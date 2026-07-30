@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+  {
+    titleNative: 'తెలంగాణ చరిత్ర',
+    titleEnglish: 'Telangana history',
+    slug: 'telangana-history-te',
+    chapterCount: 14,
+    icon: 'book',
+    available: true,
+  },
+  {
+    titleNative: 'Telangana history',
+    titleEnglish: 'English',
+    slug: 'telangana-history-en',
+    chapterCount: 0,
+    icon: 'book',
+    available: false,
+  },
+  {
+    titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
+    titleEnglish: 'Telangana economy',
+    slug: 'telangana-economy-te',
+    chapterCount: 0,
+    icon: 'chart',
+    available: false,
+  },
+  {
+    titleNative: 'Telangana economy',
+    titleEnglish: 'English',
+    slug: 'telangana-economy-en',
+    chapterCount: 0,
+    icon: 'chart',
+    available: false,
+  },
+];
+---
+<Layout title="StudyHelp - TSPSC and TS exam preparation" description="Study help for TSPSC and TS exams. Subject-wise FAQs, chapter by chapter.">
+
+  <div style="background:var(--surface-2, #fff); border-bottom:1px solid var(--border);">
+    <div style="max-width:1100px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:32px;">
+        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text, #111);">StudyHelp</a>
+        <nav style="display:flex; gap:24px; font-size:16px;">
+          <a href="/" style="text-decoration:none; color:var(--text, #111); font-weight:600;">Home</a>
+          <a href="/subjects/" style="text-decoration:none; color:var(--muted);">Subjects</a>
+          <a href="/plans/" style="text-decoration:none; color:var(--muted);">Plans</a>
+          <a href="/about/" style="text-decoration:none; color:var(--muted);">About</a>
+        </nav>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="/login/" style="font-size:14px; padding:8px 16px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text, #111);">Login</a>
+        <a href="/plans/" style="font-size:14px; padding:8px 16px; border:1px solid #185fa5; border-radius:8px; text-decoration:none; background:#e6f1fb; color:#0c447c;">Go premium</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; padding:24px;">
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:2.5rem 1.5rem; text-align:center; margin-bottom:1.5rem;">
+      <h1 style="margin:0 0 6px; font-size:22px;">Study help for TSPSC and TS exams</h1>
+      <p style="color:var(--muted); font-size:14px; margin:0 0 4px;">Pick a subject to start reading FAQs, chapter by chapter</p>
+      <p style="color:var(--muted); font-size:12px; margin:0; opacity:0.8;">Free to start, no login needed</p>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+      <span style="font-size:14px; font-weight:600;">Subjects</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:1.5rem;">
+      {subjects.map((s) => (
+        s.available ? (
+          <a href={`/${s.slug}/`} style="display:block; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.25rem; text-decoration:none; color:inherit;">
+            <div style="font-weight:700; font-size:15px;">{s.titleNative}</div>
+            <div style="font-size:13px; color:var(--muted); margin:2px 0 10px;">{s.titleEnglish}</div>
+            <span style="font-size:12px; color:var(--muted);">{s.chapterCount} chapters</span>
+          </a>
+        ) : (
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.25rem; opacity:0.6;">
+            <div style="font-weight:700; font-size:15px;">{s.titleNative}</div>
+            <div style="font-size:13px; color:var(--muted); margin:2px 0 10px;">{s.titleEnglish}</div>
+            <span style="font-size:12px; color:var(--muted);">coming soon</span>
+          </div>
+        )
+      ))}
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div style="font-size:13px; color:var(--muted);">Already purchased a subject? Login to continue reading, no limits.</div>
+      <a href="/login/" style="font-size:13px; padding:6px 14px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text, #111);">Login</a>
+    </div>
+
+  </div>
+</Layout>

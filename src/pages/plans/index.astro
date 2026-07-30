@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const subjects = [
+  {
+    titleNative: 'తెలంగాణ చరిత్ర',
+    titleEnglish: 'Telangana history',
+    slug: 'telangana-history-te',
+    price: 199,
+    popular: true,
+    available: true,
+  },
+  {
+    titleNative: 'Telangana history',
+    titleEnglish: 'English',
+    slug: 'telangana-history-en',
+    price: 199,
+    popular: false,
+    available: false,
+  },
+  {
+    titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
+    titleEnglish: 'Telangana economy',
+    slug: 'telangana-economy-te',
+    price: 199,
+    popular: false,
+    available: false,
+  },
+  {
+    titleNative: 'Telangana economy',
+    titleEnglish: 'English',
+    slug: 'telangana-economy-en',
+    price: 199,
+    popular: false,
+    available: false,
+  },
+];
+---
+<Layout title="Plans - StudyHelp" description="Unlock unlimited access to StudyHelp subjects. One-time payment, no subscription.">
+
+  <div style="background:var(--card); border-bottom:1px solid var(--border);">
+    <div style="max-width:1100px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:32px;">
+        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text);">StudyHelp</a>
+        <nav style="display:flex; gap:24px; font-size:16px;">
+          <a href="/" style="text-decoration:none; color:var(--muted);">Home</a>
+          <a href="/subjects/" style="text-decoration:none; color:var(--muted);">Subjects</a>
+          <a href="/plans/" style="text-decoration:none; color:var(--text); font-weight:600;">Plans</a>
+          <a href="/about/" style="text-decoration:none; color:var(--muted);">About</a>
+        </nav>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="/login/" style="font-size:14px; padding:8px 16px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text);">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; padding:24px;">
+
+    <div style="text-align:center; margin-bottom:1.5rem;">
+      <h1 style="margin:0 0 6px;">Unlock unlimited access</h1>
+      <p style="color:var(--muted); font-size:14px; margin:0;">One-time payment per subject. No subscription, no expiry.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:1.5rem;">
+      {subjects.map((s) => (
+        <div style={`background:var(--card); border:${s.popular ? '2px solid var(--accent)' : '1px solid var(--border)'}; border-radius:12px; padding:1.25rem; ${s.available ? '' : 'opacity:0.6;'}`}>
+          {s.popular && (
+            <span style="font-size:12px; background:var(--accent-bg); color:var(--accent); padding:2px 10px; border-radius:6px;">most popular</span>
+          )}
+          <div style={`font-weight:700; font-size:15px; ${s.popular ? 'margin-top:10px;' : 'margin-top:26px;'}`}>{s.titleNative}</div>
+          <div style="font-size:13px; color:var(--muted); margin:2px 0 12px;">{s.titleEnglish}</div>
+          <div style="font-size:22px; font-weight:700; margin-bottom:12px;">Rs. {s.price}</div>
+          {s.available ? (
+            <button
+              data-subject={s.slug}
+              data-price={s.price}
+              class="buy-btn"
+              style="width:100%; font-size:13px; padding:8px; border:1px solid var(--accent); border-radius:8px; background:var(--accent-bg); color:var(--accent); cursor:pointer;"
+            >
+              Buy now
+            </button>
+          ) : (
+            <button disabled style="width:100%; font-size:13px; padding:8px; border:1px solid var(--border); border-radius:8px; background:var(--bg); color:var(--muted); cursor:not-allowed;">
+              Coming soon
+            </button>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.25rem;">
+      <div style="font-size:14px; font-weight:600; margin-bottom:12px;">What you get</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px;">
+        <div>
+          <div style="font-size:13px; font-weight:600;">Unlimited reading</div>
+          <div style="font-size:12px; color:var(--muted);">All chapters, all FAQs</div>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:600;">Up to 3 devices</div>
+          <div style="font-size:12px; color:var(--muted);">Manage and switch anytime</div>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:600;">No expiry</div>
+          <div style="font-size:12px; color:var(--muted);">One-time payment, forever access</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Placeholder only - Razorpay checkout wiring happens in a later build stage
+    // once the Worker + KV + OTP backend (Stages 1-3 of the workflow doc) exists.
+    document.querySelectorAll('.buy-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const subject = btn.getAttribute('data-subject');
+        alert(`Buy flow for "${subject}" is not wired up yet. Payment + login backend comes in a later build stage.`);
+      });
+    });
+  </script>
+</Layout>

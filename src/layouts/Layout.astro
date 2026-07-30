@@ -1,0 +1,112 @@
+---
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style is:global>
+    :root {
+      --bg: #f7f6f2;
+      --card: #ffffff;
+      --border: #e2e0d8;
+      --text: #1c1c1a;
+      --muted: #6b6a63;
+      --accent: #185fa5;
+      --accent-bg: #e6f1fb;
+      --success-bg: #eaf3de;
+      --success-text: #27500a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans Telugu", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    main {
+      width: 100%;
+    }
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 14px 16px 64px;
+    }
+    a { color: var(--accent); text-decoration: none; font-size: 17px; }
+    h1 { font-size: 28px; font-weight: 700; margin: 0 0 2px; }
+    p.sub { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
+    input[type="search"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 17px;
+      font-family: inherit;
+      margin-bottom: 20px;
+    }
+    #back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease, background 0.15s ease;
+      z-index: 9999;
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    #back-to-top:hover {
+      filter: brightness(0.92);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <slot />
+  </main>
+
+  <button id="back-to-top" aria-label="పైకి వెళ్లు" title="పైకి వెళ్లు">&uarr;</button>
+
+  <script>
+    const btn = document.getElementById('back-to-top');
+    if (btn) {
+      const toggle = () => {
+        if (window.scrollY > 400) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      };
+      window.addEventListener('scroll', toggle, { passive: true });
+      toggle();
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Login - StudyHelp" description="Login to StudyHelp to access your purchased subjects.">
+
+  <div style="background:var(--card); border-bottom:1px solid var(--border);">
+    <div style="max-width:1100px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:32px;">
+        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text);">StudyHelp</a>
+        <nav style="display:flex; gap:24px; font-size:16px;">
+          <a href="/" style="text-decoration:none; color:var(--muted);">Home</a>
+          <a href="/subjects/" style="text-decoration:none; color:var(--muted);">Subjects</a>
+          <a href="/plans/" style="text-decoration:none; color:var(--muted);">Plans</a>
+          <a href="/about/" style="text-decoration:none; color:var(--muted);">About</a>
+        </nav>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="/plans/" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent);">Go premium</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:420px; margin:60px auto; padding:0 16px;">
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:2rem;">
+      <h1 style="font-size:22px; margin:0 0 6px; text-align:center;">Login</h1>
+      <p style="color:var(--muted); font-size:14px; margin:0 0 24px; text-align:center;">
+        Enter your email, we will send a one-time code. No password needed.
+      </p>
+
+      <div id="email-step">
+        <label for="email" style="font-size:13px; color:var(--muted); display:block; margin-bottom:6px;">Email address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="you@example.com"
+          style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:16px; font-family:inherit; margin-bottom:16px;"
+        />
+        <button
+          id="send-otp-btn"
+          style="width:100%; padding:10px; border:1px solid var(--accent); border-radius:8px; background:var(--accent-bg); color:var(--accent); font-size:15px; cursor:pointer;"
+        >
+          Send code
+        </button>
+      </div>
+
+      <div id="otp-step" style="display:none;">
+        <label for="otp" style="font-size:13px; color:var(--muted); display:block; margin-bottom:6px;">Enter the 6-digit code</label>
+        <input
+          type="text"
+          id="otp"
+          maxlength="6"
+          placeholder="000000"
+          style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:16px; font-family:inherit; margin-bottom:16px; letter-spacing:4px; text-align:center;"
+        />
+        <button
+          id="verify-otp-btn"
+          style="width:100%; padding:10px; border:1px solid var(--accent); border-radius:8px; background:var(--accent-bg); color:var(--accent); font-size:15px; cursor:pointer;"
+        >
+          Verify and login
+        </button>
+      </div>
+
+      <p style="font-size:12px; color:var(--muted); text-align:center; margin:16px 0 0;">
+        Login works on up to 3 devices at a time for purchased subjects.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    // Placeholder only - OTP send/verify is not wired to a backend yet.
+    // Real implementation is Stage 2 of the build plan (Worker + Apps Script OTP email + KV).
+    const emailStep = document.getElementById('email-step');
+    const otpStep = document.getElementById('otp-step');
+    const sendBtn = document.getElementById('send-otp-btn');
+    const verifyBtn = document.getElementById('verify-otp-btn');
+
+    sendBtn.addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      if (!email || !email.includes('@')) {
+        alert('Enter a valid email address.');
+        return;
+      }
+      alert(`OTP sending is not wired up yet. Would send a code to ${email} once the backend is built.`);
+      emailStep.style.display = 'none';
+      otpStep.style.display = 'block';
+    });
+
+    verifyBtn.addEventListener('click', () => {
+      alert('OTP verification is not wired up yet. Login backend comes in a later build stage.');
+    });
+  </script>
+</Layout>

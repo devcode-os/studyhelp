@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const chapterFiles = import.meta.glob('../../data/*.json', { eager: true });
+
+const chapters = Object.values(chapterFiles)
+  .flatMap((mod) => (Array.isArray(mod.default) ? mod.default : [mod.default]))
+  .filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber)
+  .sort((a, b) => a.chapterNumber - b.chapterNumber);
+
+const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
+---
+<Layout title="తెలంగాణ చరిత్ర FAQs" description="TSPSC మరియు TS పరీక్షల కోసం తెలంగాణ చరిత్ర ప్రశ్నలు, అధ్యాయాల వారీగా">
+
+  <div style="background:var(--surface-2, #fff); border-bottom:1px solid var(--border);">
+    <div style="max-width:1100px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:32px;">
+        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text, #111);">StudyHelp</a>
+        <nav style="display:flex; gap:24px; font-size:16px;">
+          <a href="/" style="text-decoration:none; color:var(--muted);">Home</a>
+          <a href="/subjects/" style="text-decoration:none; color:var(--text, #111); font-weight:600;">Subjects</a>
+          <a href="/plans/" style="text-decoration:none; color:var(--muted);">Plans</a>
+          <a href="/about/" style="text-decoration:none; color:var(--muted);">About</a>
+        </nav>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="/login/" style="font-size:14px; padding:8px 16px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text, #111);">Login</a>
+        <a href="/plans/" style="font-size:14px; padding:8px 16px; border:1px solid #185fa5; border-radius:8px; text-decoration:none; background:#e6f1fb; color:#0c447c;">Go premium</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; padding:24px;">
+
+    <div style="font-size:13px; color:var(--muted); margin-bottom:12px;">
+      <a href="/" style="color:var(--muted); text-decoration:none;">Home</a> /
+      <a href="/subjects/" style="color:var(--muted); text-decoration:none;">Subjects</a> /
+      తెలంగాణ చరిత్ర
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <div>
+        <h1 style="margin:0 0 4px; font-size:22px;">తెలంగాణ చరిత్ర</h1>
+        <div style="font-size:13px; color:var(--muted);">{chapters.length} chapters, {totalQuestions}+ questions</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:12px; color:var(--muted); margin-bottom:6px;">First 30 answers free, site-wide</div>
+        <a href="/plans/" style="font-size:13px; padding:8px 16px; border:1px solid #185fa5; border-radius:8px; text-decoration:none; background:#e6f1fb; color:#0c447c;">Unlock unlimited, Rs. 199</a>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px;">
+      {chapters.map((ch) => (
+        <a href={`/${ch.slug}/`} style="display:block; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.25rem; text-decoration:none; color:inherit;">
+          <div style="width:32px; height:32px; border-radius:50%; background:var(--surface-1, #f1f1f1); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:var(--muted); margin-bottom:12px;">
+            {ch.chapterNumber}
+          </div>
+          <div style="font-weight:700; font-size:15px;">{ch.title}</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">{ch.faqs.length} questions</div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</Layout>

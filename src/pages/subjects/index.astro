@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const subjects = [
+  {
+    titleNative: 'తెలంగాణ చరిత్ర',
+    titleEnglish: 'Telangana history',
+    slug: 'telangana-history-te',
+    chapterCount: 17,
+    available: true,
+  },
+  {
+    titleNative: 'Telangana history',
+    titleEnglish: 'English',
+    slug: 'telangana-history-en',
+    chapterCount: 0,
+    available: false,
+  },
+  {
+    titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
+    titleEnglish: 'Telangana economy',
+    slug: 'telangana-economy-te',
+    chapterCount: 0,
+    available: false,
+  },
+  {
+    titleNative: 'Telangana economy',
+    titleEnglish: 'English',
+    slug: 'telangana-economy-en',
+    chapterCount: 0,
+    available: false,
+  },
+];
+---
+<Layout title="Subjects - StudyHelp" description="All subjects available on StudyHelp for TSPSC and TS exam preparation.">
+
+  <div style="background:var(--card); border-bottom:1px solid var(--border);">
+    <div style="max-width:1100px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:32px;">
+        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text);">StudyHelp</a>
+        <nav style="display:flex; gap:24px; font-size:16px;">
+          <a href="/" style="text-decoration:none; color:var(--muted);">Home</a>
+          <a href="/subjects/" style="text-decoration:none; color:var(--text); font-weight:600;">Subjects</a>
+          <a href="/plans/" style="text-decoration:none; color:var(--muted);">Plans</a>
+          <a href="/about/" style="text-decoration:none; color:var(--muted);">About</a>
+        </nav>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="/login/" style="font-size:14px; padding:8px 16px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text);">Login</a>
+        <a href="/plans/" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent);">Go premium</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; padding:24px;">
+
+    <div style="font-size:13px; color:var(--muted); margin-bottom:12px;">
+      <a href="/" style="color:var(--muted); text-decoration:none;">Home</a> / Subjects
+    </div>
+
+    <h1 style="margin-bottom:16px;">Subjects</h1>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
+      {subjects.map((s) => (
+        s.available ? (
+          <a href={`/${s.slug}/`} style="display:block; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.25rem; text-decoration:none; color:inherit;">
+            <div style="font-weight:700; font-size:15px;">{s.titleNative}</div>
+            <div style="font-size:13px; color:var(--muted); margin:2px 0 10px;">{s.titleEnglish}</div>
+            <span style="font-size:12px; color:var(--muted);">{s.chapterCount} chapters</span>
+          </a>
+        ) : (
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.25rem; opacity:0.6;">
+            <div style="font-weight:700; font-size:15px;">{s.titleNative}</div>
+            <div style="font-size:13px; color:var(--muted); margin:2px 0 10px;">{s.titleEnglish}</div>
+            <span style="font-size:12px; color:var(--muted);">coming soon</span>
+          </div>
+        )
+      ))}
+    </div>
+
+  </div>
+</Layout>

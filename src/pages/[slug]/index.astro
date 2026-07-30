@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const chapterFiles = import.meta.glob('../../data/*.json', { eager: true });
+
+  const chapters = Object.values(chapterFiles)
+    .flatMap((mod) => (Array.isArray(mod.default) ? mod.default : [mod.default]))
+    .filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber);
+
+  return chapters.map((ch) => ({
+    params: { slug: ch.slug },
+    props: { chapter: ch }
+  }));
+}
+
+const { chapter } = Astro.props;
+const PER_PAGE = 20;
+const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
+---
+<style>
+</style>
+<Layout title={`${chapter.title} FAQs`} description={`${chapter.title} - తెలంగాణ చరిత్ర ప్రశ్నలు`}>
+
+  <div style="background:var(--card); border-bottom:1px solid var(--border);">
+    <div style="max-width:1300px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:32px;">
+        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text);">StudyHelp</a>
+        <nav style="display:flex; gap:24px; font-size:16px;">
+          <a href="/" style="text-decoration:none; color:var(--muted);">Home</a>
+          <a href="/subjects/" style="text-decoration:none; color:var(--muted);">Subjects</a>
+          <a href="/plans/" style="text-decoration:none; color:var(--muted);">Plans</a>
+          <a href="/about/" style="text-decoration:none; color:var(--muted);">About</a>
+        </nav>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="/login/" style="font-size:14px; padding:8px 16px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text);">Login</a>
+        <a href="/plans/" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent);">Go premium</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:912px; margin:0 auto; padding:14px 24px 0;">
+    <nav aria-label="breadcrumb" style="font-size:13px; color:var(--muted); margin-bottom:12px; line-height:1.6;">
+      <a href="/" style="color:var(--muted);">Home</a> / <a href="/subjects/" style="color:var(--muted);">Subjects</a> / <a href="/telangana-history-te/" style="color:var(--muted);">తెలంగాణ చరిత్ర</a> / <span style="color:var(--text); font-weight:600;">{chapter.title}</span>
+    </nav>
+  </div>
+
+  <div style="max-width:912px; margin:0 auto; padding:0 24px 64px;">
+    <h1 style="margin:0 0 16px; font-size:20px; font-weight:700;">{chapter.chapterNumber}. {chapter.title} <span style="font-weight:400; font-size:14px; color:var(--muted);">({chapter.faqs.length} ప్రశ్నలు)</span></h1>
+
+    <div id="faq-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+    <div id="pagination" style="display:flex; justify-content:center; gap:8px; margin-top:20px;"></div>
+  </div>
+
+  <script define:vars={{ faqs: chapter.faqs, perPage: PER_PAGE }}>
+    let currentPage = 1;
+    const totalPages = Math.ceil(faqs.length / perPage);
+
+    function renderPage(page) {
+      currentPage = page;
+      const start = (page - 1) * perPage;
+      const pageFaqs = faqs.slice(start, start + perPage);
+      const list = document.getElementById('faq-list');
+
+      list.innerHTML = pageFaqs.map((f, i) => `
+        <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden; background:var(--card);">
+          <div class="q-row" data-i="${start + i}" style="cursor:pointer; padding:16px 18px; display:flex; justify-content:space-between; gap:10px;">
+            <span style="font-size:18px; line-height:1.6;">${start + i + 1}. ${f.q}</span>
+            <span style="color:var(--muted); flex-shrink:0; font-size:18px;">&darr;</span>
+          </div>
+          <div class="a-row" data-i="${start + i}" style="display:none; padding:0 18px 18px;">
+            <div style="background:var(--success-bg); border-radius:8px; padding:14px 16px;">
+              <p style="margin:0; font-weight:700; color:var(--success-text); font-size:19px;">${f.a}</p>
+              ${f.e ? `<p style="margin:8px 0 0; font-size:15px; color:var(--muted);">${f.e}</p>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      list.querySelectorAll('.q-row').forEach((row) => {
+        row.addEventListener('click', () => {
+          const i = row.getAttribute('data-i');
+          const a = list.querySelector(`.a-row[data-i="${i}"]`);
+          const isOpen = a.style.display === 'block';
+          list.querySelectorAll('.a-row').forEach((el) => el.style.display = 'none');
+          a.style.display = isOpen ? 'none' : 'block';
+        });
+      });
+
+      renderPagination();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderPagination() {
+      const pag = document.getElementById('pagination');
+      if (totalPages <= 1) { pag.innerHTML = ''; return; }
+      let html = `<button ${currentPage === 1 ? 'disabled' : ''} id="prev-btn">మునుపటి</button>`;
+      for (let p = 1; p <= totalPages; p++) {
+        html += `<button data-page="${p}" style="${p === currentPage ? 'border-color:var(--accent); color:var(--accent);' : ''}">${p}</button>`;
+      }
+      html += `<button ${currentPage === totalPages ? 'disabled' : ''} id="next-btn">తర్వాత</button>`;
+      pag.innerHTML = html;
+
+      pag.querySelectorAll('button[data-page]').forEach((btn) => {
+        btn.addEventListener('click', () => renderPage(parseInt(btn.getAttribute('data-page'))));
+      });
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      if (prevBtn) prevBtn.addEventListener('click', () => renderPage(currentPage - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => renderPage(currentPage + 1));
+    }
+
+    renderPage(1);
+  </script>
+</Layout>
