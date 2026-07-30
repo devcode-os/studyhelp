@@ -2,15 +2,25 @@
 const { title, description } = Astro.props;
 ---
 <!doctype html>
-<html lang="te">
+<html lang="te" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google" content="notranslate" />
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;700&display=swap" rel="stylesheet" />
-  <style is:global>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
+  <script is:inline>
+    // Runs before paint to avoid a light-mode flash on load
+    (function () {
+      var saved = localStorage.getItem('studyhelp-theme');
+      var theme = saved === 'dark' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <style>
     :root {
       --bg: #f7f6f2;
       --card: #ffffff;
@@ -22,6 +32,17 @@ const { title, description } = Astro.props;
       --success-bg: #eaf3de;
       --success-text: #27500a;
     }
+    html[data-theme="dark"] {
+      --bg: #14161a;
+      --card: #1c1f24;
+      --border: #2c2f36;
+      --text: #ececec;
+      --muted: #9a9a9a;
+      --accent: #8ec6ff;
+      --accent-bg: #1c2c3a;
+      --success-bg: #1e2c17;
+      --success-text: #9fd67a;
+    }
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -31,18 +52,24 @@ const { title, description } = Astro.props;
       line-height: 1.8;
       font-size: 18px;
     }
-    main {
-      width: 100%;
-    }
-    .content {
+    main { width: 100%; }
+    :global(.content) {
       max-width: 720px;
       margin: 0 auto;
-      padding: 14px 16px 64px;
+      padding: 24px 16px 64px;
     }
     a { color: var(--accent); text-decoration: none; font-size: 17px; }
-    h1 { font-size: 28px; font-weight: 700; margin: 0 0 2px; }
-    p.sub { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
-    input[type="search"] {
+    html[data-theme="dark"] a {
+      color: #ffffff;
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 3px;
+    }
+    h1 { font-size: 28px; font-weight: 700; margin: 0 0 4px; }
+    p.sub { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
+    input[type="search"],
+    input[type="email"],
+    input[type="text"] {
       width: 100%;
       padding: 12px 16px;
       border: 1px solid var(--border);
@@ -50,37 +77,69 @@ const { title, description } = Astro.props;
       font-size: 17px;
       font-family: inherit;
       margin-bottom: 20px;
+      background: var(--card);
+      color: var(--text);
     }
-    #back-to-top {
+
+    /* Chapter grid: 3-column on desktop, boxed single-column list on mobile */
+    :global(.chapter-grid) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    @media (max-width: 720px) {
+      :global(.chapter-grid) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Subject header: left/right split on desktop, centered stack on mobile */
+    :global(.subject-header-left) {
+      text-align: left;
+    }
+    :global(.subject-header-right) {
+      text-align: right;
+    }
+    @media (max-width: 720px) {
+      :global(.subject-header-left),
+      :global(.subject-header-right) {
+        text-align: center;
+      }
+    }
+
+    /* Chapter card content: left-aligned on desktop, centered on mobile */
+    @media (max-width: 720px) {
+      :global(.chapter-card) {
+        text-align: center;
+      }
+      :global(.chapter-card .chapter-card-number) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* Scroll-to-top button, positioned above mobile browser nav bars */
+    #scroll-top-btn {
       position: fixed;
-      right: 24px;
+      right: 16px;
       bottom: 24px;
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: none;
       background: var(--accent);
       color: #fff;
-      font-size: 22px;
-      line-height: 1;
-      display: flex;
+      border: none;
+      font-size: 18px;
+      display: none;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease, background 0.15s ease;
-      z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 40;
     }
-    #back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    #back-to-top:hover {
-      filter: brightness(0.92);
+    #scroll-top-btn.show { display: flex; }
+    @media (max-width: 720px) {
+      #scroll-top-btn { bottom: 84px; }
     }
   </style>
 </head>
@@ -89,21 +148,19 @@ const { title, description } = Astro.props;
     <slot />
   </main>
 
-  <button id="back-to-top" aria-label="పైకి వెళ్లు" title="పైకి వెళ్లు">&uarr;</button>
+  <button id="scroll-top-btn" aria-label="Scroll to top">&#8593;</button>
 
-  <script>
-    const btn = document.getElementById('back-to-top');
-    if (btn) {
-      const toggle = () => {
+  <script is:inline>
+    const scrollBtn = document.getElementById('scroll-top-btn');
+    if (scrollBtn) {
+      window.addEventListener('scroll', () => {
         if (window.scrollY > 400) {
-          btn.classList.add('visible');
+          scrollBtn.classList.add('show');
         } else {
-          btn.classList.remove('visible');
+          scrollBtn.classList.remove('show');
         }
-      };
-      window.addEventListener('scroll', toggle, { passive: true });
-      toggle();
-      btn.addEventListener('click', () => {
+      });
+      scrollBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }

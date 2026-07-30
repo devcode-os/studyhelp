@@ -1,0 +1,164 @@
+---
+// Shared header, used on every page via <Header />
+// Highlights the current page's nav link if `active` prop is passed (e.g. active="home")
+const { active = '' } = Astro.props;
+---
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="logo">StudyHelp</a>
+
+    <nav class="nav-desktop">
+      <a href="/" class:list={{ active: active === 'home' }}>Home</a>
+      <a href="/subjects/" class:list={{ active: active === 'subjects' }}>Subjects</a>
+      <a href="/plans/" class:list={{ active: active === 'plans' }}>Plans</a>
+      <a href="/about/" class:list={{ active: active === 'about' }}>About</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="icon-light">&#9728;</span>
+        <span class="icon-dark">&#9789;</span>
+      </button>
+      <a href="/login/" class="btn btn-outline nav-desktop-only">Login</a>
+      <a href="/plans/" class="btn btn-accent nav-desktop-only">Go premium</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">&#9776;</button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/subjects/">Subjects</a>
+    <a href="/plans/">Plans</a>
+    <a href="/about/">About</a>
+    <a href="/login/">Login</a>
+    <a href="/plans/" class="btn btn-accent" style="text-align:center;">Go premium</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--text);
+    flex-shrink: 0;
+  }
+  .nav-desktop {
+    display: flex;
+    gap: 24px;
+    font-size: 16px;
+  }
+  .nav-desktop a {
+    text-decoration: none;
+    color: var(--muted);
+  }
+  .nav-desktop a.active {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: transparent;
+    cursor: pointer;
+  }
+  .btn-accent {
+    border-color: var(--accent);
+    background: var(--accent-bg);
+    color: var(--accent);
+  }
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-dark { display: none; }
+  html[data-theme="dark"] .icon-light { display: none; }
+  html[data-theme="dark"] .icon-dark { display: inline; }
+
+  .menu-toggle {
+    display: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 16px 16px;
+    border-top: 1px solid var(--border);
+  }
+  .mobile-menu a {
+    padding: 10px 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 16px;
+    border-radius: 6px;
+  }
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  @media (max-width: 720px) {
+    .nav-desktop-only { display: none; }
+    .nav-desktop { display: none; }
+    .menu-toggle { display: block; }
+  }
+</style>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+  }
+
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('studyhelp-theme', next);
+    });
+  }
+</script>

@@ -36,8 +36,8 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
 
     <div class="chapter-grid">
       {chapters.map((ch) => (
-        <a href={`/${ch.slug}/`} class="chapter-card" style="display:block; background:var(--card); border:1px solid var(--border); border-bottom:3px solid var(--success-bg); border-radius:12px; padding:1.25rem; text-decoration:none; color:inherit;">
-          <div class="chapter-card-number" style="width:32px; height:32px; border-radius:50%; background:var(--accent-bg); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:var(--accent); margin-bottom:12px;">
+        <a href={`/${ch.slug}/`} style="display:block; background:var(--card); border:1px solid var(--border); border-bottom:3px solid var(--success-bg); border-radius:12px; padding:1.25rem; text-decoration:none; color:inherit;">
+          <div style="width:32px; height:32px; border-radius:50%; background:var(--accent-bg); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:var(--accent); margin-bottom:12px;">
             {ch.chapterNumber}
           </div>
           <div style="font-weight:700; font-size:15px;">{ch.title}</div>

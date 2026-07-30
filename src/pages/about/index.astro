@@ -1,25 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
 ---
 <Layout title="About - StudyHelp" description="About StudyHelp - subject-wise FAQs for TSPSC and TS exam preparation.">
 
-  <div style="background:var(--card); border-bottom:1px solid var(--border);">
-    <div style="max-width:1100px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-      <div style="display:flex; align-items:center; gap:32px;">
-        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text);">StudyHelp</a>
-        <nav style="display:flex; gap:24px; font-size:16px;">
-          <a href="/" style="text-decoration:none; color:var(--muted);">Home</a>
-          <a href="/subjects/" style="text-decoration:none; color:var(--muted);">Subjects</a>
-          <a href="/plans/" style="text-decoration:none; color:var(--muted);">Plans</a>
-          <a href="/about/" style="text-decoration:none; color:var(--text); font-weight:600;">About</a>
-        </nav>
-      </div>
-      <div style="display:flex; gap:10px;">
-        <a href="/login/" style="font-size:14px; padding:8px 16px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text);">Login</a>
-        <a href="/plans/" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent);">Go premium</a>
-      </div>
-    </div>
-  </div>
+  <Header active="about" />
 
   <div class="content">
     <h1>About StudyHelp</h1>

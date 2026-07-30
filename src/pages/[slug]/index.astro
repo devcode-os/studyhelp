@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
 
 export function getStaticPaths() {
   const chapterFiles = import.meta.glob('../../data/*.json', { eager: true });
@@ -18,39 +19,20 @@ const { chapter } = Astro.props;
 const PER_PAGE = 20;
 const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
 ---
-<style>
-</style>
 <Layout title={`${chapter.title} FAQs`} description={`${chapter.title} - తెలంగాణ చరిత్ర ప్రశ్నలు`}>
 
-  <div style="background:var(--card); border-bottom:1px solid var(--border);">
-    <div style="max-width:1300px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-      <div style="display:flex; align-items:center; gap:32px;">
-        <a href="/" style="font-weight:700; font-size:24px; text-decoration:none; color:var(--text);">StudyHelp</a>
-        <nav style="display:flex; gap:24px; font-size:16px;">
-          <a href="/" style="text-decoration:none; color:var(--muted);">Home</a>
-          <a href="/subjects/" style="text-decoration:none; color:var(--muted);">Subjects</a>
-          <a href="/plans/" style="text-decoration:none; color:var(--muted);">Plans</a>
-          <a href="/about/" style="text-decoration:none; color:var(--muted);">About</a>
-        </nav>
-      </div>
-      <div style="display:flex; gap:10px;">
-        <a href="/login/" style="font-size:14px; padding:8px 16px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text);">Login</a>
-        <a href="/plans/" style="font-size:14px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent);">Go premium</a>
-      </div>
+  <Header />
+
+  <div class="content">
+    <a href="/telangana-history-te/" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:20px; padding:5px 12px 5px 8px; margin-bottom:14px;">&larr; అధ్యాయాలు</a>
+    <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+      <h1 style="margin:0;">{chapter.chapterNumber}. {chapter.title}</h1>
+      <span style="font-size:14px; font-weight:700; color:var(--text);">{chapter.faqs.length} ప్రశ్నలు</span>
     </div>
-  </div>
 
-  <div style="max-width:912px; margin:0 auto; padding:14px 24px 0;">
-    <nav aria-label="breadcrumb" style="font-size:13px; color:var(--muted); margin-bottom:12px; line-height:1.6;">
-      <a href="/" style="color:var(--muted);">Home</a> / <a href="/subjects/" style="color:var(--muted);">Subjects</a> / <a href="/telangana-history-te/" style="color:var(--muted);">తెలంగాణ చరిత్ర</a> / <span style="color:var(--text); font-weight:600;">{chapter.title}</span>
-    </nav>
-  </div>
+    <div id="faq-list" style="display:flex; flex-direction:column; gap:8px; margin-top:20px;"></div>
 
-  <div style="max-width:912px; margin:0 auto; padding:0 24px 64px;">
-    <h1 style="margin:0 0 16px; font-size:20px; font-weight:700;">{chapter.chapterNumber}. {chapter.title} <span style="font-weight:400; font-size:14px; color:var(--muted);">({chapter.faqs.length} ప్రశ్నలు)</span></h1>
-
-    <div id="faq-list" style="display:flex; flex-direction:column; gap:8px;"></div>
-    <div id="pagination" style="display:flex; justify-content:center; gap:8px; margin-top:20px;"></div>
+    <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
   </div>
 
   <script define:vars={{ faqs: chapter.faqs, perPage: PER_PAGE }}>
@@ -95,11 +77,12 @@ const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
     function renderPagination() {
       const pag = document.getElementById('pagination');
       if (totalPages <= 1) { pag.innerHTML = ''; return; }
-      let html = `<button ${currentPage === 1 ? 'disabled' : ''} id="prev-btn">మునుపటి</button>`;
+      const btnStyle = 'min-width:36px; height:36px; padding:0 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--text); font-size:14px; cursor:pointer;';
+      let html = `<button ${currentPage === 1 ? 'disabled' : ''} id="prev-btn" style="${btnStyle}">మునుపటి</button>`;
       for (let p = 1; p <= totalPages; p++) {
-        html += `<button data-page="${p}" style="${p === currentPage ? 'border-color:var(--accent); color:var(--accent);' : ''}">${p}</button>`;
+        html += `<button data-page="${p}" style="${btnStyle} ${p === currentPage ? 'border-color:var(--accent); color:var(--accent); font-weight:700;' : ''}">${p}</button>`;
       }
-      html += `<button ${currentPage === totalPages ? 'disabled' : ''} id="next-btn">తర్వాత</button>`;
+      html += `<button ${currentPage === totalPages ? 'disabled' : ''} id="next-btn" style="${btnStyle}">తర్వాత</button>`;
       pag.innerHTML = html;
 
       pag.querySelectorAll('button[data-page]').forEach((btn) => {
