@@ -18,6 +18,10 @@ export function getStaticPaths() {
 const { chapter } = Astro.props;
 const PER_PAGE = 20;
 const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
+
+// Only question text ships in the static HTML - answers stay out of markup
+// entirely and are looked up client-side, since answers are the paid product.
+const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '' }));
 ---
 <Layout title={`${chapter.title} FAQs`} description={`${chapter.title} - తెలంగాణ చరిత్ర ప్రశ్నలు`}>
 
@@ -30,49 +34,56 @@ const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
       <span style="font-size:14px; font-weight:700; color:var(--text);">{chapter.faqs.length} ప్రశ్నలు</span>
     </div>
 
-    <div id="faq-list" style="display:flex; flex-direction:column; gap:8px; margin-top:20px;"></div>
+    <div id="faq-list" style="display:flex; flex-direction:column; gap:8px; margin-top:20px;">
+      {chapter.faqs.map((f, i) => (
+        <div class="faq-item" data-i={i} data-page={Math.floor(i / PER_PAGE) + 1} style={`border:1px solid var(--border); border-radius:8px; overflow:hidden; background:var(--card); ${i >= PER_PAGE ? 'display:none;' : ''}`}>
+          <div class="q-row" data-i={i} style="cursor:pointer; padding:16px 18px; display:flex; justify-content:space-between; gap:10px;">
+            <span style="font-size:18px; line-height:1.6;">{i + 1}. {f.q}</span>
+            <span style="color:var(--muted); flex-shrink:0; font-size:18px;">&darr;</span>
+          </div>
+          <div class="a-row" data-i={i} style="display:none; padding:0 18px 18px;"></div>
+        </div>
+      ))}
+    </div>
 
     <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
   </div>
 
-  <script define:vars={{ faqs: chapter.faqs, perPage: PER_PAGE }}>
+  <script define:vars={{ answers, perPage: PER_PAGE }}>
     let currentPage = 1;
-    const totalPages = Math.ceil(faqs.length / perPage);
+    const totalPages = Math.ceil(answers.length / perPage);
+    const list = document.getElementById('faq-list');
 
-    function renderPage(page) {
+    function showPage(page) {
       currentPage = page;
-      const start = (page - 1) * perPage;
-      const pageFaqs = faqs.slice(start, start + perPage);
-      const list = document.getElementById('faq-list');
+      list.querySelectorAll('.faq-item').forEach((item) => {
+        const itemPage = parseInt(item.getAttribute('data-page'));
+        item.style.display = itemPage === page ? 'block' : 'none';
+      });
+      renderPagination();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-      list.innerHTML = pageFaqs.map((f, i) => `
-        <div style="border:1px solid var(--border); border-radius:8px; overflow:hidden; background:var(--card);">
-          <div class="q-row" data-i="${start + i}" style="cursor:pointer; padding:16px 18px; display:flex; justify-content:space-between; gap:10px;">
-            <span style="font-size:18px; line-height:1.6;">${start + i + 1}. ${f.q}</span>
-            <span style="color:var(--muted); flex-shrink:0; font-size:18px;">&darr;</span>
-          </div>
-          <div class="a-row" data-i="${start + i}" style="display:none; padding:0 18px 18px;">
+    list.querySelectorAll('.q-row').forEach((row) => {
+      row.addEventListener('click', () => {
+        const i = row.getAttribute('data-i');
+        const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
+        const isOpen = aRow.style.display === 'block';
+
+        list.querySelectorAll('.a-row').forEach((el) => el.style.display = 'none');
+
+        if (!isOpen) {
+          const f = answers[parseInt(i)];
+          aRow.innerHTML = `
             <div style="background:var(--success-bg); border-radius:8px; padding:14px 16px;">
               <p style="margin:0; font-weight:700; color:var(--success-text); font-size:19px;">${f.a}</p>
               ${f.e ? `<p style="margin:8px 0 0; font-size:15px; color:var(--muted);">${f.e}</p>` : ''}
             </div>
-          </div>
-        </div>
-      `).join('');
-
-      list.querySelectorAll('.q-row').forEach((row) => {
-        row.addEventListener('click', () => {
-          const i = row.getAttribute('data-i');
-          const a = list.querySelector(`.a-row[data-i="${i}"]`);
-          const isOpen = a.style.display === 'block';
-          list.querySelectorAll('.a-row').forEach((el) => el.style.display = 'none');
-          a.style.display = isOpen ? 'none' : 'block';
-        });
+          `;
+          aRow.style.display = 'block';
+        }
       });
-
-      renderPagination();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    });
 
     function renderPagination() {
       const pag = document.getElementById('pagination');
@@ -86,14 +97,14 @@ const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
       pag.innerHTML = html;
 
       pag.querySelectorAll('button[data-page]').forEach((btn) => {
-        btn.addEventListener('click', () => renderPage(parseInt(btn.getAttribute('data-page'))));
+        btn.addEventListener('click', () => showPage(parseInt(btn.getAttribute('data-page'))));
       });
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
-      if (prevBtn) prevBtn.addEventListener('click', () => renderPage(currentPage - 1));
-      if (nextBtn) nextBtn.addEventListener('click', () => renderPage(currentPage + 1));
+      if (prevBtn) prevBtn.addEventListener('click', () => showPage(currentPage - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => showPage(currentPage + 1));
     }
 
-    renderPage(1);
+    renderPagination();
   </script>
 </Layout>
