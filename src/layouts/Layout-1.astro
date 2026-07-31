@@ -31,12 +31,6 @@ const { title, description } = Astro.props;
       --accent-bg: #e6f1fb;
       --success-bg: #eaf3de;
       --success-text: #27500a;
-      --amber-bg: #faeeda;
-      --amber-text: #854f0b;
-      --amber-text-strong: #412402;
-      --teal-bg: #e1f5ee;
-      --teal-text: #0f6e56;
-      --teal-text-strong: #04342c;
     }
     html[data-theme="dark"] {
       --bg: #14161a;
@@ -48,12 +42,6 @@ const { title, description } = Astro.props;
       --accent-bg: #1c2c3a;
       --success-bg: #1e2c17;
       --success-text: #9fd67a;
-      --amber-bg: #3a2a10;
-      --amber-text: #f0c07a;
-      --amber-text-strong: #ffe0b0;
-      --teal-bg: #133026;
-      --teal-text: #7fd9bd;
-      --teal-text-strong: #b0eedb;
     }
     * { box-sizing: border-box; }
     body {
@@ -105,10 +93,6 @@ const { title, description } = Astro.props;
       }
     }
 
-    :global(.stat-pill-row) {
-      justify-content: flex-start;
-    }
-
     /* Subject header: left/right split on desktop, centered stack on mobile */
     :global(.subject-header-left) {
       text-align: left;
@@ -120,9 +104,6 @@ const { title, description } = Astro.props;
       :global(.subject-header-left),
       :global(.subject-header-right) {
         text-align: center;
-      }
-      :global(.stat-pill-row) {
-        justify-content: center;
       }
     }
 
