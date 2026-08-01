@@ -19,7 +19,7 @@ const { active = '' } = Astro.props;
         <span class="icon-light">&#9728;</span>
         <span class="icon-dark">&#9789;</span>
       </button>
-      <a href="/login/" class="btn btn-outline nav-desktop-only">Login</a>
+      <a href="/login/" id="login-link" class="btn btn-outline nav-desktop-only">Login</a>
       <a href="/plans/" class="btn btn-accent nav-desktop-only">Go premium</a>
       <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">&#9776;</button>
     </div>
@@ -30,7 +30,7 @@ const { active = '' } = Astro.props;
     <a href="/subjects/">Subjects</a>
     <a href="/plans/">Plans</a>
     <a href="/about/">About</a>
-    <a href="/login/">Login</a>
+    <a href="/login/" id="login-link-mobile">Login</a>
     <a href="/plans/" class="btn btn-accent" style="text-align:center;">Go premium</a>
   </div>
 </header>
@@ -159,6 +159,27 @@ const { active = '' } = Astro.props;
       const next = current === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('studyhelp-theme', next);
+    });
+  }
+
+  // TEMP: reflects stored email as "logged in" state, since real OTP login/session
+  // isn't built yet. Once OTP login exists, replace this check with the real session check.
+  const storedEmail = localStorage.getItem('studyhelp_email');
+  const loginLink = document.getElementById('login-link');
+  const loginLinkMobile = document.getElementById('login-link-mobile');
+
+  if (storedEmail) {
+    [loginLink, loginLinkMobile].forEach((el) => {
+      if (!el) return;
+      el.textContent = 'Logout';
+      el.href = '#';
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (confirm('Log out of StudyHelp on this device?')) {
+          localStorage.removeItem('studyhelp_email');
+          window.location.href = '/';
+        }
+      });
     });
   }
 </script>

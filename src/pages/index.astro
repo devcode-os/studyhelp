@@ -86,10 +86,20 @@ const iconMap = {
       ))}
     </div>
 
-    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+    <div id="login-banner" style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
       <div style="font-size:13px; color:var(--muted);">Already purchased a subject? Login to continue reading, no limits.</div>
       <a href="/login/" style="font-size:13px; padding:6px 14px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text, #111);">Login</a>
     </div>
 
   </div>
+
+  <script>
+    // TEMP: hides the "login to continue" banner if this browser already has a stored
+    // identity (placeholder for real OTP session check once login backend exists).
+    const storedEmail = localStorage.getItem('studyhelp_email');
+    if (storedEmail) {
+      const banner = document.getElementById('login-banner');
+      if (banner) banner.style.display = 'none';
+    }
+  </script>
 </Layout>
