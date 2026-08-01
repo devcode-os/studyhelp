@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Confirming Payment - StudyHelp" description="Confirming your payment">
+  <div style="max-width:500px; margin:80px auto; padding:24px; text-align:center;">
+    <h2 id="status-title">Confirming your payment...</h2>
+    <p id="status-detail" style="color:var(--muted); font-size:14px;">This usually takes just a few seconds.</p>
+  </div>
+
+  <script>
+    const WORKER_URL = 'https://studyhelp-payments.sasi-488.workers.dev';
+
+    const params = new URLSearchParams(window.location.search);
+    const user_id = params.get('user_id');
+    const subject_id = params.get('subject_id');
+
+    const titleEl = document.getElementById('status-title');
+    const detailEl = document.getElementById('status-detail');
+
+    if (!user_id || !subject_id) {
+      titleEl.textContent = 'Something went wrong';
+      detailEl.textContent = 'Missing payment details. Please try again from the Plans page.';
+    } else {
+      let attempts = 0;
+      const maxAttempts = 10;
+
+      const check = async () => {
+        attempts++;
+        try {
+          const res = await fetch(
+            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(user_id)}&subject_id=${encodeURIComponent(subject_id)}`
+          );
+          const data = await res.json();
+
+          if (data.unlocked) {
+            titleEl.textContent = 'Payment confirmed!';
+            detailEl.textContent = 'Redirecting to your subject...';
+            // Redirect to the actual subject page using the slug directly
+            window.location.href = `/${subject_id}/`;
+            return;
+          }
+
+          if (attempts >= maxAttempts) {
+            titleEl.textContent = 'Still confirming...';
+            detailEl.innerHTML = 'This is taking longer than expected. <a href="javascript:location.reload()">Refresh to check again</a>, or contact support if this persists.';
+            return;
+          }
+
+          setTimeout(check, 1500);
+        } catch (err) {
+          titleEl.textContent = 'Connection error';
+          detailEl.textContent = 'Please refresh this page to try checking again.';
+        }
+      };
+
+      check();
+    }
+  </script>
+</Layout>

@@ -54,6 +54,13 @@ async function createOrder(request, env) {
       return json({ error: "Invalid subject" }, 400);
     }
 
+    // Auto-create user if not exists (identity = email for now, pre-OTP-login)
+    await env.DB.prepare(
+      `INSERT INTO users (id, email) VALUES (?, ?) ON CONFLICT(id) DO NOTHING`
+    )
+      .bind(user_id, user_id)
+      .run();
+
     // Already entitled? Don't let them pay twice.
     const existing = await env.DB.prepare(
       "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
