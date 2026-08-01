@@ -181,5 +181,28 @@ const { active = '' } = Astro.props;
         }
       });
     });
+
+    // Check if all currently live subjects are owned — if so, show "Premium" instead of "Go premium".
+    // NOTE: this list needs updating whenever a new subject goes live (available: true elsewhere).
+    const LIVE_SUBJECTS = ['telangana-history-te', 'telangana-economy-en'];
+    const WORKER_URL = 'https://studyhelp-payments.sasi-488.workers.dev';
+
+    Promise.all(
+      LIVE_SUBJECTS.map((subject_id) =>
+        fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(storedEmail)}&subject_id=${encodeURIComponent(subject_id)}`)
+          .then((res) => res.json())
+          .then((data) => data.unlocked)
+          .catch(() => false)
+      )
+    ).then((results) => {
+      const allOwned = results.every(Boolean);
+      if (allOwned) {
+        document.querySelectorAll('a[href="/plans/"].btn-accent').forEach((el) => {
+          el.textContent = '★ Premium';
+          el.style.cursor = 'default';
+          el.removeAttribute('href');
+        });
+      }
+    });
   }
 </script>
