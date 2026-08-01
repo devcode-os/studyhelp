@@ -95,14 +95,134 @@ const subjects = [
 
   </div>
 
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
-    // Placeholder only - Razorpay checkout wiring happens in a later build stage
-    // once the Worker + KV + OTP backend (Stages 1-3 of the workflow doc) exists.
+    const WORKER_URL = 'https://studyhelp-payments.sasi-488.workers.dev';
+
+    // TEMP identity: email captured via simple prompt, no OTP verification yet.
+    // Once OTP login is built, replace getUserEmail() with the verified session email —
+    // same field, so existing entitlements keep working unchanged.
+    function getUserEmail() {
+      let email = localStorage.getItem('studyhelp_email');
+      if (!email) {
+        email = promptForEmail();
+      }
+      return email;
+    }
+
+    function promptForEmail() {
+      let email = null;
+      while (!email) {
+        const input = prompt('Enter your email to continue with purchase:');
+        if (input === null) return null; // user cancelled
+        const trimmed = input.trim();
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+          email = trimmed.toLowerCase();
+          localStorage.setItem('studyhelp_email', email);
+        } else {
+          alert('Please enter a valid email address.');
+        }
+      }
+      return email;
+    }
+
+    // On page load: check ownership for every available subject, swap button to "Open" if owned
+    async function checkOwnershipForAllSubjects() {
+      const storedEmail = localStorage.getItem('studyhelp_email');
+      if (!storedEmail) return; // no identity yet, nothing to check — all buttons stay "Buy now"
+
+      const buttons = document.querySelectorAll('.buy-btn');
+      for (const btn of buttons) {
+        const subject_id = btn.getAttribute('data-subject');
+        try {
+          const res = await fetch(
+            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(storedEmail)}&subject_id=${encodeURIComponent(subject_id)}`
+          );
+          const data = await res.json();
+          if (data.unlocked) {
+            setButtonToOpen(btn, subject_id);
+          }
+        } catch (err) {
+          // silently skip on network error — button stays as "Buy now", user can retry
+        }
+      }
+    }
+
+    function setButtonToOpen(btn, subject_id) {
+      btn.textContent = 'Open — Unlimited access';
+      btn.classList.remove('buy-btn');
+      btn.style.background = 'var(--accent)';
+      btn.style.color = '#fff';
+      btn.onclick = () => {
+        window.location.href = `/${subject_id}/`;
+      };
+    }
+
     document.querySelectorAll('.buy-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const subject = btn.getAttribute('data-subject');
-        alert(`Buy flow for "${subject}" is not wired up yet. Payment + login backend comes in a later build stage.`);
+      btn.addEventListener('click', async () => {
+        const subject_id = btn.getAttribute('data-subject'); // works for any available subject, not hardcoded
+
+        const user_id = getUserEmail();
+        if (!user_id) return; // user cancelled email prompt
+
+        btn.disabled = true;
+        btn.textContent = 'Loading...';
+
+        try {
+          const res = await fetch(`${WORKER_URL}/create-order`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ user_id, subject_id }),
+          });
+          const order = await res.json();
+
+          if (!res.ok) {
+            if (order.error === 'Already purchased') {
+              setButtonToOpen(btn, subject_id);
+              return;
+            }
+            alert(order.error || 'Could not start payment');
+            btn.disabled = false;
+            btn.textContent = 'Buy now';
+            return;
+          }
+
+          const rzp = new Razorpay({
+            key: order.key_id,
+            amount: order.amount,
+            currency: order.currency,
+            order_id: order.order_id,
+            name: 'StudyHelp',
+            description: subject_id,
+            prefill: { email: user_id },
+            handler: function () {
+              // Don't unlock here — redirect to processing page which waits for webhook confirmation
+              window.location.href =
+                `/payment-processing/?user_id=${encodeURIComponent(user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+            },
+            modal: {
+              ondismiss: function () {
+                btn.disabled = false;
+                btn.textContent = 'Buy now';
+              },
+            },
+          });
+
+          rzp.on('payment.failed', function () {
+            alert('Payment failed. Please try again.');
+            btn.disabled = false;
+            btn.textContent = 'Buy now';
+          });
+
+          rzp.open();
+        } catch (err) {
+          alert('Error: ' + err.message);
+          btn.disabled = false;
+          btn.textContent = 'Buy now';
+        }
       });
     });
+
+    checkOwnershipForAllSubjects();
   </script>
 </Layout>

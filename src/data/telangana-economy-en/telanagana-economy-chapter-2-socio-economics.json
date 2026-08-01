@@ -1,0 +1,611 @@
+{
+  "slug": "telanagana-economy-chapter-2-socio-economics",
+  "chapterNumber": 2,
+  "title": "Telangana Macro Economics",
+  "faqs": [
+    {
+      "q": "What is Telangana's long-term GSDP target for 2047?",
+      "a": "USD 3 trillion",
+      "e": "Part of the \"Telangana Rising 2047\" vision.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's interim GSDP milestone target for 2034?",
+      "a": "USD 1 trillion",
+      "e": "Interim milestone on the way to the USD 3 trillion 2047 target.",
+      "table": null
+    },
+    {
+      "q": "What spatial planning model is Telangana using to achieve balanced growth?",
+      "a": "CURE-PURE-RARE model",
+      "e": "Divides the State into three sector-specific economic zones for balanced, inclusive, sustainable growth.",
+      "table": null
+    },
+    {
+      "q": "What does CURE-PURE-RARE stand for?",
+      "a": "Core Urban Region – Peri-Urban Region – Rural Agriculture Region",
+      "e": "CURE strengthens Hyderabad as a tech/DeepTech/AI hub; PURE develops manufacturing corridors and MSME clusters; RARE enhances rural incomes via agriculture, livestock, and eco-tourism.",
+      "table": null
+    },
+    {
+      "q": "What real GDP growth rates does Telangana forecast for 2025-30, 2031-39, and 2041-47 respectively?",
+      "a": "8%, 7%, 5.2%",
+      "e": "Forecast to sustain high double-digit-adjacent growth over two decades to reach the 2047 goal.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's GSDP at current prices for 2025-26 (PAE)?",
+      "a": "Rs.17,82,198 crore",
+      "e": "Compared to Rs.16,09,902 crore in 2024-25 (FRE).",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's GSDP growth rate in 2025-26 at current prices?",
+      "a": "10.7%",
+      "e": "Higher than the national growth rate of 8.0% (FAE).",
+      "table": null
+    },
+    {
+      "q": "What was India's GDP growth rate (FAE) for 2025-26?",
+      "a": "8.0%",
+      "e": "As per First Advance Estimates by MoSPI, at current prices.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's GSDP at constant prices for 2025-26, and its growth rate?",
+      "a": "Rs.8,89,582 crore; 8.5%",
+      "e": "Up from Rs.8,20,197 crore in 2024-25 at constant prices.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's share in India's GDP for 2025-26 (PAE)?",
+      "a": "4.99%",
+      "e": "Increased from 4.87% in 2024-25 (FRE).",
+      "table": null
+    },
+    {
+      "q": "What are Telangana's and All India's GSDP/GDP figures for 2024-25 and 2025-26 at both current and constant prices?",
+      "a": "Telangana GSDP 2025-26: Rs.17,82,198 crore (current prices)",
+      "e": "Telangana recorded 10.7% growth at current prices, higher than All India's 8.0%.",
+      "table": {
+        "headers": ["Description", "Current Prices 2024-25 (FRE)", "Current Prices 2025-26 (PAE)", "GR% 2024-25", "GR% 2025-26", "Constant Prices 2024-25 (FRE)", "Constant Prices 2025-26 (PAE)", "GR% 2024-25", "GR% 2025-26"],
+        "rows": [
+          ["Telangana", "16,09,902", "17,82,198", "10.6", "10.7", "8,20,197", "8,89,582", "6.5", "8.5"],
+          ["All India", "3,30,68,145", "3,57,13,886", "9.8", "8.0", "1,87,96,955", "2,01,89,919", "6.5", "7.4"]
+        ],
+        "unit": "Rs. in crore"
+      }
+    },
+    {
+      "q": "What is Telangana's Per Capita Income (PCI) for 2025-26 (PAE) at current prices?",
+      "a": "Rs.4,18,931",
+      "e": "Nearly double the national average of Rs.2,19,575.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's PCI growth rate in 2025-26?",
+      "a": "10.2%",
+      "e": "At current prices, up from Rs.3,80,031 in 2024-25 (FRE).",
+      "table": null
+    },
+    {
+      "q": "What are Telangana's and All India's Per Capita Income figures for 2024-25 and 2025-26 at current and constant prices?",
+      "a": "Telangana PCI 2025-26: Rs.4,18,931 (current prices)",
+      "e": "Telangana's PCI is nearly double the national average, showing stronger income growth.",
+      "table": {
+        "headers": ["Description", "Current Prices 2024-25", "Current Prices 2025-26", "GR% 2024-25", "GR% 2025-26", "Constant Prices 2024-25", "Constant Prices 2025-26", "GR% 2024-25", "GR% 2025-26"],
+        "rows": [
+          ["Telangana", "3,80,031", "4,18,931", "9.8", "10.2", "1,88,436", "2,04,022", "5.5", "8.3"],
+          ["All India", "2,05,324", "2,19,575", "8.7", "6.9", "1,14,710", "1,21,968", "5.4", "6.3"]
+        ],
+        "unit": "in Rs."
+      }
+    },
+    {
+      "q": "Which sector dominates Telangana's economy in terms of GSVA contribution for 2025-26?",
+      "a": "Tertiary (Services) sector",
+      "e": "Contributes 68.6% to GSVA, vs 56.4% nationally.",
+      "table": null
+    },
+    {
+      "q": "What percentage does each broad sector (Primary, Secondary, Tertiary) contribute to GSVA in Telangana vs All India for 2025-26?",
+      "a": "Tertiary is highest: 68.6% (Telangana) vs 56.4% (All India)",
+      "e": "Telangana's tertiary-heavy structure reflects strong service-oriented growth.",
+      "table": {
+        "headers": ["Sector", "Telangana (%)", "All India (%)"],
+        "rows": [
+          ["Primary", "15.1", "18.4"],
+          ["Secondary", "16.3", "25.2"],
+          ["Tertiary", "68.6", "56.4"]
+        ],
+        "unit": "% share of GSVA/GVA, current prices, 2025-26"
+      }
+    },
+    {
+      "q": "What were the growth rates of each broad sector (Primary, Secondary, Tertiary) at current prices in Telangana vs All India for 2025-26?",
+      "a": "Tertiary grew fastest: 13.5% (Telangana) vs 10.6% (All India)",
+      "e": "Telangana recorded higher growth than All India across all three sectors.",
+      "table": {
+        "headers": ["Sector", "Telangana (%)", "All India (%)"],
+        "rows": [
+          ["Primary", "1.4", "0.2"],
+          ["Secondary", "9.4", "7.5"],
+          ["Tertiary", "13.5", "10.6"]
+        ],
+        "unit": "Growth rate %, current prices, 2025-26"
+      }
+    },
+    {
+      "q": "What is Telangana's Primary sector GSVA for 2025-26 (PAE)?",
+      "a": "Rs.2,49,691 crore",
+      "e": "Grew 1.4% from Rs.2,46,282 crore in 2024-25.",
+      "table": null
+    },
+    {
+      "q": "What is the sub-sector composition of Telangana's Primary sector GSVA for 2025-26?",
+      "a": "Livestock (41.4%) is highest",
+      "e": "Composition indicates a diversified primary sector with strong emphasis on agriculture and allied activities.",
+      "table": {
+        "headers": ["Sub-sector", "Share (%)"],
+        "rows": [
+          ["Livestock", "41.4"],
+          ["Crops", "38.2"],
+          ["Mining & Quarrying", "14.4"],
+          ["Fishing & Aquaculture", "3.1"],
+          ["Forestry & Logging", "2.9"]
+        ],
+        "unit": "% contribution to Primary sector GSVA, current prices, 2025-26 (PAE)"
+      }
+    },
+    {
+      "q": "What government initiative supports solar-powered irrigation in Telangana's primary sector?",
+      "a": "Indira Solar Giri Jal Vikasam",
+      "e": "Aims to raise productivity and cropping intensity.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's Secondary sector GSVA for 2025-26 (PAE) and its growth rate?",
+      "a": "Rs.2,68,325 crore; 9.4%",
+      "e": "Compared to a lower All India growth rate of 7.5%.",
+      "table": null
+    },
+    {
+      "q": "What is the sub-sector composition of Telangana's Secondary sector GSVA for 2025-26?",
+      "a": "Manufacturing (51.1%) is highest",
+      "e": "Reflects strong industrial growth and rapid infrastructure development.",
+      "table": {
+        "headers": ["Sub-sector", "Share (%)"],
+        "rows": [
+          ["Manufacturing", "51.1"],
+          ["Construction", "34.8"],
+          ["Electricity, Gas, Water supply & Other Utility Services", "14.1"]
+        ],
+        "unit": "% contribution to Secondary sector GSVA, current prices, 2025-26 (PAE)"
+      }
+    },
+    {
+      "q": "Which city is identified as a premier node for pharmaceutical cluster formation in Telangana?",
+      "a": "Hyderabad",
+      "e": "As highlighted in the Economic Survey 2025-26.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's Tertiary sector GSVA for 2025-26 (PAE) and its growth rate?",
+      "a": "Rs.11,30,596 crore; 13.5%",
+      "e": "All India tertiary GVA grew at a lower 10.6% for the same period.",
+      "table": null
+    },
+    {
+      "q": "What is the sub-sector composition of Telangana's Tertiary sector GSVA for 2025-26?",
+      "a": "Real Estate, Ownership of Dwelling & Professional Services (34.1%) is highest",
+      "e": "Trade and real estate together make up over 64% of the tertiary sector.",
+      "table": {
+        "headers": ["Sub-sector", "Share (%)"],
+        "rows": [
+          ["Real Estate, Ownership of Dwelling & Professional Services", "34.1"],
+          ["Trade, Repair, Hotels & Restaurants", "30.4"],
+          ["Transport, Storage, Communication & Broadcasting Services", "12.2"],
+          ["Other Services", "12.5"],
+          ["Financial Services", "7.3"],
+          ["Public Administration", "3.5"]
+        ],
+        "unit": "% contribution to Tertiary sector GSVA, current prices, 2025-26 (PAE)"
+      }
+    },
+    {
+      "q": "What government initiatives strengthened Telangana's IT, startup, and professional services ecosystem?",
+      "a": "T-Hub, TASK, and T-Works",
+      "e": "Supported by investments in digital infrastructure and ease of doing business.",
+      "table": null
+    },
+    {
+      "q": "What percentage of India's Generative AI startups does Telangana host (as of 2025)?",
+      "a": "7%",
+      "e": "Ranking as the fourth-largest hub after Karnataka, Maharashtra, and Delhi.",
+      "table": null
+    },
+    {
+      "q": "How many Telangana institutions are ranked in the top 100 nationally by NIRF 2025?",
+      "a": "5",
+      "e": "National Institutional Ranking Framework (NIRF) 2025.",
+      "table": null
+    },
+    {
+      "q": "Along with Telangana, which three states account for nearly 40% of India's total services output?",
+      "a": "Karnataka, Maharashtra, and Tamil Nadu",
+      "e": "Driven by high-productivity sectors such as IT and professional services.",
+      "table": null
+    },
+    {
+      "q": "Which district ranked first in Gross District Domestic Product (GDDP) for 2024-25?",
+      "a": "Rangareddy",
+      "e": "GDDP of Rs.3,41,080 crore, driven by IT parks, industrial estates, and corporate headquarters concentration.",
+      "table": {
+        "headers": ["Rank", "District", "GDDP (Rs. crore)"],
+        "rows": [
+          ["1", "Rangareddy", "3,41,080"],
+          ["2", "Hyderabad", "2,25,860"],
+          ["3", "Medchal-Malkajgiri", "1,16,133"],
+          ["4", "Sangareddy", "74,194"],
+          ["5", "Nalgonda", "64,219"],
+          ["6", "Nizamabad", "49,974"],
+          ["7", "Bhadradri Kothagudem", "48,354"],
+          ["8", "Khammam", "47,184"],
+          ["9", "Suryapet", "38,865"],
+          ["10", "Siddipet", "37,495"],
+          ["11", "Mahabubnagar", "37,456"],
+          ["12", "Karimnagar", "35,348"],
+          ["13", "Peddapalli", "31,680"],
+          ["14", "Yadadri Bhuvanagiri", "30,924"],
+          ["15", "Medak", "30,589"],
+          ["16", "Hanumakonda", "30,480"],
+          ["17", "Kamareddy", "30,296"],
+          ["18", "Jagtial", "28,514"],
+          ["19", "Nagarkurnool", "28,471"],
+          ["20", "Vikarabad", "27,456"],
+          ["21", "Mancherial", "26,375"],
+          ["22", "Nirmal", "24,078"],
+          ["23", "Warangal", "24,060"],
+          ["24", "Mahabubabad", "23,546"],
+          ["25", "Adilabad", "23,051"],
+          ["26", "Jogulamba Gadwal", "19,340"],
+          ["27", "Wanaparthy", "18,786"],
+          ["28", "Jangaon", "17,301"],
+          ["29", "Narayanpet", "17,278"],
+          ["30", "Rajanna Siricilla", "16,696"],
+          ["31", "Kumuram Bheem", "16,465"],
+          ["32", "Jayashankar", "16,413"],
+          ["33", "Mulugu", "11,943"]
+        ],
+        "unit": "Rs. in crore, District-wise GDDP at Current Prices, 2024-25 (FRE)"
+      }
+    },
+    {
+      "q": "Which district ranked last (33rd) in GDDP for 2024-25?",
+      "a": "Mulugu",
+      "e": "GDDP of Rs.11,943 crore, reflecting limited industrialization and higher forest cover.",
+      "table": null
+    },
+    {
+      "q": "Which district recorded the highest Per Capita Income (PCI) in Telangana (2022-23)?",
+      "a": "Rangareddy",
+      "e": "PCI of Rs.11,29,735, attributed to concentration of IT parks, industrial estates, and logistics hubs.",
+      "table": {
+        "headers": ["Rank", "District", "PCI (Rs.)"],
+        "rows": [
+          ["1", "Rangareddy", "11,29,735"],
+          ["2", "Hyderabad", "4,76,679"],
+          ["3", "Sangareddy", "3,94,587"],
+          ["4", "Medchal-Malkajgiri", "3,81,506"],
+          ["5", "Bhadradri Kothagudem", "3,69,420"],
+          ["6", "Mahabubnagar", "3,36,898"],
+          ["7", "Mulugu", "3,35,509"],
+          ["8", "Yadadri Bhuvanagiri", "3,35,264"],
+          ["9", "Nalgonda", "3,30,216"],
+          ["10", "Medak", "3,29,209"],
+          ["11", "Peddapalli", "3,27,477"],
+          ["12", "Jayashankar", "3,26,297"],
+          ["13", "Siddipet", "3,12,192"],
+          ["14", "Suryapet", "2,96,756"],
+          ["15", "Karimnagar", "2,94,122"],
+          ["16", "Nirmal", "2,85,974"],
+          ["17", "Warangal", "2,83,876"],
+          ["18", "Khammam", "2,83,744"],
+          ["19", "Nagarkurnool", "2,79,261"],
+          ["20", "Jangaon", "2,75,486"],
+          ["21", "Wanaparthy", "2,74,879"],
+          ["22", "Mancherial", "2,72,752"],
+          ["23", "Adilabad", "2,72,702"],
+          ["24", "Nizamabad", "2,67,743"],
+          ["25", "Kumuram Bheem", "2,67,266"],
+          ["26", "Jogulamba Gadwal", "2,66,959"],
+          ["27", "Kamareddy", "2,63,307"],
+          ["28", "Narayanpet", "2,59,260"],
+          ["29", "Mahabubabad", "2,56,485"],
+          ["30", "Rajanna Siricilla", "2,55,984"],
+          ["31", "Vikarabad", "2,47,747"],
+          ["32", "Jagtial", "2,44,245"],
+          ["33", "Hanumakonda", "2,37,809"]
+        ],
+        "unit": "Rs., District-wise Per Capita Income at Current Prices, 2022-23"
+      }
+    },
+    {
+      "q": "Which district recorded the lowest PCI in Telangana (2022-23)?",
+      "a": "Hanumakonda",
+      "e": "PCI of Rs.2,37,809, lowest among all 33 districts.",
+      "table": null
+    },
+    {
+      "q": "Which district ranked second in both GDDP and PCI?",
+      "a": "Hyderabad",
+      "e": "GDDP Rs.2,25,860 crore; PCI Rs.4,76,679, reflecting its status as the State's administrative, commercial, and technological capital.",
+      "table": null
+    },
+    {
+      "q": "What is the interim milestone share of India's GDP Telangana aims for by 2034 under Telangana Rising 2047?",
+      "a": "10%",
+      "e": "Raising its current share of 5% in India's GDP to 10%.",
+      "table": null
+    },
+    {
+      "q": "Under baseline (current momentum) projections, what economy size could Telangana reach by 2047?",
+      "a": "USD 1.21 trillion",
+      "e": "Falls short of the aspirational USD 3 trillion target, requiring accelerated growth.",
+      "table": null
+    },
+    {
+      "q": "What is the sectoral growth architecture target for Telangana's economy by 2047?",
+      "a": "Services sector is the largest target at USD 1.95 trillion",
+      "e": "Services is envisaged as the principal growth driver by 2047.",
+      "table": {
+        "headers": ["Sector", "Target (USD Trillion)"],
+        "rows": [
+          ["Agriculture", "0.33"],
+          ["Industry", "0.5"],
+          ["Services", "1.95"],
+          ["Taxes & Subsidies", "0.22"]
+        ],
+        "unit": "USD Trillion, sectoral growth architecture target by 2047"
+      }
+    },
+    {
+      "q": "What long-term climate objective is Telangana advancing alongside its growth vision?",
+      "a": "Net-Zero 2047",
+      "e": "Advanced together with the CURE-PURE-RARE framework.",
+      "table": null
+    },
+    {
+      "q": "Which Ministry is responsible for compiling National Accounts Statistics (including GDP)?",
+      "a": "Ministry of Statistics and Programme Implementation (MoSPI)",
+      "e": "Through its National Accounts Division.",
+      "table": null
+    },
+    {
+      "q": "What is the current base year for India's GDP estimates (before revision)?",
+      "a": "2011-12",
+      "e": "Being revised to reflect more recent structural changes in the economy.",
+      "table": null
+    },
+    {
+      "q": "To which year has MoSPI revised the base year for GDP/GSDP estimates?",
+      "a": "2022-23",
+      "e": "Chosen for the new national accounts series.",
+      "table": null
+    },
+    {
+      "q": "What international manual does the revised quarterly GDP framework align with?",
+      "a": "IMF's Quarterly National Accounts Manual (2017)",
+      "e": "Ensures global comparability and analytical robustness.",
+      "table": null
+    },
+    {
+      "q": "What new data sources are being used to improve GDP/GSDP estimation accuracy?",
+      "a": "GST, PFMS, e-VAHAN, energy data, ASUSE, and PLFS surveys",
+      "e": "Helps better capture the unorganised sector for more realistic measurement.",
+      "table": null
+    },
+    {
+      "q": "What technologies is MoSPI using for data integrity and validation in the revision process?",
+      "a": "CAPI, cloud-based software, AI, Machine Learning, and NLP",
+      "e": "CAPI = Computer Assisted Personal Interviews.",
+      "table": null
+    },
+    {
+      "q": "When were the revised GDP estimates of All India (new series) released?",
+      "a": "February 27, 2026",
+      "e": "Released by MoSPI under the revised 2022-23 base year series.",
+      "table": null
+    },
+    {
+      "q": "When are the revised State GSDP estimates (new series) expected to be released?",
+      "a": "April 2026",
+      "e": "To be released per MoSPI's compilation methodology.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's annual inflation rate in 2024-25 compared to All India?",
+      "a": "3.7% (Telangana) vs 4.6% (All India)",
+      "e": "Telangana recorded lower inflation than the national average.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's inflation rate for April-December 2025-26 compared to All India?",
+      "a": "0.2% (Telangana) vs 1.7% (All India)",
+      "e": "Reflects strong price stability due to lower food prices and effective supply-side conditions.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's Unemployment Rate as per PLFS (Oct-Dec 2025)?",
+      "a": "6.1%",
+      "e": "As per the Quarterly Bulletin of the Periodic Labour Force Survey (PLFS).",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's overall Labour Force Participation Rate (LFPR) for Oct-Dec 2025?",
+      "a": "60.7%",
+      "e": "Higher than the national average of 55.8%.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's Labour Force Participation Rate (LFPR) by rural and urban areas compared to All India?",
+      "a": "Rural LFPR is highest at 66.1% (Telangana)",
+      "e": "Telangana's LFPR is higher than the All India average in both rural and urban areas.",
+      "table": {
+        "headers": ["Area", "Telangana (%)", "All India (%)"],
+        "rows": [
+          ["Rural", "66.1", "58.4"],
+          ["Urban", "53.3", "50.4"],
+          ["Overall", "60.7", "55.8"]
+        ],
+        "unit": "% LFPR, PLFS Quarterly Bulletin, Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "What is Telangana's female LFPR compared to the national average?",
+      "a": "45.4% vs 34.9%",
+      "e": "10.5 percentage points higher than the national average.",
+      "table": null
+    },
+    {
+      "q": "What is the gender-wise LFPR (male/female) in rural and urban Telangana compared to All India?",
+      "a": "Rural male LFPR is highest at 78.8% (All India)",
+      "e": "Telangana shows much higher female LFPR than All India in both rural and urban areas.",
+      "table": {
+        "headers": ["Area", "Gender", "Telangana (%)", "All India (%)"],
+        "rows": [
+          ["Rural", "Male", "77.9", "78.8"],
+          ["Rural", "Female", "55.1", "39.4"],
+          ["Urban", "Male", "76.2", "75.1"],
+          ["Urban", "Female", "32.0", "25.5"]
+        ],
+        "unit": "% LFPR by gender, PLFS Quarterly Bulletin, Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "Which Act was amended to remove restrictions on women working across industries in Telangana?",
+      "a": "Telangana Shops and Establishments Act",
+      "e": "Amended during 2024-25 to enhance ease of doing business and workforce inclusivity.",
+      "table": null
+    },
+    {
+      "q": "How does Telangana's LFPR compare with other Southern states?",
+      "a": "Telangana has the highest combined LFPR (60.7%)",
+      "e": "Telangana leads all Southern states in combined labour force participation.",
+      "table": {
+        "headers": ["State", "Rural (%)", "Urban (%)", "Combined (%)"],
+        "rows": [
+          ["Telangana", "66.1", "53.3", "60.7"],
+          ["Andhra Pradesh", "61.0", "50.5", "57.2"],
+          ["Karnataka", "62.7", "51.8", "58.2"],
+          ["Kerala", "54.0", "49.1", "51.6"],
+          ["Tamil Nadu", "65.1", "54.5", "59.8"]
+        ],
+        "unit": "% LFPR, Southern states comparison, PLFS Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "What is Telangana's overall Worker Population Ratio (WPR) for Oct-Dec 2025?",
+      "a": "57.0%",
+      "e": "Higher than the All India WPR of 53.1%.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's Worker Population Ratio (WPR) by rural and urban areas compared to All India?",
+      "a": "Rural WPR is highest at 62.5% (Telangana)",
+      "e": "Telangana shows stronger employment engagement than the national level in both areas.",
+      "table": {
+        "headers": ["Area", "Telangana (%)", "All India (%)"],
+        "rows": [
+          ["Rural", "62.5", "56.1"],
+          ["Urban", "49.5", "47.1"],
+          ["Overall", "57.0", "53.1"]
+        ],
+        "unit": "% WPR, PLFS Quarterly Bulletin, Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "What is the gender-wise WPR (male/female) in rural and urban Telangana compared to All India?",
+      "a": "Rural male WPR is highest at 75.5% (All India)",
+      "e": "Telangana's stronger employment position is largely driven by higher female workforce participation.",
+      "table": {
+        "headers": ["Area", "Gender", "Telangana (%)", "All India (%)"],
+        "rows": [
+          ["Rural", "Male", "73.3", "75.5"],
+          ["Rural", "Female", "52.4", "37.9"],
+          ["Urban", "Male", "71.2", "70.7"],
+          ["Urban", "Female", "29.4", "23.2"]
+        ],
+        "unit": "% WPR by gender, PLFS Quarterly Bulletin, Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "How does Telangana's WPR compare with other Southern states?",
+      "a": "Telangana has the highest combined WPR (57.0%)",
+      "e": "Telangana leads all Southern states in combined Worker Population Ratio.",
+      "table": {
+        "headers": ["State", "Rural (%)", "Urban (%)", "Combined (%)"],
+        "rows": [
+          ["Telangana", "62.5", "49.5", "57.0"],
+          ["Andhra Pradesh", "57.7", "46.6", "53.7"],
+          ["Karnataka", "61.3", "50.1", "56.6"],
+          ["Kerala", "50.0", "45.3", "47.6"],
+          ["Tamil Nadu", "61.5", "51.1", "56.3"]
+        ],
+        "unit": "% WPR, Southern states comparison, PLFS Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "What is the sector-wise employment distribution (Agriculture/Industries/Services) in Telangana compared to All India?",
+      "a": "Agriculture is highest at 41.5% (Telangana) vs 43.2% (All India)",
+      "e": "Telangana shows relatively stronger services orientation in its employment structure.",
+      "table": {
+        "headers": ["Sector", "Telangana (%)", "All India (%)"],
+        "rows": [
+          ["Agriculture", "41.5", "43.2"],
+          ["Industries", "22.2", "24.0"],
+          ["Services", "36.3", "32.8"]
+        ],
+        "unit": "% employment share, Rural+Urban combined, PLFS Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "What is the sector-wise employment breakdown split by rural and urban areas in Telangana vs All India?",
+      "a": "Agriculture dominates rural employment at 62.6% (Telangana)",
+      "e": "Services dominate urban employment in both Telangana and All India.",
+      "table": {
+        "headers": ["Sector", "Telangana Rural (%)", "Telangana Urban (%)", "All India Rural (%)", "All India Urban (%)"],
+        "rows": [
+          ["Agriculture", "62.6", "4.9", "58.5", "6.7"],
+          ["Industries", "17.7", "30.2", "20.9", "31.5"],
+          ["Services", "19.7", "64.9", "20.6", "61.9"]
+        ],
+        "unit": "% employment share by rural/urban, PLFS Oct-Dec 2025"
+      }
+    },
+    {
+      "q": "What percentage of India's total organized manufacturing employment does Telangana account for?",
+      "a": "5%",
+      "e": "Ranked among the top seven states alongside Tamil Nadu, Gujarat, Maharashtra, Uttar Pradesh, Karnataka, and Haryana, which together contribute 60% of the country's manufacturing employment.",
+      "table": null
+    },
+    {
+      "q": "Under the CURE-PURE-RARE framework, what will CURE (Core Urban Region) focus on?",
+      "a": "Hyderabad as a global hub for technology, DeepTech, AI, and Industry 4.0",
+      "e": "Reinforces the state's leadership in knowledge-based sectors.",
+      "table": null
+    },
+    {
+      "q": "Under the CURE-PURE-RARE framework, what will PURE (Peri-Urban Region) focus on?",
+      "a": "Manufacturing corridors, MSME clusters, and integrated logistics networks",
+      "e": "Deepens industrial capacity and strengthens links between urban centres and surrounding regions.",
+      "table": null
+    },
+    {
+      "q": "Under the CURE-PURE-RARE framework, what will RARE (Rural Agriculture Region) focus on?",
+      "a": "Rural incomes via agriculture, livestock, fisheries, handlooms, handicrafts, and eco-tourism",
+      "e": "Also includes forest-based activities to diversify rural livelihoods.",
+      "table": null
+    }
+  ]
+}

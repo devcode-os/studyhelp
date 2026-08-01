@@ -1,0 +1,8 @@
+name = "studyhelp-payments"
+main = "razorpay-worker.js"
+compatibility_date = "2026-07-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "studyhelp-db"
+database_id = "a5bf3374-765c-4226-a067-8f6a396a1f6b"

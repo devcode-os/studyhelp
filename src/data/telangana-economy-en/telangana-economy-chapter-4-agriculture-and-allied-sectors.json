@@ -1,0 +1,1894 @@
+{
+  "slug": "telangana-economy-chapter-4-agriculture-and-allied-sectors",
+  "chapterNumber": 4,
+  "title": "Agriculture and Allied Sectors",
+  "faqs": [
+    {
+      "q": "What allocation has been made for agriculture and allied activities in 2025-26, and what percentage of Budget Estimates does it represent?",
+      "a": "Rs. 26,684 crore (10.1%)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the growth rate of the primary sector's contribution to Telangana's GSVA from 2024-25 to 2025-26?",
+      "a": "1.4%",
+      "e": "Rose from Rs. 2,46,282 crore (2024-25 FRE) to Rs. 2,49,691 crore (2025-26 PAE).",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's total foodgrain production in 2023-24, 2024-25, and estimated for 2025-26?",
+      "a": "207.95, 232.10, 236.87 lakh MTs respectively",
+      "e": "2025-26 figure is per Second Advance Estimates (SAE).",
+      "table": null
+    },
+    {
+      "q": "Under Rythu Bharosa, how much was released during Vanakalam 2025, and over what time span?",
+      "a": "Rs. 8,744.13 crore within nine days",
+      "e": "Released between 16.06.2025 and 24.06.2025, benefiting 69.40 lakh pattadars.",
+      "table": null
+    },
+    {
+      "q": "What is the livestock sector's contribution to Telangana's GSVA at Current Prices for 2025-26, and its growth rate?",
+      "a": "Rs. 1,03,525 crore; 5.1% growth",
+      "e": "Up from Rs. 98,512 crore in 2024-25 (FRE).",
+      "table": null
+    },
+    {
+      "q": "How much paddy did Telangana procure at MSP during Vanakalam 2025-26, and at what value?",
+      "a": "71.86 lakh metric tonnes (LMTs); Rs. 17,160 crore",
+      "e": "Procured from 14.35 lakh farmers through 8,448 Paddy Procurement Centres.",
+      "table": null
+    },
+    {
+      "q": "How many priority areas does the RARE framework under Telangana Rising 2047 focus on?",
+      "a": "12",
+      "e": "RARE stands for Rural Agriculture Region Economy.",
+      "table": null
+    },
+    {
+      "q": "According to PLFS Oct-Dec 2025, what percentage of Telangana's rural population is engaged in agriculture and allied activities?",
+      "a": "62.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the estimated value of the Agriculture and Allied sector in Telangana for 2025-26 (PAE)?",
+      "a": "Rs. 2,13,799 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the sub-sector composition of Telangana's Agriculture and Allied Sectors GSVA for 2025-26 (PAE)?",
+      "a": "Livestock is highest at 48.4% (Rs. 1,03,525 crore)",
+      "e": "Full breakdown by value and share.",
+      "table": {
+        "headers": [
+          "Sub-sector",
+          "Value (Rs. crore)",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "Livestock",
+            "1,03,525",
+            "48.4"
+          ],
+          [
+            "Crops",
+            "95,373",
+            "44.6"
+          ],
+          [
+            "Fishing and Aquaculture",
+            "7,725",
+            "3.6"
+          ],
+          [
+            "Forestry and Logging",
+            "7,176",
+            "3.4"
+          ]
+        ],
+        "unit": "Current Prices, 2025-26 (PAE)"
+      }
+    },
+    {
+      "q": "What is Telangana's rank among Indian states by geographical area, and what is its total area?",
+      "a": "11th largest; 276.95 lakh acres (112.08 lakh hectares)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's land use pattern for 2024-25?",
+      "a": "Net Sown Area is highest at 50.13% (138.82 lakh acres)",
+      "e": "Full land use breakdown.",
+      "table": {
+        "headers": [
+          "Category",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "Net Area Sown",
+            "50.13"
+          ],
+          [
+            "Forests",
+            "24.69"
+          ],
+          [
+            "Land put to Non-Agricultural Uses",
+            "7.62"
+          ],
+          [
+            "Barren and Un-cultivable Land",
+            "5.42"
+          ],
+          [
+            "Current Fallows",
+            "5.63"
+          ],
+          [
+            "Other Fallows Lands",
+            "2.60"
+          ],
+          [
+            "Permanent Pastures & other Grazing Lands",
+            "2.23"
+          ],
+          [
+            "Culturable Waste",
+            "0.92"
+          ],
+          [
+            "Land under Miscellaneous",
+            "0.76"
+          ]
+        ],
+        "unit": "% of total geographical area, 2024-25"
+      }
+    },
+    {
+      "q": "As per the Agriculture Census 2021-22, what is the total number of operational holdings in Telangana, and the area covered?",
+      "a": "70.59 lakh holdings; 155.97 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the average landholding size in Telangana as per the 2021-22 Agriculture Census, and how has it changed since 2015-16?",
+      "a": "2.21 acres, down from 2.47 acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the land holding pattern in Telangana by size class, as per the 11th Agriculture Census (2021-22)?",
+      "a": "Marginal holdings (below 2.47 acres) are highest at 68.65% of holdings",
+      "e": "Full breakdown by size class.",
+      "table": {
+        "headers": [
+          "Size Class (Acres)",
+          "No. of Holdings ('000)",
+          "% of Holdings",
+          "Area Operated ('000 Acres)",
+          "% of Area Operated"
+        ],
+        "rows": [
+          [
+            "Marginal (Below 2.47)",
+            "4,847",
+            "68.65",
+            "5,108",
+            "32.74"
+          ],
+          [
+            "Small (2.48-4.94)",
+            "1,600",
+            "22.67",
+            "5,528",
+            "35.44"
+          ],
+          [
+            "Semi-Medium (4.95-9.88)",
+            "504",
+            "7.15",
+            "3,205",
+            "20.56"
+          ],
+          [
+            "Medium (9.89-24.77)",
+            "99",
+            "1.40",
+            "1,352",
+            "8.66"
+          ],
+          [
+            "Large (24.78 and Above)",
+            "9",
+            "0.13",
+            "405",
+            "2.60"
+          ],
+          [
+            "Total",
+            "7,059",
+            "100.0",
+            "15,597",
+            "100.0"
+          ]
+        ],
+        "unit": "11th Agriculture Census, 2021-22"
+      }
+    },
+    {
+      "q": "How did the total number of agricultural holdings in Telangana change between 2015-16 and 2021-22?",
+      "a": "Increased from 59.48 lakh to 70.59 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the land holding pattern in Telangana by social group, as per the 11th Agriculture Census?",
+      "a": "'Others' category holds the highest share at 74.33% of holdings",
+      "e": "Full breakdown by social group.",
+      "table": {
+        "headers": [
+          "Social Group",
+          "No. of Holdings ('000)",
+          "% of Holdings",
+          "Area Operated ('000 Acres)",
+          "% of Area Operated"
+        ],
+        "rows": [
+          [
+            "Scheduled Caste",
+            "978",
+            "13.85",
+            "1,510",
+            "9.68"
+          ],
+          [
+            "Scheduled Tribes",
+            "834",
+            "11.81",
+            "1,861",
+            "11.93"
+          ],
+          [
+            "Institutional",
+            "0.20",
+            "0.0",
+            "22",
+            "0.14"
+          ],
+          [
+            "Others",
+            "5,247",
+            "74.33",
+            "12,205",
+            "78.25"
+          ],
+          [
+            "Total",
+            "7,059",
+            "100.0",
+            "15,597",
+            "100.0"
+          ]
+        ],
+        "unit": "11th Agriculture Census, 2021-22"
+      }
+    },
+    {
+      "q": "How did Scheduled Caste land holdings as a percentage of total holdings change between 2015-16 and 2021-22?",
+      "a": "Increased from 11.77% to 13.85%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which district has the highest average land holding size in Telangana?",
+      "a": "Adilabad",
+      "e": "3.78 acres average. Full district-wise average land holding (Acres):",
+      "table": {
+        "headers": [
+          "District",
+          "Avg. Land Holding (Acres)"
+        ],
+        "rows": [
+          [
+            "Adilabad",
+            "3.78"
+          ],
+          [
+            "Kumuram Bheem",
+            "3.42"
+          ],
+          [
+            "Bhadradri Kothagudem",
+            "3.22"
+          ],
+          [
+            "Jogulamba Gadwal",
+            "2.68"
+          ],
+          [
+            "Narayanpet",
+            "2.55"
+          ],
+          [
+            "Nirmal",
+            "2.48"
+          ],
+          [
+            "Yadadri Bhuvanagiri",
+            "2.46"
+          ],
+          [
+            "Nagarkurnool",
+            "2.42"
+          ],
+          [
+            "Nalgonda",
+            "2.40"
+          ],
+          [
+            "Jangaon",
+            "2.35"
+          ],
+          [
+            "Mancherial",
+            "2.29"
+          ],
+          [
+            "Vikarabad",
+            "2.28"
+          ],
+          [
+            "Suryapet",
+            "2.28"
+          ],
+          [
+            "Mulugu",
+            "2.27"
+          ],
+          [
+            "Khammam",
+            "2.26"
+          ],
+          [
+            "Mahabubabad",
+            "2.14"
+          ],
+          [
+            "Wanaparthy",
+            "2.12"
+          ],
+          [
+            "Jayashankar",
+            "2.09"
+          ],
+          [
+            "Rangareddy",
+            "2.06"
+          ],
+          [
+            "Mahabubnagar",
+            "2.06"
+          ],
+          [
+            "Sangareddy",
+            "2.05"
+          ],
+          [
+            "Rajanna Sircilla",
+            "2.05"
+          ],
+          [
+            "Medchal-Malkajgiri",
+            "2.01"
+          ],
+          [
+            "Nizamabad",
+            "1.98"
+          ],
+          [
+            "Siddipet",
+            "1.94"
+          ],
+          [
+            "Jagtial",
+            "1.90"
+          ],
+          [
+            "Peddapalli",
+            "1.87"
+          ],
+          [
+            "Hanumakonda",
+            "1.86"
+          ],
+          [
+            "Karimnagar",
+            "1.85"
+          ],
+          [
+            "Warangal",
+            "1.83"
+          ],
+          [
+            "Kamareddy",
+            "1.81"
+          ],
+          [
+            "Medak",
+            "1.49"
+          ]
+        ],
+        "unit": "Acres, Agriculture Census 2021-22"
+      }
+    },
+    {
+      "q": "Which district has the smallest average land holding size in Telangana?",
+      "a": "Medak",
+      "e": "1.49 acres average.",
+      "table": null
+    },
+    {
+      "q": "How many Manual Rain Gauge Stations and TGDPS Automatic Weather Stations measure rainfall in Telangana?",
+      "a": "591 Manual Rain Gauge Stations; 1,091 TGDPS AWS",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much rainfall did Telangana receive in 2025-26, and by what percentage did it exceed normal rainfall?",
+      "a": "1,184.5 mm; 37% excess",
+      "e": "Normal rainfall is 863.3 mm.",
+      "table": null
+    },
+    {
+      "q": "Which district recorded the highest rainfall deviation in Telangana for 2025-26 (up to 28th February 2026)?",
+      "a": "Nagarkurnool",
+      "e": "82% deviation. Full district-wise rainfall deviation (%):",
+      "table": {
+        "headers": [
+          "District",
+          "Deviation (%)"
+        ],
+        "rows": [
+          [
+            "Nagarkurnool",
+            "82"
+          ],
+          [
+            "Medak",
+            "78"
+          ],
+          [
+            "Yadadri Bhuvanagiri",
+            "76"
+          ],
+          [
+            "Siddipet",
+            "73"
+          ],
+          [
+            "Mahabubnagar",
+            "70"
+          ],
+          [
+            "Wanaparthy",
+            "68"
+          ],
+          [
+            "Kamareddy",
+            "56"
+          ],
+          [
+            "Narayanpet",
+            "55"
+          ],
+          [
+            "Warangal",
+            "50"
+          ],
+          [
+            "Rangareddy",
+            "47"
+          ],
+          [
+            "Nalgonda",
+            "44"
+          ],
+          [
+            "Sangareddy",
+            "39"
+          ],
+          [
+            "Vikarabad",
+            "39"
+          ],
+          [
+            "Jogulamba Gadwal",
+            "39"
+          ],
+          [
+            "Hyderabad",
+            "38"
+          ],
+          [
+            "Adilabad",
+            "37"
+          ],
+          [
+            "Karimnagar",
+            "37"
+          ],
+          [
+            "Nirmal",
+            "34"
+          ],
+          [
+            "Mahabubabad",
+            "34"
+          ],
+          [
+            "Jangaon",
+            "34"
+          ],
+          [
+            "Suryapet",
+            "30"
+          ],
+          [
+            "Kumuram Bheem",
+            "29"
+          ],
+          [
+            "Hanumakonda",
+            "28"
+          ],
+          [
+            "Mulugu",
+            "28"
+          ],
+          [
+            "Medchal-Malkajgiri",
+            "27"
+          ],
+          [
+            "Khammam",
+            "26"
+          ],
+          [
+            "Bhadradri",
+            "23"
+          ],
+          [
+            "Rajanna Sircilla",
+            "19"
+          ],
+          [
+            "Nizamabad",
+            "18"
+          ],
+          [
+            "Jayashankar",
+            "16"
+          ],
+          [
+            "Mancherial",
+            "15"
+          ],
+          [
+            "Jagtial",
+            "11"
+          ],
+          [
+            "Peddapalli",
+            "2"
+          ]
+        ],
+        "unit": "% deviation from normal rainfall, up to 28th Feb 2026"
+      }
+    },
+    {
+      "q": "Which district recorded the lowest rainfall deviation in Telangana for 2025-26?",
+      "a": "Peddapalli",
+      "e": "2% deviation.",
+      "table": null
+    },
+    {
+      "q": "How many districts and mandals received excess rainfall between June 2025 and February 2026?",
+      "a": "27 districts; 460 mandals",
+      "e": "Out of 621 total mandals in the state.",
+      "table": null
+    },
+    {
+      "q": "What was the season-wise rainfall performance in Telangana for 2025-26?",
+      "a": "North East Monsoon recorded the highest excess at 72%",
+      "e": "Full season-wise rainfall data.",
+      "table": {
+        "headers": [
+          "Season",
+          "Normal (mm)",
+          "Actual (mm)",
+          "Deviation (%)",
+          "Status"
+        ],
+        "rows": [
+          [
+            "South West (Jun'25-Sep'25)",
+            "740.6",
+            "988.4",
+            "33",
+            "Excess"
+          ],
+          [
+            "North East (Oct'25-Dec'25)",
+            "110.2",
+            "189.6",
+            "72",
+            "Excess"
+          ],
+          [
+            "Winter (Jan'26-Feb'26)",
+            "12.5",
+            "6.5",
+            "-48",
+            "Deficit"
+          ],
+          [
+            "Total Rainfall (as on 28.02.2026)",
+            "863.3",
+            "1,184.5",
+            "37",
+            "Excess"
+          ]
+        ]
+      }
+    },
+    {
+      "q": "What was Telangana's total production of pulses in 2023-24, 2024-25, and 2025-26 (SAE)?",
+      "a": "3.61, 3.99, 3.48 lakh MTs respectively",
+      "e": "Pulse production showed a decline in 2025-26 unlike foodgrains.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's rice production trend from 2023-24 to 2025-26 (SAE)?",
+      "a": "173.93, 189.45, 187.19 lakh MT respectively",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's cotton (Kapas) production trend from 2023-24 to 2025-26 (SAE)?",
+      "a": "26.35, 30.24, 31.64 lakh MT respectively",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's maize production trend from 2023-24 to 2025-26?",
+      "a": "27.76, 33.92, 42.23 lakh MT respectively",
+      "e": "Maize registered the most significant growth among the three crops.",
+      "table": null
+    },
+    {
+      "q": "What was the area under the top 5 crops in Telangana from 2023-24 to 2025-26 (SAE)?",
+      "a": "Paddy area increased from 118.09 to 132.01 lakh acres",
+      "e": "Full area breakdown for top 5 crops.",
+      "table": {
+        "headers": [
+          "Crop",
+          "2023-24 (Lakh Acres)",
+          "2024-25 (Lakh Acres)",
+          "2025-26 SAE (Lakh Acres)"
+        ],
+        "rows": [
+          [
+            "Paddy",
+            "118.09",
+            "127.03",
+            "132.01"
+          ],
+          [
+            "Cotton",
+            "44.92",
+            "44.78",
+            "50.70"
+          ],
+          [
+            "Maize",
+            "12.08",
+            "14.30",
+            "17.72"
+          ],
+          [
+            "Soyabean",
+            "4.49",
+            "3.81",
+            "3.80"
+          ],
+          [
+            "Redgram",
+            "4.42",
+            "5.32",
+            "4.36"
+          ]
+        ],
+        "unit": "Lakh Acres"
+      }
+    },
+    {
+      "q": "What was the share of gross sown area under top 5 crops during the Vanakalam season from 2023-24 to 2025-26 (SAE)?",
+      "a": "Paddy is the dominant crop, at 47.12% in 2025-26",
+      "e": "Full Vanakalam season breakdown.",
+      "table": {
+        "headers": [
+          "Year",
+          "Paddy (%)",
+          "Cotton (%)",
+          "Maize (%)",
+          "Redgram (%)",
+          "Soyabean (%)",
+          "Total Top 5 (%)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "46.89",
+            "31.95",
+            "3.79",
+            "3.11",
+            "3.19",
+            "88.93"
+          ],
+          [
+            "2024-25",
+            "47.70",
+            "31.97",
+            "3.74",
+            "3.72",
+            "2.72",
+            "89.85"
+          ],
+          [
+            "2025-26 (SAE)",
+            "47.12",
+            "34.18",
+            "4.66",
+            "2.91",
+            "2.56",
+            "91.43"
+          ]
+        ],
+        "unit": "% of Total Sown Area, Vanakalam season"
+      }
+    },
+    {
+      "q": "What was the share of gross sown area under top 5 crops during the Yasangi season from 2023-24 to 2025-26 (SAE)?",
+      "a": "Paddy is overwhelmingly dominant, at 75.15% in 2025-26",
+      "e": "Full Yasangi season breakdown.",
+      "table": {
+        "headers": [
+          "Year",
+          "Paddy (%)",
+          "Maize (%)",
+          "Jowar (%)",
+          "Bengalgram (%)",
+          "Groundnut (%)",
+          "Total Top 5 (%)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "75.64",
+            "9.80",
+            "3.48",
+            "3.47",
+            "2.96",
+            "95.35"
+          ],
+          [
+            "2024-25",
+            "74.67",
+            "11.23",
+            "4.57",
+            "2.14",
+            "2.88",
+            "95.49"
+          ],
+          [
+            "2025-26 (SAE)",
+            "75.15",
+            "13.08",
+            "4.45",
+            "2.14",
+            "2.85",
+            "97.67"
+          ]
+        ],
+        "unit": "% of Total Sown Area, Yasangi season"
+      }
+    },
+    {
+      "q": "What is Telangana's cropping intensity index for 2023-24, as compared to other non-special category states?",
+      "a": "152.5",
+      "e": "Full state-wise comparison.",
+      "table": {
+        "headers": [
+          "State",
+          "Cropping Intensity"
+        ],
+        "rows": [
+          [
+            "Punjab",
+            "201.1"
+          ],
+          [
+            "Haryana",
+            "196.3"
+          ],
+          [
+            "Madhya Pradesh",
+            "193.5"
+          ],
+          [
+            "West Bengal",
+            "193.2"
+          ],
+          [
+            "Uttar Pradesh",
+            "182.0"
+          ],
+          [
+            "India",
+            "156.8"
+          ],
+          [
+            "Telangana",
+            "152.5"
+          ],
+          [
+            "Rajasthan",
+            "152.2"
+          ],
+          [
+            "Gujarat",
+            "151.3"
+          ],
+          [
+            "Bihar",
+            "147.5"
+          ],
+          [
+            "Maharashtra",
+            "145.6"
+          ],
+          [
+            "Jharkhand",
+            "143.5"
+          ],
+          [
+            "Tamil Nadu",
+            "128.6"
+          ],
+          [
+            "Kerala",
+            "128.5"
+          ],
+          [
+            "Karnataka",
+            "125.8"
+          ],
+          [
+            "Odisha",
+            "120.0"
+          ],
+          [
+            "Chhattisgarh",
+            "119.7"
+          ],
+          [
+            "Andhra Pradesh",
+            "115.9"
+          ],
+          [
+            "Goa",
+            "114.2"
+          ]
+        ],
+        "unit": "Crop Intensity Index, 2023-24, Source: Handbook of Statistics on Indian States, RBI"
+      }
+    },
+    {
+      "q": "Which state recorded the highest cropping intensity among non-special category states in 2023-24?",
+      "a": "Punjab",
+      "e": "Cropping intensity index of 201.1.",
+      "table": null
+    },
+    {
+      "q": "Which district recorded the highest cropping intensity in Telangana for 2024-25?",
+      "a": "Mulugu",
+      "e": "Cropping intensity of 318. Full district-wise cropping intensity.",
+      "table": {
+        "headers": [
+          "District",
+          "Cropping Intensity"
+        ],
+        "rows": [
+          [
+            "Mulugu",
+            "318"
+          ],
+          [
+            "Nizamabad",
+            "199"
+          ],
+          [
+            "Bhadradri",
+            "198"
+          ],
+          [
+            "Nirmal",
+            "193"
+          ],
+          [
+            "Karimnagar",
+            "188"
+          ],
+          [
+            "Suryapet",
+            "185"
+          ],
+          [
+            "Peddapalli",
+            "181"
+          ],
+          [
+            "Kamareddy",
+            "179"
+          ],
+          [
+            "Jagtial",
+            "177"
+          ],
+          [
+            "Medak",
+            "177"
+          ],
+          [
+            "Khammam",
+            "174"
+          ],
+          [
+            "Warangal",
+            "171"
+          ],
+          [
+            "Mahabubabad",
+            "170"
+          ],
+          [
+            "Rajanna Sircilla",
+            "169"
+          ],
+          [
+            "Wanaparthy",
+            "169"
+          ],
+          [
+            "Hanumakonda",
+            "165"
+          ],
+          [
+            "Medchal-Malkajgiri",
+            "164"
+          ],
+          [
+            "Jayashankar",
+            "160"
+          ],
+          [
+            "Adilabad",
+            "156"
+          ],
+          [
+            "Siddipet",
+            "151"
+          ],
+          [
+            "Yadadri Bhuvanagiri",
+            "149"
+          ],
+          [
+            "Jangaon",
+            "146"
+          ],
+          [
+            "Mahabubnagar",
+            "146"
+          ],
+          [
+            "Nalgonda",
+            "146"
+          ],
+          [
+            "Mancherial",
+            "145"
+          ],
+          [
+            "Nagarkurnool",
+            "143"
+          ],
+          [
+            "Sangareddy",
+            "137"
+          ],
+          [
+            "Narayanpet",
+            "133"
+          ],
+          [
+            "Jogulamba Gadwal",
+            "132"
+          ],
+          [
+            "Rangareddy",
+            "131"
+          ],
+          [
+            "Kumuram Bheem",
+            "129"
+          ],
+          [
+            "Vikarabad",
+            "114"
+          ]
+        ],
+        "unit": "Cropping Intensity Index, 2024-25"
+      }
+    },
+    {
+      "q": "Which district recorded the lowest cropping intensity in Telangana for 2024-25?",
+      "a": "Vikarabad",
+      "e": "Cropping intensity of 114.",
+      "table": null
+    },
+    {
+      "q": "What is the yield performance of major crops in Telangana between 2023-24 and 2024-25?",
+      "a": "Redgram and Cotton saw the highest yield growth, both above 15%",
+      "e": "Full yield breakdown by crop (kg/hectare).",
+      "table": {
+        "headers": [
+          "Crop",
+          "2023-24 (kg/ha)",
+          "2024-25 (kg/ha)"
+        ],
+        "rows": [
+          [
+            "Paddy",
+            "5,458",
+            "5,527"
+          ],
+          [
+            "Maize",
+            "5,671",
+            "5,860"
+          ],
+          [
+            "Redgram",
+            "812",
+            "934"
+          ],
+          [
+            "Bengalgram",
+            "1,686",
+            "1,762"
+          ],
+          [
+            "Cotton (Kapas)",
+            "1,449",
+            "1,668"
+          ],
+          [
+            "Groundnut",
+            "2,450",
+            "2,106"
+          ],
+          [
+            "Sesamum",
+            "739",
+            "636"
+          ],
+          [
+            "Soyabean",
+            "1,483",
+            "1,884"
+          ],
+          [
+            "Jowar",
+            "2,191",
+            "2,757"
+          ],
+          [
+            "Greengram",
+            "763",
+            "704"
+          ],
+          [
+            "Blackgram",
+            "1,230",
+            "1,463"
+          ],
+          [
+            "Chillies",
+            "2,937",
+            "3,726"
+          ]
+        ],
+        "unit": "kg/Hectare"
+      }
+    },
+    {
+      "q": "Which crops recorded yield declines between 2023-24 and 2024-25 in Telangana?",
+      "a": "Groundnut, Sesamum, and Greengram",
+      "e": "Groundnut declined from 2,450 to 2,106 kg/ha; Sesamum from 739 to 636 kg/ha; Greengram from 763 to 704 kg/ha.",
+      "table": null
+    },
+    {
+      "q": "What is the enhanced investment support per acre under the Rythu Bharosa Scheme?",
+      "a": "Rs. 12,000 per acre per year",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which portal is used to verify land extent for Rythu Bharosa assistance?",
+      "a": "Bhu Bharati portal",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What insurance amount is paid under Rythu Bima in the event of an insured farmer's death?",
+      "a": "Rs. 5.00 lakh",
+      "e": "Entire premium is borne by the Government, covering farmers aged 18 to 59 years.",
+      "table": null
+    },
+    {
+      "q": "When does the Rythu Bima Policy Year commence and end?",
+      "a": "14th August to 13th August of next year",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are the details of Rythu Bima beneficiaries in Telangana across recent years?",
+      "a": "Claim amount was highest in 2023-24 at Rs. 1,297 crore",
+      "e": "Full year-wise breakdown.",
+      "table": {
+        "headers": [
+          "Year",
+          "Farmers Enrolled (lakhs)",
+          "No. of Claims Paid ('000)",
+          "Claim Amount (Rs. Cr)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "41.02",
+            "25.9",
+            "1,297"
+          ],
+          [
+            "2024-25",
+            "42.15",
+            "25.7",
+            "1,287"
+          ],
+          [
+            "2025-26",
+            "42.15",
+            "10.5*",
+            "525*"
+          ]
+        ],
+        "unit": "*as on 28.02.2026, Source: Department of Agriculture, Government of Telangana"
+      }
+    },
+    {
+      "q": "What is the acreage norm for positioning one Agriculture Extension Officer under Rythu Nestham?",
+      "a": "5,000 acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the cost of the \"Real Time Solutions through Digital Platform\" project under Rythu Nestham, and how many video conferencing units are planned?",
+      "a": "Rs. 96.63 crore; 2,601 units",
+      "e": "Of which 1,600 units have already been set up.",
+      "table": null
+    },
+    {
+      "q": "As of 24.02.2026, how many Rythu Nestham episodes have been organised, and how many farmers reached?",
+      "a": "84 episodes; 20,68,817 farmers",
+      "e": "Including 3,34,488 women farmers.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's agricultural credit target and achievement percentage across recent years?",
+      "a": "Highest achievement was in 2023-24 at 88.43%",
+      "e": "Full year-wise breakdown.",
+      "table": {
+        "headers": [
+          "Year",
+          "Target (Rs. Cr)",
+          "Achievement (Rs. Cr)",
+          "Percentage (%)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "73,438.5",
+            "64,940.0",
+            "88.43"
+          ],
+          [
+            "2024-25",
+            "90,795.2",
+            "73,104.7",
+            "80.52"
+          ],
+          [
+            "2025-26*",
+            "89,501.0",
+            "72,084.0",
+            "80.54"
+          ]
+        ],
+        "unit": "*as of Feb 2026, Source: Department of Agriculture, Government of Telangana"
+      }
+    },
+    {
+      "q": "What formal institutional agencies support agricultural credit delivery in Telangana?",
+      "a": "Co-operatives, Regional Rural Banks (RRBs), and Scheduled Commercial Banks (SCBs)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was the fertiliser allocation vs supply for Telangana between 2024-25 and 2025-26?",
+      "a": "2024-25 had higher allocation at 44.0 LMTs",
+      "e": "Full year-wise comparison.",
+      "table": {
+        "headers": [
+          "Year",
+          "Allocation (LMTs)",
+          "Supplied (LMTs)"
+        ],
+        "rows": [
+          [
+            "2024-25",
+            "44.0",
+            "36.67"
+          ],
+          [
+            "2025-26*",
+            "43.85",
+            "38.51"
+          ]
+        ],
+        "unit": "*as of February 2026"
+      }
+    },
+    {
+      "q": "How many districts have implemented the Urea Booking Mobile Application?",
+      "a": "31 districts",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What percentage of the agricultural Gross Value of Output (GVO) does horticulture contribute in Telangana, despite occupying how much of the agricultural area?",
+      "a": "25% of GVO; 6% of area",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's national rank in overall horticultural area, and in area under oil palm cultivation?",
+      "a": "12th in horticultural area; 2nd in oil palm area",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's national rank as a producer of red chilli and turmeric?",
+      "a": "3rd largest producer of red chilli; 4th in area and 5th in production of turmeric",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's Oil Extraction Rate (OER) for oil palm, and how does it compare nationally?",
+      "a": "20%; highest in the country",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was the area and production under Horticulture crops in Telangana for 2025-26?",
+      "a": "13.00 lakh acres; 42.22 lakh MTs",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the sector-wise breakdown of area and production under Horticulture in Telangana?",
+      "a": "Fruits have the largest production at 21.06 lakh MTs",
+      "e": "Full sector-wise breakdown.",
+      "table": {
+        "headers": [
+          "Sector",
+          "Area (Lakh Ac.)",
+          "Production (Lakh MTs)"
+        ],
+        "rows": [
+          [
+            "Fruits",
+            "4.56",
+            "21.06"
+          ],
+          [
+            "Vegetables",
+            "1.03",
+            "9.53"
+          ],
+          [
+            "Spices",
+            "3.14",
+            "7.23"
+          ],
+          [
+            "Oil Palm",
+            "2.90",
+            "3.71"
+          ],
+          [
+            "Plantation, Agro Forestry and Others",
+            "1.30",
+            "0.08"
+          ],
+          [
+            "Flowers",
+            "0.06",
+            "0.58"
+          ],
+          [
+            "Medicinal & Aromatic crops",
+            "0.01",
+            "0.03"
+          ],
+          [
+            "Total",
+            "13.00",
+            "42.22"
+          ]
+        ],
+        "unit": "Lakh Acres / Lakh MTs, Source: Department of Horticulture, Government of Telangana"
+      }
+    },
+    {
+      "q": "What financial assistance per acre is provided to oil palm farmers in Telangana?",
+      "a": "Rs. 50,918 per acre",
+      "e": "Towards planting material, maintenance, intercropping for four years, and drip irrigation.",
+      "table": null
+    },
+    {
+      "q": "What is the present Fresh Fruit Bunches (FFB) price fixed by the State Government for oil palm (as of Feb 2026)?",
+      "a": "Rs. 21,456 per MT",
+      "e": "The highest in the country.",
+      "table": null
+    },
+    {
+      "q": "What is the capacity and cost of the oil palm processing mill established at Narmetta in Siddipet district?",
+      "a": "30 TPH (expandable to 120 TPH); Rs. 300 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much crude palm oil did Telangana produce in 2024-25, and at what Oil Extraction Rate?",
+      "a": "Around 70,000 MTs; 20%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's Oil Palm Fresh Fruit Bunches (FFB) production trend from 2023-24 to 2025-26?",
+      "a": "2.77, 2.51, 3.71 lakh MTs respectively",
+      "e": "2025-26 figure is as on 27.01.2026.",
+      "table": null
+    },
+    {
+      "q": "How many farmers benefited under the Micro Irrigation Project (MIP) in 2025-26, and with what financial support?",
+      "a": "35,129 farmers; Rs. 292.4 crore",
+      "e": "Covering 35,643 hectares, as of March 2026.",
+      "table": null
+    },
+    {
+      "q": "As per the 20th Livestock Census 2019, what is Telangana's total livestock population, and by how much did it grow from 2012?",
+      "a": "3.26 crore; 22% increase",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's national rank in total livestock population, sheep population, and poultry population, as per the 20th Livestock Census?",
+      "a": "8th in total livestock; 1st in sheep; 3rd in poultry",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are the livestock resources in India and Telangana as per the 20th Livestock Census?",
+      "a": "Sheep has the highest share to India at 25.67%",
+      "e": "Full breakdown by animal type.",
+      "table": {
+        "headers": [
+          "Type of Animals",
+          "India (Lakh)",
+          "Telangana (Lakh)",
+          "% Share to India"
+        ],
+        "rows": [
+          [
+            "Cattle",
+            "1,925.23",
+            "42.31",
+            "2.20"
+          ],
+          [
+            "Buffalo",
+            "1,098.52",
+            "42.26",
+            "3.85"
+          ],
+          [
+            "Sheep",
+            "742.61",
+            "190.63",
+            "25.67"
+          ],
+          [
+            "Goat",
+            "1,488.85",
+            "49.35",
+            "3.31"
+          ],
+          [
+            "Pig",
+            "90.55",
+            "1.78",
+            "1.97"
+          ],
+          [
+            "Horses & Ponies",
+            "3.42",
+            "0.04",
+            "1.13"
+          ],
+          [
+            "Mule",
+            "0.84",
+            "0.00",
+            "0.00"
+          ],
+          [
+            "Donkey",
+            "1.24",
+            "0.02",
+            "1.64"
+          ],
+          [
+            "Camel",
+            "2.52",
+            "0.00",
+            "0.00"
+          ],
+          [
+            "Total Livestock",
+            "5,358.22",
+            "326.39",
+            "6.09"
+          ],
+          [
+            "Backyard poultry",
+            "3,170.73",
+            "175.44",
+            "5.53"
+          ],
+          [
+            "Commercial Poultry",
+            "5,347.37",
+            "624.55",
+            "11.68"
+          ],
+          [
+            "Total Poultry",
+            "8,518.10",
+            "799.99",
+            "9.39"
+          ]
+        ],
+        "unit": "Lakh numbers, 20th Livestock Census"
+      }
+    },
+    {
+      "q": "What was the growth in livestock production (milk, eggs, meat) in Telangana between 2024-25 and 2025-26 (AE)?",
+      "a": "Meat production saw the highest growth at 6.72%",
+      "e": "Full production breakdown.",
+      "table": {
+        "headers": [
+          "Product",
+          "2024-25",
+          "2025-26 (AE)",
+          "% Change"
+        ],
+        "rows": [
+          [
+            "Milk ('000 Tonne)",
+            "5,935",
+            "6,175",
+            "4.04"
+          ],
+          [
+            "Eggs (Millions)",
+            "19,353",
+            "20,515",
+            "6.00"
+          ],
+          [
+            "Meat ('000 Tonne)",
+            "1,101",
+            "1,175",
+            "6.72"
+          ]
+        ],
+        "unit": "Source: Animal Husbandry Department, Government of Telangana"
+      }
+    },
+    {
+      "q": "What fish and prawn production did Telangana achieve in 2025-26 (up to January 2026), and at what value?",
+      "a": "4.54 lakh tonnes; Rs. 7,097 crore",
+      "e": "Against a target of 5.20 lakh tonnes.",
+      "table": null
+    },
+    {
+      "q": "What is the project outlay for the export-oriented wholesale fish market being established at Koheda, Hyderabad?",
+      "a": "Rs. 47.03 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's state fish, and where is the Centre of Excellence for its conservation being established?",
+      "a": "Striped murrel; at Lower Manair Dam (LMD) Reservoir, Karimnagar",
+      "e": "Investment of Rs. 2.50 crore.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's fish production trend from 2023-24 to 2024-25?",
+      "a": "Increased from 4,39,513 tonnes to 4,62,770 tonnes",
+      "e": "A growth of 5.29%.",
+      "table": null
+    },
+    {
+      "q": "What is the government's target for total irrigation potential (IP) in Telangana, and how much has been achieved?",
+      "a": "127.69 lakh acres target; 74.51 lakh acres achieved",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many irrigation projects have been initiated in Telangana, and how many are completed?",
+      "a": "73 initiated (34 major, 39 medium); 42 completed (10 major, 32 medium)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the cumulative capital expenditure on irrigation schemes in Telangana as of 30th November 2025?",
+      "a": "Rs. 2.419 lakh crore",
+      "e": "Including Rs. 69,966 crore via KIPCL and Rs. 15,284 crore via TSWRIDCL; total expenditure including additional project costs is Rs. 2.650 lakh crore.",
+      "table": null
+    },
+    {
+      "q": "Which two irrigation projects are being modernised in Telangana?",
+      "a": "Nagarjuna Sagar and Nizamsagar",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Of the total paddy procured during Vanakalam 2025-26, how much was Sannarakam paddy, and what bonus was transferred?",
+      "a": "39.08 LMT; Rs. 1,940 crore bonus",
+      "e": "Total of Rs. 19,099 crore directly credited into farmers' bank accounts.",
+      "table": null
+    },
+    {
+      "q": "What is the additional incentive per quintal for farmers cultivating and selling Sannarakam paddy?",
+      "a": "Rs. 500 per quintal",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the procurement trend of Sannarakam paddy across recent seasons?",
+      "a": "Vanakalam 2025-26 recorded the highest quantity at 39.08 LMTs",
+      "e": "Full season-wise breakdown.",
+      "table": {
+        "headers": [
+          "Season",
+          "Qty Procured (LMTs)",
+          "No. of Farmers (Lakh)"
+        ],
+        "rows": [
+          [
+            "Vanakalam 2024-25",
+            "23.98",
+            "4.48"
+          ],
+          [
+            "Yasangi 2024-25",
+            "23.19",
+            "4.09"
+          ],
+          [
+            "Vanakalam 2025-26 (as on 18.02.2026)",
+            "39.08",
+            "7.49"
+          ]
+        ],
+        "unit": "LMTs / Lakh farmers"
+      }
+    },
+    {
+      "q": "What is the cumulative quantity of Sannarakam paddy procured from Vanakalam 2024-25 to Vanakalam 2025-26, and from how many farmers?",
+      "a": "86.25 LMTs; 16.06 lakh farmers",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "With which country did the Government of Telangana execute a Memorandum of Agreement (MoA) for rice export, and for how much rice?",
+      "a": "Philippines; 8 LMT of rice",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much rice has Telangana exported to the Philippines, and what revenue has it generated (as of Feb 2026)?",
+      "a": "22,750 MT; Rs. 84.40 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which state accounted for the highest cotton procurement by the Cotton Corporation of India (CCI) in 2024-25?",
+      "a": "Telangana",
+      "e": "About 44% of total CCI procurement. Full state-wise breakdown.",
+      "table": {
+        "headers": [
+          "State",
+          "Cotton Procured (Thousand Bales of 170 Kg each)"
+        ],
+        "rows": [
+          [
+            "Telangana",
+            "3,922.50"
+          ],
+          [
+            "Maharashtra",
+            "2,625.45"
+          ],
+          [
+            "Gujarat",
+            "908.52"
+          ],
+          [
+            "Karnataka",
+            "460.70"
+          ],
+          [
+            "Andhra Pradesh",
+            "375.00"
+          ],
+          [
+            "Madhya Pradesh",
+            "332.07"
+          ],
+          [
+            "Orissa",
+            "193.30"
+          ],
+          [
+            "Rajasthan",
+            "50.16"
+          ],
+          [
+            "Haryana",
+            "38.58"
+          ],
+          [
+            "Punjab",
+            "1.33"
+          ]
+        ],
+        "unit": "Thousand Bales (170 Kg each), 2024-25, Source: Agriculture Statistics at a Glance, MoAFW, GoI"
+      }
+    },
+    {
+      "q": "During Vanakalam 2025-26, how much cotton did the Cotton Corporation of India (CCI) procure in Telangana, and at what value?",
+      "a": "15.23 lakh metric tonnes; Rs. 12,096 crore",
+      "e": "From 8.2 lakh farmers, as on 30.01.2026; Rs. 10,530 crore already released to farmers.",
+      "table": null
+    },
+    {
+      "q": "What is the funding pattern for farm mechanisation under the Central Sector Scheme – Sub Mission on Agricultural Mechanisation in 2025-26?",
+      "a": "60% Government of India, 40% State Government",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many farm implements are proposed for distribution under the Sub Mission on Agricultural Mechanisation in 2025-26, with what financial allocation?",
+      "a": "1,31,182 implements; Rs. 101.93 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What does the RARE framework under Telangana Vision 2047 for Farmer Empowerment stand for?",
+      "a": "Rural Agri Region Economy",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are the 12 RARE Areas under Telangana Vision 2047 for Farmer Empowerment, and their focus themes?",
+      "a": "Area 1 is Climate-Smart Resilient Agri-Ecosystem",
+      "e": "Full list of RARE Areas and focus themes.",
+      "table": {
+        "headers": [
+          "RARE Area",
+          "Focus Theme"
+        ],
+        "rows": [
+          [
+            "Climate-Smart Resilient Agri-Ecosystem",
+            "Soil health, natural farming, smart irrigation, mechanisation, climate-risk mitigation"
+          ],
+          [
+            "Strengthening Research & Innovation Ecosystem",
+            "AgTech, AI, nano-inputs, bioinformatics, advanced farm research"
+          ],
+          [
+            "Intensive Farming & Value-Addition Zones",
+            "Oilseeds, pulses, millets, horticulture, oil palm, exports"
+          ],
+          [
+            "Global Seed Leadership",
+            "Seed hubs, certification, exports, traceability"
+          ],
+          [
+            "Next-Gen Agri-Infrastructure",
+            "AgTech clusters, logistics, markets, cold chains, and irrigation"
+          ],
+          [
+            "Safe & Quality Nutritious Food",
+            "Biofortified crops, nutrition-smart clusters"
+          ],
+          [
+            "Livestock & Dairy Growth",
+            "Productivity, breed conservation, Digi-Vet, fodder security"
+          ],
+          [
+            "Poultry-Led Prosperity",
+            "Hygienic meat hubs, value-added products, and backyard poultry"
+          ],
+          [
+            "Empowered Farmer Cooperatives & Farmers Welfare",
+            "Value-chain incubation, women-led enterprises, and social security"
+          ],
+          [
+            "Blue Revolution: Accelerated Growth in Fisheries & Aquaculture",
+            "Inland fisheries expansion, seed, cooperatives"
+          ],
+          [
+            "Green Forest Livelihoods",
+            "Agroforestry, bamboo, NTFPs, tribal enterprises"
+          ],
+          [
+            "Clean Energy Revolution",
+            "Bio-energy hubs, solar irrigation, circular rural economy"
+          ]
+        ],
+        "unit": "Source: Vision 2047 Document, Government of Telangana"
+      }
+    },
+    {
+      "q": "What is TGSDC, and what is its mandate?",
+      "a": "Telangana Seeds Development Corporation",
+      "e": "Mandate is ensuring production and supply of quality seeds of notified crop varieties at affordable prices.",
+      "table": null
+    },
+    {
+      "q": "How many trained seed growers does TGSDC work with, covering what area?",
+      "a": "About 1,600 growers; nearly 10,500 acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many sale counters does TGSDC operate across Telangana?",
+      "a": "Over 1,432 sale counters",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much total seed did TGSDC distribute during 2024-25?",
+      "a": "1.87 lakh quintals",
+      "e": "Included 59,245 quintals of paddy, 23,327 quintals of pulses, 2,667 quintals of oilseeds, and about 1.01 lakh quintals of green manure seeds.",
+      "table": null
+    },
+    {
+      "q": "What subsidy rate applies to green manure seed under TGSDC's programme, and how many farmers benefited?",
+      "a": "60% subsidy; 2.05 lakh farmers",
+      "e": "Covering 8.14 lakh acres with a subsidy outlay of Rs. 55.64 crore.",
+      "table": null
+    },
+    {
+      "q": "What is the role of the Telangana Seed & Organic Certification Authority (TGSOCA)?",
+      "a": "Certification of high-quality seeds of notified varieties",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much seed did TGSOCA certify under national seeds certification during 2024-25?",
+      "a": "17.58 lakh quintals",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many acres were registered under organic certification by TGSOCA during 2024-25, and how many under Telangana specifically?",
+      "a": "1.34 lakh acres; 41,000 acres under Telangana",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What area does PJTAU cover, and what is its NIRF 2025 rank among Agriculture and Allied sector institutions?",
+      "a": "Over 5,141 acres; 24th rank",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What ICAR accreditation score and grade did PJTAU achieve?",
+      "a": "3.59 (Grade 'A')",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many new crop varieties did PJTAU release during 2024-25?",
+      "a": "Ten",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many externally funded research projects did PJTAU receive during 2024-25, worth how much?",
+      "a": "29 projects; Rs. 37.25 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which institution funded the ARISA Lab established at PJTAU, and what is its focus?",
+      "a": "SBI; AI, Robotics and IoT-based Smart Agriculture",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What quota did PJTAU introduce for children of landless agricultural labourers?",
+      "a": "15%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "When was the National Mission on Natural Farming (NMNF) introduced?",
+      "a": "December 2024",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are the key on-farm bio-inputs promoted under Natural Farming?",
+      "a": "Beejamrut, Jeevamrut, Ghan Jeevamrut, Neemastra, and Dashparni",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many clusters has the Government of India sanctioned for Natural Farming in Telangana, covering what area and benefiting how many farmers during 2025-26?",
+      "a": "498 clusters; 24,450 hectares; 61,125 farmers",
+      "e": "Across 32 districts, with a total budget allocation of Rs. 42.07 crore.",
+      "table": null
+    }
+  ]
+}

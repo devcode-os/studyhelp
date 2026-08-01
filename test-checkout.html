@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>StudyHelp Payment Test</title>
+</head>
+<body>
+
+<h2>StudyHelp — Test Checkout</h2>
+<p>Subject: Modern TS History (₹1 test price)</p>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<button id="buy-btn">Unlock Subject — ₹1 (TEST)</button>
+<p id="status"></p>
+
+<script>
+const WORKER_URL = 'https://studyhelp-payments.sasi-488.workers.dev';
+
+document.getElementById('buy-btn').addEventListener('click', async () => {
+  const user_id = 'test-user-1';
+  const subject_id = 'ts-history-modern';
+  const statusEl = document.getElementById('status');
+
+  statusEl.textContent = 'Creating order...';
+
+  try {
+    const res = await fetch(`${WORKER_URL}/create-order`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user_id, subject_id }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      statusEl.textContent = 'Error: ' + (data.error || 'Could not create order');
+      return;
+    }
+
+    statusEl.textContent = 'Order created: ' + data.order_id + ' — opening checkout...';
+
+    const rzp = new Razorpay({
+      key: data.key_id,
+      amount: data.amount,
+      currency: data.currency,
+      order_id: data.order_id,
+      name: 'StudyHelp (Test)',
+      description: 'Subject Unlock Test',
+      handler: function (response) {
+        statusEl.innerHTML =
+          'Payment submitted. Payment ID: ' + response.razorpay_payment_id +
+          '<br>Checking D1 for entitlement in a few seconds...';
+        pollAccess(user_id, subject_id, statusEl);
+      },
+      modal: {
+        ondismiss: function () {
+          statusEl.textContent = 'Checkout closed without completing payment.';
+        },
+      },
+    });
+
+    rzp.on('payment.failed', function (resp) {
+      statusEl.textContent = 'Payment failed: ' + JSON.stringify(resp.error);
+    });
+
+    rzp.open();
+  } catch (err) {
+    statusEl.textContent = 'Error: ' + err.message;
+  }
+});
+
+async function pollAccess(user_id, subject_id, statusEl) {
+  let attempts = 0;
+  const maxAttempts = 10;
+
+  const check = async () => {
+    attempts++;
+    const res = await fetch(`${WORKER_URL}/check-access?user_id=${user_id}&subject_id=${subject_id}`);
+    const data = await res.json();
+
+    if (data.unlocked) {
+      statusEl.innerHTML = '<strong>SUCCESS — entitlement confirmed in D1. Subject unlocked.</strong>';
+      return;
+    }
+
+    if (attempts >= maxAttempts) {
+      statusEl.textContent = 'Still waiting for webhook confirmation. Check D1 manually or refresh.';
+      return;
+    }
+
+    setTimeout(check, 1500);
+  };
+
+  check();
+}
+</script>
+
+</body>
+</html>

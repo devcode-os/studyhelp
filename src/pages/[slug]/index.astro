@@ -41,7 +41,7 @@ const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
 
 // Only question text ships in the static HTML - answers stay out of markup
 // entirely and are looked up client-side, since answers are the paid product.
-const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '' }));
+const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '', table: f.table || null }));
 ---
 <Layout title={`${chapter.title} FAQs`} description={`${chapter.title} - ${chapter.faqs.length} FAQs`}>
 
@@ -74,6 +74,30 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '' }));
     const totalPages = Math.ceil(answers.length / perPage);
     const list = document.getElementById('faq-list');
 
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = String(str);
+      return div.innerHTML;
+    }
+
+    function renderTable(table) {
+      const headerHtml = table.headers.map((h) => `<th style="border:1px solid var(--border); padding:6px 10px; text-align:left; background:var(--card); font-weight:700;">${escapeHtml(h)}</th>`).join('');
+      const rowsHtml = table.rows.map((row, idx) => `
+        <tr style="${idx % 2 === 1 ? 'background:rgba(0,0,0,0.02);' : ''}">
+          ${row.map((cell) => `<td style="border:1px solid var(--border); padding:6px 10px;">${escapeHtml(cell)}</td>`).join('')}
+        </tr>
+      `).join('');
+      return `
+        <div style="margin-top:12px; overflow-x:auto;">
+          ${table.unit ? `<p style="margin:0 0 6px; font-size:13px; color:var(--muted);">${escapeHtml(table.unit)}</p>` : ''}
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead><tr>${headerHtml}</tr></thead>
+            <tbody>${rowsHtml}</tbody>
+          </table>
+        </div>
+      `;
+    }
+
     function showPage(page) {
       currentPage = page;
       list.querySelectorAll('.faq-item').forEach((item) => {
@@ -94,10 +118,12 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '' }));
 
         if (!isOpen) {
           const f = answers[parseInt(i)];
+          const tableHtml = f.table ? renderTable(f.table) : '';
           aRow.innerHTML = `
             <div style="background:var(--success-bg); border-radius:8px; padding:14px 16px;">
               <p style="margin:0; font-weight:700; color:var(--success-text); font-size:19px;">${f.a}</p>
               ${f.e ? `<p style="margin:8px 0 0; font-size:15px; color:var(--muted);">${f.e}</p>` : ''}
+              ${tableHtml}
             </div>
           `;
           aRow.style.display = 'block';
