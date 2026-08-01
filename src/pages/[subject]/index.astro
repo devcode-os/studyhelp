@@ -69,7 +69,7 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
       </div>
       <div class="subject-header-right" style="flex:1; min-width:220px;">
         <div style="font-size:12px; color:var(--muted); margin-bottom:6px;">First 30 answers free, site-wide</div>
-        <a href="/plans/" style="font-size:13px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent); display:inline-block;">Unlock unlimited, Rs. 199</a>
+        <a id="unlock-btn" href="/plans/" style="font-size:13px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent); display:inline-block;">Unlock unlimited, Rs. 199</a>
       </div>
     </div>
 
@@ -92,4 +92,32 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
     )}
 
   </div>
+
+  <script define:vars={{ subject }}>
+    const WORKER_URL = 'https://studyhelp-payments.sasi-488.workers.dev';
+
+    // TEMP: identity = stored email, placeholder until real OTP login/session exists.
+    const storedEmail = localStorage.getItem('studyhelp_email');
+
+    if (storedEmail) {
+      fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(storedEmail)}&subject_id=${encodeURIComponent(subject)}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.unlocked) {
+            const btn = document.getElementById('unlock-btn');
+            if (btn) {
+              btn.textContent = '✓ Unlimited access unlocked';
+              btn.removeAttribute('href');
+              btn.style.cursor = 'default';
+              btn.style.background = 'var(--success-bg, #d1fae5)';
+              btn.style.color = 'var(--success-text, #065f46)';
+              btn.style.borderColor = 'transparent';
+            }
+          }
+        })
+        .catch(() => {
+          // silently ignore — button stays as default "Unlock unlimited" on network error
+        });
+    }
+  </script>
 </Layout>
