@@ -1,13 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
+import { getSubjectMeta } from '../../data/subjectsMeta.js';
 
 export function getStaticPaths() {
-  const chapterFiles = import.meta.glob('../../data/*.json', { eager: true });
+  // Matches src/data/<any-subject-folder>/*.json - no subject names hardcoded.
+  // Adding a new subject just means adding a new folder under src/data/,
+  // this file never needs to change.
+  const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
 
-  const chapters = Object.values(chapterFiles)
-    .flatMap((mod) => (Array.isArray(mod.default) ? mod.default : [mod.default]))
-    .filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber);
+  const chapters = Object.entries(chapterFiles).flatMap(([path, mod]) => {
+    // path looks like: ../../data/telangana-economy-en/chapter-1.json
+    // subject folder name = second-to-last path segment
+    const subject = path.split('/').slice(-2, -1)[0];
+
+    const items = Array.isArray(mod.default) ? mod.default : [mod.default];
+
+    return items
+      .filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber)
+      .map((ch) => ({ ...ch, subject }));
+  });
 
   return chapters.map((ch) => ({
     params: { slug: ch.slug },
@@ -16,6 +28,14 @@ export function getStaticPaths() {
 }
 
 const { chapter } = Astro.props;
+const meta = getSubjectMeta(chapter.subject);
+const isTelugu = meta.lang === 'te';
+
+const backLabel = isTelugu ? 'అధ్యాయాలు' : 'Chapters';
+const questionsLabel = isTelugu ? 'ప్రశ్నలు' : 'questions';
+const prevLabel = isTelugu ? 'మునుపటి' : 'Previous';
+const nextLabel = isTelugu ? 'తర్వాత' : 'Next';
+
 const PER_PAGE = 20;
 const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
 
@@ -23,15 +43,15 @@ const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
 // entirely and are looked up client-side, since answers are the paid product.
 const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '' }));
 ---
-<Layout title={`${chapter.title} FAQs`} description={`${chapter.title} - తెలంగాణ చరిత్ర ప్రశ్నలు`}>
+<Layout title={`${chapter.title} FAQs`} description={`${chapter.title} - ${chapter.faqs.length} FAQs`}>
 
   <Header />
 
   <div class="content">
-    <a href="/telangana-history-te/" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:20px; padding:5px 12px 5px 8px; margin-bottom:14px;">&larr; అధ్యాయాలు</a>
+    <a href={`/${chapter.subject}/`} style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:20px; padding:5px 12px 5px 8px; margin-bottom:14px;">&larr; {backLabel}</a>
     <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
       <h1 style="margin:0;">{chapter.chapterNumber}. {chapter.title}</h1>
-      <span style="font-size:14px; font-weight:700; color:var(--text);">{chapter.faqs.length} ప్రశ్నలు</span>
+      <span style="font-size:14px; font-weight:700; color:var(--text);">{chapter.faqs.length} {questionsLabel}</span>
     </div>
 
     <div id="faq-list" style="display:flex; flex-direction:column; gap:8px; margin-top:20px;">
@@ -49,7 +69,7 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '' }));
     <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
   </div>
 
-  <script define:vars={{ answers, perPage: PER_PAGE }}>
+  <script define:vars={{ answers, perPage: PER_PAGE, prevLabel, nextLabel }}>
     let currentPage = 1;
     const totalPages = Math.ceil(answers.length / perPage);
     const list = document.getElementById('faq-list');
@@ -89,11 +109,11 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '' }));
       const pag = document.getElementById('pagination');
       if (totalPages <= 1) { pag.innerHTML = ''; return; }
       const btnStyle = 'min-width:36px; height:36px; padding:0 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--text); font-size:14px; cursor:pointer;';
-      let html = `<button ${currentPage === 1 ? 'disabled' : ''} id="prev-btn" style="${btnStyle}">మునుపటి</button>`;
+      let html = `<button ${currentPage === 1 ? 'disabled' : ''} id="prev-btn" style="${btnStyle}">${prevLabel}</button>`;
       for (let p = 1; p <= totalPages; p++) {
         html += `<button data-page="${p}" style="${btnStyle} ${p === currentPage ? 'border-color:var(--accent); color:var(--accent); font-weight:700;' : ''}">${p}</button>`;
       }
-      html += `<button ${currentPage === totalPages ? 'disabled' : ''} id="next-btn" style="${btnStyle}">తర్వాత</button>`;
+      html += `<button ${currentPage === totalPages ? 'disabled' : ''} id="next-btn" style="${btnStyle}">${nextLabel}</button>`;
       pag.innerHTML = html;
 
       pag.querySelectorAll('button[data-page]').forEach((btn) => {
