@@ -5,11 +5,33 @@
 //   RAZORPAY_KEY_SECRET -> secret
 //   RAZORPAY_WEBHOOK_SECRET -> secret (set this string in Razorpay dashboard webhook config too)
 
+// Used by endpoints that don't set/read cookies (create-order, webhook, check-access).
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
+
+// Used by auth endpoints (signup/login/logout/me) that set/read the session cookie.
+// Wildcard origin ("*") does not work with credentialed requests — browsers
+// reject it — so we must echo back the actual studyhelp origin instead.
+// Includes localhost so `npm run dev` testing works before deploying to production.
+const ALLOWED_ORIGINS = [
+  "https://studyhelp.fdaytalk.com",
+  "http://localhost:4321",
+  "http://localhost:3000",
+];
+
+function corsHeadersWithCredentials(request) {
+  const origin = request.headers.get("Origin");
+  const matched = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    "Access-Control-Allow-Origin": matched,
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Credentials": "true",
+  };
+}
 
 export default {
   async fetch(request, env) {
@@ -17,7 +39,11 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      return new Response(null, { status: 204, headers: CORS_HEADERS });
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset"];
+      const headers = authRoutes.includes(url.pathname)
+        ? corsHeadersWithCredentials(request)
+        : CORS_HEADERS;
+      return new Response(null, { status: 204, headers });
     }
 
     if (url.pathname === "/create-order" && request.method === "POST") {
@@ -28,6 +54,27 @@ export default {
     }
     if (url.pathname === "/check-access" && request.method === "GET") {
       return checkAccess(request, env);
+    }
+    if (url.pathname === "/signup" && request.method === "POST") {
+      return signup(request, env);
+    }
+    if (url.pathname === "/login" && request.method === "POST") {
+      return login(request, env);
+    }
+    if (url.pathname === "/logout" && request.method === "POST") {
+      return logout(request, env);
+    }
+    if (url.pathname === "/me" && request.method === "GET") {
+      return me(request, env);
+    }
+    if (url.pathname === "/forgot-passcode/send-otp" && request.method === "POST") {
+      return sendOtp(request, env);
+    }
+    if (url.pathname === "/forgot-passcode/reset" && request.method === "POST") {
+      return resetPasscode(request, env);
+    }
+    if (url.pathname === "/support/submit" && request.method === "POST") {
+      return submitSupportRequest(request, env);
     }
 
     return new Response("Not found", { status: 404, headers: CORS_HEADERS });
@@ -203,9 +250,519 @@ async function checkAccess(request, env) {
   return json({ unlocked: !!entitlement });
 }
 
-function json(data, status = 200) {
+// ---------- 4. Signup ----------
+// Fields required, in order per spec: name, phone, email (recovery), passcode, confirm passcode
+async function signup(request, env) {
+  // All responses on this route must carry credentialed CORS headers,
+  // since the client calls fetch() with credentials: 'include'.
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const { name, phone, recovery_email, passcode, confirm_passcode } =
+      await request.json();
+
+    if (!name || !phone || !recovery_email || !passcode || !confirm_passcode) {
+      return jsonAuth({ error: "All fields are required" }, 400);
+    }
+    if (!/^\d{10}$/.test(phone.replace(/\D/g, "").slice(-10))) {
+      return jsonAuth({ error: "Enter a valid phone number" }, 400);
+    }
+    if (!/^\d{6}$/.test(passcode)) {
+      return jsonAuth({ error: "Passcode must be exactly 6 digits" }, 400);
+    }
+    if (passcode !== confirm_passcode) {
+      return jsonAuth({ error: "Passcodes do not match" }, 400);
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recovery_email)) {
+      return jsonAuth({ error: "Enter a valid recovery email" }, 400);
+    }
+
+    const normalizedPhone = phone.replace(/\D/g, "").slice(-10);
+
+    const existing = await env.DB.prepare("SELECT id FROM users WHERE phone = ?")
+      .bind(normalizedPhone)
+      .first();
+    if (existing) {
+      return jsonAuth({ error: "An account already exists for this phone number. Please log in instead." }, 409);
+    }
+
+    const passcodeHash = await hashPasscode(passcode);
+    const userId = crypto.randomUUID();
+
+    await env.DB.prepare(
+      `INSERT INTO users (id, name, phone, recovery_email, passcode_hash)
+       VALUES (?, ?, ?, ?, ?)`
+    )
+      .bind(userId, name, normalizedPhone, recovery_email, passcodeHash)
+      .run();
+
+    const session = await createSession(env, userId);
+
+    return jsonAuth(
+      { user_id: userId, name },
+      200,
+      { "Set-Cookie": sessionCookie(session) }
+    );
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- 5. Login ----------
+async function login(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const { phone, passcode } = await request.json();
+    if (!phone || !passcode) {
+      return jsonAuth({ error: "Phone and passcode required" }, 400);
+    }
+
+    const normalizedPhone = phone.replace(/\D/g, "").slice(-10);
+
+    const user = await env.DB.prepare(
+      "SELECT id, name, passcode_hash FROM users WHERE phone = ?"
+    )
+      .bind(normalizedPhone)
+      .first();
+
+    if (!user || !user.passcode_hash) {
+      return jsonAuth({ error: "Invalid phone number or passcode" }, 401);
+    }
+
+    const valid = await verifyPasscode(passcode, user.passcode_hash);
+    if (!valid) {
+      return jsonAuth({ error: "Invalid phone number or passcode" }, 401);
+    }
+
+    // Device/session limit check (3-device cap per Section 3)
+    const activeSessions = await env.DB.prepare(
+      "SELECT id FROM login_sessions WHERE user_id = ? AND expires_at > ? ORDER BY created_at ASC"
+    )
+      .bind(user.id, Math.floor(Date.now() / 1000))
+      .all();
+
+    if (activeSessions.results.length >= 3) {
+      // Evict oldest session to make room (simple cap enforcement for now;
+      // Stage 4 will add a proper session-management UI for manual logout)
+      const oldest = activeSessions.results[0];
+      await env.DB.prepare("DELETE FROM login_sessions WHERE id = ?")
+        .bind(oldest.id)
+        .run();
+    }
+
+    const session = await createSession(env, user.id);
+
+    return jsonAuth(
+      { user_id: user.id, name: user.name },
+      200,
+      { "Set-Cookie": sessionCookie(session) }
+    );
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- 6. Logout ----------
+async function logout(request, env) {
+  const token = getSessionTokenFromRequest(request);
+  if (token) {
+    const tokenHash = await sha256Hex(token);
+    await env.DB.prepare("DELETE FROM login_sessions WHERE session_token_hash = ?")
+      .bind(tokenHash)
+      .run();
+  }
+  return json(
+    { ok: true },
+    200,
+    {
+      "Set-Cookie": "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=None",
+      ...corsHeadersWithCredentials(request),
+    }
+  );
+}
+
+// ---------- 7. Me (check current session) ----------
+async function me(request, env) {
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return json({ logged_in: false }, 200, corsHeadersWithCredentials(request));
+  }
+  return json(
+    {
+      logged_in: true,
+      user_id: user.id,
+      name: user.name,
+      phone: user.phone,
+      recovery_email: user.recovery_email,
+    },
+    200,
+    corsHeadersWithCredentials(request)
+  );
+}
+
+// ---------- 8. Forgot Passcode: Send OTP ----------
+// Sends a 6-digit OTP to the user's registered recovery email.
+// Name+phone match alone is never sufficient — email OTP is the real gate (Section 4).
+async function sendOtp(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const { phone } = await request.json();
+    if (!phone) {
+      return jsonAuth({ error: "Phone number required" }, 400);
+    }
+    const normalizedPhone = phone.replace(/\D/g, "").slice(-10);
+
+    const user = await env.DB.prepare(
+      "SELECT id, recovery_email FROM users WHERE phone = ?"
+    )
+      .bind(normalizedPhone)
+      .first();
+
+    // Always return a generic success-shaped message even if phone isn't found,
+    // so this endpoint can't be used to enumerate which phone numbers are registered.
+    const genericResponse = {
+      message: "If this phone number is registered, a reset code has been sent to the registered recovery email.",
+    };
+
+    if (!user || !user.recovery_email) {
+      return jsonAuth(genericResponse);
+    }
+
+    // Per-phone rate limit: max 3 OTP sends per hour (Section 4 requirement)
+    const oneHourAgo = Math.floor(Date.now() / 1000) - 3600;
+    const recentSends = await env.DB.prepare(
+      "SELECT COUNT(*) as c FROM otp_send_log WHERE phone = ? AND sent_at > ?"
+    )
+      .bind(normalizedPhone, oneHourAgo)
+      .first();
+
+    if (recentSends.c >= 3) {
+      return jsonAuth(
+        { error: "Too many reset attempts. Please try again later or contact support." },
+        429
+      );
+    }
+
+    // Generate 6-digit OTP
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const otpHash = await sha256Hex(otp);
+    const expiresAt = Math.floor(Date.now() / 1000) + 10 * 60; // 10 min expiry
+
+    // Invalidate any previous unused OTPs for this user before issuing a new one
+    await env.DB.prepare(
+      "DELETE FROM otp_codes WHERE user_id = ? AND purpose = 'passcode_reset' AND used = 0"
+    )
+      .bind(user.id)
+      .run();
+
+    await env.DB.prepare(
+      `INSERT INTO otp_codes (id, user_id, otp_hash, purpose, expires_at)
+       VALUES (?, ?, ?, 'passcode_reset', ?)`
+    )
+      .bind(crypto.randomUUID(), user.id, otpHash, expiresAt)
+      .run();
+
+    await env.DB.prepare("INSERT INTO otp_send_log (id, phone) VALUES (?, ?)")
+      .bind(crypto.randomUUID(), normalizedPhone)
+      .run();
+
+    const emailResult = await sendOtpEmail(env, user.recovery_email, otp);
+    if (!emailResult.ok) {
+      // Don't leak delivery failure details to the client (avoid enumeration),
+      // but surface it as a generic server error so it's not silently swallowed.
+      return jsonAuth(
+        { error: "Could not send reset code right now. Please try again shortly or contact support." },
+        502
+      );
+    }
+
+    return jsonAuth(genericResponse);
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- 9. Forgot Passcode: Verify OTP + Set New Passcode ----------
+async function resetPasscode(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const { phone, otp, new_passcode, confirm_new_passcode } = await request.json();
+
+    if (!phone || !otp || !new_passcode || !confirm_new_passcode) {
+      return jsonAuth({ error: "All fields are required" }, 400);
+    }
+    if (!/^\d{6}$/.test(new_passcode)) {
+      return jsonAuth({ error: "Passcode must be exactly 6 digits" }, 400);
+    }
+    if (new_passcode !== confirm_new_passcode) {
+      return jsonAuth({ error: "Passcodes do not match" }, 400);
+    }
+
+    const normalizedPhone = phone.replace(/\D/g, "").slice(-10);
+
+    const user = await env.DB.prepare("SELECT id FROM users WHERE phone = ?")
+      .bind(normalizedPhone)
+      .first();
+
+    if (!user) {
+      return jsonAuth({ error: "Invalid or expired code" }, 400);
+    }
+
+    const otpRow = await env.DB.prepare(
+      `SELECT id, otp_hash, attempts, expires_at, used FROM otp_codes
+       WHERE user_id = ? AND purpose = 'passcode_reset'
+       ORDER BY created_at DESC LIMIT 1`
+    )
+      .bind(user.id)
+      .first();
+
+    if (!otpRow || otpRow.used || otpRow.expires_at < Math.floor(Date.now() / 1000)) {
+      return jsonAuth({ error: "Invalid or expired code" }, 400);
+    }
+
+    if (otpRow.attempts >= 5) {
+      return jsonAuth({ error: "Too many incorrect attempts. Please request a new code." }, 429);
+    }
+
+    const otpHash = await sha256Hex(otp);
+    if (otpHash !== otpRow.otp_hash) {
+      await env.DB.prepare("UPDATE otp_codes SET attempts = attempts + 1 WHERE id = ?")
+        .bind(otpRow.id)
+        .run();
+      return jsonAuth({ error: "Incorrect code" }, 400);
+    }
+
+    // OTP correct — mark used (one-time use), update passcode
+    await env.DB.prepare("UPDATE otp_codes SET used = 1 WHERE id = ?")
+      .bind(otpRow.id)
+      .run();
+
+    const newHash = await hashPasscode(new_passcode);
+    await env.DB.prepare("UPDATE users SET passcode_hash = ? WHERE id = ?")
+      .bind(newHash, user.id)
+      .run();
+
+    // Invalidate all existing sessions on passcode reset (security best practice)
+    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?")
+      .bind(user.id)
+      .run();
+
+    return jsonAuth({ message: "Passcode reset successfully. Please log in with your new passcode." });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// Send OTP email via Resend
+async function sendOtpEmail(env, toEmail, otp) {
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "StudyHelp <studyhelp@fdaytalk.com>",
+        to: [toEmail],
+        subject: "Your StudyHelp passcode reset code",
+        html: `<p>Your StudyHelp passcode reset code is:</p>
+               <p style="font-size:24px;font-weight:bold;letter-spacing:4px;">${otp}</p>
+               <p>This code expires in 10 minutes. If you did not request this, you can ignore this email.</p>`,
+      }),
+    });
+    return { ok: res.ok };
+  } catch (err) {
+    return { ok: false, error: String(err) };
+  }
+}
+
+// ---------- 10. Support request submission (public /support/ form) ----------
+// Public form per spec Section 5 — no login required. Uses plain (non-credentialed)
+// CORS since this doesn't touch the session cookie at all.
+async function submitSupportRequest(request, env) {
+  try {
+    const { phone, recovery_email, contact_email, payment_or_order_id, description } = await request.json();
+
+    if (!description || !description.trim()) {
+      return json({ error: "Please describe the problem." }, 400);
+    }
+    if (!phone && !recovery_email && !payment_or_order_id) {
+      return json({ error: "Please provide at least a phone number, email, or payment/order ID so we can find your account." }, 400);
+    }
+    if (!contact_email || !contact_email.trim()) {
+      return json({ error: "Please provide an email we can reply to." }, 400);
+    }
+
+    const id = crypto.randomUUID();
+
+    await env.DB.prepare(
+      `INSERT INTO support_requests (id, phone, recovery_email, contact_email, payment_or_order_id, description)
+       VALUES (?, ?, ?, ?, ?, ?)`
+    )
+      .bind(
+        id,
+        phone ? phone.replace(/\D/g, "").slice(-10) : null,
+        recovery_email || null,
+        contact_email.trim(),
+        payment_or_order_id || null,
+        description.trim()
+      )
+      .run();
+
+    // Best-effort notification email to the owner — request still succeeds
+    // even if this fails, since the request is already safely stored in D1.
+    try {
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "StudyHelp Support <studyhelp@fdaytalk.com>",
+          to: ["studyhelp@fdaytalk.com"],
+          reply_to: contact_email.trim(),
+          subject: "New StudyHelp support request",
+          html: `<p>A new support request was submitted.</p>
+                 <p><strong>Phone:</strong> ${phone || "-"}<br/>
+                 <strong>Reply to:</strong> ${contact_email.trim()}<br/>
+                 <strong>Recovery email on file (per student):</strong> ${recovery_email || "-"}<br/>
+                 <strong>Payment/Order ID:</strong> ${payment_or_order_id || "-"}</p>
+                 <p><strong>Description:</strong><br/>${description.trim().replace(/\n/g, "<br/>")}</p>
+                 <p style="color:#888;font-size:12px;">Request ID: ${id}</p>`,
+        }),
+      });
+    } catch (err) {
+      // ignore — request is already saved in D1 regardless
+    }
+
+    return json({ message: "Your request has been submitted. We'll get back to you soon." }, 200);
+  } catch (err) {
+    return json({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+
+
+// PBKDF2 passcode hashing (Web Crypto — no bcrypt available in Workers runtime)
+async function hashPasscode(passcode) {
+  const enc = new TextEncoder();
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const keyMaterial = await crypto.subtle.importKey(
+    "raw",
+    enc.encode(passcode),
+    "PBKDF2",
+    false,
+    ["deriveBits"]
+  );
+  const derivedBits = await crypto.subtle.deriveBits(
+    { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+    keyMaterial,
+    256
+  );
+  const hashHex = [...new Uint8Array(derivedBits)]
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+  const saltHex = [...salt].map((b) => b.toString(16).padStart(2, "0")).join("");
+  return `${saltHex}:${hashHex}`;
+}
+
+async function verifyPasscode(passcode, storedHash) {
+  const [saltHex, hashHex] = storedHash.split(":");
+  if (!saltHex || !hashHex) return false;
+  const salt = new Uint8Array(saltHex.match(/.{2}/g).map((b) => parseInt(b, 16)));
+  const enc = new TextEncoder();
+  const keyMaterial = await crypto.subtle.importKey(
+    "raw",
+    enc.encode(passcode),
+    "PBKDF2",
+    false,
+    ["deriveBits"]
+  );
+  const derivedBits = await crypto.subtle.deriveBits(
+    { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+    keyMaterial,
+    256
+  );
+  const computedHex = [...new Uint8Array(derivedBits)]
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+  return computedHex === hashHex;
+}
+
+async function sha256Hex(text) {
+  const enc = new TextEncoder();
+  const digest = await crypto.subtle.digest("SHA-256", enc.encode(text));
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+// Session lifetime: 30 days
+const SESSION_LIFETIME_SECONDS = 30 * 24 * 60 * 60;
+
+async function createSession(env, userId) {
+  const token = crypto.randomUUID() + crypto.randomUUID();
+  const tokenHash = await sha256Hex(token);
+  const expiresAt = Math.floor(Date.now() / 1000) + SESSION_LIFETIME_SECONDS;
+
+  await env.DB.prepare(
+    `INSERT INTO login_sessions (id, user_id, session_token_hash, expires_at)
+     VALUES (?, ?, ?, ?)`
+  )
+    .bind(crypto.randomUUID(), userId, tokenHash, expiresAt)
+    .run();
+
+  return { token, expiresAt };
+}
+
+function sessionCookie({ token, expiresAt }) {
+  const maxAge = expiresAt - Math.floor(Date.now() / 1000);
+  // SameSite=None (not Lax) is required here: the frontend (studyhelp.fdaytalk.com)
+  // and this Worker (*.workers.dev) are different sites from the browser's
+  // perspective, so this is a cross-site fetch. Lax cookies are never sent on
+  // cross-site JS-initiated requests, only on top-level navigations — that
+  // silently broke session recognition. None + Secure fixes it.
+  return `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=None`;
+}
+
+function getSessionTokenFromRequest(request) {
+  const cookieHeader = request.headers.get("Cookie") || "";
+  const match = cookieHeader.match(/sh_session=([^;]+)/);
+  return match ? match[1] : null;
+}
+
+async function getUserFromSession(request, env) {
+  const token = getSessionTokenFromRequest(request);
+  if (!token) return null;
+
+  const tokenHash = await sha256Hex(token);
+  const session = await env.DB.prepare(
+    "SELECT user_id, expires_at FROM login_sessions WHERE session_token_hash = ?"
+  )
+    .bind(tokenHash)
+    .first();
+
+  if (!session || session.expires_at < Math.floor(Date.now() / 1000)) {
+    return null;
+  }
+
+  const user = await env.DB.prepare("SELECT id, name, phone, recovery_email FROM users WHERE id = ?")
+    .bind(session.user_id)
+    .first();
+
+  return user || null;
+}
+
+function json(data, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS, ...extraHeaders },
   });
 }

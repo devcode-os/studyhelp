@@ -1,0 +1,405 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+<Layout title="Forgot Passcode - StudyHelp" description="Reset your StudyHelp passcode using your registered recovery email.">
+  <Header active="login" />
+
+  <div class="content auth-content">
+    <div class="auth-card">
+
+      <div id="step-1">
+        <div class="auth-icon"><i class="ti ti-key"></i></div>
+        <h1>Forgot passcode</h1>
+        <p class="sub">We'll send a reset code to your registered recovery email.</p>
+
+        <form id="send-otp-form">
+          <label for="phone">Phone number</label>
+          <div class="phone-input">
+            <span class="phone-prefix">+91</span>
+            <input type="tel" id="phone" name="phone" required inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="10-digit mobile number" />
+          </div>
+
+          <div id="error-msg-1" class="error-msg" style="display:none;">
+            <i class="ti ti-alert-circle"></i><span id="error-text-1"></span>
+          </div>
+
+          <button type="submit" class="btn-block" id="send-otp-btn">
+            <span class="btn-label">Send reset code</span>
+            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+          </button>
+        </form>
+
+        <p class="alt-action">Can't access your recovery email? <a href="/support/">Contact Support</a></p>
+      </div>
+
+      <div id="step-2" style="display:none;">
+        <div class="auth-icon"><i class="ti ti-mail-opened"></i></div>
+        <h1>Enter reset code</h1>
+        <p class="sub">Check your recovery email for a 6-digit code. It expires in 10 minutes.</p>
+
+        <form id="reset-form">
+          <label for="otp">Reset code</label>
+          <input type="text" id="otp" name="otp" required inputmode="numeric" maxlength="6" autocomplete="one-time-code" class="code-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;" />
+
+          <label for="new_passcode">New 6-digit passcode</label>
+          <input type="text" id="new_passcode" name="new_passcode" required inputmode="numeric" maxlength="6" autocomplete="one-time-code" class="code-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;" />
+
+          <label for="confirm_new_passcode">Confirm new passcode</label>
+          <input type="text" id="confirm_new_passcode" name="confirm_new_passcode" required inputmode="numeric" maxlength="6" autocomplete="one-time-code" class="code-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;" />
+
+          <div id="error-msg-2" class="error-msg" style="display:none;">
+            <i class="ti ti-alert-circle"></i><span id="error-text-2"></span>
+          </div>
+          <div id="success-msg" class="success-msg" style="display:none;">
+            <i class="ti ti-circle-check"></i><span id="success-text"></span>
+          </div>
+
+          <button type="submit" class="btn-block" id="reset-btn">
+            <span class="btn-label">Reset passcode</span>
+            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+          </button>
+        </form>
+
+        <p class="alt-action">
+          Didn't get the code? <button type="button" id="resend-btn" class="link-btn">Send again</button>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    .auth-content {
+      max-width: 440px;
+    }
+    .auth-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+      animation: card-in 0.45s ease-out;
+    }
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html[data-theme="dark"] .auth-card {
+      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    }
+    .auth-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .auth-card h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+    .auth-card .sub {
+      margin-bottom: 24px;
+    }
+    .auth-card label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 18px 0 6px;
+    }
+    .auth-card input {
+      margin-bottom: 0;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .auth-card input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+    }
+    .phone-input {
+      display: flex;
+      align-items: stretch;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--card);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .phone-input:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+    }
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      background: var(--bg);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 17px;
+      border-right: 1px solid var(--border);
+    }
+    .phone-input input {
+      border: none;
+      border-radius: 0;
+      flex: 1;
+    }
+    .phone-input input:focus {
+      box-shadow: none;
+    }
+    .code-input {
+      box-sizing: border-box;
+      width: 100%;
+      font-size: clamp(18px, 5.5vw, 24px);
+      font-weight: 700;
+      letter-spacing: clamp(4px, 2.2vw, 10px);
+      text-align: center;
+      font-family: monospace;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .code-input::placeholder {
+      letter-spacing: clamp(4px, 2.2vw, 10px);
+      color: var(--border);
+    }
+    .error-msg, .success-msg {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin: 18px 0 0;
+    }
+    .error-msg {
+      background: #fdecec;
+      color: #b3261e;
+      border-left: 3px solid #d33;
+    }
+    html[data-theme="dark"] .error-msg {
+      background: #3a1c1c;
+      color: #ff9b93;
+    }
+    .success-msg {
+      background: var(--success-bg);
+      color: var(--success-text);
+      border-left: 3px solid var(--success-text);
+    }
+    .btn-block {
+      width: 100%;
+      margin-top: 26px;
+      padding: 13px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      background: var(--accent-bg);
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.1s, opacity 0.15s;
+    }
+    .btn-block:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+    .btn-block:active:not(:disabled) {
+      transform: translateY(0);
+    }
+    .btn-block:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+    .btn-spinner {
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .alt-action {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .link-btn {
+      background: none;
+      border: none;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 0;
+    }
+    .link-btn:disabled {
+      color: var(--muted);
+      cursor: not-allowed;
+    }
+  </style>
+
+  <script>
+    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const sendOtpForm = document.getElementById('send-otp-form');
+    const resetForm = document.getElementById('reset-form');
+    const errorMsg1 = document.getElementById('error-msg-1');
+    const errorText1 = document.getElementById('error-text-1');
+    const errorMsg2 = document.getElementById('error-msg-2');
+    const errorText2 = document.getElementById('error-text-2');
+    const successMsg = document.getElementById('success-msg');
+    const successText = document.getElementById('success-text');
+    const sendOtpBtn = document.getElementById('send-otp-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const resendBtn = document.getElementById('resend-btn');
+
+    function setBtnLoading(btn, isLoading, labelWhenIdle) {
+      const label = btn.querySelector('.btn-label');
+      const spinner = btn.querySelector('.btn-spinner');
+      btn.disabled = isLoading;
+      if (label) label.textContent = isLoading ? 'Please wait...' : labelWhenIdle;
+      if (spinner) spinner.style.display = isLoading ? 'inline-block' : 'none';
+    }
+
+    let currentPhone = '';
+    let debounceTimer = null;
+
+    // Strip non-digit characters as the user types (pattern/inputmode alone don't block typing on desktop)
+    ['phone', 'otp', 'new_passcode', 'confirm_new_passcode'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const maxLen = id === 'phone' ? 10 : 6;
+      el.addEventListener('input', () => {
+        el.value = el.value.replace(/\D/g, '').slice(0, maxLen);
+      });
+    });
+
+    // 60-second client-side debounce on send/resend (server also enforces its own
+    // 3-per-hour rate limit independently — this is just to prevent accidental double-clicks).
+    function startDebounce(btn) {
+      let secondsLeft = 60;
+      btn.disabled = true;
+      const originalText = 'Send again';
+      btn.textContent = `Send again (${secondsLeft}s)`;
+
+      debounceTimer = setInterval(() => {
+        secondsLeft -= 1;
+        btn.textContent = `${originalText} (${secondsLeft}s)`;
+        if (secondsLeft <= 0) {
+          clearInterval(debounceTimer);
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }
+      }, 1000);
+    }
+
+    async function sendOtp(phone, errorEl, errorTextEl) {
+      errorEl.style.display = 'none';
+      try {
+        const res = await fetch(`${WORKER_URL}/forgot-passcode/send-otp`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone }),
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorTextEl.textContent = data.error || 'Something went wrong. Please try again.';
+          errorEl.style.display = 'flex';
+          return false;
+        }
+
+        return true;
+      } catch (err) {
+        errorTextEl.textContent = 'Network error. Please check your connection and try again.';
+        errorEl.style.display = 'flex';
+        return false;
+      }
+    }
+
+    sendOtpForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const phone = sendOtpForm.phone.value.trim();
+      setBtnLoading(sendOtpBtn, true, 'Send reset code');
+
+      const ok = await sendOtp(phone, errorMsg1, errorText1);
+
+      if (ok) {
+        currentPhone = phone;
+        step1.style.display = 'none';
+        step2.style.display = 'block';
+        startDebounce(resendBtn);
+      } else {
+        setBtnLoading(sendOtpBtn, false, 'Send reset code');
+      }
+    });
+
+    resendBtn.addEventListener('click', async () => {
+      resendBtn.disabled = true;
+      const ok = await sendOtp(currentPhone, errorMsg2, errorText2);
+      if (ok) {
+        errorMsg2.style.display = 'none';
+        successText.textContent = 'A new code has been sent.';
+        successMsg.style.display = 'flex';
+      }
+      startDebounce(resendBtn);
+    });
+
+    resetForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg2.style.display = 'none';
+      successMsg.style.display = 'none';
+      setBtnLoading(resetBtn, true, 'Reset passcode');
+
+      const payload = {
+        phone: currentPhone,
+        otp: resetForm.otp.value.trim(),
+        new_passcode: resetForm.new_passcode.value.trim(),
+        confirm_new_passcode: resetForm.confirm_new_passcode.value.trim(),
+      };
+
+      try {
+        const res = await fetch(`${WORKER_URL}/forgot-passcode/reset`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorText2.textContent = data.error || 'Something went wrong. Please try again.';
+          errorMsg2.style.display = 'flex';
+          setBtnLoading(resetBtn, false, 'Reset passcode');
+          return;
+        }
+
+        successText.textContent = 'Passcode reset successfully. Redirecting to login...';
+        successMsg.style.display = 'flex';
+        setTimeout(() => { window.location.href = '/login/'; }, 1500);
+      } catch (err) {
+        errorText2.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg2.style.display = 'flex';
+        setBtnLoading(resetBtn, false, 'Reset passcode');
+      }
+    });
+  </script>
+
+<style>
+  @media (max-width: 380px) {
+    .auth-card {
+      padding: 28px 20px;
+    }
+  }
+</style>

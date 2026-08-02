@@ -99,44 +99,28 @@ const subjects = [
   <script>
     const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
 
-    // TEMP identity: email captured via simple prompt, no OTP verification yet.
-    // Once OTP login is built, replace getUserEmail() with the verified session email —
-    // same field, so existing entitlements keep working unchanged.
-    function getUserEmail() {
-      let email = localStorage.getItem('studyhelp_email');
-      if (!email) {
-        email = promptForEmail();
-      }
-      return email;
-    }
+    let currentUser = null; // { user_id, name } once resolved, else null
 
-    function promptForEmail() {
-      let email = null;
-      while (!email) {
-        const input = prompt('Enter your email to continue with purchase:');
-        if (input === null) return null; // user cancelled
-        const trimmed = input.trim();
-        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-          email = trimmed.toLowerCase();
-          localStorage.setItem('studyhelp_email', email);
-        } else {
-          alert('Please enter a valid email address.');
-        }
+    async function getSession() {
+      try {
+        const res = await fetch(`${WORKER_URL}/me`, { credentials: 'include' });
+        const data = await res.json();
+        return data.logged_in ? data : null;
+      } catch (err) {
+        return null;
       }
-      return email;
     }
 
     // On page load: check ownership for every available subject, swap button to "Open" if owned
     async function checkOwnershipForAllSubjects() {
-      const storedEmail = localStorage.getItem('studyhelp_email');
-      if (!storedEmail) return; // no identity yet, nothing to check — all buttons stay "Buy now"
+      if (!currentUser) return; // not logged in — every button stays "Buy now"
 
       const buttons = document.querySelectorAll('.buy-btn');
       for (const btn of buttons) {
         const subject_id = btn.getAttribute('data-subject');
         try {
           const res = await fetch(
-            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(storedEmail)}&subject_id=${encodeURIComponent(subject_id)}`
+            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`
           );
           const data = await res.json();
           if (data.unlocked) {
@@ -167,24 +151,17 @@ const subjects = [
       return freshBtn;
     }
 
-    document.querySelectorAll('.buy-btn').forEach((btn) => {
-      btn.addEventListener('click', async () => {
-        const subject_id = btn.getAttribute('data-subject'); // works for any available subject, not hardcoded
+    function startPurchase(btn, subject_id) {
+      btn.disabled = true;
+      btn.textContent = 'Loading...';
 
-        const user_id = getUserEmail();
-        if (!user_id) return; // user cancelled email prompt
-
-        btn.disabled = true;
-        btn.textContent = 'Loading...';
-
-        try {
-          const res = await fetch(`${WORKER_URL}/create-order`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user_id, subject_id }),
-          });
-          const order = await res.json();
-
+      fetch(`${WORKER_URL}/create-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id: currentUser.user_id, subject_id }),
+      })
+        .then((res) => res.json().then((order) => ({ res, order })))
+        .then(({ res, order }) => {
           if (!res.ok) {
             if (order.error === 'Already purchased') {
               // Don't just relabel and wait for a second click — that leaves
@@ -212,11 +189,11 @@ const subjects = [
             order_id: order.order_id,
             name: 'StudyHelp',
             description: subject_id,
-            prefill: { email: user_id },
+            prefill: { name: currentUser.name },
             handler: function () {
               // Don't unlock here — redirect to processing page which waits for webhook confirmation
               window.location.href =
-                `/payment-processing/?user_id=${encodeURIComponent(user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+                `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
             },
             modal: {
               ondismiss: function () {
@@ -233,14 +210,45 @@ const subjects = [
           });
 
           rzp.open();
-        } catch (err) {
+        })
+        .catch((err) => {
           alert('Error: ' + err.message);
           btn.disabled = false;
           btn.textContent = 'Buy now';
+        });
+    }
+
+    document.querySelectorAll('.buy-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const subject_id = btn.getAttribute('data-subject'); // works for any available subject, not hardcoded
+
+        if (!currentUser) {
+          // Single account-creation path (spec Section 1a): send to signup,
+          // which links to login for returning students. ?buy= carries the
+          // purchase intent so it auto-resumes here after auth completes.
+          const returnTo = `/plans/?buy=${encodeURIComponent(subject_id)}`;
+          window.location.href = `/signup/?next=${encodeURIComponent(returnTo)}`;
+          return;
         }
+
+        startPurchase(btn, subject_id);
       });
     });
 
-    checkOwnershipForAllSubjects();
+    // Boot: resolve session once, then check ownership, then auto-resume
+    // a purchase if we arrived here via the ?buy= redirect after login/signup.
+    getSession().then((session) => {
+      currentUser = session;
+      checkOwnershipForAllSubjects().then(() => {
+        const params = new URLSearchParams(window.location.search);
+        const buySubject = params.get('buy');
+        if (buySubject && currentUser) {
+          const btn = document.querySelector(`.buy-btn[data-subject="${CSS.escape(buySubject)}"]`);
+          if (btn) startPurchase(btn, buySubject);
+          // Clean the URL so a page refresh doesn't re-trigger the purchase
+          window.history.replaceState({}, '', '/plans/');
+        }
+      });
+    });
   </script>
 </Layout>

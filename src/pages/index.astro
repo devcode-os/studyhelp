@@ -94,12 +94,17 @@ const iconMap = {
   </div>
 
   <script>
-    // TEMP: hides the "login to continue" banner if this browser already has a stored
-    // identity (placeholder for real OTP session check once login backend exists).
-    const storedEmail = localStorage.getItem('studyhelp_email');
-    if (storedEmail) {
-      const banner = document.getElementById('login-banner');
-      if (banner) banner.style.display = 'none';
-    }
+    // Hides the "login to continue" banner if the visitor has a real, active session.
+    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+
+    fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.logged_in) {
+          const banner = document.getElementById('login-banner');
+          if (banner) banner.style.display = 'none';
+        }
+      })
+      .catch(() => {});
   </script>
 </Layout>

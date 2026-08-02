@@ -2,37 +2,46 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 ---
-<Layout title="Log In - StudyHelp" description="Log in to StudyHelp with your phone number and passcode.">
-  <Header active="login" />
+<Layout title="Sign Up - StudyHelp" description="Create your StudyHelp account with just a phone number and passcode.">
+  <Header active="signup" />
 
   <div class="content auth-content">
     <div class="auth-card">
-      <div class="auth-icon"><i class="ti ti-lock"></i></div>
-      <h1>Log in</h1>
-      <p class="sub">Mobile number + 6-digit passcode.</p>
+      <div class="auth-icon"><i class="ti ti-user-plus"></i></div>
+      <h1>Create your account</h1>
+      <p class="sub">Mobile number + passcode. No Gmail or SMS OTP needed.</p>
 
-      <form id="login-form">
+      <form id="signup-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name" />
+
         <label for="phone">Phone number</label>
         <div class="phone-input">
           <span class="phone-prefix">+91</span>
           <input type="tel" id="phone" name="phone" required inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="10-digit mobile number" />
         </div>
 
-        <label for="passcode">Passcode</label>
+        <label for="recovery_email">Recovery email</label>
+        <input type="email" id="recovery_email" name="recovery_email" required autocomplete="email" placeholder="you@example.com" />
+        <p class="hint"><i class="ti ti-info-circle"></i> If you forget your passcode, a reset code goes here.</p>
+
+        <label for="passcode">6-digit passcode</label>
         <input type="text" id="passcode" name="passcode" required inputmode="numeric" maxlength="6" autocomplete="one-time-code" class="code-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;" />
+
+        <label for="confirm_passcode">Confirm passcode</label>
+        <input type="text" id="confirm_passcode" name="confirm_passcode" required inputmode="numeric" maxlength="6" autocomplete="one-time-code" class="code-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;" />
 
         <div id="error-msg" class="error-msg" style="display:none;">
           <i class="ti ti-alert-circle"></i><span id="error-text"></span>
         </div>
 
         <button type="submit" class="btn-block" id="submit-btn">
-          <span class="btn-label">Log in</span>
+          <span class="btn-label">Create account</span>
           <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
         </button>
       </form>
 
-      <p class="alt-action"><a href="/forgot-passcode/">Forgot passcode?</a></p>
-      <p class="alt-action">New here? <a href="/signup/">Create an account</a></p>
+      <p class="alt-action">Already have an account? <a href="/login/">Log in</a></p>
     </div>
   </div>
 
@@ -136,6 +145,14 @@ import Header from '../../components/Header.astro';
       letter-spacing: clamp(4px, 2.2vw, 10px);
       color: var(--border);
     }
+    .hint {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
     .error-msg {
       display: flex;
       align-items: center;
@@ -193,7 +210,7 @@ import Header from '../../components/Header.astro';
     }
     .alt-action {
       text-align: center;
-      margin-top: 14px;
+      margin-top: 22px;
       font-size: 14px;
       color: var(--muted);
     }
@@ -201,7 +218,7 @@ import Header from '../../components/Header.astro';
 
   <script>
     const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
-    const form = document.getElementById('login-form');
+    const form = document.getElementById('signup-form');
     const errorMsg = document.getElementById('error-msg');
     const errorText = document.getElementById('error-text');
     const submitBtn = document.getElementById('submit-btn');
@@ -209,7 +226,7 @@ import Header from '../../components/Header.astro';
     const btnSpinner = submitBtn.querySelector('.btn-spinner');
 
     // Strip non-digit characters as the user types (pattern/inputmode alone don't block typing on desktop)
-    ['phone', 'passcode'].forEach((id) => {
+    ['phone', 'passcode', 'confirm_passcode'].forEach((id) => {
       const el = document.getElementById(id);
       const maxLen = id === 'phone' ? 10 : 6;
       el.addEventListener('input', () => {
@@ -219,7 +236,7 @@ import Header from '../../components/Header.astro';
 
     function setLoading(isLoading, labelWhenIdle) {
       submitBtn.disabled = isLoading;
-      btnLabel.textContent = isLoading ? 'Logging in...' : labelWhenIdle;
+      btnLabel.textContent = isLoading ? 'Creating account...' : labelWhenIdle;
       btnSpinner.style.display = isLoading ? 'inline-block' : 'none';
     }
 
@@ -234,15 +251,18 @@ import Header from '../../components/Header.astro';
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorMsg.style.display = 'none';
-      setLoading(true, 'Log in');
+      setLoading(true, 'Create account');
 
       const payload = {
+        name: form.name.value.trim(),
         phone: form.phone.value.trim(),
+        recovery_email: form.recovery_email.value.trim(),
         passcode: form.passcode.value.trim(),
+        confirm_passcode: form.confirm_passcode.value.trim(),
       };
 
       try {
-        const res = await fetch(`${WORKER_URL}/login`, {
+        const res = await fetch(`${WORKER_URL}/signup`, {
           method: 'POST',
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
@@ -251,18 +271,18 @@ import Header from '../../components/Header.astro';
         const data = await res.json();
 
         if (!res.ok) {
-          showError(data.error || 'Invalid phone number or passcode.');
-          setLoading(false, 'Log in');
+          showError(data.error || 'Something went wrong. Please try again.');
+          setLoading(false, 'Create account');
           return;
         }
 
-        btnLabel.textContent = 'Logged in!';
+        btnLabel.textContent = 'Account created!';
         btnSpinner.style.display = 'none';
         submitBtn.classList.add('btn-success');
         setTimeout(() => { window.location.href = nextUrl; }, 700);
       } catch (err) {
         showError('Network error. Please check your connection and try again.');
-        setLoading(false, 'Log in');
+        setLoading(false, 'Create account');
       }
     });
   </script>

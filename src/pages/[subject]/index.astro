@@ -96,30 +96,31 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
   <script define:vars={{ subject }}>
     const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
 
-    // TEMP: identity = stored email, placeholder until real OTP login/session exists.
-    const storedEmail = localStorage.getItem('studyhelp_email');
+    fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+      .then((res) => res.json())
+      .then((session) => {
+        if (!session.logged_in) return; // not logged in — button stays default "Unlock unlimited"
 
-    if (storedEmail) {
-      fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(storedEmail)}&subject_id=${encodeURIComponent(subject)}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.unlocked) {
-            const btn = document.getElementById('unlock-btn');
-            const trialText = document.getElementById('free-trial-text');
-            if (trialText) trialText.style.display = 'none';
-            if (btn) {
-              btn.textContent = '✓ Unlimited access unlocked';
-              btn.removeAttribute('href');
-              btn.style.cursor = 'default';
-              btn.style.background = 'var(--success-bg, #d1fae5)';
-              btn.style.color = 'var(--success-text, #065f46)';
-              btn.style.borderColor = 'transparent';
+        return fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.unlocked) {
+              const btn = document.getElementById('unlock-btn');
+              const trialText = document.getElementById('free-trial-text');
+              if (trialText) trialText.style.display = 'none';
+              if (btn) {
+                btn.textContent = '✓ Unlimited access unlocked';
+                btn.removeAttribute('href');
+                btn.style.cursor = 'default';
+                btn.style.background = 'var(--success-bg, #d1fae5)';
+                btn.style.color = 'var(--success-text, #065f46)';
+                btn.style.borderColor = 'transparent';
+              }
             }
-          }
-        })
-        .catch(() => {
-          // silently ignore — button stays as default "Unlock unlimited" on network error
-        });
-    }
+          });
+      })
+      .catch(() => {
+        // silently ignore — button stays as default "Unlock unlimited" on network error
+      });
   </script>
 </Layout>

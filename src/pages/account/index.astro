@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+<Layout title="My Account - StudyHelp" description="View your StudyHelp account details.">
+  <Header active="account" />
+
+  <div class="content auth-content">
+    <div class="auth-card" id="account-card" style="display:none;">
+      <div class="auth-icon"><i class="ti ti-user-circle"></i></div>
+      <h1 id="account-name">Your account</h1>
+      <p class="sub">Manage your StudyHelp account details.</p>
+
+      <div class="detail-row">
+        <span class="detail-label"><i class="ti ti-phone"></i> Phone</span>
+        <span class="detail-value" id="detail-phone">-</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label"><i class="ti ti-mail"></i> Recovery email</span>
+        <span class="detail-value" id="detail-email">-</span>
+      </div>
+
+      <button type="button" class="btn-block btn-danger" id="logout-btn">
+        <span class="btn-label"><i class="ti ti-logout"></i> Log out</span>
+        <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+      </button>
+
+      <p class="alt-action"><a href="/plans/">View plans &amp; purchases &rarr;</a></p>
+    </div>
+
+    <div class="auth-card" id="loading-card">
+      <p class="sub" style="margin:0; text-align:center;">Loading your account...</p>
+    </div>
+
+    <div class="auth-card" id="signed-out-card" style="display:none;">
+      <div class="auth-icon"><i class="ti ti-lock"></i></div>
+      <h1>You're not logged in</h1>
+      <p class="sub">Log in to see your account details.</p>
+      <a href="/login/?next=/account/" class="btn-block" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">Log in</a>
+    </div>
+  </div>
+
+  <style>
+    .auth-content {
+      max-width: 440px;
+    }
+    .auth-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+      animation: card-in 0.45s ease-out;
+    }
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html[data-theme="dark"] .auth-card {
+      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    }
+    .auth-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .auth-card h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+    .auth-card .sub {
+      margin-bottom: 24px;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .detail-row:last-of-type {
+      border-bottom: none;
+    }
+    .detail-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .detail-value {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .btn-block {
+      width: 100%;
+      margin-top: 26px;
+      padding: 13px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      background: var(--accent-bg);
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.1s, opacity 0.15s;
+    }
+    .btn-danger {
+      border-color: #d33;
+      background: #fdecec;
+      color: #b3261e;
+    }
+    html[data-theme="dark"] .btn-danger {
+      background: #3a1c1c;
+      color: #ff9b93;
+    }
+    .btn-block:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+    .btn-block:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+    .btn-spinner {
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .alt-action {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+
+  <script>
+    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+    const loadingCard = document.getElementById('loading-card');
+    const accountCard = document.getElementById('account-card');
+    const signedOutCard = document.getElementById('signed-out-card');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+      .then((res) => res.json())
+      .then((data) => {
+        loadingCard.style.display = 'none';
+        if (!data.logged_in) {
+          signedOutCard.style.display = 'block';
+          return;
+        }
+        document.getElementById('account-name').textContent = data.name || 'Your account';
+        document.getElementById('detail-phone').textContent = data.phone ? `+91 ${data.phone}` : '-';
+        document.getElementById('detail-email').textContent = data.recovery_email || '-';
+        accountCard.style.display = 'block';
+      })
+      .catch(() => {
+        loadingCard.style.display = 'none';
+        signedOutCard.style.display = 'block';
+      });
+
+    logoutBtn.addEventListener('click', () => {
+      const label = logoutBtn.querySelector('.btn-label');
+      const spinner = logoutBtn.querySelector('.btn-spinner');
+      logoutBtn.disabled = true;
+      if (spinner) spinner.style.display = 'inline-block';
+
+      fetch(`${WORKER_URL}/logout`, { method: 'POST', credentials: 'include' })
+        .finally(() => { window.location.href = '/'; });
+    });
+  </script>

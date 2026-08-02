@@ -162,47 +162,43 @@ const { active = '' } = Astro.props;
     });
   }
 
-  // TEMP: reflects stored email as "logged in" state, since real OTP login/session
-  // isn't built yet. Once OTP login exists, replace this check with the real session check.
-  const storedEmail = localStorage.getItem('studyhelp_email');
+  // Real session check via cookie-backed /me endpoint (replaces old localStorage email check)
+  const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
   const loginLink = document.getElementById('login-link');
   const loginLinkMobile = document.getElementById('login-link-mobile');
 
-  if (storedEmail) {
-    [loginLink, loginLinkMobile].forEach((el) => {
-      if (!el) return;
-      el.textContent = 'Logout';
-      el.href = '#';
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (confirm('Log out of StudyHelp on this device?')) {
-          localStorage.removeItem('studyhelp_email');
-          window.location.href = '/';
+  fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.logged_in) return;
+
+      [loginLink, loginLinkMobile].forEach((el) => {
+        if (!el) return;
+        el.textContent = 'Account';
+        el.href = '/account/';
+      });
+
+      // Check if all currently live subjects are owned — if so, show "Premium" instead of "Go premium".
+      // NOTE: this list needs updating whenever a new subject goes live (available: true elsewhere).
+      const LIVE_SUBJECTS = ['telangana-history-te', 'telangana-economy-en'];
+
+      Promise.all(
+        LIVE_SUBJECTS.map((subject_id) =>
+          fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(data.user_id)}&subject_id=${encodeURIComponent(subject_id)}`)
+            .then((res) => res.json())
+            .then((d) => d.unlocked)
+            .catch(() => false)
+        )
+      ).then((results) => {
+        const allOwned = results.every(Boolean);
+        if (allOwned) {
+          document.querySelectorAll('a[href="/plans/"].btn-accent').forEach((el) => {
+            el.textContent = '★ Premium';
+            el.style.cursor = 'default';
+            el.removeAttribute('href');
+          });
         }
       });
-    });
-
-    // Check if all currently live subjects are owned — if so, show "Premium" instead of "Go premium".
-    // NOTE: this list needs updating whenever a new subject goes live (available: true elsewhere).
-    const LIVE_SUBJECTS = ['telangana-history-te', 'telangana-economy-en'];
-    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
-
-    Promise.all(
-      LIVE_SUBJECTS.map((subject_id) =>
-        fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(storedEmail)}&subject_id=${encodeURIComponent(subject_id)}`)
-          .then((res) => res.json())
-          .then((data) => data.unlocked)
-          .catch(() => false)
-      )
-    ).then((results) => {
-      const allOwned = results.every(Boolean);
-      if (allOwned) {
-        document.querySelectorAll('a[href="/plans/"].btn-accent').forEach((el) => {
-          el.textContent = '★ Premium';
-          el.style.cursor = 'default';
-          el.removeAttribute('href');
-        });
-      }
-    });
-  }
+    })
+    .catch(() => {});
 </script>
