@@ -187,7 +187,16 @@ const subjects = [
 
           if (!res.ok) {
             if (order.error === 'Already purchased') {
-              setButtonToOpen(btn, subject_id); // btn is cloned+replaced internally; safe even though this listener is on the old node
+              // Don't just relabel and wait for a second click — that leaves
+              // the user unsure whether anything happened. Show a clear
+              // confirmation and auto-redirect straight to their content.
+              btn.disabled = true;
+              btn.textContent = '✓ Already purchased — opening...';
+              btn.style.background = 'var(--accent)';
+              btn.style.color = '#fff';
+              setTimeout(() => {
+                window.location.href = `/${subject_id}/`;
+              }, 800);
               return;
             }
             alert(order.error || 'Could not start payment');
