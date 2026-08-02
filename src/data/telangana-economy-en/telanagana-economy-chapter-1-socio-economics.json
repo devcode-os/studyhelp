@@ -4,889 +4,918 @@
   "title": "Telangana Socio Economics",
   "faqs": [
     {
-      "q": "What is Telangana's economic target by 2034?",
-      "a": "USD 1 trillion economy",
-      "e": ""
+      "q": "What is Telangana's target GSDP (Gross State Domestic Product) by 2047 under Vision 2047?",
+      "a": "USD 3 trillion",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is Telangana's economic target by 2047?",
-      "a": "USD 3 trillion economy",
-      "e": ""
+      "q": "What spatial development model does Telangana use to divide the State into three economic zones?",
+      "a": "CURE-PURE-RARE",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is Telangana's current contribution to India's GDP, and what is the target?",
-      "a": "5% to 10%",
-      "e": ""
+      "q": "What are the projected real GDP growth rates for Telangana across the three periods leading to 2047?",
+      "a": "8%, 7%, 5.2%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Period",
+          "Projected Real GDP Growth"
+        ],
+        "rows": [
+          [
+            "2025-30",
+            "8%"
+          ],
+          [
+            "2031-39",
+            "7%"
+          ],
+          [
+            "2041-47",
+            "5.2%"
+          ]
+        ],
+        "unit": "% average growth rate"
+      }
     },
     {
-      "q": "How many key strategies does the Telangana Vision 2047 outline?",
-      "a": "Ten",
-      "e": ""
-    },
-    {
-      "q": "What are the three core pillars of Telangana Vision 2047?",
+      "q": "What are the three core pillars structuring Telangana's ten key strategies for Vision 2047?",
       "a": "Economic Growth, Inclusive Development, Sustainable Development",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What are the three cross-cutting enablers of Telangana Vision 2047?",
+      "q": "What are the three cross-cutting enablers supporting Telangana's Vision 2047?",
       "a": "Technology and innovation, efficient financing, digital governance",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What does CURE stand for in the Telangana spatial framework?",
-      "a": "Core Urban Region Economy",
-      "e": ""
-    },
-    {
-      "q": "What does PURE stand for in the Telangana spatial framework?",
-      "a": "Peri-Urban Region Economy",
-      "e": ""
-    },
-    {
-      "q": "What does RARE stand for in the Telangana spatial framework?",
-      "a": "Rural Agri Region Economy",
-      "e": ""
-    },
-    {
-      "q": "What defines the boundary of the CURE zone?",
-      "a": "Outer Ring Road (ORR)",
-      "e": ""
-    },
-    {
-      "q": "What type of economy does the CURE zone function as?",
-      "a": "Net-Zero, service sector-only metropolis",
-      "e": ""
-    },
-    {
-      "q": "Between which two roads is the PURE zone located?",
-      "a": "ORR and RRR",
-      "e": "PURE lies between the Outer Ring Road and the Regional Ring Road and is dedicated to manufacturing."
-    },
-    {
-      "q": "What is the RARE zone's main focus?",
-      "a": "Agriculture, green economy, agri-based enterprises",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 1 of the Ten Key Strategies Framework called?",
-      "a": "Principal Strategy - The Three-Zone State (CURE-PURE-RARE)",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 2 of the Ten Key Strategies Framework?",
-      "a": "From Ad-Hocism to Policy Stability",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 3 of the Ten Key Strategies Framework?",
-      "a": "Game Changer Projects",
-      "e": ""
-    },
-    {
-      "q": "Name two Game Changer infrastructure projects mentioned under Strategy 3.",
-      "a": "Bharat Future City, River Musi rejuvenation",
-      "e": "Others include radial roads, regional ring road, regional ring railway, and bullet train corridors."
-    },
-    {
-      "q": "What is Strategy 4 of the Ten Key Strategies Framework?",
-      "a": "Excellence in Governance",
-      "e": ""
-    },
-    {
-      "q": "What is the name of the statewide connectivity initiative under Excellence in Governance?",
-      "a": "T-Fiber",
-      "e": ""
-    },
-    {
-      "q": "What is the fast-tracked investment facilitation initiative called?",
-      "a": "SPEED initiative",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 5 called?",
-      "a": "Knowledge Hub",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 6 called?",
-      "a": "Inclusive & Sustainable Welfare",
-      "e": ""
-    },
-    {
-      "q": "Name the three core empowerment streams under Strategy 6.",
-      "a": "Healthcare, education and skills, livelihood and financial empowerment",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 7 called?",
-      "a": "Resources for Growth",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 8 called?",
-      "a": "Environment and Sustainability",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 9 called?",
-      "a": "Culture",
-      "e": ""
-    },
-    {
-      "q": "Name the iconic cultural symbols mentioned under Strategy 9.",
-      "a": "Telangana Talli and the State Anthem",
-      "e": ""
-    },
-    {
-      "q": "What is Strategy 10 called?",
-      "a": "Of, For, and By the People",
-      "e": ""
-    },
-    {
-      "q": "How many districts' citizen voices shaped the Telangana Vision 2047?",
-      "a": "33 districts",
-      "e": ""
-    },
-    {
-      "q": "What percentage of citizen survey responses came from youth?",
-      "a": "More than 65%",
-      "e": ""
-    },
-    {
-      "q": "What is the \"Maximum 2-Hour Commuting Principle\"?",
-      "a": "Nearly 90% of population reaches metro core within 2 hours",
-      "e": "This principle uses an integrated mobility grid for urban-rural connectivity."
-    },
-    {
-      "q": "Within what radius are smaller towns organised into functional urban clusters?",
-      "a": "40 km radius",
-      "e": ""
-    },
-    {
-      "q": "What theories does the CURE-PURE-RARE framework combine?",
-      "a": "Central place theory and networked flow approaches",
-      "e": ""
-    },
-    {
-      "q": "On what four factors is the USD 3 trillion macroeconomic model grounded?",
-      "a": "Capital stock, labour force, TFP, human capital",
-      "e": "Capital stock accumulation, effective labour force expansion, Total Factor Productivity, and human capital development."
-    },
-    {
-      "q": "What is the projected Services Sector value by 2047 (GVA)?",
-      "a": "USD 1.95 trillion",
-      "e": ""
-    },
-    {
-      "q": "What is the projected Industry Sector value by 2047 (GVA)?",
-      "a": "USD 0.5 trillion",
-      "e": ""
-    },
-    {
-      "q": "What is the projected Agriculture and Allied Sectors value by 2047 (GVA)?",
+      "q": "What is the projected sectoral GVA target for the agriculture sector under Vision 2047?",
       "a": "USD 0.33 trillion",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is the value of taxes and subsidies across sectors by 2047?",
+      "q": "What is the projected sectoral GVA target for the industry sector under Vision 2047?",
+      "a": "USD 0.5 trillion",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the projected sectoral GVA target for the services sector under Vision 2047, and what makes it significant?",
+      "a": "USD 1.95 trillion",
+      "e": "Services is expected to be the principal growth driver, supported by high-value services and global investment ecosystems.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's GSDP at current prices for 2025-26 (PAE), and what was its growth rate?",
+      "a": "Rs. 17.82 lakh crore; 10.7%",
+      "e": "This is significantly higher than the national growth rate of 8.0% per the First Advance Estimates (FAE) by MoSPI.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's Per Capita Income (PCI) for 2025-26 (PAE), compared to the national average?",
+      "a": "Rs. 4,18,931 (Telangana) vs Rs. 2,19,575 (National)",
+      "e": "Telangana's PCI grew at 10.2%.",
+      "table": null
+    },
+    {
+      "q": "What was the primary sector GSVA in Telangana for 2025-26 (PAE), and its growth rate?",
+      "a": "Rs. 2,49,691 crore; 1.4% growth",
+      "e": "This sector contributed 15.1% to State GSVA.",
+      "table": null
+    },
+    {
+      "q": "What was the secondary sector GSVA in Telangana for 2025-26 (PAE), and its growth rate?",
+      "a": "Rs. 2,68,325 crore; 9.4% growth",
+      "e": "This sector contributed 16.3% to State GSVA.",
+      "table": null
+    },
+    {
+      "q": "What was the tertiary sector GSVA in Telangana for 2025-26 (PAE), and its growth rate?",
+      "a": "Rs. 11,30,596 crore; 13.5% growth",
+      "e": "This sector contributed 68.6% to State GSVA, reflecting a service-led economy.",
+      "table": null
+    },
+    {
+      "q": "According to the PLFS Quarterly Bulletin (Oct-Dec 2025), what was the sectoral share of employment in Telangana (combined Rural+Urban)?",
+      "a": "41.5% Agriculture, 22.2% Industries, 36.3% Services",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's total expenditure under the Budget Estimates for 2025-26?",
+      "a": "Rs. 3,04,865 crore",
+      "e": "Comprising revenue expenditure of Rs. 2,26,982 crore and capital expenditure of Rs. 36,504 crore.",
+      "table": null
+    },
+    {
+      "q": "What percentage of revenue expenditure was allocated to development expenditure in Telangana's 2025-26 Budget Estimates?",
+      "a": "78.9%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What were the total borrowings and repayments by Telangana's State Government and State-related entities between December 2023 and December 2025?",
+      "a": "Rs. 3,19,179 crore borrowings; Rs. 3,04,202 crore repayments",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What percentage of Telangana's rural population is engaged in agriculture and its allied activities, as per the PLFS Oct-Dec Quarterly report?",
+      "a": "62.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much did the Telangana government allocate for agriculture and allied activities in the 2025-26 Budget, and what percentage of total Budget Estimates does this represent?",
+      "a": "Rs. 26,684 crore; approximately 10.1%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was the total foodgrain production in Telangana for 2025-26 (SAE), compared to 2023-24?",
+      "a": "236.87 lakh MTs (2025-26) vs 207.95 lakh MTs (2023-24)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much did the livestock sector's GSVA contribution grow in 2025-26 (PAE), and to what value?",
+      "a": "5.1% growth; Rs. 1,03,525 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much was distributed under Rythu Bharosa during Vanakalam 2025-26, and to how many pattadars?",
+      "a": "Rs. 8,744.13 crore; 69.40 lakh pattadars",
+      "e": "This was distributed in just nine days, from 16.06.2025 to 24.06.2025.",
+      "table": null
+    },
+    {
+      "q": "How much paddy did Telangana procure at MSP during Vanakalam 2025-26, and what was its value?",
+      "a": "71.86 lakh metric tonnes (LMTs); Rs. 17,160 crore",
+      "e": "Procured from 14.35 lakh farmers through 8,448 Paddy Procurement Centres (PPCs).",
+      "table": null
+    },
+    {
+      "q": "Out of the total paddy procurement during Vanakalam 2025-26, how much comprised Sannarakam paddy, and what bonus amount was transferred to farmers?",
+      "a": "39.08 LMT Sannarakam; Rs. 1,940 crore bonus",
+      "e": "A total of Rs. 19,099 crore was directly credited into farmers' bank accounts overall.",
+      "table": null
+    },
+    {
+      "q": "What was the industrial sector's contribution to Telangana's GSVA in 2025-26 (PAE), and its growth rate?",
+      "a": "Rs. 3,04,217 crore; 8.1% growth",
+      "e": "This represents an 18.5% share of GSVA compared to 2024-25 (FRE).",
+      "table": null
+    },
+    {
+      "q": "Which sub-sector is the primary contributor to Telangana's industrial GSVA, and what share does it hold?",
+      "a": "Manufacturing; 45.1%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which industrial sub-sector recorded the highest growth rate in 2025-26 (PAE)?",
+      "a": "Construction",
+      "e": "Construction recorded 11.4% growth, the highest among industrial sub-sectors.",
+      "table": null
+    },
+    {
+      "q": "How much investment did the Telangana Industrial Infrastructure Corporation (TGIIC) attract through land allotments between December 2023 and December 2025?",
+      "a": "Rs. 88,534 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "In which category was Telangana recognised as a \"Top Achiever\" in the 2024 Ease of Doing Business assessment?",
+      "a": "Land Administration, Business Entry, Construction Permit Enablers, Services Sector",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much investment has the Life Sciences sector secured in Telangana, and how many jobs has it generated?",
+      "a": "Over Rs. 73,360 crore; 1,00,000 direct and 2,50,000 indirect jobs",
+      "e": "Secured through more than 190 investments.",
+      "table": null
+    },
+    {
+      "q": "What are the investment and job creation targets under the Next-Gen Life Sciences Policy 2026-2030?",
+      "a": "USD 25 billion investment; 5,00,000 new jobs by 2030",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is India's first and largest SAFRAN-CFM International Aero Engine MRO facility, and where is it located?",
+      "a": "Aero Engine MRO facility, Hyderabad",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's rank among merchandise export States for FY 2024-25, and what were its export earnings?",
+      "a": "7th rank; Rs. 1,61,843 crore",
+      "e": "This represented a 39.30% increase from the previous year.",
+      "table": null
+    },
+    {
+      "q": "What are Telangana's top two export categories for FY 2024-25, and their respective shares?",
+      "a": "Aircraft, Spacecraft & Parts (29.40%); Pharmaceutical Products (26.85%)",
+      "e": "The USA is the leading export destination.",
+      "table": null
+    },
+    {
+      "q": "What was Telangana's rank in NITI Aayog's Export Preparedness Index 2024, nationally and among landlocked states?",
+      "a": "8th nationally; 2nd among landlocked states",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What percentage of State GSVA does the Services sector contribute in 2025-26 (PAE), and what is its growth rate?",
+      "a": "68.6%; 13.5% growth",
+      "e": "This outperformed both Primary and Secondary sectors.",
+      "table": null
+    },
+    {
+      "q": "Which sub-sector constitutes the largest share of Services GSVA, and which recorded the highest growth rate?",
+      "a": "Real Estate, Ownership of Dwelling and Professional Services (largest); Trade, Repair, Hotels and Restaurants (highest growth)",
+      "e": "Real Estate etc. contributed 23.4% of total GSVA, while Trade, Repair, Hotels and Restaurants grew at 16.8%.",
+      "table": null
+    },
+    {
+      "q": "According to NITI Aayog's 2025 report, what share of India's total services output do Telangana, Karnataka, Maharashtra, and Tamil Nadu together account for?",
+      "a": "Nearly 40%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "As per the PLFS Quarterly Bulletin (Oct-Dec 2025), what share of total employment and urban employment does the services sector account for in Telangana?",
+      "a": "36.3% of total employment; 64.9% of urban employment",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What percentage of UDYAM portal-registered MSMEs in Telangana operate in the services sector?",
+      "a": "79.8%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much did Telangana's IT and ITeS sector generate in exports in 2024-25, and how many jobs did it support?",
+      "a": "Rs. 3.13 lakh crore; 9.39 lakh jobs",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What share of India's Global Capability Centres (GCCs) does Hyderabad host, and how many new GCCs did it attract in 2025 (up to October)?",
+      "a": "Nearly 20%; 40 new GCCs",
+      "e": "This was the highest among Indian cities.",
+      "table": null
+    },
+    {
+      "q": "According to NASSCOM's India Generative AI Startup Landscape 2025 report, what share of India's GenAI startups does Telangana account for, and what is its national rank?",
+      "a": "About 7%; 4th",
+      "e": "Karnataka leads with 39%, followed by Maharashtra (14%) and Delhi (9%).",
+      "table": null
+    },
+    {
+      "q": "What is the Telangana Data Exchange (TGDeX), and what has it achieved?",
+      "a": "India's first State-led Digital Public Infrastructure (DPI) for AI",
+      "e": "It has recorded over 2 lakh interactions and offers more than 350 open-source AI/ML models with 10 departmental use-cases.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's total contracted power capacity for 2025-26, and how is it split between fossil fuel and renewable sources?",
+      "a": "23,187 MW; 55.45% fossil fuel, 44.55% renewable",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many zero bills did the Gruha Jyothi Scheme issue, and what subsidy did this involve?",
+      "a": "10.97 crore zero bills; Rs. 3,901 crore subsidy",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What irrigation potential has Telangana created, out of the total envisaged potential?",
+      "a": "74.51 lakh acres out of 127.69 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's total road network length, and which category holds the largest share?",
+      "a": "1,29,017 km; Panchayat Raj roads (68,709 km)",
+      "e": "This brings the State's road density to 115.11 km per 100 sq. km.",
+      "table": null
+    },
+    {
+      "q": "What are the lengths of the Northern and Southern parts of the Regional Ring Road (RRR) project?",
+      "a": "161.52 km (Northern); 201 km (Southern)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many buses does the TGSRTC fleet operate, and how many daily passengers does it handle?",
+      "a": "9,990 buses; 62.26 lakh daily passengers",
+      "e": "Supported by the Maha Lakshmi Scheme, which facilitated 269.68 crore free trips for women.",
+      "table": null
+    },
+    {
+      "q": "By what percentage did air passenger traffic surge in 2024-25, and what was the total figure?",
+      "a": "16.49% surge; 2.9 crore passengers",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many Gram Panchayats does the T-Fiber initiative connect?",
+      "a": "8,895",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Bharat Future City, and how large is it?",
+      "a": "30,000-acre Net-Zero greenfield smart city",
+      "e": "Anchored by dedicated zones for AI, Health, Education, and Life Sciences.",
+      "table": null
+    },
+    {
+      "q": "What investment is being made through the Telangana Super Specialty Hospital Corporation Ltd. (SSHCL) to establish TIMS institutions?",
+      "a": "Rs. 9,339 crore",
+      "e": "Three autonomous 1,000-bed TIMS institutions are planned at Sanathnagar (Cardiac/Transplant), Alwal (Neurosciences), and LB Nagar (Gastro Sciences).",
+      "table": null
+    },
+    {
+      "q": "What is the bed capacity of the Warangal Super Specialty Hospital under the Warangal Health City project, and how large is the project area?",
+      "a": "2,000-bed hospital; 56 acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the investment for the NIMS expansion project?",
+      "a": "Rs. 1,600 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's current Maternal Mortality Ratio (MMR), compared to the national average?",
+      "a": "43 per 1,00,000 live births (Telangana) vs 88 (National)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are Telangana's Infant Mortality Rate (IMR) and Under-5 Mortality Rate (U5MR)?",
+      "a": "IMR 18; U5MR 22 per 1,000 live births",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are Telangana's long-term targets for MMR and IMR by 2047?",
+      "a": "MMR below 6; IMR below 7",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Following the \"One Medical College per District\" policy, what is Telangana's current medical education capacity?",
+      "a": "4,140 seats across 35 Government Medical Colleges (as of 2025)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the coverage limit under the Rajiv Aarogyasri Scheme, and how many new medical procedures were added to expand its scope?",
+      "a": "Rs. 10 lakh per family per year; 163 new procedures",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What coverage does the Employees Accidental Insurance Scheme provide for accidental death, air accidents, and life insurance?",
+      "a": "Rs. 1.2 crore, Rs. 2 crore, Rs. 10 lakh respectively",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many schools does Telangana have, and what is the total student enrollment?",
+      "a": "39,641 schools; 62.36 lakh students",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "As per UDISE 2024-25, what percentage of Telangana schools are equipped with digital libraries and functional computer facilities?",
+      "a": "85.7% digital libraries; 81.2% computer facilities",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many infrastructure works have Amma Adarsha Patashala Committees (AAPC) completed, and at what investment?",
+      "a": "58,632 works; Rs. 706 crore",
+      "e": "An additional Rs. 146 crore has been sanctioned as a dedicated sanitation budget.",
+      "table": null
+    },
+    {
+      "q": "On which days is ragi java provided under the Mid-Day Meal programme, and to which classes during 2025-26?",
+      "a": "Tuesday, Thursday, Saturday; Pre-Primary to Class X",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What new digital literacy initiative has Telangana introduced for Classes I-IX from 2025-26?",
+      "a": "AI and Digital Literacy",
+      "e": "Includes ICT labs, interactive panels, IT trade labs, and AXL computer labs.",
+      "table": null
+    },
+    {
+      "q": "What is the purpose of Young India Integrated Residential Schools being established in all Assembly Constituencies?",
+      "a": "Inclusive residential education for SC, ST, BC, Minority communities",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Where has Telangana inaugurated the Dr. Manmohan Singh Earth Sciences University?",
+      "a": "Kothagudem",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many Advanced Technology Centres (ATCs) are being set up under ITI 2.0 Transformation, and what annual training capacity will they create?",
+      "a": "118 ATCs; over 12,000 trainees annually",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is T-GATE, and what does it aim to achieve?",
+      "a": "Telangana Gateway for Adaptive Training and Employment",
+      "e": "Builds a unified ecosystem integrating vocational training, employment services, and career progression.",
+      "table": null
+    },
+    {
+      "q": "What is the name of Telangana's rights-based welfare approach, and what does it strengthen?",
+      "a": "Abhaya Hastam-Six Guarantees",
+      "e": "Strengthens financial security, housing, food security, and women's empowerment for vulnerable sections.",
+      "table": null
+    },
+    {
+      "q": "As of January 2026, how many passenger trips had women undertaken under the Mahalakshmi free bus facility, and what was the resulting female ridership increase?",
+      "a": "269.68 crore trips; approximately 67% ridership",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many families benefit from subsidised LPG cylinders, and how many benefit from the Gruha Jyothi scheme?",
+      "a": "42.90 lakh (LPG); 53.09 lakh (Gruha Jyothi)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many beneficiaries does the Cheyutha Pension Scheme cover?",
+      "a": "42.23 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many houses has the Indiramma Indlu programme sanctioned, out of its target?",
+      "a": "3,24,536 houses out of 4,50,000 target",
+      "e": "Each unit consists of two rooms, a separate kitchen, and a toilet.",
+      "table": null
+    },
+    {
+      "q": "Into how many groups has Telangana sub-classified its 59 Scheduled Castes for equitable reservation distribution?",
+      "a": "Three groups",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What does the \"Katamayya Rakshaka Kavacham\" initiative provide, and to whom?",
+      "a": "Safety kits to toddy tappers",
+      "e": "50,000 kits have been distributed to prevent occupational hazards.",
+      "table": null
+    },
+    {
+      "q": "How many families receive free fortified Sanna Biyyam through the Public Distribution System, and how many Anganwadi centres provide nutrition services?",
+      "a": "About 1.05 crore families; 35,781 Anganwadi centres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's forest cover extent, and what percentage of the State's geographical area does it represent?",
+      "a": "27,688 sq km; 24.69%",
+      "e": "This is higher than the national average of 23.59%.",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's long-term forest cover target?",
+      "a": "33%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many protected areas has Telangana notified for biodiversity conservation, and what do they comprise?",
+      "a": "12 protected areas",
+      "e": "Comprising nine wildlife sanctuaries and three national parks, managed by the Telangana Forest Department.",
+      "table": null
+    },
+    {
+      "q": "How many rural habitations out of the total have received safe drinking water access in Telangana?",
+      "a": "23,453 out of 24,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many individuals are employed under MGNREGS in Telangana, and what percentage of its target has been achieved?",
+      "a": "32.64 lakh individuals; 87.1% target achievement",
+      "e": "This generated 6.53 crore person-days of employment.",
+      "table": null
+    },
+    {
+      "q": "For what national award did Telangana receive recognition as the Best State, related to water conservation?",
+      "a": "Jal Sanchay Jan Bhagidari (JSJB)",
+      "e": "Recognised at the 6th National Water Awards.",
+      "table": null
+    },
+    {
+      "q": "How much annual financial support does the Indiramma Atmeeya Bharosa scheme provide to landless agricultural labourers?",
+      "a": "Rs. 12,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many women and SHGs does Telangana's Self-Help Group movement cover?",
+      "a": "47.04 lakh women; 4.62 lakh SHGs",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which Gram Panchayat secured the First Rank nationally under the Atma Nirbhar Panchayat Special Award (ANPSA) 2025, and what incentive did it win?",
+      "a": "Mall Gram Panchayat, Yacharam Mandal, Ranga Reddy district; Rs. 1 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's projected urban population share for 2026, compared to the projected national average?",
+      "a": "50.08% (Telangana) vs 36.01% (National)",
+      "e": "Per the National Population Projection Report (2011-2036); expected to rise to 57.60% (2.3 crore) by 2036 for Telangana vs 39.06% for India.",
+      "table": null
+    },
+    {
+      "q": "How many Urban Local Bodies does Telangana have, and how are they classified?",
+      "a": "132 ULBs (9 Corporations, 123 Municipalities)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Into which three corporations has the expanded Hyderabad metropolitan area been reorganised?",
+      "a": "GHMC, Cyberabad Municipal Corporation (CMC), Malkajgiri Municipal Corporation (MMC)",
+      "e": "Covering 12 zones, 60 circles, and 300 wards.",
+      "table": null
+    },
+    {
+      "q": "What is the combined estimated cost of the three strategic elevated corridors in northern Hyderabad?",
+      "a": "Rs. 7,406 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many daily passengers does the Hyderabad Metro Rail currently carry, and what is the proposed Phase-II expansion?",
+      "a": "About 5 lakh daily passengers; 162 km expansion",
+      "e": "The Phase-II expansion involves an investment of Rs. 43,848 crore.",
+      "table": null
+    },
+    {
+      "q": "What is GHMC's sewage treatment capacity target, and through how many STPs?",
+      "a": "100% target; 45 STPs",
+      "e": "Total capacity of 1,878 MLD.",
+      "table": null
+    },
+    {
+      "q": "What is the length of the Musi Riverfront Transformation project?",
+      "a": "55 km",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many domestic tourist visits and foreign tourist arrivals did Telangana record in calendar year 2025?",
+      "a": "8.49 crore domestic; 1.71 lakh foreign",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much total investment has the Telangana Rising Global Summit secured?",
+      "a": "Rs. 5.75 lakh crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What two Guinness World Records did the Bathukamma festival celebrations create in September 2025?",
+      "a": "Largest floral arrangement (19.44 metres); synchronised performance by 1,354 women",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many athletes registered for the Chief Minister's Cup 2025, including para athletes?",
+      "a": "5,41,103 athletes; 1,729 para athletes",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the Prajavani Programme, and where can citizens submit grievances in person?",
+      "a": "Citizen engagement platform; Mahatma Jyothiba Phule Praja Bhavan",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What unique identification system does the Telangana Bhu Bharati Act 2025 introduce for land parcels?",
+      "a": "Bhudhaar",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "By what percentage did Telangana achieve reductions in cybercrime complaints and financial losses in 2025?",
+      "a": "2% reduction in complaints; 23% decrease in financial losses",
+      "e": "This contrasts with a 24% national increase in cybercrime during the same period.",
+      "table": null
+    },
+    {
+      "q": "How many Praja Palana Seva Kendras were established to ensure citizen-centric service delivery?",
+      "a": "846",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many public representatives were elected in Telangana's recent local body elections?",
+      "a": "1,15,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana's target to transform into a USD 1-trillion economy, and by which year?",
+      "a": "2034",
+      "e": "This is an intermediate milestone before the USD 3-trillion target by 2047.",
+      "table": null
+    },
+    {
+      "q": "By how much does Telangana aim to increase its contribution to India's GDP by 2047?",
+      "a": "From 5% to 10%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What four elements anchor Telangana's Vision 2047 roadmap?",
+      "a": "Human capital, innovation, infrastructure, inclusive growth",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What defines the boundary of the CURE (Core Urban Region Economy) zone?",
+      "a": "Outer Ring Road (ORR)",
+      "e": "CURE will function as a Net-Zero, service sector-only metropolis.",
+      "table": null
+    },
+    {
+      "q": "Between which two boundaries is the PURE (Peri-Urban Region Economy) zone located?",
+      "a": "ORR and Regional Ring Road (RRR)",
+      "e": "This zone is dedicated to manufacturing.",
+      "table": null
+    },
+    {
+      "q": "What is the geographic scope of the RARE (Rural Agri Region Economy) zone?",
+      "a": "Beyond RRR to the State's final frontier boundary",
+      "e": "RARE focuses on agriculture, green economy, and agri-based enterprises.",
+      "table": null
+    },
+    {
+      "q": "What comprehensive policy areas has Telangana formulated under the \"From Ad-Hocism to Policy Stability\" strategy?",
+      "a": "Sports, tourism, education, industries and investments, social inclusivity",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are the major game-changer infrastructure projects under Vision 2047?",
+      "a": "Bharat Future City, River Musi rejuvenation, radial roads, regional ring road, regional ring railway, bullet train corridors",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What initiative supports fast-tracked investment facilitation under \"Excellence in Governance\"?",
+      "a": "SPEED initiative",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What three empowerment streams form the basis of Telangana's \"Inclusive & Sustainable Welfare\" strategy?",
+      "a": "Healthcare, education and skills, livelihood and financial empowerment",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What percentage of citizen survey responses for Vision 2047 came from youth?",
+      "a": "More than 65%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What theoretical approaches does the CURE-PURE-RARE framework combine?",
+      "a": "Central place theory and networked flow approaches",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Within what radius will smaller towns and cities be organised into functional urban clusters under the CURE-PURE-RARE framework?",
+      "a": "40 km",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the \"Maximum 2-Hour Commuting Principle,\" and what percentage of the population does it target?",
+      "a": "Nearly 90% of population reaching metropolitan core within two hours",
+      "e": "This utilises an integrated mobility grid for seamless urban-rural flow.",
+      "table": null
+    },
+    {
+      "q": "What four factors form the basis of the macroeconomic modelling behind the USD 3 trillion roadmap?",
+      "a": "Capital stock accumulation, effective labour force expansion, Total Factor Productivity (TFP), human capital development",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the projected sectoral GVA for Agriculture and Allied Sectors by 2047, and what transition does it represent?",
+      "a": "USD 0.33 trillion",
+      "e": "Represents a transition toward high-value agri-food processing and climate-smart farming.",
+      "table": null
+    },
+    {
+      "q": "What is the value of taxes and subsidies across sectors in the 2047 projection?",
       "a": "USD 0.22 trillion",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is the projected Real GDP growth rate during 2025-30?",
-      "a": "8%",
-      "e": ""
+      "q": "What is the Business as Usual (BaU) projection for Telangana's economy by 2047, compared to the USD 3 trillion target?",
+      "a": "USD 1.21 trillion (BaU) vs USD 3 trillion (target)",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is the projected Real GDP growth rate during 2031-39?",
-      "a": "7%",
-      "e": ""
-    },
-    {
-      "q": "What is the projected Real GDP growth rate during 2041-47?",
-      "a": "5.2%",
-      "e": ""
-    },
-    {
-      "q": "What is the Business as Usual (BaU) projection for Telangana's economy by 2047?",
-      "a": "USD 1.21 trillion",
-      "e": ""
-    },
-    {
-      "q": "By what multiple is human capital growth rate proposed to increase?",
+      "q": "By what multiple is the growth rate of human capital proposed to increase under the Three Decisive Fronts for Transformation?",
       "a": "1.75 times",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
       "q": "By what multiple is Total Factor Productivity (TFP) to be accelerated?",
       "a": "1.7 times",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What percentage of GSDP is investment targeted to reach?",
-      "a": "52%",
-      "e": ""
+      "q": "What percentage of GSDP is investment targeted to reach under Capital Formation, and what share must be privately driven?",
+      "a": "52% of GSDP; 80% private investment",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What percentage of required capital must come from private investment?",
-      "a": "80%",
-      "e": ""
+      "q": "Under the Job-Led Growth Model, how many additional jobs can each high-skilled R&D job generate in non-tradable sectors?",
+      "a": "Between 2.6 and 4.9 jobs",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What growth model anchors the State's strategy?",
-      "a": "Job-Led Growth Model",
-      "e": ""
-    },
-    {
-      "q": "How many additional jobs can each high-skilled R&D job generate in non-tradable sectors?",
-      "a": "2.6 to 4.9 jobs",
-      "e": ""
-    },
-    {
-      "q": "What is CURE envisioned as under the growth model?",
+      "q": "What role is CURE (Core Urban Region) envisioned to play in Telangana's innovation ecosystem?",
       "a": "State's global innovation and knowledge hub",
-      "e": ""
+      "e": "Anchored around Hyderabad, focusing on DeepTech, AI, Industry 4.0, GCCs, and advanced R&D.",
+      "table": null
     },
     {
-      "q": "What technologies will CURE serve as a centre for?",
-      "a": "DeepTech, AI, Industry 4.0, GCCs",
-      "e": ""
-    },
-    {
-      "q": "What is the length of the Musi Riverfront Rejuvenation corridor?",
+      "q": "What is the planned length of the Musi Riverfront Rejuvenation ecological and cultural corridor?",
       "a": "35–40 km",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "To what length will Metro Rail, LRTS, and BRTS networks expand?",
+      "q": "To what total length will Metro Rail, LRTS, and BRTS networks expand under the CURE zone's Advanced Mobility Systems?",
       "a": "Over 623 km",
-      "e": ""
+      "e": "This supports the concept of \"15-minute neighbourhoods.\"",
+      "table": null
     },
     {
-      "q": "What planning concept ensures access to essential services within CURE?",
-      "a": "15-minute neighbourhoods",
-      "e": ""
-    },
-    {
-      "q": "What two systems will enable predictive urban planning in CURE?",
-      "a": "Urban Digital Twin, Spatial Intelligence Platform",
-      "e": ""
-    },
-    {
-      "q": "What is PURE's main functional role?",
+      "q": "What is the primary function of PURE (Peri-Urban Region Economy) within Telangana's Vision 2047?",
       "a": "Manufacturing and logistics backbone",
-      "e": ""
+      "e": "Focuses on MSME clusters, eco-industrial parks, logistics corridors, and skill development centres.",
+      "table": null
     },
     {
-      "q": "Where are Bharat Industrial Parks located?",
-      "a": "Between ORR and RRR",
-      "e": ""
+      "q": "Where are the Bharat Industrial Parks located, and what industries will they promote?",
+      "a": "Between ORR and RRR; aerospace, defence, semiconductors, green technologies",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What sectors will Bharat Industrial Parks promote?",
-      "a": "Aerospace, defence, semiconductors, green technologies",
-      "e": ""
+      "q": "What does RARE (Rural Agriculture Region Economy) focus on, and what technologies will it leverage?",
+      "a": "Agrarian transformation and decentralised industrialisation",
+      "e": "Leverages AgriTech, climate-smart agriculture, livestock development, fisheries, handlooms, and forest-based livelihoods (NTFPs).",
+      "table": null
     },
     {
-      "q": "What does RARE focus on for agrarian transformation?",
-      "a": "Decentralised industrialisation",
-      "e": ""
-    },
-    {
-      "q": "What will each Mandal Headquarters (MHQ) be developed into?",
+      "q": "Into what will each Mandal Headquarters (MHQ) be developed under the RARE zone strategy?",
       "a": "Agro-Industrial and Logistics Hub",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is the mobile clinic and telemedicine initiative called?",
-      "a": "HealthNet",
-      "e": ""
+      "q": "What two initiatives aim to provide urban-grade healthcare and governance services at the village level under RARE?",
+      "a": "HealthNet and Jan Seva Centres",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What are the village-level digital governance and citizen support centres called?",
-      "a": "Jan Seva Centres",
-      "e": ""
+      "q": "What is the objective of the Telangana Scientific Return Programme (TGSRP)?",
+      "a": "Attract globally renowned researchers and \"scientific superstars\"",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What are the five foundational pillars of Telangana's Investment Magnet strategy?",
-      "a": "Policy Stability, Infrastructure, EoDB, Innovation, Quality of Life",
-      "e": "Full names: Policy Stability, World-Class Infrastructure, Ease of Doing Business, Robust Innovation Systems, Superior Quality of Life."
+      "q": "What flagship project anchors the Digital Telangana 2047 Mission?",
+      "a": "300-acre AI City",
+      "e": "",
+      "table": null
     },
     {
-      "q": "What was the year-on-year rise in FDI inflows to Telangana?",
-      "a": "33%",
-      "e": ""
+      "q": "What is the three-tier logistics system proposed under Vision 2047, and where are the Gateways (Multimodal Logistics Parks) located?",
+      "a": "Gateways, Regional Logistics Hubs, Mandal-Level Micro Hubs",
+      "e": "Gateways are located in Nalgonda, Warangal, Khammam, and Nizamabad.",
+      "table": null
     },
     {
-      "q": "How much FDI did Telangana receive between April and September 2024?",
-      "a": "Rs 12,864 crore",
-      "e": ""
+      "q": "What is the target for Hyderabad's future identity by 2047 in terms of urban culture and lifestyle?",
+      "a": "South Asia's Night-Time Capital",
+      "e": "",
+      "table": null
     },
     {
-      "q": "By what year does Telangana aim to achieve zero-touch, blockchain-enabled clearance workflows?",
+      "q": "What are the three specialised industrial clusters mentioned as Future-Ready Industrial Clusters under Vision 2047?",
+      "a": "Fab City, Telangana Mobility Valley, Genome Valley",
+      "e": "Fab City focuses on semiconductors, Telangana Mobility Valley on clean mobility, and Genome Valley on life sciences.",
+      "table": null
+    },
+    {
+      "q": "What are the five foundational pillars anchoring Telangana's \"Investment Magnet\" strategy?",
+      "a": "Policy Stability, World-Class Infrastructure, Ease of Doing Business, Robust Innovation Systems, Superior Quality of Life",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "By how much did FDI inflows rise year-on-year between April and September 2024, and what was the total?",
+      "a": "33% rise; Rs 12,864 crore",
+      "e": "This positioned Telangana at the top of national rankings in the first half of 2024-25.",
+      "table": null
+    },
+    {
+      "q": "By which year does Telangana aim to achieve zero-touch, blockchain-enabled clearance workflows?",
       "a": "2039",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is the name of the hub for investor dispute resolution?",
+      "q": "What is being established to bolster investor confidence through fast, fair dispute resolution, benchmarked against SIAC and LCIA?",
       "a": "International Arbitration and Mediation Centre",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "Against which international bodies is the Arbitration Centre benchmarked?",
-      "a": "SIAC and LCIA",
-      "e": "Singapore International Arbitration Centre and London Court of International Arbitration."
+      "q": "What is \"EduCity,\" and what is its purpose under the Investment Magnet strategy?",
+      "a": "Globally connected talent ecosystem",
+      "e": "Designed to attract and nurture diverse talent through financial incentives like relocation support and research grants.",
+      "table": null
     },
     {
-      "q": "What is the name of the globally connected talent ecosystem under Investment Magnet?",
-      "a": "EduCity",
-      "e": ""
+      "q": "What target does the Telangana GCC Policy (2025-2030) aim to achieve by 2030?",
+      "a": "15 million sq. ft. of Grade-A office space",
+      "e": "Aims to make Telangana the premier GCC hub for the Asia-Pacific.",
+      "table": null
     },
     {
-      "q": "What lending model is Telangana pivoting away from to address the \"missing middle\"?",
-      "a": "Collateral-dependent lending model",
-      "e": ""
-    },
-    {
-      "q": "What data types will the SME information exchange platform integrate?",
-      "a": "GST, PF/TDS, compliance data",
-      "e": ""
-    },
-    {
-      "q": "What facility will absorb downside risk to crowd in private VC and PE capital?",
-      "a": "Fund of Funds (FoF)",
-      "e": ""
-    },
-    {
-      "q": "What financing mechanism will lower borrowing costs for projects like the Regional Ring Road?",
-      "a": "Interest subvention",
-      "e": ""
-    },
-    {
-      "q": "What act will be implemented for land titling reform?",
-      "a": "Model Conclusive Land Titling Act",
-      "e": ""
-    },
-    {
-      "q": "What are the two cities/areas developed into innovation engines via a \"diffusion loop\"?",
+      "q": "Which cities are being transformed into self-sustaining innovation engines through a \"diffusion loop\"?",
       "a": "Nizamabad, Mahbubnagar, Siddipet",
-      "e": "These digital hubs are being transformed into self-sustaining innovation engines."
+      "e": "",
+      "table": null
     },
     {
-      "q": "What is the target office space for Global Capability Centres (GCCs) by 2030?",
-      "a": "15 million sq. ft.",
-      "e": ""
-    },
-    {
-      "q": "What years does the Telangana GCC Policy cover?",
-      "a": "2025–2030",
-      "e": ""
-    },
-    {
-      "q": "What is the platform focused on the ageing population and health tech called?",
+      "q": "What platform does Telangana use to lead the global silver economy focused on health tech and assistive devices?",
       "a": "ElderX",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "What global economy value does Telangana aim to lead through ElderX?",
-      "a": "USD 2 trillion silver economy",
-      "e": ""
-    },
-    {
-      "q": "Which city's governance model inspires Telangana's \"Design Capital\" approach?",
-      "a": "Helsinki",
-      "e": ""
-    },
-    {
-      "q": "What zone in Gachibowli and Financial District is being developed for banking?",
-      "a": "Banking Ops 2.0 Zone",
-      "e": ""
-    },
-    {
-      "q": "What is the name of the statewide consent-based lending infrastructure?",
-      "a": "Unified Lending Interface (ULI)",
-      "e": ""
-    },
-    {
-      "q": "On what framework is the Unified Lending Interface built?",
-      "a": "Account Aggregator framework and RBI's Public Tech Platform",
-      "e": ""
-    },
-    {
-      "q": "What is the bureau that generates credit scores using alternative data called?",
-      "a": "Telangana Information Bureau (TIB)",
-      "e": ""
-    },
-    {
-      "q": "How many Self-Help Groups (SHGs) will have their repayment histories digitised?",
+      "q": "How many SHGs' repayment histories are being digitised under SHG Modernisation for financial inclusion?",
       "a": "6.1 lakh SHGs",
-      "e": ""
+      "e": "",
+      "table": null
     },
     {
-      "q": "Under which scheme can women convert monthly payments into a lump sum grant?",
-      "a": "Mahalakshmi Yojana",
-      "e": ""
-    },
-    {
-      "q": "What is the maximum lump sum grant amount under Mahalakshmi Yojana?",
-      "a": "Rs 2 lakh",
-      "e": ""
-    },
-    {
-      "q": "Where is Bharat Future City located?",
-      "a": "Mucherla",
-      "e": ""
-    },
-    {
-      "q": "What is the total area of Bharat Future City?",
-      "a": "30,000 acres",
-      "e": ""
-    },
-    {
-      "q": "What is the area of the AI City zone within Bharat Future City?",
-      "a": "300 acres",
-      "e": ""
-    },
-    {
-      "q": "What is the area of the Health City zone within Bharat Future City?",
-      "a": "200 acres",
-      "e": ""
-    },
-    {
-      "q": "What is the area of the Life Sciences Hub within Bharat Future City?",
-      "a": "3,000 acres",
-      "e": ""
-    },
-    {
-      "q": "What is the area of the Education Hub within Bharat Future City?",
-      "a": "500 acres",
-      "e": ""
-    },
-    {
-      "q": "How many acres of reserve forest will Bharat Future City maintain?",
-      "a": "15,000 acres",
-      "e": ""
-    },
-    {
-      "q": "What urban planning concept is Bharat Future City designed as?",
-      "a": "15-Minute City",
-      "e": ""
-    },
-    {
-      "q": "What Net-Zero target year applies to Bharat Future City?",
-      "a": "2047",
-      "e": ""
-    },
-    {
-      "q": "What demographic dividend window is Telangana harnessing?",
-      "a": "2025–2036",
-      "e": ""
-    },
-    {
-      "q": "What is the apex institution redefining vocational education through credit-based lifelong learning?",
-      "a": "Young India Skills University (YISU)",
-      "e": ""
-    },
-    {
-      "q": "Industrial Training Institutes are being upgraded into what?",
-      "a": "Advanced Technology Centres (ATCs)",
-      "e": ""
-    },
-    {
-      "q": "What schools are being established for students from marginalised communities?",
-      "a": "Young India Integrated Residential Schools (YIIRS)",
-      "e": ""
-    },
-    {
-      "q": "What is the unified apex body for the State's skilling and employment agenda?",
-      "a": "Telangana Skill Development Mission (TGSDM)",
-      "e": ""
-    },
-    {
-      "q": "What is the digital marketplace for personalised career pathways called?",
-      "a": "Candidate-Centric Career Development and Employment Portal",
-      "e": ""
-    },
-    {
-      "q": "What do the C3AI metrics stand for?",
-      "a": "Competency, Aspiration, Aptitude, Attitude, Interest",
-      "e": ""
-    },
-    {
-      "q": "At which critical transition points does C3AI provide guidance?",
-      "a": "Class X, Class XII, college exit",
-      "e": ""
-    },
-    {
-      "q": "What apprenticeship model is Telangana adopting under the Skill Excellence Programme?",
-      "a": "German-style dual apprenticeship model",
-      "e": ""
-    },
-    {
-      "q": "What are the two tiers of the post-Class XII education structure?",
-      "a": "Tier-1 Teaching Universities, Tier-2 Research Universities",
-      "e": ""
-    },
-    {
-      "q": "What district innovation platform brings together research universities, schools, industry, and startups?",
-      "a": "Edu-City Innovation District",
-      "e": ""
-    },
-    {
-      "q": "What platform accelerates innovation by pooling labs and research infrastructure?",
-      "a": "T-Engine",
-      "e": ""
-    },
-    {
-      "q": "Which policy guides Telangana's sports strategy?",
-      "a": "Telangana Sports Policy 2025",
-      "e": ""
-    },
-    {
-      "q": "What pathway structure does the sports development strategy follow?",
-      "a": "Grassroots-to-Greatness",
-      "e": ""
-    },
-    {
-      "q": "What academy is being strengthened for elite athlete development?",
-      "a": "Young India Sports Academy (YISA)",
-      "e": ""
-    },
-    {
-      "q": "What are the three integrated pillars of youth development?",
-      "a": "Mind, Service, Identity",
-      "e": "Mind (mental health/well-being), Service (volunteering/social responsibility), Identity (cultural roots/value systems)."
-    },
-    {
-      "q": "What mission has Telangana launched for women's economic empowerment?",
-      "a": "Indira Mahila Shakthi Mission",
-      "e": ""
-    },
-    {
-      "q": "What does the Koti Mahila Koteeswarulu programme aim for?",
-      "a": "1 Crore Women as Decamillionaires",
-      "e": ""
-    },
-    {
-      "q": "What wing ensures women's safety at home, work, and public spaces?",
-      "a": "Women's Safety Wing",
-      "e": ""
-    },
-    {
-      "q": "What is Stree Nidhi?",
-      "a": "SHG-owned cooperative financial institution",
-      "e": "Provides rapid, affordable credit to SHG members to eliminate dependence on informal moneylenders."
-    },
-    {
-      "q": "Name two sectors Stree Nidhi supports enterprises in.",
-      "a": "Dairy, tailoring",
-      "e": "Also supports food processing, solar energy, and electric mobility."
-    },
-    {
-      "q": "What is the women-focused venture network under WE-Hub called?",
-      "a": "WE-Hub 2.0",
-      "e": ""
-    },
-    {
-      "q": "What framework helps women re-enter the workforce?",
-      "a": "Return-to-Work support framework",
-      "e": ""
-    },
-    {
-      "q": "What will Transgender citizens be protected by?",
-      "a": "Comprehensive Equality Code",
-      "e": ""
-    },
-    {
-      "q": "What fund is dedicated to Persons with Disabilities' medical needs?",
-      "a": "Medical Insurance Corpus Fund",
-      "e": ""
-    },
-    {
-      "q": "What centres provide rehabilitation for Persons with Disabilities at district level?",
-      "a": "District-Level Disability Rehabilitation Centres",
-      "e": ""
-    },
-    {
-      "q": "What percentage of Telangana's workforce is employed in agriculture?",
-      "a": "Nearly half",
-      "e": ""
-    },
-    {
-      "q": "How many RARE areas make up Telangana's agricultural transformation strategy?",
-      "a": "12 RARE areas",
-      "e": ""
-    },
-    {
-      "q": "What does RARE 1 prioritise?",
-      "a": "Climate-Smart Resilient Agri-Ecosystem",
-      "e": ""
-    },
-    {
-      "q": "To how many villages is natural farming being expanded under RARE 1?",
-      "a": "4,000 villages",
-      "e": ""
-    },
-    {
-      "q": "What does RARE 2 involve creating?",
-      "a": "Telangana Agriculture Bioinformatics Grid (TAG)",
-      "e": ""
-    },
-    {
-      "q": "What is RARE 3 called?",
-      "a": "Intensive Farming and Value-Addition Zones",
-      "e": ""
-    },
-    {
-      "q": "By how much will oil palm cultivation increase under RARE 3?",
-      "a": "Sixfold",
-      "e": ""
-    },
-    {
-      "q": "By how much will mulberry raw silk increase under RARE 3?",
-      "a": "Fivefold",
-      "e": ""
-    },
-    {
-      "q": "By how much will Tasar silk production increase under RARE 3?",
-      "a": "Eightfold",
-      "e": ""
-    },
-    {
-      "q": "What does RARE 4 aim to triple?",
-      "a": "Certified seed output",
-      "e": ""
-    },
-    {
-      "q": "How many integrated seed hubs will be established by 2047 under RARE 4?",
-      "a": "100 seed hubs",
-      "e": ""
-    },
-    {
-      "q": "What is RARE 5's international market project, and what is its cost?",
-      "a": "Koheda market, Rs 2,500 crore",
-      "e": ""
-    },
-    {
-      "q": "By how much will cold storage capacity expand under RARE 5?",
-      "a": "Fivefold",
-      "e": ""
-    },
-    {
-      "q": "What does RARE 6 focus on?",
-      "a": "Safe & Quality Nutritious Food",
-      "e": ""
-    },
-    {
-      "q": "Across how many acres will crop biofortification occur under RARE 6?",
-      "a": "25 lakh acres",
-      "e": ""
-    },
-    {
-      "q": "What milk production target does RARE 7 (Livestock & Dairy Growth) set?",
-      "a": "10 million tonnes",
-      "e": ""
-    },
-    {
-      "q": "What meat production target does RARE 7 set?",
-      "a": "3.5 million tonnes",
-      "e": ""
-    },
-    {
-      "q": "By what year will FMD, PPR, and Rabies be eradicated under RARE 7?",
-      "a": "2030",
-      "e": ""
-    },
-    {
-      "q": "What does RARE 8 empower women through?",
-      "a": "Backyard poultry programs",
-      "e": ""
-    },
-    {
-      "q": "What does RARE 9 provide for agri-entrepreneurs?",
-      "a": "Life insurance and incubation",
-      "e": ""
-    },
-    {
-      "q": "What is RARE 9 called?",
-      "a": "Empowered Farmer Cooperatives & Farmers Welfare",
-      "e": ""
-    },
-    {
-      "q": "What is RARE 10 (Blue Revolution) targeting?",
-      "a": "Fivefold increase in fish and prawn production",
-      "e": ""
-    },
-    {
-      "q": "How many jobs will the Blue Revolution (RARE 10) generate?",
-      "a": "Nearly a million jobs",
-      "e": ""
-    },
-    {
-      "q": "How many acres will be brought under agroforestry via RARE 11?",
-      "a": "20 lakh acres",
-      "e": ""
-    },
-    {
-      "q": "How many skill development centres will RARE 11 build?",
-      "a": "100 centres",
-      "e": ""
-    },
-    {
-      "q": "What does RARE 12 (Clean Energy Revolution) aim to transition?",
-      "a": "All farm pumps to solar power",
-      "e": ""
-    },
-    {
-      "q": "What do the Common People Reforms (CPR) integrate?",
-      "a": "Health, nutrition, and education",
-      "e": ""
-    },
-    {
-      "q": "What are the six life-course-based focus areas of the health vision?",
-      "a": "Nutrition, Maternal/Reproductive Health, Child/Adolescent Health, Healthcare Delivery, NCDs, Mental Health",
-      "e": ""
-    },
-    {
-      "q": "What is the mission providing Iron-Folic Acid supplementation and deworming?",
-      "a": "Anaemia Mukt Telangana",
-      "e": ""
-    },
-    {
-      "q": "What percentage WASH coverage is targeted across schools and health facilities?",
-      "a": "100%",
-      "e": ""
-    },
-    {
-      "q": "What units are being established at PHCs to manage acute malnutrition?",
-      "a": "Community-Based Management of Acute Malnutrition (CMAM)",
-      "e": ""
-    },
-    {
-      "q": "What percentage of institutional deliveries is being targeted?",
-      "a": "100%",
-      "e": ""
-    },
-    {
-      "q": "What fertility service is being made accessible in the public sector?",
-      "a": "In Vitro Fertilisation (IVF)",
-      "e": ""
-    },
-    {
-      "q": "What are urban centre facilities offering specialist consultations at the doorstep called?",
-      "a": "Polyclinics",
-      "e": ""
-    },
-    {
-      "q": "What standards will ensure uniform protocols across healthcare facilities?",
-      "a": "Indian Public Health Standards (IPHS)",
-      "e": ""
-    },
-    {
-      "q": "At what age is universal early screening for hypertension, diabetes, and cancers targeted?",
-      "a": "Adults over 30",
-      "e": ""
-    },
-    {
-      "q": "How many dialysis \"spokes\" will ensure access within a 15-km radius?",
-      "a": "Over 200",
-      "e": ""
-    },
-    {
-      "q": "What health record system links citizens via ABHA?",
-      "a": "Digital Health profiles/health cards",
-      "e": ""
-    },
-    {
-      "q": "In which two foreign languages will nurses be trained for global opportunities?",
-      "a": "German and Japanese",
-      "e": ""
-    },
-    {
-      "q": "By 2047, what percentage of GSDP will health expenditure increase to?",
-      "a": "8% (from 4%)",
-      "e": ""
-    },
-    {
-      "q": "What is the centrepiece mission for Foundational Literacy and Numeracy (FLN)?",
-      "a": "State Learning Mission",
-      "e": ""
-    },
-    {
-      "q": "What competency target is set for Grade 3 literacy and numeracy?",
-      "a": "80% competency",
-      "e": ""
-    },
-    {
-      "q": "Across how many campuses are YIIRS being established?",
-      "a": "105 campuses",
-      "e": ""
-    },
-    {
-      "q": "What two new institutional bodies anchor school education reform?",
-      "a": "TGSEB and TGSSA",
-      "e": "Telangana School Education Board and Telangana School Standards Authority."
-    },
-    {
-      "q": "What serves as the integrated data backbone for education planning and monitoring?",
-      "a": "Vidya Samiksha Kendra",
-      "e": ""
-    },
-    {
-      "q": "What percentage of Telangana's power capacity should come from renewables/storage by 2047?",
-      "a": "90%",
-      "e": ""
-    },
-    {
-      "q": "What is the projected power demand Telangana aims to meet by 2047?",
-      "a": "780 TWh",
-      "e": ""
-    },
-    {
-      "q": "How many public charging stations will be deployed by 2030?",
-      "a": "6,000",
-      "e": ""
-    },
-    {
-      "q": "How many polluting industries will be relocated under the Net-Zero Industry initiative?",
-      "a": "Over 1,600",
-      "e": ""
-    },
-    {
-      "q": "What percentage of industrial energy should come from clean sources under Net-Zero Industry?",
-      "a": "90%",
-      "e": ""
-    },
-    {
-      "q": "What water-efficient rice cultivation practice is targeted for 100% adoption?",
-      "a": "Direct Seeded Rice",
-      "e": ""
-    },
-    {
-      "q": "How many saplings will be planted to restore natural forests?",
-      "a": "More than 2 billion",
-      "e": ""
-    },
-    {
-      "q": "What fraction of Telangana's land is targeted for green cover by 2047?",
-      "a": "One-third",
-      "e": ""
-    },
-    {
-      "q": "What resource recovery percentage does the Waste-to-Wealth focus area target?",
-      "a": "98%",
-      "e": ""
-    },
-    {
-      "q": "What authority oversees Telangana's Net-Zero sectors?",
-      "a": "Telangana State Net-Zero Authority (TGNA)",
-      "e": ""
-    },
-    {
-      "q": "What fund mobilises finance for clean energy and climate-aligned growth?",
-      "a": "Climate Fund",
-      "e": ""
+      "q": "Under the Mahalakshmi Yojana, what lump sum grant can women opt to receive for enterprise development?",
+      "a": "Up to Rs 2 lakh",
+      "e": "",
+      "table": null
     }
   ]
 }

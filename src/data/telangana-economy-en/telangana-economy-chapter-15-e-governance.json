@@ -1,0 +1,872 @@
+{
+  "slug": "telangana-economy-chapter-15-e-governance",
+  "chapterNumber": 15,
+  "title": "e-Governance",
+  "faqs": [
+    {
+      "q": "What framework did the Telangana Government adopt for balanced development under its Vision 2047 roadmap?",
+      "a": "CURE-PURE-RARE",
+      "e": "A polycentric strategy for balanced and inclusive development across the State, moving beyond a Hyderabad-centric growth model.",
+      "table": null
+    },
+    {
+      "q": "What does CURE stand for in Telangana's Vision 2047 framework?",
+      "a": "Core Urban Region",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What does PURE stand for in Telangana's Vision 2047 framework?",
+      "a": "Peri-Urban Region",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What does RARE stand for in Telangana's Vision 2047 framework?",
+      "a": "Rural Agri Region",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "On what date did the first phase of Praja Palana begin across every Gram Panchayat and Municipal Ward?",
+      "a": "28th December 2023",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many applications were received across various welfare schemes under Praja Palana?",
+      "a": "1.09 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many Praja Palana Seva Kendras (PPSKs) were established?",
+      "a": "846",
+      "e": "Established to guide citizens facing bureaucratic hurdles under the decentralised delivery system.",
+      "table": null
+    },
+    {
+      "q": "What subsidy does the Maha Lakshmi scheme provide under Praja Palana?",
+      "a": "LPG cylinders at Rs. 500",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What benefit does the Gruha Jyothi scheme provide under Praja Palana?",
+      "a": "Free electricity up to 200 units",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "On which two days can citizens personally submit petitions under the Prajavani Program?",
+      "a": "Tuesday and Friday",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the subsidised meal price provided at Prajabhavan under Prajavani?",
+      "a": "Rs. 5",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much did the Chief Minister's Relief Fund (CMRF) sanction for Kum. Sowmya's heart surgery through Prajavani?",
+      "a": "Rs. 4 lakh",
+      "e": "An additional Rs. 5 lakh SHG loan through SERP bridged the remaining gap for the Rs. 9 lakh surgery.",
+      "table": null
+    },
+    {
+      "q": "For how many years did Kum. Sunitha, a 100% disabled woman, struggle without an Aadhaar card before Prajavani's intervention?",
+      "a": "15 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was the approximate cost of the life-saving treatment provided free to Smt. Sushmitha's premature newborn under the Rajiv Arogyasri scheme?",
+      "a": "Rs. 22.5 lakh",
+      "e": "The baby received critical neonatal care during a 45-day hospitalisation.",
+      "table": null
+    },
+    {
+      "q": "How many years had Sri Vetty Anand Rao's land dispute persisted before it was resolved through the Decentralised Prajavani Program pilot?",
+      "a": "60 years",
+      "e": "The dispute concerned 1.30 acres of land in Survey No. 157 in Pittabongaram village, Indravelli, Adilabad.",
+      "table": null
+    },
+    {
+      "q": "How long did Sri Kanchu Gangaiah spend in jail in Bahrain before Pravasi Prajavani helped secure his release?",
+      "a": "Six months",
+      "e": "He had migrated to Bahrain in 2008 and lost his passport when his employer seized it and his company shut down.",
+      "table": null
+    },
+    {
+      "q": "Which organisation provided Rs. 2 lakh in financial assistance and arranged travel for Pyatla Saibaba's return from Saudi Arabia?",
+      "a": "Saudi Arabia Telugu Association (SATA)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which department serves as the backbone for digital administration in Telangana, managing e-Procurement, e-Office and GOIR?",
+      "a": "ITE&C Department",
+      "e": "Information Technology, Electronics and Communications department.",
+      "table": null
+    },
+    {
+      "q": "What upgrade did the GOIR website's application and database servers undergo?",
+      "a": "Windows Server 2012 to Windows Server 2022",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "From how many instances has the eOffice application expanded to its current 36 instances?",
+      "a": "Three",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "With which company did the Telangana Government sign an MoU in February 2025 to migrate the eOffice workload to the cloud?",
+      "a": "Microsoft",
+      "e": "The migration to Azure Cloud was coupled with an upgrade from eOffice Version 5.x to 7.x.",
+      "table": null
+    },
+    {
+      "q": "What is the name of the AI-powered WhatsApp chatbot revamped by the department for departmental services information?",
+      "a": "MEDHA",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What AI technology is used to mask sensitive Aadhaar numbers on certified copies under e-Aadhaar signing?",
+      "a": "Aadhaar NIBHRIT",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What does T-SAT stand for?",
+      "a": "Telangana Skills, Academics & Training",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many subscribers does T-SAT have across its platforms?",
+      "a": "Over 4.8 million",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is T-SAT's motto?",
+      "a": "Educate. Empower. Enlighten.",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What are the five specialised YouTube channels operated by T-SAT?",
+      "a": "TSAT Vidya, Nipuna, Agri, Culture, Health",
+      "e": "TSAT Vidya covers academics, Nipuna covers skills/competitive exams, Agri covers innovation, Culture and Health cover their respective domains.",
+      "table": {
+        "headers": [
+          "Channel",
+          "Focus Area"
+        ],
+        "rows": [
+          [
+            "TSAT Vidya",
+            "Academics"
+          ],
+          [
+            "TSAT Nipuna",
+            "Skills and competitive exams"
+          ],
+          [
+            "TSAT Agri",
+            "Innovation"
+          ],
+          [
+            "TSAT Culture",
+            "Culture"
+          ],
+          [
+            "TSAT Health",
+            "Health"
+          ]
+        ],
+        "unit": "T-SAT YouTube channels"
+      }
+    },
+    {
+      "q": "On what date did the Telangana Bhu Bharati (Record of Rights in Land) Act, 2025 officially come into force?",
+      "a": "April 14, 2025",
+      "e": "Communicated via G.O.Ms.No.36, with rules notified under G.O.Ms.No.39.",
+      "table": null
+    },
+    {
+      "q": "What is the name of the unique identification number assigned to every land parcel under the Bhu Bharati Act?",
+      "a": "Bhudhaar",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the name of the AI-powered chatbot on the Bhu Bharati Portal that assists users?",
+      "a": "Bhu Mitra",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which organisation developed and maintains the Bhu Bharati Portal's technical architecture?",
+      "a": "NIC Telangana",
+      "e": "The portal comprises six transactional and five informative modules.",
+      "table": null
+    },
+    {
+      "q": "As of March 1, 2026, how many crore hits had the Bhu Bharati Portal recorded (cumulative from 14.04.2025)?",
+      "a": "4.68 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What does MeeSeva mean in Telugu?",
+      "a": "At your service",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many services does MeeSeva offer, and through how many centres?",
+      "a": "500+ services, 5,000+ centres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is T-Wallet recognised as in India?",
+      "a": "First State-owned wallet",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "By mid-December 2025, how much had T-Wallet's total collected amount reached?",
+      "a": "Rs. 2,974.01 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was the growth trend in T-Wallet's collected amount between 2023-24 and 2024-25?",
+      "a": "Nearly doubled",
+      "e": "",
+      "table": {
+        "headers": [
+          "Metric",
+          "2023-24",
+          "2024-25"
+        ],
+        "rows": [
+          [
+            "Transactions",
+            "18.98 lakh",
+            "24.76 lakh"
+          ],
+          [
+            "Collection",
+            "Rs. 2,604.38 crore",
+            "Rs. 4,298.18 crore"
+          ]
+        ],
+        "unit": "T-Wallet growth figures"
+      }
+    },
+    {
+      "q": "In which month was the Mee Ticket App launched?",
+      "a": "January 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How much revenue did the Mee Ticket App generate within its first 10 months?",
+      "a": "Rs. 1.75 crore",
+      "e": "It facilitated 80,316 transactions and 2,88,630 tickets booked, expanding to 221 locations.",
+      "table": null
+    },
+    {
+      "q": "On what date was MeeSeva through WhatsApp launched, and by whom?",
+      "a": "18th November 2025, by D. Sridhar Babu",
+      "e": "Sridhar Babu was the Hon'ble Minister for Information Technology.",
+      "table": null
+    },
+    {
+      "q": "How many Government to Citizen (G2C) services does MeeSeva through WhatsApp offer, and across how many departments?",
+      "a": "580+ services, 40+ departments",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "In how many districts is the State AI Team's facial recognition technology currently being piloted for attendance monitoring?",
+      "a": "4 districts",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What does SEEEPC stand for?",
+      "a": "Socio, Economic, Educational, Employment, Political and Caste",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What percentage reservation does the Telangana Backward Classes, Scheduled Castes and Scheduled Tribes Act, 2025 provide in education and public employment?",
+      "a": "42%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the name of the second legislation ensuring Backward Classes participation in local self-governance based on SEEEPC Survey findings?",
+      "a": "Telangana Backward Classes (Reservation of Seats in Rural and Urban Local Bodies) Act, 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "To whom have both SEEEPC-based Bills been forwarded for assent?",
+      "a": "President of India",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What methodology does TGCSB follow for its cybersecurity operations?",
+      "a": "Adopt, Identify, Protect, Detect, Respond and Recover",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "By what percentage did cybercrime reduce in Telangana in 2025, compared to the national trend?",
+      "a": "2% reduction (vs 24% national increase)",
+      "e": "Financial losses also decreased by 23% in Telangana against a 4% national reduction.",
+      "table": null
+    },
+    {
+      "q": "How much did defrauded amounts saved increase to in 2025?",
+      "a": "Rs. 279.23 crore",
+      "e": "Up from Rs. 225 crore in 2024, a 10% improvement.",
+      "table": null
+    },
+    {
+      "q": "How many victims received refunds of Rs. 182.97 crore through Lok Adalats and regular courts via TGCSB's streamlined SOP?",
+      "a": "29,273 victims",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What percentage of NCRP complaints above Rs. 10 lakh were converted into FIRs in 2025?",
+      "a": "83%",
+      "e": "This resulted in 20,086 FIRs in 2025.",
+      "table": null
+    },
+    {
+      "q": "How many arrests, SIM card blockings, and IMEI blockings resulted from TGCSB's law enforcement priorities in 2025?",
+      "a": "1,878 arrests, 9,579 SIM cards, 8,854 IMEIs",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the cybercrime helpline number enhanced by TGCSB?",
+      "a": "1930",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was the average call waiting time on the 1930 helpline in 2025, down from 2023?",
+      "a": "3 minutes (from 6 minutes in 2023)",
+      "e": "Zero waiting time was achieved in 2026 with a 100% call answer rate after the Voice Bot launch.",
+      "table": null
+    },
+    {
+      "q": "What percentage of cybercrime victims analysed by the 1930 helpline team were aged 18-45?",
+      "a": "82%",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many Child Sexual Exploitation & Abuse Material (CSEAM) arrests were made in 2025, compared to 2024?",
+      "a": "421 arrests (vs 39 in 2024)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many online exploitation tip lines did the Child Protection Unit (CPU) handle?",
+      "a": "1,20,563",
+      "e": "This resulted in registering 870 FIRs.",
+      "table": null
+    },
+    {
+      "q": "On what dates was the SHIELD 2025 cybersecurity conclave held, and at which venue?",
+      "a": "18-19 February 2025, HICC",
+      "e": "Held at Hyderabad International Convention Centre in collaboration with the Society for Cyberabad Security Council (SCSC).",
+      "table": null
+    },
+    {
+      "q": "What are the three key initiatives launched under SHIELD 2.0 in February 2026?",
+      "a": "1930 Saarthi, Sentinel/C-Sight, CipherSprint",
+      "e": "",
+      "table": {
+        "headers": [
+          "Initiative",
+          "Purpose"
+        ],
+        "rows": [
+          [
+            "1930 Saarthi",
+            "AI Voice Agent for faster complaint registration"
+          ],
+          [
+            "Sentinel (CCIT) and C-Sight",
+            "Real-time threat detection and monitoring"
+          ],
+          [
+            "CipherSprint",
+            "Innovation challenge for cybersecurity solutions"
+          ]
+        ],
+        "unit": "SHIELD 2.0 initiatives (Feb 2026)"
+      }
+    },
+    {
+      "q": "On what date was the 'Fraud Ka Full Stop' campaign launched, and by whom?",
+      "a": "2 December 2025, Director General of Police",
+      "e": "A six-week statewide awareness campaign involving 4,046 programmes reaching approximately 3.3 lakh citizens.",
+      "table": null
+    },
+    {
+      "q": "At how many locations were Cyber Academies established?",
+      "a": "Five",
+      "e": "TGCSB HQ, RBVRR Telangana Police Academy, and Police Training Colleges at Medchal, Karimnagar, and Warangal.",
+      "table": null
+    },
+    {
+      "q": "How many cyber offenders did Cyber Crime Police Stations (CCPSs) arrest in 2025, and what is the cumulative total since inception?",
+      "a": "393 in 2025; 653 cumulative",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many betting-related URLs were identified and taken down by TGCSB in 2025?",
+      "a": "148",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Through coordination with which platform did TGCSB receive 89 real-time suicide alerts, rescuing 76 individuals?",
+      "a": "Meta",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which university partnered with TGCSB for legal awareness and training on cyber laws and digital evidence?",
+      "a": "NALSAR University of Law",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "From what figure did Hyderabad's vehicular population rise to by November 2025?",
+      "a": "94.16 lakh (from 42.2 lakh in 2014)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was Hyderabad's average travel speed increase from 2024 to 2025 due to Traffic Police initiatives?",
+      "a": "20.1 km/hr to 23.40 km/hr",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "By how much did drunken driving cases reduce from 2024 to 2025?",
+      "a": "52,149 to 43,023",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What campaign has been pivotal in clearing footpaths and carriageways of encroachments?",
+      "a": "Operation ROPE",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many transgender individuals were appointed as Traffic Assistants by Hyderabad Traffic Police?",
+      "a": "39",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "By how much did road accident cases drop from 2024 to 2025 in Hyderabad?",
+      "a": "2839 to 1823",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What policing strategy encompasses Telangana Police's women's safety framework?",
+      "a": "SMART policing",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many by-hand petitions did the Domestic Violence (DV) Module receive in 2025?",
+      "a": "240",
+      "e": "Resulting in 35 FIR registrations and 34 reunions.",
+      "table": null
+    },
+    {
+      "q": "What is CDEW recognised as India's first of its kind?",
+      "a": "Police-administered family counselling project",
+      "e": "Combines law enforcement with counselling expertise for marital discord and domestic disputes.",
+      "table": null
+    },
+    {
+      "q": "What marriage restoration rate did CDEW achieve in closed cases in 2025?",
+      "a": "38%",
+      "e": "The cumulative success reunion rate since inception is nearly 40%.",
+      "table": null
+    },
+    {
+      "q": "Which Act do SAHAS Help Desks enforce for workplace safety?",
+      "a": "POSH Act 2013",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "On what date did the Pride Place Cell sign an MoU with Yugantar NGO?",
+      "a": "July 24, 2025",
+      "e": "To improve crisis coordination and rescue operations for queer-trans persons.",
+      "table": null
+    },
+    {
+      "q": "How many cases has the NRI Cell for Protection of Deserted NRI Spouses managed as of November 2025?",
+      "a": "564 cases",
+      "e": "Achieving successful settlements in 209 instances.",
+      "table": null
+    },
+    {
+      "q": "How many Look Out Circulars (LOCs) are in force against NRI spouses?",
+      "a": "229",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many petitions did SHE Teams' application software record in 2025, compared to 2024?",
+      "a": "18,185 (vs 13,405 in 2024)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What investigation disposal rate did the Sexual Offences Module (SOM) achieve for Rape and POCSO cases in 2025?",
+      "a": "76.99%",
+      "e": "The module monitors progress to ensure investigation completion within 60 days.",
+      "table": null
+    },
+    {
+      "q": "In which month/year was the T-Safe Service launched?",
+      "a": "March 2024",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many total trips and SOS alerts did T-Safe Service record as of November 2025?",
+      "a": "59,973 trips, 50,352 SOS alerts",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many Bharosa Centres and One Stop Centres exist in the State?",
+      "a": "35 and 36 respectively",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What crimes do Anti-Human Trafficking Units (AHTU) combat, and across how many Police Units?",
+      "a": "Human trafficking, bonded/child labour; 31 Units",
+      "e": "AHTU also addresses illegal adoption and child pornography, conducting drives like Smile and Muskaan.",
+      "table": null
+    },
+    {
+      "q": "How many missing children has the DARPAN facial recognition application successfully reunited with their families?",
+      "a": "39",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "By what name was the Telangana Anti-Narcotics Bureau (TGANB) renamed in June 2025?",
+      "a": "EAGLE",
+      "e": "Elite Action Group for Drug Law Enforcement.",
+      "table": null
+    },
+    {
+      "q": "How many NDPS cases were registered up to December 22, 2025, and how many individuals arrested?",
+      "a": "2,663 cases, 5,558 individuals",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What was the worth of drugs seized in 2025?",
+      "a": "Rs. 128.38 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many foreign nationals were arrested in 2025 for drug-related crimes, primarily from which countries?",
+      "a": "20; Nigeria and Nepal",
+      "e": "Additionally, 41 foreigners were deported during 2025.",
+      "table": null
+    },
+    {
+      "q": "Approximately how many \"Anti-Drug Soldiers\" were enrolled as of 2025?",
+      "a": "59,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many Anti-Drug Committees (ADCs) were formed in junior colleges, and across how many districts?",
+      "a": "1,405 ADCs, 21 districts",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which prison in Telangana was awarded a Gold Medal as the Best Hygiene Prison in India in 2025?",
+      "a": "Central Prison, Cherlapalli",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is Telangana the first State in India to establish for inmates struggling with substance abuse?",
+      "a": "NIVRUTTI De-addiction Centres",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the motto of the prison education initiative that made 23,220 prisoners literate?",
+      "a": "Thumb In – Sign Out",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Through which two universities do inmates access higher education, earning Bachelor's and Post Graduate degrees?",
+      "a": "Dr. BRAOU and IGNOU",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Through which institute can inmates enrol in Class X courses?",
+      "a": "National Institute of Open Schooling (NIOS)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the maximum daily wage now paid to highly skilled prisoners, enhanced in 2024?",
+      "a": "Rs. 200",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many \"My Nation\" Fuel Outlets provide employment to released and semi-open prisoners?",
+      "a": "32",
+      "e": "These outlets paid over Rs. 3.79 crore in salaries during 2025.",
+      "table": null
+    },
+    {
+      "q": "What do the \"Waste to Wealth\" initiatives convert temple flowers and old tyres into?",
+      "a": "Incense sticks and furniture",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Between what dates did the State Government's massive recruitment drive take place?",
+      "a": "07-12-2023 to 10-03-2026",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many total posts were filled in the recruitment drive across various administrative domains?",
+      "a": "67,763",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "How many selections did the Telangana Public Service Commission (TGPSC) alone account for?",
+      "a": "17,326",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Which department received the highest number of recruitment posts, and how many?",
+      "a": "Home Department, 15,714",
+      "e": "Followed by Secondary Education (10,272 posts) and Health, Medical & Family Welfare (9,023 posts).",
+      "table": null
+    },
+    {
+      "q": "How many secretariat departments were reinforced through this recruitment initiative?",
+      "a": "27",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the department-wise breakdown of recruitment posts filled between 07-12-2023 and 10-03-2026?",
+      "a": "Home Department highest, Planning Department lowest",
+      "e": "The full breakdown spans 27 departments totalling 67,763 posts.",
+      "table": {
+        "headers": [
+          "Department",
+          "No. of Posts"
+        ],
+        "rows": [
+          [
+            "Home Department",
+            "15,714"
+          ],
+          [
+            "Secondary Education Department",
+            "10,272"
+          ],
+          [
+            "Health, Medical & Family Welfare Department",
+            "9,023"
+          ],
+          [
+            "Revenue Department",
+            "8,079"
+          ],
+          [
+            "Backward Classes Welfare Department",
+            "5,829"
+          ],
+          [
+            "Municipal Administration & Urban Development",
+            "3,229"
+          ],
+          [
+            "Scheduled Castes Development Department",
+            "2,609"
+          ],
+          [
+            "Higher Education Department",
+            "2,474"
+          ],
+          [
+            "Panchayat Raj and Rural Development",
+            "1,685"
+          ],
+          [
+            "Minorities Welfare Department",
+            "1,595"
+          ],
+          [
+            "Energy Department",
+            "1,550"
+          ],
+          [
+            "Tribal Welfare Department",
+            "1,452"
+          ],
+          [
+            "Irrigation & Command Area Development",
+            "1,249"
+          ],
+          [
+            "Finance Department",
+            "1,115"
+          ],
+          [
+            "Transport, Roads and Buildings Department",
+            "458"
+          ],
+          [
+            "Women, Children, Disabled and Senior Citizens",
+            "329"
+          ],
+          [
+            "Agriculture and Co-operation",
+            "298"
+          ],
+          [
+            "General Administration",
+            "216"
+          ],
+          [
+            "Labour and Employment",
+            "183"
+          ],
+          [
+            "Animal Husbandry, Dairy Development & Fisheries",
+            "176"
+          ],
+          [
+            "Food & Civil Supplies",
+            "88"
+          ],
+          [
+            "Industries and Commerce",
+            "65"
+          ],
+          [
+            "Environment, Forest, Science & Technology",
+            "31"
+          ],
+          [
+            "Youth Advancement, Tourism and Culture",
+            "17"
+          ],
+          [
+            "Legislative Secretariat",
+            "15"
+          ],
+          [
+            "Law Department",
+            "7"
+          ],
+          [
+            "Planning Department",
+            "5"
+          ],
+          [
+            "GRAND TOTAL",
+            "67,763"
+          ]
+        ],
+        "unit": "Number of posts, Source: Finance Department, Government of Telangana"
+      }
+    },
+    {
+      "q": "How many public representatives were newly elected in Telangana's recent Local Body Elections?",
+      "a": "Over 1,15,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the duration and date range of the Praja Palana – Pragathi Pranalika Action Plan?",
+      "a": "99 days (06.03.2026–12.06.2026)",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "Around how many key themes is the Praja Palana – Pragathi Pranalika programme organised?",
+      "a": "10",
+      "e": "Themes include cleanliness, file clearance, Health, Road safety ('Arrive – Alive'), Welfare, Child Protection, Agriculture, Education, Youth and Sports, Women, and Environment.",
+      "table": null
+    },
+    {
+      "q": "Through how many stages is the Praja Palana – Pragathi Pranalika programme conducted?",
+      "a": "5 stages",
+      "e": "From Gram Panchayat, Mandal, Assembly Constituency, District, to State level.",
+      "table": null
+    },
+    {
+      "q": "On what date did District Collectors organise a one-day training programme for newly elected local body representatives?",
+      "a": "12th March 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What economic target does Telangana's governance roadmap aim for by 2047?",
+      "a": "$3 Trillion economy",
+      "e": "",
+      "table": null
+    },
+    {
+      "q": "What is the name of the digital exchange driving Telangana's \"zero-touch\" digital transformation?",
+      "a": "Telangana Digital Exchange (TGDeX)",
+      "e": "",
+      "table": null
+    }
+  ]
+}
