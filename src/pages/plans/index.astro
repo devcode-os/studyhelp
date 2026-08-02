@@ -149,13 +149,22 @@ const subjects = [
     }
 
     function setButtonToOpen(btn, subject_id) {
-      btn.textContent = 'Open — Unlimited access';
-      btn.classList.remove('buy-btn');
-      btn.style.background = 'var(--accent)';
-      btn.style.color = '#fff';
-      btn.onclick = () => {
+      // Clone the node to strip any previously attached addEventListener
+      // handlers (the buy-flow listener below), so this button can never
+      // have both a "buy" listener and an "open" handler firing on the
+      // same click.
+      const freshBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(freshBtn, btn);
+
+      freshBtn.disabled = false;
+      freshBtn.textContent = 'Open — Unlimited access';
+      freshBtn.classList.remove('buy-btn');
+      freshBtn.style.background = 'var(--accent)';
+      freshBtn.style.color = '#fff';
+      freshBtn.onclick = () => {
         window.location.href = `/${subject_id}/`;
       };
+      return freshBtn;
     }
 
     document.querySelectorAll('.buy-btn').forEach((btn) => {
@@ -178,7 +187,7 @@ const subjects = [
 
           if (!res.ok) {
             if (order.error === 'Already purchased') {
-              setButtonToOpen(btn, subject_id);
+              setButtonToOpen(btn, subject_id); // btn is cloned+replaced internally; safe even though this listener is on the old node
               return;
             }
             alert(order.error || 'Could not start payment');
