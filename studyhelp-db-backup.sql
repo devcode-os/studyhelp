@@ -1,0 +1,94 @@
+PRAGMA defer_foreign_keys=TRUE;
+CREATE TABLE users (
+  id TEXT PRIMARY KEY,
+  email TEXT UNIQUE,
+  phone TEXT,
+  created_at INTEGER DEFAULT (unixepoch())
+);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('test-user-1','test@example.com',NULL,1785602046);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s@gmail.com','s@gmail.com',NULL,1785606528);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s2@gmail.co','s2@gmail.co',NULL,1785607292);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s2@gmail.com','s2@gmail.com',NULL,1785607333);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s3@gmail.com','s3@gmail.com',NULL,1785607692);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s4@gmail.com','s4@gmail.com',NULL,1785609398);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s5@gmail.com','s5@gmail.com',NULL,1785610022);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s6@gmail.com','s6@gmail.com',NULL,1785610447);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('s7@gmail.com','s7@gmail.com',NULL,1785611432);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('f@gmail.com','f@gmail.com',NULL,1785619063);
+INSERT INTO "users" ("id","email","phone","created_at") VALUES('sdd@gmail.com','sdd@gmail.com',NULL,1785633350);
+CREATE TABLE subjects (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  price_paise INTEGER NOT NULL
+);
+INSERT INTO "subjects" ("id","name","price_paise") VALUES('ts-history-modern','Modern TS History',100);
+INSERT INTO "subjects" ("id","name","price_paise") VALUES('telangana-history-te','Telangana History',19900);
+INSERT INTO "subjects" ("id","name","price_paise") VALUES('telangana-economy-te','Telangana Economy',19900);
+INSERT INTO "subjects" ("id","name","price_paise") VALUES('telangana-economy-en','Telangana Economy',19900);
+CREATE TABLE orders (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  amount_paise INTEGER NOT NULL,
+  status TEXT NOT NULL DEFAULT 'created',
+  created_at INTEGER DEFAULT (unixepoch()),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (subject_id) REFERENCES subjects(id)
+);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKZb3GvXNfLbDm','test-user-1','ts-history-modern',100,'created',1785602073);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKZl5dO79T7LOW','test-user-1','ts-history-modern',100,'created',1785602643);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKZoSg8XwLBK4B','test-user-1','ts-history-modern',100,'created',1785602834);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKZoewb8jF7h3o','test-user-1','ts-history-modern',100,'created',1785602846);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKZooz8qV1paI5','test-user-1','ts-history-modern',100,'created',1785602855);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKZrFiJgSoxsDd','test-user-1','ts-history-modern',100,'failed',1785602993);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKZvVUBebtOs8J','test-user-1','ts-history-modern',100,'paid',1785603234);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKarV0QmgvrcoS','s@gmail.com','telangana-history-te',19900,'paid',1785606528);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKb4x1R1nLME6L','s2@gmail.co','telangana-history-te',19900,'created',1785607293);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKb5ErnOcLpbQz','s2@gmail.co','telangana-history-te',19900,'created',1785607309);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKb5fOmYOd68Bj','s2@gmail.com','telangana-history-te',19900,'paid',1785607333);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKbBz01POOquDC','s3@gmail.com','telangana-history-te',19900,'paid',1785607692);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKbg2MB1RZ57FK','s4@gmail.com','telangana-economy-en',19900,'paid',1785609399);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKbr1RiryxSGeS','s5@gmail.com','telangana-economy-en',19900,'paid',1785610023);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKbsncn0ppP74Z','s5@gmail.com','telangana-history-te',19900,'paid',1785610124);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKbyUbUlhzUdMK','s6@gmail.com','telangana-economy-en',19900,'paid',1785610447);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKc2ERCIbeIFj9','s6@gmail.com','telangana-history-te',19900,'paid',1785610660);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKcFpdkFPsVguk','s7@gmail.com','telangana-history-te',19900,'paid',1785611432);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKcGjO539zs4js','s7@gmail.com','telangana-economy-en',19900,'paid',1785611483);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKeQC0OxwiY87W','f@gmail.com','telangana-economy-en',19900,'paid',1785619064);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKeWPuuOsuR9RT','f@gmail.com','telangana-history-te',19900,'paid',1785619417);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKiTin4R9koSP1','sdd@gmail.com','telangana-history-te',19900,'paid',1785633351);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKiXYi1Buk6WY5','sdd@gmail.com','telangana-economy-en',19900,'created',1785633569);
+INSERT INTO "orders" ("id","user_id","subject_id","amount_paise","status","created_at") VALUES('order_TKkKPhM5eWkYn4','s@gmail.com','telangana-economy-en',19900,'paid',1785639865);
+CREATE TABLE entitlements (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  order_id TEXT NOT NULL,
+  payment_id TEXT NOT NULL,
+  granted_at INTEGER DEFAULT (unixepoch()),
+  UNIQUE(user_id, subject_id),
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (subject_id) REFERENCES subjects(id)
+);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('0264f259-b40f-473c-8f49-b9486c340e78','test-user-1','ts-history-modern','order_TKZvVUBebtOs8J','pay_TKZw7hvDzGQfKt',1785603298);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('3d6a08fe-3fc3-496c-8035-2feb0fdf3450','s@gmail.com','telangana-history-te','order_TKarV0QmgvrcoS','pay_TKas9fCB6d6QgV',1785606574);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('ab67f937-bd53-460e-9d40-13309508b0a9','s2@gmail.com','telangana-history-te','order_TKb5fOmYOd68Bj','pay_TKb7XSfwgUEBYz',1785607448);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('f0e8a779-2865-49c2-a707-c47a22bf9528','s3@gmail.com','telangana-history-te','order_TKbBz01POOquDC','pay_TKbCmm226KEZ6z',1785607746);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('5fb86f62-208a-4538-9e77-988e108e2a62','s4@gmail.com','telangana-economy-en','order_TKbg2MB1RZ57FK','pay_TKbh9otVUMZd53',1785609470);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('0848e3f6-1f33-4add-b6c5-ab4e46f3d18a','s5@gmail.com','telangana-economy-en','order_TKbr1RiryxSGeS','pay_TKbrXTmrnnnNg8',1785610064);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('cb77eadd-f792-46af-bfc4-20c70f332b70','s5@gmail.com','telangana-history-te','order_TKbsncn0ppP74Z','pay_TKbt621CELDOBd',1785610148);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('c8c3c31b-ac22-4f79-b2ee-d2962318385d','s6@gmail.com','telangana-economy-en','order_TKbyUbUlhzUdMK','pay_TKbz87tKTd8FSS',1785610496);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('feb8e324-007a-444b-b49d-51f4e6e17df0','s6@gmail.com','telangana-history-te','order_TKc2ERCIbeIFj9','pay_TKc338uJ2WdxTF',1785610713);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('ba576ef4-7188-49ea-b1b8-1ed9fd2d3681','s7@gmail.com','telangana-history-te','order_TKcFpdkFPsVguk','pay_TKcGFmNx6eBF2G',1785611462);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('83bf7be9-cd30-46cd-8fcb-a55fe6995c5c','s7@gmail.com','telangana-economy-en','order_TKcGjO539zs4js','pay_TKcGyuQwaRxFWb',1785611504);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('c472bcae-e4c1-49fb-93b0-e4350ef95a3c','f@gmail.com','telangana-economy-en','order_TKeQC0OxwiY87W','pay_TKeVITYtezXcNP',1785619362);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('d7575b8f-354b-4709-b759-0c000b33db65','f@gmail.com','telangana-history-te','order_TKeWPuuOsuR9RT','pay_TKeXGxT2qEDkY6',1785619477);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('31fdb1fd-79e7-4a7d-928f-f522d7938391','sdd@gmail.com','telangana-history-te','order_TKiTin4R9koSP1','pay_TKiWMH24tDQlW4',1785633509);
+INSERT INTO "entitlements" ("id","user_id","subject_id","order_id","payment_id","granted_at") VALUES('b8e60be7-c8fa-4068-af6f-16e8987c64cd','s@gmail.com','telangana-economy-en','order_TKkKPhM5eWkYn4','pay_TKkNK3NxjjwFN8',1785640041);
+CREATE TABLE device_sessions (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  device_label TEXT,
+  last_active INTEGER DEFAULT (unixepoch()),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
