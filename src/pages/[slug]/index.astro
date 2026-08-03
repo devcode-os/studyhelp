@@ -76,6 +76,25 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
     <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
   </div>
 
+  <style>
+    /* Removes the default mobile browser tap-highlight (the blue flash on
+       tap) on question rows. Was always there, only became noticeable once
+       answers started taking a moment to load instead of appearing instantly. */
+    .q-row {
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent;
+      outline: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .q-row:active {
+      background: var(--accent-bg);
+    }
+    .q-row:focus {
+      outline: none;
+    }
+  </style>
+
   <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
