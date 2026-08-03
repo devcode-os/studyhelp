@@ -11,6 +11,33 @@ import Header from '../../components/Header.astro';
       <h1 id="account-name">Your account</h1>
       <p class="sub">Manage your StudyHelp account details.</p>
 
+      <div class="verify-banner" id="verify-banner" style="display:none;">
+        <div class="verify-banner-row">
+          <i class="ti ti-mail-exclamation"></i>
+          <span class="verify-banner-text">Email verification pending</span>
+          <button type="button" class="verify-dismiss" id="verify-dismiss" aria-label="Dismiss">
+            <i class="ti ti-x"></i>
+          </button>
+        </div>
+        <button type="button" class="verify-now-btn" id="verify-now-btn">
+          <span class="btn-label">Verify now</span>
+          <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+        </button>
+
+        <div class="verify-otp-row" id="verify-otp-row" style="display:none;">
+          <p class="hint"><i class="ti ti-info-circle"></i> <span id="verify-otp-hint">Enter the 6-digit code sent to your recovery email.</span></p>
+          <input type="text" id="verify-otp-input" inputmode="numeric" maxlength="6" autocomplete="one-time-code" class="code-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;" />
+          <div id="verify-error-msg" class="error-msg" style="display:none;">
+            <i class="ti ti-alert-circle"></i><span id="verify-error-text"></span>
+          </div>
+          <button type="button" class="btn-block" id="verify-confirm-btn">
+            <span class="btn-label">Confirm code</span>
+            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+          </button>
+          <button type="button" class="verify-resend-btn" id="verify-resend-btn" disabled>Resend code (<span id="verify-resend-timer">60</span>s)</button>
+        </div>
+      </div>
+
       <div class="detail-row">
         <span class="detail-label"><i class="ti ti-phone"></i> Phone</span>
         <span class="detail-value" id="detail-phone">-</span>
@@ -146,16 +173,157 @@ import Header from '../../components/Header.astro';
       font-size: 14px;
       color: var(--muted);
     }
+
+    /* Email verification banner */
+    .verify-banner {
+      background: var(--accent-bg);
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+    }
+    .verify-banner-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .verify-banner-row i.ti-mail-exclamation {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .verify-banner-text {
+      flex: 1;
+    }
+    .verify-dismiss {
+      background: none;
+      border: none;
+      color: var(--accent);
+      cursor: pointer;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+    .verify-dismiss:hover {
+      opacity: 1;
+    }
+    .verify-now-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 1px solid var(--accent);
+      background: var(--card);
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.1s, opacity 0.15s;
+    }
+    .verify-now-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+    .verify-now-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+    .verify-otp-row {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--accent);
+    }
+    .verify-otp-row .hint {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .code-input {
+      box-sizing: border-box;
+      width: 100%;
+      font-size: clamp(18px, 5.5vw, 24px);
+      font-weight: 700;
+      letter-spacing: clamp(4px, 2.2vw, 10px);
+      text-align: center;
+      font-family: monospace;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .code-input::placeholder {
+      letter-spacing: clamp(4px, 2.2vw, 10px);
+      color: var(--border);
+    }
+    .error-msg {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fdecec;
+      color: #b3261e;
+      border-left: 3px solid #d33;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin: 14px 0 0;
+    }
+    html[data-theme="dark"] .error-msg {
+      background: #3a1c1c;
+      color: #ff9b93;
+    }
+    .verify-otp-row .btn-block {
+      margin-top: 14px;
+    }
+    .verify-resend-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .verify-resend-btn:not(:disabled) {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .verify-resend-btn:disabled {
+      cursor: not-allowed;
+    }
   </style>
 
   <script>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
     const SESSION_CACHE_KEY = 'sh_session_cache';
     const SESSION_CACHE_TTL = 5 * 60 * 1000;
+    const VERIFY_DISMISS_KEY = 'sh_verify_banner_dismissed';
+
     const loadingCard = document.getElementById('loading-card');
     const accountCard = document.getElementById('account-card');
     const signedOutCard = document.getElementById('signed-out-card');
     const logoutBtn = document.getElementById('logout-btn');
+
+    const verifyBanner = document.getElementById('verify-banner');
+    const verifyDismiss = document.getElementById('verify-dismiss');
+    const verifyNowBtn = document.getElementById('verify-now-btn');
+    const verifyOtpRow = document.getElementById('verify-otp-row');
+    const verifyOtpInput = document.getElementById('verify-otp-input');
+    const verifyErrorMsg = document.getElementById('verify-error-msg');
+    const verifyErrorText = document.getElementById('verify-error-text');
+    const verifyConfirmBtn = document.getElementById('verify-confirm-btn');
+    const verifyResendBtn = document.getElementById('verify-resend-btn');
+    const verifyResendTimer = document.getElementById('verify-resend-timer');
 
     function getCachedSession() {
       try {
@@ -177,9 +345,15 @@ import Header from '../../components/Header.astro';
       } catch (err) {}
     }
 
-    function getSession() {
-      const cached = getCachedSession();
-      if (cached) return Promise.resolve(cached);
+    function clearCachedSession() {
+      try { sessionStorage.removeItem(SESSION_CACHE_KEY); } catch (err) {}
+    }
+
+    function getSession(forceFresh) {
+      if (!forceFresh) {
+        const cached = getCachedSession();
+        if (cached) return Promise.resolve(cached);
+      }
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
         .then((res) => res.json())
         .then((data) => {
@@ -188,6 +362,118 @@ import Header from '../../components/Header.astro';
         })
         .catch(() => ({ logged_in: false }));
     }
+
+    let resendCountdownInterval = null;
+    function startResendCountdown() {
+      let remaining = 60;
+      verifyResendBtn.disabled = true;
+      verifyResendTimer.textContent = String(remaining);
+      if (resendCountdownInterval) clearInterval(resendCountdownInterval);
+      resendCountdownInterval = setInterval(() => {
+        remaining -= 1;
+        if (remaining <= 0) {
+          clearInterval(resendCountdownInterval);
+          verifyResendBtn.disabled = false;
+          verifyResendBtn.textContent = 'Resend code';
+          return;
+        }
+        verifyResendTimer.textContent = String(remaining);
+      }, 1000);
+    }
+
+    function sendVerifyOtp(isResend) {
+      const btn = isResend ? verifyResendBtn : verifyNowBtn;
+      const label = btn.querySelector ? btn.querySelector('.btn-label') : null;
+      const spinner = btn.querySelector ? btn.querySelector('.btn-spinner') : null;
+      btn.disabled = true;
+      if (spinner) spinner.style.display = 'inline-block';
+      verifyErrorMsg.style.display = 'none';
+
+      return fetch(`${WORKER_URL}/verify-email/send-otp`, {
+        method: 'POST',
+        credentials: 'include',
+      })
+        .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+        .then(({ ok, data }) => {
+          if (spinner) spinner.style.display = 'none';
+          if (!ok) {
+            if (label) btn.disabled = false;
+            verifyErrorText.textContent = data.error || 'Could not send code. Please try again.';
+            verifyErrorMsg.style.display = 'flex';
+            verifyOtpRow.style.display = 'block';
+            if (isResend) verifyResendBtn.disabled = false;
+            return;
+          }
+          verifyOtpRow.style.display = 'block';
+          if (label) { btn.disabled = false; }
+          verifyOtpInput.focus();
+          startResendCountdown();
+        })
+        .catch(() => {
+          if (spinner) spinner.style.display = 'none';
+          btn.disabled = false;
+          verifyErrorText.textContent = 'Network error. Please try again.';
+          verifyErrorMsg.style.display = 'flex';
+          verifyOtpRow.style.display = 'block';
+        });
+    }
+
+    verifyNowBtn.addEventListener('click', () => sendVerifyOtp(false));
+    verifyResendBtn.addEventListener('click', () => sendVerifyOtp(true));
+
+    verifyOtpInput.addEventListener('input', () => {
+      verifyOtpInput.value = verifyOtpInput.value.replace(/\D/g, '').slice(0, 6);
+    });
+
+    verifyConfirmBtn.addEventListener('click', () => {
+      const otp = verifyOtpInput.value.trim();
+      if (otp.length !== 6) {
+        verifyErrorText.textContent = 'Enter the 6-digit code.';
+        verifyErrorMsg.style.display = 'flex';
+        return;
+      }
+
+      const label = verifyConfirmBtn.querySelector('.btn-label');
+      const spinner = verifyConfirmBtn.querySelector('.btn-spinner');
+      verifyConfirmBtn.disabled = true;
+      spinner.style.display = 'inline-block';
+      verifyErrorMsg.style.display = 'none';
+
+      fetch(`${WORKER_URL}/verify-email/confirm`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ otp }),
+      })
+        .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+        .then(({ ok, data }) => {
+          spinner.style.display = 'none';
+          if (!ok) {
+            verifyConfirmBtn.disabled = false;
+            verifyErrorText.textContent = data.error || 'Incorrect code. Please try again.';
+            verifyErrorMsg.style.display = 'flex';
+            return;
+          }
+          // Verified — clear cache so /me reflects the new state, then hide the banner.
+          clearCachedSession();
+          if (resendCountdownInterval) clearInterval(resendCountdownInterval);
+          label.textContent = 'Verified!';
+          setTimeout(() => {
+            verifyBanner.style.display = 'none';
+          }, 700);
+        })
+        .catch(() => {
+          spinner.style.display = 'none';
+          verifyConfirmBtn.disabled = false;
+          verifyErrorText.textContent = 'Network error. Please try again.';
+          verifyErrorMsg.style.display = 'flex';
+        });
+    });
+
+    verifyDismiss.addEventListener('click', () => {
+      verifyBanner.style.display = 'none';
+      try { sessionStorage.setItem(VERIFY_DISMISS_KEY, '1'); } catch (err) {}
+    });
 
     getSession()
       .then((data) => {
@@ -199,6 +485,14 @@ import Header from '../../components/Header.astro';
         document.getElementById('account-name').textContent = data.name || 'Your account';
         document.getElementById('detail-phone').textContent = data.phone ? `+91 ${data.phone}` : '-';
         document.getElementById('detail-email').textContent = data.recovery_email || '-';
+
+        let dismissed = false;
+        try { dismissed = sessionStorage.getItem(VERIFY_DISMISS_KEY) === '1'; } catch (err) {}
+
+        if (!data.email_verified && data.recovery_email && !dismissed) {
+          verifyBanner.style.display = 'block';
+        }
+
         accountCard.style.display = 'block';
       })
       .catch(() => {
@@ -213,7 +507,7 @@ import Header from '../../components/Header.astro';
       if (spinner) spinner.style.display = 'inline-block';
       // Clear the cached session immediately so no stale "logged in" state
       // lingers after logout, even within the 5-minute cache window.
-      try { sessionStorage.removeItem(SESSION_CACHE_KEY); } catch (err) {}
+      clearCachedSession();
 
       fetch(`${WORKER_URL}/logout`, { method: 'POST', credentials: 'include' })
         .finally(() => { window.location.href = '/'; });
