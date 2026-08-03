@@ -120,11 +120,13 @@ async function createOrder(request, env) {
       .bind(user_id, user_id)
       .run();
 
-    // Already entitled? Don't let them pay twice.
+    // Already entitled AND still within the 45-day window? Don't let them pay twice.
+    // Once expired, this correctly falls through and lets them buy again.
+    const nowTs = Math.floor(Date.now() / 1000);
     const existing = await env.DB.prepare(
-      "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+      "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
     )
-      .bind(user_id, subject_id)
+      .bind(user_id, subject_id, nowTs)
       .first();
 
     if (existing) {
@@ -201,13 +203,25 @@ async function handleWebhook(request, env) {
       return new Response("ok", { status: 200 });
     }
 
-    // Idempotent: only insert if not already entitled (handles Razorpay webhook retries)
+    // Idempotent: if this exact order was already processed (webhook retry),
+    // do nothing. If it's a genuine new/renewal purchase (different order_id
+    // for this user+subject — e.g. buying again after the 45-day window
+    // lapsed), extend access fresh from now. Always 45 days from time of
+    // payment, no stacking on top of remaining time — matches the simple
+    // "45 days unlimited access" pricing, not a top-up model.
+    const ACCESS_DURATION_SECONDS = 45 * 24 * 60 * 60;
+    const expiresAt = Math.floor(Date.now() / 1000) + ACCESS_DURATION_SECONDS;
+
     await env.DB.prepare(
-      `INSERT INTO entitlements (id, user_id, subject_id, order_id, payment_id)
-       VALUES (?, ?, ?, ?, ?)
-       ON CONFLICT(user_id, subject_id) DO NOTHING`
+      `INSERT INTO entitlements (id, user_id, subject_id, order_id, payment_id, expires_at)
+       VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT(user_id, subject_id) DO UPDATE SET
+         order_id = excluded.order_id,
+         payment_id = excluded.payment_id,
+         expires_at = excluded.expires_at
+       WHERE entitlements.order_id != excluded.order_id`
     )
-      .bind(crypto.randomUUID(), order.user_id, order.subject_id, orderId, paymentId)
+      .bind(crypto.randomUUID(), order.user_id, order.subject_id, orderId, paymentId, expiresAt)
       .run();
 
     await env.DB.prepare("UPDATE orders SET status = 'paid' WHERE id = ?")
@@ -253,13 +267,14 @@ async function checkAccess(request, env) {
     return json({ error: "user_id and subject_id required" }, 400);
   }
 
+  const nowTs = Math.floor(Date.now() / 1000);
   const entitlement = await env.DB.prepare(
-    "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+    "SELECT id, expires_at FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
   )
-    .bind(user_id, subject_id)
+    .bind(user_id, subject_id, nowTs)
     .first();
 
-  return json({ unlocked: !!entitlement });
+  return json({ unlocked: !!entitlement, expires_at: entitlement ? entitlement.expires_at : null });
 }
 
 // ---------- 4. Signup ----------
@@ -969,14 +984,15 @@ async function getChapterAnswers(request, env) {
     }
   }
 
+  const nowTs = Math.floor(Date.now() / 1000);
   const entitlement = await env.DB.prepare(
-    "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+    "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
   )
-    .bind(user.id, chapter.subject_id)
+    .bind(user.id, chapter.subject_id, nowTs)
     .first();
 
   if (!entitlement) {
-    return jsonAuth({ error: "This subject has not been purchased", locked: true }, 403);
+    return jsonAuth({ error: "This subject is not currently unlocked on your account. Purchase for 45 days of unlimited access.", locked: true }, 403);
   }
 
   // answers_json is already a JSON string in D1 — parse then re-send as real JSON
@@ -1057,12 +1073,15 @@ async function getSingleAnswer(request, env) {
     }
   }
 
-  // 1. Logged in AND purchased this subject -> always unlimited, no counting at all.
+  // 1. Logged in AND purchased this subject (within the 45-day window) ->
+  // always unlimited, no counting at all. Once expired, this correctly
+  // falls through to the free-click budget below like any unpurchased user.
   if (user) {
+    const nowTs = Math.floor(Date.now() / 1000);
     const entitlement = await env.DB.prepare(
-      "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+      "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
     )
-      .bind(user.id, chapter.subject_id)
+      .bind(user.id, chapter.subject_id, nowTs)
       .first();
 
     if (entitlement) {
@@ -1129,7 +1148,7 @@ async function getSingleAnswer(request, env) {
   if (newCount > dailyLimit) {
     return jsonAuth(
       {
-        error: `You've reached today's ${dailyLimit} free answers for this subject. Purchase for unlimited access, or come back tomorrow.`,
+        error: `You've reached today's ${dailyLimit} free answers for this subject. Purchase for 45 days of unlimited access, or come back tomorrow.`,
         locked: true,
         limitReached: true,
         remaining: 0,
