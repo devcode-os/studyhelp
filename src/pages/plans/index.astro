@@ -37,15 +37,15 @@ const subjects = [
   },
 ];
 ---
-<Layout title="Plans - StudyHelp" description="Unlock unlimited access to StudyHelp subjects. One-time payment, no subscription.">
+<Layout title="Plans - StudyHelp" description="Unlock 45 days of unlimited access to StudyHelp subjects. One-time payment.">
 
   <Header active="plans" />
 
   <div style="max-width:1100px; margin:0 auto; padding:24px;">
 
     <div style="text-align:center; margin-bottom:1.5rem;">
-      <h1 style="margin:0 0 6px;">Unlock unlimited access</h1>
-      <p style="color:var(--muted); font-size:14px; margin:0;">One-time payment per subject. No subscription, no expiry.</p>
+      <h1 style="margin:0 0 6px;">45 Days Unlimited Access</h1>
+      <p style="color:var(--muted); font-size:14px; margin:0;">One-time payment per subject. No subscription.</p>
     </div>
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:1.5rem;">
@@ -86,8 +86,8 @@ const subjects = [
           <div style="font-size:12px; color:var(--muted);">Manage and switch anytime</div>
         </div>
         <div>
-          <div style="font-size:13px; font-weight:600;">No expiry</div>
-          <div style="font-size:12px; color:var(--muted);">One-time payment, forever access</div>
+          <div style="font-size:13px; font-weight:600;">45 days unlimited</div>
+          <div style="font-size:12px; color:var(--muted);">One-time payment, full 45-day access</div>
         </div>
       </div>
     </div>
@@ -101,6 +101,22 @@ const subjects = [
     const SESSION_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
     let currentUser = null; // { user_id, name } once resolved, else null
+
+    // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
+    // from a unix-seconds expires_at timestamp.
+    function formatDaysLeft(expiresAtSeconds) {
+      const msLeft = expiresAtSeconds * 1000 - Date.now();
+      const daysLeft = Math.ceil(msLeft / (24 * 60 * 60 * 1000));
+      if (daysLeft <= 0) return 'Expires today';
+      if (daysLeft === 1) return '1 day left';
+      return `${daysLeft} days left`;
+    }
+
+    function formatExpiryDate(expiresAtSeconds) {
+      return new Date(expiresAtSeconds * 1000).toLocaleDateString('en-IN', {
+        day: 'numeric', month: 'short', year: 'numeric',
+      });
+    }
 
     function getCachedSession() {
       try {
@@ -149,7 +165,7 @@ const subjects = [
           );
           const data = await res.json();
           if (data.unlocked) {
-            setButtonToOpen(btn, subject_id);
+            setButtonToOpen(btn, subject_id, data.expires_at);
           }
         } catch (err) {
           // silently skip on network error — button stays as "Buy now", user can retry
@@ -157,7 +173,7 @@ const subjects = [
       }
     }
 
-    function setButtonToOpen(btn, subject_id) {
+    function setButtonToOpen(btn, subject_id, expiresAt) {
       // Clone the node to strip any previously attached addEventListener
       // handlers (the buy-flow listener below), so this button can never
       // have both a "buy" listener and an "open" handler firing on the
@@ -166,7 +182,10 @@ const subjects = [
       btn.parentNode.replaceChild(freshBtn, btn);
 
       freshBtn.disabled = false;
-      freshBtn.textContent = 'Open — Unlimited access';
+      freshBtn.textContent = expiresAt
+        ? `Open — ${formatDaysLeft(expiresAt)}`
+        : 'Open';
+      freshBtn.title = expiresAt ? `Access until ${formatExpiryDate(expiresAt)}` : '';
       freshBtn.classList.remove('buy-btn');
       freshBtn.style.background = 'var(--accent)';
       freshBtn.style.color = '#fff';

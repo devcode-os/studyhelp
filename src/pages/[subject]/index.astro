@@ -68,8 +68,8 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
         </div>
       </div>
       <div class="subject-header-right" style="flex:1; min-width:220px;">
-        <div id="free-trial-text" style="font-size:12px; color:var(--muted); margin-bottom:6px;">15 free answers/day, no login needed &middot; unlimited once purchased</div>
-        <a id="unlock-btn" href={`/plans/?highlight=${subject}`} style="font-size:13px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent); display:inline-block;">Unlock unlimited, Rs. 199</a>
+        <div id="free-trial-text" style="font-size:12px; color:var(--muted); margin-bottom:6px;">15 free answers/day, no login needed &middot; 45 days unlimited once purchased</div>
+        <a id="unlock-btn" href={`/plans/?highlight=${subject}`} style="font-size:13px; padding:8px 16px; border:1px solid var(--accent); border-radius:8px; text-decoration:none; background:var(--accent-bg); color:var(--accent); display:inline-block;">Unlock 45 days, Rs. 199</a>
       </div>
     </div>
 
@@ -200,6 +200,22 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
         .catch(() => ({ logged_in: false }));
     }
 
+    // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
+    // from a unix-seconds expires_at timestamp.
+    function formatDaysLeft(expiresAtSeconds) {
+      const msLeft = expiresAtSeconds * 1000 - Date.now();
+      const daysLeft = Math.ceil(msLeft / (24 * 60 * 60 * 1000));
+      if (daysLeft <= 0) return 'Expires today';
+      if (daysLeft === 1) return '1 day left';
+      return `${daysLeft} days left`;
+    }
+
+    function formatExpiryDate(expiresAtSeconds) {
+      return new Date(expiresAtSeconds * 1000).toLocaleDateString('en-IN', {
+        day: 'numeric', month: 'short', year: 'numeric',
+      });
+    }
+
     getSession()
       .then((session) => {
         if (!session.logged_in) return; // not logged in — button stays default "Unlock unlimited"
@@ -212,7 +228,13 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
               const trialText = document.getElementById('free-trial-text');
               if (trialText) trialText.style.display = 'none';
               if (btn) {
-                btn.textContent = '✓ Unlimited access unlocked';
+                const daysLeft = data.expires_at
+                  ? formatDaysLeft(data.expires_at)
+                  : 'Unlimited access unlocked';
+                btn.textContent = `✓ ${daysLeft}`;
+                if (data.expires_at) {
+                  btn.title = `Access until ${formatExpiryDate(data.expires_at)}`;
+                }
                 btn.removeAttribute('href');
                 btn.style.cursor = 'default';
                 btn.style.background = 'var(--success-bg, #d1fae5)';
