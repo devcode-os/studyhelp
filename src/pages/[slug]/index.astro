@@ -76,7 +76,8 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
     <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
   </div>
 
-  <script define:vars={{ chapterSlug, perPage: PER_PAGE, prevLabel, nextLabel }}>
+  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel }}>
+    const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
     let currentPage = 1;
@@ -159,7 +160,7 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
       lockBanner.style.display = 'block';
       lockMessage.textContent = message;
       lockAction.textContent = 'View plans';
-      lockAction.href = '/plans/';
+      lockAction.href = PLANS_URL;
     }
 
     function showRemainingHint(remaining, dailyLimit) {
@@ -167,7 +168,7 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
         lockBanner.style.display = 'block';
         lockMessage.textContent = `${remaining} of ${dailyLimit} free answers left for this subject today. Resets tomorrow.`;
         lockAction.textContent = 'View plans';
-        lockAction.href = '/plans/';
+        lockAction.href = PLANS_URL;
       }
     }
 
