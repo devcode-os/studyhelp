@@ -57,8 +57,8 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
     </div>
 
     <div id="lock-banner" style="display:none; background:var(--amber-bg); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:16px; font-size:14px; color:var(--amber-text-strong);">
-      <span id="lock-message">Log in and purchase this subject to view answers.</span>
-      <a id="lock-action" href="/login/" style="margin-left:8px; font-weight:700; color:var(--accent); text-decoration:underline;">Log in</a>
+      <span id="lock-message">Purchase this subject for unlimited access.</span>
+      <a id="lock-action" href="/plans/" style="margin-left:8px; font-weight:700; color:var(--accent); text-decoration:underline;">View plans</a>
     </div>
 
     <div id="faq-list" style="display:flex; flex-direction:column; gap:8px; margin-top:20px;">
@@ -103,6 +103,35 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
   <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
+    // Device fingerprint for the free-click counter: a hash of stable
+    // device/browser properties (not stored state), so it survives private/
+    // incognito browsing where cookies get wiped on close. Weaker entropy
+    // than a full fingerprinting library, but no library cost and matches
+    // the accepted design — see workflow doc for the tradeoff discussion.
+    let fingerprintPromise = null;
+    async function getFingerprint() {
+      if (fingerprintPromise) return fingerprintPromise;
+      fingerprintPromise = (async () => {
+        try {
+          const raw = [
+            navigator.userAgent,
+            screen.width,
+            screen.height,
+            Intl.DateTimeFormat().resolvedOptions().timeZone,
+            navigator.hardwareConcurrency || '',
+          ].join('|');
+          const enc = new TextEncoder().encode(raw);
+          const digest = await crypto.subtle.digest('SHA-256', enc);
+          return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+        } catch (err) {
+          return null; // Worker falls back to the cookie if this comes back empty
+        }
+      })();
+      return fingerprintPromise;
+    }
+    // Kick off computation immediately so it's ready before the first click.
+    getFingerprint();
 
     let currentPage = 1;
     const revealedAnswers = {}; // index -> answer object, cached once revealed this page view
@@ -241,8 +270,10 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
         aRow.style.display = 'block';
 
         try {
+          const fp = await getFingerprint();
+          const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
           const res = await fetch(
-            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}`,
+            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
             { credentials: 'include' }
           );
           const data = await res.json();
