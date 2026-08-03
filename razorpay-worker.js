@@ -934,15 +934,26 @@ async function getSingleAnswer(request, env) {
     }
   }
 
-  const existing = await env.DB.prepare(
-    "SELECT count FROM free_click_log WHERE actor_type = ? AND actor_id = ? AND subject_id = ? AND click_date = ?"
+  // Single atomic upsert: increment (or create) today's count for this
+  // actor+subject in ONE database round-trip instead of a separate
+  // SELECT-then-INSERT/UPDATE (which was 2 round-trips). If this pushes
+  // the count past the daily limit, we simply don't return the answer for
+  // that call — the log ends up counting the blocked attempt too, which
+  // doesn't affect correctness (the person is still correctly blocked the
+  // moment their real usage exceeds the limit).
+  const newCountRow = await env.DB.prepare(
+    `INSERT INTO free_click_log (id, actor_type, actor_id, subject_id, click_date, count)
+     VALUES (?, ?, ?, ?, ?, 1)
+     ON CONFLICT(actor_type, actor_id, subject_id, click_date)
+     DO UPDATE SET count = count + 1
+     RETURNING count`
   )
-    .bind(actorType, actorId, chapter.subject_id, today)
+    .bind(crypto.randomUUID(), actorType, actorId, chapter.subject_id, today)
     .first();
 
-  const usedSoFar = existing ? existing.count : 0;
+  const newCount = newCountRow.count;
 
-  if (usedSoFar >= dailyLimit) {
+  if (newCount > dailyLimit) {
     return jsonAuth(
       {
         error: user
@@ -958,23 +969,8 @@ async function getSingleAnswer(request, env) {
     );
   }
 
-  // Under budget — increment and deliver the answer.
-  if (existing) {
-    await env.DB.prepare(
-      "UPDATE free_click_log SET count = count + 1 WHERE actor_type = ? AND actor_id = ? AND subject_id = ? AND click_date = ?"
-    )
-      .bind(actorType, actorId, chapter.subject_id, today)
-      .run();
-  } else {
-    await env.DB.prepare(
-      "INSERT INTO free_click_log (id, actor_type, actor_id, subject_id, click_date, count) VALUES (?, ?, ?, ?, ?, 1)"
-    )
-      .bind(crypto.randomUUID(), actorType, actorId, chapter.subject_id, today)
-      .run();
-  }
-
   return jsonAuth(
-    { answer, remaining: dailyLimit - usedSoFar - 1, dailyLimit },
+    { answer, remaining: dailyLimit - newCount, dailyLimit },
     200,
     extraCookieHeader
   );
