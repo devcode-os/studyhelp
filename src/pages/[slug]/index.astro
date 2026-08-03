@@ -165,7 +165,7 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
     function showRemainingHint(remaining, dailyLimit) {
       if (remaining <= 3) {
         lockBanner.style.display = 'block';
-        lockMessage.textContent = `${remaining} free answer${remaining === 1 ? '' : 's'} left for this subject today.`;
+        lockMessage.textContent = `${remaining} of ${dailyLimit} free answers left for this subject today. Resets tomorrow.`;
         lockAction.textContent = 'View plans';
         lockAction.href = '/plans/';
       }

@@ -930,8 +930,8 @@ async function getSingleAnswer(request, env) {
     return jsonAuth(
       {
         error: user
-          ? "You've used today's free answers for this subject. Purchase for unlimited access, or try again tomorrow."
-          : "You've used today's free answers for this subject. Log in for more free answers, purchase for unlimited access, or try again tomorrow.",
+          ? `You've reached today's ${dailyLimit} free answers for this subject. Purchase for unlimited access, or come back tomorrow for 20 more free answers.`
+          : `You've reached today's ${dailyLimit} free answers for this subject. Log in for 20 free answers/day, purchase for unlimited access, or come back tomorrow.`,
         locked: true,
         limitReached: true,
         remaining: 0,
