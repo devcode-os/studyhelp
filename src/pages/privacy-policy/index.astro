@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+<Layout title="Privacy Policy - StudyHelp" description="How StudyHelp collects, uses, and protects your information.">
+  <Header active="privacy" />
+
+  <div class="content legal-content">
+    <div class="legal-card">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: 3 August 2026</p>
+
+      <p>This policy explains what information StudyHelp (operated by fdaytalk) collects, why, and how it is protected. StudyHelp is built to collect as little personal information as genuinely necessary to run the service.</p>
+
+      <h2>1. Information We Collect</h2>
+
+      <h3>When you create an account</h3>
+      <ul>
+        <li><strong>Name</strong> — as you enter it at signup.</li>
+        <li><strong>Phone number</strong> — your primary account identifier. Not shared publicly or with third parties, except where required to process a payment.</li>
+        <li><strong>Passcode</strong> — never stored in readable form. We store only a one-way cryptographic hash (PBKDF2, 100,000 iterations) — we cannot see or recover your actual passcode, even internally.</li>
+        <li><strong>Recovery email</strong> — used only for account recovery (forgotten passcode) and to send a one-time verification code. Never used for login, marketing, or shared with third parties.</li>
+      </ul>
+
+      <h3>When you make a payment</h3>
+      <p>Payments are processed entirely by Razorpay, a licensed third-party payment gateway. StudyHelp never sees or stores your card number, UPI ID, or bank details — these go directly to Razorpay under its own security and compliance standards. We store only the payment reference (Order ID, Payment ID), the amount, and the subject purchased, so we can confirm your access and help with any payment support issue.</p>
+
+      <h3>When you use free access (no account needed)</h3>
+      <p>To provide a fair 15-free-answers-per-subject-per-day allowance without requiring anyone to sign up, we track free usage two ways:</p>
+      <ul>
+        <li><strong>A device fingerprint</strong> — a one-way hash generated from basic browser/device properties (browser type, screen size, timezone, processor core count). This hash cannot be reversed to identify you personally, and no separate profile is built from it — it is used solely to count today's free answers for a given subject.</li>
+        <li><strong>A cookie</strong> (<code>sh_anon_id</code>) — a fallback identifier used only if the fingerprint method is unavailable, for the same purpose.</li>
+      </ul>
+      <p>Neither of these is linked to your name, phone number, or any other personal detail unless you separately create an account.</p>
+
+      <h3>Automatically, for security</h3>
+      <p>Like most websites, our infrastructure (Cloudflare) automatically logs IP addresses and basic request information for security purposes — detecting abuse, rate-limiting excessive requests, and protecting against automated attacks. This is standard infrastructure-level logging, not used to build a profile of you.</p>
+
+      <h2>2. Cookies We Use</h2>
+      <ul>
+        <li><strong>Session cookie</strong> — keeps you logged in. Deleted automatically after 30 days, or immediately on logout.</li>
+        <li><strong>Free-click tracking cookie</strong> (fallback only, see above) — counts today's free answers if device fingerprinting isn't available.</li>
+        <li><strong>Theme preference</strong> — remembers whether you chose light or dark mode. Stored locally in your browser, never sent to our servers.</li>
+      </ul>
+      <p>We do not use advertising or third-party tracking cookies.</p>
+
+      <h2>3. Who We Share Information With</h2>
+      <p>We do not sell or rent your information to anyone. Information is shared only with the service providers necessary to run StudyHelp:</p>
+      <ul>
+        <li><strong>Razorpay</strong> — processes your payment. Governed by Razorpay's own privacy policy for payment data.</li>
+        <li><strong>Resend</strong> — sends passcode-reset and email-verification codes to your recovery email. Only your recovery email address and the code itself pass through this service.</li>
+        <li><strong>Cloudflare</strong> — hosts the website, our database, and backend infrastructure. Cloudflare processes data as our infrastructure provider, under its own security standards.</li>
+      </ul>
+      <p>We may also disclose information if required by law, or to investigate genuine fraud or abuse of the service.</p>
+
+      <h2>4. How Long We Keep Information</h2>
+      <p>Account information is kept for as long as your account exists. Payment records are kept as required for accounting and dispute-resolution purposes. If you'd like your account deleted, contact support — see Section 7.</p>
+
+      <h2>5. Security</h2>
+      <p>Passcodes are never stored in plain text. Session cookies are set with security flags (HttpOnly, Secure) to prevent access via malicious scripts. Payment details never touch our servers directly. While no system can guarantee perfect security, we take reasonable, standard precautions to protect your information.</p>
+
+      <h2>6. Children's Privacy</h2>
+      <p>StudyHelp is intended for exam aspirants generally above the age of 16. We do not knowingly collect personal information from young children. If you believe a child has provided us personal information, contact support and we will remove it.</p>
+
+      <h2>7. Your Choices</h2>
+      <p>You can:</p>
+      <ul>
+        <li>View your account details anytime on your <a href="/account/">Account page</a>.</li>
+        <li>Log out of any device from your account.</li>
+        <li>Request account deletion or data correction by contacting support.</li>
+        <li>Use StudyHelp's free tier without ever creating an account or providing personal information at all.</li>
+      </ul>
+
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this policy as the service evolves. The "Last updated" date above reflects the most recent revision. Significant changes will be reflected here; continued use of StudyHelp after an update means you accept the revised policy.</p>
+
+      <h2>9. Contact</h2>
+      <p>Questions about this policy or your data can be sent to <a href="/contact/">Contact Us</a> or directly to <strong>studyhelp@fdaytalk.com</strong>.</p>
+    </div>
+  </div>
+
+  <style>
+    .legal-content {
+      max-width: 760px;
+    }
+    .legal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+    }
+    html[data-theme="dark"] .legal-card {
+      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    }
+    .legal-card h1 {
+      font-size: 26px;
+      margin: 0 0 4px;
+    }
+    .legal-card .updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .legal-card h2 {
+      font-size: 17px;
+      margin: 28px 0 10px;
+      color: var(--text);
+    }
+    .legal-card h3 {
+      font-size: 15px;
+      margin: 18px 0 6px;
+      color: var(--text);
+    }
+    .legal-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0 0 14px;
+    }
+    .legal-card ul {
+      margin: 0 0 14px;
+      padding-left: 22px;
+    }
+    .legal-card li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .legal-card a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .legal-card code {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 13px;
+    }
+    @media (max-width: 480px) {
+      .legal-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</Layout>

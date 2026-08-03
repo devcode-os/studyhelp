@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+<Layout title="Terms & Conditions - StudyHelp" description="Terms and conditions for using StudyHelp.">
+  <Header active="terms" />
+
+  <div class="content legal-content">
+    <div class="legal-card">
+      <h1>Terms &amp; Conditions</h1>
+      <p class="updated">Last updated: 3 August 2026</p>
+
+      <p>StudyHelp (<strong>studyhelp.fdaytalk.com</strong>) is operated by <strong>fdaytalk</strong>, an individual/sole proprietorship business based in Telangana, India. These Terms &amp; Conditions ("Terms") govern your access to and use of StudyHelp. By creating an account, purchasing a subject, or using the free-access features on this site, you agree to these Terms. If you do not agree, please do not use the service.</p>
+
+      <h2>1. What StudyHelp Is</h2>
+      <p>StudyHelp provides exam-preparation content in a Frequently Asked Questions (FAQ) format for competitive exams such as TSPSC and related Telangana state exams. Content is organised by subject and chapter. StudyHelp is a self-study aid, not a coaching institute, and does not guarantee any exam result, rank, or outcome.</p>
+
+      <h2>2. Accounts</h2>
+      <p>To purchase a subject or use certain features, you create an account with your name, phone number, a 6-digit passcode, and a recovery email address. Your phone number is your primary account identifier and is not shared publicly.</p>
+      <ul>
+        <li>You must provide accurate information when creating an account.</li>
+        <li>You are responsible for keeping your passcode confidential. StudyHelp staff will never ask you for your passcode.</li>
+        <li>You may be asked to verify your recovery email; this helps us reach you if you ever need account recovery.</li>
+        <li>One account per person. Creating multiple accounts to gain additional free access is not permitted (see Section 5).</li>
+        <li>You may log in on up to <strong>3 devices</strong> at a time. If you log in on a fourth device, your oldest active session is signed out automatically.</li>
+      </ul>
+
+      <h2>3. Free Access</h2>
+      <p>Anyone, whether logged in or not, may view up to <strong>15 free question answers per subject per day</strong>, at no cost. This allowance resets daily and does not require an account. Free access is provided to let you evaluate content quality before purchasing, and may be adjusted, reduced, or withdrawn at any time without prior notice, at StudyHelp's discretion.</p>
+
+      <h2>4. Paid Access</h2>
+      <p>Purchasing a subject grants you <strong>unlimited access to that specific subject for 45 days</strong> from the date of successful payment. This is a one-time payment per purchase, not a recurring subscription — no further charges occur automatically, and your access does not renew on its own. If you wish to continue accessing a subject after your 45 days end, you may purchase it again at the then-current price.</p>
+      <p>Access applies only to the specific subject purchased. It does not extend to other subjects, and purchasing one subject does not grant free or discounted access to any other subject.</p>
+
+      <h2>5. Prohibited Use</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Copy, redistribute, resell, publicly post, or share purchased content with anyone outside your own personal use.</li>
+        <li>Create multiple accounts, use fake details, or otherwise attempt to gain free access beyond the intended daily allowance.</li>
+        <li>Use automated tools, scripts, or bots to access, scrape, or download content from StudyHelp.</li>
+        <li>Attempt to bypass, disable, or interfere with any access-control, payment, or security mechanism on the site.</li>
+        <li>Share your account passcode or login access with others.</li>
+      </ul>
+      <p>StudyHelp reserves the right to suspend or terminate accounts that violate these Terms, without refund, at its discretion.</p>
+
+      <h2>6. Payments</h2>
+      <p>Payments are processed through Razorpay, a third-party payment gateway. StudyHelp does not store your card, UPI, or bank details — these are handled entirely by Razorpay under its own security standards. All prices are listed in Indian Rupees (INR) and are inclusive of applicable taxes unless stated otherwise. Access is granted only after your payment is successfully confirmed; opening a checkout page or starting a payment does not by itself grant access.</p>
+
+      <h2>7. Content Accuracy</h2>
+      <p>StudyHelp makes reasonable efforts to keep content accurate and up to date, but exam syllabi, government data, and official notifications can change. Content on StudyHelp is provided as a study aid and should be cross-checked against official sources (such as TSPSC notifications) for anything exam-critical. StudyHelp is not liable for outcomes resulting from reliance on content that has since become outdated.</p>
+
+      <h2>8. Service Availability</h2>
+      <p>StudyHelp is provided on a best-effort basis. While we aim for reliable uptime, we do not guarantee uninterrupted or error-free access at all times. If a genuine technical issue on our side prevents you from accessing content you've paid for, see our <a href="/refund-policy/">Refund &amp; Cancellation Policy</a> for how this is handled.</p>
+
+      <h2>9. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, StudyHelp and fdaytalk are not liable for any indirect, incidental, or consequential loss arising from your use of, or inability to use, the service — including but not limited to exam results, missed deadlines, or data loss. Our total liability for any claim relating to a purchase is limited to the amount you paid for that specific subject.</p>
+
+      <h2>10. Changes to These Terms</h2>
+      <p>We may update these Terms from time to time, for example to reflect new features or changes in how the service works. The "Last updated" date above will reflect the most recent revision. Continued use of StudyHelp after changes are published means you accept the updated Terms.</p>
+
+      <h2>11. Governing Law</h2>
+      <p>These Terms are governed by the laws of India, and any disputes arising from them are subject to the exclusive jurisdiction of the courts of <strong>Telangana</strong>.</p>
+
+      <h2>12. Contact</h2>
+      <p>Questions about these Terms can be sent through our <a href="/contact/">Contact Us</a> page, or directly to <strong>studyhelp@fdaytalk.com</strong>.</p>
+    </div>
+  </div>
+
+  <style>
+    .legal-content {
+      max-width: 760px;
+    }
+    .legal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+    }
+    html[data-theme="dark"] .legal-card {
+      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    }
+    .legal-card h1 {
+      font-size: 26px;
+      margin: 0 0 4px;
+    }
+    .legal-card .updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .legal-card h2 {
+      font-size: 17px;
+      margin: 28px 0 10px;
+      color: var(--text);
+    }
+    .legal-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0 0 14px;
+    }
+    .legal-card ul {
+      margin: 0 0 14px;
+      padding-left: 22px;
+    }
+    .legal-card li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .legal-card a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      .legal-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</Layout>

@@ -1,4 +1,5 @@
 ---
+import Footer from '../components/Footer.astro';
 const { title, description } = Astro.props;
 ---
 <!doctype html>
@@ -166,6 +167,8 @@ const { title, description } = Astro.props;
   <main>
     <slot />
   </main>
+
+  <Footer />
 
   <button id="scroll-top-btn" aria-label="Scroll to top">&#8593;</button>
 

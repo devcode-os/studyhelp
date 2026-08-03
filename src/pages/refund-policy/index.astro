@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+<Layout title="Refund & Cancellation Policy - StudyHelp" description="Refund and cancellation policy for StudyHelp subject purchases.">
+  <Header active="refund" />
+
+  <div class="content legal-content">
+    <div class="legal-card">
+      <h1>Refund &amp; Cancellation Policy</h1>
+      <p class="updated">Last updated: 3 August 2026</p>
+
+      <p>This policy explains when refunds are and are not available for StudyHelp purchases. Please read it before purchasing.</p>
+
+      <h2>1. General Policy — No Refunds After Access is Activated</h2>
+      <p>Each StudyHelp purchase grants <strong>45 days of unlimited access</strong> to one subject, starting immediately once your payment is confirmed. Because access is granted instantly and the content becomes fully available to you at that point, <strong>we do not offer refunds for accidental payments, change of mind, or simply deciding not to use the content</strong>, once access has been activated.</p>
+      <p>This is standard for instantly-delivered digital content: once you have full access to everything included in your purchase, the product has been delivered in full, in the same way a downloaded e-book or unlocked digital course typically cannot be "returned."</p>
+
+      <h2>2. When a Refund or Fix Is Available</h2>
+      <p>The exceptions below are handled — these are genuine delivery or payment problems, not change-of-mind cases:</p>
+
+      <h3>a) Payment succeeded, but access was not granted</h3>
+      <p>If your payment was successful but you were not able to access the subject you paid for, this is a delivery failure on our side. Contact support with your payment details (see Section 4 below) and we will investigate. Once confirmed, we grant access via a one-time access code — you do not need to pay again, and you are not required to accept a cash refund instead if access can be restored.</p>
+
+      <h3>b) Payment shows as failed, but money was debited from your account</h3>
+      <p>This is a banking/payment-gateway timing issue, not something StudyHelp controls directly. If your payment shows as failed but the amount was deducted, it is typically reversed automatically to your original payment method by your bank or by Razorpay's standard reversal process, usually within <strong>5–7 business days</strong>. No access is granted in this case, since the payment was not actually completed on our end. If the amount is not reversed within a reasonable time, contact support and we will help you follow up.</p>
+
+      <h3>c) Duplicate payment</h3>
+      <p>If you were accidentally charged twice for the same subject (e.g. due to a network issue during checkout), contact support with both payment IDs. We will confirm one entitlement is active and process a refund for the duplicate transaction through Razorpay.</p>
+
+      <h2>3. Cancellation</h2>
+      <p>Since access is granted instantly and is valid for a fixed 45-day window rather than an ongoing subscription, there is no separate "cancellation" process — there is nothing recurring to cancel. Your access simply ends automatically after 45 days unless you choose to purchase again.</p>
+
+      <h2>4. How to Raise a Payment Issue</h2>
+      <p>Contact us through the <a href="/contact/">Contact Us</a> page with as much of the following as you can provide:</p>
+      <ul>
+        <li>Your registered phone number</li>
+        <li>Razorpay Payment ID and/or Order ID (found in your payment confirmation email or SMS)</li>
+        <li>The subject you purchased</li>
+        <li>A description of what happened</li>
+      </ul>
+      <p>We aim to respond to genuine payment issues promptly. Please do not send your account passcode to support under any circumstances — we will never ask for it.</p>
+
+      <h2>5. Processing Time for Approved Refunds</h2>
+      <p>Where a refund is approved (duplicate payment cases), it is processed through Razorpay to your original payment method, following Razorpay's standard refund timelines — typically <strong>5–7 business days</strong>, depending on your bank.</p>
+    </div>
+  </div>
+
+  <style>
+    .legal-content {
+      max-width: 760px;
+    }
+    .legal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+    }
+    html[data-theme="dark"] .legal-card {
+      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    }
+    .legal-card h1 {
+      font-size: 26px;
+      margin: 0 0 4px;
+    }
+    .legal-card .updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .legal-card h2 {
+      font-size: 17px;
+      margin: 28px 0 10px;
+      color: var(--text);
+    }
+    .legal-card h3 {
+      font-size: 15px;
+      margin: 18px 0 6px;
+      color: var(--text);
+    }
+    .legal-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0 0 14px;
+    }
+    .legal-card ul {
+      margin: 0 0 14px;
+      padding-left: 22px;
+    }
+    .legal-card li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .legal-card a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      .legal-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</Layout>
