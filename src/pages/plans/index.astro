@@ -48,6 +48,13 @@ const subjects = [
       <p style="color:var(--muted); font-size:14px; margin:0;">One-time payment per subject. No subscription.</p>
     </div>
 
+    <div id="active-subjects-section" style="display:none; margin-bottom:1.5rem;">
+      <div style="font-size:14px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:6px;">
+        <i class="ti ti-circle-check" style="color:var(--success-text, #065f46);"></i> Your Active Subjects
+      </div>
+      <div id="active-subjects-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px;"></div>
+    </div>
+
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:1.5rem;">
       {subjects.map((s) => (
         <div id={`plan-card-${s.slug}`} data-slug={s.slug} data-popular={s.popular ? "true" : "false"} style={`background:var(--card); border:${s.popular ? '2px solid var(--accent)' : '1px solid var(--border)'}; border-radius:12px; padding:1.25rem; transition:box-shadow 0.2s, border-color 0.2s; ${s.available ? '' : 'opacity:0.6;'}`}>
@@ -95,7 +102,7 @@ const subjects = [
   </div>
 
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script>
+  <script define:vars={{ subjectMeta: subjects.map((s) => ({ slug: s.slug, titleNative: s.titleNative, titleEnglish: s.titleEnglish })) }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
     const SESSION_CACHE_KEY = 'sh_session_cache';
     const SESSION_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
@@ -152,9 +159,16 @@ const subjects = [
       }
     }
 
-    // On page load: check ownership for every available subject, swap button to "Open" if owned
+    // On page load: check ownership for every available subject, swap button to
+    // "Open" if owned, and build the prominent "Your Active Subjects" section
+    // so a purchased subject isn't just a relabeled button buried in the
+    // pricing grid — easy to miss there.
     async function checkOwnershipForAllSubjects() {
       if (!currentUser) return; // not logged in — every button stays "Buy now"
+
+      const activeList = document.getElementById('active-subjects-list');
+      const activeSection = document.getElementById('active-subjects-section');
+      let anyActive = false;
 
       const buttons = document.querySelectorAll('.buy-btn');
       for (const btn of buttons) {
@@ -166,10 +180,27 @@ const subjects = [
           const data = await res.json();
           if (data.unlocked) {
             setButtonToOpen(btn, subject_id, data.expires_at);
+            anyActive = true;
+
+            const meta = subjectMeta.find((s) => s.slug === subject_id);
+            const card = document.createElement('div');
+            card.style.cssText = 'background:var(--success-bg, #d1fae5); border:1px solid var(--success-text, #065f46); border-radius:12px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;';
+            card.innerHTML = `
+              <div>
+                <div style="font-weight:700; font-size:14px; color:var(--success-text, #065f46);">${meta ? meta.titleNative : subject_id}</div>
+                <div style="font-size:12px; color:var(--muted);">${data.expires_at ? formatDaysLeft(data.expires_at) + ' &middot; until ' + formatExpiryDate(data.expires_at) : 'Active'}</div>
+              </div>
+              <a href="/${subject_id}/" style="font-size:13px; font-weight:600; padding:8px 16px; border-radius:8px; background:var(--success-text, #065f46); color:#fff; text-decoration:none; flex-shrink:0;">Open</a>
+            `;
+            activeList.appendChild(card);
           }
         } catch (err) {
           // silently skip on network error — button stays as "Buy now", user can retry
         }
+      }
+
+      if (anyActive) {
+        activeSection.style.display = 'block';
       }
     }
 
