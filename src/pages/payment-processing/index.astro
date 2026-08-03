@@ -8,7 +8,7 @@ import Layout from '../../layouts/Layout.astro';
   </div>
 
   <script>
-    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
     const params = new URLSearchParams(window.location.search);
     const user_id = params.get('user_id');
@@ -16,6 +16,22 @@ import Layout from '../../layouts/Layout.astro';
 
     const titleEl = document.getElementById('status-title');
     const detailEl = document.getElementById('status-detail');
+
+    // Checks whether the just-completed purchase's account still has an
+    // unverified email, and if so, sets a one-time flag the subject landing
+    // page reads to show a single auto-dismissing toast reminder.
+    // Session-based (cookie), separate from the check-access call below
+    // which is keyed by user_id/subject_id instead.
+    function flagVerifyToastIfNeeded() {
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.logged_in && data.recovery_email && !data.email_verified) {
+            try { sessionStorage.setItem('sh_show_verify_toast', '1'); } catch (err) {}
+          }
+        })
+        .catch(() => {});
+    }
 
     if (!user_id || !subject_id) {
       titleEl.textContent = 'Something went wrong';
@@ -35,8 +51,10 @@ import Layout from '../../layouts/Layout.astro';
           if (data.unlocked) {
             titleEl.textContent = 'Payment confirmed!';
             detailEl.textContent = 'Redirecting to your subject...';
-            // Redirect to the actual subject page using the slug directly
-            window.location.href = `/${subject_id}/`;
+            // Best-effort — don't let a slow/failed /me call delay the redirect.
+            flagVerifyToastIfNeeded().finally(() => {
+              window.location.href = `/${subject_id}/`;
+            });
             return;
           }
 

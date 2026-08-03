@@ -93,6 +93,76 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
 
   </div>
 
+  <div id="verify-toast" class="verify-toast" style="display:none;">
+    <i class="ti ti-mail-exclamation"></i>
+    <span class="verify-toast-text">Email verification pending &mdash; <a href="/account/">verify now</a></span>
+    <button type="button" id="verify-toast-close" class="verify-toast-close" aria-label="Dismiss">
+      <i class="ti ti-x"></i>
+    </button>
+  </div>
+
+  <style>
+    .verify-toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90vw;
+      width: 420px;
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      animation: toast-in 0.35s ease-out;
+    }
+    html[data-theme="dark"] .verify-toast {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+    @keyframes toast-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+    .verify-toast i.ti-mail-exclamation {
+      color: var(--accent);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .verify-toast-text {
+      flex: 1;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .verify-toast-text a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .verify-toast-close {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .verify-toast-close:hover {
+      color: var(--text);
+    }
+    @media (max-width: 480px) {
+      .verify-toast {
+        bottom: 12px;
+        width: calc(100vw - 24px);
+      }
+    }
+  </style>
+
   <script define:vars={{ subject }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
     const SESSION_CACHE_KEY = 'sh_session_cache';
@@ -155,5 +225,39 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
       .catch(() => {
         // silently ignore — button stays as default "Unlock unlimited" on network error
       });
+
+    // One-time post-purchase toast: flag is set by payment-processing/index.astro
+    // right before redirecting here, only if the account's email was still
+    // unverified at that moment. Read once, then cleared immediately so a
+    // refresh or revisit never shows it again — the header badge and
+    // /account/ banner remain the persistent reminder after this.
+    (function showVerifyToastIfFlagged() {
+      let shouldShow = false;
+      try {
+        shouldShow = sessionStorage.getItem('sh_show_verify_toast') === '1';
+        sessionStorage.removeItem('sh_show_verify_toast');
+      } catch (err) {
+        return;
+      }
+      if (!shouldShow) return;
+
+      const toast = document.getElementById('verify-toast');
+      const closeBtn = document.getElementById('verify-toast-close');
+      if (!toast) return;
+
+      toast.style.display = 'flex';
+
+      const AUTO_DISMISS_MS = 25000;
+      const dismissTimer = setTimeout(() => {
+        toast.style.display = 'none';
+      }, AUTO_DISMISS_MS);
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          clearTimeout(dismissTimer);
+          toast.style.display = 'none';
+        });
+      }
+    })();
   </script>
 </Layout>
