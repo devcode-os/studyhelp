@@ -77,21 +77,26 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
   </div>
 
   <style>
-    /* Removes the default mobile browser tap-highlight (the blue flash on
-       tap) on question rows. Was always there, only became noticeable once
-       answers started taking a moment to load instead of appearing instantly. */
+    /* No visual color change on question tap at all — only the green answer
+       reveal below should show. Mobile browsers apply a default blue
+       tap-highlight flash on any clickable element unless explicitly
+       disabled; this removes it completely. */
+    .faq-item,
     .q-row {
-      -webkit-tap-highlight-color: transparent;
-      tap-highlight-color: transparent;
-      outline: none;
+      -webkit-tap-highlight-color: transparent !important;
+      tap-highlight-color: transparent !important;
+      touch-action: manipulation;
+      outline: none !important;
       -webkit-user-select: none;
       user-select: none;
     }
-    .q-row:active {
-      background: var(--accent-bg);
-    }
-    .q-row:focus {
-      outline: none;
+    .q-row:active,
+    .q-row:focus,
+    .q-row:hover,
+    .faq-item:active,
+    .faq-item:focus {
+      background: var(--card) !important;
+      outline: none !important;
     }
   </style>
 
