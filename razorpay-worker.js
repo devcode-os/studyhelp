@@ -796,6 +796,22 @@ async function getChapterAnswers(request, env) {
     return jsonAuth({ error: "Login required", locked: true }, 401);
   }
 
+  // Admin bypass: same ADMIN_PHONES check as the single-answer endpoint,
+  // so the background bulk-fetch (used to speed up repeat clicks) also
+  // works for admin accounts on subjects they haven't "purchased".
+  if (env.ADMIN_PHONES) {
+    const adminPhones = env.ADMIN_PHONES.split(",").map((p) => p.trim());
+    if (adminPhones.includes(user.phone)) {
+      let answers;
+      try {
+        answers = JSON.parse(chapter.answers_json);
+      } catch (err) {
+        return jsonAuth({ error: "Content error" }, 500);
+      }
+      return jsonAuth({ answers, admin: true });
+    }
+  }
+
   const entitlement = await env.DB.prepare(
     "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
   )
