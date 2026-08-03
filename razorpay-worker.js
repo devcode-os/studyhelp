@@ -39,7 +39,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -75,6 +75,12 @@ export default {
     }
     if (url.pathname === "/support/submit" && request.method === "POST") {
       return submitSupportRequest(request, env);
+    }
+    if (url.pathname === "/verify-email/send-otp" && request.method === "POST") {
+      return sendEmailVerifyOtp(request, env);
+    }
+    if (url.pathname === "/verify-email/confirm" && request.method === "POST") {
+      return confirmEmailVerifyOtp(request, env);
     }
     if (url.pathname === "/content/chapter-answers" && request.method === "GET") {
       return getChapterAnswers(request, env);
@@ -403,6 +409,7 @@ async function me(request, env) {
       name: user.name,
       phone: user.phone,
       recovery_email: user.recovery_email,
+      email_verified: !!user.email_verified,
     },
     200,
     corsHeadersWithCredentials(request)
@@ -566,6 +573,131 @@ async function resetPasscode(request, env) {
   }
 }
 
+// ---------- 8a. Verify Email: Send OTP (on-demand, 60s rate limit) ----------
+// Triggered only when the logged-in student clicks "Verify now" on the
+// dashboard banner — never sent automatically at signup/payment, so it
+// doesn't compete with forgot-passcode for Resend's free-tier daily quota.
+async function sendEmailVerifyOtp(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+    if (!user.recovery_email) {
+      return jsonAuth({ error: "No recovery email on file. Add one from your account page first." }, 400);
+    }
+
+    const fullUser = await env.DB.prepare(
+      "SELECT email_verified, last_verify_attempt FROM users WHERE id = ?"
+    )
+      .bind(user.id)
+      .first();
+
+    if (fullUser.email_verified) {
+      return jsonAuth({ message: "Email already verified." });
+    }
+
+    const nowSec = Math.floor(Date.now() / 1000);
+    if (fullUser.last_verify_attempt && nowSec - fullUser.last_verify_attempt < 60) {
+      const waitSec = 60 - (nowSec - fullUser.last_verify_attempt);
+      return jsonAuth({ error: `Please wait ${waitSec}s before retrying.` }, 429);
+    }
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const otpHash = await sha256Hex(otp);
+    const expiresAt = nowSec + 10 * 60; // 10 min expiry, same as passcode reset
+
+    // Invalidate any previous unused email-verify OTPs before issuing a new one
+    await env.DB.prepare(
+      "DELETE FROM otp_codes WHERE user_id = ? AND purpose = 'email_verify' AND used = 0"
+    )
+      .bind(user.id)
+      .run();
+
+    await env.DB.prepare(
+      `INSERT INTO otp_codes (id, user_id, otp_hash, purpose, expires_at)
+       VALUES (?, ?, ?, 'email_verify', ?)`
+    )
+      .bind(crypto.randomUUID(), user.id, otpHash, expiresAt)
+      .run();
+
+    // Record the attempt timestamp before sending, so a slow/failed send
+    // still counts against the 60s cooldown (prevents rapid retry spam).
+    await env.DB.prepare("UPDATE users SET last_verify_attempt = ? WHERE id = ?")
+      .bind(nowSec, user.id)
+      .run();
+
+    const emailResult = await sendEmailVerifyOtpEmail(env, user.recovery_email, otp);
+    if (!emailResult.ok) {
+      return jsonAuth(
+        { error: "Could not send verification code right now. Please try again shortly." },
+        502
+      );
+    }
+
+    return jsonAuth({ message: "Verification code sent to your recovery email." });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- 8b. Verify Email: Confirm OTP ----------
+async function confirmEmailVerifyOtp(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+
+    const { otp } = await request.json();
+    if (!otp) {
+      return jsonAuth({ error: "Code required" }, 400);
+    }
+
+    const otpRow = await env.DB.prepare(
+      `SELECT id, otp_hash, attempts, expires_at, used FROM otp_codes
+       WHERE user_id = ? AND purpose = 'email_verify'
+       ORDER BY created_at DESC LIMIT 1`
+    )
+      .bind(user.id)
+      .first();
+
+    if (!otpRow || otpRow.used || otpRow.expires_at < Math.floor(Date.now() / 1000)) {
+      return jsonAuth({ error: "Invalid or expired code" }, 400);
+    }
+
+    if (otpRow.attempts >= 5) {
+      return jsonAuth({ error: "Too many incorrect attempts. Please request a new code." }, 429);
+    }
+
+    const otpHash = await sha256Hex(otp);
+    if (otpHash !== otpRow.otp_hash) {
+      await env.DB.prepare("UPDATE otp_codes SET attempts = attempts + 1 WHERE id = ?")
+        .bind(otpRow.id)
+        .run();
+      return jsonAuth({ error: "Incorrect code" }, 400);
+    }
+
+    await env.DB.prepare("UPDATE otp_codes SET used = 1 WHERE id = ?")
+      .bind(otpRow.id)
+      .run();
+
+    await env.DB.prepare("UPDATE users SET email_verified = 1 WHERE id = ?")
+      .bind(user.id)
+      .run();
+
+    return jsonAuth({ message: "Email verified." });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
 // Send OTP email via Resend
 async function sendOtpEmail(env, toEmail, otp) {
   try {
@@ -580,6 +712,31 @@ async function sendOtpEmail(env, toEmail, otp) {
         to: [toEmail],
         subject: "Your StudyHelp passcode reset code",
         html: `<p>Your StudyHelp passcode reset code is:</p>
+               <p style="font-size:24px;font-weight:bold;letter-spacing:4px;">${otp}</p>
+               <p>This code expires in 10 minutes. If you did not request this, you can ignore this email.</p>`,
+      }),
+    });
+    return { ok: res.ok };
+  } catch (err) {
+    return { ok: false, error: String(err) };
+  }
+}
+
+// Send email-verification OTP via Resend (separate template from passcode reset,
+// so the wording matches what the user is actually doing)
+async function sendEmailVerifyOtpEmail(env, toEmail, otp) {
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "StudyHelp <studyhelp@fdaytalk.com>",
+        to: [toEmail],
+        subject: "Verify your StudyHelp email",
+        html: `<p>Your StudyHelp email verification code is:</p>
                <p style="font-size:24px;font-weight:bold;letter-spacing:4px;">${otp}</p>
                <p>This code expires in 10 minutes. If you did not request this, you can ignore this email.</p>`,
       }),
@@ -760,7 +917,7 @@ async function getUserFromSession(request, env) {
     return null;
   }
 
-  const user = await env.DB.prepare("SELECT id, name, phone, recovery_email FROM users WHERE id = ?")
+  const user = await env.DB.prepare("SELECT id, name, phone, recovery_email, email_verified FROM users WHERE id = ?")
     .bind(session.user_id)
     .first();
 

@@ -19,7 +19,9 @@ const { active = '' } = Astro.props;
         <span class="icon-light">&#9728;</span>
         <span class="icon-dark">&#9789;</span>
       </button>
-      <a href="/login/" id="login-link" class="btn btn-outline nav-desktop-only">Login</a>
+      <a href="/login/" id="login-link" class="btn btn-outline nav-desktop-only">
+        <span id="login-link-text">Login</span><span id="verify-badge-desktop" class="verify-badge" style="display:none;">!</span>
+      </a>
       <a href="/plans/" class="btn btn-accent nav-desktop-only">Go premium</a>
       <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">&#9776;</button>
     </div>
@@ -30,7 +32,9 @@ const { active = '' } = Astro.props;
     <a href="/subjects/">Subjects</a>
     <a href="/plans/">Plans</a>
     <a href="/about/">About</a>
-    <a href="/login/" id="login-link-mobile">Login</a>
+    <a href="/login/" id="login-link-mobile">
+      <span id="login-link-mobile-text">Login</span><span id="verify-badge-mobile" class="verify-badge" style="display:none;">!</span>
+    </a>
     <a href="/plans/" class="btn btn-accent" style="text-align:center;">Go premium</a>
   </div>
 </header>
@@ -88,6 +92,28 @@ const { active = '' } = Astro.props;
     border-color: var(--accent);
     background: var(--accent-bg);
     color: var(--accent);
+  }
+  #login-link, #login-link-mobile {
+    position: relative;
+  }
+  .verify-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #d33;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  html[data-theme="dark"] .verify-badge {
+    background: #ff6b6b;
+    color: #1a1a1a;
   }
   .theme-toggle {
     width: 38px;
@@ -206,15 +232,27 @@ const { active = '' } = Astro.props;
 
   const loginLink = document.getElementById('login-link');
   const loginLinkMobile = document.getElementById('login-link-mobile');
+  const loginLinkText = document.getElementById('login-link-text');
+  const loginLinkMobileText = document.getElementById('login-link-mobile-text');
+  const verifyBadgeDesktop = document.getElementById('verify-badge-desktop');
+  const verifyBadgeMobile = document.getElementById('verify-badge-mobile');
 
   getSession().then((data) => {
       if (!data.logged_in) return;
 
       [loginLink, loginLinkMobile].forEach((el) => {
         if (!el) return;
-        el.textContent = 'Account';
         el.href = '/account/';
       });
+      if (loginLinkText) loginLinkText.textContent = 'Account';
+      if (loginLinkMobileText) loginLinkMobileText.textContent = 'Account';
+
+      // Persistent reminder badge: stays visible on every page (not just /account/)
+      // until the recovery email is actually verified.
+      if (!data.email_verified && data.recovery_email) {
+        if (verifyBadgeDesktop) verifyBadgeDesktop.style.display = 'inline-flex';
+        if (verifyBadgeMobile) verifyBadgeMobile.style.display = 'inline-flex';
+      }
 
       // Check if all currently live subjects are owned — if so, show "Premium" instead of "Go premium".
       // NOTE: this list needs updating whenever a new subject goes live (available: true elsewhere).

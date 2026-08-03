@@ -15,9 +15,6 @@ import Header from '../../components/Header.astro';
         <div class="verify-banner-row">
           <i class="ti ti-mail-exclamation"></i>
           <span class="verify-banner-text">Email verification pending</span>
-          <button type="button" class="verify-dismiss" id="verify-dismiss" aria-label="Dismiss">
-            <i class="ti ti-x"></i>
-          </button>
         </div>
         <button type="button" class="verify-now-btn" id="verify-now-btn">
           <span class="btn-label">Verify now</span>
@@ -197,20 +194,6 @@ import Header from '../../components/Header.astro';
     .verify-banner-text {
       flex: 1;
     }
-    .verify-dismiss {
-      background: none;
-      border: none;
-      color: var(--accent);
-      cursor: pointer;
-      padding: 2px;
-      display: flex;
-      align-items: center;
-      opacity: 0.7;
-      transition: opacity 0.15s;
-    }
-    .verify-dismiss:hover {
-      opacity: 1;
-    }
     .verify-now-btn {
       margin-top: 10px;
       width: 100%;
@@ -307,7 +290,6 @@ import Header from '../../components/Header.astro';
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
     const SESSION_CACHE_KEY = 'sh_session_cache';
     const SESSION_CACHE_TTL = 5 * 60 * 1000;
-    const VERIFY_DISMISS_KEY = 'sh_verify_banner_dismissed';
 
     const loadingCard = document.getElementById('loading-card');
     const accountCard = document.getElementById('account-card');
@@ -315,7 +297,6 @@ import Header from '../../components/Header.astro';
     const logoutBtn = document.getElementById('logout-btn');
 
     const verifyBanner = document.getElementById('verify-banner');
-    const verifyDismiss = document.getElementById('verify-dismiss');
     const verifyNowBtn = document.getElementById('verify-now-btn');
     const verifyOtpRow = document.getElementById('verify-otp-row');
     const verifyOtpInput = document.getElementById('verify-otp-input');
@@ -470,11 +451,6 @@ import Header from '../../components/Header.astro';
         });
     });
 
-    verifyDismiss.addEventListener('click', () => {
-      verifyBanner.style.display = 'none';
-      try { sessionStorage.setItem(VERIFY_DISMISS_KEY, '1'); } catch (err) {}
-    });
-
     getSession()
       .then((data) => {
         loadingCard.style.display = 'none';
@@ -486,10 +462,7 @@ import Header from '../../components/Header.astro';
         document.getElementById('detail-phone').textContent = data.phone ? `+91 ${data.phone}` : '-';
         document.getElementById('detail-email').textContent = data.recovery_email || '-';
 
-        let dismissed = false;
-        try { dismissed = sessionStorage.getItem(VERIFY_DISMISS_KEY) === '1'; } catch (err) {}
-
-        if (!data.email_verified && data.recovery_email && !dismissed) {
+        if (!data.email_verified && data.recovery_email) {
           verifyBanner.style.display = 'block';
         }
 

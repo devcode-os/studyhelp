@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+<Layout title="Contact Support - StudyHelp" description="Get help with your StudyHelp account, passcode, or payment.">
+  <Header active="support" />
+
+  <div class="content auth-content">
+    <div class="auth-card" id="form-card">
+      <div class="auth-icon"><i class="ti ti-headset"></i></div>
+      <h1>Contact Support</h1>
+      <p class="sub">Can't access your recovery email, or ran into a payment issue? Tell us what happened and we'll help sort it out.</p>
+
+      <form id="support-form">
+        <label for="phone">Phone number</label>
+        <div class="phone-input">
+          <span class="phone-prefix">+91</span>
+          <input type="tel" id="phone" name="phone" inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="10-digit mobile number" />
+        </div>
+
+        <label for="contact_email">Email to reply to</label>
+        <input type="email" id="contact_email" name="contact_email" required autocomplete="email" placeholder="you@example.com" />
+        <p class="hint"><i class="ti ti-info-circle"></i> We'll send our reply here — use any email you can currently access.</p>
+
+        <label for="recovery_email">Recovery email on your account <span class="optional">(if you remember it)</span></label>
+        <input type="email" id="recovery_email" name="recovery_email" autocomplete="email" placeholder="you@example.com" />
+
+        <label for="payment_or_order_id">Payment ID or Order ID <span class="optional">(if you purchased)</span></label>
+        <input type="text" id="payment_or_order_id" name="payment_or_order_id" placeholder="pay_... or order_..." />
+        <p class="hint"><i class="ti ti-info-circle"></i> Find this in your Razorpay payment confirmation email or SMS.</p>
+
+        <label for="description">Describe the problem</label>
+        <textarea id="description" name="description" required rows="4" placeholder="What happened? Include as much detail as you can."></textarea>
+
+        <div id="error-msg" class="error-msg" style="display:none;">
+          <i class="ti ti-alert-circle"></i><span id="error-text"></span>
+        </div>
+
+        <button type="submit" class="btn-block" id="submit-btn">
+          <span class="btn-label">Submit request</span>
+          <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+        </button>
+      </form>
+    </div>
+
+    <div class="auth-card" id="success-card" style="display:none;">
+      <div class="auth-icon success-icon"><i class="ti ti-circle-check"></i></div>
+      <h1>Request submitted</h1>
+      <p class="sub">We've received your request and will get back to you as soon as we can.</p>
+      <a href="/" class="btn-block" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">Back to home</a>
+    </div>
+  </div>
+
+  <style>
+    .auth-content {
+      max-width: 480px;
+    }
+    .auth-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+      animation: card-in 0.45s ease-out;
+    }
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html[data-theme="dark"] .auth-card {
+      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    }
+    .auth-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .success-icon {
+      background: var(--success-bg);
+      color: var(--success-text);
+    }
+    .auth-card h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+    .auth-card .sub {
+      margin-bottom: 24px;
+    }
+    .auth-card label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin: 18px 0 6px;
+    }
+    .optional {
+      font-weight: 400;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .auth-card input,
+    .auth-card textarea {
+      margin-bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+      background: var(--bg);
+      color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .auth-card textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+    .auth-card input:focus,
+    .auth-card textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+    }
+    .phone-input {
+      display: flex;
+      align-items: stretch;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--card);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .phone-input:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+    }
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      background: var(--bg);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 17px;
+      border-right: 1px solid var(--border);
+    }
+    .phone-input input {
+      border: none;
+      border-radius: 0;
+      flex: 1;
+    }
+    .phone-input input:focus {
+      box-shadow: none;
+    }
+    .hint {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
+    .error-msg {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fdecec;
+      color: #b3261e;
+      border-left: 3px solid #d33;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin: 18px 0 0;
+    }
+    html[data-theme="dark"] .error-msg {
+      background: #3a1c1c;
+      color: #ff9b93;
+    }
+    .btn-block {
+      width: 100%;
+      margin-top: 26px;
+      padding: 13px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      background: var(--accent-bg);
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.1s, opacity 0.15s;
+    }
+    .btn-block:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+    .btn-block:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+    .btn-spinner {
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @media (max-width: 380px) {
+      .auth-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+
+  <script>
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+    const form = document.getElementById('support-form');
+    const formCard = document.getElementById('form-card');
+    const successCard = document.getElementById('success-card');
+    const errorMsg = document.getElementById('error-msg');
+    const errorText = document.getElementById('error-text');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnLabel = submitBtn.querySelector('.btn-label');
+    const btnSpinner = submitBtn.querySelector('.btn-spinner');
+
+    // Strip non-digit characters from phone as the user types
+    const phoneEl = document.getElementById('phone');
+    phoneEl.addEventListener('input', () => {
+      phoneEl.value = phoneEl.value.replace(/\D/g, '').slice(0, 10);
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      btnLabel.textContent = 'Submitting...';
+      btnSpinner.style.display = 'inline-block';
+
+      const payload = {
+        phone: form.phone.value.trim(),
+        contact_email: form.contact_email.value.trim(),
+        recovery_email: form.recovery_email.value.trim(),
+        payment_or_order_id: form.payment_or_order_id.value.trim(),
+        description: form.description.value.trim(),
+      };
+
+      try {
+        const res = await fetch(`${WORKER_URL}/support/submit`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorText.textContent = data.error || 'Something went wrong. Please try again.';
+          errorMsg.style.display = 'flex';
+          submitBtn.disabled = false;
+          btnLabel.textContent = 'Submit request';
+          btnSpinner.style.display = 'none';
+          return;
+        }
+
+        formCard.style.display = 'none';
+        successCard.style.display = 'block';
+      } catch (err) {
+        errorText.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg.style.display = 'flex';
+        submitBtn.disabled = false;
+        btnLabel.textContent = 'Submit request';
+        btnSpinner.style.display = 'none';
+      }
+    });
+  </script>
