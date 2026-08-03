@@ -95,16 +95,48 @@ const iconMap = {
 
   <script>
     // Hides the "login to continue" banner if the visitor has a real, active session.
-    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+    // Cached in sessionStorage (5 min TTL) to avoid a server call on every page load.
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+    const SESSION_CACHE_KEY = 'sh_session_cache';
+    const SESSION_CACHE_TTL = 5 * 60 * 1000;
 
-    fetch(`${WORKER_URL}/me`, { credentials: 'include' })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.logged_in) {
-          const banner = document.getElementById('login-banner');
-          if (banner) banner.style.display = 'none';
-        }
-      })
-      .catch(() => {});
+    function getCachedSession() {
+      try {
+        const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
+        // Never trust a cached "logged out" result - always re-check fresh in that case,
+        // since it likely means we cached the state from BEFORE a login happened.
+        return cached.data.logged_in ? cached.data : null;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setCachedSession(data) {
+      try {
+        sessionStorage.setItem(SESSION_CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+      } catch (err) {}
+    }
+
+    function getSession() {
+      const cached = getCachedSession();
+      if (cached) return Promise.resolve(cached);
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .then((data) => {
+          setCachedSession(data);
+          return data;
+        })
+        .catch(() => ({ logged_in: false }));
+    }
+
+    getSession().then((data) => {
+      if (data.logged_in) {
+        const banner = document.getElementById('login-banner');
+        if (banner) banner.style.display = 'none';
+      }
+    });
   </script>
 </Layout>

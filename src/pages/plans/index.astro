@@ -97,14 +97,40 @@ const subjects = [
 
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
-    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+    const SESSION_CACHE_KEY = 'sh_session_cache';
+    const SESSION_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
     let currentUser = null; // { user_id, name } once resolved, else null
 
+    function getCachedSession() {
+      try {
+        const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
+        // Never trust a cached "logged out" result - always re-check fresh in that case,
+        // since it likely means we cached the state from BEFORE a login happened.
+        return cached.data.logged_in ? cached.data : null;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setCachedSession(data) {
+      try {
+        sessionStorage.setItem(SESSION_CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+      } catch (err) {}
+    }
+
     async function getSession() {
+      const cached = getCachedSession();
+      if (cached) return cached.logged_in ? cached : null;
+
       try {
         const res = await fetch(`${WORKER_URL}/me`, { credentials: 'include' });
         const data = await res.json();
+        setCachedSession(data);
         return data.logged_in ? data : null;
       } catch (err) {
         return null;

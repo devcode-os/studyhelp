@@ -39,7 +39,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -75,6 +75,12 @@ export default {
     }
     if (url.pathname === "/support/submit" && request.method === "POST") {
       return submitSupportRequest(request, env);
+    }
+    if (url.pathname === "/content/chapter-answers" && request.method === "GET") {
+      return getChapterAnswers(request, env);
+    }
+    if (url.pathname === "/content/answer" && request.method === "GET") {
+      return getSingleAnswer(request, env);
     }
 
     return new Response("Not found", { status: 404, headers: CORS_HEADERS });
@@ -378,7 +384,7 @@ async function logout(request, env) {
     { ok: true },
     200,
     {
-      "Set-Cookie": "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=None",
+      "Set-Cookie": "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax",
       ...corsHeadersWithCredentials(request),
     }
   );
@@ -724,12 +730,13 @@ async function createSession(env, userId) {
 
 function sessionCookie({ token, expiresAt }) {
   const maxAge = expiresAt - Math.floor(Date.now() / 1000);
-  // SameSite=None (not Lax) is required here: the frontend (studyhelp.fdaytalk.com)
-  // and this Worker (*.workers.dev) are different sites from the browser's
-  // perspective, so this is a cross-site fetch. Lax cookies are never sent on
-  // cross-site JS-initiated requests, only on top-level navigations — that
-  // silently broke session recognition. None + Secure fixes it.
-  return `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=None`;
+  // SameSite=Lax now works correctly because this Worker runs on
+  // api.studyhelp.fdaytalk.com — the same root domain (fdaytalk.com) as the
+  // frontend (studyhelp.fdaytalk.com), making this a same-site cookie.
+  // (Previously this ran on *.workers.dev, a different site entirely, which
+  // forced SameSite=None — that broke in private/incognito mode and any
+  // browser blocking third-party cookies, and widened CSRF exposure.)
+  return `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`;
 }
 
 function getSessionTokenFromRequest(request) {
@@ -758,6 +765,203 @@ async function getUserFromSession(request, env) {
     .first();
 
   return user || null;
+}
+
+// ---------- 11. Chapter answers (entitlement-gated content delivery) ----------
+// This is the ONLY place full answer text/tables ever leave the server.
+// Nothing here is ever baked into the Astro static build.
+async function getChapterAnswers(request, env) {
+  const jsonAuth = (data, status = 200) =>
+    json(data, status, corsHeadersWithCredentials(request));
+
+  const url = new URL(request.url);
+  const chapterSlug = url.searchParams.get("chapter_slug");
+
+  if (!chapterSlug) {
+    return jsonAuth({ error: "chapter_slug required" }, 400);
+  }
+
+  const chapter = await env.DB.prepare(
+    "SELECT subject_id, answers_json FROM chapter_content WHERE chapter_slug = ?"
+  )
+    .bind(chapterSlug)
+    .first();
+
+  if (!chapter) {
+    return jsonAuth({ error: "Chapter not found" }, 404);
+  }
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required", locked: true }, 401);
+  }
+
+  const entitlement = await env.DB.prepare(
+    "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+  )
+    .bind(user.id, chapter.subject_id)
+    .first();
+
+  if (!entitlement) {
+    return jsonAuth({ error: "This subject has not been purchased", locked: true }, 403);
+  }
+
+  // answers_json is already a JSON string in D1 — parse then re-send as real JSON
+  let answers;
+  try {
+    answers = JSON.parse(chapter.answers_json);
+  } catch (err) {
+    return jsonAuth({ error: "Content error" }, 500);
+  }
+
+  return jsonAuth({ answers });
+}
+
+// Daily free-click limits for subjects NOT purchased.
+const FREE_CLICKS_ANON = 10;
+const FREE_CLICKS_LOGGED_IN = 20;
+const ANON_COOKIE_NAME = "sh_anon_id";
+const ANON_COOKIE_LIFETIME_SECONDS = 400 * 24 * 60 * 60; // ~13 months, so returning visitors keep a stable anon id
+
+function todayUtc() {
+  return new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
+}
+
+function getAnonIdFromRequest(request) {
+  const cookieHeader = request.headers.get("Cookie") || "";
+  const match = cookieHeader.match(/sh_anon_id=([^;]+)/);
+  return match ? match[1] : null;
+}
+
+// ---------- 12. Single-answer delivery with free-click limiting ----------
+// Used for subjects the visitor has NOT purchased. Purchased subjects always
+// go through the full-chapter endpoint above (no limit). This endpoint hands
+// out exactly one answer per call, so the daily free-click count is a real
+// boundary — not something already sitting in the browser's memory.
+async function getSingleAnswer(request, env) {
+  const jsonAuth = (data, status = 200, extraHeaders = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extraHeaders });
+
+  const url = new URL(request.url);
+  const chapterSlug = url.searchParams.get("chapter_slug");
+  const index = parseInt(url.searchParams.get("index"), 10);
+
+  if (!chapterSlug || Number.isNaN(index)) {
+    return jsonAuth({ error: "chapter_slug and index required" }, 400);
+  }
+
+  const chapter = await env.DB.prepare(
+    "SELECT subject_id, answers_json FROM chapter_content WHERE chapter_slug = ?"
+  )
+    .bind(chapterSlug)
+    .first();
+
+  if (!chapter) {
+    return jsonAuth({ error: "Chapter not found" }, 404);
+  }
+
+  let answersArr;
+  try {
+    answersArr = JSON.parse(chapter.answers_json);
+  } catch (err) {
+    return jsonAuth({ error: "Content error" }, 500);
+  }
+
+  if (index < 0 || index >= answersArr.length) {
+    return jsonAuth({ error: "Invalid question index" }, 400);
+  }
+
+  const answer = answersArr[index];
+
+  // Admin bypass: your own phone number(s), set via the ADMIN_PHONES secret
+  // (comma-separated, e.g. "9876543210,9123456789"), get unlimited access
+  // everywhere with no free-click counting — for content review/testing.
+  const user = await getUserFromSession(request, env);
+  if (user && env.ADMIN_PHONES) {
+    const adminPhones = env.ADMIN_PHONES.split(",").map((p) => p.trim());
+    if (adminPhones.includes(user.phone)) {
+      return jsonAuth({ answer, unlimited: true, admin: true });
+    }
+  }
+
+  // 1. Logged in AND purchased this subject -> always unlimited, no counting at all.
+  if (user) {
+    const entitlement = await env.DB.prepare(
+      "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+    )
+      .bind(user.id, chapter.subject_id)
+      .first();
+
+    if (entitlement) {
+      return jsonAuth({ answer, unlimited: true });
+    }
+  }
+
+  // 2. Not entitled (logged in but unpurchased, or fully anonymous) -> free-click budget applies.
+  const actorType = user ? "user" : "anon";
+  const dailyLimit = user ? FREE_CLICKS_LOGGED_IN : FREE_CLICKS_ANON;
+  const today = todayUtc();
+
+  let extraCookieHeader = {};
+  let actorId;
+
+  if (user) {
+    actorId = user.id;
+  } else {
+    actorId = getAnonIdFromRequest(request);
+    if (!actorId) {
+      actorId = crypto.randomUUID();
+      extraCookieHeader["Set-Cookie"] =
+        `${ANON_COOKIE_NAME}=${actorId}; Path=/; Max-Age=${ANON_COOKIE_LIFETIME_SECONDS}; Secure; SameSite=Lax`;
+      // Not HttpOnly: this is a soft, best-effort free-trial counter (not a
+      // security boundary), matching the accepted design in the workflow doc.
+    }
+  }
+
+  const existing = await env.DB.prepare(
+    "SELECT count FROM free_click_log WHERE actor_type = ? AND actor_id = ? AND subject_id = ? AND click_date = ?"
+  )
+    .bind(actorType, actorId, chapter.subject_id, today)
+    .first();
+
+  const usedSoFar = existing ? existing.count : 0;
+
+  if (usedSoFar >= dailyLimit) {
+    return jsonAuth(
+      {
+        error: user
+          ? "You've used today's free answers for this subject. Purchase for unlimited access, or try again tomorrow."
+          : "You've used today's free answers for this subject. Log in for more free answers, purchase for unlimited access, or try again tomorrow.",
+        locked: true,
+        limitReached: true,
+        remaining: 0,
+        dailyLimit,
+      },
+      403,
+      extraCookieHeader
+    );
+  }
+
+  // Under budget — increment and deliver the answer.
+  if (existing) {
+    await env.DB.prepare(
+      "UPDATE free_click_log SET count = count + 1 WHERE actor_type = ? AND actor_id = ? AND subject_id = ? AND click_date = ?"
+    )
+      .bind(actorType, actorId, chapter.subject_id, today)
+      .run();
+  } else {
+    await env.DB.prepare(
+      "INSERT INTO free_click_log (id, actor_type, actor_id, subject_id, click_date, count) VALUES (?, ?, ?, ?, ?, 1)"
+    )
+      .bind(crypto.randomUUID(), actorType, actorId, chapter.subject_id, today)
+      .run();
+  }
+
+  return jsonAuth(
+    { answer, remaining: dailyLimit - usedSoFar - 1, dailyLimit },
+    200,
+    extraCookieHeader
+  );
 }
 
 function json(data, status = 200, extraHeaders = {}) {

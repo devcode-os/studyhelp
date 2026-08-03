@@ -5,15 +5,10 @@ import { getSubjectMeta } from '../../data/subjectsMeta.js';
 
 export function getStaticPaths() {
   // Matches src/data/<any-subject-folder>/*.json - no subject names hardcoded.
-  // Adding a new subject just means adding a new folder under src/data/,
-  // this file never needs to change.
   const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
 
   const chapters = Object.entries(chapterFiles).flatMap(([path, mod]) => {
-    // path looks like: ../../data/telangana-economy-en/chapter-1.json
-    // subject folder name = second-to-last path segment
     const subject = path.split('/').slice(-2, -1)[0];
-
     const items = Array.isArray(mod.default) ? mod.default : [mod.default];
 
     return items
@@ -23,12 +18,23 @@ export function getStaticPaths() {
 
   return chapters.map((ch) => ({
     params: { slug: ch.slug },
-    props: { chapter: ch }
+    // SECURITY: only question text (ch.faqs[].q) is passed as props.
+    // Answer text, explanations, and tables are NEVER included here —
+    // they live only in D1's chapter_content table, served by the Worker
+    // after a real session + entitlement check. Do not add f.a, f.e, or
+    // f.table to this props object.
+    props: {
+      chapterSlug: ch.slug,
+      subject: ch.subject,
+      chapterNumber: ch.chapterNumber,
+      title: ch.title,
+      questions: ch.faqs.map((f) => f.q),
+    },
   }));
 }
 
-const { chapter } = Astro.props;
-const meta = getSubjectMeta(chapter.subject);
+const { chapterSlug, subject, chapterNumber, title, questions } = Astro.props;
+const meta = getSubjectMeta(subject);
 const isTelugu = meta.lang === 'te';
 
 const backLabel = isTelugu ? 'అధ్యాయాలు' : 'Chapters';
@@ -37,28 +43,29 @@ const prevLabel = isTelugu ? 'మునుపటి' : 'Previous';
 const nextLabel = isTelugu ? 'తర్వాత' : 'Next';
 
 const PER_PAGE = 20;
-const totalPages = Math.ceil(chapter.faqs.length / PER_PAGE);
-
-// Only question text ships in the static HTML - answers stay out of markup
-// entirely and are looked up client-side, since answers are the paid product.
-const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '', table: f.table || null }));
+const totalPages = Math.ceil(questions.length / PER_PAGE);
 ---
-<Layout title={`${chapter.title} FAQs`} description={`${chapter.title} - ${chapter.faqs.length} FAQs`}>
+<Layout title={`${title} FAQs`} description={`${title} - ${questions.length} FAQs`}>
 
   <Header />
 
   <div class="content">
-    <a href={`/${chapter.subject}/`} style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:20px; padding:5px 12px 5px 8px; margin-bottom:14px;">&larr; {backLabel}</a>
+    <a href={`/${subject}/`} style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:20px; padding:5px 12px 5px 8px; margin-bottom:14px;">&larr; {backLabel}</a>
     <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
-      <h1 style="margin:0;">{chapter.chapterNumber}. {chapter.title}</h1>
-      <span style="font-size:14px; font-weight:700; color:var(--text);">{chapter.faqs.length} {questionsLabel}</span>
+      <h1 style="margin:0;">{chapterNumber}. {title}</h1>
+      <span style="font-size:14px; font-weight:700; color:var(--text);">{questions.length} {questionsLabel}</span>
+    </div>
+
+    <div id="lock-banner" style="display:none; background:var(--amber-bg); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:16px; font-size:14px; color:var(--amber-text-strong);">
+      <span id="lock-message">Log in and purchase this subject to view answers.</span>
+      <a id="lock-action" href="/login/" style="margin-left:8px; font-weight:700; color:var(--accent); text-decoration:underline;">Log in</a>
     </div>
 
     <div id="faq-list" style="display:flex; flex-direction:column; gap:8px; margin-top:20px;">
-      {chapter.faqs.map((f, i) => (
+      {questions.map((q, i) => (
         <div class="faq-item" data-i={i} data-page={Math.floor(i / PER_PAGE) + 1} style={`border:1px solid var(--border); border-radius:8px; overflow:hidden; background:var(--card); ${i >= PER_PAGE ? 'display:none;' : ''}`}>
           <div class="q-row" data-i={i} style="cursor:pointer; padding:16px 18px; display:flex; justify-content:space-between; gap:10px;">
-            <span style="font-size:18px; line-height:1.6;">{i + 1}. {f.q}</span>
+            <span style="font-size:18px; line-height:1.6;">{i + 1}. {q}</span>
             <span style="color:var(--muted); flex-shrink:0; font-size:18px;">&darr;</span>
           </div>
           <div class="a-row" data-i={i} style="display:none; padding:0 18px 18px;"></div>
@@ -69,10 +76,19 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '', table: f.table 
     <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
   </div>
 
-  <script define:vars={{ answers, perPage: PER_PAGE, prevLabel, nextLabel }}>
+  <script define:vars={{ chapterSlug, perPage: PER_PAGE, prevLabel, nextLabel }}>
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
     let currentPage = 1;
-    const totalPages = Math.ceil(answers.length / perPage);
+    const revealedAnswers = {}; // index -> answer object, cached once revealed this page view
+    let purchased = false; // true once we learn this subject is fully unlocked (stops further limit checks)
+
     const list = document.getElementById('faq-list');
+    const lockBanner = document.getElementById('lock-banner');
+    const lockMessage = document.getElementById('lock-message');
+    const lockAction = document.getElementById('lock-action');
+    const totalItems = list.querySelectorAll('.faq-item').length;
+    const totalPages = Math.ceil(totalItems / perPage);
 
     function escapeHtml(str) {
       const div = document.createElement('div');
@@ -98,6 +114,17 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '', table: f.table 
       `;
     }
 
+    function renderAnswerHtml(f) {
+      const tableHtml = f.table ? renderTable(f.table) : '';
+      return `
+        <div style="background:var(--success-bg); border-radius:8px; padding:14px 16px;">
+          <p style="margin:0; font-weight:700; color:var(--success-text); font-size:19px;">${f.a}</p>
+          ${f.e ? `<p style="margin:8px 0 0; font-size:15px; color:var(--muted);">${f.e}</p>` : ''}
+          ${tableHtml}
+        </div>
+      `;
+    }
+
     function showPage(page) {
       currentPage = page;
       list.querySelectorAll('.faq-item').forEach((item) => {
@@ -107,29 +134,6 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '', table: f.table 
       renderPagination();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
-    list.querySelectorAll('.q-row').forEach((row) => {
-      row.addEventListener('click', () => {
-        const i = row.getAttribute('data-i');
-        const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
-        const isOpen = aRow.style.display === 'block';
-
-        list.querySelectorAll('.a-row').forEach((el) => el.style.display = 'none');
-
-        if (!isOpen) {
-          const f = answers[parseInt(i)];
-          const tableHtml = f.table ? renderTable(f.table) : '';
-          aRow.innerHTML = `
-            <div style="background:var(--success-bg); border-radius:8px; padding:14px 16px;">
-              <p style="margin:0; font-weight:700; color:var(--success-text); font-size:19px;">${f.a}</p>
-              ${f.e ? `<p style="margin:8px 0 0; font-size:15px; color:var(--muted);">${f.e}</p>` : ''}
-              ${tableHtml}
-            </div>
-          `;
-          aRow.style.display = 'block';
-        }
-      });
-    });
 
     function renderPagination() {
       const pag = document.getElementById('pagination');
@@ -150,6 +154,72 @@ const answers = chapter.faqs.map((f) => ({ a: f.a, e: f.e || '', table: f.table 
       if (prevBtn) prevBtn.addEventListener('click', () => showPage(currentPage - 1));
       if (nextBtn) nextBtn.addEventListener('click', () => showPage(currentPage + 1));
     }
+
+    function showLimitReached(message) {
+      lockBanner.style.display = 'block';
+      lockMessage.textContent = message;
+      lockAction.textContent = 'View plans';
+      lockAction.href = '/plans/';
+    }
+
+    function showRemainingHint(remaining, dailyLimit) {
+      if (remaining <= 3) {
+        lockBanner.style.display = 'block';
+        lockMessage.textContent = `${remaining} free answer${remaining === 1 ? '' : 's'} left for this subject today.`;
+        lockAction.textContent = 'View plans';
+        lockAction.href = '/plans/';
+      }
+    }
+
+    list.querySelectorAll('.q-row').forEach((row) => {
+      row.addEventListener('click', async () => {
+        const i = parseInt(row.getAttribute('data-i'));
+        const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
+        const isOpen = aRow.style.display === 'block';
+
+        list.querySelectorAll('.a-row').forEach((el) => el.style.display = 'none');
+        if (isOpen) return;
+
+        // Already revealed earlier in this page view — just re-show, no server call needed.
+        if (revealedAnswers[i]) {
+          aRow.innerHTML = renderAnswerHtml(revealedAnswers[i]);
+          aRow.style.display = 'block';
+          return;
+        }
+
+        aRow.innerHTML = '<p style="margin:0; color:var(--muted); font-size:14px;">Loading...</p>';
+        aRow.style.display = 'block';
+
+        try {
+          const res = await fetch(
+            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}`,
+            { credentials: 'include' }
+          );
+          const data = await res.json();
+
+          if (!res.ok) {
+            aRow.style.display = 'none';
+            showLimitReached(data.error || 'Please log in or purchase to continue.');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+          }
+
+          revealedAnswers[i] = data.answer;
+          aRow.innerHTML = renderAnswerHtml(data.answer);
+          aRow.style.display = 'block';
+
+          if (data.unlimited) {
+            purchased = true;
+            lockBanner.style.display = 'none';
+          } else if (typeof data.remaining === 'number') {
+            showRemainingHint(data.remaining, data.dailyLimit);
+          }
+        } catch (err) {
+          aRow.style.display = 'none';
+          showLimitReached('Network error. Please check your connection and try again.');
+        }
+      });
+    });
 
     renderPagination();
   </script>

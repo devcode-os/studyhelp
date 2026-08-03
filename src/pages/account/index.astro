@@ -149,14 +149,47 @@ import Header from '../../components/Header.astro';
   </style>
 
   <script>
-    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+    const SESSION_CACHE_KEY = 'sh_session_cache';
+    const SESSION_CACHE_TTL = 5 * 60 * 1000;
     const loadingCard = document.getElementById('loading-card');
     const accountCard = document.getElementById('account-card');
     const signedOutCard = document.getElementById('signed-out-card');
     const logoutBtn = document.getElementById('logout-btn');
 
-    fetch(`${WORKER_URL}/me`, { credentials: 'include' })
-      .then((res) => res.json())
+    function getCachedSession() {
+      try {
+        const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
+        // Never trust a cached "logged out" result - always re-check fresh in that case,
+        // since it likely means we cached the state from BEFORE a login happened.
+        return cached.data.logged_in ? cached.data : null;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setCachedSession(data) {
+      try {
+        sessionStorage.setItem(SESSION_CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+      } catch (err) {}
+    }
+
+    function getSession() {
+      const cached = getCachedSession();
+      if (cached) return Promise.resolve(cached);
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .then((data) => {
+          setCachedSession(data);
+          return data;
+        })
+        .catch(() => ({ logged_in: false }));
+    }
+
+    getSession()
       .then((data) => {
         loadingCard.style.display = 'none';
         if (!data.logged_in) {
@@ -178,6 +211,9 @@ import Header from '../../components/Header.astro';
       const spinner = logoutBtn.querySelector('.btn-spinner');
       logoutBtn.disabled = true;
       if (spinner) spinner.style.display = 'inline-block';
+      // Clear the cached session immediately so no stale "logged in" state
+      // lingers after logout, even within the 5-minute cache window.
+      try { sessionStorage.removeItem(SESSION_CACHE_KEY); } catch (err) {}
 
       fetch(`${WORKER_URL}/logout`, { method: 'POST', credentials: 'include' })
         .finally(() => { window.location.href = '/'; });

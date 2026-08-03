@@ -162,14 +162,52 @@ const { active = '' } = Astro.props;
     });
   }
 
-  // Real session check via cookie-backed /me endpoint (replaces old localStorage email check)
-  const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+  // Real session check via cookie-backed /me endpoint (replaces old localStorage email check).
+  // Cached in sessionStorage (5 min TTL) so we're not hitting the Worker on every
+  // single page load — login state rarely changes mid-session.
+  const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+  const SESSION_CACHE_KEY = 'sh_session_cache';
+  const SESSION_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+  function getCachedSession() {
+    try {
+      const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
+      if (!raw) return null;
+      const cached = JSON.parse(raw);
+      if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
+      // Never trust a cached "logged out" result - always re-check fresh in that case,
+      // since it likely means we cached the state from BEFORE a login happened.
+      return cached.data.logged_in ? cached.data : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function setCachedSession(data) {
+    try {
+      sessionStorage.setItem(SESSION_CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+    } catch (err) {
+      // sessionStorage unavailable (private mode edge cases) — just skip caching
+    }
+  }
+
+  function getSession() {
+    const cached = getCachedSession();
+    if (cached) return Promise.resolve(cached);
+
+    return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+      .then((res) => res.json())
+      .then((data) => {
+        setCachedSession(data);
+        return data;
+      })
+      .catch(() => ({ logged_in: false }));
+  }
+
   const loginLink = document.getElementById('login-link');
   const loginLinkMobile = document.getElementById('login-link-mobile');
 
-  fetch(`${WORKER_URL}/me`, { credentials: 'include' })
-    .then((res) => res.json())
-    .then((data) => {
+  getSession().then((data) => {
       if (!data.logged_in) return;
 
       [loginLink, loginLinkMobile].forEach((el) => {

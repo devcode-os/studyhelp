@@ -200,7 +200,7 @@ import Header from '../../components/Header.astro';
   </style>
 
   <script>
-    const WORKER_URL = 'https://studyhelp-payments.fdaytalk.workers.dev';
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
     const form = document.getElementById('login-form');
     const errorMsg = document.getElementById('error-msg');
     const errorText = document.getElementById('error-text');
@@ -259,6 +259,8 @@ import Header from '../../components/Header.astro';
         btnLabel.textContent = 'Logged in!';
         btnSpinner.style.display = 'none';
         submitBtn.classList.add('btn-success');
+        // Clear any stale cached session so the destination page re-checks fresh
+        try { sessionStorage.removeItem('sh_session_cache'); } catch (err) {}
         setTimeout(() => { window.location.href = nextUrl; }, 700);
       } catch (err) {
         showError('Network error. Please check your connection and try again.');
