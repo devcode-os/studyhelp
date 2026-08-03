@@ -990,9 +990,9 @@ async function getChapterAnswers(request, env) {
   return jsonAuth({ answers });
 }
 
-// Daily free-click limits for subjects NOT purchased.
-const FREE_CLICKS_ANON = 10;
-const FREE_CLICKS_LOGGED_IN = 20;
+// Daily free-click limit for subjects NOT purchased — flat, same for everyone,
+// login status makes no difference (per the locked no-login-for-free-tier design).
+const FREE_CLICKS_LIMIT = 15;
 const ANON_COOKIE_NAME = "sh_anon_id";
 const ANON_COOKIE_LIFETIME_SECONDS = 400 * 24 * 60 * 60; // ~13 months, so returning visitors keep a stable anon id
 
@@ -1070,16 +1070,31 @@ async function getSingleAnswer(request, env) {
     }
   }
 
-  // 2. Not entitled (logged in but unpurchased, or fully anonymous) -> free-click budget applies.
-  const actorType = user ? "user" : "anon";
-  const dailyLimit = user ? FREE_CLICKS_LOGGED_IN : FREE_CLICKS_ANON;
+  // 2. Not entitled (logged in but unpurchased, or fully anonymous) -> free-click
+  // budget applies. Login status is irrelevant here by design — the free tier
+  // needs no account at all.
+  //
+  // Primary tracking key is a client-computed device fingerprint (hash of
+  // userAgent + screen size + timezone + hardwareConcurrency), passed as
+  // ?fp=. Unlike the sh_anon_id cookie, this survives private/incognito
+  // browsing since it's derived from stable device/browser properties
+  // rather than stored state — closing the incognito reset loophole the
+  // cookie-only approach had.
+  //
+  // Falls back to the cookie if no fingerprint was sent (e.g. an old cached
+  // page still loaded, or JS fingerprinting failed for some reason) so
+  // nothing breaks — just loses incognito-resistance for that request.
+  const dailyLimit = FREE_CLICKS_LIMIT;
   const today = todayUtc();
 
+  const fingerprint = url.searchParams.get("fp");
   let extraCookieHeader = {};
   let actorId;
+  let actorType;
 
-  if (user) {
-    actorId = user.id;
+  if (fingerprint && /^[a-f0-9]{16,64}$/i.test(fingerprint)) {
+    actorId = fingerprint;
+    actorType = "fp";
   } else {
     actorId = getAnonIdFromRequest(request);
     if (!actorId) {
@@ -1089,6 +1104,7 @@ async function getSingleAnswer(request, env) {
       // Not HttpOnly: this is a soft, best-effort free-trial counter (not a
       // security boundary), matching the accepted design in the workflow doc.
     }
+    actorType = "anon";
   }
 
   // Single atomic upsert: increment (or create) today's count for this
@@ -1113,9 +1129,7 @@ async function getSingleAnswer(request, env) {
   if (newCount > dailyLimit) {
     return jsonAuth(
       {
-        error: user
-          ? `You've reached today's ${dailyLimit} free answers for this subject. Purchase for unlimited access, or come back tomorrow for 20 more free answers.`
-          : `You've reached today's ${dailyLimit} free answers for this subject. Log in for 20 free answers/day, purchase for unlimited access, or come back tomorrow.`,
+        error: `You've reached today's ${dailyLimit} free answers for this subject. Purchase for unlimited access, or come back tomorrow.`,
         locked: true,
         limitReached: true,
         remaining: 0,

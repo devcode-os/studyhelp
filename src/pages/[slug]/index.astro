@@ -136,6 +136,7 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
     let currentPage = 1;
     const revealedAnswers = {}; // index -> answer object, cached once revealed this page view
     let purchased = false; // true once we learn this subject is fully unlocked (stops further limit checks)
+    let limitReached = false; // true once the daily free-click cap is hit — short-circuits further clicks, no wasted fetch
     let bulkAnswers = null; // once unlimited access confirmed, holds ALL answers for instant reveals
 
     async function fetchAllAnswersInBackground() {
@@ -266,6 +267,16 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
           return;
         }
 
+        // Already know the daily cap is hit — don't waste a round trip
+        // showing "Loading..." just to get the same 403 back. Banner is
+        // already visible from the first time this happened; just re-scroll
+        // to it so the person notices, no flash of loading state at all.
+        if (limitReached) {
+          aRow.style.display = 'none';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
         aRow.innerHTML = '<p style="margin:0; color:var(--muted); font-size:14px;">Loading...</p>';
         aRow.style.display = 'block';
 
@@ -280,6 +291,7 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
 
           if (!res.ok) {
             aRow.style.display = 'none';
+            if (data.limitReached) limitReached = true;
             showLimitReached(data.error || 'Please log in or purchase to continue.');
             window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
