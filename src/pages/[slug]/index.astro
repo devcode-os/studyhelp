@@ -83,6 +83,21 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
     let currentPage = 1;
     const revealedAnswers = {}; // index -> answer object, cached once revealed this page view
     let purchased = false; // true once we learn this subject is fully unlocked (stops further limit checks)
+    let bulkAnswers = null; // once unlimited access confirmed, holds ALL answers for instant reveals
+
+    async function fetchAllAnswersInBackground() {
+      try {
+        const res = await fetch(
+          `${WORKER_URL}/content/chapter-answers?chapter_slug=${encodeURIComponent(chapterSlug)}`,
+          { credentials: 'include' }
+        );
+        if (!res.ok) return; // stays null, falls back to per-answer fetching — no harm
+        const data = await res.json();
+        bulkAnswers = data.answers;
+      } catch (err) {
+        // silently ignore — per-answer fetching still works fine as a fallback
+      }
+    }
 
     const list = document.getElementById('faq-list');
     const lockBanner = document.getElementById('lock-banner');
@@ -188,6 +203,16 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
           return;
         }
 
+        // Once we've confirmed unlimited access, the whole chapter loads in the
+        // background after the first click — subsequent clicks are instant,
+        // same speed as before the security fix, with no repeated round trips.
+        if (bulkAnswers && bulkAnswers[i]) {
+          revealedAnswers[i] = bulkAnswers[i];
+          aRow.innerHTML = renderAnswerHtml(bulkAnswers[i]);
+          aRow.style.display = 'block';
+          return;
+        }
+
         aRow.innerHTML = '<p style="margin:0; color:var(--muted); font-size:14px;">Loading...</p>';
         aRow.style.display = 'block';
 
@@ -212,6 +237,7 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
           if (data.unlimited) {
             purchased = true;
             lockBanner.style.display = 'none';
+            if (!bulkAnswers) fetchAllAnswersInBackground(); // speed up every click after this one
           } else if (typeof data.remaining === 'number') {
             showRemainingHint(data.remaining, data.dailyLimit);
           }
