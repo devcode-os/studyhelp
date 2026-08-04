@@ -364,21 +364,14 @@ async function login(request, env) {
       return jsonAuth({ error: "Invalid phone number or passcode" }, 401);
     }
 
-    // Device/session limit check (3-device cap per Section 3)
-    const activeSessions = await env.DB.prepare(
-      "SELECT id FROM login_sessions WHERE user_id = ? AND expires_at > ? ORDER BY created_at ASC"
-    )
-      .bind(user.id, Math.floor(Date.now() / 1000))
-      .all();
-
-    if (activeSessions.results.length >= 3) {
-      // Evict oldest session to make room (simple cap enforcement for now;
-      // Stage 4 will add a proper session-management UI for manual logout)
-      const oldest = activeSessions.results[0];
-      await env.DB.prepare("DELETE FROM login_sessions WHERE id = ?")
-        .bind(oldest.id)
-        .run();
-    }
+    // Single active session policy (replaces the earlier 3-device cap,
+    // Aug 3, 2026): logging in on a new device always logs out any
+    // previous session for this account, everywhere. No device limit to
+    // hit, no management UI needed — there is never more than one active
+    // session to manage.
+    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?")
+      .bind(user.id)
+      .run();
 
     const session = await createSession(env, user.id);
 
