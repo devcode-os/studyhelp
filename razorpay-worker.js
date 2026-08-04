@@ -19,6 +19,7 @@ const CORS_HEADERS = {
 const ALLOWED_ORIGINS = [
   "https://studyhelp.fdaytalk.com",
   "http://localhost:4321",
+  "https://localhost:4321",
   "http://localhost:3000",
 ];
 
@@ -329,7 +330,7 @@ async function signup(request, env) {
     return jsonAuth(
       { user_id: userId, name },
       200,
-      { "Set-Cookie": sessionCookie(session) }
+      { "Set-Cookie": sessionCookie(session, request) }
     );
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
@@ -378,7 +379,7 @@ async function login(request, env) {
     return jsonAuth(
       { user_id: user.id, name: user.name },
       200,
-      { "Set-Cookie": sessionCookie(session) }
+      { "Set-Cookie": sessionCookie(session, request) }
     );
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
@@ -893,7 +894,7 @@ async function createSession(env, userId) {
   return { token, expiresAt };
 }
 
-function sessionCookie({ token, expiresAt }) {
+function sessionCookie({ token, expiresAt }, request) {
   const maxAge = expiresAt - Math.floor(Date.now() / 1000);
   // SameSite=Lax now works correctly because this Worker runs on
   // api.studyhelp.fdaytalk.com — the same root domain (fdaytalk.com) as the
@@ -901,7 +902,24 @@ function sessionCookie({ token, expiresAt }) {
   // (Previously this ran on *.workers.dev, a different site entirely, which
   // forced SameSite=None — that broke in private/incognito mode and any
   // browser blocking third-party cookies, and widened CSRF exposure.)
-  return `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`;
+  //
+  // Local dev exception: localhost:4321 and api.studyhelp.fdaytalk.com are
+  // different sites (different root domains), so this is a CROSS-site
+  // request from the browser's point of view. Cross-site cookies are only
+  // ever sent by the browser when SameSite=None — and SameSite=None is only
+  // valid paired with Secure, which requires the local dev server itself to
+  // run over https (see mkcert setup). Without this, the cookie gets stored
+  // but never actually sent back on API calls, so login silently fails to
+  // "stick" and every request looks anonymous (hits the 15/day free-click
+  // limit). Production (studyhelp.fdaytalk.com <-> api.studyhelp.fdaytalk.com)
+  // shares the root domain fdaytalk.com, so it stays same-site and keeps
+  // using the tighter Secure; SameSite=Lax — unaffected by this branch.
+  const origin = request?.headers.get("Origin") || "";
+  const isLocalDev = origin.includes("localhost") || origin.includes("127.0.0.1");
+
+  return isLocalDev
+    ? `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=None`
+    : `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`;
 }
 
 function getSessionTokenFromRequest(request) {

@@ -9,5 +9,8 @@
   },
   "dependencies": {
     "astro": "^4.15.0"
+  },
+  "devDependencies": {
+    "vite-plugin-mkcert": "^2.1.0"
   }
 }
