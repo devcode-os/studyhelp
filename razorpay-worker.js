@@ -646,6 +646,46 @@ async function resetPasscode(request, env) {
 // Triggered only when the logged-in student clicks "Verify now" on the
 // dashboard banner — never sent automatically at signup/payment, so it
 // doesn't compete with forgot-passcode for Resend's free-tier daily quota.
+// ---------- Shared verify lockout (email_verify + email_change, 2 wrong codes -> 24h) ----------
+const VERIFY_LOCKOUT_MAX_FAILS = 2;
+const VERIFY_LOCKOUT_SECONDS = 24 * 60 * 60;
+
+async function getVerifyLockState(env, userId) {
+  const row = await env.DB.prepare(
+    "SELECT verify_fail_count, verify_locked_until FROM users WHERE id = ?"
+  )
+    .bind(userId)
+    .first();
+  const nowSec = Math.floor(Date.now() / 1000);
+  const locked = !!(row.verify_locked_until && row.verify_locked_until > nowSec);
+  return { failCount: row.verify_fail_count || 0, lockedUntil: row.verify_locked_until, locked };
+}
+
+async function recordVerifyFailure(env, userId) {
+  const nowSec = Math.floor(Date.now() / 1000);
+  const row = await env.DB.prepare("SELECT verify_fail_count FROM users WHERE id = ?")
+    .bind(userId)
+    .first();
+  const newCount = (row.verify_fail_count || 0) + 1;
+  const lockedUntil = newCount >= VERIFY_LOCKOUT_MAX_FAILS ? nowSec + VERIFY_LOCKOUT_SECONDS : null;
+  await env.DB.prepare("UPDATE users SET verify_fail_count = ?, verify_locked_until = ? WHERE id = ?")
+    .bind(newCount, lockedUntil, userId)
+    .run();
+  return { failCount: newCount, lockedUntil };
+}
+
+async function resetVerifyLock(env, userId) {
+  await env.DB.prepare("UPDATE users SET verify_fail_count = 0, verify_locked_until = NULL WHERE id = ?")
+    .bind(userId)
+    .run();
+}
+
+function lockoutMessage(lockedUntil) {
+  const nowSec = Math.floor(Date.now() / 1000);
+  const hoursLeft = Math.max(1, Math.ceil((lockedUntil - nowSec) / 3600));
+  return `Too many incorrect attempts. Please try again in about ${hoursLeft} hour${hoursLeft === 1 ? "" : "s"}.`;
+}
+
 async function sendEmailVerifyOtp(request, env) {
   const jsonAuth = (data, status = 200, extra = {}) =>
     json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
@@ -667,6 +707,11 @@ async function sendEmailVerifyOtp(request, env) {
 
     if (fullUser.email_verified) {
       return jsonAuth({ message: "Email already verified." });
+    }
+
+    const lockState = await getVerifyLockState(env, user.id);
+    if (lockState.locked) {
+      return jsonAuth({ error: lockoutMessage(lockState.lockedUntil), locked: true }, 429);
     }
 
     const nowSec = Math.floor(Date.now() / 1000);
@@ -737,6 +782,11 @@ async function confirmEmailVerifyOtp(request, env) {
       .bind(user.id)
       .first();
 
+    const lockState = await getVerifyLockState(env, user.id);
+    if (lockState.locked) {
+      return jsonAuth({ error: lockoutMessage(lockState.lockedUntil), locked: true }, 429);
+    }
+
     if (!otpRow || otpRow.used || otpRow.expires_at < Math.floor(Date.now() / 1000)) {
       return jsonAuth({ error: "Invalid or expired code" }, 400);
     }
@@ -750,6 +800,10 @@ async function confirmEmailVerifyOtp(request, env) {
       await env.DB.prepare("UPDATE otp_codes SET attempts = attempts + 1 WHERE id = ?")
         .bind(otpRow.id)
         .run();
+      const failResult = await recordVerifyFailure(env, user.id);
+      if (failResult.lockedUntil) {
+        return jsonAuth({ error: lockoutMessage(failResult.lockedUntil), locked: true }, 429);
+      }
       return jsonAuth({ error: "Incorrect code" }, 400);
     }
 
@@ -760,6 +814,8 @@ async function confirmEmailVerifyOtp(request, env) {
     await env.DB.prepare("UPDATE users SET email_verified = 1 WHERE id = ?")
       .bind(user.id)
       .run();
+
+    await resetVerifyLock(env, user.id);
 
     return jsonAuth({ message: "Email verified." });
   } catch (err) {
@@ -803,6 +859,11 @@ async function sendChangeEmailOtp(request, env) {
 
     if (newEmail === (user.recovery_email || "").toLowerCase()) {
       return jsonAuth({ error: "That's already your current recovery email" }, 400);
+    }
+
+    const lockState = await getVerifyLockState(env, user.id);
+    if (lockState.locked) {
+      return jsonAuth({ error: lockoutMessage(lockState.lockedUntil), locked: true }, 429);
     }
 
     const nowSec = Math.floor(Date.now() / 1000);
@@ -874,6 +935,11 @@ async function confirmChangeEmailOtp(request, env) {
       .bind(user.id)
       .first();
 
+    const lockState = await getVerifyLockState(env, user.id);
+    if (lockState.locked) {
+      return jsonAuth({ error: lockoutMessage(lockState.lockedUntil), locked: true }, 429);
+    }
+
     if (!otpRow || otpRow.used || otpRow.expires_at < Math.floor(Date.now() / 1000)) {
       return jsonAuth({ error: "Invalid or expired code" }, 400);
     }
@@ -887,6 +953,10 @@ async function confirmChangeEmailOtp(request, env) {
       await env.DB.prepare("UPDATE otp_codes SET attempts = attempts + 1 WHERE id = ?")
         .bind(otpRow.id)
         .run();
+      const failResult = await recordVerifyFailure(env, user.id);
+      if (failResult.lockedUntil) {
+        return jsonAuth({ error: lockoutMessage(failResult.lockedUntil), locked: true }, 429);
+      }
       return jsonAuth({ error: "Incorrect code" }, 400);
     }
 
@@ -911,6 +981,8 @@ async function confirmChangeEmailOtp(request, env) {
     )
       .bind(fullUser.pending_recovery_email, user.id)
       .run();
+
+    await resetVerifyLock(env, user.id);
 
     return jsonAuth({ message: "Recovery email updated.", recovery_email: fullUser.pending_recovery_email });
   } catch (err) {

@@ -16,10 +16,25 @@ import Header from '../../components/Header.astro';
           <i class="ti ti-mail-exclamation"></i>
           <span class="verify-banner-text">Email verification pending</span>
         </div>
-        <button type="button" class="verify-now-btn" id="verify-now-btn">
-          <span class="btn-label">Verify now</span>
-          <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
-        </button>
+
+        <div id="verify-step-start">
+          <button type="button" class="verify-now-btn" id="verify-now-btn">
+            <span class="btn-label">Verify now</span>
+            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+          </button>
+        </div>
+
+        <div id="verify-step-email" style="display:none;">
+          <p class="hint"><i class="ti ti-info-circle"></i> <span>Check this is the right email before we send a code. Not yours? Edit it below.</span></p>
+          <input type="email" id="verify-email-input" class="text-input" placeholder="you@example.com" autocomplete="email" />
+          <div id="verify-email-error-msg" class="error-msg" style="display:none;">
+            <i class="ti ti-alert-circle"></i><span id="verify-email-error-text"></span>
+          </div>
+          <button type="button" class="btn-block" id="verify-send-code-btn">
+            <span class="btn-label">Send code to this email</span>
+            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+          </button>
+        </div>
 
         <div class="verify-otp-row" id="verify-otp-row" style="display:none;">
           <p class="hint"><i class="ti ti-info-circle"></i> <span id="verify-otp-hint">Enter the 6-digit code sent to your recovery email.</span></p>
@@ -32,7 +47,7 @@ import Header from '../../components/Header.astro';
             <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
           </button>
           <button type="button" class="verify-resend-btn" id="verify-resend-btn" disabled>Resend code (<span id="verify-resend-timer">60</span>s)</button>
-          <button type="button" class="verify-resend-btn" id="wrong-email-link">Wrong or unreachable email? Change it</button>
+          <button type="button" class="verify-resend-btn" id="edit-email-again-btn">Edit email address</button>
         </div>
       </div>
 
@@ -44,7 +59,7 @@ import Header from '../../components/Header.astro';
         <span class="detail-label"><i class="ti ti-mail"></i> Recovery email</span>
         <span class="detail-value" id="detail-email">-</span>
       </div>
-      <button type="button" class="change-email-toggle" id="change-email-toggle">Change recovery email</button>
+      <button type="button" class="change-email-toggle" id="change-email-toggle" style="display:none;">Change recovery email</button>
 
       <div class="change-email-box" id="change-email-box" style="display:none;">
         <div id="change-email-step-input">
@@ -370,14 +385,27 @@ import Header from '../../components/Header.astro';
     const logoutBtn = document.getElementById('logout-btn');
 
     const verifyBanner = document.getElementById('verify-banner');
+    const verifyStepStart = document.getElementById('verify-step-start');
     const verifyNowBtn = document.getElementById('verify-now-btn');
+    const verifyStepEmail = document.getElementById('verify-step-email');
+    const verifyEmailInput = document.getElementById('verify-email-input');
+    const verifyEmailErrorMsg = document.getElementById('verify-email-error-msg');
+    const verifyEmailErrorText = document.getElementById('verify-email-error-text');
+    const verifySendCodeBtn = document.getElementById('verify-send-code-btn');
     const verifyOtpRow = document.getElementById('verify-otp-row');
+    const verifyOtpHint = document.getElementById('verify-otp-hint');
     const verifyOtpInput = document.getElementById('verify-otp-input');
     const verifyErrorMsg = document.getElementById('verify-error-msg');
     const verifyErrorText = document.getElementById('verify-error-text');
     const verifyConfirmBtn = document.getElementById('verify-confirm-btn');
     const verifyResendBtn = document.getElementById('verify-resend-btn');
     const verifyResendTimer = document.getElementById('verify-resend-timer');
+    const editEmailAgainBtn = document.getElementById('edit-email-again-btn');
+
+    // 'verify' = sending code to the existing recovery_email (no change).
+    // 'change' = the typed value differs, so this promotes to a real email change.
+    let verifyFlowMode = 'verify';
+    let currentRecoveryEmail = '';
 
     const changeEmailToggle = document.getElementById('change-email-toggle');
     const changeEmailBox = document.getElementById('change-email-box');
@@ -453,45 +481,92 @@ import Header from '../../components/Header.astro';
       }, 1000);
     }
 
-    function sendVerifyOtp(isResend) {
-      const btn = isResend ? verifyResendBtn : verifyNowBtn;
+    function showVerifyStart() {
+      verifyStepStart.style.display = 'block';
+      verifyStepEmail.style.display = 'none';
+      verifyOtpRow.style.display = 'none';
+    }
+
+    function showVerifyEmailStep() {
+      verifyStepStart.style.display = 'none';
+      verifyStepEmail.style.display = 'block';
+      verifyOtpRow.style.display = 'none';
+      verifyEmailInput.value = currentRecoveryEmail;
+      verifyEmailErrorMsg.style.display = 'none';
+      verifyEmailInput.focus();
+    }
+
+    verifyNowBtn.addEventListener('click', showVerifyEmailStep);
+    editEmailAgainBtn.addEventListener('click', () => {
+      if (resendCountdownInterval) clearInterval(resendCountdownInterval);
+      showVerifyEmailStep();
+    });
+
+    function sendVerifyStep(isResend) {
+      const btn = isResend ? verifyResendBtn : verifySendCodeBtn;
       const label = btn.querySelector ? btn.querySelector('.btn-label') : null;
       const spinner = btn.querySelector ? btn.querySelector('.btn-spinner') : null;
       btn.disabled = true;
       if (spinner) spinner.style.display = 'inline-block';
+      verifyEmailErrorMsg.style.display = 'none';
       verifyErrorMsg.style.display = 'none';
 
-      return fetch(`${WORKER_URL}/verify-email/send-otp`, {
-        method: 'POST',
-        credentials: 'include',
-      })
+      const typedEmail = verifyEmailInput.value.trim();
+      if (!isResend) {
+        if (!typedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(typedEmail)) {
+          if (spinner) spinner.style.display = 'none';
+          btn.disabled = false;
+          verifyEmailErrorText.textContent = 'Enter a valid email address.';
+          verifyEmailErrorMsg.style.display = 'flex';
+          return;
+        }
+        verifyFlowMode = typedEmail.toLowerCase() === currentRecoveryEmail.toLowerCase() ? 'verify' : 'change';
+      }
+
+      const endpoint = verifyFlowMode === 'verify'
+        ? `${WORKER_URL}/verify-email/send-otp`
+        : `${WORKER_URL}/account/change-email/send-otp`;
+      const body = verifyFlowMode === 'verify'
+        ? undefined
+        : JSON.stringify({ new_email: typedEmail || undefined });
+      const headers = verifyFlowMode === 'verify'
+        ? {}
+        : { 'Content-Type': 'application/json' };
+
+      return fetch(endpoint, { method: 'POST', credentials: 'include', headers, body })
         .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
         .then(({ ok, data }) => {
           if (spinner) spinner.style.display = 'none';
+          btn.disabled = false;
           if (!ok) {
-            if (label) btn.disabled = false;
-            verifyErrorText.textContent = data.error || 'Could not send code. Please try again.';
-            verifyErrorMsg.style.display = 'flex';
-            verifyOtpRow.style.display = 'block';
-            if (isResend) verifyResendBtn.disabled = false;
+            const target = isResend ? verifyErrorText : verifyEmailErrorText;
+            const targetMsg = isResend ? verifyErrorMsg : verifyEmailErrorMsg;
+            target.textContent = data.error || 'Could not send code. Please try again.';
+            targetMsg.style.display = 'flex';
+            if (isResend) verifyResendBtn.disabled = data.locked ? true : false;
             return;
           }
+          verifyStepStart.style.display = 'none';
+          verifyStepEmail.style.display = 'none';
           verifyOtpRow.style.display = 'block';
-          if (label) { btn.disabled = false; }
+          verifyOtpHint.textContent = verifyFlowMode === 'verify'
+            ? 'Enter the 6-digit code sent to your recovery email.'
+            : `Enter the 6-digit code sent to ${typedEmail || 'your new email'}.`;
           verifyOtpInput.focus();
           startResendCountdown();
         })
         .catch(() => {
           if (spinner) spinner.style.display = 'none';
           btn.disabled = false;
-          verifyErrorText.textContent = 'Network error. Please try again.';
-          verifyErrorMsg.style.display = 'flex';
-          verifyOtpRow.style.display = 'block';
+          const target = isResend ? verifyErrorText : verifyEmailErrorText;
+          const targetMsg = isResend ? verifyErrorMsg : verifyEmailErrorMsg;
+          target.textContent = 'Network error. Please try again.';
+          targetMsg.style.display = 'flex';
         });
     }
 
-    verifyNowBtn.addEventListener('click', () => sendVerifyOtp(false));
-    verifyResendBtn.addEventListener('click', () => sendVerifyOtp(true));
+    verifySendCodeBtn.addEventListener('click', () => sendVerifyStep(false));
+    verifyResendBtn.addEventListener('click', () => sendVerifyStep(true));
 
     verifyOtpInput.addEventListener('input', () => {
       verifyOtpInput.value = verifyOtpInput.value.replace(/\D/g, '').slice(0, 6);
@@ -511,7 +586,11 @@ import Header from '../../components/Header.astro';
       spinner.style.display = 'inline-block';
       verifyErrorMsg.style.display = 'none';
 
-      fetch(`${WORKER_URL}/verify-email/confirm`, {
+      const endpoint = verifyFlowMode === 'verify'
+        ? `${WORKER_URL}/verify-email/confirm`
+        : `${WORKER_URL}/account/change-email/confirm`;
+
+      fetch(endpoint, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -526,12 +605,18 @@ import Header from '../../components/Header.astro';
             verifyErrorMsg.style.display = 'flex';
             return;
           }
-          // Verified — clear cache so /me reflects the new state, then hide the banner.
+          // Verified — clear cache so /me reflects the new state, then hide the banner
+          // and reveal "Change recovery email" now that they're verified.
           clearCachedSession();
           if (resendCountdownInterval) clearInterval(resendCountdownInterval);
           label.textContent = 'Verified!';
+          if (verifyFlowMode === 'change' && data.recovery_email) {
+            document.getElementById('detail-email').textContent = data.recovery_email;
+            currentRecoveryEmail = data.recovery_email;
+          }
           setTimeout(() => {
             verifyBanner.style.display = 'none';
+            changeEmailToggle.style.display = 'block';
           }, 700);
         })
         .catch(() => {
@@ -589,14 +674,6 @@ import Header from '../../components/Header.astro';
         changeEmailBox.style.display = 'none';
       }
     });
-
-    const wrongEmailLink = document.getElementById('wrong-email-link');
-    if (wrongEmailLink) {
-      wrongEmailLink.addEventListener('click', () => {
-        showChangeEmailInputStep();
-        changeEmailBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-    }
 
     cancelChangeEmailBtn.addEventListener('click', () => {
       changeEmailBox.style.display = 'none';
@@ -740,6 +817,14 @@ import Header from '../../components/Header.astro';
         document.getElementById('account-name').textContent = data.name || 'Your account';
         document.getElementById('detail-phone').textContent = data.phone ? `+91 ${data.phone}` : '-';
         document.getElementById('detail-email').textContent = data.recovery_email || '-';
+        currentRecoveryEmail = data.recovery_email || '';
+
+        // "Change recovery email" is only offered once verified — while
+        // verification is pending, the verify-banner above is the single
+        // path to fix a wrong email (editable before sending, see showVerifyEmailStep).
+        if (data.email_verified) {
+          changeEmailToggle.style.display = 'block';
+        }
 
         if (!data.email_verified && data.recovery_email) {
           verifyBanner.style.display = 'block';
@@ -748,8 +833,21 @@ import Header from '../../components/Header.astro';
         if (data.pending_recovery_email) {
           // An email change was started but never confirmed (e.g. they navigated
           // away). Resume directly at the OTP step instead of losing progress.
-          showChangeEmailOtpStep(data.pending_recovery_email);
-          startChangeEmailResendCountdown();
+          if (data.email_verified) {
+            // Change was started after they were already verified — resume in
+            // the standalone "Change recovery email" box.
+            showChangeEmailOtpStep(data.pending_recovery_email);
+            startChangeEmailResendCountdown();
+          } else {
+            // Change was started as part of the verify flow itself — resume
+            // inside the verify-banner's OTP step, same mode it was in.
+            verifyFlowMode = 'change';
+            verifyStepStart.style.display = 'none';
+            verifyStepEmail.style.display = 'none';
+            verifyOtpRow.style.display = 'block';
+            verifyOtpHint.textContent = `Enter the 6-digit code sent to ${data.pending_recovery_email}.`;
+            startResendCountdown();
+          }
         }
 
         accountCard.style.display = 'block';
