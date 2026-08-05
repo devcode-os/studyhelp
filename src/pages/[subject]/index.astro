@@ -73,6 +73,8 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
       </div>
     </div>
 
+    <div id="grace-grant-banner" style="display:none; margin-bottom:1.5rem; padding:12px 16px; border-radius:10px; background:#fff4e0; border:1px solid #e8c876; color:#6b4a00; font-size:13px; line-height:1.5;"></div>
+
     {chapters.length > 0 ? (
       <div class="chapter-grid">
         {chapters.map((ch) => (
@@ -240,6 +242,15 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
                 btn.style.background = 'var(--success-bg, #d1fae5)';
                 btn.style.color = 'var(--success-text, #065f46)';
                 btn.style.borderColor = 'transparent';
+              }
+
+              if (data.is_grace_grant) {
+                const banner = document.getElementById('grace-grant-banner');
+                if (banner) {
+                  const days = data.grace_days_remaining;
+                  banner.innerHTML = `We haven't yet confirmed your payment. You've been given ${days ?? ''} day${days === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/" style="color:#6b4a00; font-weight:600;">contact us</a>.`;
+                  banner.style.display = 'block';
+                }
               }
             }
           });
