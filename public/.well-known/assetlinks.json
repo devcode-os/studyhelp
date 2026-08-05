@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.fdaytalk.studyhelp",
+    "sha256_cert_fingerprints": [
+      "85:01:E2:B4:40:07:EE:F0:FD:5A:79:C3:B3:D3:11:11:27:87:FA:0A:A6:41:E3:09:B2:71:A3:03:D5:56:6D:BE"
+    ]
+  }
+}]
