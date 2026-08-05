@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -82,6 +82,12 @@ export default {
     }
     if (url.pathname === "/verify-email/confirm" && request.method === "POST") {
       return confirmEmailVerifyOtp(request, env);
+    }
+    if (url.pathname === "/account/change-email/send-otp" && request.method === "POST") {
+      return sendChangeEmailOtp(request, env);
+    }
+    if (url.pathname === "/account/change-email/confirm" && request.method === "POST") {
+      return confirmChangeEmailOtp(request, env);
     }
     if (url.pathname === "/content/chapter-answers" && request.method === "GET") {
       return getChapterAnswers(request, env);
@@ -459,6 +465,11 @@ async function me(request, env) {
   if (!user) {
     return json({ logged_in: false }, 200, corsHeadersWithCredentials(request));
   }
+  const fullUser = await env.DB.prepare(
+    "SELECT pending_recovery_email FROM users WHERE id = ?"
+  )
+    .bind(user.id)
+    .first();
   return json(
     {
       logged_in: true,
@@ -466,6 +477,7 @@ async function me(request, env) {
       name: user.name,
       phone: user.phone,
       recovery_email: user.recovery_email,
+      pending_recovery_email: fullUser ? fullUser.pending_recovery_email : null,
       email_verified: !!user.email_verified,
     },
     200,
@@ -752,6 +764,182 @@ async function confirmEmailVerifyOtp(request, env) {
     return jsonAuth({ message: "Email verified." });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- 8c. Change Recovery Email: Send OTP to new address ----------
+// Student-side self-service — see migration-recovery-email-change.sql notes.
+// New email is staged in pending_recovery_email; recovery_email is untouched
+// until the OTP sent to the NEW address is confirmed.
+async function sendChangeEmailOtp(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+
+    const { new_email } = await request.json();
+    const fullUserPre = await env.DB.prepare(
+      "SELECT pending_recovery_email, last_email_change_attempt FROM users WHERE id = ?"
+    )
+      .bind(user.id)
+      .first();
+
+    let newEmail;
+    if (new_email && new_email.trim()) {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(new_email.trim())) {
+        return jsonAuth({ error: "Enter a valid email address" }, 400);
+      }
+      newEmail = new_email.trim().toLowerCase();
+    } else if (fullUserPre.pending_recovery_email) {
+      // No new_email supplied — this is a resend for an already-staged change.
+      newEmail = fullUserPre.pending_recovery_email;
+    } else {
+      return jsonAuth({ error: "Enter a valid email address" }, 400);
+    }
+
+    if (newEmail === (user.recovery_email || "").toLowerCase()) {
+      return jsonAuth({ error: "That's already your current recovery email" }, 400);
+    }
+
+    const nowSec = Math.floor(Date.now() / 1000);
+    if (fullUserPre.last_email_change_attempt && nowSec - fullUserPre.last_email_change_attempt < 60) {
+      const waitSec = 60 - (nowSec - fullUserPre.last_email_change_attempt);
+      return jsonAuth({ error: `Please wait ${waitSec}s before retrying.` }, 429);
+    }
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const otpHash = await sha256Hex(otp);
+    const expiresAt = nowSec + 10 * 60;
+
+    await env.DB.prepare(
+      "DELETE FROM otp_codes WHERE user_id = ? AND purpose = 'email_change' AND used = 0"
+    )
+      .bind(user.id)
+      .run();
+
+    await env.DB.prepare(
+      `INSERT INTO otp_codes (id, user_id, otp_hash, purpose, expires_at)
+       VALUES (?, ?, ?, 'email_change', ?)`
+    )
+      .bind(crypto.randomUUID(), user.id, otpHash, expiresAt)
+      .run();
+
+    // Stage the new email now so confirm can promote it — recovery_email
+    // itself is untouched until the OTP is actually verified.
+    await env.DB.prepare(
+      "UPDATE users SET pending_recovery_email = ?, last_email_change_attempt = ? WHERE id = ?"
+    )
+      .bind(newEmail, nowSec, user.id)
+      .run();
+
+    const emailResult = await sendChangeEmailOtpEmail(env, newEmail, otp);
+    if (!emailResult.ok) {
+      return jsonAuth(
+        { error: "Could not send verification code right now. Please try again shortly." },
+        502
+      );
+    }
+
+    return jsonAuth({ message: "Verification code sent to your new email address." });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- 8d. Change Recovery Email: Confirm OTP ----------
+async function confirmChangeEmailOtp(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+
+    const { otp } = await request.json();
+    if (!otp) {
+      return jsonAuth({ error: "Code required" }, 400);
+    }
+
+    const otpRow = await env.DB.prepare(
+      `SELECT id, otp_hash, attempts, expires_at, used FROM otp_codes
+       WHERE user_id = ? AND purpose = 'email_change'
+       ORDER BY created_at DESC LIMIT 1`
+    )
+      .bind(user.id)
+      .first();
+
+    if (!otpRow || otpRow.used || otpRow.expires_at < Math.floor(Date.now() / 1000)) {
+      return jsonAuth({ error: "Invalid or expired code" }, 400);
+    }
+
+    if (otpRow.attempts >= 5) {
+      return jsonAuth({ error: "Too many incorrect attempts. Please request a new code." }, 429);
+    }
+
+    const otpHash = await sha256Hex(otp);
+    if (otpHash !== otpRow.otp_hash) {
+      await env.DB.prepare("UPDATE otp_codes SET attempts = attempts + 1 WHERE id = ?")
+        .bind(otpRow.id)
+        .run();
+      return jsonAuth({ error: "Incorrect code" }, 400);
+    }
+
+    const fullUser = await env.DB.prepare(
+      "SELECT pending_recovery_email FROM users WHERE id = ?"
+    )
+      .bind(user.id)
+      .first();
+
+    if (!fullUser.pending_recovery_email) {
+      return jsonAuth({ error: "No pending email change found. Please start again." }, 400);
+    }
+
+    await env.DB.prepare("UPDATE otp_codes SET used = 1 WHERE id = ?")
+      .bind(otpRow.id)
+      .run();
+
+    // Promote pending -> real recovery_email. New address was just proven
+    // reachable by this OTP, so email_verified is set true in the same step.
+    await env.DB.prepare(
+      "UPDATE users SET recovery_email = ?, pending_recovery_email = NULL, email_verified = 1 WHERE id = ?"
+    )
+      .bind(fullUser.pending_recovery_email, user.id)
+      .run();
+
+    return jsonAuth({ message: "Recovery email updated.", recovery_email: fullUser.pending_recovery_email });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// Send change-email OTP via Resend (separate template — this goes to the
+// NEW address, which has never seen a StudyHelp email before)
+async function sendChangeEmailOtpEmail(env, toEmail, otp) {
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "StudyHelp <studyhelp@fdaytalk.com>",
+        to: [toEmail],
+        subject: "Confirm your new StudyHelp recovery email",
+        html: `<p>You requested to change your StudyHelp recovery email to this address. Your confirmation code is:</p>
+               <p style="font-size:24px;font-weight:bold;letter-spacing:4px;">${otp}</p>
+               <p>This code expires in 10 minutes. If you did not request this, you can ignore this email — your account is unaffected.</p>`,
+      }),
+    });
+    return { ok: res.ok };
+  } catch (err) {
+    return { ok: false, error: String(err) };
   }
 }
 
@@ -1159,8 +1347,11 @@ async function adminManualGrants(request, env) {
      JOIN users u ON u.id = e.user_id
      LEFT JOIN subjects s ON s.id = e.subject_id
      WHERE e.granted_by IS NOT NULL
-     ORDER BY e.expires_at ASC`
+     ORDER BY
+       CASE WHEN e.revoked_at IS NULL AND e.expires_at > ? THEN 0 ELSE 1 END ASC,
+       e.expires_at ASC`
   )
+    .bind(nowTs)
     .all();
 
   const results = (grants.results || []).map((g) => ({

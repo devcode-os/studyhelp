@@ -43,36 +43,6 @@ import Header from '../../components/Header.astro';
         <span class="detail-label"><i class="ti ti-mail"></i> Recovery email</span>
         <span class="detail-value" id="detail-email">-</span>
       </div>
-      <button type="button" class="change-email-toggle" id="change-email-toggle">Change recovery email</button>
-
-      <div class="change-email-box" id="change-email-box" style="display:none;">
-        <div id="change-email-step-input">
-          <p class="hint"><i class="ti ti-info-circle"></i> <span>We'll send a code to the new address to confirm it before switching.</span></p>
-          <input type="email" id="new-email-input" class="text-input" placeholder="new-email@example.com" autocomplete="email" />
-          <div id="change-email-error-msg" class="error-msg" style="display:none;">
-            <i class="ti ti-alert-circle"></i><span id="change-email-error-text"></span>
-          </div>
-          <button type="button" class="btn-block" id="send-change-otp-btn">
-            <span class="btn-label">Send code</span>
-            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
-          </button>
-          <button type="button" class="verify-resend-btn" id="cancel-change-email-btn">Cancel</button>
-        </div>
-
-        <div id="change-email-step-otp" style="display:none;">
-          <p class="hint"><i class="ti ti-info-circle"></i> <span id="change-email-otp-hint">Enter the 6-digit code sent to your new email.</span></p>
-          <input type="text" id="change-email-otp-input" inputmode="numeric" maxlength="6" autocomplete="one-time-code" class="code-input" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;" />
-          <div id="change-email-otp-error-msg" class="error-msg" style="display:none;">
-            <i class="ti ti-alert-circle"></i><span id="change-email-otp-error-text"></span>
-          </div>
-          <button type="button" class="btn-block" id="confirm-change-email-btn">
-            <span class="btn-label">Confirm code</span>
-            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
-          </button>
-          <button type="button" class="verify-resend-btn" id="resend-change-email-btn" disabled>Resend code (<span id="change-email-resend-timer">60</span>s)</button>
-          <button type="button" class="verify-resend-btn" id="restart-change-email-btn">Use a different email</button>
-        </div>
-      </div>
 
       <button type="button" class="btn-block btn-danger" id="logout-btn">
         <span class="btn-label"><i class="ti ti-logout"></i> Log out</span>
@@ -199,48 +169,6 @@ import Header from '../../components/Header.astro';
       margin-top: 20px;
       font-size: 14px;
       color: var(--muted);
-    }
-
-    /* Change recovery email */
-    .change-email-toggle {
-      display: block;
-      margin: 6px 0 0;
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: underline;
-      cursor: pointer;
-      padding: 4px 0;
-    }
-    .change-email-box {
-      margin-top: 10px;
-      padding: 14px 16px;
-      background: var(--bg, #f7f7f9);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .change-email-box .hint {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--muted);
-      margin: 0 0 10px;
-    }
-    .text-input {
-      box-sizing: border-box;
-      width: 100%;
-      font-size: 15px;
-      padding: 11px 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--card);
-      color: var(--text);
-    }
-    .change-email-box .btn-block {
-      margin-top: 12px;
     }
 
     /* Email verification banner */
@@ -377,24 +305,6 @@ import Header from '../../components/Header.astro';
     const verifyConfirmBtn = document.getElementById('verify-confirm-btn');
     const verifyResendBtn = document.getElementById('verify-resend-btn');
     const verifyResendTimer = document.getElementById('verify-resend-timer');
-
-    const changeEmailToggle = document.getElementById('change-email-toggle');
-    const changeEmailBox = document.getElementById('change-email-box');
-    const changeEmailStepInput = document.getElementById('change-email-step-input');
-    const changeEmailStepOtp = document.getElementById('change-email-step-otp');
-    const newEmailInput = document.getElementById('new-email-input');
-    const changeEmailErrorMsg = document.getElementById('change-email-error-msg');
-    const changeEmailErrorText = document.getElementById('change-email-error-text');
-    const sendChangeOtpBtn = document.getElementById('send-change-otp-btn');
-    const cancelChangeEmailBtn = document.getElementById('cancel-change-email-btn');
-    const changeEmailOtpHint = document.getElementById('change-email-otp-hint');
-    const changeEmailOtpInput = document.getElementById('change-email-otp-input');
-    const changeEmailOtpErrorMsg = document.getElementById('change-email-otp-error-msg');
-    const changeEmailOtpErrorText = document.getElementById('change-email-otp-error-text');
-    const confirmChangeEmailBtn = document.getElementById('confirm-change-email-btn');
-    const resendChangeEmailBtn = document.getElementById('resend-change-email-btn');
-    const changeEmailResendTimer = document.getElementById('change-email-resend-timer');
-    const restartChangeEmailBtn = document.getElementById('restart-change-email-btn');
 
     function getCachedSession() {
       try {
@@ -541,186 +451,6 @@ import Header from '../../components/Header.astro';
         });
     });
 
-    // ---------- Change recovery email ----------
-    let changeEmailResendInterval = null;
-
-    function startChangeEmailResendCountdown() {
-      let remaining = 60;
-      resendChangeEmailBtn.disabled = true;
-      changeEmailResendTimer.textContent = String(remaining);
-      resendChangeEmailBtn.style.display = 'block';
-      if (changeEmailResendInterval) clearInterval(changeEmailResendInterval);
-      changeEmailResendInterval = setInterval(() => {
-        remaining -= 1;
-        if (remaining <= 0) {
-          clearInterval(changeEmailResendInterval);
-          resendChangeEmailBtn.disabled = false;
-          resendChangeEmailBtn.textContent = 'Resend code';
-          return;
-        }
-        changeEmailResendTimer.textContent = String(remaining);
-      }, 1000);
-    }
-
-    function showChangeEmailInputStep() {
-      changeEmailBox.style.display = 'block';
-      changeEmailStepInput.style.display = 'block';
-      changeEmailStepOtp.style.display = 'none';
-      changeEmailErrorMsg.style.display = 'none';
-      newEmailInput.focus();
-    }
-
-    function showChangeEmailOtpStep(targetEmail) {
-      changeEmailBox.style.display = 'block';
-      changeEmailStepInput.style.display = 'none';
-      changeEmailStepOtp.style.display = 'block';
-      changeEmailOtpHint.textContent = targetEmail
-        ? `Enter the 6-digit code sent to ${targetEmail}.`
-        : 'Enter the 6-digit code sent to your new email.';
-      changeEmailOtpInput.value = '';
-      changeEmailOtpInput.focus();
-    }
-
-    changeEmailToggle.addEventListener('click', () => {
-      if (changeEmailBox.style.display === 'none') {
-        showChangeEmailInputStep();
-      } else {
-        changeEmailBox.style.display = 'none';
-      }
-    });
-
-    cancelChangeEmailBtn.addEventListener('click', () => {
-      changeEmailBox.style.display = 'none';
-      newEmailInput.value = '';
-      changeEmailErrorMsg.style.display = 'none';
-    });
-
-    restartChangeEmailBtn.addEventListener('click', () => {
-      if (changeEmailResendInterval) clearInterval(changeEmailResendInterval);
-      showChangeEmailInputStep();
-    });
-
-    sendChangeOtpBtn.addEventListener('click', () => {
-      const newEmail = newEmailInput.value.trim();
-      changeEmailErrorMsg.style.display = 'none';
-
-      if (!newEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newEmail)) {
-        changeEmailErrorText.textContent = 'Enter a valid email address.';
-        changeEmailErrorMsg.style.display = 'flex';
-        return;
-      }
-
-      const label = sendChangeOtpBtn.querySelector('.btn-label');
-      const spinner = sendChangeOtpBtn.querySelector('.btn-spinner');
-      sendChangeOtpBtn.disabled = true;
-      spinner.style.display = 'inline-block';
-
-      fetch(`${WORKER_URL}/account/change-email/send-otp`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ new_email: newEmail }),
-      })
-        .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
-        .then(({ ok, data }) => {
-          spinner.style.display = 'none';
-          sendChangeOtpBtn.disabled = false;
-          if (!ok) {
-            changeEmailErrorText.textContent = data.error || 'Could not send code. Please try again.';
-            changeEmailErrorMsg.style.display = 'flex';
-            return;
-          }
-          showChangeEmailOtpStep(newEmail);
-          startChangeEmailResendCountdown();
-        })
-        .catch(() => {
-          spinner.style.display = 'none';
-          sendChangeOtpBtn.disabled = false;
-          changeEmailErrorText.textContent = 'Network error. Please try again.';
-          changeEmailErrorMsg.style.display = 'flex';
-        });
-    });
-
-    resendChangeEmailBtn.addEventListener('click', () => {
-      // Re-uses the same send-otp call — pending_recovery_email is already
-      // staged server-side from the first send, so this just issues a fresh code.
-      const newEmail = newEmailInput.value.trim();
-      resendChangeEmailBtn.disabled = true;
-      fetch(`${WORKER_URL}/account/change-email/send-otp`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ new_email: newEmail || undefined }),
-      })
-        .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
-        .then(({ ok, data }) => {
-          if (!ok) {
-            changeEmailOtpErrorText.textContent = data.error || 'Could not resend code.';
-            changeEmailOtpErrorMsg.style.display = 'flex';
-            resendChangeEmailBtn.disabled = false;
-            return;
-          }
-          startChangeEmailResendCountdown();
-        })
-        .catch(() => {
-          resendChangeEmailBtn.disabled = false;
-        });
-    });
-
-    changeEmailOtpInput.addEventListener('input', () => {
-      changeEmailOtpInput.value = changeEmailOtpInput.value.replace(/\D/g, '').slice(0, 6);
-    });
-
-    confirmChangeEmailBtn.addEventListener('click', () => {
-      const otp = changeEmailOtpInput.value.trim();
-      changeEmailOtpErrorMsg.style.display = 'none';
-      if (otp.length !== 6) {
-        changeEmailOtpErrorText.textContent = 'Enter the 6-digit code.';
-        changeEmailOtpErrorMsg.style.display = 'flex';
-        return;
-      }
-
-      const label = confirmChangeEmailBtn.querySelector('.btn-label');
-      const spinner = confirmChangeEmailBtn.querySelector('.btn-spinner');
-      confirmChangeEmailBtn.disabled = true;
-      spinner.style.display = 'inline-block';
-
-      fetch(`${WORKER_URL}/account/change-email/confirm`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ otp }),
-      })
-        .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
-        .then(({ ok, data }) => {
-          spinner.style.display = 'none';
-          if (!ok) {
-            confirmChangeEmailBtn.disabled = false;
-            changeEmailOtpErrorText.textContent = data.error || 'Incorrect code. Please try again.';
-            changeEmailOtpErrorMsg.style.display = 'flex';
-            return;
-          }
-          if (changeEmailResendInterval) clearInterval(changeEmailResendInterval);
-          label.textContent = 'Updated!';
-          clearCachedSession();
-          document.getElementById('detail-email').textContent = data.recovery_email || newEmailInput.value.trim();
-          // Recovery email is verified as part of this same confirm step —
-          // the "verify email" banner no longer applies, hide it too.
-          verifyBanner.style.display = 'none';
-          setTimeout(() => {
-            changeEmailBox.style.display = 'none';
-            confirmChangeEmailBtn.disabled = false;
-            label.textContent = 'Confirm code';
-          }, 900);
-        })
-        .catch(() => {
-          spinner.style.display = 'none';
-          confirmChangeEmailBtn.disabled = false;
-          changeEmailOtpErrorText.textContent = 'Network error. Please try again.';
-          changeEmailOtpErrorMsg.style.display = 'flex';
-        });
-    });
-
     getSession()
       .then((data) => {
         loadingCard.style.display = 'none';
@@ -734,13 +464,6 @@ import Header from '../../components/Header.astro';
 
         if (!data.email_verified && data.recovery_email) {
           verifyBanner.style.display = 'block';
-        }
-
-        if (data.pending_recovery_email) {
-          // An email change was started but never confirmed (e.g. they navigated
-          // away). Resume directly at the OTP step instead of losing progress.
-          showChangeEmailOtpStep(data.pending_recovery_email);
-          startChangeEmailResendCountdown();
         }
 
         accountCard.style.display = 'block';
