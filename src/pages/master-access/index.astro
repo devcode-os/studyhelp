@@ -325,7 +325,7 @@
 
     function renderSearchResult(data) {
       const { user, entitlements, orders, subjects } = data;
-      const subjectOptions = subjects.map((s) => `<option value="${s.id}">${esc(s.name)}</option>`).join("");
+      const subjectOptions = subjects.map((s) => `<option value="${s.id}">${esc(s.name)} — ${esc(s.id)}</option>`).join("");
       const rec = recommendation(data);
 
       const entHtml = entitlements.length
