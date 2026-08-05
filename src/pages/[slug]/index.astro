@@ -86,17 +86,18 @@ function formatMath(str) {
     <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
   </div>
 
-  <style>
+  <style is:global>
     /* Mobile font reduction — English chapters only. Telugu chapters
        (.lang-te) are untouched so Telugu font sizing stays exactly as-is. */
     @media (max-width: 640px) {
       .lang-en h1 { font-size: 19px !important; }
-      .lang-en .q-text { font-size: 15px !important; }
+      .lang-en .q-text { font-size: 15px !important; font-weight: 600 !important; }
       .lang-en .opt-letter,
       .lang-en .opt-text { font-size: 14px !important; }
       .lang-en .answer-text { font-size: 14px !important; font-weight: 600 !important; }
       .lang-en .expl-text { font-size: 14px !important; }
       .lang-en .expl-toggle { font-size: 12px !important; }
+      .lang-te .q-text { font-weight: 600 !important; }
     }
 
     /* No visual color change on question tap at all — only the green answer

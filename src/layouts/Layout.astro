@@ -94,11 +94,11 @@ const { title, description } = Astro.props;
       color: var(--text);
     }
 
-    /* Chapter grid: 3-column on desktop, boxed single-column list on mobile */
+    /* Chapter grid: 4-column on desktop, boxed single-column list on mobile */
     :global(.chapter-grid) {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
     }
     @media (max-width: 720px) {
       :global(.chapter-grid) {

@@ -44,12 +44,22 @@ const nextLabel = isTelugu ? 'తర్వాత' : 'Next';
 
 const PER_PAGE = 20;
 const totalPages = Math.ceil(questions.length / PER_PAGE);
+
+// Converts caret notation (17^203, x^2) into proper Unicode superscripts
+// so questions typed/pasted with ^ still render as math, not literal text.
+// Display-only — no effect on props shape or security.
+const SUP_MAP = { '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻','+':'⁺' };
+function formatMath(str) {
+  return String(str).replace(/\^(-?\d+)/g, (_, exp) =>
+    exp.split('').map((ch) => SUP_MAP[ch] || ch).join('')
+  );
+}
 ---
 <Layout title={`${title} FAQs`} description={`${title} - ${questions.length} FAQs`}>
 
   <Header />
 
-  <div class="content">
+  <div class={isTelugu ? 'lang-te content' : 'lang-en content'}>
     <a href={`/${subject}/`} style="display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--muted); text-decoration:none; border:1px solid var(--border); border-radius:20px; padding:5px 12px 5px 8px; margin-bottom:14px;">&larr; {backLabel}</a>
     <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
       <h1 style="margin:0;">{chapterNumber}. {title}</h1>
@@ -65,7 +75,7 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
       {questions.map((q, i) => (
         <div class="faq-item" data-i={i} data-page={Math.floor(i / PER_PAGE) + 1} style={`border:1px solid var(--border); border-radius:8px; overflow:hidden; background:var(--card); ${i >= PER_PAGE ? 'display:none;' : ''}`}>
           <div class="q-row" data-i={i} style="cursor:pointer; padding:16px 18px; display:flex; justify-content:space-between; gap:10px;">
-            <span style="font-size:18px; line-height:1.6;">{i + 1}. {q}</span>
+            <span class="q-text" style="font-size:18px; line-height:1.6;">{i + 1}. {formatMath(q)}</span>
             <span style="color:var(--muted); flex-shrink:0; font-size:18px;">&darr;</span>
           </div>
           <div class="a-row" data-i={i} style="display:none; padding:0 18px 18px;"></div>
@@ -77,6 +87,18 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
   </div>
 
   <style>
+    /* Mobile font reduction — English chapters only. Telugu chapters
+       (.lang-te) are untouched so Telugu font sizing stays exactly as-is. */
+    @media (max-width: 640px) {
+      .lang-en h1 { font-size: 19px !important; }
+      .lang-en .q-text { font-size: 15px !important; }
+      .lang-en .opt-letter,
+      .lang-en .opt-text { font-size: 14px !important; }
+      .lang-en .answer-text { font-size: 14px !important; font-weight: 600 !important; }
+      .lang-en .expl-text { font-size: 14px !important; }
+      .lang-en .expl-toggle { font-size: 12px !important; }
+    }
+
     /* No visual color change on question tap at all — only the green answer
        reveal below should show. Mobile browsers apply a default blue
        tap-highlight flash on any clickable element unless explicitly
@@ -184,15 +206,144 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
       `;
     }
 
-    function renderAnswerHtml(f) {
+    // Converts caret notation into Unicode superscripts client-side too,
+    // in case an answer/explanation fetched from the Worker contains ^n.
+    const SUP_MAP = { '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻','+':'⁺' };
+    function formatMath(str) {
+      return String(str).replace(/\^(-?\d+)/g, (_, exp) =>
+        exp.split('').map((ch) => SUP_MAP[ch] || ch).join('')
+      );
+    }
+
+    // Tracks which option (if any) the user tapped for each MCQ, so
+    // reopening a question later in this session shows the same locked-in
+    // state instead of resetting to blank. Purely a UI convenience —
+    // unrelated to the entitlement/session state below.
+    const userSelections = {};
+
+    // Splits explanation text into paragraphs on blank lines, rendering
+    // each as its own <p> with a small controlled gap instead of one
+    // oversized empty-line gap per blank line.
+    function renderExplanationParagraphs(text) {
+      const paragraphs = String(text).split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+      return paragraphs.map((p, idx) => {
+        const withBreaks = escapeHtml(formatMath(p)).replace(/\n/g, '<br>');
+        const marginBottom = idx < paragraphs.length - 1 ? '10px' : '0';
+        return `<p class="expl-text" style="margin:0 0 ${marginBottom}; font-size:15px; line-height:1.5; color:color-mix(in srgb, var(--text) 55%, var(--muted) 45%);">${withBreaks}</p>`;
+      }).join('');
+    }
+
+    // Explanation for FAQ blocks — always visible inline, no toggle.
+    function renderExplanationInline(f) {
+      if (!f.e) return '';
+      return `<div style="margin-top:8px;">${renderExplanationParagraphs(f.e)}</div>`;
+    }
+
+    // Explanation for MCQ blocks — hidden behind a Show/Hide toggle,
+    // only rendered once the user has answered.
+    function renderExplanationToggle(f, i) {
+      if (!f.e) return '';
+      const explId = `expl-${i}`;
+      return `
+        <button type="button" class="expl-toggle" data-target="${explId}" style="margin-top:10px; background:none; border:1px solid var(--border); border-radius:6px; padding:5px 10px; font-size:13px; color:var(--accent); cursor:pointer;">Show explanation</button>
+        <div id="${explId}" style="display:none; margin-top:8px;">
+          ${renderExplanationParagraphs(f.e)}
+        </div>
+      `;
+    }
+
+    // MCQ box: unmarked + tappable until answered, then locked with
+    // green/red feedback and the explanation toggle revealed.
+    function renderMcqBox(f, i) {
+      const selected = userSelections[i] || null;
+      const letters = Object.keys(f.options);
+
+      const optionRows = letters.map((letter) => {
+        const isCorrect = letter === f.answer;
+        const isWrongPick = selected && letter === selected && !isCorrect;
+        const isRightPick = selected && isCorrect;
+
+        let stateStyle = 'background:var(--card); border-color:var(--border);';
+        let icon = '';
+        if (isRightPick) {
+          stateStyle = 'background:var(--success-bg); border-color:var(--success-text); font-weight:700;';
+          icon = '<span style="margin-left:auto; color:var(--success-text);">&#10003;</span>';
+        } else if (isWrongPick) {
+          stateStyle = 'background:var(--amber-bg); border-color:#c0392b; font-weight:700;';
+          icon = '<span style="margin-left:auto; color:#c0392b;">&#10007;</span>';
+        }
+
+        return `
+          <div class="opt-row${selected ? '' : ' opt-clickable'}" data-letter="${letter}" style="display:flex; gap:8px; align-items:center; padding:10px 12px; border-radius:6px; border:1px solid var(--border); cursor:${selected ? 'default' : 'pointer'}; ${stateStyle}">
+            <span class="opt-letter" style="text-transform:uppercase; color:var(--muted); flex-shrink:0;">(${letter})</span>
+            <span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>
+            ${icon}
+          </div>
+        `;
+      }).join('');
+
+      const feedbackHtml = selected ? `
+        <p class="answer-text" style="margin:12px 0 0; font-weight:600; font-size:14px; color:${selected === f.answer ? 'var(--success-text)' : '#c0392b'};">
+          ${selected === f.answer ? 'Correct!' : 'Not quite.'} Answer: ${formatMath(f.a)}
+        </p>
+        ${renderExplanationToggle(f, i)}
+      ` : `
+        <p style="margin:10px 0 0; font-size:13px; color:var(--muted);">Tap an option to check your answer</p>
+      `;
+
       const tableHtml = f.table ? renderTable(f.table) : '';
+
+      return `
+        <div style="background:var(--card); border-radius:8px; padding:14px 16px;">
+          <div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optionRows}</div>
+          ${feedbackHtml}
+          ${selected ? tableHtml : ''}
+        </div>
+      `;
+    }
+
+    // FAQ box — unchanged flip-card behavior, answer + explanation shown
+    // immediately on tap.
+    function renderFaqBox(f) {
+      const tableHtml = f.table ? renderTable(f.table) : '';
+      const explHtml = renderExplanationInline(f);
       return `
         <div style="background:var(--success-bg); border-radius:8px; padding:14px 16px;">
-          <p style="margin:0; font-weight:700; color:var(--success-text); font-size:19px;">${f.a}</p>
-          ${f.e ? `<p style="margin:8px 0 0; font-size:15px; color:var(--muted);">${f.e}</p>` : ''}
+          <p class="answer-text" style="margin:0; font-weight:600; color:var(--success-text); font-size:14px;">${formatMath(f.a)}</p>
+          ${explHtml}
           ${tableHtml}
         </div>
       `;
+    }
+
+    function renderAnswerHtml(f, i) {
+      return f && f.type === 'mcq' && f.options ? renderMcqBox(f, i) : renderFaqBox(f);
+    }
+
+    // Wires up option taps (only while unanswered) and the explanation
+    // toggle (only once answered). Called after every render of an a-row.
+    function attachMcqHandlers(aRow, f, i) {
+      if (!f || f.type !== 'mcq' || !f.options) return;
+
+      aRow.querySelectorAll('.opt-clickable').forEach((optEl) => {
+        optEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          userSelections[i] = optEl.getAttribute('data-letter');
+          aRow.innerHTML = renderAnswerHtml(f, i);
+          attachMcqHandlers(aRow, f, i);
+        });
+      });
+
+      const toggleBtn = aRow.querySelector('.expl-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const target = document.getElementById(toggleBtn.getAttribute('data-target'));
+          const nowOpen = target.style.display === 'block';
+          target.style.display = nowOpen ? 'none' : 'block';
+          toggleBtn.textContent = nowOpen ? 'Show explanation' : 'Hide explanation';
+        });
+      }
     }
 
     function showPage(page) {
@@ -252,8 +403,9 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
 
         // Already revealed earlier in this page view — just re-show, no server call needed.
         if (revealedAnswers[i]) {
-          aRow.innerHTML = renderAnswerHtml(revealedAnswers[i]);
+          aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i);
           aRow.style.display = 'block';
+          attachMcqHandlers(aRow, revealedAnswers[i], i);
           return;
         }
 
@@ -262,8 +414,9 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
         // same speed as before the security fix, with no repeated round trips.
         if (bulkAnswers && bulkAnswers[i]) {
           revealedAnswers[i] = bulkAnswers[i];
-          aRow.innerHTML = renderAnswerHtml(bulkAnswers[i]);
+          aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i);
           aRow.style.display = 'block';
+          attachMcqHandlers(aRow, bulkAnswers[i], i);
           return;
         }
 
@@ -298,8 +451,9 @@ const totalPages = Math.ceil(questions.length / PER_PAGE);
           }
 
           revealedAnswers[i] = data.answer;
-          aRow.innerHTML = renderAnswerHtml(data.answer);
+          aRow.innerHTML = renderAnswerHtml(data.answer, i);
           aRow.style.display = 'block';
+          attachMcqHandlers(aRow, data.answer, i);
 
           if (data.unlimited) {
             purchased = true;
