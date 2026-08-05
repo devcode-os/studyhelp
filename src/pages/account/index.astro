@@ -32,6 +32,7 @@ import Header from '../../components/Header.astro';
             <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
           </button>
           <button type="button" class="verify-resend-btn" id="verify-resend-btn" disabled>Resend code (<span id="verify-resend-timer">60</span>s)</button>
+          <button type="button" class="verify-resend-btn" id="wrong-email-link">Wrong or unreachable email? Change it</button>
         </div>
       </div>
 
@@ -588,6 +589,14 @@ import Header from '../../components/Header.astro';
         changeEmailBox.style.display = 'none';
       }
     });
+
+    const wrongEmailLink = document.getElementById('wrong-email-link');
+    if (wrongEmailLink) {
+      wrongEmailLink.addEventListener('click', () => {
+        showChangeEmailInputStep();
+        changeEmailBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
 
     cancelChangeEmailBtn.addEventListener('click', () => {
       changeEmailBox.style.display = 'none';
