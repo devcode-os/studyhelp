@@ -1,9 +1,7 @@
 ---
 // src/pages/master-access/index.astro
-// Private support/admin console — Stage 6 (core).
-// NOT linked in Header.astro or any public nav. Reachable only if you know the URL.
-// Auth: ADMIN_SECRET Worker secret, checked server-side. Session cookie is
-// sh_admin_session, separate from student sh_session, 4-hour lifetime.
+// Private support/admin console. NOT linked in public nav.
+// Auth: ADMIN_SECRET, session cookie sh_admin_session, 4-hour lifetime.
 ---
 <html lang="en">
 <head>
@@ -12,24 +10,55 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Master Access</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; color: #1a1a1a; }
-    h1 { font-size: 20px; }
-    input, textarea, button { font-size: 14px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
-    button { cursor: pointer; background: #1a1a2e; color: white; border: none; }
-    button.secondary { background: #eee; color: #1a1a1a; }
-    button.danger { background: #b02a2a; }
-    .row { display: flex; gap: 8px; margin-bottom: 12px; }
-    .row input { flex: 1; }
-    .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-    .ent { border: 1px solid #eee; border-radius: 6px; padding: 10px; margin-bottom: 8px; }
-    .ent.active { border-color: #2a7a2a; }
-    .ent.expired { opacity: 0.6; }
-    .tag { display: inline-block; font-size: 11px; padding: 2px 6px; border-radius: 4px; background: #eee; margin-left: 6px; }
-    .tag.manual { background: #ffe9b3; }
-    .err { color: #b02a2a; font-size: 13px; }
-    .muted { color: #777; font-size: 13px; }
+    :root {
+      --bg: #f7f7f9; --card: #fff; --border: #e3e3e8; --text: #1a1a1a; --muted: #6b6b74;
+      --accent: #1a1a2e; --green: #1f8a4c; --green-bg: #e9f7ef; --amber: #a86a00; --amber-bg: #fff4e0;
+      --red: #b02a2a; --red-bg: #fdecec;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 24px; }
+    .wrap { max-width: 1000px; margin: 0 auto; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    h3 { font-size: 15px; margin: 0 0 8px; }
+    h4 { font-size: 13px; margin: 16px 0 6px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; }
+    input, select, button, textarea { font-size: 14px; padding: 9px 12px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; }
+    button { cursor: pointer; background: var(--accent); color: white; border: none; font-weight: 500; }
+    button:hover { opacity: 0.9; }
+    button.secondary { background: #eee; color: var(--text); }
+    button.danger { background: var(--red); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; }
+    .tabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .tab { padding: 10px 16px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; font-size: 14px; }
+    .tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+    .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .muted { color: var(--muted); font-size: 13px; }
+    .err { color: var(--red); font-size: 13px; margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    td { padding: 10px; border-bottom: 1px solid var(--border); font-size: 14px; }
+    tr.user-row { cursor: pointer; }
+    tr.user-row:hover { background: #fafafa; }
+    .badge { display: inline-block; font-size: 11px; padding: 3px 8px; border-radius: 20px; font-weight: 600; }
+    .badge.active { background: var(--green-bg); color: var(--green); }
+    .badge.none { background: #f0f0f2; color: var(--muted); }
+    .badge.manual { background: var(--amber-bg); color: var(--amber); margin-left: 6px; }
+    .expand-row td { background: #fbfbfc; padding: 0; }
+    .expand-inner { padding: 14px 20px; }
+    .ent-line { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 13px; }
+    .ent-line:last-child { border-bottom: none; }
+    .callout { border-radius: 8px; padding: 12px 14px; font-size: 13px; margin-top: 10px; }
+    .callout.amber { background: var(--amber-bg); color: #6b4a00; }
+    .callout.green { background: var(--green-bg); color: #145c30; }
+    .callout.gray { background: #f0f0f2; color: var(--muted); }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--accent); color: white; padding: 12px 18px; border-radius: 8px; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); z-index: 100; }
+    .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid #ddd; border-top-color: var(--accent); border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .confirm-box { background: #fff8e6; border: 1px solid #f0d78a; border-radius: 8px; padding: 12px; margin-top: 10px; }
     #app { display: none; }
-    #login { max-width: 360px; margin: 80px auto; }
+    #login { max-width: 360px; margin: 100px auto; }
+    .load-more { display: block; margin: 14px auto 0; }
   </style>
 </head>
 <body>
@@ -37,30 +66,40 @@
   <div id="login">
     <h1>Master Access</h1>
     <div class="card">
-      <div class="row"><input id="admin_name" placeholder="Your name (for audit log)" /></div>
-      <div class="row"><input id="secret" type="password" placeholder="Admin secret" /></div>
-      <button id="loginBtn" style="width:100%">Log in</button>
+      <div class="row" style="flex-direction: column; align-items: stretch;">
+        <input id="admin_name" placeholder="Your name (for audit log)" />
+        <input id="secret" type="password" placeholder="Admin secret" />
+        <button id="loginBtn">Log in</button>
+      </div>
       <p class="err" id="loginErr"></p>
     </div>
   </div>
 
   <div id="app">
-    <h1>Master Access — <span id="whoami"></span> <button class="secondary" id="logoutBtn">Log out</button></h1>
-
-    <div class="card">
-      <div class="row">
-        <input id="q" placeholder="Search by phone, recovery email, payment ID, or order ID" />
-        <button id="searchBtn">Search</button>
+    <div class="wrap">
+      <div class="topbar">
+        <h1>Master Access — <span id="whoami"></span></h1>
+        <button class="secondary" id="logoutBtn">Log out</button>
       </div>
-      <p class="err" id="searchErr"></p>
-    </div>
 
-    <div id="results"></div>
+      <div class="tabs">
+        <div class="tab active" data-tab="users">All Users</div>
+        <div class="tab" data-tab="grants">Manual Grants</div>
+        <div class="tab" data-tab="search">Search</div>
+      </div>
+
+      <div id="tab-users"></div>
+      <div id="tab-grants" style="display:none"></div>
+      <div id="tab-search" style="display:none"></div>
+    </div>
   </div>
+
+  <div id="toastHost"></div>
 
   <script>
     const API = "https://api.studyhelp.fdaytalk.com";
     const $ = (id) => document.getElementById(id);
+    const esc = (s) => (s ?? "").toString().replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
     async function api(path, opts = {}) {
       const res = await fetch(API + path, {
@@ -72,12 +111,25 @@
       return { ok: res.ok, status: res.status, data };
     }
 
+    function toast(msg) {
+      const el = document.createElement("div");
+      el.className = "toast";
+      el.textContent = msg;
+      $("toastHost").appendChild(el);
+      setTimeout(() => el.remove(), 3500);
+    }
+
+    function fmtDate(ts) { return ts ? new Date(ts * 1000).toLocaleString() : "—"; }
+    function fmtDateShort(ts) { return ts ? new Date(ts * 1000).toLocaleDateString() : "—"; }
+
+    // ---------- Auth ----------
     async function checkSession() {
       const { ok, data } = await api("/master-access/me");
       if (ok && data.admin_name) {
         $("login").style.display = "none";
         $("app").style.display = "block";
         $("whoami").textContent = data.admin_name;
+        loadUsers();
       }
     }
 
@@ -85,82 +137,229 @@
       $("loginErr").textContent = "";
       const admin_name = $("admin_name").value.trim();
       const secret = $("secret").value;
-      if (!admin_name || !secret) {
-        $("loginErr").textContent = "Enter your name and the admin secret.";
-        return;
-      }
-      const { ok, data } = await api("/master-access/login", {
-        method: "POST",
-        body: JSON.stringify({ admin_name, secret }),
-      });
-      if (!ok) {
-        $("loginErr").textContent = data.error || "Login failed";
-        return;
-      }
+      if (!admin_name || !secret) { $("loginErr").textContent = "Enter your name and the admin secret."; return; }
+      const { ok, data } = await api("/master-access/login", { method: "POST", body: JSON.stringify({ admin_name, secret }) });
+      if (!ok) { $("loginErr").textContent = data.error || "Login failed"; return; }
       $("login").style.display = "none";
       $("app").style.display = "block";
       $("whoami").textContent = data.admin_name;
+      loadUsers();
     };
 
-    $("logoutBtn").onclick = async () => {
-      await api("/master-access/logout", { method: "POST" });
-      location.reload();
-    };
+    $("logoutBtn").onclick = async () => { await api("/master-access/logout", { method: "POST" }); location.reload(); };
 
+    // ---------- Tabs ----------
+    document.querySelectorAll(".tab").forEach((tabEl) => {
+      tabEl.onclick = () => {
+        document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+        tabEl.classList.add("active");
+        ["users", "grants", "search"].forEach((name) => {
+          $("tab-" + name).style.display = name === tabEl.dataset.tab ? "block" : "none";
+        });
+        if (tabEl.dataset.tab === "grants") loadManualGrants();
+      };
+    });
+
+    // ---------- Tab: All Users ----------
+    let allUsersCache = [];
+    let usersCursor = null;
+
+    async function loadUsers(cursor) {
+      $("tab-users").innerHTML = `<div class="card"><span class="spinner"></span> Loading users...</div>`;
+      const { ok, data } = await api("/master-access/users" + (cursor ? `?before=${cursor}` : ""));
+      if (!ok) { $("tab-users").innerHTML = `<div class="card err">${esc(data.error || "Failed to load users")}</div>`; return; }
+      if (!cursor) allUsersCache = data.users;
+      else allUsersCache = allUsersCache.concat(data.users);
+      usersCursor = data.next_cursor;
+      renderUsersTab();
+    }
+
+    function renderUsersTab(filterText) {
+      const filter = (filterText || "").trim().toLowerCase();
+      const rows = filter
+        ? allUsersCache.filter((u) => (u.phone || "").includes(filter) || (u.name || "").toLowerCase().includes(filter))
+        : allUsersCache;
+
+      const rowsHtml = rows.map((u) => {
+        const hasActive = u.subjects_active > 0;
+        return `
+          <tr class="user-row" data-phone="${esc(u.phone)}">
+            <td>${esc(u.phone)}</td>
+            <td>${esc(u.name || "—")}</td>
+            <td><span class="badge ${hasActive ? "active" : "none"}">${u.subjects_active}/${u.subjects_total} active</span></td>
+            <td class="muted">${fmtDateShort(u.created_at)}</td>
+          </tr>
+          <tr class="expand-row" data-expand-for="${esc(u.phone)}" style="display:none"><td colspan="4"></td></tr>
+        `;
+      }).join("");
+
+      $("tab-users").innerHTML = `
+        <div class="card">
+          <input id="userFilter" placeholder="Filter by phone or name..." style="width:100%" value="${esc(filterText || "")}" />
+        </div>
+        <div class="card" style="padding:0">
+          <table>
+            <thead><tr><th>Phone</th><th>Name</th><th>Subjects</th><th>Joined</th></tr></thead>
+            <tbody>${rowsHtml || `<tr><td colspan="4" class="muted" style="padding:16px">No users found.</td></tr>`}</tbody>
+          </table>
+        </div>
+        ${usersCursor && !filter ? `<button class="secondary load-more" id="loadMoreBtn">Load more</button>` : ""}
+      `;
+
+      $("userFilter").oninput = (e) => renderUsersTab(e.target.value);
+      if (usersCursor && !filter) $("loadMoreBtn").onclick = () => loadUsers(usersCursor);
+
+      document.querySelectorAll(".user-row").forEach((row) => {
+        row.onclick = () => toggleExpand(row.dataset.phone);
+      });
+    }
+
+    async function toggleExpand(phone) {
+      const expandRow = document.querySelector(`tr[data-expand-for="${CSS.escape(phone)}"]`);
+      const isOpen = expandRow.style.display !== "none";
+      document.querySelectorAll(".expand-row").forEach((r) => (r.style.display = "none"));
+      if (isOpen) return;
+
+      expandRow.querySelector("td").innerHTML = `<div class="expand-inner"><span class="spinner"></span> Loading...</div>`;
+      expandRow.style.display = "table-row";
+
+      const { ok, data } = await api("/master-access/search?q=" + encodeURIComponent(phone));
+      if (!ok || !data.found) {
+        expandRow.querySelector("td").innerHTML = `<div class="expand-inner muted">Couldn't load details.</div>`;
+        return;
+      }
+      const entHtml = data.entitlements.length
+        ? data.entitlements.map((e) => `
+            <div class="ent-line">
+              <span>${esc(e.subject_name || e.subject_id)} ${e.manual ? '<span class="badge manual">manual</span>' : ""}</span>
+              <span class="badge ${e.active ? "active" : "none"}">${e.active ? "Active until " + fmtDateShort(e.expires_at) : "Expired"}</span>
+            </div>`).join("")
+        : `<span class="muted">No entitlements yet.</span>`;
+      expandRow.querySelector("td").innerHTML = `<div class="expand-inner">${entHtml}</div>`;
+    }
+
+    // ---------- Tab: Manual Grants ----------
+    async function loadManualGrants() {
+      $("tab-grants").innerHTML = `<div class="card"><span class="spinner"></span> Loading...</div>`;
+      const { ok, data } = await api("/master-access/manual-grants");
+      if (!ok) { $("tab-grants").innerHTML = `<div class="card err">${esc(data.error || "Failed to load")}</div>`; return; }
+
+      const rows = (data.grants || []).map((g) => {
+        const daysLeft = g.active ? Math.max(0, Math.ceil((g.expires_at - Date.now() / 1000) / 86400)) : 0;
+        return `
+          <tr>
+            <td>${esc(g.phone)}<div class="muted">${esc(g.user_name || "")}</div></td>
+            <td>${esc(g.subject_name || g.subject_id)}</td>
+            <td>${g.duration_days ?? "—"} days</td>
+            <td>${esc(g.granted_reason || "—")}<div class="muted">by ${esc(g.granted_by || "—")}</div></td>
+            <td><span class="badge ${g.active ? "active" : "none"}">${g.active ? daysLeft + "d left" : "expired/revoked"}</span></td>
+          </tr>`;
+      }).join("");
+
+      $("tab-grants").innerHTML = `
+        <div class="card" style="padding:0">
+          <table>
+            <thead><tr><th>User</th><th>Subject</th><th>Duration</th><th>Reason</th><th>Status</th></tr></thead>
+            <tbody>${rows || `<tr><td colspan="5" class="muted" style="padding:16px">No manual grants yet.</td></tr>`}</tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    // ---------- Tab: Search ----------
+    $("tab-search").innerHTML = `
+      <div class="card">
+        <div class="row">
+          <input id="q" placeholder="Search by phone, recovery email, payment ID, or order ID" style="flex:1" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <p class="err" id="searchErr"></p>
+      </div>
+      <div id="searchResults"></div>
+    `;
     $("searchBtn").onclick = doSearch;
     $("q").addEventListener("keydown", (e) => { if (e.key === "Enter") doSearch(); });
 
     async function doSearch() {
       $("searchErr").textContent = "";
-      $("results").innerHTML = "";
+      $("searchResults").innerHTML = `<div class="card"><span class="spinner"></span> Searching...</div>`;
       const q = $("q").value.trim();
-      if (!q) return;
+      if (!q) { $("searchResults").innerHTML = ""; return; }
 
       const { ok, data } = await api("/master-access/search?q=" + encodeURIComponent(q));
-      if (!ok) {
-        $("searchErr").textContent = data.error || "Search failed";
-        return;
-      }
-      if (!data.found) {
-        $("results").innerHTML = '<p class="muted">No user found for that search.</p>';
-        return;
-      }
-      renderUser(data);
+      if (!ok) { $("searchErr").textContent = data.error || "Search failed"; $("searchResults").innerHTML = ""; return; }
+      if (!data.found) { $("searchResults").innerHTML = `<div class="card muted">No user found for that search.</div>`; return; }
+      renderSearchResult(data);
     }
 
-    function renderUser(data) {
+    function recommendation(data) {
+      // Heuristic support-case guidance based on what the data shows.
+      const nowTs = Date.now() / 1000;
+      const recentOrder = (data.orders || [])[0];
+
+      if (recentOrder && recentOrder.status === "paid") {
+        const hasMatchingActiveEnt = data.entitlements.some(
+          (e) => e.subject_id === recentOrder.subject_id && e.active
+        );
+        if (!hasMatchingActiveEnt) {
+          return { level: "amber", text: `Payment for "${recentOrder.subject_id}" shows PAID on Razorpay, but there's no matching active entitlement — the webhook likely failed to fire or errored. Recommended: verify the payment ID against Razorpay dashboard, then grant manual access (consider a short grace grant first if unverified, or full 45 days if confirmed).` };
+        }
+      }
+      if (recentOrder && recentOrder.status === "created") {
+        return { level: "gray", text: `Latest order for "${recentOrder.subject_id}" is still "created" — payment was never completed on Razorpay's side. No grant needed. Ask the student to retry checkout.` };
+      }
+      if (recentOrder && recentOrder.status === "failed") {
+        return { level: "gray", text: `Latest order for "${recentOrder.subject_id}" failed. No action needed — any debited amount auto-reverses via bank/Razorpay. Ask the student to retry.` };
+      }
+      const anyActive = data.entitlements.some((e) => e.active);
+      if (anyActive) {
+        const active = data.entitlements.find((e) => e.active);
+        return { level: "green", text: `Access is currently active (${active.subject_name || active.subject_id}, until ${fmtDateShort(active.expires_at)}). If they're still complaining, it's likely a login/device issue — ask them to log out and back in, or confirm they're using the correct phone number.` };
+      }
+      const anyExpired = data.entitlements.length > 0;
+      if (anyExpired) {
+        return { level: "gray", text: `All entitlements for this user have expired. If the 45-day window naturally ended, this is expected — offer repurchase. If they believe this is wrong, check order history above.` };
+      }
+      return { level: "gray", text: `No orders or entitlements found for this user yet.` };
+    }
+
+    function renderSearchResult(data) {
       const { user, entitlements, orders, subjects } = data;
-      const subjectOptions = subjects.map((s) => `<option value="${s.id}">${s.name}</option>`).join("");
+      const subjectOptions = subjects.map((s) => `<option value="${s.id}">${esc(s.name)}</option>`).join("");
+      const rec = recommendation(data);
 
       const entHtml = entitlements.length
         ? entitlements.map((e) => {
-            const cls = e.active ? "active" : "expired";
-            const expDate = new Date(e.expires_at * 1000).toLocaleString();
-            const manualTag = e.manual ? '<span class="tag manual">manual</span>' : "";
             const revokeBtn = e.manual && e.active
-              ? `<button class="danger revokeBtn" data-id="${e.id}">Revoke</button>`
+              ? `<button class="danger revokeBtn" data-id="${e.id}" style="margin-left:8px">Revoke</button>`
               : "";
             return `
-              <div class="ent ${cls}">
-                <strong>${e.subject_name || e.subject_id}</strong> ${manualTag}
-                <span class="tag">${e.active ? "ACTIVE" : "EXPIRED/REVOKED"}</span>
-                <div class="muted">Expires: ${expDate}</div>
-                ${e.granted_reason ? `<div class="muted">Granted reason: ${e.granted_reason} — by ${e.granted_by}</div>` : ""}
-                ${e.revoked_at ? `<div class="muted">Revoked: ${e.revoked_reason} — by ${e.revoked_by}</div>` : ""}
+              <div class="ent-line" style="flex-direction:column;align-items:flex-start;gap:4px">
+                <div style="display:flex;justify-content:space-between;width:100%">
+                  <strong>${esc(e.subject_name || e.subject_id)}</strong>
+                  <span>
+                    <span class="badge ${e.active ? "active" : "none"}">${e.active ? "ACTIVE" : "EXPIRED/REVOKED"}</span>
+                    ${e.manual ? '<span class="badge manual">manual</span>' : ""}
+                  </span>
+                </div>
+                <div class="muted">Expires: ${fmtDate(e.expires_at)}</div>
+                ${e.granted_reason ? `<div class="muted">Granted: ${esc(e.granted_reason)} — by ${esc(e.granted_by)} on ${fmtDateShort(e.granted_at)}</div>` : ""}
+                ${e.revoked_at ? `<div class="muted">Revoked: ${esc(e.revoked_reason)} — by ${esc(e.revoked_by)} on ${fmtDateShort(e.revoked_at)}</div>` : ""}
                 ${revokeBtn}
+                <div class="revokeForm" data-id="${e.id}" style="display:none;width:100%"></div>
               </div>`;
           }).join("")
-        : '<p class="muted">No entitlements yet.</p>';
+        : `<span class="muted">No entitlements yet.</span>`;
 
       const ordersHtml = orders.length
-        ? orders.map((o) => `<div class="muted">${o.id} — ${o.subject_id} — ₹${(o.amount_paise / 100).toFixed(2)} — ${o.status} — ${new Date(o.created_at * 1000).toLocaleDateString()}</div>`).join("")
-        : '<p class="muted">No orders.</p>';
+        ? orders.map((o) => `<div class="ent-line"><span>${esc(o.id)} — ${esc(o.subject_id)}</span><span>₹${(o.amount_paise / 100).toFixed(2)} · ${esc(o.status)} · ${fmtDateShort(o.created_at)}</span></div>`).join("")
+        : `<span class="muted">No orders.</span>`;
 
-      $("results").innerHTML = `
+      $("searchResults").innerHTML = `
         <div class="card">
-          <h3>${user.name || "(no name)"}</h3>
-          <div class="muted">Phone: ${user.phone} · Recovery email: ${user.recovery_email || "—"}</div>
-          <div class="muted">Joined: ${new Date(user.created_at * 1000).toLocaleDateString()}</div>
+          <h3>${esc(user.name || "(no name)")}</h3>
+          <div class="muted">Phone: ${esc(user.phone)} · Recovery email: ${esc(user.recovery_email || "—")} · Joined: ${fmtDateShort(user.created_at)}</div>
+          <div class="callout ${rec.level}">${esc(rec.text)}</div>
 
           <h4>Entitlements</h4>
           ${entHtml}
@@ -168,9 +367,18 @@
           <h4>Grant manual access</h4>
           <div class="row">
             <select id="grantSubject">${subjectOptions}</select>
-            <input id="grantReason" placeholder="Reason (e.g. Scholarship, webhook failed)" />
-            <button id="grantBtn">Grant 45 days</button>
+            <select id="grantDuration">
+              <option value="3">3 days (grace)</option>
+              <option value="7">7 days</option>
+              <option value="15">15 days</option>
+              <option value="45" selected>45 days (full)</option>
+              <option value="custom">Custom...</option>
+            </select>
+            <input id="grantDurationCustom" type="number" min="1" max="365" placeholder="Days" style="display:none;width:80px" />
+            <input id="grantReason" placeholder="Reason (e.g. Scholarship, webhook failed)" style="flex:1;min-width:200px" />
+            <button id="grantBtn">Grant access</button>
           </div>
+          <div id="grantConfirm"></div>
           <p class="err" id="grantErr"></p>
 
           <h4>Payment history</h4>
@@ -178,38 +386,67 @@
         </div>
       `;
 
-      $("grantBtn").onclick = async () => {
+      $("grantDuration").onchange = (e) => {
+        $("grantDurationCustom").style.display = e.target.value === "custom" ? "inline-block" : "none";
+      };
+
+      $("grantBtn").onclick = () => {
         $("grantErr").textContent = "";
         const subject_id = $("grantSubject").value;
         const reason = $("grantReason").value.trim();
-        if (!reason) {
-          $("grantErr").textContent = "Reason is required.";
-          return;
-        }
-        const { ok, data: res } = await api("/master-access/grant", {
-          method: "POST",
-          body: JSON.stringify({ user_id: user.id, subject_id, reason }),
-        });
-        if (!ok) {
-          $("grantErr").textContent = res.error || "Grant failed";
-          return;
-        }
-        doSearch(); // refresh from the current q
+        const durationSel = $("grantDuration").value;
+        const days = durationSel === "custom" ? Number($("grantDurationCustom").value) : Number(durationSel);
+
+        if (!reason) { $("grantErr").textContent = "Reason is required."; return; }
+        if (!days || days < 1) { $("grantErr").textContent = "Enter a valid number of days."; return; }
+
+        const subjectLabel = $("grantSubject").selectedOptions[0].textContent;
+        $("grantConfirm").innerHTML = `
+          <div class="confirm-box">
+            Grant <strong>${days} days</strong> access to <strong>${esc(subjectLabel)}</strong> for <strong>${esc(user.phone)}</strong>?
+            <div class="row" style="margin-top:8px">
+              <button id="confirmGrantBtn">Yes, grant access</button>
+              <button class="secondary" id="cancelGrantBtn">Cancel</button>
+            </div>
+          </div>`;
+
+        $("cancelGrantBtn").onclick = () => { $("grantConfirm").innerHTML = ""; };
+        $("confirmGrantBtn").onclick = async () => {
+          $("confirmGrantBtn").disabled = true;
+          const { ok, data: res } = await api("/master-access/grant", {
+            method: "POST",
+            body: JSON.stringify({ user_id: user.id, subject_id, reason, duration_days: days }),
+          });
+          if (!ok) { $("grantErr").textContent = res.error || "Grant failed"; $("grantConfirm").innerHTML = ""; return; }
+          toast(`Access granted for ${subjectLabel} — ${res.days_granted} days`);
+          doSearch();
+        };
       };
 
       document.querySelectorAll(".revokeBtn").forEach((btn) => {
-        btn.onclick = async () => {
-          const reason = prompt("Reason for revoking this manual grant?");
-          if (!reason || !reason.trim()) return;
-          const { ok, data: res } = await api("/master-access/revoke", {
-            method: "POST",
-            body: JSON.stringify({ entitlement_id: btn.dataset.id, reason: reason.trim() }),
-          });
-          if (!ok) {
-            alert(res.error || "Revoke failed");
-            return;
-          }
-          doSearch();
+        btn.onclick = () => {
+          const formHost = document.querySelector(`.revokeForm[data-id="${btn.dataset.id}"]`);
+          formHost.style.display = "block";
+          formHost.innerHTML = `
+            <div class="confirm-box">
+              <input id="revokeReason-${btn.dataset.id}" placeholder="Reason for revoking" style="width:100%;margin-bottom:8px" />
+              <div class="row">
+                <button class="danger" id="confirmRevoke-${btn.dataset.id}">Confirm revoke</button>
+                <button class="secondary" id="cancelRevoke-${btn.dataset.id}">Cancel</button>
+              </div>
+            </div>`;
+          document.getElementById(`cancelRevoke-${btn.dataset.id}`).onclick = () => { formHost.style.display = "none"; formHost.innerHTML = ""; };
+          document.getElementById(`confirmRevoke-${btn.dataset.id}`).onclick = async () => {
+            const reason = document.getElementById(`revokeReason-${btn.dataset.id}`).value.trim();
+            if (!reason) { return; }
+            const { ok, data: res } = await api("/master-access/revoke", {
+              method: "POST",
+              body: JSON.stringify({ entitlement_id: btn.dataset.id, reason }),
+            });
+            if (!ok) { alert(res.error || "Revoke failed"); return; }
+            toast(`Access revoked`);
+            doSearch();
+          };
         };
       });
     }

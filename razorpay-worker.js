@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/revoke"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -100,6 +100,12 @@ export default {
     }
     if (url.pathname === "/master-access/search" && request.method === "GET") {
       return adminSearch(request, env);
+    }
+    if (url.pathname === "/master-access/users" && request.method === "GET") {
+      return adminListUsers(request, env);
+    }
+    if (url.pathname === "/master-access/manual-grants" && request.method === "GET") {
+      return adminManualGrants(request, env);
     }
     if (url.pathname === "/master-access/grant" && request.method === "POST") {
       return adminGrant(request, env);
@@ -288,12 +294,36 @@ async function checkAccess(request, env) {
 
   const nowTs = Math.floor(Date.now() / 1000);
   const entitlement = await env.DB.prepare(
-    "SELECT id, expires_at FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
+    "SELECT id, expires_at, granted_reason, granted_by, granted_at FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
   )
     .bind(user_id, subject_id, nowTs)
     .first();
 
-  return json({ unlocked: !!entitlement, expires_at: entitlement ? entitlement.expires_at : null });
+  if (!entitlement) {
+    return json({ unlocked: false, expires_at: null });
+  }
+
+  // A manual grant (granted_reason set) shorter than the standard 45-day
+  // window is a "grace grant" — temporary access while a payment issue is
+  // sorted out, not a real purchase. Frontend uses this to show a banner
+  // instead of treating it like normal unlimited access.
+  const FULL_ACCESS_SECONDS = 45 * 24 * 60 * 60;
+  const grantedDurationSeconds = entitlement.granted_at
+    ? entitlement.expires_at - entitlement.granted_at
+    : null;
+  const isGraceGrant =
+    !!entitlement.granted_reason &&
+    grantedDurationSeconds !== null &&
+    grantedDurationSeconds < FULL_ACCESS_SECONDS;
+
+  return json({
+    unlocked: true,
+    expires_at: entitlement.expires_at,
+    is_grace_grant: isGraceGrant,
+    grace_days_remaining: isGraceGrant
+      ? Math.max(0, Math.ceil((entitlement.expires_at - nowTs) / (24 * 60 * 60)))
+      : null,
+  });
 }
 
 // ---------- 4. Signup ----------
@@ -1010,7 +1040,10 @@ async function adminLogin(request, env) {
       ? `${ADMIN_COOKIE_NAME}=${token}; Path=/; Max-Age=${ADMIN_SESSION_LIFETIME_SECONDS}; HttpOnly; Secure; SameSite=None`
       : `${ADMIN_COOKIE_NAME}=${token}; Path=/; Max-Age=${ADMIN_SESSION_LIFETIME_SECONDS}; HttpOnly; Secure; SameSite=Lax`;
 
-    return jsonAuth({ ok: true, admin_name: admin_name.trim() }, 200, { "Set-Cookie": cookie });
+    return json({ ok: true, admin_name: admin_name.trim() }, 200, {
+      ...corsHeadersWithCredentials(request),
+      "Set-Cookie": cookie,
+    });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
@@ -1054,12 +1087,98 @@ async function getAdminFromSession(request, env) {
   return session;
 }
 
+// ---------- Admin: paginated all-users list ----------
+async function adminListUsers(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const url = new URL(request.url);
+  const before = url.searchParams.get("before"); // created_at cursor for "Load more"
+  const limit = 20;
+  const nowTs = Math.floor(Date.now() / 1000);
+
+  const users = before
+    ? await env.DB.prepare(
+        "SELECT id, name, phone, recovery_email, created_at FROM users WHERE created_at < ? ORDER BY created_at DESC LIMIT ?"
+      )
+        .bind(Number(before), limit)
+        .all()
+    : await env.DB.prepare(
+        "SELECT id, name, phone, recovery_email, created_at FROM users ORDER BY created_at DESC LIMIT ?"
+      )
+        .bind(limit)
+        .all();
+
+  const rows = users.results || [];
+  if (rows.length === 0) return jsonAuth({ users: [], next_cursor: null });
+
+  // One query for entitlement counts across this page of users, rather than N+1 queries.
+  const ids = rows.map((u) => u.id);
+  const placeholders = ids.map(() => "?").join(",");
+  const entitlementCounts = await env.DB.prepare(
+    `SELECT user_id,
+            COUNT(*) AS total,
+            SUM(CASE WHEN expires_at > ? AND (revoked_at IS NULL) THEN 1 ELSE 0 END) AS active
+     FROM entitlements
+     WHERE user_id IN (${placeholders})
+     GROUP BY user_id`
+  )
+    .bind(nowTs, ...ids)
+    .all();
+
+  const countsByUser = {};
+  for (const row of entitlementCounts.results || []) {
+    countsByUser[row.user_id] = { total: row.total, active: row.active };
+  }
+
+  const usersWithCounts = rows.map((u) => ({
+    ...u,
+    subjects_total: countsByUser[u.id]?.total || 0,
+    subjects_active: countsByUser[u.id]?.active || 0,
+  }));
+
+  const nextCursor = rows.length === limit ? rows[rows.length - 1].created_at : null;
+
+  return jsonAuth({ users: usersWithCounts, next_cursor: nextCursor });
+}
+
+// ---------- Admin: manual grants tracker (grace grants + full manual grants) ----------
+async function adminManualGrants(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const nowTs = Math.floor(Date.now() / 1000);
+  const grants = await env.DB.prepare(
+    `SELECT e.id, e.user_id, u.name AS user_name, u.phone,
+            e.subject_id, s.name AS subject_name,
+            e.expires_at, e.granted_reason, e.granted_by, e.granted_at,
+            e.revoked_at, e.revoked_reason, e.revoked_by
+     FROM entitlements e
+     JOIN users u ON u.id = e.user_id
+     LEFT JOIN subjects s ON s.id = e.subject_id
+     WHERE e.granted_by IS NOT NULL
+     ORDER BY e.expires_at ASC`
+  )
+    .all();
+
+  const results = (grants.results || []).map((g) => ({
+    ...g,
+    active: !g.revoked_at && g.expires_at > nowTs,
+    duration_days: g.granted_at ? Math.round((g.expires_at - g.granted_at) / (24 * 60 * 60)) : null,
+  }));
+
+  return jsonAuth({ grants: results });
+}
+
 async function adminSearch(request, env) {
   const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
   const admin = await getAdminFromSession(request, env);
   if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
 
   const url = new URL(request.url);
+
   const q = (url.searchParams.get("q") || "").trim();
   if (!q) return jsonAuth({ error: "q required (phone, recovery email, payment_id, or order_id)" }, 400);
 
@@ -1131,13 +1250,18 @@ async function adminGrant(request, env) {
   if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
 
   try {
-    const { user_id, subject_id, reason } = await request.json();
+    const { user_id, subject_id, reason, duration_days } = await request.json();
     if (!user_id || !subject_id || !reason || !reason.trim()) {
       return jsonAuth({ error: "user_id, subject_id, and reason are all required" }, 400);
     }
 
+    const days = Number(duration_days) || 45;
+    if (days < 1 || days > 365) {
+      return jsonAuth({ error: "duration_days must be between 1 and 365" }, 400);
+    }
+
     const nowTs = Math.floor(Date.now() / 1000);
-    const ACCESS_DURATION_SECONDS = 45 * 24 * 60 * 60; // same 45-day window as paid access
+    const ACCESS_DURATION_SECONDS = days * 24 * 60 * 60;
     const expiresAt = nowTs + ACCESS_DURATION_SECONDS;
     const entitlementId = crypto.randomUUID();
 
@@ -1170,7 +1294,7 @@ async function adminGrant(request, env) {
       .bind(crypto.randomUUID(), admin.admin_identifier, user_id, subject_id, entitlementId, reason.trim(), nowTs)
       .run();
 
-    return jsonAuth({ ok: true, expires_at: expiresAt });
+    return jsonAuth({ ok: true, expires_at: expiresAt, days_granted: days });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
