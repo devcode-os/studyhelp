@@ -172,6 +172,7 @@
           $("tab-" + name).style.display = name === tabEl.dataset.tab ? "block" : "none";
         });
         if (tabEl.dataset.tab === "grants") loadManualGrants();
+        if (tabEl.dataset.tab === "users") loadUsers();
       };
     });
 
