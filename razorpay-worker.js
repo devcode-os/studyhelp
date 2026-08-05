@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/revoke"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -88,6 +88,24 @@ export default {
     }
     if (url.pathname === "/content/answer" && request.method === "GET") {
       return getSingleAnswer(request, env);
+    }
+    if (url.pathname === "/master-access/login" && request.method === "POST") {
+      return adminLogin(request, env);
+    }
+    if (url.pathname === "/master-access/logout" && request.method === "POST") {
+      return adminLogout(request, env);
+    }
+    if (url.pathname === "/master-access/me" && request.method === "GET") {
+      return adminMe(request, env);
+    }
+    if (url.pathname === "/master-access/search" && request.method === "GET") {
+      return adminSearch(request, env);
+    }
+    if (url.pathname === "/master-access/grant" && request.method === "POST") {
+      return adminGrant(request, env);
+    }
+    if (url.pathname === "/master-access/revoke" && request.method === "POST") {
+      return adminRevoke(request, env);
     }
 
     return new Response("Not found", { status: 404, headers: CORS_HEADERS });
@@ -948,6 +966,260 @@ async function getUserFromSession(request, env) {
     .first();
 
   return user || null;
+}
+
+// ---------- Admin console (Stage 6, core: login, search, grant, revoke) ----------
+// Route: /master-access/  (not linked in public nav, gated by ADMIN_SECRET)
+// Separate cookie/session system from student login — shorter lifetime,
+// never shares sh_session, never touches passcode hashes.
+
+const ADMIN_SESSION_LIFETIME_SECONDS = 4 * 60 * 60; // 4 hours — shorter than student 30-day sessions, per spec
+const ADMIN_COOKIE_NAME = "sh_admin_session";
+
+async function adminLogin(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  try {
+    const { secret, admin_name } = await request.json();
+
+    if (!env.ADMIN_SECRET) {
+      return jsonAuth({ error: "Admin console not configured" }, 500);
+    }
+    if (!secret || secret !== env.ADMIN_SECRET) {
+      // Same generic message regardless of failure reason — don't help an attacker
+      // distinguish "wrong secret" from "no secret sent".
+      return jsonAuth({ error: "Invalid credentials" }, 401);
+    }
+    if (!admin_name || !admin_name.trim()) {
+      return jsonAuth({ error: "admin_name required — used to label audit log entries" }, 400);
+    }
+
+    const token = crypto.randomUUID() + crypto.randomUUID();
+    const tokenHash = await sha256Hex(token);
+    const expiresAt = Math.floor(Date.now() / 1000) + ADMIN_SESSION_LIFETIME_SECONDS;
+
+    await env.DB.prepare(
+      `INSERT INTO admin_sessions (id, session_token_hash, admin_identifier, expires_at)
+       VALUES (?, ?, ?, ?)`
+    )
+      .bind(crypto.randomUUID(), tokenHash, admin_name.trim(), expiresAt)
+      .run();
+
+    const origin = request.headers.get("Origin") || "";
+    const isLocalDev = origin.includes("localhost") || origin.includes("127.0.0.1");
+    const cookie = isLocalDev
+      ? `${ADMIN_COOKIE_NAME}=${token}; Path=/; Max-Age=${ADMIN_SESSION_LIFETIME_SECONDS}; HttpOnly; Secure; SameSite=None`
+      : `${ADMIN_COOKIE_NAME}=${token}; Path=/; Max-Age=${ADMIN_SESSION_LIFETIME_SECONDS}; HttpOnly; Secure; SameSite=Lax`;
+
+    return jsonAuth({ ok: true, admin_name: admin_name.trim() }, 200, { "Set-Cookie": cookie });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function adminLogout(request, env) {
+  const token = getAdminTokenFromRequest(request);
+  if (token) {
+    const tokenHash = await sha256Hex(token);
+    await env.DB.prepare("DELETE FROM admin_sessions WHERE session_token_hash = ?").bind(tokenHash).run();
+  }
+  return json({ ok: true }, 200, {
+    ...corsHeadersWithCredentials(request),
+    "Set-Cookie": `${ADMIN_COOKIE_NAME}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`,
+  });
+}
+
+async function adminMe(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ admin: null }, 401);
+  return jsonAuth({ admin_name: admin.admin_identifier });
+}
+
+function getAdminTokenFromRequest(request) {
+  const cookieHeader = request.headers.get("Cookie") || "";
+  const match = cookieHeader.match(new RegExp(`${ADMIN_COOKIE_NAME}=([^;]+)`));
+  return match ? match[1] : null;
+}
+
+async function getAdminFromSession(request, env) {
+  const token = getAdminTokenFromRequest(request);
+  if (!token) return null;
+  const tokenHash = await sha256Hex(token);
+  const session = await env.DB.prepare(
+    "SELECT admin_identifier, expires_at FROM admin_sessions WHERE session_token_hash = ?"
+  )
+    .bind(tokenHash)
+    .first();
+  if (!session || session.expires_at < Math.floor(Date.now() / 1000)) return null;
+  return session;
+}
+
+async function adminSearch(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const url = new URL(request.url);
+  const q = (url.searchParams.get("q") || "").trim();
+  if (!q) return jsonAuth({ error: "q required (phone, recovery email, payment_id, or order_id)" }, 400);
+
+  const normalizedPhone = q.replace(/\D/g, "").slice(-10);
+
+  // Try to resolve a user_id via phone, recovery_email, or a payment/order id on their orders.
+  let user = await env.DB.prepare(
+    "SELECT id, name, phone, recovery_email, created_at FROM users WHERE phone = ? OR recovery_email = ?"
+  )
+    .bind(normalizedPhone, q)
+    .first();
+
+  if (!user) {
+    const orderMatch = await env.DB.prepare(
+      "SELECT user_id FROM orders WHERE id = ? OR id IN (SELECT order_id FROM entitlements WHERE payment_id = ?)"
+    )
+      .bind(q, q)
+      .first();
+    if (orderMatch) {
+      user = await env.DB.prepare(
+        "SELECT id, name, phone, recovery_email, created_at FROM users WHERE id = ?"
+      )
+        .bind(orderMatch.user_id)
+        .first();
+    }
+  }
+
+  if (!user) return jsonAuth({ found: false });
+
+  const nowTs = Math.floor(Date.now() / 1000);
+
+  const entitlements = await env.DB.prepare(
+    `SELECT e.id, e.subject_id, s.name AS subject_name, e.order_id, e.payment_id,
+            e.expires_at, e.granted_reason, e.granted_by, e.granted_at,
+            e.revoked_at, e.revoked_reason, e.revoked_by
+     FROM entitlements e
+     LEFT JOIN subjects s ON s.id = e.subject_id
+     WHERE e.user_id = ?
+     ORDER BY e.expires_at DESC`
+  )
+    .bind(user.id)
+    .all();
+
+  const orders = await env.DB.prepare(
+    `SELECT id, subject_id, amount_paise, status, created_at
+     FROM orders WHERE user_id = ? ORDER BY created_at DESC LIMIT 20`
+  )
+    .bind(user.id)
+    .all();
+
+  const subjects = await env.DB.prepare("SELECT id, name FROM subjects").all();
+
+  return jsonAuth({
+    found: true,
+    user,
+    entitlements: (entitlements.results || []).map((e) => ({
+      ...e,
+      active: !e.revoked_at && e.expires_at > nowTs,
+      manual: !e.order_id && !e.payment_id,
+    })),
+    orders: orders.results || [],
+    subjects: subjects.results || [],
+  });
+}
+
+async function adminGrant(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  try {
+    const { user_id, subject_id, reason } = await request.json();
+    if (!user_id || !subject_id || !reason || !reason.trim()) {
+      return jsonAuth({ error: "user_id, subject_id, and reason are all required" }, 400);
+    }
+
+    const nowTs = Math.floor(Date.now() / 1000);
+    const ACCESS_DURATION_SECONDS = 45 * 24 * 60 * 60; // same 45-day window as paid access
+    const expiresAt = nowTs + ACCESS_DURATION_SECONDS;
+    const entitlementId = crypto.randomUUID();
+
+    // order_id/payment_id are NOT NULL on the real table, so '' is used as the
+    // "no real payment" sentinel instead of NULL — never fake a Razorpay record
+    // for manual access, per the locked spec, just represented as empty string
+    // rather than NULL to satisfy the column constraint. granted_at already
+    // exists on this table with its own unixepoch() default — left alone here.
+    await env.DB.prepare(
+      `INSERT INTO entitlements (id, user_id, subject_id, order_id, payment_id, expires_at, granted_reason, granted_by)
+       VALUES (?, ?, ?, '', '', ?, ?, ?)
+       ON CONFLICT(user_id, subject_id) DO UPDATE SET
+         expires_at = excluded.expires_at,
+         order_id = '',
+         payment_id = '',
+         granted_reason = excluded.granted_reason,
+         granted_by = excluded.granted_by,
+         granted_at = unixepoch(),
+         revoked_at = NULL,
+         revoked_reason = NULL,
+         revoked_by = NULL`
+    )
+      .bind(entitlementId, user_id, subject_id, expiresAt, reason.trim(), admin.admin_identifier)
+      .run();
+
+    await env.DB.prepare(
+      `INSERT INTO admin_audit_log (id, action, admin_identifier, user_id, subject_id, entitlement_id, reason, created_at)
+       VALUES (?, 'grant', ?, ?, ?, ?, ?, ?)`
+    )
+      .bind(crypto.randomUUID(), admin.admin_identifier, user_id, subject_id, entitlementId, reason.trim(), nowTs)
+      .run();
+
+    return jsonAuth({ ok: true, expires_at: expiresAt });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function adminRevoke(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  try {
+    const { entitlement_id, reason } = await request.json();
+    if (!entitlement_id || !reason || !reason.trim()) {
+      return jsonAuth({ error: "entitlement_id and reason are required" }, 400);
+    }
+
+    const entitlement = await env.DB.prepare(
+      "SELECT id, user_id, subject_id, order_id, payment_id FROM entitlements WHERE id = ?"
+    )
+      .bind(entitlement_id)
+      .first();
+
+    if (!entitlement) return jsonAuth({ error: "Entitlement not found" }, 404);
+
+    // Per spec: the console only revokes MANUAL entitlements — protects against
+    // accidentally revoking a real paid subscription. Paid entitlements have
+    // order_id/payment_id set and simply are not revocable from here.
+    if (entitlement.order_id || entitlement.payment_id) {
+      return jsonAuth({ error: "This is a paid entitlement, not a manual grant — cannot revoke from here" }, 400);
+    }
+
+    const nowTs = Math.floor(Date.now() / 1000);
+    await env.DB.prepare(
+      `UPDATE entitlements SET expires_at = ?, revoked_at = ?, revoked_reason = ?, revoked_by = ? WHERE id = ?`
+    )
+      .bind(nowTs, nowTs, reason.trim(), admin.admin_identifier, entitlement_id)
+      .run();
+
+    await env.DB.prepare(
+      `INSERT INTO admin_audit_log (id, action, admin_identifier, user_id, subject_id, entitlement_id, reason, created_at)
+       VALUES (?, 'revoke', ?, ?, ?, ?, ?, ?)`
+    )
+      .bind(crypto.randomUUID(), admin.admin_identifier, entitlement.user_id, entitlement.subject_id, entitlement_id, reason.trim(), nowTs)
+      .run();
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
 }
 
 // ---------- 11. Chapter answers (entitlement-gated content delivery) ----------

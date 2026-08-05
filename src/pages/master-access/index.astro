@@ -1,0 +1,220 @@
+---
+// src/pages/master-access/index.astro
+// Private support/admin console — Stage 6 (core).
+// NOT linked in Header.astro or any public nav. Reachable only if you know the URL.
+// Auth: ADMIN_SECRET Worker secret, checked server-side. Session cookie is
+// sh_admin_session, separate from student sh_session, 4-hour lifetime.
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Master Access</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; color: #1a1a1a; }
+    h1 { font-size: 20px; }
+    input, textarea, button { font-size: 14px; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+    button { cursor: pointer; background: #1a1a2e; color: white; border: none; }
+    button.secondary { background: #eee; color: #1a1a1a; }
+    button.danger { background: #b02a2a; }
+    .row { display: flex; gap: 8px; margin-bottom: 12px; }
+    .row input { flex: 1; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .ent { border: 1px solid #eee; border-radius: 6px; padding: 10px; margin-bottom: 8px; }
+    .ent.active { border-color: #2a7a2a; }
+    .ent.expired { opacity: 0.6; }
+    .tag { display: inline-block; font-size: 11px; padding: 2px 6px; border-radius: 4px; background: #eee; margin-left: 6px; }
+    .tag.manual { background: #ffe9b3; }
+    .err { color: #b02a2a; font-size: 13px; }
+    .muted { color: #777; font-size: 13px; }
+    #app { display: none; }
+    #login { max-width: 360px; margin: 80px auto; }
+  </style>
+</head>
+<body>
+
+  <div id="login">
+    <h1>Master Access</h1>
+    <div class="card">
+      <div class="row"><input id="admin_name" placeholder="Your name (for audit log)" /></div>
+      <div class="row"><input id="secret" type="password" placeholder="Admin secret" /></div>
+      <button id="loginBtn" style="width:100%">Log in</button>
+      <p class="err" id="loginErr"></p>
+    </div>
+  </div>
+
+  <div id="app">
+    <h1>Master Access — <span id="whoami"></span> <button class="secondary" id="logoutBtn">Log out</button></h1>
+
+    <div class="card">
+      <div class="row">
+        <input id="q" placeholder="Search by phone, recovery email, payment ID, or order ID" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <p class="err" id="searchErr"></p>
+    </div>
+
+    <div id="results"></div>
+  </div>
+
+  <script>
+    const API = "https://api.studyhelp.fdaytalk.com";
+    const $ = (id) => document.getElementById(id);
+
+    async function api(path, opts = {}) {
+      const res = await fetch(API + path, {
+        ...opts,
+        credentials: "include",
+        headers: { "Content-Type": "application/json", ...(opts.headers || {}) },
+      });
+      const data = await res.json().catch(() => ({}));
+      return { ok: res.ok, status: res.status, data };
+    }
+
+    async function checkSession() {
+      const { ok, data } = await api("/master-access/me");
+      if (ok && data.admin_name) {
+        $("login").style.display = "none";
+        $("app").style.display = "block";
+        $("whoami").textContent = data.admin_name;
+      }
+    }
+
+    $("loginBtn").onclick = async () => {
+      $("loginErr").textContent = "";
+      const admin_name = $("admin_name").value.trim();
+      const secret = $("secret").value;
+      if (!admin_name || !secret) {
+        $("loginErr").textContent = "Enter your name and the admin secret.";
+        return;
+      }
+      const { ok, data } = await api("/master-access/login", {
+        method: "POST",
+        body: JSON.stringify({ admin_name, secret }),
+      });
+      if (!ok) {
+        $("loginErr").textContent = data.error || "Login failed";
+        return;
+      }
+      $("login").style.display = "none";
+      $("app").style.display = "block";
+      $("whoami").textContent = data.admin_name;
+    };
+
+    $("logoutBtn").onclick = async () => {
+      await api("/master-access/logout", { method: "POST" });
+      location.reload();
+    };
+
+    $("searchBtn").onclick = doSearch;
+    $("q").addEventListener("keydown", (e) => { if (e.key === "Enter") doSearch(); });
+
+    async function doSearch() {
+      $("searchErr").textContent = "";
+      $("results").innerHTML = "";
+      const q = $("q").value.trim();
+      if (!q) return;
+
+      const { ok, data } = await api("/master-access/search?q=" + encodeURIComponent(q));
+      if (!ok) {
+        $("searchErr").textContent = data.error || "Search failed";
+        return;
+      }
+      if (!data.found) {
+        $("results").innerHTML = '<p class="muted">No user found for that search.</p>';
+        return;
+      }
+      renderUser(data);
+    }
+
+    function renderUser(data) {
+      const { user, entitlements, orders, subjects } = data;
+      const subjectOptions = subjects.map((s) => `<option value="${s.id}">${s.name}</option>`).join("");
+
+      const entHtml = entitlements.length
+        ? entitlements.map((e) => {
+            const cls = e.active ? "active" : "expired";
+            const expDate = new Date(e.expires_at * 1000).toLocaleString();
+            const manualTag = e.manual ? '<span class="tag manual">manual</span>' : "";
+            const revokeBtn = e.manual && e.active
+              ? `<button class="danger revokeBtn" data-id="${e.id}">Revoke</button>`
+              : "";
+            return `
+              <div class="ent ${cls}">
+                <strong>${e.subject_name || e.subject_id}</strong> ${manualTag}
+                <span class="tag">${e.active ? "ACTIVE" : "EXPIRED/REVOKED"}</span>
+                <div class="muted">Expires: ${expDate}</div>
+                ${e.granted_reason ? `<div class="muted">Granted reason: ${e.granted_reason} — by ${e.granted_by}</div>` : ""}
+                ${e.revoked_at ? `<div class="muted">Revoked: ${e.revoked_reason} — by ${e.revoked_by}</div>` : ""}
+                ${revokeBtn}
+              </div>`;
+          }).join("")
+        : '<p class="muted">No entitlements yet.</p>';
+
+      const ordersHtml = orders.length
+        ? orders.map((o) => `<div class="muted">${o.id} — ${o.subject_id} — ₹${(o.amount_paise / 100).toFixed(2)} — ${o.status} — ${new Date(o.created_at * 1000).toLocaleDateString()}</div>`).join("")
+        : '<p class="muted">No orders.</p>';
+
+      $("results").innerHTML = `
+        <div class="card">
+          <h3>${user.name || "(no name)"}</h3>
+          <div class="muted">Phone: ${user.phone} · Recovery email: ${user.recovery_email || "—"}</div>
+          <div class="muted">Joined: ${new Date(user.created_at * 1000).toLocaleDateString()}</div>
+
+          <h4>Entitlements</h4>
+          ${entHtml}
+
+          <h4>Grant manual access</h4>
+          <div class="row">
+            <select id="grantSubject">${subjectOptions}</select>
+            <input id="grantReason" placeholder="Reason (e.g. Scholarship, webhook failed)" />
+            <button id="grantBtn">Grant 45 days</button>
+          </div>
+          <p class="err" id="grantErr"></p>
+
+          <h4>Payment history</h4>
+          ${ordersHtml}
+        </div>
+      `;
+
+      $("grantBtn").onclick = async () => {
+        $("grantErr").textContent = "";
+        const subject_id = $("grantSubject").value;
+        const reason = $("grantReason").value.trim();
+        if (!reason) {
+          $("grantErr").textContent = "Reason is required.";
+          return;
+        }
+        const { ok, data: res } = await api("/master-access/grant", {
+          method: "POST",
+          body: JSON.stringify({ user_id: user.id, subject_id, reason }),
+        });
+        if (!ok) {
+          $("grantErr").textContent = res.error || "Grant failed";
+          return;
+        }
+        doSearch(); // refresh from the current q
+      };
+
+      document.querySelectorAll(".revokeBtn").forEach((btn) => {
+        btn.onclick = async () => {
+          const reason = prompt("Reason for revoking this manual grant?");
+          if (!reason || !reason.trim()) return;
+          const { ok, data: res } = await api("/master-access/revoke", {
+            method: "POST",
+            body: JSON.stringify({ entitlement_id: btn.dataset.id, reason: reason.trim() }),
+          });
+          if (!ok) {
+            alert(res.error || "Revoke failed");
+            return;
+          }
+          doSearch();
+        };
+      });
+    }
+
+    checkSession();
+  </script>
+</body>
+</html>
