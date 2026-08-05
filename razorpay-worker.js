@@ -1118,24 +1118,24 @@ async function adminListUsers(request, env) {
   const placeholders = ids.map(() => "?").join(",");
   const entitlementCounts = await env.DB.prepare(
     `SELECT user_id,
-            COUNT(*) AS total,
-            SUM(CASE WHEN expires_at > ? AND (revoked_at IS NULL) THEN 1 ELSE 0 END) AS active
+            SUM(CASE WHEN expires_at > ? AND revoked_at IS NULL AND (order_id != '' OR payment_id != '') THEN 1 ELSE 0 END) AS active_purchased,
+            SUM(CASE WHEN expires_at > ? AND revoked_at IS NULL AND order_id = '' AND payment_id = '' THEN 1 ELSE 0 END) AS active_manual
      FROM entitlements
      WHERE user_id IN (${placeholders})
      GROUP BY user_id`
   )
-    .bind(nowTs, ...ids)
+    .bind(nowTs, nowTs, ...ids)
     .all();
 
   const countsByUser = {};
   for (const row of entitlementCounts.results || []) {
-    countsByUser[row.user_id] = { total: row.total, active: row.active };
+    countsByUser[row.user_id] = { activePurchased: row.active_purchased, activeManual: row.active_manual };
   }
 
   const usersWithCounts = rows.map((u) => ({
     ...u,
-    subjects_total: countsByUser[u.id]?.total || 0,
-    subjects_active: countsByUser[u.id]?.active || 0,
+    subjects_active_purchased: countsByUser[u.id]?.activePurchased || 0,
+    subjects_active_manual: countsByUser[u.id]?.activeManual || 0,
   }));
 
   const nextCursor = rows.length === limit ? rows[rows.length - 1].created_at : null;

@@ -196,15 +196,18 @@
         : allUsersCache;
 
       const rowsHtml = rows.map((u) => {
-        const hasActive = u.subjects_active > 0;
+        const purchased = u.subjects_active_purchased || 0;
+        const manual = u.subjects_active_manual || 0;
+        const hasAny = purchased + manual > 0;
         return `
           <tr class="user-row" data-phone="${esc(u.phone)}">
             <td><strong>${esc(u.phone)}</strong></td>
             <td>${esc(u.name || "—")}</td>
-            <td><span class="badge ${hasActive ? "active" : "none"}">${u.subjects_active}/${u.subjects_total} active</span></td>
+            <td>
+              <span class="badge ${hasAny ? "active" : "none"}" title="Purchased / Manually granted">${purchased} bought · ${manual} manual</span>
+            </td>
             <td class="muted">${fmtDateShort(u.created_at)}</td>
           </tr>
-          <tr class="expand-row" data-expand-for="${esc(u.phone)}" style="display:none"><td colspan="4"></td></tr>
         `;
       }).join("");
 
@@ -215,9 +218,9 @@
           </div>
         </div>
         <div class="card">
-          <h4 class="section-label">${rows.length} user${rows.length === 1 ? "" : "s"}${filter ? " matching filter" : ""}</h4>
+          <h4 class="section-label">${rows.length} user${rows.length === 1 ? "" : "s"}${filter ? " matching filter" : ""} — click a row for full details</h4>
           <table>
-            <thead><tr><th>Phone</th><th>Name</th><th>Subjects</th><th>Joined</th></tr></thead>
+            <thead><tr><th>Phone</th><th>Name</th><th>Subjects (bought · manual)</th><th>Joined</th></tr></thead>
             <tbody>${rowsHtml || `<tr><td colspan="4" class="muted" style="padding:16px">No users found.</td></tr>`}</tbody>
           </table>
         </div>
@@ -228,44 +231,32 @@
       if (usersCursor && !filter) $("loadMoreBtn").onclick = () => loadUsers(usersCursor);
 
       document.querySelectorAll(".user-row").forEach((row) => {
-        row.onclick = () => toggleExpand(row.dataset.phone);
+        row.onclick = () => goToSearchFor(row.dataset.phone);
       });
     }
 
-    async function toggleExpand(phone) {
-      const expandRow = document.querySelector(`tr[data-expand-for="${CSS.escape(phone)}"]`);
-      const isOpen = expandRow.style.display !== "none";
-      document.querySelectorAll(".expand-row").forEach((r) => (r.style.display = "none"));
-      if (isOpen) return;
-
-      expandRow.querySelector("td").innerHTML = `<div class="expand-inner"><span class="spinner"></span> Loading...</div>`;
-      expandRow.style.display = "table-row";
-
-      const { ok, data } = await api("/master-access/search?q=" + encodeURIComponent(phone));
-      if (!ok || !data.found) {
-        expandRow.querySelector("td").innerHTML = `<div class="expand-inner muted">Couldn't load details.</div>`;
-        return;
-      }
-      const entHtml = data.entitlements.length
-        ? data.entitlements.map((e) => `
-            <div class="ent-line">
-              <span>${esc(e.subject_name || e.subject_id)} ${e.manual ? '<span class="badge manual">manual</span>' : ""}</span>
-              <span class="badge ${e.active ? "active" : "none"}">${e.active ? "Active until " + fmtDateShort(e.expires_at) : "Expired"}</span>
-            </div>`).join("")
-        : `<span class="muted">No entitlements yet.</span>`;
-      expandRow.querySelector("td").innerHTML = `<div class="expand-inner">${entHtml}</div>`;
+    // Jumps straight to the Search tab with full detail already loaded —
+    // no more copy/paste of the phone number required.
+    function goToSearchFor(phone) {
+      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+      document.querySelector('.tab[data-tab="search"]').classList.add("active");
+      ["users", "grants", "search"].forEach((name) => {
+        $("tab-" + name).style.display = name === "search" ? "block" : "none";
+      });
+      $("q").value = phone;
+      doSearch();
     }
 
     // ---------- Tab: Manual Grants ----------
     async function loadManualGrants() {
-      $("tab-grants").innerHTML = `<div class="card"><span class="spinner"></span> Loading...</div>`;
+      $("tab-grants").innerHTML = `<div class="card"><div class="card-body"><span class="spinner"></span> Loading...</div></div>`;
       const { ok, data } = await api("/master-access/manual-grants");
       if (!ok) { $("tab-grants").innerHTML = `<div class="card"><div class="card-body err">${esc(data.error || "Failed to load")}</div></div>`; return; }
 
       const rows = (data.grants || []).map((g) => {
         const daysLeft = g.active ? Math.max(0, Math.ceil((g.expires_at - Date.now() / 1000) / 86400)) : 0;
         return `
-          <tr>
+          <tr class="user-row" data-phone="${esc(g.phone)}">
             <td><strong>${esc(g.phone)}</strong><div class="muted">${esc(g.user_name || "")}</div></td>
             <td>${esc(g.subject_name || g.subject_id)}<div class="muted">${esc(g.subject_id)}</div></td>
             <td>${g.duration_days ?? "—"} days</td>
@@ -276,13 +267,17 @@
 
       $("tab-grants").innerHTML = `
         <div class="card">
-          <h4 class="section-label">${(data.grants || []).length} manual grant${(data.grants || []).length === 1 ? "" : "s"} (soonest-expiring first)</h4>
+          <h4 class="section-label">${(data.grants || []).length} manual grant${(data.grants || []).length === 1 ? "" : "s"} (soonest-expiring first) — click a row for full details</h4>
           <table>
             <thead><tr><th>User</th><th>Subject</th><th>Duration</th><th>Reason</th><th>Status</th></tr></thead>
             <tbody>${rows || `<tr><td colspan="5" class="muted" style="padding:16px">No manual grants yet.</td></tr>`}</tbody>
           </table>
         </div>
       `;
+
+      document.querySelectorAll("#tab-grants .user-row").forEach((row) => {
+        row.onclick = () => goToSearchFor(row.dataset.phone);
+      });
     }
 
     // ---------- Tab: Search ----------
