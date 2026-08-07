@@ -134,20 +134,8 @@
       setTimeout(() => el.remove(), 3500);
     }
 
-    // DD-MM-YYYY, fixed regardless of browser/OS locale (was toLocaleString(),
-    // which rendered US-style MM/DD/YYYY on US-locale browsers).
-    function pad2(n) { return String(n).padStart(2, "0"); }
-    function fmtDate(ts) {
-      if (!ts) return "—";
-      const d = new Date(ts * 1000);
-      const time = `${pad2(d.getHours() % 12 || 12)}:${pad2(d.getMinutes())} ${d.getHours() < 12 ? "AM" : "PM"}`;
-      return `${pad2(d.getDate())}-${pad2(d.getMonth() + 1)}-${d.getFullYear()}, ${time}`;
-    }
-    function fmtDateShort(ts) {
-      if (!ts) return "—";
-      const d = new Date(ts * 1000);
-      return `${pad2(d.getDate())}-${pad2(d.getMonth() + 1)}-${d.getFullYear()}`;
-    }
+    function fmtDate(ts) { return ts ? new Date(ts * 1000).toLocaleString() : "—"; }
+    function fmtDateShort(ts) { return ts ? new Date(ts * 1000).toLocaleDateString() : "—"; }
 
     // ---------- Auth ----------
     async function checkSession() {
@@ -366,9 +354,6 @@
             const revokeBtn = e.manual && e.active
               ? `<button class="danger revokeBtn" data-id="${e.id}" style="margin-left:8px">Revoke</button>`
               : "";
-            const extendBtn = e.manual && e.active
-              ? `<button class="secondary extendBtn" data-id="${e.id}" data-granted="${e.granted_at || ""}" style="margin-left:8px">Extend</button>`
-              : "";
             return `
               <div class="ent-line" style="flex-direction:column;align-items:flex-start;gap:4px">
                 <div style="display:flex;justify-content:space-between;width:100%">
@@ -382,9 +367,7 @@
                 ${e.granted_reason ? `<div class="muted">Granted: ${esc(e.granted_reason)} — by ${esc(e.granted_by)} on ${fmtDateShort(e.granted_at)}</div>` : ""}
                 ${e.revoked_at ? `<div class="muted">Revoked: ${esc(e.revoked_reason)} — by ${esc(e.revoked_by)} on ${fmtDateShort(e.revoked_at)}</div>` : ""}
                 ${revokeBtn}
-                ${extendBtn}
                 <div class="revokeForm" data-id="${e.id}" style="display:none;width:100%"></div>
-                <div class="extendForm" data-id="${e.id}" style="display:none;width:100%"></div>
               </div>`;
           }).join("")
         : `<span class="muted">No entitlements yet.</span>`;
@@ -494,54 +477,6 @@
             });
             if (!ok) { alert(res.error || "Revoke failed"); return; }
             toast(`Access revoked`);
-            doSearch();
-          };
-        };
-      });
-
-      document.querySelectorAll(".extendBtn").forEach((btn) => {
-        btn.onclick = () => {
-          const formHost = document.querySelector(`.extendForm[data-id="${btn.dataset.id}"]`);
-          const grantedAt = Number(btn.dataset.granted) || null;
-          const grantedLabel = grantedAt ? fmtDateShort(grantedAt) : "unknown";
-          formHost.style.display = "block";
-          formHost.innerHTML = `
-            <div class="confirm-box">
-              <div class="muted" style="margin-bottom:8px">
-                Extends from the original grant date (${grantedLabel}), not from today — e.g. entering 45 here
-                sets expiry to 45 days after ${grantedLabel}, however many days have already passed.
-              </div>
-              <div class="row">
-                <select id="extendDuration-${btn.dataset.id}">
-                  <option value="7">7 days total</option>
-                  <option value="15">15 days total</option>
-                  <option value="45" selected>45 days total (full)</option>
-                  <option value="custom">Custom...</option>
-                </select>
-                <input id="extendDurationCustom-${btn.dataset.id}" type="number" min="1" max="365" placeholder="Days" style="display:none;width:80px" />
-                <input id="extendReason-${btn.dataset.id}" placeholder="Reason (e.g. Payment verified)" style="flex:1;min-width:180px" />
-              </div>
-              <div class="row" style="margin-top:8px">
-                <button id="confirmExtend-${btn.dataset.id}">Confirm extend</button>
-                <button class="secondary" id="cancelExtend-${btn.dataset.id}">Cancel</button>
-              </div>
-            </div>`;
-          document.getElementById(`extendDuration-${btn.dataset.id}`).onchange = (e) => {
-            document.getElementById(`extendDurationCustom-${btn.dataset.id}`).style.display = e.target.value === "custom" ? "inline-block" : "none";
-          };
-          document.getElementById(`cancelExtend-${btn.dataset.id}`).onclick = () => { formHost.style.display = "none"; formHost.innerHTML = ""; };
-          document.getElementById(`confirmExtend-${btn.dataset.id}`).onclick = async () => {
-            const reason = document.getElementById(`extendReason-${btn.dataset.id}`).value.trim();
-            const durationSel = document.getElementById(`extendDuration-${btn.dataset.id}`).value;
-            const days = durationSel === "custom" ? Number(document.getElementById(`extendDurationCustom-${btn.dataset.id}`).value) : Number(durationSel);
-            if (!reason) { alert("Reason is required."); return; }
-            if (!days || days < 1) { alert("Enter a valid number of days."); return; }
-            const { ok, data: res } = await api("/master-access/extend", {
-              method: "POST",
-              body: JSON.stringify({ entitlement_id: btn.dataset.id, duration_days: days, reason }),
-            });
-            if (!ok) { alert(res.error || "Extend failed"); return; }
-            toast(`Extended to ${days} days from original grant date`);
             doSearch();
           };
         };

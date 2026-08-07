@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -115,9 +115,6 @@ export default {
     }
     if (url.pathname === "/master-access/grant" && request.method === "POST") {
       return adminGrant(request, env);
-    }
-    if (url.pathname === "/master-access/extend" && request.method === "POST") {
-      return adminExtend(request, env);
     }
     if (url.pathname === "/master-access/revoke" && request.method === "POST") {
       return adminRevoke(request, env);
@@ -1363,31 +1360,12 @@ async function adminListUsers(request, env) {
 
   const users = before
     ? await env.DB.prepare(
-        `SELECT * FROM (
-           SELECT u.id, u.name, u.phone, u.recovery_email, u.created_at,
-                  COALESCE(
-                    (SELECT MAX(o.created_at) FROM orders o WHERE o.user_id = u.id AND o.status = 'paid'),
-                    (SELECT MAX(e.granted_at) FROM entitlements e WHERE e.user_id = u.id),
-                    u.created_at
-                  ) AS latest_activity
-           FROM users u
-         ) t
-         WHERE latest_activity < ?
-         ORDER BY latest_activity DESC LIMIT ?`
+        "SELECT id, name, phone, recovery_email, created_at FROM users WHERE created_at < ? ORDER BY created_at DESC LIMIT ?"
       )
         .bind(Number(before), limit)
         .all()
     : await env.DB.prepare(
-        `SELECT * FROM (
-           SELECT u.id, u.name, u.phone, u.recovery_email, u.created_at,
-                  COALESCE(
-                    (SELECT MAX(o.created_at) FROM orders o WHERE o.user_id = u.id AND o.status = 'paid'),
-                    (SELECT MAX(e.granted_at) FROM entitlements e WHERE e.user_id = u.id),
-                    u.created_at
-                  ) AS latest_activity
-           FROM users u
-         ) t
-         ORDER BY latest_activity DESC LIMIT ?`
+        "SELECT id, name, phone, recovery_email, created_at FROM users ORDER BY created_at DESC LIMIT ?"
       )
         .bind(limit)
         .all();
@@ -1420,7 +1398,7 @@ async function adminListUsers(request, env) {
     subjects_active_manual: countsByUser[u.id]?.activeManual || 0,
   }));
 
-  const nextCursor = rows.length === limit ? rows[rows.length - 1].latest_activity : null;
+  const nextCursor = rows.length === limit ? rows[rows.length - 1].created_at : null;
 
   return jsonAuth({ users: usersWithCounts, next_cursor: nextCursor });
 }
@@ -1580,65 +1558,6 @@ async function adminGrant(request, env) {
       .run();
 
     return jsonAuth({ ok: true, expires_at: expiresAt, days_granted: days });
-  } catch (err) {
-    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
-  }
-}
-
-async function adminExtend(request, env) {
-  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
-  const admin = await getAdminFromSession(request, env);
-  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
-
-  try {
-    const { entitlement_id, duration_days, reason } = await request.json();
-    if (!entitlement_id || !reason || !reason.trim()) {
-      return jsonAuth({ error: "entitlement_id and reason are required" }, 400);
-    }
-
-    const days = Number(duration_days);
-    if (!days || days < 1 || days > 365) {
-      return jsonAuth({ error: "duration_days must be between 1 and 365" }, 400);
-    }
-
-    const entitlement = await env.DB.prepare(
-      "SELECT id, user_id, subject_id, order_id, payment_id, granted_at, revoked_at FROM entitlements WHERE id = ?"
-    )
-      .bind(entitlement_id)
-      .first();
-
-    if (!entitlement) return jsonAuth({ error: "Entitlement not found" }, 404);
-
-    // Same rule as revoke: only manual entitlements can be touched from this console.
-    if (entitlement.order_id || entitlement.payment_id) {
-      return jsonAuth({ error: "This is a paid entitlement, not a manual grant — cannot extend from here" }, 400);
-    }
-    if (entitlement.revoked_at) {
-      return jsonAuth({ error: "This grant was revoked — issue a fresh grant instead of extending" }, 400);
-    }
-    if (!entitlement.granted_at) {
-      return jsonAuth({ error: "No granted_at on this entitlement — cannot compute extension" }, 400);
-    }
-
-    // Key difference from Grant: expires_at is computed from the ORIGINAL
-    // granted_at, not from now. A 3-day grace grant extended to 45 days ends
-    // up expiring 45 days after it was first granted, not 45 days from
-    // whenever the extension happened. granted_at itself is left untouched.
-    const newExpiresAt = entitlement.granted_at + days * 24 * 60 * 60;
-    const nowTs = Math.floor(Date.now() / 1000);
-
-    await env.DB.prepare(`UPDATE entitlements SET expires_at = ? WHERE id = ?`)
-      .bind(newExpiresAt, entitlement_id)
-      .run();
-
-    await env.DB.prepare(
-      `INSERT INTO admin_audit_log (id, action, admin_identifier, user_id, subject_id, entitlement_id, reason, created_at)
-       VALUES (?, 'extend', ?, ?, ?, ?, ?, ?)`
-    )
-      .bind(crypto.randomUUID(), admin.admin_identifier, entitlement.user_id, entitlement.subject_id, entitlement_id, reason.trim(), nowTs)
-      .run();
-
-    return jsonAuth({ ok: true, expires_at: newExpiresAt, total_days_from_grant: days });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
