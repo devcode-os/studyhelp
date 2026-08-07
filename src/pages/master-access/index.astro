@@ -101,11 +101,13 @@
         <div class="tab active" data-tab="users">All Users</div>
         <div class="tab" data-tab="grants">Manual Grants</div>
         <div class="tab" data-tab="search">Search</div>
+        <div class="tab" data-tab="pricing">Subject Pricing</div>
       </div>
 
       <div id="tab-users"></div>
       <div id="tab-grants" style="display:none"></div>
       <div id="tab-search" style="display:none"></div>
+      <div id="tab-pricing" style="display:none"></div>
     </div>
   </div>
 
@@ -180,11 +182,12 @@
       tabEl.onclick = () => {
         document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
         tabEl.classList.add("active");
-        ["users", "grants", "search"].forEach((name) => {
+        ["users", "grants", "search", "pricing"].forEach((name) => {
           $("tab-" + name).style.display = name === tabEl.dataset.tab ? "block" : "none";
         });
         if (tabEl.dataset.tab === "grants") loadManualGrants();
         if (tabEl.dataset.tab === "users") loadUsers();
+        if (tabEl.dataset.tab === "pricing") loadSubjectPricing();
       };
     });
 
@@ -253,7 +256,7 @@
     function goToSearchFor(phone) {
       document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
       document.querySelector('.tab[data-tab="search"]').classList.add("active");
-      ["users", "grants", "search"].forEach((name) => {
+      ["users", "grants", "search", "pricing"].forEach((name) => {
         $("tab-" + name).style.display = name === "search" ? "block" : "none";
       });
       $("q").value = phone;
@@ -291,6 +294,152 @@
       document.querySelectorAll("#tab-grants .user-row").forEach((row) => {
         row.onclick = () => goToSearchFor(row.dataset.phone);
       });
+    }
+
+    // ---------- Tab: Subject Pricing ----------
+    async function loadSubjectPricing() {
+      $("tab-pricing").innerHTML = `<div class="card"><div class="card-body"><span class="spinner"></span> Loading...</div></div>`;
+      const { ok, data } = await api("/master-access/subjects");
+      if (!ok) { $("tab-pricing").innerHTML = `<div class="card"><div class="card-body err">${esc(data.error || "Failed to load")}</div></div>`; return; }
+      renderSubjectPricing(data.subjects || []);
+    }
+
+    function renderSubjectPricing(subjects) {
+      const rows = subjects.map((s) => {
+        const rupees = (s.price_paise / 100).toFixed(2);
+        return `
+          <tr class="subj-row" data-id="${esc(s.id)}">
+            <td><strong>${esc(s.name)}</strong><div class="muted">${esc(s.id)}</div></td>
+            <td>${esc(s.title_native || "—")}<div class="muted">${esc(s.title_english || "")}</div></td>
+            <td>₹${rupees}${s.popular ? ' <span class="badge active">popular</span>' : ""}</td>
+            <td class="muted">${s.active_entitlements} active</td>
+            <td><button class="secondary editSubjBtn" data-id="${esc(s.id)}" data-name="${esc(s.name)}" data-price="${s.price_paise}" data-native="${esc(s.title_native || "")}" data-english="${esc(s.title_english || "")}" data-popular="${s.popular ? "1" : "0"}">Edit</button></td>
+          </tr>
+          <tr class="editSubjRow" data-id="${esc(s.id)}" style="display:none"><td colspan="5" style="background:#f4f5fa"></td></tr>
+        `;
+      }).join("");
+
+      $("tab-pricing").innerHTML = `
+        <div class="card">
+          <h4 class="section-label">${subjects.length} subject${subjects.length === 1 ? "" : "s"}</h4>
+          <table>
+            <thead><tr><th>Subject</th><th>Display title</th><th>Price</th><th>Active access</th><th></th></tr></thead>
+            <tbody>${rows || `<tr><td colspan="5" class="muted" style="padding:16px">No subjects yet.</td></tr>`}</tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h4 class="section-label">Add new subject</h4>
+          <div class="card-body">
+            <div class="callout gray" style="margin:0 0 12px">
+              This only inserts the subject + price into D1 (step 3 of the launch checklist). It does NOT add the
+              content folder, the /plans/ page card, or the LIVE_SUBJECTS entry in Header.astro — those are still
+              separate manual steps.
+            </div>
+            <div class="row">
+              <input id="newSubjId" placeholder="id / slug (e.g. telangana-geography-en)" style="flex:1;min-width:220px" />
+              <input id="newSubjName" placeholder="Internal name" style="flex:1;min-width:160px" />
+              <input id="newSubjPrice" type="number" min="1" step="0.01" placeholder="Price in ₹" style="width:110px" />
+            </div>
+            <div class="row" style="margin-top:8px">
+              <input id="newSubjTitleNative" placeholder="Native/display title (e.g. తెలంగాణ చరిత్ర or Telangana economy)" style="flex:1;min-width:220px" />
+              <input id="newSubjTitleEnglish" placeholder="Sub-label (e.g. English, Telangana history)" style="flex:1;min-width:180px" />
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px">
+                <input id="newSubjPopular" type="checkbox" style="width:auto;padding:0" /> Most popular
+              </label>
+              <button id="addSubjBtn">Add subject</button>
+            </div>
+            <div id="addSubjConfirm"></div>
+            <p class="err" id="addSubjErr"></p>
+          </div>
+        </div>
+      `;
+
+      document.querySelectorAll(".editSubjBtn").forEach((btn) => {
+        btn.onclick = () => {
+          const editRow = document.querySelector(`.editSubjRow[data-id="${btn.dataset.id}"]`);
+          const isOpen = editRow.style.display !== "none";
+          document.querySelectorAll(".editSubjRow").forEach((r) => { r.style.display = "none"; r.querySelector("td").innerHTML = ""; });
+          if (isOpen) return;
+
+          editRow.style.display = "table-row";
+          editRow.querySelector("td").innerHTML = `
+            <div class="row" style="padding:10px 4px">
+              <input id="editName-${btn.dataset.id}" value="${esc(btn.dataset.name)}" placeholder="Internal name" style="flex:1;min-width:160px" />
+              <input id="editPrice-${btn.dataset.id}" type="number" min="1" step="0.01" value="${(Number(btn.dataset.price) / 100).toFixed(2)}" style="width:110px" />
+            </div>
+            <div class="row" style="padding:0 4px 10px">
+              <input id="editNative-${btn.dataset.id}" value="${esc(btn.dataset.native)}" placeholder="Native/display title" style="flex:1;min-width:200px" />
+              <input id="editEnglish-${btn.dataset.id}" value="${esc(btn.dataset.english)}" placeholder="Sub-label" style="flex:1;min-width:160px" />
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px">
+                <input id="editPopular-${btn.dataset.id}" type="checkbox" style="width:auto;padding:0" ${btn.dataset.popular === "1" ? "checked" : ""} /> Most popular
+              </label>
+              <button id="saveSubj-${btn.dataset.id}">Save</button>
+              <button class="secondary" id="cancelSubj-${btn.dataset.id}">Cancel</button>
+            </div>
+            <p class="err" id="editSubjErr-${btn.dataset.id}" style="padding:0 4px"></p>
+          `;
+          document.getElementById(`cancelSubj-${btn.dataset.id}`).onclick = () => { editRow.style.display = "none"; };
+          document.getElementById(`saveSubj-${btn.dataset.id}`).onclick = async () => {
+            const errEl = document.getElementById(`editSubjErr-${btn.dataset.id}`);
+            errEl.textContent = "";
+            const name = document.getElementById(`editName-${btn.dataset.id}`).value.trim();
+            const rupees = Number(document.getElementById(`editPrice-${btn.dataset.id}`).value);
+            if (!name) { errEl.textContent = "Name is required."; return; }
+            if (!rupees || rupees <= 0) { errEl.textContent = "Enter a valid price."; return; }
+            const { ok, data: res } = await api("/master-access/subjects/update", {
+              method: "POST",
+              body: JSON.stringify({
+                id: btn.dataset.id,
+                name,
+                price_paise: Math.round(rupees * 100),
+                title_native: document.getElementById(`editNative-${btn.dataset.id}`).value.trim(),
+                title_english: document.getElementById(`editEnglish-${btn.dataset.id}`).value.trim(),
+                popular: document.getElementById(`editPopular-${btn.dataset.id}`).checked,
+              }),
+            });
+            if (!ok) { errEl.textContent = res.error || "Update failed"; return; }
+            toast(`${name} updated`);
+            loadSubjectPricing();
+          };
+        };
+      });
+
+      $("addSubjBtn").onclick = () => {
+        $("addSubjErr").textContent = "";
+        const id = $("newSubjId").value.trim();
+        const name = $("newSubjName").value.trim();
+        const rupees = Number($("newSubjPrice").value);
+        if (!id || !/^[a-z0-9-]+$/.test(id)) { $("addSubjErr").textContent = "Slug must be lowercase letters, numbers, and hyphens only."; return; }
+        if (!name) { $("addSubjErr").textContent = "Name is required."; return; }
+        if (!rupees || rupees <= 0) { $("addSubjErr").textContent = "Enter a valid price."; return; }
+
+        $("addSubjConfirm").innerHTML = `
+          <div class="confirm-box">
+            Add subject <strong>${esc(name)}</strong> (<code>${esc(id)}</code>) at <strong>₹${rupees.toFixed(2)}</strong>?
+            <div class="row" style="margin-top:8px">
+              <button id="confirmAddSubj">Yes, add subject</button>
+              <button class="secondary" id="cancelAddSubj">Cancel</button>
+            </div>
+          </div>`;
+        $("cancelAddSubj").onclick = () => { $("addSubjConfirm").innerHTML = ""; };
+        $("confirmAddSubj").onclick = async () => {
+          const { ok, data: res } = await api("/master-access/subjects/create", {
+            method: "POST",
+            body: JSON.stringify({
+              id,
+              name,
+              price_paise: Math.round(rupees * 100),
+              title_native: $("newSubjTitleNative").value.trim(),
+              title_english: $("newSubjTitleEnglish").value.trim(),
+              popular: $("newSubjPopular").checked,
+            }),
+          });
+          if (!ok) { $("addSubjErr").textContent = res.error || "Create failed"; $("addSubjConfirm").innerHTML = ""; return; }
+          toast(`${name} added`);
+          loadSubjectPricing();
+        };
+      };
     }
 
     // ---------- Tab: Search ----------

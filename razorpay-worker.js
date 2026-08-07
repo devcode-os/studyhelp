@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -118,6 +118,18 @@ export default {
     }
     if (url.pathname === "/master-access/extend" && request.method === "POST") {
       return adminExtend(request, env);
+    }
+    if (url.pathname === "/subjects/public" && request.method === "GET") {
+      return publicListSubjects(request, env);
+    }
+    if (url.pathname === "/master-access/subjects" && request.method === "GET") {
+      return adminListSubjects(request, env);
+    }
+    if (url.pathname === "/master-access/subjects/update" && request.method === "POST") {
+      return adminUpdateSubject(request, env);
+    }
+    if (url.pathname === "/master-access/subjects/create" && request.method === "POST") {
+      return adminCreateSubject(request, env);
     }
     if (url.pathname === "/master-access/revoke" && request.method === "POST") {
       return adminRevoke(request, env);
@@ -1527,6 +1539,121 @@ async function adminSearch(request, env) {
     orders: orders.results || [],
     subjects: subjects.results || [],
   });
+}
+
+// ---------- Public: subjects for /plans/ (no auth — public pricing info) ----------
+async function publicListSubjects(request, env) {
+  const subjects = await env.DB.prepare(
+    "SELECT id, name, title_native, title_english, price_paise, popular FROM subjects ORDER BY popular DESC, name ASC"
+  ).all();
+
+  return json(
+    { subjects: (subjects.results || []).map((s) => ({ ...s, popular: !!s.popular })) },
+    200,
+    CORS_HEADERS
+  );
+}
+
+// ---------- Admin: subject pricing (list / update / create) ----------
+async function adminListSubjects(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const nowTs = Math.floor(Date.now() / 1000);
+  const subjects = await env.DB.prepare(
+    `SELECT s.id, s.name, s.price_paise, s.title_native, s.title_english, s.popular,
+            (SELECT COUNT(*) FROM entitlements e
+              WHERE e.subject_id = s.id AND e.revoked_at IS NULL AND e.expires_at > ?) AS active_entitlements
+     FROM subjects s
+     ORDER BY s.name ASC`
+  )
+    .bind(nowTs)
+    .all();
+
+  return jsonAuth({ subjects: (subjects.results || []).map((s) => ({ ...s, popular: !!s.popular })) });
+}
+
+async function adminUpdateSubject(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  try {
+    const { id, name, price_paise, title_native, title_english, popular } = await request.json();
+    if (!id) return jsonAuth({ error: "id is required" }, 400);
+    if (!name || !name.trim()) return jsonAuth({ error: "name is required" }, 400);
+    const price = Number(price_paise);
+    if (!Number.isInteger(price) || price < 100 || price > 100000000) {
+      return jsonAuth({ error: "price_paise must be a whole number between 100 (₹1) and 100000000 (₹10,00,000)" }, 400);
+    }
+
+    const existing = await env.DB.prepare("SELECT id, name, price_paise FROM subjects WHERE id = ?").bind(id).first();
+    if (!existing) return jsonAuth({ error: "Subject not found" }, 404);
+
+    await env.DB.prepare(
+      "UPDATE subjects SET name = ?, price_paise = ?, title_native = ?, title_english = ?, popular = ? WHERE id = ?"
+    )
+      .bind(name.trim(), price, (title_native || "").trim() || null, (title_english || "").trim() || null, popular ? 1 : 0, id)
+      .run();
+
+    const nowTs = Math.floor(Date.now() / 1000);
+    await env.DB.prepare(
+      `INSERT INTO admin_audit_log (id, action, admin_identifier, subject_id, reason, created_at)
+       VALUES (?, 'subject_update', ?, ?, ?, ?)`
+    )
+      .bind(
+        crypto.randomUUID(),
+        admin.admin_identifier,
+        id,
+        `name: "${existing.name}" → "${name.trim()}", price: ₹${(existing.price_paise / 100).toFixed(2)} → ₹${(price / 100).toFixed(2)}`,
+        nowTs
+      )
+      .run();
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function adminCreateSubject(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  try {
+    const { id, name, price_paise, title_native, title_english, popular } = await request.json();
+    if (!id || !/^[a-z0-9-]+$/.test(id)) {
+      return jsonAuth({ error: "id (slug) is required and must be lowercase letters, numbers, and hyphens only" }, 400);
+    }
+    if (!name || !name.trim()) return jsonAuth({ error: "name is required" }, 400);
+    const price = Number(price_paise);
+    if (!Number.isInteger(price) || price < 100 || price > 100000000) {
+      return jsonAuth({ error: "price_paise must be a whole number between 100 (₹1) and 100000000 (₹10,00,000)" }, 400);
+    }
+
+    const existing = await env.DB.prepare("SELECT id FROM subjects WHERE id = ?").bind(id).first();
+    if (existing) return jsonAuth({ error: `Subject id "${id}" already exists` }, 400);
+
+    await env.DB.prepare(
+      "INSERT INTO subjects (id, name, price_paise, title_native, title_english, popular) VALUES (?, ?, ?, ?, ?, ?)"
+    )
+      .bind(id, name.trim(), price, (title_native || "").trim() || null, (title_english || "").trim() || null, popular ? 1 : 0)
+      .run();
+
+    const nowTs = Math.floor(Date.now() / 1000);
+    await env.DB.prepare(
+      `INSERT INTO admin_audit_log (id, action, admin_identifier, subject_id, reason, created_at)
+       VALUES (?, 'subject_create', ?, ?, ?, ?)`
+    )
+      .bind(crypto.randomUUID(), admin.admin_identifier, id, `"${name.trim()}" at ₹${(price / 100).toFixed(2)}`, nowTs)
+      .run();
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
 }
 
 async function adminGrant(request, env) {

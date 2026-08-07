@@ -433,25 +433,34 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
         if (verifyBadgeMobile) verifyBadgeMobile.style.display = 'inline-block';
       }
 
-      const LIVE_SUBJECTS = ['telangana-history-te', 'telangana-economy-en'];
+      // Fetched from the same public endpoint /plans/ uses, instead of a
+      // hardcoded slug list — a newly-launched subject is picked up here
+      // automatically without needing a Header.astro edit + redeploy.
+      fetch(`${WORKER_URL}/subjects/public`)
+        .then((res) => res.json())
+        .then((subjData) => {
+          const LIVE_SUBJECTS = (subjData.subjects || []).map((s) => s.id);
+          if (LIVE_SUBJECTS.length === 0) return;
 
-      Promise.all(
-        LIVE_SUBJECTS.map((subject_id) =>
-          fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(data.user_id)}&subject_id=${encodeURIComponent(subject_id)}`)
-            .then((res) => res.json())
-            .then((d) => d.unlocked)
-            .catch(() => false)
-        )
-      ).then((results) => {
-        const allOwned = results.every(Boolean);
-        if (allOwned) {
-          document.querySelectorAll('a[href="/plans/"].btn-accent').forEach((el) => {
-            el.textContent = '★ Premium';
-            el.style.cursor = 'default';
-            el.removeAttribute('href');
+          Promise.all(
+            LIVE_SUBJECTS.map((subject_id) =>
+              fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(data.user_id)}&subject_id=${encodeURIComponent(subject_id)}`)
+                .then((res) => res.json())
+                .then((d) => d.unlocked)
+                .catch(() => false)
+            )
+          ).then((results) => {
+            const allOwned = results.every(Boolean);
+            if (allOwned) {
+              document.querySelectorAll('a[href="/plans/"].btn-accent').forEach((el) => {
+                el.textContent = '★ Premium';
+                el.style.cursor = 'default';
+                el.removeAttribute('href');
+              });
+            }
           });
-        }
-      });
+        })
+        .catch(() => {});
     })
     .catch(() => {});
 </script>
