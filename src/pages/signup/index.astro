@@ -254,12 +254,33 @@ import Header from '../../components/Header.astro';
       const maxLen = id === 'phone' ? 10 : 6;
       el.addEventListener('input', () => {
         el.value = el.value.replace(/\D/g, '').slice(0, maxLen);
+        // Phone number complete — jump to Recovery email instead of making
+        // the person tap it manually.
+        if (id === 'phone' && el.value.length === maxLen) {
+          document.getElementById('recovery_email').focus();
+        }
         // Once the 6-digit passcode is fully entered, jump straight to
         // Confirm passcode instead of making the person tap it manually.
         if (id === 'passcode' && el.value.length === maxLen) {
           document.getElementById('confirm_passcode').focus();
         }
       });
+    });
+
+    // Name and Recovery email don't have a fixed length to auto-advance on,
+    // so Enter/Return moves to the next field instead — completes the same
+    // full Name -> Phone -> Recovery email -> Passcode -> Confirm passcode
+    // chain without ever requiring a manual tap between fields.
+    // Name has no reliable "done typing" signal — it could be one word
+    // ("Sasi") or several ("Sasi Reddy Kumar"), so there's no safe point
+    // to auto-advance away from it. Left as a normal manual field; the
+    // auto-advance chain starts at Phone number instead, where a fixed
+    // 10-digit length gives an unambiguous completion point.
+    document.getElementById('recovery_email').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('passcode').focus();
+      }
     });
 
     function setLoading(isLoading, labelWhenIdle) {
