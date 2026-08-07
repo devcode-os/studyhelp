@@ -7,10 +7,11 @@ const { title, description } = Astro.props;
 <head>
   <link rel="manifest" href="/manifest.json" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="google" content="notranslate" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="theme-color" content="#1C1C1A" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
@@ -39,6 +40,9 @@ const { title, description } = Astro.props;
       --teal-bg: #e1f5ee;
       --teal-text: #0f6e56;
       --teal-text-strong: #04342c;
+      /* Height reserved for the fixed mobile tab bar, used by padding/offset
+         calculations below. Kept as a var so it's defined once. */
+      --tabbar-h: 58px;
     }
     html[data-theme="dark"] {
       --bg: #14161a;
@@ -81,18 +85,50 @@ const { title, description } = Astro.props;
     }
     h1 { font-size: 28px; font-weight: 700; margin: 0 0 4px; }
     p.sub { color: var(--muted); font-size: 16px; margin: 0 0 20px; }
-    input[type="search"],
-    input[type="email"],
-    input[type="text"] {
+    :global(input[type="search"]),
+    :global(input[type="email"]),
+    :global(input[type="text"]),
+    :global(input[type="tel"]) {
       width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      padding: 13px 16px;
+      /* Filled style instead of a plain bordered box — transparent border
+         by default (so it doesn't look outdated/boxy), accent border and
+         glow only appear on focus. Applies site-wide, desktop and mobile. */
+      border: 1px solid transparent;
+      border-radius: 12px;
       font-size: 17px;
       font-family: inherit;
       margin-bottom: 20px;
-      background: var(--card);
+      background: var(--bg);
       color: var(--text);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    :global(input[type="search"]:focus),
+    :global(input[type="email"]:focus),
+    :global(input[type="text"]:focus),
+    :global(input[type="tel"]:focus) {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+      background: var(--card);
+    }
+    /* Chrome/Edge force their own yellow/blue autofill background on
+       fields they've filled in (name, email, phone), which fights our
+       filled-input design and looks visually broken next to it. This
+       trick uses a huge inset box-shadow the same color as our normal
+       input background to paint over the browser's autofill color,
+       while keeping the delayed background-color transition so Chrome's
+       own autofill animation never gets a chance to flash yellow first. */
+    :global(input:-webkit-autofill),
+    :global(input:-webkit-autofill:hover),
+    :global(input:-webkit-autofill:focus) {
+      -webkit-box-shadow: 0 0 0 1000px var(--bg) inset !important;
+      -webkit-text-fill-color: var(--text) !important;
+      caret-color: var(--text);
+      transition: background-color 5000s ease-in-out 0s;
+    }
+    :global(input:-webkit-autofill:focus) {
+      -webkit-box-shadow: 0 0 0 1000px var(--card) inset !important;
     }
 
     /* Chapter grid: 4-column on desktop, boxed single-column list on mobile */
@@ -139,7 +175,19 @@ const { title, description } = Astro.props;
       }
     }
 
-    /* Scroll-to-top button, positioned above mobile browser nav bars */
+    /* Reserve space at the bottom of scrollable pages on mobile so the last
+       card/element isn't hidden behind the fixed tab bar. Chapter pages use
+       the compact header (no tab bar) so they don't need this, but applying
+       it globally is harmless there too since they simply won't have a bar
+       to clear. */
+    @media (max-width: 720px) {
+      :global(.content) {
+        padding-bottom: calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    /* Scroll-to-top button, positioned above mobile browser nav bars AND
+       the fixed tab bar. */
     #scroll-top-btn {
       position: fixed;
       right: 16px;
@@ -160,7 +208,78 @@ const { title, description } = Astro.props;
     }
     #scroll-top-btn.show { display: flex; }
     @media (max-width: 720px) {
-      #scroll-top-btn { bottom: 84px; }
+      #scroll-top-btn {
+        bottom: calc(16px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    /* ---------- Skeleton loading shimmer, used to replace plain
+       "Loading..." text on the chapter answer reveal. Shape mimics the
+       answer capsule so there's no layout jump when the real answer swaps in. ---------- */
+    :global(.skeleton-answer) {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    :global(.skeleton-line) {
+      height: 14px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--border) 25%, var(--bg) 50%, var(--border) 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.3s ease-in-out infinite;
+    }
+    :global(.skeleton-line.w-70) { width: 70%; }
+    :global(.skeleton-line.w-50) { width: 50%; }
+    :global(.skeleton-line.w-90) { width: 90%; }
+    @keyframes skeleton-shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ---------- Toast/snackbar, replaces alert() on error states such as
+       failed payments (Plans page). Purely presentational — the JS that
+       calls showToast() still gets the exact same error string it used to
+       pass to alert(). ---------- */
+    #toast-container {
+      position: fixed;
+      left: 50%;
+      bottom: calc(20px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+      transform: translateX(-50%);
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: calc(100% - 32px);
+      max-width: 420px;
+      pointer-events: none;
+    }
+    @media (min-width: 721px) {
+      #toast-container {
+        bottom: 24px;
+      }
+    }
+    .toast {
+      pointer-events: auto;
+      background: var(--text);
+      color: var(--bg);
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .toast.toast-show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .toast.toast-error {
+      background: #b8341c;
+      color: #fff;
     }
   </style>
 </head>
@@ -172,6 +291,8 @@ const { title, description } = Astro.props;
   <Footer />
 
   <button id="scroll-top-btn" aria-label="Scroll to top">&#8593;</button>
+
+  <div id="toast-container" aria-live="polite"></div>
 
   <script is:inline>
     const scrollBtn = document.getElementById('scroll-top-btn');
@@ -187,6 +308,24 @@ const { title, description } = Astro.props;
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    // Global toast helper — replaces alert() calls site-wide. Usage:
+    //   showToast('Payment failed. Please try again.', 'error')
+    // Kept as a plain global so existing inline <script> blocks (e.g. Plans
+    // page Razorpay handler) can call it with a one-line swap from alert(...).
+    window.showToast = function (message, type = 'default', duration = 3500) {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      const el = document.createElement('div');
+      el.className = 'toast' + (type === 'error' ? ' toast-error' : '');
+      el.textContent = message;
+      container.appendChild(el);
+      requestAnimationFrame(() => el.classList.add('toast-show'));
+      setTimeout(() => {
+        el.classList.remove('toast-show');
+        setTimeout(() => el.remove(), 220);
+      }, duration);
+    };
   </script>
 </body>
 </html>

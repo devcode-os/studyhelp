@@ -112,14 +112,15 @@ import Header from '../../components/Header.astro';
 
   <style>
     .auth-content {
-      max-width: 440px;
+      max-width: 440px !important;
+      margin: 0 auto !important;
     }
     .auth-card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 36px 32px;
-      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
       animation: card-in 0.45s ease-out;
     }
     @keyframes card-in {
@@ -250,10 +251,17 @@ import Header from '../../components/Header.astro';
       width: 100%;
       font-size: 15px;
       padding: 11px 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--card);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background: var(--bg);
       color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .text-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-bg);
+      background: var(--card);
     }
     .change-email-box .btn-block {
       margin-top: 12px;
@@ -371,6 +379,87 @@ import Header from '../../components/Header.astro';
     }
     .verify-resend-btn:disabled {
       cursor: not-allowed;
+    }
+  </style>
+
+  <style>
+    @media (max-width: 720px) {
+      .auth-content {
+        max-width: 100%;
+      }
+      .auth-card {
+        padding: 14px 16px;
+        border-radius: 18px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      html[data-theme="dark"] .auth-card {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      }
+      .auth-icon {
+        display: none;
+      }
+      .auth-card h1 {
+        font-size: 17px;
+        margin-bottom: 2px;
+      }
+      .auth-card .sub {
+        font-size: 12px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+      .detail-row {
+        padding: 10px 0;
+      }
+      .detail-label {
+        font-size: 12px;
+      }
+      .detail-value {
+        font-size: 13px;
+      }
+      .hint {
+        font-size: 10px;
+        line-height: 1.3;
+      }
+      .text-input,
+      .code-input {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 14px;
+      }
+      .code-input {
+        font-size: clamp(16px, 5vw, 20px) !important;
+      }
+      .btn-block,
+      .verify-now-btn {
+        padding: 10px;
+        font-size: 13px;
+        margin-top: 12px;
+      }
+      .verify-banner {
+        padding: 10px 12px;
+        margin-bottom: 14px;
+      }
+      .verify-banner-row {
+        font-size: 13px;
+      }
+      .change-email-toggle {
+        font-size: 12px;
+      }
+      .change-email-box {
+        padding: 10px 12px;
+      }
+      .alt-action {
+        margin-top: 12px;
+        font-size: 12px;
+      }
+      .verify-resend-btn {
+        font-size: 12px;
+      }
+    }
+    @media (max-width: 380px) {
+      .auth-card {
+        padding: 12px 12px;
+      }
     }
   </style>
 

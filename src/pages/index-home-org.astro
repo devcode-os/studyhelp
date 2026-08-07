@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const subjects = [
+  {
+    titleNative: 'తెలంగాణ చరిత్ర',
+    titleEnglish: 'Telangana history',
+    slug: 'telangana-history-te',
+    chapterCount: 31,
+    icon: 'book',
+    available: true,
+  },
+
+   {
+    titleNative: 'Telangana economy',
+    titleEnglish: 'English',
+    slug: 'telangana-economy-en',
+    chapterCount: 16,
+    icon: 'chart',
+    available: true,
+  },
+  
+  {
+    titleNative: 'Telangana history',
+    titleEnglish: 'English',
+    slug: 'telangana-history-en',
+    chapterCount: 0,
+    icon: 'book',
+    available: false,
+  },
+  {
+    titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
+    titleEnglish: 'Telangana economy',
+    slug: 'telangana-economy-te',
+    chapterCount: 0,
+    icon: 'chart',
+    available: false,
+  }
+ 
+];
+
+const iconMap = {
+  book: 'ti-book',
+  chart: 'ti-chart-bar',
+};
+---
+<Layout title="StudyHelp - TSPSC and TS exam preparation" description="Study help for TSPSC and TS exams. Subject-wise FAQs, chapter by chapter.">
+
+  <Header active="home" />
+
+  <div style="max-width:1100px; margin:0 auto; padding:24px;">
+
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:2.5rem 1.5rem; text-align:center; margin-bottom:1.5rem;">
+      <h1 style="margin:0 0 6px; font-size:22px;">Study help for TSPSC and TS exams</h1>
+      <p style="color:var(--muted); font-size:14px; margin:0 0 4px;">Pick a subject to start reading FAQs, chapter by chapter</p>
+      <p style="color:var(--muted); font-size:12px; margin:0; opacity:0.8;">Free to start, no login needed</p>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+      <span style="font-size:14px; font-weight:600;">Subjects</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:1.5rem;">
+      {subjects.map((s) => (
+        s.available ? (
+          <a href={`/${s.slug}/`} style="display:block; background:var(--card); border:1px solid var(--accent); border-radius:12px; padding:1.25rem; text-decoration:none; color:inherit; position:relative;">
+            <div style="position:absolute; top:14px; right:14px; background:var(--success-bg); color:var(--success-text); font-size:11px; font-weight:500; padding:3px 9px; border-radius:20px;">Available</div>
+            <div style="width:34px; height:34px; border-radius:9px; background:var(--accent-bg); display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+              <i class={`ti ${iconMap[s.icon]}`} style="font-size:17px; color:var(--accent);" aria-hidden="true"></i>
+            </div>
+            <div style="font-weight:700; font-size:15px;">{s.titleNative}</div>
+            <div style="font-size:13px; color:var(--muted); margin:2px 0 10px;">{s.titleEnglish}</div>
+            <span style="font-size:12px; color:var(--accent); font-weight:600;">{s.chapterCount} chapters</span>
+          </a>
+        ) : (
+          <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.25rem; opacity:0.6;">
+            <div style="width:34px; height:34px; border-radius:9px; background:var(--bg); display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+              <i class={`ti ${iconMap[s.icon]}`} style="font-size:17px; color:var(--muted);" aria-hidden="true"></i>
+            </div>
+            <div style="font-weight:700; font-size:15px;">{s.titleNative}</div>
+            <div style="font-size:13px; color:var(--muted); margin:2px 0 10px;">{s.titleEnglish}</div>
+            <span style="font-size:12px; color:var(--muted);">coming soon</span>
+          </div>
+        )
+      ))}
+    </div>
+
+    <div id="login-banner" style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.25rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div style="font-size:13px; color:var(--muted);">Already purchased a subject? Login to continue reading, no limits.</div>
+      <a href="/login/" style="font-size:13px; padding:6px 14px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--text, #111);">Login</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Hides the "login to continue" banner if the visitor has a real, active session.
+    // Cached in sessionStorage (5 min TTL) to avoid a server call on every page load.
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+    const SESSION_CACHE_KEY = 'sh_session_cache';
+    const SESSION_CACHE_TTL = 5 * 60 * 1000;
+
+    function getCachedSession() {
+      try {
+        const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
+        // Never trust a cached "logged out" result - always re-check fresh in that case,
+        // since it likely means we cached the state from BEFORE a login happened.
+        return cached.data.logged_in ? cached.data : null;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setCachedSession(data) {
+      try {
+        sessionStorage.setItem(SESSION_CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+      } catch (err) {}
+    }
+
+    function getSession() {
+      const cached = getCachedSession();
+      if (cached) return Promise.resolve(cached);
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .then((data) => {
+          setCachedSession(data);
+          return data;
+        })
+        .catch(() => ({ logged_in: false }));
+    }
+
+    getSession().then((data) => {
+      if (data.logged_in) {
+        const banner = document.getElementById('login-banner');
+        if (banner) banner.style.display = 'none';
+      }
+    });
+  </script>
+</Layout>

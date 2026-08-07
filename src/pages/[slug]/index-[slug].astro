@@ -67,12 +67,12 @@ function formatMath(str) {
     <Header active="subjects" />
   </div>
   <div class="header-compact-only">
-    <Header compact={true} backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={`${questions.length} ${questionsLabel}`} />
+    <Header compact={true} backHref={`/${subject}/`} title={title} progress={`${questions.length} ${questionsLabel}`} />
   </div>
 
   <div class={isTelugu ? 'lang-te content' : 'lang-en content'}>
     <a href={`/${subject}/`} class="back-pill desktop-back-pill">&larr; {backLabel}</a>
-    <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
       <h1 style="margin:0;">{chapterNumber}. {title}</h1>
       <span style="font-size:14px; font-weight:700; color:var(--text);">{questions.length} {questionsLabel}</span>
     </div>
@@ -104,12 +104,10 @@ function formatMath(str) {
        execute session logic twice — CSS just decides which markup shows. ---------- */
     .header-compact-only { display: none; }
     .desktop-back-pill { display: inline-flex; }
-    .desktop-title-block { display: flex; }
     @media (max-width: 720px) {
       .header-desktop-only { display: none; }
       .header-compact-only { display: block; }
-      .desktop-back-pill { display: none !important; }
-      .desktop-title-block { display: none !important; }
+      .desktop-back-pill { display: none; }
     }
 
     .back-pill {
@@ -188,13 +186,13 @@ function formatMath(str) {
        (.lang-te) are untouched so Telugu font sizing stays exactly as-is. */
     @media (max-width: 640px) {
       .lang-en h1 { font-size: 19px !important; }
-      .lang-en .q-text { font-size: 15px !important; font-weight: 400 !important; }
+      .lang-en .q-text { font-size: 15px !important; font-weight: 600 !important; }
       .lang-en .opt-letter,
       .lang-en .opt-text { font-size: 14px !important; }
       .lang-en .answer-text { font-size: 14px !important; font-weight: 600 !important; }
       .lang-en .expl-text { font-size: 14px !important; }
       .lang-en .expl-toggle { font-size: 12px !important; }
-      .lang-te .q-text { font-weight: 400 !important; }
+      .lang-te .q-text { font-weight: 600 !important; }
     }
 
     /* No visual color change on question tap at all — only the green answer

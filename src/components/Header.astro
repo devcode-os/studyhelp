@@ -1,43 +1,86 @@
 ---
 // Shared header, used on every page via <Header />
 // Highlights the current page's nav link if `active` prop is passed (e.g. active="home")
-const { active = '' } = Astro.props;
+// `compact` prop: when true, renders the reading-mode header (back arrow + title + progress)
+// used only on the chapter page. Desktop nav and mobile tab bar are both suppressed in compact mode.
+const { active = '', compact = false, backHref = '/', title = '', progress = '' } = Astro.props;
 ---
-<header class="site-header">
-  <div class="site-header-inner">
-    <a href="/" class="logo">StudyHelp</a>
 
-    <nav class="nav-desktop">
-      <a href="/" class:list={{ active: active === 'home' }}>Home</a>
-      <a href="/subjects/" class:list={{ active: active === 'subjects' }}>Subjects</a>
-      <a href="/plans/" class:list={{ active: active === 'plans' }}>Plans</a>
-      <a href="/about/" class:list={{ active: active === 'about' }}>About</a>
-    </nav>
-
-    <div class="header-actions">
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="icon-light">&#9728;</span>
-        <span class="icon-dark">&#9789;</span>
-      </button>
-      <a href="/login/" id="login-link" class="btn btn-outline nav-desktop-only">
-        <span id="login-link-text">Login</span><span id="verify-badge-desktop" class="verify-badge" style="display:none;">!</span>
-      </a>
-      <a href="/plans/" class="btn btn-accent nav-desktop-only">Go premium</a>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">&#9776;</button>
-    </div>
-  </div>
-
-  <div id="mobile-menu" class="mobile-menu">
-    <a href="/">Home</a>
-    <a href="/subjects/">Subjects</a>
-    <a href="/plans/">Plans</a>
-    <a href="/about/">About</a>
-    <a href="/login/" id="login-link-mobile">
-      <span id="login-link-mobile-text">Login</span><span id="verify-badge-mobile" class="verify-badge" style="display:none;">!</span>
+{compact ? (
+  <header class="chapter-header">
+    <a href={backHref} class="chapter-back" aria-label="Back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
     </a>
-    <a href="/plans/" class="btn btn-accent" style="text-align:center;">Go premium</a>
-  </div>
-</header>
+    <span class="chapter-title">{title}</span>
+    {progress && <span class="chapter-progress">{progress}</span>}
+  </header>
+) : (
+  <>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="/" class="logo">StudyHelp</a>
+
+        <nav class="nav-desktop">
+          <a href="/" class:list={{ active: active === 'home' }}>Home</a>
+          <a href="/subjects/" class:list={{ active: active === 'subjects' }}>Subjects</a>
+          <a href="/plans/" class:list={{ active: active === 'plans' }}>Plans</a>
+          <a href="/about/" class:list={{ active: active === 'about' }}>About</a>
+        </nav>
+
+        <div class="header-actions">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="ti ti-sun icon-light" aria-hidden="true"></i>
+            <i class="ti ti-moon icon-dark" aria-hidden="true"></i>
+          </button>
+
+          <div class="more-menu-wrap">
+            <button id="more-menu-btn" class="theme-toggle more-menu-btn" aria-label="More" aria-haspopup="true" aria-expanded="false">
+              <i class="ti ti-dots-vertical" aria-hidden="true"></i>
+            </button>
+            <div id="more-menu-dropdown" class="more-menu-dropdown" role="menu">
+              <a href="/contact/" role="menuitem">Contact us</a>
+              <a href="/support/" role="menuitem">Support</a>
+              <a href="/forgot-passcode/" role="menuitem">Forgot passcode</a>
+              <div class="more-menu-divider"></div>
+              <a href="/terms/" role="menuitem">Terms &amp; conditions</a>
+              <a href="/refund-policy/" role="menuitem">Refund policy</a>
+              <a href="/privacy-policy/" role="menuitem">Privacy policy</a>
+            </div>
+          </div>
+
+          <a href="/login/" id="login-link" class="btn btn-outline nav-desktop-only">
+            <span id="login-link-text">Login</span><span id="verify-badge-desktop" class="verify-badge" style="display:none;">!</span>
+          </a>
+          <a href="/plans/" class="btn btn-accent nav-desktop-only">Go premium</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile bottom tab bar. Only rendered/visible under the 720px breakpoint via CSS.
+         Home dropped — the "StudyHelp" logo (visible on every page, already
+         linked to "/") serves as the way back to Home instead, freeing up
+         the tab bar for 3 clear destinations. -->
+    <nav class="mobile-tabbar" aria-label="Primary">
+      <a href="/subjects/" class:list={{ 'tab-active': active === 'subjects' }}>
+        <i class="ti ti-books" aria-hidden="true"></i>
+        <span>Subjects</span>
+      </a>
+      <a href="/plans/" class:list={{ 'tab-active': active === 'plans' }}>
+        <i class="ti ti-shopping-cart" aria-hidden="true"></i>
+        <span>Plans</span>
+      </a>
+      <a href="/login/" id="login-link-mobile" class:list={{ 'tab-active': active === 'account' }}>
+        <span class="tab-icon-wrap">
+          <i class="ti ti-user" aria-hidden="true"></i>
+          <span id="verify-badge-mobile" class="verify-dot" style="display:none;"></span>
+        </span>
+        <span id="login-link-mobile-text">Login</span>
+      </a>
+    </nav>
+  </>
+)}
 
 <style>
   .site-header {
@@ -93,7 +136,7 @@ const { active = '' } = Astro.props;
     background: var(--accent-bg);
     color: var(--accent);
   }
-  #login-link, #login-link-mobile {
+  #login-link {
     position: relative;
   }
   .verify-badge {
@@ -122,7 +165,7 @@ const { active = '' } = Astro.props;
     border: 1px solid var(--border);
     background: var(--bg);
     color: var(--text);
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -132,51 +175,169 @@ const { active = '' } = Astro.props;
   html[data-theme="dark"] .icon-light { display: none; }
   html[data-theme="dark"] .icon-dark { display: inline; }
 
-  .menu-toggle {
+  /* ---------- "More" menu — mobile only. Holds the links that used to
+     live in the footer (Contact, Support, Forgot passcode, Terms,
+     Refund, Privacy), since the footer is hidden on mobile and these
+     still need to be reachable somewhere. Desktop keeps using the
+     footer for these, so this button stays hidden there entirely. ---------- */
+  .more-menu-wrap {
     display: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
+    position: relative;
+  }
+  .more-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 200px;
+    background: var(--card);
     border: 1px solid var(--border);
-    background: var(--bg);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 6px;
+    z-index: 60;
+  }
+  html[data-theme="dark"] .more-menu-dropdown {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+  .more-menu-dropdown.open {
+    display: block;
+  }
+  .more-menu-dropdown a {
+    display: block;
+    padding: 10px 12px;
+    font-size: 14px;
     color: var(--text);
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    padding: 12px 16px 16px;
-    border-top: 1px solid var(--border);
-  }
-  .mobile-menu a {
-    padding: 10px 8px;
     text-decoration: none;
-    color: var(--text);
-    font-size: 16px;
-    border-radius: 6px;
+    border-radius: 8px;
   }
-  .mobile-menu.open {
+  .more-menu-dropdown a:active {
+    background: var(--bg);
+  }
+  .more-menu-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 6px 4px;
+  }
+
+  @media (max-width: 720px) {
+    .more-menu-wrap { display: block; }
+  }
+
+  /* ---------- Mobile bottom tab bar ---------- */
+  .mobile-tabbar {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html[data-theme="dark"] .mobile-tabbar {
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.35);
+  }
+  .mobile-tabbar {
+    display: none;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  .mobile-tabbar a {
+    flex: 1;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 9px 4px 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 11px;
+    transition: color 0.18s ease;
+  }
+  .mobile-tabbar a i {
+    font-size: 21px;
+    transition: transform 0.18s ease, color 0.18s ease;
+  }
+  .mobile-tabbar a.tab-active {
+    color: var(--accent);
+  }
+  .mobile-tabbar a.tab-active i {
+    transform: translateY(-1px);
+  }
+  .mobile-tabbar a:active {
+    transform: scale(0.96);
+  }
+  .tab-icon-wrap {
+    position: relative;
+    display: inline-flex;
+  }
+  .verify-dot {
+    position: absolute;
+    top: -1px;
+    right: -3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d33;
+    border: 1.5px solid var(--card);
+  }
+  html[data-theme="dark"] .verify-dot {
+    background: #ff6b6b;
+  }
+
+  /* ---------- Compact chapter-reading header ---------- */
+  .chapter-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1C1C1A;
+    color: #F7F6F2;
+    padding: 13px 16px;
+  }
+  html[data-theme="dark"] .chapter-header {
+    background: #0d0e10;
+  }
+  .chapter-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: #F7F6F2;
+    flex-shrink: 0;
+  }
+  .chapter-back i {
+    font-size: 20px;
+  }
+  .chapter-title {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .chapter-progress {
+    font-size: 12px;
+    color: #A6A399;
+    flex-shrink: 0;
   }
 
   @media (max-width: 720px) {
     .nav-desktop-only { display: none; }
     .nav-desktop { display: none; }
-    .menu-toggle { display: block; }
+    .mobile-tabbar { display: flex; }
   }
 </style>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-  }
-
   const themeToggle = document.getElementById('theme-toggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
@@ -188,9 +349,31 @@ const { active = '' } = Astro.props;
     });
   }
 
-  // Real session check via cookie-backed /me endpoint (replaces old localStorage email check).
-  // Cached in sessionStorage (5 min TTL) so we're not hitting the Worker on every
-  // single page load — login state rarely changes mid-session.
+  const moreMenuBtn = document.getElementById('more-menu-btn');
+  const moreMenuDropdown = document.getElementById('more-menu-dropdown');
+  if (moreMenuBtn && moreMenuDropdown) {
+    moreMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = moreMenuDropdown.classList.toggle('open');
+      moreMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+      if (!moreMenuDropdown.contains(e.target) && e.target !== moreMenuBtn) {
+        moreMenuDropdown.classList.remove('open');
+        moreMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    moreMenuDropdown.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        moreMenuDropdown.classList.remove('open');
+        moreMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Real session check via cookie-backed /me endpoint. UNCHANGED from previous version —
+  // same Worker URL, same caching, same entitlement check. Only the DOM targets are
+  // extended to also update the new mobile tab bar's Account tab.
   const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
   const SESSION_CACHE_KEY = 'sh_session_cache';
   const SESSION_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
@@ -201,8 +384,6 @@ const { active = '' } = Astro.props;
       if (!raw) return null;
       const cached = JSON.parse(raw);
       if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
-      // Never trust a cached "logged out" result - always re-check fresh in that case,
-      // since it likely means we cached the state from BEFORE a login happened.
       return cached.data.logged_in ? cached.data : null;
     } catch (err) {
       return null;
@@ -247,15 +428,11 @@ const { active = '' } = Astro.props;
       if (loginLinkText) loginLinkText.textContent = 'Account';
       if (loginLinkMobileText) loginLinkMobileText.textContent = 'Account';
 
-      // Persistent reminder badge: stays visible on every page (not just /account/)
-      // until the recovery email is actually verified.
       if (!data.email_verified && data.recovery_email) {
         if (verifyBadgeDesktop) verifyBadgeDesktop.style.display = 'inline-flex';
-        if (verifyBadgeMobile) verifyBadgeMobile.style.display = 'inline-flex';
+        if (verifyBadgeMobile) verifyBadgeMobile.style.display = 'inline-block';
       }
 
-      // Check if all currently live subjects are owned — if so, show "Premium" instead of "Go premium".
-      // NOTE: this list needs updating whenever a new subject goes live (available: true elsewhere).
       const LIVE_SUBJECTS = ['telangana-history-te', 'telangana-economy-en'];
 
       Promise.all(

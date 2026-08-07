@@ -10,7 +10,6 @@ const subjects = [
     chapterCount: 31,
     icon: 'book',
     available: true,
-    popular: true,
   },
   {
     titleNative: 'Telangana economy',
@@ -19,7 +18,6 @@ const subjects = [
     chapterCount: 20,
     icon: 'chart',
     available: true,
-    popular: false,
   },
   {
     titleNative: 'Telangana history',
@@ -28,7 +26,6 @@ const subjects = [
     chapterCount: 0,
     icon: 'book',
     available: false,
-    popular: false,
   },
   {
     titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
@@ -37,14 +34,8 @@ const subjects = [
     chapterCount: 0,
     icon: 'chart',
     available: false,
-    popular: false,
   },
-]
-  .sort((a, b) => {
-    if (a.available !== b.available) return a.available ? -1 : 1;
-    if (a.popular !== b.popular) return a.popular ? -1 : 1;
-    return 0;
-  });
+];
 
 const iconMap = {
   book: 'ti-book',
@@ -55,9 +46,9 @@ const iconMap = {
 
   <Header active="home" />
 
-  <div class="page-wide">
+  <div class="content">
 
-    <div class="hero-card" id="hero-card">
+    <div class="hero-card">
       <h1 class="hero-title">Study help for TSPSC and TS exams</h1>
       <p class="hero-sub">Pick a subject to start reading FAQs, chapter by chapter</p>
       <p class="hero-note">Free to start, no login needed</p>
@@ -68,9 +59,8 @@ const iconMap = {
     <div class="subject-list">
       {subjects.map((s) => (
         s.available ? (
-          <a href={`/${s.slug}/`} class={`subject-card subject-card-live ${s.popular ? 'subject-card-popular' : ''}`} data-subject-slug={s.slug}>
-            <span class="avail-pill" data-pill>Available</span>
-            {s.popular && <span class="popular-badge">Popular</span>}
+          <a href={`/${s.slug}/`} class="subject-card subject-card-live">
+            <span class="avail-pill">Available</span>
             <div class="subject-icon">
               <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
             </div>
@@ -92,24 +82,13 @@ const iconMap = {
     </div>
 
     <div id="login-banner" class="login-banner">
-      <span class="login-banner-text">Already purchased a subject? Log in to continue reading.</span>
+      <span class="login-banner-text">Already purchased a subject? Log in to continue reading, no limits.</span>
       <a href="/login/" class="login-banner-btn">Log in</a>
     </div>
 
   </div>
 
-  <style is:global>
-    .page-wide {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    @media (max-width: 720px) {
-      .page-wide {
-        padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
-      }
-    }
-
+  <style>
     .hero-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -165,23 +144,6 @@ const iconMap = {
       padding: 3px 9px;
       border-radius: 20px;
     }
-    .popular-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: var(--accent-bg);
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-    /* When a card has the Popular badge, the icon needs extra top clearance
-       so it doesn't sit underneath the badges row. Cards without Popular
-       are untouched — icon stays flush at its normal position. */
-    .subject-card-popular .subject-icon {
-      margin-top: 28px;
-    }
     .subject-icon {
       width: 36px;
       height: 36px;
@@ -199,52 +161,6 @@ const iconMap = {
     .subject-english { font-size: 13px; color: var(--muted); margin: 2px 0 10px; }
     .subject-count { font-size: 12px; color: var(--accent); font-weight: 600; }
     .subject-count-muted { font-size: 12px; color: var(--muted); }
-
-    /* Mobile: compact 2-column capsule cards, same class names as desktop. */
-    @media (max-width: 720px) {
-      .subject-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-      .subject-card {
-        border-radius: 16px;
-        padding: 0.9rem;
-      }
-      .avail-pill {
-        top: 10px;
-        right: 10px;
-        font-size: 10px;
-        padding: 2px 8px;
-      }
-      .popular-badge {
-        top: 10px;
-        left: 10px;
-        font-size: 10px;
-        padding: 2px 8px;
-      }
-      .subject-card-popular .subject-icon {
-        margin-top: 22px;
-      }
-      .subject-icon {
-        width: 30px;
-        height: 30px;
-        border-radius: 9px;
-        margin-bottom: 8px;
-      }
-      .subject-icon i { font-size: 15px; }
-      .subject-native {
-        font-size: 13px;
-        line-height: 1.3;
-      }
-      .subject-english {
-        font-size: 11px;
-        margin: 2px 0 8px;
-      }
-      .subject-count,
-      .subject-count-muted {
-        font-size: 11px;
-      }
-    }
 
     .login-banner {
       background: var(--card);
@@ -270,17 +186,12 @@ const iconMap = {
       color: var(--text);
       white-space: nowrap;
     }
-    @media (max-width: 720px) {
-      .login-banner {
-        display: none !important;
-      }
-      body.is-logged-in #hero-card {
-        display: none;
-      }
-    }
   </style>
 
-  <script define:vars={{ subjects }}>
+  <script>
+    // Real session check (replaces the old localStorage email placeholder).
+    // Same cached /me pattern as Header.astro — this reads the cache Header
+    // already populated on this page load rather than firing a second fetch.
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
     const SESSION_CACHE_KEY = 'sh_session_cache';
     const SESSION_CACHE_TTL = 5 * 60 * 1000;
@@ -309,43 +220,6 @@ const iconMap = {
       if (data.logged_in) {
         const banner = document.getElementById('login-banner');
         if (banner) banner.style.display = 'none';
-        document.body.classList.add('is-logged-in');
-      }
-    });
-
-    // Purchased subjects jump to the very front of the grid — ahead of
-    // Popular and everything else — once ownership is known. Popular-first
-    // ordering among the rest is already baked into the server-rendered
-    // order above, so this only needs to handle the "purchased" override.
-    getSession().then(async (session) => {
-      if (!session.logged_in) return;
-
-      const grid = document.querySelector('.subject-list');
-      const available = subjects.filter((s) => s.available);
-      const ownedSlugs = [];
-
-      await Promise.all(
-        available.map((s) =>
-          fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(s.slug)}`)
-            .then((res) => res.json())
-            .then((d) => {
-              if (!d.unlocked) return;
-              ownedSlugs.push(s.slug);
-              const card = document.querySelector(`[data-subject-slug="${s.slug}"]`);
-              const pill = card && card.querySelector('[data-pill]');
-              if (pill) pill.textContent = 'Purchased';
-            })
-            .catch(() => {})
-        )
-      );
-
-      if (ownedSlugs.length > 0 && grid) {
-        // Insert purchased cards at the start, in the order they were found,
-        // ahead of Popular/available/coming-soon which already sit in order.
-        ownedSlugs.slice().reverse().forEach((slug) => {
-          const card = document.querySelector(`[data-subject-slug="${slug}"]`);
-          if (card) grid.prepend(card);
-        });
       }
     });
   </script>
