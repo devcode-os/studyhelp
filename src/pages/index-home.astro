@@ -104,7 +104,7 @@ const iconMap = {
       margin: 0 auto;
       padding: 24px;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       .page-wide {
         padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
       }
@@ -201,7 +201,7 @@ const iconMap = {
     .subject-count-muted { font-size: 12px; color: var(--muted); }
 
     /* Mobile: compact 2-column capsule cards, same class names as desktop. */
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       .subject-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -270,7 +270,7 @@ const iconMap = {
       color: var(--text);
       white-space: nowrap;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       .login-banner {
         display: none !important;
       }

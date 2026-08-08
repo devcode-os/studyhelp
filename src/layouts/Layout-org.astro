@@ -137,7 +137,7 @@ const { title, description } = Astro.props;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 6px;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       :global(.chapter-grid) {
         grid-template-columns: 1fr;
       }
@@ -154,7 +154,7 @@ const { title, description } = Astro.props;
     :global(.subject-header-right) {
       text-align: right;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       :global(.subject-header-left),
       :global(.subject-header-right) {
         text-align: center;
@@ -165,7 +165,7 @@ const { title, description } = Astro.props;
     }
 
     /* Chapter card content: left-aligned on desktop, centered on mobile */
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       :global(.chapter-card) {
         text-align: center;
       }
@@ -180,7 +180,7 @@ const { title, description } = Astro.props;
        the compact header (no tab bar) so they don't need this, but applying
        it globally is harmless there too since they simply won't have a bar
        to clear. */
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       :global(.content) {
         padding-bottom: calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
       }
@@ -207,7 +207,7 @@ const { title, description } = Astro.props;
       z-index: 40;
     }
     #scroll-top-btn.show { display: flex; }
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       #scroll-top-btn {
         bottom: calc(16px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
       }
@@ -256,7 +256,7 @@ const { title, description } = Astro.props;
       max-width: 420px;
       pointer-events: none;
     }
-    @media (min-width: 901px) {
+    @media (min-width: 721px) {
       #toast-container {
         bottom: 24px;
       }
