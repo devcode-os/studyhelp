@@ -46,11 +46,22 @@ function main() {
       for (const ch of chapters) {
         if (!ch || !ch.slug || !Array.isArray(ch.faqs)) continue;
 
-        const answersOnly = ch.faqs.map((f) => ({
-          a: f.a,
-          e: f.e || '',
-          table: f.table || null,
-        }));
+        const answersOnly = ch.faqs.map((f) => {
+          const item = {
+            a: f.a,
+            e: f.e || '',
+            table: f.table || null,
+          };
+          // MCQ-specific fields — only included when actually present, so
+          // plain FAQ items (no type/options) stay exactly as before and
+          // don't get extra "type":null clutter in the JSON blob.
+          if (f.type === 'mcq' && f.options) {
+            item.type = 'mcq';
+            item.options = f.options;
+            item.answer = f.answer;
+          }
+          return item;
+        });
 
         const answersJson = escapeSql(JSON.stringify(answersOnly));
         const title = escapeSql(ch.title || '');
