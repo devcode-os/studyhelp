@@ -374,6 +374,16 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
   // Real session check via cookie-backed /me endpoint. UNCHANGED from previous version —
   // same Worker URL, same caching, same entitlement check. Only the DOM targets are
   // extended to also update the new mobile tab bar's Account tab.
+  //
+  // GUARD: chapter pages ([slug].astro) render TWO <Header> instances on the same
+  // page (one full desktop header, one compact mobile header — CSS toggles which
+  // is VISIBLE, but both still MOUNT and both still run this script). Without this
+  // guard, /me and /check-access fire twice per page load. window.__shSessionInit
+  // ensures the actual session-check network calls below only ever run once per
+  // page, regardless of how many Header instances are present in the DOM.
+  if (!window.__shSessionInit) {
+    window.__shSessionInit = true;
+
   const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
   const SESSION_CACHE_KEY = 'sh_session_cache';
   const SESSION_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
@@ -418,7 +428,14 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
   const verifyBadgeDesktop = document.getElementById('verify-badge-desktop');
   const verifyBadgeMobile = document.getElementById('verify-badge-mobile');
 
-  getSession().then((data) => {
+  // Exposed globally so other page-level scripts (e.g. [subject]/index.astro's
+  // unlock-status check) can await this SAME request/result instead of firing
+  // their own independent /me call. This is the single source of truth for
+  // session state on any given page load — do not call getSession() again
+  // from another script; use window.__shSessionPromise instead.
+  window.__shSessionPromise = getSession();
+
+  window.__shSessionPromise.then((data) => {
       if (!data.logged_in) return;
 
       [loginLink, loginLinkMobile].forEach((el) => {
@@ -463,4 +480,5 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
         .catch(() => {});
     })
     .catch(() => {});
+  } // end window.__shSessionInit guard
 </script>
