@@ -212,24 +212,12 @@ const iconMap = {
 
   <script define:vars={{ subjects }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
-    const SESSION_CACHE_KEY = 'sh_session_cache';
-    const SESSION_CACHE_TTL = 5 * 60 * 1000;
 
-    function getCachedSession() {
-      try {
-        const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
-        if (!raw) return null;
-        const cached = JSON.parse(raw);
-        if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
-        return cached.data.logged_in ? cached.data : null;
-      } catch (err) {
-        return null;
-      }
-    }
-
+    // Session is fetched ONCE per page by Header.astro (runs synchronously
+    // inline, before this script) and exposed on window.__shSessionPromise.
+    // Reusing it here avoids a duplicate /me call on every /subjects/ load.
     function getSession() {
-      const cached = getCachedSession();
-      if (cached) return Promise.resolve(cached);
+      if (window.__shSessionPromise) return window.__shSessionPromise;
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
         .then((res) => res.json())
         .catch(() => ({ logged_in: false }));
