@@ -355,36 +355,17 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
 
   <script define:vars={{ subject }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
-    const SESSION_CACHE_KEY = 'sh_session_cache';
-    const SESSION_CACHE_TTL = 5 * 60 * 1000;
 
-    function getCachedSession() {
-      try {
-        const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
-        if (!raw) return null;
-        const cached = JSON.parse(raw);
-        if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
-        return cached.data.logged_in ? cached.data : null;
-      } catch (err) {
-        return null;
-      }
-    }
-
-    function setCachedSession(data) {
-      try {
-        sessionStorage.setItem(SESSION_CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
-      } catch (err) {}
-    }
-
+    // Session is fetched ONCE per page by Header.astro and exposed on
+    // window.__shSessionPromise. Reusing it here instead of calling /me
+    // again avoids a duplicate network request on every subject page load.
+    // Falls back to a direct /me call only if Header hasn't set it yet
+    // (shouldn't normally happen since Header renders before this script,
+    // but kept as a safety net).
     function getSession() {
-      const cached = getCachedSession();
-      if (cached) return Promise.resolve(cached);
+      if (window.__shSessionPromise) return window.__shSessionPromise;
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
         .then((res) => res.json())
-        .then((data) => {
-          setCachedSession(data);
-          return data;
-        })
         .catch(() => ({ logged_in: false }));
     }
 

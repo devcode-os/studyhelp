@@ -282,24 +282,14 @@ const iconMap = {
 
   <script define:vars={{ subjects }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
-    const SESSION_CACHE_KEY = 'sh_session_cache';
-    const SESSION_CACHE_TTL = 5 * 60 * 1000;
 
-    function getCachedSession() {
-      try {
-        const raw = sessionStorage.getItem(SESSION_CACHE_KEY);
-        if (!raw) return null;
-        const cached = JSON.parse(raw);
-        if (Date.now() - cached.ts > SESSION_CACHE_TTL) return null;
-        return cached.data.logged_in ? cached.data : null;
-      } catch (err) {
-        return null;
-      }
-    }
-
+    // Session is fetched ONCE per page by Header.astro (which runs synchronously
+    // inline, before this script) and exposed on window.__shSessionPromise.
+    // Reusing that single promise here — instead of this page's own separate
+    // getSession() — avoids duplicate /me calls. Both usages below (login
+    // banner + purchased-subject reordering) now share the SAME request.
     function getSession() {
-      const cached = getCachedSession();
-      if (cached) return Promise.resolve(cached);
+      if (window.__shSessionPromise) return window.__shSessionPromise;
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
         .then((res) => res.json())
         .catch(() => ({ logged_in: false }));
@@ -317,6 +307,7 @@ const iconMap = {
     // Popular and everything else — once ownership is known. Popular-first
     // ordering among the rest is already baked into the server-rendered
     // order above, so this only needs to handle the "purchased" override.
+    // Reuses the SAME getSession() promise as above — no second /me call.
     getSession().then(async (session) => {
       if (!session.logged_in) return;
 
