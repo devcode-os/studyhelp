@@ -469,49 +469,9 @@ function formatMath(str) {
       }
     }
 
-    // ---------- Prefetch on pointerdown, not click. Starts the network
-    // request the instant a finger/mouse touches the row (pointerdown fires
-    // ~100-200ms before the full click gesture completes), so by the time
-    // click actually fires, the fetch is often already in flight or done.
-    // Same endpoint, same free-click/entitlement checks server-side —
-    // this only shaves perceived latency, it changes nothing about what
-    // gets checked or when access is granted. ----------
-    const inFlightFetches = {};
-
-    function prefetchAnswer(i) {
-      if (revealedAnswers[i]) return null;
-      if (bulkAnswers && bulkAnswers[i]) return null;
-      if (limitReached) return null;
-      if (inFlightFetches[i]) return inFlightFetches[i];
-
-      inFlightFetches[i] = (async () => {
-        try {
-          const fp = await getFingerprint();
-          const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
-          const res = await fetch(
-            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
-            { credentials: 'include' }
-          );
-          const data = await res.json();
-          return { ok: res.ok, data };
-        } catch (err) {
-          return { ok: false, networkError: true };
-        }
-      })();
-
-      return inFlightFetches[i];
-    }
-
     list.querySelectorAll('.q-row').forEach((row) => {
-      const i = parseInt(row.getAttribute('data-i'));
-
-      // Fire as early as the gesture starts. touchstart/mousedown-equivalent
-      // via pointerdown covers both touch and mouse in one listener.
-      row.addEventListener('pointerdown', () => {
-        prefetchAnswer(i);
-      });
-
       row.addEventListener('click', async () => {
+        const i = parseInt(row.getAttribute('data-i'));
         const faqItem = row.closest('.faq-item');
         const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
         const isOpen = aRow.style.display === 'block';
@@ -547,28 +507,37 @@ function formatMath(str) {
         aRow.innerHTML = renderSkeleton();
         aRow.style.display = 'block';
 
-        // Reuse the pointerdown-started fetch if it's already in flight;
-        // otherwise start one now (covers keyboard/programmatic activation
-        // that never fired pointerdown).
-        const pending = prefetchAnswer(i) || (async () => {
-          try {
-            const fp = await getFingerprint();
-            const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
-            const res = await fetch(
-              `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
-              { credentials: 'include' }
-            );
-            const data = await res.json();
-            return { ok: res.ok, data };
-          } catch (err) {
-            return { ok: false, networkError: true };
+        try {
+          const fp = await getFingerprint();
+          const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
+          const res = await fetch(
+            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
+            { credentials: 'include' }
+          );
+          const data = await res.json();
+
+          if (!res.ok) {
+            aRow.style.display = 'none';
+            faqItem.classList.remove('open');
+            if (data.limitReached) limitReached = true;
+            showLimitReached(data.error || 'Please log in or purchase to continue.');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
           }
-        })();
 
-        const result = await pending;
-        delete inFlightFetches[i];
+          revealedAnswers[i] = data.answer;
+          aRow.innerHTML = renderAnswerHtml(data.answer, i);
+          aRow.style.display = 'block';
+          attachMcqHandlers(aRow, data.answer, i);
 
-        if (result.networkError) {
+          if (data.unlimited) {
+            purchased = true;
+            lockBanner.style.display = 'none';
+            if (!bulkAnswers) fetchAllAnswersInBackground();
+          } else if (typeof data.remaining === 'number') {
+            showRemainingHint(data.remaining, data.dailyLimit);
+          }
+        } catch (err) {
           aRow.style.display = 'none';
           faqItem.classList.remove('open');
           if (window.showToast) {
@@ -576,31 +545,6 @@ function formatMath(str) {
           } else {
             showLimitReached('Network error. Please check your connection and try again.');
           }
-          return;
-        }
-
-        const { ok, data } = result;
-
-        if (!ok) {
-          aRow.style.display = 'none';
-          faqItem.classList.remove('open');
-          if (data.limitReached) limitReached = true;
-          showLimitReached(data.error || 'Please log in or purchase to continue.');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-
-        revealedAnswers[i] = data.answer;
-        aRow.innerHTML = renderAnswerHtml(data.answer, i);
-        aRow.style.display = 'block';
-        attachMcqHandlers(aRow, data.answer, i);
-
-        if (data.unlimited) {
-          purchased = true;
-          lockBanner.style.display = 'none';
-          if (!bulkAnswers) fetchAllAnswersInBackground();
-        } else if (typeof data.remaining === 'number') {
-          showRemainingHint(data.remaining, data.dailyLimit);
         }
       });
     });
