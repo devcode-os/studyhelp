@@ -12,28 +12,61 @@ export function getStaticPaths() {
     const items = Array.isArray(mod.default) ? mod.default : [mod.default];
 
     return items
-      .filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber)
+      .filter(
+        (ch) =>
+          ch &&
+          ch.slug &&
+          ch.chapterNumber &&
+          (Array.isArray(ch.faqs) || (ch.type === 'reference' && Array.isArray(ch.articles)))
+      )
       .map((ch) => ({ ...ch, subject }));
   });
 
-  return chapters.map((ch) => ({
-    params: { slug: ch.slug },
-    // SECURITY: only question text (ch.faqs[].q) is passed as props.
-    // Answer text, explanations, and tables are NEVER included here —
-    // they live only in D1's chapter_content table, served by the Worker
-    // after a real session + entitlement check. Do not add f.a, f.e, or
-    // f.table to this props object.
-    props: {
-      chapterSlug: ch.slug,
-      subject: ch.subject,
-      chapterNumber: ch.chapterNumber,
-      title: ch.title,
-      questions: ch.faqs.map((f) => f.q),
-    },
-  }));
+  return chapters.map((ch) => {
+    const isReference = ch.type === 'reference';
+
+    if (isReference) {
+      // Reference chapters (e.g. Polity Articles & Amendments quick-lookup)
+      // are always free to browse — no paywall, no D1/Worker call, no
+      // login required. Articles/amendments are static lookup data, not
+      // graded answers, so there is nothing here that needs gating.
+      return {
+        params: { slug: ch.slug },
+        props: {
+          chapterSlug: ch.slug,
+          subject: ch.subject,
+          chapterNumber: ch.chapterNumber,
+          title: ch.title,
+          isReference: true,
+          articles: ch.articles || [],
+          amendments: ch.amendments || [],
+          questions: [],
+        },
+      };
+    }
+
+    return {
+      params: { slug: ch.slug },
+      // SECURITY: only question text (ch.faqs[].q) is passed as props.
+      // Answer text, explanations, and tables are NEVER included here —
+      // they live only in D1's chapter_content table, served by the Worker
+      // after a real session + entitlement check. Do not add f.a, f.e, or
+      // f.table to this props object.
+      props: {
+        chapterSlug: ch.slug,
+        subject: ch.subject,
+        chapterNumber: ch.chapterNumber,
+        title: ch.title,
+        isReference: false,
+        articles: [],
+        amendments: [],
+        questions: ch.faqs.map((f) => f.q),
+      },
+    };
+  });
 }
 
-const { chapterSlug, subject, chapterNumber, title, questions } = Astro.props;
+const { chapterSlug, subject, chapterNumber, title, questions, isReference, articles, amendments } = Astro.props;
 const meta = getSubjectMeta(subject);
 const isTelugu = meta.lang === 'te';
 
@@ -55,7 +88,7 @@ function formatMath(str) {
   );
 }
 ---
-<Layout title={`${title} FAQs`} description={`${title} - ${questions.length} FAQs`}>
+<Layout title={isReference ? `${title} Reference` : `${title} FAQs`} description={isReference ? `${title} - ${articles.length} articles, ${amendments.length} amendments` : `${title} - ${questions.length} FAQs`}>
 
   <!-- Desktop keeps the full site header (nav, login, theme toggle) exactly as before.
        Mobile gets the compact reading-mode header — back arrow, chapter title, progress —
@@ -67,35 +100,55 @@ function formatMath(str) {
     <Header active="subjects" />
   </div>
   <div class="header-compact-only">
-    <Header compact={true} backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={`${questions.length} ${questionsLabel}`} />
+    <Header compact={true} backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} />
   </div>
 
   <div class={isTelugu ? 'lang-te content' : 'lang-en content'}>
     <a href={`/${subject}/`} class="back-pill desktop-back-pill">&larr; {backLabel}</a>
     <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
       <h1 style="margin:0;">{chapterNumber}. {title}</h1>
-      <span style="font-size:14px; font-weight:700; color:var(--text);">{questions.length} {questionsLabel}</span>
+      <span style="font-size:14px; font-weight:700; color:var(--text);">{isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`}</span>
     </div>
 
-    <div id="lock-banner" style="display:none; background:var(--amber-bg); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:16px; font-size:14px; color:var(--amber-text-strong);">
-      <span id="lock-message">Purchase this subject for 45 days of unlimited access.</span>
-      <a id="lock-action" href="/plans/" style="margin-left:8px; font-weight:700; color:var(--accent); text-decoration:underline;">View plans</a>
-    </div>
+    {isReference ? (
+      <Fragment>
+        <p style="font-size:13px; color:var(--muted); margin:6px 0 0;">Quick reference &middot; always free to browse &middot; not a quiz</p>
 
-    <div id="faq-list" class="faq-list" style="margin-top:20px;">
-      {questions.map((q, i) => (
-        <div class="faq-item" data-i={i} data-page={Math.floor(i / PER_PAGE) + 1} style={i >= PER_PAGE ? 'display:none;' : ''}>
-          <div class="q-row" data-i={i}>
-            <span class="q-num">{i + 1}.</span>
-            <span class="q-text">{formatMath(q)}</span>
-            <i class="ti ti-chevron-down q-chev" aria-hidden="true"></i>
-          </div>
-          <div class="a-row" data-i={i} style="display:none;"></div>
+        <div class="ref-tabs">
+          <div class="ref-tab active" data-tab="articles">Articles</div>
+          <div class="ref-tab" data-tab="amendments">Amendments</div>
         </div>
-      ))}
-    </div>
 
-    <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
+        <div class="ref-search">
+          <input type="text" id="refSearchInput" placeholder="Search by number or keyword" style="border:none; outline:none; background:transparent; font-size:14px; color:var(--text); width:100%; font-family:inherit;" />
+        </div>
+        <p class="ref-count" id="refResultCount" style="font-size:12px; color:var(--muted); margin:8px 0 0 2px;"></p>
+
+        <div id="refListContainer"></div>
+      </Fragment>
+    ) : (
+      <Fragment>
+        <div id="lock-banner" style="display:none; background:var(--amber-bg); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:16px; font-size:14px; color:var(--amber-text-strong);">
+          <span id="lock-message">Purchase this subject for 45 days of unlimited access.</span>
+          <a id="lock-action" href="/plans/" style="margin-left:8px; font-weight:700; color:var(--accent); text-decoration:underline;">View plans</a>
+        </div>
+
+        <div id="faq-list" class="faq-list" style="margin-top:20px;">
+          {questions.map((q, i) => (
+            <div class="faq-item" data-i={i} data-page={Math.floor(i / PER_PAGE) + 1} style={i >= PER_PAGE ? 'display:none;' : ''}>
+              <div class="q-row" data-i={i}>
+                <span class="q-num">{i + 1}.</span>
+                <span class="q-text">{formatMath(q)}</span>
+                <i class="ti ti-chevron-down q-chev" aria-hidden="true"></i>
+              </div>
+              <div class="a-row" data-i={i} style="display:none;"></div>
+            </div>
+          ))}
+        </div>
+
+        <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
+      </Fragment>
+    )}
   </div>
 
   <style is:global>
@@ -162,6 +215,10 @@ function formatMath(str) {
       font-size: 16px;
       line-height: 1.5;
       flex: 1;
+      margin-bottom: 4px; /* small breather below multi-line stems before the divider */
+      white-space: pre-wrap; /* preserves \n line breaks in multi-line
+                                 question stems, e.g. (I)/(II)/(III)
+                                 statement-based questions */
     }
     .q-chev {
       position: absolute;
@@ -210,8 +267,202 @@ function formatMath(str) {
     .faq-item:focus {
       outline: none !important;
     }
+
+    /* ---------- Reference chapter UI (Articles & Amendments) ----------
+       Free-to-browse quick lookup, no paywall, no D1/Worker involvement.
+       Ported as-is from the reference-mode build so styling matches. */
+    .ref-tabs {
+      display: flex;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+      margin-top: 16px;
+    }
+    .ref-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      border-radius: 9px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .ref-tab.active { background: var(--accent); color: #fff; }
+
+    .ref-search {
+      display: flex;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .ref-search input::placeholder { color: var(--muted); }
+
+    .ref-group-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      margin: 20px 2px 8px;
+    }
+    .ref-group-label:first-of-type { margin-top: 16px; }
+
+    .ref-entry-list { display: flex; flex-direction: column; gap: 10px; }
+    .ref-entry {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .ref-badge {
+      flex-shrink: 0;
+      min-width: 38px;
+      height: 28px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 0 6px;
+    }
+    .ref-entry-body { flex: 1; min-width: 0; }
+    .ref-entry-title { font-size: 14.5px; line-height: 1.4; color: var(--text); }
+    .ref-entry-title.repealed {
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-color: var(--muted);
+    }
+    .ref-entry-meta { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+    .ref-repealed-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 1px 6px;
+      margin-left: 6px;
+    }
+    .ref-empty { text-align: center; padding: 50px 20px; color: var(--muted); font-size: 13px; }
+
+    @media (min-width: 720px) {
+      .ref-entry-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .ref-group-label { grid-column: 1 / -1; }
+    }
   </style>
 
+  {isReference && (
+    <script define:vars={{ articles, amendments }}>
+      let currentTab = 'articles';
+      const container = document.getElementById('refListContainer');
+      const searchInput = document.getElementById('refSearchInput');
+      const resultCount = document.getElementById('refResultCount');
+
+      document.querySelectorAll('.ref-tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.ref-tab').forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentTab = tab.getAttribute('data-tab');
+          searchInput.value = '';
+          render();
+        });
+      });
+      searchInput.addEventListener('input', render);
+
+      function render() {
+        const q = searchInput.value.trim().toLowerCase();
+        container.innerHTML = '';
+
+        if (currentTab === 'articles') {
+          const items = articles.filter(
+            (a) => a.number.toLowerCase().includes(q) || a.title.toLowerCase().includes(q)
+          );
+          resultCount.textContent = `${items.length} article${items.length !== 1 ? 's' : ''}`;
+          if (items.length === 0) {
+            container.innerHTML = '<div class="ref-empty">No articles match your search.</div>';
+            return;
+          }
+          const grouped = {};
+          items.forEach((a) => { (grouped[a.part] ||= []).push(a); });
+          Object.keys(grouped).forEach((part) => {
+            const label = document.createElement('div');
+            label.className = 'ref-group-label';
+            label.textContent = part;
+            container.appendChild(label);
+
+            const list = document.createElement('div');
+            list.className = 'ref-entry-list';
+            grouped[part].forEach((a) => {
+              const entry = document.createElement('div');
+              entry.className = 'ref-entry';
+              entry.innerHTML = `
+                <div class="ref-badge">${a.number}</div>
+                <div class="ref-entry-body">
+                  <div class="ref-entry-title ${a.repealed ? 'repealed' : ''}">${a.title}${a.repealed ? '<span class="ref-repealed-tag">Repealed</span>' : ''}</div>
+                </div>
+              `;
+              list.appendChild(entry);
+            });
+            container.appendChild(list);
+          });
+        } else {
+          const items = amendments.filter(
+            (a) =>
+              a.number.toLowerCase().includes(q) ||
+              a.year.includes(q) ||
+              a.title.toLowerCase().includes(q) ||
+              a.articlesAffected.join(',').toLowerCase().includes(q)
+          );
+          resultCount.textContent = `${items.length} amendment${items.length !== 1 ? 's' : ''}`;
+          if (items.length === 0) {
+            container.innerHTML = '<div class="ref-empty">No amendments match your search.</div>';
+            return;
+          }
+          items.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+
+          const label = document.createElement('div');
+          label.className = 'ref-group-label';
+          label.textContent = 'Chronological';
+          container.appendChild(label);
+
+          const list = document.createElement('div');
+          list.className = 'ref-entry-list';
+          items.forEach((a) => {
+            const entry = document.createElement('div');
+            entry.className = 'ref-entry';
+            entry.innerHTML = `
+              <div class="ref-badge">${a.number}</div>
+              <div class="ref-entry-body">
+                <div class="ref-entry-title">${a.title}</div>
+                <div class="ref-entry-meta">${a.year} &middot; Affects: ${a.articlesAffected.join(', ')}</div>
+              </div>
+            `;
+            list.appendChild(entry);
+          });
+          container.appendChild(list);
+        }
+      }
+
+      render();
+    </script>
+  )}
+
+  {!isReference && (
   <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
@@ -609,4 +860,5 @@ function formatMath(str) {
 
     renderPagination();
   </script>
+  )}
 </Layout>
