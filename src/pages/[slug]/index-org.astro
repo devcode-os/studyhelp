@@ -317,17 +317,12 @@ function formatMath(str) {
     }
 
     function renderExplanationToggle(f, i) {
-      const tableHtml = f.table ? renderTable(f.table) : '';
-      // Neither explanation text nor a table to show — nothing to toggle.
-      if (!f.e && !tableHtml) return '';
+      if (!f.e) return '';
       const explId = `expl-${i}`;
-      // Table lives inside the SAME hidden div as the explanation text so
-      // both hide/show together as one unit under a single toggle button.
       return `
         <button type="button" class="expl-toggle" data-target="${explId}" style="margin-top:10px; background:none; border:1px solid var(--border); border-radius:6px; padding:5px 10px; font-size:13px; color:var(--accent); cursor:pointer;">Show explanation</button>
         <div id="${explId}" style="display:none; margin-top:8px;">
-          ${f.e ? renderExplanationParagraphs(f.e) : ''}
-          ${tableHtml}
+          ${renderExplanationParagraphs(f.e)}
         </div>
       `;
     }
@@ -369,9 +364,12 @@ function formatMath(str) {
         <p style="margin:10px 0 0; font-size:13px; color:var(--muted);">Tap an option to check your answer</p>
       `;
 
+      const tableHtml = f.table ? renderTable(f.table) : '';
+
       return `
         <div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optionRows}</div>
         ${feedbackHtml}
+        ${selected ? tableHtml : ''}
       `;
     }
 
