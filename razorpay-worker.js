@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -88,6 +88,9 @@ export default {
     }
     if (url.pathname === "/account/change-email/confirm" && request.method === "POST") {
       return confirmChangeEmailOtp(request, env);
+    }
+    if (url.pathname === "/account/change-passcode" && request.method === "POST") {
+      return changePasscode(request, env);
     }
     if (url.pathname === "/content/chapter-answers" && request.method === "GET") {
       return getChapterAnswers(request, env);
@@ -439,8 +442,17 @@ async function login(request, env) {
     // previous session for this account, everywhere. No device limit to
     // hit, no management UI needed — there is never more than one active
     // session to manage.
-    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?")
-      .bind(user.id)
+    //
+    // Soft-revoke (Option B, Aug 11 2026) instead of hard-delete: the old
+    // session row stays around with revoked_reason set, so when the evicted
+    // device's browser next calls /me with its now-dead cookie, the worker
+    // can tell it WHY the session died ("logged in elsewhere") instead of a
+    // generic "please log in" — the evicted device finds out the moment
+    // it's next active, with zero extra email sends.
+    await env.DB.prepare(
+      "UPDATE login_sessions SET revoked_reason = 'evicted_by_new_login', revoked_at = ? WHERE user_id = ? AND revoked_reason IS NULL"
+    )
+      .bind(Math.floor(Date.now() / 1000), user.id)
       .run();
 
     const session = await createSession(env, user.id);
@@ -476,9 +488,9 @@ async function logout(request, env) {
 
 // ---------- 7. Me (check current session) ----------
 async function me(request, env) {
-  const user = await getUserFromSession(request, env);
+  const { user, reason } = await getSessionState(request, env);
   if (!user) {
-    return json({ logged_in: false }, 200, corsHeadersWithCredentials(request));
+    return json({ logged_in: false, reason: reason || null }, 200, corsHeadersWithCredentials(request));
   }
   const fullUser = await env.DB.prepare(
     "SELECT pending_recovery_email FROM users WHERE id = ?"
@@ -646,12 +658,90 @@ async function resetPasscode(request, env) {
       .bind(newHash, user.id)
       .run();
 
-    // Invalidate all existing sessions on passcode reset (security best practice)
-    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?")
-      .bind(user.id)
+    // Invalidate all existing sessions on passcode reset (security best
+    // practice). Soft-revoke rather than hard-delete: this is the OTP-based
+    // "forgot passcode" flow, so if there IS an active session elsewhere
+    // when this fires, that could mean account takeover — the device on
+    // that other session finding out "your passcode was reset" the next
+    // time it's used is more important here than in the plain login-eviction
+    // case, not less.
+    await env.DB.prepare(
+      "UPDATE login_sessions SET revoked_reason = 'passcode_reset', revoked_at = ? WHERE user_id = ? AND revoked_reason IS NULL"
+    )
+      .bind(Math.floor(Date.now() / 1000), user.id)
       .run();
 
     return jsonAuth({ message: "Passcode reset successfully. Please log in with your new passcode." });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- 9a. Change Passcode (logged-in account settings flow) ----------
+// Distinct from resetPasscode (Section 9), which is the logged-OUT
+// forgot-passcode OTP flow. This one is for a logged-in student changing
+// their passcode from account settings — needs current passcode instead of
+// an OTP, and only revokes OTHER sessions (this device stays logged in).
+async function changePasscode(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+
+    const { current_passcode, new_passcode, confirm_new_passcode } = await request.json();
+
+    if (!current_passcode || !new_passcode || !confirm_new_passcode) {
+      return jsonAuth({ error: "All fields are required" }, 400);
+    }
+    if (!/^\d{6}$/.test(new_passcode)) {
+      return jsonAuth({ error: "New passcode must be exactly 6 digits" }, 400);
+    }
+    if (new_passcode !== confirm_new_passcode) {
+      return jsonAuth({ error: "New passcodes do not match" }, 400);
+    }
+    if (new_passcode === current_passcode) {
+      return jsonAuth({ error: "New passcode must be different from your current passcode" }, 400);
+    }
+
+    const fullUser = await env.DB.prepare("SELECT passcode_hash FROM users WHERE id = ?")
+      .bind(user.id)
+      .first();
+
+    if (!fullUser || !fullUser.passcode_hash) {
+      return jsonAuth({ error: "Current passcode is incorrect" }, 401);
+    }
+
+    const valid = await verifyPasscode(current_passcode, fullUser.passcode_hash);
+    if (!valid) {
+      return jsonAuth({ error: "Current passcode is incorrect" }, 401);
+    }
+
+    const newHash = await hashPasscode(new_passcode);
+    await env.DB.prepare("UPDATE users SET passcode_hash = ? WHERE id = ?")
+      .bind(newHash, user.id)
+      .run();
+
+    // Soft-revoke every OTHER active session for this account (never the
+    // one making this request, so the device the student is actively using
+    // stays logged in). Same reasoning as resetPasscode: a passcode change
+    // is worth surfacing to any other logged-in device, not silently
+    // dropping its access with no explanation.
+    const currentToken = getSessionTokenFromRequest(request);
+    const currentTokenHash = currentToken ? await sha256Hex(currentToken) : "";
+
+    await env.DB.prepare(
+      `UPDATE login_sessions
+       SET revoked_reason = 'passcode_changed', revoked_at = ?
+       WHERE user_id = ? AND revoked_reason IS NULL AND session_token_hash != ?`
+    )
+      .bind(Math.floor(Date.now() / 1000), user.id, currentTokenHash)
+      .run();
+
+    return jsonAuth({ message: "Passcode changed successfully." });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
@@ -1159,7 +1249,7 @@ async function hashPasscode(passcode) {
     ["deriveBits"]
   );
   const derivedBits = await crypto.subtle.deriveBits(
-    { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+    { name: "PBKDF2", salt, iterations: 50000, hash: "SHA-256" },
     keyMaterial,
     256
   );
@@ -1183,7 +1273,7 @@ async function verifyPasscode(passcode, storedHash) {
     ["deriveBits"]
   );
   const derivedBits = await crypto.subtle.deriveBits(
-    { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+    { name: "PBKDF2", salt, iterations: 50000, hash: "SHA-256" },
     keyMaterial,
     256
   );
@@ -1251,26 +1341,45 @@ function getSessionTokenFromRequest(request) {
   return match ? match[1] : null;
 }
 
-async function getUserFromSession(request, env) {
+// Returns { user, reason }. reason is null when a user is returned or when
+// there's simply no session at all (never-logged-in / unknown token — not
+// worth surfacing a specific message for). reason is set to explain WHY a
+// previously-valid-looking session is dead: 'evicted_by_new_login',
+// 'passcode_reset', or 'expired'. Used by /me to show the right message on
+// the device that got kicked out, without needing any email notification.
+async function getSessionState(request, env) {
   const token = getSessionTokenFromRequest(request);
-  if (!token) return null;
+  if (!token) return { user: null, reason: null };
 
   const tokenHash = await sha256Hex(token);
   const session = await env.DB.prepare(
-    "SELECT user_id, expires_at FROM login_sessions WHERE session_token_hash = ?"
+    "SELECT user_id, expires_at, revoked_reason FROM login_sessions WHERE session_token_hash = ?"
   )
     .bind(tokenHash)
     .first();
 
-  if (!session || session.expires_at < Math.floor(Date.now() / 1000)) {
-    return null;
+  if (!session) return { user: null, reason: null };
+
+  if (session.revoked_reason) {
+    return { user: null, reason: session.revoked_reason };
+  }
+  if (session.expires_at < Math.floor(Date.now() / 1000)) {
+    return { user: null, reason: "expired" };
   }
 
   const user = await env.DB.prepare("SELECT id, name, phone, recovery_email, email_verified FROM users WHERE id = ?")
     .bind(session.user_id)
     .first();
 
-  return user || null;
+  return { user: user || null, reason: null };
+}
+
+// Thin wrapper kept for every existing call site (logout, chapter-answers,
+// single-answer, change-email, etc.) that only ever needed the user, not the
+// reason a dead session died.
+async function getUserFromSession(request, env) {
+  const { user } = await getSessionState(request, env);
+  return user;
 }
 
 // ---------- Admin console (Stage 6, core: login, search, grant, revoke) ----------
@@ -1656,6 +1765,14 @@ async function adminCreateSubject(request, env) {
   }
 }
 
+// ---------- Admin: manual entitlement grant ----------
+// GUARD ADDED: never let a manual grant silently blank order_id/payment_id
+// on an entitlement that is already a genuine paid purchase. Previously the
+// ON CONFLICT upsert unconditionally set order_id/payment_id to '' for any
+// existing row on this (user_id, subject_id) pair, which would erase the
+// Razorpay payment trail on a real purchase and make adminRevoke/adminExtend's
+// "is this manual?" check (order_id/payment_id empty) wrongly treat a paid
+// entitlement as revocable/extendable manual access.
 async function adminGrant(request, env) {
   const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
   const admin = await getAdminFromSession(request, env);
@@ -1670,6 +1787,27 @@ async function adminGrant(request, env) {
     const days = Number(duration_days) || 45;
     if (days < 1 || days > 365) {
       return jsonAuth({ error: "duration_days must be between 1 and 365" }, 400);
+    }
+
+    // Guard: refuse to overwrite an existing PAID entitlement via grant.
+    // Grant is for creating/refreshing a MANUAL entitlement only. If the
+    // user already has an active or expired paid entitlement row for this
+    // subject, admin should use extend (for manual grants) — never grant
+    // over a paid row, since it would zero out order_id/payment_id.
+    const existingEntitlement = await env.DB.prepare(
+      "SELECT order_id, payment_id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+    )
+      .bind(user_id, subject_id)
+      .first();
+
+    if (existingEntitlement && (existingEntitlement.order_id || existingEntitlement.payment_id)) {
+      return jsonAuth(
+        {
+          error:
+            "This user already has a paid entitlement for this subject. Grant only creates manual entitlements — use extend to add time to an existing manual grant, or contact support to handle a paid entitlement issue.",
+        },
+        400
+      );
     }
 
     const nowTs = Math.floor(Date.now() / 1000);

@@ -90,42 +90,6 @@ import Header from '../../components/Header.astro';
         </div>
       </div>
 
-      <button type="button" class="change-email-toggle" id="change-passcode-toggle">Change passcode</button>
-
-      <div class="change-email-box" id="change-passcode-box" style="display:none;">
-        <div id="change-passcode-step-form">
-          <p class="hint"><i class="ti ti-info-circle"></i> <span>Choose a new 6-digit passcode. Other devices logged into this account will be signed out.</span></p>
-          <div class="passcode-field-wrap">
-            <input type="password" id="current-passcode-input" inputmode="numeric" maxlength="6" autocomplete="current-password" class="passcode-field" placeholder="Current passcode" />
-            <button type="button" class="passcode-toggle-visibility" data-target="current-passcode-input" aria-label="Show passcode" tabindex="-1"><i class="ti ti-eye"></i></button>
-          </div>
-          <div class="passcode-field-wrap" style="margin-top:10px;">
-            <input type="password" id="new-passcode-input" inputmode="numeric" maxlength="6" autocomplete="new-password" class="passcode-field" placeholder="New passcode" />
-            <button type="button" class="passcode-toggle-visibility" data-target="new-passcode-input" aria-label="Show passcode" tabindex="-1"><i class="ti ti-eye"></i></button>
-          </div>
-          <div class="passcode-field-wrap" style="margin-top:10px;">
-            <input type="password" id="confirm-new-passcode-input" inputmode="numeric" maxlength="6" autocomplete="new-password" class="passcode-field" placeholder="Confirm new passcode" />
-            <button type="button" class="passcode-toggle-visibility" data-target="confirm-new-passcode-input" aria-label="Show passcode" tabindex="-1"><i class="ti ti-eye"></i></button>
-          </div>
-          <div id="change-passcode-error-msg" class="error-msg" style="display:none;">
-            <i class="ti ti-alert-circle"></i><span id="change-passcode-error-text"></span>
-          </div>
-          <button type="button" class="btn-block" id="submit-change-passcode-btn">
-            <span class="btn-label">Change passcode</span>
-            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
-          </button>
-          <button type="button" class="verify-resend-btn" id="cancel-change-passcode-btn">Cancel</button>
-        </div>
-
-        <div id="change-passcode-step-success" style="display:none;">
-          <div class="success-msg" style="margin-top:0;">
-            <i class="ti ti-circle-check"></i><span>Passcode changed successfully.</span>
-          </div>
-          <button type="button" class="btn-block" id="done-change-passcode-btn">Done</button>
-        </div>
-      </div>
-
-
       <button type="button" class="btn-block btn-danger" id="logout-btn">
         <span class="btn-label"><i class="ti ti-logout"></i> Log out</span>
         <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
@@ -140,8 +104,8 @@ import Header from '../../components/Header.astro';
 
     <div class="auth-card" id="signed-out-card" style="display:none;">
       <div class="auth-icon"><i class="ti ti-lock"></i></div>
-      <h1 id="signed-out-title">You're not logged in</h1>
-      <p class="sub" id="signed-out-sub">Log in to see your account details.</p>
+      <h1>You're not logged in</h1>
+      <p class="sub">Log in to see your account details.</p>
       <a href="/login/?next=/account/" class="btn-block" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">Log in</a>
     </div>
   </div>
@@ -378,63 +342,6 @@ import Header from '../../components/Header.astro';
       letter-spacing: clamp(4px, 2.2vw, 10px);
       color: var(--border);
     }
-    /* Sized for text-length placeholders ("Current passcode") rather than
-       .code-input's single-digit-box styling, which overflowed here. Digits
-       typed in still read clearly at a normal size once entered. */
-    .passcode-field {
-      box-sizing: border-box;
-      width: 100%;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-align: center;
-      font-family: monospace;
-      padding: 11px 12px;
-      border: 1px solid transparent;
-      border-radius: 12px;
-      background: var(--bg);
-      color: var(--text);
-      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
-    }
-    .passcode-field::placeholder {
-      font-weight: 400;
-      letter-spacing: normal;
-      color: var(--muted);
-    }
-    .passcode-field:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-bg);
-      background: var(--card);
-    }
-    .passcode-field-wrap {
-      position: relative;
-    }
-    .passcode-field-wrap .passcode-field {
-      padding-right: 40px;
-    }
-    .passcode-toggle-visibility {
-      position: absolute;
-      top: 50%;
-      right: 6px;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: none;
-      border-radius: 8px;
-      color: var(--muted);
-      cursor: pointer;
-      font-size: 17px;
-      padding: 0;
-    }
-    .passcode-toggle-visibility:hover {
-      background: var(--accent-bg);
-      color: var(--accent);
-    }
     .error-msg {
       display: flex;
       align-items: center;
@@ -450,22 +357,6 @@ import Header from '../../components/Header.astro';
     html[data-theme="dark"] .error-msg {
       background: #3a1c1c;
       color: #ff9b93;
-    }
-    .success-msg {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #e8f5e9;
-      color: #1e7d32;
-      border-left: 3px solid #2e9e44;
-      padding: 10px 12px;
-      border-radius: 6px;
-      font-size: 14px;
-      margin: 14px 0 0;
-    }
-    html[data-theme="dark"] .success-msg {
-      background: #1b3a20;
-      color: #8fdc9c;
     }
     .verify-otp-row .btn-block {
       margin-top: 14px;
@@ -622,58 +513,6 @@ import Header from '../../components/Header.astro';
     const resendChangeEmailBtn = document.getElementById('resend-change-email-btn');
     const changeEmailResendTimer = document.getElementById('change-email-resend-timer');
     const restartChangeEmailBtn = document.getElementById('restart-change-email-btn');
-
-    const signedOutTitle = document.getElementById('signed-out-title');
-    const signedOutSub = document.getElementById('signed-out-sub');
-
-    const changePasscodeToggle = document.getElementById('change-passcode-toggle');
-    const changePasscodeBox = document.getElementById('change-passcode-box');
-    const changePasscodeStepForm = document.getElementById('change-passcode-step-form');
-    const changePasscodeStepSuccess = document.getElementById('change-passcode-step-success');
-    const currentPasscodeInput = document.getElementById('current-passcode-input');
-    const newPasscodeInput = document.getElementById('new-passcode-input');
-    const confirmNewPasscodeInput = document.getElementById('confirm-new-passcode-input');
-    const changePasscodeErrorMsg = document.getElementById('change-passcode-error-msg');
-    const changePasscodeErrorText = document.getElementById('change-passcode-error-text');
-    const submitChangePasscodeBtn = document.getElementById('submit-change-passcode-btn');
-    const cancelChangePasscodeBtn = document.getElementById('cancel-change-passcode-btn');
-    const doneChangePasscodeBtn = document.getElementById('done-change-passcode-btn');
-
-    function showChangePasscodeForm() {
-      changePasscodeStepForm.style.display = 'block';
-      changePasscodeStepSuccess.style.display = 'none';
-      changePasscodeErrorMsg.style.display = 'none';
-    }
-
-    // Maps the /me "reason" field (set when a session was soft-revoked, not
-    // just expired) to what the signed-out card shows. Keeps the account
-    // owner informed the moment they're next active, at zero email cost.
-    const SIGNED_OUT_MESSAGES = {
-      evicted_by_new_login: {
-        title: 'Logged out',
-        sub: 'You were logged out because your account was accessed from another device.',
-      },
-      passcode_reset: {
-        title: 'Logged out',
-        sub: 'You were logged out because your passcode was reset. Log in with your new passcode.',
-      },
-      passcode_changed: {
-        title: 'Logged out',
-        sub: 'You were logged out because your passcode was changed on another device.',
-      },
-    };
-
-    function showSignedOutCard(reason) {
-      const msg = SIGNED_OUT_MESSAGES[reason];
-      if (msg) {
-        signedOutTitle.textContent = msg.title;
-        signedOutSub.textContent = msg.sub;
-      } else {
-        signedOutTitle.textContent = "You're not logged in";
-        signedOutSub.textContent = 'Log in to see your account details.';
-      }
-      signedOutCard.style.display = 'block';
-    }
 
     function getCachedSession() {
       try {
@@ -936,143 +775,6 @@ import Header from '../../components/Header.astro';
       showChangeEmailInputStep();
     });
 
-    function resetPasscodeFieldVisibility() {
-      document.querySelectorAll('.passcode-toggle-visibility').forEach((btn) => {
-        const target = document.getElementById(btn.getAttribute('data-target'));
-        target.type = 'password';
-        btn.querySelector('i').className = 'ti ti-eye';
-        btn.setAttribute('aria-label', 'Show passcode');
-      });
-    }
-
-    changePasscodeToggle.addEventListener('click', () => {
-      if (changePasscodeBox.style.display === 'none') {
-        changePasscodeBox.style.display = 'block';
-        showChangePasscodeForm();
-        currentPasscodeInput.focus();
-      } else {
-        changePasscodeBox.style.display = 'none';
-        resetPasscodeFieldVisibility();
-      }
-    });
-
-    cancelChangePasscodeBtn.addEventListener('click', () => {
-      changePasscodeBox.style.display = 'none';
-      currentPasscodeInput.value = '';
-      newPasscodeInput.value = '';
-      confirmNewPasscodeInput.value = '';
-      changePasscodeErrorMsg.style.display = 'none';
-      resetPasscodeFieldVisibility();
-    });
-
-    doneChangePasscodeBtn.addEventListener('click', () => {
-      changePasscodeBox.style.display = 'none';
-      showChangePasscodeForm();
-    });
-
-    const passcodeFields = [currentPasscodeInput, newPasscodeInput, confirmNewPasscodeInput];
-
-    document.querySelectorAll('.passcode-toggle-visibility').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const target = document.getElementById(btn.getAttribute('data-target'));
-        const icon = btn.querySelector('i');
-        const showing = target.type === 'text';
-        target.type = showing ? 'password' : 'text';
-        icon.className = showing ? 'ti ti-eye' : 'ti ti-eye-off';
-        btn.setAttribute('aria-label', showing ? 'Show passcode' : 'Hide passcode');
-      });
-    });
-
-    passcodeFields.forEach((input, i) => {
-      input.addEventListener('input', () => {
-        input.value = input.value.replace(/\D/g, '').slice(0, 6);
-        // Auto-jump to the next field once this one is fully entered.
-        if (input.value.length === 6 && i < passcodeFields.length - 1) {
-          passcodeFields[i + 1].focus();
-        }
-      });
-
-      input.addEventListener('keydown', (e) => {
-        // Backspace on an already-empty field jumps back to the previous
-        // field (and lands at its end), matching standard OTP-style UX.
-        if (e.key === 'Backspace' && input.value.length === 0 && i > 0) {
-          e.preventDefault();
-          const prev = passcodeFields[i - 1];
-          prev.focus();
-          try { prev.setSelectionRange(prev.value.length, prev.value.length); } catch (err) {}
-        }
-      });
-    });
-
-    submitChangePasscodeBtn.addEventListener('click', () => {
-      const currentPasscode = currentPasscodeInput.value.trim();
-      const newPasscode = newPasscodeInput.value.trim();
-      const confirmNewPasscode = confirmNewPasscodeInput.value.trim();
-      changePasscodeErrorMsg.style.display = 'none';
-
-      if (currentPasscode.length !== 6) {
-        changePasscodeErrorText.textContent = 'Enter your current 6-digit passcode.';
-        changePasscodeErrorMsg.style.display = 'flex';
-        return;
-      }
-      if (newPasscode.length !== 6) {
-        changePasscodeErrorText.textContent = 'New passcode must be exactly 6 digits.';
-        changePasscodeErrorMsg.style.display = 'flex';
-        return;
-      }
-      if (newPasscode !== confirmNewPasscode) {
-        changePasscodeErrorText.textContent = 'New passcodes do not match.';
-        changePasscodeErrorMsg.style.display = 'flex';
-        return;
-      }
-      if (newPasscode === currentPasscode) {
-        changePasscodeErrorText.textContent = 'New passcode must be different from your current passcode.';
-        changePasscodeErrorMsg.style.display = 'flex';
-        return;
-      }
-
-      const label = submitChangePasscodeBtn.querySelector('.btn-label');
-      const spinner = submitChangePasscodeBtn.querySelector('.btn-spinner');
-      submitChangePasscodeBtn.disabled = true;
-      spinner.style.display = 'inline-block';
-
-      fetch(`${WORKER_URL}/account/change-passcode`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          current_passcode: currentPasscode,
-          new_passcode: newPasscode,
-          confirm_new_passcode: confirmNewPasscode,
-        }),
-      })
-        .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
-        .then(({ ok, data }) => {
-          spinner.style.display = 'none';
-          submitChangePasscodeBtn.disabled = false;
-          if (!ok) {
-            changePasscodeErrorText.textContent = data.error || 'Could not change passcode. Please try again.';
-            changePasscodeErrorMsg.style.display = 'flex';
-            return;
-          }
-          // Switch to the success step: fields/form hidden, replaced by a
-          // confirmation and a clear "Done" button to close the box —
-          // rather than leaving empty fields visible under a message.
-          currentPasscodeInput.value = '';
-          newPasscodeInput.value = '';
-          confirmNewPasscodeInput.value = '';
-          resetPasscodeFieldVisibility();
-          changePasscodeStepForm.style.display = 'none';
-          changePasscodeStepSuccess.style.display = 'block';
-        })
-        .catch(() => {
-          spinner.style.display = 'none';
-          submitChangePasscodeBtn.disabled = false;
-          changePasscodeErrorText.textContent = 'Network error. Please try again.';
-          changePasscodeErrorMsg.style.display = 'flex';
-        });
-    });
-
     sendChangeOtpBtn.addEventListener('click', () => {
       const newEmail = newEmailInput.value.trim();
       changeEmailErrorMsg.style.display = 'none';
@@ -1198,7 +900,7 @@ import Header from '../../components/Header.astro';
       .then((data) => {
         loadingCard.style.display = 'none';
         if (!data.logged_in) {
-          showSignedOutCard(data.reason);
+          signedOutCard.style.display = 'block';
           return;
         }
         document.getElementById('account-name').textContent = data.name || 'Your account';
@@ -1241,7 +943,7 @@ import Header from '../../components/Header.astro';
       })
       .catch(() => {
         loadingCard.style.display = 'none';
-        showSignedOutCard(null);
+        signedOutCard.style.display = 'block';
       });
 
     logoutBtn.addEventListener('click', () => {
