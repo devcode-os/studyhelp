@@ -9,7 +9,15 @@ import Header from '../../components/Header.astro';
     <div class="auth-card">
       <div class="auth-icon"><i class="ti ti-user-plus"></i></div>
       <h1>Create your account</h1>
-      <p class="sub">Mobile number + passcode. No Gmail or SMS OTP needed.</p>
+      <div id="purchase-context-banner" class="purchase-banner" style="display:none;">
+        <div class="purchase-banner-row">
+          <i class="ti ti-lock-open" aria-hidden="true"></i>
+          <span id="purchase-context-lead"></span>
+        </div>
+        <div id="purchase-context-pill" class="purchase-subject-pill"></div>
+        <p id="purchase-context-tail" class="purchase-banner-tail"></p>
+      </div>
+      <p class="sub" id="signup-sub">Mobile number + passcode. No Gmail or SMS OTP needed.</p>
 
       <form id="signup-form">
         <label for="name">Name</label>
@@ -87,6 +95,52 @@ import Header from '../../components/Header.astro';
     }
     .auth-card .sub {
       margin-bottom: 24px;
+    }
+    /* Purchase-context banner: only shown when signup was reached via a
+       "Buy now" redirect (see script below). Solid purple fill, centered
+       text, with the subject name set off on its own pill line so it's
+       the one thing that visually anchors the eye. Needs to outrank the
+       toast this replaces, which was easy to miss and gone before read. */
+    .purchase-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      background: #534AB7;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      animation: card-in 0.4s ease-out;
+    }
+    .purchase-banner-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .purchase-banner-row i {
+      font-size: 17px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .purchase-banner-row span {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .purchase-subject-pill {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+    }
+    .purchase-banner-tail {
+      font-size: 13px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.75);
     }
     .auth-card label {
       display: block;
@@ -241,6 +295,79 @@ import Header from '../../components/Header.astro';
 
   <script>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
+    // Purchase-context banner: if this signup was reached via the "Buy now"
+    // redirect from the Plans page (?next=/plans/?buy=SUBJECT_SLUG), show a
+    // persistent on-page explanation instead of relying on a toast that's
+    // easy to miss and gone before it's read. Falls back to a formatted
+    // version of the slug if the live subject title can't be fetched, so
+    // the banner never blocks on a slow/failed network call.
+    (function initPurchaseContext() {
+      const rawNext = new URLSearchParams(window.location.search).get('next');
+      if (!rawNext) return;
+
+      let buySlug = null;
+      try {
+        // 'next' is itself a URL-encoded path+query string, e.g.
+        // "/plans/?buy=telangana-economy-en" — parse it as one.
+        const nextParams = new URLSearchParams(rawNext.split('?')[1] || '');
+        buySlug = nextParams.get('buy');
+      } catch (err) {}
+
+      if (!buySlug) return;
+
+      const banner = document.getElementById('purchase-context-banner');
+      const leadEl = document.getElementById('purchase-context-lead');
+      const pillEl = document.getElementById('purchase-context-pill');
+      const tailEl = document.getElementById('purchase-context-tail');
+      const subEl = document.getElementById('signup-sub');
+      if (!banner || !leadEl || !pillEl || !tailEl) return;
+
+      const fallbackName = buySlug
+        .replace(/-(en|te)$/, '')
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+
+      function showBanner(subjectName) {
+        // Three separate text nodes (lead / pill / tail) instead of one
+        // sentence — the subject name gets its own pill line so it's the
+        // one thing that visually anchors the eye, not just a highlighted
+        // word buried mid-sentence.
+        leadEl.textContent = 'Create your account to complete your purchase';
+        pillEl.textContent = subjectName;
+        tailEl.textContent = "You'll be sent straight to payment right after.";
+        banner.style.display = 'flex';
+        // In the buy flow, "no Gmail/OTP" reads as a throwaway technical
+        // footnote right when the person needs momentum toward payment.
+        // Swap it for a line that reinforces speed/trust instead — the
+        // OTP-free detail still matters, so it's folded in rather than cut.
+        if (subEl) subEl.style.display = 'none';
+      }
+
+      // Best-effort: try to resolve the real title from the live subjects
+      // list so the banner reads naturally ("తెలంగాణ చరిత్ర" instead of
+      // a raw slug guess). If this fails or is slow, the slug-derived
+      // fallback name is already good enough to show immediately.
+      showBanner(fallbackName);
+      fetch(`${WORKER_URL}/subjects/public`)
+        .then((res) => res.json())
+        .then((data) => {
+          const match = (data.subjects || []).find((s) => s.id === buySlug);
+          if (match) {
+            // title_english on some subjects (esp. Telugu-only ones) holds
+            // a generic language label like "Telugu Version", not the
+            // actual subject name — that's not useful here. Prefer the
+            // language that matches the slug's own suffix, since that's
+            // the version the person is actually buying.
+            const isTelugu = /-te$/.test(buySlug);
+            const niceName = isTelugu
+              ? (match.title_native || match.name || match.title_english)
+              : (match.title_english || match.title_native || match.name);
+            if (niceName) showBanner(niceName);
+          }
+        })
+        .catch(() => {});
+    })();
     const form = document.getElementById('signup-form');
     const errorMsg = document.getElementById('error-msg');
     const errorText = document.getElementById('error-text');

@@ -90,9 +90,9 @@ const comingSoonSubjects = [
       margin: 0 auto;
       padding: 24px;
     }
-    @media (max-width: 720px) {
+    @media (max-width: 900px) {
       .page-wide {
-        padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+        padding: 16px 16px calc(64px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
       }
     }
 
@@ -143,6 +143,7 @@ const comingSoonSubjects = [
       .whatyouget-card {
         border-radius: 16px !important;
         padding: 1rem !important;
+        margin-bottom: 12px !important;
       }
       .whatyouget-card > div[style*="grid-template-columns"] {
         grid-template-columns: 1fr !important;
@@ -326,6 +327,10 @@ const comingSoonSubjects = [
             const subject_id = btn.getAttribute('data-subject');
             if (!currentUser) {
               const returnTo = `/plans/?buy=${encodeURIComponent(subject_id)}`;
+              // The signup page now shows its own persistent purchase-context
+              // banner (subject name + "you'll be sent straight to payment"),
+              // which explains this better than a timed toast ever could —
+              // so no toast needed here anymore, just a direct redirect.
               window.location.href = `/signup/?next=${encodeURIComponent(returnTo)}`;
               return;
             }
