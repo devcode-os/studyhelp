@@ -800,7 +800,7 @@ import Header from '../../components/Header.astro';
           verifyStepEmail.style.display = 'none';
           verifyOtpRow.style.display = 'block';
           verifyOtpHint.textContent = verifyFlowMode === 'verify'
-            ? 'Enter the 6-digit code sent to your recovery email.'
+            ? `Enter the 6-digit code sent to ${typedEmail || currentRecoveryEmail || 'your recovery email'}.`
             : `Enter the 6-digit code sent to ${typedEmail || 'your new email'}.`;
           verifyOtpInput.focus();
           startResendCountdown();
