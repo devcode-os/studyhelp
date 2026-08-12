@@ -5,10 +5,40 @@ import Header from '../../components/Header.astro';
 <Layout title="Sign Up - StudyHelp" description="Create your StudyHelp account with just a phone number and passcode.">
   <Header active="signup" />
 
+  <script is:inline>
+    // Prevent the browser's own scroll-restoration from fighting the
+    // instant-jump below — e.g. tapping back/forward on mobile can
+    // otherwise snap the page to whatever scroll position it had before,
+    // right after our script has already placed it at the heading.
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  </script>
+
   <div class="content auth-content">
     <div class="auth-card">
       <div class="auth-icon"><i class="ti ti-user-plus"></i></div>
-      <h1>Create your account</h1>
+      <h1 id="signup-heading">Create your account</h1>
+      <script is:inline>
+        // On mobile, jump straight past the header/logo bar so the page
+        // opens right at "Create your account" instead of showing the
+        // header first — like an in-page anchor jump. Placed here, right
+        // after the h1, deliberately — a script running any earlier in
+        // source order executes before this element exists in the DOM,
+        // so getElementById would silently return null and never scroll.
+        function jumpToHeading() {
+          if (!window.matchMedia('(max-width: 900px)').matches) return;
+          var heading = document.getElementById('signup-heading');
+          if (!heading) return;
+          var y = heading.getBoundingClientRect().top + window.scrollY - 12;
+          window.scrollTo(0, y);
+        }
+        jumpToHeading();
+        // Reapply once everything (including the Telugu web font) has
+        // finished loading — a late font swap can reflow the header and
+        // shift the heading's position after our first, earlier jump.
+        window.addEventListener('load', jumpToHeading);
+      </script>
       <div id="purchase-context-banner" class="purchase-banner" style="display:none;">
         <div class="purchase-banner-row">
           <i class="ti ti-lock-open" aria-hidden="true"></i>
@@ -57,6 +87,12 @@ import Header from '../../components/Header.astro';
     .auth-content {
       max-width: 440px !important;
       margin: 0 auto !important;
+      /* Prevents Chrome's automatic scroll anchoring from undoing our
+         manual scroll-to-heading below once the Telugu web font finishes
+         loading and reflows the header slightly — without this, the
+         browser "helpfully" snaps the scroll position back toward the
+         top right after our script sets it. */
+      overflow-anchor: none;
     }
     .auth-card {
       background: var(--card);
