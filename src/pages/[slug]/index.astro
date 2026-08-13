@@ -612,8 +612,8 @@ function formatMath(str) {
       }).join('');
 
       const feedbackHtml = selected ? `
-        <p class="answer-text" style="margin:12px 0 0; font-weight:600; font-size:14px; color:${selected === f.answer ? 'var(--success-text)' : '#c0392b'};">
-          ${selected === f.answer ? 'Correct!' : 'Not quite.'} Answer: ${formatMath(f.a)}
+        <p class="answer-text" style="margin:12px 0 0; font-weight:600; font-size:14px; color:var(--success-text);">
+          Correct Answer: ${formatMath(f.a)}
         </p>
         ${renderExplanationToggle(f, i)}
       ` : `

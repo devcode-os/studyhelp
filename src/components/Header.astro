@@ -15,6 +15,10 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     </a>
     <span class="chapter-title">{title}</span>
     {progress && <span class="chapter-progress">{progress}</span>}
+    <button type="button" class="theme-toggle chapter-theme-toggle js-theme-toggle" aria-label="Toggle dark mode">
+      <i class="ti ti-sun icon-light" aria-hidden="true"></i>
+      <i class="ti ti-moon icon-dark" aria-hidden="true"></i>
+    </button>
   </header>
 ) : (
   <>
@@ -30,7 +34,7 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
         </nav>
 
         <div class="header-actions">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <button class="theme-toggle js-theme-toggle" aria-label="Toggle dark mode">
             <i class="ti ti-sun icon-light" aria-hidden="true"></i>
             <i class="ti ti-moon icon-dark" aria-hidden="true"></i>
           </button>
@@ -329,6 +333,14 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     color: #A6A399;
     flex-shrink: 0;
   }
+  .chapter-theme-toggle {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border: 1px solid rgba(247, 246, 242, 0.25);
+    background: rgba(247, 246, 242, 0.08);
+    color: #F7F6F2;
+  }
 
   @media (max-width: 900px) {
     .nav-desktop-only { display: none; }
@@ -338,16 +350,16 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
 </style>
 
 <script is:inline>
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+  const themeToggles = document.querySelectorAll('.js-theme-toggle');
+  themeToggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
       const html = document.documentElement;
       const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
       const next = current === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('studyhelp-theme', next);
     });
-  }
+  });
 
   const moreMenuBtn = document.getElementById('more-menu-btn');
   const moreMenuDropdown = document.getElementById('more-menu-dropdown');
