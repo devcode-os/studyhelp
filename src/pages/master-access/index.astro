@@ -528,7 +528,7 @@
                   </span>
                 </div>
                 <div class="muted">Expires: ${fmtDate(e.expires_at)}</div>
-                ${e.granted_reason ? `<div class="muted">Granted: ${esc(e.granted_reason)} — by ${esc(e.granted_by)} on ${fmtDateShort(e.granted_at)}</div>` : ""}
+                ${e.granted_reason ? `<div class="muted">Granted: ${esc(e.granted_reason)}${(e.granted_at && e.expires_at) ? ` (${Math.round((e.expires_at - e.granted_at) / 86400)} days)` : ""} — by ${esc(e.granted_by)} on ${fmtDateShort(e.granted_at)}</div>` : ""}
                 ${e.revoked_at ? `<div class="muted">Revoked: ${esc(e.revoked_reason)} — by ${esc(e.revoked_by)} on ${fmtDateShort(e.revoked_at)}</div>` : ""}
                 ${revokeBtn}
                 ${extendBtn}
