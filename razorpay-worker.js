@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -91,6 +91,9 @@ export default {
     }
     if (url.pathname === "/account/change-passcode" && request.method === "POST") {
       return changePasscode(request, env);
+    }
+    if (url.pathname === "/account/delete" && request.method === "POST") {
+      return deleteAccount(request, env);
     }
     if (url.pathname === "/content/chapter-answers" && request.method === "GET") {
       return getChapterAnswers(request, env);
@@ -753,7 +756,70 @@ async function changePasscode(request, env) {
   }
 }
 
-// ---------- 8a. Verify Email: Send OTP (on-demand, 60s rate limit) ----------
+// ---------- Delete account (self-service, Play Store data-safety requirement) ----------
+// Requires an active session AND the current passcode re-entered, same
+// confirmation pattern as changePasscode, since this is irreversible.
+// Deletes in FK-safe order (children before the users row) — same order
+// used for the manual D1 test-data cleanup: entitlements -> orders ->
+// device_sessions -> login_sessions -> otp_codes -> otp_send_log ->
+// free_click_log -> support_requests (user's own) -> users.
+async function deleteAccount(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+
+    const { passcode } = await request.json();
+    if (!passcode) {
+      return jsonAuth({ error: "Passcode is required to confirm deletion" }, 400);
+    }
+
+    const fullUser = await env.DB.prepare("SELECT passcode_hash FROM users WHERE id = ?")
+      .bind(user.id)
+      .first();
+
+    if (!fullUser || !fullUser.passcode_hash) {
+      return jsonAuth({ error: "Passcode is incorrect" }, 401);
+    }
+
+    const valid = await verifyPasscode(passcode, fullUser.passcode_hash);
+    if (!valid) {
+      return jsonAuth({ error: "Passcode is incorrect" }, 401);
+    }
+
+    // FK-safe cascade — children before parent, matching the manual D1
+    // cleanup order used earlier for test-data removal. otp_send_log and
+    // support_requests key by phone, not user_id — verified directly
+    // against the live schema. free_click_log is intentionally NOT
+    // touched here: it only ever tracks anonymous/fingerprint-based free
+    // trial clicks (actor_type is 'fp' or 'anon'), never a logged-in
+    // user_id, so a registered account has nothing to delete there.
+    await env.DB.prepare("DELETE FROM entitlements WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM orders WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM device_sessions WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM otp_codes WHERE user_id = ?").bind(user.id).run();
+    if (user.phone) {
+      await env.DB.prepare("DELETE FROM otp_send_log WHERE phone = ?").bind(user.phone).run();
+      await env.DB.prepare("DELETE FROM support_requests WHERE phone = ?").bind(user.phone).run();
+    }
+    await env.DB.prepare("DELETE FROM users WHERE id = ?").bind(user.id).run();
+
+    return jsonAuth(
+      { message: "Account and all associated data deleted." },
+      200,
+      { "Set-Cookie": "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax" }
+    );
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+
 // Triggered only when the logged-in student clicks "Verify now" on the
 // dashboard banner — never sent automatically at signup/payment, so it
 // doesn't compete with forgot-passcode for Resend's free-tier daily quota.

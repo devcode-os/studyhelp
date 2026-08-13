@@ -126,6 +126,36 @@ import Header from '../../components/Header.astro';
       </div>
 
 
+      <button type="button" class="change-email-toggle" id="delete-account-toggle" style="color:#b8341c;">Delete account</button>
+
+      <div class="change-email-box" id="delete-account-box" style="display:none;">
+        <div id="delete-account-step-form">
+          <p class="hint"><i class="ti ti-alert-circle"></i> <span>This permanently deletes your account, purchase history, and any unlocked subject access. This cannot be undone.</span></p>
+          <div class="passcode-field-wrap">
+            <input type="password" id="delete-passcode-input" inputmode="numeric" maxlength="6" autocomplete="current-password" class="passcode-field" placeholder="Enter your passcode to confirm" />
+            <button type="button" class="passcode-toggle-visibility" data-target="delete-passcode-input" aria-label="Show passcode" tabindex="-1"><i class="ti ti-eye"></i></button>
+          </div>
+          <label style="display:flex; align-items:flex-start; gap:8px; font-size:13px; margin-top:12px; cursor:pointer;">
+            <input type="checkbox" id="delete-confirm-checkbox" style="margin-top:2px; flex-shrink:0;" />
+            <span>I understand this is permanent and cannot be undone</span>
+          </label>
+          <div id="delete-account-error-msg" class="error-msg" style="display:none;">
+            <i class="ti ti-alert-circle"></i><span id="delete-account-error-text"></span>
+          </div>
+          <button type="button" class="btn-block btn-danger" id="submit-delete-account-btn" disabled>
+            <span class="btn-label">Delete my account</span>
+            <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
+          </button>
+          <button type="button" class="verify-resend-btn" id="cancel-delete-account-btn">Cancel</button>
+        </div>
+
+        <div id="delete-account-step-success" style="display:none;">
+          <div class="success-msg" style="margin-top:0;">
+            <i class="ti ti-circle-check"></i><span>Account deleted. Redirecting...</span>
+          </div>
+        </div>
+      </div>
+
       <button type="button" class="btn-block btn-danger" id="logout-btn">
         <span class="btn-label"><i class="ti ti-logout"></i> Log out</span>
         <i class="ti ti-loader-2 btn-spinner" style="display:none;"></i>
@@ -1243,6 +1273,84 @@ import Header from '../../components/Header.astro';
         loadingCard.style.display = 'none';
         showSignedOutCard(null);
       });
+
+    const deleteAccountToggle = document.getElementById('delete-account-toggle');
+    const deleteAccountBox = document.getElementById('delete-account-box');
+    const deletePasscodeInput = document.getElementById('delete-passcode-input');
+    const deleteConfirmCheckbox = document.getElementById('delete-confirm-checkbox');
+    const submitDeleteBtn = document.getElementById('submit-delete-account-btn');
+    const cancelDeleteBtn = document.getElementById('cancel-delete-account-btn');
+    const deleteErrorMsg = document.getElementById('delete-account-error-msg');
+    const deleteErrorText = document.getElementById('delete-account-error-text');
+    const deleteStepForm = document.getElementById('delete-account-step-form');
+    const deleteStepSuccess = document.getElementById('delete-account-step-success');
+
+    if (deleteAccountToggle) {
+      deleteAccountToggle.addEventListener('click', () => {
+        deleteAccountBox.style.display = deleteAccountBox.style.display === 'none' ? 'block' : 'none';
+      });
+    }
+
+    if (cancelDeleteBtn) {
+      cancelDeleteBtn.addEventListener('click', () => {
+        deleteAccountBox.style.display = 'none';
+        deletePasscodeInput.value = '';
+        deleteConfirmCheckbox.checked = false;
+        submitDeleteBtn.disabled = true;
+        deleteErrorMsg.style.display = 'none';
+      });
+    }
+
+    if (deleteConfirmCheckbox) {
+      deleteConfirmCheckbox.addEventListener('change', () => {
+        submitDeleteBtn.disabled = !deleteConfirmCheckbox.checked;
+      });
+    }
+
+    if (submitDeleteBtn) {
+      submitDeleteBtn.addEventListener('click', () => {
+        const passcode = deletePasscodeInput.value.trim();
+        deleteErrorMsg.style.display = 'none';
+
+        if (!/^\d{6}$/.test(passcode)) {
+          deleteErrorText.textContent = 'Enter your 6-digit passcode.';
+          deleteErrorMsg.style.display = 'flex';
+          return;
+        }
+
+        const label = submitDeleteBtn.querySelector('.btn-label');
+        const spinner = submitDeleteBtn.querySelector('.btn-spinner');
+        submitDeleteBtn.disabled = true;
+        if (spinner) spinner.style.display = 'inline-block';
+
+        fetch(`${WORKER_URL}/account/delete`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ passcode }),
+        })
+          .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+          .then(({ ok, data }) => {
+            if (spinner) spinner.style.display = 'none';
+            if (!ok) {
+              submitDeleteBtn.disabled = false;
+              deleteErrorText.textContent = data.error || 'Could not delete account.';
+              deleteErrorMsg.style.display = 'flex';
+              return;
+            }
+            clearCachedSession();
+            deleteStepForm.style.display = 'none';
+            deleteStepSuccess.style.display = 'block';
+            setTimeout(() => { window.location.href = '/'; }, 1500);
+          })
+          .catch(() => {
+            if (spinner) spinner.style.display = 'none';
+            submitDeleteBtn.disabled = false;
+            deleteErrorText.textContent = 'Network error. Please try again.';
+            deleteErrorMsg.style.display = 'flex';
+          });
+      });
+    }
 
     logoutBtn.addEventListener('click', () => {
       const label = logoutBtn.querySelector('.btn-label');
