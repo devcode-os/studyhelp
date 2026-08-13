@@ -1,9 +1,24 @@
 ---
 import Footer from '../components/Footer.astro';
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  lang = 'en',
+  ogImage = '/og-default.png',
+} = Astro.props;
+
+// Canonical always points at the production origin + the current path,
+// with trailing slash normalized so /page and /page/ never split ranking
+// signals. Astro.url.pathname already reflects the requested route.
+const SITE_URL = 'https://studyhelp.fdaytalk.com';
+const path = Astro.url.pathname.endsWith('/') || Astro.url.pathname === ''
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const canonicalUrl = `${SITE_URL}${path}`;
+const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
 ---
 <!doctype html>
-<html lang="te" translate="no" class="notranslate">
+<html lang={lang} translate="no" class="notranslate">
 <head>
   <link rel="manifest" href="/manifest.json" />
   <meta charset="UTF-8" />
@@ -11,6 +26,28 @@ const { title, description } = Astro.props;
   <meta name="google" content="notranslate" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="StudyHelp" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={absoluteOgImage} />
+  <meta property="og:locale" content={lang === 'te' ? 'te_IN' : 'en_IN'} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={absoluteOgImage} />
+
   <meta name="theme-color" content="#1C1C1A" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;500;700&display=swap" rel="stylesheet" />

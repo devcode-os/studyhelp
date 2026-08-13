@@ -33,7 +33,7 @@ const meta = getSubjectMeta(subject);
 
 const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
 ---
-<Layout title={meta.seoTitle} description={meta.seoDescription}>
+<Layout title={meta.seoTitle} description={meta.seoDescription} lang={meta.lang}>
 
   <Header active="subjects" />
 
@@ -59,7 +59,7 @@ const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
           <div class="stat-pill stat-pill-teal">
             <i class="ti ti-help-circle" aria-hidden="true"></i>
             <div>
-              <div class="stat-num">{totalQuestions}+</div>
+              <div class="stat-num">{totalQuestions}</div>
               <div class="stat-label">questions</div>
             </div>
           </div>

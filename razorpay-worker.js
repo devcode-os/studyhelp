@@ -590,7 +590,13 @@ async function sendOtp(request, env) {
       );
     }
 
-    return jsonAuth(genericResponse);
+    // masked_email is only ever attached here, on the genuine success path
+    // (user exists, has a recovery email, OTP was generated and actually
+    // emailed) — never on the early generic-response branch above, which
+    // must stay identical whether the phone is unregistered or simply has
+    // no recovery email on file, to preserve that endpoint's enumeration
+    // protection.
+    return jsonAuth({ ...genericResponse, masked_email: maskEmail(user.recovery_email) });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
@@ -1287,6 +1293,21 @@ async function sha256Hex(text) {
   const enc = new TextEncoder();
   const digest = await crypto.subtle.digest("SHA-256", enc.encode(text));
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+// Masks a recovery email for safe display on the frontend, e.g.
+// "farooq123@gmail.com" -> "f***@gmail.com". Only the first character of
+// the local part is shown; the rest is a fixed "***" rather than a
+// length-revealing mask, so the masked string doesn't leak how long the
+// real address is. Used by sendOtp() on the genuine success path only —
+// never in the generic enumeration-safe response, since including it
+// there would let a caller distinguish "registered with recovery email"
+// from "not registered" purely by whether masked_email is present.
+function maskEmail(email) {
+  if (!email || typeof email !== "string" || !email.includes("@")) return null;
+  const [local, domain] = email.split("@");
+  if (!local || !domain) return null;
+  return `${local[0]}***@${domain}`;
 }
 
 // Session lifetime: 30 days

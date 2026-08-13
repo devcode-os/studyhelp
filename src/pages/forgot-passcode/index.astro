@@ -36,7 +36,7 @@ import Header from '../../components/Header.astro';
       <div id="step-2" style="display:none;">
         <div class="auth-icon"><i class="ti ti-mail-opened"></i></div>
         <h1>Enter reset code</h1>
-        <p class="sub">Check your recovery email for a 6-digit code. It expires in 10 minutes.</p>
+        <p class="sub" id="step-2-sub">Check your recovery email for a 6-digit code. It expires in 10 minutes.</p>
 
         <form id="reset-form">
           <label for="otp">Reset code</label>
@@ -251,6 +251,7 @@ import Header from '../../components/Header.astro';
 
     const step1 = document.getElementById('step-1');
     const step2 = document.getElementById('step-2');
+    const step2Sub = document.getElementById('step-2-sub');
     const sendOtpForm = document.getElementById('send-otp-form');
     const resetForm = document.getElementById('reset-form');
     const errorMsg1 = document.getElementById('error-msg-1');
@@ -317,14 +318,17 @@ import Header from '../../components/Header.astro';
         if (!res.ok) {
           errorTextEl.textContent = data.error || 'Something went wrong. Please try again.';
           errorEl.style.display = 'flex';
-          return false;
+          return { ok: false };
         }
 
-        return true;
+        // Backend returns a pre-masked email (e.g. "f***@gmail.com") — never
+        // the full address, since this response is visible in devtools/
+        // network tab on any device, including shared/public ones.
+        return { ok: true, maskedEmail: data.masked_email || null };
       } catch (err) {
         errorTextEl.textContent = 'Network error. Please check your connection and try again.';
         errorEl.style.display = 'flex';
-        return false;
+        return { ok: false };
       }
     }
 
@@ -333,10 +337,13 @@ import Header from '../../components/Header.astro';
       const phone = sendOtpForm.phone.value.trim();
       setBtnLoading(sendOtpBtn, true, 'Send reset code');
 
-      const ok = await sendOtp(phone, errorMsg1, errorText1);
+      const result = await sendOtp(phone, errorMsg1, errorText1);
 
-      if (ok) {
+      if (result.ok) {
         currentPhone = phone;
+        if (result.maskedEmail) {
+          step2Sub.textContent = `Enter the 6-digit code sent to ${result.maskedEmail}`;
+        }
         step1.style.display = 'none';
         step2.style.display = 'block';
         startDebounce(resendBtn);
@@ -347,8 +354,8 @@ import Header from '../../components/Header.astro';
 
     resendBtn.addEventListener('click', async () => {
       resendBtn.disabled = true;
-      const ok = await sendOtp(currentPhone, errorMsg2, errorText2);
-      if (ok) {
+      const result = await sendOtp(currentPhone, errorMsg2, errorText2);
+      if (result.ok) {
         errorMsg2.style.display = 'none';
         successText.textContent = 'A new code has been sent.';
         successMsg.style.display = 'flex';

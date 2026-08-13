@@ -32,7 +32,7 @@ import Header from '../../components/Header.astro';
       </form>
 
       <p class="alt-action"><a href="/forgot-passcode/">Forgot passcode?</a></p>
-      <p class="alt-action">New here? <a href="/signup/">Create an account</a></p>
+      <p class="alt-action">New here? <a href="/signup/" id="signup-link">Create an account</a></p>
     </div>
   </div>
 
@@ -247,6 +247,15 @@ import Header from '../../components/Header.astro';
 
     const params = new URLSearchParams(window.location.search);
     const nextUrl = params.get('next') || '/';
+
+    // Same reasoning as the mirrored fix on the signup page: someone
+    // arriving here mid-purchase who doesn't actually have an account yet
+    // might click "Create an account" — without this, that click drops
+    // the ?next= redirect and they'd have to start the purchase over.
+    const signupLink = document.getElementById('signup-link');
+    if (signupLink && params.get('next')) {
+      signupLink.href = `/signup/?next=${encodeURIComponent(params.get('next'))}`;
+    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();

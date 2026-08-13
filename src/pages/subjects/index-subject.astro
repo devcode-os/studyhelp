@@ -25,19 +25,15 @@ const PUBLIC_SUBJECTS = [
   { slug: 'telangana-economy-en', icon: 'chart' },
   { slug: 'telangana-history-en', icon: 'book' },
   { slug: 'telangana-economy-te', icon: 'chart' },
-  { slug: 'indian-polity-en', icon: 'gavel' },
-  { slug: 'indian-polity-te', icon: 'gavel' },
 ];
 
 // subjectsMeta.js only stores the native-script heading, not a separate
 // English name — so English subtitles are defined here per subject.
 const ENGLISH_NAME = {
-  'telangana-history-te': 'Telugu Version',
-  'telangana-economy-en': 'English Version',
-  'telangana-history-en': 'English Version',
-  'telangana-economy-te': 'Telugu Version',
-  'indian-polity-en': 'English Version',
-  'indian-polity-te': 'Telugu Version',
+  'telangana-history-te': 'Telangana history',
+  'telangana-economy-en': 'English',
+  'telangana-history-en': 'English',
+  'telangana-economy-te': 'Telangana economy',
 };
 
 const subjects = PUBLIC_SUBJECTS.map(({ slug, icon }) => {
@@ -56,7 +52,6 @@ const subjects = PUBLIC_SUBJECTS.map(({ slug, icon }) => {
 const iconMap = {
   book: 'ti-book',
   chart: 'ti-chart-bar',
-  gavel: 'ti-gavel',
 };
 ---
 <Layout title="Subjects - StudyHelp" description="All subjects available on StudyHelp for TSPSC and TS exam preparation.">

@@ -18,6 +18,34 @@ export const subjectsMeta = {
     seoTitle: 'Telangana Economy FAQs',
     seoDescription: 'TSPSC and TS Police SI, Constable exam preparation - Telangana economy questions, chapter by chapter',
   },
+  'telangana-history-en': {
+    lang: 'en',
+    heading: 'Telangana history',
+    breadcrumb: 'Telangana history',
+    seoTitle: 'Telangana History FAQs',
+    seoDescription: 'TSPSC and TS Police SI, Constable exam preparation - Telangana history questions, chapter by chapter',
+  },
+  'telangana-economy-te': {
+    lang: 'te',
+    heading: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
+    breadcrumb: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
+    seoTitle: 'తెలంగాణ ఆర్థిక వ్యవస్థ FAQs',
+    seoDescription: 'TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం తెలంగాణ ఆర్థిక వ్యవస్థ ప్రశ్నలు, అధ్యాయాల వారీగా',
+  },
+  'indian-polity-en': {
+    lang: 'en',
+    heading: 'Indian polity',
+    breadcrumb: 'Indian polity',
+    seoTitle: 'Indian Polity FAQs',
+    seoDescription: 'TSPSC and TS Police SI, Constable exam preparation - Indian polity questions, chapter by chapter',
+  },
+  'indian-polity-te': {
+    lang: 'te',
+    heading: 'భారత రాజ్యాంగం',
+    breadcrumb: 'భారత రాజ్యాంగం',
+    seoTitle: 'భారత రాజ్యాంగం FAQs',
+    seoDescription: 'TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం భారత రాజ్యాంగం ప్రశ్నలు, అధ్యాయాల వారీగా',
+  },
 
   // Example for adding a new subject later:
   // 'telangana-geography-en': {

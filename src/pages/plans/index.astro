@@ -14,13 +14,23 @@ import Header from '../../components/Header.astro';
 const comingSoonSubjects = [
   {
     titleNative: 'Telangana history',
-    titleEnglish: 'English',
+    titleEnglish: 'English Version',
     slug: 'telangana-history-en',
   },
   {
     titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
-    titleEnglish: 'Telangana economy',
+    titleEnglish: 'Telugu Version',
     slug: 'telangana-economy-te',
+  },
+  {
+    titleNative: 'Indian polity',
+    titleEnglish: 'English Version',
+    slug: 'indian-polity-en',
+  },
+  {
+    titleNative: 'భారత రాజ్యాంగం',
+    titleEnglish: 'Telugu Version',
+    slug: 'indian-polity-te',
   },
 ];
 ---
@@ -42,7 +52,7 @@ const comingSoonSubjects = [
       <div id="active-subjects-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px;"></div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:1.5rem;" class="plan-grid" id="real-plan-grid">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 280px)); gap:12px; margin-bottom:1.5rem; justify-content:start;" class="plan-grid" id="real-plan-grid">
       <div class="plan-skeleton" style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">Loading subjects...</div>
     </div>
 

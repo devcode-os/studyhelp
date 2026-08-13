@@ -79,7 +79,7 @@ import Header from '../../components/Header.astro';
         </button>
       </form>
 
-      <p class="alt-action">Already have an account? <a href="/login/">Log in</a></p>
+      <p class="alt-action">Already have an account? <a href="/login/" id="login-link">Log in</a></p>
     </div>
   </div>
 
@@ -459,6 +459,15 @@ import Header from '../../components/Header.astro';
 
     const params = new URLSearchParams(window.location.search);
     const nextUrl = params.get('next') || '/';
+
+    // Someone who lands here mid-purchase but already has an account might
+    // click "Log in" instead of filling this form out — without this, that
+    // click drops the ?next= redirect entirely and they never make it back
+    // to complete the purchase after logging in.
+    const loginLink = document.getElementById('login-link');
+    if (loginLink && params.get('next')) {
+      loginLink.href = `/login/?next=${encodeURIComponent(params.get('next'))}`;
+    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();

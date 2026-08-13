@@ -2,53 +2,80 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
-const subjects = [
+// Chapter counts are derived from real data files — same technique used on
+// /subjects/index.astro — so a subject can NEVER show as "Available" here
+// unless it actually has chapters. This is what prevents the earlier bug
+// where a subject was manually flagged available during testing but had
+// no chapters yet.
+const chapterFiles = import.meta.glob('../data/*/*.json', { eager: true });
+const countsBySubject = {};
+for (const [path, mod] of Object.entries(chapterFiles)) {
+  const subjectKey = path.split('/').slice(-2, -1)[0];
+  const items = Array.isArray(mod.default) ? mod.default : [mod.default];
+  const valid = items.filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber);
+  countsBySubject[subjectKey] = (countsBySubject[subjectKey] || 0) + valid.length;
+}
+
+// Design/display config only — NOT what controls live vs coming-soon.
+// `popular` is still a manual editorial choice, that's fine to hardcode.
+const SUBJECT_CONFIG = [
   {
     titleNative: 'తెలంగాణ చరిత్ర',
-    titleEnglish: 'Telangana history',
+    titleEnglish: 'Telugu Version',
     slug: 'telangana-history-te',
-    chapterCount: 31,
     icon: 'book',
-    available: true,
     popular: true,
   },
   {
     titleNative: 'Telangana economy',
-    titleEnglish: 'English',
+    titleEnglish: 'English Version',
     slug: 'telangana-economy-en',
-    chapterCount: 20,
     icon: 'chart',
-    available: true,
     popular: false,
   },
   {
     titleNative: 'Telangana history',
-    titleEnglish: 'English',
+    titleEnglish: 'English Version',
     slug: 'telangana-history-en',
-    chapterCount: 0,
     icon: 'book',
-    available: false,
     popular: false,
   },
   {
     titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
-    titleEnglish: 'Telangana economy',
+    titleEnglish: 'Telugu Version',
     slug: 'telangana-economy-te',
-    chapterCount: 0,
     icon: 'chart',
-    available: false,
     popular: false,
   },
-]
-  .sort((a, b) => {
-    if (a.available !== b.available) return a.available ? -1 : 1;
-    if (a.popular !== b.popular) return a.popular ? -1 : 1;
-    return 0;
-  });
+  {
+    titleNative: 'Indian polity',
+    titleEnglish: 'English Version',
+    slug: 'indian-polity-en',
+    icon: 'gavel',
+    popular: false,
+  },
+  {
+    titleNative: 'భారత రాజ్యాంగం',
+    titleEnglish: 'Telugu Version',
+    slug: 'indian-polity-te',
+    icon: 'gavel',
+    popular: false,
+  },
+];
+
+const subjects = SUBJECT_CONFIG.map((s) => {
+  const chapterCount = countsBySubject[s.slug] || 0;
+  return { ...s, chapterCount, available: chapterCount > 0 };
+}).sort((a, b) => {
+  if (a.available !== b.available) return a.available ? -1 : 1;
+  if (a.popular !== b.popular) return a.popular ? -1 : 1;
+  return 0;
+});
 
 const iconMap = {
   book: 'ti-book',
   chart: 'ti-chart-bar',
+  gavel: 'ti-gavel',
 };
 ---
 <Layout title="StudyHelp - TSPSC and TS exam preparation" description="Study help for TSPSC and TS exams. Subject-wise FAQs, chapter by chapter.">
