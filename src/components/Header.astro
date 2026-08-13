@@ -350,16 +350,25 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
 </style>
 
 <script is:inline>
-  const themeToggles = document.querySelectorAll('.js-theme-toggle');
-  themeToggles.forEach((btn) => {
-    btn.addEventListener('click', () => {
+  // Chapter pages mount BOTH Header instances (compact + full desktop) at once —
+  // CSS only hides one visually, both still exist in the DOM and this script
+  // block runs once per instance. Binding a click listener directly to each
+  // button would attach it twice, so a single tap fires both listeners and the
+  // theme flips twice in a row (visually: nothing happens). A single delegated
+  // listener, guarded so it's only ever attached once regardless of how many
+  // times this script block runs, avoids that entirely.
+  if (!window.__shThemeToggleBound) {
+    window.__shThemeToggleBound = true;
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.js-theme-toggle');
+      if (!btn) return;
       const html = document.documentElement;
       const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
       const next = current === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('studyhelp-theme', next);
     });
-  });
+  }
 
   const moreMenuBtn = document.getElementById('more-menu-btn');
   const moreMenuDropdown = document.getElementById('more-menu-dropdown');
