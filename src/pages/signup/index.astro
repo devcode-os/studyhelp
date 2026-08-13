@@ -395,11 +395,24 @@ import Header from '../../components/Header.astro';
             // actual subject name — that's not useful here. Prefer the
             // language that matches the slug's own suffix, since that's
             // the version the person is actually buying.
-            const isTelugu = /-te$/.test(buySlug);
-            const niceName = isTelugu
-              ? (match.title_native || match.name || match.title_english)
-              : (match.title_english || match.title_native || match.name);
-            if (niceName) showBanner(niceName);
+            // title_native always carries the real subject heading (e.g.
+            // "Telangana economy" or "తెలంగాణ చరిత్ర") regardless of
+            // language — subjectsMeta.js has no separate English-name
+            // field, so title_english is always just a generic "English
+            // Version" / "Telugu Version" placeholder label, never the
+            // actual subject name. Prefer title_native for every subject.
+            const niceName = match.title_native || match.name || match.title_english;
+            // subjectsMeta.js stores headings in sentence case ("Telangana
+            // economy") since that's used as-is elsewhere (page <h1>,
+            // breadcrumbs). The banner pill wants title case instead
+            // ("Telangana Economy") — capitalize each word here, only for
+            // this display, without touching the shared heading data.
+            // Only touches plain ASCII words, so Telugu-script names pass
+            // through untouched (they have no case to change anyway).
+            const titleCased = niceName
+              ? niceName.replace(/\b[a-zA-Z]+\b/g, (w) => w.charAt(0).toUpperCase() + w.slice(1))
+              : niceName;
+            if (titleCased) showBanner(titleCased);
           }
         })
         .catch(() => {});
