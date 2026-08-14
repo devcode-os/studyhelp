@@ -769,13 +769,24 @@ function formatMath(str) {
         const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
         const isOpen = aRow.style.display === 'block';
 
-        // Once an answer/options area is opened, it stays open — we no
-        // longer close other open answers when a new question is tapped.
-        // That "close everything else" step was the main cause of the
-        // page jumping/shaking, since it shifted content above/below the
-        // tapped row. Only the explanation sub-section (toggled via its
-        // own Show/Hide button, see attachMcqHandlers) stays collapsible.
-        if (isOpen) return;
+        // Anchor the tapped row's position before any layout change, so
+        // collapsing other open answers (or swapping skeleton -> real
+        // content) doesn't visually "jump" the page under the user's thumb.
+        const anchorTop = row.getBoundingClientRect().top;
+
+        list.querySelectorAll('.a-row').forEach((el) => el.style.display = 'none');
+        list.querySelectorAll('.faq-item').forEach((el) => el.classList.remove('open'));
+
+        const restoreAnchor = () => {
+          const newTop = row.getBoundingClientRect().top;
+          const delta = newTop - anchorTop;
+          if (delta !== 0) window.scrollBy(0, delta);
+        };
+
+        if (isOpen) {
+          restoreAnchor();
+          return;
+        }
 
         faqItem.classList.add('open');
 
@@ -783,6 +794,7 @@ function formatMath(str) {
           aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i);
           aRow.style.display = 'block';
           attachMcqHandlers(aRow, revealedAnswers[i], i);
+          restoreAnchor();
           return;
         }
 
@@ -791,6 +803,7 @@ function formatMath(str) {
           aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i);
           aRow.style.display = 'block';
           attachMcqHandlers(aRow, bulkAnswers[i], i);
+          restoreAnchor();
           return;
         }
 
@@ -803,6 +816,7 @@ function formatMath(str) {
 
         aRow.innerHTML = renderSkeleton();
         aRow.style.display = 'block';
+        restoreAnchor();
 
         // Reuse the pointerdown-started fetch if it's already in flight;
         // otherwise start one now (covers keyboard/programmatic activation
@@ -851,6 +865,7 @@ function formatMath(str) {
         aRow.innerHTML = renderAnswerHtml(data.answer, i);
         aRow.style.display = 'block';
         attachMcqHandlers(aRow, data.answer, i);
+        restoreAnchor();
 
         if (data.unlimited) {
           purchased = true;
