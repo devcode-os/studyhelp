@@ -232,15 +232,16 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
       border: none;
       font-size: 18px;
+      font-weight: 700;
       display: none;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.55);
       z-index: 40;
     }
     #scroll-top-btn.show { display: flex; }
