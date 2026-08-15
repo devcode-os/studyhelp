@@ -42,26 +42,24 @@ import Header from '../../components/Header.astro';
       margin: 0 auto !important;
     }
     .auth-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
       padding: 36px 32px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 30px -12px rgba(20, 16, 43, 0.5);
       animation: card-in 0.45s ease-out;
+      color: #ffffff;
     }
     @keyframes card-in {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    html[data-theme="dark"] .auth-card {
-      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
-    }
     .auth-icon {
       width: 52px;
       height: 52px;
       border-radius: 14px;
-      background: var(--accent-bg);
-      color: var(--accent);
+      background: rgba(255, 154, 60, 0.15);
+      color: #ff9a3c;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -71,49 +69,57 @@ import Header from '../../components/Header.astro';
     .auth-card h1 {
       font-size: 24px;
       margin-bottom: 4px;
+      color: #ffffff;
     }
     .auth-card .sub {
       margin-bottom: 24px;
+      color: rgba(255,255,255,0.65);
     }
     .auth-card label {
       display: block;
       font-size: 14px;
       font-weight: 600;
-      color: var(--text);
+      color: rgba(255,255,255,0.85);
       margin: 18px 0 6px;
     }
     .auth-card input {
       margin-bottom: 0;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #ffffff;
       transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .auth-card input::placeholder {
+      color: rgba(255,255,255,0.35);
     }
     .auth-card input:focus {
       outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-bg);
+      border-color: #ff9a3c;
+      box-shadow: 0 0 0 3px rgba(255, 154, 60, 0.2);
     }
     .phone-input {
       display: flex;
       align-items: stretch;
-      border: 1px solid transparent;
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 12px;
       overflow: hidden;
-      background: var(--bg);
+      background: rgba(255,255,255,0.06);
       transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
     }
     .phone-input:focus-within {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-bg);
-      background: var(--card);
+      border-color: #ff9a3c;
+      box-shadow: 0 0 0 3px rgba(255, 154, 60, 0.2);
+      background: rgba(255,255,255,0.08);
     }
     .phone-prefix {
       display: flex;
       align-items: center;
       padding: 0 12px;
       background: transparent;
-      color: var(--muted);
+      color: rgba(255,255,255,0.6);
       font-weight: 600;
       font-size: 17px;
-      border-right: 1px solid var(--border);
+      border-right: 1px solid rgba(255,255,255,0.15);
     }
     .phone-input input {
       border: none;
@@ -138,34 +144,30 @@ import Header from '../../components/Header.astro';
     }
     .code-input::placeholder {
       letter-spacing: clamp(4px, 2.2vw, 10px);
-      color: var(--border);
+      color: rgba(255,255,255,0.25);
     }
     .error-msg {
       display: flex;
       align-items: center;
       gap: 8px;
-      background: #fdecec;
-      color: #b3261e;
+      background: #3a1c1c;
+      color: #ff9b93;
       border-left: 3px solid #d33;
       padding: 10px 12px;
       border-radius: 6px;
       font-size: 14px;
       margin: 18px 0 0;
     }
-    html[data-theme="dark"] .error-msg {
-      background: #3a1c1c;
-      color: #ff9b93;
-    }
     .btn-block {
       width: 100%;
       margin-top: 26px;
       padding: 13px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       border-radius: 10px;
-      border: 1px solid var(--accent);
-      background: var(--accent-bg);
-      color: var(--accent);
+      border: none;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -184,9 +186,8 @@ import Header from '../../components/Header.astro';
       cursor: not-allowed;
     }
     .btn-success {
-      border-color: var(--success-text) !important;
-      background: var(--success-bg) !important;
-      color: var(--success-text) !important;
+      background: rgba(93, 224, 192, 0.9) !important;
+      color: #04342c !important;
       opacity: 1 !important;
     }
     .btn-spinner {
@@ -199,7 +200,10 @@ import Header from '../../components/Header.astro';
       text-align: center;
       margin-top: 14px;
       font-size: 14px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.6);
+    }
+    .alt-action a {
+      color: #ffcb8a;
     }
   </style>
 
@@ -303,10 +307,6 @@ import Header from '../../components/Header.astro';
     .auth-card {
       padding: 14px 16px;
       border-radius: 18px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    html[data-theme="dark"] .auth-card {
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
     .auth-icon {
       display: none;
