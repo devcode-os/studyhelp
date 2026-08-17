@@ -1581,15 +1581,26 @@ function formatMath(str) {
     // parallel) fetches, so the daily-limit check stays accurate.
     const revealAllBtn = document.getElementById('rt-reveal-all');
     const revealAllLabel = document.getElementById('rt-reveal-all-label');
+    const revealAllIcon = revealAllBtn ? revealAllBtn.querySelector('.ti-eye, .ti-eye-off') : null;
     let allRevealed = false;
 
     async function doRevealAll() {
+      let revealedCount = 0;
       for (let i = 0; i < totalQuestions; i++) {
         const success = await openAnswerFor(i, { scroll: false, peek: true });
-        if (!success) return; // blocked by paywall/limit — stop right here
+        if (!success) break; // blocked by paywall/limit — stop right here
+        revealedCount++;
       }
-      if (revealAllLabel) revealAllLabel.textContent = 'Hide all';
-      allRevealed = true;
+      // Update the button state if ANYTHING got revealed, even if the loop
+      // stopped early partway through — "Hide all" just hides whatever is
+      // currently open, which is still correct and useful for a partial
+      // reveal. Only leave the button as "Reveal all" if nothing opened
+      // at all (e.g. blocked immediately on the very first question).
+      if (revealedCount > 0) {
+        if (revealAllLabel) revealAllLabel.textContent = 'Hide all';
+        if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye'); revealAllIcon.classList.add('ti-eye-off'); }
+        allRevealed = true;
+      }
     }
 
     if (revealAllBtn) {
@@ -1613,6 +1624,7 @@ function formatMath(str) {
           list.querySelectorAll('.a-row').forEach((aRow) => { aRow.style.display = 'none'; });
           list.querySelectorAll('.faq-item').forEach((item) => { item.classList.remove('open'); });
           if (revealAllLabel) revealAllLabel.textContent = 'Reveal all';
+          if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
           allRevealed = false;
         }
       });
