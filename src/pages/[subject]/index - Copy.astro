@@ -32,24 +32,6 @@ const { chapters } = Astro.props;
 const meta = getSubjectMeta(subject);
 
 const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
-
-// Group chapters by an optional `section` field (e.g. "Medieval History").
-// Tag only the FIRST chapter of a new era — every later chapter (in
-// chapterNumber order) inherits that section automatically until a
-// chapter with a different `section` value appears. Chapters before the
-// first tagged chapter get no heading, so subjects with no `section`
-// tags at all render exactly as before.
-const chapterGroups = [];
-let currentHeading = null;
-for (const ch of chapters) {
-  if (ch.section && ch.section !== currentHeading) {
-    currentHeading = ch.section;
-    chapterGroups.push({ heading: currentHeading, chapters: [] });
-  } else if (!chapterGroups.length) {
-    chapterGroups.push({ heading: currentHeading, chapters: [] });
-  }
-  chapterGroups[chapterGroups.length - 1].chapters.push(ch);
-}
 ---
 <Layout title={meta.seoTitle} description={meta.seoDescription} lang={meta.lang}>
 
@@ -92,22 +74,15 @@ for (const ch of chapters) {
     <div id="grace-grant-banner" class="grace-banner" style="display:none;"></div>
 
     {chapters.length > 0 ? (
-      chapterGroups.map((group) => (
-        <Fragment>
-          {group.heading && (
-            <h2 class="section-heading">{group.heading}</h2>
-          )}
-          <div class="chapter-grid">
-            {group.chapters.map((ch) => (
-              <a href={`/${ch.slug}/`} class="chapter-card">
-                <div class="chapter-card-number">{ch.chapterNumber}</div>
-                <div class="chapter-card-title">{ch.title}</div>
-                <div class="chapter-card-qcount">{ch.faqs.length} questions</div>
-              </a>
-            ))}
-          </div>
-        </Fragment>
-      ))
+      <div class="chapter-grid">
+        {chapters.map((ch) => (
+          <a href={`/${ch.slug}/`} class="chapter-card">
+            <div class="chapter-card-number">{ch.chapterNumber}</div>
+            <div class="chapter-card-title">{ch.title}</div>
+            <div class="chapter-card-qcount">{ch.faqs.length} questions</div>
+          </a>
+        ))}
+      </div>
     ) : (
       <div class="empty-state">
         <i class="ti ti-hourglass-empty" aria-hidden="true"></i>
@@ -233,24 +208,6 @@ for (const ch of chapters) {
        class names, restyled into full-width capsule rows with number
        circle + chevron, matching the locked reading-page design language.
        No class renaming, so nothing here can leak into or break desktop. ---------- */
-    .section-heading {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      margin: 28px 0 10px;
-      padding-left: 10px;
-      border-left: 3px solid #ff9a3c;
-    }
-    .section-heading:first-of-type {
-      margin-top: 4px;
-    }
-    @media (max-width: 900px) {
-      .section-heading {
-        margin: 20px 0 8px;
-        font-size: 15px;
-      }
-    }
-
     .chapter-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
