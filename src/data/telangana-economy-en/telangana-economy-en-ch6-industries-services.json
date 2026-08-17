@@ -1,0 +1,2261 @@
+{
+  "slug": "telangana-economy-en-ch6-industries-services",
+  "chapterNumber": 6,
+  "title": "Industries & Services",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "As per 2025-26 Provisional Advanced Estimates (PAE) at current prices, what is Telangana's total Gross State Value Added?",
+      "options": {
+        "a": "Rs. 17,21,613 crore",
+        "b": "Rs. 16,48,613 crore",
+        "c": "Rs. 15,96,613 crore",
+        "d": "Rs. 14,88,613 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 16,48,613 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What growth rate did Telangana's total GSVA record in 2025-26 (PAE) compared to the FRE for 2024-25?",
+      "options": {
+        "a": "11.4%",
+        "b": "10.8%",
+        "c": "8.1%",
+        "d": "9.4%"
+      },
+      "answer": "b",
+      "a": "10.8%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per 2025-26 (PAE), what was the total contribution of Telangana's industrial sector to GSVA at current prices?",
+      "options": {
+        "a": "Rs. 3,04,217 crore",
+        "b": "Rs. 3,17,229 crore",
+        "c": "Rs. 2,96,037 crore",
+        "d": "Rs. 2,81,411 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 3,04,217 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of Telangana's total GSVA did the industrial sector account for in 2025-26 (PAE)?",
+      "options": {
+        "a": "18.5%",
+        "b": "20.5%",
+        "c": "16.5%",
+        "d": "22.2%"
+      },
+      "answer": "a",
+      "a": "18.5%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What growth rate did Telangana's industrial sector record in 2025-26 (PAE) compared to 2024-25 (FRE)?",
+      "options": {
+        "a": "8.1%",
+        "b": "10.8%",
+        "c": "11.4%",
+        "d": "7.7%"
+      },
+      "answer": "a",
+      "a": "8.1%",
+      "e": "This growth is measured against the industrial sector's 2024-25 (FRE) value of Rs. 2,81,411 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which sub-sector was the primary driver of Telangana's industrial GSVA in 2025-26 (PAE), contributing 45.1% of the total?",
+      "options": {
+        "a": "Manufacturing",
+        "b": "Electricity, Gas, Water Supply & Other Utility Services",
+        "c": "Mining and Quarrying",
+        "d": "Construction"
+      },
+      "answer": "a",
+      "a": "Manufacturing",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which industrial sub-sector recorded the highest growth rate in Telangana for 2025-26 (PAE) compared to 2024-25 (FRE)?",
+      "options": {
+        "a": "Electricity, Gas, Water Supply & Other Utility Services",
+        "b": "Construction",
+        "c": "Manufacturing",
+        "d": "Mining and Quarrying"
+      },
+      "answer": "b",
+      "a": "Construction",
+      "e": "",
+      "table": {
+        "headers": [
+          "Sub-sector",
+          "Share of Industrial GSVA",
+          "Value (Rs. crore)",
+          "Growth Rate (2025-26 PAE vs 2024-25 FRE)"
+        ],
+        "rows": [
+          [
+            "Manufacturing",
+            "45.1%",
+            "1,37,229",
+            "7.7%"
+          ],
+          [
+            "Construction",
+            "30.7%",
+            "93,404",
+            "11.4%"
+          ],
+          [
+            "Electricity, Gas, Water Supply & Other Utility Services",
+            "12.4%",
+            "37,692",
+            "10.8%"
+          ],
+          [
+            "Mining and Quarrying",
+            "11.8%",
+            "35,892",
+            "-0.6%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "As per the October–December 2025 Quarterly Bulletin of the Periodic Labour Force Survey, what percentage of persons aged 15 and above in Telangana are engaged in the industrial sector under Current Weekly Status?",
+      "options": {
+        "a": "22.2%",
+        "b": "30.2%",
+        "c": "18.5%",
+        "d": "24.0%"
+      },
+      "answer": "a",
+      "a": "22.2%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per India's national PLFS figures (Oct–Dec 2025), what is the overall industrial workforce participation share for persons aged 15 and above?",
+      "options": {
+        "a": "22.2%",
+        "b": "26.0%",
+        "c": "24.0%",
+        "d": "28.5%"
+      },
+      "answer": "c",
+      "a": "24.0%",
+      "e": "This is the national figure, compared against Telangana's 22.2% share.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In Telangana's industrial sector, what is the urban participation rate for persons aged 15 and above under Current Weekly Status?",
+      "options": {
+        "a": "30.2%",
+        "b": "31.5%",
+        "c": "17.7%",
+        "d": "22.2%"
+      },
+      "answer": "a",
+      "a": "30.2%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Region/Category",
+          "Telangana",
+          "India"
+        ],
+        "rows": [
+          [
+            "Rural",
+            "17.7%",
+            "20.9%"
+          ],
+          [
+            "Urban",
+            "30.2%",
+            "31.5%"
+          ],
+          [
+            "Male",
+            "21.9%",
+            "28.5%"
+          ],
+          [
+            "Female",
+            "22.8%",
+            "14.2%"
+          ],
+          [
+            "Rural + Urban (Persons)",
+            "22.2%",
+            "24.0%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Between male and female participation shares in Telangana's industrial sector, which is higher as per the PLFS Oct-Dec 2025 report?",
+      "options": {
+        "a": "Both are equal",
+        "b": "Female, at 22.8% vs male 21.9%",
+        "c": "Data not comparable",
+        "d": "Male, at 21.9% vs female 22.8%"
+      },
+      "answer": "b",
+      "a": "Female, at 22.8% vs male 21.9%",
+      "e": "This reflects Telangana's more inclusive industrial workforce, in contrast to India's larger male-female gap (28.5% vs 14.2%).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Telangana Factories Rules enacted, alongside the Factories Act, 1948, to protect employees?",
+      "options": {
+        "a": "1961",
+        "b": "1950",
+        "c": "1948",
+        "d": "1936"
+      },
+      "answer": "b",
+      "a": "1950",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What total revenue did the Factories Department realise for the year 2025-26 (up to 31 December, 2025)?",
+      "options": {
+        "a": "Rs. 25.00 crore",
+        "b": "Rs. 20.22 crore",
+        "c": "Rs. 13.77 crore",
+        "d": "Rs. 20.91 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 20.91 crore",
+      "e": "During the same period, the department also amended 1,002 licenses and transferred 190 licenses.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district leads Telangana in both number of factories and industrial employment as of 31 December, 2025?",
+      "options": {
+        "a": "Medchal-Malkajgiri",
+        "b": "Hyderabad",
+        "c": "Sangareddy",
+        "d": "Rangareddy"
+      },
+      "answer": "a",
+      "a": "Medchal-Malkajgiri",
+      "e": "",
+      "table": {
+        "headers": [
+          "District",
+          "Factories",
+          "Employees"
+        ],
+        "rows": [
+          [
+            "Medchal-Malkajgiri",
+            "4,095",
+            "2,96,037"
+          ],
+          [
+            "Sangareddy",
+            "2,187",
+            "2,68,735"
+          ],
+          [
+            "Rangareddy",
+            "1,931",
+            "1,85,572"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "For the year 2025-26 (up to 31 December, 2025), how many manufacturing sector units received approvals under the Telangana Industrial Project Approval and Self-Certification System?",
+      "options": {
+        "a": "998",
+        "b": "1,457",
+        "c": "1,857",
+        "d": "1,558"
+      },
+      "answer": "b",
+      "a": "1,457",
+      "e": "This came with a proposed investment of Rs. 7,338.42 crore and proposed employment generation of 36,919.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which three districts recorded the highest number of approvals for setting up business units under this Self-Certification System (2025-26, up to 31 December, 2025)?",
+      "options": {
+        "a": "Hyderabad, Sangareddy, Rangareddy",
+        "b": "Rangareddy, Sangareddy, Siddipet",
+        "c": "Sangareddy, Rangareddy, Medchal-Malkajgiri",
+        "d": "Medchal-Malkajgiri, Sangareddy, Rangareddy"
+      },
+      "answer": "d",
+      "a": "Medchal-Malkajgiri, Sangareddy, Rangareddy",
+      "e": "By investment value, the top three were Rangareddy, Sangareddy, and Siddipet; by employment generation, they were Sangareddy, Rangareddy, and Medchal-Malkajgiri.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For the year 2025-26 (up to December 31, 2025), how many claims were sanctioned under the Telangana State Industrial Development and Entrepreneur Advancement scheme?",
+      "options": {
+        "a": "1,857",
+        "b": "1,857",
+        "c": "2,610",
+        "d": "1,698"
+      },
+      "answer": "a",
+      "a": "1,857",
+      "e": "These claims totalled Rs. 600.33 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Telangana State Program for Rapid Incubation of Dalit Entrepreneurs, which category of entrepreneurs received the highest number of sanctioned claims for 2025-26 (up to 31/12/2025)?",
+      "options": {
+        "a": "ST",
+        "b": "All categories received equal claims",
+        "c": "SC",
+        "d": "PHC"
+      },
+      "answer": "a",
+      "a": "ST",
+      "e": "",
+      "table": {
+        "headers": [
+          "Category",
+          "Claims",
+          "Amount Sanctioned"
+        ],
+        "rows": [
+          [
+            "SC",
+            "1,698",
+            "Rs. 120.14 crore"
+          ],
+          [
+            "ST",
+            "2,610",
+            "Rs. 184.19 crore"
+          ],
+          [
+            "PHC",
+            "122",
+            "Rs. 10.59 crore"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Through how many branches does the Telangana Division of State Financial Corporation support MSMEs in the State?",
+      "options": {
+        "a": "14",
+        "b": "12",
+        "c": "10",
+        "d": "9"
+      },
+      "answer": "b",
+      "a": "12",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For the year 2025-26 (as of 20 December, 2025), how much did the State Financial Corporation's Telangana Division sanction in total?",
+      "options": {
+        "a": "Rs. 96 crore",
+        "b": "Rs. 106 crore",
+        "c": "Rs. 120 crore",
+        "d": "Rs. 139 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 120 crore",
+      "e": "This covered 96 sanctions; separately, 106 disbursements totalling Rs. 139 crore were made (including previous year disbursements).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During the same period (2025-26, as of 20 December, 2025), how much did the State Financial Corporation's Telangana Division recover in total?",
+      "options": {
+        "a": "Rs. 139 crore",
+        "b": "Rs. 205 crore",
+        "c": "Rs. 56 crore",
+        "d": "Rs. 149 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 205 crore",
+      "e": "",
+      "table": {
+        "headers": [
+          "Component",
+          "Amount"
+        ],
+        "rows": [
+          [
+            "Principal recovered",
+            "Rs. 149 crore"
+          ],
+          [
+            "Interest recovered",
+            "Rs. 56 crore"
+          ],
+          [
+            "Total recovered",
+            "Rs. 205 crore"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which organisation recently presented \"Outstanding Entrepreneurs\" 2025 awards to several Telangana-based units financed by the State Financial Corporation's Telangana Division?",
+      "options": {
+        "a": "FICCI",
+        "b": "NABARD",
+        "c": "COSIDICI",
+        "d": "CII"
+      },
+      "answer": "c",
+      "a": "COSIDICI",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Between December 2023 and December 2025, TGIIC made land allotments to how many units in Telangana?",
+      "options": {
+        "a": "998",
+        "b": "2,187",
+        "c": "1,457",
+        "d": "743"
+      },
+      "answer": "a",
+      "a": "998",
+      "e": "These allotments covered over 2,195 acres, attracting investments of Rs. 88,534 crore and generating employment for 75,008 individuals.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which entrepreneur/company recorded the highest single high-investment allotment (≥ Rs. 200 crore) under TGIIC as of 01.01.2025 to 31.12.2025?",
+      "options": {
+        "a": "M/S Ctrl S Datacenters Limited",
+        "b": "Hindustan Unilever Limited",
+        "c": "Amazon Data Services India Private Limited",
+        "d": "Crompton Greaves Consumer Electricals Limited"
+      },
+      "answer": "c",
+      "a": "Amazon Data Services India Private Limited",
+      "e": "",
+      "table": {
+        "headers": [
+          "Entrepreneur Name",
+          "Project Cost (Rs. Crore, approx.)",
+          "Employment"
+        ],
+        "rows": [
+          [
+            "Amazon Data Services India Private Limited",
+            "39,532",
+            "103"
+          ],
+          [
+            "Amazon Data Services India Private Limited",
+            "19,699",
+            "63"
+          ],
+          [
+            "M/S Ctrl S Datacenters Limited",
+            "2,700",
+            "1,033"
+          ],
+          [
+            "CRAMSN Research Park Private Limited",
+            "1,890",
+            "2,500"
+          ],
+          [
+            "Hindustan Unilever Limited",
+            "1,682",
+            "320"
+          ],
+          [
+            "Lenskart Solutions Limited / Private Limited",
+            "1,500",
+            "205"
+          ],
+          [
+            "Infisphere Networks Private Limited",
+            "1,000",
+            "214"
+          ],
+          [
+            "Premier Energies Global Environment Pvt.Ltd",
+            "931",
+            "1,100"
+          ],
+          [
+            "M/S. JSW UAV Limited",
+            "787",
+            "180"
+          ],
+          [
+            "Premier Energies Global Environment Pvt Ltd",
+            "722",
+            "700"
+          ],
+          [
+            "M/S KJS India Private Limited",
+            "647",
+            "1,528"
+          ],
+          [
+            "Vivint Pharma Private Limited",
+            "519",
+            "660"
+          ],
+          [
+            "Avishkaran Industries Pvt Ltd",
+            "437",
+            "2,000"
+          ],
+          [
+            "ITP Externals India Private Limited",
+            "403",
+            "310"
+          ],
+          [
+            "Crompton Greaves Consumer Electricals Limited",
+            "375",
+            "3,500"
+          ],
+          [
+            "Vaksindo Animal Health Private Limited",
+            "300",
+            "180"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which award did the Nacharam Industrial Park win in 2025?",
+      "options": {
+        "a": "Swachh Industrial Park Award",
+        "b": "Best State Award",
+        "c": "Outstanding Entrepreneurs Award",
+        "d": "Top Achiever Award"
+      },
+      "answer": "a",
+      "a": "Swachh Industrial Park Award",
+      "e": "This was won under the 'Environmental Sustainability Champions' category at the 98th FICCI Annual General Meeting in New Delhi.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Business Reforms Action Plan (BRAP) 2024, in which assessment was Telangana recognised as a \"Top Achiever\"?",
+      "options": {
+        "a": "Export Preparedness Index (EPI)",
+        "b": "Global Innovation Index",
+        "c": "Logistics Ease Across Different States (LEADS)",
+        "d": "Ease of Doing Business (EoDB)"
+      },
+      "answer": "d",
+      "a": "Ease of Doing Business (EoDB)",
+      "e": "This recognition, by DPIIT, Government of India, covered Land Administration, Business Entry, Construction Permit Enablers, and Services Sector.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the initial corpus allocated from TGIDC's internal resources for the 'Yantram Fund' under the MSME Policy 2024?",
+      "options": {
+        "a": "Rs. 25 crore",
+        "b": "Rs. 15 crore",
+        "c": "Rs. 10 crore",
+        "d": "Rs. 5 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 10 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TIHCL is registered with the RBI under which category?",
+      "options": {
+        "a": "NBFC-ND",
+        "b": "NBFC-Factor",
+        "c": "NBFC-D",
+        "d": "NBFC-MFI"
+      },
+      "answer": "a",
+      "a": "NBFC-ND",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "By what percentage does the Telangana New MSME Policy 2024 aim to increase MSMEs' contribution to Telangana GSDP?",
+      "options": {
+        "a": "20%",
+        "b": "10%",
+        "c": "5%",
+        "d": "15%"
+      },
+      "answer": "b",
+      "a": "10%",
+      "e": "The policy also targets 15% annual growth in MSME registrations and an export-ready, import-substituting MSME ecosystem.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district leads Telangana in manufacturing MSME units registered on the Udyam Portal (July 2020 to 22nd December 2025)?",
+      "options": {
+        "a": "Medchal-Malkajgiri",
+        "b": "Rangareddy",
+        "c": "Hyderabad",
+        "d": "Sangareddy"
+      },
+      "answer": "c",
+      "a": "Hyderabad",
+      "e": "",
+      "table": {
+        "headers": [
+          "District",
+          "Units"
+        ],
+        "rows": [
+          [
+            "Hyderabad",
+            "56,768"
+          ],
+          [
+            "Medchal-Malkajgiri",
+            "44,162"
+          ],
+          [
+            "Rangareddy",
+            "38,057"
+          ],
+          [
+            "Nalgonda",
+            "16,011"
+          ],
+          [
+            "Nizamabad",
+            "13,525"
+          ],
+          [
+            "Karimnagar",
+            "13,413"
+          ],
+          [
+            "Sangareddy",
+            "12,844"
+          ],
+          [
+            "Yadadri Bhuvanagiri",
+            "10,790"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Pradhan Mantri Vishwakarma Yojana provides comprehensive support to traditional artisans and craftspeople across how many trades?",
+      "options": {
+        "a": "18",
+        "b": "10",
+        "c": "21",
+        "d": "14"
+      },
+      "answer": "a",
+      "a": "18",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where has the Government of Telangana established its Technology Centre under the MSME Tool Room, and where is its extension centre located?",
+      "options": {
+        "a": "Hyderabad (Balanagar); extension at Karimnagar",
+        "b": "Karimnagar; extension at Hyderabad",
+        "c": "Hyderabad; extension at Warangal",
+        "d": "Warangal; extension at Karimnagar"
+      },
+      "answer": "a",
+      "a": "Hyderabad (Balanagar); extension at Karimnagar",
+      "e": "The Balanagar centre is the erstwhile Central Institute of Tool Design; a new Technology Centre in Warangal district is under consideration.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which facility, inaugurated in Hyderabad during 2025-26, is the first and largest aero engine MRO facility established by any OEM in India?",
+      "options": {
+        "a": "SAFRAN–CFM International Aero Engine MRO facility",
+        "b": "TASL Aero Engine Components facility",
+        "c": "M88 Military Engine MRO facility",
+        "d": "ITP Aero MRO facility"
+      },
+      "answer": "a",
+      "a": "SAFRAN–CFM International Aero Engine MRO facility",
+      "e": "It was inaugurated by the Hon'ble Prime Minister of India in the presence of the Hon'ble Chief Minister of Telangana.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The groundbreaking of the first Military Aero Engine MRO facility by a global OEM in India, undertaken in Telangana, is for which military engine?",
+      "options": {
+        "a": "M88 (used in Rafale aircraft)",
+        "b": "Safran Silvercrest",
+        "c": "GE F404",
+        "d": "Pratt & Whitney PW1000G"
+      },
+      "answer": "a",
+      "a": "M88 (used in Rafale aircraft)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Hyderabad-based space start-up inaugurated India's first privately built rocket during 2025-26?",
+      "options": {
+        "a": "Agnikul Cosmos",
+        "b": "Dhruva Space",
+        "c": "Skyroot Aerospace",
+        "d": "Bellatrix Aerospace"
+      },
+      "answer": "c",
+      "a": "Skyroot Aerospace",
+      "e": "This was inaugurated by the Hon'ble Prime Minister of India, highlighting Hyderabad's private-sector-led space ecosystem.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Tata Advanced Systems Limited (TASL) announced a new partnership with which company to manufacture aerostructures for the Rafale aircraft in Hyderabad?",
+      "options": {
+        "a": "Pratt & Whitney",
+        "b": "Dassault Aviation",
+        "c": "ITP Aero",
+        "d": "Safran"
+      },
+      "answer": "b",
+      "a": "Dassault Aviation",
+      "e": "TASL separately expanded its footprint through groundbreaking for aero engine component manufacture for Pratt & Whitney and Safran.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During the Telangana Rising Global Summit, the State signed aerospace and defence investment MoUs valued at approximately how much?",
+      "options": {
+        "a": "Rs. 20,000 crore",
+        "b": "Rs. 12,610 crore",
+        "c": "Rs. 25,000 crore",
+        "d": "Rs. 88,534 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 20,000 crore",
+      "e": "Major commitments came from GMR Group, ITP Aero (Spain), Solar Industries, and Apollo Microsystems, among others.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana hosted WINGS 2026, India's largest civil aviation airshow, during which dates?",
+      "options": {
+        "a": "16–18 February 2026",
+        "b": "8–9 December 2025",
+        "c": "28–30 January 2026",
+        "d": "25–28 September 2025"
+      },
+      "answer": "c",
+      "a": "28–30 January 2026",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At WINGS 2026, Telangana won the Best State Award from the Ministry of Civil Aviation for the fifth consecutive time, in which category?",
+      "options": {
+        "a": "Best State for MRO Development",
+        "b": "Best State for Aerospace Manufacturing",
+        "c": "Best State for Civil Aviation Infrastructure",
+        "d": "Best State for Promotion of Aviation Ecosystem"
+      },
+      "answer": "d",
+      "a": "Best State for Promotion of Aviation Ecosystem",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What insurance benefit does the Telangana Nethanna Bhadratha (Nethanna Bhima) Scheme offer to the nominee of a deceased weaver/ancillary worker?",
+      "options": {
+        "a": "Rs. 10.00 lakh",
+        "b": "Rs. 5.00 lakh",
+        "c": "Rs. 1.00 lakh",
+        "d": "Rs. 2.00 lakh"
+      },
+      "answer": "b",
+      "a": "Rs. 5.00 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Telangana Nethannaku Barosa, what is the maximum annual wage support provided to each weaver and each ancillary worker?",
+      "options": {
+        "a": "Rs. 18,000 for both",
+        "b": "Rs. 6,000 for weaver, Rs. 18,000 for ancillary worker",
+        "c": "Rs. 18,000 for weaver, Rs. 6,000 for ancillary worker",
+        "d": "Rs. 12,000 for weaver, Rs. 6,000 for ancillary worker"
+      },
+      "answer": "c",
+      "a": "Rs. 18,000 for weaver, Rs. 6,000 for ancillary worker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total Handloom Clusters has the Government of India sanctioned under NHDP for Telangana?",
+      "options": {
+        "a": "35",
+        "b": "31",
+        "c": "21",
+        "d": "40"
+      },
+      "answer": "a",
+      "a": "35",
+      "e": "The State further proposed four new clusters (Kosigi, Ieeza, Yadagirigutta, and Choutuppal) with an outlay of Rs. 4.05 crore, and for 2025-26 proposed three more projects with an outlay of Rs. 0.55 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Marketing Incentive (MI) scheme, what is the funding-sharing ratio between State and Central Governments?",
+      "options": {
+        "a": "100% Central",
+        "b": "60:40",
+        "c": "70:30",
+        "d": "50:50"
+      },
+      "answer": "d",
+      "a": "50:50",
+      "e": "For 2025-26, the financial target was set at Rs. 5.39 crore, of which Rs. 1.35 crore was released by the Government.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Sri Konda Laxman Bapuji State Awards are organised annually on which occasion?",
+      "options": {
+        "a": "World Textile Day",
+        "b": "National Handloom Day (7th August)",
+        "c": "State Formation Day",
+        "d": "Independence Day"
+      },
+      "answer": "b",
+      "a": "National Handloom Day (7th August)",
+      "e": "Awardees receive a cash prize of Rs. 25,000, a memento, a shawl, and a merit certificate. In 2024, 32 awardees were felicitated, and in 2025, 33 awardees were felicitated.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When was the Yarn Depot at Vemulawada established, and with what corpus fund?",
+      "options": {
+        "a": "March 2024; Rs. 50.00 crore",
+        "b": "October 2024; Rs. 50.00 crore",
+        "c": "2024-25; Rs. 88,534 crore",
+        "d": "October 2024; Rs. 30.00 crore"
+      },
+      "answer": "b",
+      "a": "October 2024; Rs. 50.00 crore",
+      "e": "TGSCO is the nodal agency; so far, 2,655 Metric tonnes of yarn have been supplied to MACs and SSI units.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What trademark did the Government approve for TGHDC to represent Telangana's culture and heritage?",
+      "options": {
+        "a": "NIZAM CRAFTS",
+        "b": "TELANGANA HANDICRAFTS",
+        "c": "CHENETHA",
+        "d": "GOLKONDA"
+      },
+      "answer": "d",
+      "a": "GOLKONDA",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Geographical Indication (GI)-tagged products does Telangana presently have, and how many additional applications are expected to receive registration during 2026-27?",
+      "options": {
+        "a": "6 existing; 18 additional filed",
+        "b": "16 existing; 8 additional filed",
+        "c": "18 existing; 8 additional filed",
+        "d": "18 existing; 6 additional filed"
+      },
+      "answer": "d",
+      "a": "18 existing; 6 additional filed",
+      "e": "The six additional applications include Banjara Needle Craft, Banjara Tribal Jewellery, Narayanpet Jewellery Making, Hyderabad Pearls, Kothakota Mutton, and Batik Paintings.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TGHDC is setting up four new Common Facility Centres (CFCs). At which district is the CFC for Nirmal Toys being established?",
+      "options": {
+        "a": "Karimnagar District",
+        "b": "Nalgonda District",
+        "c": "Sangareddy District",
+        "d": "Nirmal District"
+      },
+      "answer": "d",
+      "a": "Nirmal District",
+      "e": "The other three CFCs are at Bonthapally (Sangareddy, wooden toys), Karimnagar (Silver Filigree), and Devarkonda (Nalgonda, Banjara Embroidery), in addition to the existing CFC at Hasthakala Bhavan, Musheerabad, Hyderabad.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TGLIPC has proposed two Mega Leather Parks under the IFLDP scheme. At which two locations?",
+      "options": {
+        "a": "Rukmapur (Karimnagar) and Devarkonda (Nalgonda)",
+        "b": "Rukmapur (Karimnagar) and Station Ghanpur (Janagaon)",
+        "c": "Armoor (Nizamabad) and Rukmapur (Karimnagar)",
+        "d": "Station Ghanpur (Janagaon) and Bonthapally (Sangareddy)"
+      },
+      "answer": "b",
+      "a": "Rukmapur (Karimnagar) and Station Ghanpur (Janagaon)",
+      "e": "",
+      "table": {
+        "headers": [
+          "Location",
+          "Land Identified"
+        ],
+        "rows": [
+          [
+            "Rukmapur (V), Karimnagar",
+            "87 acres"
+          ],
+          [
+            "Station Ghanpur, Janagaon",
+            "120 acres"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "TGLIPC signed an MoU with which institute for training assistance at its leather parks?",
+      "options": {
+        "a": "Footwear Design and Development Institute (FDDI)",
+        "b": "MSME Tool Room",
+        "c": "Central Leather Research Institute (CLRI)",
+        "d": "National Institute of Fashion Technology (NIFT)"
+      },
+      "answer": "a",
+      "a": "Footwear Design and Development Institute (FDDI)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Life Sciences Sector in Telangana has secured over how much investment through more than 190 investments?",
+      "options": {
+        "a": "Rs. 1,00,000 crore",
+        "b": "Rs. 73,360 crore",
+        "c": "Rs. 88,534 crore",
+        "d": "Rs. 63,360 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 73,360 crore",
+      "e": "This has generated over 1,00,000 direct jobs and 2,50,000 indirect jobs.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which company invested Rs. 663.75 crore in establishing a new Global Capability Centre in Hyderabad?",
+      "options": {
+        "a": "Rx Benefits",
+        "b": "Agilent Technologies",
+        "c": "HCA Healthcare",
+        "d": "Johnson & Johnson"
+      },
+      "answer": "c",
+      "a": "HCA Healthcare",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Government of Telangana inaugurated India's first logical single-use bioprocess design-and-scale-up facility. What is it known as?",
+      "options": {
+        "a": "Green Pharma City",
+        "b": "BioAsia Hub",
+        "c": "Genome Valley",
+        "d": "1 Bio"
+      },
+      "answer": "d",
+      "a": "1 Bio",
+      "e": "Alongside this, 1.5 lakh sq. ft. of plug-and-play lab space was created through a PPP model, enabling investment of Rs. 150 crore and creating 500 jobs.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "BioAsia 2026 was held on which dates and at which venue?",
+      "options": {
+        "a": "16-18 February 2026 at HITEX Hyderabad",
+        "b": "8-9 December 2025 at Bharat Future City",
+        "c": "25-28 September 2025 at Bharat Mandapam",
+        "d": "28-30 January 2026 at HITEX Hyderabad"
+      },
+      "answer": "a",
+      "a": "16-18 February 2026 at HITEX Hyderabad",
+      "e": "This was the 23rd edition, themed \"TechBio Unleashed: AI, Automation & the Biology Revolution.\"",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's electronics ecosystem is anchored by leading Electronics Manufacturing Clusters at which locations?",
+      "options": {
+        "a": "ECity, Sultanpur, and Toopran",
+        "b": "ECity, Maheshwaram, Divitipally and Future City",
+        "c": "Raviryal, Mankhal, and Divitipally",
+        "d": "Genome Valley, ECity, and Green Pharma City"
+      },
+      "answer": "b",
+      "a": "ECity, Maheshwaram, Divitipally and Future City",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under which Government department does the Photonics Valley Corporation (PVC) operate?",
+      "options": {
+        "a": "Industries & Commerce Department",
+        "b": "Commerce & Export Promotion Department",
+        "c": "ITE&C Department",
+        "d": "Department of Mines and Geology"
+      },
+      "answer": "c",
+      "a": "ITE&C Department",
+      "e": "PVC's mandate spans semiconductors, photonics, VLSI, IoT, quantum technologies, and advanced electronics.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana participated in the Drive to Zero Summit organised by CALSTART in which country?",
+      "options": {
+        "a": "Norway",
+        "b": "Belgium",
+        "c": "The Netherlands",
+        "d": "Japan"
+      },
+      "answer": "c",
+      "a": "The Netherlands",
+      "e": "A separate Policymakers' Knowledge Exchange Programme covered Norway, the Netherlands, and Belgium.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Special Food Processing Zones (SFPZs) has the Telangana Food Processing Society (TGFPS) developed, creating how much new industrial area?",
+      "options": {
+        "a": "10 SFPZs; 7,150 acres",
+        "b": "14 SFPZs; 5,068 acres",
+        "c": "21 SFPZs; 7,150 acres",
+        "d": "14 SFPZs; 7,150 acres"
+      },
+      "answer": "d",
+      "a": "14 SFPZs; 7,150 acres",
+      "e": "This drives 70% high-value tertiary processing through plug-and-play infrastructure, farmer support, and incentives.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Government of Telangana, in partnership with UN ESCAP and NITI Aayog, hosted which regional forum on 3-4 July 2025 in Hyderabad?",
+      "options": {
+        "a": "World Food India 2025",
+        "b": "Food A'Fair 2025",
+        "c": "Impact Harvest Forum 2025",
+        "d": "BioAsia 2025"
+      },
+      "answer": "c",
+      "a": "Impact Harvest Forum 2025",
+      "e": "This forum focused on inclusive business and blended finance, inviting ASEAN members and Asia-Pacific stakeholders.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Telangana Rising Global Summit was held on which dates and at which venue?",
+      "options": {
+        "a": "16-18 February 2026 at HITEX Hyderabad",
+        "b": "8-9 December 2025 at Bharat Future City, Hyderabad",
+        "c": "25-28 September 2025 at Bharat Mandapam, New Delhi",
+        "d": "3-4 July 2025 at Hyderabad"
+      },
+      "answer": "b",
+      "a": "8-9 December 2025 at Bharat Future City, Hyderabad",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana is the only State in Southern India containing vast deposits of which mineral, mined by a State Public Sector Unit?",
+      "options": {
+        "a": "Coal, mined by Singareni Collieries Company Ltd.",
+        "b": "Limestone, mined by TGGENCO",
+        "c": "Dolomite, mined by TGMDC",
+        "d": "Iron Ore, mined by TGMDC"
+      },
+      "answer": "a",
+      "a": "Coal, mined by Singareni Collieries Company Ltd.",
+      "e": "TGGENCO separately holds a mining lease for captive power generation.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Mineral-Based Industry has the highest number of units in Telangana?",
+      "options": {
+        "a": "Ready Mix Concrete Units",
+        "b": "Brick Klins",
+        "c": "Stone Crushing Units",
+        "d": "Granite cutting & Polishing Units"
+      },
+      "answer": "d",
+      "a": "Granite cutting & Polishing Units",
+      "e": "",
+      "table": {
+        "headers": [
+          "Mineral-Based Industry",
+          "No. of Industries"
+        ],
+        "rows": [
+          [
+            "Granite cutting & Polishing Units",
+            "723"
+          ],
+          [
+            "Stone Crushing Units",
+            "463"
+          ],
+          [
+            "Brick Klins",
+            "234"
+          ],
+          [
+            "Napaslab Units",
+            "183"
+          ],
+          [
+            "Ready Mix Concrete Units",
+            "125"
+          ],
+          [
+            "Quartz Pulverising Units",
+            "79"
+          ],
+          [
+            "Manufacture Sand Units",
+            "74"
+          ],
+          [
+            "Fuller's Earth Processing Units",
+            "55"
+          ],
+          [
+            "Clay & Ceramic Units",
+            "29"
+          ],
+          [
+            "Cement Plants",
+            "21"
+          ],
+          [
+            "Mosaic Chips Units",
+            "16"
+          ],
+          [
+            "Sponge Iron Plants",
+            "15"
+          ],
+          [
+            "Thermal Power Plants",
+            "3"
+          ],
+          [
+            "Ferro Alloys Units",
+            "2"
+          ],
+          [
+            "Laterite Beneficiation Plants",
+            "2"
+          ],
+          [
+            "Barytes Processing Units",
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What revenue did the Mineral and Mining sector generate in 2024-25, and in 2025-26 (up to November 2025)?",
+      "options": {
+        "a": "Rs. 3,205.30 crore in 2024-25; Rs. 5,517.60 crore in 2025-26 (up to Nov)",
+        "b": "Rs. 6,880.44 crore in 2024-25; Rs. 3,205.30 crore in 2025-26",
+        "c": "Rs. 5,517.60 crore in 2024-25; Rs. 3,205.30 crore in 2025-26 (up to Nov)",
+        "d": "Rs. 5,517.60 crore in both years"
+      },
+      "answer": "c",
+      "a": "Rs. 5,517.60 crore in 2024-25; Rs. 3,205.30 crore in 2025-26 (up to Nov)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Effective from July 8, 2025, by what percentage were Seigniorage Fee rates revised?",
+      "options": {
+        "a": "10%",
+        "b": "20%",
+        "c": "25%",
+        "d": "15%"
+      },
+      "answer": "b",
+      "a": "20%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When were the Telangana Stone Crusher Rules, 2025 officially issued?",
+      "options": {
+        "a": "November 1, 2025",
+        "b": "March 28, 2025",
+        "c": "July 23, 2025",
+        "d": "July 8, 2025"
+      },
+      "answer": "a",
+      "a": "November 1, 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the Devapur Limestone Mine located, and how much limestone did it produce for 2025-26 (up to 31 December, 2025)?",
+      "options": {
+        "a": "Suryapet District; 32,66,304 MT",
+        "b": "Mancherial District; 3,19,671 MT",
+        "c": "Mancherial District; 32,66,304 MT",
+        "d": "Nalgonda District; 32,66,304 MT"
+      },
+      "answer": "c",
+      "a": "Mancherial District; 32,66,304 MT",
+      "e": "This generated Rs. 6,53,26,080 in Escot charges; the mine has received a 5-star rating from the Ministry of Mines for the last 3 years.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TGMDC's Black Granite Project quarry, operating over an area of 9.90 hectares, is located in which district?",
+      "options": {
+        "a": "Mancherial District",
+        "b": "Rangareddy District",
+        "c": "Suryapet District",
+        "d": "Nalgonda District"
+      },
+      "answer": "c",
+      "a": "Suryapet District",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Niti Aayog's Export Preparedness Index (EPI) Report 2024, what is Telangana's overall national ranking, and its ranking among landlocked States?",
+      "options": {
+        "a": "2nd overall; 8th among landlocked States",
+        "b": "7th overall; 2nd among landlocked States",
+        "c": "8th overall; 1st among landlocked States",
+        "d": "8th overall; 2nd among landlocked States"
+      },
+      "answer": "d",
+      "a": "8th overall; 2nd among landlocked States",
+      "e": "Separately, as per the LEADS 2024 report, Telangana has been ranked in the \"Achievers\" category among landlocked States.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During the 2024-25 financial year, what were Telangana's merchandise exports, and what was Telangana's national rank among merchandise export States?",
+      "options": {
+        "a": "Rs. 1,61,843 crore; ranked 7th",
+        "b": "Rs. 3,04,217 crore; ranked 7th",
+        "c": "Rs. 1,16,182 crore; ranked 8th",
+        "d": "Rs. 1,61,843 crore; ranked 8th"
+      },
+      "answer": "a",
+      "a": "Rs. 1,61,843 crore; ranked 7th",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage increase did Telangana's merchandise exports record in 2024-25 over 2023-24?",
+      "options": {
+        "a": "39.30%",
+        "b": "29.40%",
+        "c": "26.85%",
+        "d": "23.64%"
+      },
+      "answer": "a",
+      "a": "39.30%",
+      "e": "Exports rose from Rs. 1,16,182 crore in 2023-24 to Rs. 1,61,843 crore in 2024-25.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which State recorded the highest share of India's total merchandise exports (April 2024 to March 2025)?",
+      "options": {
+        "a": "Gujarat",
+        "b": "Tamil Nadu",
+        "c": "Karnataka",
+        "d": "Maharashtra"
+      },
+      "answer": "a",
+      "a": "Gujarat",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "Share of Total Merchandise Exports of India"
+        ],
+        "rows": [
+          [
+            "Gujarat",
+            "26.56%"
+          ],
+          [
+            "Maharashtra",
+            "15.05%"
+          ],
+          [
+            "Tamil Nadu",
+            "11.92%"
+          ],
+          [
+            "Karnataka",
+            "6.98%"
+          ],
+          [
+            "Uttar Pradesh",
+            "5.03%"
+          ],
+          [
+            "Andhra Pradesh",
+            "4.75%"
+          ],
+          [
+            "Telangana",
+            "4.37%"
+          ],
+          [
+            "West Bengal",
+            "2.90%"
+          ],
+          [
+            "Odisha",
+            "2.31%"
+          ],
+          [
+            "Madhya Pradesh",
+            "1.79%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which sector was the top contributor to Telangana's merchandise exports (April 2024 to March 2025), and what share did it hold?",
+      "options": {
+        "a": "Aircraft, Spacecraft & Parts; 29.40%",
+        "b": "Electrical Machinery & Equip.; 4.99%",
+        "c": "Pharmaceutical Products; 26.85%",
+        "d": "Organic Chemicals; 15.37%"
+      },
+      "answer": "a",
+      "a": "Aircraft, Spacecraft & Parts; 29.40%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Top 5 Sectors",
+          "Value (Rs. crore)",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "Aircraft, Spacecraft & Parts",
+            "47,577",
+            "29.40"
+          ],
+          [
+            "Pharmaceutical Products",
+            "43,461",
+            "26.85"
+          ],
+          [
+            "Organic Chemicals",
+            "24,868",
+            "15.37"
+          ],
+          [
+            "Electrical Machinery & Equip.",
+            "8,081",
+            "4.99"
+          ],
+          [
+            "Boilers, Machinery, Mechanical Appliances, And Their Parts",
+            "6,551",
+            "4.05"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which district was the top contributor to Telangana's merchandise exports (April 2024 to March 2025), and what share did it hold?",
+      "options": {
+        "a": "Hyderabad; 14.38%",
+        "b": "Sangareddy; 15.23%",
+        "c": "Medchal; 17.38%",
+        "d": "Rangareddy; 38.90%"
+      },
+      "answer": "d",
+      "a": "Rangareddy; 38.90%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Top 5 Districts",
+          "Value (Rs. crore)",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "Rangareddy",
+            "62,953",
+            "38.90"
+          ],
+          [
+            "Medchal",
+            "28,128",
+            "17.38"
+          ],
+          [
+            "Sangareddy",
+            "24,655",
+            "15.23"
+          ],
+          [
+            "Hyderabad",
+            "23,272",
+            "14.38"
+          ],
+          [
+            "Mahabubnagar",
+            "6,818",
+            "4.21"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Collectively, what share of Telangana's total merchandise export value did the top five districts contribute (April 2024 to March 2025)?",
+      "options": {
+        "a": "85.10%",
+        "b": "90.10%",
+        "c": "95.10%",
+        "d": "100%"
+      },
+      "answer": "b",
+      "a": "90.10%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which country was the leading destination for Telangana's merchandise exports (April 2024 to March 2025)?",
+      "options": {
+        "a": "China",
+        "b": "United Arab Emirates",
+        "c": "Saudi Arabia",
+        "d": "USA"
+      },
+      "answer": "d",
+      "a": "USA",
+      "e": "",
+      "table": {
+        "headers": [
+          "Destination Country",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "USA",
+            "23.64"
+          ],
+          [
+            "UAE",
+            "11.74"
+          ],
+          [
+            "Saudi Arabia",
+            "6.74"
+          ],
+          [
+            "China",
+            "3.69"
+          ],
+          [
+            "France",
+            "3.38"
+          ],
+          [
+            "UK",
+            "2.72"
+          ],
+          [
+            "Turkey",
+            "2.32"
+          ],
+          [
+            "Czech Republic",
+            "1.95"
+          ],
+          [
+            "Bangladesh",
+            "1.83"
+          ],
+          [
+            "Kuwait",
+            "1.75"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In which city did Telangana's Pavilion feature stalls for SHGs, local artisans, weavers and MSMEs (especially SC, ST, BC, and minority communities) at the 44th India International Trade Fair 2025?",
+      "options": {
+        "a": "Mumbai",
+        "b": "HITEX",
+        "c": "New Delhi",
+        "d": "Hyderabad"
+      },
+      "answer": "c",
+      "a": "New Delhi",
+      "e": "The fair was held at Bharat Mandapam, ITPO, Pragati Maidan.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What are the three \"Zero\" targets set for Telangana's Mining and Minerals sector by 2047?",
+      "options": {
+        "a": "Zero Emissions, Zero Waste, Zero Illegal Mining",
+        "b": "Zero Illegal Transportation, Zero Waste, Zero Emissions",
+        "c": "Zero Illegal Mining, Zero Emissions, Zero Overloading",
+        "d": "Zero Illegal Mining, Zero Illegal Transportation, Zero Overloading"
+      },
+      "answer": "d",
+      "a": "Zero Illegal Mining, Zero Illegal Transportation, Zero Overloading",
+      "e": "This is to be achieved through a digital overhaul deploying AI/ML and drones for a smart mining ecosystem.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of Telangana's State GSVA did the services sector contribute in 2025-26 (PAE)?",
+      "options": {
+        "a": "71.2%",
+        "b": "68.6%",
+        "c": "65.9%",
+        "d": "62.4%"
+      },
+      "answer": "b",
+      "a": "68.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the value of Telangana's services sector GSVA in 2025-26 (PAE)?",
+      "options": {
+        "a": "Rs. 13.75 lakh crore",
+        "b": "Rs. 11.31 lakh crore",
+        "c": "Rs. 9.96 lakh crore",
+        "d": "Rs. 16.48 lakh crore"
+      },
+      "answer": "b",
+      "a": "Rs. 11.31 lakh crore",
+      "e": "This is up from Rs. 9,96,293 crore in 2024-25 (FRE).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's total State GSVA (all sectors) in 2025-26 (PAE)?",
+      "options": {
+        "a": "Rs. 16,48,613 crore",
+        "b": "Rs. 11,30,596 crore",
+        "c": "Rs. 18,05,120 crore",
+        "d": "Rs. 14,22,890 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 16,48,613 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What growth rate did Telangana's services sector record in 2025-26 (PAE)?",
+      "options": {
+        "a": "16.8%",
+        "b": "13.5%",
+        "c": "11.7%",
+        "d": "9.8%"
+      },
+      "answer": "b",
+      "a": "13.5%",
+      "e": "This was the highest growth rate among the primary, secondary, and services sectors.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per NITI Aayog's \"India's Services Sector\" report, Telangana, Karnataka, Maharashtra, and Tamil Nadu together account for what share of India's total services output?",
+      "options": {
+        "a": "Nearly 30%",
+        "b": "Nearly 50%",
+        "c": "Nearly 35%",
+        "d": "Nearly 40%"
+      },
+      "answer": "d",
+      "a": "Nearly 40%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per NASSCOM's India Generative AI Startup Landscape 2025 report, what share of India's total GenAI startups did Telangana account for as of H1 CY2025?",
+      "options": {
+        "a": "About 7%",
+        "b": "About 9%",
+        "c": "About 20%",
+        "d": "About 14%"
+      },
+      "answer": "a",
+      "a": "About 7%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana ranks fourth among India's leading regions for GenAI innovation, as of H1 CY2025. Which states/UT rank ahead of it?",
+      "options": {
+        "a": "Maharashtra, Gujarat, Delhi",
+        "b": "Karnataka, Tamil Nadu, Delhi",
+        "c": "Karnataka, Maharashtra, Delhi",
+        "d": "Karnataka, Maharashtra, Tamil Nadu"
+      },
+      "answer": "c",
+      "a": "Karnataka, Maharashtra, Delhi",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "GenAI Startup Share (H1 CY2025)"
+        ],
+        "rows": [
+          [
+            "Karnataka",
+            "39%"
+          ],
+          [
+            "Maharashtra",
+            "14%"
+          ],
+          [
+            "Delhi",
+            "9%"
+          ],
+          [
+            "Telangana",
+            "About 7% (ranked 4th)"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "As per Telangana Vision 2047, what is the State's target GSDP by 2047?",
+      "options": {
+        "a": "USD 2 trillion",
+        "b": "USD 5 trillion",
+        "c": "USD 1 trillion",
+        "d": "USD 3 trillion"
+      },
+      "answer": "d",
+      "a": "USD 3 trillion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Vision 2047, to what value is Telangana's services sector GSVA projected to grow?",
+      "options": {
+        "a": "USD 1.5 trillion",
+        "b": "USD 2.5 trillion",
+        "c": "USD 1.95 trillion",
+        "d": "USD 1.2 trillion"
+      },
+      "answer": "c",
+      "a": "USD 1.95 trillion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Vision 2047 identifies the Core Urban Region Economy (CURE) within which ring road as a net-zero, services-focused metropolis?",
+      "options": {
+        "a": "190 km Outer Ring Road",
+        "b": "120 km Outer Ring Road",
+        "c": "100 km Outer Ring Road",
+        "d": "160 km Outer Ring Road"
+      },
+      "answer": "d",
+      "a": "160 km Outer Ring Road",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Telangana AI Hub includes a planned AI City of what size, within Bharat Future City?",
+      "options": {
+        "a": "300-acre",
+        "b": "500-acre",
+        "c": "150-acre",
+        "d": "200-acre"
+      },
+      "answer": "a",
+      "a": "300-acre",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Vision 2047's skilling agenda, how many citizens does Telangana aim to train in AI and advanced digital skills?",
+      "options": {
+        "a": "Over 8 million",
+        "b": "Over 15 million",
+        "c": "Over 10 million",
+        "d": "Over 5 million"
+      },
+      "answer": "c",
+      "a": "Over 10 million",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Current Weekly Status (CWS), what percentage of Telangana's workforce aged 15 years and above is employed in the services sector, compared with the all-India average?\nSource: PLFS Quarterly Bulletin (October–December 2025)",
+      "options": {
+        "a": "Telangana 36.3%, India 20.6%",
+        "b": "Telangana 32.8%, India 36.3%",
+        "c": "Telangana 36.3%, India 32.8%",
+        "d": "Telangana 41.9%, India 36.3%"
+      },
+      "answer": "c",
+      "a": "Telangana 36.3%, India 32.8%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Region",
+          "Telangana",
+          "All-India"
+        ],
+        "rows": [
+          [
+            "Rural",
+            "19.7%",
+            "20.6%"
+          ],
+          [
+            "Urban",
+            "64.9%",
+            "61.9%"
+          ],
+          [
+            "Rural+Urban",
+            "36.3%",
+            "32.8%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of males aged 15 years and above in Telangana are employed in the services sector (Rural+Urban, CWS), compared with females?\nSource: PLFS Quarterly Bulletin (October–December 2025)",
+      "options": {
+        "a": "Males 27.3%, Females 41.9%",
+        "b": "Males 36.3%, Females 32.8%",
+        "c": "Males 65.1%, Females 64.5%",
+        "d": "Males 41.9%, Females 27.3%"
+      },
+      "answer": "d",
+      "a": "Males 41.9%, Females 27.3%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Region-Gender",
+          "Telangana",
+          "All-India"
+        ],
+        "rows": [
+          [
+            "Rural Male",
+            "25.5%",
+            "24.7%"
+          ],
+          [
+            "Rural Female",
+            "12.2%",
+            "13.1%"
+          ],
+          [
+            "Urban Male",
+            "65.1%",
+            "60.9%"
+          ],
+          [
+            "Urban Female",
+            "64.5%",
+            "64.9%"
+          ],
+          [
+            "Total Male",
+            "41.9%",
+            "36.5%"
+          ],
+          [
+            "Total Female",
+            "27.3%",
+            "24.8%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of UDYAM-registered MSMEs in Telangana operate in the services sector?",
+      "options": {
+        "a": "68.6%",
+        "b": "79.8%",
+        "c": "84.5%",
+        "d": "74.2%"
+      },
+      "answer": "b",
+      "a": "79.8%",
+      "e": "This corresponds to 13,74,100 units operating in the services sector.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district has the highest number of services-sector MSME units in Telangana?\nSource: Department of Industries and Commerce, Telangana",
+      "options": {
+        "a": "Nalgonda",
+        "b": "Rangareddy",
+        "c": "Hyderabad",
+        "d": "Medchal-Malkajgiri"
+      },
+      "answer": "c",
+      "a": "Hyderabad",
+      "e": "",
+      "table": {
+        "headers": [
+          "District",
+          "MSME Units"
+        ],
+        "rows": [
+          [
+            "Hyderabad",
+            "2,38,879"
+          ],
+          [
+            "Rangareddy",
+            "1,63,776"
+          ],
+          [
+            "Medchal-Malkajgiri",
+            "1,21,568"
+          ],
+          [
+            "Nalgonda",
+            "64,723"
+          ],
+          [
+            "Nizamabad",
+            "58,302"
+          ],
+          [
+            "Karimnagar",
+            "51,875"
+          ],
+          [
+            "Khammam",
+            "49,164"
+          ],
+          [
+            "Sangareddy",
+            "46,594"
+          ],
+          [
+            "Mulugu",
+            "5,515 (lowest)"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the lowest number of services-sector MSME units in Telangana?",
+      "options": {
+        "a": "Jayashankar",
+        "b": "Kumuram Bheem",
+        "c": "Mulugu",
+        "d": "Narayanpet"
+      },
+      "answer": "c",
+      "a": "Mulugu",
+      "e": "Mulugu recorded 5,515 units, the lowest among all 33 districts.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which sub-sector was the largest contributor to Telangana's services GSVA in 2025-26 (PAE)?\nSource: Directorate of Economics and Statistics, Government of Telangana",
+      "options": {
+        "a": "Real Estate, Ownership of Dwelling and Professional Services",
+        "b": "Financial Services",
+        "c": "Trade, Repair, Hotels and Restaurants",
+        "d": "Transport, Storage, Communication and Broadcasting"
+      },
+      "answer": "a",
+      "a": "Real Estate, Ownership of Dwelling and Professional Services",
+      "e": "",
+      "table": {
+        "headers": [
+          "Sub-Sector",
+          "GSVA (Rs. crore)",
+          "Share of Total GSVA"
+        ],
+        "rows": [
+          [
+            "Real Estate, Ownership of Dwelling & Professional Services",
+            "3,86,043",
+            "23.4%"
+          ],
+          [
+            "Trade, Repair, Hotels and Restaurants",
+            "3,43,249",
+            "20.8%"
+          ],
+          [
+            "Transport, Storage, Communication & Broadcasting",
+            "1,38,257",
+            "8.4%"
+          ],
+          [
+            "Other Services",
+            "1,41,498",
+            "8.6%"
+          ],
+          [
+            "Financial Services",
+            "82,088",
+            "5.0%"
+          ],
+          [
+            "Public Administration",
+            "39,463",
+            "2.4%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which service sub-sector recorded the highest growth rate in Telangana in 2025-26 (PAE)?\nSource: Directorate of Economics and Statistics, Government of Telangana",
+      "options": {
+        "a": "Transport, Storage, Communication and Broadcasting",
+        "b": "Trade, Repair, Hotels and Restaurants",
+        "c": "Real Estate, Ownership of Dwelling and Professional Services",
+        "d": "Financial Services"
+      },
+      "answer": "b",
+      "a": "Trade, Repair, Hotels and Restaurants",
+      "e": "",
+      "table": {
+        "headers": [
+          "Sub-Sector",
+          "Growth Rate (2025-26 PAE)"
+        ],
+        "rows": [
+          [
+            "Trade, Repair, Hotels and Restaurants",
+            "16.8%"
+          ],
+          [
+            "Transport, Storage, Communication & Broadcasting",
+            "14.1%"
+          ],
+          [
+            "Other Services",
+            "13.1%"
+          ],
+          [
+            "Financial Services",
+            "12.2%"
+          ],
+          [
+            "Real Estate, Ownership of Dwelling & Professional Services",
+            "11.7%"
+          ],
+          [
+            "Public Administration",
+            "5.9%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which service sub-sector recorded the lowest growth rate in Telangana in 2025-26 (PAE)?",
+      "options": {
+        "a": "Public Administration",
+        "b": "Financial Services",
+        "c": "Real Estate, Ownership of Dwelling and Professional Services",
+        "d": "Other Services"
+      },
+      "answer": "a",
+      "a": "Public Administration",
+      "e": "Public Administration grew at 5.9%, a relatively moderate pace compared to other sub-sectors.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What were Telangana's IT exports in 2024-25?",
+      "options": {
+        "a": "Rs. 2.89 lakh crore",
+        "b": "Rs. 3.45 lakh crore",
+        "c": "Rs. 2.65 lakh crore",
+        "d": "Rs. 3.13 lakh crore"
+      },
+      "answer": "d",
+      "a": "Rs. 3.13 lakh crore",
+      "e": "Exact figure is Rs. 3,12,941 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What growth rate did Telangana's IT exports record in 2024-25 compared to 2023-24?",
+      "options": {
+        "a": "12.4%",
+        "b": "9.8%",
+        "c": "20.1%",
+        "d": "16.6%"
+      },
+      "answer": "d",
+      "a": "16.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's IT sector employment in 2024-25?",
+      "options": {
+        "a": "9,39,054",
+        "b": "7,88,900",
+        "c": "10,12,300",
+        "d": "8,45,120"
+      },
+      "answer": "a",
+      "a": "9,39,054",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Telangana's GCC Policy (2025–2030), what area of Grade-A office space does the State plan to create by 2030?",
+      "options": {
+        "a": "20 million sq. ft.",
+        "b": "12 million sq. ft.",
+        "c": "10 million sq. ft.",
+        "d": "15 million sq. ft."
+      },
+      "answer": "d",
+      "a": "15 million sq. ft.",
+      "e": "This policy also anchors new GCC clusters in Warangal, Karimnagar, and Nizamabad.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "By 2030, how many professionals is India's AVGC sector projected to require?",
+      "options": {
+        "a": "Nearly 2 million",
+        "b": "Nearly 1 million",
+        "c": "Nearly 1.5 million",
+        "d": "Nearly 2.5 million"
+      },
+      "answer": "a",
+      "a": "Nearly 2 million",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which village is the IMAGE Tower (supporting Telangana's AVGC sector) being developed?",
+      "options": {
+        "a": "Raidurgam",
+        "b": "Malakpet",
+        "c": "Kandlakoya",
+        "d": "Pocharam"
+      },
+      "answer": "a",
+      "a": "Raidurgam",
+      "e": "It is located in Ranga Reddy District, developed under a Joint Development/PPP model.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many District Host Institutions has the Telangana Innovation Cell established under the TGIC Hosts Initiative?",
+      "options": {
+        "a": "30",
+        "b": "25",
+        "c": "28",
+        "d": "33"
+      },
+      "answer": "d",
+      "a": "33",
+      "e": "One institution was established in each district of the State.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When was the Telangana Data Exchange (TGDeX) platform launched?",
+      "options": {
+        "a": "December 2025",
+        "b": "April 2025",
+        "c": "July 2025",
+        "d": "September 2025"
+      },
+      "answer": "c",
+      "a": "July 2025",
+      "e": "It was developed in collaboration with the Japan International Cooperation Agency (JICA).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When was the Telangana Quantum Strategy launched?",
+      "options": {
+        "a": "20 October 2025",
+        "b": "15 November 2025",
+        "c": "4 December 2025",
+        "d": "1 January 2026"
+      },
+      "answer": "c",
+      "a": "4 December 2025",
+      "e": "It is India's first State-level framework strategising a complete quantum value chain from research to commercialisation.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which district is India's first Rural AI Lab (enabled by T-Fiber) located?",
+      "options": {
+        "a": "Peddapalli",
+        "b": "Nizamabad",
+        "c": "Warangal",
+        "d": "Karimnagar"
+      },
+      "answer": "a",
+      "a": "Peddapalli",
+      "e": "The lab is at a Government school in Adavi Srirampur.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The ITE&C Department received two GOLD SKOCH Awards (September 2025) in the Emerging Technologies category. Which two initiatives were recognised?",
+      "options": {
+        "a": "T-Fiber and T-SAT",
+        "b": "TGDeX and TAIH",
+        "c": "TASK and PVC",
+        "d": "ADeX and VanNetra"
+      },
+      "answer": "d",
+      "a": "ADeX and VanNetra",
+      "e": "ADeX enables secure inter-departmental data sharing; VanNetra is an AI-powered application for forest data processing.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which platform was conferred the 19th National Digital Transformation Award 2025 under the Open Data and Transparency category?",
+      "options": {
+        "a": "TAIH",
+        "b": "ADeX",
+        "c": "T-Fiber",
+        "d": "TGDeX"
+      },
+      "answer": "d",
+      "a": "TGDeX",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What amount of soft loan did Telangana secure from the Japan International Cooperation Agency (JICA) in February 2024?",
+      "options": {
+        "a": "Rs. 980 crore",
+        "b": "Rs. 1,336 crore",
+        "c": "Rs. 1,650 crore",
+        "d": "Rs. 1,120 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 1,336 crore",
+      "e": "This first-of-its-kind loan supports job creation and startup ecosystem augmentation, including for women and rural entrepreneurs.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which organisation awarded ADeX the DigiTech Award 2025 (March 2025)?",
+      "options": {
+        "a": "The Economic Times",
+        "b": "SKOCH Group",
+        "c": "Indian Express Group",
+        "d": "NASSCOM"
+      },
+      "answer": "a",
+      "a": "The Economic Times",
+      "e": "",
+      "table": null
+    }
+  ]
+}

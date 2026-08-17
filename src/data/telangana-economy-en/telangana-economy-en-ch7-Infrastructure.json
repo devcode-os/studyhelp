@@ -1,0 +1,1004 @@
+{
+  "slug": "telangana-economy-en-ch7-Infrastructure",
+  "chapterNumber": 7,
+  "title": "Infrastructure",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In alignment with Vision 2047, Telangana's infrastructure approach is anchored in a three-zone framework. Which of the following are these three zones?",
+      "options": {
+        "a": "URE, PURE, CARE",
+        "b": "CBD, CURE, ORR",
+        "c": "CURE, RURE, PARE",
+        "d": "CURE, PURE, RARE"
+      },
+      "answer": "d",
+      "a": "CURE, PURE, RARE",
+      "e": "These stand for Core Urban Region Economy, Peri-Urban Region Economy, and Rural Agriculture Region Economy.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's total contracted power capacity in 2025-26 (as on 25 January 2026)?",
+      "options": {
+        "a": "24,320 MW",
+        "b": "21,450 MW",
+        "c": "20,884 MW",
+        "d": "23,187 MW"
+      },
+      "answer": "d",
+      "a": "23,187 MW",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Contracted Capacity (MW)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "20,191"
+          ],
+          [
+            "2024-25",
+            "20,884"
+          ],
+          [
+            "2025-26*",
+            "23,187"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "By what percentage did Telangana's contracted power capacity increase between 2024-25 and 2025-26 (as on 25 January 2026)?",
+      "options": {
+        "a": "7.85%",
+        "b": "14.20%",
+        "c": "11.03%",
+        "d": "3.43%"
+      },
+      "answer": "c",
+      "a": "11.03%",
+      "e": "This growth was more than three times the 3.43% increase recorded between 2023-24 and 2024-25, reflecting a marked acceleration.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Including capacity under construction, to what level will Telangana's total contracted power capacity increase?",
+      "options": {
+        "a": "26,800 MW",
+        "b": "27,720 MW",
+        "c": "25,500 MW",
+        "d": "29,100 MW"
+      },
+      "answer": "b",
+      "a": "27,720 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Of Telangana's total contracted power capacity, what percentage is fossil fuel-based?",
+      "options": {
+        "a": "55.45%",
+        "b": "62.30%",
+        "c": "48.90%",
+        "d": "44.55%"
+      },
+      "answer": "a",
+      "a": "55.45%",
+      "e": "This amounts to 12,858 MW, dominated by coal, while the remaining 44.55% (10,329 MW) comes from renewable sources including hydro.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which sector accounts for the largest share of Telangana's commissioned contracted power capacity?",
+      "options": {
+        "a": "Central Sector",
+        "b": "Cooperative Sector",
+        "c": "State Sector",
+        "d": "Private Sector"
+      },
+      "answer": "c",
+      "a": "State Sector",
+      "e": "",
+      "table": {
+        "headers": [
+          "Sector",
+          "Capacity (MW)",
+          "Share"
+        ],
+        "rows": [
+          [
+            "State",
+            "11,099",
+            "47.9%"
+          ],
+          [
+            "Private",
+            "8,279",
+            "35.7%"
+          ],
+          [
+            "Central",
+            "3,809",
+            "16.4%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was TGGENCO's installed capacity in 2025-26 (as on 25 January 2026)?",
+      "options": {
+        "a": "9,140 MW",
+        "b": "8,823 MW",
+        "c": "7,285 MW",
+        "d": "8,050 MW"
+      },
+      "answer": "b",
+      "a": "8,823 MW",
+      "e": "",
+      "table": {
+        "headers": [
+          "Source",
+          "2023-24",
+          "2024-25",
+          "2025-26*"
+        ],
+        "rows": [
+          [
+            "Thermal",
+            "4,042",
+            "4,842",
+            "6,380"
+          ],
+          [
+            "Hydro",
+            "2,442",
+            "2,442",
+            "2,442"
+          ],
+          [
+            "Solar",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "Total",
+            "6,485",
+            "7,285",
+            "8,823"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "The increase in TGGENCO's installed capacity between 2023-24 and 2025-26 is entirely attributable to the commissioning of which project?",
+      "options": {
+        "a": "Three units of 800 MW each at Yadadri Thermal Power Station",
+        "b": "Four units of 250 MW each at BTPS",
+        "c": "Two units of 500 MW each at KTPS",
+        "d": "One unit of 800 MW at Ramagundam"
+      },
+      "answer": "a",
+      "a": "Three units of 800 MW each at Yadadri Thermal Power Station",
+      "e": "This is out of the planned 5×800 MW supercritical project; the remaining two units are expected to be commissioned in 2026.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Thermal Capacity Addition Programme, what capacity of ultra-supercritical thermal power plant is proposed at Ramagundam, replacing RTS-B?",
+      "options": {
+        "a": "1×660 MW",
+        "b": "2×660 MW",
+        "c": "1×800 MW",
+        "d": "1×1000 MW"
+      },
+      "answer": "c",
+      "a": "1×800 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Solar Capacity Addition Programme, TGGENCO is establishing solar power plants aggregating to about how much capacity?",
+      "options": {
+        "a": "About 320 MW",
+        "b": "About 180 MW",
+        "c": "About 150 MW",
+        "d": "About 245 MW"
+      },
+      "answer": "d",
+      "a": "About 245 MW",
+      "e": "These are being developed through rooftop, floating, and ground-mounted installations at various thermal and hydel plant locations.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the length of EHT Lines in Telangana's transmission network, in Circuit Kilometres (CKM), as on 25 January 2026?",
+      "options": {
+        "a": "33,720 CKM",
+        "b": "31,085 CKM",
+        "c": "29,900 CKM",
+        "d": "28,450 CKM"
+      },
+      "answer": "b",
+      "a": "31,085 CKM",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As on 1 January 2026, how many 33/11kV substations exist under Telangana's electricity distribution network?",
+      "options": {
+        "a": "3,105",
+        "b": "3,650",
+        "c": "3,322",
+        "d": "2,980"
+      },
+      "answer": "c",
+      "a": "3,322",
+      "e": "The distribution network also has 7.09 lakh km of line length in the state.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's peak load demand in 2024-25?",
+      "options": {
+        "a": "17,540 MW",
+        "b": "16,890 MW",
+        "c": "15,623 MW",
+        "d": "17,162 MW"
+      },
+      "answer": "d",
+      "a": "17,162 MW",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Peak Load Demand (MW)"
+        ],
+        "rows": [
+          [
+            "2022-23",
+            "15,497"
+          ],
+          [
+            "2023-24",
+            "15,623"
+          ],
+          [
+            "2024-25",
+            "17,162"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the maximum daily energy consumption recorded in Telangana in 2024-25?",
+      "options": {
+        "a": "335 MU",
+        "b": "348 MU",
+        "c": "322 MU",
+        "d": "309 MU"
+      },
+      "answer": "a",
+      "a": "335 MU",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Maximum Energy Met (MU/day)"
+        ],
+        "rows": [
+          [
+            "2022-23",
+            "298"
+          ],
+          [
+            "2023-24",
+            "309"
+          ],
+          [
+            "2024-25",
+            "335"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total energy supplied in Telangana in 2024-25?",
+      "options": {
+        "a": "85,644 MU",
+        "b": "88,928 MU",
+        "c": "87,350 MU",
+        "d": "90,210 MU"
+      },
+      "answer": "b",
+      "a": "88,928 MU",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Total Energy Supplied (MU)"
+        ],
+        "rows": [
+          [
+            "2022-23",
+            "75,956"
+          ],
+          [
+            "2023-24",
+            "85,644"
+          ],
+          [
+            "2024-25",
+            "88,928"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's per-capita electricity consumption in 2023-24?",
+      "options": {
+        "a": "2,340 kWh",
+        "b": "2,180 kWh",
+        "c": "2,745 kWh",
+        "d": "2,508 kWh"
+      },
+      "answer": "d",
+      "a": "2,508 kWh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's total contracted renewable energy capacity (including hydro), as on 25 January 2026?",
+      "options": {
+        "a": "10,329 MW",
+        "b": "9,680 MW",
+        "c": "11,200 MW",
+        "d": "8,950 MW"
+      },
+      "answer": "a",
+      "a": "10,329 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which source accounts for the largest share of Telangana's contracted renewable energy capacity?",
+      "options": {
+        "a": "Wind",
+        "b": "Biomass/Bagasse & Waste to Energy",
+        "c": "Hydro",
+        "d": "Solar"
+      },
+      "answer": "d",
+      "a": "Solar",
+      "e": "",
+      "table": {
+        "headers": [
+          "Source",
+          "Capacity (MW)",
+          "Share"
+        ],
+        "rows": [
+          [
+            "Solar",
+            "7,546",
+            "73.0%"
+          ],
+          [
+            "Hydro",
+            "2,521",
+            "24.4%"
+          ],
+          [
+            "Biomass/Bagasse & Waste to Energy",
+            "135",
+            "1.3%"
+          ],
+          [
+            "Wind",
+            "128",
+            "1.2%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Telangana Clean & Green Energy Policy-2025, how much renewable energy capacity does the State aim to add by 2030 and by 2035?",
+      "options": {
+        "a": "20,000 MW by 2030, 35,000 MW by 2035",
+        "b": "25,000 MW by 2030, 45,000 MW by 2035",
+        "c": "20,000 MW by 2030, 40,000 MW by 2035",
+        "d": "15,000 MW by 2030, 30,000 MW by 2035"
+      },
+      "answer": "c",
+      "a": "20,000 MW by 2030, 40,000 MW by 2035",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Telangana's energy subsidy measures, what is the free power unit cap for SC and ST domestic consumers not covered under the Gruha Jyothi Scheme?",
+      "options": {
+        "a": "101 units",
+        "b": "150 units",
+        "c": "200 units",
+        "d": "250 units"
+      },
+      "answer": "a",
+      "a": "101 units",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the rated capacity of the Naini coal block allotted to SCCL in Angul District, Odisha (inaugurated April 2025)?",
+      "options": {
+        "a": "8 MTPA",
+        "b": "12 MTPA",
+        "c": "15 MTPA",
+        "d": "10 MTPA"
+      },
+      "answer": "d",
+      "a": "10 MTPA",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "SCCL has planned to open six new coal mining projects in Telangana with what combined rated capacity?",
+      "options": {
+        "a": "18.50 MTPA",
+        "b": "19.80 MTPA",
+        "c": "24.60 MTPA",
+        "d": "21.30 MTPA"
+      },
+      "answer": "d",
+      "a": "21.30 MTPA",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "SCCL has identified sites to establish pumped storage plants at Medipalli and Yellandu areas. What capacities are proposed at each?",
+      "options": {
+        "a": "400 MW at Medipalli, 200 MW at Yellandu",
+        "b": "600 MW at Medipalli, 100 MW at Yellandu",
+        "c": "300 MW at Medipalli, 150 MW at Yellandu",
+        "d": "500 MW at Medipalli, 100 MW at Yellandu"
+      },
+      "answer": "d",
+      "a": "500 MW at Medipalli, 100 MW at Yellandu",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is SCCL planning to establish a green hydrogen plant?",
+      "options": {
+        "a": "Ramagundam",
+        "b": "Yellandu",
+        "c": "Kothagudem",
+        "d": "Manuguru"
+      },
+      "answer": "a",
+      "a": "Ramagundam",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "SCCL has undertaken geothermal energy initiatives in which region?",
+      "options": {
+        "a": "Ramagundam region",
+        "b": "Pagideru region of Manuguru",
+        "c": "Kothagudem region",
+        "d": "Yellandu region"
+      },
+      "answer": "b",
+      "a": "Pagideru region of Manuguru",
+      "e": "SCCL is also planning a Geo-chemical Laboratory at Kothagudem to support exploration of Rare Earth Elements.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total irrigation potential envisaged by the Government in Telangana?",
+      "options": {
+        "a": "127.69 lakh acres",
+        "b": "118.90 lakh acres",
+        "c": "110.25 lakh acres",
+        "d": "135.40 lakh acres"
+      },
+      "answer": "a",
+      "a": "127.69 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the latest GWRA 2025 study, by what percentage did Telangana's Annual Ground Water Recharge improve between 2024 and 2025?",
+      "options": {
+        "a": "10%",
+        "b": "9%",
+        "c": "7%",
+        "d": "5%"
+      },
+      "answer": "c",
+      "a": "7%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Description",
+          "2024 (Million Cubic Metres)",
+          "2025 (Million Cubic Metres)",
+          "Improvement (%)"
+        ],
+        "rows": [
+          [
+            "Annual Ground Water Recharge",
+            "20,402",
+            "21,926",
+            "7"
+          ],
+          [
+            "Annual Extractable Ground Water Resource",
+            "18,442",
+            "19,840",
+            "7"
+          ],
+          [
+            "Groundwater Extraction for all uses",
+            "8,466",
+            "9,262",
+            "9"
+          ],
+          [
+            "Net Annual Ground Water Available for Future Use",
+            "9,945",
+            "10,674",
+            "7"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Minor Irrigation Census 2017-18, how many dug wells and tube wells does Telangana have?",
+      "options": {
+        "a": "4,57,784 dug wells; 11,21,465 tube wells",
+        "b": "4,20,600 dug wells; 10,50,300 tube wells",
+        "c": "3,80,500 dug wells; 9,85,200 tube wells",
+        "d": "5,10,200 dug wells; 12,40,800 tube wells"
+      },
+      "answer": "a",
+      "a": "4,57,784 dug wells; 11,21,465 tube wells",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the ISGJV (Indira Soura Giri Jala Vikasam) initiative, what irrigation potential is targeted under the Annual Action Plan (2025-26) to benefit tribal farming communities?",
+      "options": {
+        "a": "25,000 acres",
+        "b": "27,184 acres",
+        "c": "22,500 acres",
+        "d": "31,600 acres"
+      },
+      "answer": "b",
+      "a": "27,184 acres",
+      "e": "This aims to benefit 10,000 tribal farming communities on Recognition of Forest Rights (RoFR) lands.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total road network length in Telangana as of 2024-25?",
+      "options": {
+        "a": "1,18,450 km",
+        "b": "1,24,034 km",
+        "c": "1,29,017 km",
+        "d": "1,32,600 km"
+      },
+      "answer": "c",
+      "a": "1,29,017 km",
+      "e": "This includes 30 National Highways.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which department-owned roads account for the largest share of Telangana's road network?",
+      "options": {
+        "a": "CURE",
+        "b": "Roads & Buildings",
+        "c": "Other ULBs",
+        "d": "Panchayat Raj"
+      },
+      "answer": "d",
+      "a": "Panchayat Raj",
+      "e": "",
+      "table": {
+        "headers": [
+          "Category",
+          "Length (km)",
+          "Share"
+        ],
+        "rows": [
+          [
+            "Panchayat Raj",
+            "68,709",
+            "53.2%"
+          ],
+          [
+            "Roads & Buildings",
+            "29,075",
+            "22.5%"
+          ],
+          [
+            "Other ULBs",
+            "13,314",
+            "10.3%"
+          ],
+          [
+            "CURE",
+            "12,936",
+            "10.0%"
+          ],
+          [
+            "National Highways",
+            "4,983",
+            "3.9%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's overall road density?",
+      "options": {
+        "a": "98.40 km per 100 sq. km",
+        "b": "122.35 km per 100 sq. km",
+        "c": "115.11 km per 100 sq. km",
+        "d": "105.60 km per 100 sq. km"
+      },
+      "answer": "c",
+      "a": "115.11 km per 100 sq. km",
+      "e": "The density of notified National Highways in the state is separately 4.45 km per 100 sq. km.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Northern Part of the Regional Ring Road (RRR), notified as NH-161AA, has what total length?",
+      "options": {
+        "a": "145.30 km",
+        "b": "161.52 km",
+        "c": "178.90 km",
+        "d": "155.60 km"
+      },
+      "answer": "b",
+      "a": "161.52 km",
+      "e": "It runs from near Girmapur in Sangareddy District to near Tangadapally (Choutuppal), at a civil cost of Rs. 8,535 crore under the Hybrid Annuity Model.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the approved total length of the Southern Part of the Regional Ring Road (RRR)?",
+      "options": {
+        "a": "201 km",
+        "b": "175 km",
+        "c": "185 km",
+        "d": "220 km"
+      },
+      "answer": "a",
+      "a": "201 km",
+      "e": "This alignment passes through Choutuppal–Amangal–Sangareddy, joining the RRR Northern Part.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the SERP–Mahila Shakthi Initiative, how many buses are being procured and leased to TGSRTC through Mahila Samakhyas?",
+      "options": {
+        "a": "600",
+        "b": "750",
+        "c": "450",
+        "d": "500"
+      },
+      "answer": "a",
+      "a": "600",
+      "e": "Of these, 494 buses worth Rs. 177.84 crore were already procured in Phase-I.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's total railway route length as on March 2024?",
+      "options": {
+        "a": "2,015 km",
+        "b": "2,180 km",
+        "c": "1,920 km",
+        "d": "1,850 km"
+      },
+      "answer": "a",
+      "a": "2,015 km",
+      "e": "These are entirely Broad Gauge lines, of which about 96% are electrified as on May 2025.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the headquarters of the South Central Railway located?",
+      "options": {
+        "a": "Hyderabad",
+        "b": "Secunderabad",
+        "c": "Warangal",
+        "d": "Vijayawada"
+      },
+      "answer": "a",
+      "a": "Hyderabad",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Metro Rail Phase II (A and B) proposals cover how many new corridors with what total length?",
+      "options": {
+        "a": "6 corridors, 140 km",
+        "b": "10 corridors, 180 km",
+        "c": "8 corridors, 162.5 km",
+        "d": "7 corridors, 150 km"
+      },
+      "answer": "c",
+      "a": "8 corridors, 162.5 km",
+      "e": "This is proposed as a 50:50 joint venture between the State and Union Governments.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What investment does the State Government intend to make on Metro Rail Phase II?",
+      "options": {
+        "a": "Rs. 43,848 crore",
+        "b": "Rs. 35,600 crore",
+        "c": "Rs. 41,200 crore",
+        "d": "Rs. 38,900 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 43,848 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Metro Station has been taken up as a pilot for Multi-Modal Integration (MMI) conceptual plans prepared by HUMTA?",
+      "options": {
+        "a": "Hitech City",
+        "b": "Miyapur",
+        "c": "LB Nagar",
+        "d": "Ameerpet"
+      },
+      "answer": "d",
+      "a": "Ameerpet",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which vehicle category constitutes the largest share of Telangana's total vehicle strength (December 2025)?",
+      "options": {
+        "a": "Goods Carriages",
+        "b": "Motorcycles",
+        "c": "Motor Cars",
+        "d": "Auto-rickshaws"
+      },
+      "answer": "b",
+      "a": "Motorcycles",
+      "e": "",
+      "table": {
+        "headers": [
+          "Category",
+          "Number (Dec 2025)",
+          "Share"
+        ],
+        "rows": [
+          [
+            "Motor Cycles",
+            "1,32,87,504",
+            "73.3%"
+          ],
+          [
+            "Motor Cars",
+            "24,66,338",
+            "13.6%"
+          ],
+          [
+            "Tractor and Trailers",
+            "8,10,383",
+            "4.5%"
+          ],
+          [
+            "Goods Carriages",
+            "6,83,582",
+            "3.8%"
+          ],
+          [
+            "Auto rickshaw",
+            "5,53,625",
+            "3.1%"
+          ],
+          [
+            "Total",
+            "1,81,37,435",
+            "100.0%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which vehicle category recorded the highest percentage growth rate over end of December 2024 (among major categories)?",
+      "options": {
+        "a": "Contract Carriages",
+        "b": "Motor Cars",
+        "c": "Motorcycles",
+        "d": "e-Rickshaw/e-Cart"
+      },
+      "answer": "d",
+      "a": "e-Rickshaw/e-Cart",
+      "e": "This category grew by 37.0%, though it remains marginal in overall share (0.002%). Among conventional categories, Contract Carriages grew fastest at 12.4%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Techno-Economic Feasibility Reports (TEFRs) are being prepared for airport locations in six districts. Which three districts are identified for the first phase?",
+      "options": {
+        "a": "Adilabad, Nizamabad, Mahabubnagar",
+        "b": "Peddapalli, Nizamabad, Mahabubnagar",
+        "c": "Warangal, Peddapalli, Nizamabad",
+        "d": "Warangal, Bhadradri-Kothagudem, Adilabad"
+      },
+      "answer": "d",
+      "a": "Warangal, Bhadradri-Kothagudem, Adilabad",
+      "e": "Peddapalli, Nizamabad, and Mahabubnagar are identified for the second phase.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How much land was acquired for the Warangal airport project, with the entire land handed over to AAI in January 2026?",
+      "options": {
+        "a": "300 acres",
+        "b": "220 acres",
+        "c": "280 acres",
+        "d": "253 acres"
+      },
+      "answer": "d",
+      "a": "253 acres",
+      "e": "Rs. 295 crore was sanctioned for this land acquisition; the estimated construction expenditure is about Rs. 850 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For the Adilabad airport (proposed as a joint-use airport with the Indian Air Force), how much land acquisition has the Government ordered?",
+      "options": {
+        "a": "700 acres",
+        "b": "500 acres",
+        "c": "600 acres",
+        "d": "850 acres"
+      },
+      "answer": "a",
+      "a": "700 acres",
+      "e": "The AAI master plan requires an additional 415 acres beyond land already under Indian Air Force control.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Rajiv Gandhi International Airport's (RGIA) annual passenger handling volume?",
+      "options": {
+        "a": "Over 3.2 crore",
+        "b": "Over 2.5 crore",
+        "c": "Over 2.7 crore",
+        "d": "Over 2.9 crore"
+      },
+      "answer": "d",
+      "a": "Over 2.9 crore",
+      "e": "RGIA also handles around 1,65,000 tons of cargo annually.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "RGIA has emerged as the how many'th busiest airport in India?",
+      "options": {
+        "a": "Second",
+        "b": "Fourth",
+        "c": "Fifth",
+        "d": "Third"
+      },
+      "answer": "b",
+      "a": "Fourth",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "By what percentage did Telangana's air passenger traffic increase from 2023-24 to 2024-25?",
+      "options": {
+        "a": "16.49%",
+        "b": "19.20%",
+        "c": "12.35%",
+        "d": "14.80%"
+      },
+      "answer": "a",
+      "a": "16.49%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Category",
+          "Passengers (2024-25)"
+        ],
+        "rows": [
+          [
+            "International",
+            "47,31,033"
+          ],
+          [
+            "Domestic",
+            "2,44,50,039"
+          ],
+          [
+            "Total",
+            "2,91,81,072"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Among Indian General Category States, which state recorded the highest wireless teledensity as on September 2025?",
+      "options": {
+        "a": "Haryana",
+        "b": "Telangana",
+        "c": "Kerala",
+        "d": "Goa"
+      },
+      "answer": "d",
+      "a": "Goa",
+      "e": "Goa recorded 148.27, followed by Haryana (116.84) and Kerala (116.16); Telangana ranked fourth at 105.57.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "India's first Rural AI Lab, enabled through T-Fiber, was inaugurated in September 2025 at which village?",
+      "options": {
+        "a": "Mahadevpur, Jayashankar district",
+        "b": "Mucherla, Rangareddy district",
+        "c": "Girmapur, Sangareddy district",
+        "d": "Adavisrirampur, Peddapalli district"
+      },
+      "answer": "d",
+      "a": "Adavisrirampur, Peddapalli district",
+      "e": "The lab is at the Zilla Parishad High School, with 46 students currently undergoing AI training.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which university has been inaugurated as India's first dedicated Earth Sciences University?",
+      "options": {
+        "a": "Telangana Earth and Mineral Sciences University",
+        "b": "Dr. Manmohan Singh Earth Sciences University, Kothagudem",
+        "c": "Young India Physical Education and Sports University",
+        "d": "Young India Skills University"
+      },
+      "answer": "b",
+      "a": "Dr. Manmohan Singh Earth Sciences University, Kothagudem",
+      "e": "",
+      "table": null
+    }
+  ]
+}

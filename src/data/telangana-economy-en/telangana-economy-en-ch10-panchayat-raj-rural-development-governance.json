@@ -1,0 +1,1238 @@
+{
+  "slug": "telangana-economy-en-ch10-panchayat-raj-rural-development-governance",
+  "chapterNumber": 10,
+  "title": "Panchayat Raj, Rural Development & Governance",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "How many Gram Panchayats are there in Telangana?",
+      "options": {
+        "a": "13,210",
+        "b": "11,980",
+        "c": "12,340",
+        "d": "12,760"
+      },
+      "answer": "d",
+      "a": "12,760",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Mandal Praja Parishads does Telangana have?",
+      "options": {
+        "a": "521",
+        "b": "598",
+        "c": "542",
+        "d": "565"
+      },
+      "answer": "d",
+      "a": "565",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Zilla Praja Parishads does Telangana have?",
+      "options": {
+        "a": "29",
+        "b": "28",
+        "c": "31",
+        "d": "33"
+      },
+      "answer": "c",
+      "a": "31",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the prescribed rural water service level under Mission Bhagiratha?",
+      "options": {
+        "a": "100 LPCD",
+        "b": "120 LPCD",
+        "c": "80 LPCD",
+        "d": "135 LPCD"
+      },
+      "answer": "a",
+      "a": "100 LPCD",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the bulk water supply level for Municipal Corporations?",
+      "options": {
+        "a": "100 LPCD",
+        "b": "150 LPCD",
+        "c": "165 LPCD",
+        "d": "135 LPCD"
+      },
+      "answer": "b",
+      "a": "150 LPCD",
+      "e": "Municipalities and Nagar Panchayats are supplied at 135 LPCD.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Out of 24,000 rural habitations, how many are covered with surface-treated potable water supply (as of Feb 2026)?",
+      "options": {
+        "a": "23,453",
+        "b": "24,000",
+        "c": "23,890",
+        "d": "22,980"
+      },
+      "answer": "a",
+      "a": "23,453",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Urban Local Bodies receive bulk water supply under Mission Bhagiratha?",
+      "options": {
+        "a": "130",
+        "b": "112",
+        "c": "122",
+        "d": "135"
+      },
+      "answer": "a",
+      "a": "130",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which state won the Best State title under the Jal Sanchay Jan Bhagidari initiative at the 6th National Water Awards?",
+      "options": {
+        "a": "Telangana",
+        "b": "Tamil Nadu",
+        "c": "Andhra Pradesh",
+        "d": "Karnataka"
+      },
+      "answer": "a",
+      "a": "Telangana",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the JSJB district awards, which districts received Rs. 2 crore each?",
+      "options": {
+        "a": "Warangal, Nirmal, Jangaon",
+        "b": "Bhadradri Kothagudem, Mahabubnagar",
+        "c": "Adilabad, Nalgonda, Mancherial",
+        "d": "Khammam, Nizamabad, Karimnagar"
+      },
+      "answer": "c",
+      "a": "Adilabad, Nalgonda, Mancherial",
+      "e": "",
+      "table": {
+        "headers": [
+          "District(s)",
+          "Award Amount"
+        ],
+        "rows": [
+          [
+            "Adilabad, Nalgonda, Mancherial",
+            "Rs. 2 crore each"
+          ],
+          [
+            "Warangal, Nirmal, Jangaon",
+            "Rs. 1 crore each"
+          ],
+          [
+            "Bhadradri Kothagudem, Mahabubnagar",
+            "Rs. 25 lakh each"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the toll-free number of the 24x7 Call Centre for drinking water grievances?",
+      "options": {
+        "a": "1918",
+        "b": "1930",
+        "c": "1912",
+        "d": "1916"
+      },
+      "answer": "d",
+      "a": "1916",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the MGNREGA enacted?",
+      "options": {
+        "a": "2004",
+        "b": "2006",
+        "c": "2008",
+        "d": "2005"
+      },
+      "answer": "d",
+      "a": "2005",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Up to how many days of employment does MGNREGA guarantee per financial year to a demanding household?",
+      "options": {
+        "a": "120 days",
+        "b": "100 days",
+        "c": "90 days",
+        "d": "80 days"
+      },
+      "answer": "b",
+      "a": "100 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the focus areas of MGNREGS expenditure during 2025-26, which category received the highest allocation?",
+      "options": {
+        "a": "Afforestation",
+        "b": "CC Roads to agriculture fields",
+        "c": "Watershed management",
+        "d": "Land Development"
+      },
+      "answer": "b",
+      "a": "CC Roads to agriculture fields",
+      "e": "",
+      "table": {
+        "headers": [
+          "Focus Area",
+          "Expenditure (Rs. Crore)"
+        ],
+        "rows": [
+          [
+            "CC Roads to agriculture fields",
+            "1,021.3"
+          ],
+          [
+            "Watershed management",
+            "358.9"
+          ],
+          [
+            "Other Works",
+            "282.7"
+          ],
+          [
+            "Land Development",
+            "268.3"
+          ],
+          [
+            "Afforestation",
+            "219.7"
+          ],
+          [
+            "Irrigation – Field/Feeder Channels",
+            "171.7"
+          ],
+          [
+            "Promotion of fisheries",
+            "119.6"
+          ],
+          [
+            "Traditional water bodies",
+            "99.5"
+          ],
+          [
+            "Water Conservation",
+            "81.6"
+          ],
+          [
+            "Construction of buildings",
+            "75.5"
+          ],
+          [
+            "Rural sanitation",
+            "74.7"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Under the district-wise MGNREGA performance (as on 6th March 2026), which district recorded the highest achievement percentage?",
+      "options": {
+        "a": "Bhadradri Kothagudem",
+        "b": "Adilabad",
+        "c": "Rajanna Sircilla",
+        "d": "Karimnagar"
+      },
+      "answer": "c",
+      "a": "Rajanna Sircilla",
+      "e": "Rajanna Sircilla recorded 100.10% achievement; Karimnagar (96.9%), Bhadradri Kothagudem (94.2%), Khammam (91.8%) also performed strongly among named top performers.",
+      "table": {
+        "headers": [
+          "District",
+          "Targeted (lakh)",
+          "Generated (lakh)",
+          "Achievement"
+        ],
+        "rows": [
+          [
+            "Adilabad",
+            "44.8",
+            "41.2",
+            "92.00%"
+          ],
+          [
+            "Bhadradri Kothagudem",
+            "32.5",
+            "30.6",
+            "94.20%"
+          ],
+          [
+            "Hanumakonda",
+            "11.2",
+            "9.8",
+            "87.40%"
+          ],
+          [
+            "Jagtial",
+            "19.8",
+            "15.9",
+            "80.30%"
+          ],
+          [
+            "Jangaon",
+            "17.0",
+            "15.5",
+            "90.90%"
+          ],
+          [
+            "Jayashankar Bhupalpally",
+            "12.9",
+            "9.9",
+            "77.00%"
+          ],
+          [
+            "Jogulamba Gadwal",
+            "13.5",
+            "10.1",
+            "74.60%"
+          ],
+          [
+            "Kamareddy",
+            "22.2",
+            "15.4",
+            "69.30%"
+          ],
+          [
+            "Khammam",
+            "34.9",
+            "32.0",
+            "91.80%"
+          ],
+          [
+            "Kumuram Bheem Asifabad",
+            "28.3",
+            "25.1",
+            "88.60%"
+          ],
+          [
+            "Mahabubabad",
+            "28.6",
+            "26.5",
+            "92.40%"
+          ],
+          [
+            "Mahabubnagar",
+            "17.8",
+            "15.7",
+            "88.00%"
+          ],
+          [
+            "Mancherial",
+            "21.0",
+            "18.8",
+            "89.40%"
+          ],
+          [
+            "Medak",
+            "25.3",
+            "23.8",
+            "94.10%"
+          ],
+          [
+            "Mulugu",
+            "10.3",
+            "9.5",
+            "92.20%"
+          ],
+          [
+            "Nagarkurnool",
+            "20.2",
+            "16.5",
+            "81.60%"
+          ],
+          [
+            "Nalgonda",
+            "59.5",
+            "52.2",
+            "87.70%"
+          ],
+          [
+            "Narayanpet",
+            "12.2",
+            "9.5",
+            "77.40%"
+          ],
+          [
+            "Nirmal",
+            "32.0",
+            "28.0",
+            "87.40%"
+          ],
+          [
+            "Nizamabad",
+            "29.9",
+            "19.5",
+            "65.20%"
+          ],
+          [
+            "Peddapalli",
+            "15.2",
+            "14.2",
+            "93.50%"
+          ],
+          [
+            "Rajanna Sircilla",
+            "13.0",
+            "13.0",
+            "100.10%"
+          ],
+          [
+            "Rangareddy",
+            "14.4",
+            "12.8",
+            "89.10%"
+          ],
+          [
+            "Sangareddy",
+            "31.0",
+            "23.3",
+            "75.10%"
+          ],
+          [
+            "Siddipet",
+            "35.5",
+            "33.1",
+            "93.00%"
+          ],
+          [
+            "Suryapet",
+            "37.5",
+            "33.1",
+            "90.10%"
+          ],
+          [
+            "Vikarabad",
+            "44.9",
+            "40.3",
+            "89.00%"
+          ],
+          [
+            "Wanaparthy",
+            "14.9",
+            "10.9",
+            "73.10%"
+          ],
+          [
+            "Warangal",
+            "13.2",
+            "12.2",
+            "92.40%"
+          ],
+          [
+            "Yadadri Bhuvanagiri",
+            "19.9",
+            "18.6",
+            "93.30%"
+          ],
+          [
+            "Total",
+            "750.0",
+            "652.9",
+            "87.10%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the lowest MGNREGA achievement percentage during 2025-26?",
+      "options": {
+        "a": "Kamareddy",
+        "b": "Wanaparthy",
+        "c": "Jogulamba Gadwal",
+        "d": "Nizamabad"
+      },
+      "answer": "d",
+      "a": "Nizamabad",
+      "e": "Nizamabad recorded 65.2%; Kamareddy (69.3%), Wanaparthy (73.1%) and Jogulamba Gadwal (74.6%) also showed lower achievement rates.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When was Panula Jathara 2025 launched?",
+      "options": {
+        "a": "4th March 2026",
+        "b": "22nd August 2025",
+        "c": "5th December 2024",
+        "d": "19th November 2025"
+      },
+      "answer": "b",
+      "a": "22nd August 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total value of works commenced under Panula Jathara 2025?",
+      "options": {
+        "a": "Rs. 1,994 crore",
+        "b": "Rs. 2,773 crore",
+        "c": "Rs. 2,199 crore",
+        "d": "Rs. 205 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 2,199 crore",
+      "e": "Covering 1,01,589 works; of these, 13,552 works (Rs. 205 crore) were launched and sanction orders were issued for 88,037 works (~Rs. 1,994 crore).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the Centre-State funding ratio under WDC-PMKSY 2.0?",
+      "options": {
+        "a": "60:40",
+        "b": "90:10",
+        "c": "50:50",
+        "d": "70:30"
+      },
+      "answer": "a",
+      "a": "60:40",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which month and year was the Indiramma Atmeeya Bharosa scheme launched?",
+      "options": {
+        "a": "March 2026",
+        "b": "November 2025",
+        "c": "August 2025",
+        "d": "January 2025"
+      },
+      "answer": "d",
+      "a": "January 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under IAB eligibility, for how many days must a household have worked during 2023-24 as MGNREGS job card holders?",
+      "options": {
+        "a": "At least 15 days",
+        "b": "At least 20 days",
+        "c": "At least 30 days",
+        "d": "At least 25 days"
+      },
+      "answer": "b",
+      "a": "At least 20 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the target age group for skill training under the EGMM?",
+      "options": {
+        "a": "15–30 years",
+        "b": "21–40 years",
+        "c": "18–40 years",
+        "d": "18–35 years"
+      },
+      "answer": "d",
+      "a": "18–35 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Mall Gram Panchayat, which secured First Rank under ANPSA 2025, is located in which district?",
+      "options": {
+        "a": "Rangareddy",
+        "b": "Medak",
+        "c": "Nalgonda",
+        "d": "Khammam"
+      },
+      "answer": "a",
+      "a": "Rangareddy",
+      "e": "Situated in Yacharam Mandal, home to 3,211 residents.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What financial incentive did Mall Gram Panchayat win under the Atma Nirbhar Panchayat Special Award (ANPSA), 2025?",
+      "options": {
+        "a": "Rs. 1 crore",
+        "b": "Rs. 2 crore",
+        "c": "Rs. 25 lakh",
+        "d": "Rs. 50 lakh"
+      },
+      "answer": "a",
+      "a": "Rs. 1 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many PwD SHGs were formed during 2025-26 with over 44,200 members?",
+      "options": {
+        "a": "9,182",
+        "b": "2,934",
+        "c": "8,669",
+        "d": "6,449"
+      },
+      "answer": "d",
+      "a": "6,449",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the sum assured per SHG member under Pramada Bheema for accidental death?",
+      "options": {
+        "a": "Rs. 10 lakh",
+        "b": "Rs. 2 lakh",
+        "c": "Rs. 5 lakh",
+        "d": "Rs. 1 lakh"
+      },
+      "answer": "a",
+      "a": "Rs. 10 lakh",
+      "e": "During 2025-26, 237 claims totalling Rs. 23.70 crore were settled under this scheme.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the maximum outstanding bank loan covered per member under Loan Bheema in the event of death?",
+      "options": {
+        "a": "Rs. 5 lakh",
+        "b": "Rs. 1 lakh",
+        "c": "Rs. 10 lakh",
+        "d": "Rs. 2 lakh"
+      },
+      "answer": "d",
+      "a": "Rs. 2 lakh",
+      "e": "During 2025-26, 2,993 claims worth Rs. 23.72 crore were settled under this scheme.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the MoU with ICRISAT, how many agro-processing units per mandal are planned?",
+      "options": {
+        "a": "2",
+        "b": "10",
+        "c": "5",
+        "d": "3"
+      },
+      "answer": "c",
+      "a": "5",
+      "e": "95 proposals were prepared in 2025-26, with Rs. 26.32 crore under release from NRLM.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the funding ratio under the Start-Up Village Entrepreneurship Programme (SVEP)?",
+      "options": {
+        "a": "60:40",
+        "b": "80:20",
+        "c": "50:50",
+        "d": "70:30"
+      },
+      "answer": "a",
+      "a": "60:40",
+      "e": "Operational in 12 blocks across 12 districts.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When was the Indira Mahila Shakti Bazaar inaugurated?",
+      "options": {
+        "a": "4th March 2026",
+        "b": "19th November 2025",
+        "c": "5th December 2024",
+        "d": "22nd August 2025"
+      },
+      "answer": "c",
+      "a": "5th December 2024",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During Kharif 2025-26, how much paddy was procured through SHG-managed PPCs?",
+      "options": {
+        "a": "25.43 lakh MT",
+        "b": "4.48 lakh MT",
+        "c": "6,014.62 lakh MT",
+        "d": "80.60 lakh MT"
+      },
+      "answer": "a",
+      "a": "25.43 lakh MT",
+      "e": "Worth Rs. 6,014.62 crore, benefiting 4.48 lakh farmers, with a commission of Rs. 80.60 crore earned.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Solar Power Plants Initiative, how much solar capacity is planned across 31 districts?",
+      "options": {
+        "a": "5 MW",
+        "b": "1 MW",
+        "c": "10 MW",
+        "d": "2 MW"
+      },
+      "answer": "d",
+      "a": "2 MW",
+      "e": "MoUs signed with TGREDCO, TGSPDCL, and TGNPDCL.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Into how many categories of pension does the Cheyutha Pension Scheme disburse assistance?",
+      "options": {
+        "a": "9",
+        "b": "8",
+        "c": "13",
+        "d": "11"
+      },
+      "answer": "d",
+      "a": "11",
+      "e": "Includes Old Age, Widow, Persons with Disabilities, Toddy Tappers, Weavers, Filaria Patients, ART Patients, Dialysis Patients, Beedi Workers, Single Women, and Beedi Thekadars.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Telangana's \"Vision 2047\" roadmap, what does the \"CURE\" region stand for?",
+      "options": {
+        "a": "Coastal Urban Region",
+        "b": "Central Urban Reform",
+        "c": "Composite Urban Region",
+        "d": "Core Urban Region"
+      },
+      "answer": "d",
+      "a": "Core Urban Region",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the Core Urban Region (CURE) envisioned to evolve into?",
+      "options": {
+        "a": "An eco-tourism corridor",
+        "b": "A climate-smart agricultural belt",
+        "c": "A manufacturing and logistics engine",
+        "d": "A net-zero, knowledge-driven global hub"
+      },
+      "answer": "d",
+      "a": "A net-zero, knowledge-driven global hub",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the Peri-Urban Region (PURE) envisioned to emerge as?",
+      "options": {
+        "a": "A manufacturing and logistics engine",
+        "b": "A financial services hub",
+        "c": "A rural agri revival zone",
+        "d": "A net-zero global hub"
+      },
+      "answer": "a",
+      "a": "A manufacturing and logistics engine",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT listed as a focus area for revitalising the Rural Agri Region (RARE)?",
+      "options": {
+        "a": "Eco-tourism",
+        "b": "Food processing",
+        "c": "Climate-smart agriculture",
+        "d": "Heavy industries"
+      },
+      "answer": "d",
+      "a": "Heavy industries",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Since which date did the first phase of Praja Palana begin across every Gram Panchayat and Municipal Ward?",
+      "options": {
+        "a": "14th April 2025",
+        "b": "6th March 2026",
+        "c": "18th November 2025",
+        "d": "28th December 2023"
+      },
+      "answer": "d",
+      "a": "28th December 2023",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Praja Palana Seva Kendras (PPSKs) were established?",
+      "options": {
+        "a": "846",
+        "b": "5,000",
+        "c": "1,405",
+        "d": "500"
+      },
+      "answer": "a",
+      "a": "846",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Maha Lakshmi scheme, subsidised LPG cylinders are provided at what price?",
+      "options": {
+        "a": "Rs.300",
+        "b": "Rs.5",
+        "c": "Rs.500",
+        "d": "Rs.750"
+      },
+      "answer": "c",
+      "a": "Rs.500",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Gruha Jyothi, free electricity is provided up to how many units?",
+      "options": {
+        "a": "150 units",
+        "b": "250 units",
+        "c": "100 units",
+        "d": "200 units"
+      },
+      "answer": "d",
+      "a": "200 units",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On which two days can citizens personally submit petitions under the Prajavani Programme?",
+      "options": {
+        "a": "Monday and Thursday",
+        "b": "Wednesday and Saturday",
+        "c": "Tuesday and Friday",
+        "d": "Monday and Friday"
+      },
+      "answer": "c",
+      "a": "Tuesday and Friday",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the subsidised meal price offered at Prajabhavan under Prajavani?",
+      "options": {
+        "a": "Rs.10/-",
+        "b": "Free",
+        "c": "Rs.1/-",
+        "d": "Rs.5/-"
+      },
+      "answer": "d",
+      "a": "Rs.5/-",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "e-Procurement requires officials to publish tenders exclusively via which mechanism?",
+      "options": {
+        "a": "Biometric authentication",
+        "b": "Digital Signature Certificate tokens",
+        "c": "Aadhaar eSign",
+        "d": "OTP verification"
+      },
+      "answer": "b",
+      "a": "Digital Signature Certificate tokens",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In February 2025, the Government of Telangana signed an MoU with which company to migrate the eOffice workload to the cloud?",
+      "options": {
+        "a": "Meta",
+        "b": "Microsoft",
+        "c": "Amazon",
+        "d": "Google"
+      },
+      "answer": "b",
+      "a": "Microsoft",
+      "e": "The migration was to the Azure Cloud, alongside an upgrade from eOffice Version 5.x to 7.x.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Chatbot MEDHA is an AI-powered chatbot operating on which platform?",
+      "options": {
+        "a": "A dedicated mobile app",
+        "b": "WhatsApp",
+        "c": "Telegram",
+        "d": "SMS"
+      },
+      "answer": "b",
+      "a": "WhatsApp",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In how many languages does Chatbot MEDHA offer support?",
+      "options": {
+        "a": "Three",
+        "b": "Four",
+        "c": "Two",
+        "d": "One"
+      },
+      "answer": "c",
+      "a": "Two",
+      "e": "MEDHA offers support in both English and Telugu.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What AI-based tool does the department use to mask sensitive Aadhaar numbers on certified copies?",
+      "options": {
+        "a": "Aadhaar NIBHRIT",
+        "b": "Bhu Mitra",
+        "c": "Parichay",
+        "d": "DARPAN"
+      },
+      "answer": "a",
+      "a": "Aadhaar NIBHRIT",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "T-SAT is recognised as India's No.1 State Educational Network in which sector?",
+      "options": {
+        "a": "Digital Governance",
+        "b": "Skills, Academics & Training",
+        "c": "Agriculture and Rural Development",
+        "d": "Health and Wellness"
+      },
+      "answer": "b",
+      "a": "Skills, Academics & Training",
+      "e": "T-SAT stands for \"Telangana Skills, Academics & Training.\"",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is T-SAT's motto?",
+      "options": {
+        "a": "Educate. Empower. Enlighten.",
+        "b": "Skill. Train. Transform.",
+        "c": "Connect. Learn. Achieve.",
+        "d": "Learn. Grow. Succeed."
+      },
+      "answer": "a",
+      "a": "Educate. Empower. Enlighten.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT one of T-SAT's five specialised YouTube channels?",
+      "options": {
+        "a": "TSAT Nipuna",
+        "b": "TSAT Startup",
+        "c": "TSAT Vidya",
+        "d": "TSAT Agri"
+      },
+      "answer": "b",
+      "a": "TSAT Startup",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Telangana Bhu Bharati (Record of Rights in Land) Act, 2025 officially came into force on which date?",
+      "options": {
+        "a": "1st March 2026",
+        "b": "28th December 2023",
+        "c": "6th March 2026",
+        "d": "14th April 2025"
+      },
+      "answer": "d",
+      "a": "14th April 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the name of the unique identification number assigned to every land parcel under the Bhu Bharati Act?",
+      "options": {
+        "a": "Bhu Mitra",
+        "b": "Bhudhaar",
+        "c": "Parichay",
+        "d": "RoR ID"
+      },
+      "answer": "b",
+      "a": "Bhudhaar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the name of the AI-powered chatbot supporting the Bhu Bharati Portal?",
+      "options": {
+        "a": "MEDHA",
+        "b": "Saarthi",
+        "c": "Sentinel",
+        "d": "Bhu Mitra"
+      },
+      "answer": "d",
+      "a": "Bhu Mitra",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which month was the Mee Ticket App launched?",
+      "options": {
+        "a": "November 2025",
+        "b": "April 2025",
+        "c": "March 2024",
+        "d": "January 2025"
+      },
+      "answer": "d",
+      "a": "January 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who launched MeeSeva through WhatsApp on 18th November 2025?",
+      "options": {
+        "a": "Hon'ble Minister for IT Shri D. Sridhar Babu",
+        "b": "The e-Governance Secretary",
+        "c": "The Director General of Police",
+        "d": "The Chief Minister"
+      },
+      "answer": "a",
+      "a": "Hon'ble Minister for IT Shri D. Sridhar Babu",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's MeeSeva WhatsApp chatbot was implemented in collaboration with which company?",
+      "options": {
+        "a": "Meta",
+        "b": "Amazon",
+        "c": "Google",
+        "d": "Microsoft"
+      },
+      "answer": "a",
+      "a": "Meta",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total reservation percentage provided in education and public employment under the Telangana Backward Classes, Scheduled Castes and Scheduled Tribes Act, 2025?",
+      "options": {
+        "a": "50%",
+        "b": "33%",
+        "c": "42%",
+        "d": "27%"
+      },
+      "answer": "c",
+      "a": "42%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "By what percentage did cybercrime reduce in Telangana in 2025, contrasting with a national increase?",
+      "options": {
+        "a": "10%",
+        "b": "24%",
+        "c": "2%",
+        "d": "23%"
+      },
+      "answer": "c",
+      "a": "2%",
+      "e": "Nationally, cybercrime increased by approximately 24% during the same period.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TGCSB reduced the 1930 helpline's average waiting time from 6 minutes in 2023 to how many minutes in 2025?",
+      "options": {
+        "a": "5 minutes",
+        "b": "3 minutes",
+        "c": "2 minutes",
+        "d": "1 minute"
+      },
+      "answer": "b",
+      "a": "3 minutes",
+      "e": "Zero waiting time with a 100% call answer rate was achieved in 2026.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TGCSB organised SHIELD 2025, a two-day cybersecurity conclave, in collaboration with which organisation?",
+      "options": {
+        "a": "Society for Cyberabad Security Council (SCSC)",
+        "b": "IIIT Hyderabad",
+        "c": "NALSAR University of Law",
+        "d": "Indian School of Business"
+      },
+      "answer": "a",
+      "a": "Society for Cyberabad Security Council (SCSC)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is \"1930 Saarthi,\" launched under SHIELD 2.0 in February 2026?",
+      "options": {
+        "a": "A social media monitoring dashboard",
+        "b": "An AI Voice Agent integrated with the 1930 helpline",
+        "c": "A cyber forensic lab",
+        "d": "A SIM verification tool"
+      },
+      "answer": "b",
+      "a": "An AI Voice Agent integrated with the 1930 helpline",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TGCSB collaborated with IIIT Hyderabad to develop which Cyber Innovation Hub?",
+      "options": {
+        "a": "Vyuha Labs",
+        "b": "CipherSprint",
+        "c": "Sentinel",
+        "d": "C-Sight"
+      },
+      "answer": "a",
+      "a": "Vyuha Labs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In June 2025, the Telangana Anti-Narcotics Bureau (TGANB) was renamed to which name?",
+      "options": {
+        "a": "TGCSB",
+        "b": "SHIELD",
+        "c": "SAHAS",
+        "d": "EAGLE (Elite Action Group for Drug Law Enforcement)"
+      },
+      "answer": "d",
+      "a": "EAGLE (Elite Action Group for Drug Law Enforcement)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which month was the T-Safe service launched?",
+      "options": {
+        "a": "March 2024",
+        "b": "April 2025",
+        "c": "November 2025",
+        "d": "January 2025"
+      },
+      "answer": "a",
+      "a": "March 2024",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What are the names of the special drives conducted by AHTU to rescue children?",
+      "options": {
+        "a": "Smile and Muskaan",
+        "b": "Operation ROPE and SHIELD",
+        "c": "DARPAN and Bharosa",
+        "d": "SAHAS and Pride Place"
+      },
+      "answer": "a",
+      "a": "Smile and Muskaan",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The DARPAN application, used to trace missing children, is based on which technology?",
+      "options": {
+        "a": "Facial recognition",
+        "b": "Iris scanning",
+        "c": "Voice recognition",
+        "d": "Fingerprint biometrics"
+      },
+      "answer": "a",
+      "a": "Facial recognition",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which was the first State in India to establish NIVRUTTI De-addiction Centres for inmates?",
+      "options": {
+        "a": "Telangana",
+        "b": "Karnataka",
+        "c": "Andhra Pradesh",
+        "d": "Tamil Nadu"
+      },
+      "answer": "a",
+      "a": "Telangana",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which prison was awarded a Gold Medal as the Best Hygiene Prison in India in 2025?",
+      "options": {
+        "a": "Warangal Central Prison",
+        "b": "Karimnagar Central Prison",
+        "c": "Medchal Central Prison",
+        "d": "Cherlapalli Central Prison"
+      },
+      "answer": "d",
+      "a": "Cherlapalli Central Prison",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the name of the digital exchange central to Telangana's planned \"zero-touch\" digital transformation?",
+      "options": {
+        "a": "TGCSB",
+        "b": "TGDeX",
+        "c": "TGPSC",
+        "d": "TGANB"
+      },
+      "answer": "b",
+      "a": "TGDeX",
+      "e": "",
+      "table": null
+    }
+  ]
+}

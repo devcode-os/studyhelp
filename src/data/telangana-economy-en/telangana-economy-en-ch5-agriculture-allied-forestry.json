@@ -1,0 +1,2964 @@
+{
+  "slug": "telangana-economy-en-ch5-agriculture-allied-forestry",
+  "chapterNumber": 5,
+  "title": "Agriculture, Allied Sectors & Forestry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "As per the PLFS quarterly report for Oct-Dec 2025, what percentage of Telangana's rural population is engaged in agriculture and its allied activities?",
+      "options": {
+        "a": "62.6%",
+        "b": "57.0%",
+        "c": "78.9%",
+        "d": "48.4%"
+      },
+      "answer": "a",
+      "a": "62.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 2025-26 (BE), what is the budget allocation for agriculture and allied activities in Telangana?",
+      "options": {
+        "a": "Rs. 67,722 crore",
+        "b": "Rs. 36,504 crore",
+        "c": "Rs. 21,351 crore",
+        "d": "Rs. 26,684 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 26,684 crore",
+      "e": "This accounts for about 10.1% of the Budget Estimates.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the primary sector's contribution to Telangana's GSVA at current prices in 2025-26 (PAE)?",
+      "options": {
+        "a": "Rs. 2,46,282 crore",
+        "b": "Rs. 1,03,525 crore",
+        "c": "Rs. 2,49,691 crore",
+        "d": "Rs. 2,13,799 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 2,49,691 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total value of the Agriculture and Allied sector in Telangana for 2025-26 (PAE)?",
+      "options": {
+        "a": "Rs. 2,13,799 crore",
+        "b": "Rs. 2,49,691 crore",
+        "c": "Rs. 1,03,525 crore",
+        "d": "Rs. 95,373 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 2,13,799 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which sub-sector is the largest component of Telangana's Agriculture and Allied Sectors GSVA in 2025-26 (PAE)?",
+      "options": {
+        "a": "Livestock",
+        "b": "Fishing and Aquaculture",
+        "c": "Forestry and Logging",
+        "d": "Crops"
+      },
+      "answer": "a",
+      "a": "Livestock",
+      "e": "",
+      "table": {
+        "headers": [
+          "Sub-sector",
+          "Contribution (Rs. crore)",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "Livestock",
+            "1,03,525",
+            "48.4"
+          ],
+          [
+            "Crops",
+            "95,373",
+            "44.6"
+          ],
+          [
+            "Fishing and Aquaculture",
+            "7,725",
+            "3.6"
+          ],
+          [
+            "Forestry and Logging",
+            "7,176",
+            "3.4"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the estimated value of the crops sub-sector in Telangana's Agriculture and Allied Sectors GSVA for 2025-26 (PAE)?",
+      "options": {
+        "a": "Rs. 7,725 crore",
+        "b": "Rs. 1,03,525 crore",
+        "c": "Rs. 95,373 crore",
+        "d": "Rs. 7,176 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 95,373 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana ranks which position among Indian states by geographical area?",
+      "options": {
+        "a": "11th",
+        "b": "10th",
+        "c": "9th",
+        "d": "12th"
+      },
+      "answer": "a",
+      "a": "11th",
+      "e": "Telangana's geographical area is over 276.95 lakh acres (112.08 lakh hectares).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of Telangana's total area comes under Net Sown Area (2024-25)?",
+      "options": {
+        "a": "50.13%",
+        "b": "5.42%",
+        "c": "24.69%",
+        "d": "7.62%"
+      },
+      "answer": "a",
+      "a": "50.13%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Land Use Category",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "Net Area Sown",
+            "50.13"
+          ],
+          [
+            "Forests",
+            "24.69"
+          ],
+          [
+            "Land put to Non-Agricultural Uses",
+            "7.62"
+          ],
+          [
+            "Barren and Uncultivable Land",
+            "5.42"
+          ],
+          [
+            "Current Fallows",
+            "5.63"
+          ],
+          [
+            "Other Fallow Lands",
+            "2.60"
+          ],
+          [
+            "Permanent Pastures & Other Grazing Lands",
+            "2.23"
+          ],
+          [
+            "Culturable Waste",
+            "0.92"
+          ],
+          [
+            "Land under Miscellaneous",
+            "0.76"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Agriculture Census 2021-22, what is the total number of operational holdings in Telangana?",
+      "options": {
+        "a": "59.48 lakh",
+        "b": "7,059 lakh",
+        "c": "70.59 lakh",
+        "d": "155.97 lakh"
+      },
+      "answer": "c",
+      "a": "70.59 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the 11th Agriculture Census (2021-22), which size class holds the largest share of total landholdings in Telangana?",
+      "options": {
+        "a": "Marginal",
+        "b": "Medium",
+        "c": "Small",
+        "d": "Semi-Medium"
+      },
+      "answer": "a",
+      "a": "Marginal",
+      "e": "",
+      "table": {
+        "headers": [
+          "Size Class (Acres)",
+          "No. of Holdings ('000)",
+          "% of Holdings",
+          "% of Area Operated"
+        ],
+        "rows": [
+          [
+            "Marginal (Below 2.47)",
+            "4,847",
+            "68.65",
+            "32.74"
+          ],
+          [
+            "Small (2.48–4.94)",
+            "1,600",
+            "22.67",
+            "35.44"
+          ],
+          [
+            "Semi-Medium (4.95-9.88)",
+            "504",
+            "7.15",
+            "20.56"
+          ],
+          [
+            "Medium (9.89-24.77)",
+            "99",
+            "1.40",
+            "8.66"
+          ],
+          [
+            "Large (24.78 and Above)",
+            "9",
+            "0.13",
+            "2.60"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the average landholding size in Telangana as per the 2021-22 Agriculture Census?",
+      "options": {
+        "a": "2.68 acres",
+        "b": "2.47 acres",
+        "c": "3.22 acres",
+        "d": "2.21 acres"
+      },
+      "answer": "d",
+      "a": "2.21 acres",
+      "e": "This is down from 2.47 acres recorded in 2015-16.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Between 2015-16 and 2021-22, marginal holdings as a share of total landholdings rose from 64.56% to what percentage?",
+      "options": {
+        "a": "70.12%",
+        "b": "68.65%",
+        "c": "66.87%",
+        "d": "65.15%"
+      },
+      "answer": "b",
+      "a": "68.65%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the 11th Agriculture Census, which social group category holds the largest share of total landholdings in Telangana?",
+      "options": {
+        "a": "Others",
+        "b": "Scheduled Tribes",
+        "c": "Scheduled Caste",
+        "d": "Institutional"
+      },
+      "answer": "a",
+      "a": "Others",
+      "e": "",
+      "table": {
+        "headers": [
+          "Social Group",
+          "% of Holdings",
+          "% of Area Operated"
+        ],
+        "rows": [
+          [
+            "Scheduled Caste",
+            "13.85",
+            "9.68"
+          ],
+          [
+            "Scheduled Tribes",
+            "11.81",
+            "11.93"
+          ],
+          [
+            "Institutional",
+            "0.0",
+            "0.14"
+          ],
+          [
+            "Others",
+            "74.33",
+            "78.25"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Between 2015-16 and 2021-22, Scheduled Caste landholdings as a percent of total holdings increased from 11.77% to what?",
+      "options": {
+        "a": "13.85%",
+        "b": "14.2%",
+        "c": "12.5%",
+        "d": "11.81%"
+      },
+      "answer": "a",
+      "a": "13.85%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the highest average land holding size as per the Agriculture Census 2021-22?",
+      "options": {
+        "a": "Kumuram Bheem",
+        "b": "Bhadradri Kothagudem",
+        "c": "Jogulamba Gadwal",
+        "d": "Adilabad"
+      },
+      "answer": "d",
+      "a": "Adilabad",
+      "e": "Adilabad recorded 3.78 acres, followed by Kumuram Bheem (3.42 acres) and Bhadradri Kothagudem (3.22 acres).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the smallest average land holding size as per the Agriculture Census 2021-22?",
+      "options": {
+        "a": "Karimnagar",
+        "b": "Warangal",
+        "c": "Medak",
+        "d": "Kamareddy"
+      },
+      "answer": "c",
+      "a": "Medak",
+      "e": "Medak recorded 1.49 acres, the lowest among all districts.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How much rainfall did Telangana receive in 2025-26 (up to 28th February 2026)?",
+      "options": {
+        "a": "988.4 mm",
+        "b": "1,189.6 mm",
+        "c": "1,184.5 mm",
+        "d": "863.3 mm"
+      },
+      "answer": "c",
+      "a": "1,184.5 mm",
+      "e": "This is 37% in excess of the normal rainfall of 863.3 mm.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Rainfall in Telangana is measured through Manual Rain Gauge Stations and which other network?",
+      "options": {
+        "a": "TGDPS Automatic Weather Stations",
+        "b": "NASA Ground Stations",
+        "c": "IMD Doppler Radars",
+        "d": "ISRO Satellite Sensors"
+      },
+      "answer": "a",
+      "a": "TGDPS Automatic Weather Stations",
+      "e": "TGDPS refers to the Telangana Development Planning Society; there are 591 Manual Rain Gauge Stations and 1,091 TGDPS AWS stations.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the highest percentage deviation in rainfall for 2025-26 (up to 28th February 2026)?",
+      "options": {
+        "a": "Siddipet",
+        "b": "Yadadri Bhuvanagiri",
+        "c": "Nagarkurnool",
+        "d": "Medak"
+      },
+      "answer": "c",
+      "a": "Nagarkurnool",
+      "e": "Nagarkurnool recorded 82% deviation, the highest among all districts.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the lowest percentage deviation in rainfall for 2025-26 (up to 28th February 2026)?",
+      "options": {
+        "a": "Jagtial",
+        "b": "Peddapalli",
+        "c": "Jayashankar",
+        "d": "Nizamabad"
+      },
+      "answer": "b",
+      "a": "Peddapalli",
+      "e": "Peddapalli recorded 2% deviation, the lowest among all districts.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During 2025-26 (up to February 2026), how many mandals in Telangana received excess rainfall?",
+      "options": {
+        "a": "158",
+        "b": "3",
+        "c": "621",
+        "d": "460"
+      },
+      "answer": "d",
+      "a": "460",
+      "e": "",
+      "table": {
+        "headers": [
+          "Rainfall Status",
+          "No. of Mandals"
+        ],
+        "rows": [
+          [
+            "Excess",
+            "460"
+          ],
+          [
+            "Normal",
+            "158"
+          ],
+          [
+            "Deficit",
+            "3"
+          ],
+          [
+            "Total Mandals",
+            "621"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which monsoon period recorded the highest percentage excess of rainfall over normal during 2025-26?",
+      "options": {
+        "a": "South West Monsoon",
+        "b": "Pre-Monsoon",
+        "c": "Winter Monsoon",
+        "d": "North East Monsoon"
+      },
+      "answer": "d",
+      "a": "North East Monsoon",
+      "e": "North East Monsoon (Oct-Dec 2025) recorded a 72% excess, higher than the South West Monsoon's 33% excess.",
+      "table": {
+        "headers": [
+          "Season",
+          "Normal (mm)",
+          "Actual (mm)",
+          "Deviation (%)",
+          "Status"
+        ],
+        "rows": [
+          [
+            "South West (Jun-Sep)",
+            "740.6",
+            "988.4",
+            "33",
+            "Excess"
+          ],
+          [
+            "North East (Oct-Dec)",
+            "110.2",
+            "189.6",
+            "72",
+            "Excess"
+          ],
+          [
+            "Winter (Jan-Feb)",
+            "12.5",
+            "6.5",
+            "-48",
+            "Deficit"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "During which month in 2025-26 did Telangana record its largest rainfall deficit?",
+      "options": {
+        "a": "November 2025",
+        "b": "January 2026",
+        "c": "December 2025",
+        "d": "June 2025"
+      },
+      "answer": "c",
+      "a": "December 2025",
+      "e": "December and January both recorded large deficits (-98% and -99% respectively), the sharpest shortfalls of the year.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's total foodgrain production in 2025-26 (SAE)?",
+      "options": {
+        "a": "236.87 lakh MTs",
+        "b": "189.45 lakh MTs",
+        "c": "207.95 lakh MTs",
+        "d": "232.10 lakh MTs"
+      },
+      "answer": "a",
+      "a": "236.87 lakh MTs",
+      "e": "This continues a sustained rise from 207.95 lakh MTs in 2023-24 and 232.10 lakh MTs in 2024-25.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's pulse production is estimated to decline to what level in 2025-26 (SAE)?",
+      "options": {
+        "a": "3.99 lakh MTs",
+        "b": "3.48 lakh MTs",
+        "c": "3.61 lakh MTs",
+        "d": "4.2 lakh MTs"
+      },
+      "answer": "b",
+      "a": "3.48 lakh MTs",
+      "e": "This is a decline from 3.99 lakh MTs in 2024-25, despite the overall growth trend in foodgrains.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's rice production in 2024-25?",
+      "options": {
+        "a": "187.19 lakh MT",
+        "b": "191.2 lakh MT",
+        "c": "173.93 lakh MT",
+        "d": "189.45 lakh MT"
+      },
+      "answer": "d",
+      "a": "189.45 lakh MT",
+      "e": "",
+      "table": {
+        "headers": [
+          "Crop",
+          "2023-24 (lakh MT)",
+          "2024-25 (lakh MT)",
+          "2025-26 SAE (lakh MT)"
+        ],
+        "rows": [
+          [
+            "Rice",
+            "173.93",
+            "189.45",
+            "187.19"
+          ],
+          [
+            "Cotton (Kapas)",
+            "26.35",
+            "30.24",
+            "31.64"
+          ],
+          [
+            "Maize",
+            "27.76",
+            "33.92",
+            "42.23"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which crop recorded the highest percentage growth in production between 2023-24 and 2025-26 (SAE)?",
+      "options": {
+        "a": "Pulses",
+        "b": "Maize",
+        "c": "Cotton",
+        "d": "Rice"
+      },
+      "answer": "b",
+      "a": "Maize",
+      "e": "Maize production rose from 27.76 lakh MT to 42.23 lakh MT, a much steeper increase than rice or cotton over the same period.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the area under Paddy cultivation in Telangana in 2025-26 (SAE)?",
+      "options": {
+        "a": "127.03 lakh acres",
+        "b": "140.5 lakh acres",
+        "c": "118.09 lakh acres",
+        "d": "132.01 lakh acres"
+      },
+      "answer": "d",
+      "a": "132.01 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the top 5 crops saw its area decline between 2023-24 and 2025-26 (SAE)?",
+      "options": {
+        "a": "Redgram",
+        "b": "Maize",
+        "c": "Cotton",
+        "d": "Soyabean"
+      },
+      "answer": "d",
+      "a": "Soyabean",
+      "e": "Soyabean area declined from 4.49 lakh acres in 2023-24 to 3.81 lakh acres in 2024-25 and remained stagnant thereafter.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the Vanakalam season 2025-26 (SAE), what was Paddy's share of gross sown area?",
+      "options": {
+        "a": "34.18%",
+        "b": "46.89%",
+        "c": "47.12%",
+        "d": "47.70%"
+      },
+      "answer": "c",
+      "a": "47.12%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Paddy (%)",
+          "Cotton (%)",
+          "Maize (%)",
+          "Redgram (%)",
+          "Soyabean (%)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "46.89",
+            "31.95",
+            "3.79",
+            "3.11",
+            "3.19"
+          ],
+          [
+            "2024-25",
+            "47.70",
+            "31.97",
+            "3.74",
+            "3.72",
+            "2.72"
+          ],
+          [
+            "2025-26 (SAE)",
+            "47.12",
+            "34.18",
+            "4.66",
+            "2.91",
+            "2.56"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In the Vanakalam season, which crop's share of gross sown area rose the most from 2023-24 to 2025-26 (SAE)?",
+      "options": {
+        "a": "Maize",
+        "b": "Paddy",
+        "c": "Redgram",
+        "d": "Cotton"
+      },
+      "answer": "a",
+      "a": "Maize",
+      "e": "Maize's share rose from about 3.79% to 4.66%, a proportionally larger increase than Cotton's rise.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the Yasangi season 2025-26 (SAE), what was Paddy's share of gross sown area?",
+      "options": {
+        "a": "74.67%",
+        "b": "77.2%",
+        "c": "75.64%",
+        "d": "75.15%"
+      },
+      "answer": "d",
+      "a": "75.15%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Paddy (%)",
+          "Maize (%)",
+          "Jowar (%)",
+          "Bengalgram (%)",
+          "Groundnut (%)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "75.64",
+            "9.80",
+            "3.48",
+            "3.47",
+            "2.96"
+          ],
+          [
+            "2024-25",
+            "74.67",
+            "11.23",
+            "4.57",
+            "2.14",
+            "2.88"
+          ],
+          [
+            "2025-26 (SAE)",
+            "75.15",
+            "13.08",
+            "4.45",
+            "2.14",
+            "2.85"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In the Yasangi season, which crop showed the most notable upward trend in area share from 2023-24 to 2025-26?",
+      "options": {
+        "a": "Paddy",
+        "b": "Maize",
+        "c": "Bengalgram",
+        "d": "Groundnut"
+      },
+      "answer": "b",
+      "a": "Maize",
+      "e": "Maize's share rose from 9.80% in 2023-24 to 13.08% in 2025-26, reflecting growing cultivation interest.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's overall cropping intensity index for 2023-24?",
+      "options": {
+        "a": "145.6",
+        "b": "156.8",
+        "c": "143.5",
+        "d": "152.5"
+      },
+      "answer": "d",
+      "a": "152.5",
+      "e": "This was lower than India's average of 156.8.",
+      "table": {
+        "headers": [
+          "State",
+          "Cropping Intensity"
+        ],
+        "rows": [
+          [
+            "Punjab",
+            "201.1"
+          ],
+          [
+            "India",
+            "156.8"
+          ],
+          [
+            "Telangana",
+            "152.5"
+          ],
+          [
+            "Goa",
+            "114.2"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which state recorded the highest cropping intensity among non-special category states in 2023-24?",
+      "options": {
+        "a": "Punjab",
+        "b": "Madhya Pradesh",
+        "c": "Haryana",
+        "d": "West Bengal"
+      },
+      "answer": "a",
+      "a": "Punjab",
+      "e": "Punjab recorded 201.1, the highest among the compared states.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the highest cropping intensity in Telangana for 2024-25?",
+      "options": {
+        "a": "Bhadradri Kothagudem",
+        "b": "Mulugu",
+        "c": "Karimnagar",
+        "d": "Nizamabad"
+      },
+      "answer": "b",
+      "a": "Mulugu",
+      "e": "Mulugu recorded 318, far exceeding Nizamabad (199) and other high-intensity districts.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the lowest cropping intensity in Telangana for 2024-25?",
+      "options": {
+        "a": "Kumuram Bheem",
+        "b": "Vikarabad",
+        "c": "Rangareddy",
+        "d": "Jogulamba Gadwal"
+      },
+      "answer": "b",
+      "a": "Vikarabad",
+      "e": "Vikarabad recorded 114, the lowest among districts reported.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the paddy yield in Telangana for 2024-25?",
+      "options": {
+        "a": "5,458 kg/ha",
+        "b": "5,671 kg/ha",
+        "c": "5,527 kg/ha",
+        "d": "5,860 kg/ha"
+      },
+      "answer": "c",
+      "a": "5,527 kg/ha",
+      "e": "",
+      "table": {
+        "headers": [
+          "Crop",
+          "2023-24 (kg/ha)",
+          "2024-25 (kg/ha)"
+        ],
+        "rows": [
+          [
+            "Paddy",
+            "5,458",
+            "5,527"
+          ],
+          [
+            "Maize",
+            "5,671",
+            "5,860"
+          ],
+          [
+            "Redgram",
+            "812",
+            "934"
+          ],
+          [
+            "Cotton (Kapas)",
+            "1,449",
+            "1,668"
+          ],
+          [
+            "Soyabean",
+            "1,483",
+            "1,884"
+          ],
+          [
+            "Jowar",
+            "2,191",
+            "2,757"
+          ],
+          [
+            "Chillies",
+            "2,937",
+            "3,726"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which crop recorded the highest percentage yield growth between 2023-24 and 2024-25?",
+      "options": {
+        "a": "Jowar",
+        "b": "Soyabean",
+        "c": "Redgram",
+        "d": "Chillies"
+      },
+      "answer": "b",
+      "a": "Soyabean",
+      "e": "Soyabean yield rose from 1,483 kg/ha to 1,884 kg/ha, a 27.04% increase — the highest among all crops listed, ahead of Jowar (25.83%) and Chillies (26.86%).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which crop recorded a decline in yield between 2023-24 and 2024-25?",
+      "options": {
+        "a": "Cotton",
+        "b": "Bengalgram",
+        "c": "Groundnut",
+        "d": "Blackgram"
+      },
+      "answer": "c",
+      "a": "Groundnut",
+      "e": "Groundnut yield declined from 2,450 kg/ha to 2,106 kg/ha; Sesamum and Greengram also declined.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Cotton (Kapas) yield growth rate between 2023-24 and 2024-25?",
+      "options": {
+        "a": "18.94%",
+        "b": "15.02%",
+        "c": "4.51%",
+        "d": "15.11%"
+      },
+      "answer": "d",
+      "a": "15.11%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Rythu Bharosa Scheme, what is the enhanced investment support per acre per year?",
+      "options": {
+        "a": "Rs. 12,000",
+        "b": "Rs. 10,000",
+        "c": "Rs. 8,000",
+        "d": "Rs. 15,000"
+      },
+      "answer": "a",
+      "a": "Rs. 12,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Rythu Bima Scheme, what insurance amount is paid to the nominee in the event of an insured farmer's death?",
+      "options": {
+        "a": "Rs. 10 lakh",
+        "b": "Rs. 5 lakh",
+        "c": "Rs. 7 lakh",
+        "d": "Rs. 2 lakh"
+      },
+      "answer": "b",
+      "a": "Rs. 5 lakh",
+      "e": "The entire insurance premium is borne by the Government, covering landholding farmers aged 18 to 59 years.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Rythu Nestham, one Agriculture Extension Officer is positioned for every how many acres?",
+      "options": {
+        "a": "10,000",
+        "b": "1,000",
+        "c": "5,000",
+        "d": "2,500"
+      },
+      "answer": "c",
+      "a": "5,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the cost of the \"Real Time Solutions through Digital Platform\" project under Rythu Nestham?",
+      "options": {
+        "a": "Rs. 96.63 crore",
+        "b": "Rs. 47.03 crore",
+        "c": "Rs. 210.04 crore",
+        "d": "Rs. 101.93 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 96.63 crore",
+      "e": "This project establishes 2,601 video conferencing units, of which 1,600 have already been set up.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which university's scientists engage directly with farmers through Rythu Nestham's WEBEX-based sessions?",
+      "options": {
+        "a": "Indian Agricultural Research Institute",
+        "b": "Acharya N G Ranga Agricultural University",
+        "c": "Telangana State Agricultural University",
+        "d": "Professor Jayashankar Telangana Agricultural University"
+      },
+      "answer": "d",
+      "a": "Professor Jayashankar Telangana Agricultural University",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's agricultural credit target for 2024-25?",
+      "options": {
+        "a": "Rs. 92,197 crore",
+        "b": "Rs. 89,501.0 crore",
+        "c": "Rs. 90,795.2 crore",
+        "d": "Rs. 73,438.5 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 90,795.2 crore",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Target (Cr.)",
+          "Achievement (Cr.)",
+          "Percentage (%)"
+        ],
+        "rows": [
+          [
+            "2023-24",
+            "73,438.5",
+            "64,940.0",
+            "88.43"
+          ],
+          [
+            "2024-25",
+            "90,795.2",
+            "73,104.7",
+            "80.52"
+          ],
+          [
+            "2025-26*",
+            "89,501.0",
+            "72,084.0",
+            "80.54"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did Telangana achieve its highest percentage of agricultural credit target?",
+      "options": {
+        "a": "2024-25",
+        "b": "2025-26",
+        "c": "2023-24",
+        "d": "All years achieved equal percentage"
+      },
+      "answer": "c",
+      "a": "2023-24",
+      "e": "The state achieved 88.43% of the credit target in 2023-24, higher than in subsequent years.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the fertiliser allocation for Telangana in 2025-26 (as of Feb 2026)?",
+      "options": {
+        "a": "44.0 LMTs",
+        "b": "36.67 LMTs",
+        "c": "38.51 LMTs",
+        "d": "43.85 LMTs"
+      },
+      "answer": "d",
+      "a": "43.85 LMTs",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Allocation (LMTs)",
+          "Supplied (LMTs)"
+        ],
+        "rows": [
+          [
+            "2024-25",
+            "44.0",
+            "36.67"
+          ],
+          [
+            "2025-26*",
+            "43.85",
+            "38.51"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "The Urea Booking App developed by the Department of Agriculture has been implemented in how many districts?",
+      "options": {
+        "a": "28",
+        "b": "31",
+        "c": "33",
+        "d": "25"
+      },
+      "answer": "b",
+      "a": "31",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Urea Booking App, for how many hours is booked urea reserved for a farmer before the booking auto-expires?",
+      "options": {
+        "a": "72 hours",
+        "b": "24 hours",
+        "c": "48 hours",
+        "d": "12 hours"
+      },
+      "answer": "b",
+      "a": "24 hours",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Horticulture contributes about what percentage of Telangana's agricultural Gross Value of Output (GVO)?",
+      "options": {
+        "a": "15%",
+        "b": "25%",
+        "c": "20%",
+        "d": "6%"
+      },
+      "answer": "b",
+      "a": "25%",
+      "e": "This is despite occupying only 6% of the total agricultural area.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana ranks which position nationally in terms of overall horticultural area?",
+      "options": {
+        "a": "2nd",
+        "b": "12th",
+        "c": "5th",
+        "d": "4th"
+      },
+      "answer": "b",
+      "a": "12th",
+      "e": "Telangana stands 2nd nationally in area under oil palm cultivation, but 12th overall in horticultural area.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana is the 3rd largest producer of which horticulture crop nationally?",
+      "options": {
+        "a": "Turmeric",
+        "b": "Mango",
+        "c": "Oil palm",
+        "d": "Red chilli"
+      },
+      "answer": "d",
+      "a": "Red chilli",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What Oil Extraction Rate (OER) have Telangana's oil palm orchards achieved, the highest in the country?",
+      "options": {
+        "a": "25%",
+        "b": "15%",
+        "c": "20%",
+        "d": "18%"
+      },
+      "answer": "c",
+      "a": "20%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 2025-26, which horticulture sub-sector had the largest area under cultivation?",
+      "options": {
+        "a": "Vegetables",
+        "b": "Oil Palm",
+        "c": "Spices",
+        "d": "Fruits"
+      },
+      "answer": "d",
+      "a": "Fruits",
+      "e": "",
+      "table": {
+        "headers": [
+          "Sector",
+          "Area (Lakh Ac.)",
+          "Production (Lakh MTs)"
+        ],
+        "rows": [
+          [
+            "Fruits",
+            "4.56",
+            "21.06"
+          ],
+          [
+            "Vegetables",
+            "1.03",
+            "9.53"
+          ],
+          [
+            "Spices",
+            "3.14",
+            "7.23"
+          ],
+          [
+            "Oil Palm",
+            "2.90",
+            "3.71"
+          ],
+          [
+            "Flowers",
+            "0.06",
+            "0.58"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total area under Horticulture crops in Telangana in 2025-26?",
+      "options": {
+        "a": "4.56 lakh acres",
+        "b": "13.00 lakh acres",
+        "c": "42.22 lakh acres",
+        "d": "127.69 lakh acres"
+      },
+      "answer": "b",
+      "a": "13.00 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's oil palm processing mill established at Narmetta in Siddipet district has an initial capacity of how many Tons Per Hour (TPH)?",
+      "options": {
+        "a": "60 TPH",
+        "b": "90 TPH",
+        "c": "120 TPH",
+        "d": "30 TPH"
+      },
+      "answer": "d",
+      "a": "30 TPH",
+      "e": "This mill, costing Rs. 300 crore, is expandable to 120 TPH.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the current Fresh Fruit Bunches (FFB) price fixed by the State Government for oil palm (as of Feb 2026)?",
+      "options": {
+        "a": "Rs. 21,456 per MT",
+        "b": "Rs. 25,000 per MT",
+        "c": "Rs. 18,500 per MT",
+        "d": "Rs. 15,000 per MT"
+      },
+      "answer": "a",
+      "a": "Rs. 21,456 per MT",
+      "e": "This is the highest FFB price in the country.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's Oil Palm Fresh Fruit Bunches (FFB) production in 2025-26 (as on 27.01.2026)?",
+      "options": {
+        "a": "4.2 lakh MTs",
+        "b": "2.51 lakh MTs",
+        "c": "3.71 lakh MTs",
+        "d": "2.77 lakh MTs"
+      },
+      "answer": "c",
+      "a": "3.71 lakh MTs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Micro Irrigation Project (MIP), how many farmers benefited in 2025-26 (as of March 2026)?",
+      "options": {
+        "a": "31,899",
+        "b": "35,129",
+        "c": "35,643",
+        "d": "29,155"
+      },
+      "answer": "b",
+      "a": "35,129",
+      "e": "This covered 35,643 hectares with financial support of Rs. 292.4 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the 20th Livestock Census, what is Telangana's rank in total livestock population nationally?",
+      "options": {
+        "a": "12th",
+        "b": "8th",
+        "c": "1st",
+        "d": "3rd"
+      },
+      "answer": "b",
+      "a": "8th",
+      "e": "Telangana ranks 1st in sheep population and 3rd in poultry population nationally.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the 20th Livestock Census, which animal type has the highest population share of India's total in Telangana?",
+      "options": {
+        "a": "Buffalo",
+        "b": "Goat",
+        "c": "Cattle",
+        "d": "Sheep"
+      },
+      "answer": "d",
+      "a": "Sheep",
+      "e": "",
+      "table": {
+        "headers": [
+          "Animal Type",
+          "India (lakh)",
+          "Telangana (lakh)",
+          "% Share to India"
+        ],
+        "rows": [
+          [
+            "Cattle",
+            "1,925.23",
+            "42.31",
+            "2.20"
+          ],
+          [
+            "Buffalo",
+            "1,098.52",
+            "42.26",
+            "3.85"
+          ],
+          [
+            "Sheep",
+            "742.61",
+            "190.63",
+            "25.67"
+          ],
+          [
+            "Goat",
+            "1,488.85",
+            "49.35",
+            "3.31"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's total livestock population as per the 20th National Livestock Census 2019?",
+      "options": {
+        "a": "2.67 crore",
+        "b": "3.26 crore",
+        "c": "5.36 crore",
+        "d": "4.11 crore"
+      },
+      "answer": "b",
+      "a": "3.26 crore",
+      "e": "This is a 22% increase from 2012.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the livestock sector's contribution to Telangana's GSVA at current prices in 2025-26 (PAE)?",
+      "options": {
+        "a": "Rs. 2,49,691 crore",
+        "b": "Rs. 95,373 crore",
+        "c": "Rs. 1,03,525 crore",
+        "d": "Rs. 98,512 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 1,03,525 crore",
+      "e": "This registered a growth of 5.1% over 2024-25 (FRE).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's milk production in 2025-26 (AE)?",
+      "options": {
+        "a": "6,500 thousand tonnes",
+        "b": "6,175 thousand tonnes",
+        "c": "5,935 thousand tonnes",
+        "d": "7,000 thousand tonnes"
+      },
+      "answer": "b",
+      "a": "6,175 thousand tonnes",
+      "e": "",
+      "table": {
+        "headers": [
+          "Item",
+          "2024-25",
+          "2025-26 (AE)",
+          "% Change"
+        ],
+        "rows": [
+          [
+            "Milk ('000 Tonne)",
+            "5,935",
+            "6,175",
+            "4.04"
+          ],
+          [
+            "Eggs (Millions)",
+            "19,353",
+            "20,515",
+            "6.00"
+          ],
+          [
+            "Meat ('000 Tonne)",
+            "1,101",
+            "1,175",
+            "6.72"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which livestock product recorded the highest percentage growth between 2024-25 and 2025-26 (AE)?",
+      "options": {
+        "a": "Eggs",
+        "b": "Meat",
+        "c": "Milk",
+        "d": "All grew equally"
+      },
+      "answer": "b",
+      "a": "Meat",
+      "e": "Meat production grew by 6.72%, slightly higher than Eggs (6.00%) and Milk (4.04%).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During 2025-26 (up to January 2026), what was Telangana's fish and prawn production?",
+      "options": {
+        "a": "5.20 lakh tonnes",
+        "b": "4.54 lakh tonnes",
+        "c": "4.63 lakh tonnes",
+        "d": "4.39 lakh tonnes"
+      },
+      "answer": "b",
+      "a": "4.54 lakh tonnes",
+      "e": "This was against a target of 5.20 lakh tonnes, valued at Rs. 7,097 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's export-oriented wholesale fish market being established at Koheda, Hyderabad, has a project outlay of how much?",
+      "options": {
+        "a": "Rs. 2.50 crore",
+        "b": "Rs. 101.93 crore",
+        "c": "Rs. 47.03 crore",
+        "d": "Rs. 96.63 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 47.03 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's Centre of Excellence (CoE) for Murrel is being set up at which location?",
+      "options": {
+        "a": "Nampally",
+        "b": "Koheda, Hyderabad",
+        "c": "Lower Manair Dam Reservoir, Karimnagar",
+        "d": "Narmetta, Siddipet"
+      },
+      "answer": "c",
+      "a": "Lower Manair Dam Reservoir, Karimnagar",
+      "e": "This CoE, with an investment of Rs. 2.50 crore, focuses on conservation of the striped murrel, the state fish.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under PM-MKSSY, approximately how many fishermen and fisherwomen societies have been registered on the national fisheries digital platform portal?",
+      "options": {
+        "a": "20,68,817",
+        "b": "2,13,000",
+        "c": "3,34,488",
+        "d": "88"
+      },
+      "answer": "b",
+      "a": "2,13,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's target total irrigation potential (IP) under major, medium, and minor irrigation projects?",
+      "options": {
+        "a": "53.18 lakh acres",
+        "b": "155.97 lakh acres",
+        "c": "74.51 lakh acres",
+        "d": "127.69 lakh acres"
+      },
+      "answer": "d",
+      "a": "127.69 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the cumulative capital expenditure on irrigation schemes as of 30th November 2025?",
+      "options": {
+        "a": "Rs. 2.650 lakh crore",
+        "b": "Rs. 15,284 crore",
+        "c": "Rs. 69,966 crore",
+        "d": "Rs. 2.419 lakh crore"
+      },
+      "answer": "d",
+      "a": "Rs. 2.419 lakh crore",
+      "e": "The total expenditure, accounting for additional project costs, amounts to Rs. 2.650 lakh crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which two modernisation projects has the Irrigation Department taken up?",
+      "options": {
+        "a": "Nizamsagar and Sriram Sagar",
+        "b": "Nagarjuna Sagar and Nizamsagar",
+        "c": "Nagarjuna Sagar and Kaleshwaram",
+        "d": "Kaleshwaram and Sriram Sagar"
+      },
+      "answer": "b",
+      "a": "Nagarjuna Sagar and Nizamsagar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During Vanakalam 2025-26, how much paddy did Telangana procure at MSP (as on 18.02.2026)?",
+      "options": {
+        "a": "15.23 LMTs",
+        "b": "39.08 LMTs",
+        "c": "71.86 LMTs",
+        "d": "86.25 LMTs"
+      },
+      "answer": "c",
+      "a": "71.86 LMTs",
+      "e": "This was valued at Rs. 17,160 crore, procured from 14.35 lakh farmers through 8,448 Paddy Procurement Centres (PPCs).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Of the total paddy procured in Vanakalam 2025-26, how much comprised Sannarakam paddy?",
+      "options": {
+        "a": "39.08 LMTs",
+        "b": "71.86 LMTs",
+        "c": "23.19 LMTs",
+        "d": "23.98 LMTs"
+      },
+      "answer": "a",
+      "a": "39.08 LMTs",
+      "e": "A bonus amount of Rs. 1,940 crore was directly transferred to farmers for this Sannarakam paddy.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the additional incentive given to farmers for cultivating and selling Sannarakam paddy?",
+      "options": {
+        "a": "Rs. 500 per quintal",
+        "b": "Rs. 1,940 per quintal",
+        "c": "Rs. 1,000 per quintal",
+        "d": "Rs. 200 per quintal"
+      },
+      "answer": "a",
+      "a": "Rs. 500 per quintal",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total amount directly credited into farmers' bank accounts through Vanakalam 2025-26 paddy procurement (including bonus)?",
+      "options": {
+        "a": "Rs. 12,096 crore",
+        "b": "Rs. 17,160 crore",
+        "c": "Rs. 19,099 crore",
+        "d": "Rs. 1,940 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 19,099 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the MoA with the Philippines, how much rice has Telangana already exported (as of Feb 2026)?",
+      "options": {
+        "a": "8 LMT",
+        "b": "22,750 MT",
+        "c": "15.23 LMT",
+        "d": "71.86 LMT"
+      },
+      "answer": "b",
+      "a": "22,750 MT",
+      "e": "This generated revenue of Rs. 84.40 crore, part of a total planned export of 8 LMT of rice.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During Vanakalam 2025-26 (as on 30.01.2026), how much cotton did the Cotton Corporation of India (CCI) procure from Telangana?",
+      "options": {
+        "a": "15.23 Lakh MTs",
+        "b": "8.2 Lakh MTs",
+        "c": "39.08 Lakh MTs",
+        "d": "12.10 Lakh MTs"
+      },
+      "answer": "a",
+      "a": "15.23 Lakh MTs",
+      "e": "This was valued at Rs. 12,096 crore, of which Rs. 10,530 crore has already been released to farmers.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 2024-25, approximately what share of CCI's total national cotton procurement came from Telangana?",
+      "options": {
+        "a": "44%",
+        "b": "25%",
+        "c": "55%",
+        "d": "33%"
+      },
+      "answer": "a",
+      "a": "44%",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "Cotton Procured (Thousand Bales, 170 Kg each)"
+        ],
+        "rows": [
+          [
+            "Telangana",
+            "3,922.50"
+          ],
+          [
+            "Maharashtra",
+            "2,625.45"
+          ],
+          [
+            "Gujarat",
+            "908.52"
+          ],
+          [
+            "Punjab",
+            "1.33"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Sub Mission on Agricultural Mechanisation in 2025-26, what is the funding split between the Government of India and the State Government?",
+      "options": {
+        "a": "50:50",
+        "b": "70:30",
+        "c": "60:40",
+        "d": "75:25"
+      },
+      "answer": "c",
+      "a": "60:40",
+      "e": "Under this scheme, it is proposed to distribute 1,31,182 farm implements with a total financial allocation of Rs. 101.93 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's Vision 2047 for Farmer Empowerment is anchored on how many RARE priority areas?",
+      "options": {
+        "a": "5",
+        "b": "12",
+        "c": "8",
+        "d": "10"
+      },
+      "answer": "b",
+      "a": "12",
+      "e": "RARE stands for Rural Agri Region Economy.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Telangana's Vision 2047 RARE framework, which area's focus theme covers \"AgTech, AI, nano-inputs, bioinformatics, advanced farm research\"?",
+      "options": {
+        "a": "Next-Gen Agri-Infrastructure",
+        "b": "Clean Energy Revolution",
+        "c": "Global Seed Leadership",
+        "d": "Strengthening Research & Innovation Ecosystem"
+      },
+      "answer": "d",
+      "a": "Strengthening Research & Innovation Ecosystem",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT one of the 12 RARE Areas under Telangana's Vision 2047?",
+      "options": {
+        "a": "Green Forest Livelihoods",
+        "b": "Urban Infrastructure Modernisation",
+        "c": "Blue Revolution: Accelerated Growth in Fisheries & Aquaculture",
+        "d": "Poultry-Led Prosperity"
+      },
+      "answer": "b",
+      "a": "Urban Infrastructure Modernisation",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "TGSDC (Telangana Seeds Development Corporation) distributed how many quintals of seeds across various crops in 2024-25?",
+      "options": {
+        "a": "99,862 quintals",
+        "b": "1.87 lakh quintals",
+        "c": "59,245 quintals",
+        "d": "1.01 lakh quintals"
+      },
+      "answer": "b",
+      "a": "1.87 lakh quintals",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Government's green manure subsidy programme via TGSDC, what subsidy percentage is provided?",
+      "options": {
+        "a": "50%",
+        "b": "40%",
+        "c": "60%",
+        "d": "75%"
+      },
+      "answer": "c",
+      "a": "60%",
+      "e": "This benefited 2.05 lakh farmers covering 8.14 lakh acres, with a subsidy outlay of Rs. 55.64 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What NIRF 2025 rank did PJTAU secure among Agriculture and Allied sector institutions in 2024-25?",
+      "options": {
+        "a": "12th",
+        "b": "30th",
+        "c": "24th",
+        "d": "5th"
+      },
+      "answer": "c",
+      "a": "24th",
+      "e": "PJTAU also maintained an ICAR accreditation score of 3.59 (Grade 'A').",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "PJTAU's ARISA Lab, focused on AI, Robotics and IoT-based Smart Agriculture, was established with funding support from which institution?",
+      "options": {
+        "a": "ICAR",
+        "b": "RBI",
+        "c": "NABARD",
+        "d": "SBI"
+      },
+      "answer": "d",
+      "a": "SBI",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The National Mission on Natural Farming (NMNF) was introduced in which month/year?",
+      "options": {
+        "a": "December 2024",
+        "b": "December 2023",
+        "c": "February 2025",
+        "d": "June 2024"
+      },
+      "answer": "a",
+      "a": "December 2024",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under NMNF, how many clusters has the Government of India sanctioned in Telangana?",
+      "options": {
+        "a": "24,450",
+        "b": "32",
+        "c": "498",
+        "d": "61,125"
+      },
+      "answer": "c",
+      "a": "498",
+      "e": "These clusters cover 24,450 hectares across 32 districts, benefiting 61,125 farmers during 2025-26, with a budget allocation of Rs. 42.07 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a bio-input promoted under the National Mission on Natural Farming?",
+      "options": {
+        "a": "FUE",
+        "b": "OPMS",
+        "c": "Jeevamrut",
+        "d": "Bhu Bharati"
+      },
+      "answer": "c",
+      "a": "Jeevamrut",
+      "e": "Other bio-inputs mentioned include Beejamrut, Ghan Jeevamrut, Neemastra, and Dashparni.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's total forest cover as per the Forest Survey of India report 2023?",
+      "options": {
+        "a": "29,688 sq km",
+        "b": "27,688 sq km",
+        "c": "25,688 sq km",
+        "d": "24,688 sq km"
+      },
+      "answer": "b",
+      "a": "27,688 sq km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of Telangana's total geographical area is under forest cover?",
+      "options": {
+        "a": "25.69%",
+        "b": "24.69%",
+        "c": "22.69%",
+        "d": "23.59%"
+      },
+      "answer": "b",
+      "a": "24.69%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is India's national average forest cover percentage, as referenced in the source?",
+      "options": {
+        "a": "22.59%",
+        "b": "24.59%",
+        "c": "23.59%",
+        "d": "21.59%"
+      },
+      "answer": "c",
+      "a": "23.59%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "To what percentage does the Government aim to increase Telangana's forest cover?",
+      "options": {
+        "a": "33%",
+        "b": "35%",
+        "c": "30%",
+        "d": "28%"
+      },
+      "answer": "a",
+      "a": "33%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many plant species does Telangana's forest cover comprise?",
+      "options": {
+        "a": "more than 2,539",
+        "b": "more than 3,139",
+        "c": "more than 2,739",
+        "d": "more than 2,939"
+      },
+      "answer": "d",
+      "a": "more than 2,939",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Protected Areas has the Government declared to protect Telangana's biodiversity?",
+      "options": {
+        "a": "12",
+        "b": "9",
+        "c": "14",
+        "d": "10"
+      },
+      "answer": "a",
+      "a": "12",
+      "e": "These comprise 9 Wildlife Sanctuaries and 3 National Parks.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What area do Telangana's 12 Protected Areas together cover?",
+      "options": {
+        "a": "5,982.48 sq km",
+        "b": "5,672.87 sq km",
+        "c": "5,692.48 sq km",
+        "d": "5,472.48 sq km"
+      },
+      "answer": "c",
+      "a": "5,692.48 sq km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article of the Constitution directs the State to protect the environment and safeguard forests and wildlife?",
+      "options": {
+        "a": "Article 48A",
+        "b": "Article 47",
+        "c": "Article 21",
+        "d": "Article 51A(g)"
+      },
+      "answer": "a",
+      "a": "Article 48A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which constitutional provision places a fundamental duty on every citizen to protect the natural environment?",
+      "options": {
+        "a": "Article 48A",
+        "b": "Article 21",
+        "c": "Article 51A(g)",
+        "d": "Article 39"
+      },
+      "answer": "c",
+      "a": "Article 51A(g)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which states have a higher forest cover percentage than Telangana among its neighbouring states?",
+      "options": {
+        "a": "Maharashtra and Tamil Nadu",
+        "b": "Karnataka and Tamil Nadu",
+        "c": "Andhra Pradesh and Karnataka",
+        "d": "Chhattisgarh and Odisha"
+      },
+      "answer": "d",
+      "a": "Chhattisgarh and Odisha",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "Forest Cover (% of Geographical Area)"
+        ],
+        "rows": [
+          [
+            "Chhattisgarh",
+            "44.25"
+          ],
+          [
+            "Odisha",
+            "39.31"
+          ],
+          [
+            "Telangana",
+            "24.69"
+          ],
+          [
+            "Andhra Pradesh",
+            "22.87"
+          ],
+          [
+            "Maharashtra",
+            "20.13"
+          ],
+          [
+            "Karnataka",
+            "19.96"
+          ],
+          [
+            "Tamil Nadu",
+            "17.83"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which Telangana district has the highest forest cover percentage?",
+      "options": {
+        "a": "Nagarkurnool",
+        "b": "Mulugu",
+        "c": "Adilabad",
+        "d": "Bhadradri Kothagudem"
+      },
+      "answer": "b",
+      "a": "Mulugu",
+      "e": "",
+      "table": {
+        "headers": [
+          "District",
+          "% Forest Cover"
+        ],
+        "rows": [
+          [
+            "Mulugu",
+            "64.64"
+          ],
+          [
+            "Bhadradri Kothagudem",
+            "41.38"
+          ],
+          [
+            "Jayashankar Bhupalpally",
+            "41.15"
+          ],
+          [
+            "Mancherial",
+            "41.09"
+          ],
+          [
+            "Kumuram Bheem Asifabad",
+            "40.24"
+          ],
+          [
+            "Nagarkurnool",
+            "35.81"
+          ],
+          [
+            "Nirmal",
+            "29.83"
+          ],
+          [
+            "Adilabad",
+            "29.51"
+          ],
+          [
+            "Mahabubabad",
+            "26.49"
+          ],
+          [
+            "Jagtial",
+            "25.14"
+          ],
+          [
+            "Medchal-Malkajgiri",
+            "22.93"
+          ],
+          [
+            "Medak",
+            "19.88"
+          ],
+          [
+            "Nizamabad",
+            "19.60"
+          ],
+          [
+            "Rajanna Sircilla",
+            "18.09"
+          ],
+          [
+            "Kamareddy",
+            "17.99"
+          ],
+          [
+            "Peddapalli",
+            "17.55"
+          ],
+          [
+            "Khammam",
+            "13.91"
+          ],
+          [
+            "Rangareddy",
+            "13.91"
+          ],
+          [
+            "Vikarabad",
+            "12.15"
+          ],
+          [
+            "Hyderabad",
+            "10.99"
+          ],
+          [
+            "Mahabubnagar",
+            "10.40"
+          ],
+          [
+            "Yadadri Bhuvanagiri",
+            "9.66"
+          ],
+          [
+            "Nalgonda",
+            "9.57"
+          ],
+          [
+            "Siddipet",
+            "8.78"
+          ],
+          [
+            "Wanaparthy",
+            "7.07"
+          ],
+          [
+            "Sangareddy",
+            "6.76"
+          ],
+          [
+            "Narayanpet",
+            "5.43"
+          ],
+          [
+            "Suryapet",
+            "4.67"
+          ],
+          [
+            "Jangaon",
+            "4.44"
+          ],
+          [
+            "Warangal",
+            "3.53"
+          ],
+          [
+            "Hanumakonda",
+            "3.40"
+          ],
+          [
+            "Jogulamba Gadwal",
+            "2.32"
+          ],
+          [
+            "Karimnagar",
+            "2.29"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which Telangana district has the lowest forest cover percentage?",
+      "options": {
+        "a": "Warangal",
+        "b": "Karimnagar",
+        "c": "Hanumakonda",
+        "d": "Jogulamba Gadwal"
+      },
+      "answer": "b",
+      "a": "Karimnagar",
+      "e": "Karimnagar's 2.29% is marginally lower than Jogulamba Gadwal (2.32%) and Hanumakonda (3.40%).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the revenue generated from Telangana's forestry sector in 2024-25?",
+      "options": {
+        "a": "Rs. 45.19 crores",
+        "b": "Rs. 51.49 crores",
+        "c": "Rs. 41.49 crores",
+        "d": "Rs. 61.49 crores"
+      },
+      "answer": "b",
+      "a": "Rs. 51.49 crores",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What share of Telangana's total forest cover is classified as Open Forest?",
+      "options": {
+        "a": "11.8%",
+        "b": "6.7%",
+        "c": "44.4%",
+        "d": "37.1%"
+      },
+      "answer": "c",
+      "a": "44.4%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Forest Type",
+          "Share of Total Forest Cover"
+        ],
+        "rows": [
+          [
+            "Open Forest",
+            "44.4%"
+          ],
+          [
+            "Moderate Dense Forest",
+            "37.1%"
+          ],
+          [
+            "Scrub",
+            "11.8%"
+          ],
+          [
+            "Very Dense Forest",
+            "6.7%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How many square kilometres of Telangana's forest cover are classified as open forest?",
+      "options": {
+        "a": "8,909",
+        "b": "10,655",
+        "c": "9,655",
+        "d": "1,613"
+      },
+      "answer": "b",
+      "a": "10,655",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the highest achievement percentage under Vanamahotsavam in 2024-25?",
+      "options": {
+        "a": "Rajanna Sircilla",
+        "b": "Narayanpet",
+        "c": "Kamareddy",
+        "d": "Khammam"
+      },
+      "answer": "c",
+      "a": "Kamareddy",
+      "e": "",
+      "table": {
+        "headers": [
+          "District",
+          "Achievement (%) 2024-25"
+        ],
+        "rows": [
+          [
+            "Kamareddy",
+            "123.6"
+          ],
+          [
+            "Narayanpet",
+            "114.9"
+          ],
+          [
+            "Khammam",
+            "111.8"
+          ],
+          [
+            "Rajanna Sircilla",
+            "109.3"
+          ],
+          [
+            "Bhadradri",
+            "107.4"
+          ],
+          [
+            "Jangaon",
+            "107.2"
+          ],
+          [
+            "Peddapalli",
+            "104.4"
+          ],
+          [
+            "Medak",
+            "103.4"
+          ],
+          [
+            "Hanumakonda",
+            "102.8"
+          ],
+          [
+            "Nizamabad",
+            "102.4"
+          ],
+          [
+            "Sangareddy",
+            "102.1"
+          ],
+          [
+            "Hyderabad",
+            "101.7"
+          ],
+          [
+            "Nirmal",
+            "101.4"
+          ],
+          [
+            "Warangal",
+            "101.1"
+          ],
+          [
+            "Adilabad",
+            "100.9"
+          ],
+          [
+            "Mahabubabad",
+            "100.5"
+          ],
+          [
+            "Jogulamba Gadwal",
+            "100.5"
+          ],
+          [
+            "Medchal-Malkajgiri",
+            "100.1"
+          ],
+          [
+            "Nagarkurnool",
+            "100.1"
+          ],
+          [
+            "Nalgonda",
+            "100.0"
+          ],
+          [
+            "Kumuram Bheem",
+            "100.0"
+          ],
+          [
+            "Karimnagar",
+            "96.8"
+          ],
+          [
+            "Mulugu",
+            "96.3"
+          ],
+          [
+            "Mancherial",
+            "94.2"
+          ],
+          [
+            "Mahabubnagar",
+            "93.3"
+          ],
+          [
+            "Rangareddy",
+            "93.0"
+          ],
+          [
+            "Suryapet",
+            "92.3"
+          ],
+          [
+            "Yadadri Bhuvanagiri",
+            "92.0"
+          ],
+          [
+            "Siddipet",
+            "89.8"
+          ],
+          [
+            "Jayashankar",
+            "88.6"
+          ],
+          [
+            "Jagtial",
+            "88.5"
+          ],
+          [
+            "Vikarabad",
+            "77.9"
+          ],
+          [
+            "Wanaparthy",
+            "77.8"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the lowest achievement percentage under Vanamahotsavam in 2024-25?",
+      "options": {
+        "a": "Wanaparthy",
+        "b": "Jayashankar",
+        "c": "Jagtial",
+        "d": "Vikarabad"
+      },
+      "answer": "a",
+      "a": "Wanaparthy",
+      "e": "77.8%, marginally lower than Vikarabad's 77.9%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Protected Areas are there in Telangana?",
+      "options": {
+        "a": "12",
+        "b": "9",
+        "c": "10",
+        "d": "14"
+      },
+      "answer": "a",
+      "a": "12",
+      "e": "2 Tiger Reserves, 3 National Parks, and 7 Wildlife Sanctuaries.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What area do Telangana's Protected Areas cover, in acres?",
+      "options": {
+        "a": "12,06,642.44",
+        "b": "15,06,642.44",
+        "c": "14,06,642.44",
+        "d": "13,06,642.44"
+      },
+      "answer": "c",
+      "a": "14,06,642.44",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's Protected Areas cover approximately what percentage of the State's Forest Area?",
+      "options": {
+        "a": "24%",
+        "b": "27%",
+        "c": "30%",
+        "d": "33%"
+      },
+      "answer": "b",
+      "a": "27%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which hills is the Amrabad Tiger Reserve located?",
+      "options": {
+        "a": "Nallamala hills",
+        "b": "Eastern Ghats",
+        "c": "Western Ghats",
+        "d": "Seshachalam hills"
+      },
+      "answer": "a",
+      "a": "Nallamala hills",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the core area of the Amrabad Tiger Reserve?",
+      "options": {
+        "a": "1,166.37 sq km",
+        "b": "2,666.37 sq km",
+        "c": "892.23 sq km",
+        "d": "2,166.37 sq km"
+      },
+      "answer": "d",
+      "a": "2,166.37 sq km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the buffer area of the Amrabad Tiger Reserve?",
+      "options": {
+        "a": "445.02 sq km",
+        "b": "245.02 sq km",
+        "c": "545.02 sq km",
+        "d": "345.02 sq km"
+      },
+      "answer": "a",
+      "a": "445.02 sq km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Amrabad Tiger Reserve is the second-largest core area and the how-many-th largest Tiger Reserve in India?",
+      "options": {
+        "a": "sixth",
+        "b": "eighth",
+        "c": "fourth",
+        "d": "fifth"
+      },
+      "answer": "a",
+      "a": "sixth",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the estimated tiger population in Amrabad Tiger Reserve in 2026?",
+      "options": {
+        "a": "52",
+        "b": "32",
+        "c": "42",
+        "d": "38"
+      },
+      "answer": "c",
+      "a": "42",
+      "e": "Up from 12 tigers in 2018.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the core area of the Kawal Tiger Reserve?",
+      "options": {
+        "a": "1,123.21 sq km",
+        "b": "982.23 sq km",
+        "c": "892.23 sq km",
+        "d": "2,166.37 sq km"
+      },
+      "answer": "c",
+      "a": "892.23 sq km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the buffer area of the Kawal Tiger Reserve?",
+      "options": {
+        "a": "1,223.21 sq km",
+        "b": "892.23 sq km",
+        "c": "1,123.21 sq km",
+        "d": "1,023.21 sq km"
+      },
+      "answer": "c",
+      "a": "1,123.21 sq km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Kawal Tiger Reserve's forest areas are contiguous with the Indravati Tiger Reserve of which state?",
+      "options": {
+        "a": "Odisha",
+        "b": "Madhya Pradesh",
+        "c": "Maharashtra",
+        "d": "Chhattisgarh"
+      },
+      "answer": "d",
+      "a": "Chhattisgarh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per AITE 2022, how many tigers were recorded in the Kawal Tiger Reserve core, buffer and corridor areas?",
+      "options": {
+        "a": "12",
+        "b": "7",
+        "c": "5",
+        "d": "9"
+      },
+      "answer": "b",
+      "a": "7",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per AITE 2022, how many panthers were recorded across the Telangana Forest landscape?",
+      "options": {
+        "a": "31",
+        "b": "41",
+        "c": "51",
+        "d": "21"
+      },
+      "answer": "b",
+      "a": "41",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which is the largest Wildlife Sanctuary in Telangana by area (excluding the Amrabad Tiger Reserve core area)?",
+      "options": {
+        "a": "Kinnerasani Wildlife Sanctuary",
+        "b": "Pakhal Wildlife Sanctuary",
+        "c": "Manjira Wildlife Sanctuary",
+        "d": "Eturnagaram Wildlife Sanctuary"
+      },
+      "answer": "b",
+      "a": "Pakhal Wildlife Sanctuary",
+      "e": "",
+      "table": {
+        "headers": [
+          "Name of Sanctuary",
+          "District",
+          "Area (sq km)"
+        ],
+        "rows": [
+          [
+            "Kawal Tiger Reserve (core area)",
+            "Mancherial and Nirmal",
+            "892.23"
+          ],
+          [
+            "Pranahita Wildlife Sanctuary",
+            "Mancherial",
+            "136.02"
+          ],
+          [
+            "Siwaram Wildlife Sanctuary",
+            "Mancherial and Peddapalli",
+            "29.81"
+          ],
+          [
+            "Eturnagaram Wildlife Sanctuary",
+            "Mulugu",
+            "803.00"
+          ],
+          [
+            "Pakhal Wildlife Sanctuary",
+            "Mahbubabad and Warangal",
+            "860.20"
+          ],
+          [
+            "Kinnerasani Wildlife Sanctuary",
+            "Bhadradri Kothagudem",
+            "635.40"
+          ],
+          [
+            "Manjira Wildlife Sanctuary",
+            "Sangareddy",
+            "20.00"
+          ],
+          [
+            "Pocharam Wildlife Sanctuary",
+            "Medak and Kamareddy",
+            "129.84"
+          ],
+          [
+            "Amrabad Tiger Reserve",
+            "Nagarkurnool and Nalgonda",
+            "2,166.37"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total area covered by the Wildlife Sanctuaries/Tiger Reserves listed for Telangana?",
+      "options": {
+        "a": "5,472.87 sq km",
+        "b": "5,592.48 sq km",
+        "c": "5,872.87 sq km",
+        "d": "5,672.87 sq km"
+      },
+      "answer": "d",
+      "a": "5,672.87 sq km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which is the largest National Park in Telangana by area?",
+      "options": {
+        "a": "Kasu Brahmananda Reddy National Park",
+        "b": "Mrugavani National Park",
+        "c": "Mahavir Harina Vanasthali National Park",
+        "d": "Amrabad National Park"
+      },
+      "answer": "c",
+      "a": "Mahavir Harina Vanasthali National Park",
+      "e": "",
+      "table": {
+        "headers": [
+          "Name of National Park",
+          "District",
+          "Area (sq km)"
+        ],
+        "rows": [
+          [
+            "Kasu Brahmananda Reddy National Park",
+            "Hyderabad",
+            "1.42"
+          ],
+          [
+            "Mrugavani National Park",
+            "Rangareddy",
+            "3.60"
+          ],
+          [
+            "Mahavir Harina Vanasthali National Park",
+            "Rangareddy",
+            "14.59"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In which district is the Kasu Brahmananda Reddy National Park located?",
+      "options": {
+        "a": "Hyderabad",
+        "b": "Vikarabad",
+        "c": "Rangareddy",
+        "d": "Medchal-Malkajgiri"
+      },
+      "answer": "a",
+      "a": "Hyderabad",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Forest Circle in Telangana has the largest total forest area by legal status, as of 2023-24?",
+      "options": {
+        "a": "Kaleshwaram",
+        "b": "Amrabad TR",
+        "c": "Bhadradri",
+        "d": "Basara"
+      },
+      "answer": "a",
+      "a": "Kaleshwaram",
+      "e": "",
+      "table": {
+        "headers": [
+          "Circle",
+          "Reserve Forest",
+          "Protected Forest",
+          "Un-classified Land",
+          "Total (Acres)"
+        ],
+        "rows": [
+          [
+            "Kaleshwaram",
+            "21,17,394.26",
+            "1,19,998.98",
+            "28,155.64",
+            "22,65,548.88"
+          ],
+          [
+            "Basara",
+            "10,73,617.66",
+            "22,668.56",
+            "6,327.14",
+            "11,02,613.36"
+          ],
+          [
+            "Rajanna",
+            "4,69,322.45",
+            "5,685.29",
+            "26,873.51",
+            "5,01,881.25"
+          ],
+          [
+            "Bhadradri",
+            "15,12,617.58",
+            "49,235.44",
+            "9,999.31",
+            "15,71,852.33"
+          ],
+          [
+            "Yadadri",
+            "2,14,023.12",
+            "120.44",
+            "10,064.40",
+            "2,24,207.96"
+          ],
+          [
+            "Charminar",
+            "2,00,982.26",
+            "16,712.06",
+            "34,992.01",
+            "2,52,686.33"
+          ],
+          [
+            "Jogulamba",
+            "1,13,578.81",
+            "453.02",
+            "3,593.06",
+            "1,17,624.89"
+          ],
+          [
+            "Amrabad TR",
+            "5,03,009.71",
+            "93,030.00",
+            "858.07",
+            "5,96,897.78"
+          ],
+          [
+            "Kawal TR",
+            "-",
+            "-",
+            "-",
+            "-"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Forest College and Research Institute (FCRI) established?",
+      "options": {
+        "a": "2015",
+        "b": "2016",
+        "c": "2017",
+        "d": "2014"
+      },
+      "answer": "b",
+      "a": "2016",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which district is FCRI located?",
+      "options": {
+        "a": "Siddipet district",
+        "b": "Mulugu district",
+        "c": "Warangal district",
+        "d": "Nirmal district"
+      },
+      "answer": "a",
+      "a": "Siddipet district",
+      "e": "FCRI is located in Mulugu town of Siddipet district.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which plantation type occupies the largest area under TGFDC management?",
+      "options": {
+        "a": "Bamboo",
+        "b": "Conservation & Other areas",
+        "c": "Eucalyptus",
+        "d": "Miscellaneous"
+      },
+      "answer": "c",
+      "a": "Eucalyptus",
+      "e": "",
+      "table": {
+        "headers": [
+          "Type of Plantation",
+          "Total Area (Hectares)"
+        ],
+        "rows": [
+          [
+            "Eucalyptus",
+            "21,846.07"
+          ],
+          [
+            "Bamboo",
+            "5,274.32"
+          ],
+          [
+            "Cashew",
+            "12.00"
+          ],
+          [
+            "Teak",
+            "208.39"
+          ],
+          [
+            "Miscellaneous",
+            "666.95"
+          ],
+          [
+            "Eco-Tourism",
+            "128.76"
+          ],
+          [
+            "Conservation & Other areas",
+            "4,927.39"
+          ],
+          [
+            "Total",
+            "33,063.87"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the area of TGFDC's Virtual Safari and Eco-Theme Park using AR-VR technology?",
+      "options": {
+        "a": "106-acre",
+        "b": "96-acre",
+        "c": "86-acre",
+        "d": "116-acre"
+      },
+      "answer": "a",
+      "a": "106-acre",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which year's Water (Prevention and Control of Pollution) Act does TGPCB implement?",
+      "options": {
+        "a": "1981",
+        "b": "1974",
+        "c": "1976",
+        "d": "1972"
+      },
+      "answer": "b",
+      "a": "1974",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Air (Prevention and Control of Pollution) Act enacted?",
+      "options": {
+        "a": "1974",
+        "b": "1981",
+        "c": "1978",
+        "d": "1986"
+      },
+      "answer": "b",
+      "a": "1981",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Environment (Protection) Act enacted?",
+      "options": {
+        "a": "1986",
+        "b": "1984",
+        "c": "1981",
+        "d": "1988"
+      },
+      "answer": "a",
+      "a": "1986",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which location has the highest LTDS CETP capacity in Telangana?",
+      "options": {
+        "a": "Balanagar",
+        "b": "Patancheru",
+        "c": "Mallapur",
+        "d": "Jeedimetla"
+      },
+      "answer": "b",
+      "a": "Patancheru",
+      "e": "",
+      "table": {
+        "headers": [
+          "Location",
+          "Capacity"
+        ],
+        "rows": [
+          [
+            "Jeedimetla",
+            "LTDS-1500 KLD, HTDS-460 KLD"
+          ],
+          [
+            "Patancheru",
+            "LTDS-3000 KLD"
+          ],
+          [
+            "Balanagar",
+            "LTDS-150 KLD"
+          ],
+          [
+            "Mallapur",
+            "LTDS-2000 KLD"
+          ],
+          [
+            "Pashamylaram",
+            "HTDS-480 KLD"
+          ]
+        ]
+      }
+    }
+  ]
+}

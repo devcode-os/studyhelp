@@ -1,0 +1,993 @@
+{
+  "slug": "telangana-economy-en-ch4-public-finance",
+  "chapterNumber": 4,
+  "title": "Public Finance",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "What is Telangana's Total Expenditure for 2025-26 (BE)?",
+      "options": {
+        "a": "Rs. 3,04,865 crore",
+        "b": "Rs. 2,31,825 crore",
+        "c": "Rs. 3,04,367 crore",
+        "d": "Rs. 2,65,935 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 3,04,865 crore",
+      "e": "",
+      "table": {
+        "headers": [
+          "Item",
+          "2023-24 Accounts",
+          "2024-25 RE",
+          "2025-26 BE"
+        ],
+        "rows": [
+          [
+            "Revenue Receipts",
+            "1,69,293",
+            "2,02,108",
+            "2,29,721"
+          ],
+          [
+            "Capital Receipts",
+            "61,496",
+            "64,501",
+            "74,646"
+          ],
+          [
+            "Total Receipts",
+            "2,30,790",
+            "2,66,609",
+            "3,04,367"
+          ],
+          [
+            "Revenue Expenditure",
+            "1,68,514",
+            "1,96,219",
+            "2,26,982"
+          ],
+          [
+            "Capital Expenditure",
+            "43,918",
+            "33,088",
+            "36,504"
+          ],
+          [
+            "Loans and Advances",
+            "6,861",
+            "19,626",
+            "21,351"
+          ],
+          [
+            "Capital Disbursements",
+            "12,533",
+            "17,001",
+            "20,028"
+          ],
+          [
+            "Total Expenditure",
+            "2,31,825",
+            "2,65,935",
+            "3,04,865"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's Total Receipts for 2025-26 (BE)?",
+      "options": {
+        "a": "Rs. 3,04,865 crore",
+        "b": "Rs. 3,04,367 crore",
+        "c": "Rs. 2,66,609 crore",
+        "d": "Rs. 2,30,790 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 3,04,367 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of revenue expenditure does Development Expenditure constitute in 2025-26 (BE)?",
+      "options": {
+        "a": "71.1%",
+        "b": "85.2%",
+        "c": "78.9%",
+        "d": "63.3%"
+      },
+      "answer": "c",
+      "a": "78.9%",
+      "e": "Development expenditure comprises Social Services and Economic Services, amounting to Rs. 1,79,102 crore; the remaining 21.1% (Rs. 47,880 crore) is non-development expenditure.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which component forms the largest share of Telangana's Revenue Receipts in 2025-26 (BE)?",
+      "options": {
+        "a": "Share of Central Taxes",
+        "b": "State's Own Tax Revenue",
+        "c": "Non-Tax Revenue",
+        "d": "Grants-in-aid"
+      },
+      "answer": "b",
+      "a": "State's Own Tax Revenue",
+      "e": "",
+      "table": {
+        "headers": [
+          "Component",
+          "Amount (Rs. crore)",
+          "Share (%)"
+        ],
+        "rows": [
+          [
+            "State's Own Tax Revenue",
+            "1,45,420",
+            "63.3"
+          ],
+          [
+            "Non-Tax Revenue",
+            "31,619",
+            "13.8"
+          ],
+          [
+            "Share of Central Taxes",
+            "29,900",
+            "13.0"
+          ],
+          [
+            "Grants-in-aid",
+            "22,783",
+            "9.9"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In 2025-26 (BE), what is Telangana's Social Services expenditure on the revenue account?",
+      "options": {
+        "a": "Rs. 58,610 crore",
+        "b": "Rs. 67,722 crore",
+        "c": "Rs. 1,10,967 crore",
+        "d": "Rs. 54,258 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 1,10,967 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 2025-26 (BE), what is Telangana's Economic Services expenditure on the revenue account?",
+      "options": {
+        "a": "Rs. 58,610 crore",
+        "b": "Rs. 1,10,967 crore",
+        "c": "Rs. 67,722 crore",
+        "d": "Rs. 54,258 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 67,722 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What are Telangana's interest payments on FRBM loans for 2025-26 (BE)?",
+      "options": {
+        "a": "Rs. 20,028 crore",
+        "b": "Rs. 19,369 crore",
+        "c": "Rs. 17,730 crore",
+        "d": "Rs. 24,347 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 19,369 crore",
+      "e": "Unlike principal repayments, interest payments do not reduce the outstanding debt, so they remain a fixed pressure on the budget each year.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What are Telangana's public debt receipts under FRBM for 2025-26 (BE)?",
+      "options": {
+        "a": "Rs. 36,504 crore",
+        "b": "Rs. 74,646 crore",
+        "c": "Rs. 20,028 crore",
+        "d": "Rs. 69,539 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 69,539 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the projected Revenue Surplus for Telangana in 2025-26 (BE)?",
+      "options": {
+        "a": "Rs. 2,738 crore",
+        "b": "Rs. 36,504 crore",
+        "c": "Rs. 19,369 crore",
+        "d": "Rs. 54,010 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 2,738 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the Fiscal Deficit for Telangana in 2025-26 (BE)?",
+      "options": {
+        "a": "Rs. 41,379 crore",
+        "b": "Rs. 54,010 crore",
+        "c": "Rs. 2,738 crore",
+        "d": "Rs. 36,504 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 54,010 crore",
+      "e": "A fiscal deficit coexisting with a revenue surplus indicates borrowing is being used to fund capital investment rather than routine revenue expenditure.\n\n## BATCH 2 — Quarterly Own Tax Revenue Performance (up to December 2025)",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Aggregate State Own Tax Revenue (SOTR) for April-December 2025-26?",
+      "options": {
+        "a": "Rs. 96,152 crore",
+        "b": "Rs. 92,197 crore",
+        "c": "Rs. 1,02,197 crore",
+        "d": "Rs. 86,152 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 92,197 crore",
+      "e": "",
+      "table": {
+        "headers": [
+          "Tax Head",
+          "Apr-Dec 2024-25 (Rs. crore)",
+          "Apr-Dec 2025-26 (Rs. crore)"
+        ],
+        "rows": [
+          [
+            "SOTR (Aggregate)",
+            "86,152",
+            "92,197"
+          ],
+          [
+            "SGST",
+            "31,508",
+            "32,165"
+          ],
+          [
+            "Sales Tax (VAT)",
+            "24,035",
+            "25,127"
+          ],
+          [
+            "State Excise",
+            "14,078",
+            "17,506"
+          ],
+          [
+            "Stamps and Registration",
+            "10,571",
+            "11,304"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "During Q1-Q3 of 2025-26, which tax component led the composition of SOTR?",
+      "options": {
+        "a": "Stamps and Registration Fees",
+        "b": "SGST",
+        "c": "State Excise",
+        "d": "Sales Tax"
+      },
+      "answer": "b",
+      "a": "SGST",
+      "e": "SGST led at 34.9%, followed by Sales Tax (27.3%), State Excise (19.0%), Stamps and Registration Fees (12.3%), and Motor Vehicle Tax (5.7%).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What were SGST collections for April-December 2025-26?",
+      "options": {
+        "a": "Rs. 33,618 crore",
+        "b": "Rs. 31,508 crore",
+        "c": "Rs. 25,127 crore",
+        "d": "Rs. 32,165 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 32,165 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What were Sales Tax (VAT) collections for April-December 2025-26?",
+      "options": {
+        "a": "Rs. 25,127 crore",
+        "b": "Rs. 32,165 crore",
+        "c": "Rs. 24,035 crore",
+        "d": "Rs. 17,506 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 25,127 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What were State Excise collections for April-December 2025-26?",
+      "options": {
+        "a": "Rs. 11,304 crore",
+        "b": "Rs. 14,078 crore",
+        "c": "Rs. 25,127 crore",
+        "d": "Rs. 17,506 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 17,506 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What were Stamps and Registration collections for April-December 2025-26?",
+      "options": {
+        "a": "Rs. 25,127 crore",
+        "b": "Rs. 10,571 crore",
+        "c": "Rs. 17,506 crore",
+        "d": "Rs. 11,304 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 11,304 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What were Motor Vehicle Tax collections for April-December 2025-26?",
+      "options": {
+        "a": "Rs. 2,086 crore",
+        "b": "Rs. 5,303 crore",
+        "c": "Rs. 5,288 crore",
+        "d": "Rs. 1,657 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 5,288 crore",
+      "e": "This was broadly flat compared to Rs. 5,303 crore in the same period of 2024-25, unlike the growth seen in other tax heads.\n\n## BATCH 3 — Tax Contribution vs Devolution & Comparative Fiscal Profile",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Based on the five-year assessment (2018-19 to 2022-23), how much did Telangana receive for every Rs. 1 contributed to the Centre?",
+      "options": {
+        "a": "Rs. 0.39",
+        "b": "Rs. 0.60",
+        "c": "Rs. 0.36",
+        "d": "Rs. 0.42"
+      },
+      "answer": "d",
+      "a": "Rs. 0.42",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "2018-19",
+          "2022-23",
+          "Total (5-yr)"
+        ],
+        "rows": [
+          [
+            "Telangana",
+            "0.60",
+            "0.39",
+            "0.42"
+          ],
+          [
+            "Bihar",
+            "6.43",
+            "6.29",
+            "6.06"
+          ],
+          [
+            "Uttar Pradesh",
+            "2.25",
+            "2.02",
+            "2.03"
+          ],
+          [
+            "All-India average",
+            "0.48",
+            "0.36",
+            "0.42"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which state recorded the highest tax devolution received per Rs. 1 of tax contribution (2018-19 to 2022-23 total)?",
+      "options": {
+        "a": "Rajasthan",
+        "b": "Bihar",
+        "c": "Madhya Pradesh",
+        "d": "Uttar Pradesh"
+      },
+      "answer": "b",
+      "a": "Bihar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding Telangana's tax contribution vis-à-vis devolution (2018-19 to 2022-23):\n(I) Telangana's contribution to the Centre amounted to about Rs. 2.02 lakh crore\n(II) Devolution received by Telangana was about Rs. 0.86 lakh crore\n(III) Telangana's devolution ratio increased every year during this period\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "All of the above"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Telangana's ratio actually declined from Rs. 0.60 in 2018-19 to Rs. 0.39 in 2022-23, so statement III is incorrect.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's Revenue Receipts to GSDP (RR/GSDP) ratio in 2023-24?",
+      "options": {
+        "a": "9.7%",
+        "b": "11.6%",
+        "c": "14.4%",
+        "d": "11.1%"
+      },
+      "answer": "b",
+      "a": "11.6%",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "RR/GSDP (%)"
+        ],
+        "rows": [
+          [
+            "Bihar",
+            "22.7"
+          ],
+          [
+            "Odisha",
+            "20.8"
+          ],
+          [
+            "Telangana",
+            "11.6"
+          ],
+          [
+            "Karnataka",
+            "9.1"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which general category state recorded the highest Revenue Receipts to GSDP ratio in 2023-24?",
+      "options": {
+        "a": "Odisha",
+        "b": "Uttar Pradesh",
+        "c": "Bihar",
+        "d": "Chhattisgarh"
+      },
+      "answer": "c",
+      "a": "Bihar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's Development Expenditure to GSDP ratio in 2023-24?",
+      "options": {
+        "a": "9.7%",
+        "b": "14.4%",
+        "c": "11.1%",
+        "d": "8.5%"
+      },
+      "answer": "c",
+      "a": "11.1%",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "Development Expenditure/GSDP (%)"
+        ],
+        "rows": [
+          [
+            "Chhattisgarh",
+            "19.9"
+          ],
+          [
+            "Telangana",
+            "11.1"
+          ],
+          [
+            "Kerala",
+            "6.3"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's Interest Payments to Revenue Receipts ratio in 2023-24?",
+      "options": {
+        "a": "14.4%",
+        "b": "21.3%",
+        "c": "9.1%",
+        "d": "11.6%"
+      },
+      "answer": "a",
+      "a": "14.4%",
+      "e": "",
+      "table": {
+        "headers": [
+          "State",
+          "Interest Payments/Revenue Receipts (%)"
+        ],
+        "rows": [
+          [
+            "Odisha",
+            "2.9"
+          ],
+          [
+            "Telangana",
+            "14.4"
+          ],
+          [
+            "Punjab",
+            "25.3"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which state recorded the highest Interest Payments to Revenue Receipts ratio among general category states in 2023-24?",
+      "options": {
+        "a": "Haryana",
+        "b": "Kerala",
+        "c": "West Bengal",
+        "d": "Punjab"
+      },
+      "answer": "d",
+      "a": "Punjab",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In absolute terms, how much did Telangana spend on interest payments towards FRBM loans during 2023-24?\n## BATCH 4 — Debt Dynamics & 16th Finance Commission",
+      "options": {
+        "a": "Rs. 19,369 crore",
+        "b": "Rs. 36,504 crore",
+        "c": "Rs. 17,730 crore",
+        "d": "Rs. 24,347 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 24,347 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's total outstanding debt as on 31 December 2025?",
+      "options": {
+        "a": "Rs. 3,19,179 crore",
+        "b": "Rs. 8,00,805 crore",
+        "c": "Rs. 6,71,757 crore",
+        "d": "Rs. 5,81,701 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 8,00,805 crore",
+      "e": "",
+      "table": {
+        "headers": [
+          "Item",
+          "Outstanding Debt (1.12.2023)",
+          "Amount Raised (1.12.2023–31.12.2025)",
+          "Principal Paid",
+          "Interest Paid",
+          "Outstanding Debt (31.12.2025)"
+        ],
+        "rows": [
+          [
+            "FRBM Loans",
+            "3,89,673",
+            "1,46,362",
+            "40,660",
+            "56,350",
+            "4,95,374"
+          ],
+          [
+            "Government Guaranteed (serviced by Govt)",
+            "1,27,208",
+            "6,162",
+            "47,043",
+            "23,689",
+            "86,327"
+          ],
+          [
+            "Total",
+            "6,71,757",
+            "3,19,179",
+            "1,90,131",
+            "1,14,071",
+            "8,00,805"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Between December 2023 and December 2025, what were the total borrowings of the State and its entities?",
+      "options": {
+        "a": "Rs. 3,04,202 crore",
+        "b": "Rs. 8,00,805 crore",
+        "c": "Rs. 1,90,131 crore",
+        "d": "Rs. 3,19,179 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 3,19,179 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Between December 2023 and December 2025, what amount was paid towards interest across all debt categories?",
+      "options": {
+        "a": "Rs. 1,90,131 crore",
+        "b": "Rs. 97,010 crore",
+        "c": "Rs. 87,703 crore",
+        "d": "Rs. 1,14,071 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 1,14,071 crore",
+      "e": "Unlike principal repayments, interest payments do not reduce the outstanding stock of debt, so they remain a recurring obligation from past borrowings.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Sixteenth Finance Commission (FC-16) report was tabled in Parliament on which date?",
+      "options": {
+        "a": "1st January 2026",
+        "b": "1st February 2026",
+        "c": "27th February 2026",
+        "d": "1st April 2026"
+      },
+      "answer": "b",
+      "a": "1st February 2026",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the States' share in the divisible pool of Central taxes recommended by FC-16?",
+      "options": {
+        "a": "42%",
+        "b": "32%",
+        "c": "45%",
+        "d": "41%"
+      },
+      "answer": "d",
+      "a": "41%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements regarding the FC-16's horizontal devolution criteria changes is/are correct?\n(I) \"Contribution to GDP\" is a new parameter with 10% weightage that replaces the earlier tax effort parameter\n(II) Income Distance/Per-Capita GSDP Distance continues to receive the highest weight across states\n(III) The Forest parameter was completely removed under FC-16\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "All of the above",
+        "c": "II and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "The Forest parameter was retained at 10.0 weightage under FC-16, so statement III is incorrect.",
+      "table": {
+        "headers": [
+          "Criteria",
+          "15th FC",
+          "16th FC (Recommended)"
+        ],
+        "rows": [
+          [
+            "Population (2011)",
+            "15.0",
+            "17.5"
+          ],
+          [
+            "Area",
+            "15.0",
+            "10.0"
+          ],
+          [
+            "Demographic Performance",
+            "12.5",
+            "10.0"
+          ],
+          [
+            "Income Distance/Per-Capita GSDP Distance",
+            "45.0",
+            "42.5"
+          ],
+          [
+            "Contribution to GDP",
+            "-",
+            "10.0"
+          ],
+          [
+            "Forest",
+            "10.0",
+            "10.0"
+          ],
+          [
+            "Tax & Fiscal Effort",
+            "2.5",
+            "-"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's inter se share under the 16th Finance Commission (2026-2031)?",
+      "options": {
+        "a": "2.102%",
+        "b": "2.133%",
+        "c": "2.174%",
+        "d": "2.437%"
+      },
+      "answer": "c",
+      "a": "2.174%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Finance Commission",
+          "Award Period",
+          "Telangana's Inter se Share (%)"
+        ],
+        "rows": [
+          [
+            "14th FC",
+            "2015-2020",
+            "2.437"
+          ],
+          [
+            "15th FC",
+            "2020-2021",
+            "2.133"
+          ],
+          [
+            "15th FC",
+            "2021-2026",
+            "2.102"
+          ],
+          [
+            "16th FC",
+            "2026-2031",
+            "2.174"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Under which Finance Commission did Telangana record its highest-ever inter se share?",
+      "options": {
+        "a": "15th FC (2020-2021)",
+        "b": "16th FC",
+        "c": "14th FC",
+        "d": "15th FC (2021-2026)"
+      },
+      "answer": "c",
+      "a": "14th FC",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What total grant amount has FC-16 recommended for rural local bodies?",
+      "options": {
+        "a": "Rs. 4.4 lakh crore",
+        "b": "Rs. 9,968 crore",
+        "c": "Rs. 3.6 lakh crore",
+        "d": "Rs. 11,548 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 4.4 lakh crore",
+      "e": "A separate Rs. 3.6 lakh crore has been recommended for urban local bodies; both are split into basic (80%) and performance-based (20%) components.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's total allocation under Rural Local Body grants over the award period?",
+      "options": {
+        "a": "Rs. 9,968 crore",
+        "b": "Rs. 11,548 crore",
+        "c": "Rs. 21,516 crore",
+        "d": "Rs. 7,974 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 9,968 crore",
+      "e": "",
+      "table": {
+        "headers": [
+          "Category",
+          "Basic Grant",
+          "Local Body Performance Grant",
+          "State Performance Grant",
+          "Total"
+        ],
+        "rows": [
+          [
+            "Rural Local Body grants",
+            "7,974",
+            "997",
+            "997",
+            "9,968"
+          ],
+          [
+            "Urban Local Body grants",
+            "9,239",
+            "1,154.50",
+            "1,154.50",
+            "11,548"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's allocation under the State Disaster Response Fund (SDRF)?",
+      "options": {
+        "a": "Rs. 2,959 crore",
+        "b": "Rs. 740 crore",
+        "c": "Rs. 3,699 crore",
+        "d": "Rs. 9,968 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 2,959 crore",
+      "e": "Of this, the Union Government's share is Rs. 2,219.25 crore and the State's share is Rs. 739.75 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What fiscal deficit ceiling (as % of GSDP) has FC-16 recommended States maintain?",
+      "options": {
+        "a": "2%",
+        "b": "4%",
+        "c": "3%",
+        "d": "5%"
+      },
+      "answer": "c",
+      "a": "3%",
+      "e": "FC-16 has also recommended States discontinue off-budget borrowings and disclose debt/liabilities comprehensively, including contingent obligations.\n\n\n## BATCH 5 — Additional Facts (Introduction, Debt Table Detail, FC-16 Extras, Way Forward)",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements regarding Telangana's fiscal strategy since December 2023 is/are correct?\n(I) Renewed emphasis on restoring transparency\n(II) Improving expenditure quality\n(III) Strengthening fiscal discipline\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I only",
+        "c": "All of the above",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Telangana's public finance analysis draws on official budget documents along with reports of which two bodies?",
+      "options": {
+        "a": "World Bank and IMF",
+        "b": "CAG and RBI",
+        "c": "MoSPI and Finance Commission",
+        "d": "NITI Aayog and SEBI"
+      },
+      "answer": "b",
+      "a": "CAG and RBI",
+      "e": "CAG refers to the Comptroller and Auditor General; RBI refers to the Reserve Bank of India.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Sub-Total outstanding debt (FRBM Loans + Government Guaranteed loans serviced by Government) as on 31.12.2025?",
+      "options": {
+        "a": "Rs. 8,00,805 crore",
+        "b": "Rs. 5,81,701 crore",
+        "c": "Rs. 4,95,374 crore",
+        "d": "Rs. 6,71,757 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 5,81,701 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following grant types has FC-16 discontinued?",
+      "options": {
+        "a": "Revenue deficit grants",
+        "b": "Performance-based Grants",
+        "c": "Basic Grants",
+        "d": "Disaster Management Grants"
+      },
+      "answer": "a",
+      "a": "Revenue deficit grants",
+      "e": "FC-16 has discontinued revenue deficit grants, sector-specific grants, and state-specific grants.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many entry-level criteria must be fulfilled before local body grants are released under FC-16?",
+      "options": {
+        "a": "Five",
+        "b": "Three",
+        "c": "Four",
+        "d": "Two"
+      },
+      "answer": "b",
+      "a": "Three",
+      "e": "The three criteria are: constitution of local bodies as per the Constitution, publication of their provisional and audited accounts in the public domain, and timely constitution of the State Finance Commission.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's total allocation under Urban Local Body grants over the FC-16 award period?",
+      "options": {
+        "a": "Rs. 21,516 crore",
+        "b": "Rs. 9,239 crore",
+        "c": "Rs. 11,548 crore",
+        "d": "Rs. 9,968 crore"
+      },
+      "answer": "c",
+      "a": "Rs. 11,548 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Telangana's allocation under the State Disaster Mitigation Fund (SDMF)?",
+      "options": {
+        "a": "Rs. 555 crore",
+        "b": "Rs. 185 crore",
+        "c": "Rs. 2,959 crore",
+        "d": "Rs. 740 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 740 crore",
+      "e": "Of this, the Union Government's share is Rs. 555 crore and the State's share is Rs. 185 crore.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is among the three priorities outlined in the \"Way Forward\" for Telangana's public finance strategy?\n(I) Sustained strengthening of revenue receipts\n(II) Improving expenditure quality\n(III) Prudent debt management\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I only",
+        "c": "All of the above",
+        "d": "I and II only"
+      },
+      "answer": "c",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    }
+  ]
+}

@@ -1,0 +1,1112 @@
+{
+  "slug": "telangana-economy-en-ch9-education-skill-development",
+  "chapterNumber": 9,
+  "title": "Education and Skill Development",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "As of 31.01.2026, how many schools does Telangana have?",
+      "options": {
+        "a": "39,641",
+        "b": "38,641",
+        "c": "40,641",
+        "d": "37,641"
+      },
+      "answer": "a",
+      "a": "39,641",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total student enrolment across all school management types in Telangana?",
+      "options": {
+        "a": "62.36 lakh",
+        "b": "61.36 lakh",
+        "c": "58.36 lakh",
+        "d": "60.36 lakh"
+      },
+      "answer": "a",
+      "a": "62.36 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which management category accounts for the highest number of schools in Telangana?",
+      "options": {
+        "a": "Government and Local Body Schools",
+        "b": "MJPTBCWREIS Schools",
+        "c": "Tribal Welfare Department Institutions",
+        "d": "Private Unaided Schools"
+      },
+      "answer": "a",
+      "a": "Government and Local Body Schools",
+      "e": "",
+      "table": {
+        "headers": [
+          "Management",
+          "Schools",
+          "Enrolment"
+        ],
+        "rows": [
+          [
+            "Government and Local Body Schools",
+            "24,214",
+            "16,61,520"
+          ],
+          [
+            "TREIS",
+            "35",
+            "20,982"
+          ],
+          [
+            "Telangana Model Schools",
+            "194",
+            "1,08,745"
+          ],
+          [
+            "KGBV",
+            "495",
+            "1,31,644"
+          ],
+          [
+            "Urban Residential Schools (URS)",
+            "29",
+            "2,305"
+          ],
+          [
+            "Other State Government Schools",
+            "12",
+            "1,254"
+          ],
+          [
+            "Social Welfare Residential Educational Institutions",
+            "235",
+            "1,30,485"
+          ],
+          [
+            "Tribal Welfare Department Institutions",
+            "1,679",
+            "88,933"
+          ],
+          [
+            "Tribal Welfare Society Institutions",
+            "122",
+            "50,148"
+          ],
+          [
+            "MJPTBCWREIS Schools",
+            "294",
+            "1,44,729"
+          ],
+          [
+            "TMREIS Schools",
+            "205",
+            "73,783"
+          ],
+          [
+            "EMRS",
+            "23",
+            "9,676"
+          ],
+          [
+            "Central Government Schools",
+            "7",
+            "6,171"
+          ],
+          [
+            "Private Aided Schools",
+            "371",
+            "59,894"
+          ],
+          [
+            "Private Unaided Schools",
+            "11,689",
+            "37,43,893"
+          ],
+          [
+            "Madrasas",
+            "37",
+            "1,838"
+          ],
+          [
+            "Total",
+            "39,641",
+            "62,36,000"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Through how many pre-primary sections has Telangana introduced pre-primary education within Government primary schools?",
+      "options": {
+        "a": "1,262",
+        "b": "1,362",
+        "c": "1,162",
+        "d": "1,462"
+      },
+      "answer": "b",
+      "a": "1,362",
+      "e": "These sections span 33 districts.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's Gross Enrolment Ratio (GER) at the Foundational stage during 2024-25?",
+      "options": {
+        "a": "63.6",
+        "b": "65.6",
+        "c": "68.6",
+        "d": "61.4"
+      },
+      "answer": "a",
+      "a": "63.6",
+      "e": "",
+      "table": {
+        "headers": [
+          "Stage",
+          "Telangana",
+          "India"
+        ],
+        "rows": [
+          [
+            "Foundational",
+            "63.6",
+            "41.4"
+          ],
+          [
+            "Preparatory",
+            "110.5",
+            "95.4"
+          ],
+          [
+            "Middle",
+            "111.6",
+            "90.3"
+          ],
+          [
+            "Secondary",
+            "83.6",
+            "68.5"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the GER for girls at the Secondary stage in Telangana during 2024-25?",
+      "options": {
+        "a": "83.6",
+        "b": "90.3",
+        "c": "86.8",
+        "d": "80.6"
+      },
+      "answer": "c",
+      "a": "86.8",
+      "e": "This was higher than the boys' Secondary GER of 80.6, reflecting stronger retention of girls as schooling progresses.",
+      "table": {
+        "headers": [
+          "Stage",
+          "Boys",
+          "Girls"
+        ],
+        "rows": [
+          [
+            "Foundational",
+            "63.9",
+            "63.2"
+          ],
+          [
+            "Preparatory",
+            "109.0",
+            "112.2"
+          ],
+          [
+            "Middle",
+            "109.9",
+            "113.5"
+          ],
+          [
+            "Secondary",
+            "80.6",
+            "86.8"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's Pupil-Teacher Ratio (PTR) during 2024-25?",
+      "options": {
+        "a": "21:1",
+        "b": "20:1",
+        "c": "19:1",
+        "d": "22:1"
+      },
+      "answer": "a",
+      "a": "21:1",
+      "e": "Telangana ranked third among Non-Special Category states, alongside Rajasthan, Madhya Pradesh and Kerala, compared to the all-India PTR of 24:1.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Non-Special Category state recorded the lowest Pupil-Teacher Ratio in 2024-25?",
+      "options": {
+        "a": "Chhattisgarh",
+        "b": "Punjab",
+        "c": "Telangana",
+        "d": "Kerala"
+      },
+      "answer": "a",
+      "a": "Chhattisgarh",
+      "e": "Goa and Chhattisgarh both recorded the lowest PTR at 20:1.",
+      "table": {
+        "headers": [
+          "State",
+          "PTR"
+        ],
+        "rows": [
+          [
+            "Goa",
+            "20"
+          ],
+          [
+            "Chhattisgarh",
+            "20"
+          ],
+          [
+            "Telangana",
+            "21"
+          ],
+          [
+            "Rajasthan",
+            "21"
+          ],
+          [
+            "Madhya Pradesh",
+            "21"
+          ],
+          [
+            "Kerala",
+            "21"
+          ],
+          [
+            "Punjab",
+            "22"
+          ],
+          [
+            "Odisha",
+            "22"
+          ],
+          [
+            "Haryana",
+            "22"
+          ],
+          [
+            "Tamil Nadu",
+            "23"
+          ],
+          [
+            "All-India",
+            "24"
+          ],
+          [
+            "Andhra Pradesh",
+            "25"
+          ],
+          [
+            "Uttar Pradesh",
+            "26"
+          ],
+          [
+            "Karnataka",
+            "26"
+          ],
+          [
+            "Maharashtra",
+            "28"
+          ],
+          [
+            "West Bengal",
+            "29"
+          ],
+          [
+            "Gujarat",
+            "30"
+          ],
+          [
+            "Bihar",
+            "30"
+          ],
+          [
+            "Jharkhand",
+            "36"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "At the Secondary level, what was Telangana's Pupil-Teacher Ratio compared to the all-India value?",
+      "options": {
+        "a": "13:1 vs 17:1",
+        "b": "12:1 vs 21:1",
+        "c": "13:1 vs 21:1",
+        "d": "13:1 vs 24:1"
+      },
+      "answer": "c",
+      "a": "13:1 vs 21:1",
+      "e": "",
+      "table": {
+        "headers": [
+          "Level",
+          "Telangana",
+          "India"
+        ],
+        "rows": [
+          [
+            "Foundational",
+            "10",
+            "10"
+          ],
+          [
+            "Preparatory",
+            "11",
+            "13"
+          ],
+          [
+            "Middle",
+            "12",
+            "17"
+          ],
+          [
+            "Secondary",
+            "13",
+            "21"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was Telangana's transition rate from Middle to Secondary grades during 2024-25?",
+      "options": {
+        "a": "98.9%",
+        "b": "99.9%",
+        "c": "96.9%",
+        "d": "97.9%"
+      },
+      "answer": "a",
+      "a": "98.9%",
+      "e": "This was 12.3 percentage points higher than the national average of 86.6%.",
+      "table": {
+        "headers": [
+          "Transition",
+          "Telangana",
+          "India"
+        ],
+        "rows": [
+          [
+            "Foundational to Preparatory",
+            "100.0",
+            "98.6"
+          ],
+          [
+            "Preparatory to Middle",
+            "99.9",
+            "92.2"
+          ],
+          [
+            "Middle to Secondary",
+            "98.9",
+            "86.6"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the transition rate from Middle to Secondary stage for girls in Telangana during 2024-25?",
+      "options": {
+        "a": "99.2%",
+        "b": "98.9%",
+        "c": "99.6%",
+        "d": "98.3%"
+      },
+      "answer": "c",
+      "a": "99.6%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Transition",
+          "Boys",
+          "Girls"
+        ],
+        "rows": [
+          [
+            "Foundational to Preparatory",
+            "100.0",
+            "100.0"
+          ],
+          [
+            "Preparatory to Middle",
+            "99.2",
+            "100.0"
+          ],
+          [
+            "Middle to Secondary",
+            "98.3",
+            "99.6"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of schools in Telangana have digital libraries, compared to the national average?",
+      "options": {
+        "a": "95.1% vs 91.9%",
+        "b": "91.4% vs 93.3%",
+        "c": "85.7% vs 6.9%",
+        "d": "81.2% vs 57.9%"
+      },
+      "answer": "c",
+      "a": "85.7% vs 6.9%",
+      "e": "This gap is highlighted as a key differentiator in the State's learning-enabling infrastructure.",
+      "table": {
+        "headers": [
+          "Facility",
+          "Telangana",
+          "India"
+        ],
+        "rows": [
+          [
+            "Functional Electricity",
+            "95.1",
+            "91.9"
+          ],
+          [
+            "Functional Drinking Water",
+            "99.5",
+            "99.0"
+          ],
+          [
+            "Functional Girls' Toilet",
+            "91.4",
+            "93.3"
+          ],
+          [
+            "Functional Boys' Toilet",
+            "83.6",
+            "90.7"
+          ],
+          [
+            "Digital Library",
+            "85.7",
+            "6.9"
+          ],
+          [
+            "Playground",
+            "86.5",
+            "83.0"
+          ],
+          [
+            "Functional Computer Facility",
+            "81.2",
+            "57.9"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "During 2025-26, how many students benefited from the Mid-Day Meal Scheme in Telangana?",
+      "options": {
+        "a": "18.9 lakh",
+        "b": "16.9 lakh",
+        "c": "15.9 lakh",
+        "d": "17.9 lakh"
+      },
+      "answer": "d",
+      "a": "17.9 lakh",
+      "e": "This coverage spans 26,001 schools.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On which day is Vegetable Biryani served under the Mid-Day Meal weekly menu?",
+      "options": {
+        "a": "Friday",
+        "b": "Saturday",
+        "c": "Thursday",
+        "d": "Wednesday"
+      },
+      "answer": "c",
+      "a": "Thursday",
+      "e": "",
+      "table": {
+        "headers": [
+          "Day",
+          "Recipe"
+        ],
+        "rows": [
+          [
+            "Monday",
+            "Kichidi, Mixed Vegetable Curry and Egg"
+          ],
+          [
+            "Tuesday",
+            "Rice, Mixed Vegetable Curry, Sambar and Ragi Java"
+          ],
+          [
+            "Wednesday",
+            "Rice, Mixed Vegetable Curry, Green leafy vegetable dhal and Egg"
+          ],
+          [
+            "Thursday",
+            "Vegetable Biryani, Mixed Vegetable Curry and Ragi Java"
+          ],
+          [
+            "Friday",
+            "Rice, Mixed Vegetable Curry, Sambar and Egg"
+          ],
+          [
+            "Saturday",
+            "Rice, Mixed Vegetable Curry, Green leafy vegetable dhal and Ragi java"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of the teacher workforce has been deputed to form academic panels under the FLN Mission?",
+      "options": {
+        "a": "1%",
+        "b": "2%",
+        "c": "5%",
+        "d": "3%"
+      },
+      "answer": "b",
+      "a": "2%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per Telangana's Vision 2047, what percentage of children are targeted to achieve grade-level proficiency in Foundational Literacy and Numeracy by Grade 3?",
+      "options": {
+        "a": "85%",
+        "b": "70%",
+        "c": "80%",
+        "d": "75%"
+      },
+      "answer": "c",
+      "a": "80%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Young India Institutes of Excellence have been identified across the State?",
+      "options": {
+        "a": "93",
+        "b": "113",
+        "c": "103",
+        "d": "83"
+      },
+      "answer": "a",
+      "a": "93",
+      "e": "Three KGBVs per district were identified for this purpose, offering coaching for EAPCET, IIT-JEE, NEET, and CLAT.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Comprehensive Modular Survey (CMS) 2025, what percentage of rural students are enrolled in Government Schools?",
+      "options": {
+        "a": "54.0%",
+        "b": "79.0%",
+        "c": "47.5%",
+        "d": "63.6%"
+      },
+      "answer": "d",
+      "a": "63.6%",
+      "e": "In contrast, urban areas favour private unaided institutions (54%), while Government School enrolment in urban areas is only 23%.",
+      "table": {
+        "headers": [
+          "School Type",
+          "Rural",
+          "Urban",
+          "Rural+Urban"
+        ],
+        "rows": [
+          [
+            "Government",
+            "63.6",
+            "23.0",
+            "47.5"
+          ],
+          [
+            "Private Aided",
+            "4.5",
+            "22.8",
+            "11.8"
+          ],
+          [
+            "Private Unaided",
+            "31.6",
+            "54.0",
+            "40.5"
+          ],
+          [
+            "Others",
+            "0.3",
+            "0.1",
+            "0.2"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "As per CMS 2025, what percentage of urban students reported course fee expenditure, compared to rural students?",
+      "options": {
+        "a": "34.6% vs 29.7%",
+        "b": "56.9% vs 20.6%",
+        "c": "98.8% vs 98.7%",
+        "d": "79.0% vs 42.4%"
+      },
+      "answer": "d",
+      "a": "79.0% vs 42.4%",
+      "e": "This highlights a significant rural-urban disparity in course fee incidence.",
+      "table": {
+        "headers": [
+          "School Type",
+          "Rural",
+          "Urban",
+          "Rural+Urban"
+        ],
+        "rows": [
+          [
+            "Government",
+            "10.1",
+            "13.1",
+            "10.7"
+          ],
+          [
+            "Private Aided",
+            "95.1",
+            "98.8",
+            "97.9"
+          ],
+          [
+            "Private Unaided",
+            "100.0",
+            "98.8",
+            "99.4"
+          ],
+          [
+            "Others",
+            "29.7",
+            "52.5",
+            "34.6"
+          ],
+          [
+            "All Non-Government",
+            "98.8",
+            "98.7",
+            "98.8"
+          ],
+          [
+            "All Types",
+            "42.4",
+            "79.0",
+            "56.9"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "As per CMS 2025, what is the per-student annual expenditure on school education in Government schools in rural areas?",
+      "options": {
+        "a": "Rs. 2,286",
+        "b": "Rs. 2,609",
+        "c": "Rs. 3,260",
+        "d": "Rs. 3,963"
+      },
+      "answer": "a",
+      "a": "Rs. 2,286",
+      "e": "This is far lower than private unaided schools, which report the highest per-student expenditure.",
+      "table": {
+        "headers": [
+          "School Type",
+          "Rural",
+          "Urban",
+          "Rural+Urban"
+        ],
+        "rows": [
+          [
+            "Government",
+            "2,286",
+            "3,963",
+            "2,609"
+          ],
+          [
+            "Private Aided",
+            "28,420",
+            "32,951",
+            "31,900"
+          ],
+          [
+            "Private Unaided",
+            "35,104",
+            "41,475",
+            "38,479"
+          ],
+          [
+            "Others",
+            "4,907",
+            "3,260",
+            "4,556"
+          ],
+          [
+            "All Non-Government",
+            "34,012",
+            "38,884",
+            "36,847"
+          ],
+          [
+            "All Types",
+            "13,840",
+            "30,848",
+            "20,590"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of school reports the highest per-student annual expenditure in urban areas as per CMS 2025?",
+      "options": {
+        "a": "Government",
+        "b": "Private Unaided",
+        "c": "Others",
+        "d": "Private Aided"
+      },
+      "answer": "b",
+      "a": "Private Unaided",
+      "e": "Private unaided schools reported Rs. 41,475 per student annually in urban areas, per the table above.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "From which academic year has AI and Digital Literacy been introduced for Classes I-IX in Telangana?",
+      "options": {
+        "a": "2023-24",
+        "b": "2026-27",
+        "c": "2025-26",
+        "d": "2024-25"
+      },
+      "answer": "c",
+      "a": "2025-26",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which organisation has partnered with Telangana to roll out video-based STEM content for Classes VI-X?",
+      "options": {
+        "a": "EkStep Foundation",
+        "b": "IIT Bombay",
+        "c": "Khan Academy",
+        "d": "Physics Wallah"
+      },
+      "answer": "c",
+      "a": "Khan Academy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the \"Telangana Achievers\" programme, which organisation provides free coaching for Engineering, Medicine and Law?",
+      "options": {
+        "a": "EkStep Foundation",
+        "b": "CRISP",
+        "c": "Khan Academy",
+        "d": "Physics Wallah"
+      },
+      "answer": "d",
+      "a": "Physics Wallah",
+      "e": "This coaching covers 194 Telangana Model Schools, 495 KGBVs and 37 TREIS institutions.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the pass percentage of TGREIS students in the SSC public examinations of 2024-25?",
+      "options": {
+        "a": "98.79%",
+        "b": "93.29%",
+        "c": "97.77%",
+        "d": "99.15%"
+      },
+      "answer": "a",
+      "a": "98.79%",
+      "e": "2,449 out of 2,480 students passed; in Intermediate exams, 2,255 out of 2,397 passed with a 93.29% pass rate.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the SSC pass percentage of MJPTGBCWREIS students in 2024-25?",
+      "options": {
+        "a": "93.29%",
+        "b": "98.79%",
+        "c": "83.17%",
+        "d": "97.77%"
+      },
+      "answer": "d",
+      "a": "97.77%",
+      "e": "17,019 out of 17,408 students passed; in Intermediate exams, the pass percentage was 83.17%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which village has the Young India Police Residential School been sanctioned?",
+      "options": {
+        "a": "Station Ghanpur",
+        "b": "Kothagudem",
+        "c": "Manchirevula",
+        "d": "Kandukur"
+      },
+      "answer": "c",
+      "a": "Manchirevula",
+      "e": "It is located in Ranga Reddy district and modelled on the lines of Sainik Schools.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the toll-free number for the Tele-MANAS mental health support initiative?",
+      "options": {
+        "a": "14417",
+        "b": "18001416",
+        "c": "14416",
+        "d": "15416"
+      },
+      "answer": "c",
+      "a": "14416",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In what ratio is the PM USHA scheme funded between the Central and State Governments?",
+      "options": {
+        "a": "75:25",
+        "b": "60:40",
+        "c": "50:50",
+        "d": "70:30"
+      },
+      "answer": "b",
+      "a": "60:40",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under JIGNASA, at what level are student projects first assessed before being forwarded to district-level committees?",
+      "options": {
+        "a": "Mandal level",
+        "b": "College level",
+        "c": "University level",
+        "d": "State level"
+      },
+      "answer": "b",
+      "a": "College level",
+      "e": "The best entries are forwarded to district-level committees constituted by District Resource Centres (DRCs).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What does APAAR stand for?",
+      "options": {
+        "a": "Automated Progressive Academic Account Registry",
+        "b": "Automated Permanent Academic Account Registry",
+        "c": "Annual Permanent Academic Account Report",
+        "d": "Advanced Permanent Academic Assessment Registry"
+      },
+      "answer": "b",
+      "a": "Automated Permanent Academic Account Registry",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What does T-STEM stand for?",
+      "options": {
+        "a": "Telangana Science, Technology and Engineering Facilities Map",
+        "b": "Telangana STEM Education Model",
+        "c": "Telangana State Technical Education Monitoring",
+        "d": "Telangana Skills, Training and Employment Mission"
+      },
+      "answer": "a",
+      "a": "Telangana Science, Technology and Engineering Facilities Map",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which district is the Dr. Manmohan Singh Earth Sciences University located?",
+      "options": {
+        "a": "Warangal",
+        "b": "Khammam",
+        "c": "Bhadradri Kothagudem",
+        "d": "Ranga Reddy"
+      },
+      "answer": "c",
+      "a": "Bhadradri Kothagudem",
+      "e": "It is located at Kothagudem, in a mineral-rich region associated with Singareni Collieries.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the objective of the Young India Physical Education and Sports University (YIPESU)?",
+      "options": {
+        "a": "To provide free coaching for national entrance exams",
+        "b": "To manage school sports competitions",
+        "c": "To strengthen the State's sports ecosystem and develop Telangana as a sports hub",
+        "d": "To train teachers in physical education curriculum"
+      },
+      "answer": "c",
+      "a": "To strengthen the State's sports ecosystem and develop Telangana as a sports hub",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many schools does Vocational Education under Samagra Shiksha cover?",
+      "options": {
+        "a": "798",
+        "b": "898",
+        "c": "698",
+        "d": "998"
+      },
+      "answer": "b",
+      "a": "898",
+      "e": "This reaches approximately 1.6 lakh students through 17 NSDC-empanelled Vocational Training Partners.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In October 2025, how many Class XII students completed internships under Vocational Education?",
+      "options": {
+        "a": "5,328",
+        "b": "5,828",
+        "c": "6,328",
+        "d": "4,828"
+      },
+      "answer": "b",
+      "a": "5,828",
+      "e": "These internships spanned 14 trades with 783 employers.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What physical target of learners has Telangana taken up under the ULLAS programme for 2025-26?",
+      "options": {
+        "a": "7.8 lakh",
+        "b": "7.3 lakh",
+        "c": "8.3 lakh",
+        "d": "8.8 lakh"
+      },
+      "answer": "c",
+      "a": "8.3 lakh",
+      "e": "This target was endorsed by the Project Approval Board (PAB).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "With which economic framework has the State aligned its differentiated skilling strategy?",
+      "options": {
+        "a": "CURE-PURE-RARE",
+        "b": "TRAIN-EMPLOY-RETAIN",
+        "c": "SKILL-BUILD-GROW",
+        "d": "SCALE-ADAPT-DEPLOY"
+      },
+      "answer": "a",
+      "a": "CURE-PURE-RARE",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What does T-GATE stand for?",
+      "options": {
+        "a": "Telangana Government Apprenticeship and Training Exchange",
+        "b": "Telangana Gateway for Adaptive Training and Employment",
+        "c": "Telangana General Aptitude Training and Evaluation",
+        "d": "Telangana Growth and Technical Education"
+      },
+      "answer": "b",
+      "a": "Telangana Gateway for Adaptive Training and Employment",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "With which company is the Government collaborating for overseas placement initiatives under Global Mobility pathways?",
+      "options": {
+        "a": "SETWIN",
+        "b": "TOMCOM",
+        "c": "TASK",
+        "d": "TIGS"
+      },
+      "answer": "b",
+      "a": "TOMCOM",
+      "e": "TOMCOM stands for Telangana Overseas Manpower Company; the proposed TIGS (Telangana Institute for Global Skills) is envisaged separately as a Centre of Excellence for international workforce preparation.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At which location will Young India Skill University's permanent campus be established from 2026-27?",
+      "options": {
+        "a": "Station Ghanpur",
+        "b": "Kandukur Mandal, Future City, Hyderabad",
+        "c": "Kothagudem",
+        "d": "Manchirevula, Ranga Reddy"
+      },
+      "answer": "b",
+      "a": "Kandukur Mandal, Future City, Hyderabad",
+      "e": "Phase-I comprises 43 classrooms, a 600-bed hostel and an 84,000 sq. ft. laboratory block on 57.8 acres.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For how many consecutive years has TASK been awarded the ASC Partner Excellence Award by CISCO?",
+      "options": {
+        "a": "ninth",
+        "b": "eighth",
+        "c": "seventh",
+        "d": "tenth"
+      },
+      "answer": "a",
+      "a": "ninth",
+      "e": "TASK also received the ASC Partner Premier+ Award for the third successive year in September 2025.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "From which academic year will Holistic Report Cards be introduced for all students, as per the Way Forward section?",
+      "options": {
+        "a": "2028-29",
+        "b": "2026-27",
+        "c": "2027-28",
+        "d": "2025-26"
+      },
+      "answer": "b",
+      "a": "2026-27",
+      "e": "",
+      "table": null
+    }
+  ]
+}
