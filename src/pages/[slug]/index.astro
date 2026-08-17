@@ -128,9 +128,89 @@ function formatMath(str) {
       </Fragment>
     ) : (
       <Fragment>
-        <div id="lock-banner" style="display:none; background:var(--amber-bg); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:16px; font-size:14px; color:var(--amber-text-strong);">
-          <span id="lock-message">Purchase this subject for 45 days of unlimited access.</span>
-          <a id="lock-action" href="/plans/" style="margin-left:8px; font-weight:700; color:var(--accent); text-decoration:underline;">View plans</a>
+        <div id="reading-toolbar" class="reading-toolbar">
+          <div class="rt-progress-section">
+            <div class="rt-progress-wrap">
+              <div class="rt-progress-track"><div id="rt-progress-fill" class="rt-progress-fill"></div></div>
+              <span id="rt-progress-text" class="rt-progress-text">0 of {questions.length} answered</span>
+            </div>
+            <div class="rt-action-group">
+              <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent">
+                <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Reveal all</span>
+              </button>
+              <button type="button" id="rt-check-score" class="rt-btn rt-btn-ghost">
+                <i class="ti ti-target-arrow" aria-hidden="true"></i> Check my score
+              </button>
+            </div>
+          </div>
+
+          <button type="button" id="rt-options-toggle" class="rt-options-toggle" aria-expanded="false">
+            <span><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i> Text size, filter &amp; jump</span>
+            <i class="ti ti-chevron-down rt-options-chevron" aria-hidden="true"></i>
+          </button>
+
+          <div class="rt-controls-section" id="rt-controls-section" style="display:none;">
+            <div class="rt-control-item">
+              <span class="rt-control-label"><i class="ti ti-text-size" aria-hidden="true"></i> Text size</span>
+              <div class="rt-font-group">
+                <button type="button" class="rt-font-btn" data-size="small">A</button>
+                <button type="button" class="rt-font-btn active" data-size="medium">A</button>
+                <button type="button" class="rt-font-btn" data-size="large">A</button>
+              </div>
+            </div>
+
+            <div class="rt-control-item">
+              <span class="rt-control-label"><i class="ti ti-filter" aria-hidden="true"></i> Filter</span>
+              <select id="rt-filter" class="rt-select">
+                <option value="all">Show all</option>
+                <option value="unanswered">Unanswered only</option>
+                <option value="wrong">Wrong answers only</option>
+              </select>
+            </div>
+
+            <div class="rt-control-item">
+              <span class="rt-control-label"><i class="ti ti-map-pin" aria-hidden="true"></i> Jump to</span>
+              <div class="rt-jump-group">
+                <input type="number" id="rt-jump-input" class="rt-jump-input" placeholder="Q#" min="1" max={questions.length} />
+                <button type="button" id="rt-jump-btn" class="rt-btn rt-btn-ghost rt-btn-small">Go</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="rt-score-summary" class="rt-score-summary" style="display:none;">
+          <button type="button" id="rt-score-close" class="rt-score-close" aria-label="Close score summary">
+            <i class="ti ti-x" aria-hidden="true"></i>
+          </button>
+          <div id="rt-score-content"></div>
+        </div>
+
+        <div class="rt-sticky-bar"><div id="rt-sticky-fill" class="rt-sticky-fill"></div></div>
+
+        <div id="rt-confirm-overlay" class="rt-confirm-overlay" style="display:none;">
+          <div class="rt-confirm-box">
+            <p id="rt-confirm-message" class="rt-confirm-message"></p>
+            <div class="rt-confirm-actions">
+              <button type="button" id="rt-confirm-cancel" class="rt-btn">Keep practicing</button>
+              <button type="button" id="rt-confirm-ok" class="rt-btn rt-btn-accent-solid"></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="rt-toast" class="rt-toast" style="display:none;"></div>
+
+        <!-- Daily-limit / paywall popup: real gating unchanged (same IDs,
+             same showLimitReached()/showRemainingHint() logic below) — only
+             the presentation changed from an inline banner to a blurred
+             modal overlay, matching the confirm-popup style above. -->
+        <div id="lock-banner" class="lock-overlay" style="display:none;">
+          <div class="lock-modal">
+            <button type="button" id="lock-close" class="lock-close" aria-label="Close">
+              <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+            <p id="lock-message" class="lock-message">Purchase this subject for 45 days of unlimited access.</p>
+            <a id="lock-action" href="/plans/" class="rt-btn rt-btn-accent-solid lock-action">View plans</a>
+          </div>
         </div>
 
         <div id="faq-list" class="faq-list" style="margin-top:20px;">
@@ -236,12 +316,64 @@ function formatMath(str) {
       padding: 14px 16px;
     }
 
+    /* ---------- Rich MCQ option rows ---------- */
+    .opt-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+    }
+    .opt-row.opt-clickable { cursor: pointer; }
+    .opt-row.opt-clickable:active { transform: scale(0.985); }
+    .opt-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .opt-text { flex: 1; }
+    .opt-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    .opt-row-correct {
+      background: var(--success-bg);
+      border-color: var(--success-text);
+      font-weight: 700;
+    }
+    .opt-row-correct .opt-badge { background: var(--success-text); color: #fff; }
+    .opt-icon-correct { background: var(--success-text); color: #fff; }
+    .opt-row-wrong {
+      background: var(--amber-bg);
+      border-color: #c0392b;
+      font-weight: 700;
+    }
+    .opt-row-wrong .opt-badge { background: #c0392b; color: #fff; }
+    .opt-icon-wrong { background: #c0392b; color: #fff; }
+
     /* Mobile font reduction — English chapters only. Telugu chapters
        (.lang-te) are untouched so Telugu font sizing stays exactly as-is. */
     @media (max-width: 640px) {
       .lang-en h1 { font-size: 19px !important; }
       .lang-en .q-text { font-size: 15px !important; font-weight: 400 !important; }
-      .lang-en .opt-letter,
+      .lang-en .opt-badge,
       .lang-en .opt-text { font-size: 14px !important; }
       .lang-en .answer-text { font-size: 14px !important; font-weight: 600 !important; }
       .lang-en .expl-text { font-size: 14px !important; }
@@ -363,6 +495,414 @@ function formatMath(str) {
     @media (min-width: 720px) {
       .ref-entry-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
       .ref-group-label { grid-column: 1 / -1; }
+    }
+    /* ---------- Reading-experience toolbar ---------- */
+    .reading-toolbar {
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 16px;
+      box-shadow: 0 12px 30px -14px rgba(20,16,43,0.5);
+    }
+    .rt-progress-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .rt-progress-wrap { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 180px; }
+    .rt-progress-track {
+      flex: 1;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      overflow: hidden;
+    }
+    .rt-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      transition: width 0.3s ease;
+      box-shadow: 0 0 8px rgba(255,154,60,0.5);
+    }
+    .rt-progress-text { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.65); white-space: nowrap; }
+
+    .rt-action-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .rt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.15s ease;
+    }
+    .rt-btn:active { transform: scale(0.97); }
+    .rt-btn:disabled { opacity: 0.75; cursor: default; }
+    .rt-spin { animation: rt-spin-anim 0.7s linear infinite; }
+    @keyframes rt-spin-anim { to { transform: rotate(360deg); } }
+    .rt-btn i { font-size: 15px; }
+    .rt-btn-accent {
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      border: none;
+      box-shadow: 0 4px 12px -4px rgba(255,154,60,0.55);
+    }
+    .rt-btn-ghost {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #ffcb8a;
+    }
+    .rt-btn-small { padding: 7px 12px; }
+
+    .rt-options-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: none;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 14px;
+      padding: 12px 2px 0;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      cursor: pointer;
+    }
+    .rt-options-toggle span { display: flex; align-items: center; gap: 6px; }
+    .rt-options-toggle i { font-size: 15px; }
+    .rt-options-chevron { transition: transform 0.2s ease; }
+    .rt-options-toggle[aria-expanded="true"] .rt-options-chevron { transform: rotate(180deg); }
+
+    .rt-controls-section {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      align-items: flex-end;
+    }
+    .rt-control-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1 1 140px;
+      min-width: 0;
+    }
+    .rt-control-label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.55);
+    }
+    .rt-control-label i { font-size: 13px; }
+
+    .rt-font-group { display: flex; align-items: center; gap: 6px; }
+    .rt-font-btn {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 6px 11px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.15s ease;
+    }
+    .rt-font-btn[data-size="small"] { font-size: 11px; }
+    .rt-font-btn[data-size="medium"] { font-size: 14px; }
+    .rt-font-btn[data-size="large"] { font-size: 17px; }
+    .rt-font-btn.active {
+      border-color: #ff9a3c;
+      color: #2a1400;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+    }
+    .rt-select {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .rt-select option { background: #1c1438; color: #ffffff; }
+    .rt-jump-group { display: flex; gap: 6px; width: 100%; }
+    .rt-jump-input {
+      flex: 1;
+      min-width: 0;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .rt-jump-input::placeholder { color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 480px) {
+      .rt-progress-section { flex-direction: column; align-items: stretch; }
+      .rt-action-group { justify-content: stretch; }
+      .rt-action-group .rt-btn { flex: 1; justify-content: center; }
+      .rt-controls-section { flex-direction: column; }
+      .rt-control-item { flex: 1 1 auto; width: 100%; }
+    }
+
+    /* Sticky mini progress bar while scrolling through a long chapter */
+    .rt-sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 4px;
+      background: var(--border);
+      margin: 0 -16px;
+    }
+    .rt-sticky-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    /* Font-size scaling applied to question + answer text */
+    .content[data-font-size="small"] .q-text,
+    .content[data-font-size="small"] .opt-text,
+    .content[data-font-size="small"] .answer-text,
+    .content[data-font-size="small"] .expl-text { font-size: 13px !important; }
+    .content[data-font-size="large"] .q-text,
+    .content[data-font-size="large"] .opt-text,
+    .content[data-font-size="large"] .answer-text,
+    .content[data-font-size="large"] .expl-text { font-size: 18px !important; }
+
+    /* Small text size also tightens spacing/padding so more content
+       actually fits on screen — a smaller font alone just leaves empty
+       whitespace without this. */
+    .content[data-font-size="small"] .faq-list { gap: 8px !important; }
+    .content[data-font-size="small"] .q-row { padding: 11px 40px 11px 12px !important; gap: 8px !important; }
+    .content[data-font-size="small"] .q-num { font-size: 13px !important; min-width: 20px !important; }
+    .content[data-font-size="small"] .a-row { padding: 10px 12px !important; }
+    .content[data-font-size="small"] .opt-row { padding: 8px 10px !important; gap: 8px !important; }
+    .content[data-font-size="small"] .opt-badge { width: 22px !important; height: 22px !important; font-size: 11px !important; }
+    .content[data-font-size="small"] .opt-icon { width: 18px !important; height: 18px !important; font-size: 11px !important; }
+    .content[data-font-size="small"] .opt-list { gap: 4px !important; }
+
+    /* Large text size gets slightly roomier spacing to match the bigger
+       type, so it doesn't feel cramped. */
+    .content[data-font-size="large"] .faq-list { gap: 16px !important; }
+    .content[data-font-size="large"] .q-row { padding: 18px 50px 18px 18px !important; gap: 12px !important; }
+    .content[data-font-size="large"] .a-row { padding: 16px 18px !important; }
+    .content[data-font-size="large"] .opt-row { padding: 13px 14px !important; gap: 12px !important; }
+    .content[data-font-size="large"] .opt-badge { width: 30px !important; height: 30px !important; font-size: 15px !important; }
+
+    /* Score summary card, shown after reveal-all or on reaching the end */
+    .rt-score-summary {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .rt-score-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 4px;
+      font-size: 16px;
+    }
+    .rt-score-close:hover { color: var(--text); }
+    .rt-score-summary .rt-score-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .rt-score-summary .rt-score-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ---------- Score summary stat boxes ---------- */
+    .rt-score-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 14px;
+    }
+    .rt-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .rt-stat-box {
+      border-radius: 12px;
+      padding: 14px 8px;
+      text-align: center;
+    }
+    .rt-stat-box-correct {
+      background: var(--success-bg);
+      border: 1px solid var(--success-text);
+    }
+    .rt-stat-box-wrong {
+      background: var(--amber-bg);
+      border: 1px solid #c0392b;
+    }
+    .rt-stat-box-notattempted {
+      background: color-mix(in srgb, var(--muted) 12%, var(--card));
+      border: 1px solid var(--border);
+    }
+    .rt-stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .rt-stat-box-correct .rt-stat-num { color: var(--success-text); }
+    .rt-stat-box-wrong .rt-stat-num { color: #c0392b; }
+    .rt-stat-box-notattempted .rt-stat-num { color: var(--muted); }
+    .rt-stat-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      margin-top: 4px;
+      color: var(--muted);
+    }
+
+    .faq-item.rt-hidden { display: none !important; }
+
+    /* ---------- Confirm modal (used by Reveal all + Check my score) ---------- */
+    .rt-confirm-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+    .rt-confirm-box {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 20px 50px -20px rgba(0,0,0,0.4);
+    }
+    .rt-confirm-message {
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: var(--text);
+      margin: 0 0 18px;
+    }
+    .rt-confirm-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .rt-confirm-actions .rt-btn {
+      flex: 1;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+    }
+    .rt-btn-accent-solid {
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c) !important;
+      color: #2a1400 !important;
+      border: none !important;
+    }
+
+    /* ---------- Toast (used for filter/jump notices) ---------- */
+    .rt-toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1c1438;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4);
+      z-index: 90;
+      animation: rt-toast-in 0.25s ease-out;
+      max-width: 90vw;
+      text-align: center;
+    }
+    @keyframes rt-toast-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* ---------- Daily-limit / paywall popup ---------- */
+    .lock-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 110;
+      padding: 20px;
+    }
+    .lock-modal {
+      position: relative;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 30px 24px 26px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 60px -20px rgba(0,0,0,0.5);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .lock-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 4px;
+      font-size: 18px;
+    }
+    .lock-close:hover { color: var(--text); }
+    .lock-message {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text);
+      margin: 0 30px 20px 0;
+    }
+    .lock-action {
+      display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
     }
   </style>
 
@@ -496,6 +1036,73 @@ function formatMath(str) {
     let currentPage = 1;
     const revealedAnswers = {};
     let purchased = false;
+
+    // ---------- Lazy entitlement check for premium toolbar features ----------
+    // Only called when the student actually taps a premium feature (Reveal
+    // all, Check my score, Filter, Jump) — NOT on page load. Reuses the
+    // session Header.astro already fetched once per page load
+    // (window.__shSessionPromise) instead of calling /me again — a guest
+    // (not logged in) can never have purchased anything, so we skip the
+    // /check-access call entirely for guests and answer instantly. Only
+    // logged-in users trigger the real /check-access call, and that's
+    // cached after the first check so it never re-fires for the rest of
+    // the visit.
+    let entitlementChecked = false;
+    let entitlementCheckPromise = null;
+
+    function getSession() {
+      if (window.__shSessionPromise) return window.__shSessionPromise;
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .catch(() => ({ logged_in: false }));
+    }
+
+    async function ensureEntitlementChecked() {
+      if (purchased) return true; // already confirmed via an answer fetch
+      if (entitlementChecked) return purchased;
+      if (entitlementCheckPromise) return entitlementCheckPromise;
+
+      entitlementCheckPromise = (async () => {
+        try {
+          const session = await getSession();
+          if (!session.logged_in) {
+            // Guest — can never have purchased anything. No /check-access
+            // call needed at all.
+            entitlementChecked = true;
+            entitlementCheckPromise = null;
+            return false;
+          }
+          const accessRes = await fetch(
+            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`
+          );
+          const accessData = await accessRes.json();
+          purchased = Boolean(accessData.unlocked);
+          entitlementChecked = true;
+        } catch (err) {
+          // Network error — don't cache as "checked", so the next premium
+          // click retries instead of being permanently stuck as locked.
+        }
+        entitlementCheckPromise = null;
+        return purchased;
+      })();
+
+      return entitlementCheckPromise;
+    }
+
+    // ---------- Button loading feedback ----------
+    // Gives instant visual response to a tap even while the entitlement
+    // check is in flight, so the button never feels unresponsive on a
+    // slower connection. Restores the button's original content after.
+    function withButtonLoading(btn, task) {
+      if (!btn) return task();
+      const original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="ti ti-loader-2 rt-spin" aria-hidden="true"></i> Checking&hellip;';
+      return Promise.resolve(task()).finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = original;
+      });
+    }
     let limitReached = false;
     let bulkAnswers = null;
 
@@ -517,6 +1124,19 @@ function formatMath(str) {
     const lockBanner = document.getElementById('lock-banner');
     const lockMessage = document.getElementById('lock-message');
     const lockAction = document.getElementById('lock-action');
+    const lockClose = document.getElementById('lock-close');
+
+    if (lockClose) {
+      lockClose.addEventListener('click', () => {
+        lockBanner.style.display = 'none';
+      });
+    }
+    if (lockBanner) {
+      // Click on the dimmed backdrop (outside the modal card) also closes it.
+      lockBanner.addEventListener('click', (e) => {
+        if (e.target === lockBanner) lockBanner.style.display = 'none';
+      });
+    }
     const totalItems = list.querySelectorAll('.faq-item').length;
     const totalPages = Math.ceil(totalItems / perPage);
 
@@ -583,35 +1203,42 @@ function formatMath(str) {
       `;
     }
 
-    function renderMcqBox(f, i) {
-      const selected = userSelections[i] || null;
+    function renderMcqBox(f, i, peek = false) {
+      const selected = peek ? null : (userSelections[i] || null);
       const letters = Object.keys(f.options);
 
       const optionRows = letters.map((letter) => {
         const isCorrect = letter === f.answer;
         const isWrongPick = selected && letter === selected && !isCorrect;
         const isRightPick = selected && isCorrect;
+        // Peek mode (Reveal-all): just highlight the correct option green,
+        // no wrong/right verdict since the user never actually picked.
+        const isPeekCorrect = peek && isCorrect;
 
-        let stateStyle = 'background:var(--card); border-color:var(--border);';
+        let rowClass = 'opt-row';
+        let badgeClass = 'opt-badge';
         let icon = '';
-        if (isRightPick) {
-          stateStyle = 'background:var(--success-bg); border-color:var(--success-text); font-weight:700;';
-          icon = '<span style="margin-left:auto; color:var(--success-text);">&#10003;</span>';
+        if (isRightPick || isPeekCorrect) {
+          rowClass += ' opt-row-correct';
+          badgeClass += ' opt-badge-correct';
+          icon = '<span class="opt-icon opt-icon-correct"><i class="ti ti-check" aria-hidden="true"></i></span>';
         } else if (isWrongPick) {
-          stateStyle = 'background:var(--amber-bg); border-color:#c0392b; font-weight:700;';
-          icon = '<span style="margin-left:auto; color:#c0392b;">&#10007;</span>';
+          rowClass += ' opt-row-wrong';
+          badgeClass += ' opt-badge-wrong';
+          icon = '<span class="opt-icon opt-icon-wrong"><i class="ti ti-x" aria-hidden="true"></i></span>';
         }
+        if (!selected && !peek) rowClass += ' opt-clickable';
 
         return `
-          <div class="opt-row${selected ? '' : ' opt-clickable'}" data-letter="${letter}" style="display:flex; gap:8px; align-items:center; padding:10px 12px; border-radius:8px; border:1px solid var(--border); cursor:${selected ? 'default' : 'pointer'}; ${stateStyle}">
-            <span class="opt-letter" style="text-transform:uppercase; color:var(--muted); flex-shrink:0;">(${letter})</span>
+          <div class="${rowClass}" data-letter="${letter}">
+            <span class="${badgeClass}">${letter.toLowerCase()}</span>
             <span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>
             ${icon}
           </div>
         `;
       }).join('');
 
-      const feedbackHtml = selected ? `
+      const feedbackHtml = (selected || peek) ? `
         <p class="answer-text" style="margin:12px 0 0; font-weight:600; font-size:14px; color:var(--success-text);">
           Correct Answer: ${formatMath(f.a)}
         </p>
@@ -636,8 +1263,8 @@ function formatMath(str) {
       `;
     }
 
-    function renderAnswerHtml(f, i) {
-      return f && f.type === 'mcq' && f.options ? renderMcqBox(f, i) : renderFaqBox(f);
+    function renderAnswerHtml(f, i, peek = false) {
+      return f && f.type === 'mcq' && f.options ? renderMcqBox(f, i, peek) : renderFaqBox(f);
     }
 
     // ---------- Skeleton loading, replaces plain "Loading..." text.
@@ -661,6 +1288,7 @@ function formatMath(str) {
           userSelections[i] = optEl.getAttribute('data-letter');
           aRow.innerHTML = renderAnswerHtml(f, i);
           attachMcqHandlers(aRow, f, i);
+          markAnswered(i);
         });
       });
 
@@ -683,6 +1311,7 @@ function formatMath(str) {
         item.style.display = itemPage === page ? 'block' : 'none';
       });
       renderPagination();
+      closeOptionsPanel();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -707,7 +1336,7 @@ function formatMath(str) {
     }
 
     function showLimitReached(message) {
-      lockBanner.style.display = 'block';
+      lockBanner.style.display = 'flex';
       lockMessage.textContent = message;
       lockAction.textContent = 'View plans';
       lockAction.href = PLANS_URL;
@@ -715,7 +1344,7 @@ function formatMath(str) {
 
     function showRemainingHint(remaining, dailyLimit) {
       if (remaining <= 3) {
-        lockBanner.style.display = 'block';
+        lockBanner.style.display = 'flex';
         lockMessage.textContent = `${remaining} of ${dailyLimit} free answers left for this subject today. Resets tomorrow.`;
         lockAction.textContent = 'View plans';
         lockAction.href = PLANS_URL;
@@ -755,6 +1384,146 @@ function formatMath(str) {
       return inFlightFetches[i];
     }
 
+    // ---------- Reading-experience state ----------
+    const answeredSet = new Set(); // indices genuinely answered: FAQ reveal, or MCQ option pick
+    const totalQuestions = totalItems;
+
+    function updateProgress() {
+      const fill = document.getElementById('rt-progress-fill');
+      const text = document.getElementById('rt-progress-text');
+      const stickyFill = document.getElementById('rt-sticky-fill');
+      const pct = totalQuestions ? Math.round((answeredSet.size / totalQuestions) * 100) : 0;
+      if (fill) fill.style.width = pct + '%';
+      if (stickyFill) stickyFill.style.width = pct + '%';
+      if (text) text.textContent = `${answeredSet.size} of ${totalQuestions} answered`;
+    }
+
+    function markAnswered(i) {
+      answeredSet.add(i);
+      updateProgress();
+    }
+
+    // ---------- openAnswerFor: single entry point for revealing a question,
+    // used by both individual taps and Reveal-all. Every reveal — including
+    // ones triggered by Reveal-all — goes through the SAME real fetch/
+    // entitlement path as a manual click. Nothing bypasses the paywall:
+    // guests and unpurchased users hit the exact same lock-banner/daily-
+    // limit response Reveal-all just surfaces it via the same popup.
+    // Returns true if revealed successfully, false if blocked (limit/error)
+    // — Reveal-all uses this to know when to stop.
+    async function openAnswerFor(i, { scroll = true, peek = false } = {}) {
+      const row = list.querySelector(`.q-row[data-i="${i}"]`);
+      if (!row) return true;
+      const faqItem = row.closest('.faq-item');
+      const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
+
+      // Already revealed (fetched earlier) — just re-render, no new fetch.
+      // Peek always force-re-renders in pure-answer-key style, even if the
+      // question was already open from the student's own tap.
+      if (revealedAnswers[i]) {
+        if (aRow.style.display === 'block' && !peek) return true;
+        faqItem.classList.add('open');
+        aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i, peek);
+        aRow.style.display = 'block';
+        attachMcqHandlers(aRow, revealedAnswers[i], i);
+        return true;
+      }
+
+      if (aRow.style.display === 'block' && !peek) return true;
+
+      if (bulkAnswers && bulkAnswers[i]) {
+        revealedAnswers[i] = bulkAnswers[i];
+        faqItem.classList.add('open');
+        aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i, peek);
+        aRow.style.display = 'block';
+        attachMcqHandlers(aRow, bulkAnswers[i], i);
+        return true;
+      }
+
+      if (limitReached) {
+        aRow.style.display = 'none';
+        faqItem.classList.remove('open');
+        showLimitReached('Please log in or purchase to continue.');
+        return false;
+      }
+
+      faqItem.classList.add('open');
+      if (!peek) {
+        aRow.innerHTML = renderSkeleton();
+        aRow.style.display = 'block';
+      }
+
+      const pending = prefetchAnswer(i) || (async () => {
+        try {
+          const fp = await getFingerprint();
+          const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
+          const res = await fetch(
+            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
+            { credentials: 'include' }
+          );
+          const data = await res.json();
+          return { ok: res.ok, data };
+        } catch (err) {
+          return { ok: false, networkError: true };
+        }
+      })();
+
+      const result = await pending;
+      delete inFlightFetches[i];
+
+      if (result.networkError) {
+        aRow.style.display = 'none';
+        faqItem.classList.remove('open');
+        if (window.showToast) {
+          window.showToast('Network error. Please check your connection and try again.', 'error');
+        } else {
+          showLimitReached('Network error. Please check your connection and try again.');
+        }
+        return false;
+      }
+
+      const { ok, data } = result;
+
+      if (!ok) {
+        aRow.style.display = 'none';
+        faqItem.classList.remove('open');
+        if (data.limitReached) limitReached = true;
+        showLimitReached(data.error || 'Please log in or purchase to continue.');
+        return false;
+      }
+
+      revealedAnswers[i] = data.answer;
+      aRow.innerHTML = renderAnswerHtml(data.answer, i, peek);
+      aRow.style.display = 'block';
+      attachMcqHandlers(aRow, data.answer, i);
+
+      // Reveal-all (peek) never touches the progress/answered count — it's
+      // a lookup action, not practice. FAQ reveals via a real tap count
+      // immediately; MCQ only counts once the user picks an option (see
+      // attachMcqHandlers).
+      const isMcq = data.answer && data.answer.type === 'mcq' && data.answer.options;
+      if (!peek && !isMcq) markAnswered(i);
+
+      if (data.unlimited) {
+        purchased = true;
+        lockBanner.style.display = 'none';
+        if (!bulkAnswers) fetchAllAnswersInBackground();
+      } else if (typeof data.remaining === 'number') {
+        showRemainingHint(data.remaining, data.dailyLimit);
+      }
+
+      if (scroll) {
+        setTimeout(() => {
+          const rect = faqItem.getBoundingClientRect();
+          if (rect.bottom > window.innerHeight || rect.top < 0) {
+            faqItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 50);
+      }
+
+      return true;
+    }
+
     list.querySelectorAll('.q-row').forEach((row) => {
       const i = parseInt(row.getAttribute('data-i'));
 
@@ -764,104 +1533,301 @@ function formatMath(str) {
         prefetchAnswer(i);
       });
 
-      row.addEventListener('click', async () => {
-        const faqItem = row.closest('.faq-item');
-        const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
-        const isOpen = aRow.style.display === 'block';
-
-        // Once an answer/options area is opened, it stays open — we no
-        // longer close other open answers when a new question is tapped.
-        // That "close everything else" step was the main cause of the
-        // page jumping/shaking, since it shifted content above/below the
-        // tapped row. Only the explanation sub-section (toggled via its
-        // own Show/Hide button, see attachMcqHandlers) stays collapsible.
-        if (isOpen) return;
-
-        faqItem.classList.add('open');
-
-        if (revealedAnswers[i]) {
-          aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i);
-          aRow.style.display = 'block';
-          attachMcqHandlers(aRow, revealedAnswers[i], i);
-          return;
-        }
-
-        if (bulkAnswers && bulkAnswers[i]) {
-          revealedAnswers[i] = bulkAnswers[i];
-          aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i);
-          aRow.style.display = 'block';
-          attachMcqHandlers(aRow, bulkAnswers[i], i);
-          return;
-        }
-
-        if (limitReached) {
-          aRow.style.display = 'none';
-          faqItem.classList.remove('open');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-
-        aRow.innerHTML = renderSkeleton();
-        aRow.style.display = 'block';
-
-        // Reuse the pointerdown-started fetch if it's already in flight;
-        // otherwise start one now (covers keyboard/programmatic activation
-        // that never fired pointerdown).
-        const pending = prefetchAnswer(i) || (async () => {
-          try {
-            const fp = await getFingerprint();
-            const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
-            const res = await fetch(
-              `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
-              { credentials: 'include' }
-            );
-            const data = await res.json();
-            return { ok: res.ok, data };
-          } catch (err) {
-            return { ok: false, networkError: true };
-          }
-        })();
-
-        const result = await pending;
-        delete inFlightFetches[i];
-
-        if (result.networkError) {
-          aRow.style.display = 'none';
-          faqItem.classList.remove('open');
-          if (window.showToast) {
-            window.showToast('Network error. Please check your connection and try again.', 'error');
-          } else {
-            showLimitReached('Network error. Please check your connection and try again.');
-          }
-          return;
-        }
-
-        const { ok, data } = result;
-
-        if (!ok) {
-          aRow.style.display = 'none';
-          faqItem.classList.remove('open');
-          if (data.limitReached) limitReached = true;
-          showLimitReached(data.error || 'Please log in or purchase to continue.');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-
-        revealedAnswers[i] = data.answer;
-        aRow.innerHTML = renderAnswerHtml(data.answer, i);
-        aRow.style.display = 'block';
-        attachMcqHandlers(aRow, data.answer, i);
-
-        if (data.unlimited) {
-          purchased = true;
-          lockBanner.style.display = 'none';
-          if (!bulkAnswers) fetchAllAnswersInBackground();
-        } else if (typeof data.remaining === 'number') {
-          showRemainingHint(data.remaining, data.dailyLimit);
-        }
+      row.addEventListener('click', () => {
+        openAnswerFor(i);
       });
     });
 
+    // ---------- Confirm modal helper (Reveal all + Check my score) ----------
+    function showConfirm(message, okLabel, onConfirm) {
+      const overlay = document.getElementById('rt-confirm-overlay');
+      const msgEl = document.getElementById('rt-confirm-message');
+      const okBtn = document.getElementById('rt-confirm-ok');
+      const cancelBtn = document.getElementById('rt-confirm-cancel');
+      if (!overlay || !msgEl || !okBtn || !cancelBtn) { onConfirm(); return; }
+
+      msgEl.textContent = message;
+      okBtn.textContent = okLabel;
+      overlay.style.display = 'flex';
+
+      function cleanup() {
+        overlay.style.display = 'none';
+        okBtn.removeEventListener('click', handleOk);
+        cancelBtn.removeEventListener('click', handleCancel);
+      }
+      function handleOk() { cleanup(); onConfirm(); }
+      function handleCancel() { cleanup(); }
+
+      okBtn.addEventListener('click', handleOk);
+      cancelBtn.addEventListener('click', handleCancel);
+    }
+
+    // ---------- Toast helper (filter/jump notices) ----------
+    let toastTimer = null;
+    function showLocalToast(message) {
+      const toast = document.getElementById('rt-toast');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.style.display = 'block';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 2500);
+    }
+
+    // ---------- Reveal all / Hide all (toggle) ----------
+    // Every question Reveal-all opens goes through the exact same fetch/
+    // entitlement check as a manual click (see openAnswerFor above) — a
+    // guest or unpurchased user hits the same lock popup partway through,
+    // exactly as if they'd been clicking one by one. Sequential (not
+    // parallel) fetches, so the daily-limit check stays accurate.
+    const revealAllBtn = document.getElementById('rt-reveal-all');
+    const revealAllLabel = document.getElementById('rt-reveal-all-label');
+    let allRevealed = false;
+
+    async function doRevealAll() {
+      for (let i = 0; i < totalQuestions; i++) {
+        const success = await openAnswerFor(i, { scroll: false, peek: true });
+        if (!success) return; // blocked by paywall/limit — stop right here
+      }
+      if (revealAllLabel) revealAllLabel.textContent = 'Hide all';
+      allRevealed = true;
+    }
+
+    if (revealAllBtn) {
+      revealAllBtn.addEventListener('click', async () => {
+        if (!allRevealed) {
+          const ok = await withButtonLoading(revealAllBtn, () => ensureEntitlementChecked());
+          if (!ok) {
+            showLimitReached('Reveal all is a premium feature. Purchase this subject to unlock it.');
+            return;
+          }
+          if (answeredSet.size > 0 && answeredSet.size < totalQuestions) {
+            showConfirm(
+              `You've answered ${answeredSet.size} of ${totalQuestions} questions. Revealing all will show every answer, including ones you haven't tried yet.`,
+              'Reveal anyway',
+              doRevealAll
+            );
+          } else {
+            doRevealAll();
+          }
+        } else {
+          list.querySelectorAll('.a-row').forEach((aRow) => { aRow.style.display = 'none'; });
+          list.querySelectorAll('.faq-item').forEach((item) => { item.classList.remove('open'); });
+          if (revealAllLabel) revealAllLabel.textContent = 'Reveal all';
+          allRevealed = false;
+        }
+      });
+    }
+
+    // ---------- Check my score ----------
+    // Only ever scores questions that have actually been revealed (fetched
+    // for real) — there is no local answer key to draw from, unlike a demo
+    // build. Unrevealed questions simply can't be scored and aren't counted
+    // in the MCQ denominator, since their correct answer is never sent to
+    // the client until unlocked.
+    const checkScoreBtn = document.getElementById('rt-check-score');
+
+    function doCheckScore() {
+      showScoreSummary();
+      const summary = document.getElementById('rt-score-summary');
+      if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    if (checkScoreBtn) {
+      checkScoreBtn.addEventListener('click', async () => {
+        const ok = await withButtonLoading(checkScoreBtn, () => ensureEntitlementChecked());
+        if (!ok) {
+          showLimitReached('Check my score is a premium feature. Purchase this subject to unlock it.');
+          return;
+        }
+        if (answeredSet.size > 0 && answeredSet.size < totalQuestions) {
+          showConfirm(
+            `You've answered ${answeredSet.size} of ${totalQuestions} questions. Check your score now, or keep practicing?`,
+            'Check anyway',
+            doCheckScore
+          );
+        } else {
+          doCheckScore();
+        }
+      });
+    }
+
+    const scoreCloseBtn = document.getElementById('rt-score-close');
+    if (scoreCloseBtn) {
+      scoreCloseBtn.addEventListener('click', () => {
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.style.display = 'none';
+      });
+    }
+
+    function showScoreSummary() {
+      const summary = document.getElementById('rt-score-summary');
+      const content = document.getElementById('rt-score-content');
+      if (!summary || !content) return;
+
+      let correct = 0, wrong = 0, mcqRevealed = 0;
+      Object.keys(revealedAnswers).forEach((key) => {
+        const idx = parseInt(key);
+        const f = revealedAnswers[idx];
+        const isMcq = f && f.type === 'mcq' && f.options;
+        if (!isMcq) return;
+        mcqRevealed++;
+        const pick = userSelections[idx];
+        if (!pick) return;
+        if (pick === f.answer) correct++; else wrong++;
+      });
+
+      if (mcqRevealed === 0) {
+        summary.style.display = 'block';
+        content.innerHTML = `
+          <p class="rt-score-title">Your progress</p>
+          <div style="text-align:center;">
+            <div class="rt-score-num">${answeredSet.size}/${totalQuestions}</div>
+            <div class="rt-score-label">questions reviewed</div>
+          </div>
+        `;
+        return;
+      }
+
+      const notAttempted = mcqRevealed - correct - wrong;
+      summary.style.display = 'block';
+      content.innerHTML = `
+        <p class="rt-score-title">Your score (revealed questions)</p>
+        <div class="rt-stat-grid">
+          <div class="rt-stat-box rt-stat-box-correct">
+            <div class="rt-stat-num">${correct}</div>
+            <div class="rt-stat-label">Correct</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-wrong">
+            <div class="rt-stat-num">${wrong}</div>
+            <div class="rt-stat-label">Wrong</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-notattempted">
+            <div class="rt-stat-num">${notAttempted}</div>
+            <div class="rt-stat-label">Not attempted</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ---------- Filter: all / unanswered / wrong ----------
+    // "Wrong" can only check questions that have actually been revealed
+    // (we have no local answer key for unrevealed ones).
+    async function applyFilter() {
+      const filterSelect = document.getElementById('rt-filter');
+      const mode = filterSelect ? filterSelect.value : 'all';
+      const pag = document.getElementById('pagination');
+
+      if (mode !== 'all') {
+        filterSelect.disabled = true;
+        const ok = await ensureEntitlementChecked();
+        filterSelect.disabled = false;
+        if (!ok) {
+          filterSelect.value = 'all';
+          showLimitReached('Filtering by unanswered/wrong is a premium feature. Purchase this subject to unlock it.');
+          return;
+        }
+      }
+
+      if (mode === 'all') {
+        if (pag) pag.style.display = '';
+        list.querySelectorAll('.faq-item').forEach((item) => {
+          item.classList.remove('rt-hidden');
+        });
+        showPage(currentPage);
+        return;
+      }
+
+      if (pag) pag.style.display = 'none';
+      let matchCount = 0;
+      list.querySelectorAll('.faq-item').forEach((item) => {
+        const i = parseInt(item.getAttribute('data-i'));
+        let show = true;
+        if (mode === 'unanswered') show = !answeredSet.has(i);
+        else if (mode === 'wrong') {
+          const f = revealedAnswers[i];
+          const isMcq = f && f.type === 'mcq' && f.options;
+          show = isMcq && userSelections[i] && userSelections[i] !== f.answer;
+        }
+        item.style.display = show ? 'block' : 'none';
+        item.classList.toggle('rt-hidden', !show);
+        if (show) matchCount++;
+      });
+
+      const modeLabel = mode === 'unanswered' ? 'unanswered' : 'wrong-answer';
+      showLocalToast(`Showing ${matchCount} ${modeLabel} question${matchCount === 1 ? '' : 's'}`);
+    }
+    const filterSelect = document.getElementById('rt-filter');
+    if (filterSelect) filterSelect.addEventListener('change', applyFilter);
+
+    // ---------- Jump to question ----------
+    const jumpInput = document.getElementById('rt-jump-input');
+    const jumpBtn = document.getElementById('rt-jump-btn');
+    async function jumpToQuestion() {
+      const n = parseInt(jumpInput.value);
+      if (!n || n < 1 || n > totalQuestions) return;
+
+      const ok = await withButtonLoading(jumpBtn, () => ensureEntitlementChecked());
+      if (!ok) {
+        showLimitReached('Jump to question is a premium feature. Purchase this subject to unlock it.');
+        return;
+      }
+
+      if (filterSelect && filterSelect.value !== 'all') {
+        filterSelect.value = 'all';
+        applyFilter();
+        showLocalToast(`Filter cleared to jump to Q${n}`);
+      }
+
+      const targetIndex = n - 1;
+      const targetPage = Math.floor(targetIndex / perPage) + 1;
+      if (targetPage !== currentPage) showPage(targetPage);
+      setTimeout(() => {
+        const item = list.querySelector(`.faq-item[data-i="${targetIndex}"]`);
+        if (item) {
+          item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          item.style.transition = 'box-shadow 0.3s ease';
+          item.style.boxShadow = '0 0 0 2px var(--accent)';
+          setTimeout(() => { item.style.boxShadow = ''; }, 1200);
+        }
+      }, 100);
+    }
+    if (jumpBtn) jumpBtn.addEventListener('click', jumpToQuestion);
+    if (jumpInput) jumpInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') jumpToQuestion(); });
+
+    // ---------- Options toggle (collapsed by default) ----------
+    // Only auto-closes when moving to a different page (see showPage) —
+    // stays open through filter/text-size/jump selections and clicks
+    // elsewhere on the page.
+    const optionsToggle = document.getElementById('rt-options-toggle');
+    const controlsSection = document.getElementById('rt-controls-section');
+
+    function closeOptionsPanel() {
+      if (!controlsSection || !optionsToggle) return;
+      controlsSection.style.display = 'none';
+      optionsToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (optionsToggle && controlsSection) {
+      optionsToggle.addEventListener('click', () => {
+        const isOpen = controlsSection.style.display === 'flex';
+        controlsSection.style.display = isOpen ? 'none' : 'flex';
+        optionsToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+
+    // ---------- Font size control ----------
+    // UX TOGGLE: set to false to disable auto-scroll on reveal, reverting
+    // to plain in-place opening — single flag, no other code changes.
+    const contentEl = document.querySelector('.content');
+    document.querySelectorAll('.rt-font-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.rt-font-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (contentEl) contentEl.setAttribute('data-font-size', btn.getAttribute('data-size'));
+      });
+    });
+
+    updateProgress();
     renderPagination();
   </script>
   )}
