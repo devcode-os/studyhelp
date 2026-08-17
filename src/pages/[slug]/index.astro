@@ -1095,12 +1095,27 @@ function formatMath(str) {
     // slower connection. Restores the button's original content after.
     function withButtonLoading(btn, task) {
       if (!btn) return task();
-      const original = btn.innerHTML;
+      // Hide the button's existing children (don't destroy/recreate them —
+      // overwriting innerHTML would detach any cached references to them,
+      // like the Reveal-all label/icon, silently breaking later updates).
+      // Insert a temporary spinner alongside instead, then just toggle
+      // visibility back.
+      const children = Array.from(btn.childNodes);
+      children.forEach((node) => {
+        if (node.nodeType === 1) node.style.display = 'none';
+      });
+      const spinner = document.createElement('span');
+      spinner.className = 'rt-btn-loading-spinner';
+      spinner.innerHTML = '<i class="ti ti-loader-2 rt-spin" aria-hidden="true"></i> Checking&hellip;';
+      btn.appendChild(spinner);
       btn.disabled = true;
-      btn.innerHTML = '<i class="ti ti-loader-2 rt-spin" aria-hidden="true"></i> Checking&hellip;';
+
       return Promise.resolve(task()).finally(() => {
         btn.disabled = false;
-        btn.innerHTML = original;
+        spinner.remove();
+        children.forEach((node) => {
+          if (node.nodeType === 1) node.style.display = '';
+        });
       });
     }
     let limitReached = false;
