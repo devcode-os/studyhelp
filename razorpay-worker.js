@@ -101,6 +101,9 @@ export default {
     if (url.pathname === "/content/answer" && request.method === "GET") {
       return getSingleAnswer(request, env);
     }
+    if (url.pathname === "/content/questions" && request.method === "GET") {
+      return getChapterQuestions(request, env);
+    }
     if (url.pathname === "/master-access/login" && request.method === "POST") {
       return adminLogin(request, env);
     }
@@ -2274,4 +2277,54 @@ function json(data, status = 200, extraHeaders = {}) {
     status,
     headers: { "Content-Type": "application/json", ...CORS_HEADERS, ...extraHeaders },
   });
+}
+
+// ---------- 13. Chapter questions + options (free, no gating) ----------
+// Frontend fix: show Q+options open for ALL users without an accordion tap.
+// Deliberately public — NO session check, NO entitlement check, NO
+// free-click counting, since nothing paywalled is returned here.
+// Strips `answer` (the correct-letter key), `explanation`/`e`, and `table`
+// from every question before sending — those remain exclusive to
+// /content/answer and /content/chapter-answers, unchanged and still fully
+// gated as before. Only `type` and `options` (the 4 choices, unmarked) go
+// out. For non-MCQ (plain FAQ) items, `options` is simply absent — nothing
+// to preview before the gated reveal.
+async function getChapterQuestions(request, env) {
+  const jsonPublic = (data, status = 200) => json(data, status, CORS_HEADERS);
+
+  const url = new URL(request.url);
+  const chapterSlug = url.searchParams.get("chapter_slug");
+
+  if (!chapterSlug) {
+    return jsonPublic({ error: "chapter_slug required" }, 400);
+  }
+
+  const chapter = await env.DB.prepare(
+    "SELECT answers_json FROM chapter_content WHERE chapter_slug = ?"
+  )
+    .bind(chapterSlug)
+    .first();
+
+  if (!chapter) {
+    return jsonPublic({ error: "Chapter not found" }, 404);
+  }
+
+  let answersArr;
+  try {
+    answersArr = JSON.parse(chapter.answers_json);
+  } catch (err) {
+    return jsonPublic({ error: "Content error" }, 500);
+  }
+
+  // Build an object keyed by index (matching the shape the frontend already
+  // uses for bulkAnswers), stripped down to only type + options.
+  const questions = {};
+  answersArr.forEach((item, idx) => {
+    if (item && item.type === "mcq" && item.options) {
+      questions[idx] = { type: "mcq", options: item.options };
+    }
+    // Non-MCQ items intentionally omitted — nothing to preview for those.
+  });
+
+  return jsonPublic({ questions });
 }

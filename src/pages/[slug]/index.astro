@@ -138,8 +138,8 @@ function formatMath(str) {
               <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent">
                 <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Reveal all</span>
               </button>
-              <button type="button" id="rt-check-score" class="rt-btn rt-btn-ghost">
-                <i class="ti ti-target-arrow" aria-hidden="true"></i> Check my score
+              <button type="button" id="rt-start-mocktest" class="rt-btn rt-btn-ghost">
+                <i class="ti ti-clock-play" aria-hidden="true"></i> Mock Test
               </button>
             </div>
           </div>
@@ -213,6 +213,33 @@ function formatMath(str) {
           </div>
         </div>
 
+        <!-- Mock Test: full-screen overlay, one question at a time, timer,
+             paid-users only. Separate exit-confirm popup reused for both
+             back-button/back-gesture and "Reveal all" tapped mid-test. -->
+        <div id="mt-overlay" class="mt-overlay">
+          <div class="mt-topbar">
+            <div class="mt-timer"><i class="ti ti-clock" aria-hidden="true"></i> <span id="mt-timer-text">00:00</span></div>
+            <div class="mt-progress" id="mt-progress-text">Question 1 of 1</div>
+            <button type="button" id="mt-exit-btn" class="mt-exit-btn">Exit</button>
+          </div>
+          <div class="mt-body" id="mt-body"></div>
+          <div class="mt-footer">
+            <button type="button" id="mt-prev-btn" class="mt-nav-btn">Previous</button>
+            <button type="button" id="mt-next-btn" class="mt-nav-btn">Next</button>
+            <button type="button" id="mt-submit-btn" class="mt-nav-btn mt-submit-btn" style="display:none;">Submit Test</button>
+          </div>
+        </div>
+
+        <div id="mt-exit-overlay" class="rt-confirm-overlay" style="display:none;">
+          <div class="rt-confirm-box">
+            <p class="rt-confirm-message">Exit mock test? Your progress on this attempt will be lost.</p>
+            <div class="rt-confirm-actions">
+              <button type="button" id="mt-exit-cancel" class="rt-btn">Keep testing</button>
+              <button type="button" id="mt-exit-confirm" class="rt-btn rt-btn-accent-solid">Exit &amp; show score</button>
+            </div>
+          </div>
+        </div>
+
         <div id="faq-list" class="faq-list" style="margin-top:20px;">
           {questions.map((q, i) => (
             <div class="faq-item" data-i={i} data-page={Math.floor(i / PER_PAGE) + 1} style={i >= PER_PAGE ? 'display:none;' : ''}>
@@ -221,6 +248,7 @@ function formatMath(str) {
                 <span class="q-text">{formatMath(q)}</span>
                 <i class="ti ti-chevron-down q-chev" aria-hidden="true"></i>
               </div>
+              <div class="mcq-preview" data-i={i} style="display:none; padding:0 16px 14px;"></div>
               <div class="a-row" data-i={i} style="display:none;"></div>
             </div>
           ))}
@@ -904,10 +932,144 @@ function formatMath(str) {
       justify-content: center;
       box-sizing: border-box;
     }
+
+    /* ---------- Fix #1: Casual copy/paste deterrent ----------
+       Blocks text selection + copy/cut/right-click on question and
+       answer content. Deterrent-level only (view-source/devtools can
+       still bypass this) — matches agreed scope. */
+    .content .q-text,
+    .content .opt-text,
+    .content .answer-text,
+    .content .expl-text,
+    .content .ref-entry-title,
+    .content .ref-entry-meta {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    /* ---------- Mock Test mode ---------- */
+    .mt-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 200;
+      display: none;
+      flex-direction: column;
+    }
+    .mt-overlay.active { display: flex; }
+    .mt-topbar {
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .mt-timer {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffb35c;
+      font-variant-numeric: tabular-nums;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mt-progress {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+    }
+    .mt-exit-btn {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .mt-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 16px;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mt-q-num { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+    .mt-q-text { font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 18px; white-space: pre-wrap; }
+    .mt-opt-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .mt-opt-row.mt-opt-selected {
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, var(--card));
+    }
+    .mt-footer {
+      flex-shrink: 0;
+      display: flex;
+      gap: 10px;
+      padding: 14px 16px;
+      border-top: 1px solid var(--border);
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mt-nav-btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .mt-nav-btn.mt-submit-btn {
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      border: none;
+    }
+    .mt-nav-btn:disabled { opacity: 0.5; cursor: default; }
+    .mt-start-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .mt-start-card p { color: var(--muted); font-size: 13.5px; margin: 8px 0 16px; }
+    #mt-start-btn {
+      width: 100%;
+      justify-content: center;
+    }
   </style>
 
   {isReference && (
     <script define:vars={{ articles, amendments }}>
+      // Fix #1: same casual copy/paste deterrent as the FAQ/MCQ view.
+      const refContentArea = document.querySelector('.content');
+      if (refContentArea) {
+        ['copy', 'cut', 'contextmenu', 'selectstart'].forEach((evt) => {
+          refContentArea.addEventListener(evt, (e) => e.preventDefault());
+        });
+      }
+
       let currentTab = 'articles';
       const container = document.getElementById('refListContainer');
       const searchInput = document.getElementById('refSearchInput');
@@ -1003,7 +1165,7 @@ function formatMath(str) {
   )}
 
   {!isReference && (
-  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel }}>
+  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
@@ -1033,8 +1195,75 @@ function formatMath(str) {
     }
     getFingerprint();
 
+    // ---------- Fix #1: casual copy/paste deterrent ----------
+    // Blocks copy/cut/right-click/text-selection-start on the content area.
+    // Deterrent-level only, as agreed — doesn't stop view-source/devtools.
+    const contentArea = document.querySelector('.content');
+    if (contentArea) {
+      ['copy', 'cut', 'contextmenu', 'selectstart'].forEach((evt) => {
+        contentArea.addEventListener(evt, (e) => e.preventDefault());
+      });
+    }
+
     let currentPage = 1;
     const revealedAnswers = {};
+
+    // ---------- Fix #2: Q+options open by default (no accordion tap) ----------
+    // Public, ungated /content/questions endpoint returns only type+options
+    // (no answer/explanation) for every MCQ in the chapter. Rendered
+    // immediately under each question for ALL users, all pages. Tapping a
+    // preview option is what actually triggers the same gated
+    // /content/answer fetch as before (via preselect) — so free-click
+    // counting, page-2+ restriction, and the paywall are all unchanged;
+    // only the number of taps needed to START that flow has dropped from
+    // two (open + reveal) to one (tap an option).
+    async function loadAndRenderPublicOptions() {
+      try {
+        const res = await fetch(
+          `${WORKER_URL}/content/questions?chapter_slug=${encodeURIComponent(chapterSlug)}`
+        );
+        if (!res.ok) return;
+        const data = await res.json();
+        const qs = data.questions || {};
+        Object.keys(qs).forEach((key) => {
+          const i = parseInt(key);
+          const f = qs[i];
+          if (!f || f.type !== 'mcq' || !f.options) return;
+          renderMcqPreview(i, f);
+        });
+      } catch (err) {
+        // Silent fail — falls back to old accordion-tap behavior for
+        // whichever questions didn't get a preview rendered.
+      }
+    }
+
+    function renderMcqPreview(i, f) {
+      const previewEl = list.querySelector(`.mcq-preview[data-i="${i}"]`);
+      const chev = list.querySelector(`.q-row[data-i="${i}"] .q-chev`);
+      if (!previewEl) return;
+      if (revealedAnswers[i]) return; // already answered/revealed, nothing to preview
+
+      if (chev) chev.style.display = 'none'; // no accordion needed for MCQ anymore
+
+      const optionRows = Object.keys(f.options).map((letter) => `
+        <div class="opt-row opt-clickable mcq-preview-opt" data-letter="${letter}">
+          <span class="opt-badge">${letter.toLowerCase()}</span>
+          <span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>
+        </div>
+      `).join('');
+
+      previewEl.innerHTML = `<div class="opt-list" style="display:flex; flex-direction:column; gap:6px; margin-top:6px;">${optionRows}</div>`;
+      previewEl.style.display = 'block';
+
+      previewEl.querySelectorAll('.mcq-preview-opt').forEach((optEl) => {
+        optEl.addEventListener('pointerdown', () => prefetchAnswer(i));
+        optEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const letter = optEl.getAttribute('data-letter');
+          openAnswerFor(i, { preselect: letter });
+        });
+      });
+    }
     let purchased = false;
 
     // ---------- Lazy entitlement check for premium toolbar features ----------
@@ -1118,7 +1347,25 @@ function formatMath(str) {
         });
       });
     }
-    let limitReached = false;
+    // ---------- Fix #4: subject-wide, day-cached free-click limit ----------
+    // Once the daily 15-free-answer limit is hit for this subject, every
+    // subsequent block (any chapter, any page) shows the SAME message as
+    // the first time — no repeat server calls, no separate generic popup.
+    // Cached in localStorage per subject+date so it also survives
+    // navigating to a different chapter within the same subject.
+    function todayKey() {
+      const d = new Date();
+      return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    }
+    const LIMIT_STORAGE_KEY = `sh_limit_${subject}_${todayKey()}`;
+    let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
+    const DAILY_LIMIT_MESSAGE = "You've reached today's 15 free answers for this subject. Purchase for 45 days of unlimited access, or come back tomorrow.";
+
+    function setLimitReached() {
+      limitReached = true;
+      try { localStorage.setItem(LIMIT_STORAGE_KEY, '1'); } catch (err) {}
+    }
+
     let bulkAnswers = null;
 
     async function fetchAllAnswersInBackground() {
@@ -1426,11 +1673,13 @@ function formatMath(str) {
     // limit response Reveal-all just surfaces it via the same popup.
     // Returns true if revealed successfully, false if blocked (limit/error)
     // — Reveal-all uses this to know when to stop.
-    async function openAnswerFor(i, { scroll = true, peek = false } = {}) {
+    async function openAnswerFor(i, { scroll = true, peek = false, preselect = null } = {}) {
       const row = list.querySelector(`.q-row[data-i="${i}"]`);
       if (!row) return true;
       const faqItem = row.closest('.faq-item');
       const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
+      if (preselect) userSelections[i] = preselect;
+      const previewEl = list.querySelector(`.mcq-preview[data-i="${i}"]`);
 
       // Already revealed (fetched earlier) — just re-render, no new fetch.
       // Peek always force-re-renders in pure-answer-key style, even if the
@@ -1440,6 +1689,7 @@ function formatMath(str) {
         faqItem.classList.add('open');
         aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i, peek);
         aRow.style.display = 'block';
+        if (previewEl) previewEl.style.display = 'none';
         attachMcqHandlers(aRow, revealedAnswers[i], i);
         return true;
       }
@@ -1450,6 +1700,7 @@ function formatMath(str) {
         revealedAnswers[i] = bulkAnswers[i];
         faqItem.classList.add('open');
         aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i, peek);
+        if (previewEl) previewEl.style.display = 'none';
         aRow.style.display = 'block';
         attachMcqHandlers(aRow, bulkAnswers[i], i);
         return true;
@@ -1458,8 +1709,25 @@ function formatMath(str) {
       if (limitReached) {
         aRow.style.display = 'none';
         faqItem.classList.remove('open');
-        showLimitReached('Please log in or purchase to continue.');
+        showLimitReached(DAILY_LIMIT_MESSAGE);
         return false;
+      }
+
+      // ---------- Fix #2: free clicks apply only to page 1 (first 20) ----------
+      // Free-click allowance not yet exhausted, but user is browsing page 2+
+      // and isn't a purchased subject holder — reveal is always paywalled
+      // here regardless of remaining free clicks. Purchased users pass
+      // straight through (their bulkAnswers branch above already returns
+      // before reaching this point in practice, but this stays as a
+      // correct fallback).
+      if (currentPage > 1) {
+        const isPurchased = await ensureEntitlementChecked();
+        if (!isPurchased) {
+          aRow.style.display = 'none';
+          faqItem.classList.remove('open');
+          showLimitReached('Free clicks are only available on the first 20 questions. Purchase this subject for full access.');
+          return false;
+        }
       }
 
       faqItem.classList.add('open');
@@ -1502,12 +1770,17 @@ function formatMath(str) {
       if (!ok) {
         aRow.style.display = 'none';
         faqItem.classList.remove('open');
-        if (data.limitReached) limitReached = true;
-        showLimitReached(data.error || 'Please log in or purchase to continue.');
+        if (data.limitReached) {
+          setLimitReached();
+          showLimitReached(DAILY_LIMIT_MESSAGE);
+        } else {
+          showLimitReached(data.error || DAILY_LIMIT_MESSAGE);
+        }
         return false;
       }
 
       revealedAnswers[i] = data.answer;
+      if (previewEl) previewEl.style.display = 'none';
       aRow.innerHTML = renderAnswerHtml(data.answer, i, peek);
       aRow.style.display = 'block';
       attachMcqHandlers(aRow, data.answer, i);
@@ -1531,7 +1804,8 @@ function formatMath(str) {
         setTimeout(() => {
           const rect = faqItem.getBoundingClientRect();
           if (rect.bottom > window.innerHeight || rect.top < 0) {
-            faqItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Fix #5: answer-reveal auto-scroll disabled per request.
+            // Jump-to-question and score-summary scrolls are unaffected.
           }
         }, 50);
       }
@@ -1645,36 +1919,230 @@ function formatMath(str) {
       });
     }
 
-    // ---------- Check my score ----------
-    // Only ever scores questions that have actually been revealed (fetched
-    // for real) — there is no local answer key to draw from, unlike a demo
-    // build. Unrevealed questions simply can't be scored and aren't counted
-    // in the MCQ denominator, since their correct answer is never sent to
-    // the client until unlocked.
-    const checkScoreBtn = document.getElementById('rt-check-score');
+    // ---------- Fix #3: Mock Test mode (paid subject holders only) ----------
+    // One question at a time, persistent timer, shuffled question order per
+    // attempt (original data `index` preserved for answer lookup — only the
+    // DISPLAY order is shuffled, numbering shown to the user is always
+    // sequential 1..N regardless of shuffle). Retakes are unrestricted and
+    // unlimited — no attempt is stored/remembered between visits.
+    const mtOverlay = document.getElementById('mt-overlay');
+    const mtBody = document.getElementById('mt-body');
+    const mtTimerText = document.getElementById('mt-timer-text');
+    const mtProgressText = document.getElementById('mt-progress-text');
+    const mtPrevBtn = document.getElementById('mt-prev-btn');
+    const mtNextBtn = document.getElementById('mt-next-btn');
+    const mtSubmitBtn = document.getElementById('mt-submit-btn');
+    const mtExitBtn = document.getElementById('mt-exit-btn');
+    const mtExitOverlay = document.getElementById('mt-exit-overlay');
+    const mtExitCancel = document.getElementById('mt-exit-cancel');
+    const mtExitConfirm = document.getElementById('mt-exit-confirm');
+    const startMockTestBtn = document.getElementById('rt-start-mocktest');
 
-    function doCheckScore() {
-      showScoreSummary();
-      const summary = document.getElementById('rt-score-summary');
-      if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const SECONDS_PER_QUESTION = 60;
+    let mtOrder = [];         // shuffled array of original question indices
+    let mtAnswers = {};       // original index -> full answer object (from chapter-answers)
+    let mtSelections = {};    // original index -> selected letter
+    let mtCurrentPos = 0;     // position within mtOrder
+    let mtTimerInterval = null;
+    let mtSecondsLeft = 0;
+    let mtActive = false;
+
+    function shuffleArray(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
     }
 
-    if (checkScoreBtn) {
-      checkScoreBtn.addEventListener('click', async () => {
-        const ok = await withButtonLoading(checkScoreBtn, () => ensureEntitlementChecked());
+    async function fetchAllAnswersForMockTest() {
+      if (bulkAnswers) return bulkAnswers;
+      const res = await fetch(
+        `${WORKER_URL}/content/chapter-answers?chapter_slug=${encodeURIComponent(chapterSlug)}`,
+        { credentials: 'include' }
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data.answers;
+    }
+
+    function mtFormatTime(sec) {
+      const m = Math.floor(sec / 60).toString().padStart(2, '0');
+      const s = Math.floor(sec % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    function renderMtQuestion() {
+      const idx = mtOrder[mtCurrentPos];
+      const q = questions[idx];
+      const f = mtAnswers[idx];
+      const isMcq = f && f.type === 'mcq' && f.options;
+      mtProgressText.textContent = `Question ${mtCurrentPos + 1} of ${mtOrder.length}`;
+
+      let optsHtml = '';
+      if (isMcq) {
+        optsHtml = Object.keys(f.options).map((letter) => {
+          const selected = mtSelections[idx] === letter;
+          return `<div class="mt-opt-row ${selected ? 'mt-opt-selected' : ''}" data-letter="${letter}">
+            <span class="opt-badge">${letter.toLowerCase()}</span>
+            <span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>
+          </div>`;
+        }).join('');
+      }
+
+      mtBody.innerHTML = `
+        <div class="mt-q-num">Q${mtCurrentPos + 1}</div>
+        <div class="mt-q-text">${escapeHtml(formatMath(q))}</div>
+        ${optsHtml}
+      `;
+
+      mtBody.querySelectorAll('.mt-opt-row').forEach((row) => {
+        row.addEventListener('click', () => {
+          mtSelections[idx] = row.getAttribute('data-letter');
+          renderMtQuestion();
+        });
+      });
+
+      mtPrevBtn.disabled = mtCurrentPos === 0;
+      const isLast = mtCurrentPos === mtOrder.length - 1;
+      mtNextBtn.style.display = isLast ? 'none' : '';
+      mtSubmitBtn.style.display = isLast ? '' : 'none';
+    }
+
+    function startMtTimer(totalSeconds) {
+      mtSecondsLeft = totalSeconds;
+      mtTimerText.textContent = mtFormatTime(mtSecondsLeft);
+      mtTimerInterval = setInterval(() => {
+        mtSecondsLeft--;
+        mtTimerText.textContent = mtFormatTime(Math.max(0, mtSecondsLeft));
+        if (mtSecondsLeft <= 0) {
+          clearInterval(mtTimerInterval);
+          finishMockTest();
+        }
+      }, 1000);
+    }
+
+    function stopMtTimer() {
+      if (mtTimerInterval) clearInterval(mtTimerInterval);
+      mtTimerInterval = null;
+    }
+
+    let mtPopstateGuard = null;
+
+    function openMockTestOverlay() {
+      mtActive = true;
+      mtOverlay.classList.add('active');
+      // Push a history state so back-gesture/back-button triggers popstate
+      // instead of navigating away; intercepted below.
+      history.pushState({ mockTest: true }, '');
+      mtPopstateGuard = () => {
+        history.pushState({ mockTest: true }, '');
+        requestMtExit();
+      };
+      window.addEventListener('popstate', mtPopstateGuard);
+    }
+
+    function closeMockTestOverlay() {
+      mtActive = false;
+      mtOverlay.classList.remove('active');
+      stopMtTimer();
+      if (mtPopstateGuard) {
+        window.removeEventListener('popstate', mtPopstateGuard);
+        mtPopstateGuard = null;
+      }
+    }
+
+    function requestMtExit() {
+      mtExitOverlay.style.display = 'flex';
+    }
+
+    if (mtExitBtn) mtExitBtn.addEventListener('click', requestMtExit);
+    if (mtExitCancel) {
+      mtExitCancel.addEventListener('click', () => { mtExitOverlay.style.display = 'none'; });
+    }
+    if (mtExitConfirm) {
+      mtExitConfirm.addEventListener('click', () => {
+        mtExitOverlay.style.display = 'none';
+        finishMockTest();
+      });
+    }
+    if (mtPrevBtn) mtPrevBtn.addEventListener('click', () => { mtCurrentPos--; renderMtQuestion(); });
+    if (mtNextBtn) mtNextBtn.addEventListener('click', () => { mtCurrentPos++; renderMtQuestion(); });
+    if (mtSubmitBtn) mtSubmitBtn.addEventListener('click', () => finishMockTest());
+
+    function finishMockTest() {
+      closeMockTestOverlay();
+
+      // Feed mock-test selections/answers into the SAME state the normal
+      // Filter feature reads, so "Wrong answers only" works as post-test
+      // review (per agreed spec).
+      Object.keys(mtAnswers).forEach((key) => {
+        const idx = parseInt(key);
+        revealedAnswers[idx] = mtAnswers[idx];
+        if (mtSelections[idx]) {
+          userSelections[idx] = mtSelections[idx];
+          answeredSet.add(idx);
+        }
+      });
+      updateProgress();
+
+      let correct = 0, wrong = 0, attempted = 0;
+      mtOrder.forEach((idx) => {
+        const f = mtAnswers[idx];
+        const isMcq = f && f.type === 'mcq' && f.options;
+        if (!isMcq) return;
+        const pick = mtSelections[idx];
+        if (!pick) return;
+        attempted++;
+        if (pick === f.answer) correct++; else wrong++;
+      });
+      const notAttempted = mtOrder.length - attempted;
+
+      const summary = document.getElementById('rt-score-summary');
+      const content = document.getElementById('rt-score-content');
+      summary.style.display = 'block';
+      content.innerHTML = `
+        <p class="rt-score-title">Mock Test Result</p>
+        <div class="rt-stat-grid">
+          <div class="rt-stat-box rt-stat-box-correct">
+            <div class="rt-stat-num">${correct}</div>
+            <div class="rt-stat-label">Correct</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-wrong">
+            <div class="rt-stat-num">${wrong}</div>
+            <div class="rt-stat-label">Wrong</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-notattempted">
+            <div class="rt-stat-num">${notAttempted}</div>
+            <div class="rt-stat-label">Not attempted</div>
+          </div>
+        </div>
+      `;
+      summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    if (startMockTestBtn) {
+      startMockTestBtn.addEventListener('click', async () => {
+        const ok = await withButtonLoading(startMockTestBtn, () => ensureEntitlementChecked());
         if (!ok) {
-          showLimitReached('Check my score is a premium feature. Purchase this subject to unlock it.');
+          showLimitReached('Mock Test is a premium feature. Purchase this subject to unlock it.');
           return;
         }
-        if (answeredSet.size > 0 && answeredSet.size < totalQuestions) {
-          showConfirm(
-            `You've answered ${answeredSet.size} of ${totalQuestions} questions. Check your score now, or keep practicing?`,
-            'Check anyway',
-            doCheckScore
-          );
-        } else {
-          doCheckScore();
+        const answers = await fetchAllAnswersForMockTest();
+        if (!answers) {
+          if (window.showToast) window.showToast('Could not load mock test. Please try again.', 'error');
+          return;
         }
+        mtAnswers = answers;
+        mtSelections = {};
+        mtCurrentPos = 0;
+        // Fix #3: same chapter's questions, reordered randomly per attempt.
+        mtOrder = shuffleArray(Object.keys(answers).map(Number));
+        const totalSeconds = mtOrder.length * SECONDS_PER_QUESTION;
+        openMockTestOverlay();
+        renderMtQuestion();
+        startMtTimer(totalSeconds);
       });
     }
 
@@ -1856,6 +2324,7 @@ function formatMath(str) {
 
     updateProgress();
     renderPagination();
+    loadAndRenderPublicOptions();
   </script>
   )}
 </Layout>
