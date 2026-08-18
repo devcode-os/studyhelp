@@ -2012,6 +2012,7 @@ function formatMath(str) {
     let mtTimerInterval = null;
     let mtSecondsLeft = 0;
     let mtActive = false;
+    let mtReviewMode = false; // true when navigating a finished attempt's review, not a live test
     let mtAttemptCount = 0; // within-page only, resets on reload/revisit — not persisted
     let mtTrialMode = false;   // true for guests/non-purchased — first 10 Qs, metered by free-clicks
     let mtTrialBlocked = false; // set true if free-click limit hit mid-trial
@@ -2175,6 +2176,16 @@ function formatMath(str) {
     }
 
     function requestMtExit() {
+      if (mtReviewMode) {
+        // Review mode is read-only — nothing to lose, no need to interrupt
+        // with a confirm popup. Just close straight back to the scorecard.
+        mtReviewMode = false;
+        if (mtSubmitBtn) mtSubmitBtn.textContent = 'Submit Test';
+        closeMockTestOverlay();
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
       mtExitOverlay.style.display = 'flex';
     }
 
@@ -2188,9 +2199,25 @@ function formatMath(str) {
         finishMockTest();
       });
     }
-    if (mtPrevBtn) mtPrevBtn.addEventListener('click', () => { mtCurrentPos--; renderMtQuestion(); });
-    if (mtNextBtn) mtNextBtn.addEventListener('click', () => { mtCurrentPos++; renderMtQuestion(); });
-    if (mtSubmitBtn) mtSubmitBtn.addEventListener('click', () => finishMockTest());
+    if (mtPrevBtn) mtPrevBtn.addEventListener('click', () => {
+      mtCurrentPos--;
+      mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+    });
+    if (mtNextBtn) mtNextBtn.addEventListener('click', () => {
+      mtCurrentPos++;
+      mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+    });
+    if (mtSubmitBtn) mtSubmitBtn.addEventListener('click', () => {
+      if (mtReviewMode) {
+        mtReviewMode = false;
+        mtSubmitBtn.textContent = 'Submit Test';
+        closeMockTestOverlay();
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        finishMockTest();
+      }
+    });
 
     function finishMockTest() {
       closeMockTestOverlay();
@@ -2226,21 +2253,22 @@ function formatMath(str) {
       content.innerHTML = `
         <p class="rt-score-title">${mtTrialMode ? 'Free Trial Mock Test Result' : `Mock Test Result - Attempt #${mtAttemptCount}`}</p>
         <div class="rt-stat-grid">
-          <div class="rt-stat-box rt-stat-box-correct mt-review-trigger" data-filter="correct" role="button" tabindex="0">
+          <div class="rt-stat-box rt-stat-box-correct">
             <div class="rt-stat-num">${correct}</div>
             <div class="rt-stat-label">Correct</div>
           </div>
-          <div class="rt-stat-box rt-stat-box-wrong mt-review-trigger" data-filter="wrong" role="button" tabindex="0">
+          <div class="rt-stat-box rt-stat-box-wrong">
             <div class="rt-stat-num">${wrong}</div>
             <div class="rt-stat-label">Wrong</div>
           </div>
-          <div class="rt-stat-box rt-stat-box-notattempted mt-review-trigger" data-filter="notattempted" role="button" tabindex="0">
+          <div class="rt-stat-box rt-stat-box-notattempted">
             <div class="rt-stat-num">${notAttempted}</div>
             <div class="rt-stat-label">Not attempted</div>
           </div>
         </div>
-        <p style="font-size:12px; color:var(--muted); text-align:center; margin:10px 0 0;">Tap a box above to review those questions</p>
-        <div id="mt-review-list" style="margin-top:14px;"></div>
+        <button type="button" id="mt-review-btn" class="rt-btn rt-btn-accent" style="width:100%; justify-content:center; margin-top:14px;">
+          <i class="ti ti-list-check" aria-hidden="true"></i> Review Mock Test
+        </button>
         ${mtTrialMode ? `
           <a href="${PLANS_URL}" class="mt-trial-cta">
             That was just ${mtOrder.length} questions \u2014 unlock the full ${totalQuestions}-question Mock Test for this subject
@@ -2249,69 +2277,68 @@ function formatMath(str) {
       `;
       summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      // ---------- Post-test review: tap a stat box to see exactly which
-      // questions fell in that bucket, with the question, every option,
-      // the user's pick, and the correct answer clearly marked. ----------
-      function renderMtReview(filterMode) {
-        const reviewList = document.getElementById('mt-review-list');
-        if (!reviewList) return;
-
-        const items = mtOrder.filter((idx) => {
-          const f = mtAnswers[idx];
-          const isMcq = f && f.type === 'mcq' && f.options;
-          if (!isMcq) return false;
-          const pick = mtSelections[idx];
-          if (filterMode === 'notattempted') return !pick;
-          if (!pick) return false;
-          const isCorrect = pick === f.answer;
-          return filterMode === 'correct' ? isCorrect : !isCorrect;
+      // ---------- Review Mock Test: re-opens the SAME full-screen mock
+      // test block, one question per screen with Previous/Next, but in
+      // review mode — shows your pick vs the correct answer for every
+      // question from this attempt, in original test order. No category
+      // filter — all questions, one pass. ----------
+      const reviewBtn = document.getElementById('mt-review-btn');
+      if (reviewBtn) {
+        reviewBtn.addEventListener('click', () => {
+          openMtReview();
         });
+      }
+    }
 
-        if (items.length === 0) {
-          reviewList.innerHTML = `<p style="text-align:center; color:var(--muted); font-size:13px; padding:12px 0;">Nothing in this category.</p>`;
-          return;
-        }
+    function openMtReview() {
+      mtReviewMode = true;
+      mtCurrentPos = 0;
+      openMockTestOverlay();
+      renderMtReviewQuestion();
+    }
 
-        reviewList.innerHTML = items.map((idx) => {
-          const f = mtAnswers[idx];
-          const pick = mtSelections[idx];
-          const optsHtml = Object.keys(f.options).map((letter) => {
-            const isCorrectLetter = letter === f.answer;
-            const isPick = letter === pick;
-            let cls = 'opt-row';
-            let icon = '';
-            if (isCorrectLetter) {
-              cls += ' opt-row-correct';
-              icon = '<span class="opt-icon opt-icon-correct"><i class="ti ti-check" aria-hidden="true"></i></span>';
-            } else if (isPick) {
-              cls += ' opt-row-wrong';
-              icon = '<span class="opt-icon opt-icon-wrong"><i class="ti ti-x" aria-hidden="true"></i></span>';
-            }
-            return `<div class="${cls}"><span class="opt-badge">${letter.toLowerCase()}</span><span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>${icon}</div>`;
-          }).join('');
+    function renderMtReviewQuestion() {
+      const idx = mtOrder[mtCurrentPos];
+      const f = mtAnswers[idx];
+      const pick = mtSelections[idx];
+      const isMcq = f && f.type === 'mcq' && f.options;
 
-          return `
-            <div class="faq-item" style="margin-bottom:10px;">
-              <div class="q-row" style="cursor:default;">
-                <span class="q-num">Q${mtOrder.indexOf(idx) + 1}.</span>
-                <span class="q-text">${escapeHtml(formatMath(questions[idx]))}</span>
-              </div>
-              <div class="a-row" style="display:block;">
-                <div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optsHtml}</div>
-                ${!pick ? '<p style="margin:10px 0 0; font-size:13px; color:var(--muted);">You did not attempt this question.</p>' : ''}
-              </div>
-            </div>
-          `;
+      mtProgressText.textContent = `Reviewing ${mtCurrentPos + 1} of ${mtOrder.length}`;
+      mtTimerText.textContent = 'Review';
+
+      let bodyHtml = `
+        <div class="mt-q-num">Q${mtCurrentPos + 1}</div>
+        <div class="mt-q-text">${escapeHtml(formatMath(questions[idx]))}</div>
+      `;
+
+      if (isMcq) {
+        const optsHtml = Object.keys(f.options).map((letter) => {
+          const isCorrectLetter = letter === f.answer;
+          const isPick = letter === pick;
+          let cls = 'opt-row';
+          let icon = '';
+          if (isCorrectLetter) {
+            cls += ' opt-row-correct';
+            icon = '<span class="opt-icon opt-icon-correct"><i class="ti ti-check" aria-hidden="true"></i></span>';
+          } else if (isPick) {
+            cls += ' opt-row-wrong';
+            icon = '<span class="opt-icon opt-icon-wrong"><i class="ti ti-x" aria-hidden="true"></i></span>';
+          }
+          return `<div class="${cls}"><span class="opt-badge">${letter.toLowerCase()}</span><span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>${icon}</div>`;
         }).join('');
+        bodyHtml += `<div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optsHtml}</div>`;
+        if (!pick) {
+          bodyHtml += `<p style="margin:10px 0 0; font-size:13px; color:var(--muted);">You did not attempt this question.</p>`;
+        }
       }
 
-      content.querySelectorAll('.mt-review-trigger').forEach((box) => {
-        box.addEventListener('click', () => {
-          content.querySelectorAll('.mt-review-trigger').forEach((b) => b.style.outline = 'none');
-          box.style.outline = '2px solid var(--accent)';
-          renderMtReview(box.getAttribute('data-filter'));
-        });
-      });
+      mtBody.innerHTML = bodyHtml;
+      mtPrevBtn.disabled = mtCurrentPos === 0;
+      mtPrevBtn.style.display = '';
+      const isLast = mtCurrentPos === mtOrder.length - 1;
+      mtNextBtn.style.display = isLast ? 'none' : '';
+      mtSubmitBtn.style.display = isLast ? '' : 'none';
+      mtSubmitBtn.textContent = 'Finish Review';
     }
 
     if (startMockTestBtn) {
@@ -2322,6 +2349,8 @@ function formatMath(str) {
         mtAnswers = {};
         mtCurrentPos = 0;
         mtTrialBlocked = false;
+        mtReviewMode = false;
+        if (mtSubmitBtn) mtSubmitBtn.textContent = 'Submit Test';
 
         if (isPurchased) {
           mtTrialMode = false;
