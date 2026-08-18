@@ -213,6 +213,12 @@ function formatMath(str) {
           </div>
         </div>
 
+        <div id="mt-starting-overlay" class="mt-starting-overlay">
+          <i class="ti ti-clock-play mt-starting-icon" aria-hidden="true"></i>
+          <div class="mt-starting-title">Mock Test Starting&hellip;</div>
+          <div class="mt-starting-sub" id="mt-starting-sub"></div>
+        </div>
+
         <!-- Mock Test: full-screen overlay, one question at a time, timer,
              paid-users only. Separate exit-confirm popup reused for both
              back-button/back-gesture and "Reveal all" tapped mid-test. -->
@@ -959,6 +965,24 @@ function formatMath(str) {
     }
     .mt-overlay.active { display: flex; }
     #mt-exit-overlay { z-index: 210; }
+    .mt-starting-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      z-index: 220;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      color: #fff;
+      text-align: center;
+    }
+    .mt-starting-overlay.active { display: flex; }
+    .mt-starting-icon { font-size: 40px; color: #ffb35c; animation: mt-pulse 0.9s ease-in-out infinite; }
+    @keyframes mt-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.12); opacity: 0.75; } }
+    .mt-starting-title { font-size: 19px; font-weight: 800; }
+    .mt-starting-sub { font-size: 13.5px; color: rgba(255,255,255,0.7); }
     .mt-topbar {
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
       padding: 14px 16px;
@@ -1957,6 +1981,7 @@ function formatMath(str) {
     let mtTimerInterval = null;
     let mtSecondsLeft = 0;
     let mtActive = false;
+    let mtAttemptCount = 0; // within-page only, resets on reload/revisit — not persisted
 
     function shuffleArray(arr) {
       const a = arr.slice();
@@ -2114,7 +2139,7 @@ function formatMath(str) {
       const content = document.getElementById('rt-score-content');
       summary.style.display = 'block';
       content.innerHTML = `
-        <p class="rt-score-title">Mock Test Result</p>
+        <p class="rt-score-title">Mock Test Result - Attempt #${mtAttemptCount}</p>
         <div class="rt-stat-grid">
           <div class="rt-stat-box rt-stat-box-correct">
             <div class="rt-stat-num">${correct}</div>
@@ -2151,9 +2176,27 @@ function formatMath(str) {
         // Fix #3: same chapter's questions, reordered randomly per attempt.
         mtOrder = shuffleArray(Object.keys(answers).map(Number));
         const totalSeconds = mtOrder.length * SECONDS_PER_QUESTION;
-        openMockTestOverlay();
-        renderMtQuestion();
-        startMtTimer(totalSeconds);
+
+        // Brief starting transition — gives the mode-switch a moment to
+        // register instead of jumping straight into a running timer.
+        const startingOverlay = document.getElementById('mt-starting-overlay');
+        const startingTitle = document.querySelector('.mt-starting-title');
+        const startingSub = document.getElementById('mt-starting-sub');
+        mtAttemptCount++;
+        if (startingTitle) {
+          startingTitle.textContent = mtAttemptCount > 1
+            ? `Ready for Attempt #${mtAttemptCount}\u2026`
+            : 'Mock Test Starting\u2026';
+        }
+        if (startingSub) startingSub.textContent = `${mtOrder.length} questions \u00b7 ${mtFormatTime(totalSeconds)} on the clock`;
+        if (startingOverlay) startingOverlay.classList.add('active');
+
+        setTimeout(() => {
+          if (startingOverlay) startingOverlay.classList.remove('active');
+          openMockTestOverlay();
+          renderMtQuestion();
+          startMtTimer(totalSeconds);
+        }, 1200);
       });
     }
 
