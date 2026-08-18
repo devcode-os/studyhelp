@@ -136,7 +136,7 @@ function formatMath(str) {
             </div>
             <div class="rt-action-group">
               <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent">
-                <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Reveal all</span>
+                <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Reveal All</span>
               </button>
               <button type="button" id="rt-start-mocktest" class="rt-btn rt-btn-ghost">
                 <i class="ti ti-clock-play" aria-hidden="true"></i> Mock Test
@@ -807,6 +807,7 @@ function formatMath(str) {
       background: color-mix(in srgb, var(--muted) 12%, var(--card));
       border: 1px solid var(--border);
     }
+    .mt-review-trigger { cursor: pointer; }
     .rt-stat-num {
       font-size: 26px;
       font-weight: 800;
@@ -1070,6 +1071,18 @@ function formatMath(str) {
       border: none;
     }
     .mt-nav-btn:disabled { opacity: 0.5; cursor: default; }
+    .mt-trial-cta {
+      margin-top: 14px;
+      text-align: center;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      border-radius: 10px;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 13.5px;
+      text-decoration: none;
+      display: block;
+    }
     .mt-start-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -1832,6 +1845,7 @@ function formatMath(str) {
         lockBanner.style.display = 'none';
         if (!bulkAnswers) fetchAllAnswersInBackground();
       } else if (typeof data.remaining === 'number') {
+        knownRemainingClicks = data.remaining;
         showRemainingHint(data.remaining, data.dailyLimit);
       }
 
@@ -1921,7 +1935,7 @@ function formatMath(str) {
       // reveal. Only leave the button as "Reveal all" if nothing opened
       // at all (e.g. blocked immediately on the very first question).
       if (revealedCount > 0) {
-        if (revealAllLabel) revealAllLabel.textContent = 'Hide all';
+        if (revealAllLabel) revealAllLabel.textContent = 'Hide All';
         if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye'); revealAllIcon.classList.add('ti-eye-off'); }
         allRevealed = true;
       }
@@ -1945,19 +1959,26 @@ function formatMath(str) {
             doRevealAll();
           }
         } else {
-          list.querySelectorAll('.a-row').forEach((aRow) => { aRow.style.display = 'none'; });
-          list.querySelectorAll('.faq-item').forEach((item) => { item.classList.remove('open'); });
-          // Bug fix: "Hide all" should only hide the answer/verdict — MCQ
-          // options (the always-open preview) must stay visible, not
-          // collapse back to a closed accordion. Only questions the user
-          // has genuinely answered (a real pick, tracked in userSelections)
-          // stay hidden here, matching intent — those already have their
-          // own state; everything else reverts to the open-options preview.
-          list.querySelectorAll('.mcq-preview').forEach((previewEl) => {
-            const i = parseInt(previewEl.getAttribute('data-i'));
-            if (!userSelections[i]) previewEl.style.display = 'block';
+          // Bug fix: "Hide All" must only undo the REVEAL-ALL peek — it
+          // should never touch a question the user genuinely answered
+          // themselves (tracked via userSelections). Those stay exactly as
+          // they are: answer/verdict visible, nothing collapses. Only
+          // peeked-but-not-actually-answered questions get hidden back to
+          // their open-options preview state.
+          list.querySelectorAll('.faq-item').forEach((item) => {
+            const qRow = item.querySelector('.q-row[data-i]');
+            if (!qRow) return;
+            const i = parseInt(qRow.getAttribute('data-i'));
+            if (answeredSet.has(i)) return; // leave genuinely-answered questions untouched (covers both MCQ picks and real FAQ reveals)
+
+            const aRow = item.querySelector('.a-row');
+            if (aRow) aRow.style.display = 'none';
+            item.classList.remove('open');
+
+            const previewEl = item.querySelector('.mcq-preview');
+            if (previewEl) previewEl.style.display = 'block';
           });
-          if (revealAllLabel) revealAllLabel.textContent = 'Reveal all';
+          if (revealAllLabel) revealAllLabel.textContent = 'Reveal All';
           if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
           allRevealed = false;
         }
@@ -1992,6 +2013,10 @@ function formatMath(str) {
     let mtSecondsLeft = 0;
     let mtActive = false;
     let mtAttemptCount = 0; // within-page only, resets on reload/revisit — not persisted
+    let mtTrialMode = false;   // true for guests/non-purchased — first 10 Qs, metered by free-clicks
+    let mtTrialBlocked = false; // set true if free-click limit hit mid-trial
+    const TRIAL_QUESTION_COUNT = 10;
+    let knownRemainingClicks = null; // updated from the server's own `remaining` field on every answer fetch
 
     function shuffleArray(arr) {
       const a = arr.slice();
@@ -2013,18 +2038,66 @@ function formatMath(str) {
       return data.answers;
     }
 
+    // ---------- Free trial Mock Test (guests / non-purchased) ----------
+    // Reuses the SAME per-question /content/answer endpoint as casual free-
+    // click reveals — same 15/day quota, same D1-backed gating, nothing new
+    // to trust. Answers are fetched lazily, one at a time, as the trial-taker
+    // reaches each question (never all upfront), so each question genuinely
+    // costs one real free click, same as normal reading mode.
+    async function fetchTrialAnswer(idx) {
+      const fp = await getFingerprint();
+      const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
+      const res = await fetch(
+        `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${idx}${fpParam}`,
+        { credentials: 'include' }
+      );
+      const data = await res.json();
+      if (typeof data.remaining === 'number') knownRemainingClicks = data.remaining;
+      return { ok: res.ok, data };
+    }
+
     function mtFormatTime(sec) {
       const m = Math.floor(sec / 60).toString().padStart(2, '0');
       const s = Math.floor(sec % 60).toString().padStart(2, '0');
       return `${m}:${s}`;
     }
 
-    function renderMtQuestion() {
+    async function renderMtQuestion() {
       const idx = mtOrder[mtCurrentPos];
       const q = questions[idx];
+      mtProgressText.textContent = `Question ${mtCurrentPos + 1} of ${mtOrder.length}`;
+
+      // Trial mode: fetch this question's answer/options lazily, only when
+      // the trial-taker actually reaches it — consumes one real free click,
+      // same as a normal reveal tap would.
+      if (mtTrialMode && !mtAnswers[idx]) {
+        mtBody.innerHTML = `
+          <div class="mt-q-num">Q${mtCurrentPos + 1}</div>
+          <div class="mt-q-text">${escapeHtml(formatMath(q))}</div>
+          <div class="skeleton-answer">
+            <div class="skeleton-line w-90"></div>
+            <div class="skeleton-line w-70"></div>
+          </div>
+        `;
+        mtPrevBtn.disabled = true;
+        mtNextBtn.disabled = true;
+        mtSubmitBtn.disabled = true;
+
+        const result = await fetchTrialAnswer(idx);
+        if (!result.ok) {
+          // Free-click limit hit mid-trial — stop here, show whatever was
+          // answered so far via the normal finish flow.
+          mtTrialBlocked = true;
+          showLimitReached(result.data && result.data.limitReached ? DAILY_LIMIT_MESSAGE : (result.data.error || DAILY_LIMIT_MESSAGE));
+          if (result.data && result.data.limitReached) setLimitReached();
+          finishMockTest();
+          return;
+        }
+        mtAnswers[idx] = result.data.answer;
+      }
+
       const f = mtAnswers[idx];
       const isMcq = f && f.type === 'mcq' && f.options;
-      mtProgressText.textContent = `Question ${mtCurrentPos + 1} of ${mtOrder.length}`;
 
       let optsHtml = '';
       if (isMcq) {
@@ -2051,6 +2124,8 @@ function formatMath(str) {
       });
 
       mtPrevBtn.disabled = mtCurrentPos === 0;
+      mtNextBtn.disabled = false;
+      mtSubmitBtn.disabled = false;
       const isLast = mtCurrentPos === mtOrder.length - 1;
       mtNextBtn.style.display = isLast ? 'none' : '';
       mtSubmitBtn.style.display = isLast ? '' : 'none';
@@ -2149,42 +2224,146 @@ function formatMath(str) {
       const content = document.getElementById('rt-score-content');
       summary.style.display = 'block';
       content.innerHTML = `
-        <p class="rt-score-title">Mock Test Result - Attempt #${mtAttemptCount}</p>
+        <p class="rt-score-title">${mtTrialMode ? 'Free Trial Mock Test Result' : `Mock Test Result - Attempt #${mtAttemptCount}`}</p>
         <div class="rt-stat-grid">
-          <div class="rt-stat-box rt-stat-box-correct">
+          <div class="rt-stat-box rt-stat-box-correct mt-review-trigger" data-filter="correct" role="button" tabindex="0">
             <div class="rt-stat-num">${correct}</div>
             <div class="rt-stat-label">Correct</div>
           </div>
-          <div class="rt-stat-box rt-stat-box-wrong">
+          <div class="rt-stat-box rt-stat-box-wrong mt-review-trigger" data-filter="wrong" role="button" tabindex="0">
             <div class="rt-stat-num">${wrong}</div>
             <div class="rt-stat-label">Wrong</div>
           </div>
-          <div class="rt-stat-box rt-stat-box-notattempted">
+          <div class="rt-stat-box rt-stat-box-notattempted mt-review-trigger" data-filter="notattempted" role="button" tabindex="0">
             <div class="rt-stat-num">${notAttempted}</div>
             <div class="rt-stat-label">Not attempted</div>
           </div>
         </div>
+        <p style="font-size:12px; color:var(--muted); text-align:center; margin:10px 0 0;">Tap a box above to review those questions</p>
+        <div id="mt-review-list" style="margin-top:14px;"></div>
+        ${mtTrialMode ? `
+          <a href="${PLANS_URL}" class="mt-trial-cta">
+            That was just ${mtOrder.length} questions \u2014 unlock the full ${totalQuestions}-question Mock Test for this subject
+          </a>
+        ` : ''}
       `;
       summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // ---------- Post-test review: tap a stat box to see exactly which
+      // questions fell in that bucket, with the question, every option,
+      // the user's pick, and the correct answer clearly marked. ----------
+      function renderMtReview(filterMode) {
+        const reviewList = document.getElementById('mt-review-list');
+        if (!reviewList) return;
+
+        const items = mtOrder.filter((idx) => {
+          const f = mtAnswers[idx];
+          const isMcq = f && f.type === 'mcq' && f.options;
+          if (!isMcq) return false;
+          const pick = mtSelections[idx];
+          if (filterMode === 'notattempted') return !pick;
+          if (!pick) return false;
+          const isCorrect = pick === f.answer;
+          return filterMode === 'correct' ? isCorrect : !isCorrect;
+        });
+
+        if (items.length === 0) {
+          reviewList.innerHTML = `<p style="text-align:center; color:var(--muted); font-size:13px; padding:12px 0;">Nothing in this category.</p>`;
+          return;
+        }
+
+        reviewList.innerHTML = items.map((idx) => {
+          const f = mtAnswers[idx];
+          const pick = mtSelections[idx];
+          const optsHtml = Object.keys(f.options).map((letter) => {
+            const isCorrectLetter = letter === f.answer;
+            const isPick = letter === pick;
+            let cls = 'opt-row';
+            let icon = '';
+            if (isCorrectLetter) {
+              cls += ' opt-row-correct';
+              icon = '<span class="opt-icon opt-icon-correct"><i class="ti ti-check" aria-hidden="true"></i></span>';
+            } else if (isPick) {
+              cls += ' opt-row-wrong';
+              icon = '<span class="opt-icon opt-icon-wrong"><i class="ti ti-x" aria-hidden="true"></i></span>';
+            }
+            return `<div class="${cls}"><span class="opt-badge">${letter.toLowerCase()}</span><span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>${icon}</div>`;
+          }).join('');
+
+          return `
+            <div class="faq-item" style="margin-bottom:10px;">
+              <div class="q-row" style="cursor:default;">
+                <span class="q-num">Q${mtOrder.indexOf(idx) + 1}.</span>
+                <span class="q-text">${escapeHtml(formatMath(questions[idx]))}</span>
+              </div>
+              <div class="a-row" style="display:block;">
+                <div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optsHtml}</div>
+                ${!pick ? '<p style="margin:10px 0 0; font-size:13px; color:var(--muted);">You did not attempt this question.</p>' : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      content.querySelectorAll('.mt-review-trigger').forEach((box) => {
+        box.addEventListener('click', () => {
+          content.querySelectorAll('.mt-review-trigger').forEach((b) => b.style.outline = 'none');
+          box.style.outline = '2px solid var(--accent)';
+          renderMtReview(box.getAttribute('data-filter'));
+        });
+      });
     }
 
     if (startMockTestBtn) {
       startMockTestBtn.addEventListener('click', async () => {
-        const ok = await withButtonLoading(startMockTestBtn, () => ensureEntitlementChecked());
-        if (!ok) {
-          showLimitReached('Mock Test is a premium feature. Purchase this subject to unlock it.');
-          return;
-        }
-        const answers = await fetchAllAnswersForMockTest();
-        if (!answers) {
-          if (window.showToast) window.showToast('Could not load mock test. Please try again.', 'error');
-          return;
-        }
-        mtAnswers = answers;
+        const isPurchased = await withButtonLoading(startMockTestBtn, () => ensureEntitlementChecked());
+
         mtSelections = {};
+        mtAnswers = {};
         mtCurrentPos = 0;
-        // Fix #3: same chapter's questions, reordered randomly per attempt.
-        mtOrder = shuffleArray(Object.keys(answers).map(Number));
+        mtTrialBlocked = false;
+
+        if (isPurchased) {
+          mtTrialMode = false;
+          const answers = await fetchAllAnswersForMockTest();
+          if (!answers) {
+            if (window.showToast) window.showToast('Could not load mock test. Please try again.', 'error');
+            return;
+          }
+          mtAnswers = answers;
+          // Fix #3: same chapter's questions, reordered randomly per attempt.
+          mtOrder = shuffleArray(Object.keys(answers).map(Number));
+        } else {
+          // Fix: free trial mock test for guests/non-purchased users — first
+          // 10 questions only, shuffled, each answer metered by the same
+          // free-click quota as normal reading (no bulk fetch, no bypass).
+          //
+          // Bug fix: if the person already used some free clicks reading
+          // casually before starting the trial, promising a fixed 10
+          // questions would silently die mid-test once the real daily
+          // quota ran out. Clamp the trial size to whatever's ACTUALLY
+          // left (from the server's own `remaining` count) so what's shown
+          // upfront is honest and the test never ends unexpectedly.
+          mtTrialMode = true;
+
+          if (limitReached || knownRemainingClicks === 0) {
+            showLimitReached(DAILY_LIMIT_MESSAGE);
+            return;
+          }
+
+          const availableClicks = knownRemainingClicks === null ? TRIAL_QUESTION_COUNT : knownRemainingClicks;
+          const trialCount = Math.min(TRIAL_QUESTION_COUNT, totalQuestions, availableClicks);
+
+          if (trialCount <= 0) {
+            showLimitReached(DAILY_LIMIT_MESSAGE);
+            return;
+          }
+
+          mtOrder = shuffleArray(
+            Array.from({ length: trialCount }, (_, i) => i)
+          );
+        }
+
         const totalSeconds = mtOrder.length * SECONDS_PER_QUESTION;
 
         // Brief starting transition — gives the mode-switch a moment to
@@ -2194,11 +2373,15 @@ function formatMath(str) {
         const startingSub = document.getElementById('mt-starting-sub');
         mtAttemptCount++;
         if (startingTitle) {
-          startingTitle.textContent = mtAttemptCount > 1
-            ? `Ready for Attempt #${mtAttemptCount}\u2026`
-            : 'Mock Test Starting\u2026';
+          startingTitle.textContent = mtTrialMode
+            ? 'Free Trial Mock Test Starting\u2026'
+            : (mtAttemptCount > 1 ? `Ready for Attempt #${mtAttemptCount}\u2026` : 'Mock Test Starting\u2026');
         }
-        if (startingSub) startingSub.textContent = `${mtOrder.length} questions \u00b7 ${mtFormatTime(totalSeconds)} on the clock`;
+        if (startingSub) {
+          startingSub.textContent = mtTrialMode
+            ? `${mtOrder.length} questions \u00b7 uses your free-click quota \u00b7 ${mtFormatTime(totalSeconds)} on the clock`
+            : `${mtOrder.length} questions \u00b7 ${mtFormatTime(totalSeconds)} on the clock`;
+        }
         if (startingOverlay) startingOverlay.classList.add('active');
 
         setTimeout(() => {
