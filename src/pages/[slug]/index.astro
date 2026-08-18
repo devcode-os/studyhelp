@@ -1947,6 +1947,16 @@ function formatMath(str) {
         } else {
           list.querySelectorAll('.a-row').forEach((aRow) => { aRow.style.display = 'none'; });
           list.querySelectorAll('.faq-item').forEach((item) => { item.classList.remove('open'); });
+          // Bug fix: "Hide all" should only hide the answer/verdict — MCQ
+          // options (the always-open preview) must stay visible, not
+          // collapse back to a closed accordion. Only questions the user
+          // has genuinely answered (a real pick, tracked in userSelections)
+          // stay hidden here, matching intent — those already have their
+          // own state; everything else reverts to the open-options preview.
+          list.querySelectorAll('.mcq-preview').forEach((previewEl) => {
+            const i = parseInt(previewEl.getAttribute('data-i'));
+            if (!userSelections[i]) previewEl.style.display = 'block';
+          });
           if (revealAllLabel) revealAllLabel.textContent = 'Reveal all';
           if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
           allRevealed = false;
