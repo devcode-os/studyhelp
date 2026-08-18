@@ -958,6 +958,7 @@ function formatMath(str) {
       flex-direction: column;
     }
     .mt-overlay.active { display: flex; }
+    #mt-exit-overlay { z-index: 210; }
     .mt-topbar {
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
       padding: 14px 16px;
@@ -1707,10 +1708,20 @@ function formatMath(str) {
       }
 
       if (limitReached) {
-        aRow.style.display = 'none';
-        faqItem.classList.remove('open');
-        showLimitReached(DAILY_LIMIT_MESSAGE);
-        return false;
+        // Bug fix: a locally-cached limitReached (from before login/purchase,
+        // same subject+day) must not block a NOW-purchased user. Verify
+        // real entitlement before trusting the cached flag; if purchased,
+        // clear the stale cache and fall through to a normal fetch.
+        const isPurchasedNow = await ensureEntitlementChecked();
+        if (isPurchasedNow) {
+          limitReached = false;
+          try { localStorage.removeItem(LIMIT_STORAGE_KEY); } catch (err) {}
+        } else {
+          aRow.style.display = 'none';
+          faqItem.classList.remove('open');
+          showLimitReached(DAILY_LIMIT_MESSAGE);
+          return false;
+        }
       }
 
       // ---------- Fix #2: free clicks apply only to page 1 (first 20) ----------
