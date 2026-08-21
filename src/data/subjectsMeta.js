@@ -46,6 +46,22 @@ export const subjectsMeta = {
     seoTitle: 'భారత రాజ్యాంగం MCQs',
     seoDescription: 'UPSC, SSC, TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం భారత రాజ్యాంగం ప్రశ్నలు, అధ్యాయాల వారీగా',
   },
+  'ts-constable-previous-papers-en': {
+    lang: 'en',
+    category: 'papers',
+    heading: 'TS Police Constable Previous Papers',
+    breadcrumb: 'TS Constable Previous Papers',
+    seoTitle: 'TS Police Constable Previous Question Papers',
+    seoDescription: 'TS Police Constable previous exam papers with subject-wise weightage and pattern analysis, English version',
+  },
+  'ts-constable-previous-papers-te': {
+    lang: 'te',
+    category: 'papers',
+    heading: 'TS పోలీస్ కానిస్టేబుల్ Previous Papers',
+    breadcrumb: 'TS Constable Previous Papers (Telugu)',
+    seoTitle: 'TS పోలీస్ కానిస్టేబుల్ Previous Papers',
+    seoDescription: 'TS పోలీస్ కానిస్టేబుల్ మునుపటి పరీక్ష ప్రశ్నపత్రాలు, సబ్జెక్ట్ వారీగా వెయిటేజీ మరియు నమూనా విశ్లేషణతో సహా',
+  },
 
   // Example for adding a new subject later:
   // 'telangana-geography-en': {

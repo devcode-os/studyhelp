@@ -1,0 +1,3066 @@
+{
+  "slug": "ts-constable-prelims-2018-te",
+  "chapterNumber": 2,
+  "title": "TS Police Constable Prelims - 2018 (Set A) [Telugu]",
+  "weightage": [
+    {
+      "subject": "రీజనింగ్ (వెర్బల్ + నాన్-వెర్బల్ + ఆప్టిట్యూడ్)",
+      "questions": 35,
+      "percentage": 17.5,
+      "breakdown": [
+        {
+          "name": "వెర్బల్ రీజనింగ్ (కోడింగ్, క్యాలెండర్, దిక్కులు)",
+          "questions": 11
+        },
+        {
+          "name": "ఆప్టిట్యూడ్ & ప్రవర్తనా నిర్ణయం",
+          "questions": 10
+        },
+        {
+          "name": "సంఖ్యా & పటాల శ్రేణులు",
+          "questions": 7
+        },
+        {
+          "name": "సీటింగ్ అరేంజ్‌మెంట్",
+          "questions": 3
+        },
+        {
+          "name": "డేటా ఇంటర్‌ప్రిటేషన్",
+          "questions": 3
+        },
+        {
+          "name": "డేటా సఫిషియెన్సీ",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "తెలంగాణ చరిత్ర & ఉద్యమం",
+      "questions": 35,
+      "percentage": 17.5,
+      "breakdown": [
+        {
+          "name": "తెలంగాణ ప్రాచీన & మధ్యయుగ చరిత్ర",
+          "questions": 14
+        },
+        {
+          "name": "తెలంగాణ ఉద్యమం & సమైక్యీకరణ",
+          "questions": 12
+        },
+        {
+          "name": "తెలంగాణ సంస్కృతి & సాహిత్యం",
+          "questions": 7
+        },
+        {
+          "name": "నిజాంల & బ్రిటిష్ కాలంలో తెలంగాణ",
+          "questions": 2
+        }
+      ]
+    },
+    {
+      "subject": "క్వాంటిటేటివ్ ఆప్టిట్యూడ్",
+      "questions": 25,
+      "percentage": 12.5,
+      "breakdown": [
+        {
+          "name": "అర్థమెటిక్ (లాభ-నష్టం, SI/CI, కాలం-పని, వేగం-దూరం)",
+          "questions": 16
+        },
+        {
+          "name": "బీజగణితం & సంఖ్యా వ్యవస్థలు",
+          "questions": 5
+        },
+        {
+          "name": "మెన్సురేషన్ & జ్యామితి",
+          "questions": 4
+        }
+      ]
+    },
+    {
+      "subject": "ఇంగ్లీష్ లాంగ్వేజ్ (English)",
+      "questions": 20,
+      "percentage": 10.0,
+      "breakdown": [
+        {
+          "name": "Vocabulary & Grammar",
+          "questions": 16
+        },
+        {
+          "name": "Reading Comprehension",
+          "questions": 4
+        }
+      ]
+    },
+    {
+      "subject": "భారతదేశ చరిత్ర (ప్రాచీన, మధ్యయుగ, ఆధునిక)",
+      "questions": 20,
+      "percentage": 10.0,
+      "breakdown": [
+        {
+          "name": "ప్రాచీన భారతదేశం",
+          "questions": 10
+        },
+        {
+          "name": "మధ్యయుగ భారతదేశం",
+          "questions": 7
+        },
+        {
+          "name": "ఆధునిక భారతదేశం",
+          "questions": 3
+        }
+      ]
+    },
+    {
+      "subject": "కరెంట్ అఫైర్స్ & సాధారణ పరిజ్ఞానం",
+      "questions": 16,
+      "percentage": 8.0,
+      "breakdown": [
+        {
+          "name": "జాతీయ & అంతర్జాతీయ దినోత్సవాలు",
+          "questions": 3
+        },
+        {
+          "name": "అవార్డులు & గౌరవాలు",
+          "questions": 2
+        },
+        {
+          "name": "పాలన & ప్రభుత్వ పథకాలు",
+          "questions": 2
+        },
+        {
+          "name": "భారత అంతర్జాతీయ సంబంధాలు",
+          "questions": 2
+        },
+        {
+          "name": "క్రీడలు & స్టేడియంలు",
+          "questions": 2
+        },
+        {
+          "name": "రక్షణ & సైనిక వ్యవహారాలు",
+          "questions": 2
+        },
+        {
+          "name": "సంస్థలు & మౌలిక సదుపాయాలు",
+          "questions": 2
+        },
+        {
+          "name": "ఇంధనం & సైన్స్ కరెంట్ అఫైర్స్",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "సాధారణ శాస్త్రం (భౌతిక, రసాయన, జీవశాస్త్రం)",
+      "questions": 15,
+      "percentage": 7.5,
+      "breakdown": [
+        {
+          "name": "భౌతిక శాస్త్రం",
+          "questions": 6
+        },
+        {
+          "name": "జీవశాస్త్రం",
+          "questions": 6
+        },
+        {
+          "name": "రసాయన శాస్త్రం",
+          "questions": 3
+        }
+      ]
+    },
+    {
+      "subject": "భారత రాజ్యవ్యవస్థ & పరిపాలన",
+      "questions": 12,
+      "percentage": 6.0,
+      "breakdown": [
+        {
+          "name": "రాజ్యాంగ సంస్థలు & భావనలు",
+          "questions": 7
+        },
+        {
+          "name": "ప్రస్తుత రాజకీయ పదవులు",
+          "questions": 3
+        },
+        {
+          "name": "ఎన్నికలు",
+          "questions": 1
+        },
+        {
+          "name": "భద్రతా దళాలు",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "పర్యావరణం & జీవావరణ శాస్త్రం",
+      "questions": 10,
+      "percentage": 5.0,
+      "breakdown": [
+        {
+          "name": "కాలుష్యం, వాతావరణ మార్పు & సుస్థిరత",
+          "questions": 7
+        },
+        {
+          "name": "జీవావరణం & పర్యావరణ ఆవరణలు",
+          "questions": 2
+        },
+        {
+          "name": "వాతావరణ వాయువులు & మానవ శరీరం",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "భారత ఆర్థిక వ్యవస్థ",
+      "questions": 6,
+      "percentage": 3.0,
+      "breakdown": [
+        {
+          "name": "పేదరికం & సమ్మిళిత వృద్ధి",
+          "questions": 3
+        },
+        {
+          "name": "ఉపాధి పథకాలు",
+          "questions": 1
+        },
+        {
+          "name": "జనాభా శాస్త్రం",
+          "questions": 1
+        },
+        {
+          "name": "పరిశ్రమ",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "భౌగోళిక శాస్త్రం",
+      "questions": 6,
+      "percentage": 3.0,
+      "breakdown": [
+        {
+          "name": "వాతావరణం & బుతుపవనాలు",
+          "questions": 2
+        },
+        {
+          "name": "మానవ భౌగోళికం & జనాభా శాస్త్రం",
+          "questions": 2
+        },
+        {
+          "name": "భౌతిక భౌగోళికం",
+          "questions": 1
+        },
+        {
+          "name": "పారిశ్రామిక & ఇంధన భౌగోళికం",
+          "questions": 1
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "What is the synonym of 'amenable' in 'Both parties were amenable to a peaceful settlement of the land dispute'.?",
+      "options": {
+        "a": "Doubtful",
+        "b": "Unwilling",
+        "c": "Responsive",
+        "d": "Disagreeable"
+      },
+      "answer": "c",
+      "a": "Responsive",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the synonym of 'antidote' in 'Jogging is considered an antidote to mental stress'.?",
+      "options": {
+        "a": "Poisonous",
+        "b": "Remedy",
+        "c": "Equivalent",
+        "d": "Dangerous"
+      },
+      "answer": "b",
+      "a": "Remedy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the antonym of 'transparent' in 'The window-glass is transparent'?",
+      "options": {
+        "a": "Opaque",
+        "b": "Translucent",
+        "c": "Susceptible",
+        "d": "Fragile"
+      },
+      "answer": "a",
+      "a": "Opaque",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the antonym of 'unanimous' in 'It was a unanimous decision'?",
+      "options": {
+        "a": "United",
+        "b": "Partial",
+        "c": "Compatible",
+        "d": "Harmonious"
+      },
+      "answer": "b",
+      "a": "Partial",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "His mother was _________ American though his father was __________ European.",
+      "options": {
+        "a": "a, a",
+        "b": "a, an",
+        "c": "an, a",
+        "d": "an, an"
+      },
+      "answer": "c",
+      "a": "an, a",
+      "e": "The choice between 'a' and 'an' depends on the sound that follows, not the spelling. 'American' begins with a vowel sound, so it takes 'an', while 'European' begins with a consonant sound (yu-), so it takes 'a'.\n\nThat gives 'an American' and 'a European', matching the pattern an, a.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The coordinator was asked to attend __________ the issue and resolve it immediately.",
+      "options": {
+        "a": "by",
+        "b": "in",
+        "c": "to",
+        "d": "No preposition required"
+      },
+      "answer": "c",
+      "a": "to",
+      "e": "The phrasal verb 'attend to' means to deal with or handle something, which fits the context of resolving an issue.\n\n'Attend by' and 'attend in' are not standard English collocations, so 'to' is the correct preposition here.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Either of the roads ___________ to Vasantha Nagar.",
+      "options": {
+        "a": "lead",
+        "b": "leads",
+        "c": "have led",
+        "d": "are led"
+      },
+      "answer": "b",
+      "a": "leads",
+      "e": "'Either' is a singular pronoun meaning 'one or the other', so it takes a singular verb.\n\nSince the subject 'Either of the roads' is treated as singular, the verb must also be singular, which gives 'leads'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Please don't disturb me, I _________ the coins now.",
+      "options": {
+        "a": "have been counting",
+        "b": "count",
+        "c": "was counting",
+        "d": "am counting"
+      },
+      "answer": "d",
+      "a": "am counting",
+      "e": "The action of counting the coins is happening at the exact moment of speaking, which calls for the present continuous tense.\n\n'Am counting' correctly expresses this ongoing action happening right now, unlike the simple present or past forms.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Rishi __________ his engineering course by the end of 2017.",
+      "options": {
+        "a": "will completed",
+        "b": "complete",
+        "c": "will have completed",
+        "d": "was completed"
+      },
+      "answer": "c",
+      "a": "will have completed",
+      "e": "The phrase 'by the end of 2017' points to a future point by which an action will be finished, which requires the future perfect tense.\n\n'Will have completed' correctly shows an action that will be finished before a specified future time.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correctly spelt word from the options given below.",
+      "options": {
+        "a": "occasional",
+        "b": "occassional",
+        "c": "ocasional",
+        "d": "occational"
+      },
+      "answer": "a",
+      "a": "occasional",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the meaning of underlined idiom in \"We would be glad to put you up for a few days if you would like to stay\"?",
+      "options": {
+        "a": "tolerate someone",
+        "b": "build something",
+        "c": "provide accommodation",
+        "d": "contribute something"
+      },
+      "answer": "c",
+      "a": "provide accommodation",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the meaning of the underlined phrase in 'How did you wolf down that pizza so quickly'?",
+      "options": {
+        "a": "To eat gently",
+        "b": "To eat hungrily",
+        "c": "To eat slowly",
+        "d": "To swallow slowly"
+      },
+      "answer": "b",
+      "a": "To eat hungrily",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct order of the following jumbled sentences into a meaningful paragraph.\n(a) Wages will seldom rise in proportion to the rising prices\n(b) The problem of food is intimately connect with population, the market is governed by demand and supply\n(c) Without enough food, such people lack health, strength of efficiency and they fall an easy prey to all sorts of diseases\n(d) If too many people demand goods to go round, prices will rise and poor classes will starve",
+      "options": {
+        "a": "1-(c), 2-(d), 3-(a), 4-(b)",
+        "b": "1-(d), 2-(c), 3-(b), 4-(a)",
+        "c": "1-(a), 2-(c), 3-(d), 4-(b)",
+        "d": "1-(b), 2-(d), 3-(a), 4-(c)"
+      },
+      "answer": "d",
+      "a": "1-(b), 2-(d), 3-(a), 4-(c)",
+      "e": "The paragraph should open with the general statement introducing the topic, which is (b), about food being connected with population and demand-supply.\n\nThis is followed logically by (d) prices rising due to demand, then (a) wages not keeping pace with rising prices, and finally (c) the consequence of poor health and disease. This gives the order b, d, a, c.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct order of the following jumbled sentences to make it a meaningful paragraph.\n(a) A dove, perched on a nearby tree, saw the ant's danger and dropped a leaf into the water\n(b) Once, an ant who had come to drink at a stream fell into the water and was carried away by the swift current\n(c) He was about to fire when the ant, who was nearby, crawled forward and bit him sharply on the ankle\n(d) Sometime after this, a hunter, creeping through the bushes, saw the dove asleep, and took a careful aim with his gun",
+      "options": {
+        "a": "1-(d), 2-(c), 3-(b), 4-(a)",
+        "b": "1-(c), 2-(d), 3-(a), 4-(b)",
+        "c": "1-(b), 2-(a), 3-(d), 4-(c)",
+        "d": "1-(a), 2-(c), 3-(d), 4-(b)"
+      },
+      "answer": "c",
+      "a": "1-(b), 2-(a), 3-(d), 4-(c)",
+      "e": "The story begins with (b), the ant falling into the stream. This is followed by (a), the dove noticing and dropping a leaf to save it.\n\nNext comes (d), a hunter later trying to catch the dove, and finally (c), the ant biting the hunter to save the dove in return. This gives the order b, a, d, c.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank:\nManoj played cricket for two days, _________ he?",
+      "options": {
+        "a": "did",
+        "b": "didn't",
+        "c": "wasn't",
+        "d": "wouldn't"
+      },
+      "answer": "b",
+      "a": "didn't",
+      "e": "This is a tag question. The main statement 'Manoj played cricket' is in the simple past tense and is affirmative.\n\nA question tag for an affirmative statement must be negative and use the same auxiliary verb form as the main clause, which gives 'didn't he'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank:\nJohnson has not prepared for tomorrow's exam, __________ he?",
+      "options": {
+        "a": "isn't",
+        "b": "hasn't",
+        "c": "has",
+        "d": "does"
+      },
+      "answer": "c",
+      "a": "has",
+      "e": "This is a tag question where the main statement is negative, using 'has not prepared'.\n\nA question tag for a negative statement must be positive, and since the main verb uses 'has', the tag must also use 'has', giving 'has he'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How did most people regard early motor cars?",
+      "options": {
+        "a": "Not better than horse-driven engines",
+        "b": "A mere joke, or as rather dangerous playthings",
+        "c": "A mere scientific experiment",
+        "d": "A cumbersome vehicle"
+      },
+      "answer": "b",
+      "a": "A mere joke, or as rather dangerous playthings",
+      "e": "",
+      "table": null,
+      "passage": "It was Germany and France that the first successful attempts were made to produce an internal-combustion engine driven by petrol. In England, people were strangely timid about horseless vehicles. English inventors were handicapped by a quaint old law that forbade any such vehicle to attain a greater speed than four miles an hour, and compelled each one to be preceded by a man carrying a red flag. This law was not repealed until 1896.\n\nThe earliest motor cars were looked upon as mere jokes, or as rather dangerous playthings, by everyone except their inventors. Some of them were single-seaters, others would carry two or even three people; but all were noisy, clumsy, queer-looking things. When in 1888, Carl Benz, a German, produced a three-wheeled, internal combustion car, a great forward stride had been made. Another German, whose name, Daimler, is often seen on motor cars to this day, was experimenting about the same time, and testing a petrol driven engine.\n\nIt is understood how the introduction of the petrol-driven engine revolutionalised road transport throughout the world. Until then the necessary power to push a vehicle along could not be obtained without the cumbersome tanks, boilers and furnaces of the steam engine. The internal-combustion engine is light in weight and small in size by comparison; the fuel is burned in it, so that there is no waste, like the dirty cinders of a coal fire."
+    },
+    {
+      "type": "mcq",
+      "q": "What were all early motor cars?",
+      "options": {
+        "a": "A plaything or toy meant for engineers",
+        "b": "A vehicle better than horse-driven vehicle",
+        "c": "Noisy, clumsy, queer-looking things",
+        "d": "Dangerous but beautiful"
+      },
+      "answer": "c",
+      "a": "Noisy, clumsy, queer-looking things",
+      "e": "",
+      "table": null,
+      "passage": "It was Germany and France that the first successful attempts were made to produce an internal-combustion engine driven by petrol. In England, people were strangely timid about horseless vehicles. English inventors were handicapped by a quaint old law that forbade any such vehicle to attain a greater speed than four miles an hour, and compelled each one to be preceded by a man carrying a red flag. This law was not repealed until 1896.\n\nThe earliest motor cars were looked upon as mere jokes, or as rather dangerous playthings, by everyone except their inventors. Some of them were single-seaters, others would carry two or even three people; but all were noisy, clumsy, queer-looking things. When in 1888, Carl Benz, a German, produced a three-wheeled, internal combustion car, a great forward stride had been made. Another German, whose name, Daimler, is often seen on motor cars to this day, was experimenting about the same time, and testing a petrol driven engine.\n\nIt is understood how the introduction of the petrol-driven engine revolutionalised road transport throughout the world. Until then the necessary power to push a vehicle along could not be obtained without the cumbersome tanks, boilers and furnaces of the steam engine. The internal-combustion engine is light in weight and small in size by comparison; the fuel is burned in it, so that there is no waste, like the dirty cinders of a coal fire."
+    },
+    {
+      "type": "mcq",
+      "q": "What made the English inventors handicapped?",
+      "options": {
+        "a": "The general public did not welcome the invention",
+        "b": "The quaint old law that forbade any such vehicle to attain a greater than four miles an hour",
+        "c": "Non-availability of adequate fuel power the engine",
+        "d": "Availability of micro-air vehicles"
+      },
+      "answer": "b",
+      "a": "The quaint old law that forbade any such vehicle to attain a greater than four miles an hour",
+      "e": "",
+      "table": null,
+      "passage": "It was Germany and France that the first successful attempts were made to produce an internal-combustion engine driven by petrol. In England, people were strangely timid about horseless vehicles. English inventors were handicapped by a quaint old law that forbade any such vehicle to attain a greater speed than four miles an hour, and compelled each one to be preceded by a man carrying a red flag. This law was not repealed until 1896.\n\nThe earliest motor cars were looked upon as mere jokes, or as rather dangerous playthings, by everyone except their inventors. Some of them were single-seaters, others would carry two or even three people; but all were noisy, clumsy, queer-looking things. When in 1888, Carl Benz, a German, produced a three-wheeled, internal combustion car, a great forward stride had been made. Another German, whose name, Daimler, is often seen on motor cars to this day, was experimenting about the same time, and testing a petrol driven engine.\n\nIt is understood how the introduction of the petrol-driven engine revolutionalised road transport throughout the world. Until then the necessary power to push a vehicle along could not be obtained without the cumbersome tanks, boilers and furnaces of the steam engine. The internal-combustion engine is light in weight and small in size by comparison; the fuel is burned in it, so that there is no waste, like the dirty cinders of a coal fire."
+    },
+    {
+      "type": "mcq",
+      "q": "What is incorrect about the internal combustion engine?",
+      "options": {
+        "a": "fuel burnt in it as waste",
+        "b": "light in weight",
+        "c": "noisy and clumsy",
+        "d": "small in size"
+      },
+      "answer": "a",
+      "a": "fuel burnt in it as waste",
+      "e": "",
+      "table": null,
+      "passage": "It was Germany and France that the first successful attempts were made to produce an internal-combustion engine driven by petrol. In England, people were strangely timid about horseless vehicles. English inventors were handicapped by a quaint old law that forbade any such vehicle to attain a greater speed than four miles an hour, and compelled each one to be preceded by a man carrying a red flag. This law was not repealed until 1896.\n\nThe earliest motor cars were looked upon as mere jokes, or as rather dangerous playthings, by everyone except their inventors. Some of them were single-seaters, others would carry two or even three people; but all were noisy, clumsy, queer-looking things. When in 1888, Carl Benz, a German, produced a three-wheeled, internal combustion car, a great forward stride had been made. Another German, whose name, Daimler, is often seen on motor cars to this day, was experimenting about the same time, and testing a petrol driven engine.\n\nIt is understood how the introduction of the petrol-driven engine revolutionalised road transport throughout the world. Until then the necessary power to push a vehicle along could not be obtained without the cumbersome tanks, boilers and furnaces of the steam engine. The internal-combustion engine is light in weight and small in size by comparison; the fuel is burned in it, so that there is no waste, like the dirty cinders of a coal fire."
+    },
+    {
+      "type": "mcq",
+      "q": "మీరు ఇండియా Vs పాకిస్తాన్ క్రికెట్ మ్యాచ్ ఫైనల్ TVలో చూస్తున్నప్పుడు, మీ తమ్ముడు వచ్చి తనకి గణితము సబ్జెక్టులో ఉన్న సందేహాలు తీర్చమని నిన్ను అడిగితే నీవు ఏం చేస్తావు?",
+      "options": {
+        "a": "నేను వాడి సందేహాలు ఓర్పుగా తీర్చుతాను",
+        "b": "ముందే ఎందుకు అడగలేదు అని వాడిమీద అరుస్తాను",
+        "c": "TV ఆఫ్ అక్కడనుంచి వెళ్ళిపోతాను",
+        "d": "నాకు చిరాకు వస్తుంది"
+      },
+      "answer": "a",
+      "a": "నేను వాడి సందేహాలు ఓర్పుగా తీర్చుతాను",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక బాలుడు ఒక ముఖ్యమైన విషయాన్ని అవగాహన చేసుకునేందుకు ఇబ్బంది పడుతున్నప్పుడు నువ్వు ఎలాంటి సలహా ఆ బాలుడికి ఇస్తావు?",
+      "options": {
+        "a": "చదువు ఆపివేయమంటాను",
+        "b": "ఆ సబ్జెక్టుని ఎప్పటికీ చదవవద్దంటాను",
+        "c": "కొంచెం సేపు చదువు ఆపి, తర్వాత కొనసాగించమంటాను",
+        "d": "అర్ధంగాని అంశాన్ని బట్టి పట్టమంటాను"
+      },
+      "answer": "c",
+      "a": "కొంచెం సేపు చదువు ఆపి, తర్వాత కొనసాగించమంటాను",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఎవరైనా మిమ్మల్ని కావాలని బాధపెట్టడానికి ప్రయత్నిస్తే, మీరు ఏం చేయాలి?",
+      "options": {
+        "a": "తిప్పికొట్టాలి",
+        "b": "ఏడ్వాలి",
+        "c": "పోలీసుకి ఫిర్యాదు చేయాలి",
+        "d": "పట్టించుకోకూడదు"
+      },
+      "answer": "d",
+      "a": "పట్టించుకోకూడదు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నిన్ను నమ్మి నీ స్నేహితుడు తన యొక్క వ్యక్తిగత సమస్యలను నీతో చెపితే, నువ్వు ఏం చేయాలి?",
+      "options": {
+        "a": "అందరికి ఆ విషయాన్ని చెప్పాలి",
+        "b": "స్నేహితుడు అలా ఉన్నందుకు సంతోషపడాలి",
+        "c": "ఆ రహస్యాలను మనస్సులోనే పెట్టుకోవాలి",
+        "d": "స్నేహితుడిని అలుసుగా చూడాలి"
+      },
+      "answer": "c",
+      "a": "ఆ రహస్యాలను మనస్సులోనే పెట్టుకోవాలి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పరీక్షల్లో నీకు వచ్చిన మార్కులు కాకుండా తప్పుడు ఆధారాలతో వేరే మార్కులు వచ్చాయని మీ తల్లిదండ్రులతో చెప్పావా?",
+      "options": {
+        "a": "చెప్పాను",
+        "b": "చెప్పలేదు",
+        "c": "అప్పుడప్పుడు",
+        "d": "సందర్భాన్ని బట్టి"
+      },
+      "answer": "b",
+      "a": "చెప్పలేదు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మీ ఉద్దేశంలో 'లింగ సమానత్వం' అంటే అర్థము ఏమిటి?",
+      "options": {
+        "a": "ఆడవాళ్ళకు ప్రత్యేక స్థానము కల్పించటం",
+        "b": "మగవాళ్ళ కంటే ఆడవాళ్ళు ఎక్కువ",
+        "c": "ఆడవాళ్ళ కంటే మగవాళ్ళు ఎక్కువ",
+        "d": "స్త్రీ, పురుషులకు సమాన అవకాశాలు ఉండటం"
+      },
+      "answer": "d",
+      "a": "స్త్రీ, పురుషులకు సమాన అవకాశాలు ఉండటం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "'బలహీన వర్గాలు' అనగా అర్థము ఏమిటి?",
+      "options": {
+        "a": "శారీరక బలహీనులు",
+        "b": "ఆర్థికంగా బలహీనులు",
+        "c": "వికలాంగులు",
+        "d": "వాళ్ళ హక్కులకోసం పోరాటం చేయలేనివాళ్ళు"
+      },
+      "answer": "b",
+      "a": "ఆర్థికంగా బలహీనులు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నీవు నీ స్నేహితుని కోసం రెండు గంటల నుండి ఎదురు చూస్తున్నావు, అయినా వాడు ఇంకా రాలేదు. నీవు అతని గురించి ఏమి అనుకుంటున్నావు?",
+      "options": {
+        "a": "వాడికి కాలం యొక్క విలువ తెలియదు",
+        "b": "ఏమైన సమస్యతో బాధపడుతున్నాడేమో",
+        "c": "వాడు వస్తే, గట్టిగా అరుస్తాను",
+        "d": "నన్ను వదిలేసి, ఇంక ఎక్కడికన్నా వెళ్ళాడేమో!"
+      },
+      "answer": "b",
+      "a": "ఏమైన సమస్యతో బాధపడుతున్నాడేమో",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నీ ఎదురుగా ఉన్న వ్యక్తి జేబులోంచి డబ్బులు క్రిందపడితే, నీవు ఆ వ్యక్తికి ఇచ్చేస్తావా?",
+      "options": {
+        "a": "తప్పకుండా ఇస్తాను",
+        "b": "నేను ఇవ్వను",
+        "c": "అప్పుడప్పుడు ఇస్తాను",
+        "d": "చాలాసార్లు ఇస్తాను"
+      },
+      "answer": "a",
+      "a": "తప్పకుండా ఇస్తాను",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇద్దరు వ్యక్తులు పోట్లాడుకుంటూ వుంటే, అక్కడ ఉన్న నువ్వు ఏం చేస్తావు?",
+      "options": {
+        "a": "అక్కడ నుండి పారిపోతావు",
+        "b": "ఒక్కరికి వత్తాసు పలుకుతావు",
+        "c": "ఇద్దరు వ్యక్తులకు సర్ది చెపుతావు",
+        "d": "పోలీసుకు చెపుతావు"
+      },
+      "answer": "c",
+      "a": "ఇద్దరు వ్యక్తులకు సర్ది చెపుతావు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "(1 - 1/2)(1 - 1/3)(1 - 1/4)....(1 - 1/n) =",
+      "options": {
+        "a": "1/n(n+1)",
+        "b": "(n+1)/n",
+        "c": "2/n",
+        "d": "1/n"
+      },
+      "answer": "d",
+      "a": "1/n",
+      "e": "ఇది ఒక టెలిస్కోపింగ్ గుణకారం. ప్రతి కారకం (1 - 1/k) ను (k-1)/k గా రాయవచ్చు, కాబట్టి పదాలను వరుసగా రాస్తే (1/2)(2/3)(3/4)...((n-1)/n) వస్తుంది.\n\nప్రతి న్యూమరేటర్ తర్వాతి భిన్నం యొక్క డినామినేటర్‌తో రద్దు అవుతుంది, చివరకు న్యూమరేటర్‌లో 1, డినామినేటర్‌లో n మాత్రమే మిగులుతాయి, కాబట్టి గుణకారం విలువ 1/n అవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రెండు సంఖ్యల నిష్పత్తి 3:5 మరియు వాటి H.C.F 5. అప్పుడు, ఆ సంఖ్యల L.C.M ఎంత?",
+      "options": {
+        "a": "45",
+        "b": "35",
+        "c": "150",
+        "d": "75"
+      },
+      "answer": "d",
+      "a": "75",
+      "e": "నిష్పత్తి 3:5 మరియు H.C.F 5 కావున, అసలు సంఖ్యలు 3x5=15 మరియు 5x5=25 అవుతాయి.\n\nరెండు సంఖ్యలకు H.C.F మరియు L.C.M ల లబ్ధం, ఆ సంఖ్యల లబ్ధానికి సమానం కావున, L.C.M = (15x25)/5 = 75 అవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ సంఖ్య నుండి 11 తీసివేసిన తరువాత 16, 18, 21, 24 మరియు 28 లచే భాగింపబడే సంఖ్యలలో అతి చిన్న సంఖ్య ఏది?",
+      "options": {
+        "a": "1109",
+        "b": "1119",
+        "c": "1019",
+        "d": "1214"
+      },
+      "answer": "c",
+      "a": "1019",
+      "e": "11 తీసివేసిన తరువాత వచ్చే సంఖ్య 16, 18, 21, 24, 28 లచే ఖచ్చితంగా భాగింపబడాలి, కాబట్టి అది వాటి L.C.M యొక్క గుణిజం కావాలి.\n\nఈ సంఖ్యల L.C.M 1008 అవుతుంది, కాబట్టి అలాంటి అతి చిన్న సంఖ్య 1008 + 11 = 1019.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A మరియు B యొక్క వయస్సులు 3:5 నిష్పత్తిలో ఉన్నాయి. పది సంవత్సరముల తరువాత, వారి వయస్సుల నిష్పత్తి 31:45 అవుతుంది. వారి ప్రస్తుత వయస్సులు (సంవత్సరములలో)",
+      "options": {
+        "a": "21, 35",
+        "b": "24, 40",
+        "c": "18, 30",
+        "d": "27, 45"
+      },
+      "answer": "a",
+      "a": "21, 35",
+      "e": "ప్రస్తుత వయస్సులను 3x మరియు 5x గా తీసుకుందాం. పది సంవత్సరముల తరువాత అవి 3x+10 మరియు 5x+10 అవుతాయి, మరియు ఈ నిష్పత్తి 31:45 గా ఇవ్వబడింది.\n\n45(3x+10) = 31(5x+10) ను సాధించగా 135x + 450 = 155x + 310, కాబట్టి 20x = 140, x = 7. కావున ప్రస్తుత వయస్సులు 21 మరియు 35 సంవత్సరాలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "వెండి మరియు రాగిని 2:5 మరియు 4:7 నిష్పత్తులలో కలిపి A మరియు B అనే రెండు లోహ మిశ్రమములను తయారుచేశారు. ఈ లోహ మిశ్రమములు A, B లను సమభాగాలు తీసికొని కలిపి మూడవ లోహ మిశ్రమము C ని తయారు చేశారు. ఈ మిశ్రమము C లో ఉన్న వెండి మరియు రాగిల నిష్పత్తి",
+      "options": {
+        "a": "3:5",
+        "b": "25:52",
+        "c": "25:49",
+        "d": "15:27"
+      },
+      "answer": "b",
+      "a": "25:52",
+      "e": "మిశ్రమము A లో వెండి భాగం 2/7, రాగి భాగం 5/7. మిశ్రమము B లో వెండి భాగం 4/11, రాగి భాగం 7/11.\n\nA మరియు B లను సమభాగాలుగా కలిపితే, మొత్తం వెండి భాగం 2/7 + 4/11 = 50/77, మొత్తం రాగి భాగం 5/7 + 7/11 = 104/77 అవుతుంది, కాబట్టి వెండి-రాగి నిష్పత్తి 50:104, అంటే 25:52.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక దుకాణదారుడు పంచదార ధరను 10% తగ్గించాడు. ఒక వ్యక్తి రూ. 900లో 2 kg ఎక్కువ పంచదార కొనగలడు. 1 kg పంచదార యొక్క అసలు ధరకు, తగ్గించిన ధరకు మధ్య వ్యత్యాసము (రూపాయలలో)",
+      "options": {
+        "a": "5",
+        "b": "6",
+        "c": "4",
+        "d": "3"
+      },
+      "answer": "a",
+      "a": "5",
+      "e": "అసలు ధర 1 kg కు p అనుకుందాం. అసలు ధరలో రూ.900తో 900/p kg కొనవచ్చు, 10% తగ్గించిన తరువాత అదే డబ్బుతో 900/(0.9p) kg కొనవచ్చు.\n\nఈ అదనపు పరిమాణం 100/p, ఇది 2 kg కు సమానం కావున p = 50. తగ్గించిన ధర 45, కాబట్టి 1 kg కు వ్యత్యాసము 50 - 45 = 5 రూపాయలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇద్దరి అభ్యర్థుల మధ్య జరిగిన ఒక ఎలెక్షన్‌లో నమోదు అయిన ఓటర్లలో 80% మంది ఓట్లు వేశారు. ఈ వేసిన ఓట్లలో (votes) 5% ఓట్లు సరైనవి కావు అని నిర్ణయించారు. గెలిచిన అభ్యర్థికి 32490 ఓట్లు వచ్చాయి. ఇది సరి అయిన ఓట్లలో 60%. అయితే, మొత్తం నమోదు అయిన ఓటర్ల సంఖ్య",
+      "options": {
+        "a": "75850",
+        "b": "64750",
+        "c": "82500",
+        "d": "71250"
+      },
+      "answer": "d",
+      "a": "71250",
+      "e": "గెలిచిన అభ్యర్థికి వచ్చిన 32490 ఓట్లు సరైన ఓట్లలో 60% కావున, మొత్తం సరైన ఓట్లు 32490/0.6 = 54150.\n\nఈ సరైన ఓట్లు వేసిన మొత్తం ఓట్లలో 95% కావున, వేసిన ఓట్లు 54150/0.95 = 57000. ఇది నమోదైన ఓటర్లలో 80% కావున, మొత్తం నమోదైన ఓటర్లు 57000/0.8 = 71250.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వ్యక్తి A, ఒక వ్యాపారమును రూ. 3,00,000 పెట్టుబడితో ప్రారంభించాడు. కొంతకాలము తరువాత రెండవ వ్యక్తి B రూ. 4,00,000 పెట్టుబడితో Aతో చేరాడు. సంవత్సరాంతమున వచ్చిన లాభమును A, B లు సమానముగా పంచుకుంటే, B ఎన్ని నెలల తరువాత A తో చేరినాడు?",
+      "options": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4"
+      },
+      "answer": "c",
+      "a": "3",
+      "e": "A యొక్క పెట్టుబడి పూర్తి 12 నెలలు పనిచేస్తుంది, కావున దాని మూలధన-కాల విలువ 3,00,000 x 12. లాభం సమానంగా పంచుకోవాలంటే, B యొక్క మూలధన-కాల విలువ కూడా అంతే ఉండాలి.\n\nB, x నెలలు పెట్టుబడి పెడితే, 4,00,000 x x = 3,00,000 x 12, కావున x = 9 నెలలు. అంటే B, 12 - 9 = 3 నెలల తరువాత చేరాడు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ముగ్గురు వ్యక్తులు A, B, C లు ఒక కంపెనీని ప్రారంభించి, దాని నిర్వహణకు మొత్తం రూ. P పెట్టుబడిగా పెట్టారు. B కంటే A రూ. 50,000 ఎక్కువ పెట్టాడు, C కంటే B రూ. 50,000 ఎక్కువ పెట్టాడు. A, B, C ల పెట్టుబడులు 8:7:6 నిష్పత్తిలో ఉంటే, P (రూపాయలలో) ఎంత?",
+      "options": {
+        "a": "10,50,000",
+        "b": "12,00,000",
+        "c": "13,50,000",
+        "d": "14,00,000"
+      },
+      "answer": "a",
+      "a": "10,50,000",
+      "e": "A, B, C ల పెట్టుబడులను 8k, 7k, 6k గా తీసుకుందాం, ఇవ్వబడిన నిష్పత్తి ప్రకారం.\n\nA, B కంటే రూ.50,000 ఎక్కువ కావున 8k - 7k = 50,000, కావున k = 50,000. దీనితో A = 4,00,000, B = 3,50,000, C = 3,00,000 అవుతాయి, మొత్తం P = 10,50,000.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నాలుగు వరస సంఖ్యలు A, B, C, D ల సగటు 55.5. అప్పుడు, లబ్ధం BC =",
+      "options": {
+        "a": "2580",
+        "b": "3060",
+        "c": "3080",
+        "d": "3660"
+      },
+      "answer": "c",
+      "a": "3080",
+      "e": "A, B, C, D లు నాలుగు వరస సంఖ్యలు, వాటి సగటు 55.5 కావున, వాటి మొత్తం 4 x 55.5 = 222.\n\nసంఖ్యలను A, A+1, A+2, A+3 గా రాస్తే 4A + 6 = 222, కావున A = 54. దీనితో B = 55, C = 56 అవుతాయి, లబ్ధం BC = 55 x 56 = 3080.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక క్రికెటర్ యొక్క బౌలింగ్ (bowling) సగటు ఒక వికెట్‌కు 9.5 పరుగులు. ఆ తరువాత మేచ్‌లో అతను 19 పరుగులు ఇచ్చి 3 వికెట్లు తీసుకున్నాడు. ఈ మేచ్ తరువాత అతని బౌలింగ్ సగటు 0.1 పరుగులు తగ్గింది. ఈ మేచ్ ముందు అతను తీసుకున్న మొత్తం వికెట్ల సంఖ్య",
+      "options": {
+        "a": "96",
+        "b": "92",
+        "c": "90",
+        "d": "84"
+      },
+      "answer": "b",
+      "a": "92",
+      "e": "ఈ మేచ్ ముందు తీసుకున్న వికెట్ల సంఖ్యను w అనుకుందాం, కావున ముందు ఇచ్చిన పరుగులు 9.5w.\n\nమేచ్ తరువాత కొత్త సగటు (9.5w + 19)/(w + 3) = 9.4 అవుతుంది. దీనిని సాధించగా 0.1w = 9.2, కావున w = 92.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వ్యక్తి తన వద్ద ఉన్న సరుకులలో 2/3 వ వంతు, 35% లాభమునకు అమ్మాడు. మిగతా సరుకులను 23% లాభమునకు అమ్మాడు. అప్పుడు అతనికి మొత్తం అమ్మకములో వచ్చిన లాభ శాతము",
+      "options": {
+        "a": "27%",
+        "b": "29%",
+        "c": "30%",
+        "d": "31%"
+      },
+      "answer": "d",
+      "a": "31%",
+      "e": "మొత్తం లాభ శాతము ఈ రెండు లాభ శాతాల భారిత సగటు, ఏ భాగం ఏ శాతానికి అమ్మబడిందో దాని ఆధారంగా.\n\nఇది (2/3 x 35 + 1/3 x 23) = (70 + 23)/3 = 93/3 = 31% అవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వస్తువును రూ. 950 కు అమ్మితే వచ్చిన లాభము, అదే వస్తువును రూ. 650 కి అమ్మితే వచ్చే నష్టానికి రెండు రెట్లు. ఆ వస్తువును ఏ ధరకు అమ్మితే 30% లాభము వస్తుంది?",
+      "options": {
+        "a": "875",
+        "b": "920",
+        "c": "975",
+        "d": "1025"
+      },
+      "answer": "c",
+      "a": "975",
+      "e": "క్రయ ధరను x అనుకుందాం. రూ.950 వద్ద లాభము 950 - x, రూ.650 వద్ద నష్టము x - 650, లాభము నష్టానికి రెండు రెట్లు అని ఇవ్వబడింది.\n\n950 - x = 2(x - 650) ను సాధించగా 950 - x = 2x - 1300, కావున 3x = 2250, x = 750. 30% లాభమునకు అమ్మకపు ధర 750 x 1.3 = 975.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "అసలు సొమ్ము P మీద సాధారణ వడ్డీ P లో 1/50 భాగము అయి, మరియు సంవత్సరాల సంఖ్య సాధారణ వడ్డీరేటులో సగభాగము అయింది. అప్పుడు సంవత్సరపు వడ్డీరేటు",
+      "options": {
+        "a": "6%",
+        "b": "5%",
+        "c": "4%",
+        "d": "2%"
+      },
+      "answer": "d",
+      "a": "2%",
+      "e": "సాధారణ వడ్డీ సూత్రం SI = PRT/100 ఉపయోగించి, SI = P/50, T = R/2 అనే విలువలను ప్రతిక్షేపిస్తే P/50 = P x R x (R/2)/100 అవుతుంది.\n\nఇది సరళీకరిస్తే R² = 200/50 = 4, కావున R = 2%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక బాంకు, A అను వ్యక్తికి రూ. 3,00,000 లను సాధారణవడ్డీ 8% చొప్పున మరియు B అను వ్యక్తికి రూ. 2,00,000 లను సాధారణ వడ్డీ 10% చొప్పున T సంవత్సరములకు అప్పు ఇచ్చింది. ఆ కాలము పూర్తి అయిన తరువాత బాంకుకు రూ. 1,76,000 వడ్డీ వస్తే, T = (సంవత్సరములలో)",
+      "options": {
+        "a": "5",
+        "b": "4",
+        "c": "3",
+        "d": "2"
+      },
+      "answer": "b",
+      "a": "4",
+      "e": "మొత్తం వచ్చిన వడ్డీ, రెండు అప్పుల నుండి వచ్చిన వడ్డీల మొత్తం: A నుండి 3,00,000 x 0.08 x T మరియు B నుండి 2,00,000 x 0.10 x T.\n\nఇవి కలిపితే 24,000T + 20,000T = 44,000T, దీనిని 1,76,000కి సమానం చేస్తే T = 4 సంవత్సరాలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక బాంకులో సంవత్సరానికి చక్రవడ్డీ 10% చొప్పున 3 సంవత్సరముల కొరకు వేసిన మొత్తములు పట్టిక I లో ఇవ్వబడినవి. పట్టిక II లో చక్రవడ్డీలు ఇవ్వబడినవి. వాటిని జతపరచండి\nList - I\n(a) 20000\n(b) 15000\n(c) 10000\nList - II\n(i) 7850\n(ii) 3310\n(iii) 4865\n(iv) 4965\n(v) 6620",
+      "options": {
+        "a": "a-v, b-iii, c-ii",
+        "b": "a-i, b-iv, c-ii",
+        "c": "a-v, b-iv, c-ii",
+        "d": "a-i, b-iv, c-iii"
+      },
+      "answer": "c",
+      "a": "a-v, b-iv, c-ii",
+      "e": "సంవత్సరానికి 10% చక్రవడ్డీగా 3 సంవత్సరాలకు వేసిన అసలు మొత్తానికి, చక్రవడ్డీ, అసలును (1.1³ - 1) తో గుణించగా వస్తుంది, అంటే 0.331.\n\nఈ గుణకాన్ని ఉపయోగించి 20000 x 0.331 = 6620, 15000 x 0.331 = 4965, 10000 x 0.331 = 3310 వస్తాయి, ఇది a-v, b-iv, c-ii కు సరిపోతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "6గురు పురుషులు మరియు 8 మంది స్త్రీలు ఒక పనిని 40 రోజులలో పూర్తి చేస్తారు. అదే పనిని 8 మంది పురుషులు మరియు 16 మంది స్త్రీలు 24 రోజులలో పూర్తి చేస్తారు. అదే పనిని 10 మంది పురుషులు మరియు 8 మంది స్త్రీలు ఎన్ని రోజులలో పూర్తి చేస్తారు?",
+      "options": {
+        "a": "16",
+        "b": "24",
+        "c": "28",
+        "d": "30"
+      },
+      "answer": "d",
+      "a": "30",
+      "e": "ఒక పురుషుని ఒక రోజు పని రేటును m, ఒక స్త్రీది w అనుకుందాం. ఇవ్వబడిన రెండు పరిస్థితులు 6m + 8w = 1/40, 8m + 16w = 1/24 అనే సమీకరణాలను ఇస్తాయి.\n\nఈ రెండు సమీకరణాలను సాధించగా m = 1/480, w = 1/640 వస్తాయి. 10 మంది పురుషులు, 8 మంది స్త్రీలకు కలిపిన రేటు 10/480 + 8/640 = 1/30, కావున పని 30 రోజులలో పూర్తి అవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A అను వ్యక్తి ఒక ఇంటిని 30 రోజులలో పెయింట్ చేయగలడు. B అను రెండవ వ్యక్తి అదే ఇంటిని 36 రోజులలో పెయింట్ చేయగలడు. A మరియు B ఇద్దరు కలిసి 15 రోజులు పనిచేశారు. తరువాత A వెళ్ళిపోయాడు. మిగతాపనిని B పూర్తి చేయుటకు కావలసిన సమయము (రోజులలో)",
+      "options": {
+        "a": "3",
+        "b": "4",
+        "c": "5",
+        "d": "6"
+      },
+      "answer": "a",
+      "a": "3",
+      "e": "A రేటు 1/30, B రేటు 1/36 ప్రతిరోజుకు, కావున కలిసి పనిచేస్తే వారి రేటు 1/30 + 1/36 = 11/180 ప్రతిరోజుకు.\n\n15 రోజులు కలిసి పనిచేస్తే 15 x 11/180 = 11/12 వంతు పని పూర్తి అవుతుంది, మిగిలింది 1/12. B ఒక్కడే, 1/36 రేటుతో, ఈ మిగిలిన పనిని పూర్తి చేయడానికి (1/12)/(1/36) = 3 రోజులు పడుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వ్యక్తి 6.30 a.m కు పట్టణము P నుండి పట్టణము Q కి బయలుదేరాడు. అతను 90 km/hr వేగంతో 2 గంటల 30 నిముషములు ప్రయాణించాడు. ఆ తరువాత వేగమును 50 km/hr కి తగ్గించాడు. ఆ పట్టణముల మధ్య దూరము 345 km అయితే, అతను పట్టణము Q కి ఎప్పుడు చేరాడు?",
+      "options": {
+        "a": "10.25 a.m",
+        "b": "11.15 a.m",
+        "c": "11.24 a.m",
+        "d": "11.50 a.m"
+      },
+      "answer": "c",
+      "a": "11.24 a.m",
+      "e": "మొదటి 2.5 గంటలలో 90 km/hr వేగంతో 225 km ప్రయాణించాడు, మిగిలిన దూరం 345 - 225 = 120 km.\n\nతగ్గించిన 50 km/hr వేగంతో ఈ మిగిలిన దూరానికి 2.4 గంటలు అంటే 2 గంటల 24 నిమిషాలు పడుతుంది. 6.30 a.m తరువాత మొత్తం ప్రయాణ సమయం 2.5+2.4=4.9 గంటలు కలిపితే చేరిన సమయం 11.24 a.m.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక 80 మీటర్లు పొడుగుగల ఒక రైలు 80 km/hr వేగంతో పరిగెడుతున్నది. ఈ రైలు 120 మీటర్లు పొడుగు గల ఒక ప్లాటుఫారం (platform) ను దాటుటకు కావలసిన సమయము (సెకండ్లలో)",
+      "options": {
+        "a": "6.5",
+        "b": "8.5",
+        "c": "9.9",
+        "d": "9"
+      },
+      "answer": "d",
+      "a": "9",
+      "e": "ప్లాటుఫారంను పూర్తిగా దాటటానికి, రైలు తన పొడవు మరియు ప్లాటుఫారం పొడవు కలిపిన దూరం 80 + 120 = 200 మీటర్లు ప్రయాణించాలి.\n\nవేగాన్ని మీటర్ల/సెకనుకు మారిస్తే 80 x 1000/3600, సుమారు 22.2 m/s, ఈ దూరాన్ని ఈ వేగంతో భాగించగా సమయం సుమారు 9 సెకన్లు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "α మరియు β వర్గ సమీకరణము px²+qx+r = 0 యొక్క మూలాలు అయిన, పట్టిక I మరియు పట్టిక II లో ఇచ్చిన వాటిని జతపరచండి.\nList - I\n(a) 1/α + 1/β\n(b) α/β + β/α\n(c) α²+β²\nList - II\n(i) (q²-2pr)/p²\n(ii) (q²+2pr)/pr\n(iii) (q²-2pr)/pr\n(iv) -q/r",
+      "options": {
+        "a": "a-iv, b-iii, c-i",
+        "b": "a-iv, b-ii, c-iii",
+        "c": "a-i, b-iii, c-iv",
+        "d": "a-ii, b-iv, c-iii"
+      },
+      "answer": "a",
+      "a": "a-iv, b-iii, c-i",
+      "e": "px²+qx+r=0 సమీకరణానికి, మూలాల మొత్తం α+β = -q/p మరియు లబ్ధం αβ = r/p అవుతుంది.\n\n(a) కు 1/α+1/β = (α+β)/αβ = -q/r, ఇది (iv) కు సరిపోతుంది. (b) కు α/β+β/α సరళీకరిస్తే (q²-2pr)/pr వస్తుంది, ఇది (iii) కు సరిపోతుంది. (c) కు α²+β² = (q²-2pr)/p², ఇది (i) కు సరిపోతుంది. కావున సరైన జత a-iv, b-iii, c-i.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "3:4:5 నిష్పత్తిలో భుజములు గల మూడు ఘనములను కరిగించి, 18√3 సెం.మీలు గల వికర్ణము గల ఒక ఘనమును తయారుచేయబడింది. ఆ ఘనముల భుజములు (సెం.మీలలో)",
+      "options": {
+        "a": "3, 4, 5",
+        "b": "6, 8,10",
+        "c": "9, 12, 15",
+        "d": "12, 16, 20"
+      },
+      "answer": "c",
+      "a": "9, 12, 15",
+      "e": "ఒక ఘనానికి, వికర్ణం = భుజం x √3, కావున వికర్ణం 18√3 అయితే, ఏర్పడిన ఘనం భుజం 18 సెం.మీ, దాని ఘనపరిమాణం 18³ = 5832 ఘనసెం.మీ.\n\nమూడు ఘనముల భుజములు 3k, 4k, 5k అయితే, వాటి మొత్తం ఘనపరిమాణం k³ x (27+64+125) = 216k³, దీనిని 5832కి సమానం చేస్తే k = 3, కావున భుజములు 9, 12, 15 సెం.మీ.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక స్తంభ శిఖరానికి అని ఉన్న ఒక నిచ్చెన నేలతో 60° కోణము చేస్తుంది. ఆ నిచ్చెన క్రింది కొన స్తంభమునకు 4 మీటర్ల దూరములో ఉన్నది. ఆ నిచ్చెన యొక్క పొడవు (మీటర్లలో)",
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "9",
+        "d": "10"
+      },
+      "answer": "b",
+      "a": "8",
+      "e": "నిచ్చెన, స్తంభం మరియు నేల కలిసి ఒక లంబకోణ త్రిభుజం ఏర్పరుస్తాయి, ఇక్కడ భూమి భుజం 4 మీటర్లు, నేలతో కోణం 60 డిగ్రీలు.\n\ncos60 = భూమిభుజం/నిచ్చెనపొడవు ఉపయోగించి, నిచ్చెన పొడవు = 4/cos60 = 4/0.5 = 8 మీటర్లు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "√1225 + √0.0615+x = 35.25 ⇒ x =",
+      "options": {
+        "a": "0.001",
+        "b": "0.0001",
+        "c": "0.02",
+        "d": "0.01"
+      },
+      "answer": "a",
+      "a": "0.001",
+      "e": "1225 యొక్క వర్గమూలం సరిగ్గా 35, కావున సమీకరణం √(0.0615 + x) = 35.25 - 35 = 0.25 గా మారుతుంది.\n\nరెండు వైపులా వర్గం చేస్తే 0.0615 + x = 0.0625, కావున x = 0.001.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "2a = 3b = 4c మరియు a+b+c = 26√61 అయిన, అప్పుడు √(a²+b²+c²) =",
+      "options": {
+        "a": "144",
+        "b": "361",
+        "c": "104",
+        "d": "122"
+      },
+      "answer": "d",
+      "a": "122",
+      "e": "2a = 3b = 4c = k అనుకుందాం, కావున a = k/2, b = k/3, c = k/4. అప్పుడు a+b+c = k(1/2+1/3+1/4) = 13k/12, దీనిని 26√61కి సమానం చేస్తే k = 24√61.\n\nఅప్పుడు a²+b²+c² = k²(1/4+1/9+1/16) = k² x 61/144. k² = 576 x 61 కావున ఇది 4 x 61 x 61 = 14884 అవుతుంది, దాని వర్గమూలం 122.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "గతిజశక్తి యొక్క పరిమాణములు ఈ క్రింది వానిలో దేనితో సమానముగా ఉండును",
+      "options": {
+        "a": "బలం",
+        "b": "పని",
+        "c": "ద్రవ్యవేగం",
+        "d": "వేగం"
+      },
+      "answer": "b",
+      "a": "పని",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నీటిలోని ధ్వనులను కొలుచుటకు ఉపయోగించే పరికరము",
+      "options": {
+        "a": "హైగ్రోమీటరు",
+        "b": "హైడ్రోఫోన్",
+        "c": "హిప్సోమీటరు",
+        "d": "గ్రామ్‌ఫోన్"
+      },
+      "answer": "b",
+      "a": "హైడ్రోఫోన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పది (10) అంగుళాలను కిలోమీటర్లలోనికి మార్చుము",
+      "options": {
+        "a": "254 × 10⁻³",
+        "b": "2.54 × 10⁻⁴",
+        "c": "2.54 × 10⁴",
+        "d": "25.4 × 10⁻⁴"
+      },
+      "answer": "b",
+      "a": "2.54 × 10⁻⁴",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక మోనోక్రొమాటిక్ రేడియేషన్‌ను భూమి నుండి దూరముగా ఉన్న గ్రహంపై కిరణపుంజం (beam) చేశారు. అది పరావర్తనము చెంది ఏడు నిమిషాల తరువాత చేరింది. ఒకవేళ సిగ్నల్ యొక్క వేగం 3×10⁸ m/s ఉంటే, భూమి మరియు గ్రహం మధ్య ఉన్న దూరము మీటర్లలో",
+      "options": {
+        "a": "3.15 × 10⁸",
+        "b": "3 × 10¹⁰",
+        "c": "6.3 × 10¹⁰",
+        "d": "3.15 × 10¹⁰"
+      },
+      "answer": "c",
+      "a": "6.3 × 10¹⁰",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "SI యూనిట్లలో ప్లాంక్ స్థిరాంకం (Planck's constant) విలువ",
+      "options": {
+        "a": "6.62 × 10⁻³⁴ Js",
+        "b": "6 × 10²³ Js",
+        "c": "10 × 10⁶ M⁻¹",
+        "d": "8.314 × 10⁻⁷ J"
+      },
+      "answer": "a",
+      "a": "6.62 × 10⁻³⁴ Js",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింద పేర్కొన్న వాటిలో ఏది యాంటిబయాటిక్ కాదు",
+      "options": {
+        "a": "ఎరిత్రోమైసిన్",
+        "b": "టెట్రా-సైక్లిన్",
+        "c": "ఆక్సీటోసిన్",
+        "d": "ఒఫ్లోక్సాసిన్"
+      },
+      "answer": "c",
+      "a": "ఆక్సీటోసిన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "డ్రై ఐస్ యొక్క రసాయనిక నామం",
+      "options": {
+        "a": "ఘన H₂O",
+        "b": "ఘన O₃",
+        "c": "ఘన CaCO₃",
+        "d": "ఘన CO₂"
+      },
+      "answer": "d",
+      "a": "ఘన CO₂",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది పేర్కొన్న వాతావరణ పొరలలో ఏది రేడియో కమ్యూనికేషన్స్‌కు సహాయపడుతుంది",
+      "options": {
+        "a": "ట్రోపోస్ఫియర్",
+        "b": "అయనోస్ఫియర్",
+        "c": "స్ట్రాటోస్ఫియర్",
+        "d": "మీసోస్ఫియర్"
+      },
+      "answer": "b",
+      "a": "అయనోస్ఫియర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది పేర్కొన్న మూలకములలో దేనికి అతి ఎక్కువ బణువిద్యుదాత్మకత కలదు",
+      "options": {
+        "a": "Cl",
+        "b": "Br",
+        "c": "O",
+        "d": "N"
+      },
+      "answer": "c",
+      "a": "O",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక ఉష్ణగ్రాహక చర్యలో ΔH అనగా చర్య యొక్క ఎంథాల్పీని వర్ణించినచో, ఉత్తేజిత శక్తి యొక్క అతి తక్కువ విలువ (minimum value) ఎలా ఉండును",
+      "options": {
+        "a": "< ΔH",
+        "b": "= ΔH",
+        "c": "> ΔH",
+        "d": "సున్న (Zero)"
+      },
+      "answer": "b",
+      "a": "= ΔH",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది పేర్కొన్న వాతావరణ పొరలను క్రింది నుండి పైకి సరైన క్రమములో ఏర్పరచుము\nA) ఎక్సోస్ఫియర్  B) ట్రోపోస్ఫియర్  C) స్ట్రాటోస్ఫియర్  D) మీసోస్ఫియర్",
+      "options": {
+        "a": "A, B, C, D",
+        "b": "B, C, D, A",
+        "c": "C, D, A, B",
+        "d": "D, A, B, C"
+      },
+      "answer": "b",
+      "a": "B, C, D, A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "“డార్క్ ఫెర్మెంటేషన్” (Dark Fermentation) అనగా",
+      "options": {
+        "a": "వాతావరణములో CO₂ ను తగ్గించే విధానము",
+        "b": "వ్యర్థజలం నుంచి హైడ్రోజన్‌ను ఒక ఇంధనము రూపములో ఉత్పత్తి చేసే విధానము",
+        "c": "న్యూక్లియర్ వ్యర్థాన్ని వదిలించుకునే విధానము",
+        "d": "సేంద్రియ వ్యర్థము నుండి మీథేన్‌ను ఉత్పత్తి చేసే విధానము"
+      },
+      "answer": "b",
+      "a": "వ్యర్థజలం నుంచి హైడ్రోజన్‌ను ఒక ఇంధనము రూపములో ఉత్పత్తి చేసే విధానము",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కార్బన్ మోనాక్సైడ్‌కి సంబంధించి ఈ క్రింది పేర్కొన్న వాటిలో సరైనది ఏది\nA) అది మానవ శరీరములో ఉత్పత్తి అగును\nB) అది సికిల్ సెల్ ఎనీమియాను చికిత్స చేయుటకు సహాయపడును\nC) అది ఒక న్యూరోట్రాన్స్‌మిటర్‌లాగా పనిచేయును",
+      "options": {
+        "a": "A, B మరియు C",
+        "b": "A మాత్రమే",
+        "c": "A మరియు C",
+        "d": "C మాత్రమే"
+      },
+      "answer": "a",
+      "a": "A, B మరియు C",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "బయలాజికల్ ఆక్సిజన్ డిమాండ్ దేనిని సూచిస్తుంది?",
+      "options": {
+        "a": "ఎక్కువ స్థాయి సూక్ష్మజీవుల కాలుష్యమును",
+        "b": "తక్కువ స్థాయి సూక్ష్మజీవుల కాలుష్యమును",
+        "c": "ఎటువంటి కాలుష్యము లేకపోవుటను",
+        "d": "నీరు అతి స్వచ్ఛమైనది"
+      },
+      "answer": "a",
+      "a": "ఎక్కువ స్థాయి సూక్ష్మజీవుల కాలుష్యమును",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కార్బన్ క్రెడిట్ అనగా",
+      "options": {
+        "a": "నమ్మతించిన కార్బన్ ఎమిషన్‌కు మరియు వాస్తవంగా ఎమిట్ అయిన కార్బన్‌కు ఉన్న వ్యత్యాసం",
+        "b": "ఒక బ్యాంకు ఇచ్చిన లోను",
+        "c": "ఒక పైస్థాయి న్యాయిక కలిగిన జీవన ప్రమాణం కొలుచుట",
+        "d": "నీటిలో ఎంత కార్బన్ ఉన్నదో తెలియజేయుట"
+      },
+      "answer": "a",
+      "a": "నమ్మతించిన కార్బన్ ఎమిషన్‌కు మరియు వాస్తవంగా ఎమిట్ అయిన కార్బన్‌కు ఉన్న వ్యత్యాసం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒత్తిడి, కోపము మరియు ఎక్కువ బిపికి ఏ హార్మోన్ బాధ్యత వహిస్తుంది?",
+      "options": {
+        "a": "ఆక్సీటోసిన్",
+        "b": "థైరాక్సిన్",
+        "c": "ఎడ్రినాలిన్",
+        "d": "గలనిన్"
+      },
+      "answer": "c",
+      "a": "ఎడ్రినాలిన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో దేనిని జంతు స్టార్చ్ అంటారు",
+      "options": {
+        "a": "సెల్యులోస్",
+        "b": "గ్లైకోజెన్",
+        "c": "కైటిన్",
+        "d": "పెక్టిన్"
+      },
+      "answer": "b",
+      "a": "గ్లైకోజెన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "RNA లో న్యూక్లియోటైడ్స్ దేనితో ముడిపడి ఉంటాయి",
+      "options": {
+        "a": "పెప్టైడ్ బంధాలు",
+        "b": "హైడ్రోజన్ బంధాలు",
+        "c": "అయానిక్ బంధాలు",
+        "d": "ఫాస్ఫోడైఎస్టర్ బంధాలు"
+      },
+      "answer": "d",
+      "a": "ఫాస్ఫోడైఎస్టర్ బంధాలు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇది యూనివర్సల్ ఆక్సెప్టర్ బ్లడ్ గ్రూపు",
+      "options": {
+        "a": "O⁻",
+        "b": "A⁻",
+        "c": "B⁺",
+        "d": "AB⁺"
+      },
+      "answer": "d",
+      "a": "AB⁺",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మానవ శరీరములో అతి పెద్ద అవయవం",
+      "options": {
+        "a": "మెదడు",
+        "b": "గుండె",
+        "c": "చర్మము",
+        "d": "కాలేయం"
+      },
+      "answer": "c",
+      "a": "చర్మము",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది శ్రేణిలో తరువాత వచ్చు సంఖ్యను కనుగొనండి\n0, 3, 8, 15, 24, _______",
+      "options": {
+        "a": "36",
+        "b": "35",
+        "c": "34",
+        "d": "33"
+      },
+      "answer": "b",
+      "a": "35",
+      "e": "వరుస పదాల మధ్య వ్యత్యాసములు 3, 5, 7, 9, ఇవి వరుస బేసి సంఖ్యలు, కావున తరువాతి వ్యత్యాసము 11 అవ్వాలి.\n\nఈ వ్యత్యాసమును చివరి పదానికి కలిపితే 24 + 11 = 35 వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది పటములను పరిశీలించి, ప్రశ్నార్థకము (?) చోట ఉండవలసిన సంఖ్యను కనుగొనండి. మొదటి త్రిభుజం: పైన 1, క్రింద-ఎడమ 3, క్రింద-కుడి 5, లోపలి విలువ 35. రెండవ త్రిభుజం: పైన 2, క్రింద-ఎడమ 4, క్రింద-కుడి 3, లోపలి విలువ 29. మూడవ త్రిభుజం: పైన 1, క్రింద-ఎడమ 4, క్రింద-కుడి 2, లోపలి విలువ ?",
+      "options": {
+        "a": "21",
+        "b": "22",
+        "c": "29",
+        "d": "20"
+      },
+      "answer": "a",
+      "a": "21",
+      "e": "సంఖ్యలను పరిశీలిస్తే, లోపలి విలువ పైన, క్రింద-ఎడమ, క్రింద-కుడి సంఖ్యల వర్గముల మొత్తానికి సమానం. మొదటి త్రిభుజంలో 1²+3²+5² = 1+9+25 = 35, ఇది సరిపోతుంది.\n\nఇదే నియమాన్ని మూడవ త్రిభుజానికి వర్తింపజేస్తే, 1²+4²+2² = 1+16+4 = 21.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది శ్రేణిలో తరువాత వచ్చు సంఖ్యను కనుగొనండి\n1, 1, 2, 3, 5, 8, _____",
+      "options": {
+        "a": "13",
+        "b": "15",
+        "c": "19",
+        "d": "21"
+      },
+      "answer": "a",
+      "a": "13",
+      "e": "ఇది ఫిబొనాచీ శ్రేణి, ఇందులో ప్రతి పదం ముందున్న రెండు పదాల మొత్తానికి సమానం.\n\n3+5=8 కావున, తరువాతి పదం 5+8=13.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది శ్రేణిలో లోపించిన (ఖాళీలోని) సంఖ్యను కనుగొనండి\n9, 25, 49, _____ , 169",
+      "options": {
+        "a": "100",
+        "b": "121",
+        "c": "64",
+        "d": "144"
+      },
+      "answer": "b",
+      "a": "121",
+      "e": "ఇవ్వబడిన సంఖ్యలు వరుస ప్రధాన సంఖ్యల వర్గములు: 3²=9, 5²=25, 7²=49, 13²=169.\n\nఈ ప్రధాన సంఖ్యల క్రమం 3, 5, 7, 11, 13 ను అనుసరిస్తే, లోపించిన పదం 11²=121 అవ్వాలి.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది పటములను పరిశీలించి, (?) చోట ఉండవలసిన సంఖ్యను కనుగొనండి. మొదటి చతురస్రం: పై వరుస 2,3; క్రింది వరుస 9,4. రెండవ చతురస్రం: పై వరుస 4,6; క్రింది వరుస 36,16. మూడవ చతురస్రం: పై వరుస 5,?; క్రింది వరుస 49,25.",
+      "options": {
+        "a": "6",
+        "b": "5",
+        "c": "7",
+        "d": "9"
+      },
+      "answer": "c",
+      "a": "7",
+      "e": "పై, క్రింది వరుసలను పోల్చిచూస్తే, ప్రతి క్రింది సంఖ్య, అదే చతురస్రంలోని మరో పై సంఖ్య యొక్క వర్గానికి సమానం. మొదటి చతురస్రంలో 9 అనేది 3² కి, 4 అనేది 2² కి సమానం.\n\nమూడవ చతురస్రానికి ఇదే నియమం వర్తింపజేస్తే, క్రింద-ఎడమ విలువ 49 కావున, లోపించిన పై-కుడి సంఖ్య దాని వర్గం 49 కావాలి, అంటే ఆ సంఖ్య 7 (మరియు 25 = 5² గా సరిపోవడం ద్వారా ఇది ధృవీకరించబడుతుంది).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది పటములను పరిశీలించి, P, Q ల విలువలను కనుగొనండి. మొదటి త్రిభుజం: 4, 3, 6. రెండవ త్రిభుజం: 8, 9, 15. మూడవ త్రిభుజం: 5, 8, 10. నాలుగవ త్రిభుజం: 7, P, Q.",
+      "options": {
+        "a": "4, 8",
+        "b": "5, 7",
+        "c": "5, 6",
+        "d": "4, 7"
+      },
+      "answer": "d",
+      "a": "4, 7",
+      "e": "ప్రతి త్రిభుజంలో, క్రింది విలువ పైన ఉన్న రెండు విలువల మొత్తం నుండి పెరుగుతున్న ఒక స్థిరాంకాన్ని తీసివేసినది: మొదటి త్రిభుజంలో వ్యత్యాసం 1 (4+3-6=1), రెండవదానిలో 2 (8+9-15=2), మూడవదానిలో 3 (5+8-10=3).\n\nఈ క్రమాన్ని అనుసరిస్తే, నాలుగవ త్రిభుజంలో వ్యత్యాసం 4 అవ్వాలి, అంటే 7+P-Q=4. ఇచ్చిన options పరిశీలిస్తే P=4, Q=7 ఈ సంబంధాన్ని సంతృప్తిపరుస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది శ్రేణిలో తరువాత వచ్చు సంఖ్యను కనుగొనండి\n3, 10, 24, 45, _____",
+      "options": {
+        "a": "60",
+        "b": "84",
+        "c": "73",
+        "d": "76"
+      },
+      "answer": "c",
+      "a": "73",
+      "e": "వరుస పదాల మధ్య వ్యత్యాసములు 7, 14, 21, ఇవి 7 యొక్క పెరుగుతున్న గుణిజాలు, కావున తరువాతి వ్యత్యాసము 28 అవ్వాలి.\n\nదీనిని చివరి పదానికి కలిపితే 45 + 28 = 73 వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలుగు చానెల్స్‌ను వీక్షించే కుటుంబాల సంఖ్య ఎంత?",
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "12",
+        "d": "14"
+      },
+      "answer": "d",
+      "a": "14",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇంగ్లీషు చానెల్స్‌ను వీక్షించే కుటుంబాల సంఖ్య ఎంత?",
+      "options": {
+        "a": "14",
+        "b": "21",
+        "c": "17",
+        "d": "7"
+      },
+      "answer": "b",
+      "a": "21",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "హిందీ మరియు తెలుగు చానెల్స్‌ను రెండింటిని వీక్షించే కుటుంబాల సంఖ్య ఎంత?",
+      "options": {
+        "a": "6",
+        "b": "4",
+        "c": "7",
+        "d": "17"
+      },
+      "answer": "a",
+      "a": "6",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒకవేళ ఎరుపును పసుపు పచ్చగాను, పసుపు పచ్చను ఆకుపచ్చగాను, ఆకుపచ్చను నీలంగాను, నీలంను గులాబి రంగుగాను అనుకుంటే, సాధారంగా ఆకులు ఈ రంగులో ఉంటాయి",
+      "options": {
+        "a": "ఆకుపచ్చ",
+        "b": "గులాబి రంగు",
+        "c": "పసుపు పచ్చ",
+        "d": "నీలం"
+      },
+      "answer": "d",
+      "a": "నీలం",
+      "e": "ఆకులు సాధారణంగా ఆకుపచ్చ రంగులో ఉంటాయి, కావున ఈ కోడ్ ప్రకారం ఆకుపచ్చను ఇప్పుడు ఏమని పిలుస్తారో తెలుసుకోవాలి.\n\nఈ కోడ్‌లో ఆకుపచ్చను నీలం అని పిలుస్తారు కావున, ఆకుల సాధారణ రంగును నీలం అని పిలుస్తారు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒకవేళ UMBRELLA ను VLCQFKMZ గా వ్రాస్తే, JUSTICE అనే పదాన్ని ఇలా సూచిస్తారు",
+      "options": {
+        "a": "KSSTJBF",
+        "b": "KTTSICF",
+        "c": "KTTSJBF",
+        "d": "KTSSJAF"
+      },
+      "answer": "c",
+      "a": "KTTSJBF",
+      "e": "UMBRELLA ను దాని కోడ్ VLCQFKMZ తో పోల్చిచూస్తే, ప్రతి అక్షరం స్థానం ఒకసారి ముందుకు ఒకసారి వెనుకకు మారుతుంది అని తెలుస్తుంది: U నుండి V (+1), M నుండి L (-1), B నుండి C (+1), ఇలా కొనసాగుతుంది.\n\nఇదే +1, -1 మార్పు క్రమాన్ని JUSTICE (J,U,S,T,I,C,E) కు వర్తింపజేస్తే K,T,T,S,J,B,F వస్తుంది, అంటే KTTSJBF.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒకవేళ TBDIJO ను SACHIN కు కోడుగా సూచిస్తే, IZVOEBJ ను ఏ పదానికి కోడుగా సూచించవచ్చు?",
+      "options": {
+        "a": "SAMURAI",
+        "b": "MARUTHI",
+        "c": "HYUNDAI",
+        "d": "CRICKET"
+      },
+      "answer": "c",
+      "a": "HYUNDAI",
+      "e": "TBDIJO ను SACHIN తో పోల్చిచూస్తే, కోడ్‌లోని ప్రతి అక్షరం అసలు అక్షరం కంటే సరిగ్గా ఒక స్థానం ముందున్నదని తెలుస్తుంది, ఎందుకంటే T-1=S, B-1=A, D-1=C ఇలా కొనసాగుతుంది.\n\nఈ వ్యతిరేక నియమాన్ని (ప్రతి అక్షరం నుండి ఒకటి తీసివేయుట) IZVOEBJ కు వర్తింపజేస్తే H,Y,U,N,D,A,I వస్తుంది, ఇది HYUNDAI అని సూచిస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒకవేళ TEN, GANG మరియు MEAT అనే పదాలను వరుసగా 439, 6596 మరియు 1354 గా సూచిస్తే, MANAGEMENT అనే పదాన్ని ఎలా సూచిస్తారు?",
+      "options": {
+        "a": "1595363194",
+        "b": "1595313694",
+        "c": "1595361934",
+        "d": "1595631394"
+      },
+      "answer": "d",
+      "a": "1595631394",
+      "e": "మూడు కోడ్ చేయబడిన పదాలను పోల్చిచూస్తే ఒక స్థిరమైన అక్షర-అంకె సంబంధం కనిపిస్తుంది: T=4, E=3, N=9 (TEN నుండి), G=6, A=5 (GANG నుండి), మరియు M=1 (MEAT నుండి), ఇవన్నీ ఒకదానితో ఒకటి సరిపోతాయి.\n\nఈ సంబంధాన్ని MANAGEMENT (M,A,N,A,G,E,M,E,N,T) కు వర్తింపజేస్తే 1,5,9,5,6,3,1,3,9,4 వస్తుంది, అంటే 1595631394.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక సంవత్సరము ఏప్రిల్ ఒకటవ తేదీన ఆదివారము అయితే ఆ సంవత్సరము ఆగష్టు 15వ తేదీ ఏ రోజున వస్తుంది?",
+      "options": {
+        "a": "సోమవారము",
+        "b": "మంగళవారము",
+        "c": "బుధవారము",
+        "d": "గురువారము"
+      },
+      "answer": "c",
+      "a": "బుధవారము",
+      "e": "ఏప్రిల్ 1 నుండి ఆగష్టు 15 వరకు రోజుల సంఖ్యను లెక్కిస్తే, ఏప్రిల్‌లో మిగిలిన 29 రోజులు, మే లో 31, జూన్‌లో 30, జూలైలో 31, ఆగష్టులో 15, మొత్తం 136 రోజులు ఏప్రిల్ 1 తరువాత.\n\n136 ను 7 తో భాగిస్తే శేషం 3 వస్తుంది, కావున ఆదివారము నుండి 3 రోజులు ముందుకు జరిగితే బుధవారము వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "15 ఆగష్టు 2016 రోజున సోమవారం అయితే 15 ఆగష్టు 2017న ఏ రోజు అవుతుంది?",
+      "options": {
+        "a": "సోమవారము",
+        "b": "బుధవారము",
+        "c": "ఆదివారము",
+        "d": "మంగళవారము"
+      },
+      "answer": "d",
+      "a": "మంగళవారము",
+      "e": "ఆగష్టు 15, 2016 నుండి ఆగష్టు 15, 2017 వరకు గల కాలం సరిగ్గా 365 రోజులు, ఎందుకంటే ఈ మధ్యలో వచ్చే ఫిబ్రవరి (2017) లీపు సంవత్సరం కాదు.\n\n365 ను 7 తో భాగిస్తే శేషం 1 వస్తుంది, కావున సోమవారము నుండి 1 రోజు ముందుకు జరిగితే మంగళవారము వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సెక్రటరీగారు సమావేశమునకు హాజరుపడుటకు 10.10 am కు వచ్చారు. ఆయన చైర్పర్సన్ కంటే 30 నిమిషాలు ముందు వచ్చారు. చైర్పర్సన్‌గారు సమావేశ నిర్ణీత సమయానికి 10 ని.లు ఆలస్యంగా వచ్చారు. సమావేశ నిర్ణీత సమయము ఎంత?",
+      "options": {
+        "a": "10.40 am",
+        "b": "10.10 am",
+        "c": "10.30 am",
+        "d": "10.20 am"
+      },
+      "answer": "c",
+      "a": "10.30 am",
+      "e": "సెక్రటరీ 10.10 am కు, చైర్పర్సన్ కంటే 30 నిమిషాల ముందు వచ్చారు కావున, చైర్పర్సన్ 10.40 am కు వచ్చారు.\n\nచైర్పర్సన్ నిర్ణీత సమయానికి 10 నిమిషాలు ఆలస్యంగా వచ్చారు కావున, సమావేశం అసలు 10.40 - 10 నిమిషాలు = 10.30 am కు నిర్ణయించబడింది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "శంకర్ తన తరగతిలో మొదటి నుండి 8వ స్థానంలోను చివరి నుండి 24వ స్థానంలోను ఉన్నాడు. ఆ తరగతిలో మొత్తం విద్యార్థుల సంఖ్య 40 ఉండాలంటే ఇంక ఎంత మంది విద్యార్థులను కలుపాలి?",
+      "options": {
+        "a": "8",
+        "b": "9",
+        "c": "10",
+        "d": "16"
+      },
+      "answer": "b",
+      "a": "9",
+      "e": "శంకర్‌ను రెండుసార్లు లెక్కించకుండా ఉండటానికి 1 తీసివేస్తే, ప్రస్తుత తరగతిలోని మొత్తం విద్యార్థుల సంఖ్య పైనుండి మరియు చివరనుండి స్థానముల మొత్తానికి సమానం: 8 + 24 - 1 = 31.\n\nతరగతి బలం 40కి చేర్చాలంటే, అవసరమైన అదనపు విద్యార్థుల సంఖ్య 40 - 31 = 9.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక అమ్మాయి ఒక దిక్కులో 6 కి.మీ. నడిచిన తరువాత ఎడమవైపు తిరిగి మరొక 8 కి.మీ. ప్రయాణించినచో, ప్రస్తుతము ఆమె ఉన్న స్థానానికి మరియు మొదట బయలుదేరిన స్థానానికి ఉన్న దూరం ఎంత?",
+      "options": {
+        "a": "12 km",
+        "b": "10 km",
+        "c": "9 km",
+        "d": "14 km"
+      },
+      "answer": "b",
+      "a": "10 km",
+      "e": "అమ్మాయి 6 కి.మీ. నడిచిన తరువాత ఎడమవైపు తిరిగి 8 కి.మీ. ప్రయాణించడం వలన, ఈ రెండు మార్గాలు ఒక లంబకోణ త్రిభుజం యొక్క రెండు భుజాలుగా ఏర్పడతాయి.\n\nమొదటి స్థానం నుండి నేరుగా దూరం ఈ త్రిభుజం యొక్క కర్ణం, పైథాగరస్ సిద్ధాంతం ఉపయోగించి √(6²+8²) = √100 = 10 కి.మీ.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "గడియారం 10.00 సమయం సూచించినప్పుడు గంటల ముల్లు ఉత్తర దిశ వైపు సూచిస్తే, ఏ సమయానికి గంటల ముల్లు నైఋతి (south-west) దిశను చూపిస్తుంది?",
+      "options": {
+        "a": "5:15",
+        "b": "5:30",
+        "c": "4:00",
+        "d": "4:30"
+      },
+      "answer": "b",
+      "a": "5:30",
+      "e": "10 గంటల సమయంలో గంటల ముల్లు స్థానాన్ని ఉత్తర దిక్కుకు స్థిర సూచికగా తీసుకుంటే, ప్రతి గంటకు గంటల ముల్లు 30 డిగ్రీలు సవ్యదిశలో తిరుగుతుంది.\n\nనైఋతి దిశ ఉత్తరం నుండి 225 డిగ్రీలు సవ్యదిశలో ఉంటుంది, 225/30 = 7.5 గంటలు కావున దీనిని 10:00కు కలిపితే 5:30 వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇచ్చిన క్రమమును పరిశీలించి, ఎన్ని అక్షరాలు వాటి ముందు ఒక గుర్తును మరియు తరువాత ఒక అంకెను కలిగి ఉన్నాయో గుర్తించండి\nM * K 5.L * N 3 X ? P 4 * L M % N 4",
+      "options": {
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "5"
+      },
+      "answer": "c",
+      "a": "4",
+      "e": "ఈ క్రమములో, ముందు ఒక గుర్తు మరియు వెంటనే తరువాత ఒక అంకె ఉన్న అక్షరాలను వెతకాలి.\n\nఇలాంటి నాలుగు అక్షరాలు కనిపిస్తాయి: K (ముందు *, తరువాత 5), N (ముందు *, తరువాత 3), P (ముందు ?, తరువాత 4), మరియు N (ముందు %, తరువాత 4).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "P, Q, R అనే ముగ్గురు ఇంజనీర్లు ఒక ప్రాజెక్టును డిజైన్ చేస్తున్నారు. ఈ క్రింది ప్రకటనలను పరిశీలించి, ఆ ముగ్గురు ఇంజనీర్లూ ఆ పనిని ఎన్ని రోజులలో పూర్తి చేస్తారో కనుగొనవచ్చునా?\nI. P మరియు Q లు రెండు నెలలలో డిజైన్‌ను పూర్తి చేస్తారు\nII. Q మరియు R లు ఒకటిన్నర నెలలలో డిజైన్‌ను పూర్తి చేస్తారు\nIII. P మరియు R లు మూడు నెలలలో డిజైన్‌ను పూర్తి చేస్తారు",
+      "options": {
+        "a": "I మరియు II లతో కనుగొనవచ్చును",
+        "b": "I, II మరియు III లతో కనుగొనవచ్చును",
+        "c": "I, II మరియు III లతో కనుగొనలేము",
+        "d": "I మరియు III లతో కనుగొనవచ్చును"
+      },
+      "answer": "b",
+      "a": "I, II మరియు III లతో కనుగొనవచ్చును",
+      "e": "ముగ్గురు వ్యక్తుల జతల కలిపిన రేట్ల నుండి వారి వ్యక్తిగత పని రేట్లను తెలుసుకోవాలంటే, మూడు జతల సమీకరణాలూ అవసరం, ఎందుకంటే రెండు సమీకరణాలు మాత్రమే మూడు తెలియని విలువలను నిర్ణయించలేవు.\n\nమూడు ప్రకటనలను కలిపి ఉపయోగిస్తే, P, Q, R ల వ్యక్తిగత రేట్లను సాధించవచ్చు, వీటి నుండి ముగ్గురూ కలిసి పనిచేసే సమయాన్ని కనుగొనవచ్చు. కావున I, II మరియు III కలిపి సరిపోతాయి.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఆరుగురు మిత్రులు A, B, C, D, E మరియు F లు ఒక షడ్భుజి ఆకారం గల బల్ల మూలల (శిరస్సులు) దగ్గర మధ్యకు చూస్తూ కూర్చున్నారు. 'A' F మరియు C ల మధ్యలో కూర్చున్నాడు. B కు కుడివైపు రెండవ వాడు D మరియు D కి ప్రక్కన C ఉన్నాడు.\nE కు ఖచ్చితంగా ఎదురుగా ఎవరు కూర్చున్నారు?",
+      "options": {
+        "a": "D",
+        "b": "C",
+        "c": "B",
+        "d": "A"
+      },
+      "answer": "d",
+      "a": "A",
+      "e": "ఇచ్చిన సూచనలను ఉపయోగించి, షడ్భుజి చుట్టూ కూర్చునే క్రమము D, C, A, F, B, E (బల్ల చుట్టూ) అని తేలుతుంది, A, F మరియు C ల మధ్యలో, D అనేది C కి ప్రక్క వ్యక్తిగా ఉంటుంది.\n\nషడ్భుజిలో, ఒక వ్యక్తికి సరిగ్గా ఎదురుగా ఉన్న వ్యక్తి మూడు స్థానాల దూరంలో ఉంటాడు. E నుండి మూడు స్థానాలు లెక్కిస్తే A వస్తాడు, కావున A, E కి సరిగ్గా ఎదురుగా కూర్చున్నాడు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఆరుగురు మిత్రులు A, B, C, D, E మరియు F లు ఒక షడ్భుజి ఆకారం గల బల్ల మూలల (శిరస్సులు) దగ్గర మధ్యకు చూస్తూ కూర్చున్నారు. 'A' F మరియు C ల మధ్యలో కూర్చున్నాడు. B కు కుడివైపు రెండవ వాడు D మరియు D కి ప్రక్కన C ఉన్నాడు.\nB కు ఇరువైపుల ఉన్న ఇద్దరు ఎవరు?",
+      "options": {
+        "a": "E మరియు D",
+        "b": "F మరియు E",
+        "c": "C మరియు B",
+        "d": "A మరియు D"
+      },
+      "answer": "b",
+      "a": "F మరియు E",
+      "e": "స్థిరపరచిన D, C, A, F, B, E క్రమము ప్రకారం, B కి ప్రక్కనే ఉన్న సీట్లు ఒకవైపు F, మరొకవైపు E.\n\nB కి రెండవ కుడివైపు D ఉండాలనే షరతు ఈ ఏర్పాటులో సంతృప్తి చెందుతుంది, కావున ఇది ధృవీకరించబడింది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఆరుగురు మిత్రులు A, B, C, D, E మరియు F లు ఒక షడ్భుజి ఆకారం గల బల్ల మూలల (శిరస్సులు) దగ్గర మధ్యకు చూస్తూ కూర్చున్నారు. 'A' F మరియు C ల మధ్యలో కూర్చున్నాడు. B కు కుడివైపు రెండవ వాడు D మరియు D కి ప్రక్కన C ఉన్నాడు.\nD కు ఖచ్చితంగా ఎదురుగా ఎవరు కూర్చున్నారు?",
+      "options": {
+        "a": "F",
+        "b": "B",
+        "c": "A",
+        "d": "C"
+      },
+      "answer": "a",
+      "a": "F",
+      "e": "D, C, A, F, B, E క్రమము ప్రకారం, D కి సరిగ్గా ఎదురుగా ఉన్న వ్యక్తి మూడు స్థానాల దూరంలో ఉంటాడు.\n\nD నుండి మూడు స్థానాలు లెక్కిస్తే F వస్తాడు, కావున F, D కి సరిగ్గా ఎదురుగా కూర్చున్నాడు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సింధు నాగరికతకు చెందిన ఏ ప్రదేశములో అత్యధికంగా బావులు కనుక్కోబడినాయి?",
+      "options": {
+        "a": "హరప్పా",
+        "b": "మొహెంజొదారో",
+        "c": "ధోలవీరా",
+        "d": "కాళిబంగన్"
+      },
+      "answer": "b",
+      "a": "మొహెంజొదారో",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింద ఇవ్వబడిన రెండు వాక్యములు ఒకటి ప్రతిపాదన (A) రెండు కారణము (R)\nప్రతిపాదన (A): ఆర్యులు గంగానది ప్రాంతమునకు విస్తరించడంలో ఇనుప సాంకేతిక పరిజ్ఞానం ముఖ్యమైన పాత్రను వహించింది.\nకారణం (R): గంగానది పరివాహక ప్రాంతమంతా దట్టమైన అరణ్యం ఉండింది. దీన్ని బలమైన లోహ పనిముట్లతో మాత్రమే తొలగించడానికి వీలుంటుంది.",
+      "options": {
+        "a": "(A) మరియు (R) లు రెండూ నిజం మరియు (A) కి (R) సరిఅయిన వివరణ",
+        "b": "(A) మరియు (R) లు రెండూ నిజం. కాని (A) కి (R) సరిఅయిన వివరణ కాదు",
+        "c": "(A) నిజం (R) తప్పు",
+        "d": "(A) తప్పు (R) నిజం"
+      },
+      "answer": "a",
+      "a": "(A) మరియు (R) లు రెండూ నిజం మరియు (A) కి (R) సరిఅయిన వివరణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాఖ్యానములలో ఏది సరిఅయింది కాదు.",
+      "options": {
+        "a": "మానవుల బాధలకు కారణం దాని నివారణ అను విషయంపై తన మొట్టమొదటి సందేశాన్ని బుద్ధుడు తన అయిదుగురు పూర్వ సహచరులకు బెనారస్ సమీపంలో గల జింకల పార్కులో వినిపించెను",
+        "b": "బుద్ధుని యొక్క సూత్రముల అంతిమ ఉద్దేశ్యం 'నిబ్బానను' సాధించడం అనగా జనన మరణాలు అనే చక్రం నుండి విముక్తిని పొందడం",
+        "c": "బౌద్ధమత భిక్కిసులు (nuns) ఈ క్రింది వాటిని పూర్తిగా త్యజించవలయును. అవి ఏమనగా : దొంగతనము, శృంగారములో పాల్గొనడం, అబద్ధం చెప్పడం, మత్తు పదార్థములు వాడడం, మధ్యాహ్నం తర్వాత భోజనం చేయడం, సుగంధపూరితమైన వస్తువులు వాడడం, ఆహ్లాదానికై జరిపే కార్యకలాపములకు దూరంగా ఉండడం మరియు ఆభరణములను ధరించడం",
+        "d": "బౌద్ధమత గ్రంధములు స్త్రీల విషయములో విప్లవాత్మకమైన భావములకు కళ్ళి ఉన్నాయి. తమ యొక్క, భవిష్యత్తును, వ్యక్తిత్వమును నిర్ణయించుకునే అధికారము స్త్రీలకే అవి కట్టబెట్టినాయి."
+      },
+      "answer": "d",
+      "a": "బౌద్ధమత గ్రంధములు స్త్రీల విషయములో విప్లవాత్మకమైన భావములకు కళ్ళి ఉన్నాయి. తమ యొక్క, భవిష్యత్తును, వ్యక్తిత్వమును నిర్ణయించుకునే అధికారము స్త్రీలకే అవి కట్టబెట్టినాయి.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వానిలోని ఏ గ్రంధం శృతి వాఙ్మయంలో భాగం కాదు",
+      "options": {
+        "a": "బ్రాహ్మణులు",
+        "b": "వేదాంగములు",
+        "c": "అరణ్యకాలు",
+        "d": "ఉపనిషత్తులు"
+      },
+      "answer": "b",
+      "a": "వేదాంగములు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\nజాబితా - I (అశోకుని యొక్క మైనర్ రాతి శాసనములు)\n(a) రాజుల మంధగిరి\n(b) బ్రహ్మగిరి\n(c) నిత్తూర్\n(d) రూపనాధ్\nజాబితా - II (వీటి యొక్క ప్రస్తుత ప్రాంతం)\n(i) చిత్రదుర్గ జిల్లా, కర్ణాటక\n(ii) బెల్లారి జిల్లా, కర్ణాటక\n(iii) జబల్పూర్ జిల్లా, మధ్యప్రదేశ్\n(iv) కర్నూల్ జిల్లా, ఆంధ్రప్రదేశ్",
+      "options": {
+        "a": "i ii iii iv",
+        "b": "ii i iii iv",
+        "c": "iii iv i ii",
+        "d": "iv i ii iii"
+      },
+      "answer": "d",
+      "a": "iv i ii iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\nజాబితా - I (రచయిత)\n(a) ఇలంగోవడిగల్\n(b) సత్తైనార్\n(c) తిరువల్లువార్\n(d) నాథముని\nజాబితా - II (గ్రంధము)\n(i) మణిమేఖలై\n(ii) శిలప్పాధికారం\n(iii) నలయిర దివ్య ప్రబంధం\n(iv) తిరుక్కురల్",
+      "options": {
+        "a": "ii i iii iv",
+        "b": "i ii iii iv",
+        "c": "iv iii i ii",
+        "d": "ii i iv iii"
+      },
+      "answer": "d",
+      "a": "ii i iv iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిలో ఏది సరిఅయిన జతకాదు",
+      "options": {
+        "a": "చేర-విల్లు",
+        "b": "చోళ-పులి",
+        "c": "పాండ్య-చేప",
+        "d": "పల్లవ-నెమలి"
+      },
+      "answer": "d",
+      "a": "పల్లవ-నెమలి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది ఆయుర్వేద వైద్యులను వారు నివసించిన కాలాన్ని బట్టి క్రమానుగతంగా వ్రాయుము\na) జీవకుడు  b) వాగ్భటుడు  c) శుశ్రుతుడు  d) చరకుడు",
+      "options": {
+        "a": "d a b c",
+        "b": "c b d a",
+        "c": "a c d b",
+        "d": "b d a c"
+      },
+      "answer": "c",
+      "a": "a c d b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తొలి శాతవాహనుల నాణెములు ఎక్కడ లభ్యమయినాయి",
+      "options": {
+        "a": "కోటిలింగాల",
+        "b": "పైఠన్",
+        "c": "నాసిక్",
+        "d": "దూళికట్ట"
+      },
+      "answer": "a",
+      "a": "కోటిలింగాల",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కనిష్కుని యొక్క నాణెములు మరియు శాసనములు ఎక్కువగా ఏ భాషలో అభ్యమవుతున్నాయి",
+      "options": {
+        "a": "ప్రాకృత భాష",
+        "b": "బాక్ట్రియన్ భాష",
+        "c": "గ్రీక్ భాష",
+        "d": "అప్ఘని భాష"
+      },
+      "answer": "b",
+      "a": "బాక్ట్రియన్ భాష",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\nజాబితా - I (యుద్ధములు)\n(a) మొదటి తరాయిన్ యుద్ధం\n(b) ఖాన్వా యుద్ధం\n(c) తల్లికోట యుద్ధం\n(d) హల్దీగాట్ యుద్ధం\nజాబితా - II (సంవత్సరము)\n(i) 1191\n(ii) 1576\n(iii) 1565\n(iv) 1527",
+      "options": {
+        "a": "ii i iv iii",
+        "b": "i iv iii ii",
+        "c": "iii ii i iv",
+        "d": "iv iii ii i"
+      },
+      "answer": "b",
+      "a": "i iv iii ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిలో ఏ వాఖ్యానం విజయనగరమునకు సంబంధించి సరి అయినది కాదు",
+      "options": {
+        "a": "పారశిక యాంత్రికుడయిన అబ్దుల్ రజాక్ విజయనగరమును గూర్చి వివరిస్తూ “బిజనగూర్ పట్టణం లాంటి దాన్ని ప్రపంచములో ఎక్కడ చూడలేదని వినలేదని ప్రశంసించినాడు”",
+        "b": "కృష్టదేవరాయలు వైష్టవమతమును అవలంబించినప్పటికి శైవులను, జైనులను, క్రైస్తవులను మరియు యూదులను వాత్సల్యంతో అభిమానించాడు",
+        "c": "రెండవ హరిహరుని యొక్క సేనాధిపతి అయిన ఇరుగప్ప, 'నానాపద రత్నమాల' అను గ్రంధమును రచించెను",
+        "d": "'రాయవాచకం' ప్రకారం విజయనగర రాజ్యంలో అయిదు రకాల కోటలు ఉండేవి. అవి గిరిదుర్గములు, స్థల దుర్గములు, జలదుర్గములు, వనదుర్గములు మరియు పర్వత దుర్గములు"
+      },
+      "answer": "d",
+      "a": "'రాయవాచకం' ప్రకారం విజయనగర రాజ్యంలో అయిదు రకాల కోటలు ఉండేవి. అవి గిరిదుర్గములు, స్థల దుర్గములు, జలదుర్గములు, వనదుర్గములు మరియు పర్వత దుర్గములు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\nజాబితా - I (రాజ్యం)\n(a) అహ్మూద్‌నగర్\n(b) బెరార్\n(c) బీజాపూర్\n(d) గోల్కొండ\nజాబితా - II (పరిపాలించిన వంశం)\n(i) అదిల్ షాహిలు\n(ii) నిజామ్ షాహిలు\n(iii) ఇమద్ షాహిలు\n(iv) కుతుబ్ షాహిలు",
+      "options": {
+        "a": "i ii iii iv",
+        "b": "iv i ii iii",
+        "c": "ii iii i iv",
+        "d": "iii ii i iv"
+      },
+      "answer": "c",
+      "a": "ii iii i iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మధ్యయుగం నాటి ఏ సుల్తాన్ 'సతి' ఆచారమును దురాచారమని భావించి నిషేధించెను",
+      "options": {
+        "a": "బాల్బన్",
+        "b": "అల్లావుద్దీన్ ఖిల్జీ",
+        "c": "మహమ్మద్‌బిన్ తుగ్లక్",
+        "d": "ఫిరోజ్‌షా తుగ్లక్"
+      },
+      "answer": "c",
+      "a": "మహమ్మద్‌బిన్ తుగ్లక్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది ఆలయములలో దేనిలో ఎక్కువగా 'హద్దులేని శృంగార భంగిమలతో' కూడిన శిల్పములు కలవు",
+      "options": {
+        "a": "రామప్ప దేవాలయం",
+        "b": "కోణార్క్ దేవాలయం",
+        "c": "పట్టడకల్ నందు గల విరూపాక్ష దేవాలయం",
+        "d": "బృహదీశ్వర దేవాలయం"
+      },
+      "answer": "b",
+      "a": "కోణార్క్ దేవాలయం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): అంతర్గతంగా కాని, బాహ్యంగా కాని మొగల్ పాదుషాలు పూర్తి సార్వభౌమాధికారమును కల్గి ఉన్నారు\nకారణం (R): వీరు ఎవరి ముఖ్యంగా ఖలీఫా యొక్క అధికారమును గుర్తించలేదు",
+      "options": {
+        "a": "(A) మరియు (R) నిజం మరియు (R) (A) నకు సరి అయిన వివరణ",
+        "b": "(A) మరియు (R) రెండూ నిజం. కాని (R) నకు (A) సరిఅయిన వివరణ కాదు",
+        "c": "(A) నిజం కాని (R) తప్పు",
+        "d": "(A) తప్పు కాని (R) నిజం"
+      },
+      "answer": "a",
+      "a": "(A) మరియు (R) నిజం మరియు (R) (A) నకు సరి అయిన వివరణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో ఏ కోటను శివాజీ, బీజాపూర్ నుండి ఆక్రమించలేదు",
+      "options": {
+        "a": "రాయిగడ్",
+        "b": "జావళి",
+        "c": "కొండన",
+        "d": "తోరణ"
+      },
+      "answer": "a",
+      "a": "రాయిగడ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "1853లో డల్హౌసి ద్వార ప్రవేశపెట్టబడిన తంతితీగలు (telegraphic line) ఈ క్రింది వాటి మధ్య వేసారు",
+      "options": {
+        "a": "బాంబే మరియు థానా",
+        "b": "కలకత్తా మరియు మద్రాస్",
+        "c": "బాంబే మరియు మద్రాస్",
+        "d": "కలకత్తా మరియు ఆగ్రా"
+      },
+      "answer": "d",
+      "a": "కలకత్తా మరియు ఆగ్రా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "అఖిల భారత జాతీయ కాంగ్రెస్ యొక్క తొలినాటి కార్యక్రమములను గమనించి “కాంగ్రెస్ అంటే మూడు రోజుల తమాషా తప్ప మరేది కాదు” అని నుడివింది",
+      "options": {
+        "a": "దాదాభాయి నౌరోజి",
+        "b": "అశ్విని కుమార్ దత్తా",
+        "c": "లాలాలజపత్ రాయ్",
+        "d": "అరబిందో ఘోష్"
+      },
+      "answer": "d",
+      "a": "అరబిందో ఘోష్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది ప్రతిపాదనలలో ఏది సత్యాగ్రహమునకు సంబంధించి సరి అయింది కాదు",
+      "options": {
+        "a": "సత్యాగ్రహం అంటే 'ప్రేమ' మరియు 'అంతరాత్మ'తో జయించడం",
+        "b": "సత్యాగ్రహం బలహీనుల యొక్క ఆయుధం",
+        "c": "సత్యాగ్రహం బలవంతుల యొక్క ఆయుధం",
+        "d": "సత్యాగ్రహం యొక్క ఉద్దేశం ఏమంటే తనకుతాను ఇబ్బంది పడుతూ ఎదుటివారిని మార్చుటము"
+      },
+      "answer": "b",
+      "a": "సత్యాగ్రహం బలహీనుల యొక్క ఆయుధం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "బోధన్ పూర్వ నామం ఏమిటి?",
+      "options": {
+        "a": "ఇందూర్",
+        "b": "అంధక",
+        "c": "మూలక",
+        "d": "పోదన"
+      },
+      "answer": "a",
+      "a": "ఇందూర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\n(a) హాలిక\n(b) కోలిక\n(c) కులరిక\n(d) వదిక\n(i) వడ్రంగి\n(ii) వ్యవసాయదారుడు\n(iii) నేతపనివారు\n(iv) కుమ్మరి",
+      "options": {
+        "a": "a-ii, b-iii, c-iv, d-i",
+        "b": "a-i, b-ii, c-iii, d-iv",
+        "c": "a-iii, b-iv, c-ii, d-i",
+        "d": "a-iv, b-i, c-iii, d-ii"
+      },
+      "answer": "a",
+      "a": "a-ii, b-iii, c-iv, d-i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణలోని ఏ ప్రదేశంలో పెద్దమొత్తంలో రోమన్ నాణెములు బయల్పడినాయి",
+      "options": {
+        "a": "కీసర",
+        "b": "చైతన్యపురి",
+        "c": "గుటిపర్తి",
+        "d": "సలేశ్వరము"
+      },
+      "answer": "c",
+      "a": "గుటిపర్తి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రాచీన కాలంలో ఈ క్రింది నదులలో ఏది 'తెలివాహ' గా పిలువబడింది?",
+      "options": {
+        "a": "కృష్ణ",
+        "b": "గోదావరి",
+        "c": "మంజీర",
+        "d": "మూసి"
+      },
+      "answer": "b",
+      "a": "గోదావరి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "'కవిజనాశ్రయం' గ్రంధ రచయిత ఎవరు?",
+      "options": {
+        "a": "సోమదేవసూరి",
+        "b": "పంప",
+        "c": "మల్లియ రేచన",
+        "d": "సత్యాశ్రయ"
+      },
+      "answer": "c",
+      "a": "మల్లియ రేచన",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఉత్తర తెలంగాణకు చెందిన బావరి బౌద్ధమతాన్ని స్వీకరించి దానిని వ్యాప్తి చేసినాడు. అయన గురించి ఈ క్రింది గ్రంధాలలో ఏది తెలుపుతుంది?",
+      "options": {
+        "a": "సుత్తనిపాత",
+        "b": "కాలచక్ర",
+        "c": "గాధాసప్తశతి",
+        "d": "కథాసరిత్సాగర"
+      },
+      "answer": "a",
+      "a": "సుత్తనిపాత",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మధ్య యుగాలలో ఈ క్రింది వానిలో దేనిని సుల్తాన్‌పూర్‌గా పిలువబడింది",
+      "options": {
+        "a": "కరీంనగర్",
+        "b": "వరంగల్",
+        "c": "నిజామాబాద్",
+        "d": "మెదక్"
+      },
+      "answer": "b",
+      "a": "వరంగల్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది రాజ వంశాలలో ఎవరు గ్రామ పరిపాలనలో ఆయగార్ విధానాన్ని ప్రవేశపెట్టినారు",
+      "options": {
+        "a": "శాతవాహనులు",
+        "b": "విష్ణుకుండులు",
+        "c": "ఇక్ష్వాకులు",
+        "d": "కాకతీయులు"
+      },
+      "answer": "d",
+      "a": "కాకతీయులు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కాకతీయ సైన్యాలకు మరియు సారక్క కుమారుడు జంపన్నకు మధ్య యుద్ధం ఎక్కడ జరిగింది",
+      "options": {
+        "a": "దయ్యాల మడుగు",
+        "b": "ముజ్జంపల్లి",
+        "c": "మంచుకొండ",
+        "d": "ధర్మారం"
+      },
+      "answer": "c",
+      "a": "మంచుకొండ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\n(a) రేలా నృత్యం\n(b) గూసాడి నృత్యం\n(c) ముత్యంపేట\n(d) భీమ్‌గల్\n(i) కొండగట్టు జాతర\n(ii) లింబాద్రిగుట్ట\n(iii) కోయలు\n(iv) గోండులు",
+      "options": {
+        "a": "a-i, b-ii, c-iii, d-iv",
+        "b": "a-ii, b-i, c-iv, d-iii",
+        "c": "a-iii, b-iv, c-i, d-ii",
+        "d": "a-iv, b-iii, c-ii, d-i"
+      },
+      "answer": "c",
+      "a": "a-iii, b-iv, c-i, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ శాసనం రుద్రదేవుని 'వినయ భూషణుడు' అని తెలుపుతుంది",
+      "options": {
+        "a": "హనుమకొండ శాసనం",
+        "b": "మల్లాపూర్ శాసనం",
+        "c": "త్రిపురాంతకం శాసనం",
+        "d": "ద్రాక్షారామ శాసనం"
+      },
+      "answer": "a",
+      "a": "హనుమకొండ శాసనం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పురుషులను రంజింపచేయుటం కొసం స్త్రీలు చేసే పేరిని నృత్యాన్ని ఏమంటారు",
+      "options": {
+        "a": "లాస్యం",
+        "b": "రమ్యం",
+        "c": "భోగం",
+        "d": "రసమయం"
+      },
+      "answer": "d",
+      "a": "రసమయం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\n(a) బయ్యారం చెరువు\n(b) పాకాల చెరువు\n(c) కేసముద్రం చెరువు\n(d) నాగసముద్రం చెరువు\n(i) జగడాల ముమ్మడ\n(ii) మొదటి ప్రోలరాజు\n(iii) మైలాంబ\n(iv) నాగాంబిక",
+      "options": {
+        "a": "a-i, b-ii, c-iii, d-iv",
+        "b": "a-ii, b-i, c-iv, d-iii",
+        "c": "a-iii, b-i, c-ii, d-iv",
+        "d": "a-iv, b-iii, c-i, d-ii"
+      },
+      "answer": "c",
+      "a": "a-iii, b-i, c-ii, d-iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వజ్రాల గనుల ప్రదేశాలలో ఏది తప్పుగా జతపర్చబడింది",
+      "options": {
+        "a": "కొల్లూరు - గుంటూరు జిల్లా",
+        "b": "పరిటాల - కృష్టా జిల్లా",
+        "c": "వజ్రకరూర్ - చిత్తూరు జిల్లా",
+        "d": "గండికోట - కడప"
+      },
+      "answer": "c",
+      "a": "వజ్రకరూర్ - చిత్తూరు జిల్లా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కుతుబ్‌షాహిల పరిపాలనాకాలంలో ఈ క్రింది వాటిలో ఏది నీలి మందు ఉత్పత్తికి ప్రసిద్ధి చెందింది",
+      "options": {
+        "a": "కోలార్",
+        "b": "నాగులవంచ",
+        "c": "నిజామాబాద్",
+        "d": "మంతెన"
+      },
+      "answer": "b",
+      "a": "నాగులవంచ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\n(a) శివదేవయ్య\n(b) ఏకామ్రనాధుడు\n(c) మంచన\n(d) శాకల్యమల్ల\n(i) ప్రతాప చరిత్రం\n(ii) నిరోష్ఠ్య రామాయణం\n(iii) పురుషార్థ సారం\n(iv) కేయూరబాహు చరిత్ర",
+      "options": {
+        "a": "a-ii, b-iii, c-i, d-iv",
+        "b": "a-iv, b-ii, c-iii, d-i",
+        "c": "a-iii, b-i, c-iv, d-ii",
+        "d": "a-iii, b-ii, c-i, d-iv"
+      },
+      "answer": "c",
+      "a": "a-iii, b-i, c-iv, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని కాలానుక్రమంగా అమర్చుము\n(a) సికందర్ జా (b) మీర్ మహాబూబ్ అలీఖాన్ (c) వాసిరుద్దౌలా (d) నిజాం ఆలీ",
+      "options": {
+        "a": "d , a, c, b",
+        "b": "a, b, c, d",
+        "c": "b, c, d, a",
+        "d": "a, d, c, b"
+      },
+      "answer": "a",
+      "a": "d , a, c, b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిలో తెలుగులో మొట్టమొదటి యక్షగానం ఏది",
+      "options": {
+        "a": "యయాతి చరిత్ర",
+        "b": "సుగ్రీవ విజయం",
+        "c": "తపతి సంహరణోపాఖ్యానం",
+        "d": "క్రీడాభిరామం"
+      },
+      "answer": "b",
+      "a": "సుగ్రీవ విజయం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "లంబాడీల మూలపురుషుల జీవిత చరిత్రలను ఈ క్రింది వారిలో ఎవరు గానం చేస్తారు",
+      "options": {
+        "a": "భట్లు",
+        "b": "రంజులు",
+        "c": "పర్ధానులు",
+        "d": "భిక్షకులు"
+      },
+      "answer": "a",
+      "a": "భట్లు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "యానాది భాగవతాన్ని ఈ విధంగా పిలుస్తారు",
+      "options": {
+        "a": "గరుడాచల భాగవతం",
+        "b": "అంకమ్మ భాగవతం",
+        "c": "ఎల్లమ్మ భాగవతం",
+        "d": "పోచమ్మ భాగవతం"
+      },
+      "answer": "b",
+      "a": "అంకమ్మ భాగవతం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "హైదరాబాద్‌లో అక్కన్న-మాదన్న దేవాలయం ఎక్కడ ఉంది?",
+      "options": {
+        "a": "బహదూర్‌పురా",
+        "b": "శాలిబండ",
+        "c": "గోల్కొండ",
+        "d": "కారవాన్"
+      },
+      "answer": "c",
+      "a": "గోల్కొండ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "హైదరాబాద్ నందు 1857 తిరుగుబాటును అణచడంలో ఈ క్రింది వారిలో ఏ సంస్థానాధీశుడు బ్రిటీష్ వారికి సహాయపడినాడు.",
+      "options": {
+        "a": "రాజా రామేశ్వర్ రావు - వనపర్తి",
+        "b": "రాజా వెంకట లక్ష్మణరావు - జట్ప్రోలు",
+        "c": "రాజా రామ్ భూపాల్ రావు - గద్వాల్",
+        "d": "రాజా వెంకటరాయ నాయక్ రావు - పాల్వంచ"
+      },
+      "answer": "a",
+      "a": "రాజా రామేశ్వర్ రావు - వనపర్తి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణలోని ఈ క్రింది జిల్లాలలో ఎక్కడ శివరాం వన్యప్రాణి సంరక్షణ కేంద్రం ఉంది",
+      "options": {
+        "a": "ఆదిలాబాద్ - నిజామాబాద్",
+        "b": "మహబూబ్‌నగర్ - మెదక్",
+        "c": "కరీంనగర్ - వరంగల్",
+        "d": "ఆదిలాబాద్ - కరీంనగర్"
+      },
+      "answer": "a",
+      "a": "ఆదిలాబాద్ - నిజామాబాద్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "హైద్రాబాద్ రాజ్యం పై జరిపిన పోలీస్ చర్యను ఈ విధంగా కూడ పిలుస్తారు?",
+      "options": {
+        "a": "గోడార్డ్ ప్లాన్",
+        "b": "రజాకర్ ప్లాన్",
+        "c": "జై హైదరాబాద్ ప్లాన్",
+        "d": "చౌదరి ప్లాన్"
+      },
+      "answer": "d",
+      "a": "చౌదరి ప్లాన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణ సాయుధ పోరాట కాలంలో 'విసునూరు దొర'కు వ్యతిరేకంగా ఈ క్రింది వారిలో ఏ లంబాడా నాయకుడు పోరాటం చేసినాడు.",
+      "options": {
+        "a": "జాతోత్ ఠాను నాయక్",
+        "b": "బల్లు నాయక్",
+        "c": "తేజావత్ దాసునాయక్",
+        "d": "బుక్యా బాల్య"
+      },
+      "answer": "d",
+      "a": "బుక్యా బాల్య",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "'తెలంగాణ తల్లి' విగ్రహ రూపకల్పనలో ఈ క్రింది వారిలో ఎవరు భాగస్వామి కాదు.",
+      "options": {
+        "a": "బి.ఎస్. రాములు",
+        "b": "భూపతి కృష్టమూర్తి",
+        "c": "ఆచార్య గంగాధర్",
+        "d": "పసునూరి దయాకర్"
+      },
+      "answer": "c",
+      "a": "ఆచార్య గంగాధర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "హైద్రాబాద్ 1952 ముల్కీ ఉద్యమ ఘటనల పై దర్యాప్తు జరిపిన ఈ క్రింది వారిలో ఎవరు నాయకత్వం వహించారు",
+      "options": {
+        "a": "వామన్ నాయక్",
+        "b": "అక్బర్ హైదరి",
+        "c": "జగన్ మోహన్‌రెడ్డి",
+        "d": "రామాచారి"
+      },
+      "answer": "d",
+      "a": "రామాచారి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "1969 జై తెలంగాణ ఉద్యమకాలంలో ఈ క్రింది వారిలో ఎవరు మొట్టమొదట ఆమరణ నిరాహార దీక్ష ప్రారంభించారు",
+      "options": {
+        "a": "కొలిశెట్టి రామదాసు",
+        "b": "టి. పురుషోత్తమ రావు",
+        "c": "పోటు కృష్టమూర్తి",
+        "d": "అన్నాభత్తుల రవీంద్రనాధ్"
+      },
+      "answer": "b",
+      "a": "టి. పురుషోత్తమ రావు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిని కాలానుక్రమంలో అమర్చుము\n(a) ఎనిమిది సూత్రాల పథకం (b) ఆరు సూత్రాల పథకం (c) అయిదు సూత్రాల పథకం (d) ప్రెసిడెన్షియల్ ఆర్డర్",
+      "options": {
+        "a": "a, c, b, d",
+        "b": "a, b, c, d",
+        "c": "d, b, c, a",
+        "d": "b, a, d, c"
+      },
+      "answer": "c",
+      "a": "d, b, c, a",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\nజాబితా - I\n(a) తెలంగాణ ఇన్‌ఫర్మేషన్ ట్రస్టు\n(b) తెలంగాణ స్టూడెంట్స్ ఫోరం\n(c) తెలంగాణ ఐక్య వేదిక\n(d) తెలంగాణ జనసభ\nజాబితా - II\n(i) 1997\n(ii) 1998\n(iii) 1991\n(iv) 1986",
+      "options": {
+        "a": "a-i, b-ii, c-iii, d-iv",
+        "b": "a-iv, b-iii, c-i, d-ii",
+        "c": "a-ii, b-i, c-iv, d-iii",
+        "d": "a-iii, b-iv, c-ii, d-i"
+      },
+      "answer": "a",
+      "a": "a-i, b-ii, c-iii, d-iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిని కాలానుక్రమంగా అమర్చుము\n(a) సకలజనుల సమ్మె (b) మిలియన్ మార్చ్ (c) సాగర హారం (d) సడక్ బంద్",
+      "options": {
+        "a": "b, c, d, a",
+        "b": "a, d, c, b",
+        "c": "a, b, d, c",
+        "d": "b, a, d, c"
+      },
+      "answer": "d",
+      "a": "b, a, d, c",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణ రాష్ట్ర న్యాయవాదుల జాయింట్ యాక్షన్ కమిటీకి ఎవరు కన్వీనర్‌గా ఉండిరి",
+      "options": {
+        "a": "యం. రాజేందర్ రెడ్డి",
+        "b": "తన్నీరు శ్రీరంగరావు",
+        "c": "గంద్ర మోహన్‌రావు",
+        "d": "పి. గోవర్ధన్ రెడ్డి"
+      },
+      "answer": "c",
+      "a": "గంద్ర మోహన్‌రావు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిలో ఏది సరిఅయిన జతకాదు.",
+      "options": {
+        "a": "బెల్లయ్య నాయక్ - లంబాడి హక్కుల పోరాట సమితి",
+        "b": "దుబ్బగట్ల నర్సింగరావు - మున్నూరు కాపు హక్కుల పోరాట సమితి",
+        "c": "బెల్లికృష్ణ - గొల్ల, కురుమ హక్కుల పోరాట సమితి",
+        "d": "వాలిగి ప్రభాకర్ - ఎరుకుల హక్కుల పోరాట సమితి"
+      },
+      "answer": "d",
+      "a": "వాలిగి ప్రభాకర్ - ఎరుకుల హక్కుల పోరాట సమితి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సకలజనుల సమ్మెకు ఈ క్రింది వారిలో ఎవరు పిలుపునిచ్చారు",
+      "options": {
+        "a": "తెలంగాణ జాయింట్ యాక్షన్ కమిటి",
+        "b": "తెలంగాణ విద్యావంతుల వేదిక",
+        "c": "తెలంగాణ రాష్ట్ర సమితి",
+        "d": "తెలంగాణ ఐక్యవేదిక"
+      },
+      "answer": "a",
+      "a": "తెలంగాణ జాయింట్ యాక్షన్ కమిటి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఆంధ్రప్రదేశ్ పునర్వ్యవస్థీకరణ బిల్లును హోంమంత్రి సుశీల్‌కుమార్ షిండె లోక్‌సభలో ఎప్పుడు ప్రవేశపెట్టినాడు?",
+      "options": {
+        "a": "ఫిబ్రవరి 3, 2014",
+        "b": "ఫిబ్రవరి 13, 2014",
+        "c": "ఫిబ్రవరి 20, 2014",
+        "d": "మార్చి 1, 2014"
+      },
+      "answer": "b",
+      "a": "ఫిబ్రవరి 13, 2014",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): వేసవి కాలంలో అంతర ఆయనరేఖా అభిసరణ మండలం భూమధ్యరేఖకు ఉత్తరంగా ఉంటుంది.\nకారణం (R): అంతర ఆయనరేఖా అభిసరణ మండలం ఉత్తర దిక్కుగా భారతదేశం వైపు వెళ్ళడం వల్ల బుతుపవనాలు ఏర్పడేందుకు దారితీస్తాయి.",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+        "b": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+        "c": "(A) సరియైనది మరియు (R) తప్పు",
+        "d": "(A) తప్పు మరియు (R) సరియైనది"
+      },
+      "answer": "a",
+      "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము:\nజాబితా - I\n(a) ఆటోట్రాప్‌లు\n(b) హెట్రోట్రాప్‌లు\n(c) ట్రాఫిక్ స్ట్రక్చర్ (ట్రాఫిక్ నిర్మాణం)\n(d) ఆహార వలయం (ఫుడ్ చైన్)\nజాబితా - II\n(i) ఒక లెవల్ నుండి ఇంకో లెవల్‌కి శక్తి మార్చిడి\n(ii) జీవుల శ్రేణీయుత క్రమబద్ధీకరణ\n(iii) ఆహారం కొరకు ఇతర జీవులపై ఆధారపడడం\n(iv) ఆహారాన్ని తామే తయారుచేసుకోవడం",
+      "options": {
+        "a": "iv iii ii i",
+        "b": "iii iv i ii",
+        "c": "i ii iii iv",
+        "d": "ii iii i iv"
+      },
+      "answer": "a",
+      "a": "iv iii ii i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుడి:\nజాబితా - I\n(a) గురు శిఖర శిఖరాగ్రం\n(b) దూదార్ జలపాతం\n(c) థాల్‌గట్ గ్యాప్\n(d) ప్రవాళ భిత్తికలు\nజాబితా - II\n(i) లక్షద్వీపాలు\n(ii) పశ్చిమ కనుమలు\n(iii) నర్మదా నది\n(iv) ఆరావళులు",
+      "options": {
+        "a": "iv iii ii i",
+        "b": "iii iv i ii",
+        "c": "i ii iii iv",
+        "d": "ii iii i iv"
+      },
+      "answer": "a",
+      "a": "iv iii ii i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము :\nజాబితా - I\n(a) కల్పక్కం\n(b) నరోరా\n(c) కైగా\n(d) కాక్రపారా\nజాబితా - II\n(i) గుజరాత్\n(ii) కర్ణాటక\n(iii) ఉత్తర ప్రదేశ్\n(iv) తమిళనాడు",
+      "options": {
+        "a": "iv iii ii i",
+        "b": "iii iv i ii",
+        "c": "i ii iii iv",
+        "d": "ii iii i iv"
+      },
+      "answer": "a",
+      "a": "iv iii ii i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): దక్షిణ చైనాలో జనించే ఉష్టమండల చక్రవాతాలను టైఫూనులంటారు.\nకారణం (R): ఉష్టమండల చక్రవాతాల సమీపణ రేఖలు వర్తులాకారంలో ఉంటాయి.",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+        "b": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+        "c": "(A) సరియైనది మరియు (R) తప్పు",
+        "d": "(A) తప్పు మరియు (R) సరియైనది"
+      },
+      "answer": "b",
+      "a": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): గ్రీన్ హౌస్ ఎక్కువగానుండడం వల్ల మరియు ఓజోన్ పొర క్షయం వల్ల ప్రపంచ తాపీకరణ గ్యాసులు ఏర్పడుతుంది.\nకారణం (R): సముద్ర మట్టం పడిపోవుటకు ప్రపంచ తాపీకరణే కారణాంశం.",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+        "b": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+        "c": "(A) సరియైనది మరియు (R) తప్పు",
+        "d": "(A) సరియైనది కాదు (తప్పు) మరియు (R) సరియైనది"
+      },
+      "answer": "c",
+      "a": "(A) సరియైనది మరియు (R) తప్పు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వ్యాఖ్యలను చదువుము :\na) జాతీయ సలహా మండలిని ఎన్‌డిఏ ప్రభుత్వము ఏర్పరచినది\nb) సోనియా గాంధీ జాతీయ సలహా మండలి అధ్యక్షురాలు\nc) కేంద్ర మరియు రాష్ట్ర ప్రభుత్వములకు జాతీయ సలహా మండలి సలహాలు ఇచ్చును\nd) జాతీయ సలహా మండలి అధ్యక్షుడు ప్రధాన మంత్రి\nసరైన వ్యాఖ్యలు ఏవి?",
+      "options": {
+        "a": "a & d",
+        "b": "b మాత్రమే",
+        "c": "a, b & c",
+        "d": "b & d"
+      },
+      "answer": "b",
+      "a": "b మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "1998 అసెంబ్లీ సాధారణ ఎన్నికలలో ఎలెక్ట్రానిక్ ఓటింగ్ యంత్రములను మొదటిసారి ఏ రాష్ట్రాలలో ఉపయోగించారు?\na) మధ్యప్రదేశ్, రాజస్తాన్ మరియు హిమాచల్‌ప్రదేశ్\nb) రాజస్తాన్, ఉత్తరప్రదేశ్ మరియు బిహార్\nc) మధ్యప్రదేశ్ మరియు కేరళ\nd) మధ్యప్రదేశ్, రాజస్తాన్ మరియు ఢిల్లీ",
+      "options": {
+        "a": "d",
+        "b": "c",
+        "c": "b",
+        "d": "a"
+      },
+      "answer": "a",
+      "a": "d",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): రాష్ట్ర జాబితాలోని అంశములపై పార్లమెంట్ చట్టము చేయవచ్చును జాతీయ ప్రయోజనం దృష్ట్యా.\nకారణం (R): రాజ్యసభ పార్లమెంట్‌లో భాగము",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+        "b": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+        "c": "(A) సరియైనది మరియు (R) తప్పు",
+        "d": "(A) తప్పు మరియు (R) సరియైనది"
+      },
+      "answer": "a",
+      "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వ్యాఖ్యలను చదువుము :\na) రాజ్యసభలో ప్రస్తుత సభానాయకుడు అరుణ్ జైట్లీ\nb) లోక్‌సభలో ప్రస్తుత సభానాయకుడు నరేంద్ర మోడీ\nc) రాజ్యసభలో ప్రస్తుత సభానాయకుడు వెంకయ్యనాయుడు\nd) లోక్‌సభలో ప్రస్తుత సభానాయకుడు రాజనాధ్ సింగ్\nసరైన వ్యాఖ్యలను తెలుపుము :",
+      "options": {
+        "a": "a & d",
+        "b": "b & c",
+        "c": "c & d",
+        "d": "a & b"
+      },
+      "answer": "d",
+      "a": "a & b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): భారతదేశము గణతంత్ర రాజ్యము\nకారణం (R): భారతదేశములో విశ్వజనీన వయోజన వోటు హక్కు వ్యవస్థ ఉన్నది",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+        "b": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+        "c": "(A) సరియైనది మరియు (R) తప్పు",
+        "d": "(A) తప్పు మరియు (R) సరియైనది"
+      },
+      "answer": "b",
+      "a": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): మంత్రి మండలిలో ఐక్యత మరియు సమన్వయ భావమును కాబినెట్ సమిష్టి బాధ్యత సూత్రము సూచించును.\nకారణం (R): కాబినెట్ సభ్యుని నియమించడము మరియు తొలగించడము ప్రధానమంత్రి విచక్షణకు చెందినది",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+        "b": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+        "c": "(A) సరియైనది మరియు (R) తప్పు",
+        "d": "(A) తప్పు మరియు (R) సరియైనది"
+      },
+      "answer": "b",
+      "a": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వ్యాఖ్యలను చదువుము :\na) షణ్ముఖనాథన్ మేఘాలయ గవర్నర్‌గా నియమింపబడెను\nb) ద్రౌపది మర్ము జార్ఖండ్ గవర్నర్‌గా నియమింపబడెను\nc) తథాగతరాయ్ అరుణాచల్ ప్రదేశ్ గవర్నర్‌గా నియమింపబడెను\nd) నజ్మా హెప్తుల్లా మిజోరాం గవర్నర్‌గా నియమింపబడెను\nసరైన వ్యాఖ్యలను తెలుపుము :",
+      "options": {
+        "a": "a & c",
+        "b": "a & b",
+        "c": "b & d",
+        "d": "a & d"
+      },
+      "answer": "b",
+      "a": "a & b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారతదేశములో 'సమ్మిళిత వృద్ధి'లోని రెండు ప్రధాన అంతర్భాగాలు ఏవి?\nA) గతంలో విస్మరించబడిన వర్గాల వారికి ఆర్థిక ప్రతిఫలాలు అందజేయడం\nB) మ్యానుఫాక్చరింగ్ (తయారీ) వస్తువులను ఎగుమతి చేయడం\nC) పేదరిక నిర్మూలన తగ్గింపు, ఉపాధి కల్పన\nD) పర్యావరణ విచ్ఛేదన",
+      "options": {
+        "a": "A మరియు C మాత్రమే",
+        "b": "B మరియు D మాత్రమే",
+        "c": "A మరియు B మాత్రమే",
+        "d": "B మరియు C మాత్రమే"
+      },
+      "answer": "a",
+      "a": "A మరియు C మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "జనాభా విస్ఫోటనకు సంబంధించి క్రింది వాటిలో సరైన వ్యాఖ్య ఏది?",
+      "options": {
+        "a": "జననాల రేటు మరియు మరణాల రేటు రెండూ అధికంగా ఉంటాయి.",
+        "b": "జననాల రేటు మరియు మరణాల రేటు రెండూ తక్కువగా ఉంటాయి.",
+        "c": "జననాల రేటు అధికంగా ఉండి, మరణాల రేటు శీఘ్రంగా తగ్గుతుంది.",
+        "d": "జననాల రేటు తక్కువగా ఉండి, మరణాల రేటు మోతాదులో పెరుగుతుంది."
+      },
+      "answer": "c",
+      "a": "జననాల రేటు అధికంగా ఉండి, మరణాల రేటు శీఘ్రంగా తగ్గుతుంది.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వారిలో అర్థశాస్త్రంలో నోబెల్ బహుమతిని పొందినది ఎవరు?",
+      "options": {
+        "a": "సర్ సి.వి. రామన్",
+        "b": "అమర్త్య సేన్",
+        "c": "సి.హెచ్. హనుమంత రావు",
+        "d": "సి. రంగరాజన్"
+      },
+      "answer": "b",
+      "a": "అమర్త్య సేన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పేదరికానికి సంబంధించి క్రింది వాటిలో ఏ వ్యాఖ్యలు సరైనవి?\nA) సామాజికార్థిక దృగ్విషయమైన పేదరికంలో తమ కనీస జీవితావసరాలను తీర్చుకోలేని స్థితిలో సమాజంలోని ప్రజలు ఉంటారు.\nB) ప్రతి పేద వ్యక్తి ఆదాయాన్ని దారిద్ర్య రేఖ సూచించే ఆదాయానికి సమానమయ్యే వరకు బదిలీ చేసే తీరును పేదరిక వ్యత్యాసం తెలుపుతుంది.\nC) కనీస భౌతిక జీవన వ్యయాన్ని లేదా ఆదాయాన్ని కూడా పొందలేని ప్రజల స్థితిని 'సాపేక్ష వ్యయం'గా చెప్పవచ్చు.",
+      "options": {
+        "a": "A మరియు B మాత్రమే",
+        "b": "B మరియు C మాత్రమే",
+        "c": "C మరియు A మాత్రమే",
+        "d": "A, B మరియు C"
+      },
+      "answer": "a",
+      "a": "A మరియు B మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో ప్రాంతీయ అసమతుల్యతకు సంబంధించి రెండు ప్రధాన ఆర్థిక సూచికలు ఏవి?\nA) సమ్మిళిత వృద్ధి B) పేదరిక స్థాయి C) రాష్ట్రాల తలసరి ఆదాయాలు D) సామాజిక న్యాయం",
+      "options": {
+        "a": "A మరియు B మాత్రమే",
+        "b": "B మరియు C మాత్రమే",
+        "c": "C మరియు D మాత్రమే",
+        "d": "D మరియు A మాత్రమే"
+      },
+      "answer": "b",
+      "a": "B మరియు C మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో పర్యావరణపు ఆవరణలు ఏవి?\nA) వాతావరణం (Atmosphere) B) జీవావరణం C) జలావరణం D) శిలావరణం",
+      "options": {
+        "a": "A మరియు B మాత్రమే",
+        "b": "A, B మరియు C మాత్రమే",
+        "c": "A, B మరియు D మాత్రమే",
+        "d": "A, B, C మరియు D"
+      },
+      "answer": "d",
+      "a": "A, B, C మరియు D",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో ఏ దశాబ్దాన్ని ఐక్యరాజ్య సమితి 'సుస్థిర అభివృద్ధి కొరకై విద్యా దశాబ్దం'గా ప్రకటించింది?",
+      "options": {
+        "a": "2000-10",
+        "b": "2005-15",
+        "c": "2010-20",
+        "d": "2015-25"
+      },
+      "answer": "b",
+      "a": "2005-15",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "జతపరచుము:\nసంస్థ\n(a) సరిహద్దు భద్రతా దళం\n(b) ఇండో-టిబెటన్ సరిహద్దు రక్షణ దళము\n(c) సశస్త్ర సీమ బలము\n(d) తీరప్రాంత రక్షక దళము\nస్థాపక సంవత్సరము\n(i) 1963\n(ii) 1965\n(iii) 1978\n(iv) 1962",
+      "options": {
+        "a": "a-ii, b-iv, c-i, d-iii",
+        "b": "a-ii, b-iv, c-iii, d-i",
+        "c": "a-iv, b-ii, c-i, d-iii",
+        "d": "a-iii, b-i, c-ii, d-iv"
+      },
+      "answer": "a",
+      "a": "a-ii, b-iv, c-i, d-iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో సరియైనవి కానివి ఏవి :\na) నేషనల్ ఫిజికల్ లాబరేటరీ లక్నోలో కలదు.\nb) భారత పరిశోధనా కేంద్రము హిమాద్రి ఆర్కిటిక్ రీజియన్‌లో కలదు.\nc) సెంట్రల్ ఫుడ్ టెక్నాలజికల్ రీసర్చ్ ఇన్‌స్టిట్యూట్ మైసూర్‌లో కలదు.\nd) రైస్ రీసర్చ్ ఇన్‌స్టిట్యూట్ భువనేశ్వర్‌లో కలదు.",
+      "options": {
+        "a": "a & c",
+        "b": "b & c",
+        "c": "a & d",
+        "d": "b & d"
+      },
+      "answer": "c",
+      "a": "a & d",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వ్యాఖ్యలను చదవండి:\nA) 2014, కామన్వెల్త్ క్రీడలు కౌలాలంపూర్‌లో నిర్వహింపబడ్డాయి\nB) 2016, కబడ్డి ప్రపంచ కప్పుకు అహ్మదాబాద్ ఆతిథ్యమిస్తుంది\nC) 2015, జాతీయ క్రీడలు కేరళలో నిర్వహింపబడ్డాయి\nసరైన వ్యాఖ్యలను తెలపండి:",
+      "options": {
+        "a": "A & B",
+        "b": "B & C",
+        "c": "C & A",
+        "d": "A, B & C"
+      },
+      "answer": "b",
+      "a": "B & C",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారతదేశములో ఎత్తైన వంతెన ఏది?",
+      "options": {
+        "a": "సేవోక్ వంతెన",
+        "b": "నైని వంతెన",
+        "c": "చంబల్ వంతెన",
+        "d": "ఎల్లిస్ వంతెన"
+      },
+      "answer": "a",
+      "a": "సేవోక్ వంతెన",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మహాత్మ గాంధీ శాంతి బహుమతి, 2014 పొందినవారు",
+      "options": {
+        "a": "ఇస్రో",
+        "b": "చండీ ప్రసాద్ భట్",
+        "c": "డెస్మండ్ తుతు",
+        "d": "మిషనరీస్ ఆఫ్ ఛారిటి"
+      },
+      "answer": "a",
+      "a": "ఇస్రో",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము :\nజాబితా - I (దినోత్సవం)\na) ధరిత్రి దినోత్సవం\nb) అంతర్జాతీయ పులుల దినోత్సవం\nc) ప్రపంచ సముద్రాల దినోత్సవం\nd) జాతీయ క్రీడా దినోత్సవం\nజాబితా - II (తేదీ)\ni) ఏప్రిల్ 22\nii) జూన్ 8\niii) జూలై 29\niv) ఆగస్టు 29",
+      "options": {
+        "a": "a-(iii), b-(i), c-(iv), d-(ii)",
+        "b": "a-(iv), b-(ii), c-(i), d-(iii)",
+        "c": "a-(ii), b-(iv), c-(iii), d-(i)",
+        "d": "a-(i), b-(iii), c-(ii), d-(iv)"
+      },
+      "answer": "d",
+      "a": "a-(i), b-(iii), c-(ii), d-(iv)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వ్యాఖ్యలను చదవండి:\nA) దేశములో అంతర్గత భద్రతా చట్టాన్ని రచించుకున్న మొదటి రాష్ట్రము మహారాష్ట్ర\nB) 2017లో భారతీయ ప్రవాస దివసుకు ఆతిథ్యం ఇచ్చేది హైదరాబాద్ నగరం\nC) భారతదేశంలో ఇటీవలే అవతరించిన తొలి ద్వీప జిల్లా మజూలి\nసరైన వ్యాఖ్యలను తెలుపండి:",
+      "options": {
+        "a": "A & B",
+        "b": "B & C",
+        "c": "C & A",
+        "d": "A, B & C"
+      },
+      "answer": "c",
+      "a": "C & A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో లింగ నిష్పత్తి అంటే ఏది?",
+      "options": {
+        "a": "1,000 మంది స్త్రీలకు ఉన్న పురుషుల సంఖ్య",
+        "b": "100 మంది స్త్రీలకు ఉన్న పురుషుల సంఖ్య",
+        "c": "1,000 మంది పురుషులకు ఉన్న స్త్రీల సంఖ్య",
+        "d": "100 మంది పురుషులకు ఉన్న స్త్రీల సంఖ్య"
+      },
+      "answer": "c",
+      "a": "1,000 మంది పురుషులకు ఉన్న స్త్రీల సంఖ్య",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సరియైన జతను సూచించుము\n\n         ఆర్మీ            నావి           ఎయిర్‌ఫోర్స్\n(1)    కెప్టెన్       సబ్‌లెఫ్టినెంట్    ఫ్లయిట్ లెఫ్టినెంట్\n(2)    మేజర్        కమాండర్       స్క్వాడ్రన్ హెడర్\n(3)    కల్నల్        కమాండర్       ఎయిర్ కమాండర్\n(4)    మేజర్-జనరల్    రేర్ అడ్మిరల్     ఎయిర్ వైస్ మార్షల్",
+      "options": {
+        "a": "కెప్టెన్, సబ్‌లెఫ్టినెంట్, ఫ్లయిట్ లెఫ్టినెంట్",
+        "b": "మేజర్, కమాండర్, స్క్వాడ్రన్ హెడర్",
+        "c": "కల్నల్, కమాండర్, ఎయిర్ కమాండర్",
+        "d": "మేజర్-జనరల్, రేర్ అడ్మిరల్, ఎయిర్ వైస్ మార్షల్"
+      },
+      "answer": "d",
+      "a": "మేజర్-జనరల్, రేర్ అడ్మిరల్, ఎయిర్ వైస్ మార్షల్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A): భారతదేశంలో ఒక మిలియన్ జనాభాతో నున్న నగరాన్ని మెట్రోపాలిటన్ సిటి అని పిలుస్తారు.\nకారణం (R): 2011 జనాభా లెక్కల ప్రకారం భారతదేశంలో కేవలం 12 మాత్రమే మెట్రోపాలిటన్ సిటీలు (నగరాలు) కలవు.",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవే మరియు (A) కు (R) సరియైన వివరణ",
+        "b": "(A) మరియు (R) రెండూ సరియైనవే కాని (A) కు (R) సరియైన వివరణ కాదు",
+        "c": "(A) సరియైనది (కరెక్టు) కాని (R) తప్పు",
+        "d": "(A) తప్పు కాని (R) కరెక్టు (సరియైనది)"
+      },
+      "answer": "c",
+      "a": "(A) సరియైనది (కరెక్టు) కాని (R) తప్పు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వివరణలను చదవండి :\nA) దారిద్ర్య రేఖకు దిగువన గల మహిళలకు స్వయం ఉపాధిని కల్పించడానికి డ్వాక్రా పథకం ఉద్దేశించబడింది.\nB) జాతీయ గ్రామీణ ఉపాధి పథకాన్ని 1980వ సంవత్సరంలో ప్రవేశపెట్టారు\nC) ఉద్యోగితా స్థితిని లెక్కించడానికి సాధారణ స్థితి, వారపరమైన స్థితి మరియు రోజువారీ స్థితి అను మూడు భావనలను ఎన్‌ఎస్‌ఎస్ సంస్థ వాడింది\nD) గ్రామీణ ప్రాంతాలలో వేతన ఉపాధిని కల్పించడానికి ప్రధానమంత్రి రోజ్‌గార్ యోజన ఉద్దేశించబడింది\nపై వివరణములలో ఏవి సరియైనవి?",
+      "options": {
+        "a": "A, B మరియు C మాత్రమే",
+        "b": "B, C మరియు D మాత్రమే",
+        "c": "A, C మరియు D మాత్రమే",
+        "d": "A, B మరియు D మాత్రమే"
+      },
+      "answer": "a",
+      "a": "A, B మరియు C మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఐక్యరాజ్య సమితిలో భారత శాశ్వత ప్రతినిధి (ప్రస్తుతము)",
+      "options": {
+        "a": "నిరుపమా సేన్",
+        "b": "సయ్యద్ అక్బరుద్దీన్",
+        "c": "ఎ.కె. ముఖర్జీ",
+        "d": "హెచ్.ఎస్. పూరి"
+      },
+      "answer": "b",
+      "a": "సయ్యద్ అక్బరుద్దీన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో మూడు ప్రధాన కాలుష్య రకాలు (రూపాలు) ఏవి?\nA) వాయు కాలుష్యం B) నీటి కాలుష్యం C) ధ్వని కాలుష్యం D) ధరిత్రి కాలుష్యం",
+      "options": {
+        "a": "A, B & C మాత్రమే",
+        "b": "B, C & D మాత్రమే",
+        "c": "C, D & A మాత్రమే",
+        "d": "D, A & B మాత్రమే"
+      },
+      "answer": "a",
+      "a": "A, B & C మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "జాతీయ షెడ్యూల్డ్ కులాల/తెగల హబ్‌ను ప్రారంభించే నగరము",
+      "options": {
+        "a": "జైపూర్",
+        "b": "ఆగ్రా",
+        "c": "నాగ్‌పూర్",
+        "d": "లూధియానా"
+      },
+      "answer": "c",
+      "a": "నాగ్‌పూర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రపంచములో అత్యంత పెద్దదైన సౌరశక్తి ఉత్పత్తి కేంద్రమును ప్రారంభించిన రాష్ట్రము",
+      "options": {
+        "a": "రాజస్తాన్",
+        "b": "తమిళనాడు",
+        "c": "ఆంధ్రప్రదేశ్",
+        "d": "హర్యానా"
+      },
+      "answer": "c",
+      "a": "ఆంధ్రప్రదేశ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఓటర్ల సంఖ్య రీత్యా అతి చిన్న లోక్‌సభ నియోజక వర్గము",
+      "options": {
+        "a": "లడక్",
+        "b": "డామన్ & డియు",
+        "c": "లక్షద్వీప్",
+        "d": "అండమాన్ & నికోబార్ ద్వీపము"
+      },
+      "answer": "c",
+      "a": "లక్షద్వీప్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము:\nరోజు (ప్రాముఖ్యత)\na) ప్రపంచ కిడ్నీ రోజు\nb) ప్రపంచ కాన్సర్ రోజు\nc) ప్రపంచ క్షయ రోజు\nd) ప్రపంచ వికలాంగుల రోజు\nనెల\ni) ఫిబ్రవరి 14\nii) మార్చి 24\niii) మార్చి 10\niv) డిసెంబర్ 3",
+      "options": {
+        "a": "a-ii, b-iv, c-iii, d-i",
+        "b": "a-iv, b-ii, c-i, d-iii",
+        "c": "a-iii, b-ii, c-iv, d-i",
+        "d": "a-iii, b-i, c-ii, d-iv"
+      },
+      "answer": "d",
+      "a": "a-iii, b-i, c-ii, d-iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మొదటి స్పాంజ్ ఐరన్ ప్లాంట్ నెలకొల్పిన ప్రదేశం",
+      "options": {
+        "a": "తెలంగాణ",
+        "b": "ఆంధ్ర",
+        "c": "రాయలసీమ",
+        "d": "బుందేల్‌ఖండ్"
+      },
+      "answer": "a",
+      "a": "తెలంగాణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో సరియైన జత కానిది :\nస్టేడియమ్          ప్రదేశము\n(1) కీనన్ స్టేడియమ్    జంషెడ్పూర్\n(2) శివాజీ స్టేడియమ్   పూణె\n(3) రంజి స్టేడియమ్    కోలకతా\n(4) డి.వై.పాటిల్ స్టేడియమ్  నవీ ముంబయి",
+      "options": {
+        "a": "కీనన్ స్టేడియమ్ - జంషెడ్పూర్",
+        "b": "శివాజీ స్టేడియమ్ - పూణె",
+        "c": "రంజి స్టేడియమ్ - కోలకతా",
+        "d": "డి.వై.పాటిల్ స్టేడియమ్ - నవీ ముంబయి"
+      },
+      "answer": "b",
+      "a": "శివాజీ స్టేడియమ్ - పూణె",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము\nరోజు\na) జాతీయ శాస్త్ర దినము\nb) వాయుసేన దినము\nc) నౌకాదళ దినము\nd) ఉగ్రవాద వ్యతిరేక దినము\nతారీఖు\ni) అక్టోబర్, 8\nii) ఫిబ్రవరి, 28\niii) మే, 21\niv) డిసెంబర్, 4",
+      "options": {
+        "a": "a-iii, b-i, c-iv, d-ii",
+        "b": "a-i, b-iii, c-iv, d-ii",
+        "c": "a-ii, b-i, c-iv, d-iii",
+        "d": "a-iv, b-ii, c-iii, d-i"
+      },
+      "answer": "c",
+      "a": "a-ii, b-i, c-iv, d-iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వ్యాఖ్యలను పరిగణింపుము:\na) 2015లో సుప్రీం కోర్టు సామాజిక న్యాయ బెంచ్‌ను ఏర్పరచినది.\nb) సుప్రీం కోర్టు సామాజిక న్యాయ బెంచ్‌ను భారత ప్రధాన న్యాయమూర్తి హెచ్.ఎల్. దత్తు ఏర్పరచినాడు.\nc) ప్రతి శుక్రవారము సామాజిక న్యాయ బెంచ్ వ్యాజ్యములను పరిశీలించును.\nసరియైన వ్యాఖ్య(లు) :",
+      "options": {
+        "a": "a & b",
+        "b": "c & a",
+        "c": "b & c",
+        "d": "a"
+      },
+      "answer": "a",
+      "a": "a & b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "డినోటిఫైడ్ మరియు సంచార జాతుల కమిషన్ చైర్మన్:",
+      "options": {
+        "a": "శ్రావణ్ సింగ్ రాఠోడ్",
+        "b": "బికు రామ్",
+        "c": "కరియా ముండా",
+        "d": "బాబులాల్ మరండి"
+      },
+      "answer": "b",
+      "a": "బికు రామ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత నేపాల్ మైత్రి బస్ సర్వీస్ కలిపే నగరాలు",
+      "options": {
+        "a": "ఢిల్లీ మరియు ఖాట్మండు",
+        "b": "వారణాసి మరియు ఖాట్మండు",
+        "c": "అలహాబాద్ మరియు ఖాట్మండు",
+        "d": "గయ మరియు ఖాట్మండు"
+      },
+      "answer": "a",
+      "a": "ఢిల్లీ మరియు ఖాట్మండు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వ్యాఖ్యలను పరిగణింపుము:\na) ఆపరేషన్ రాహత్, 2015 కు నాయకత్వం వహించినది జనరల్ వి.కె. సింగ్.\nb) సిరియా నుండి భారత పౌరులను రక్షించేందుకు ఏర్పర్చినది ఆపరేషన్ రాహత్.\nc) ఆపరేషన్ రాహత్‌లో ఐఎన్‌ఎస్ సుమిత్రను ఉపయోగించినారు.\nసరైన వ్యాఖ్యలు:",
+      "options": {
+        "a": "a & c",
+        "b": "a & b",
+        "c": "b & c",
+        "d": "a, b & c"
+      },
+      "answer": "a",
+      "a": "a & c",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వానిని జతపరచుము:\nమంత్రి\n(a) హెచ్.ఎం. పటేల్\n(b) ఇంద్రజిత్ గుప్తా\n(c) మధు దండావతె\n(d) జార్జ్ ఫెర్నాండేజ్\nకేంద్ర ప్రభుత్వము\n(i) ఆర్థిక శాఖ మంత్రి, జాతీయ ఫ్రంట్ ప్రభుత్వము\n(ii) రక్షణ శాఖ మంత్రి, ఎన్‌డిఎ-I ప్రభుత్వము\n(iii) ఆర్థిక శాఖ మంత్రి, జనతా ప్రభుత్వము\n(iv) హోం శాఖ మంత్రి, యునైటెడ్ ఫ్రంట్ ప్రభుత్వము",
+      "options": {
+        "a": "a-ii, b-iv, c-i, d-iii",
+        "b": "a-iv, b-iii, c-i, d-ii",
+        "c": "a-iv, b-ii, c-i, d-iii",
+        "d": "a-iii, b-iv, c-i, d-ii"
+      },
+      "answer": "d",
+      "a": "a-iii, b-iv, c-i, d-ii",
+      "e": "",
+      "table": null
+    }
+  ]
+}

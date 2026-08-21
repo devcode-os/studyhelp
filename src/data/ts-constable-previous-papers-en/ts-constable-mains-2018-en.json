@@ -1,0 +1,975 @@
+{
+  "slug": "ts-constable-mains-2018-en",
+  "chapterNumber": 5,
+  "title": "TS Police Constable Mains - 28 Apr 2018",
+  "weightage": [
+    {
+      "subject": "Quantitative Aptitude",
+      "questions": 25,
+      "percentage": 40.3,
+      "breakdown": [
+        { "name": "Number Systems & Simplification", "questions": 7 },
+        { "name": "Time, Work & Distance", "questions": 5 },
+        { "name": "Ratio, Proportion & Mixture", "questions": 3 },
+        { "name": "Percentages, Profit & Loss", "questions": 3 },
+        { "name": "Data Interpretation", "questions": 3 },
+        { "name": "Averages & Ages", "questions": 2 },
+        { "name": "Simple & Compound Interest", "questions": 1 },
+        { "name": "Geometry & Mensuration", "questions": 1 }
+      ]
+    },
+    {
+      "subject": "General English",
+      "questions": 20,
+      "percentage": 32.3,
+      "breakdown": [
+        { "name": "Grammar & Usage", "questions": 12 },
+        { "name": "Reading Comprehension", "questions": 3 },
+        { "name": "Vocabulary & Idioms", "questions": 3 },
+        { "name": "Sentence Rearrangement (Para Jumbles)", "questions": 2 }
+      ]
+    },
+    {
+      "subject": "General Science (Physics, Chemistry, Biology)",
+      "questions": 17,
+      "percentage": 27.4,
+      "breakdown": [
+        { "name": "Chemistry & Materials", "questions": 7 },
+        { "name": "Physics", "questions": 5 },
+        { "name": "Biology & Health Science", "questions": 5 }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following statements is incorrect regarding the usage of the article?\n(1) Eight-year-old Roxy Getter is the youngest girl who climbed the Mount Kilimanjaro in 2017.\n(2) Raj : Have you got a cold ? Raghu : No, I've got the flu.\n(3) What a lovely dress !\n(4) Dr. Kalam was elected President in 2002.",
+      "options": {
+        "a": "Eight-year-old Roxy Getter is the youngest girl who climbed the Mount Kilimanjaro in 2017.",
+        "b": "Raj : Have you got a cold ? Raghu : No, I've got the flu.",
+        "c": "What a lovely dress !",
+        "d": "Dr. Kalam was elected President in 2002."
+      },
+      "answer": "a",
+      "a": "Eight-year-old Roxy Getter is the youngest girl who climbed the Mount Kilimanjaro in 2017.",
+      "e": "Zero article is used before names of individual mountain peaks such as Mount Kilimanjaro. Using the definite article 'the' before 'Mount Kilimanjaro' is grammatically incorrect.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blanks using the correct preposition:\nWhere did you come ________ ?",
+      "options": {
+        "a": "for",
+        "b": "from",
+        "c": "above",
+        "d": "into"
+      },
+      "answer": "b",
+      "a": "from",
+      "e": "The preposition 'from' indicates origin or source. 'Where did you come from?' is the correct expression.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with the appropriate verb form given below:\nRaghu ________ cricket when his friend went home yesterday.",
+      "options": {
+        "a": "has played",
+        "b": "is playing",
+        "c": "is played",
+        "d": "was playing"
+      },
+      "answer": "d",
+      "a": "was playing",
+      "e": "The past continuous tense 'was playing' is required because the action was ongoing in the past when another action occurred.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with the correct verb form.\nI ________ French too well.",
+      "options": {
+        "a": "am not understanding",
+        "b": "do not understand",
+        "c": "am not understand",
+        "d": "do not understanding"
+      },
+      "answer": "b",
+      "a": "do not understand",
+      "e": "Stative verbs like 'understand' are not used in continuous forms when denoting state of mind. Simple present 'do not understand' is correct.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the grammatically correct sentence from the options given below:",
+      "options": {
+        "a": "Neither the teacher nor the students was present in the class.",
+        "b": "Neither the teacher nor the students were present in the class.",
+        "c": "Neither the teacher nor the students has present in the class.",
+        "d": "Neither the teacher nor the students is present in the class."
+      },
+      "answer": "b",
+      "a": "Neither the teacher nor the students were present in the class.",
+      "e": "When two subjects are joined by 'neither... nor', the verb agrees with the closer subject. Since 'students' is plural, the plural verb 'were' is correct.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following sentences has a subject that does not agree with the verb?",
+      "options": {
+        "a": "Every shirt, tie and coat is marked for reduction sale.",
+        "b": "Neither our Accounts Department nor our Head Office have a record of the transaction.",
+        "c": "Excessive absences were the reason for his failure.",
+        "d": "The committee has agreed to submit its report on Friday."
+      },
+      "answer": "b",
+      "a": "Neither our Accounts Department nor our Head Office have a record of the transaction.",
+      "e": "In option (b), 'Head Office' is singular, so the verb governed by 'neither... nor' must be singular ('has' instead of 'have').",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Pick the one word that gives the meaning of the following:\nA large system consisting of many similar parts that are connected together.",
+      "options": {
+        "a": "NETWORK",
+        "b": "DISTRIBUTION",
+        "c": "COMPUTER",
+        "d": "COMMUNICATION"
+      },
+      "answer": "a",
+      "a": "NETWORK",
+      "e": "'Network' defined as an interconnected system of components working together.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the correct passive form of the following sentence from the options given below:\n'We would have painted the walls green.'",
+      "options": {
+        "a": "The walls would have been painted green by us.",
+        "b": "The green walls would have been painted by us.",
+        "c": "The walls in green would be painted by us.",
+        "d": "The green walls will have been painted by us."
+      },
+      "answer": "a",
+      "a": "The walls would have been painted green by us.",
+      "e": "Passive voice for 'would have + V3' is formed by using 'would have been + V3'.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Pick the option that gives the correct indirect form of the following sentence:\nDirect : The politician said, \"It gives me great pleasure to be here this morning.\"",
+      "options": {
+        "a": "The politician said that it gave him great pleasure to be there that morning.",
+        "b": "The politician said it gives me great pleasure to be there that morning.",
+        "c": "The politician said that it gave him great pleasure to be here this morning.",
+        "d": "The politician said it gives me great pleasure to be there this morning."
+      },
+      "answer": "a",
+      "a": "The politician said that it gave him great pleasure to be there that morning.",
+      "e": "In indirect speech, present tense becomes past tense ('gives' -> 'gave'), 'here' becomes 'there', and 'this morning' becomes 'that morning'.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The following sentence is in Direct Speech. Choose the correct option which expresses the same sentence in Indirect Speech:\nThe spectators said, \"Bravo! Well played, Sachin\".",
+      "options": {
+        "a": "The spectators called Sachin bravo because he had played well.",
+        "b": "The spectators said that Sachin has played well.",
+        "c": "The spectators encouraged Sachin saying that he played well.",
+        "d": "The spectators applauded Sachin saying that he had played well."
+      },
+      "answer": "d",
+      "a": "The spectators applauded Sachin saying that he had played well.",
+      "e": "The exclamatory word 'Bravo!' converts to 'applauded... saying', while past simple changes to past perfect ('had played').",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the following question, there are six sentences of a paragraph marked S1, S6, P, Q, R, S. The positions of S1 and S6 are fixed. You are required to choose the most logical sequence of the sentences that form the paragraph:\n\nS1: Proverbs contain homely but universal truths.\nP: Some of them point out the incongruities of situations in life.\nQ: Naturally, they are translatable from one language to another.\nR: Therefore, their appeal is direct to anyone.\nS: Many of them had their birth in folk literature.\nS6: They are everyman's philosophy.",
+      "options": {
+        "a": "QPRS",
+        "b": "QSPR",
+        "c": "PSRQ",
+        "d": "SPQR"
+      },
+      "answer": "d",
+      "a": "SPQR",
+      "e": "S describes the origin of proverbs (folk literature). P details their nature. Q connects their universal property to translatability, and R establishes their broad appeal leading to S6.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct option which expresses the following sentence in passive voice:\nDo you imitate others?",
+      "options": {
+        "a": "Are others imitated by you?",
+        "b": "Are others being imitated by you?",
+        "c": "Were others imitated by you?",
+        "d": "Have others are imitated by you?"
+      },
+      "answer": "a",
+      "a": "Are others imitated by you?",
+      "e": "Interrogative simple present ('Do + subject + verb') converts to passive voice as 'Are + object + V3 + by + subject'.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the following question, there are six sentences of a paragraph marked S1, S6, P, Q, R, S. The positions of S1 and S6 are fixed. You are required to choose the most logical sequence of the sentences that form the paragraph:\n\nS1: There are divergent theories of education.\nP: There is still another which holds that education has to be considered rather in relation to community than to the other.\nQ: Yet, again some believe that a right proportion of all the theories should go into every system.\nR: The other holds that the purpose of education is to impart culture.\nS: The first considers that the sole purpose of education is to provide opportunities for growth.\nS6: No actual education proceeds wholly and completely on any one of the theories.",
+      "options": {
+        "a": "PQRS",
+        "b": "PQSR",
+        "c": "RPQ",
+        "d": "SQPR"
+      },
+      "answer": "d",
+      "a": "SQPR",
+      "e": "S opens with 'The first', R presents 'The other', P brings in 'still another', and Q synthesizes these ideas before S6.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The author mentions the work of Darwin and Fabre in order to",
+      "options": {
+        "a": "provide experimental evidence of the inflexibility of one kind of insect behaviour.",
+        "b": "contradict the conventional wisdom about \"typical\" wasp behaviour.",
+        "c": "illustrate the strength of the wasp's maternal affection.",
+        "d": "explore the logical implications of the thesis articulated earlier."
+      },
+      "answer": "a",
+      "a": "provide experimental evidence of the inflexibility of one kind of insect behaviour.",
+      "e": "The author introduces Darwin and Fabre's experiments specifically to demonstrate how insect behavior is driven by rigid, fixed mechanisms.",
+      "table": null,
+      "passage": "Insect behaviour generally appears to be explicable in terms of unconscious, inflexible stimulus-response mechanisms. For instance, a female sphex wasp leaves her egg sealed in a burrow alongside a paralyzed grasshopper, which her larvae can eat upon hatching. Before she deposits the grasshopper in the burrow, she inspects the burrow; if the inspection reveals no problems, she drags the grasshopper inside by its antennae. As thoughtful as this behaviour appears, it reveals its mechanistic character upon interference. Darwin discovered that prior removal of the grasshopper's antennae prevents the wasp from depositing the grasshopper, even though the legs or ovipositor could also serve as handles. Likewise, Fabre moved the grasshopper a few centimeters away from the burrow's mouth while the wasp was inside inspecting. The wasp returned the grasshopper to the edge of the burrow and then began a new inspection. Fabre performed this disruptive maneuver forty times; the wasp's response never changed."
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements is not true according to the passage?",
+      "options": {
+        "a": "Darwin restrains the grasshopper while the wasp attempts to drag it by its antennae, which subsequently break off.",
+        "b": "Darwin releases the grasshopper but the wasp ignores it.",
+        "c": "The wasp takes significant time to retrieve the grasshopper, then re-inspects the burrow.",
+        "d": "The wasp instantly brings the grasshopper and moves into the burrow."
+      },
+      "answer": "d",
+      "a": "The wasp instantly brings the grasshopper and moves into the burrow.",
+      "e": "The passage highlights that interference caused the wasp to repeat its inspection routine rather than moving directly into the burrow.",
+      "table": null,
+      "passage": "Insect behaviour generally appears to be explicable in terms of unconscious, inflexible stimulus-response mechanisms. For instance, a female sphex wasp leaves her egg sealed in a burrow alongside a paralyzed grasshopper, which her larvae can eat upon hatching. Before she deposits the grasshopper in the burrow, she inspects the burrow; if the inspection reveals no problems, she drags the grasshopper inside by its antennae. As thoughtful as this behaviour appears, it reveals its mechanistic character upon interference. Darwin discovered that prior removal of the grasshopper's antennae prevents the wasp from depositing the grasshopper, even though the legs or ovipositor could also serve as handles. Likewise, Fabre moved the grasshopper a few centimeters away from the burrow's mouth while the wasp was inside inspecting. The wasp returned the grasshopper to the edge of the burrow and then began a new inspection. Fabre performed this disruptive maneuver forty times; the wasp's response never changed."
+    },
+    {
+      "type": "mcq",
+      "q": "The primary purpose of the passage is to ________.",
+      "options": {
+        "a": "argue that insects are not unique in their dependence on rigid routines.",
+        "b": "argue that insect behaviour relies on rigid routines which appear to be unconscious.",
+        "c": "analyze the maternal behaviour of wasps.",
+        "d": "compare and contrast the work of Darwin and Fabre."
+      },
+      "answer": "b",
+      "a": "argue that insect behaviour relies on rigid routines which appear to be unconscious.",
+      "e": "The passage establishes in its opening statement that insect actions rely on unconscious and inflexible routine responses.",
+      "table": null,
+      "passage": "Insect behaviour generally appears to be explicable in terms of unconscious, inflexible stimulus-response mechanisms. For instance, a female sphex wasp leaves her egg sealed in a burrow alongside a paralyzed grasshopper, which her larvae can eat upon hatching. Before she deposits the grasshopper in the burrow, she inspects the burrow; if the inspection reveals no problems, she drags the grasshopper inside by its antennae. As thoughtful as this behaviour appears, it reveals its mechanistic character upon interference. Darwin discovered that prior removal of the grasshopper's antennae prevents the wasp from depositing the grasshopper, even though the legs or ovipositor could also serve as handles. Likewise, Fabre moved the grasshopper a few centimeters away from the burrow's mouth while the wasp was inside inspecting. The wasp returned the grasshopper to the edge of the burrow and then began a new inspection. Fabre performed this disruptive maneuver forty times; the wasp's response never changed."
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is the antonym of the underlined word in the sentence 'I made some success, and the students had a predilection for me.'?",
+      "options": {
+        "a": "Fondness",
+        "b": "Inclination",
+        "c": "Disinclination",
+        "d": "Predisposition"
+      },
+      "answer": "c",
+      "a": "Disinclination",
+      "e": "'Predilection' means a strong preference or liking. Its antonym is 'disinclination'.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following words is correctly spelt?",
+      "options": {
+        "a": "Liason",
+        "b": "Irresistable",
+        "c": "Fluorescent",
+        "d": "Farenheit"
+      },
+      "answer": "c",
+      "a": "Fluorescent",
+      "e": "'Fluorescent' is correctly spelled. Correct spellings for the remaining words are Liaison, Irresistible, and Fahrenheit.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the best explanation of the expression \"It's raining cats and dogs\"?\nIt means that ________.",
+      "options": {
+        "a": "cats and dogs do not enjoy rain.",
+        "b": "it can never rain cats and dogs",
+        "c": "cats and dogs enjoy the rain",
+        "d": "it is raining heavily"
+      },
+      "answer": "d",
+      "a": "it is raining heavily",
+      "e": "The idiom 'raining cats and dogs' means downpouring or raining very heavily.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct option that conveys the same meaning as the underlined word in the following sentence:\nMany cities were incinerated during the war.",
+      "options": {
+        "a": "traumatized",
+        "b": "burnt",
+        "c": "shocked",
+        "d": "prohibited"
+      },
+      "answer": "b",
+      "a": "burnt",
+      "e": "'Incinerated' means destroyed completely by fire or burnt.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(A) The number of ordered pairs of positive integers (m, n) such that m + n = 648 and g.c.d. of (m, n) = 27 is 8.\n(B) If the number x is of the form x = 48m + 39 for some positive integer m, then the remainder when x is divided by 8 is 1.\n\nSelect the correct option among the following:",
+      "options": {
+        "a": "Both (A) and (B) are true.",
+        "b": "Only (A) is true.",
+        "c": "Only (B) is true.",
+        "d": "Both (A) and (B) are false."
+      },
+      "answer": "b",
+      "a": "Only (A) is true.",
+      "e": "Let m = 27a and n = 27b where gcd(a, b) = 1. Then 27(a + b) = 648, which simplifies to a + b = 24. Co-prime pairs (a, b) summing to 24 are (1,23), (5,19), (7,17), (11,13) and their reverse orders, yielding 8 pairs. Thus (A) is true.\n\nFor (B), x = 48m + 39 = 8(6m + 4) + 7. The remainder when divided by 8 is 7, not 1. Thus (B) is false.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The radius 'r' of a circle and the side 'a' of a square are such that r : a = 3 : 2\u221a\u03c0. If s is the area of the square then the area of the circle is",
+      "options": {
+        "a": "2s\u221a\u03c0",
+        "b": "(9/4)s",
+        "c": "2s",
+        "d": "s/2"
+      },
+      "answer": "b",
+      "a": "(9/4)s",
+      "e": "Given r / a = 3 / (2\u221a\u03c0). The area of the square is s = a\u00b2.\n\nThe area of the circle is \u03c0r\u00b2 = \u03c0 * (3a / 2\u221a\u03c0)\u00b2 = \u03c0 * (9a\u00b2 / 4\u03c0) = (9/4)a\u00b2 = (9/4)s.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If 3x = 2y + 5z and 3y = 4x + z then x : y : z =",
+      "options": {
+        "a": "17 : 13 : 11",
+        "b": "23 : 17 : 1",
+        "c": "11 : 13 : 17",
+        "d": "17 : 23 : 1"
+      },
+      "answer": "b",
+      "a": "23 : 17 : 1",
+      "e": "From 3x - 2y = 5z and -4x + 3y = z, multiplying the second equation by 5 gives -20x + 15y = 5z.\n\nEquating both yields 3x - 2y = -20x + 15y, so 23x = 17y, which means x : y = 17 : 23 or x = 23, y = 17, z = 1.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If 8% of 7% of 5% of x is 105 then the value of x in lakhs is",
+      "options": {
+        "a": "3.75",
+        "b": "0.375",
+        "c": "0.0375",
+        "d": "0.00375"
+      },
+      "answer": "a",
+      "a": "3.75",
+      "e": "Setting up the equation: (8/100) * (7/100) * (5/100) * x = 105.\n\nThis simplifies to (280 / 1000000) * x = 105, giving x = 375,000. In lakhs, x = 375,000 / 100,000 = 3.75.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "2 + \u221a2 + 1/(2 + \u221a2) + 1/(\u221a2 - 2) + \u221b(4 * 12/125) =",
+      "options": {
+        "a": "0.36",
+        "b": "3.6",
+        "c": "(28 + 5\u221a2)/5",
+        "d": "(18 + 10\u221a2)/5"
+      },
+      "answer": "b",
+      "a": "3.6",
+      "e": "Simplifying 1/(2 + \u221a2) + 1/(\u221a2 - 2) gives -\u221a2. Thus 2 + \u221a2 - \u221a2 = 2.\n\nThe cube root term \u221b(4 12/125) = \u221b(512/125) = 8/5 = 1.6.\n\nAdding these together gives 2 + 1.6 = 3.6.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The average age of a group of x students is 16 years. If m students each of age 15 years is added to this group then the new average is 15.8 years. Then what percent of x is m ?",
+      "options": {
+        "a": "15",
+        "b": "20",
+        "c": "25",
+        "d": "30"
+      },
+      "answer": "c",
+      "a": "25",
+      "e": "Total sum of ages: 16x + 15m = 15.8(x + m).\n\nExpanding gives 16x + 15m = 15.8x + 15.8m, which simplifies to 0.2x = 0.8m, so x = 4m. Therefore m/x = 1/4 = 25%.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The average height of 25 students out of 40 students in a class is 163 cm and the average height of the remaining students is 169 cm. Then the average height of the students in that class, in cm, is",
+      "options": {
+        "a": "164.75",
+        "b": "165.25",
+        "c": "165.75",
+        "d": "166.25"
+      },
+      "answer": "b",
+      "a": "165.25",
+      "e": "The remaining students count is 40 - 25 = 15.\n\nOverall average = (25 * 163 + 15 * 169) / 40 = (4075 + 2535) / 40 = 6610 / 40 = 165.25 cm.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If a person purchases pens at the rate of 16 pens for \u20b9 200 and sells them at the rate of 12 pens for \u20b9 160, then the profit/loss percent is",
+      "options": {
+        "a": "6\u2154% profit",
+        "b": "13\u2153% profit",
+        "c": "6\u2154% loss",
+        "d": "13\u2153% loss"
+      },
+      "answer": "a",
+      "a": "6\u2154% profit",
+      "e": "Cost price per pen = 200 / 16 = \u20b9 12.50. Selling price per pen = 160 / 12 = \u20b9 13.333.\n\nProfit per pen = 13.333 - 12.50 = 0.833. Profit percentage = (0.833 / 12.50) * 100 = 6\u2154% profit.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The rate of income tax is reduced to 14\u00bd% from 19%. If a person's taxable income is \u20b9 3,20,000, then the tax benefit, in rupees, is",
+      "options": {
+        "a": "14,400",
+        "b": "1,440",
+        "c": "16,000",
+        "d": "1,600"
+      },
+      "answer": "a",
+      "a": "14,400",
+      "e": "Reduction in tax rate = 19% - 14.5% = 4.5%.\n\nTax benefit = 4.5% of \u20b9 3,20,000 = (4.5 / 100) * 3,20,000 = \u20b9 14,400.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "10 men and 15 women can complete a work in 6 days. 12 men and 27 women can complete the same work in 4 days. Then the number of days required for 2 men and 12 women to complete the same work is",
+      "options": {
+        "a": "12",
+        "b": "10",
+        "c": "9",
+        "d": "8"
+      },
+      "answer": "a",
+      "a": "12",
+      "e": "Total work equation: 6 * (10M + 15W) = 4 * (12M + 27W), which simplifies to 12M = 18W, or 2M = 3W.\n\nTotal work equals 6 * (15W + 15W) = 180 woman-days. The target group 2M + 12W = 3W + 12W = 15W requires 180 / 15 = 12 days.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "4 men and 5 women in 6 days can earn \u20b9 10,650 while 6 men and 4 women in 4 days can earn \u20b9 8,200. Then the amount (in rupees) earned by 5 men and 10 women in 3 days is",
+      "options": {
+        "a": "8,750",
+        "b": "16,900",
+        "c": "8,625",
+        "d": "16,225"
+      },
+      "answer": "c",
+      "a": "8,625",
+      "e": "Daily earnings: 4M + 5W = 1775 and 6M + 4W = 2050.\n\nSolving these linear equations yields W = 175 and M = 225. Daily earnings for 5M + 10W = 5(225) + 10(175) = \u20b9 2875. In 3 days, total earnings = 2875 * 3 = \u20b9 8,625.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Suppose some principal amount P is given at r % simple interest per annum for a period of 12 years to get an amount A. Match the following:\n\nList-I (Amount A):\ni. 2P\nii. 5P/4\niii. 3P/2\niv. 7P/4\n\nList-II (Rate of Interest r):\na. 2\u215b\nb. 6\u00bc\nc. 8\u2153\nd. 4\u2156",
+      "options": {
+        "a": "i-c, ii-d, iii-b, iv-a",
+        "b": "i-c, ii-d, iii-a, iv-b",
+        "c": "i-c, ii-a, iii-d, iv-b",
+        "d": "i-c, ii-b, iii-d, iv-a"
+      },
+      "answer": "c",
+      "a": "i-c, ii-a, iii-d, iv-b",
+      "e": "Formula: A = P(1 + 12r/100).\n\nEvaluating each option gives i -> 8\u2153% (c), ii -> 2\u215b% (a), iii -> 4\u2156% (d), and iv -> 6\u00bc% (b).",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The graph given below shows the production of wheat in different years in millions of tons. The percentage increase of production of wheat in the year 2017 over the year 2015 is",
+      "options": {
+        "a": "14\u2157",
+        "b": "22\u2159",
+        "c": "28\u2157",
+        "d": "11\u2159"
+      },
+      "answer": "c",
+      "a": "28\u2157",
+      "e": "Production in 2015 = 14 million tons; production in 2017 = 18 million tons. Increase = 4 million tons.\n\nPercentage increase = (4 / 14) * 100 = 200/7% = 28\u2157%.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If the number 6653A321 is divisible by 11 then A =",
+      "options": {
+        "a": "1",
+        "b": "0",
+        "c": "2",
+        "d": "4"
+      },
+      "answer": "c",
+      "a": "2",
+      "e": "Sum of odd position digits (from right): 1 + 3 + 3 + 6 = 13.\n\nSum of even position digits: 2 + A + 5 + 6 = 13 + A.\n\nFor divisibility by 11, the difference (13 + A) - 13 = A must be a multiple of 11. For a single digit value, A = 0.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "P and Q started a business together with an initial investment in the ratio 3 : 2. P invested for 8 months but Q for less time. They shared their profits in the ratio 2 : 1. Then for how many months did Q invest ?",
+      "options": {
+        "a": "3",
+        "b": "4",
+        "c": "6",
+        "d": "7"
+      },
+      "answer": "c",
+      "a": "6",
+      "e": "Ratio of profits = (3 * 8) / (2 * t) = 2 / 1.\n\nSimplifying 24 / 2t = 2 / 1 gives 4t = 24, so t = 6 months.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "5 trains A, B, C, D, E respectively running with speeds 50 kmph, 45 kmph, 40 kmph, 35 kmph, 30 kmph have to travel 120 km, 105 km, 100 km, 85 km, 80 km to reach their destinations respectively. Then the train that takes least time to reach its destination is",
+      "options": {
+        "a": "A",
+        "b": "B",
+        "c": "C",
+        "d": "E"
+      },
+      "answer": "b",
+      "a": "B",
+      "e": "Calculating time = Distance / Speed for each train:\nTrain A: 120/50 = 2.4 hrs\nTrain B: 105/45 = 2.33 hrs\nTrain C: 100/40 = 2.5 hrs\nTrain D: 85/35 = 2.43 hrs\nTrain E: 80/30 = 2.67 hrs\n\nTrain B takes the least time.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If 25% of x is equal to 15% of y as well as 10% of z then x : y : z =",
+      "options": {
+        "a": "6 : 10 : 15",
+        "b": "3 : 5 : 15",
+        "c": "12 : 10 : 15",
+        "d": "6 : 10 : 5"
+      },
+      "answer": "a",
+      "a": "6 : 10 : 15",
+      "e": "25x = 15y = 10z implies 5x = 3y = 2z = k.\n\nThus x : y : z = (1/5) : (1/3) : (1/2) = 6 : 10 : 15.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "By selling an article for \u20b9 1,403, a trader gets a profit of 15%. The cost price of the article, in rupees, is",
+      "options": {
+        "a": "1350",
+        "b": "1310",
+        "c": "1270",
+        "d": "1220"
+      },
+      "answer": "d",
+      "a": "1220",
+      "e": "Cost Price = Selling Price / 1.15 = 1403 / 1.15 = \u20b9 1220.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If the cost price of 24 pens is equal to the selling price of 20 pens of the same kind, then the outcome of this transaction is",
+      "options": {
+        "a": "24% profit",
+        "b": "24% loss",
+        "c": "20% profit",
+        "d": "20% loss"
+      },
+      "answer": "c",
+      "a": "20% profit",
+      "e": "24 * CP = 20 * SP, giving SP / CP = 6 / 5.\n\nProfit percentage = ((6 - 5) / 5) * 100 = 20%.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person A can complete a piece of work in x days and another person B requires 2x days to finish the same work. If both work together they can finish the work in 14 days, then x =",
+      "options": {
+        "a": "18",
+        "b": "20",
+        "c": "21",
+        "d": "24"
+      },
+      "answer": "c",
+      "a": "21",
+      "e": "Combined daily rate = 1/x + 1/2x = 3/2x. Total days taken = 2x / 3 = 14, yielding x = 21.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The following table gives the number of students who appeared and qualified in the Mathematics Olympiad in the southern states:\n\nAppeared vs Qualified:\nTelangana: 740 appeared, 60 qualified\nAndhra Pradesh: 800 appeared, 65 qualified\nKarnataka: 840 appeared, 70 qualified\nKerala: 700 appeared, 55 qualified\nTamil Nadu: 775 appeared, 62 qualified\n\nThen the state with the highest percentage of qualified candidates is",
+      "options": {
+        "a": "Karnataka",
+        "b": "Telangana",
+        "c": "Kerala",
+        "d": "Tamil Nadu"
+      },
+      "answer": "a",
+      "a": "Karnataka",
+      "e": "Qualifying percentages: Telangana = 8.11%, AP = 8.125%, Karnataka = 8.33%, Kerala = 7.85%, Tamil Nadu = 8.00%. Karnataka is highest.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Two numbers when divided by d leave respective remainders 4 and 3. If their sum is divided by d the remainder is 1, then d =",
+      "options": {
+        "a": "7",
+        "b": "6",
+        "c": "5",
+        "d": "1"
+      },
+      "answer": "b",
+      "a": "6",
+      "e": "Sum of remainders = 4 + 3 = 7. When 7 is divided by d, it leaves a remainder of 1.\n\nHence 7 - 1 = 6 is divisible by d. Since d > 4, d must equal 6.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the decimal representation of 121/185, the digit in 1000\u1d57\u02b0 decimal place is",
+      "options": {
+        "a": "6",
+        "b": "5",
+        "c": "4",
+        "d": "0"
+      },
+      "answer": "c",
+      "a": "4",
+      "e": "121 / 185 = 0.6540540... consisting of '6' followed by repeating pattern '540'.\n\nFor the 1000th digit: (1000 - 1) = 999th term of the cycle. 999 mod 3 = 0, corresponding to the 3rd cycle digit '0'.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If a = 5/4, b = 3/8, then match the following:\n\nList-I:\nA. 1/a + 1/b =\nB. a\u00b2 + b\u00b2 =\nC. 1/a\u00b2 + 1/b\u00b2 =\nD. a/b + b/a =\n\nList-II:\nP. 1744/225\nQ. 52/15\nR. 109/30\nS. 109/64",
+      "options": {
+        "a": "A-P, B-S, C-Q, D-R",
+        "b": "A-Q, B-R, C-S, D-P",
+        "c": "A-P, B-R, C-S, D-Q",
+        "d": "A-Q, B-S, C-P, D-R"
+      },
+      "answer": "d",
+      "a": "A-Q, B-S, C-P, D-R",
+      "e": "A = 4/5 + 8/3 = 52/15 (Q).\nB = 25/16 + 9/64 = 109/64 (S).\nC = 16/25 + 64/9 = 1744/225 (P).\nD = 10/3 + 3/10 = 109/30 (R).",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "If 397246 is divided by K, the quotient is 865 and the remainder is 211, then K =",
+      "options": {
+        "a": "363",
+        "b": "379",
+        "c": "437",
+        "d": "459"
+      },
+      "answer": "d",
+      "a": "459",
+      "e": "Dividend = Divisor * Quotient + Remainder.\n\n397246 = K * 865 + 211, leading to K * 865 = 397035, hence K = 459.",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following statements:\na. Biofertilizers synthesize nutrients from environment and soil.\nb. Deep litter is an example of concentrated organic manure.\nc. Application of potassium to crops enhances resistance towards disease causing pests.\n\nWhich of the above statements is/are correct ?",
+      "options": {
+        "a": "a and b",
+        "b": "b and c",
+        "c": "a and c",
+        "d": "b only"
+      },
+      "answer": "c",
+      "a": "a and c",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following food materials with the predominant organic acids they contain:\n\nList-I (Food Material):\na. Apple fruit\nb. Spinach leaves\nc. Tamarind fruit\nd. Amla fruit\n\nList-II (Predominant carboxylic acid):\ni. Tartaric acid\nii. Ascorbic acid\niii. Malic acid\niv. Oxalic acid",
+      "options": {
+        "a": "a-iv, b-iii, c-i, d-ii",
+        "b": "a-iii, b-i, c-iv, d-ii",
+        "c": "a-ii, b-iii, c-iv, d-i",
+        "d": "a-iii, b-iv, c-i, d-ii"
+      },
+      "answer": "d",
+      "a": "a-iii, b-iv, c-i, d-ii",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Indicate the alkaloid employed to control high blood pressure:",
+      "options": {
+        "a": "Quinine",
+        "b": "Caffeine",
+        "c": "Reserpine",
+        "d": "Nicotine"
+      },
+      "answer": "c",
+      "a": "Reserpine",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Light regulates the pattern of growth in plants. If a potted plant is placed in a window after a few days, it exhibits a bending towards the direction where sunlight is present during day. This pattern of growth is called as:",
+      "options": {
+        "a": "Phototropic movement",
+        "b": "Phototactic movement",
+        "c": "Photonastic movement",
+        "d": "Photoperiodism"
+      },
+      "answer": "a",
+      "a": "Phototropic movement",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Name the acid present in vinegar which is widely used as preservative in pickles:",
+      "options": {
+        "a": "Acetic acid",
+        "b": "Lactic acid",
+        "c": "Formic acid",
+        "d": "Tartaric acid"
+      },
+      "answer": "a",
+      "a": "Acetic acid",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Kidney transplantation is the best solution for acute renal failure. The first kidney transplantation was done in India at which of the following hospitals ?",
+      "options": {
+        "a": "AIIMS, New Delhi",
+        "b": "CMC, Vellore",
+        "c": "NIMS, Hyderabad",
+        "d": "Jaslok Hospital, Mumbai"
+      },
+      "answer": "b",
+      "a": "CMC, Vellore",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\n\nList-I:\na. Shrillness of Sound\nb. Audible limit\nc. Amplitude\nd. Unit of sound energy\n\nList-II:\ni. Intensity\nii. Decibel\niii. 20 Hz - 20000 Hz\niv. Pitch",
+      "options": {
+        "a": "a-iii, b-iv, c-ii, d-i",
+        "b": "a-iv, b-iii, c-i, d-ii",
+        "c": "a-i, b-ii, c-iii, d-iv",
+        "d": "a-ii, b-i, c-iv, d-iii"
+      },
+      "answer": "b",
+      "a": "a-iv, b-iii, c-i, d-ii",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): When a carpet is beaten with a stick, dust comes out.\nReason (R): Inertia is a property of matter that resists changes in its state of motion or rest.\n\nThe correct answer is:",
+      "options": {
+        "a": "Both (A) and (R) are correct and (R) is the correct explanation of (A).",
+        "b": "Both (A) and (R) are correct but (R) is not the correct explanation of (A).",
+        "c": "(A) is correct but (R) is not correct.",
+        "d": "(A) is not correct but (R) is correct."
+      },
+      "answer": "a",
+      "a": "Both (A) and (R) are correct and (R) is the correct explanation of (A).",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The energy possessed by a body by virtue of motion is",
+      "options": {
+        "a": "Potential energy",
+        "b": "Kinetic energy",
+        "c": "Attractive energy",
+        "d": "Gravitational energy"
+      },
+      "answer": "b",
+      "a": "Kinetic energy",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The mirror used by a dentist is",
+      "options": {
+        "a": "Plane mirror",
+        "b": "Convex mirror",
+        "c": "Concave mirror",
+        "d": "Cylindrical mirror"
+      },
+      "answer": "c",
+      "a": "Concave mirror",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Biodegradable polymer among the following is",
+      "options": {
+        "a": "Nylon 6",
+        "b": "Terylene",
+        "c": "Nylon 6, 6",
+        "d": "PHBV"
+      },
+      "answer": "d",
+      "a": "PHBV",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Mirage is the best example for which of the following phenomenon ?",
+      "options": {
+        "a": "Reflection",
+        "b": "Refraction",
+        "c": "Total internal reflection",
+        "d": "Multiple reflection"
+      },
+      "answer": "c",
+      "a": "Total internal reflection",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following is used predominantly in making aeroplanes ?",
+      "options": {
+        "a": "Duralumin",
+        "b": "German Silver",
+        "c": "Gun metal",
+        "d": "Invar"
+      },
+      "answer": "a",
+      "a": "Duralumin",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The bulbs used in green houses are made of",
+      "options": {
+        "a": "Neon",
+        "b": "Nitrogen",
+        "c": "Xenon",
+        "d": "Krypton"
+      },
+      "answer": "a",
+      "a": "Neon",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The property of metals by which they can be beaten into thin sheets is called",
+      "options": {
+        "a": "Malleability",
+        "b": "Ductility",
+        "c": "Conductivity",
+        "d": "Sonorous Property"
+      },
+      "answer": "a",
+      "a": "Malleability",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "The gas used as fire extinguisher is",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Carbon monoxide",
+        "c": "Nitric oxide",
+        "d": "Sulphur dioxide"
+      },
+      "answer": "a",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "passage": null
+    },
+    {
+      "type": "mcq",
+      "q": "Due to its very low solubility in blood, which one of the following is mixed with 20% oxygen and supplied to deep sea divers :",
+      "options": {
+        "a": "nitrogen",
+        "b": "helium",
+        "c": "hydrogen",
+        "d": "argon"
+      },
+      "answer": "b",
+      "a": "helium",
+      "e": "",
+      "table": null,
+      "passage": null
+    }
+  ]
+}

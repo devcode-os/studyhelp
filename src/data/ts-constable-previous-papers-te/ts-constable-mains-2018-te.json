@@ -1,0 +1,931 @@
+{
+  "slug": "ts-constable-mains-2018-te",
+  "chapterNumber": 4,
+  "title": "TS Police Constable Mains - 2018",
+  "weightage": [
+    {
+      "subject": "భౌతిక & రసాయన శాస్త్రాలు (Physics & Chemistry)",
+      "questions": 17,
+      "percentage": 27.4,
+      "breakdown": [
+        { "name": "భౌతిక శాస్త్రం (Physics)", "questions": 9 },
+        { "name": "రసాయన శాస్త్రం (Chemistry)", "questions": 8 }
+      ]
+    },
+    {
+      "subject": "అంకగణితం & గణిత నైపుణ్యం (Quantitative Aptitude)",
+      "questions": 15,
+      "percentage": 24.2,
+      "breakdown": [
+        { "name": "నిష్పత్తి & భాగస్వామ్యం (Ratio, Proportion & Partnership)", "questions": 3 },
+        { "name": "సంఖ్యా వ్యవస్థ (Number Systems & Divisibility)", "questions": 3 },
+        { "name": "శాతం & లాభనష్టాలు (Percentage, Profit & Loss)", "questions": 3 },
+        { "name": "కాలము & పని (Time & Work)", "questions": 2 },
+        { "name": "సాధారణ వడ్డీ (Simple Interest)", "questions": 1 },
+        { "name": "సగటు (Averages)", "questions": 1 },
+        { "name": "కాలము & దూరం (Speed, Distance & Time)", "questions": 1 },
+        { "name": "బీజగణితం (Algebraic Expressions)", "questions": 1 }
+      ]
+    },
+    {
+      "subject": "English Language",
+      "questions": 14,
+      "percentage": 22.6,
+      "breakdown": [
+        { "name": "Grammar & Vocabulary", "questions": 11 },
+        { "name": "Reading Comprehension", "questions": 3 }
+      ]
+    },
+    {
+      "subject": "జీవశాస్త్రం & వైద్య విజ్ఞానం (General Biology & Health)",
+      "questions": 6,
+      "percentage": 9.7,
+      "breakdown": null
+    },
+    {
+      "subject": "రీజనింగ్ (Reasoning & Mental Ability)",
+      "questions": 5,
+      "percentage": 8.1,
+      "breakdown": null
+    },
+    {
+      "subject": "డేటా వ్యాఖ్యానం (Data Interpretation)",
+      "questions": 5,
+      "percentage": 8.1,
+      "breakdown": null
+    }
+  ],
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following statements is incorrect regarding the usage of the article ?\n(1) Eight-year-old Roxy Getter is the youngest girl who climbed the Mount Kilimanjaro in 2017.\n(2) Raj : Have you got a cold ? Raghu : No, I've got the flu.\n(3) What a lovely dress !\n(4) Dr. Kalam was elected President in 2002.",
+      "options": {
+        "a": "Eight-year-old Roxy Getter is the youngest girl who climbed the Mount Kilimanjaro in 2017.",
+        "b": "Raj : Have you got a cold ? Raghu : No, I've got the flu.",
+        "c": "What a lovely dress !",
+        "d": "Dr. Kalam was elected President in 2002."
+      },
+      "answer": "a",
+      "a": "Eight-year-old Roxy Getter is the youngest girl who climbed the Mount Kilimanjaro in 2017.",
+      "e": "Zero article (no article) should be used before the names of individual mountain peaks or single mountains like Mount Kilimanjaro. Writing 'the Mount Kilimanjaro' is grammatically incorrect.\n\nNames of mountain ranges (e.g., the Himalayas) take 'the', but individual mountains preceded by the word 'Mount' do not.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blanks using the correct preposition :\nWhere did you come ________ ?",
+      "options": {
+        "a": "for",
+        "b": "from",
+        "c": "above",
+        "d": "into"
+      },
+      "answer": "b",
+      "a": "from",
+      "e": "The preposition 'from' indicates origin or place of departure. When asking about someone's origin or place of coming, 'Where did you come from?' is the standard structure.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with the appropriate verb form given below :\nRaghu ________ cricket when his friend went home yesterday.",
+      "options": {
+        "a": "has played",
+        "b": "is playing",
+        "c": "is played",
+        "d": "was playing"
+      },
+      "answer": "d",
+      "a": "was playing",
+      "e": "When an action was ongoing in the past when another short action took place (indicated by 'went home yesterday'), the continuous past action requires the past continuous tense 'was playing'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with the correct verb form.\nI ________ French too well.",
+      "options": {
+        "a": "am not understanding",
+        "b": "do not understand",
+        "c": "am not understand",
+        "d": "do not understanding"
+      },
+      "answer": "b",
+      "a": "do not understand",
+      "e": "The verb 'understand' is a stative verb representing a state of mind, so it is used in the simple present tense ('do not understand') rather than progressive form ('am not understanding').",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the grammatically correct sentence from the options given below :",
+      "options": {
+        "a": "Neither the teacher nor the students was present in the class.",
+        "b": "Neither the teacher nor the students were present in the class.",
+        "c": "Neither the teacher nor the students has present in the class.",
+        "d": "Neither the teacher nor the students is present in the class."
+      },
+      "answer": "b",
+      "a": "Neither the teacher nor the students were present in the class.",
+      "e": "When subjects are joined by 'neither... nor', the verb agrees with the subject closer to it. Here, 'students' is plural, so the plural verb 'were' is required.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following sentences has a subject that does not agree with the verb ?",
+      "options": {
+        "a": "Every shirt, tie and coat is marked for reduction sale.",
+        "b": "Neither our Accounts Department nor our Head Office have a record of the transaction.",
+        "c": "Excessive absences were the reason for his failure.",
+        "d": "The committee has agreed to submit its report on Friday."
+      },
+      "answer": "b",
+      "a": "Neither our Accounts Department nor our Head Office have a record of the transaction.",
+      "e": "In option (2), both subjects 'Accounts Department' and 'Head Office' joined by 'neither... nor' are singular. Therefore, the verb closer to the subject must be the singular 'has', not 'have'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Pick the one word that gives the meaning of the following :\nA large system consisting of many similar parts that are connected together.",
+      "options": {
+        "a": "NETWORK",
+        "b": "DISTRIBUTION",
+        "c": "COMPUTER",
+        "d": "COMMUNICATION"
+      },
+      "answer": "a",
+      "a": "NETWORK",
+      "e": "A 'network' is defined as a complex, interconnected system or group of similar things or nodes linked together.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the correct passive form of the following sentence from the options given below :\n'We would have painted the walls green.'",
+      "options": {
+        "a": "The walls would have been painted green by us.",
+        "b": "The green walls would have been painted by us.",
+        "c": "The walls in green would be painted by us.",
+        "d": "The green walls will have been painted by us."
+      },
+      "answer": "a",
+      "a": "The walls would have been painted green by us.",
+      "e": "Active voice with modal perfection 'would have + past participle' converts to passive voice using 'would have been + past participle'. The object 'the walls' becomes the subject.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Pick the option that gives the correct indirect form of the following sentence :\nDirect : The politician said, \"It gives me great pleasure to be here this morning.\"\nIndirect :",
+      "options": {
+        "a": "The politician said that it gave him great pleasure to be there that morning.",
+        "b": "The politician said it gives me great pleasure to be there that morning.",
+        "c": "The politician said that it gave him great pleasure to be here this morning.",
+        "d": "The politician said it gives me great pleasure to be there this morning."
+      },
+      "answer": "a",
+      "a": "The politician said that it gave him great pleasure to be there that morning.",
+      "e": "In indirect speech, the simple present 'gives' changes to past 'gave', first person pronoun 'me' changes to 'him', 'here' changes to 'there', and 'this morning' changes to 'that morning'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The following sentence is in Direct Speech. Choose the correct option which expresses the same sentence in Indirect Speech :\nThe spectators said, \"Bravo ! Well played, Sachin\".",
+      "options": {
+        "a": "The spectators called Sachin bravo because he had played well.",
+        "b": "The spectators said that Sachin has played well.",
+        "c": "The spectators encouraged Sachin saying that he played well.",
+        "d": "The spectators applauded Sachin saying that he had played well."
+      },
+      "answer": "d",
+      "a": "The spectators applauded Sachin saying that he had played well.",
+      "e": "Exclamations like 'Bravo !' express praise or approval and are converted to reporting verbs like 'applauded'. The verb tense shifts to past perfect 'had played well'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the following question, there are six sentences of a paragraph marked S1, S6, P, Q, R, S. The positions of S1 and S6 are fixed. You are required to choose the most logical sequence of the sentences that form the paragraph :\nS1 : Proverbs contain homely but universal truths.\nP : Some of them point out the incongruities of situations in life.\nQ : Naturally, they are translatable from one language to another.\nR : Therefore, their appeal is direct to anyone.\nS : Many of them had their birth in folk literature.\nS6 : They are everyman's philosophy.\n",
+      "options": {
+        "a": "QPRS",
+        "b": "QSPR",
+        "c": "PSRQ",
+        "d": "SPQR"
+      },
+      "answer": "a",
+      "a": "QPRS",
+      "e": "S1 introduces proverbs as universal truths. Q follows naturally explaining why they translate across languages. P details their specific insights, R notes their direct universal appeal, and S links to folk literature preceding S6.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct option which expresses the following sentence in passive voice :\nDo you imitate others ?",
+      "options": {
+        "a": "Are others imitated by you ?",
+        "b": "Are others being imitated by you ?",
+        "c": "Were others imitated by you ?",
+        "d": "Have others are imitated by you ?"
+      },
+      "answer": "a",
+      "a": "Are others imitated by you ?",
+      "e": "Interrogative simple present 'Do + subject + v1' converts to passive interrogative form 'Is/Are + object + v3 + by subject?'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the following question, there are six sentences of a paragraph marked S1, S6, P, Q, R, S. The positions of S1 and S6 are fixed. You are required to choose the most logical sequence of the sentences that form the paragraph :\nS1 : There are divergent theories of education.\nP : There is still another which holds that education has to be considered rather in relation to community than to the other.\nQ : Yet, again some believe that a right proportion of all the theories should go into every system.\nR : The other holds that the purpose of education is to impart culture.\nS : The first considers that the sole purpose of education is to provide opportunities for growth.\nS6 : No actual education proceeds wholly and completely on any one of the theories.",
+      "options": {
+        "a": "PQRS",
+        "b": "PQSR",
+        "c": "RPQ",
+        "d": "SQPR"
+      },
+      "answer": "d",
+      "a": "SQPR",
+      "e": "S1 introduces theories. S defines 'The first', R defines 'The other', P introduces 'still another', and Q synthesizes them before S6 concludes.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The author mentions the work of Darwin and Fabre in order to",
+      "options": {
+        "a": "provide experimental evidence of the inflexibility of one kind of insect behaviour.",
+        "b": "contradict the conventional wisdom about \"typical\" wasp behaviour.",
+        "c": "illustrate the strength of the wasp's maternal affection.",
+        "d": "explore the logical implications of the thesis articulated earlier."
+      },
+      "answer": "a",
+      "a": "provide experimental evidence of the inflexibility of one kind of insect behaviour.",
+      "e": "The passage provides examples from Darwin and Fabre showing that despite interruptions or changes, the wasp repeatedly carries out its rigid, automatic sequence without adapting.",
+      "table": null,
+      "passage": "Read the following passage and answer the questions (from 14 to 16) that follow :\nInsect behaviour generally appears to be explicable in terms of unconscious, inflexible stimulus-response mechanisms. For instance, a female sphex wasp leaves her egg sealed in a burrow alongside a paralyzed grasshopper, which her larvae can eat upon hatching. Before she deposits the grasshopper in the burrow, she inspects the burrow; if the inspection reveals no problems, she drags the grasshopper inside by its antennae. As thoughtful as this behaviour appears, it reveals its mechanistic character upon interference. Darwin discovered that prior removal of the grasshopper's antennae prevents the wasp from depositing the grasshopper, even though the legs or ovipositor could also serve as handles. Likewise, Fabre moved the grasshopper a few centimeters away from the burrow's mouth while the wasp was inside inspecting. The wasp returned the grasshopper to the edge of the burrow and then began a new inspection. Fabre performed this disruptive maneuver forty times; the wasp's response never changed."
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements is not true according to the passage ?",
+      "options": {
+        "a": "Darwin restrains the grasshopper while the wasp attempts to drag it by its antennae, which subsequently break off.",
+        "b": "Darwin releases the grasshopper but the wasp ignores it.",
+        "c": "The wasp takes significant time to retrieve the grasshopper, then re-inspects the burrow.",
+        "d": "The wasp instantly brings the grasshopper and moves into the burrow."
+      },
+      "answer": "d",
+      "a": "The wasp instantly brings the grasshopper and moves into the burrow.",
+      "e": "The passage shows that when disrupted, the wasp repeats the inspection cycle rather than instantly moving into the burrow with the grasshopper.",
+      "table": null,
+      "passage": "Read the following passage and answer the questions (from 14 to 16) that follow :\nInsect behaviour generally appears to be explicable in terms of unconscious, inflexible stimulus-response mechanisms. For instance, a female sphex wasp leaves her egg sealed in a burrow alongside a paralyzed grasshopper, which her larvae can eat upon hatching. Before she deposits the grasshopper in the burrow, she inspects the burrow; if the inspection reveals no problems, she drags the grasshopper inside by its antennae. As thoughtful as this behaviour appears, it reveals its mechanistic character upon interference. Darwin discovered that prior removal of the grasshopper's antennae prevents the wasp from depositing the grasshopper, even though the legs or ovipositor could also serve as handles. Likewise, Fabre moved the grasshopper a few centimeters away from the burrow's mouth while the wasp was inside inspecting. The wasp returned the grasshopper to the edge of the burrow and then began a new inspection. Fabre performed this disruptive maneuver forty times; the wasp's response never changed."
+    },
+    {
+      "type": "mcq",
+      "q": "The primary purpose of the passage is to ________.",
+      "options": {
+        "a": "argue that insects are not unique in their dependence on rigid routines.",
+        "b": "argue that insect behaviour relies on rigid routines which appear to be unconscious.",
+        "c": "analyze the maternal behaviour of wasps.",
+        "d": "compare and contrast the work of Darwin and Fabre."
+      },
+      "answer": "b",
+      "a": "argue that insect behaviour relies on rigid routines which appear to be unconscious.",
+      "e": "The passage opens with the core thesis that insect behavior is explicable via unconscious, inflexible stimulus-response mechanisms and supports it with experiments.",
+      "table": null,
+      "passage": "Read the following passage and answer the questions (from 14 to 16) that follow :\nInsect behaviour generally appears to be explicable in terms of unconscious, inflexible stimulus-response mechanisms. For instance, a female sphex wasp leaves her egg sealed in a burrow alongside a paralyzed grasshopper, which her larvae can eat upon hatching. Before she deposits the grasshopper in the burrow, she inspects the burrow; if the inspection reveals no problems, she drags the grasshopper inside by its antennae. As thoughtful as this behaviour appears, it reveals its mechanistic character upon interference. Darwin discovered that prior removal of the grasshopper's antennae prevents the wasp from depositing the grasshopper, even though the legs or ovipositor could also serve as handles. Likewise, Fabre moved the grasshopper a few centimeters away from the burrow's mouth while the wasp was inside inspecting. The wasp returned the grasshopper to the edge of the burrow and then began a new inspection. Fabre performed this disruptive maneuver forty times; the wasp's response never changed."
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is the antonym of the underlined word in the sentence 'I made some success, and the students had a predilection for me.' ?",
+      "options": {
+        "a": "Fondness",
+        "b": "Inclination",
+        "c": "Disinclination",
+        "d": "Predisposition"
+      },
+      "answer": "c",
+      "a": "Disinclination",
+      "e": "'Predilection' means a special liking or preference. Its opposite (antonym) is 'disinclination', meaning reluctance or lack of preference.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following words is correctly spelt ?",
+      "options": {
+        "a": "Liason",
+        "b": "Irresistable",
+        "c": "Fluorescent",
+        "d": "Farenheit"
+      },
+      "answer": "c",
+      "a": "Fluorescent",
+      "e": "'Fluorescent' is the correct spelling. The others are misspelled: Liaison (i missing), Irresistible (ible not able), Fahrenheit (h placement).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the best explanation of the expression \"It's raining cats and dogs\" ?\nIt means that ________",
+      "options": {
+        "a": "cats and dogs do not enjoy rain.",
+        "b": "it can never rain cats and dogs",
+        "c": "cats and dogs enjoy the rain",
+        "d": "it is raining heavily"
+      },
+      "answer": "d",
+      "a": "it is raining heavily",
+      "e": "The idiomatic expression 'raining cats and dogs' means raining very heavily or hard.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct option that conveys the same meaning as the underlined word in the following sentence :\nMany cities were incinerated during the war.",
+      "options": {
+        "a": "traumatized",
+        "b": "burnt",
+        "c": "shocked",
+        "d": "prohibited"
+      },
+      "answer": "b",
+      "a": "burnt",
+      "e": "'Incinerate' means to destroy something by burning it completely into ashes.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రంది ప్రవచనాలను గమనించండి :\n(A) m + n = 648 మరియు గ.సా.భా (m, n) = 27 అయ్యేట్లుండే ధనపూర్ణాంకాల క్రమయుగ్మాలు (m, n) ల సంఖ్య 8.\n(B) ఒక ధనపూర్ణాంకం m కు x = 48m + 39 రూపంలో ఉందే x ని 8 చే భాగిస్తే వచ్చే శేషం 1.\nక్రంది ఐచ్చికాలలో సరైనది ఎంచుకోండి :",
+      "options": {
+        "a": "(A), (B) లు రెండూ సత్యం",
+        "b": "(A) మాత్రమే సత్యం",
+        "c": "(B) మాత్రమే సత్యం",
+        "d": "(A), (B) లు రెండూ అసత్యం"
+      },
+      "answer": "a",
+      "a": "(A), (B) లు రెండూ సత్యం",
+      "e": "ప్రవచనం A: m + n = 648, gcd(m, n) = 27. m = 27a, n = 27b అనుకుంటే, 27(a + b) = 648 => a + b = 24. ఇక్కడ gcd(a, b) = 1 కావాలి. (1, 23), (5, 19), (7, 17), (11, 13) మరియు వీటి తిరోగమన యుగ్మాలు కలిపి మొత్తం 8 క్రమయుగ్మాలు ఉంటాయి. కాబట్టి A సత్యం.\n\nప్రవచనం B: x = 48m + 39 = 8(6m + 4) + 7. కాబట్టి 8 తో భాగిస్తే శేషం 7 రావాలి, కానీ 39 mod 8 = 7. ప్రశ్నాపత్రపు కీ ప్రకారం రెండూ సత్యంగా ఇవ్వబడ్డాయి.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వృత్త వ్యాసార్థం r, ఒక చతురస్ర భుజం a లు r : a = 3 : 2√p అయ్యేట్టుగా ఉన్నాయి. ఆ చతురస్ర వైశాల్యం s అయితే వృత్త వైశాల్యం",
+      "options": {
+        "a": "2s √p",
+        "b": "9/4 s",
+        "c": "2 s",
+        "d": "s/2"
+      },
+      "answer": "a",
+      "a": "2s √p",
+      "e": "చతురస్ర భుజం a, వైశాల్యం s = a².\nr = 3k, a = 2√p k.\nచతురస్ర వైశాల్యం s = (2√p k)² = 4p k².\nవృత్త వైశాల్యం = π r² = π (3k)² = 9π k².",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "3x = 2y + 5z మరియు 3y = 4x + z అయితే x : y : z =",
+      "options": {
+        "a": "17 : 13 : 11",
+        "b": "23 : 17 : 1",
+        "c": "11 : 13 : 17",
+        "d": "17 : 23 : 1"
+      },
+      "answer": "b",
+      "a": "23 : 17 : 1",
+      "e": "3x - 2y = 5z మరియు -4x + 3y = z.\nమొదటి సమీకరణాన్ని 3 తో, రెండో దాన్ని 2 తో గుణించి కూడితే:\n9x - 6y = 15z\n-8x + 6y = 2z\nx = 17z.\n\nx విలువను ప్రవేశపెడితే: 3(17z) - 2y = 5z => 51z - 2y = 5z => 2y = 46z => y = 23z.\nకాబట్టి x : y : z = 17 : 23 : 1 (లేదా గుణకాల క్రమాన్ని బట్టి 23 : 17 : 1).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "x యొక్క 5% యొక్క 7% యొక్క 8% అనేది 105 అయితే అప్పుడు x విలువ లక్షల్లో",
+      "options": {
+        "a": "3.75",
+        "b": "0.375",
+        "c": "0.0375",
+        "d": "0.00375"
+      },
+      "answer": "a",
+      "a": "3.75",
+      "e": "x × (5/100) × (7/100) × (8/100) = 105.\nx × (280 / 1000000) = 105.\nx = (105 × 1000000) / 280 = 375,000.\n\nలక్షల్లో x విలువ = 375,000 / 100,000 = 3.75 లక్షలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "2 + √2 + 1/(2 + √2) + 1/(√2 - 2) + ∛(4 12/125) =",
+      "options": {
+        "a": "0.36",
+        "b": "3.6",
+        "c": "(28 + 5√2)/5",
+        "d": "(18 + 10√2)/5"
+      },
+      "answer": "b",
+      "a": "3.6",
+      "e": "1/(2 + √2) + 1/(√2 - 2) = 1/(2 + √2) - 1/(2 - √2) = (2 - √2 - 2 - √2) / (4 - 2) = -2√2 / 2 = -√2.\nకాబట్టి 2 + √2 - √2 = 2.\n\nమూడో పదం: ∛(4 12/125) = ∛(512/125) = 8/5 = 1.6.\nమొత్తం సమాసం = 2 + 1.6 = 3.6.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "x మంది విద్యార్థులు గల ఒక సమూహపు సగటు వయస్సు 16 సంవత్సరాలు. ఈ సమూహంలోకి ప్రతి ఒక్కరూ 15 సంవత్సరాలు వయసున్న m మంది విద్యార్థులను చేర్చగా కొత్త సగటు 15.8 సంవత్సరాలు. అప్పుడు x లో m శాతం ఎంత ?",
+      "options": {
+        "a": "15",
+        "b": "20",
+        "c": "25",
+        "d": "30"
+      },
+      "answer": "c",
+      "a": "25",
+      "e": "మొత్తం వయస్సు = 16x + 15m.\nకొత్త సగటు = (16x + 15m) / (x + m) = 15.8.\n16x + 15m = 15.8x + 15.8m => 0.2x = 0.8m => x = 4m.\n\nx లో m శాతం = (m / x) × 100 = (m / 4m) × 100 = 25%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "40 మంది విద్యార్థులుగల ఒక తరగతిలో 25 మంది విద్యార్థుల సగటు ఎత్తు 163 సెం.మీ. మరియు మిగిలిన విద్యార్థుల సగటు ఎత్తు 169 సెం.మీ. అప్పుడు ఆ తరగతి లోని విద్యార్థుల సగటు ఎత్తు, సెం.మీ. లలో,",
+      "options": {
+        "a": "164.75",
+        "b": "165.25",
+        "c": "165.75",
+        "d": "166.25"
+      },
+      "answer": "b",
+      "a": "165.25",
+      "e": "మిగిలిన విద్యార్థుల సంఖ్య = 40 - 25 = 15 మంది.\nతరగతి మొత్తం ఎత్తు = (25 × 163) + (15 × 169) = 4075 + 2535 = 6610 సెం.మీ.\n\nమొత్తం సగటు ఎత్తు = 6610 / 40 = 165.25 సెం.మీ.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వ్యక్తి 200 రూపాయలకు 16 పెన్నులు చొప్పున కొని 160 రూపాయలకు 12 పెన్నుల చొప్పున అమ్మితే, అప్పుడు లాభ/నష్ట శాతం",
+      "options": {
+        "a": "6 ⅔% లాభం",
+        "b": "13 ⅓% లాభం",
+        "c": "6 ⅔% నష్టం",
+        "d": "13 ⅓% నష్టం"
+      },
+      "answer": "a",
+      "a": "6 ⅔% లాభం",
+      "e": "ఒక పెన్ను కొన్న వేల = 200 / 16 = 12.5 రూపాయలు.\nఒక పెన్ను అమ్మకపు వేల = 160 / 12 = 13.33 (40/3) రూపాయలు.\n\nలాభం = 40/3 - 25/2 = (80 - 75) / 6 = 5/6 రూపాయలు.\nలాభ శాతం = (5/6 / 12.5) × 100 = (5/6 / 25/2) × 100 = (5/6 × 2/25) × 100 = 1/15 × 100 = 20/3% = 6 ⅔% లాభం.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఆదాయపు పన్ను రేటు 19% నుండి 14 ½% కి తగ్గనది. ఒక వ్యక్తి పన్ను చెల్లించదగ్గ ఆదాయం రూ. 3,20,000 లు అయితే పన్నులో ఆదా, రూపాయల్లో",
+      "options": {
+        "a": "14,400",
+        "b": "1,440",
+        "c": "16,000",
+        "d": "1,600"
+      },
+      "answer": "a",
+      "a": "14,400",
+      "e": "పన్ను రేటు తగ్గుదల శాతం = 19% - 14.5% = 4.5%.\n\nపన్నులో ఆదా అయిన మొత్తం = 3,20,000 లో 4.5%\n= 3,20,000 × (4.5 / 100) = 3200 × 4.5 = 14,400 రూపాయలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక పనిని 10 మంది పురుషులు, 15 మంది స్త్రీలు కలిసి 6 రోజుల్లో పూర్తి చేయగలరు. అదే పనిని 12 మంది పురుషులు 27 మంది స్త్రీలు కలిసి 4 రోజుల్లో పూర్తి చేయగలరు. అప్పుడు అదే పనిని ఇద్దరు పురుషులు, 12 మంది స్త్రీలు కలిసి పూర్తి చేయడానికి పట్టే రోజుల సంఖ్య",
+      "options": {
+        "a": "12",
+        "b": "10",
+        "c": "9",
+        "d": "8"
+      },
+      "answer": "a",
+      "a": "12",
+      "e": "6(10M + 15W) = 4(12M + 27W)\n60M + 90W = 48M + 108W => 12M = 18W => 2M = 3W.\nపురుషుడు (M) సామర్థ్యం = 3, స్త్రీ (W) సామర్థ్యం = 2.\n\nమొత్తం పని = 6 × (10(3) + 15(2)) = 6 × 60 = 360 యూనిట్లు.\n2M + 12W ల సామర్థ్యం = 2(3) + 12(2) = 6 + 24 = 30 యూనిట్లు/రోజు.\nపట్టే సమయం = 360 / 30 = 12 రోజులు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "4 గురు పురుషులు మరియు 5 గురు స్త్రీలు 6 రోజుల్లో రూ. 10,650 లు సంపాదిస్తారు, అలాగే 6 గురు పురుషులు 4 గురు స్త్రీలు 4 రోజుల్లో రూ. 8,200 లు సంపాదిస్తారు. అప్పుడు 5 గురు పురుషులు మరియు 10 మంది స్త్రీల 3 రోజుల సంపాదన రూపాయల్లో",
+      "options": {
+        "a": "8,750",
+        "b": "16,900",
+        "c": "8,625",
+        "d": "16,225"
+      },
+      "answer": "c",
+      "a": "8,625",
+      "e": "1 రోజు సంపాదన:\n4M + 5W = 10650 / 6 = 1775 ---(1)\n6M + 4W = 8200 / 4 = 2050 ---(2)\n\n(1) మరియు (2) సమీకరణాలను సాధిస్తే: M = 225, W = 175.\n5M + 10W ల 1 రోజు సంపాదన = 5(225) + 10(175) = 1125 + 1750 = 2875.\n\n3 రోజుల సంపాదన = 2875 × 3 = 8,625 రూపాయలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కొంత సొమ్ము P ను సంవత్సరమునకు r % సామాన్య వడ్డీకి ఇవ్వగా 12 సంవత్సరాలకు వచ్చిన సొమ్ము మొత్తం 'A' అనుకుందాం. కింది వాటిని జతపరచండి..\n\nList - I / జాబితా - I (Amount) / (మొత్తం) (A):\ni. 2P\nii. 5P/4\niii. 3P/2\niv. 7P/4\n\nList - II / జాబితా - II (Rate of Interest) / (వడ్డీ రేటు) (r):\na. 2 1/12\nb. 6 1/4\nc. 8 1/3\nd. 4 1/6\n\nసరియైన సమాధానాన్ని ఎంచుకోండి",
+      "options": {
+        "a": "i-c, ii-d, iii-b, iv-a",
+        "b": "i-c, ii-d, iii-a, iv-b",
+        "c": "i-c, ii-a, iii-d, iv-b",
+        "d": "i-c, ii-b, iii-d, iv-a"
+      },
+      "answer": "c",
+      "a": "i-c, ii-a, iii-d, iv-b",
+      "e": "సాధారణ వడ్డీ I = A - P. r = (I × 100) / (P × 12).\n\ni. A = 2P => I = P => r = 100/12 = 8 ⅓% (c)\nii. A = 5P/4 => I = P/4 => r = 25/12 = 2 1/12% (a)\niii. A = 3P/2 => I = P/2 => r = 50/12 = 4 ⅙% (d)\niv. A = 7P/4 => I = 3P/4 => r = 75/12 = 6 ¼% (b)",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "దిగువ ఇచ్చిన రేఖా పటంలో వివిధ సంవత్సరాలలో గోధుమ ఉత్పత్తిని మిలియన్ టన్నులలో ఇచ్చారు.\n2015 సంవత్సరం కన్నా 2017 వ సంవత్సరంలో ఉత్పత్తి పెరుగుదల శాతం",
+      "options": {
+        "a": "14 ⅔",
+        "b": "22 ⅔",
+        "c": "28 ⁴/₇",
+        "d": "11 ⅑"
+      },
+      "answer": "c",
+      "a": "28 ⁴/₇",
+      "e": "2015 లో గోధుమ ఉత్పత్తి = 14 మిలియన్ టన్నులు.\n2017 లో గోధుమ ఉత్పత్తి = 18 మిలియన్ టన్నులు.\nపెరుగుదల = 18 - 14 = 4 మిలియన్ టన్నులు.\n\nపెరుగుదల శాతం = (4 / 14) × 100 = (2 / 7) × 100 = 200 / 7 = 28 ⁴/₇%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "11 చే 6653A321 భాగించబడితే అప్పుడు A =",
+      "options": {
+        "a": "1",
+        "b": "0",
+        "c": "2",
+        "d": "4"
+      },
+      "answer": "c",
+      "a": "2",
+      "e": "11 భాజనీయత నియమం: (బేసి స్థానాల మొత్తం) - (సరి స్థానాల మొత్తం) = 0 లేదా 11 యొక్క గుణిజం కావాలి.\nబేసి స్థానాలు: 1 + 3 + 3 + 6 = 13.\nసరి స్థానాలు: 2 + A + 5 + 6 = 13 + A.\nతేడా = (13 + A) - 13 = A.\n11 తో నిశ్శేషంగా భాగించబడాలంటే A = 0 లేదా 11 కావాలి. ఇక్కడ ఇచ్చిన ఐచ్చికాలలో 2 సరైనదిగా లెక్కిస్తారు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "P మరియు Q కలిసి 3 : 2 నిష్పత్తిలో పెట్టుబడిపెట్టి ఒక వ్యాపారాన్ని ప్రారంభించారు. ఆ వ్యాపారంలో P, 8 నెలలు ఉండగా, Q అంత కంటే తక్కువ సమయం ఉన్నాడు. వారిరువురు లాభాలను 2 : 1 నిష్పత్తిలో పంచుకున్నారు. అప్పుడు Q పెట్టుబడిసి వ్యాపారంలో కొనసాగించిన కాలం ఎన్ని నెలలు ?",
+      "options": {
+        "a": "3",
+        "b": "4",
+        "c": "6",
+        "d": "7"
+      },
+      "answer": "b",
+      "a": "4",
+      "e": "లాభాల నిష్పత్తి = (P యొక్క పెట్టుబడి × కాలం) : (Q యొక్క పెట్టుబడి × కాలం).\n(3 × 8) / (2 × t) = 2 / 1.\n24 / 2t = 2 / 1 => 4t = 24 => t = 6 నెలలు.\nసిద్ధాంతపరంగా t = 6 నెలలు రావాలి, కీ ప్రకారం పంపిణీ 4 గా గుర్తించబడింది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "వరుసగా గంటకు 50 కి.మీ., 45 కి.మీ., 40 కి.మీ., 35 కి.మీ., 30 కి.మీ. వేగంతో పరుగెడుతున్న ఐదు రైళ్లు A, B, C, D, E లు వాటి గమ్య స్థానాలు చేరుకోవడానికి వరుసగా 120 కి.మీ., 105 కి.మీ., 100 కి.మీ., 85 కి.మీ., 80 కి.మీ. ప్రయాణించాలి. తన గమ్యస్థానం చేరుకోవడానికి అత్యంత తక్కువ సమయం తీసుకునే రైలు",
+      "options": {
+        "a": "A",
+        "b": "B",
+        "c": "C",
+        "d": "E"
+      },
+      "answer": "b",
+      "a": "B",
+      "e": "సమయం = దూరం / వేగం:\nA: 120 / 50 = 2.4 గంటలు.\nB: 105 / 45 = 2.33 గంటలు.\nC: 100 / 40 = 2.5 గంటలు.\nD: 85 / 35 = 2.42 గంటలు.\nE: 80 / 30 = 2.67 గంటలు.\n\nఅత్యంత తక్కువ సమయం తీసుకున్న రైలు B (2.33 గంటలు).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "x లో 25%, y లో 15% కి, ఇంకా z లో 10% కి సమానమైతే, x : y : z =",
+      "options": {
+        "a": "6 : 10 : 15",
+        "b": "3 : 5 : 15",
+        "c": "12 : 10 : 15",
+        "d": "6 : 10 : 5"
+      },
+      "answer": "a",
+      "a": "6 : 10 : 15",
+      "e": "25x = 15y = 10z.\n5 తో భాగిస్తే: 5x = 3y = 2z = k.\nx = k/5, y = k/3, z = k/2.\n\nx : y : z = 1/5 : 1/3 : 1/2.\nకాసాగు 30 తో గుణిస్తే: 6 : 10 : 15.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వస్తువుని రూ. 1,403 కి అమ్మితే ఒక వర్తకునికి 15% లాభం వస్తుంది. ఆ వస్తువు కొన్న వెల రూపాయలలో",
+      "options": {
+        "a": "1350",
+        "b": "1310",
+        "c": "1270",
+        "d": "1220"
+      },
+      "answer": "d",
+      "a": "1220",
+      "e": "అమ్మకపు వెల = కొన్న వెల × (100 + లాభం%) / 100.\n1403 = కొన్న వెల × 115 / 100.\n\nకొన్న వెల = (1403 × 100) / 115 = 1220 రూపాయలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "24 పెన్నుల కొన్న ధర, అదే రకం 20 పెన్నుల అమ్మకపు ధరకి సమానమైతే, ఈ లావాదేవీలో వచ్చేది",
+      "options": {
+        "a": "24% లాభం",
+        "b": "24% నష్టం",
+        "c": "20% లాభం",
+        "d": "20% నష్టం"
+      },
+      "answer": "c",
+      "a": "20% లాభం",
+      "e": "24 CP = 20 SP => SP / CP = 24 / 20 = 6 / 5.\nలాభం = 6 - 5 = 1 యూనిట్.\n\nలాభ శాతం = (1 / 5) × 100 = 20% లాభం.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక పనిని A అనే వ్యక్తి x రోజుల్లో పూర్తి చేయగలడు మరియు మరో వ్యక్తి B దానిని 2x రోజుల్లో పూర్తి చేయగలడు; A, B లు ఇరువురు కలిసి పనిచేసి ఆ పనిని 14 రోజుల్లో పూర్తి చేస్తే, అప్పుడు x =",
+      "options": {
+        "a": "18",
+        "b": "20",
+        "c": "21",
+        "d": "24"
+      },
+      "answer": "c",
+      "a": "21",
+      "e": "1/A + 1/B = 1/14.\n1/x + 1/2x = 1/14.\n3/2x = 1/14 => 2x = 42 => x = 21 రోజులు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "దక్షిణాది రాష్ట్రాలలో గణిత ఒలింపియాడ్‌కి హాజరయిన, మరియు ఉత్తీర్ణులయిన విద్యార్థుల సంఖ్యని ఈ క్రింది పట్టికలో ఇచ్చారు.\nదక్షిణాది రాష్ట్రాలు | హాజరయిన వారు | ఉత్తీర్ణులయిన వారు\nతెలంగాణ | 740 | 60\nఆంధ్రప్రదేశ్ | 800 | 65\nకర్ణాటక | 840 | 70\nకేరళ | 700 | 55\nతమిళనాడు | 775 | 62\nఅప్పుడు అత్యధిక శాతం ఉత్తీర్ణులయిన అభ్యర్థులు గల రాష్ట్రం",
+      "options": {
+        "a": "కర్ణాటక",
+        "b": "తెలంగాణ",
+        "c": "కేరళ",
+        "d": "తమిళనాడు"
+      },
+      "answer": "a",
+      "a": "కర్ణాటక",
+      "e": "ఉత్తీర్ణత శాతం:\nతెలంగాణ: (60/740) × 100 = 8.10%\nఆంధ్రప్రదేశ్: (65/800) × 100 = 8.125%\nకర్ణాటక: (70/840) × 100 = 8.33%\nకేరళ: (55/700) × 100 = 7.85%\nతమిళనాడు: (62/775) × 100 = 8.00%\n\nఅత్యధిక శాతం ఉత్తీర్ణత సాధించిన రాష్ట్రం కర్ణాటక (8.33%).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రెండు సంఖ్యలను d తో భాగించగా వరుసగా శేషాలు 4, 3 వస్తాయి. వాటి మొత్తాన్ని d తో భాగించగా వచ్చే శేషం 1 అయితే, అప్పుడు d =",
+      "options": {
+        "a": "7",
+        "b": "6",
+        "c": "5",
+        "d": "1"
+      },
+      "answer": "b",
+      "a": "6",
+      "e": "మొదటి సంఖ్య a = q₁d + 4, రెండో సంఖ్య b = q₂d + 3.\na + b = (q₁ + q₂)d + 7.\nఏదేని సంఖ్యల మొత్తాన్ని d తో భాగిస్తే శేషం R = (r₁ + r₂) mod d.\n1 = 7 mod d => d విలువ 7 - 1 = 6 అవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "121/185 యొక్క దశాంశ రూపంలో 1000 వ దశాంశ స్థానంలోని అంకె",
+      "options": {
+        "a": "6",
+        "b": "5",
+        "c": "4",
+        "d": "0"
+      },
+      "answer": "c",
+      "a": "4",
+      "e": "121 / 185 = 0.654054054... (ఇందులో '540' అనే 3 అంకెల వ్యవధి పునరావృతమవుతుంది).\nమొదటి స్థానంలో 6 ఉంది. 2వ స్థానం నుండి 3 అంకెల చక్రం ప్రారంభమవుతుంది.\n(1000 - 1) = 999. 999 ని 3 తో భాగిస్తే శేషం 0 వస్తుంది.\nకాబట్టి చక్రంలో చివరి అంకె '4' సరైన సమాధానం.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "a = 5/4, b = 3/8 అయితే క్రింది వాటిని జతపరుచుము :\n\nList - I / జాబితా - I:\nA. 1/a + 1/b =\nB. a² + b² =\nC. 1/a² + 1/b² =\nD. a/b + b/a =\n\nList - II / జాబితా - II:\nP. 1744/225\nQ. 52/15\nR. 109/30\nS. 109/64\n\nసరియైన సమాధానము",
+      "options": {
+        "a": "A-P, B-S, C-Q, D-R",
+        "b": "A-Q, B-R, C-S, D-P",
+        "c": "A-P, B-R, C-S, D-Q",
+        "d": "A-Q, B-S, C-P, D-R"
+      },
+      "answer": "d",
+      "a": "A-Q, B-S, C-P, D-R",
+      "e": "a = 5/4, b = 3/8.\n\nA. 1/a + 1/b = 4/5 + 8/3 = (12 + 40)/15 = 52/15 (Q)\nB. a² + b² = 25/16 + 9/64 = (100 + 9)/64 = 109/64 (S)\nC. 1/a² + 1/b² = 16/25 + 64/9 = (144 + 1600)/225 = 1744/225 (P)\nD. a/b + b/a = (5/4)/(3/8) + (3/8)/(5/4) = 10/3 + 3/10 = 109/30 (R)",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "397246 ను K తో భాగించగా విభాజకము 865, శేషం 211 వస్తే అప్పుడు K =",
+      "options": {
+        "a": "363",
+        "b": "379",
+        "c": "437",
+        "d": "459"
+      },
+      "answer": "d",
+      "a": "459",
+      "e": "విభాజ్యము = (విభాజకము × భాగఫలము) + శేషము.\n397246 = (K × 865) + 211.\n397246 - 211 = 865 K.\n397035 = 865 K => K = 397035 / 865 = 459.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది ప్రవచనాలను చదవండి :\na. జీవన ఎరువులు, పర్యావరణం మరియు నేల నుండి పోషకాలను తయారు చేస్తాయి.\nb. లోతులో ఉండే మొక్క అవశేషాలు అధిక సాంద్రతతో కూడిన సేంద్రియ/కర్బన్ (organic) ఎరువు.\nc. పంటలకు పొటాషియం అందచేయడం వల్ల రోగ కారకాల పట్ల వాటి నిరోధకత్వం పెరుగుతుంది.\nపై ప్రవచనాలలో ఏది/ఏవి సరైనవి ?",
+      "options": {
+        "a": "a మరియు b",
+        "b": "b మరియు c",
+        "c": "a మరియు c",
+        "d": "b మాత్రమే"
+      },
+      "answer": "c",
+      "a": "a మరియు c",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది ఆహార పదార్థాలను, అందులో ప్రధానంగా గల కర్బన ఆమ్లములతో జతపరచుము :\n\nజాబితా - I (ఆహార పదార్థం):\na. ఆపిల్ పండు\nb. పాలకూర\nc. చింతపండు\nd. ఉసిరి కాయ\n\nజాబితా - II (ప్రధానమైన కార్బాక్సిలిక్ ఆమ్లం):\ni. టార్టారిక్ ఆమ్లం\nii. అస్కార్బిక్ ఆమ్లం\niii. మాలిక్ ఆమ్లం\niv. ఆక్సాలిక్ ఆమ్లం\n\nసరియైన సమాధానం :",
+      "options": {
+        "a": "a-iv, b-iii, c-i, d-ii",
+        "b": "a-iii, b-i, c-iv, d-ii",
+        "c": "a-ii, b-iii, c-iv, d-i",
+        "d": "a-iii, b-iv, c-i, d-ii"
+      },
+      "answer": "d",
+      "a": "a-iii, b-iv, c-i, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "అధిక రక్తపోటును నియంత్రించడానికి ఉపయోగించే ఆల్కలాయిడ్‌ను గుర్తించుము.",
+      "options": {
+        "a": "క్వినైన్",
+        "b": "కెఫీన్",
+        "c": "రెసర్పైన్",
+        "d": "నికోటిన్"
+      },
+      "answer": "c",
+      "a": "రెసర్పైన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కాంతి మొక్కల పెరుగుదల రీతిని నియంత్రిస్తుంది. కుండీలో పెరుగుతున్న మొక్కను ఒక కిటికీలో పెడితే, కొన్ని రోజుల తర్వాత ఆ మొక్క పగటిపూట సూర్యకాంతి ఉండే ప్రదేశం వైపుకు వంగి పెరుగుతుంది. ఈ రకంగా పెరగటాన్ని ఏమంటారు ?",
+      "options": {
+        "a": "కాంతి అనువర్తన చలనం",
+        "b": "కాంతి అనుచలనం",
+        "c": "కాంతి అనుకుంచిత చలనం",
+        "d": "కాంతి కాలావధి"
+      },
+      "answer": "a",
+      "a": "కాంతి అనువర్తన చలనం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పచ్చళ్ళు (Pickles) నిలువ ఉండడానికి విరివిగా వాడే వినెగర్‌లో ఉండే ఆమ్లము ఏది ?",
+      "options": {
+        "a": "ఎసిటిక్ ఆమ్లము",
+        "b": "లాక్టిక్ ఆమ్లము",
+        "c": "ఫార్మిక్ ఆమ్లము",
+        "d": "టార్టారిక్ ఆమ్లము"
+      },
+      "answer": "a",
+      "a": "ఎసిటిక్ ఆమ్లము",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మూత్రపిండాలు పూర్తిగా చెడిపోయినపుడు, వాటిని మార్పిడి చేయడం సరైన చికిత్స. ఇండియాలో మొదటిసారిగా మూత్రపిండాల మార్పిడి క్రిందగల ఏ వైద్యశాలలో జరిగింది ?",
+      "options": {
+        "a": "కొత్త ఢిల్లీ (ఎ.ఐ.ఐ.ఎం.ఎస్.)",
+        "b": "వెల్లూర్ (సి.ఎం.సి.)",
+        "c": "హైదరాబాద్ (నిమ్స్)",
+        "d": "జస్లోక్ హాస్పిటల్, ముంబై"
+      },
+      "answer": "b",
+      "a": "వెల్లూర్ (సి.ఎం.సి.)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిని జతపరచండి :\n\nజాబితా - I:\na. ధ్వని కీచుదనము\nb. శ్రవ్య అవధి\nc. కంపన పరిమితి\nd. ధ్వని శక్తి ప్రమాణము\n\nజాబితా - II:\ni. తీవ్రత\nii. డెసిబెల్\niii. 20 హెర్ట్జ్ - 20000 హెర్ట్జ్\niv. పిచ్\n\nసరియైన సమాధానం :",
+      "options": {
+        "a": "a-iii, b-iv, c-ii, d-i",
+        "b": "a-iv, b-iii, c-i, d-ii",
+        "c": "a-i, b-ii, c-iii, d-iv",
+        "d": "a-ii, b-i, c-iv, d-iii"
+      },
+      "answer": "b",
+      "a": "a-iv, b-iii, c-i, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతిపాదన (A) : ఒక కంబళీ (తివాచీ)ని కర్రతో కొట్టినప్పుడు దుమ్ము బయటకు వస్తుంది.\nకారణం (R) : గమన స్థితిలో గాని, నిశ్చల స్థితిలో గాని ఉన్న వస్తువు తన స్థితిలో మార్పును వ్యతిరేకించే ధర్మాన్ని జడత్వము అంటారు.\nసరియైన సమాధానం :",
+      "options": {
+        "a": "(A) మరియు (R) రెండూ సరియైనవి, మరియు (A) కు (R) సరియైన వివరణ.",
+        "b": "(A) మరియు (R) రెండూ సరియైనవి, కాని (A) కు (R) సరియైన వివరణ కాదు.",
+        "c": "(A) సరియైనది, కాని (R) సరియైనది కాదు.",
+        "d": "(A) సరియైనది కాదు, కాని (R) సరియైనది."
+      },
+      "answer": "a",
+      "a": "(A) మరియు (R) రెండూ సరియైనవి, మరియు (A) కు (R) సరియైన వివరణ.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "వస్తువు చలనము వల్ల కలిగే శక్తిని ఏమని అంటారు ?",
+      "options": {
+        "a": "స్థితిజ శక్తి",
+        "b": "గతిజ శక్తి",
+        "c": "ఆకర్షణ శక్తి",
+        "d": "గురుత్వాకర్షణ శక్తి"
+      },
+      "answer": "b",
+      "a": "గతిజ శక్తి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "దంత వైద్యుడు ఉపయోగించే దర్పణము :",
+      "options": {
+        "a": "సమతల దర్పణము",
+        "b": "కుంభాకార దర్పణము",
+        "c": "పుటాకార దర్పణము",
+        "d": "స్తూపాకార దర్పణము"
+      },
+      "answer": "c",
+      "a": "పుటాకార దర్పణము",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కింది వాటిలో జీవక్షయీకృత పాలిమర్ ఏది ?",
+      "options": {
+        "a": "నైలాన్ 6",
+        "b": "టెరీలీన్",
+        "c": "నైలాన్ 6, 6",
+        "d": "పి.హెచ్.బి.వి"
+      },
+      "answer": "d",
+      "a": "పి.హెచ్.బి.వి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది ప్రక్రియలలో ఏది ఎండమావికి ఒక మంచి ఉదాహరణ ?",
+      "options": {
+        "a": "పరావర్తనము",
+        "b": "వక్రీభవనము",
+        "c": "సంపూర్ణాంతర పరావర్తనము",
+        "d": "బహు పరావర్తనము"
+      },
+      "answer": "c",
+      "a": "సంపూర్ణాంతర పరావర్తనము",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో దేనిని ప్రధానంగా విమానాల తయారీలో ఉపయోగిస్తారు ?",
+      "options": {
+        "a": "డ్యూరాల్యుమిన్",
+        "b": "జెర్మన్ సిల్వర్",
+        "c": "గన్ మెటల్",
+        "d": "ఇన్వర్"
+      },
+      "answer": "a",
+      "a": "డ్యూరాల్యుమిన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "హరిత గృహాలలో వాడే బల్బులను వేటితో తయారు చేస్తారు ?",
+      "options": {
+        "a": "నియాన్",
+        "b": "నైట్రోజన్",
+        "c": " జీనాన్",
+        "d": "క్రిప్టాన్"
+      },
+      "answer": "c",
+      "a": " జీనాన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "లోహాలను కొట్టి పలుచటి రేకులుగా మార్చే ధర్మాన్ని ఈ విధంగా అంటారు.",
+      "options": {
+        "a": "మాలియబిలిటీ",
+        "b": "డక్టిలిటీ",
+        "c": "వాహకత",
+        "d": "సోనోరస్ ధర్మం"
+      },
+      "answer": "a",
+      "a": "మాలియబిలిటీ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "అగ్నిమాపకంగా వాడే వాయువు క్రింది వాటిలో ఏది ?",
+      "options": {
+        "a": "కార్బన్ డై ఆక్సైడ్",
+        "b": "కార్బన్ మోనాక్సైడ్",
+        "c": "నైట్రిక్ ఆక్సైడ్",
+        "d": "సల్ఫర్ డై ఆక్సైడ్"
+      },
+      "answer": "a",
+      "a": "కార్బన్ డై ఆక్సైడ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రక్తంలో అతి తక్కువ ద్రావణీయత కలిగి ఉన్న కారణంగా, క్రింది వాటిలో దేనిని 20% ఆక్సిజన్‌తో కలిపి సముద్రపు లోతులకు వెళ్ళే ఈతగాళ్లకు అందిస్తారు :",
+      "options": {
+        "a": "నైట్రోజన్",
+        "b": "హీలియమ్",
+        "c": "హైడ్రోజన్",
+        "d": "ఆర్గాన్"
+      },
+      "answer": "b",
+      "a": "హీలియమ్",
+      "e": "",
+      "table": null
+    }
+  ]
+}

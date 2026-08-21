@@ -29,14 +29,14 @@ const comingSoonSubjects = [
   },
 ];
 ---
-<Layout title="Plans - StudyHelp" description="Unlock 45 days of unlimited access to StudyHelp subjects. One-time payment.">
+<Layout title="Plans - StudyHelp" description="Unlock unlimited access to StudyHelp subjects. One-time payment, no subscription.">
 
   <Header active="plans" />
 
   <div class="page-wide">
 
     <div style="text-align:center; margin-bottom:1.5rem; position:relative; overflow:hidden; border-radius:20px; padding:2rem 1.25rem; background:linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%); box-shadow:0 12px 30px -12px rgba(20, 16, 43, 0.5);" class="plans-intro">
-      <h1 style="margin:0 0 6px; color:#ffffff; position:relative;" class="plans-h1">45 Days Unlimited Access</h1>
+      <h1 style="margin:0 0 6px; color:#ffffff; position:relative;" class="plans-h1">Unlock Unlimited Access</h1>
       <p style="color:rgba(255,255,255,0.72); font-size:14px; margin:0; position:relative;" class="plans-sub">One-time payment per subject. No subscription.</p>
     </div>
 
@@ -47,12 +47,12 @@ const comingSoonSubjects = [
       <div id="active-subjects-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px;"></div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 280px)); gap:12px; margin-bottom:1.5rem; justify-content:start;" class="plan-grid" id="real-plan-grid">
+    <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin-bottom:1.5rem;" class="plan-grid" id="real-plan-grid">
       <div class="plan-skeleton" style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">Loading subjects...</div>
     </div>
 
     {comingSoonSubjects.length > 0 && (
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:1.5rem;" class="plan-grid">
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin-bottom:1.5rem;" class="plan-grid">
         {comingSoonSubjects.map((s) => (
           <div class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem; opacity:0.55; color:#ffffff;">
             <div class="card-title" style="font-weight:700; font-size:15px; margin-top:26px; color:#ffffff;">{s.titleNative}</div>
@@ -77,8 +77,8 @@ const comingSoonSubjects = [
           <div style="font-size:12px; color:rgba(255,255,255,0.6);">Switch devices anytime, no limit</div>
         </div>
         <div>
-          <div style="font-size:13px; font-weight:600; color:#ffffff;">45 days unlimited</div>
-          <div style="font-size:12px; color:rgba(255,255,255,0.6);">One-time payment, full 45-day access</div>
+          <div style="font-size:13px; font-weight:600; color:#ffffff;">Unlimited access</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6);">One-time payment, duration shown on each subject</div>
         </div>
       </div>
     </div>
@@ -98,6 +98,9 @@ const comingSoonSubjects = [
     @media (max-width: 900px) {
       .page-wide {
         padding: 16px 16px calc(64px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
+      }
+      .plan-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       }
     }
 
@@ -281,16 +284,23 @@ const comingSoonSubjects = [
     }
 
     function renderPlanCard(s) {
-      // s: { slug, titleNative, titleEnglish, price, popular }
+      // s: { slug, titleNative, titleEnglish, price, popular, accessDays, category }
       const popularBadge = s.popular
         ? `<span class="badge-popular" style="font-size:12px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; font-weight:700; padding:2px 10px; border-radius:6px; display:inline-block;">most popular</span>`
         : `<span class="badge-popular" style="font-size:12px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; font-weight:700; padding:2px 10px; border-radius:6px; display:none;">most popular</span>`;
+      // "your subject" reads oddly for a previous-papers product — swap to
+      // "your paper set" for category === 'papers', keep the original text
+      // for everything else. Both are set here (not just one, toggled by
+      // JS below) so highlightIntendedSubject/checkOwnership only ever
+      // need to show/hide the existing badge, never rewrite its text.
+      const yoursLabel = s.category === 'papers' ? '&#10003; your paper set' : '&#10003; your subject';
       return `
         <div id="plan-card-${s.slug}" data-slug="${s.slug}" data-popular="${s.popular ? 'true' : 'false'}" class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:${s.popular ? '2px solid #ff9a3c' : '1px solid rgba(255,255,255,0.08)'}; border-radius:12px; padding:1.25rem; color:#ffffff; transition:box-shadow 0.2s, border-color 0.2s;">
           ${popularBadge}
-          <span class="badge-yours" style="font-size:12px; background:rgba(93, 224, 192, 0.15); color:#5ce0c0; font-weight:700; padding:2px 10px; border-radius:6px; display:none;">&#10003; your subject</span>
+          <span class="badge-yours" style="font-size:12px; background:rgba(93, 224, 192, 0.15); color:#5ce0c0; font-weight:700; padding:2px 10px; border-radius:6px; display:none;">${yoursLabel}</span>
           <div class="card-title" style="font-weight:700; font-size:15px; color:#ffffff; ${s.popular ? 'margin-top:10px;' : 'margin-top:26px;'}">${s.titleNative}</div>
-          <div style="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 12px;">${s.titleEnglish || ''}</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 4px;">${s.titleEnglish || ''}</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px;">${s.accessDays} days unlimited access</div>
           <div style="font-size:22px; font-weight:700; margin-bottom:12px; color:#ffcb8a;" class="plan-price">Rs. ${s.price}</div>
           <button data-subject="${s.slug}" data-price="${s.price}" class="buy-btn" style="width:100%; font-size:13px; font-weight:700; padding:8px; border:none; border-radius:8px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; cursor:pointer;">
             Buy now
@@ -316,6 +326,8 @@ const comingSoonSubjects = [
           titleEnglish: s.title_english || '',
           price: s.price_paise / 100,
           popular: !!s.popular,
+          accessDays: s.access_days || 45,
+          category: s.category || 'subject',
         }));
 
         subjectMeta = subjects;

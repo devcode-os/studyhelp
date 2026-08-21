@@ -29,6 +29,7 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
         <nav class="nav-desktop">
           <a href="/" class:list={{ active: active === 'home' }}>Home</a>
           <a href="/subjects/" class:list={{ active: active === 'subjects' }}>Subjects</a>
+          <a href="/papers/" class:list={{ active: active === 'papers' }}>Papers</a>
           <a href="/plans/" class:list={{ active: active === 'plans' }}>Plans</a>
           <a href="/about/" class:list={{ active: active === 'about' }}>About</a>
         </nav>
@@ -44,6 +45,7 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
               <i class="ti ti-dots-vertical" aria-hidden="true"></i>
             </button>
             <div id="more-menu-dropdown" class="more-menu-dropdown" role="menu">
+              <a href="/papers/" role="menuitem">Previous Papers</a>
               <a href="/contact/" role="menuitem">Contact us</a>
               <a href="/support/" role="menuitem">Support</a>
               <a href="/forgot-passcode/" role="menuitem">Forgot passcode</a>

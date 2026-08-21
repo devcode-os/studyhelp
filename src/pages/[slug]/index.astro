@@ -67,16 +67,21 @@ export function getStaticPaths() {
         articles: [],
         amendments: [],
         questions: ch.faqs.map((f) => f.q),
+        // Subject-wise weightage breakdown for previous-papers chapters.
+        // Not sensitive like answers — it's aggregate stats, not a graded
+        // response — but display is still gated to purchased users only
+        // via ensureEntitlementChecked(), zero free clicks.
+        weightage: ch.weightage || [],
       },
     };
   });
 }
 
-const { chapterSlug, subject, chapterNumber, title, questions, isReference, articles, amendments, articlesSearchPlaceholder, amendmentsSearchPlaceholder } = Astro.props;
+const { chapterSlug, subject, chapterNumber, title, questions, isReference, articles, amendments, articlesSearchPlaceholder, amendmentsSearchPlaceholder, weightage } = Astro.props;
 const meta = getSubjectMeta(subject);
 const isTelugu = meta.lang === 'te';
 
-const backLabel = isTelugu ? 'అధ్యాయాలు' : 'Chapters';
+const backLabel = meta.category === 'papers' ? (isTelugu ? 'ప్రశ్నపత్రాలు' : 'Papers') : (isTelugu ? 'అధ్యాయాలు' : 'Chapters');
 const questionsLabel = isTelugu ? 'ప్రశ్నలు' : 'questions';
 const prevLabel = isTelugu ? 'మునుపటి' : 'Previous';
 const nextLabel = isTelugu ? 'తర్వాత' : 'Next';
@@ -134,6 +139,21 @@ function formatMath(str) {
       </Fragment>
     ) : (
       <Fragment>
+        {weightage && weightage.length > 0 && (
+          <div id="pattern-weightage-accordion" class="pw-accordion">
+            <button type="button" id="pw-accordion-toggle" class="pw-accordion-toggle" aria-expanded="false">
+              <span class="pw-accordion-label">
+                <i class="ti ti-chart-pie" aria-hidden="true"></i>
+                Question Paper Pattern &amp; Subject Weightage
+              </span>
+              <i class="ti ti-chevron-down pw-accordion-chevron" aria-hidden="true"></i>
+            </button>
+            <div id="pw-accordion-body" class="pw-accordion-body" style="display:none;">
+              <div id="pw-accordion-content"></div>
+            </div>
+          </div>
+        )}
+
         <div id="reading-toolbar" class="reading-toolbar">
           <div class="rt-progress-section">
             <div class="rt-progress-wrap">
@@ -144,9 +164,11 @@ function formatMath(str) {
               <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent">
                 <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Reveal All Answers</span>
               </button>
-              <button type="button" id="rt-start-mocktest" class="rt-btn rt-btn-ghost">
-                <i class="ti ti-clock-play" aria-hidden="true"></i> Mock Test
-              </button>
+              {meta.category !== 'papers' && (
+                <button type="button" id="rt-start-mocktest" class="rt-btn rt-btn-ghost">
+                  <i class="ti ti-clock-play" aria-hidden="true"></i> Mock Test
+                </button>
+              )}
             </div>
           </div>
 
@@ -536,6 +558,59 @@ function formatMath(str) {
       .ref-entry-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
       .ref-group-label { grid-column: 1 / -1; }
     }
+    /* ---------- Question Paper Pattern & Weightage accordion.
+       Deliberately styled DIFFERENT from .reading-toolbar (light card,
+       accent border, subtle icon) rather than the same dark gradient —
+       two visually identical dark cards stacked back to back reads as
+       one confusing block, not two distinct features. This one sits
+       above the toolbar and closes itself once opened once, so there's
+       no visual redundancy competing with Reveal All / Mock Test. */
+    .pw-accordion {
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: 14px;
+      margin-top: 16px;
+      overflow: hidden;
+    }
+    .pw-accordion-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: none;
+      border: none;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+    }
+    .pw-accordion-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .pw-accordion-label i {
+      font-size: 17px;
+      color: var(--accent);
+    }
+    .pw-accordion-chevron {
+      font-size: 16px;
+      color: var(--muted);
+      transition: transform 0.15s ease;
+      flex-shrink: 0;
+    }
+    .pw-accordion-body {
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--border);
+    }
+    .pw-accordion-body #pw-accordion-content {
+      padding-top: 14px;
+    }
+
     /* ---------- Reading-experience toolbar ---------- */
     .reading-toolbar {
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
@@ -790,6 +865,52 @@ function formatMath(str) {
       text-transform: uppercase;
       letter-spacing: 0.04em;
       margin: 0 0 14px;
+    }
+    .rt-weightage-row {
+      border-top: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .rt-weightage-row:first-of-type { border-top: none; padding-top: 0; }
+    .rt-weightage-row-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .rt-weightage-count {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--accent);
+    }
+    .rt-weightage-breakdown {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .rt-weightage-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 8px;
+    }
+    .rt-weightage-num-blurred {
+      filter: blur(5px);
+      user-select: none;
+      pointer-events: none;
+    }
+    .rt-weightage-unlock {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .rt-weightage-unlock p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 10px;
     }
     .rt-stat-grid {
       display: grid;
@@ -1210,7 +1331,7 @@ function formatMath(str) {
   )}
 
   {!isReference && (
-  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions }}>
+  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
@@ -1310,6 +1431,11 @@ function formatMath(str) {
       });
     }
     let purchased = false;
+    // Default 45 until a real /check-access call confirms the subject's
+    // actual access_days (e.g. 365 for previous-papers subjects). Only
+    // used for CTA copy — the real entitlement duration always comes from
+    // the Worker/D1, this is display text only.
+    let subjectAccessDays = 45;
 
     // ---------- Lazy entitlement check for premium toolbar features ----------
     // Only called when the student actually taps a premium feature (Reveal
@@ -1351,6 +1477,7 @@ function formatMath(str) {
           );
           const accessData = await accessRes.json();
           purchased = Boolean(accessData.unlocked);
+          if (accessData.total_access_days) subjectAccessDays = accessData.total_access_days;
           entitlementChecked = true;
         } catch (err) {
           // Network error — don't cache as "checked", so the next premium
@@ -2435,6 +2562,72 @@ function formatMath(str) {
         const summary = document.getElementById('rt-score-summary');
         if (summary) summary.style.display = 'none';
       });
+    }
+
+    // ---------- Question Paper Pattern & Weightage accordion: opens for
+    // everyone on click (teaser), but the actual numbers (question counts,
+    // percentages) are blurred for non-purchased users — subject/topic
+    // names stay fully readable as a hook, only the figures themselves
+    // are gated behind purchase. Inline accordion, not a popup, so it
+    // doesn't visually compete with the reading toolbar right below it.
+    const pwToggle = document.getElementById('pw-accordion-toggle');
+    const pwBody = document.getElementById('pw-accordion-body');
+    const pwChevron = pwToggle ? pwToggle.querySelector('.pw-accordion-chevron') : null;
+    let pwLoaded = false;
+
+    if (pwToggle && pwBody && Array.isArray(weightage) && weightage.length > 0) {
+      pwToggle.addEventListener('click', async () => {
+        const isOpen = pwBody.style.display === 'block';
+        if (isOpen) {
+          pwBody.style.display = 'none';
+          pwToggle.setAttribute('aria-expanded', 'false');
+          if (pwChevron) pwChevron.style.transform = '';
+          return;
+        }
+
+        pwBody.style.display = 'block';
+        pwToggle.setAttribute('aria-expanded', 'true');
+        if (pwChevron) pwChevron.style.transform = 'rotate(180deg)';
+
+        if (!pwLoaded) {
+          await renderPatternWeightage();
+          pwLoaded = true;
+        }
+      });
+    }
+
+    async function renderPatternWeightage() {
+      const content = document.getElementById('pw-accordion-content');
+      if (!content) return;
+
+      const unlocked = await ensureEntitlementChecked();
+      const numClass = unlocked ? 'rt-weightage-num' : 'rt-weightage-num rt-weightage-num-blurred';
+
+      const rows = weightage.map((w) => {
+        const breakdownHtml = Array.isArray(w.breakdown) && w.breakdown.length > 0
+          ? `<div class="rt-weightage-breakdown">${w.breakdown.map((b) =>
+              `<div class="rt-weightage-breakdown-row"><span>${b.name}</span><span class="${numClass}">${b.questions}</span></div>`
+            ).join('')}</div>`
+          : '';
+        return `
+          <div class="rt-weightage-row">
+            <div class="rt-weightage-row-head">
+              <span class="rt-weightage-subject">${w.subject}</span>
+              <span class="rt-weightage-count ${numClass}">${w.questions} Qs &middot; ${w.percentage}%</span>
+            </div>
+            ${breakdownHtml}
+          </div>
+        `;
+      }).join('');
+
+      const unlockCta = unlocked ? '' : `
+        <div class="rt-weightage-unlock">
+          <p>Unlock exact question counts and percentage weightage for every subject</p>
+          <a href="/plans/?highlight=${encodeURIComponent(subject)}" class="rt-btn rt-btn-accent">Unlock ${subjectAccessDays} days, Rs. 199</a>
+        </div>
+      `;
+
+      content.innerHTML = `${rows}${unlockCta}`;
     }
 
     function showScoreSummary() {

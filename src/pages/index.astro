@@ -94,6 +94,10 @@ const iconMap = {
         <span class="hero-hook-pill">5000+ questions</span>
         <span class="hero-hook-pill">2025-26 syllabus</span>
       </div>
+      <a href="/papers/" class="hero-papers-btn">
+        <i class="ti ti-file-text hero-papers-icon" aria-hidden="true"></i>
+        <span>All Previous Question Papers</span>
+      </a>
     </div>
 
     <p class="section-label">Subjects</p>
@@ -201,6 +205,32 @@ const iconMap = {
       box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.55);
     }
     .hero-hook-spark { font-size: 14px; line-height: 1; }
+
+    .hero-papers-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+    .hero-papers-icon {
+      font-size: 15px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+    }
+    .hero-papers-btn:active {
+      background: rgba(255, 255, 255, 0.16);
+    }
 
     .section-label {
       font-size: 14px;
@@ -338,8 +368,10 @@ const iconMap = {
     }
 
     .login-banner {
-      background: var(--card);
-      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 14px;
       padding: 1rem 1.25rem;
       display: flex;
@@ -350,16 +382,19 @@ const iconMap = {
     }
     .login-banner-text {
       font-size: 13px;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.72);
     }
     .login-banner-btn {
       font-size: 13px;
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 999px;
       text-decoration: none;
-      color: var(--text);
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
       white-space: nowrap;
+      box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.45);
     }
     @media (max-width: 900px) {
       .login-banner {

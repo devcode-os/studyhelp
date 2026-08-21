@@ -223,6 +223,89 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       }
     }
 
+    /* ---------- Smart app install banner. Shown only to Android visitors
+       browsing in a regular tab (not already inside the installed TWA),
+       who haven't dismissed it before. Sits at the very top of the page,
+       above everything else including the header, since it's the first
+       thing to decide before anything else loads. */
+    /* ---------- Smart app install banner. Shown only to Android visitors
+       browsing in a regular tab (not already inside the installed TWA),
+       who haven't dismissed it before. Fixed to the bottom of the screen,
+       above the mobile tab bar (same --tabbar-h offset pattern used by
+       .verify-toast on subject pages) — bottom placement reads as a
+       familiar native "install this app" prompt and doesn't push page
+       content down the way a top banner would. */
+    .app-install-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.12);
+      padding: 12px 14px;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 70;
+    }
+    @media (max-width: 900px) {
+      .app-install-banner {
+        bottom: calc(var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
+      }
+    }
+    @media (min-width: 901px) {
+      .app-install-banner {
+        bottom: env(safe-area-inset-bottom, 0px);
+      }
+    }
+    .app-install-banner-icon img {
+      display: block;
+      border-radius: 8px;
+    }
+    .app-install-banner-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .app-install-banner-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .app-install-banner-sub {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+    .app-install-banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .app-install-banner-install {
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .app-install-banner-dismiss {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .app-install-banner-dismiss:hover { color: var(--text); }
+
     /* Scroll-to-top button, positioned above mobile browser nav bars AND
        the fixed tab bar. */
     #scroll-top-btn {
@@ -322,6 +405,22 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
   </style>
 </head>
 <body>
+  <div id="app-install-banner" class="app-install-banner" style="display:none;">
+    <div class="app-install-banner-icon">
+      <img src="/apple-touch-icon.png" alt="" width="36" height="36" />
+    </div>
+    <div class="app-install-banner-text">
+      <div class="app-install-banner-title">StudyHelp App</div>
+      <div class="app-install-banner-sub">Faster, user-friendly access</div>
+    </div>
+    <div class="app-install-banner-actions">
+      <a href="https://play.google.com/store/apps/details?id=com.fdaytalk.studyhelp" id="app-install-btn" class="app-install-banner-install">Install</a>
+      <button type="button" id="app-install-dismiss" class="app-install-banner-dismiss" aria-label="Continue in browser">
+        <i class="ti ti-x" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
   <main>
     <slot />
   </main>
@@ -333,6 +432,45 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
   <div id="toast-container" aria-live="polite"></div>
 
   <script is:inline>
+    // ---------- Smart app install banner ----------
+    // Shows only when BOTH of these are true:
+    //  - Android device (this is an Android TWA app, no iOS build exists)
+    //  - NOT already running inside the installed TWA itself — a TWA launch
+    //    sets document.referrer to "android-app://<package>/..." and also
+    //    matches the standalone display-mode media query, either of which
+    //    reliably distinguishes "opened from the installed app" from
+    //    "opened as a normal browser tab", without needing any native
+    //    bridge or install-detection API (which doesn't reliably exist).
+    // Dismissing (X) only hides it for the current page view — no
+    // localStorage/sessionStorage memory, so it shows again fresh on the
+    // next page navigation, back button, or reload. Intentional: this is
+    // a full page reload site (not an SPA), so "per page" is the natural
+    // unit here rather than "once ever".
+    (function initAppInstallBanner() {
+      try {
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        if (!isAndroid) return;
+
+        const isTwa = document.referrer.startsWith('android-app://')
+          || window.matchMedia('(display-mode: standalone)').matches;
+        if (isTwa) return;
+
+        const banner = document.getElementById('app-install-banner');
+        if (!banner) return;
+        banner.style.display = 'flex';
+
+        const dismissBtn = document.getElementById('app-install-dismiss');
+        if (dismissBtn) {
+          dismissBtn.addEventListener('click', () => {
+            banner.style.display = 'none';
+          });
+        }
+      } catch (err) {
+        // Any unexpected error here (e.g. matchMedia unsupported) should
+        // never break the rest of the page — banner just stays hidden.
+      }
+    })();
+
     const scrollBtn = document.getElementById('scroll-top-btn');
     if (scrollBtn) {
       window.addEventListener('scroll', () => {

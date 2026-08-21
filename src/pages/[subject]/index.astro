@@ -63,7 +63,11 @@ for (const ch of chapters) {
 
     <div class="breadcrumb">
       <a href="/">Home</a> /
-      <a href="/subjects/">Subjects</a> /
+      {meta.category === 'papers' ? (
+        <Fragment><a href="/papers/">Papers</a> /</Fragment>
+      ) : (
+        <Fragment><a href="/subjects/">Subjects</a> /</Fragment>
+      )}
       {meta.breadcrumb}
     </div>
 
@@ -75,21 +79,27 @@ for (const ch of chapters) {
             <i class="ti ti-books" aria-hidden="true"></i>
             <div>
               <div class="stat-num">{chapters.length}</div>
-              <div class="stat-label">chapters</div>
+              <div class="stat-label">{meta.category === 'papers' ? 'papers' : 'chapters'}</div>
             </div>
           </div>
-          <div class="stat-pill stat-pill-teal">
-            <i class="ti ti-help-circle" aria-hidden="true"></i>
-            <div>
-              <div class="stat-num">{totalQuestions}</div>
-              <div class="stat-label">questions</div>
+          {meta.category !== 'papers' && (
+            <div class="stat-pill stat-pill-teal">
+              <i class="ti ti-help-circle" aria-hidden="true"></i>
+              <div>
+                <div class="stat-num">{totalQuestions}</div>
+                <div class="stat-label">questions</div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       <div class="subject-header-right">
-        <div id="free-trial-text" class="trial-text">15 free answers/day, no login needed &middot; 45 days unlimited once purchased</div>
-        <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock 45 days, Rs. 199</a>
+        {meta.category === 'papers' ? (
+          <div id="free-trial-text" class="trial-text">Question paper pattern &amp; subject weightage inside &middot; <span id="access-days-text">365</span> days unlimited once purchased</div>
+        ) : (
+          <div id="free-trial-text" class="trial-text">15 free answers/day, no login needed &middot; <span id="access-days-text">45</span> days unlimited once purchased</div>
+        )}
+        <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock <span id="unlock-btn-days">{meta.category === 'papers' ? '365' : '45'}</span> days, Rs. 199</a>
       </div>
     </div>
 
@@ -446,6 +456,24 @@ for (const ch of chapters) {
       });
     }
 
+    // Fetch this subject's real access_days from D1 (via the public
+    // subjects endpoint) and update the two static "45"/"365" placeholders
+    // in the header. Static markup already shows a sensible default per
+    // category so there's no layout flash if this fetch is slow — this
+    // just corrects the number once the real value is known.
+    fetch(`${WORKER_URL}/subjects/public`)
+      .then((res) => res.json())
+      .then((data) => {
+        const match = (data.subjects || []).find((s) => s.id === subject);
+        if (!match || !match.access_days) return;
+        document.querySelectorAll('#access-days-text, #unlock-btn-days').forEach((el) => {
+          el.textContent = match.access_days;
+        });
+      })
+      .catch(() => {
+        // silently ignore — static default (45 or 365 based on category) stays as-is
+      });
+
     getSession()
       .then((session) => {
         if (!session.logged_in) return;
@@ -484,7 +512,7 @@ for (const ch of chapters) {
           });
       })
       .catch(() => {
-        // silently ignore — button stays as default "Unlock 45 days" on network error
+        // silently ignore — button stays as its static category-based default on network error
       });
 
     // One-time post-purchase toast: flag is set by payment-processing/index.astro

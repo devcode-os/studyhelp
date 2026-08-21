@@ -1,0 +1,2983 @@
+{
+  "slug": "ts-constable-mains-2023-te",
+  "chapterNumber": 6,
+  "title": "TS పోలీస్ కానిస్టేబుల్ మెయిన్స్ - 30 ఏప్రిల్ 2023",
+  "weightage": [
+    {
+      "subject": "చరిత్ర (భారత, ప్రపంచ, తెలంగాణ)",
+      "questions": 33,
+      "percentage": 16.5,
+      "breakdown": [
+        {
+          "name": "భారత చరిత్ర",
+          "questions": 27
+        },
+        {
+          "name": "తెలంగాణ చరిత్ర",
+          "questions": 6
+        },
+        {
+          "name": "ప్రపంచ చరిత్ర",
+          "questions": 0
+        }
+      ]
+    },
+    {
+      "subject": "కరెంట్ అఫైర్స్ (జాతీయ, అంతర్జాతీయ, తెలంగాణ)",
+      "questions": 26,
+      "percentage": 13.0,
+      "breakdown": [
+        {
+          "name": "తెలంగాణ కరెంట్ అఫైర్స్",
+          "questions": 14
+        },
+        {
+          "name": "జాతీయ & అంతర్జాతీయ కరెంట్ అఫైర్స్",
+          "questions": 12
+        }
+      ]
+    },
+    {
+      "subject": "English",
+      "questions": 25,
+      "percentage": 12.5,
+      "breakdown": [
+        {
+          "name": "Grammar & Usage",
+          "questions": 18
+        },
+        {
+          "name": "Reading Comprehension",
+          "questions": 5
+        },
+        {
+          "name": "Vocabulary",
+          "questions": 2
+        }
+      ]
+    },
+    {
+      "subject": "క్వాంటిటేటివ్ ఆప్టిట్యూడ్",
+      "questions": 25,
+      "percentage": 12.5,
+      "breakdown": [
+        {
+          "name": "బీజగణితం (Algebra)",
+          "questions": 4
+        },
+        {
+          "name": "సంఖ్యా వ్యవస్థలు & గ.సా.భా-క.సా.గు",
+          "questions": 3
+        },
+        {
+          "name": "శాతములు & లాభ-నష్టములు",
+          "questions": 2
+        },
+        {
+          "name": "నిష్పత్తి & అనుపాతం",
+          "questions": 2
+        },
+        {
+          "name": "కాలం, వేగం & దూరం",
+          "questions": 2
+        },
+        {
+          "name": "బారు & చక్ర వడ్డీ",
+          "questions": 2
+        },
+        {
+          "name": "క్షేత్రమితి (Mensuration)",
+          "questions": 2
+        },
+        {
+          "name": "కాలం & పని",
+          "questions": 2
+        },
+        {
+          "name": "వయస్సులు",
+          "questions": 1
+        },
+        {
+          "name": "ఇతరములు (శ్రేణులు, గడియారాలు, క్యాలెండర్లు)",
+          "questions": 5
+        }
+      ]
+    },
+    {
+      "subject": "రీజనింగ్ (వెర్బల్ + నాన్-వెర్బల్)",
+      "questions": 24,
+      "percentage": 12.0,
+      "breakdown": null
+    },
+    {
+      "subject": "జనరల్ సైన్స్ (భౌతిక, రసాయన, జీవ శాస్త్రాలు)",
+      "questions": 23,
+      "percentage": 11.5,
+      "breakdown": [
+        {
+          "name": "భౌతిక శాస్త్రం",
+          "questions": 8
+        },
+        {
+          "name": "జీవ శాస్త్రం",
+          "questions": 7
+        },
+        {
+          "name": "రసాయన శాస్త్రం",
+          "questions": 5
+        },
+        {
+          "name": "భూగర్భ శాస్త్రం",
+          "questions": 2
+        },
+        {
+          "name": "ఖగోళ శాస్త్రం",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "పాలిటీ (రాజ్యాంగశాస్త్రం)",
+      "questions": 14,
+      "percentage": 7.0,
+      "breakdown": null
+    },
+    {
+      "subject": "ఆర్థిక శాస్త్రం",
+      "questions": 10,
+      "percentage": 5.0,
+      "breakdown": null
+    },
+    {
+      "subject": "నీతి శాస్త్రం & సామాజిక అవగాహన",
+      "questions": 10,
+      "percentage": 5.0,
+      "breakdown": null
+    },
+    {
+      "subject": "భూగోళ శాస్త్రం",
+      "questions": 5,
+      "percentage": 2.5,
+      "breakdown": null
+    },
+    {
+      "subject": "క్రీడలు",
+      "questions": 3,
+      "percentage": 1.5,
+      "breakdown": null
+    },
+    {
+      "subject": "సంస్కృతి & సాహిత్యం",
+      "questions": 2,
+      "percentage": 1.0,
+      "breakdown": null
+    }
+  ],
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with an appropriate form of the verb given in brackets to make it a meaningful sentence.\nShe ___ (hand) me a picture of sloppily drawn birthday cake last year.",
+      "options": {
+        "a": "Have handed",
+        "b": "Had handed",
+        "c": "Handing",
+        "d": "Handed"
+      },
+      "answer": "d",
+      "a": "Handed",
+      "e": "The sentence describes a completed action at a specific past time, marked by 'last year'. This calls for the simple past tense.\n\nOut of the options, only 'Handed' fits as the simple past form of the verb 'hand', making the sentence grammatically correct and meaningful.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with an appropriate form of the verb given in brackets to make it a meaningful sentence.\nI ___ (pull) out my calculator before I added up all the money.",
+      "options": {
+        "a": "Had pulled",
+        "b": "Have pulled",
+        "c": "Pulled",
+        "d": "Had been pulled"
+      },
+      "answer": "a",
+      "a": "Had pulled",
+      "e": "When two past actions are mentioned and one happened before the other, the earlier action takes the past perfect tense.\n\nHere, pulling out the calculator happened before adding up the money, so 'had pulled' correctly shows this earlier action.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following sentences is incorrect with reference to reported speech?",
+      "options": {
+        "a": "The waiter asked if we wanted a table near the window.",
+        "b": "The teacher asked the students how they wanted to the activity.",
+        "c": "Shamir enquired where was the bus station.",
+        "d": "The guard warned us not to enter the area."
+      },
+      "answer": "c",
+      "a": "Shamir enquired where was the bus station.",
+      "e": "In reported speech, indirect questions follow normal statement word order (subject before verb), not question word order.\n\nThe correct form should be 'Shamir enquired where the bus station was', not 'where was the bus station'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the correct passive form of the verb from the options given below.\nA nation ___ (hold) together by shared beliefs and shared attitudes.",
+      "options": {
+        "a": "Is held",
+        "b": "Were held",
+        "c": "have been held",
+        "d": "to be hold"
+      },
+      "answer": "a",
+      "a": "Is held",
+      "e": "The sentence needs a present tense passive form since it describes a general, ongoing truth about nations.\n\n'Is held' correctly matches the singular subject 'A nation' and expresses the passive voice in the present simple tense.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with an appropriate verb that agrees with the subject in the following sentence.\nOne of the most important secrets to success ___, instead of being against something, be for something.",
+      "options": {
+        "a": "Is",
+        "b": "Are",
+        "c": "Has",
+        "d": "Does"
+      },
+      "answer": "a",
+      "a": "Is",
+      "e": "The subject of the sentence is 'One', which is singular, even though it is followed by a plural noun phrase 'secrets to success'.\n\nSince the verb must agree with 'One' and not with 'secrets', the singular verb 'Is' is correct.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following words has an incorrect spelling?",
+      "options": {
+        "a": "ACCOMMODATE",
+        "b": "VACUUM",
+        "c": "EMBARRASS",
+        "d": "JUDGEMENT"
+      },
+      "answer": "b",
+      "a": "VACUUM",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the grammatically incorrect sentence in passive voice from the options given below.",
+      "options": {
+        "a": "These windows in my room really need to be cleaned soon.",
+        "b": "The President is hoping to be elected for a second term.",
+        "c": "Sheela and Swathi might have been invited to the party.",
+        "d": "Raveendra has asked to make a presentation at the meeting by his team leader."
+      },
+      "answer": "d",
+      "a": "Raveendra has asked to make a presentation at the meeting by his team leader.",
+      "e": "For a sentence to be correctly passive, the verb form must match passive construction throughout.\n\nHere, 'has asked' should be 'has been asked' to correctly show that Raveendra was asked by his team leader, making option (4) grammatically incorrect as written.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with correct preposition in the following sentence.\nGreat innovators believe that logic and imagination shake hands ___ each other.",
+      "options": {
+        "a": "With",
+        "b": "To",
+        "c": "Of",
+        "d": "On"
+      },
+      "answer": "a",
+      "a": "With",
+      "e": "The phrase 'shake hands with' is a fixed prepositional expression used to describe two things coming together or cooperating.\n\nHence, 'with' is the correct preposition to complete the sentence meaningfully.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the meaning of the idiom 'turn the clock back'?",
+      "options": {
+        "a": "To restore something to a former condition",
+        "b": "To waste time",
+        "c": "To turn off the alarm clock",
+        "d": "To do things with a jet speed in future"
+      },
+      "answer": "a",
+      "a": "To restore something to a former condition",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the correct form of the following sentence to be converted to direct speech.\n'They told us that they would start the admission process the following day.'",
+      "options": {
+        "a": "\"We will start the admission process tomorrow,\" they told us.",
+        "b": "We told them, \"They will start the admission process tomorrow.\"",
+        "c": "\"We would start the admission process the next day,\" they told us.",
+        "d": "We told them, \"We had to start the admission process tomorrow.\""
+      },
+      "answer": "a",
+      "a": "\"We will start the admission process tomorrow,\" they told us.",
+      "e": "When converting reported speech back to direct speech, the tense shifts back to what would have been originally spoken, and 'the following day' becomes 'tomorrow'.\n\nThe subject and reporting verb also revert to match who actually spoke, giving option (1) as the correct direct speech version.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with an appropriate article in the following sentence.\nPast glory and education don't count for much. We have to continuously sharpen ___ axe.",
+      "options": {
+        "a": "An",
+        "b": "The",
+        "c": "A",
+        "d": "No article is required"
+      },
+      "answer": "a",
+      "a": "An",
+      "e": "The word 'axe' begins with a vowel sound, so the indefinite article 'an' is used before it.\n\nSince the sentence refers to a general, non-specific axe, 'an' is the appropriate article here.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the correct idiom which means 'accurate information'?",
+      "options": {
+        "a": "Chapter and verse",
+        "b": "Closed chapter",
+        "c": "Dead and buried",
+        "d": "Caught in the crossfire"
+      },
+      "answer": "a",
+      "a": "Chapter and verse",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with correct preposition in the following sentence.\nHe gaped ___ some developed countries in wonder for their vast materialistic progress.",
+      "options": {
+        "a": "At",
+        "b": "Away",
+        "c": "On",
+        "d": "Over"
+      },
+      "answer": "a",
+      "a": "At",
+      "e": "The verb 'gape' is typically followed by the preposition 'at' when expressing looking at something with wonder or surprise.\n\nHence, 'at' correctly completes the sentence.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with an appropriate article in the following sentence.\nPeople without conviction do not take ___ stand.",
+      "options": {
+        "a": "A",
+        "b": "An",
+        "c": "No article is required",
+        "d": "The"
+      },
+      "answer": "a",
+      "a": "A",
+      "e": "The word 'stand' begins with a consonant sound, so the indefinite article 'a' is used before it.\n\nSince the sentence refers to a general stand and not a specific one, 'a' fits correctly.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with an appropriate form of the verb given in brackets to make it a meaningful sentence.\nUnless you ___ (read) today, you cannot be perfect person tomorrow.",
+      "options": {
+        "a": "Are reading",
+        "b": "Read",
+        "c": "Had read",
+        "d": "Have read"
+      },
+      "answer": "b",
+      "a": "Read",
+      "e": "'Unless' introduces a conditional clause similar to an 'if not' condition, and such clauses typically use the simple present tense to refer to a general or habitual condition.\n\nHence, 'Read' is the correct form to complete the sentence.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with an appropriate pronoun that agrees with the subject in the following sentence.\nThe biggest achievement of Digital India has been ___ tremendous success in ensuring digital inclusion for all in India.",
+      "options": {
+        "a": "Is",
+        "b": "Are",
+        "c": "Has",
+        "d": "Does"
+      },
+      "answer": "c",
+      "a": "Has",
+      "e": "The subject 'The biggest achievement' is singular, and the sentence structure requires a verb form that matches this singular subject to describe the ongoing outcome.\n\n'Has' is the form that correctly agrees with the singular subject in this context.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the correct synonym of the underlined word in the following sentence.\n'Illustrious people seem to light up everything around them.'",
+      "options": {
+        "a": "Eminent",
+        "b": "Obscure",
+        "c": "Notorious",
+        "d": "Obsessed"
+      },
+      "answer": "a",
+      "a": "Eminent",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank with correct preposition in the following sentence.\nSteve Jobs said, \"Innovation distinguishes ___ a leader and a follower.\"",
+      "options": {
+        "a": "Between",
+        "b": "From",
+        "c": "On",
+        "d": "About"
+      },
+      "answer": "a",
+      "a": "Between",
+      "e": "The verb 'distinguish' when comparing two things is followed by the preposition 'between'.\n\nHence, 'between a leader and a follower' is the grammatically correct form.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the correct antonym of the underlined word in the following sentence.\nHe was fishing for a squid with pals in shallow water.",
+      "options": {
+        "a": "Shoal",
+        "b": "Superficial",
+        "c": "Deep",
+        "d": "Skin-deep"
+      },
+      "answer": "c",
+      "a": "Deep",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the word with correct spelling from the options given below.",
+      "options": {
+        "a": "MANOEUVRE",
+        "b": "PRONOUNCIATION",
+        "c": "CONSCIENSCIOUS",
+        "d": "CHANGABLE"
+      },
+      "answer": "a",
+      "a": "MANOEUVRE",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the passage given below and answer the question.\nPeople wait for the rains since they can ___ in it.",
+      "options": {
+        "a": "splash",
+        "b": "have potholed roads",
+        "c": "spate of water borne diseases",
+        "d": "endless traffic jams"
+      },
+      "answer": "a",
+      "a": "splash",
+      "e": "",
+      "table": null,
+      "passage": "The beginning of this fun-filled season with the sun hidden behind the grey clouds brings cheer to many of us waiting eagerly to splash in the rains. Ofcourse not everything about rain is glamorous. Especially when you think about endless traffic jams, the bad roads dotted with potholes, uncleared garbage and the spate of water borne diseases. Also viral infections like cold and cough make their presence felt.\n\nMost infectious diseases prevalent in the rainy season can be prevented by simply washing our hands regularly. Scrubbing hands regularly with water and soap can prevent us from contacting respiratory and diarrheal diseases.\n\nKids have a lower level of immunity and hence hand washing becomes a crucial part of their lifestyle. When playing especially during monsoon season kids come into contact with germs and can unknowingly become infected simply by touching their nose, eyes or mouth. The Food and Drug Administration states that the human influenza virus can survive on surfaces for up to eight hours, making people susceptible to catching it each time they touch the infected surface. Hence repeated hand washing is required.\n\nTo make the best of the rainy season we should follow some simple guidelines. First of all if we decide to get wet in rains we should change into a dry set of clothes at the earliest. Also we should keep raw food items at bay and wash vegetables and fruits thoroughly before use. Moreover, strict kitchen hygiene should be maintained in order to enjoy one of the most beautiful seasons of the year. Also, in order to have a trouble free rainy season home made fresh food should be given preference over the fast food sold in the market."
+    },
+    {
+      "type": "mcq",
+      "q": "Besides maintaining kitchen hygiene we should ___ so as to keep us disease free in the rainy season.",
+      "options": {
+        "a": "avoid raw fruits",
+        "b": "enjoy raw fruits",
+        "c": "avoid vegetables",
+        "d": "consume more fruits and vegetables"
+      },
+      "answer": "a",
+      "a": "avoid raw fruits",
+      "e": "",
+      "table": null,
+      "passage": "The beginning of this fun-filled season with the sun hidden behind the grey clouds brings cheer to many of us waiting eagerly to splash in the rains. Ofcourse not everything about rain is glamorous. Especially when you think about endless traffic jams, the bad roads dotted with potholes, uncleared garbage and the spate of water borne diseases. Also viral infections like cold and cough make their presence felt.\n\nMost infectious diseases prevalent in the rainy season can be prevented by simply washing our hands regularly. Scrubbing hands regularly with water and soap can prevent us from contacting respiratory and diarrheal diseases.\n\nKids have a lower level of immunity and hence hand washing becomes a crucial part of their lifestyle. When playing especially during monsoon season kids come into contact with germs and can unknowingly become infected simply by touching their nose, eyes or mouth. The Food and Drug Administration states that the human influenza virus can survive on surfaces for up to eight hours, making people susceptible to catching it each time they touch the infected surface. Hence repeated hand washing is required.\n\nTo make the best of the rainy season we should follow some simple guidelines. First of all if we decide to get wet in rains we should change into a dry set of clothes at the earliest. Also we should keep raw food items at bay and wash vegetables and fruits thoroughly before use. Moreover, strict kitchen hygiene should be maintained in order to enjoy one of the most beautiful seasons of the year. Also, in order to have a trouble free rainy season home made fresh food should be given preference over the fast food sold in the market."
+    },
+    {
+      "type": "mcq",
+      "q": "After getting wet in rains we should put on dry clothes ___.",
+      "options": {
+        "a": "as late as possible",
+        "b": "whenever we like to",
+        "c": "as early as possible",
+        "d": "when we fall sick"
+      },
+      "answer": "c",
+      "a": "as early as possible",
+      "e": "",
+      "table": null,
+      "passage": "The beginning of this fun-filled season with the sun hidden behind the grey clouds brings cheer to many of us waiting eagerly to splash in the rains. Ofcourse not everything about rain is glamorous. Especially when you think about endless traffic jams, the bad roads dotted with potholes, uncleared garbage and the spate of water borne diseases. Also viral infections like cold and cough make their presence felt.\n\nMost infectious diseases prevalent in the rainy season can be prevented by simply washing our hands regularly. Scrubbing hands regularly with water and soap can prevent us from contacting respiratory and diarrheal diseases.\n\nKids have a lower level of immunity and hence hand washing becomes a crucial part of their lifestyle. When playing especially during monsoon season kids come into contact with germs and can unknowingly become infected simply by touching their nose, eyes or mouth. The Food and Drug Administration states that the human influenza virus can survive on surfaces for up to eight hours, making people susceptible to catching it each time they touch the infected surface. Hence repeated hand washing is required.\n\nTo make the best of the rainy season we should follow some simple guidelines. First of all if we decide to get wet in rains we should change into a dry set of clothes at the earliest. Also we should keep raw food items at bay and wash vegetables and fruits thoroughly before use. Moreover, strict kitchen hygiene should be maintained in order to enjoy one of the most beautiful seasons of the year. Also, in order to have a trouble free rainy season home made fresh food should be given preference over the fast food sold in the market."
+    },
+    {
+      "type": "mcq",
+      "q": "The passage suggests that small children should wash their hands ___ in the rainy season since they have lower immunity.",
+      "options": {
+        "a": "frequently",
+        "b": "rarely",
+        "c": "after every meal",
+        "d": "before every meal"
+      },
+      "answer": "a",
+      "a": "frequently",
+      "e": "",
+      "table": null,
+      "passage": "The beginning of this fun-filled season with the sun hidden behind the grey clouds brings cheer to many of us waiting eagerly to splash in the rains. Ofcourse not everything about rain is glamorous. Especially when you think about endless traffic jams, the bad roads dotted with potholes, uncleared garbage and the spate of water borne diseases. Also viral infections like cold and cough make their presence felt.\n\nMost infectious diseases prevalent in the rainy season can be prevented by simply washing our hands regularly. Scrubbing hands regularly with water and soap can prevent us from contacting respiratory and diarrheal diseases.\n\nKids have a lower level of immunity and hence hand washing becomes a crucial part of their lifestyle. When playing especially during monsoon season kids come into contact with germs and can unknowingly become infected simply by touching their nose, eyes or mouth. The Food and Drug Administration states that the human influenza virus can survive on surfaces for up to eight hours, making people susceptible to catching it each time they touch the infected surface. Hence repeated hand washing is required.\n\nTo make the best of the rainy season we should follow some simple guidelines. First of all if we decide to get wet in rains we should change into a dry set of clothes at the earliest. Also we should keep raw food items at bay and wash vegetables and fruits thoroughly before use. Moreover, strict kitchen hygiene should be maintained in order to enjoy one of the most beautiful seasons of the year. Also, in order to have a trouble free rainy season home made fresh food should be given preference over the fast food sold in the market."
+    },
+    {
+      "type": "mcq",
+      "q": "The word in the passage which means the same as 'prone and vulnerable' is ___.",
+      "options": {
+        "a": "dotted",
+        "b": "hygiene",
+        "c": "susceptible",
+        "d": "influenza"
+      },
+      "answer": "c",
+      "a": "susceptible",
+      "e": "",
+      "table": null,
+      "passage": "The beginning of this fun-filled season with the sun hidden behind the grey clouds brings cheer to many of us waiting eagerly to splash in the rains. Ofcourse not everything about rain is glamorous. Especially when you think about endless traffic jams, the bad roads dotted with potholes, uncleared garbage and the spate of water borne diseases. Also viral infections like cold and cough make their presence felt.\n\nMost infectious diseases prevalent in the rainy season can be prevented by simply washing our hands regularly. Scrubbing hands regularly with water and soap can prevent us from contacting respiratory and diarrheal diseases.\n\nKids have a lower level of immunity and hence hand washing becomes a crucial part of their lifestyle. When playing especially during monsoon season kids come into contact with germs and can unknowingly become infected simply by touching their nose, eyes or mouth. The Food and Drug Administration states that the human influenza virus can survive on surfaces for up to eight hours, making people susceptible to catching it each time they touch the infected surface. Hence repeated hand washing is required.\n\nTo make the best of the rainy season we should follow some simple guidelines. First of all if we decide to get wet in rains we should change into a dry set of clothes at the earliest. Also we should keep raw food items at bay and wash vegetables and fruits thoroughly before use. Moreover, strict kitchen hygiene should be maintained in order to enjoy one of the most beautiful seasons of the year. Also, in order to have a trouble free rainy season home made fresh food should be given preference over the fast food sold in the market."
+    },
+    {
+      "type": "mcq",
+      "q": "A, B, C, D వరుసగా నలుగురు విద్యార్థుల మార్కులను సూచిస్తాయనుకుందాం. A, B, C ల యొక్క సగటు 10 1/3; B, C, D ల యొక్క సగటు 13 2/3; C, D, A ల యొక్క సగటు 12 1/3; మరియు D, A, B ల యొక్క సగటు 11 2/3 అయితే 5(C-B) =",
+      "options": {
+        "a": "D+A-B-C",
+        "b": "3(D-A)-(B+C)",
+        "c": "2A-D",
+        "d": "D-A"
+      },
+      "answer": "a",
+      "a": "D+A-B-C",
+      "e": "ఇచ్చిన నాలుగు సగటుల నుండి నాలుగు సమీకరణాలు వస్తాయి: A+B+C=31, B+C+D=41, C+D+A=37, D+A+B=35 (ప్రతీది 3తో గుణించగా).\n\nఈ సమీకరణాలను జతలుగా తీసివేసి, సరళీకరించడం ద్వారా 5(C-B) = D+A-B-C అని లభిస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "n ఒక ధన పూర్ణాంకం మరియు n < 193. అనుకుందాం. n మరియు 193 లు సహప్రధాన సంఖ్యలయితే n కు పొందుపడు అన్ని విలువల యొక్క మొత్తం :",
+      "options": {
+        "a": "18528",
+        "b": "18336",
+        "c": "18527",
+        "d": "6240"
+      },
+      "answer": "a",
+      "a": "18528",
+      "e": "193 ఒక ప్రధాన సంఖ్య కాబట్టి, 1 నుండి 192 వరకు ఉన్న ప్రతి పూర్ణాంకం దానితో సహప్రధానంగా ఉంటుంది (1 తప్ప మరే ఉమ్మడి కారణాంకం ఉండదు).\n\nకాబట్టి n యొక్క అన్ని విలువల మొత్తం మొదటి 192 సహజ సంఖ్యల మొత్తానికి సమానం: 192×193/2 = 18528.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక దుకాణదారుడు ఒక నిర్ధిష్ట నెలలో అతనికి వచ్చిన లాభంలో 20% అతని వద్ద గల పనివారికి ఇచ్చే వేతనానికి ఖర్చు చేశాడు. లాభంలో మిగిలిన దానిలో 10% శాతాన్ని కొట్టు బాడుగకు మరియు 40% శాతాన్ని అతని కుటుంబ ఖర్చులకు గానూ వెచ్చించాడు. ఆ తరువాత మిగిలిన 50,000 రూపాయలను బ్యాంకులో పొదుపు చేశాడు. అయితే అతడు వేతనాలకు మరియు బాడుగకు వెచ్చించిన మొత్తం సొమ్ము (రూపాయలలో) :",
+      "options": {
+        "a": "25,000",
+        "b": "35,000",
+        "c": "40,000",
+        "d": "75,000"
+      },
+      "answer": "b",
+      "a": "35,000",
+      "e": "వేతనానికి 20% ఖర్చు చేసిన తర్వాత లాభంలో 80% మిగులుతుంది. ఈ మిగిలిన మొత్తంలో 50% బాడుగ మరియు కుటుంబ ఖర్చులకు, మిగిలిన 50% పొదుపుగా ₹50,000 గా మిగులుతుంది.\n\nకాబట్టి మిగిలిన లాభం ₹1,00,000, మొత్తం లాభం ₹1,25,000. వేతనం=20%×1,25,000=₹25,000, బాడుగ=10%×1,00,000=₹10,000. వేతనం మరియు బాడుగ కలిపి ₹35,000.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒకవేళ a:b = 3:4, b:c = 4:5, a+2b = 55 మరియు 3b-c = 35 అయితే 3a+2b-c =",
+      "options": {
+        "a": "60",
+        "b": "45",
+        "c": "50",
+        "d": "75"
+      },
+      "answer": "a",
+      "a": "60",
+      "e": "a:b=3:4 మరియు b:c=4:5 లలో b విలువ ఒకేలా ఉండటం వలన a:b:c = 3:4:5. a=3k, b=4k అనుకుంటే a+2b=55 నుండి 11k=55, k=5.\n\nఇది a=15, b=20, c=25 ను ఇస్తుంది, ఇది 3b-c=35 ను సంతృప్తి పరుస్తుంది. కాబట్టి 3a+2b-c = 45+40-25 = 60.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రెండు ప్రదేశాలు A మరియు B ల మధ్య దూరం 480 కి.మీ.లు. ఒక కారు A నుండి బయలుదేరింది; కానీ రోడ్ ట్రాఫిక్ వల్ల దాని వేగం దాని సాధారణ వేగం కంటే గంటకు 20 కి.మీ.లు చొప్పున తగ్గింది మరియు అది గమ్య స్థానం B ని చేరే సమయం సాధారణ సమయం కంటే 2 గంటలు పెరిగింది. అయితే పూర్తి ప్రయాణానికి పట్టే సాధారణ కాల వ్యవధి (గంటలలో) :",
+      "options": {
+        "a": "6",
+        "b": "5 1/2",
+        "c": "8",
+        "d": "7 1/4"
+      },
+      "answer": "a",
+      "a": "6",
+      "e": "సాధారణ వేగం s అనుకుంటే, సాధారణ సమయం 480/s. వేగం (s-20)కి తగ్గినప్పుడు, కొత్త సమయం 480/(s-20), ఇది సాధారణ సమయం కంటే 2 గంటలు ఎక్కువ.\n\n480/(s-20) - 480/s = 2 అనే సమీకరణాన్ని సాధించగా s = 80 కి.మీ./గంట వస్తుంది, కాబట్టి సాధారణ ప్రయాణ సమయం 480/80 = 6 గంటలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "1887 సెప్టెంబర్ 5న వారంలోని ఏ రోజైనదో ఆ రోజు :",
+      "options": {
+        "a": "ఆదివారం",
+        "b": "సోమవారం",
+        "c": "మంగళవారం",
+        "d": "శనివారం"
+      },
+      "answer": "b",
+      "a": "సోమవారం",
+      "e": "సెప్టెంబర్ 5వ తేదీ ఎల్లప్పుడూ 'డూమ్స్‌డే' తేదీగా ఉంటుంది, అంటే ఇచ్చిన సంవత్సరంలోని ఇతర డూమ్స్‌డే తేదీల వలెనే ఇది అదే వారంరోజున వస్తుంది.\n\n1887 సంవత్సరానికి ప్రామాణిక యాంకర్-డే పద్ధతిని ఉపయోగించి డూమ్స్‌డేను లెక్కించగా సోమవారం అని వస్తుంది, కాబట్టి 1887 సెప్టెంబర్ 5వ తేదీ సోమవారం.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "5,25,000 రూపాయల పెట్టుబడితో A ఒక వ్యాపారాన్ని ప్రారంభించాడు. వ్యాపారాన్ని ప్రారంభించినప్పటి నుండి 5వ మాసాంతంలో 4,32,000 రూపాయల పెట్టుబడితో A తో B చేరాడు మరియు వ్యాపార ప్రారంభం నుండి 8వ మాసాంతంలో 6,30,000 రూపాయల పెట్టుబడితో A మరియు B లతో C చేరాడు. సంవత్సరాంతం ఆర్జించిన లాభంలో C వాటా 50,000 రూపాయలు మరియు A వాటా B వాటా కంటే x రూపాయలు ఎక్కువైతే, x =",
+      "options": {
+        "a": "60,000",
+        "b": "75,000",
+        "c": "50,000",
+        "d": "65,000"
+      },
+      "answer": "d",
+      "a": "65,000",
+      "e": "పెట్టుబడి-నెలలు: A = 5,25,000×12 = 63,00,000; B = 4,32,000×7 = 30,24,000; C = 6,30,000×4 = 25,20,000.\n\nC వాటా ₹50,000 అనేది 25,20,000 నిష్పత్తికి అనుగుణం కావడంతో, మొత్తం లాభం సుమారు ₹2,35,000. A వాటా సుమారు ₹1,25,000 మరియు B వాటా సుమారు ₹60,000, కాబట్టి x = A - B ≈ ₹65,000.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A ఒక పనిని 6 రోజులలో చేయగలడు మరియు B అదే పనిని 9 రోజులలో చేయగలడు. A మరియు B లు మూడవ వ్యక్తి C తో కలిసి అదే పనిని 3 రోజులలో పూర్తి చేయగలరు. ఆ పనికి అయ్యే మొత్తం వేతనాలు 24,000 రూపాయలైతే C యొక్క వేతనం (రూపాయలలో) :",
+      "options": {
+        "a": "12,000",
+        "b": "8,000",
+        "c": "4,000",
+        "d": "6,000"
+      },
+      "answer": "c",
+      "a": "4,000",
+      "e": "A రేటు 1/6 మరియు B రేటు 1/9 రోజుకు. A, B మరియు C కలిసి పనిని 3 రోజులలో పూర్తి చేస్తారు కాబట్టి వారి కలిపిన రేటు 1/3.\n\nA మరియు B రేట్లను 1/3 నుండి తీసివేస్తే C రేటు 1/18 అని వస్తుంది, అంటే C ఒక్కడే 18 రోజులలో పని పూర్తి చేయగలడు. 3 రోజులలో C పనిలో 1/6 వంతు చేస్తాడు కాబట్టి C వేతనం ₹24,000లో 1/6 వంతు = ₹4,000.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వృత్తాకారపు స్థంభం చుట్టూ ఒక దీర్ఘ చతురస్రాకారపు బాటను దాని లోపలి భుజము ప్రతి స్థలాన్ని ఒక బిందువున వద్ద తాకేటట్టు 5 మీటర్ల వెడల్పుతో, ఒక బాటను నిర్మించారు. స్థలం యొక్క వైశాల్యం 61,600 చ.సెం.మీ. మీటర్లుగా ఉండి, బాటను నిర్మించడానికి ప్రతి మీటరుకు 100 రూపాయలు ఖర్చు అయితే, బాటను నిర్మించడానికి కావలసిన మొత్తం (రూపాయలలో) :",
+      "options": {
+        "a": "4,35,000",
+        "b": "7,56,000",
+        "c": "5,70,000",
+        "d": "6,75,000"
+      },
+      "answer": "a",
+      "a": "4,35,000",
+      "e": "పొలం వైశాల్యం 61,600 చ.మీ. కావడం మరియు వైశాల్యం=πr² అవడం వలన, π=22/7 తో సాధించగా పొలం వ్యాసార్థం 140 మీ. వస్తుంది. దీనికి 5 మీ. బాట వెడల్పు కలిపితే బాహ్య వ్యాసార్థం 145 మీ.\n\nబాట వైశాల్యం π(145²-140²) = π×5×285, దీనిని ప్రతి చ.మీ.కు ₹100 ఖర్చుతో గుణించగా బాటను నిర్మించడానికి అయ్యే మొత్తం ఖర్చు వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "75-32+23×570÷15 యొక్క 2+(37-7+5) =",
+      "options": {
+        "a": "505",
+        "b": "1729",
+        "c": "5041",
+        "d": "1816"
+      },
+      "answer": "c",
+      "a": "5041",
+      "e": "గణిత క్రమం (BODMAS) ప్రకారం, 'యొక్క' అనేది గుణకారంగా పరిగణించబడుతుంది మరియు దానిని కూడిక, తీసివేతల కంటే ముందు గుణకారం, భాగహారాలతో పాటు చేయాలి.\n\nముందుగా బ్రాకెట్‌ను సాధించి, ఆ తర్వాత గుణకారం, భాగహారం, 'యొక్క' లను ఎడమ నుండి కుడికి చేసి, చివరగా కూడిక, తీసివేతలు చేయగా 5041 వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A, B, C, D నలుగురు వ్యక్తులు. ఒక పురాతనవస్తువును B కు A, C కు B మరియు D కు C విక్రయించారు. D కొనేటప్పటికి మొత్తం మీద ఆ పురావస్తువు యొక్క ధర 80% పెరిగింది. 25% లాభాన్ని A మరియు 20% లాభాన్ని B పొందారు. అయితే C పొందిన లాభం :",
+      "options": {
+        "a": "15%",
+        "b": "20%",
+        "c": "30%",
+        "d": "35%"
+      },
+      "answer": "b",
+      "a": "20%",
+      "e": "A కొన్న ధరను 100గా తీసుకుంటే, A 25% లాభంతో B కు అమ్మగా B ధర 125 అవుతుంది. B 20% లాభంతో C కు అమ్మగా C ధర 150 అవుతుంది.\n\nD కొనేటప్పటికి మొత్తం ధర 80% పెరిగినందున, D ధర 180. కాబట్టి C లాభం (180-150)/150 × 100 = 20%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A యొక్క ప్రస్తుత వయస్సు B యొక్క ప్రస్తుత వయస్సుకు మూడు రెట్లు. 5 సంవత్సరాల క్రితం A యొక్క వయస్సు అప్పటి B యొక్క వయస్సు వర్గానికి సమానం. కాని ఇప్పటి నుండి పది సంవత్సరాల తర్వాత, A యొక్క వయస్సు అప్పటి B యొక్క వయస్సుకు రెండు రెట్లు. అయితే A యొక్క ప్రస్తుత వయస్సు (సంవత్సరాలలో) :",
+      "options": {
+        "a": "9",
+        "b": "20",
+        "c": "18",
+        "d": "30"
+      },
+      "answer": "d",
+      "a": "30",
+      "e": "B ప్రస్తుత వయస్సు b అనుకుంటే, A ప్రస్తుత వయస్సు 3b. పది సంవత్సరాల తర్వాత షరతు నుండి 3b+10 = 2(b+10), దీని నుండి b=10 వస్తుంది.\n\n5 సంవత్సరాల క్రితం షరతుతో సరిచూడగా ఇది సరిపోతుంది, ఎందుకంటే 3(10)-5=25 అనేది (10-5)² కి సమానం. కాబట్టి A ప్రస్తుత వయస్సు 3×10 = 30 సంవత్సరాలు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక వస్తువును దాని ప్రకటిత ధరపై 25% తగ్గింపుతో అమ్మితే ఒక వ్యాపారికి 12 1/2% లాభం వస్తుంది. దాని ప్రకటిత ధరపై ఇచ్చే తగ్గింపు 30% అయితే దాని కొన్న ధరపై వచ్చే లాభ శాతం :",
+      "options": {
+        "a": "10%",
+        "b": "7 1/2%",
+        "c": "5 1/2%",
+        "d": "5%"
+      },
+      "answer": "d",
+      "a": "5%",
+      "e": "కొన్న ధరను 100గా తీసుకుంటే, 25% తగ్గింపుతో 12.5% లాభం రావడం అంటే అమ్మకపు ధర 112.5, కాబట్టి ప్రకటిత ధర 150 అవుతుంది.\n\n30% తగ్గింపుతో, కొత్త అమ్మకపు ధర 150లో 70% = 105, ఇది కొన్న ధర 100పై 5% లాభాన్ని ఇస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక నిర్ధిష్ట సొమ్ముపై సాలీనా 6% చొప్పున 3 సంవత్సరాలకు బారువడ్డీ 22,500 రూపాయలు మరియు అదే సొమ్ముపై సాలీనా R% చొప్పున 4 సంవత్సరాలకు బారువడ్డీ 40,000 రూపాయలు. అయితే అదే సొమ్ముపై సాలీనా 7% చొప్పున R సంవత్సరాలకు బారువడ్డీ (రూపాయలలో) :",
+      "options": {
+        "a": "45,000",
+        "b": "50,000",
+        "c": "70,000",
+        "d": "80,000"
+      },
+      "answer": "c",
+      "a": "70,000",
+      "e": "మొదటి సందర్భంలో SI = PRT/100 ఉపయోగించి, 22,500 = P×6×3/100 నుండి అసలు మొత్తం ₹1,25,000 వస్తుంది. ఈ అసలు మొత్తాన్ని రెండవ సందర్భంలో ఉపయోగించి, 40,000 = 1,25,000×R×4/100 నుండి R = 8% వస్తుంది.\n\nఇప్పుడు R సంవత్సరాలకు (8 సంవత్సరాలు) 7% వద్ద బారువడ్డీ కనుగొనగా: SI = 1,25,000×7×8/100 = ₹70,000.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "7 సెం.మీ.ల అంతర వ్యాసార్థం గల ఒక స్థూపాకార పాత్ర, ఒక్కొక్కటి 7 సెం.మీ. వ్యాసార్థం గల 6 ఘన గోళాకార బంతులను కలిగి ఉంది. అత్యంత ఎగువన ఉన్న బంతి ఆ పాత్ర యొక్క పైమూతను స్పృశిస్తే, అప్పుడు ఆ పాత్రలో ఖాళీగా ఉన్న ప్రాంతం యొక్క పరిమాణం (ఘ.సెం.మీ.లలో) :",
+      "options": {
+        "a": "2156",
+        "b": "8624",
+        "c": "6468",
+        "d": "4312"
+      },
+      "answer": "d",
+      "a": "4312",
+      "e": "7 సెం.మీ. వ్యాసార్థం గల 6 గోళాలు పేర్చబడి, స్థూపం వ్యాసార్థం గోళం వ్యాసార్థానికి సమానం కావడం వలన, స్థూపం ఎత్తు గోళం వ్యాసానికి 6 రెట్లు, అంటే 6×14 = 84 సెం.మీ.\n\nస్థూపం పరిమాణం π×7²×84 = 12936 ఘ.సెం.మీ., మరియు 6 గోళాల మొత్తం పరిమాణం 6×(4/3)×π×7³ = 8624 ఘ.సెం.మీ. ఖాళీ ప్రాంతం 12936 - 8624 = 4312 ఘ.సెం.మీ.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "r1, r2 వ్యాసార్థాలుగా గల రెండు గొట్టాలు ఒక ఖాళీ తొట్టిని వరుసగా t1 నిమిషాలు మరియు t2 నిమిషాలలో నింపగలిగి ఉండి, నీటి ప్రవాహ వేగం రెండు గొట్టాలలోనూ ఒకేలా ఉంటే అప్పుడు t1r1² = t2r2² అని ఇవ్వబడినది. వరుసగా 1 సెం.మీ., 1 1/2 సెం.మీ. మరియు 2 సెం.మీ. వ్యాసార్థాలు గల మూడు కుళాయిలు ఉన్నాయి. వాటి నుండి వచ్చే నీటి ప్రవాహం యొక్క వేగం ఒకే విధంగా ఉంటుంది. వాటిలో అన్నిటికంటే ఎక్కువ వెడల్పు గల కుళాయి ఒక ఖాళీ తొట్టిని 45 నిమిషాలలో నింపగలదు. అన్ని కుళాయిలను ఒకేసారి తెరిచినట్లైతే, ఎన్ని గంటలలో ఆ ఖాళీ తొట్టి నిండుతుంది?",
+      "options": {
+        "a": "12/29",
+        "b": "20/29",
+        "c": "25",
+        "d": "19 1/4"
+      },
+      "answer": "a",
+      "a": "12/29",
+      "e": "t×d² అన్ని కుళాయిలకు స్థిరంగా ఉండటం వలన, వెడల్పు కుళాయి (వ్యాసం 2) 45 నిమిషాలు తీసుకుంటే, ఆ స్థిరాంకం విలువ 45×4=180. దీని నుండి మిగతా కుళాయిల నింపే సమయాలు 180 నిమిషాలు మరియు 80 నిమిషాలు వస్తాయి.\n\nమూడు వ్యక్తిగత రేట్లను (1/180+1/80+1/45) కలిపి, దాని విలోమాన్ని తీసుకోగా కలిపిన సమయం 720/29 నిమిషాలు వస్తుంది, ఇది 12/29 గంటలకు సమానం.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "546, 1155, 462 మరియు 1365 ల యొక్క గ.సా.భా. H మరియు 252, 504, 108 ల యొక్క క.సా.గు. L అయితే L/H =",
+      "options": {
+        "a": "144",
+        "b": "180",
+        "c": "72",
+        "d": "360"
+      },
+      "answer": "c",
+      "a": "72",
+      "e": "ప్రతి సంఖ్యను ప్రధాన కారణాంకాలుగా విభజిస్తే, 546, 1155, 462 మరియు 1365 లలో ఉమ్మడి కారణాంకాలు 3 మరియు 7, కాబట్టి వాటి గ.సా.భా. H = 21.\n\n252, 504 మరియు 108 ల క.సా.గు. కొరకు, ఉన్న అన్ని ప్రధాన కారణాంకాల యొక్క అత్యధిక ఘాతాలను తీసుకుంటే L = 1512 వస్తుంది. కాబట్టి L/H = 1512/21 = 72.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక రైలు సాధారణ వేగంతో ఒక ప్లాట్‌ఫాంను 18 సెకండ్లలో దాటగలదు. దాని సాధారణ వేగాన్ని గంటకు 15 కి.మీ. చొప్పున పెంచితే అదే ప్లాట్‌ఫాంను ఆ రైలు 15 సెకండ్లలో దాటగలదు. ఆ ప్లాట్‌ఫాం యొక్క పొడవు రైలు పొడవుకు 1 1/2 రెట్లయితే, రైలు యొక్క సాధారణ వేగం (గంటకు కి.మీ.లలో) :",
+      "options": {
+        "a": "60",
+        "b": "75",
+        "c": "85",
+        "d": "100"
+      },
+      "answer": "b",
+      "a": "75",
+      "e": "రైలు పొడవు L అనుకుంటే, ప్లాట్‌ఫాం 1.5L, మరియు దాటవలసిన మొత్తం దూరం 2.5L. రెండు వేగాల కొరకు సమీకరణాలను ఏర్పరచి (అనుగుణ యూనిట్లలో) సమానం చేయగా.\n\nఈ రెండు సమీకరణాలను కలిపి సాధించగా రైలు యొక్క సాధారణ వేగం గంటకు 75 కి.మీ. అని వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "x = 3080+3080+3080+...to ∞ యొక్క వర్గమూలం, y = 200√200√200...to ∞ మరియు x+y=z, అయితే √z√z√z =",
+      "options": {
+        "a": "64",
+        "b": "128",
+        "c": "256",
+        "d": "512"
+      },
+      "answer": "b",
+      "a": "128",
+      "e": "x కొరకు, x² = 3080+x ను సాధించగా x = 56 వస్తుంది. y కొరకు, y² = 200y ను సాధించగా y = 200 వస్తుంది. కాబట్టి z = x+y = 256.\n\nనెస్టెడ్ వ్యక్తీకరణ √(z√(z√z)) అనేది z యొక్క 7/8 ఘాతానికి సరళీకరించబడుతుంది. z = 256 = 2⁸ కావడం వలన, ఇది 2⁷ = 128 అవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతి 24 గంటల వ్యవధిలో ఒక గడియారం 5 నిమిషాలు కోల్పోతుంది మరియు అదే వ్యవధిలో మరొక గడియారం 3 నిమిషాలు లాభ పడుతుంది. రెండు గడియారాలు ఒక నిర్ధిష్ట సమయంలో ఒకే సమయం 't' ని చూపిస్తే, సమీప భవిష్యత్తులో ఆ రెండు గడియారాలు ఏ సమయ వ్యవధిలో (రోజులలో) మళ్ళీ అదే సమయం 't' ని చూపుతాయి?",
+      "options": {
+        "a": "90",
+        "b": "120",
+        "c": "180",
+        "d": "240"
+      },
+      "answer": "a",
+      "a": "90",
+      "e": "ఒక గడియారం 5 నిమిషాలు కోల్పోతూ, మరొకటి 3 నిమిషాలు లాభ పడుతూ ఉండటం వలన, రెండు గడియారాలు ప్రతి రోజుకూ ఒకదానికొకటి 8 నిమిషాలు దూరమవుతాయి.\n\n12-గంటల డయల్‌పై రెండు గడియారాలు మళ్ళీ అదే సమయాన్ని చూపడానికి, మొత్తం వ్యత్యాసం 720 నిమిషాలు (12 గంటలు) చేరాలి. 720ను రోజువారీ వ్యత్యాసం 8 నిమిషాలతో భాగించగా 90 రోజులు వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో 7280 యొక్క భాజకం :",
+      "options": {
+        "a": "119",
+        "b": "264",
+        "c": "117",
+        "d": "182"
+      },
+      "answer": "d",
+      "a": "182",
+      "e": "7280 ను ప్రధాన కారణాంకాలుగా విభజిస్తే 7280 = 2⁴×5×7×13.\n\nప్రతి ఐచ్ఛికాన్ని ఈ కారణాంకాలతో సరిచూడగా, 182 = 2×7×13 మాత్రమే 7280 ను ఖచ్చితంగా భాగిస్తుంది (7280÷182 = 40), కాబట్టి ఇదే సరైన భాజకం.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సాలీనా చక్రవడ్డీకి ఇవ్వబడిన కొంత సొమ్ము 2 సంవత్సరాలలో 7680 రూపాయల మొత్తంగానూ మరియు 3 సంవత్సరాలలో 8192 రూపాయల మొత్తంగానూ అయ్యింది. అయితే పెట్టుబడిగా పెట్టిన సొమ్ము (రూపాయలలో) :",
+      "options": {
+        "a": "3,500",
+        "b": "5,800",
+        "c": "6,750",
+        "d": "2,250"
+      },
+      "answer": "c",
+      "a": "6,750",
+      "e": "3 సంవత్సరాల తర్వాత మొత్తానికి 2 సంవత్సరాల తర్వాత మొత్తానికి గల నిష్పత్తి (1+r) = 8192/7680 = 16/15 అని ఇస్తుంది.\n\nP(1+r)² = 7680 తో (1+r)² = 256/225 ను ఉపయోగించి, అసలు P = 7680×225/256 = ₹6,750.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "8 మంది పురుషులు ఒక పనిని 12 రోజులలో పూర్తి చేయగలరు; అదే పనిని 9 మంది స్త్రీలు 16 రోజులలో చేయగలరు; అదే పనిని 12 మంది పిల్లలు 24 రోజులలో పూర్తి చేయగలరు. 6 మంది పురుషులు, 12 మంది స్త్రీలు మరియు 18 మంది పిల్లలు ఆ పనిని ప్రారంభించి, వారందరూ కలిసి 3 రోజులు పని చేశారు. మిగిలిన పనిని 4వ రోజు కేవలం స్త్రీలు మాత్రమే పూర్తి చేయవలసి వస్తే, అవసరమయ్యే స్త్రీల సంఖ్య :",
+      "options": {
+        "a": "9",
+        "b": "54",
+        "c": "42",
+        "d": "24"
+      },
+      "answer": "b",
+      "a": "54",
+      "e": "ఒక పురుషుని రోజువారీ పని రేటు 1/96, ఒక స్త్రీ రేటు 1/144, మరియు ఒక పిల్లవాని రేటు 1/288 మొత్తం పనిలో. 3 రోజులలో 6 మంది పురుషులు, 12 మంది స్త్రీలు మరియు 18 మంది పిల్లలు కలిసి పనిలో సుమారు 0.625 వంతు పూర్తి చేస్తారు, మిగిలింది 0.375.\n\nప్రతి స్త్రీ రోజుకు 1/144 వంతు పని చేస్తుంది కాబట్టి, 0.375 వంతు పనిని ఒక్క రోజులో పూర్తి చేయడానికి అవసరమైన స్త్రీల సంఖ్య 0.375×144 = 54.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "x, y, z లు ఏవైనా మూడు శూన్యేతర వాస్తవ సంఖ్యలు x⁴-y²=z², y⁴-z²=x² మరియు z⁴-x²=y² అయ్యేటట్టు ఉన్న ఏవైనా మూడు శూన్యేతర వాస్తవ సంఖ్యలు x, y, z లు అయితే, (x²+1)⁻¹+(y²+1)⁻¹+(z²+1)⁻¹ =",
+      "options": {
+        "a": "x²y²z²",
+        "b": "1/(x²y²z²)",
+        "c": "0",
+        "d": "1"
+      },
+      "answer": "d",
+      "a": "1",
+      "e": "ఇచ్చిన మూడు సమీకరణాలను కలిపి కూడితే x⁴+y⁴+z⁴-(x²+y²+z²) అనేది x²+y²+z² కు సమానమని చూపిస్తుంది, ఇది x², y² మరియు z² ల మధ్య సంబంధాన్ని ఇస్తుంది.\n\nఈ సంబంధాన్ని ఉపయోగించి మూడు విలోమ పదాల మొత్తాన్ని బీజగణితంగా సరళీకరించగా వ్యక్తీకరణ ఎల్లప్పుడూ 1కి సమానమని తెలుస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "0.7̄ ను దాని చేతనే గుణించగా వచ్చిన దానిని, 0.8̄ యొక్క వ్యుత్క్రమంలో 2/9వ భాగంచే భాగించారు. ఆ విధంగా వచ్చిన విలువ x అయితే 9√x =",
+      "options": {
+        "a": "0.5̄",
+        "b": "14",
+        "c": "0.6̄",
+        "d": "16"
+      },
+      "answer": "b",
+      "a": "14",
+      "e": "0.7̄ అనేది 7/9కి సమానం, దానిని వర్గం చేస్తే 49/81. 0.8̄ (అది 8/9) యొక్క వ్యుత్క్రమం 9/8, మరియు దీనిలో 2/9వ భాగం 1/4.\n\n49/81 ను 1/4 తో భాగించగా x = 196/81 వస్తుంది. 9√x = 9×(14/9) = 14.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కాకతీయుల పతనానంతరము బస్తర్ జిల్లాలో నివాసమేర్పరచుకున్న రెండవ ప్రతాపరుద్రుని సోదరుడు ఎవరు?",
+      "options": {
+        "a": "జగదేక దేవుడు",
+        "b": "అన్నమ దేవుడు",
+        "c": "సుదర్శన దేవుడు",
+        "d": "ప్రసాదిత్య దేవుడు"
+      },
+      "answer": "b",
+      "a": "అన్నమ దేవుడు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఢిల్లీ సుల్తానుల దర్బారు లో మొట్టమొదటి సారి నౌరోజ్ పండుగను ప్రవేశపెట్టిన సుల్తాను ఎవరు?",
+      "options": {
+        "a": "ఇల్టుట్మిష్",
+        "b": "బాల్బన్",
+        "c": "అల్లాఉద్దీన్ ఖిల్జీ",
+        "d": "గియాసుద్దీన్ తుగ్లక్"
+      },
+      "answer": "b",
+      "a": "బాల్బన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మార్కెట్ శక్తుల యొక్క డిమాండ్ అండ్ సప్లై ఆధారంగా నిర్ణయించు మార్పిడి ధర ___.",
+      "options": {
+        "a": "ప్లోటింగ్ మార్పిడి ధర",
+        "b": "స్థిర మార్పిడి ధర",
+        "c": "ఏకపక్ష మార్పిడి ధర",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "ప్లోటింగ్ మార్పిడి ధర",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "హర్షవర్ధనునిచే రచించబడిన నాటకములను గుర్తించుము.",
+      "options": {
+        "a": "హర్షచరిత్ర, చారుదత్త మరియు నాగానందము",
+        "b": "ప్రియదర్శిక, రత్నావళి మరియు నాగానందము",
+        "c": "ప్రియదర్శిక, రత్నావళి మరియు శాకుంతల",
+        "d": "కాదంబరి, శాకుంతల మరియు రత్నావళి"
+      },
+      "answer": "b",
+      "a": "ప్రియదర్శిక, రత్నావళి మరియు నాగానందము",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది ఖనిజాలలో దేనిని 100°C ఉష్ణోగ్రతకు వేడి చేయడం ద్వారా ప్లాస్టర్ ఆఫ్ ప్యారిస్ (PoP) తయారు చేయబడుతుంది?",
+      "options": {
+        "a": "CaSO₄2H₂O",
+        "b": "CaSO₃2H₂O",
+        "c": "CaSO₁2H₂O",
+        "d": "CaSO₂H₂O"
+      },
+      "answer": "a",
+      "a": "CaSO₄2H₂O",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రీ.శ. 1576 సంవత్సరంలో హల్దీఘాటు యుద్ధంలో రాణా ప్రతాప్ సింగ్ కు సహాయపడిన ఆఫ్ఘన్ నాయకులు ఎవరు?",
+      "options": {
+        "a": "హసన్ ఖాన్ మేవాటి",
+        "b": "హకీమ్ ఖాన్ సూర్",
+        "c": "నుస్రత్ షా",
+        "d": "మునీమ్ ఖాన్"
+      },
+      "answer": "b",
+      "a": "హకీమ్ ఖాన్ సూర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సింధూ నాగరికతకు సంబంధించిన ఏ స్థలము (సైట్) కోటను (సిటాడల్) కలిగి లేదు?",
+      "options": {
+        "a": "కాలిభంగన్",
+        "b": "లోథల్",
+        "c": "సుర్కొటాడ",
+        "d": "చన్హుదారో"
+      },
+      "answer": "d",
+      "a": "చన్హుదారో",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భూ అంతర్భాగమును ఈ విధంగా కూడ అంటారు ___.",
+      "options": {
+        "a": "శిలావరణం",
+        "b": "జలావరణం",
+        "c": "మెసో ఆవరణం",
+        "d": "భారా వరణం"
+      },
+      "answer": "d",
+      "a": "భారా వరణం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత రాజ్యాంగం ప్రకారం మొత్తం ఎన్ని లోక్ సభ స్థానాల సభ్యత్వములను భారత పార్లమెంటుకు కేటాయించడం జరిగింది?",
+      "options": {
+        "a": "552",
+        "b": "543",
+        "c": "529",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "552",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మే నెల 2023 సంవత్సరంలో నోబెల్ ప్రైజ్ సమ్మిట్ (సమావేశం) 2023 ను నిర్వహించబడనుంది. ఈ సమ్మిట్ యొక్క ప్రధాన సారాంశము ఏమిటి మరియు ఈ సమ్మిట్ ఎక్కడ నిర్వహించబడనుంది?",
+      "options": {
+        "a": "జీవ వైవిధ్యం (బయో డైవర్సిటీ) మరియు న్యూయార్క్ సిటీ",
+        "b": "పర్యావరణ పరిరక్షణ (ఎన్విరాన్‌మెంటల్ ప్రొటెక్షన్) మరియు లండన్",
+        "c": "సత్యం, నమ్మకం మరియు దృఢ విశ్వాసం (ట్రుత్, ట్రస్ట్ అండ్ హోప్) మరియు వాషింగ్టన్ డి.సి.",
+        "d": "విపత్తు నిర్వహణ (డిజాస్టర్ మేనేజ్‌మెంట్) మరియు ఢిల్లీ"
+      },
+      "answer": "c",
+      "a": "సత్యం, నమ్మకం మరియు దృఢ విశ్వాసం (ట్రుత్, ట్రస్ట్ అండ్ హోప్) మరియు వాషింగ్టన్ డి.సి.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో ఏ పదార్థంలో అత్యధిక జ్వలన ఉష్ణోగ్రతను కలిగి ఉంటుందని అంచనా వేయబడింది?",
+      "options": {
+        "a": "ఆల్కహాల్",
+        "b": "బొగ్గు",
+        "c": "కిరోసిన్",
+        "d": "పెట్రోల్"
+      },
+      "answer": "b",
+      "a": "బొగ్గు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పర్యావరణానికి సంబంధించి SMOG అను పదానికి నిర్వచనం ___.",
+      "options": {
+        "a": "ఓజోన్ మరియు స్మోక్",
+        "b": "సౌండ్ మరియు ఫాగ్",
+        "c": "సౌండ్ మరియు ఓజోన్",
+        "d": "స్మోక్ మరియు ఫాగ్"
+      },
+      "answer": "d",
+      "a": "స్మోక్ మరియు ఫాగ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిని జతపరచుము.\nగ్రూప్-I (శాసనములు)\n(a) పూనా ప్లేట్లు\n(b) మందసోర్ శాసనము\n(c) అయ్యవోలు శాసనము\n(d) హాతిగుంఫా శాసనము\n\nగ్రూప్-II (కాలము)\n(i) గుప్తులు\n(ii) వాకాటకులు\n(iii) ఖారవేలుడు\n(iv) చాళుక్యులు",
+      "options": {
+        "a": "(ii)(iv)(iii)(i)",
+        "b": "(i)(ii)(iv)(iii)",
+        "c": "(ii)(i)(iv)(iii)",
+        "d": "(iv)(iii)(i)(ii)"
+      },
+      "answer": "c",
+      "a": "(ii)(i)(iv)(iii)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో మొక్కలలో పునరుత్పత్తికి సంబంధించిన భాగాన్ని గుర్తించండి.",
+      "options": {
+        "a": "వేరు",
+        "b": "విత్తనాలు",
+        "c": "పుష్పాలు",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "వేరు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఢిల్లీ లోని రాజపథ్ యొక్క కొత్త పేరు ___",
+      "options": {
+        "a": "జన్‌పథ్",
+        "b": "కర్తవ్యపథ్",
+        "c": "వీర్‌పథ్",
+        "d": "వృక్షపథ్"
+      },
+      "answer": "b",
+      "a": "కర్తవ్యపథ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలోని గ్రూప్-I అంశాలకు సమానమైన గ్రూప్-II అంశాల ఎంపికలతో జతపర్చండి.\nగ్రూప్-I\n(a) సెడిమెంటరీ రాళ్ళు\n(b) మెటామార్ఫిక్ రాళ్ళు\n(c) ఇగ్నియస్ రాళ్ళు\n(d) ఎక్స్ట్రూసివ్ రాళ్ళు\n\nగ్రూప్-II\n(i) కరిగిన లావా చల్లబడిన తర్వాత ఈ రాళ్ళు ఏర్పడతాయి\n(ii) శిలా ఫలకాలు (లితిఫికేషన్ ప్రక్రియ) ద్వారా ఈ రాళ్ళు ఏర్పడతాయి\n(iii) ఒత్తిడి (ప్రెషర్), పరిమాణము (వాల్యూమ్), ఉష్ణోగ్రత (టెంపరేచర్) PVT వర్గాల ఆధారంగా ఈ రాళ్ళు ఏర్పడతాయి\n(iv) శిలా ద్రవాలు చల్లబడి గట్టి పడటం ద్వారా ఈ రాళ్ళు ఏర్పడతాయి",
+      "options": {
+        "a": "(iii)(iv)(i)(ii)",
+        "b": "(iv)(iii)(ii)(i)",
+        "c": "(ii)(iii)(iv)(i)",
+        "d": "(iv)(i)(ii)(iii)"
+      },
+      "answer": "c",
+      "a": "(ii)(iii)(iv)(i)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రిజర్వ్ బ్యాంక్ ఆఫ్ ఇండియా (RBI) ఇతర వాణిజ్య బ్యాంకులకు ఇచ్చే వడ్డీ రేటును ___ అంటారు.",
+      "options": {
+        "a": "రేట్ ఆఫ్ ఇంట్రెస్ట్",
+        "b": "రెపో రేట్",
+        "c": "క్రెడిట్ రేట్",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "b",
+      "a": "రెపో రేట్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సైమన్ కమిషన్‌ను ఏ సంవత్సరంలో మరియు ఎవరు నియామకం చేశారు?",
+      "options": {
+        "a": "1926 మరియు యు.ఎస్. ప్రభుత్వము",
+        "b": "1927 మరియు బ్రిటిష్ ప్రభుత్వము",
+        "c": "1928 మరియు ఫ్రెంచ్ ప్రభుత్వము",
+        "d": "1929 మరియు డచ్ ప్రభుత్వము"
+      },
+      "answer": "b",
+      "a": "1927 మరియు బ్రిటిష్ ప్రభుత్వము",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది రాజులను మరియు వారి బిరుదులను ఆధారంగా జతపరచండి.\nగ్రూప్-I (రాజులు)\n(a) అబుల్ హసన్ కుతుబ్ షా\n(b) మొదటి చంద్రగుప్తుడు\n(c) అశోక\n(d) రాజేంద్ర చోళుడు\n(e) ఔరంగజేబు\n\nగ్రూప్-II (బిరుదులు)\n(i) మహారాజాధిరాజ\n(ii) దేవనంపియ\n(iii) జిందా పీర్\n(iv) తానాషా\n(v) గంగైకొండ",
+      "options": {
+        "a": "(iv)(i)(ii)(v)(iii)",
+        "b": "(iv)(i)(iii)(ii)(v)",
+        "c": "(iii)(v)(i)(ii)(iv)",
+        "d": "(iii)(v)(iv)(ii)(i)"
+      },
+      "answer": "a",
+      "a": "(iv)(i)(ii)(v)(iii)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో దేనివలన అయస్కాంతము తన ప్రభావాన్ని కోల్పోతుంది.",
+      "options": {
+        "a": "వేడి చేయడం వలన మాత్రమే",
+        "b": "సుత్తితో కొట్టటం వలన మాత్రమే",
+        "c": "పైనుండి భూమిపై పడవేయడం వలన మాత్రమే",
+        "d": "పైవన్నీ"
+      },
+      "answer": "d",
+      "a": "పైవన్నీ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది యుద్ధములను క్రమానుగతంగా వ్రాయుము.\n(A) ప్లాసీ యుద్ధము\n(B) బక్సార్ యుద్ధము\n(C) రెండవ కర్ణాటక యుద్ధము\n(D) మొదటి ఆంగ్లో-మైసూర్ యుద్ధము",
+      "options": {
+        "a": "(A), (B), (C), (D)",
+        "b": "(B), (D), (C), (A)",
+        "c": "(C), (A), (B), (D)",
+        "d": "(D), (B), (C), (A)"
+      },
+      "answer": "c",
+      "a": "(C), (A), (B), (D)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిని జతపరచుము.\nగ్రూప్-I (అశోకుని రాతి శాసనములు)\n(a) ధౌళి\n(b) ఎర్రగుడి\n(c) గిర్నార్\n(d) కల్సి\n\nగ్రూప్-II (వేయించబడిన ప్రదేశములు)\n(i) డెహ్రాడూన్ జిల్లా, ఉత్తరాఖండ్\n(ii) జానాగడ్ జిల్లా, గుజరాత్\n(iii) పూరి జిల్లా, ఒరిస్సా\n(iv) కర్నూలు జిల్లా, ఆంధ్రప్రదేశ్",
+      "options": {
+        "a": "(i)(ii)(iv)(iii)",
+        "b": "(iii)(iv)(ii)(i)",
+        "c": "(ii)(iv)(i)(iii)",
+        "d": "(iv)(i)(iii)(ii)"
+      },
+      "answer": "b",
+      "a": "(iii)(iv)(ii)(i)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "కర్కట రేఖ ___ రాష్ట్రాల గుండా వెళ్ళుచున్నది.",
+      "options": {
+        "a": "ఒడిషా & బీహార్",
+        "b": "బీహార్ & ఉత్తర ప్రదేశ్",
+        "c": "మహారాష్ట్ర & గోవా",
+        "d": "మణిపూర్ & ఛత్తీస్‌ఘర్"
+      },
+      "answer": "d",
+      "a": "మణిపూర్ & ఛత్తీస్‌ఘర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో భారత మూలాలున్న ప్రపంచ స్థాయి నాయకులను గుర్తించండి.",
+      "options": {
+        "a": "రిషి సునాక్ మాత్రమే",
+        "b": "కమలా హారిస్ మాత్రమే",
+        "c": "ప్రవింద్ జగన్నాథ్ మాత్రమే",
+        "d": "పైవన్నీ"
+      },
+      "answer": "d",
+      "a": "పైవన్నీ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత స్టాక్ మార్కెట్ యొక్క సూచీలను ___ అని అంటారు.",
+      "options": {
+        "a": "బ్రెంట్",
+        "b": "సెన్సెక్స్",
+        "c": "నాస్డాక్ (NASDAQ)",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "b",
+      "a": "సెన్సెక్స్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "వర్ధమాన మహావీరునికి సంబంధించినంతవరకు సరికాని జతను గుర్తించుము.",
+      "options": {
+        "a": "సిద్ధార్థ - మహావీరుని యొక్క తండ్రి",
+        "b": "త్రిశల - మహావీరుని యొక్క తల్లి",
+        "c": "యశోద - మహావీరుని యొక్క భార్య",
+        "d": "జమాలి - మహావీరుని యొక్క సోదరుడు"
+      },
+      "answer": "d",
+      "a": "జమాలి - మహావీరుని యొక్క సోదరుడు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "గ్లోబల్ ఇన్వెస్ట్‌మెంట్ కాంక్లేవ్ 23 (GIC23), 2023 ఏప్రిల్ 12 న ఏ పట్టణంలో ప్రారంభమగును?",
+      "options": {
+        "a": "అహ్మదాబాద్",
+        "b": "హైదరాబాద్",
+        "c": "పూణే",
+        "d": "ఢిల్లీ"
+      },
+      "answer": "b",
+      "a": "హైదరాబాద్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "బాల్‌పాయింట్ పెన్ ___ సూత్రం ఆధారంగా పని చేస్తుంది.",
+      "options": {
+        "a": "లామినార్ ప్రవాహం",
+        "b": "అంతర పరిమాణు శక్తి",
+        "c": "తలతన్యత",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "c",
+      "a": "తలతన్యత",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మరాఠా ప్రభువు అయిన శంభాజిని మరియు ఆయన ప్రధానమంత్రి కవికలశ్‌ను క్రీ.శ. 1689 లో మొగలులు ఏ ప్రదేశములో బంధించినారు?",
+      "options": {
+        "a": "రాయగఢ్",
+        "b": "రాజాపూర్",
+        "c": "సంగమేశ్వర్",
+        "d": "బహదూర్‌గఢ్"
+      },
+      "answer": "c",
+      "a": "సంగమేశ్వర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో పంటిలోని రంధ్రాలను నింపడానికి వాడే పాదరస మిశ్రమం ఏది?",
+      "options": {
+        "a": "అమాల్గమ్ (Amalgam)",
+        "b": "టంకం ఇనుము (Solder)",
+        "c": "కంచు (Bronze)",
+        "d": "ఇత్తడి (Brass)"
+      },
+      "answer": "a",
+      "a": "అమాల్గమ్ (Amalgam)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ మొఘల్ రాజా, ఆంగ్లేయుల (బ్రిటిష్) కెప్టెన్ హాకిన్స్ కు స్వాగతం పలికి పోర్చుగీసు పాలకుల ఆగ్రహానికి కారణమయ్యాడు?",
+      "options": {
+        "a": "మూహియల్-దిన్-మెహమ్మద్",
+        "b": "జలాలుద్దీన్ మెహమ్మద్ అక్బర్",
+        "c": "మెహమ్మద్ బిన్ తుగ్లక్",
+        "d": "మీర్జా నూరుద్దీన్ మెహమ్మద్ సలీమ్"
+      },
+      "answer": "d",
+      "a": "మీర్జా నూరుద్దీన్ మెహమ్మద్ సలీమ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రెండు వేర్వేరు కంపెనీలు కలిసి ఒక కంపెనీగా రూపాంతరం చెందే క్రమం మరియు కలిసిన రెండు కంపెనీలు వాటి ఉనికిని పూర్తిగా కోల్పోయే పద్ధతిని ___ అంటారు.",
+      "options": {
+        "a": "విలీనం (Merging)",
+        "b": "సమ్మేళనం (Amalgamation)",
+        "c": "స్వాధీనం (Takeover)",
+        "d": "ఉమ్మడి వ్యాపారం (Joint Venture)"
+      },
+      "answer": "b",
+      "a": "సమ్మేళనం (Amalgamation)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో ఏ దేశంలో భారత రాయబార కార్యాలయం లేదు?",
+      "options": {
+        "a": "సోమాలియా",
+        "b": "పాకిస్తాన్",
+        "c": "చైనా",
+        "d": "బాంగ్లాదేశ్"
+      },
+      "answer": "a",
+      "a": "సోమాలియా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఓడ రేవు పేరు ఆధారంగా అది ఉన్న రాష్ట్రాన్ని జతపరచండి.\nగ్రూప్-I (ఓడ రేవు)\n(a) ప్రదీప్ పోర్ట్ అథారిటీ\n(b) దీన్ దయాళ్ పోర్ట్\n(c) జవహర్‌లాల్ నెహ్రూ పోర్ట్\n(d) శ్యామ్ ప్రసాద్ ముఖర్జీ పోర్ట్\n(e) కామరాజర్ పోర్ట్ లిమిటెడ్\n\nగ్రూప్-II (రాష్ట్రం)\n(i) గుజరాత్\n(ii) కోల్‌కతా\n(iii) తమిళనాడు\n(iv) మహారాష్ట్ర\n(v) ఒడిషా",
+      "options": {
+        "a": "(iii)(ii)(i)(v)(iv)",
+        "b": "(iii)(ii)(iv)(i)(v)",
+        "c": "(v)(i)(ii)(iv)(iii)",
+        "d": "(v)(i)(iv)(ii)(iii)"
+      },
+      "answer": "d",
+      "a": "(v)(i)(iv)(ii)(iii)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "షేర్‌షా కాలంలో 'పరగణా' యొక్క అధికారి ఎవరు?",
+      "options": {
+        "a": "ఫౌజ్‌దార్",
+        "b": "అమిల్",
+        "c": "ముఖద్దమ్",
+        "d": "షిక్‌దార్"
+      },
+      "answer": "b",
+      "a": "అమిల్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రాష్ట్ర గవర్నర్లను వారి పాలించే రాష్ట్రం ఆధారంగా జతపర్చండి.\nగ్రూప్-I (గవర్నర్)\n(a) ఎస్. అబ్దుల్ నజీర్\n(b) శ్రీ రమేష్ బైస్\n(c) ఆనందీబెన్ పటేల్\n(d) ఆరిఫ్ మహమ్మద్ ఖాన్\n(e) శ్రీ సత్యదేవ్ నారాయణ ఆర్య\n\nగ్రూప్-II (రాష్ట్రం)\n(i) మహారాష్ట్ర\n(ii) ఆంధ్ర ప్రదేశ్\n(iii) కేరళ\n(iv) త్రిపుర\n(v) ఉత్తర ప్రదేశ్",
+      "options": {
+        "a": "(iii)(ii)(i)(iv)(v)",
+        "b": "(iii)(ii)(v)(iv)(i)",
+        "c": "(ii)(i)(iii)(iv)(v)",
+        "d": "(ii)(i)(v)(iii)(iv)"
+      },
+      "answer": "d",
+      "a": "(ii)(i)(v)(iii)(iv)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది ప్రవచనాలలో సరియైన ప్రవచనాలను గుర్తించండి.\n(A) చనిపోయిన జంతువులను తినే ఇతర జంతువులను స్కావెంజర్స్ అంటారు.\n(B) సూక్ష్మక్రిములు, శిలీంధ్రాలు మరియు వానపాములు వ్యర్థాలను కుళ్ళబెడతాయి.\n(C) మానవ శరీరంలోని సూక్ష్మక్రిములు హానికలిగిస్తాయి.\n(D) డీకంపోసర్స్ మరియు స్కావెంజర్స్ లేకపోయినట్లైతే చనిపోయిన జంతువులు మరియు వృక్షాల వల్ల పరిసరాలు పరిశుభ్రంగా ఉండదు",
+      "options": {
+        "a": "(A), (B) & (C) మాత్రమే",
+        "b": "(A), (B) & (D) మాత్రమే",
+        "c": "(B), (C) & (D) మాత్రమే",
+        "d": "(A), (B), (C) & (D)"
+      },
+      "answer": "b",
+      "a": "(A), (B) & (D) మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "స్వాతంత్ర్య పోరాట సమయంలో జరిగిన సంఘటనలను అవి జరిగిన ఆరోహణా క్రమంలో గుర్తించండి.\n(A) జలియన్‌వాలా బాగ్ సంఘటన\n(B) ఇండియన్ నేషనల్ ఆర్మీ సహాయం కోసం సుభాష్ చంద్ర బోస్ జపాన్ చేరిన రోజు\n(C) మహాత్మా గాంధీ ద్వారా దండి మార్చ్\n(D) మహాత్మా గాంధీ ద్వారా చంపారన్ సత్యాగ్రహం\n(E) గాంధీజీ ద్వారా క్విట్ ఇండియా మూమెంట్\n(F) భగత్ సింగ్, రాజ్‌గురు మరియు సుఖదేవ్ లను లాహోర్ జైలులో ఉరి తీసిన సంఘటన",
+      "options": {
+        "a": "(D), (A), (C), (F), (E), (B)",
+        "b": "(D), (A), (F), (C), (E), (B)",
+        "c": "(A), (D), (E), (F), (B), (C)",
+        "d": "(A), (D), (C), (F), (B), (E)"
+      },
+      "answer": "a",
+      "a": "(D), (A), (C), (F), (E), (B)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "బేకింగ్ సోడా యొక్క రసాయన నామం ___.",
+      "options": {
+        "a": "సోడియం క్లోరైడ్",
+        "b": "సోడియం హైడ్రోక్లోరైడ్",
+        "c": "సోడియం హైడ్రోజన్ కార్బొనేట్",
+        "d": "సోడియం కార్బొనేట్"
+      },
+      "answer": "c",
+      "a": "సోడియం హైడ్రోజన్ కార్బొనేట్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ద్రవ్య ముసాయిదా చట్టం ఈ క్రింది వాటిలో ఏ చోట ప్రవేశపెట్టకూడదు, అది ఏమిటి?",
+      "options": {
+        "a": "లోక్ సభ (హౌజ్ ఆఫ్ ద పీపుల్) మాత్రమే",
+        "b": "రాజ్య సభ మాత్రమే",
+        "c": "(1) మరియు (2) రెండూను",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "b",
+      "a": "రాజ్య సభ మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతి సంవత్సరం, దేశం కోసం వీర మరణం పొందినందుకు సైనికులకు నివాళి అర్పించడానికి ప్రతి సంవత్సరం భారత సైన్యం \"ఇన్ఫాంట్రీ డే\" (పదాతిదళం రోజు) ఏ రోజున జరుపుతుంది?",
+      "options": {
+        "a": "26వ జనవరి",
+        "b": "15వ ఆగస్టు",
+        "c": "27వ అక్టోబర్",
+        "d": "30వ డిసెంబర్"
+      },
+      "answer": "c",
+      "a": "27వ అక్టోబర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత ప్రభుత్వం ద్వారా ఆమోదించబడిన ఏ విధానము దేశ అంతరిక్ష పరిశోధన విభాగాన్ని ఉత్తేజపరుస్తుంది?",
+      "options": {
+        "a": "నేషనల్ సైన్స్ పాలసీ 2023",
+        "b": "ఇండియన్ స్పేస్ పాలసీ 2023",
+        "c": "నేషనల్ సెక్యూరిటీ పాలసీ 2023",
+        "d": "ఇండియన్ సోషల్ పాలసీ 2023"
+      },
+      "answer": "b",
+      "a": "ఇండియన్ స్పేస్ పాలసీ 2023",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది ప్రవచనములలో బుగ్వేదానికి సంబంధించి సరికాని దానిని గుర్తించండి.\n(బుగ్వేదంలో 1028 శ్లోకాలు, 10,560 మంత్రాలు మరియు 74,000 పదములు కలవు.)",
+      "options": {
+        "a": "బుగ్వేద ఆర్యుల యొక్క భౌగోళిక పరిజ్ఞానం యమునా నది వరకు మాత్రమే ఉన్నట్టు గోచరిస్తున్నది.",
+        "b": "బుగ్వేదములో ఎన్నో శ్లోకములు శివుని గురించి ప్రస్తావించినాయి.",
+        "c": "సభ, సమితి మరియు విధాత అను గిరిజన సభ (అసెంబ్లీలు) బుగ్వేద కాలంలో రాజాల యొక్క అధికారములను కట్టుబాటులో ఉంచినాయి.",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "b",
+      "a": "బుగ్వేదములో ఎన్నో శ్లోకములు శివుని గురించి ప్రస్తావించినాయి.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది వాటిలో మెడికల్ టూరిజం అభివృద్ధి చేయడానికి ఉద్దేశించిన కార్యక్రమం ఏది?",
+      "options": {
+        "a": "యూనివర్సల్ ఇమ్యూనైజేషన్ ప్రోగ్రాం",
+        "b": "హీల్ ఇన్ ఇండియా",
+        "c": "ఆయుష్మాన్ భారత్ యోజన",
+        "d": "ప్రధాన మంత్రి స్వస్థ్య సురక్షా యోజన"
+      },
+      "answer": "b",
+      "a": "హీల్ ఇన్ ఇండియా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రిజర్వ్ బ్యాంక్ ఆఫ్ ఇండియా చెల్లించవలసిన మొత్తంలో లోటు ఉన్నప్పుడు వాటిని భర్తీ చేయడానికి తీసుకునే లావాదేవీలను ___ అంటారు.",
+      "options": {
+        "a": "కేపిటల్ ఇన్వెస్ట్‌మెంట్",
+        "b": "ఆక్షన్ సేల్",
+        "c": "అఫిషియల్ రిజర్వ్ సేల్",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "c",
+      "a": "అఫిషియల్ రిజర్వ్ సేల్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "NILP అనునది 2023 సంవత్సరం మార్చి నెలలో భారత ప్రభుత్వం ప్రారంభించిన పథకం. దీని పూర్తి రూపం ఏమిటి?",
+      "options": {
+        "a": "నార్త్ ఈస్ట్ ఇండిపెండెంట్ లివింగ్ ప్రోగ్రాం",
+        "b": "న్యూ ఇండియా లిటరసీ ప్రోగ్రాం",
+        "c": "నార్తర్న్ ఐర్లాండ్ లేబర్ పార్టీ",
+        "d": "నెస్ట్లే ఇంటర్న్‌షిప్ లీప్ ప్రోగ్రాం"
+      },
+      "answer": "b",
+      "a": "న్యూ ఇండియా లిటరసీ ప్రోగ్రాం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత రాజ్యాంగం ప్రకారం ఏ ఆర్టికల్ (నిబంధన) ద్వారా జిల్లా న్యాయాధికారి నియమింపబడతారు?",
+      "options": {
+        "a": "243",
+        "b": "233",
+        "c": "320",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "b",
+      "a": "233",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో భారతదేశ అంతర్గత భద్రతకు సంబంధించినది ఏది కాదు?",
+      "options": {
+        "a": "దేశంలో చట్ట విరుద్ధ కార్యకలాపాలను నిరోధించుట",
+        "b": "సైబర్ నేరాలకు వ్యతిరేకంగా పోరాడడానికి సమర్థవంతమైన వ్యూహాలు",
+        "c": "అవినీతి నిర్మూలనకు సంబంధించిన చట్టాలను సమర్థవంతంగా అమలు పరచడం",
+        "d": "భారత పౌరులకు వేరే దేశాలలో పూర్తి రక్షణ"
+      },
+      "answer": "d",
+      "a": "భారత పౌరులకు వేరే దేశాలలో పూర్తి రక్షణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో ఏ పోషకాలు పాలలో ఉండవు?",
+      "options": {
+        "a": "కాల్షియం",
+        "b": "క్రొవ్వు",
+        "c": "ఫైబర్",
+        "d": "ప్రొటీన్"
+      },
+      "answer": "c",
+      "a": "ఫైబర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నృత్య విధానాలను అవి ఉద్భవించిన రాష్ట్రాలతో జతపరచుము.\nగ్రూప్-I (నృత్య విధానం)\n(a) దండరి\n(b) చ్చావు\n(c) బిహు\n(d) యక్షగాన\n(e) దేఖని\n\nగ్రూప్-II (రాష్ట్రం)\n(i) అస్సాం\n(ii) కర్ణాటక\n(iii) గోవా\n(iv) పశ్చిమ బెంగాల్\n(v) తెలంగాణ",
+      "options": {
+        "a": "(v)(iv)(i)(ii)(iii)",
+        "b": "(v)(iv)(ii)(i)(iii)",
+        "c": "(v)(ii)(i)(iv)(iii)",
+        "d": "(v)(i)(ii)(iv)(iii)"
+      },
+      "answer": "a",
+      "a": "(v)(iv)(i)(ii)(iii)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "రాజులను మరియు వారి పరిపాలనలను ఆరోహణా క్రమంలో గుర్తించండి.\n(A) అశోకుడు జరిపిన కళింగ యుద్ధం, లక్షకు పైగా ప్రాణాలు కోల్పోవడం.\n(B) చంద్రగుప్త మౌర్యుల రాజ్యపాలన.\n(C) జలాలుద్దీన్ ముహమ్మద్ అక్బర్ 13 సంవత్సరాల వయస్సులో చక్రవర్తిగా గుర్తింపబడ్డాడు.\n(D) శ్రీకృష్ణ దేవరాయలు ద్వారా ఉదయగిరి, కొండవల్లి మరియు కొండవీడు కోటల ఆక్రమణ.\n(E) శివాజీ 16 వ వీట తోర్నా కోటను స్వాధీన పరచుకోవడం.",
+      "options": {
+        "a": "(C), (D), (A), (B), (E)",
+        "b": "(B), (A), (C), (D), (E)",
+        "c": "(B), (A), (D), (C), (E)",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "c",
+      "a": "(B), (A), (D), (C), (E)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సౌర వ్యవస్థలోని గ్రహాలను వాటి యొక్క చంద్రుల సంఖ్య ఆధారంగా అవరోహణా (ఎక్కువ నుండి తక్కువ) క్రమంలో అమర్చండి.\n(A) నెప్ట్యూన్ (Neptune)\n(B) అంగారకుడు (Mars)\n(C) శని గ్రహం (Saturn)\n(D) యురేనస్ (Uranus)",
+      "options": {
+        "a": "(C), (B), (D), (A)",
+        "b": "(B), (C), (A), (D)",
+        "c": "(B), (C), (D), (A)",
+        "d": "(C), (D), (A), (B)"
+      },
+      "answer": "d",
+      "a": "(C), (D), (A), (B)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఆర్థిక శాస్త్రంలో తరుగుదల యొక్క ఉద్దేశ్యం ___.",
+      "options": {
+        "a": "గతంలో పొందిన లాభం చూపించడం",
+        "b": "పన్ను (టాక్స్) తగ్గించడం",
+        "c": "నికర లాభాన్ని లెక్కించడం",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "c",
+      "a": "నికర లాభాన్ని లెక్కించడం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నీటి సరఫరా కొరకు మన ఇళ్ళలో ఉపయోగించే ఇనుప పైపులు త్రుప్పు పట్టకుండా ___ తో పూత పూయబడి ఉంటాయి.",
+      "options": {
+        "a": "కార్బన్",
+        "b": "హీలియం",
+        "c": "జింక్",
+        "d": "మెగ్నీషియం"
+      },
+      "answer": "c",
+      "a": "జింక్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "దావోస్ లో జరిగిన ప్రపంచ ఆర్థిక వేదిక-2023 కి భారతదేశం నుండి హాజరైన ప్రతినిధులను గుర్తించండి.\n(A) ఏక్నాథ్ షిండే  (B) గౌతమ్ అదానీ  (C) అనిల్ అంబానీ  (D) కె. తారక రామారావు  (E) ముకేష్ అంబానీ  (F) అదర్ పూనావాలా  (G) సంజీవ్ బజాజ్",
+      "options": {
+        "a": "(A), (B), (C) & (F) మాత్రమే",
+        "b": "(B), (D), (E) & (F) మాత్రమే",
+        "c": "(A), (E), (F) & (G) మాత్రమే",
+        "d": "(2) & (3) రెండూను"
+      },
+      "answer": "b",
+      "a": "(B), (D), (E) & (F) మాత్రమే",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది టోర్నమెంట్ కప్‌లను వాటికి సంబంధించిన క్రీడలతో జతపరచండి.\nగ్రూప్-I (టోర్నమెంట్ కప్)\n(a) దురంద్ కప్\n(b) బీటన్ కప్\n(c) అగర్వాల్ కప్\n(d) డేవిస్ కప్\n(e) ఎజ్రా కప్\n\nగ్రూప్-II (క్రీడలు)\n(i) హాకీ\n(ii) బాడ్మింటన్\n(iii) పోలో\n(iv) ఫుట్‌బాల్\n(v) లాన్ టెన్నిస్",
+      "options": {
+        "a": "(iv)(i)(v)(ii)(iii)",
+        "b": "(iv)(i)(ii)(v)(iii)",
+        "c": "(ii)(iv)(v)(iii)(i)",
+        "d": "(ii)(iv)(v)(i)(iii)"
+      },
+      "answer": "b",
+      "a": "(iv)(i)(ii)(v)(iii)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సరికాని జతను గుర్తించుము.\n(1) మద్రాస్ నేటివ్ అసోసియేషన్ - గాజుల లక్ష్మీనరసు చెట్టి\n(2) ఇండియన్ అసోసియేషన్ - సురేంద్రనాథ్ బెనర్జీ\n(3) ఈస్ట్ ఇండియా అసోసియేషన్ - దాదాభాయి నౌరోజి\n(4) బాంబే ప్రెసిడెన్సీ అసోసియేషన్ - బాలగంగాధర్ తిలక్",
+      "options": {
+        "a": "మద్రాస్ నేటివ్ అసోసియేషన్ - గాజుల లక్ష్మీనరసు చెట్టి",
+        "b": "ఇండియన్ అసోసియేషన్ - సురేంద్రనాథ్ బెనర్జీ",
+        "c": "ఈస్ట్ ఇండియా అసోసియేషన్ - దాదాభాయి నౌరోజి",
+        "d": "బాంబే ప్రెసిడెన్సీ అసోసియేషన్ - బాలగంగాధర్ తిలక్"
+      },
+      "answer": "d",
+      "a": "బాంబే ప్రెసిడెన్సీ అసోసియేషన్ - బాలగంగాధర్ తిలక్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "జన్యు శాస్త్ర పితామహుడిగా పేరుపొందిన వ్యక్తి ఎవరు?",
+      "options": {
+        "a": "హిప్పోక్రేట్స్",
+        "b": "రాబర్ట్ హుక్",
+        "c": "లియోనార్డో డా విన్సీ",
+        "d": "గ్రెగర్ జోహాన్ మెండల్"
+      },
+      "answer": "d",
+      "a": "గ్రెగర్ జోహాన్ మెండల్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇనుప ధాతువుకు ప్రసిద్ధి గాంచిన 'బోనాయిఘర్ రేంజ్' నెలకొని ఉన్న రాష్ట్రం ___.",
+      "options": {
+        "a": "బీహార్",
+        "b": "ఛత్తీస్‌ఘర్",
+        "c": "ఒడిషా",
+        "d": "గోవా"
+      },
+      "answer": "c",
+      "a": "ఒడిషా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఎలక్ట్రికల్ షార్ట్ సర్క్యూట్ సమయంలో సర్క్యూట్‌లో (వలయం) కరెంట్ ___.",
+      "options": {
+        "a": "గణనీయంగా తగ్గుతుంది",
+        "b": "మారదు",
+        "c": "భారీగా పెరుగుతుంది",
+        "d": "నిరంతరం మారుతూ ఉంటుంది"
+      },
+      "answer": "c",
+      "a": "భారీగా పెరుగుతుంది",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "'మహారాజాధిరాజ' బిరుదును ధరించిన మొదటి విజయనగర రాజు ఎవరు?",
+      "options": {
+        "a": "హరి హర",
+        "b": "బుక్క",
+        "c": "రెండవ హరి హర",
+        "d": "విరూపాక్ష"
+      },
+      "answer": "a",
+      "a": "హరి హర",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "డి.ఎన్.ఏ (DNA) యొక్క పూర్తి రూపం ___",
+      "options": {
+        "a": "డియోక్సిరిబోన్యూక్లియిక్ ఆమ్లం",
+        "b": "డియోక్సిరిబోన్యూక్లియిక్ అణువు",
+        "c": "డబుల్ ఆక్సిరిబో న్యూక్లియిక్ అణువు",
+        "d": "డబుల్ ఆక్సిరిబో న్యూక్లియిక్ ఆమ్లం"
+      },
+      "answer": "a",
+      "a": "డియోక్సిరిబోన్యూక్లియిక్ ఆమ్లం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక దేశ కరెన్సీ ధర వేరే దేశ కరెన్సీ ధరతో మారకం చేయు విలువను ___ అంటారు.",
+      "options": {
+        "a": "బదిలీ ధర",
+        "b": "కొనే ధర",
+        "c": "అమ్మే ధర",
+        "d": "మార్పిడి ధర"
+      },
+      "answer": "d",
+      "a": "మార్పిడి ధర",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "డిఫెన్స్ రీసెర్చ్ అండ్ డెవలప్‌మెంట్ ఆర్గనైజేషన్ (DRDO) ద్వారా తయారు చేయబడ్డ అగ్ని (AGNI) క్షిపణి గురించి సరియైన వర్ణన ఏది?",
+      "options": {
+        "a": "స్వల్ప శ్రేణి క్షిపణి (Short range missile)",
+        "b": "వేగవంతమైన క్షిపణి (Fastest missile)",
+        "c": "సుదూర క్షిపణి (Long range missile)",
+        "d": "పైవేవీ కావు (None of the above)"
+      },
+      "answer": "c",
+      "a": "సుదూర క్షిపణి (Long range missile)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిని జతపరచుము.\nగ్రూప్-I (గ్రంథములు)\n(a) బృహత్కథామంజరి\n(b) కథాసరిత్సాగర\n(c) బృహత్కథ\n(d) కాతంత్ర\n\nగ్రూప్-II (రచయితలు)\n(i) శర్వవర్మన్\n(ii) క్షేమేంద్ర\n(iii) సోమదేవ\n(iv) గుణాఢ్యుడు",
+      "options": {
+        "a": "(i)(ii)(iii)(iv)",
+        "b": "(ii)(i)(iv)(iii)",
+        "c": "(iv)(iii)(ii)(i)",
+        "d": "(ii)(iii)(iv)(i)"
+      },
+      "answer": "d",
+      "a": "(ii)(iii)(iv)(i)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "బ్యాలెన్స్ ఆఫ్ పేమెంట్ (BOP) యొక్క భాగాలు ___.",
+      "options": {
+        "a": "కరెంటు ఖాతా మాత్రమే",
+        "b": "మూలధన ఖాతా మాత్రమే",
+        "c": "(1) మరియు (2) రెండూను",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "c",
+      "a": "(1) మరియు (2) రెండూను",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "అల్లాఉద్దీన్ ఖిల్జీ యొక్క సైనిక సంస్కరణములకు సంబంధించి సరికానిది ఏది?",
+      "options": {
+        "a": "ఆరిజ్-ఇ-మమాలిక్ ద్వారా సైనికులు ప్రత్యక్షంగా నియమించబడేవారు.",
+        "b": "గుర్రాలపై ముద్రను వేయడం(దాగ్) మరియు సైనికుల యొక్క వివరాలను తెలిపే పట్టికను (చెహరా) ప్రవేశపెట్టడము జరిగినది.",
+        "c": "వాయవ్య ప్రాంత (నార్త్-వెస్ట్) రక్షణకు ప్రత్యేకమైన శాశ్వత సైనిక సిబ్బంది నియమింపబడినారు.",
+        "d": "దక్షిణ భారతదేశం వైపు తన రాజ్యాన్ని విస్తరించడానికి ప్రత్యేకమైన సైన్యాన్ని తయారు చేయడం జరిగింది."
+      },
+      "answer": "d",
+      "a": "దక్షిణ భారతదేశం వైపు తన రాజ్యాన్ని విస్తరించడానికి ప్రత్యేకమైన సైన్యాన్ని తయారు చేయడం జరిగింది.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భూమి నుండి వేరే గ్రహం లాంటి సుదూరాలను (లార్జ్ డిస్టెన్సెస్) కొలువడానికి ఉపయోగించే పద్ధతిని ___ అంటారు.",
+      "options": {
+        "a": "దృష్టి నిక్షేప పద్ధతి",
+        "b": "పొడవుల వ్యాప్తి",
+        "c": "ప్రాథమిక లేదా మూల ప్రమాణాలు",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "దృష్టి నిక్షేప పద్ధతి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత ప్రభుత్వం పథకమైన జననీ సురక్ష యోజన (JSY) యొక్క ముఖ్య ఉద్దేశ్యం:",
+      "options": {
+        "a": "తల్లి మరియు శిశు మరణాలను తగ్గించుట",
+        "b": "స్త్రీలకు భద్రతా రక్షణ కల్పించుట",
+        "c": "స్త్రీలకు విద్యా బోధన అందించుట",
+        "d": "స్త్రీలకు ఉపాధి కల్పన అవకాశాలు"
+      },
+      "answer": "a",
+      "a": "తల్లి మరియు శిశు మరణాలను తగ్గించుట",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత ఆరోగ్య మంత్రిత్వ శాఖ యొక్క పూర్తి పేరును గుర్తించండి.",
+      "options": {
+        "a": "మినిస్ట్రీ ఆఫ్ హెల్త్ అండ్ చైల్డ్ వెల్ఫేర్",
+        "b": "మినిస్ట్రీ ఆఫ్ హెల్త్ అండ్ ఫ్యామిలీ వెల్ఫేర్",
+        "c": "మినిస్ట్రీ ఆఫ్ హోమ్ అండ్ ఫ్యామిలీ వెల్ఫేర్",
+        "d": "మినిస్ట్రీ ఆఫ్ హోమ్ అండ్ చైల్డ్ వెల్ఫేర్"
+      },
+      "answer": "b",
+      "a": "మినిస్ట్రీ ఆఫ్ హెల్త్ అండ్ ఫ్యామిలీ వెల్ఫేర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సత్యవర్త్ కడియాన్ అనే ఆటగాడు ఈ క్రింది వాటిలో ఏ ఆటకు సంబంధించిన వాడు?",
+      "options": {
+        "a": "కబడ్డీ",
+        "b": "బాక్సింగ్",
+        "c": "క్రికెట్",
+        "d": "రెజ్లింగ్"
+      },
+      "answer": "d",
+      "a": "రెజ్లింగ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత రాష్ట్రపతి ప్రమాణ స్వీకారం ఎవరి సమక్షంలో జరుగుతుంది?",
+      "options": {
+        "a": "పదవి ముగించిన రాష్ట్రపతి",
+        "b": "భారత ప్రధానమంత్రి",
+        "c": "భారత సుప్రీం కోర్టు ప్రధాన న్యాయమూర్తి",
+        "d": "భారత ఉపరాష్ట్రపతి"
+      },
+      "answer": "c",
+      "a": "భారత సుప్రీం కోర్టు ప్రధాన న్యాయమూర్తి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో బౌద్ధ మతానికి సంబంధించి సరికానటువంటి ప్రవచనం ఏది?",
+      "options": {
+        "a": "బుద్ధుని పుట్టుకకు సంబంధించిన జాతక కథలు అభిధమ్మ పీఠకములో పొందుపరచబడినాయి.",
+        "b": "బౌద్ధ జాతక కథల ప్రకారం బుద్ధుడు 551 సార్లు జన్మించెను.",
+        "c": "తొలి బౌద్ధ సాహిత్యము 'పాళి' భాషలో వ్రాయబడినాయి.",
+        "d": "వినయ పీఠకము, బౌద్ధ సంఘ నియమావళితో వ్యవహరించబడును."
+      },
+      "answer": "a",
+      "a": "బుద్ధుని పుట్టుకకు సంబంధించిన జాతక కథలు అభిధమ్మ పీఠకములో పొందుపరచబడినాయి.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత వాయుసేన ముఖ్య అధిపతి (చీఫ్ ఆఫ్ ఎయిర్‌ఫోర్స్ స్టాఫ్) గా పని చేసిన తెలంగాణ వ్యక్తిని గుర్తించండి.",
+      "options": {
+        "a": "ఎయిర్ చీఫ్ మార్షల్ ఇద్రిస్ హసన్ లతీఫ్",
+        "b": "ఎయిర్ చీఫ్ మార్షల్ లక్ష్మణ్ మాధవ్ కత్రె",
+        "c": "ఎయిర్ చీఫ్ మార్షల్ ప్రతాప్ చంద్ర లాల్",
+        "d": "ఎయిర్ చీఫ్ మార్షల్ వివేక్ రామ్ చౌదరి"
+      },
+      "answer": "a",
+      "a": "ఎయిర్ చీఫ్ మార్షల్ ఇద్రిస్ హసన్ లతీఫ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారతదేశంలోని సోహాగిఘాట్ ప్రాంతములో క్రీ.శ.1867-68 సంవత్సరములో మొట్టమొదటి రాతి చిత్రాలను ఎవరు కనుగొనిరి?",
+      "options": {
+        "a": "వి.ఎస్. వాకాంకర్",
+        "b": "ఆర్చిబోల్డ్ కార్లీల్",
+        "c": "హెచ్.డి. సంకాలియ",
+        "d": "అరుణ్ సొనాకియ"
+      },
+      "answer": "b",
+      "a": "ఆర్చిబోల్డ్ కార్లీల్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "2023 వ సంవత్సరములో భారతదేశంలోని ఏ రాష్ట్రం \"జాగా మిషన్\" (JAGA Mission) పథకం UN-హాబిటాట్, వర్ల్డ్ హాబిటాట్ అవార్డును గెలుచుకుంది?",
+      "options": {
+        "a": "ఒడిషా",
+        "b": "తెలంగాణ",
+        "c": "తమిళనాడు",
+        "d": "పంజాబ్"
+      },
+      "answer": "a",
+      "a": "ఒడిషా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో ఏది కృత్రిమ మేధస్సుకు సంబంధించిన చాట్‌బాట్ కాదు?",
+      "options": {
+        "a": "మొబైల్ మంకీ",
+        "b": "నెటోమి",
+        "c": "చాట్‌జిపిటి",
+        "d": "వైర్‌షార్క్"
+      },
+      "answer": "d",
+      "a": "వైర్‌షార్క్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "శిలాజాలను కలిగి ఉన్న శిలలు :",
+      "options": {
+        "a": "అగ్నిమయ శిలలు",
+        "b": "ప్లూటానిక్ శిలలు",
+        "c": "రూపాంతర శిలలు",
+        "d": "అవక్షేప శిలలు"
+      },
+      "answer": "d",
+      "a": "అవక్షేప శిలలు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ రాష్ట్రం పాలు మరియు పాల ఉత్పత్తుల యొక్క స్వచ్ఛత నిర్ధారించడానికి \"ప్యూర్ ఫర్ ష్యూర్\" అనే ప్రచారం ప్రారంభించింది?",
+      "options": {
+        "a": "గుజరాత్",
+        "b": "బీహార్",
+        "c": "తెలంగాణ",
+        "d": "రాజస్థాన్"
+      },
+      "answer": "c",
+      "a": "తెలంగాణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ బహుమనీ రాజు యొక్క వర్ధంతిని, బీదర్ కు చెందిన హిందువులు మరియు ముస్లిములు కలిసి 'ఉర్స్' జరుపుకుంటారు?",
+      "options": {
+        "a": "ఫిరోజ్ షా",
+        "b": "మొదటి మహమ్మద్ షా",
+        "c": "అహమ్మద్ షా వలి",
+        "d": "హుమాయున్"
+      },
+      "answer": "c",
+      "a": "అహమ్మద్ షా వలి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "DRDO కు సంబంధించిన లేజర్ సైన్స్ అండ్ టెక్నాలజీ సెంటర్ ___ లో ఉంది.",
+      "options": {
+        "a": "ముంబాయి",
+        "b": "కొల్కతా",
+        "c": "ఢిల్లీ",
+        "d": "చెన్నై"
+      },
+      "answer": "c",
+      "a": "ఢిల్లీ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మెరాపి పర్వతం ___ కు ఉదాహరణ.",
+      "options": {
+        "a": "ఖండ పర్వతం",
+        "b": "అగ్ని పర్వతం",
+        "c": "ముడుత పర్వతం",
+        "d": "అవశేష పర్వతం"
+      },
+      "answer": "b",
+      "a": "అగ్ని పర్వతం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వారిలో నోబెల్ పురస్కారానికి సమానమైన అంతర్జాతీయ గణాంకాల పురస్కారం (International Prize in Statistics) 2023 సంవత్సరంలో పొందిన వారిని గుర్తించండి.",
+      "options": {
+        "a": "కల్యంపూడి రాధాకృష్ణ రావు",
+        "b": "నాన్ లైర్డ్",
+        "c": "నీనా గుప్తా",
+        "d": "బ్రాడ్లీ ఎఫ్రాన్"
+      },
+      "answer": "d",
+      "a": "బ్రాడ్లీ ఎఫ్రాన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "'బైసన్' జాతీయ వన్యప్రాణీ సంరక్షణ కేంద్రం నెలకొనివున్న రాష్ట్రం ___",
+      "options": {
+        "a": "మధ్య ప్రదేశ్",
+        "b": "త్రిపుర",
+        "c": "పశ్చిమ బెంగాల్",
+        "d": "మణిపూర్"
+      },
+      "answer": "a",
+      "a": "మధ్య ప్రదేశ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మానవ కణంలో ఎన్ని క్రోమోజోమ్ జతలు ఉన్నాయి?",
+      "options": {
+        "a": "3",
+        "b": "13",
+        "c": "23",
+        "d": "33"
+      },
+      "answer": "c",
+      "a": "23",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మంత్రిత్వ శాఖలను వాటి పథకాలతో జతపర్చండి:\nగ్రూప్-I (మంత్రిత్వ శాఖలు)\n(a) సూక్ష్మ, చిన్న & మధ్య తరహ పరిశ్రమల మంత్రిత్వ శాఖ\n(b) భారత ప్రభుత్వం ట్రైబల్ ఎఫైర్స్\n(c) గ్రామీణాభివృద్ధి మంత్రిత్వ శాఖ\n(d) ఆర్థిక మంత్రిత్వ శాఖ\n(e) స్త్రీ మరియు శిశు వికాస మంత్రిత్వ శాఖ\n\nగ్రూప్-II (పథకాలు)\n(i) ప్రధాన మంత్రి గ్రామ్ సడక్ యోజన\n(ii) ఆత్మ నిర్భర్ భారత్\n(iii) ఖాదీగ్రామోద్యోగ్ వికాస్ యోజన\n(iv) పోషణ్ (POSHAN) అభియాన్\n(v) ప్రధాన మంత్రి జనధన్",
+      "options": {
+        "a": "(iii)(v)(ii)(i)(iv)",
+        "b": "(iii)(ii)(v)(i)(iv)",
+        "c": "(iii)(ii)(i)(v)(iv)",
+        "d": "(iii)(iv)(i)(v)(ii)"
+      },
+      "answer": "c",
+      "a": "(iii)(ii)(i)(v)(iv)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పత్తి కాయల నుండి పత్తిని మరియు గింజలను వేరు చేయు పద్ధతిని ___ అంటారు.",
+      "options": {
+        "a": "స్పిన్నింగ్",
+        "b": "జిన్నింగ్",
+        "c": "వీవింగ్",
+        "d": "నిట్టింగ్"
+      },
+      "answer": "b",
+      "a": "జిన్నింగ్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో పుస్తకాల రచయితలను ఆధారంగా వారి రచనలను జతపరచుము.\nగ్రూప్-I (రచయితలు)\n(a) అరుంధతి రాయ్\n(b) కుష్వంత్ సింగ్\n(c) హాబీబ్ అహ్మద్\n(d) ఎ.పి.జె. అబ్దుల్ కలామ్\n(e) అటల్ బిహారీ వాజ్‌పేయి\n\nగ్రూప్-II (రచనలు)\n(i) కన్‌స్ట్రక్టివ్ పార్లమెంటేరియన్\n(ii) మేరా దేశ్ బదల్ రహా హై\n(iii) ఆజాది : ఫ్రీడమ్\n(iv) ట్రైన్ టు పాకిస్తాన్\n(v) మేరా ప్యారా భారత్ దేశ్",
+      "options": {
+        "a": "(iii)(iv)(ii)(v)(i)",
+        "b": "(iii)(ii)(iv)(v)(i)",
+        "c": "(iii)(ii)(v)(iv)(i)",
+        "d": "(iii)(iv)(v)(ii)(i)"
+      },
+      "answer": "d",
+      "a": "(iii)(iv)(v)(ii)(i)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారతదేశంలో రాష్ట్ర యొక్క కార్యనిర్వహణా అధికారాలు ఎవరి ఆధీనంలో ఉంటాయి?",
+      "options": {
+        "a": "రాష్ట్రపతి",
+        "b": "ముఖ్యమంత్రి",
+        "c": "ప్రధానమంత్రి",
+        "d": "గవర్నర్"
+      },
+      "answer": "d",
+      "a": "గవర్నర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది చోళ రాజులను వారి బిరుదులతో జతపరచుము.\nగ్రూప్-I (రాజులు)\n(a) విజయాలయ\n(b) పరాంతక\n(c) సుందరచోళ అరళమౌళి\n(d) రాజేంద్ర చోళ\n\nగ్రూప్-II (బిరుదులు)\n(i) రాజకేసరి\n(ii) మధురై కొండ\n(iii) కడారము గొండ\n(iv) రాజ రాజ",
+      "options": {
+        "a": "(i)(ii)(iv)(iii)",
+        "b": "(ii)(i)(iv)(iii)",
+        "c": "(i)(ii)(iii)(iv)",
+        "d": "(ii)(iv)(i)(iii)"
+      },
+      "answer": "a",
+      "a": "(i)(ii)(iv)(iii)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ సంవత్సరంలో సాలార్ జంగ్ మ్యూజియం ప్రారంభించబడింది?",
+      "options": {
+        "a": "1948",
+        "b": "1949",
+        "c": "1950",
+        "d": "1951"
+      },
+      "answer": "d",
+      "a": "1951",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A, B, C, D, E, F లు ఒక కుటుంబంలోని సభ్యులు. F యొక్క తండ్రి A. C యొక్క కుమార్తె E. B యొక్క భర్త D. F యొక్క భార్య C. A యొక్క కుమార్తె B. అయితే E తో D యొక్క సంబంధం ఏమిటి?",
+      "options": {
+        "a": "తండ్రి",
+        "b": "తాత",
+        "c": "బావ/బావమరిది",
+        "d": "మామ"
+      },
+      "answer": "c",
+      "a": "బావ/బావమరిది",
+      "e": "A అనేది F కి తండ్రి, B అనేది A కి కుమార్తె కావడం వలన, B అనేది F కి సోదరి అవుతుంది. C అనేది F కి భార్య, E అనేది F మరియు C ల కుమార్తె, కాబట్టి E అనేది B వైపు నుండి F కి మేనకోడలు అవుతుంది.\n\nD అనేది B కి భర్త కావడం వలన, D అనేది E కి మామ (అత్త యొక్క భర్త) అవుతాడు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణ ప్రభుత్వం ద్వారా \"నేతన్నకు చేయూత\" పథకం ఏ సంవత్సరంలో ప్రారంభించబడింది?",
+      "options": {
+        "a": "2015",
+        "b": "2016",
+        "c": "2017",
+        "d": "2018"
+      },
+      "answer": "d",
+      "a": "2018",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన ఐచ్ఛికాలలో నుండి, మొదటి రెండు పదాల మధ్య ఎలాంటి సంబంధం ఉందో అలాంటి సంబంధాన్ని నాలుగవ పదంతో కలిగిన పదాన్ని ఇచ్చికాల నుండి కనుక్కోండి.\nHJL : OQS :: ? : IKM",
+      "options": {
+        "a": "LNP",
+        "b": "NPR",
+        "c": "LJH",
+        "d": "MOQ"
+      },
+      "answer": "b",
+      "a": "NPR",
+      "e": "HJL మరియు OQS లలో, ప్రతి అక్షరం వర్ణమాలలో ఒక అక్షరాన్ని దాటుతూ ఏర్పడింది, మరియు రెండవ సమూహం మొదటి సమూహానికి కొంత స్థిర దూరం ముందుకు ఉంటుంది.\n\nఇదే దాటే విధానాన్ని మరియు దూరాన్ని IKM తో ముగిసే సమూహానికి వర్తింపజేయగా, NPR అనేది సరిపోలే మొదటి సమూహంగా వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "\"బలగం\" చిత్రం మార్చి, 2023లో ONYKO FILMS అవార్డును ఈ క్రింది వర్గాలలో దేనిలో గెలుచుకుంది?",
+      "options": {
+        "a": "ఉత్తమ దర్శకుడు చలనచిత్ర విభాగం",
+        "b": "ఉత్తమ సంభాషణ చలనచిత్ర విభాగం",
+        "c": "ఉత్తమ నాటక చలనచిత్ర విభాగం",
+        "d": "ఉత్తమ డాక్యుమెంటరీ చలనచిత్ర విభాగం"
+      },
+      "answer": "c",
+      "a": "ఉత్తమ నాటక చలనచిత్ర విభాగం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వారిలో, భారతదేశానికి తాత్కాలిక రాష్ట్రపతిగా సేవలందించిన భారతదేశ ప్రధాన న్యాయమూర్తి ఎవరు?",
+      "options": {
+        "a": "జస్టిస్ హెచ్.జె. కానియా",
+        "b": "జస్టిస్ మొహమ్మద్ హిదాయతుల్లా",
+        "c": "జస్టిస్ ఎ.ఎన్. రే",
+        "d": "జస్టిస్ హన్స్ రాజ్ ఖన్నా"
+      },
+      "answer": "b",
+      "a": "జస్టిస్ మొహమ్మద్ హిదాయతుల్లా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన నాలుగు ప్రత్యామ్నాయాలలో మూడు ప్రత్యామ్నాయాలు ఒక నిర్ధిష్ట మార్గంలో సంబంధాన్ని కలిగి ఉండడం వల్ల ఒక సమూహంగా ఏర్పడతాయి. ఈ సమూహానికి చెందని ప్రత్యామ్నాయాన్ని కనుక్కోండి.",
+      "options": {
+        "a": "ఎలుగుబంటి (Bear)",
+        "b": "సింహం (Lion)",
+        "c": "నక్క (Jackal)",
+        "d": "పులి (Tiger)"
+      },
+      "answer": "a",
+      "a": "ఎలుగుబంటి (Bear)",
+      "e": "సింహం, నక్క మరియు పులి అనేవి ఒక సాధారణ వన్యమృగ వర్గంలోకి వస్తాయి, అయితే ఎలుగుబంటి వేరే జంతు కుటుంబానికి చెందినది.\n\nకాబట్టి ఎలుగుబంటి మిగతా మూడింటితో సమూహంలో చేరనిది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణ హైకోర్టు మొదటి ప్రధాన న్యాయమూర్తిని గుర్తించండి.",
+      "options": {
+        "a": "TB. రాధాకృష్ణ",
+        "b": "A. వెంకట శేష సాయి",
+        "c": "CH. ప్రవీణ్ కుమార్",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "TB. రాధాకృష్ణ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "అష్టభుజి ఆకృతిలోని ఒక డైనింగ్ టేబుల్ చుట్టూ కేంద్రానికి అభిముఖంగా E, I, N, O, Q, S, T మరియు U అనే 8 మంది వ్యక్తులు ఒక్కొక్కరు ఒక్కొక్క వైపున కూర్చున్నారు. I అనే వ్యక్తి E కి కుడివైపున మూడవవాడు గానూ మరియు N కు ఎడమవైపున రెండవవాడు గానూ ఉన్నాడు. U అనే వ్యక్తి T కి ఎడమవైపున మూడవవాడు గానూ మరియు N కి కుడివైపున రెండవవాడు గానూ ఉన్నాడు. I మరియు N ల మధ్య S లేడు. T కి వికర్ణం వెంబడి ఎదురుగా Q ఉన్నాడు. అయితే S కి కుడివైపున మూడవదిగా ఉన్న వ్యక్తి ___",
+      "options": {
+        "a": "Q",
+        "b": "U",
+        "c": "I",
+        "d": "O"
+      },
+      "answer": "a",
+      "a": "Q",
+      "e": "ఇచ్చిన సూచనల (E మరియు N లతో I స్థానం, T మరియు N లతో U స్థానం, మరియు Q T కి వికర్ణం ఎదురుగా ఉండటం) ఆధారంగా ఎనిమిది మంది వ్యక్తులను దశలవారీగా అష్టభుజి బల్ల చుట్టూ అమర్చడం ద్వారా ప్రతి వ్యక్తి స్థానం నిర్ధారించబడుతుంది.\n\nఈ కూర్చొనే అమరికను వ్యవస్థీకృతంగా పరిష్కరించగా, S కి కుడివైపున మూడవదిగా ఉన్న వ్యక్తి Q అని తేలుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పురుషత్వం మరియు స్త్రీత్వం గురించి కొంత మంది వ్యక్తులు కలిగి ఉన్న ఆలోచనలను ఈ క్రింది వాటిలో గుర్తించండి.",
+      "options": {
+        "a": "లింగపరమైన స్థిరమైన మానసిక అభిప్రాయం (Gender Stereotypes)",
+        "b": "మేధోనైతికత (Intellectual Ethics)",
+        "c": "నైతికత (Morality)",
+        "d": "లింగ సున్నితత్వం (Gender Sensitivity)"
+      },
+      "answer": "a",
+      "a": "లింగపరమైన స్థిరమైన మానసిక అభిప్రాయం (Gender Stereotypes)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలోని సంస్థలను, వాటి యొక్క ప్రధాన కార్యాలయాలున్న ప్రదేశాలతో జతపరచుము.\nగ్రూప్-I\n(a) UNICEF\n(b) ILO (అంతర్జాతీయ కార్మిక సంస్థ)\n(c) FAO (ఆహార మరియు వ్యవసాయ సంస్థ)\n(d) ప్రపంచ బ్యాంకు\n\nగ్రూప్-II\n(i) రోమ్\n(ii) న్యూయార్క్\n(iii) జెనీవా\n(iv) వాషింగ్టన్ డి.సి.",
+      "options": {
+        "a": "(a)-(ii), (b)-(iii), (c)-(i), (d)-(iv)",
+        "b": "(a)-(ii), (b)-(iv), (c)-(iii), (d)-(i)",
+        "c": "(a)-(iii), (b)-(ii), (c)-(iv), (d)-(i)",
+        "d": "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)"
+      },
+      "answer": "a",
+      "a": "(a)-(ii), (b)-(iii), (c)-(i), (d)-(iv)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వారిలో \"తెలంగాణ భగత్ సింగ్\" గా గుర్తింపు పొందిన నాయకుడు ఎవరు?",
+      "options": {
+        "a": "శ్రీ కొమురం భీం",
+        "b": "శ్రీ అనభేరి ప్రభాకర్",
+        "c": "శ్రీ కాళోజీ నారాయణరావు",
+        "d": "ప్రొఫెసర్ జయశంకర్"
+      },
+      "answer": "b",
+      "a": "శ్రీ అనభేరి ప్రభాకర్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భాషా ప్రయుక్త రాష్ట్రాల కమిటీ చైర్‌మన్ ఎవరు?",
+      "options": {
+        "a": "శ్రీ రాజేంద్ర ప్రసాద్",
+        "b": "పండిట్ జవహర్‌లాల్ నెహ్రూ",
+        "c": "శ్రీ ఎస్. కె. ధార్",
+        "d": "సర్ జాన్ సైమన్"
+      },
+      "answer": "c",
+      "a": "శ్రీ ఎస్. కె. ధార్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఈ క్రింది వాటిలో ఏది నైతిక సూత్రాలకు ప్రత్యామ్నాయంగా పరిగణించబడింది?",
+      "options": {
+        "a": "నిజమైన నీతి (Real Ethics)",
+        "b": "తర్క నీతి (Logic Ethics)",
+        "c": "ధర్మ నీతి (Virtue Ethics)",
+        "d": "కంప్యూటర్ నీతి (Computer Ethics)"
+      },
+      "answer": "c",
+      "a": "ధర్మ నీతి (Virtue Ethics)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "2022 సంవత్సరంలో ఆసియాలోని దేశాలలో అత్యధిక స్థాయి దేశీయ ఉత్పత్తి (GDP) కలిగిన దేశాన్ని గుర్తించండి.",
+      "options": {
+        "a": "భారతదేశం",
+        "b": "చైనా",
+        "c": "జపాన్",
+        "d": "దక్షిణ కొరియా"
+      },
+      "answer": "b",
+      "a": "చైనా",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "1992 సంవత్సరంలో పద్మవిభూషణ్ పురస్కారం అందుకున్న కవిని గుర్తించండి.",
+      "options": {
+        "a": "డా. అందెశ్రీ",
+        "b": "డా. సి. నారాయణరెడ్డి",
+        "c": "కాళోజీ నారాయణరావు",
+        "d": "దాశరథి కృష్ణమాచార్యులు"
+      },
+      "answer": "b",
+      "a": "డా. సి. నారాయణరెడ్డి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒకవేళ 'EDIT' ను '7182322' గా కోడ్ చేస్తే, అదే విధంగా 'FILM' యొక్క కోడ్ :",
+      "options": {
+        "a": "21141815",
+        "b": "14151821",
+        "c": "15181421",
+        "d": "15142118"
+      },
+      "answer": "c",
+      "a": "15181421",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక నిర్ధిష్ట కోడ్‌లో, 'SMILE' ను '@5*7%' అని, 'DOUBT' ను '&3↑8#' అని మరియు 'NOTARY' ను '$3#2Δ9' అని వ్రాస్తే, అదే విధంగా 'REASON' అనే పదాన్ని వ్రాస్తే వచ్చేది :",
+      "options": {
+        "a": "Δ%23@$",
+        "b": "2%3Δ$@",
+        "c": "Δ%2@$3",
+        "d": "Δ%2@3$"
+      },
+      "answer": "d",
+      "a": "Δ%2@3$",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణా రాష్ట్ర పోలీస్ చిహ్నం యొక్క రూపకర్త ఎవరు?",
+      "options": {
+        "a": "తోట వైకుంఠం",
+        "b": "సూర్య ప్రకాష్",
+        "c": "జి. రవీందర్ రెడ్డి",
+        "d": "లక్ష్మణ్ ఆలే"
+      },
+      "answer": "b",
+      "a": "సూర్య ప్రకాష్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక పురుషుని చూపిస్తూ, ఒక స్త్రీ, 'అతను నా తండ్రి యొక్క సోదరి యొక్క కుమార్తె యొక్క కుమారుడు' అన్నది. అయితే ఆ స్త్రీకి ఆ పురుషుడు ఏమౌతాడు?",
+      "options": {
+        "a": "సోదరుని కుమారుడు",
+        "b": "కజిన్",
+        "c": "బావ/బావమరిది",
+        "d": "మనమడు"
+      },
+      "answer": "b",
+      "a": "కజిన్",
+      "e": "స్త్రీ యొక్క తండ్రి యొక్క సోదరి ఆమెకు అత్త, మరియు అత్త కుమార్తె ఆమెకు కజిన్ అవుతుంది. కాబట్టి ప్రస్తావించబడిన పురుషుడు, ఆ కజిన్ యొక్క కుమారుడు కావడం వలన, ఆ స్త్రీకి కజిన్ (మొదటి కజిన్ యొక్క కుమారుడు) అవుతాడు.\n\nఇచ్చిన ఐచ్ఛికాలలో, 'కజిన్' అనేది సరిపోలిన అత్యంత సన్నిహిత సంబంధమవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక పరిస్థితిని లేదా ఉద్దేశ్యాన్ని ప్రత్యామ్నాయ కోణంలో చూడగలిగే విధానాన్ని ఈ క్రింది వాటిలో గుర్తించండి.",
+      "options": {
+        "a": "స్వతంత్ర అంశం (Independent Aspect)",
+        "b": "సామాజిక అవగాహన (Social Awareness)",
+        "c": "సాంకేతిక శిక్షణ (Technical training)",
+        "d": "దృష్టి కోణం (Perspective)"
+      },
+      "answer": "d",
+      "a": "దృష్టి కోణం (Perspective)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నీతి శాస్త్రం అనేది ___ లో ఏది సరైనది లేక తప్పు అనే దాని అధ్యయనం.",
+      "options": {
+        "a": "మానవ ప్రవర్తన",
+        "b": "తాత్విక ప్రవర్తన",
+        "c": "నైతిక ప్రవర్తన",
+        "d": "తార్కిక ప్రవర్తన"
+      },
+      "answer": "a",
+      "a": "మానవ ప్రవర్తన",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "నీతిశాస్త్రం మంచి, చెడు, తప్పు మరియు ఒప్పు, ధర్మం మరియు తెలివి, న్యాయం మరియు నేరం లాంటి భావనలను నిర్వచించి మానవుని ___ దాని పరిష్కరించడానికి ప్రయత్నిస్తుంది.",
+      "options": {
+        "a": "తత్వశాస్త్రం",
+        "b": "మనస్తత్వశాస్త్రం",
+        "c": "విధేయత",
+        "d": "నైతికత"
+      },
+      "answer": "d",
+      "a": "నైతికత",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన మొదటి రెండు పదాల మధ్య ఎలాంటి సంబంధం ఉందో అలాంటి సంబంధాన్ని మూడవ పదంతో కలిగిన పదాన్ని ఇచ్చికాల నుండి కనుక్కోండి.\nEOPSOLIXN : EXPLOSION :: HEARTBEAT : ___",
+      "options": {
+        "a": "HEERTBAAT",
+        "b": "HAERTBAET",
+        "c": "HAABTREET",
+        "d": "HAABRTEET"
+      },
+      "answer": "a",
+      "a": "HEERTBAAT",
+      "e": "మొదటి జతలో, EOPSOLIXN అనేది EXPLOSION అనే పదం యొక్క ఒక నిర్ధిష్ట అక్షర-పునర్వ్యవస్థీకరణ పద్ధతిని అనుసరించి ఏర్పరచబడిన కలగలిపిన (జంబుల్డ్) రూపం.\n\nఇదే పద్ధతిని HEARTBEAT అనే పదం యొక్క అక్షరాలకు వర్తింపజేయగా, HEERTBAAT అనేది సరిపోలే కలగలిపిన రూపంగా వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇవ్వబడిన గుర్తులను ఉపయోగించి కింది ప్రశ్నకు సమాధానమివ్వుము.\n'A%B' అంటే 'A మరియు B లను గుణించుము'\n'A@B' అంటే 'A కి B ని కూడుము'\n'A#2' అంటే 'A యొక్క వర్గము'\n'A*B' అంటే 'B చే A ని భాగించుము'.\n5 యూనిట్ల భుజము గల చతురస్రం యొక్క వైశాల్యము మరియు 5 యూనిట్ల వ్యాసార్థం గల వృత్తం యొక్క వైశాల్యముల మొత్తం.",
+      "options": {
+        "a": "5#2*22@7%5#2",
+        "b": "5#2@22*7%5#2",
+        "c": "5*2@22#7*5*2",
+        "d": "5#2@22%7*5#2"
+      },
+      "answer": "b",
+      "a": "5#2@22*7%5#2",
+      "e": "చతురస్రం యొక్క వైశాల్యం '5#2' (5 యొక్క వర్గం) గా వ్యక్తీకరించబడుతుంది. వృత్తం యొక్క వైశాల్యం 22ను 7చే భాగించి, వ్యాసార్థం యొక్క వర్గంతో గుణించడం ద్వారా '22*7%5#2' గా వ్యక్తీకరించబడుతుంది.\n\nఈ రెండు వైశాల్యాలను '@' గుర్తు ఉపయోగించి కూడగా, రెండు వైశాల్యాల మొత్తానికి '5#2@22*7%5#2' అనే వ్యక్తీకరణ వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన మొదటి రెండు సంఖ్యల మధ్య ఎలాంటి సంబంధం ఉందో అలాంటి సంబంధాన్ని మూడవ సంఖ్యతో కలిగిన సంఖ్యను ఐచ్ఛికాల నుండి కనుక్కోండి.\n6 : 15 :: 35 : ?",
+      "options": {
+        "a": "55",
+        "b": "91",
+        "c": "143",
+        "d": "77"
+      },
+      "answer": "b",
+      "a": "91",
+      "e": "మొదటి రెండు సంఖ్యలైన 6 మరియు 15 లు ఒక సంఖ్యా క్రమంలోని వరుస పదాలను కలిపే ఒక నిర్ధిష్ట గుణకార పద్ధతి ద్వారా సంబంధం కలిగి ఉంటాయి.\n\nఇదే సంబంధ పద్ధతిని 35 కు వర్తింపజేయగా, అదే నిష్పత్తి సంబంధాన్ని కొనసాగించే సంఖ్యగా 91 వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారత రాష్ట్రపతి తన అధికారాలను ఉపయోగించి ఎంత మంది సభ్యులను రాజ్యసభకు నియామకం చేయగలరు?",
+      "options": {
+        "a": "10",
+        "b": "11",
+        "c": "12",
+        "d": "13"
+      },
+      "answer": "c",
+      "a": "12",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలుగు భాషకు ప్రాచీన హోదా రావడానికి దోహదం చేసిన \"పద్య శాసనం\" ఎక్కడ లభించింది?",
+      "options": {
+        "a": "బొమ్మలమ్మ గుట్ట",
+        "b": "వెయ్యి స్తంభాల గుడి",
+        "c": "ఫణిగిరి",
+        "d": "ఖిల్లా ఘన్‌పూర్"
+      },
+      "answer": "c",
+      "a": "ఫణిగిరి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ సంస్థ అతిపెద్దసైతెలియాడే సోలార్ పవర్ ప్లాంట్ (Solar Power Plant) ను తెలంగాణలో ప్రారంభించనుంది?",
+      "options": {
+        "a": "ఎన్.టి.పి.సి.",
+        "b": "బి.హెచ్.ఇ.ఎల్.",
+        "c": "అదానీ పవర్",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "ఎన్.టి.పి.సి.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒకవేళ 'విద్యార్థి' ని 'ఉపాధ్యాయుడు' అని, 'ఉపాధ్యాయుడు' ని 'ప్రధానోపాధ్యాయుడు' అని, 'బోర్డు' ని 'చాక్' అని, 'బెంచ్ డెస్క్' ని 'టేబుల్' అని, 'తరగతి' ని 'ఇల్లు' అని పిలిస్తే, ఈ కోడ్‌లో, క్రింది వానిలో తప్పుగానున్న ఐచ్ఛికమేది?",
+      "options": {
+        "a": "ప్రధానోపాధ్యాయుడు పాఠాలను బోధిస్తాడు.",
+        "b": "ఉపాధ్యాయులు టేబుల్లపై కూర్చుంటారు.",
+        "c": "ప్రతి ఇంటిలో చాక్ ఉంటుంది.",
+        "d": "ఉపాధ్యాయులకు ప్రధానోపాధ్యాయుడు బదిలీ సర్టిఫికెట్లను జారీ చేస్తాడు."
+      },
+      "answer": "d",
+      "a": "ఉపాధ్యాయులకు ప్రధానోపాధ్యాయుడు బదిలీ సర్టిఫికెట్లను జారీ చేస్తాడు.",
+      "e": "ఇచ్చిన కోడ్ ప్రత్యామ్నాయాల ప్రకారం, ప్రతి ప్రవచనాన్ని కోడ్ పదాలను వాటి అసలు అర్థాలలోకి తిరిగి మార్చిన తర్వాత అది తార్కికంగా సరిపోతుందా లేదా అని పరిశీలించాలి.\n\nఐచ్ఛికం (4), కోడ్ నుండి డీకోడ్ చేసినప్పుడు, సాధారణంగా వర్ణించబడుతున్న పాత్రలకు తార్కికంగా సరిపోని చర్యను వివరిస్తుంది, కాబట్టి ఇది తప్పు ప్రవచనమవుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "పురుషులు స్త్రీల కంటే ఉన్నతమైన మరియు శక్తివంతులుగా పరిగణించబడే ఒక సామాజిక వ్యవస్థను ___ అంటారు.",
+      "options": {
+        "a": "సోపానక్రమం (Hierarchy)",
+        "b": "పితృస్వామ్యం (Patriarchy)",
+        "c": "మాతృస్వామ్యం (Matriarchy)",
+        "d": "అరాచకం (Anarchy)"
+      },
+      "answer": "b",
+      "a": "పితృస్వామ్యం (Patriarchy)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "భారతదేశ రక్షణ సేన లోని ఏ విభాగము IIT మద్రాసుతో అవగాహనా ఒప్పందం (MOU) సాంకేతిక అభివృద్ధి కొరకు సంతకాలు చేసింది?",
+      "options": {
+        "a": "భారత వాయు సేన",
+        "b": "భారత సముద్ర తీర రక్షణ దళం",
+        "c": "భారత సైన్యం",
+        "d": "భారత నౌకా దళం"
+      },
+      "answer": "d",
+      "a": "భారత నౌకా దళం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇవ్వబడిన అక్షర శ్రేణిలో ఖాళీ స్థానంలో ఏమి వస్తుంది?\nBGDE, CHEG, EJGI, GLIK, KPMO, ___",
+      "options": {
+        "a": "FKHJ",
+        "b": "MROQ",
+        "c": "LQNP",
+        "d": "NSPR"
+      },
+      "answer": "b",
+      "a": "MROQ",
+      "e": "శ్రేణిలోని నాలుగు అక్షరాల ప్రతి సమూహం, మునుపటి సమూహం యొక్క అక్షరాలకు ఒక స్థిరమైన మార్పు (షిఫ్టింగ్) పద్ధతిని అనుసరించి ఏర్పడుతుంది.\n\nఇదే మార్పు పద్ధతిని చివరి సమూహం KPMO నుండి కొనసాగించగా, తదుపరి పదంగా MROQ వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "2017 సంవత్సరంలో తెలంగాణ స్పోర్ట్స్ జర్నలిస్ట్స్ వార్షిక అవార్డులలో ఏ క్రీడాకారుడు/క్రీడాకారిణికి \"స్పోర్ట్స్ పర్సన్ ఆఫ్ ది ఇయర్\" అవార్డు లభించింది?",
+      "options": {
+        "a": "పి.వి. సింధు",
+        "b": "సానియా మీర్జా",
+        "c": "మిథాలి రాజ్",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "పి.వి. సింధు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "సామాజిక అవగాహన యొక్క రూపం ___.",
+      "options": {
+        "a": "కృత్రిమ మేధస్సు",
+        "b": "మానవ మేధస్సు",
+        "c": "వర్చువల్ (ఊహాజనిత) మేధస్సు",
+        "d": "భావోద్వేగ మేధస్సు"
+      },
+      "answer": "d",
+      "a": "భావోద్వేగ మేధస్సు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "చరిత్రకారుడు జై శెట్టి రామనయ్య ప్రకారం, తెలంగాణలో శాతవాహనుల మొదటి రాజధాని ఏది?",
+      "options": {
+        "a": "కోటిలింగాల",
+        "b": "ధర్మపురి",
+        "c": "వేములవాడ",
+        "d": "రాయపట్నం"
+      },
+      "answer": "a",
+      "a": "కోటిలింగాల",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "లోపించిన పదంతో ఒక పద శ్రేణి ఇవ్వబడింది. శ్రేణిని సంపూర్ణం చేసే సరియైన ఐచ్చికాన్ని ఎంచుకోండి.\nబ్యాగ్, పుస్తకం, బెంచీ, పెన్సిల్, ___.",
+      "options": {
+        "a": "క్లాస్",
+        "b": "ఎరేజర్",
+        "c": "టీచర్",
+        "d": "స్టూడెంట్"
+      },
+      "answer": "b",
+      "a": "ఎరేజర్",
+      "e": "ఇచ్చిన పదాలు అన్నీ తరగతి గదిలో సాధారణంగా కనిపించే వస్తువులు, అక్షర క్రమం లేదా సంఖ్యా క్రమం కంటే అనుబంధ ఆధారిత సమూహాన్ని అనుసరిస్తాయి.\n\nఐచ్ఛికాలలో, 'ఎరేజర్' అనేది ఆ సమూహాన్ని పూర్తి చేసే మరో సాధారణ తరగతి గది వస్తువుగా బాగా సరిపోతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ శతాబ్దంలో వేయి స్తంభాల గుడి కాకతీయ రాజుల ద్వారా నిర్మించబడింది?",
+      "options": {
+        "a": "12వ శతాబ్దం",
+        "b": "13వ శతాబ్దం",
+        "c": "11వ శతాబ్దం",
+        "d": "14వ శతాబ్దం"
+      },
+      "answer": "a",
+      "a": "12వ శతాబ్దం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక తరగతిలో, ఒక పరీక్షలో ఉత్తీర్ణులైన విద్యార్థులతో తప్పిన వారికి గల నిష్పత్తి 7:2. ఉత్తీర్ణులైన విద్యార్థులలో అగ్రస్థానం నుండి A యొక్క ర్యాంకు 23 మరియు అధోస్థానం నుండి B యొక్క ర్యాంకు 28. తరగతిలోని విద్యార్థులంతా పరీక్షకు హాజరైతే మరియు A యొక్క ర్యాంకు కంటే 6 ర్యాంకుల దిగువన B యొక్క ర్యాంకు ఉంటే, తరగతిలోని విద్యార్థుల సంఖ్య :",
+      "options": {
+        "a": "56",
+        "b": "84",
+        "c": "72",
+        "d": "81"
+      },
+      "answer": "c",
+      "a": "72",
+      "e": "B ర్యాంకు A ర్యాంకు 23 కంటే 6 ర్యాంకుల దిగువన ఉండటం వలన, B ర్యాంకు అగ్రస్థానం నుండి 29. B అధోస్థానం నుండి కూడా 28వ ర్యాంకు కావడంతో, ఉత్తీర్ణులైన మొత్తం విద్యార్థుల సంఖ్య 29+28-1 = 56.\n\nఉత్తీర్ణులైన వారు మరియు తప్పిన వారు 7:2 నిష్పత్తిలో ఉండటం వలన, తరగతిలోని మొత్తం విద్యార్థుల సంఖ్య (56/7)×9 = 72.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన మొదటి రెండు పదాల మధ్య ఎలాంటి సంబంధం ఉందో అలాంటి సంబంధాన్ని మూడవ పదంతో కలిగిన పదాన్ని ఇచ్చికాల నుండి కనుక్కోండి.\nస్ఫిగ్నో మానోమీటర్ : రక్తపోటు :: ఫాతోమీటర్ : ___",
+      "options": {
+        "a": "భూకంపాలు",
+        "b": "ఎలక్ట్రిక్ వోల్టేజ్",
+        "c": "సముద్రపు లోతు",
+        "d": "ధ్వని యొక్క తీవ్రత"
+      },
+      "answer": "c",
+      "a": "సముద్రపు లోతు",
+      "e": "స్ఫిగ్నో మానోమీటర్ అనేది ప్రత్యేకంగా రక్తపోటును కొలవడానికి ఉపయోగించే పరికరం.\n\nఇదే విధంగా, ఫాతోమీటర్ అనేది సముద్రపు లోతును కొలవడానికి ఉపయోగించే పరికరం, కాబట్టి 'సముద్రపు లోతు' సరిపోలే పదంగా వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణ ప్రభుత్వానికి చెందిన \"ధృవ\" పోర్టల్ దేనికి సంబంధించింది?",
+      "options": {
+        "a": "భూముల రిజిస్ట్రేషన్ (Land Registration)",
+        "b": "పాస్ పోర్ట్ వెరిఫికేషన్ (Passport Verification)",
+        "c": "ఆన్‌లైన్ ఎంప్లాయిమెంట్ (Online Employment)",
+        "d": "మానవ అక్రమ రవాణా (Human Trafficking)"
+      },
+      "answer": "b",
+      "a": "పాస్ పోర్ట్ వెరిఫికేషన్ (Passport Verification)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ప్రతి సంవత్సరం భారతదేశంలో ఏ రోజున \"కార్గిల్ విజయ దినోత్సవం (విజయ్ దివస్)\" జరుపుకుంటారు?",
+      "options": {
+        "a": "జూన్ 13",
+        "b": "జూలై 26",
+        "c": "ఆగస్టు 13",
+        "d": "సెప్టెంబర్ 26"
+      },
+      "answer": "b",
+      "a": "జూలై 26",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "శాతవాహన రాజుల కాలంలో ఏ భాషను అధికారికంగా ఉపయోగించేవారు?",
+      "options": {
+        "a": "సంస్కృతం",
+        "b": "ప్రాకృతం",
+        "c": "హిందీ",
+        "d": "తెలుగు"
+      },
+      "answer": "b",
+      "a": "ప్రాకృతం",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఏ అంతర్జాతీయ సంస్థతో తెలంగాణ ప్రభుత్వం డిజిటల్ తెలంగాణ కొరకు మెమోరాండమ్ ఆఫ్ అండర్‌స్టాండింగ్ (MoU) చేసుకుంది?",
+      "options": {
+        "a": "అమెజాన్",
+        "b": "మైక్రోసాఫ్ట్",
+        "c": "ఫేస్‌బుక్",
+        "d": "గూగుల్"
+      },
+      "answer": "b",
+      "a": "మైక్రోసాఫ్ట్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది చిత్రాలలో ఏది కరణీయ సంఖ్యలు, పూర్ణాంకాలు మరియు ఆకరణీయ సంఖ్యల మధ్య సంబంధాన్ని ఉత్తమంగా వర్తిస్తుంది?",
+      "options": {
+        "a": "అతిపాతనమైన వృత్తాల చిత్రం (ఐచ్ఛికం 1)",
+        "b": "రెండు వేరు వేరు వృత్తాల చిత్రం (ఐచ్ఛికం 2)",
+        "c": "మూడు వేరు వేరు వృత్తాల చిత్రం (ఐచ్ఛికం 3)",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "b",
+      "a": "రెండు వేరు వేరు వృత్తాల చిత్రం (ఐచ్ఛికం 2)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన నాలుగు ప్రత్యామ్నాయాలలో మూడు ప్రత్యామ్నాయాలు ఒక నిర్ధిష్ట మార్గంలో సంబంధాన్ని కలిగి ఉండడం వల్ల ఒక సమూహంగా ఏర్పడతాయి. ఈ సమూహానికి చెందని ప్రత్యామ్నాయాన్ని కనుక్కోండి.",
+      "options": {
+        "a": "ఘనం (Cube)",
+        "b": "సమాంతర చతుర్భుజం (Parallelogram)",
+        "c": "రాంబస్ (Rhombus)",
+        "d": "దీర్ఘ చతురస్రం (Rectangle)"
+      },
+      "answer": "a",
+      "a": "ఘనం (Cube)",
+      "e": "సమాంతర చతుర్భుజం, రాంబస్ మరియు దీర్ఘ చతురస్రం అనేవి అన్నీ ద్విమితీయ (ఫ్లాట్) చతుర్భుజ ఆకారాలు, ఇవి ఒక సమతల ఆకృతికి సంబంధించిన ఉమ్మడి రేఖాగణిత లక్షణాలను పంచుకుంటాయి.\n\nఘనం, త్రిమితీయ (సాలిడ్) ఆకారం కావడం వలన, ఈ ఫ్లాట్ చతుర్భుజాల సమూహానికి చెందదు.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇవ్వబడిన పటంలోని మొత్తం త్రిభుజాల సంఖ్య.",
+      "options": {
+        "a": "10",
+        "b": "16",
+        "c": "18",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "b",
+      "a": "16",
+      "e": "మొదట అన్ని అతిచిన్న త్రిభుజాలను లెక్కించి, తర్వాత రెండు లేదా అంతకంటే ఎక్కువ చిన్న త్రిభుజాలను కలిపి ఏర్పడే త్రిభుజాలను, పటంలోని అతిపెద్ద త్రిభుజం వరకు లెక్కించాలి.\n\nఈ వేర్వేరు పరిమాణాల త్రిభుజాలన్నింటినీ కలిపి లెక్కించగా పటంలో మొత్తం 16 త్రిభుజాలు వస్తాయి.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇతరుల భావోద్వేగాలను మరియు వారు వ్యవహరించే విధానాన్ని మార్గనిర్దేశం చేసే సామర్థ్యాన్ని ___ అంటారు.",
+      "options": {
+        "a": "కమ్యూనికేషన్ స్కిల్స్",
+        "b": "కాగ్నిటివ్ స్కిల్స్",
+        "c": "టెక్నికల్ స్కిల్స్",
+        "d": "సోషియల్ స్కిల్స్"
+      },
+      "answer": "d",
+      "a": "సోషియల్ స్కిల్స్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇవ్వబడిన శ్రేణిలో ఖాళీ స్థానంలో ఏమి వస్తుంది?\nC X 15 E V, F U 48 H S, I R 99 K P, L O 168 N M, ___.",
+      "options": {
+        "a": "O L 255 Q J",
+        "b": "N K 237 M L",
+        "c": "R U 255 S T",
+        "d": "M Q 273 L M"
+      },
+      "answer": "a",
+      "a": "O L 255 Q J",
+      "e": "శ్రేణిలోని ప్రతి సమూహం, అక్షరాలు ముందుకు కదులుతూ మరియు సంఖ్యా పదం సమూహాలలో ఒక నిర్దిష్ట నియమాన్ని అనుసరిస్తూ మారే స్థిరమైన పద్ధతిని అనుసరిస్తుంది.\n\nమునుపటి సమూహం నుండి ఈ స్థిరమైన పద్ధతిని కొనసాగించగా, తదుపరి పదంగా 'O L 255 Q J' వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణలో కాళేశ్వరం ప్రాజెక్టును ప్రారంభోత్సవం చేసిన తెలంగాణ గవర్నరు పేరును గుర్తించండి.",
+      "options": {
+        "a": "E.S.L. నరసింహన్",
+        "b": "తమిళ సాయి సౌందరరాజన్",
+        "c": "ND తివారి",
+        "d": "పైవేవీ కావు"
+      },
+      "answer": "a",
+      "a": "E.S.L. నరసింహన్",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇవ్వబడిన సంఖ్యా శ్రేణిలో ఖాళీ స్థానంలో ఏమి వస్తుంది?\n11, 22, 46, 90, 160, ___.",
+      "options": {
+        "a": "387",
+        "b": "295",
+        "c": "240",
+        "d": "330"
+      },
+      "answer": "c",
+      "a": "240",
+      "e": "వరుస పదాల మధ్య భేదాలను (11, 24, 44, 70) పరిశీలించి, ఈ భేదాలు ఏ నియమం ప్రకారం పెరుగుతున్నాయో గమనించడం ద్వారా తదుపరి భేదాన్ని కనుక్కునే నియమం లభిస్తుంది.\n\nఈ నియమాన్ని ఉపయోగించి తదుపరి భేదాన్ని కనుక్కొని 160కు కలుపగా, తదుపరి పదంగా 240 వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "మన జీవన పరిసరాలలో అనుభవాలకు (subjective) ప్రతిస్పందనలుగా నిర్వచించబడేదాయేది ___?",
+      "options": {
+        "a": "తెలివి తేటలు",
+        "b": "భావోద్వేగాలు",
+        "c": "సాంస్కృతికత",
+        "d": "తాత్వికత"
+      },
+      "answer": "b",
+      "a": "భావోద్వేగాలు",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన నాలుగు ప్రత్యామ్నాయాలలో మూడు ప్రత్యామ్నాయాలు ఒక నిర్ధిష్ట మార్గంలో సంబంధాన్ని కలిగి ఉండడం వల్ల ఒక సమూహంగా ఏర్పడతాయి. ఈ సమూహానికి చెందని ప్రత్యామ్నాయాన్ని కనుక్కోండి.",
+      "options": {
+        "a": "15",
+        "b": "35",
+        "c": "221",
+        "d": "143"
+      },
+      "answer": "b",
+      "a": "35",
+      "e": "నాలుగు సంఖ్యలలో మూడు సంఖ్యలను ఒక నిర్ధిష్ట స్థిర పద్ధతిని అనుసరించి, దగ్గరగా ఉన్న రెండు ప్రధాన సంఖ్యల లబ్దంగా వ్యక్తీకరించవచ్చు.\n\n35 అనే సంఖ్యను ఈ పద్ధతితో సరిచూడగా, అది మిగతా మూడింటితో సమానమైన సంబంధాన్ని కలిగి ఉండదు, కాబట్టి ఇది సమూహానికి చెందనిదిగా వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఒక నిర్ధిశిత కోడ్‌లో 'na ja ba' అంటే 'some good people', 'ba sa ya' అంటే 'many good men' మరియు 'ra sa ja' అంటే 'some bad men'. అయితే ఈ కోడ్‌లో 'many bad people' యొక్క కోడ్.",
+      "options": {
+        "a": "ra na sa",
+        "b": "ya ra sa",
+        "c": "na ba ya",
+        "d": "na ra ya"
+      },
+      "answer": "d",
+      "a": "na ra ya",
+      "e": "ఇచ్చిన కోడ్ పదబంధాలను పోల్చి చూడగా, మొదటి రెండు పదబంధాల మధ్య ఉమ్మడి పదం 'మంచి' (good) కి కోడ్‌ను సూచిస్తుంది (ba), మరియు చివరి రెండు పదబంధాల మధ్య ఉమ్మడి పదం 'పురుషులు' (men) కి కోడ్‌ను సూచిస్తుంది (sa).\n\nఈ విధంగా మిగిలిన పదాలను కనుక్కొనగా 'ప్రజలు'=na, 'చెడు'=ra మరియు 'చాలామంది'=ya అవుతుంది, కాబట్టి 'many bad people' కు కోడ్ 'na ra ya'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "P1, P2, P3, P4, P5, P6, P7 అనేవి ఏడు వేర్వేరు ఇళ్ళు క్రింద వివరించిన విధంగా ఉన్నాయి.\n(i) P1 కు దక్షిణంగా P1 నుండి 6 మీటర్ల దూరంలో P2 ఉంది.\n(ii) P2 కు తూర్పు దిశలో P2 నుండి 15 మీటర్ల దూరంలో P3 ఉంది.\n(iii) P3 కు ఈశాన్యంగా P3 నుండి 6√2 మీటర్ల దూరంలో P4 ఉంది.\n(iv) P4 కు తూర్పు దిశలో P4 నుండి 14 మీటర్ల దూరంలో P5 ఉంది.\n(v) P5 కు ఉత్తరంగా P5 నుండి 6 మీటర్ల దూరంలో P6 ఉంది.\n(vi) P6 కు పడమర దిశలో P6 నుండి 27 మీటర్ల దూరంలో P7 ఉంది.\nఅయితే P7 మరియు P1 ల మధ్య గల కనిష్ట దూరం (మీటర్లలో) :",
+      "options": {
+        "a": "10",
+        "b": "5",
+        "c": "13",
+        "d": "25"
+      },
+      "answer": "c",
+      "a": "13",
+      "e": "ఇచ్చిన దిశలు మరియు దూరాలను ఉపయోగించి ప్రతి ఇంటిని దశలవారీగా కోఆర్డినేట్ గ్రిడ్‌పై గుర్తు పెట్టడం ద్వారా P1 మరియు P7 యొక్క తుది స్థానాలను ఖచ్చితంగా గుర్తించవచ్చు.\n\nఈ రెండు తుది కోఆర్డినేట్ల మధ్య దూర సూత్రాన్ని ఉపయోగించగా, P7 మరియు P1 ల మధ్య కనిష్ట దూరం 13 మీటర్లుగా వస్తుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "గొప్ప భారతీయ నాయకులు ఇచ్చిన క్రింది నినాదాలను, అది నినదించిన నాయకునితో జతపరచండి :\nగ్రూప్-I (నినాదం)\n(a) జై జగత్\n(b) కర్ మత్ దో\n(c) వేదోం కీ ఓర్ లౌటో\n(d) దేశ్ బచావో, దేశ్ బనావో\n\nగ్రూప్-II (నాయకుడు)\n(i) దయానంద సరస్వతి\n(ii) పి.వి. నరసింహారావు\n(iii) వినోబా భావే\n(iv) సర్దార్ వల్లభభాయి పటేల్",
+      "options": {
+        "a": "(iii)(iv)(ii)(i)",
+        "b": "(iii)(iv)(i)(ii)",
+        "c": "(iii)(i)(iv)(ii)",
+        "d": "(iii)(ii)(iv)(i)"
+      },
+      "answer": "b",
+      "a": "(iii)(iv)(i)(ii)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "ఇతరుల భావాలను అర్థం చేసుకొని మరియు పంచుకోవడం లాంటి మానసిక ప్రవృత్తిని ఈ క్రింది వాటిలో గుర్తించండి.",
+      "options": {
+        "a": "సానుభూతి",
+        "b": "చికిత్స",
+        "c": "జాలి",
+        "d": "ఉదాసీనత"
+      },
+      "answer": "a",
+      "a": "సానుభూతి",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింది సమాచారాన్ని అధ్యయనం చేసి, క్రింద ఇవ్వబడిన ప్రశ్నకు సమాధానమివ్వు.\n'A*B' అంటే 'B కంటే A పెద్దది'\n'A#B' అంటే 'B కంటే A పెద్దది కాదు'\n'A%B' అంటే 'B కంటే A చిన్నది'\n'A$B' అంటే 'B కంటే A చిన్నది కాదు'\n'A@B' అంటే 'B కంటే A పెద్దది కాదు; చిన్నది కాదు'.\nఒకవేళ P % Q # R @ S $ T * U ఇచ్చిన, అయితే క్రిందివానిలో ఏది సత్యము కానవసరం లేదు.",
+      "options": {
+        "a": "S $ Q",
+        "b": "R * P",
+        "c": "P % S",
+        "d": "Q @ U"
+      },
+      "answer": "b",
+      "a": "R * P",
+      "e": "ఇచ్చిన సంబంధాల గొలుసును (P%Q#R@S$T*U) దశలవారీగా అధ్యయనం చేసి, ప్రతి గుర్తును దాని అసలు అసమానత అర్థంలోకి మార్చడం ద్వారా అన్ని పదాల మధ్య మొత్తం సంబంధం ఏర్పడుతుంది.\n\nఈ కలిపిన సంబంధంతో ప్రతి సమాధాన ఐచ్ఛికాన్ని సరిచూడగా, 'R * P' అనే ప్రవచనం ఎల్లప్పుడూ నిజమవదని తేలుతుంది.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "తెలంగాణ రాష్ట్రం లో పులుల అభయారణ్యాలను గుర్తించండి :",
+      "options": {
+        "a": "శ్రీశైలం పులుల అభయారణ్యం మాత్రమే",
+        "b": "కవ్వాల్ అభయారణ్యం మాత్రమే",
+        "c": "అమ్రాబాద్ అభయారణ్యం మాత్రమే",
+        "d": "పైవన్నీ"
+      },
+      "answer": "d",
+      "a": "పైవన్నీ",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "క్రింద ఇచ్చిన నాలుగు ప్రత్యామ్నాయాలలో మూడు ప్రత్యామ్నాయాలు ఒక నిర్ధిష్ట మార్గంలో సంబంధాన్ని కలిగి ఉండడం వల్ల ఒక సమూహంగా ఏర్పడతాయి. ఈ సమూహానికి చెందని ప్రత్యామ్నాయాన్ని కనుక్కోండి.",
+      "options": {
+        "a": "E G B",
+        "b": "K M B",
+        "c": "Q S B",
+        "d": "O S B"
+      },
+      "answer": "b",
+      "a": "K M B",
+      "e": "నాలుగు అక్షర సమూహాలలో మూడు, మొదటి రెండు అక్షరాలు వర్ణమాలలో రెండు స్థానాల దూరంలో ఉండి, మూడవ అక్షరం స్థిరంగా ఉండే ఒక స్థిరమైన పద్ధతిని అనుసరిస్తాయి.\n\n'K M B' ను ఈ పద్ధతితో సరిచూడగా, అది మిగతా మూడింటితో సమానమైన సంబంధాన్ని కలిగి ఉండదు, కాబట్టి ఇది సమూహానికి చెందనిదిగా వస్తుంది.",
+      "table": null
+    }
+  ]
+}

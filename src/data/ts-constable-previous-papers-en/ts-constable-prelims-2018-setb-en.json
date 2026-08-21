@@ -1,0 +1,3062 @@
+{
+  "slug": "ts-constable-prelims-2018-setb-en",
+  "chapterNumber": 3,
+  "title": "TS Police Constable Prelims - 2018 (Set B)",
+  "weightage": [
+    {
+      "subject": "Reasoning (Verbal + Non-verbal + Attitude)",
+      "questions": 35,
+      "percentage": 17.5,
+      "breakdown": [
+        {
+          "name": "Verbal Reasoning (Coding, Calendar, Direction)",
+          "questions": 11
+        },
+        {
+          "name": "Attitude & Behavioural Judgement",
+          "questions": 10
+        },
+        {
+          "name": "Number & Figure Series",
+          "questions": 7
+        },
+        {
+          "name": "Seating Arrangement",
+          "questions": 3
+        },
+        {
+          "name": "Data Interpretation",
+          "questions": 3
+        },
+        {
+          "name": "Data Sufficiency",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "Telangana History & Movement",
+      "questions": 35,
+      "percentage": 17.5,
+      "breakdown": [
+        {
+          "name": "Telangana Ancient & Medieval History",
+          "questions": 14
+        },
+        {
+          "name": "Telangana Movement & Integration",
+          "questions": 12
+        },
+        {
+          "name": "Telangana Culture & Literature",
+          "questions": 7
+        },
+        {
+          "name": "Telangana under Nizams & British Period",
+          "questions": 2
+        }
+      ]
+    },
+    {
+      "subject": "Quantitative Aptitude",
+      "questions": 25,
+      "percentage": 12.5,
+      "breakdown": [
+        {
+          "name": "Arithmetic (Profit-Loss, SI/CI, Time-Work, Time-Speed-Distance)",
+          "questions": 16
+        },
+        {
+          "name": "Algebra & Number Systems",
+          "questions": 5
+        },
+        {
+          "name": "Mensuration & Geometry",
+          "questions": 4
+        }
+      ]
+    },
+    {
+      "subject": "English Language",
+      "questions": 20,
+      "percentage": 10.0,
+      "breakdown": [
+        {
+          "name": "Vocabulary & Grammar",
+          "questions": 16
+        },
+        {
+          "name": "Reading Comprehension",
+          "questions": 4
+        }
+      ]
+    },
+    {
+      "subject": "Indian History (Ancient, Medieval, Modern)",
+      "questions": 20,
+      "percentage": 10.0,
+      "breakdown": [
+        {
+          "name": "Ancient India",
+          "questions": 10
+        },
+        {
+          "name": "Medieval India",
+          "questions": 7
+        },
+        {
+          "name": "Modern India",
+          "questions": 3
+        }
+      ]
+    },
+    {
+      "subject": "Current Affairs & General Knowledge",
+      "questions": 16,
+      "percentage": 8.0,
+      "breakdown": [
+        {
+          "name": "National & International Observance Days",
+          "questions": 3
+        },
+        {
+          "name": "Awards & Honours",
+          "questions": 2
+        },
+        {
+          "name": "Governance & Government Schemes",
+          "questions": 2
+        },
+        {
+          "name": "India's International Relations",
+          "questions": 2
+        },
+        {
+          "name": "Sports & Stadiums",
+          "questions": 2
+        },
+        {
+          "name": "Defence & Military Affairs",
+          "questions": 2
+        },
+        {
+          "name": "Institutes & Infrastructure",
+          "questions": 2
+        },
+        {
+          "name": "Energy & Science Current Affairs",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "General Science (Physics, Chemistry, Biology)",
+      "questions": 15,
+      "percentage": 7.5,
+      "breakdown": [
+        {
+          "name": "Physics",
+          "questions": 6
+        },
+        {
+          "name": "Biology",
+          "questions": 6
+        },
+        {
+          "name": "Chemistry",
+          "questions": 3
+        }
+      ]
+    },
+    {
+      "subject": "Indian Polity & Governance",
+      "questions": 12,
+      "percentage": 6.0,
+      "breakdown": [
+        {
+          "name": "Constitutional Bodies & Concepts",
+          "questions": 7
+        },
+        {
+          "name": "Current Political Office Holders",
+          "questions": 3
+        },
+        {
+          "name": "Elections",
+          "questions": 1
+        },
+        {
+          "name": "Security Forces",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "Environment & Ecology",
+      "questions": 10,
+      "percentage": 5.0,
+      "breakdown": [
+        {
+          "name": "Pollution, Climate & Sustainability",
+          "questions": 7
+        },
+        {
+          "name": "Ecology & Environment Spheres",
+          "questions": 2
+        },
+        {
+          "name": "Atmospheric Gases & Human Body",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "Indian Economy",
+      "questions": 6,
+      "percentage": 3.0,
+      "breakdown": [
+        {
+          "name": "Poverty & Inclusive Growth",
+          "questions": 3
+        },
+        {
+          "name": "Employment Schemes",
+          "questions": 1
+        },
+        {
+          "name": "Demography",
+          "questions": 1
+        },
+        {
+          "name": "Industry",
+          "questions": 1
+        }
+      ]
+    },
+    {
+      "subject": "Geography",
+      "questions": 6,
+      "percentage": 3.0,
+      "breakdown": [
+        {
+          "name": "Climate & Monsoon",
+          "questions": 2
+        },
+        {
+          "name": "Human Geography & Demography",
+          "questions": 2
+        },
+        {
+          "name": "Physical Geography",
+          "questions": 1
+        },
+        {
+          "name": "Industrial & Energy Geography",
+          "questions": 1
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Choose the correctly spelt word from the options given below.",
+      "options": {
+        "a": "occasional",
+        "b": "occassional",
+        "c": "ocasional",
+        "d": "occational"
+      },
+      "answer": "a",
+      "a": "occasional",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the meaning of underlined idiom in \"We would be glad to put you up for a few days if you would like to stay\"?",
+      "options": {
+        "a": "tolerate someone",
+        "b": "build something",
+        "c": "provide accommodation",
+        "d": "contribute something"
+      },
+      "answer": "c",
+      "a": "provide accommodation",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the meaning of the underlined phrase in 'How did you wolf down that pizza so quickly'?",
+      "options": {
+        "a": "To eat gently",
+        "b": "To eat hungrily",
+        "c": "To eat slowly",
+        "d": "To swallow slowly"
+      },
+      "answer": "b",
+      "a": "To eat hungrily",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct order of the following jumbled sentences into a meaningful paragraph.\n(a) Wages will seldom rise in proportion to the rising prices\n(b) The problem of food is intimately connect with population, the market is governed by demand and supply\n(c) Without enough food, such people lack health, strength of efficiency and they fall an easy prey to all sorts of diseases\n(d) If too many people demand goods to go round, prices will rise and poor classes will starve",
+      "options": {
+        "a": "1-(c), 2-(d), 3-(a), 4-(b)",
+        "b": "1-(d), 2-(c), 3-(b), 4-(a)",
+        "c": "1-(a), 2-(c), 3-(d), 4-(b)",
+        "d": "1-(b), 2-(d), 3-(a), 4-(c)"
+      },
+      "answer": "d",
+      "a": "1-(b), 2-(d), 3-(a), 4-(c)",
+      "e": "The paragraph should open with the general statement introducing the topic, which is (b), about food being connected with population and demand-supply.\n\nThis is followed logically by (d) prices rising due to demand, then (a) wages not keeping pace with rising prices, and finally (c) the consequence of poor health and disease. This gives the order b, d, a, c.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct order of the following jumbled sentences to make it a meaningful paragraph.\n(a) A dove, perched on a nearby tree, saw the ant's danger and dropped a leaf into the water\n(b) Once, an ant who had come to drink at a stream fell into the water and was carried away by the swift current\n(c) He was about to fire when the ant, who was nearby, crawled forward and bit him sharply on the ankle\n(d) Sometime after this, a hunter, creeping through the bushes, saw the dove asleep, and took a careful aim with his gun",
+      "options": {
+        "a": "1-(d), 2-(c), 3-(b), 4-(a)",
+        "b": "1-(c), 2-(d), 3-(a), 4-(b)",
+        "c": "1-(b), 2-(a), 3-(d), 4-(c)",
+        "d": "1-(a), 2-(c), 3-(d), 4-(b)"
+      },
+      "answer": "c",
+      "a": "1-(b), 2-(a), 3-(d), 4-(c)",
+      "e": "The story begins with (b), the ant falling into the stream. This is followed by (a), the dove noticing and dropping a leaf to save it.\n\nNext comes (d), a hunter later trying to catch the dove, and finally (c), the ant biting the hunter to save the dove in return. This gives the order b, a, d, c.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank:\nManoj played cricket for two days, _________ he?",
+      "options": {
+        "a": "did",
+        "b": "didn't",
+        "c": "wasn't",
+        "d": "wouldn't"
+      },
+      "answer": "b",
+      "a": "didn't",
+      "e": "This is a tag question. The main statement 'Manoj played cricket' is in the simple past tense and is affirmative.\n\nA question tag for an affirmative statement must be negative and use the same auxiliary verb form as the main clause, which gives 'didn't he'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Fill in the blank:\nJohnson has not prepared for tomorrow's exam, __________ he?",
+      "options": {
+        "a": "isn't",
+        "b": "hasn't",
+        "c": "has",
+        "d": "does"
+      },
+      "answer": "c",
+      "a": "has",
+      "e": "This is a tag question where the main statement is negative, using 'has not prepared'.\n\nA question tag for a negative statement must be positive, and since the main verb uses 'has', the tag must also use 'has', giving 'has he'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How did most people regard early motor cars?",
+      "options": {
+        "a": "Not better than horse-driven engines",
+        "b": "A mere joke, or as rather dangerous playthings",
+        "c": "A mere scientific experiment",
+        "d": "A cumbersome vehicle"
+      },
+      "answer": "b",
+      "a": "A mere joke, or as rather dangerous playthings",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What were all early motor cars?",
+      "options": {
+        "a": "A plaything or toy meant for engineers",
+        "b": "A vehicle better than horse-driven vehicle",
+        "c": "Noisy, clumsy, queer-looking things",
+        "d": "Dangerous but beautiful"
+      },
+      "answer": "c",
+      "a": "Noisy, clumsy, queer-looking things",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What made the English inventors handicapped?",
+      "options": {
+        "a": "The general public did not welcome the invention",
+        "b": "The quaint old law that forbade any such vehicle to attain a greater than four miles an hour",
+        "c": "Non-availability of adequate fuel power the engine",
+        "d": "Availability of micro-air vehicles"
+      },
+      "answer": "b",
+      "a": "The quaint old law that forbade any such vehicle to attain a greater than four miles an hour",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is incorrect about the internal combustion engine?",
+      "options": {
+        "a": "fuel burnt in it as waste",
+        "b": "light in weight",
+        "c": "noisy and clumsy",
+        "d": "small in size"
+      },
+      "answer": "a",
+      "a": "fuel burnt in it as waste",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the synonym of 'amenable' in 'Both parties were amenable to a peaceful settlement of the land dispute'.?",
+      "options": {
+        "a": "Doubtful",
+        "b": "Unwilling",
+        "c": "Responsive",
+        "d": "Disagreeable"
+      },
+      "answer": "c",
+      "a": "Responsive",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the synonym of 'antidote' in 'Jogging is considered an antidote to mental stress'.?",
+      "options": {
+        "a": "Poisonous",
+        "b": "Remedy",
+        "c": "Equivalent",
+        "d": "Dangerous"
+      },
+      "answer": "b",
+      "a": "Remedy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the antonym of 'transperant' in 'The window-glass is transperant'?",
+      "options": {
+        "a": "Opaque",
+        "b": "Translucent",
+        "c": "Susceptible",
+        "d": "Fragile"
+      },
+      "answer": "a",
+      "a": "Opaque",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the antonym of 'unanimous' in 'It was a unanimous decision'?",
+      "options": {
+        "a": "United",
+        "b": "Partial",
+        "c": "Compatible",
+        "d": "Harmonious"
+      },
+      "answer": "b",
+      "a": "Partial",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "His mother was _________ American though his father was __________ European.",
+      "options": {
+        "a": "a, a",
+        "b": "a, an",
+        "c": "an, a",
+        "d": "an, an"
+      },
+      "answer": "c",
+      "a": "an, a",
+      "e": "The choice between 'a' and 'an' depends on the sound that follows, not the spelling. 'American' begins with a vowel sound, so it takes 'an', while 'European' begins with a consonant sound (yu-), so it takes 'a'.\n\nThat gives 'an American' and 'a European', matching the pattern an, a.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The coordinator was asked to attend __________ the issue and resolve it immediately.",
+      "options": {
+        "a": "by",
+        "b": "in",
+        "c": "to",
+        "d": "No preposition required"
+      },
+      "answer": "c",
+      "a": "to",
+      "e": "The phrasal verb 'attend to' means to deal with or handle something, which fits the context of resolving an issue.\n\n'Attend by' and 'attend in' are not standard English collocations, so 'to' is the correct preposition here.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Either of the roads ___________ to Vasantha Nagar.",
+      "options": {
+        "a": "lead",
+        "b": "leads",
+        "c": "have led",
+        "d": "are led"
+      },
+      "answer": "b",
+      "a": "leads",
+      "e": "'Either' is a singular pronoun meaning 'one or the other', so it takes a singular verb.\n\nSince the subject 'Either of the roads' is treated as singular, the verb must also be singular, which gives 'leads'.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Please don't disturb me, I _________ the coins now.",
+      "options": {
+        "a": "have been counting",
+        "b": "count",
+        "c": "was counting",
+        "d": "am counting"
+      },
+      "answer": "d",
+      "a": "am counting",
+      "e": "The action of counting the coins is happening at the exact moment of speaking, which calls for the present continuous tense.\n\n'Am counting' correctly expresses this ongoing action happening right now, unlike the simple present or past forms.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Rishi __________ his engineering course by the end of 2017.",
+      "options": {
+        "a": "will completed",
+        "b": "complete",
+        "c": "will have completed",
+        "d": "was completed"
+      },
+      "answer": "c",
+      "a": "will have completed",
+      "e": "The phrase 'by the end of 2017' points to a future point by which an action will be finished, which requires the future perfect tense.\n\n'Will have completed' correctly shows an action that will be finished before a specified future time.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Do you produce a wrong evidence to your parents regarding your performance in Exams?",
+      "options": {
+        "a": "I do",
+        "b": "No",
+        "c": "Sometimes",
+        "d": "Depending upon the situation"
+      },
+      "answer": "b",
+      "a": "No",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to you, 'Gender Equality' means _________",
+      "options": {
+        "a": "Having women reservations",
+        "b": "Women are superior to men",
+        "c": "Men are superior to women",
+        "d": "Having equal opportunities to both men and women"
+      },
+      "answer": "d",
+      "a": "Having equal opportunities to both men and women",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What does it mean by \"Weaker Sections\"?",
+      "options": {
+        "a": "Physically weak",
+        "b": "Financially weak",
+        "c": "Handicapped people",
+        "d": "People who can't fight for their rights"
+      },
+      "answer": "b",
+      "a": "Financially weak",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "You have been waiting for your friend for the past two hours, still he has not yet come. How do you feel about him?",
+      "options": {
+        "a": "He does not have time sense",
+        "b": "He might be having some problem",
+        "c": "If he comes, I will shout at him for the delay",
+        "d": "Leaving me alone, he might have gone to somewhere else"
+      },
+      "answer": "b",
+      "a": "He might be having some problem",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Do you return the money to the owner, when it fell down from his/her pocket?",
+      "options": {
+        "a": "Yes, always",
+        "b": "No, I can't",
+        "c": "Sometimes",
+        "d": "Most of the times"
+      },
+      "answer": "a",
+      "a": "Yes, always",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When two persons are quarrelling with each other, you will _________",
+      "options": {
+        "a": "Run away from there",
+        "b": "Join one side",
+        "c": "Pacify two persons",
+        "d": "Call police"
+      },
+      "answer": "c",
+      "a": "Pacify two persons",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When you watch India Vs Pakistan Cricket Match Finals, your younger brother asks you to clear his doubts in Mathematics. How do you respond?",
+      "options": {
+        "a": "You clear his doubts patiently",
+        "b": "You shout at him for not asking before",
+        "c": "You switch off TV and go away",
+        "d": "You feel irritated"
+      },
+      "answer": "a",
+      "a": "You clear his doubts patiently",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When you see a child facing a problem in understanding an important concept for a long time, you advise him to _________",
+      "options": {
+        "a": "stop reading the subject",
+        "b": "leave that subject forever",
+        "c": "take a break and read it once again",
+        "d": "by heart the concept"
+      },
+      "answer": "c",
+      "a": "take a break and read it once again",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "It somebody tries to hurt you intentionally, you should",
+      "options": {
+        "a": "Retort",
+        "b": "Cry",
+        "c": "Complain to police",
+        "d": "Ignore"
+      },
+      "answer": "d",
+      "a": "Ignore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If your friend tells you about his personal problems thinking that you are trustworthy person, you should _________",
+      "options": {
+        "a": "Share it with everyone",
+        "b": "Feel happy about it",
+        "c": "Maintain confidentiality",
+        "d": "Look at him with contempt"
+      },
+      "answer": "c",
+      "a": "Maintain confidentiality",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The dimensions of kinetic energy is same as that of",
+      "options": {
+        "a": "Force",
+        "b": "Work",
+        "c": "Momentum",
+        "d": "Velocity"
+      },
+      "answer": "b",
+      "a": "Work",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The instrument used to measure sounds under water is",
+      "options": {
+        "a": "Hygrometer",
+        "b": "Hydrophone",
+        "c": "Hypsometer",
+        "d": "Gramaphone"
+      },
+      "answer": "b",
+      "a": "Hydrophone",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Convert 10 inches into kilometers",
+      "options": {
+        "a": "254 × 10-3",
+        "b": "2.54 × 10-4",
+        "c": "2.54 × 104",
+        "d": "25.4 × 10-4"
+      },
+      "answer": "b",
+      "a": "2.54 × 10-4",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A monochromatic radiation was beamed on a distant planet from Earth and the reflection was received after seven minutes. If the velocity of the signal is 3×10⁸ m/s, then the distance between the Earth and Planet in meters is",
+      "options": {
+        "a": "3.15 × 10⁸",
+        "b": "3 × 10¹⁰",
+        "c": "6.3 × 10¹⁰",
+        "d": "3.15 × 10¹⁰"
+      },
+      "answer": "c",
+      "a": "6.3 × 10¹⁰",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The value of Planck's constant in SI units is",
+      "options": {
+        "a": "6.62 × 10-34 Js",
+        "b": "6 × 1023 Js",
+        "c": "10 × 106 M-1",
+        "d": "8.314 × 10-7 J"
+      },
+      "answer": "a",
+      "a": "6.62 × 10-34 Js",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not an antibiotic",
+      "options": {
+        "a": "Erythromycin",
+        "b": "Tetracycline",
+        "c": "Oxytocin",
+        "d": "Ofloxacin"
+      },
+      "answer": "c",
+      "a": "Oxytocin",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Chemical name of Dry Ice is",
+      "options": {
+        "a": "Solid H2O",
+        "b": "Solid O3",
+        "c": "Solid CaCO3",
+        "d": "Solid CO2"
+      },
+      "answer": "d",
+      "a": "Solid CO2",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following atmospheric layers help in radio communications",
+      "options": {
+        "a": "Troposphere",
+        "b": "Ionosphere",
+        "c": "Stratosphere",
+        "d": "Mesosphere"
+      },
+      "answer": "b",
+      "a": "Ionosphere",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Among the elements given below, which one has the highest electronegativity",
+      "options": {
+        "a": "Cl",
+        "b": "Br",
+        "c": "O",
+        "d": "N"
+      },
+      "answer": "c",
+      "a": "O",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For an endothermic reaction where ΔH respresents the enthalpy of the reaction, the minimum value of the activation energy will be",
+      "options": {
+        "a": "< ΔH",
+        "b": "= ΔH",
+        "c": "> ΔH",
+        "d": "Zero"
+      },
+      "answer": "a",
+      "a": "< ΔH",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Arrange the following atmospheric layers in the correct order from bottom to top\nA) Exosphere B) Troposphere C) Stratosphere D) Mesosphere",
+      "options": {
+        "a": "A, B, C, D",
+        "b": "B, C, D, A",
+        "c": "C, D, A, B",
+        "d": "D, A, B, C"
+      },
+      "answer": "b",
+      "a": "B, C, D, A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The term \"Dark Fermentation\" means",
+      "options": {
+        "a": "a method to reduce CO2 in the atmosphere",
+        "b": "a method to produce hydrogen as fuel from waste water",
+        "c": "a method to dispose nuclear waste",
+        "d": "a method to produce methane from organic waste"
+      },
+      "answer": "b",
+      "a": "a method to produce hydrogen as fuel from waste water",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is correct for Carbon Monoxide\nA) It is produced in the human body\nB) It helps in treating sickle cell anaemia\nC) It acts as a neurotransmitter",
+      "options": {
+        "a": "A, B and C",
+        "b": "A only",
+        "c": "A and C",
+        "d": "C only"
+      },
+      "answer": "a",
+      "a": "A, B and C",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Biological oxygen demand indicates",
+      "options": {
+        "a": "High level of microbial pollution",
+        "b": "Low level of microbial pollution",
+        "c": "Absence of any pollution",
+        "d": "Water is highly pure"
+      },
+      "answer": "a",
+      "a": "High level of microbial pollution",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon credit is",
+      "options": {
+        "a": "the difference between the carbon emission allowed and actually emitted",
+        "b": "a loan given by a Bank",
+        "c": "a measure of high quality of living standard",
+        "d": "the amount of carbon in water"
+      },
+      "answer": "a",
+      "a": "the difference between the carbon emission allowed and actually emitted",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which hormone is responsible for stress, anger and high BP",
+      "options": {
+        "a": "Oxytocin",
+        "b": "Thyroxin",
+        "c": "Adrenaline",
+        "d": "Galanin"
+      },
+      "answer": "c",
+      "a": "Adrenaline",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is known as animal starch",
+      "options": {
+        "a": "Cellulose",
+        "b": "Glycogen",
+        "c": "Chitin",
+        "d": "Pectin"
+      },
+      "answer": "b",
+      "a": "Glycogen",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In RNA, nucleotides are attached by",
+      "options": {
+        "a": "Peptide bonds",
+        "b": "Hydrogen bonds",
+        "c": "Ionic bonds",
+        "d": "Phosphodiester bonds"
+      },
+      "answer": "d",
+      "a": "Phosphodiester bonds",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The universal acceptor blood group is",
+      "options": {
+        "a": "O-",
+        "b": "A-",
+        "c": "B+",
+        "d": "AB+"
+      },
+      "answer": "d",
+      "a": "AB+",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The largest organ in human body is",
+      "options": {
+        "a": "Brain",
+        "b": "Heart",
+        "c": "Skin",
+        "d": "Liver"
+      },
+      "answer": "c",
+      "a": "Skin",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Find the next number in the series\n0, 3, 8, 15, 24, ______",
+      "options": {
+        "a": "36",
+        "b": "35",
+        "c": "34",
+        "d": "33"
+      },
+      "answer": "b",
+      "a": "35",
+      "e": "The differences between consecutive terms are 3, 5, 7, 9, which are consecutive odd numbers, so the next difference should be 11.\n\nAdding this next difference to the last term gives 24 + 11 = 35.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Find the number in the place of question mark (?)\nTriangle patterns: 1/3,5 -> 35; 2/4,3 -> 29; 1/4,2 -> ?",
+      "options": {
+        "a": "21",
+        "b": "22",
+        "c": "29",
+        "d": "20"
+      },
+      "answer": "a",
+      "a": "21",
+      "e": "Testing the numbers shows that the inner value equals the sum of the squares of the top, bottom-left and bottom-right numbers. For the first triangle, 1 squared + 3 squared + 5 squared = 1+9+25 = 35, which matches.\n\nApplying the same rule to the third triangle, 1 squared + 4 squared + 2 squared = 1+16+4 = 21.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Find the next number in the series\n1, 1, 2, 3, 5, 8, _____",
+      "options": {
+        "a": "13",
+        "b": "15",
+        "c": "19",
+        "d": "21"
+      },
+      "answer": "a",
+      "a": "13",
+      "e": "This is the Fibonacci sequence, where each term is the sum of the two preceding terms.\n\nSince 3+5=8, the next term is 5+8=13.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Find the missing number in the series\n9, 25, 49, _____ , 169",
+      "options": {
+        "a": "100",
+        "b": "121",
+        "c": "64",
+        "d": "144"
+      },
+      "answer": "b",
+      "a": "121",
+      "e": "The given numbers are squares of consecutive prime numbers: 3 squared = 9, 5 squared = 25, 7 squared = 49, and 13 squared = 169.\n\nFollowing this pattern of prime numbers 3, 5, 7, 11, 13, the missing term should be 11 squared = 121.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Observe the figures given below. Fill the place with question mark (?) with suitable number\nBox patterns: 2,3/9,4; 4,6/36,16; 5,?/49,25",
+      "options": {
+        "a": "6",
+        "b": "5",
+        "c": "7",
+        "d": "9"
+      },
+      "answer": "c",
+      "a": "7",
+      "e": "Comparing the top and bottom rows shows that each bottom number is the square of the other top number in the same square. In the first square, 9 equals 3 squared and 4 equals 2 squared.\n\nApplying this to the third square, since the bottom-left value is 49, the missing top-right number must satisfy 49 = its square, meaning the missing number is 7 (and this is confirmed since 25 = 5 squared, matching the given top-left value of 5).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Observe the following figures and find out the values of P, Q\nTriangle patterns: 4,3/6; 8,9/15; 5,8/10; 7,P/Q",
+      "options": {
+        "a": "4, 8",
+        "b": "5, 7",
+        "c": "5, 6",
+        "d": "4, 7"
+      },
+      "answer": "d",
+      "a": "4, 7",
+      "e": "In each triangle, the bottom value equals the sum of the two upper values minus an increasing constant: the first triangle's difference is 1 (4+3-6=1), the second is 2 (8+9-15=2), and the third is 3 (5+8-10=3).\n\nFollowing this pattern, the fourth triangle should have a difference of 4, giving 7+P-Q=4, and checking the options shows P=4, Q=7 satisfies this relationship.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Find the next number in the series\n3, 10, 24, 45, _____",
+      "options": {
+        "a": "60",
+        "b": "84",
+        "c": "73",
+        "d": "76"
+      },
+      "answer": "c",
+      "a": "73",
+      "e": "The differences between consecutive terms are 7, 14, 21, which are increasing multiples of 7, so the next difference should be 28.\n\nAdding this to the last term gives 45 + 28 = 73.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many families watch Telugu channels? (Venn diagram: Hindi 8, English 12, Telugu 6, overlaps 3,2,4,2)",
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "12",
+        "d": "14"
+      },
+      "answer": "d",
+      "a": "14",
+      "e": "The number of families watching Telugu channels includes everyone inside the Telugu circle of the Venn diagram, whether they watch it alone or alongside other channels.\n\nAdding the Telugu-only region (6) to the overlaps involving Telugu, that is Hindi-Telugu only (2), English-Telugu only (2), and all three channels (4), gives 6 + 2 + 2 + 4 = 14.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many families watch English channels?",
+      "options": {
+        "a": "14",
+        "b": "21",
+        "c": "17",
+        "d": "7"
+      },
+      "answer": "b",
+      "a": "21",
+      "e": "The number of families watching English channels includes everyone inside the English circle, whether they watch only English or English along with other channels.\n\nAdding the English-only region (12) to the overlaps involving English, that is Hindi-English only (3), English-Telugu only (2), and all three channels (4), gives 12 + 3 + 2 + 4 = 21.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many families watch both Hindi and Telugu channels?",
+      "options": {
+        "a": "6",
+        "b": "4",
+        "c": "7",
+        "d": "17"
+      },
+      "answer": "a",
+      "a": "6",
+      "e": "Families watching both Hindi and Telugu channels means every family inside the overlap of the Hindi and Telugu circles, regardless of whether they also watch English.\n\nThis includes the Hindi-Telugu only region (2) plus the families who watch all three channels (4), giving 2 + 4 = 6.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If Red is called Yellow, Yellow is called Green, Green is called Blue, Blue is called Pink, then usually leaves colour will be",
+      "options": {
+        "a": "Green",
+        "b": "Pink",
+        "c": "Yellow",
+        "d": "Blue"
+      },
+      "answer": "d",
+      "a": "Blue",
+      "e": "Leaves are usually green in colour, so we need to find what green is now called according to the given code chain.\n\nSince Green is called Blue in this code, the usual colour of leaves will be called Blue.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If UMBRELLA is coded as VLCQFKMZ, then JUSTICE is coded as",
+      "options": {
+        "a": "KSSTJBF",
+        "b": "KTTSICF",
+        "c": "KTTSJBF",
+        "d": "KTSSJAF"
+      },
+      "answer": "c",
+      "a": "KTTSJBF",
+      "e": "Comparing UMBRELLA with its code VLCQFKMZ shows that each letter's position alternately shifts forward by one and backward by one: U to V (+1), M to L (-1), B to C (+1), and so on.\n\nApplying this same alternating +1, -1 pattern to JUSTICE (J,U,S,T,I,C,E) gives K,T,T,S,J,B,F, which is KTTSJBF.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If TBDIJO is coded for SACHIN, then which of the following words is coded as IZVOEBJ",
+      "options": {
+        "a": "SAMURAI",
+        "b": "MARUTHI",
+        "c": "HYUNDAI",
+        "d": "CRICKET"
+      },
+      "answer": "c",
+      "a": "HYUNDAI",
+      "e": "Comparing TBDIJO with SACHIN shows that each letter of the code is exactly one position ahead of the corresponding original letter, since T-1=S, B-1=A, D-1=C, and so on.\n\nApplying the reverse rule (subtracting one from each letter) to IZVOEBJ gives H,Y,U,N,D,A,I, which spells HYUNDAI.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If TEN, GANG and MEAT are coded as 439, 6596 and 1354 respectively, then how is MANAGEMENT coded?",
+      "options": {
+        "a": "1595363194",
+        "b": "1595313694",
+        "c": "1595361934",
+        "d": "1595631394"
+      },
+      "answer": "d",
+      "a": "1595631394",
+      "e": "Comparing the three coded words shows a consistent letter-to-digit mapping: T=4, E=3, N=9 (from TEN), G=6, A=5 (from GANG), and M=1 (from MEAT), all cross-verified against each other.\n\nApplying this mapping to MANAGEMENT (M,A,N,A,G,E,M,E,N,T) gives 1,5,9,5,6,3,1,3,9,4, which is 1595631394.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If 1st April of year falls on Sunday, what is the day on 15th August of the same year?",
+      "options": {
+        "a": "Monday",
+        "b": "Tuesday",
+        "c": "Wednesday",
+        "d": "Thursday"
+      },
+      "answer": "c",
+      "a": "Wednesday",
+      "e": "Counting the number of days from April 1 to August 15 gives 29 remaining days in April, plus 31 in May, 30 in June, 31 in July, and 15 in August, totaling 136 days after April 1.\n\nSince 136 divided by 7 leaves a remainder of 3, the day shifts forward by 3 from Sunday, landing on Wednesday.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "15th August, 2016 falls on Monday, what is the day on 15th August, 2017?",
+      "options": {
+        "a": "Monday",
+        "b": "Wednesday",
+        "c": "Sunday",
+        "d": "Tuesday"
+      },
+      "answer": "d",
+      "a": "Tuesday",
+      "e": "The period from August 15, 2016 to August 15, 2017 spans exactly 365 days, since the intervening February (2017) is not a leap year February within this range.\n\nSince 365 divided by 7 leaves a remainder of 1, the day shifts forward by 1 from Monday, landing on Tuesday.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Secretary has arrived at 10.10 am, 30 minutes before chairperson. Chairperson arrived 10 minutes late to the scheduled meeting. When is meeting scheduled?",
+      "options": {
+        "a": "10.40 am",
+        "b": "10.10 am",
+        "c": "10.30 am",
+        "d": "10.20 am"
+      },
+      "answer": "c",
+      "a": "10.30 am",
+      "e": "Since the secretary arrived at 10.10 am, 30 minutes before the chairperson, the chairperson arrived at 10.40 am.\n\nAs the chairperson was 10 minutes late to the scheduled meeting time, the meeting was originally scheduled for 10.40 - 10 minutes = 10.30 am.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Shankar is 8th from top and 24th from last in his class. How many students should be added to make the strength 40?",
+      "options": {
+        "a": "8",
+        "b": "9",
+        "c": "10",
+        "d": "16"
+      },
+      "answer": "b",
+      "a": "9",
+      "e": "The total number of students currently in the class equals the sum of the positions from the top and from the last, minus 1 for Shankar being counted twice: 8 + 24 - 1 = 31.\n\nTo bring the strength up to 40, the number of additional students needed is 40 - 31 = 9.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Girl travels 6 km and takes left, further travels 8 km. What is the straight distance to that position, from the starting point?",
+      "options": {
+        "a": "12 km",
+        "b": "10 km",
+        "c": "9 km",
+        "d": "14 km"
+      },
+      "answer": "b",
+      "a": "10 km",
+      "e": "Since the girl travels 6 km, then turns left and travels 8 km, the two paths form the two legs of a right-angled triangle.\n\nThe straight-line distance from the starting point is the hypotenuse, calculated using the Pythagorean theorem as the square root of (6 squared + 8 squared), which equals the square root of 100, or 10 km.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When a clock is showing 10 'O' clock, the hours hand is showing north direction. At what time does the hours hand show 'southwest'?",
+      "options": {
+        "a": "5:15",
+        "b": "5:30",
+        "c": "4:00",
+        "d": "4:30"
+      },
+      "answer": "b",
+      "a": "5:30",
+      "e": "Taking the hour hand's position at 10 o'clock as the fixed reference for north, each hour represents a 30-degree clockwise rotation of the hour hand.\n\nThe southwest direction is 225 degrees clockwise from north, and since 225/30 = 7.5 hours, adding this to 10:00 gives 5:30.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Observe the sequence given and find out how many letters are immediately followed by a number and preceded by a symbol?\nM * K 5.L * N 3 X ? P 4 * L M % N 4",
+      "options": {
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "5"
+      },
+      "answer": "c",
+      "a": "4",
+      "e": "Going through the sequence, we look for a letter that has a symbol immediately before it and a number immediately after it.\n\nFour such letters are found: K (preceded by *, followed by 5), N (preceded by *, followed by 3), P (preceded by ?, followed by 4), and N (preceded by %, followed by 4).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Three engineers P, Q, R are designing a project. Can we find out in how much time all the three engineers will complete the designing, observing the following statements?\nI. P & Q can complete the design in 2 months\nII. Q & R can complete the design in 1½ months\nIII. P & R can complete the design in 3 months.",
+      "options": {
+        "a": "I & II are sufficient",
+        "b": "I, II & III are sufficient",
+        "c": "I, II & III are insufficient",
+        "d": "I & III are sufficient"
+      },
+      "answer": "b",
+      "a": "I, II & III are sufficient",
+      "e": "To find the individual working rates of three people from pairwise combined rates, all three pairwise equations are needed, since two equations alone cannot uniquely determine three unknowns.\n\nUsing all three statements together, the individual rates of P, Q and R can be solved, and from these, the time taken by all three working together can be found. Hence, I, II and III together are sufficient.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Study: Six friends A,B,C,D,E,F sit on hexagon corners facing center. 'A' sits between F and C. D is on second right of B and immediate neighbour of C.\nWho sits exactly opposite to E?",
+      "options": {
+        "a": "D",
+        "b": "C",
+        "c": "B",
+        "d": "A"
+      },
+      "answer": "d",
+      "a": "A",
+      "e": "Using the given clues, the seating order around the hexagon works out to D, C, A, F, B, E (going around the table), with A between F and C, and D as an immediate neighbour of C.\n\nIn a hexagon, the person exactly opposite another is three seats away. Counting three seats from E in this arrangement lands on A, so A sits exactly opposite E.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who are the two immediate neighbours of 'B'?",
+      "options": {
+        "a": "E and D",
+        "b": "F and E",
+        "c": "C and B",
+        "d": "A and D"
+      },
+      "answer": "b",
+      "a": "F and E",
+      "e": "From the established seating order D, C, A, F, B, E around the hexagon, the seats immediately next to B are F on one side and E on the other.\n\nThis is confirmed by the condition that D is the second seat to the right of B, which is satisfied in this arrangement.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who is sitting on the side exactly opposite to 'D'?",
+      "options": {
+        "a": "F",
+        "b": "B",
+        "c": "A",
+        "d": "C"
+      },
+      "answer": "a",
+      "a": "F",
+      "e": "Using the seating order D, C, A, F, B, E around the hexagon, the person exactly opposite D is three seats away.\n\nCounting three seats from D in this arrangement lands on F, so F sits exactly opposite D.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "(1-1/2)(1-1/3)(1-1/4)....(1-1/n) =",
+      "options": {
+        "a": "1/(n(n+1))",
+        "b": "(n+1)/n",
+        "c": "2/n",
+        "d": "1/n"
+      },
+      "answer": "d",
+      "a": "1/n",
+      "e": "This is a telescoping product. Each factor (1 - 1/k) simplifies to (k-1)/k, so writing out the terms gives (1/2)(2/3)(3/4)...((n-1)/n).\n\nEvery numerator cancels with the denominator of the next fraction, leaving only 1 in the numerator and n in the denominator, so the product equals 1/n.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The ratio of two numbers is 3:5 and their H.C.F is 5. Then, their L.C.M is",
+      "options": {
+        "a": "45",
+        "b": "35",
+        "c": "150",
+        "d": "75"
+      },
+      "answer": "d",
+      "a": "75",
+      "e": "Since the ratio of the numbers is 3:5 and their HCF is 5, the actual numbers are 3x5=15 and 5x5=25.\n\nFor two numbers, the product of the HCF and LCM equals the product of the numbers, so LCM = (15x25)/5 = 75.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The smallest number which when subtracted by 11 is divisible by 16, 18, 21, 24 and 28 is",
+      "options": {
+        "a": "1109",
+        "b": "1119",
+        "c": "1019",
+        "d": "1214"
+      },
+      "answer": "c",
+      "a": "1019",
+      "e": "The number, after subtracting 11, must be exactly divisible by 16, 18, 21, 24 and 28, so it must be a multiple of their LCM.\n\nThe LCM of these numbers works out to 1008, so the smallest such number is 1008 + 11 = 1019.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The ages of A and B are in the ratio 3:5. Ten years later, the ratio of their ages will be 31:45. Their present ages are (in years)",
+      "options": {
+        "a": "21, 35",
+        "b": "24, 40",
+        "c": "18, 30",
+        "d": "27, 45"
+      },
+      "answer": "a",
+      "a": "21, 35",
+      "e": "Let the present ages be 3x and 5x. Ten years later, their ages become 3x+10 and 5x+10, and this ratio is given as 31:45.\n\nSolving 45(3x+10) = 31(5x+10) gives 135x + 450 = 155x + 310, so 20x = 140 and x = 7. The present ages are therefore 21 and 35 years.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Silver and copper are mixed in the ratios 2:5 and 4:7 to prepare two alloys A and B. Equal quantities of these alloys A and B are mixed to prepare a third alloy C. The ratio of silver and copper in C is",
+      "options": {
+        "a": "3:5",
+        "b": "25:52",
+        "c": "25:49",
+        "d": "15:27"
+      },
+      "answer": "b",
+      "a": "25:52",
+      "e": "In alloy A, silver forms 2/7 of the mixture and copper 5/7. In alloy B, silver forms 4/11 and copper 7/11.\n\nMixing equal quantities of A and B, the total silver fraction is 2/7 + 4/11 = 50/77 and the total copper fraction is 5/7 + 7/11 = 104/77, giving a silver-to-copper ratio of 50:104, which simplifies to 25:52.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A shop keeper reduced the price of sugar by 10%. A person can buy 2 kg more sugar for Rs.900. The difference between the original price and the reduced price, per kg, is (in rupees)",
+      "options": {
+        "a": "5",
+        "b": "6",
+        "c": "4",
+        "d": "3"
+      },
+      "answer": "a",
+      "a": "5",
+      "e": "Let the original price per kg be p. At the original price, Rs.900 buys 900/p kg, and after a 10% reduction, the same amount buys 900/(0.9p) kg.\n\nThe extra quantity purchased is 100/p, which equals 2 kg, giving p = 50. The reduced price is then 45, so the difference per kg is 50 - 45 = 5 rupees.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In an election between two candidates 80% of the enrolled voters voted. Of these votes, 5% votes were declared invalid. The winning candidate got 32490 votes which is 60% of the valid votes. The total number of voters enrolled in the election is",
+      "options": {
+        "a": "75850",
+        "b": "64750",
+        "c": "82500",
+        "d": "71250"
+      },
+      "answer": "d",
+      "a": "71250",
+      "e": "Since 32490 votes represent 60% of the valid votes, the total valid votes come to 32490/0.6 = 54150.\n\nThese valid votes are 95% of the total votes cast, so the votes cast equal 54150/0.95 = 57000, and since this is 80% of the enrolled voters, the total enrolled voters equal 57000/0.8 = 71250.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person A started a business with investment of Rs.3,00,000. A second person B joined A afterwards with contribution of Rs.4,00,000. If the profit at the end of the year is shared equally by A and B, after how many months did B join A?",
+      "options": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4"
+      },
+      "answer": "c",
+      "a": "3",
+      "e": "A's investment works for the full 12 months, contributing a capital-time value of 3,00,000 x 12. For the profit to be shared equally, B's capital-time value must match this.\n\nIf B invests for x months, then 4,00,000 x x = 3,00,000 x 12, giving x = 9 months, meaning B joined after 12 - 9 = 3 months.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Three individuals A, B, C start a company and contribute a total of Rs.P towards its running. A contributes Rs.50,000 more than B and B contributes Rs.50,000 more than C. If the contributions of A, B and C are in the ratio 8:7:6, then P (in rupees) is",
+      "options": {
+        "a": "10,50,000",
+        "b": "12,00,000",
+        "c": "13,50,000",
+        "d": "14,00,000"
+      },
+      "answer": "a",
+      "a": "10,50,000",
+      "e": "Let the contributions of A, B and C be 8k, 7k and 6k respectively, following the given ratio.\n\nSince A contributes Rs.50,000 more than B, we get 8k - 7k = 50,000, so k = 50,000. This gives A = 4,00,000, B = 3,50,000 and C = 3,00,000, and their total P = 10,50,000.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The average of four consecutive numbers A, B, C, D is 55.5. Then, the product BC =",
+      "options": {
+        "a": "2580",
+        "b": "3060",
+        "c": "3080",
+        "d": "3660"
+      },
+      "answer": "c",
+      "a": "3080",
+      "e": "Since A, B, C, D are four consecutive numbers with an average of 55.5, their sum is 4 x 55.5 = 222.\n\nWriting the numbers as A, A+1, A+2, A+3 gives 4A + 6 = 222, so A = 54. This makes B = 55 and C = 56, and their product BC = 55 x 56 = 3080.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A cricketer's bowling average is 9.5 runs per wicket. In the next match, he takes 3 wickets for 19 runs. His bowling average after this match decreases by 0.1 runs. The number of wickets taken by him before this match is",
+      "options": {
+        "a": "96",
+        "b": "92",
+        "c": "90",
+        "d": "84"
+      },
+      "answer": "b",
+      "a": "92",
+      "e": "Let the number of wickets taken before this match be w, so the runs conceded before this match are 9.5w.\n\nAfter the match, the new average is (9.5w + 19)/(w + 3) = 9.4. Solving this equation gives 0.1w = 9.2, so w = 92.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person sold 2/3rd of his articles at a profit of 35%. The rest of his articles were sold at a profit of 23%. The overall percentage of his profit is",
+      "options": {
+        "a": "27%",
+        "b": "29%",
+        "c": "30%",
+        "d": "31%"
+      },
+      "answer": "d",
+      "a": "31%",
+      "e": "The overall profit percentage is the weighted average of the two profit rates, weighted by the fraction of articles sold at each rate.\n\nThis works out to (2/3 x 35 + 1/3 x 23) = (70 + 23)/3 = 93/3 = 31%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The profit earned by selling an article for Rs.950 is double the loss incurred when the same article is sold for Rs.650. At what price should the article be sold to make 30% profit?",
+      "options": {
+        "a": "875",
+        "b": "920",
+        "c": "975",
+        "d": "1025"
+      },
+      "answer": "c",
+      "a": "975",
+      "e": "Let the cost price be x. The profit at Rs.950 is 950 - x, and the loss at Rs.650 is x - 650, and the profit is given as double the loss.\n\nSolving 950 - x = 2(x - 650) gives 950 - x = 2x - 1300, so 3x = 2250 and x = 750. For a 30% profit, the selling price should be 750 x 1.3 = 975.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The simple interest on a sum of money P is 1/50 of the principal amount P and the number of years is 1/2 of the rate of interest per annum. The interest rate per annum is",
+      "options": {
+        "a": "6%",
+        "b": "5%",
+        "c": "4%",
+        "d": "2%"
+      },
+      "answer": "d",
+      "a": "2%",
+      "e": "Using the simple interest formula SI = PRT/100, and given SI = P/50 with T = R/2, we can substitute to get P/50 = P x R x (R/2)/100.\n\nThis simplifies to R squared = 200/50 = 4, so R = 2%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Bank lends Rs. 3,00,000 to a person A at simple interest 8% and Rs. 2,00,000 to another person B at simple interest 10% for T years. If the Bank receives an interest of Rs. 1,76,000 at the end of the period, then T = (in years)",
+      "options": {
+        "a": "5",
+        "b": "4",
+        "c": "3",
+        "d": "2"
+      },
+      "answer": "b",
+      "a": "4",
+      "e": "The total interest earned is the sum of the interest from both loans: 3,00,000 x 0.08 x T from A and 2,00,000 x 0.10 x T from B.\n\nAdding these gives 24,000T + 20,000T = 44,000T, and setting this equal to 1,76,000 gives T = 4 years.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The amount deposited in a bank for 3 years at the rate of 10% per annum, compounded yearly is given in List I. In List II, compound interest is given. Match them\nList-I: (a) 20000 (b) 15000 (c) 10000\nList-II: (i) 7850 (ii) 3310 (iii) 4865 (iv) 4965 (v) 6620",
+      "options": {
+        "a": "a-v, b-iii, c-ii",
+        "b": "a-i, b-iv, c-ii",
+        "c": "a-v, b-iv, c-ii",
+        "d": "a-i, b-iv, c-iii"
+      },
+      "answer": "c",
+      "a": "a-v, b-iv, c-ii",
+      "e": "For a principal compounded yearly at 10% for 3 years, the compound interest equals the principal multiplied by (1.1 cubed - 1), which is 0.331.\n\nApplying this factor gives 20000 x 0.331 = 6620, 15000 x 0.331 = 4965, and 10000 x 0.331 = 3310, matching a-v, b-iv, c-ii.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "6 men and 8 women can do a work in 40 days. 8 men and 16 women finish the same work in 24 days. In how many days can 10 men and 8 women finish the same work?",
+      "options": {
+        "a": "16",
+        "b": "24",
+        "c": "28",
+        "d": "30"
+      },
+      "answer": "d",
+      "a": "30",
+      "e": "Let a man's one-day work rate be m and a woman's be w. The two given conditions give 6m + 8w = 1/40 and 8m + 16w = 1/24.\n\nSolving these two equations gives m = 1/480 and w = 1/640. For 10 men and 8 women, the combined rate is 10/480 + 8/640 = 1/30, so the work is completed in 30 days.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person A can paint a house in 30 days. A second person B can paint the same house in 36 days. Both A and B work together for 15 days. Then, A goes away. The number of days that B takes to complete the painting is (in days)",
+      "options": {
+        "a": "3",
+        "b": "4",
+        "c": "5",
+        "d": "6"
+      },
+      "answer": "a",
+      "a": "3",
+      "e": "A's rate is 1/30 and B's rate is 1/36 per day, so together they complete 1/30 + 1/36 = 11/180 of the work each day.\n\nIn 15 days together, they finish 15 x 11/180 = 11/12 of the work, leaving 1/12 remaining. B alone, at a rate of 1/36 per day, needs (1/12)/(1/36) = 3 more days to finish.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person left a city P to go to city Q at 6.30 a.m. He travelled at a speed of 90 km/hr for 2 hours and 30 minutes. After that, the speed was reduced to 50 km/hr. If the distance between the cities is 345 km, at what time did he reach the city Q?",
+      "options": {
+        "a": "10.25 a.m",
+        "b": "11.15 a.m",
+        "c": "11.24 a.m",
+        "d": "11.50 a.m"
+      },
+      "answer": "c",
+      "a": "11.24 a.m",
+      "e": "In the first 2.5 hours at 90 km/hr, the person covers 225 km, leaving 345 - 225 = 120 km still to travel.\n\nAt the reduced speed of 50 km/hr, this remaining distance takes 2.4 hours, or 2 hours 24 minutes. Adding this to the total travel time of 2.5 hours after the 6.30 a.m. start gives an arrival time of 11.24 a.m.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A train 80 meters long is running at a speed of 80 km/hr. The time that the train will take to pass a platform of length 120 meters is (in seconds)",
+      "options": {
+        "a": "6.5",
+        "b": "8.5",
+        "c": "9.9",
+        "d": "9"
+      },
+      "answer": "d",
+      "a": "9",
+      "e": "To completely cross the platform, the train must cover its own length plus the platform's length, which is 80 + 120 = 200 metres.\n\nConverting the speed to metres per second gives 80 x 1000/3600, approximately 22.2 m/s, and dividing the distance by this speed gives a time of approximately 9 seconds.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "α and β are the roots of the quadratic equation px²+qx+r=0. Match the items in List I and List II\nList-I: (a) 1/α+1/β (b) α/β+β/α (c) α²+β²\nList-II: (i) (q²-2pr)/p² (ii) (q²+2pr)/pr (iii) (q²-2pr)/pr (iv) -q/r",
+      "options": {
+        "a": "a-iv, b-iii, c-i",
+        "b": "a-iv, b-ii, c-iii",
+        "c": "a-i, b-iii, c-iv",
+        "d": "a-ii, b-iv, c-iii"
+      },
+      "answer": "a",
+      "a": "a-iv, b-iii, c-i",
+      "e": "For the quadratic px²+qx+r=0, the sum of roots is α+β = -q/p and the product is αβ = r/p.\n\nFor (a), 1/α+1/β = (α+β)/αβ = (-q/p)/(r/p) = -q/r, which matches (iv). For (b), α/β+β/α = ((α+β)²-2αβ)/αβ, which simplifies to (q²-2pr)/pr, matching (iii). For (c), α²+β² = (α+β)²-2αβ = (q²-2pr)/p², matching (i). So the correct match is a-iv, b-iii, c-i.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Three cubes with sides in the ratio 3:4:5 are melted to form a single cube whose diagonal is 18√3 cm. The sides of the cubes are (in cm)",
+      "options": {
+        "a": "3, 4, 5",
+        "b": "6, 8, 10",
+        "c": "9, 12, 15",
+        "d": "12, 16, 20"
+      },
+      "answer": "c",
+      "a": "9, 12, 15",
+      "e": "For a cube, the diagonal equals the side length multiplied by root 3, so a diagonal of 18 root 3 means the resulting cube's side is 18 cm and its volume is 18 cubed = 5832 cubic cm.\n\nIf the original cubes have sides 3k, 4k and 5k, their combined volume is k cubed x (27+64+125) = 216k cubed, and setting this equal to 5832 gives k = 3, so the sides are 9, 12 and 15 cm.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A ladder which is touching the top of a pole makes an angle 60° with the floor. Its lower end is at a distance of 4 meters from the pole. The length of the ladder is (in meters)",
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "9",
+        "d": "10"
+      },
+      "answer": "b",
+      "a": "8",
+      "e": "The ladder, the pole and the ground form a right triangle, where the base is the 4-metre distance and the angle at the base with the floor is 60 degrees.\n\nUsing cos60 = base/ladder length, the ladder length equals 4/cos60 = 4/0.5 = 8 metres.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "√1225 + √0.0615+x = 35.25 ⇒ x =",
+      "options": {
+        "a": "0.001",
+        "b": "0.0001",
+        "c": "0.02",
+        "d": "0.01"
+      },
+      "answer": "a",
+      "a": "0.001",
+      "e": "The square root of 1225 is exactly 35, so the equation reduces to root(0.0615 + x) = 35.25 - 35 = 0.25.\n\nSquaring both sides gives 0.0615 + x = 0.0625, so x = 0.001.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If 2a = 3b = 4c and a+b+c = 26√61, then √(a²+b²+c²) =",
+      "options": {
+        "a": "144",
+        "b": "361",
+        "c": "104",
+        "d": "122"
+      },
+      "answer": "d",
+      "a": "122",
+      "e": "Let 2a = 3b = 4c = k, so a = k/2, b = k/3 and c = k/4. Then a+b+c = k(1/2+1/3+1/4) = 13k/12, and setting this equal to 26 root 61 gives k = 24 root 61.\n\nThen a squared + b squared + c squared = k squared (1/4+1/9+1/16) = k squared x 61/144. Since k squared = 576 x 61, this becomes 4 x 61 x 61 = 14884, and its square root is 122.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the original name of Bodhan",
+      "options": {
+        "a": "Indur",
+        "b": "Andhaka",
+        "c": "Mulaka",
+        "d": "Podana"
+      },
+      "answer": "a",
+      "a": "Indur",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following\n(a) Halika (b) Kolika (c) Kularika (d) Vadhika\n(i) Carpenter (ii) Cultivator (iii) Weaver (iv) Potter",
+      "options": {
+        "a": "a-ii, b-iii, c-iv, d-i",
+        "b": "a-i, b-ii, c-iii, d-iv",
+        "c": "a-iii, b-iv, c-ii, d-i",
+        "d": "a-iv, b-i, c-iii, d-ii"
+      },
+      "answer": "a",
+      "a": "a-ii, b-iii, c-iv, d-i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At which place in Telangana large number of Roman coins were found.",
+      "options": {
+        "a": "Keesara",
+        "b": "Chaitanyapuri",
+        "c": "Gutiparthi",
+        "d": "Saleshwaram"
+      },
+      "answer": "c",
+      "a": "Gutiparthi",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In Ancient period which one of the following Rivers was called 'Telivaha'",
+      "options": {
+        "a": "Krishna",
+        "b": "Godavari",
+        "c": "Manjira",
+        "d": "Musi"
+      },
+      "answer": "b",
+      "a": "Godavari",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who was the author of the text \"Kavijanashrayam\"?",
+      "options": {
+        "a": "Somadeva Suri",
+        "b": "Pampa",
+        "c": "Malliya Rechana",
+        "d": "Satyasraya"
+      },
+      "answer": "c",
+      "a": "Malliya Rechana",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Bawari from Northern Telangana was converted to Buddhism and he was the earliest to propagate it. Which one of the following text mentions about him?",
+      "options": {
+        "a": "Suttanipata",
+        "b": "Kalachakra",
+        "c": "Gadhasaptasati",
+        "d": "Kathasarithasagara"
+      },
+      "answer": "a",
+      "a": "Suttanipata",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following was called Sultanpur during the medieval period?",
+      "options": {
+        "a": "Karimnagar",
+        "b": "Warangal",
+        "c": "Nizamabad",
+        "d": "Medak"
+      },
+      "answer": "b",
+      "a": "Warangal",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following Dynasty introduced the Ayagar System in Village Administration?",
+      "options": {
+        "a": "Satavahanas",
+        "b": "Vishnukudis",
+        "c": "Ikshvakus",
+        "d": "Kakatiyas"
+      },
+      "answer": "d",
+      "a": "Kakatiyas",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where did the Battle between the Kakatiya armies and Jampanna, the son of Sarakka took place?",
+      "options": {
+        "a": "Dayyalamadugu",
+        "b": "Muzzampalli",
+        "c": "Manchukonda",
+        "d": "Dharmaram"
+      },
+      "answer": "c",
+      "a": "Manchukonda",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\n(a) Rela Dance (b) Gusadi Dance (c) Mutyampeta (d) Bhimgal\n(i) Kondagattujatara (ii) Limbadrigutta (iii) Koyas (iv) Gonds",
+      "options": {
+        "a": "a-i, b-ii, c-iii, d-iv",
+        "b": "a-ii, b-i, c-iv, d-iii",
+        "c": "a-iii, b-iv, c-i, d-ii",
+        "d": "a-iv, b-iii, c-ii, d-i"
+      },
+      "answer": "c",
+      "a": "a-iii, b-iv, c-i, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to which inscription 'Rudraveda' was called as 'vinayabushana'",
+      "options": {
+        "a": "Hanumakonda Inscription",
+        "b": "Mallapur Inscription",
+        "c": "Tripurantakam Inscription",
+        "d": "Draksharama Inscription"
+      },
+      "answer": "a",
+      "a": "Hanumakonda Inscription",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Perini dance performed by women for the pleasure of man was known as",
+      "options": {
+        "a": "Lasyam",
+        "b": "Ramyam",
+        "c": "Bhogam",
+        "d": "Rasamayam"
+      },
+      "answer": "d",
+      "a": "Rasamayam",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\n(a) Bayyaram Tank (b) Pakala Tank (c) Kesamudram Tank (d) Nagasamudram Tank\n(i) Jagadala Mummada (ii) Prolaraju I (iii) Mailamba (iv) Nagambika",
+      "options": {
+        "a": "a-i, b-ii, c-iii, d-iv",
+        "b": "a-ii, b-i, c-iv, d-iii",
+        "c": "a-iii, b-i, c-ii, d-iv",
+        "d": "a-iv, b-iii, c-i, d-ii"
+      },
+      "answer": "c",
+      "a": "a-iii, b-i, c-ii, d-iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following Diamond Mine locations is wrongly Matched",
+      "options": {
+        "a": "Kolluru - Guntur District",
+        "b": "Paritala - Krishna District",
+        "c": "Vajrakarur - Chittoor District",
+        "d": "Gandikota - Kadapa"
+      },
+      "answer": "c",
+      "a": "Vajrakarur - Chittoor District",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During the Qutub Shahi period which of the following place was famous for Indigo production",
+      "options": {
+        "a": "Kolar",
+        "b": "Nagulavancha",
+        "c": "Nizamabad",
+        "d": "Mantena"
+      },
+      "answer": "b",
+      "a": "Nagulavancha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\n(a) Sivadevayya (b) Ekamranatha (c) Manchana (d) Shakalya malla\n(i) Pratapacharitramu (ii) Nirostya Ramayanam (iii) Purushartasaram (iv) Keyurabahu Charitra",
+      "options": {
+        "a": "a-ii, b-iii, c-i, d-iv",
+        "b": "a-iv, b-ii, c-iii, d-i",
+        "c": "a-iii, b-i, c-iv, d-ii",
+        "d": "a-iii, b-ii, c-i, d-iv"
+      },
+      "answer": "c",
+      "a": "a-iii, b-i, c-iv, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Arrange the following in chronological order\n(a) Sikander Jah (b) Mir Mahabub Ali Khan (c) Nasiruddaula (d) Nizam Ali",
+      "options": {
+        "a": "d, a, c, b",
+        "b": "a, b, c, d",
+        "c": "b, c, d, a",
+        "d": "a, d, c, b"
+      },
+      "answer": "a",
+      "a": "d, a, c, b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following was the first Yakashaganam in Telugu",
+      "options": {
+        "a": "Yayaticharitra",
+        "b": "Sugrivavijayam",
+        "c": "Tapati Samharanopakhyanam",
+        "d": "Kridabhiramam"
+      },
+      "answer": "b",
+      "a": "Sugrivavijayam",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following recite the stories of the ancestors of Lambadas",
+      "options": {
+        "a": "Bhats",
+        "b": "Ranjus",
+        "c": "Pardans",
+        "d": "Bikshus"
+      },
+      "answer": "a",
+      "a": "Bhats",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Yanadi Bhagavatam is also known as",
+      "options": {
+        "a": "Garudachala Bhagvatam",
+        "b": "Ankamma Bhagvatam",
+        "c": "Ellamma Bhagvatam",
+        "d": "Pochamma Bhagvatam"
+      },
+      "answer": "b",
+      "a": "Ankamma Bhagvatam",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Akkanna-Madanna Temple in Hyderabad is located at",
+      "options": {
+        "a": "Bahadurpura",
+        "b": "Shalibanda",
+        "c": "Golkonda",
+        "d": "Karavan"
+      },
+      "answer": "c",
+      "a": "Golkonda",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who among the following Jagirdar helped the British to suppress the 1857 mutiny in Hyderabad state.",
+      "options": {
+        "a": "Raja Rameshwar Rao of Wanaparthy",
+        "b": "Raja Venkata Laxman Rao of Jataprole",
+        "c": "Raja Rambupal Rao of Gadwal",
+        "d": "Raja Venkataraya Nayak Rao of Palwancha"
+      },
+      "answer": "a",
+      "a": "Raja Rameshwar Rao of Wanaparthy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Shivaram Wildlife Sanctuary is located in which of the following districts of Telangana",
+      "options": {
+        "a": "Adilabad - Nizamabad",
+        "b": "Mahabubnagar - Medak",
+        "c": "Karimnagar - Warangal",
+        "d": "Adilabad - Karimnagar"
+      },
+      "answer": "a",
+      "a": "Adilabad - Nizamabad",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Police Action against the Hyderabad State was also known as",
+      "options": {
+        "a": "Goddard plan",
+        "b": "Razakar plan",
+        "c": "Jai Hyderabad plan",
+        "d": "Choudari plan"
+      },
+      "answer": "d",
+      "a": "Choudari plan",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who among the following Lambada leader fought against the 'Visnuru dora' during Telangana Armed struggle.",
+      "options": {
+        "a": "Jatoth Tanu Naik",
+        "b": "Bhallu Naik",
+        "c": "Tejavat Dasunaik",
+        "d": "Bhukya Balya"
+      },
+      "answer": "d",
+      "a": "Bhukya Balya",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "One of the following was not associated with designing of 'Telangana Talli' statue",
+      "options": {
+        "a": "B.S. Ramulu",
+        "b": "Bhoopathy Krishnamurthy",
+        "c": "Prof. Gangadhar",
+        "d": "Pasunuri Dayakar"
+      },
+      "answer": "c",
+      "a": "Prof. Gangadhar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Commission investigated the incidents related to 1952 Mulki Movement in Hyderabad was headed by whom of the following",
+      "options": {
+        "a": "Vaman Naik",
+        "b": "Akbar Hyderi",
+        "c": "Jagan Mohan Reddy",
+        "d": "Ramachari"
+      },
+      "answer": "d",
+      "a": "Ramachari",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who among the following undertook the indefinite fast during 1969 Jai Telangana Movement?",
+      "options": {
+        "a": "Kolisetti Ramdas",
+        "b": "T. Purshotham Rao",
+        "c": "Potu Krishnamurthy",
+        "d": "Annabathula Ravindranath"
+      },
+      "answer": "b",
+      "a": "T. Purshotham Rao",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Arrange the following in chronological order\n(a) Eight point formula (b) Six point formula (c) Five point formula (d) The Presidential order",
+      "options": {
+        "a": "a, c, b, d",
+        "b": "a, b, c, d",
+        "c": "d, b, c, a",
+        "d": "b, a, d, c"
+      },
+      "answer": "c",
+      "a": "d, b, c, a",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nList-I: (a) Telangana Information Trust (b) Telangana Students Forum (c) Telangana Ikya Vedica (d) Telangana Janasabha\nList-II: (i) 1997 (ii) 1998 (iii) 1991 (iv) 1986",
+      "options": {
+        "a": "a-i, b-ii, c-iii, d-iv",
+        "b": "a-iv, b-iii, c-i, d-ii",
+        "c": "a-ii, b-i, c-iv, d-iii",
+        "d": "a-iii, b-iv, c-ii, d-i"
+      },
+      "answer": "a",
+      "a": "a-i, b-ii, c-iii, d-iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Arrange the following in chronological order\n(a) Sakala janaula samme (b) Million March (c) Sagaraharam (d) Sadak Bandh",
+      "options": {
+        "a": "b, c, d, a",
+        "b": "a, d, c, b",
+        "c": "a, b, d, c",
+        "d": "b, a, d, c"
+      },
+      "answer": "d",
+      "a": "b, a, d, c",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who was the convener of Telangana State Advocate Joint Action Committee",
+      "options": {
+        "a": "M. Rajender Reddy",
+        "b": "Tanneru Sriranga Rao",
+        "c": "Gandra Mohan Rao",
+        "d": "P. Govardan Reddy"
+      },
+      "answer": "c",
+      "a": "Gandra Mohan Rao",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following is not correctly matched.",
+      "options": {
+        "a": "Bellaiah Naik - Lambadi Hakkula Porata Samithi",
+        "b": "Dubbagatla Narsing Rao - Munnuru Kapu Hakkula Porata Samithi",
+        "c": "Belli Krishna - Golla, Kuruma Hakkula Porata Samithi",
+        "d": "Valigi Prabhakar - Erukala Hakkula Porata Samithi"
+      },
+      "answer": "d",
+      "a": "Valigi Prabhakar - Erukala Hakkula Porata Samithi",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Sakala Janula Samme was organised by which one of the following",
+      "options": {
+        "a": "Telangana Joint Action Committee",
+        "b": "Telangana Vidyavantula Vedica",
+        "c": "Telangana Rashtra Samiti",
+        "d": "Telangana Ikya Vedika"
+      },
+      "answer": "a",
+      "a": "Telangana Joint Action Committee",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When was the A.P. State Reorganisation Bill introduced in Lok Sabha by Home Minister Sushil Kumar Shinde",
+      "options": {
+        "a": "February 3, 2014",
+        "b": "February 13, 2014",
+        "c": "February 20, 2014",
+        "d": "March 1, 2014"
+      },
+      "answer": "b",
+      "a": "February 13, 2014",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At which Indus valley site maximum wells were discovered?",
+      "options": {
+        "a": "Harappa",
+        "b": "Mohenjodaro",
+        "c": "Dholavira",
+        "d": "Kalibangan"
+      },
+      "answer": "b",
+      "a": "Mohenjodaro",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Given below are two statements one labelled as Assertion (A) and other labelled as Reason (R):\nAssertion (A): Iron technology played a crucial role in the expansion of the Aryans into the Gangetic Valley.\nReason (R): The Gangetic valley had thick vegetation which could be cleared only by implements of strong metal",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true, but (R) is not the correct explanation of (A)",
+        "c": "(A) is true but (R) is false",
+        "d": "(A) is false but (R) is true"
+      },
+      "answer": "a",
+      "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following and identify the wrong one.",
+      "options": {
+        "a": "Buddha gave his first sermon on deliverance from suffering to his five former companions in a deer park near Benaras",
+        "b": "The ultimate goal of the Buddha's teachings were the attainment of 'Nibbana' i.e, liberation from the cycle of birth and death",
+        "c": "Buddhist nuns strictly avoid following; theft, sexual activity, lying, use of intoxicants, eating after midday, attending entertainments, use of perfumes and jewellery",
+        "d": "Buddhist texts reflect revolutionary ideas about women and stressed that women should have freedom to shape her life and personality"
+      },
+      "answer": "d",
+      "a": "Buddhist texts reflect revolutionary ideas about women and stressed that women should have freedom to shape her life and personality",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following text does not come under Sruti literature",
+      "options": {
+        "a": "Brahmanas",
+        "b": "Vedangas",
+        "c": "Aranyakas",
+        "d": "Upanishads"
+      },
+      "answer": "b",
+      "a": "Vedangas",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following\nList-I (Ashoka's minor rock edicts): (a) Rajula Mandagiri (b) Brahmagiri (c) Nittur (d) Rupnath\nList-II (present location): (i) Chitradurga district, Karnataka (ii) Bellary district, Karnataka (iii) Jabalpur district, Madhya Pradesh (iv) Kurnool district, Andhra Pradesh",
+      "options": {
+        "a": "a-i, b-ii, c-iii, d-iv",
+        "b": "a-ii, b-i, c-iii, d-iv",
+        "c": "a-iii, b-iv, c-i, d-ii",
+        "d": "a-iv, b-i, c-ii, d-iii"
+      },
+      "answer": "d",
+      "a": "a-iv, b-i, c-ii, d-iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following\nList-I (Authors): (a) ILangovadigal (b) Sattanar (c) Tiruvalluvar (d) Nathamuni\nList-II (Texts): (i) Manimeklai (ii) Silappadikaram (iii) Nalayira Divya Prabandam (iv) Tirukkural",
+      "options": {
+        "a": "a-ii, b-i, c-iii, d-iv",
+        "b": "a-i, b-ii, c-iii, d-iv",
+        "c": "a-iv, b-iii, c-i, d-ii",
+        "d": "a-ii, b-i, c-iv, d-iii"
+      },
+      "answer": "d",
+      "a": "a-ii, b-i, c-iv, d-iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Identify the wrong pair",
+      "options": {
+        "a": "Chera-Bow",
+        "b": "Chola-Tiger",
+        "c": "Pandya-Fish",
+        "d": "Pallava-Peacock"
+      },
+      "answer": "d",
+      "a": "Pallava-Peacock",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Arrange the following Ayurvedic doctors in a chronological order according to their existence\na) Jivaka b) Vagbhata c) Sushruta d) Charaka",
+      "options": {
+        "a": "d a b c",
+        "b": "c b d a",
+        "c": "a c d b",
+        "d": "b d a c"
+      },
+      "answer": "c",
+      "a": "a c d b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The early Sathavahana coins were discovered at",
+      "options": {
+        "a": "Kotilingala",
+        "b": "Paithan",
+        "c": "Nashik",
+        "d": "Dulikatta"
+      },
+      "answer": "a",
+      "a": "Kotilingala",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which language many Kanishka coins and inscriptions are available",
+      "options": {
+        "a": "Prakrita language",
+        "b": "Bactrian language",
+        "c": "Greek language",
+        "d": "Afghani language"
+      },
+      "answer": "b",
+      "a": "Bactrian language",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following\nList-I (wars): (a) First Tarain war (b) Khanua war (c) Talikota war (d) Haldighati war\nList-II (year): (i) 1191 (ii) 1576 (iii) 1565 (iv) 1527",
+      "options": {
+        "a": "a-ii, b-i, c-iv, d-iii",
+        "b": "a-i, b-iv, c-iii, d-ii",
+        "c": "a-iii, b-ii, c-i, d-iv",
+        "d": "a-iv, b-iii, c-ii, d-i"
+      },
+      "answer": "b",
+      "a": "a-i, b-iv, c-iii, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following statement is not correct about Vijayanagara period?",
+      "options": {
+        "a": "Abdur Razak, a Persian traveller observed about city of Vijaynagar 'the city of Beejanagaur is such that the eyes has not seen nor the ear heard of any place resembles it in the whole world'.",
+        "b": "Krishnadevaraya though a follower of Vaishnavism, treated shaivites, Jains, Christians and Jews with kindness and compassion",
+        "c": "Irugappa, the general and minister of Harihara II authored 'Nanapatharatnamala'",
+        "d": "According to 'Rayavachakamu' there are five kinds of forts in Vijayanagara kindom: giridurga, staladurga, Jaladurga, vanadurga and parvatadurga"
+      },
+      "answer": "d",
+      "a": "According to 'Rayavachakamu' there are five kinds of forts in Vijayanagara kindom: giridurga, staladurga, Jaladurga, vanadurga and parvatadurga",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following\nList-I (Kingdom): (a) Ahmednagar (b) Berar (c) Bijapur (d) Golkonda\nList-II (Ruling Dynasty): (i) Adil shahis (ii) Nizam shahis (iii) Imad shahis (iv) Qutub shahis",
+      "options": {
+        "a": "i ii iii iv",
+        "b": "iv i ii iii",
+        "c": "ii iii i iv",
+        "d": "iii ii i iv"
+      },
+      "answer": "c",
+      "a": "ii iii i iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Name the Medieval Sultan who imposed a ban on 'Sati' condemning it as an unfair practice",
+      "options": {
+        "a": "Balban",
+        "b": "Alauddin Khilji",
+        "c": "Muhammad bin Tughlaq",
+        "d": "Firuz shah Tughlaq"
+      },
+      "answer": "c",
+      "a": "Muhammad bin Tughlaq",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following temple have erotic sculptures in large number",
+      "options": {
+        "a": "Ramappa Temple",
+        "b": "Konark Temple",
+        "c": "Pattadikal Virupaksha Temple",
+        "d": "Brihadishvara Temple"
+      },
+      "answer": "b",
+      "a": "Konark Temple",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): The Mughal emperors had complete sovereignty, not only internally but also externally\nReason (R): They refused to recognise any external authority like the Caliph as their superior",
+      "options": {
+        "a": "(A) and (R) are true (R) is the correct explanation of (A)",
+        "b": "(A) and (R) are true (R) is not the correct explanation of (A)",
+        "c": "(A) is true but (R) is false",
+        "d": "(A) is false but (R) is true"
+      },
+      "answer": "a",
+      "a": "(A) and (R) are true (R) is the correct explanation of (A)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following fort was not conquered by Shivaji from Bijapur",
+      "options": {
+        "a": "Raigarh",
+        "b": "Javali",
+        "c": "Kondana",
+        "d": "Torna"
+      },
+      "answer": "a",
+      "a": "Raigarh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The first telegraphic line introduced by Lord Dalhousie in 1853 ran between",
+      "options": {
+        "a": "Bombay and Thana",
+        "b": "Calcutta and Madras",
+        "c": "Bombay and Madras",
+        "d": "Calcutta and Agra"
+      },
+      "answer": "d",
+      "a": "Calcutta and Agra",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "After observing the early Indian National Congress activities who said that \"The Congress is nothing but a three day thamasha\"",
+      "options": {
+        "a": "Dadabai Naoroji",
+        "b": "Ashwini Kumar Datta",
+        "c": "Lala Lajpat Rai",
+        "d": "Aurobindo Ghosh"
+      },
+      "answer": "d",
+      "a": "Aurobindo Ghosh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following statements is wrong about 'satyagraha'",
+      "options": {
+        "a": "Satyagraha considered as 'Love Force' and 'Soul force'",
+        "b": "Satyagraha conceived as a weapons of the weak",
+        "c": "Satyagraha conceived as a weapons of the strong",
+        "d": "The aim of the satyagraha is the conversion of the opponent by self suffering"
+      },
+      "answer": "b",
+      "a": "Satyagraha conceived as a weapons of the weak",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): India is a Republic\nReason (R): India has universal adult franchise system",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+        "c": "(A) is true and (R) is false",
+        "d": "(A) is false and (R) is true"
+      },
+      "answer": "b",
+      "a": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Collective responsibility of cabinet signifies unity and coordination among members of the council of ministers\nReason (R): It is the prerogative of the Prime Minister to select or drop a member of the cabinet",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+        "c": "(A) is true and (R) is false",
+        "d": "(A) is false and (R) is true"
+      },
+      "answer": "b",
+      "a": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following statements:\na) Shanmuganathan is appointed as Governor of Meghalaya\nb) Draupadi Murmu is appointed as Governor of Jharkhand\nc) Tathagata Roy is appointed as Governor of Arunachal Pradesh\nd) Najma Heptullah is appointed as Governor of Mizoram",
+      "options": {
+        "a": "a & c",
+        "b": "a & b",
+        "c": "b & d",
+        "d": "a & d"
+      },
+      "answer": "b",
+      "a": "a & b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The two major components of 'inclusive growth' in India include\nA) Providing economic benefits to hitherto neglected marginalised sections\nB) Exporting manufacturing goods\nC) Poverty reduction and employment generation\nD) Environmental degradation",
+      "options": {
+        "a": "A & C only",
+        "b": "B & D only",
+        "c": "A & B only",
+        "d": "B & C only"
+      },
+      "answer": "a",
+      "a": "A & C only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which one of the following statements is correct with regard to population explosion?",
+      "options": {
+        "a": "Both birth and death rates are high.",
+        "b": "Both birth and death rates are low.",
+        "c": "Birth rate will be high and death rate decreases very fast.",
+        "d": "Birth rate will be low and death rate increases moderately."
+      },
+      "answer": "c",
+      "a": "Birth rate will be high and death rate decreases very fast.",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Nobel Prize in Economics was awarded to one of the following :",
+      "options": {
+        "a": "Sir C.V. Raman",
+        "b": "Amarthya Sen",
+        "c": "Ch. Hanumantha Rao",
+        "d": "C. Rangarajan"
+      },
+      "answer": "b",
+      "a": "Amarthya Sen",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements about poverty are correct?\nA) Poverty is a socio-economic phenomenon in which a section of the society is unable to fulfill even its basic necessities of life.\nB) The poverty gap measures the transfer that would bring the income of every poor person exactly upto the poverty line.\nC) A person whose income or expenditure is so meagre that he lives below the subsistence level is called as 'relative poverty'.",
+      "options": {
+        "a": "A and B only",
+        "b": "B and C only",
+        "c": "C and A only",
+        "d": "A, B and C"
+      },
+      "answer": "a",
+      "a": "A and B only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which among the following are the two major economic indicators of regional imbalances?\nA) Inclusive growth B) Poverty level C) Per capita income of states D) Social justice",
+      "options": {
+        "a": "A and B only",
+        "b": "B and C only",
+        "c": "C and D only",
+        "d": "D and A only"
+      },
+      "answer": "b",
+      "a": "B and C only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following are the spheres of environment?\nA) Atmosphere B) Biosphere C) Hydrosphere D) Lithosphere",
+      "options": {
+        "a": "A and B only",
+        "b": "A, B and C only",
+        "c": "A, B and D only",
+        "d": "A, B, C and D"
+      },
+      "answer": "d",
+      "a": "A, B, C and D",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following decades was declared by the UNO as a 'Decade of Education for Sustainable Development'?",
+      "options": {
+        "a": "2000-10",
+        "b": "2005-15",
+        "c": "2010-20",
+        "d": "2015-25"
+      },
+      "answer": "b",
+      "a": "2005-15",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nOrganisation: (a) Border Security Force (b) Indo-Tibetan Border Police (c) Sashastra Seema Bal (d) Coast Guard\nYear of establishment: (i) 1963 (ii) 1965 (iii) 1978 (iv) 1962",
+      "options": {
+        "a": "a-ii, b-iv, c-i, d-iii",
+        "b": "a-ii, b-iv, c-iii, d-i",
+        "c": "a-iv, b-ii, c-i, d-iii",
+        "d": "a-iii, b-i, c-ii, d-iv"
+      },
+      "answer": "a",
+      "a": "a-ii, b-iv, c-i, d-iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the incorrect statement/s from the following:\na) The National Physical Laboratory is situated in Lucknow.\nb) Indian Research Station 'Himadri' is located in Arctic region.\nc) Central Food Technological Research Institute is located in Mysore.\nd) Central Rice Research Institute is located in Bhubaneswar.",
+      "options": {
+        "a": "a & c",
+        "b": "b & c",
+        "c": "a & d",
+        "d": "b & d"
+      },
+      "answer": "c",
+      "a": "a & d",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following statements:\nA) Commonwealth Games, 2014 were held in Kaulalampur\nB) Kabaddi World cup, 2016 will be held in Ahmedabad\nC) National Games, 2015 were held in Kerala",
+      "options": {
+        "a": "A & B",
+        "b": "B & C",
+        "c": "C & A",
+        "d": "A, B & C"
+      },
+      "answer": "b",
+      "a": "B & C",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Highest bridge in India is",
+      "options": {
+        "a": "Sevoke bridge",
+        "b": "Naini bridge",
+        "c": "Chambal bridge",
+        "d": "Ellis bridge"
+      },
+      "answer": "a",
+      "a": "Sevoke bridge",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Mahatma Gandhi Peace Prize for the year 2014 was given to",
+      "options": {
+        "a": "ISRO",
+        "b": "Chandi Prasad Bhatt",
+        "c": "Desmond Tutu",
+        "d": "Missionaries of Charity"
+      },
+      "answer": "a",
+      "a": "ISRO",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nList-I (Day): a) Earth Day b) International Tigers Day c) World Oceans Day d) National Sports Day\nList-II (Date): (i) 22nd April (ii) 8th June (iii) 29th July (iv) 29th August",
+      "options": {
+        "a": "a-(iii), b-(i), c-(iv), d-(ii)",
+        "b": "a-(iv), b-(ii), c-(i), d-(iii)",
+        "c": "a-(ii), b-(iv), c-(iii), d-(i)",
+        "d": "a-(i), b-(iii), c-(ii), d-(iv)"
+      },
+      "answer": "d",
+      "a": "a-(i), b-(iii), c-(ii), d-(iv)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following statements:\nA) The first state in the country to draft its own internal security legislation is Maharashtra.\nB) The city to host Bharatiya Pravas Divas in 2017 will be Hyderabad\nC) The first island district that emerged recently in India is Majuli",
+      "options": {
+        "a": "A & B",
+        "b": "B & C",
+        "c": "C & A",
+        "d": "A, B & C"
+      },
+      "answer": "c",
+      "a": "C & A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Sex ratio means (from among the following)",
+      "options": {
+        "a": "Number of males per 1,000 females",
+        "b": "Number of males per 100 females",
+        "c": "Number of females per 1,000 males",
+        "d": "Number of females per 100 males"
+      },
+      "answer": "c",
+      "a": "Number of females per 1,000 males",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the correct match\nArmy | Navy | Airforce",
+      "options": {
+        "a": "Captain | Sub-Lientenant | Flight Lientenant",
+        "b": "Major | Commander | Squadron header",
+        "c": "Colonel | Commodore | Air commodore",
+        "d": "Major-general | Rear Admiral | Air vice Marshal"
+      },
+      "answer": "d",
+      "a": "Major-general | Rear Admiral | Air vice Marshal",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Urban center with more than one million population in India is called as metropolitan city\nReason (R): According to 2011 census there are only 12 metropolitan cities in India",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+        "c": "(A) is true but (R) if false",
+        "d": "(A) is false but (R) is true"
+      },
+      "answer": "c",
+      "a": "(A) is true but (R) if false",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following statements:\nA) The DWCRA aimed at providing self-employment to women of BPL families.\nB) The NREP was launched in 1980.\nC) The NSS organisation gave three concepts of employment to measure its status-usual status, current weekly status and current daily status\nD) The PMRY aimed at providing wage employment in rural areas",
+      "options": {
+        "a": "A, B and C only",
+        "b": "B, C and D only",
+        "c": "A, C and D only",
+        "d": "A, B and D only"
+      },
+      "answer": "a",
+      "a": "A, B and C only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The present Indian permanent representative to UNO is",
+      "options": {
+        "a": "Nirupama Sen",
+        "b": "Syed Akbaruddin",
+        "c": "A.K. Mukerji",
+        "d": "H.S. Puri"
+      },
+      "answer": "b",
+      "a": "Syed Akbaruddin",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following are the three major forms of pollution?\nA) Air pollution B) Water pollution C) Noise pollution D) Land pollution",
+      "options": {
+        "a": "A, B & C only",
+        "b": "B, C & D only",
+        "c": "C, D & A only",
+        "d": "D, A & B only"
+      },
+      "answer": "a",
+      "a": "A, B & C only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The National SC/ST Hub will be launched in the city",
+      "options": {
+        "a": "Jaipur",
+        "b": "Agra",
+        "c": "Nagpur",
+        "d": "Ludhiana"
+      },
+      "answer": "c",
+      "a": "Nagpur",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The world's largest solar power plant is installed in the state",
+      "options": {
+        "a": "Rajasthan",
+        "b": "Tamilnadu",
+        "c": "Andhra Pradesh",
+        "d": "Haryana"
+      },
+      "answer": "c",
+      "a": "Andhra Pradesh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Smallest parliamentary constituency in terms of number of electors is",
+      "options": {
+        "a": "Ladak",
+        "b": "Daman and Diu",
+        "c": "Lakshadweep",
+        "d": "Andaman and Nicobar island"
+      },
+      "answer": "c",
+      "a": "Lakshadweep",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nDay (Significance): a) World Kidney Day b) World Cancer Day c) World Tuberculosis Day d) World Disabled Day\nMonth: i) Feb, 4 ii) March, 24 iii) March, 10 iv) December, 3",
+      "options": {
+        "a": "a-ii, b-iv, c-iii, d-i",
+        "b": "a-iv, b-ii, c-i, d-iii",
+        "c": "a-iii, b-ii, c-iv, d-i",
+        "d": "a-iii, b-i, c-ii, d-iv"
+      },
+      "answer": "d",
+      "a": "a-iii, b-i, c-ii, d-iv",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The first sponge iron plant was established in",
+      "options": {
+        "a": "Telangana",
+        "b": "Andhra",
+        "c": "Rayalaseema",
+        "d": "Bundelkhand"
+      },
+      "answer": "a",
+      "a": "Telangana",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Choose the incorrect pair from the following:\nStadium | Location",
+      "options": {
+        "a": "Keenan stadium | Jamshedpur",
+        "b": "Shivaji stadium | Pune",
+        "c": "Ranji stadium | Kolkata",
+        "d": "D.Y. Patil stadium | Navi Mumbai"
+      },
+      "answer": "b",
+      "a": "Shivaji stadium | Pune",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nDay: a) National Science Day b) Air Force Day c) Navy Day d) Anti Terrorism day\nDate: i) October, 8 ii) February, 28 iii) May, 21 iv) December, 4",
+      "options": {
+        "a": "a-iii, b-i, c-iv, d-ii",
+        "b": "a-i, b-iii, c-iv, d-ii",
+        "c": "a-ii, b-i, c-iv, d-iii",
+        "d": "a-iv, b-ii, c-iii, d-i"
+      },
+      "answer": "c",
+      "a": "a-ii, b-i, c-iv, d-iii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements\na) Supreme Court Constituted Social Justice Bench in the year 2015.\nb) The Social Justice Bench of Supreme Court was set up by the Chief Justice of India, H.L. Dattu.\nc) The Social Justice Bench sits every Friday to hear the cases.",
+      "options": {
+        "a": "a & b",
+        "b": "c & a",
+        "c": "b & c",
+        "d": "a"
+      },
+      "answer": "a",
+      "a": "a & b",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Chairman of Commission on De-Notified and Nomadic Tribes is",
+      "options": {
+        "a": "Shravan Singh Rathore",
+        "b": "Bhiku Ram",
+        "c": "Karia Munda",
+        "d": "Babulal Marandi"
+      },
+      "answer": "b",
+      "a": "Bhiku Ram",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Bharat Nepal Maitri bus service runs between",
+      "options": {
+        "a": "Delhi to Kathmandu",
+        "b": "Varanasi to Kathmandu",
+        "c": "Allahabad to Kathmandu",
+        "d": "Gaya to Kathmandu"
+      },
+      "answer": "a",
+      "a": "Delhi to Kathmandu",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\na) Operation Rahat, 2015 was commanded by Gen V.K. Singh.\nb) Operation Rahat is a rescue mission to evacuate Indian civilians from Syria.\nc) INS Sumitra was deployed in Operation Rahat",
+      "options": {
+        "a": "a & c",
+        "b": "a & b",
+        "c": "b & c",
+        "d": "a, b & c"
+      },
+      "answer": "a",
+      "a": "a & c",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nMinister: (a) H.M. Patel (b) Indrajit Gupta (c) Madhu Dandavate (d) George Fernandes\nUnion Government: (i) Finance Minister, N F Government (ii) Defence Minister, NDA-I (iii) Finance Minister, Janata Government (iv) Home Minister, UF Government",
+      "options": {
+        "a": "a-ii, b-iv, c-i, d-iii",
+        "b": "a-iv, b-iii, c-i, d-ii",
+        "c": "a-iv, b-ii, c-i, d-iii",
+        "d": "a-iii, b-iv, c-i, d-ii"
+      },
+      "answer": "d",
+      "a": "a-iii, b-iv, c-i, d-ii",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): During summer season Intertropical Convergenic Zone (ITCZ) is located to the north of Equator.\nReason (R): The northward shift of ITCZ over India leads to onset of monsoon.",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+        "c": "(A) is true and (R) is false",
+        "d": "(A) is false and (R) is true"
+      },
+      "answer": "a",
+      "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nList-I: (a) Autotrophs (b) Hetrotrophs (c) Tropic structure (d) Food chain\nList-II: (i) Transfer of energy from one level to another (ii) Hierarchical arrangement of organisms (iii) Depends on other organisms for their food (iv) Prepare the food themselves",
+      "options": {
+        "a": "iv iii ii i",
+        "b": "iii iv i ii",
+        "c": "i ii iii iv",
+        "d": "ii iii i iv"
+      },
+      "answer": "a",
+      "a": "iv iii ii i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nList-I: (a) Guru Shikhar Peak (b) Dhuadhar waterfall (c) Thalghat gap (d) Coral reefs\nList-II: (i) Lakshadweep islands (ii) Western ghats (iii) Narmada river (iv) Aravallis",
+      "options": {
+        "a": "iv iii ii i",
+        "b": "iii iv i ii",
+        "c": "i ii iii iv",
+        "d": "ii iii i iv"
+      },
+      "answer": "a",
+      "a": "iv iii ii i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Match the following:\nList-I: (a) Kalpakkam (b) Narora (c) Kaiga (d) Kakrapara\nList-II: (i) Gujarat (ii) Karnataka (iii) UP (iv) Tamil Nadu",
+      "options": {
+        "a": "iv iii ii i",
+        "b": "iii iv i ii",
+        "c": "i ii iii iv",
+        "d": "ii iii i iv"
+      },
+      "answer": "a",
+      "a": "iv iii ii i",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Tropical cyclones taking origin in South China sea is called as Typhoons.\nReason (R): The isobars of tropical cyclone are circular in shape.",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+        "c": "(A) is true and (R) is false",
+        "d": "(A) is false and (R) is true"
+      },
+      "answer": "b",
+      "a": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Global warming is caused due to increasing presence of green house gases and ozone layer depletion.\nReason (R): Global warming is responsible for lowering of sea level.",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+        "c": "(A) is true and (R) is false",
+        "d": "(A) is false and (R) is true"
+      },
+      "answer": "c",
+      "a": "(A) is true and (R) is false",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following statements :\na) National Advisory Council was established by NDA Government\nb) The chair person of National Advisory Council was Sonia Gandhi\nc) National Advisory Council advises Union and State Governments\nd) Prime Minister is the Chairman of National Advisory Council",
+      "options": {
+        "a": "a & d",
+        "b": "b only",
+        "c": "a, b & c",
+        "d": "b & d"
+      },
+      "answer": "b",
+      "a": "b only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Electronic voting machines were used in general elections of state legislative assemblies for the first time in 1998 in the following states:\na) Madhya Pradesh, Rajasthan and Himachal Pradesh\nb) Rajasthan, Uttar Pradesh and Bihar\nc) Madhya Pradesh and Kerala\nd) Madhya Pradesh, Rajasthan and Delhi",
+      "options": {
+        "a": "d",
+        "b": "c",
+        "c": "b",
+        "d": "a"
+      },
+      "answer": "a",
+      "a": "d",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): The Parliament can legislate matters in State List in national interest.\nReason (R): Rajya Sabha is part of Parliament.",
+      "options": {
+        "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+        "b": "Both (A) and (R) are true and (R) is not the correct explanation of (A)",
+        "c": "(A) is true and (R) is false",
+        "d": "(A) is false and (R) is true"
+      },
+      "answer": "a",
+      "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Read the following statements:\na) Arun Jaitley is the leader of the house in Rajya Sabha\nb) Narendra Modi is the leader of the house in Lok Sabha\nc) Venkaiah Naidu is the leader of the house in Rajya Sabha\nd) Rajnath Singh is the leader of the house in Lok Sabha",
+      "options": {
+        "a": "a & d",
+        "b": "b & c",
+        "c": "c & d",
+        "d": "a & b"
+      },
+      "answer": "d",
+      "a": "a & b",
+      "e": "",
+      "table": null
+    }
+  ]
+}

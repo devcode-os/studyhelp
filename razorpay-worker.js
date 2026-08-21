@@ -260,11 +260,19 @@ async function handleWebhook(request, env) {
 
     // Idempotent: if this exact order was already processed (webhook retry),
     // do nothing. If it's a genuine new/renewal purchase (different order_id
-    // for this user+subject — e.g. buying again after the 45-day window
-    // lapsed), extend access fresh from now. Always 45 days from time of
-    // payment, no stacking on top of remaining time — matches the simple
-    // "45 days unlimited access" pricing, not a top-up model.
-    const ACCESS_DURATION_SECONDS = 45 * 24 * 60 * 60;
+    // for this user+subject — e.g. buying again after access lapsed), extend
+    // access fresh from now. Always the subject's full access_days from time
+    // of payment, no stacking on top of remaining time — matches the simple
+    // "unlimited access for N days" pricing, not a top-up model. Most
+    // subjects are 45 days; access_days lets specific subjects (e.g.
+    // previous-papers, sold as a longer-window product) differ per D1 row.
+    const subjectRow = await env.DB.prepare(
+      "SELECT access_days FROM subjects WHERE id = ?"
+    )
+      .bind(order.subject_id)
+      .first();
+    const accessDays = (subjectRow && subjectRow.access_days) || 45;
+    const ACCESS_DURATION_SECONDS = accessDays * 24 * 60 * 60;
     const expiresAt = Math.floor(Date.now() / 1000) + ACCESS_DURATION_SECONDS;
 
     await env.DB.prepare(
@@ -329,15 +337,26 @@ async function checkAccess(request, env) {
     .bind(user_id, subject_id, nowTs)
     .first();
 
+  const subjectRow = await env.DB.prepare(
+    "SELECT access_days FROM subjects WHERE id = ?"
+  )
+    .bind(subject_id)
+    .first();
+  const totalAccessDays = (subjectRow && subjectRow.access_days) || 45;
+
   if (!entitlement) {
-    return json({ unlocked: false, expires_at: null });
+    return json({ unlocked: false, expires_at: null, total_access_days: totalAccessDays });
   }
 
-  // A manual grant (granted_reason set) shorter than the standard 45-day
-  // window is a "grace grant" — temporary access while a payment issue is
-  // sorted out, not a real purchase. Frontend uses this to show a banner
-  // instead of treating it like normal unlimited access.
-  const FULL_ACCESS_SECONDS = 45 * 24 * 60 * 60;
+  // A manual grant (granted_reason set) shorter than this subject's full
+  // access window is a "grace grant" — temporary access while a payment
+  // issue is sorted out, not a real purchase. Frontend uses this to show a
+  // banner instead of treating it like normal unlimited access. Compared
+  // against the subject's own access_days (most are 45, some differ —
+  // e.g. previous-papers subjects sold with a longer window) rather than a
+  // fixed constant, so a full-length grant on a 365-day subject is never
+  // mistaken for a grace grant.
+  const FULL_ACCESS_SECONDS = totalAccessDays * 24 * 60 * 60;
   const grantedDurationSeconds = entitlement.granted_at
     ? entitlement.expires_at - entitlement.granted_at
     : null;
@@ -349,6 +368,7 @@ async function checkAccess(request, env) {
   return json({
     unlocked: true,
     expires_at: entitlement.expires_at,
+    total_access_days: totalAccessDays,
     is_grace_grant: isGraceGrant,
     grace_days_remaining: isGraceGrant
       ? Math.max(0, Math.ceil((entitlement.expires_at - nowTs) / (24 * 60 * 60)))
@@ -1743,7 +1763,7 @@ async function adminSearch(request, env) {
 // ---------- Public: subjects for /plans/ (no auth — public pricing info) ----------
 async function publicListSubjects(request, env) {
   const subjects = await env.DB.prepare(
-    "SELECT id, name, title_native, title_english, price_paise, popular FROM subjects ORDER BY popular DESC, name ASC"
+    "SELECT id, name, title_native, title_english, price_paise, popular, access_days, category FROM subjects ORDER BY popular DESC, name ASC"
   ).all();
 
   return json(
