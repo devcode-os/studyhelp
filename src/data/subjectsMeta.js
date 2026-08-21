@@ -37,14 +37,14 @@ export const subjectsMeta = {
     heading: 'Indian Polity',
     breadcrumb: 'Indian Polity',
     seoTitle: 'Indian Polity MCQs',
-    seoDescription: 'TSPSC and TS Police SI, Constable exam preparation - Indian polity questions, chapter by chapter',
+    seoDescription: 'UPSC, SSC, TSPSC, Telangana Police SI, Constable and other competitive exam preparation - Indian polity questions, chapter by chapter',
   },
   'indian-polity-te': {
     lang: 'te',
     heading: 'భారత రాజ్యాంగం',
     breadcrumb: 'భారత రాజ్యాంగం',
     seoTitle: 'భారత రాజ్యాంగం MCQs',
-    seoDescription: 'TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం భారత రాజ్యాంగం ప్రశ్నలు, అధ్యాయాల వారీగా',
+    seoDescription: 'UPSC, SSC, TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం భారత రాజ్యాంగం ప్రశ్నలు, అధ్యాయాల వారీగా',
   },
 
   // Example for adding a new subject later:

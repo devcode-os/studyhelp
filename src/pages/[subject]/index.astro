@@ -12,7 +12,11 @@ export function getStaticPaths() {
     const subject = path.split('/').slice(-2, -1)[0];
     const items = Array.isArray(mod.default) ? mod.default : [mod.default];
     const valid = items.filter(
-      (ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber
+      (ch) =>
+        ch &&
+        ch.slug &&
+        ch.chapterNumber &&
+        (Array.isArray(ch.faqs) || (ch.type === 'reference' && Array.isArray(ch.articles)))
     );
 
     if (!bySubject[subject]) bySubject[subject] = [];
@@ -31,7 +35,7 @@ const { subject } = Astro.params;
 const { chapters } = Astro.props;
 const meta = getSubjectMeta(subject);
 
-const totalQuestions = chapters.reduce((sum, ch) => sum + ch.faqs.length, 0);
+const totalQuestions = chapters.reduce((sum, ch) => sum + (ch.faqs ? ch.faqs.length : 0), 0);
 
 // Group chapters by an optional `section` field (e.g. "Medieval History").
 // Tag only the FIRST chapter of a new era — every later chapter (in
@@ -102,7 +106,7 @@ for (const ch of chapters) {
               <a href={`/${ch.slug}/`} class="chapter-card">
                 <div class="chapter-card-number">{ch.chapterNumber}</div>
                 <div class="chapter-card-title">{ch.title}</div>
-                <div class="chapter-card-qcount">{ch.faqs.length} questions</div>
+                <div class="chapter-card-qcount">{ch.type === 'reference' ? `${ch.articles.length} articles` : `${ch.faqs.length} questions`}</div>
               </a>
             ))}
           </div>

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /account/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /forgot-passcode/
+Disallow: /master-access/
+Disallow: /payment-processing/
+
+Sitemap: https://studyhelp.fdaytalk.com/sitemap-index.xml

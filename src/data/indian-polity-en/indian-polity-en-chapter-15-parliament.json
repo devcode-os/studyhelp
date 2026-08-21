@@ -1,0 +1,4375 @@
+{
+  "slug": "indian-polity-en-chapter-15-parliament",
+  "chapterNumber": 15,
+  "title": "Parliament",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Articles 79 to 122 of the Constitution are contained in which Part?",
+      "options": {
+        "a": "Part VI",
+        "b": "Part V",
+        "c": "Part XVIII",
+        "d": "Part IV"
+      },
+      "answer": "b",
+      "a": "Part V",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year were the Hindi names 'Rajya Sabha' and 'Lok Sabha' adopted for the Council of States and House of the People?",
+      "options": {
+        "a": "1956",
+        "b": "1954",
+        "c": "1950",
+        "d": "1952"
+      },
+      "answer": "b",
+      "a": "1954",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT one of the three constituent parts of the Indian Parliament under the Constitution?",
+      "options": {
+        "a": "The Council of States",
+        "b": "The Council of Ministers",
+        "c": "The House of the People",
+        "d": "The President"
+      },
+      "answer": "b",
+      "a": "The Council of Ministers",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the legislature of the USA, the Upper House is known as the:",
+      "options": {
+        "a": "Senate",
+        "b": "House of Commons",
+        "c": "House of Lords",
+        "d": "House of Representatives"
+      },
+      "answer": "a",
+      "a": "Senate",
+      "e": "The American Congress consists of the Senate and House of Representatives; unlike India, the American President is not an integral part of the legislature.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The parliamentary form of government in India, which emphasises interdependence between the legislature and executive, is reflected in the concept of:",
+      "options": {
+        "a": "President-in-Parliament",
+        "b": "Quasi-federalism",
+        "c": "Collective responsibility",
+        "d": "Separation of powers"
+      },
+      "answer": "a",
+      "a": "President-in-Parliament",
+      "e": "Modelled on the British 'Crown-in-Parliament', in contrast to the American Presidential system's separation of legislative and executive organs.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs regarding the structure of national legislatures:\n(I) India – President, Rajya Sabha, Lok Sabha\n(II) Britain – Crown, House of Lords, House of Commons\n(III) USA – President, Senate, House of Representatives\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I, II and III",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "The American President is not an integral part of Congress, unlike the President of India and the British Crown.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum strength of the Rajya Sabha as fixed by the Constitution is:",
+      "options": {
+        "a": "250",
+        "b": "245",
+        "c": "238",
+        "d": "260"
+      },
+      "answer": "a",
+      "a": "250",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Of the maximum strength of the Rajya Sabha, how many members are to be nominated by the President?",
+      "options": {
+        "a": "12",
+        "b": "20",
+        "c": "10",
+        "d": "15"
+      },
+      "answer": "a",
+      "a": "12",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At present, how many members of the Rajya Sabha represent the union territories?",
+      "options": {
+        "a": "8",
+        "b": "19",
+        "c": "12",
+        "d": "20"
+      },
+      "answer": "a",
+      "a": "8",
+      "e": "The Rajya Sabha presently has 245 members: 225 representing states, 8 representing union territories, and 12 nominated members.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Schedule of the Constitution deals with the allocation of seats in the Rajya Sabha to the states and union territories?",
+      "options": {
+        "a": "Fifth Schedule",
+        "b": "Seventh Schedule",
+        "c": "Third Schedule",
+        "d": "Fourth Schedule"
+      },
+      "answer": "d",
+      "a": "Fourth Schedule",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The representatives of states in the Rajya Sabha are elected by:",
+      "options": {
+        "a": "An electoral college of MPs",
+        "b": "The elected members of state legislative assemblies",
+        "c": "The Governor of the state",
+        "d": "The people directly"
+      },
+      "answer": "b",
+      "a": "The elected members of state legislative assemblies",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Representatives of the states in the Rajya Sabha are elected by means of which electoral system?",
+      "options": {
+        "a": "Direct universal suffrage",
+        "b": "List system of proportional representation",
+        "c": "Proportional representation by single transferable vote",
+        "d": "First-past-the-post"
+      },
+      "answer": "c",
+      "a": "Proportional representation by single transferable vote",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the American Senate, how many members represent each state, irrespective of population?",
+      "options": {
+        "a": "4",
+        "b": "2",
+        "c": "1",
+        "d": "3"
+      },
+      "answer": "b",
+      "a": "2",
+      "e": "Unlike India, where Rajya Sabha seats are allotted to states on the basis of population, the American Senate gives all states equal representation.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which state has the highest number of Rajya Sabha seats, due to its population?",
+      "options": {
+        "a": "West Bengal",
+        "b": "Bihar",
+        "c": "Maharashtra",
+        "d": "Uttar Pradesh"
+      },
+      "answer": "d",
+      "a": "Uttar Pradesh",
+      "e": "Uttar Pradesh has 31 Rajya Sabha members, while a small state like Tripura has only 1, since seats are allotted on the basis of population.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many union territories, out of the total eight, have representation in the Rajya Sabha?",
+      "options": {
+        "a": "Two",
+        "b": "Three",
+        "c": "Five",
+        "d": "Four"
+      },
+      "answer": "b",
+      "a": "Three",
+      "e": "Only Delhi, Puducherry, and Jammu & Kashmir have representation; the other five union territories have populations too small for any representative.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The members nominated by the President to the Rajya Sabha must have special knowledge or practical experience in art, literature, science, and:",
+      "options": {
+        "a": "Law",
+        "b": "Sports",
+        "c": "Administration",
+        "d": "Social service"
+      },
+      "answer": "d",
+      "a": "Social service",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum strength of the Lok Sabha as fixed by the Constitution is:",
+      "options": {
+        "a": "543",
+        "b": "552",
+        "c": "550",
+        "d": "530"
+      },
+      "answer": "c",
+      "a": "550",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Of the maximum strength of the Lok Sabha, how many members are to represent the union territories?",
+      "options": {
+        "a": "19",
+        "b": "25",
+        "c": "12",
+        "d": "20"
+      },
+      "answer": "d",
+      "a": "20",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At present, how many members of the Lok Sabha represent the states?",
+      "options": {
+        "a": "550",
+        "b": "543",
+        "c": "530",
+        "d": "524"
+      },
+      "answer": "d",
+      "a": "524",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum age for a citizen to be eligible to vote in Lok Sabha elections is:",
+      "options": {
+        "a": "18 years",
+        "b": "21 years",
+        "c": "25 years",
+        "d": "30 years"
+      },
+      "answer": "a",
+      "a": "18 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The voting age for Lok Sabha elections was reduced from 21 to 18 years by which Constitutional Amendment Act?",
+      "options": {
+        "a": "42nd Amendment Act",
+        "b": "52nd Amendment Act",
+        "c": "61st Amendment Act",
+        "d": "44th Amendment Act"
+      },
+      "answer": "c",
+      "a": "61st Amendment Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act enabled members of the Lok Sabha from union territories to be chosen by direct election?",
+      "options": {
+        "a": "Government of Union Territories Act, 1963",
+        "b": "Delimitation Act, 1962",
+        "c": "Representation of the People Act, 1951",
+        "d": "Union Territories (Direct Election to the House of the People) Act, 1965"
+      },
+      "answer": "d",
+      "a": "Union Territories (Direct Election to the House of the People) Act, 1965",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Before its discontinuation, the President could nominate members from which community to the Lok Sabha if it was not adequately represented?",
+      "options": {
+        "a": "Anglo-Indian community",
+        "b": "Sikh community",
+        "c": "Jewish community",
+        "d": "Parsi community"
+      },
+      "answer": "a",
+      "a": "Anglo-Indian community",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many members from the Anglo-Indian community could be nominated to the Lok Sabha?",
+      "options": {
+        "a": "Three",
+        "b": "Four",
+        "c": "One",
+        "d": "Two"
+      },
+      "answer": "d",
+      "a": "Two",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment Act made the last extension (upto 2020) of the Anglo-Indian nomination provision, before its eventual discontinuation?",
+      "options": {
+        "a": "95th Amendment Act, 2009",
+        "b": "84th Amendment Act, 2001",
+        "c": "87th Amendment Act, 2003",
+        "d": "104th Amendment Act, 2019"
+      },
+      "answer": "a",
+      "a": "95th Amendment Act, 2009",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Constitutional Amendment Act discontinued the provision for nomination of Anglo-Indian members to the Lok Sabha?",
+      "options": {
+        "a": "97th Amendment Act, 2012",
+        "b": "106th Amendment Act, 2023",
+        "c": "95th Amendment Act, 2009",
+        "d": "104th Amendment Act, 2019"
+      },
+      "answer": "d",
+      "a": "104th Amendment Act, 2019",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The provision for nomination of Anglo-Indian members to the Lok Sabha ceased to have effect on:",
+      "options": {
+        "a": "31st March, 2020",
+        "b": "26th January, 2020",
+        "c": "25th January, 2020",
+        "d": "25th January, 2019"
+      },
+      "answer": "c",
+      "a": "25th January, 2020",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The constitutional provision requiring a uniform ratio between Lok Sabha seats and state population does not apply to a state having a population of less than:",
+      "options": {
+        "a": "Six million",
+        "b": "Twelve million",
+        "c": "Three million",
+        "d": "Ten million"
+      },
+      "answer": "a",
+      "a": "Six million",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Delimitation Commission Acts for readjustment of Lok Sabha seats and constituencies were enacted by Parliament in 1952, 1962, 1972, and:",
+      "options": {
+        "a": "2011",
+        "b": "2001",
+        "c": "1991",
+        "d": "2002"
+      },
+      "answer": "d",
+      "a": "2002",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 42nd Amendment Act of 1976 froze the allocation of Lok Sabha seats to states at which census level?",
+      "options": {
+        "a": "1961",
+        "b": "1971",
+        "c": "1981",
+        "d": "1991"
+      },
+      "answer": "b",
+      "a": "1971",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Until which year was the freeze on readjustment of Lok Sabha seat allocation extended by the 84th Amendment Act of 2001?",
+      "options": {
+        "a": "2021",
+        "b": "2000",
+        "c": "2026",
+        "d": "2011"
+      },
+      "answer": "c",
+      "a": "2026",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 87th Amendment Act of 2003 provided for delimitation of constituencies on the basis of which census?",
+      "options": {
+        "a": "1971 census",
+        "b": "2001 census",
+        "c": "1991 census",
+        "d": "1981 census"
+      },
+      "answer": "b",
+      "a": "2001 census",
+      "e": "This replaced the 1991 census basis earlier provided by the 84th Amendment Act, 2001, without altering the number of seats allotted to each state.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the 104th Amendment Act of 2019, reservation of seats for Scheduled Castes and Scheduled Tribes in the Lok Sabha is to last until:",
+      "options": {
+        "a": "2020",
+        "b": "2026",
+        "c": "2030",
+        "d": "2035"
+      },
+      "answer": "c",
+      "a": "2030",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Members elected to seats reserved for Scheduled Castes and Scheduled Tribes in the Lok Sabha are elected by:",
+      "options": {
+        "a": "All the voters in the constituency",
+        "b": "Nomination by the President",
+        "c": "A separate electorate of SC/ST voters only",
+        "d": "An electoral college of state legislators"
+      },
+      "answer": "a",
+      "a": "All the voters in the constituency",
+      "e": "There is no separate electorate for reserved seats, and SC/ST candidates may also contest general (non-reserved) seats.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which system of representation has the Constitution adopted for elections to the Lok Sabha?",
+      "options": {
+        "a": "Single transferable vote system",
+        "b": "First-past-the-post system",
+        "c": "List system of proportional representation",
+        "d": "Mixed member proportional system"
+      },
+      "answer": "b",
+      "a": "First-past-the-post system",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In India, the single transferable vote system of proportional representation is used for elections to the Rajya Sabha, state legislative councils, and for the election of the President and:",
+      "options": {
+        "a": "Vice-President",
+        "b": "Speaker of Lok Sabha",
+        "c": "Chief Justice of India",
+        "d": "Prime Minister"
+      },
+      "answer": "a",
+      "a": "Vice-President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding why proportional representation was not adopted for Lok Sabha elections:\n(I) It was considered too complicated for voters given the low literacy scale in the country.\n(II) It tends to multiply political parties, leading to instability in a parliamentary government.\n(III) It was considered too expensive for a developing economy.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Rajya Sabha first constituted?",
+      "options": {
+        "a": "1950",
+        "b": "1952",
+        "c": "1951",
+        "d": "1954"
+      },
+      "answer": "b",
+      "a": "1952",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What fraction of Rajya Sabha members retire every second year?",
+      "options": {
+        "a": "One-third",
+        "b": "One-fourth",
+        "c": "Two-thirds",
+        "d": "Half"
+      },
+      "answer": "a",
+      "a": "One-third",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act provided that the term of office of a member of the Rajya Sabha shall be six years?",
+      "options": {
+        "a": "Salary, Allowances and Pension of Members of Parliament Act, 1954",
+        "b": "Representation of the People Act, 1950",
+        "c": "Representation of the People Act, 1951",
+        "d": "Government of India Act, 1935"
+      },
+      "answer": "c",
+      "a": "Representation of the People Act, 1951",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the first batch of the Rajya Sabha, the members who should retire early were decided by:",
+      "options": {
+        "a": "A resolution of the House",
+        "b": "Lottery",
+        "c": "Seniority",
+        "d": "Presidential nomination"
+      },
+      "answer": "b",
+      "a": "Lottery",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the normal term of the Lok Sabha from the date of its first meeting after general elections?",
+      "options": {
+        "a": "Six years",
+        "b": "Five years",
+        "c": "Four years",
+        "d": "Seven years"
+      },
+      "answer": "b",
+      "a": "Five years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During a national emergency, the term of the Lok Sabha can be extended by a law of Parliament for one year at a time, but the extension beyond the emergency's cessation cannot continue for more than:",
+      "options": {
+        "a": "One year",
+        "b": "Six months",
+        "c": "Nine months",
+        "d": "Three months"
+      },
+      "answer": "b",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person's decision to dissolve the Lok Sabha before completion of its five-year term, made by the President, can be challenged in a court of law.",
+      "options": {
+        "a": "True only during emergency",
+        "b": "True in all cases",
+        "c": "False",
+        "d": "True only if malafide"
+      },
+      "answer": "c",
+      "a": "False",
+      "e": "The President's decision to dissolve the Lok Sabha at any time, even before the completion of five years, cannot be challenged in a court of law.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum age prescribed by the Constitution for a person to be chosen as a member of the Rajya Sabha?",
+      "options": {
+        "a": "25 years",
+        "b": "21 years",
+        "c": "35 years",
+        "d": "30 years"
+      },
+      "answer": "d",
+      "a": "30 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum age prescribed by the Constitution for a person to be chosen as a member of the Lok Sabha?",
+      "options": {
+        "a": "30 years",
+        "b": "21 years",
+        "c": "35 years",
+        "d": "25 years"
+      },
+      "answer": "d",
+      "a": "25 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the oath sworn by a person before being chosen as a member of Parliament:\n(I) To bear true faith and allegiance to the Constitution of India\n(II) To uphold the sovereignty and integrity of India\n(III) To faithfully discharge the duties of a member of Parliament\nWhich of the above is/are part of this oath, as per the Constitution's qualification requirement?",
+      "options": {
+        "a": "I, II and III",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I only"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The oath sworn as a qualification for being chosen a member (before the election commission's authorised person) covers only these two points; the duty-related clause belongs to the separate oath taken before actually entering the House.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The requirement that a Rajya Sabha candidate from a particular state must be an elector in that state was dispensed with in which year?",
+      "options": {
+        "a": "2001",
+        "b": "2003",
+        "c": "1999",
+        "d": "2006"
+      },
+      "answer": "b",
+      "a": "2003",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Supreme Court upheld the constitutional validity of dispensing with the domicile requirement for Rajya Sabha candidates in which year?",
+      "options": {
+        "a": "2008",
+        "b": "2003",
+        "c": "2004",
+        "d": "2006"
+      },
+      "answer": "d",
+      "a": "2006",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following disqualifies a person from being elected as a member of Parliament, as specified directly in the Constitution?",
+      "options": {
+        "a": "Being an undischarged insolvent",
+        "b": "Conviction for bribery",
+        "c": "Dismissal from government service for corruption",
+        "d": "Failure to lodge an account of election expenses"
+      },
+      "answer": "a",
+      "a": "Being an undischarged insolvent",
+      "e": "This is one of the five disqualifications specified directly in the Constitution; the other three options are additional disqualifications laid down by Parliament under the Representation of the People Act, 1951.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Holding an office of profit under the Union or state government disqualifies a person from Parliament membership, except in the case of:",
+      "options": {
+        "a": "A civil servant on deputation",
+        "b": "A minister",
+        "c": "A government contractor",
+        "d": "A judge"
+      },
+      "answer": "b",
+      "a": "A minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On the question of whether a sitting member is subject to any disqualification, whose decision is final?",
+      "options": {
+        "a": "The Chairman of the Rajya Sabha",
+        "b": "The Election Commission",
+        "c": "The President",
+        "d": "The Speaker of the Lok Sabha"
+      },
+      "answer": "c",
+      "a": "The President",
+      "e": "The President's decision is final, but he/she must first obtain the opinion of the Election Commission and act accordingly.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person becomes disqualified from Parliament membership under the Representation of the People Act, 1951 if convicted for an offence resulting in imprisonment for how many years or more?",
+      "options": {
+        "a": "One year",
+        "b": "Five years",
+        "c": "Three years",
+        "d": "Two years"
+      },
+      "answer": "d",
+      "a": "Two years",
+      "e": "Detention under a preventive detention law is specifically not treated as a disqualification.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A member of Parliament incurs disqualification on the ground of defection if a nominated member joins a political party after the expiry of how many months?",
+      "options": {
+        "a": "Three months",
+        "b": "Nine months",
+        "c": "Twelve months",
+        "d": "Six months"
+      },
+      "answer": "d",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Tenth Schedule, the question of disqualification of a Rajya Sabha member on the ground of defection is decided by the:",
+      "options": {
+        "a": "Election Commission",
+        "b": "President",
+        "c": "Chairman",
+        "d": "Speaker"
+      },
+      "answer": "c",
+      "a": "Chairman",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court rule that the Chairman/Speaker's decision on disqualification under the Tenth Schedule is subject to judicial review?",
+      "options": {
+        "a": "Kesavananda Bharati case",
+        "b": "Minerva Mills case",
+        "c": "Golaknath case",
+        "d": "Kihoto Hollohan case"
+      },
+      "answer": "d",
+      "a": "Kihoto Hollohan case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If a person is elected to both Houses of Parliament, within how many days must he/she intimate which House he/she desires to serve?",
+      "options": {
+        "a": "7 days",
+        "b": "10 days",
+        "c": "14 days",
+        "d": "30 days"
+      },
+      "answer": "b",
+      "a": "10 days",
+      "e": "In default of such intimation, the seat in the Rajya Sabha becomes vacant.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If a sitting member of a state legislature is elected to Parliament, within how many days must he/she resign the state legislature seat, failing which the Parliament seat becomes vacant?",
+      "options": {
+        "a": "14 days",
+        "b": "30 days",
+        "c": "60 days",
+        "d": "10 days"
+      },
+      "answer": "a",
+      "a": "14 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A House can declare the seat of a member vacant if he/she is absent from all its meetings, without permission, for a period of:",
+      "options": {
+        "a": "60 days",
+        "b": "90 days",
+        "c": "45 days",
+        "d": "30 days"
+      },
+      "answer": "a",
+      "a": "60 days",
+      "e": "In computing this period, no account is taken of any period during which the House is prorogued or adjourned for more than four consecutive days.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If a disqualified candidate is elected to Parliament, which authority can declare the election void?",
+      "options": {
+        "a": "The President",
+        "b": "The Election Commission",
+        "c": "The High Court",
+        "d": "The Supreme Court directly"
+      },
+      "answer": "c",
+      "a": "The High Court",
+      "e": "This is enabled by the Representation of the People Act, 1951; the aggrieved party can appeal to the Supreme Court against the High Court's order.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a case in which a member of Parliament must vacate his/her seat?",
+      "options": {
+        "a": "If absent for 30 days without permission",
+        "b": "If convicted for any offence",
+        "c": "If elected to a state legislature and resigns within 14 days",
+        "d": "If appointed to the office of governor of a state"
+      },
+      "answer": "d",
+      "a": "If appointed to the office of governor of a state",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the penalty per day for a person who sits or votes as a member of a House before taking the prescribed oath or affirmation?",
+      "options": {
+        "a": "₹1,000",
+        "b": "₹500",
+        "c": "₹100",
+        "d": "₹250"
+      },
+      "answer": "b",
+      "a": "₹500",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act enacted by Parliament in 1954 governs the salary, allowances, and pension of Members of Parliament?",
+      "options": {
+        "a": "Salary, Allowances and Pension of Members of Parliament Act",
+        "b": "Leaders and Chief Whips of Recognised Parties Act",
+        "c": "Representation of the People Act",
+        "d": "Salaries and Allowances of Officers of Parliament Act"
+      },
+      "answer": "a",
+      "a": "Salary, Allowances and Pension of Members of Parliament Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 2018, the monthly salary of Members of Parliament was increased from ₹50,000 to:",
+      "options": {
+        "a": "₹75,000",
+        "b": "₹1,00,000",
+        "c": "₹1,50,000",
+        "d": "₹1,25,000"
+      },
+      "answer": "b",
+      "a": "₹1,00,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did Parliament first provide for a pension for its members, though the Constitution itself contains no such provision?",
+      "options": {
+        "a": "1985",
+        "b": "1954",
+        "c": "1976",
+        "d": "1966"
+      },
+      "answer": "c",
+      "a": "1976",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 2018, the monthly pension of a person who has served any period as a Member of Parliament was increased from ₹20,000 to:",
+      "options": {
+        "a": "₹28,000",
+        "b": "₹25,000",
+        "c": "₹22,000",
+        "d": "₹30,000"
+      },
+      "answer": "b",
+      "a": "₹25,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The salaries and allowances of the Speaker, Deputy Speaker, Chairman, and Deputy Chairman are charged on the Consolidated Fund of India, meaning they are:",
+      "options": {
+        "a": "Not subject to the annual vote of Parliament",
+        "b": "Determined solely by the President",
+        "c": "Subject to annual vote of Parliament",
+        "d": "Reviewed every five years by the Finance Commission"
+      },
+      "answer": "a",
+      "a": "Not subject to the annual vote of Parliament",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act enacted in 1953 governs the salaries and allowances of the Chairman/Deputy Chairman of Rajya Sabha and Speaker/Deputy Speaker of Lok Sabha as \"Officers of Parliament\"?",
+      "options": {
+        "a": "Representation of the People Act",
+        "b": "Salaries and Allowances of Officers of Parliament Act",
+        "c": "Leaders and Chief Whips of Recognised Parties and Groups in Parliament (Facilities) Act",
+        "d": "Salary, Allowances and Pension of Members of Parliament Act"
+      },
+      "answer": "b",
+      "a": "Salaries and Allowances of Officers of Parliament Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 2018, the monthly salary of the Chairman of the Rajya Sabha was increased from ₹1.25 lakh to:",
+      "options": {
+        "a": "₹2 lakh",
+        "b": "₹5 lakh",
+        "c": "₹3 lakh",
+        "d": "₹4 lakh"
+      },
+      "answer": "d",
+      "a": "₹4 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who fixes the date of election of the Speaker of the Lok Sabha?",
+      "options": {
+        "a": "The President",
+        "b": "The outgoing Speaker",
+        "c": "The Prime Minister",
+        "d": "The Lok Sabha Secretariat"
+      },
+      "answer": "a",
+      "a": "The President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A resolution for the removal of the Speaker of the Lok Sabha can be moved only after giving how many days' advance notice?",
+      "options": {
+        "a": "21 days",
+        "b": "14 days",
+        "c": "30 days",
+        "d": "7 days"
+      },
+      "answer": "b",
+      "a": "14 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When a resolution for the removal of the Speaker is under consideration, the Speaker can vote in the first instance but not in the case of:",
+      "options": {
+        "a": "An equality of votes",
+        "b": "A constitutional amendment",
+        "c": "A quorum failure",
+        "d": "A money bill"
+      },
+      "answer": "a",
+      "a": "An equality of votes",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When the Lok Sabha is dissolved, what happens to the office of the Speaker?",
+      "options": {
+        "a": "The Deputy Speaker automatically takes over permanently",
+        "b": "The President appoints a caretaker Speaker",
+        "c": "It falls vacant immediately",
+        "d": "The Speaker continues till the newly-elected Lok Sabha meets"
+      },
+      "answer": "d",
+      "a": "The Speaker continues till the newly-elected Lok Sabha meets",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker of the Lok Sabha derives powers and duties from three sources: the Constitution, the Rules of Procedure and Conduct of Business of Lok Sabha, and:",
+      "options": {
+        "a": "Cabinet decisions",
+        "b": "Directions of the President",
+        "c": "Recommendations of the Business Advisory Committee",
+        "d": "Parliamentary Conventions"
+      },
+      "answer": "d",
+      "a": "Parliamentary Conventions",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the quorum required to constitute a meeting of the House?",
+      "options": {
+        "a": "One-fourth of total strength",
+        "b": "One-twentieth of total strength",
+        "c": "One-tenth of total strength",
+        "d": "One-fifth of total strength"
+      },
+      "answer": "c",
+      "a": "One-tenth of total strength",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In case of a tie in the House, the Speaker exercises a vote called the:",
+      "options": {
+        "a": "Tie-breaker vote",
+        "b": "Presiding vote",
+        "c": "Casting vote",
+        "d": "Deciding vote"
+      },
+      "answer": "c",
+      "a": "Casting vote",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who summons a joint sitting of the two Houses of Parliament to settle a deadlock over a bill?",
+      "options": {
+        "a": "The Chairman of Rajya Sabha",
+        "b": "The Prime Minister",
+        "c": "The President",
+        "d": "The Speaker"
+      },
+      "answer": "c",
+      "a": "The President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whose decision is final regarding whether a bill is a money bill or not?",
+      "options": {
+        "a": "The Speaker of the Lok Sabha",
+        "b": "The Chairman of the Rajya Sabha",
+        "c": "The Attorney General",
+        "d": "The President"
+      },
+      "answer": "a",
+      "a": "The Speaker of the Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker decides questions of disqualification of a Lok Sabha member arising on the ground of defection under which Schedule?",
+      "options": {
+        "a": "Ninth Schedule",
+        "b": "Eleventh Schedule",
+        "c": "Tenth Schedule",
+        "d": "Twelfth Schedule"
+      },
+      "answer": "c",
+      "a": "Tenth Schedule",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker acts as the ex-officio chairman of which group linking the Parliament of India with parliaments of the world?",
+      "options": {
+        "a": "Commonwealth Parliamentary Association",
+        "b": "Inter-Parliamentary Union",
+        "c": "World Parliamentary Council",
+        "d": "Indian Parliamentary Group"
+      },
+      "answer": "d",
+      "a": "Indian Parliamentary Group",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following committees is the Speaker the chairman of?",
+      "options": {
+        "a": "Business Advisory Committee",
+        "b": "Public Accounts Committee",
+        "c": "Committee on Public Undertakings",
+        "d": "Estimates Committee"
+      },
+      "answer": "a",
+      "a": "Business Advisory Committee",
+      "e": "The Speaker is also chairman of the Rules Committee and the General Purposes Committee, but not of the financial committees like the Public Accounts Committee.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A motion for the removal of the Speaker, to be considered and discussed, must have the support of at least how many members?",
+      "options": {
+        "a": "25 members",
+        "b": "75 members",
+        "c": "50 members",
+        "d": "100 members"
+      },
+      "answer": "c",
+      "a": "50 members",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker of the Lok Sabha is placed at which rank in the order of precedence, along with the Chief Justice of India?",
+      "options": {
+        "a": "Fifth",
+        "b": "Eighth",
+        "c": "Sixth",
+        "d": "Seventh"
+      },
+      "answer": "d",
+      "a": "Seventh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In Britain, there is a convention that the Speaker resigns from party membership on election to the office. Is this convention fully established in India?",
+      "options": {
+        "a": "No",
+        "b": "Yes, but only for the Deputy Speaker",
+        "c": "Yes, since 1952",
+        "d": "Yes, since the 44th Amendment"
+      },
+      "answer": "a",
+      "a": "No",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Deputy Speaker of the Lok Sabha is elected after the election of:",
+      "options": {
+        "a": "The Chairman of Rajya Sabha",
+        "b": "The Leader of the Opposition",
+        "c": "The Prime Minister",
+        "d": "The Speaker"
+      },
+      "answer": "d",
+      "a": "The Speaker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who fixes the date of election of the Deputy Speaker of the Lok Sabha?",
+      "options": {
+        "a": "The Speaker",
+        "b": "The outgoing Deputy Speaker",
+        "c": "The President",
+        "d": "The Prime Minister"
+      },
+      "answer": "a",
+      "a": "The Speaker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whenever the Deputy Speaker is appointed as a member of a parliamentary committee, he/she automatically becomes its:",
+      "options": {
+        "a": "Vice-chairman",
+        "b": "Secretary",
+        "c": "Chairman",
+        "d": "Convenor"
+      },
+      "answer": "c",
+      "a": "Chairman",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When the Speaker presides over the House, the Deputy Speaker is treated as:",
+      "options": {
+        "a": "Any other ordinary member of the House",
+        "b": "The de facto Leader of the House",
+        "c": "A silent observer without voting rights",
+        "d": "A special functionary with veto power"
+      },
+      "answer": "a",
+      "a": "Any other ordinary member of the House",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In India, which party does the post of Deputy Speaker usually go to, as a convention?",
+      "options": {
+        "a": "An independent MP",
+        "b": "A regional party",
+        "c": "The ruling party",
+        "d": "The opposition party"
+      },
+      "answer": "d",
+      "a": "The opposition party",
+      "e": "The Speaker usually comes from the ruling party or alliance, though there have been exceptional cases.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The institutions of Speaker and Deputy Speaker originated in India in 1921 under provisions of which Act?",
+      "options": {
+        "a": "Indian Councils Act, 1909",
+        "b": "Government of India Act, 1919",
+        "c": "Government of India Act, 1858",
+        "d": "Government of India Act, 1935"
+      },
+      "answer": "b",
+      "a": "Government of India Act, 1919",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Before 1921, who used to preside over meetings of the Central Legislative Council?",
+      "options": {
+        "a": "The senior-most member",
+        "b": "The Viceroy",
+        "c": "The Secretary of State",
+        "d": "The Governor-General of India"
+      },
+      "answer": "d",
+      "a": "The Governor-General of India",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who was appointed as the first Speaker of the central legislative assembly in 1921?",
+      "options": {
+        "a": "Sachidanand Sinha",
+        "b": "Frederick Whyte",
+        "c": "G.V. Mavalankar",
+        "d": "Vithalbhai J. Patel"
+      },
+      "answer": "b",
+      "a": "Frederick Whyte",
+      "e": "Frederick Whyte and Sachidanand Sinha were appointed as the first Speaker and first Deputy Speaker respectively by the Governor-General.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who became the first Indian and the first elected Speaker of the central legislative assembly, in 1925?",
+      "options": {
+        "a": "G.V. Mavalankar",
+        "b": "Sachidanand Sinha",
+        "c": "Frederick Whyte",
+        "d": "Vithalbhai J. Patel"
+      },
+      "answer": "d",
+      "a": "Vithalbhai J. Patel",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act changed the nomenclature of \"President\" and \"Deputy President\" of the Central Legislative Assembly to \"Speaker\" and \"Deputy Speaker\"?",
+      "options": {
+        "a": "Government of India Act, 1919",
+        "b": "Indian Independence Act, 1947",
+        "c": "Government of India Act, 1858",
+        "d": "Government of India Act, 1935"
+      },
+      "answer": "d",
+      "a": "Government of India Act, 1935",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who were the first Speaker and first Deputy Speaker (respectively) of the Lok Sabha?",
+      "options": {
+        "a": "Vithalbhai J. Patel and Frederick Whyte",
+        "b": "Balram Jakhar and Rabi Ray",
+        "c": "Hukum Singh and Neelam Sanjiva Reddy",
+        "d": "G.V. Mavalankar and Ananthasayanam Ayyangar"
+      },
+      "answer": "d",
+      "a": "G.V. Mavalankar and Ananthasayanam Ayyangar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Rules of Lok Sabha, the Speaker nominates a panel of chairpersons of not more than how many members?",
+      "options": {
+        "a": "Ten",
+        "b": "Five",
+        "c": "Eight",
+        "d": "Twelve"
+      },
+      "answer": "a",
+      "a": "Ten",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Can a member of the panel of chairpersons preside over the House when the office of both the Speaker and Deputy Speaker is vacant?",
+      "options": {
+        "a": "Yes, if approved by a House resolution",
+        "b": "No; the session must be adjourned until a new Speaker is elected",
+        "c": "No; the Speaker's duties are performed by a member the President appoints for the purpose",
+        "d": "Yes, automatically"
+      },
+      "answer": "c",
+      "a": "No; the Speaker's duties are performed by a member the President appoints for the purpose",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who administers the oath to the Speaker Pro Tem?",
+      "options": {
+        "a": "The President",
+        "b": "The Vice-President",
+        "c": "The Chief Justice of India",
+        "d": "The outgoing Speaker"
+      },
+      "answer": "a",
+      "a": "The President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The main duty of the Speaker Pro Tem is to:",
+      "options": {
+        "a": "Certify money bills",
+        "b": "Administer oath to the new members",
+        "c": "Pass the annual budget",
+        "d": "Appoint parliamentary committees"
+      },
+      "answer": "b",
+      "a": "Administer oath to the new members",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who is the ex-officio Chairman of the Rajya Sabha?",
+      "options": {
+        "a": "The Prime Minister",
+        "b": "The Vice-President of India",
+        "c": "The senior-most Rajya Sabha member",
+        "d": "The President"
+      },
+      "answer": "b",
+      "a": "The Vice-President of India",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Chairman of the Rajya Sabha can be removed from office only if he/she is removed from the office of:",
+      "options": {
+        "a": "Deputy Chairman",
+        "b": "Vice-President",
+        "c": "Chairman itself, by a Rajya Sabha resolution",
+        "d": "President"
+      },
+      "answer": "b",
+      "a": "Vice-President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding special powers of the Speaker not enjoyed by the Rajya Sabha Chairman:\n(I) The Speaker decides whether a bill is a money bill or not.\n(II) The Speaker presides over a joint sitting of the two Houses of Parliament.\n(III) The Speaker alone can summon a joint sitting of Parliament.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and II only",
+        "c": "I, II and III",
+        "d": "I and III only"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The President, not the Speaker, summons a joint sitting; the Speaker merely presides over it.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Like the Speaker, can the Chairman of the Rajya Sabha vote in the first instance?",
+      "options": {
+        "a": "No, but can cast a vote in case of equality of votes",
+        "b": "Yes, always",
+        "c": "No, under no circumstances",
+        "d": "Yes, but only on money bills"
+      },
+      "answer": "a",
+      "a": "No, but can cast a vote in case of equality of votes",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During any period when the Vice-President acts as President, he/she is paid:",
+      "options": {
+        "a": "The salary and allowance of the President",
+        "b": "The salary and allowance of the Chairman of Rajya Sabha",
+        "c": "A reduced Vice-Presidential salary",
+        "d": "No salary at all"
+      },
+      "answer": "a",
+      "a": "The salary and allowance of the President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Deputy Chairman of the Rajya Sabha performs the duties of the Chairman's office when it is vacant or when:",
+      "options": {
+        "a": "The Vice-President acts as President or discharges the functions of the President",
+        "b": "The Rajya Sabha is in a joint sitting",
+        "c": "A money bill is under discussion",
+        "d": "The Chairman is on leave"
+      },
+      "answer": "a",
+      "a": "The Vice-President acts as President or discharges the functions of the President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Is the Deputy Chairman of the Rajya Sabha subordinate to the Chairman?",
+      "options": {
+        "a": "Yes, but only in administrative matters",
+        "b": "Yes",
+        "c": "No; he/she is directly responsible to the Rajya Sabha",
+        "d": "Only during the Chairman's absence"
+      },
+      "answer": "c",
+      "a": "No; he/she is directly responsible to the Rajya Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Rules of Rajya Sabha, who nominates the panel of vice-chairpersons?",
+      "options": {
+        "a": "The Deputy Chairman",
+        "b": "The Prime Minister",
+        "c": "The President",
+        "d": "The Chairman"
+      },
+      "answer": "d",
+      "a": "The Chairman",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The secretariat of each House of Parliament is headed by a:",
+      "options": {
+        "a": "Director-General",
+        "b": "Chief Secretary",
+        "c": "Secretary-General",
+        "d": "Principal Secretary"
+      },
+      "answer": "c",
+      "a": "Secretary-General",
+      "e": "The Secretary-General is a permanent officer appointed by the presiding officer of the House.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Rules of Lok Sabha, who is nominated by the prime minister to function as the 'Leader of the House' in the Rajya Sabha?",
+      "options": {
+        "a": "The Leader of the Opposition",
+        "b": "A minister who is a member of the Rajya Sabha",
+        "c": "The Chairman himself",
+        "d": "Any senior member"
+      },
+      "answer": "b",
+      "a": "A minister who is a member of the Rajya Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The functionary equivalent to India's 'Leader of the House' is known in the USA as the:",
+      "options": {
+        "a": "Majority leader",
+        "b": "House Whip",
+        "c": "Speaker Pro Tem",
+        "d": "Senate President"
+      },
+      "answer": "a",
+      "a": "Majority leader",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was an official Leader of the Opposition recognised for the first time in India?",
+      "options": {
+        "a": "1985",
+        "b": "1969",
+        "c": "1952",
+        "d": "1977"
+      },
+      "answer": "b",
+      "a": "1969",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under which Act were the Leaders of Opposition in the Lok Sabha and Rajya Sabha accorded statutory recognition?",
+      "options": {
+        "a": "Representation of the People Act, 1951",
+        "b": "Leaders and Chief Whips of Recognised Parties and Groups in Parliament (Facilities) Act, 1998",
+        "c": "Salaries and Allowances of Officers of Parliament Act, 1953",
+        "d": "Salary and Allowances of Leaders of Opposition in Parliament Act, 1977"
+      },
+      "answer": "d",
+      "a": "Salary and Allowances of Leaders of Opposition in Parliament Act, 1977",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Leader of the Opposition is entitled to salary, allowances, and facilities equivalent to that of a:",
+      "options": {
+        "a": "Cabinet Minister",
+        "b": "Minister of State",
+        "c": "Deputy Speaker",
+        "d": "Chief Justice of India"
+      },
+      "answer": "a",
+      "a": "Cabinet Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The functionary equivalent to India's 'Leader of the Opposition' is known in the USA as the:",
+      "options": {
+        "a": "Shadow leader",
+        "b": "Opposition chief",
+        "c": "Ranking member",
+        "d": "Minority leader"
+      },
+      "answer": "d",
+      "a": "Minority leader",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to the directions issued by the Chairman and the Speaker, the minimum numerical strength required for recognition as a political party is:",
+      "options": {
+        "a": "One-fifth of the total membership of the House",
+        "b": "55 members in the Lok Sabha",
+        "c": "One-tenth of the total membership of the House",
+        "d": "One-twentieth of the total membership of the House"
+      },
+      "answer": "c",
+      "a": "One-tenth of the total membership of the House",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who described the Leader of the Opposition as the 'alternative Prime Minister'?",
+      "options": {
+        "a": "Ivor Jennings",
+        "b": "De Lolme",
+        "c": "A.V. Dicey",
+        "d": "N.N. Mallya"
+      },
+      "answer": "a",
+      "a": "Ivor Jennings",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The unique British institution formed by the Opposition party to balance the ruling cabinet is called the:",
+      "options": {
+        "a": "Counter Executive",
+        "b": "Alternate Council",
+        "c": "Shadow Cabinet",
+        "d": "Reserve Ministry"
+      },
+      "answer": "c",
+      "a": "Shadow Cabinet",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Are the offices of the Leader of the House and the Leader of the Opposition mentioned in the Constitution of India?",
+      "options": {
+        "a": "Neither is mentioned in the Constitution",
+        "b": "Only the Leader of the Opposition is constitutionally mentioned",
+        "c": "Both are mentioned in the Constitution",
+        "d": "Only the Leader of the House is constitutionally mentioned"
+      },
+      "answer": "a",
+      "a": "Neither is mentioned in the Constitution",
+      "e": "The Leader of the House is mentioned in the Rules of the House, and the Leader of the Opposition is mentioned in Parliamentary Statute.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The office of 'whip' is based on:",
+      "options": {
+        "a": "A Presidential order",
+        "b": "Conventions of parliamentary government",
+        "c": "The Rules of Procedure of the House",
+        "d": "A specific Article of the Constitution"
+      },
+      "answer": "b",
+      "a": "Conventions of parliamentary government",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the Lok Sabha, the Chief Whip of the government party is which functionary?",
+      "options": {
+        "a": "The Speaker",
+        "b": "The Leader of the House",
+        "c": "The Minister of Home Affairs",
+        "d": "The Minister of Parliamentary Affairs"
+      },
+      "answer": "d",
+      "a": "The Minister of Parliamentary Affairs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the Rajya Sabha, who holds the position of Chief Whip of the government party?",
+      "options": {
+        "a": "The Deputy Chairman",
+        "b": "The Minister of Parliamentary Affairs",
+        "c": "The Leader of the House",
+        "d": "The Minister of State for Parliamentary Affairs"
+      },
+      "answer": "d",
+      "a": "The Minister of State for Parliamentary Affairs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Leaders and Chief Whips of Recognised Parties and Groups in Parliament (Facilities) Act, 1998, a recognised party must have a strength of not less than how many members in respect of the Lok Sabha?",
+      "options": {
+        "a": "25 members",
+        "b": "55 members",
+        "c": "50 members",
+        "d": "30 members"
+      },
+      "answer": "b",
+      "a": "55 members",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the same Act, a recognised group must have a strength of not less than how many members in respect of the Rajya Sabha?",
+      "options": {
+        "a": "15 members",
+        "b": "10 members",
+        "c": "20 members",
+        "d": "25 members"
+      },
+      "answer": "a",
+      "a": "15 members",
+      "e": "A recognised group requires 30 members in the Lok Sabha and 15 in the Rajya Sabha, while a recognised party requires 55 in the Lok Sabha and 25 in the Rajya Sabha.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum gap permissible between two sessions of Parliament is:",
+      "options": {
+        "a": "Four months",
+        "b": "One year",
+        "c": "Three months",
+        "d": "Six months"
+      },
+      "answer": "d",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is one of the three usual sessions of Parliament in a year?",
+      "options": {
+        "a": "The Spring Session",
+        "b": "The Monsoon Session",
+        "c": "The Autumn Session",
+        "d": "The Harvest Session"
+      },
+      "answer": "b",
+      "a": "The Monsoon Session",
+      "e": "The three sessions are the Budget Session (February to May), the Monsoon Session (July to September), and the Winter Session (November to December).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The period spanning between the prorogation of a House and its reassembly in a new session is called:",
+      "options": {
+        "a": "Dissolution",
+        "b": "Sine die",
+        "c": "Adjournment",
+        "d": "Recess"
+      },
+      "answer": "d",
+      "a": "Recess",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Each meeting of a day in a Parliament session normally consists of two sittings: a morning sitting from 11 am to 1 pm, and a post-lunch sitting from:",
+      "options": {
+        "a": "3 pm to 7 pm",
+        "b": "1:30 pm to 5 pm",
+        "c": "2 pm to 6 pm",
+        "d": "2:30 pm to 6:30 pm"
+      },
+      "answer": "c",
+      "a": "2 pm to 6 pm",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When a House is adjourned without naming a day for reassembly, it is called:",
+      "options": {
+        "a": "Dissolution",
+        "b": "Adjournment sine die",
+        "c": "Prorogation",
+        "d": "Recess"
+      },
+      "answer": "b",
+      "a": "Adjournment sine die",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "With whom does the power of adjournment as well as adjournment sine die lie?",
+      "options": {
+        "a": "The President",
+        "b": "The Prime Minister",
+        "c": "The presiding officer of the House",
+        "d": "The Cabinet"
+      },
+      "answer": "c",
+      "a": "The presiding officer of the House",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which authority issues the notification for prorogation of a session, after the House is adjourned sine die?",
+      "options": {
+        "a": "The Prime Minister",
+        "b": "The President",
+        "c": "The Chairman",
+        "d": "The Speaker"
+      },
+      "answer": "b",
+      "a": "The President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT subject to dissolution?",
+      "options": {
+        "a": "Lok Sabha",
+        "b": "Rajya Sabha",
+        "c": "State Legislative Assembly",
+        "d": "None of the above"
+      },
+      "answer": "b",
+      "a": "Rajya Sabha",
+      "e": "The Rajya Sabha, being a permanent House, is not subject to dissolution; only the Lok Sabha is.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Once the Lok Sabha is dissolved before the completion of its normal tenure, the dissolution is:",
+      "options": {
+        "a": "Subject to Supreme Court review",
+        "b": "Irrevocable",
+        "c": "Reversible by a Parliament resolution",
+        "d": "Revocable by the President"
+      },
+      "answer": "b",
+      "a": "Irrevocable",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements comparing adjournment and prorogation:\n(I) Adjournment terminates only a sitting, while prorogation terminates a session.\n(II) Adjournment is done by the presiding officer, while prorogation is done by the President.\n(III) In Britain, prorogation brings to an end all bills or business pending before the House, unlike in India.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I, II and III",
+        "c": "I and III only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On prorogation, do bills pending before the House lapse?",
+      "options": {
+        "a": "Only money bills lapse",
+        "b": "No, bills do not lapse on prorogation, though pending notices (other than those to introduce bills) lapse",
+        "c": "Yes, unless the President specifically saves them",
+        "d": "Yes, always"
+      },
+      "answer": "b",
+      "a": "No, bills do not lapse on prorogation, though pending notices (other than those to introduce bills) lapse",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When the Lok Sabha is dissolved, a bill passed by the Lok Sabha but pending in the Rajya Sabha:",
+      "options": {
+        "a": "Does not lapse",
+        "b": "Lapses",
+        "c": "Is referred to a joint sitting",
+        "d": "Automatically becomes law"
+      },
+      "answer": "b",
+      "a": "Lapses",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When the Lok Sabha is dissolved, a bill passed by both Houses but pending the assent of the President:",
+      "options": {
+        "a": "Does not lapse",
+        "b": "Lapses",
+        "c": "Requires re-passage by both Houses",
+        "d": "Is automatically withheld"
+      },
+      "answer": "a",
+      "a": "Does not lapse",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum number of members that must be present in the Lok Sabha to constitute a quorum for conducting business?",
+      "options": {
+        "a": "50",
+        "b": "25",
+        "c": "55",
+        "d": "100"
+      },
+      "answer": "c",
+      "a": "55",
+      "e": "Quorum is one-tenth of the total membership of each House, including the presiding officer; for the Lok Sabha's 543 members, this works out to at least 55.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum number of members that must be present in the Rajya Sabha to constitute a quorum?",
+      "options": {
+        "a": "55",
+        "b": "25",
+        "c": "20",
+        "d": "30"
+      },
+      "answer": "b",
+      "a": "25",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During an 'open' voting period in the Lok Sabha, which colour on the Individual Result Display Panel indicates an 'Abstain' vote?",
+      "options": {
+        "a": "Red",
+        "b": "White",
+        "c": "Yellow",
+        "d": "Green"
+      },
+      "answer": "c",
+      "a": "Yellow",
+      "e": "Green indicates 'Ayes' and red indicates 'Noes'; during secret voting, the LED flashes only white light.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which method of recording votes in the Lobbies has become obsolete since the installation of Automatic Vote Recording Equipment?",
+      "options": {
+        "a": "Casting vote",
+        "b": "Voice vote",
+        "c": "Division by members going into the Lobbies",
+        "d": "Secret ballot"
+      },
+      "answer": "c",
+      "a": "Division by members going into the Lobbies",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Constitution has declared which two languages for transacting business in Parliament?",
+      "options": {
+        "a": "Hindi and Sanskrit",
+        "b": "Hindi and English",
+        "c": "Hindi and Tamil",
+        "d": "English and Urdu"
+      },
+      "answer": "b",
+      "a": "Hindi and English",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "English was originally intended to be discontinued as a floor language after fifteen years from the commencement of the Constitution, but continued to be used along with Hindi due to which Act?",
+      "options": {
+        "a": "Government of India Act, 1935",
+        "b": "Representation of the People Act, 1951",
+        "c": "Eighth Schedule Amendment Act",
+        "d": "Official Languages Act, 1963"
+      },
+      "answer": "d",
+      "a": "Official Languages Act, 1963",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A minister who is not a member of either House of Parliament can remain a minister without being a member of either House for how long?",
+      "options": {
+        "a": "Three months",
+        "b": "Six months",
+        "c": "One year",
+        "d": "Nine months"
+      },
+      "answer": "b",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Members of the preceding Lok Sabha who could not get re-elected to the new Lok Sabha are called:",
+      "options": {
+        "a": "Retired members",
+        "b": "Transitional members",
+        "c": "Interim members",
+        "d": "Lame-ducks"
+      },
+      "answer": "d",
+      "a": "Lame-ducks",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The purpose of a 'lame-duck session' was to pass which item to enable the government to carry on till the new Lok Sabha was constituted?",
+      "options": {
+        "a": "The Finance Bill",
+        "b": "The Annual Financial Statement",
+        "c": "The Appropriation Bill",
+        "d": "The Vote on Account"
+      },
+      "answer": "d",
+      "a": "The Vote on Account",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of majority is also known as ordinary majority, functional majority, or working majority?",
+      "options": {
+        "a": "Absolute majority",
+        "b": "Effective majority",
+        "c": "Simple majority",
+        "d": "Special majority"
+      },
+      "answer": "c",
+      "a": "Simple majority",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Simple majority is prescribed under which Article of the Constitution as the general rule for determining questions in Parliament?",
+      "options": {
+        "a": "Article 368",
+        "b": "Article 61",
+        "c": "Article 100",
+        "d": "Article 249"
+      },
+      "answer": "c",
+      "a": "Article 100",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Removal of the Vice-President in the Lok Sabha requires which type of majority?",
+      "options": {
+        "a": "Special majority",
+        "b": "Simple majority",
+        "c": "Effective majority",
+        "d": "Absolute majority"
+      },
+      "answer": "b",
+      "a": "Simple majority",
+      "e": "Though initiated by the Rajya Sabha with effective majority, the Lok Sabha's agreement to remove the Vice-President under Article 67 requires only simple majority.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "\"Effective majority\" is referred to in the Constitution as a majority of:",
+      "options": {
+        "a": "All members registered as voters",
+        "b": "All the then members of the House",
+        "c": "Members present only",
+        "d": "Two-thirds of total membership"
+      },
+      "answer": "b",
+      "a": "All the then members of the House",
+      "e": "It means a majority of the total membership excluding vacant seats, i.e., the effective strength of the House.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Removal of the Speaker and Deputy Speaker of the Lok Sabha requires which type of majority?",
+      "options": {
+        "a": "Simple majority",
+        "b": "Special Majority-I",
+        "c": "Effective majority",
+        "d": "Special Majority-II"
+      },
+      "answer": "c",
+      "a": "Effective majority",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Absolute majority means a majority of the total membership of the House, irrespective of vacant seats or absentees. Is absolute majority prescribed by the Constitution as a standalone requirement for any case?",
+      "options": {
+        "a": "Yes, for impeachment of the President",
+        "b": "Yes, for removal of judges",
+        "c": "No, it is not prescribed as a standalone requirement, only as a component of special majority",
+        "d": "Yes, for Constitutional amendments"
+      },
+      "answer": "c",
+      "a": "No, it is not prescribed as a standalone requirement, only as a component of special majority",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Amendment of the Constitution under Article 368 requires which type of majority?",
+      "options": {
+        "a": "Special Majority-III",
+        "b": "Simple majority",
+        "c": "Special Majority-I",
+        "d": "Effective majority"
+      },
+      "answer": "c",
+      "a": "Special Majority-I",
+      "e": "This requires a majority of the total membership of each House along with a two-thirds majority of members present and voting.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Impeachment of the President under Article 61 requires:",
+      "options": {
+        "a": "Simple majority only",
+        "b": "Effective majority only",
+        "c": "A two-thirds majority of members present and voting only",
+        "d": "A two-thirds majority of the total membership of each House"
+      },
+      "answer": "d",
+      "a": "A two-thirds majority of the total membership of each House",
+      "e": "This is classified as Special Majority-II, distinct from Special Majority-I which requires total membership plus two-thirds present and voting.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Parliamentary legislation on matters in the State List under Article 249 requires a two-thirds majority of members present and voting in which House specifically?",
+      "options": {
+        "a": "Both Houses jointly",
+        "b": "Rajya Sabha",
+        "c": "A joint sitting",
+        "d": "Lok Sabha"
+      },
+      "answer": "b",
+      "a": "Rajya Sabha",
+      "e": "This is classified as Special Majority-III, along with recommendation for creation of new All-India Services under Article 312.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which kind of parliamentary question requires an oral answer and permits supplementary questions?",
+      "options": {
+        "a": "Special mention",
+        "b": "Short notice question",
+        "c": "Unstarred question",
+        "d": "Starred question"
+      },
+      "answer": "d",
+      "a": "Starred question",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "An unstarred question requires a written answer, and consequently:",
+      "options": {
+        "a": "Supplementary questions cannot follow",
+        "b": "It must be answered within ten days",
+        "c": "It can only be addressed to the Prime Minister",
+        "d": "Supplementary questions can follow"
+      },
+      "answer": "a",
+      "a": "Supplementary questions cannot follow",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A short notice question is one asked by giving notice of less than how many days?",
+      "options": {
+        "a": "Seven days",
+        "b": "Five days",
+        "c": "Ten days",
+        "d": "Fourteen days"
+      },
+      "answer": "c",
+      "a": "Ten days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Questions to private members are printed in which colour, to distinguish them from questions addressed to ministers?",
+      "options": {
+        "a": "Light pink",
+        "b": "Green",
+        "c": "White",
+        "d": "Yellow"
+      },
+      "answer": "d",
+      "a": "Yellow",
+      "e": "Starred, unstarred, and short notice questions are printed in green, white, and light pink respectively.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Zero Hour is an informal device that starts immediately after which parliamentary proceeding?",
+      "options": {
+        "a": "The Motion of Thanks",
+        "b": "The Calling Attention Motion",
+        "c": "The Question Hour",
+        "d": "The budget presentation"
+      },
+      "answer": "c",
+      "a": "The Question Hour",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Since which year has the Zero Hour been in existence, as an Indian innovation in parliamentary procedure?",
+      "options": {
+        "a": "1962",
+        "b": "1954",
+        "c": "1950",
+        "d": "1953"
+      },
+      "answer": "a",
+      "a": "1962",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of motion is a self-contained independent proposal dealing with a very important matter, such as impeachment of the President?",
+      "options": {
+        "a": "Substantive Motion",
+        "b": "Ancillary Motion",
+        "c": "Subsidiary Motion",
+        "d": "Substitute Motion"
+      },
+      "answer": "a",
+      "a": "Substantive Motion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A motion that is moved in substitution of an original motion, and if adopted supersedes it, is called a:",
+      "options": {
+        "a": "Substantive Motion",
+        "b": "Amendment",
+        "c": "Superseding Motion",
+        "d": "Substitute Motion"
+      },
+      "answer": "d",
+      "a": "Substitute Motion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding Subsidiary Motions:\n(I) An Ancillary Motion is used as the regular way of proceeding with various kinds of business.\n(II) A Superseding Motion is moved during debate on another issue and seeks to supersede it.\n(III) An Amendment seeks to modify or substitute only a part of the original motion.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I, II and III",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of closure motion involves grouping the clauses of a bill or lengthy resolution into parts before the debate begins, with the entire part put to vote after debate?",
+      "options": {
+        "a": "Kangaroo Closure",
+        "b": "Guillotine Closure",
+        "c": "Closure by Compartments",
+        "d": "Simple Closure"
+      },
+      "answer": "c",
+      "a": "Closure by Compartments",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under which type of closure motion are only important clauses taken up for debate and voting, while intervening clauses are skipped and taken as passed?",
+      "options": {
+        "a": "Simple Closure",
+        "b": "Closure by Compartments",
+        "c": "Kangaroo Closure",
+        "d": "Guillotine Closure"
+      },
+      "answer": "c",
+      "a": "Kangaroo Closure",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of closure motion involves putting undiscussed clauses of a bill to vote along with discussed ones, due to want of time?",
+      "options": {
+        "a": "Simple Closure",
+        "b": "Kangaroo Closure",
+        "c": "Guillotine Closure",
+        "d": "Compartmental Closure"
+      },
+      "answer": "c",
+      "a": "Guillotine Closure",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Privilege Motion is concerned with the breach of parliamentary privileges by a:",
+      "options": {
+        "a": "Outsider",
+        "b": "Minister",
+        "c": "Private member",
+        "d": "Journalist"
+      },
+      "answer": "b",
+      "a": "Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Since which year has the Calling Attention Motion, an Indian innovation, been in existence?",
+      "options": {
+        "a": "1954",
+        "b": "1950",
+        "c": "1953",
+        "d": "1962"
+      },
+      "answer": "a",
+      "a": "1954",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike the Zero Hour, is the Calling Attention Motion mentioned in the Rules of Procedure?",
+      "options": {
+        "a": "No, neither is mentioned",
+        "b": "Yes, the Calling Attention Motion is mentioned in the Rules of Procedure",
+        "c": "Only the Zero Hour is mentioned",
+        "d": "Both are mentioned"
+      },
+      "answer": "b",
+      "a": "Yes, the Calling Attention Motion is mentioned in the Rules of Procedure",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "An Adjournment Motion needs the support of how many members to be admitted?",
+      "options": {
+        "a": "25 members",
+        "b": "55 members",
+        "c": "100 members",
+        "d": "50 members"
+      },
+      "answer": "d",
+      "a": "50 members",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The discussion on an Adjournment Motion should last for not less than:",
+      "options": {
+        "a": "Three hours",
+        "b": "Two hours",
+        "c": "Two hours and thirty minutes",
+        "d": "One hour"
+      },
+      "answer": "c",
+      "a": "Two hours and thirty minutes",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which House of Parliament is not permitted to make use of the Adjournment Motion?",
+      "options": {
+        "a": "Lok Sabha",
+        "b": "Neither House",
+        "c": "Both Houses equally",
+        "d": "Rajya Sabha"
+      },
+      "answer": "d",
+      "a": "Rajya Sabha",
+      "e": "The Adjournment Motion involves an element of censure against the government, and hence the Rajya Sabha cannot use this device.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A No-Confidence Motion needs the support of how many members to be admitted?",
+      "options": {
+        "a": "50 members",
+        "b": "25 members",
+        "c": "100 members",
+        "d": "55 members"
+      },
+      "answer": "a",
+      "a": "50 members",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under which Article of the Constitution is the council of ministers stated to be collectively responsible to the Lok Sabha?",
+      "options": {
+        "a": "Article 76",
+        "b": "Article 75",
+        "c": "Article 61",
+        "d": "Article 74"
+      },
+      "answer": "b",
+      "a": "Article 75",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Confidence Motion has emerged as a procedural device to cope with situations resulting from:",
+      "options": {
+        "a": "Hung parliaments, minority governments, and coalition governments",
+        "b": "Prorogation of the House",
+        "c": "Delimitation disputes",
+        "d": "Breach of parliamentary privilege"
+      },
+      "answer": "a",
+      "a": "Hung parliaments, minority governments, and coalition governments",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements comparing a Censure Motion and a No-Confidence Motion:\n(I) A Censure Motion must state the reasons for its adoption, while a No-Confidence Motion need not.\n(II) A Censure Motion can be moved against an individual minister, while a No-Confidence Motion can be moved only against the entire council of ministers.\n(III) If passed, a Censure Motion requires the council of ministers to resign, while a No-Confidence Motion does not.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I, II and III",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "It is the reverse for resignation: if a No-Confidence Motion is passed, the council of ministers must resign; a passed Censure Motion does not require resignation.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The President's inaugural address to Parliament, discussed on a motion called the 'Motion of Thanks', corresponds to which address in Britain?",
+      "options": {
+        "a": "The Coronation Address",
+        "b": "The State of the Union Address",
+        "c": "The Speech from the Throne",
+        "d": "The Royal Assent Speech"
+      },
+      "answer": "c",
+      "a": "The Speech from the Throne",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What happens if the Motion of Thanks on the President's address is not passed by the House?",
+      "options": {
+        "a": "It amounts to the defeat of the government",
+        "b": "The President must re-address the House",
+        "c": "Nothing; it is merely a formality",
+        "d": "A joint sitting is automatically summoned"
+      },
+      "answer": "a",
+      "a": "It amounts to the defeat of the government",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A motion admitted by the Speaker but for which no date has been fixed for discussion is called a:",
+      "options": {
+        "a": "Substantive Motion",
+        "b": "Dilatory Motion",
+        "c": "No-Day-Yet-Named Motion",
+        "d": "Ancillary Motion"
+      },
+      "answer": "c",
+      "a": "No-Day-Yet-Named Motion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A motion for the adjournment of debate on a bill, or one that seeks to retard or delay the progress of business, is called a:",
+      "options": {
+        "a": "No-Day-Yet-Named Motion",
+        "b": "Dilatory Motion",
+        "c": "Superseding Motion",
+        "d": "Privilege Motion"
+      },
+      "answer": "b",
+      "a": "Dilatory Motion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Is debate allowed on a Point of Order raised by a member?",
+      "options": {
+        "a": "Yes, extensive debate is allowed",
+        "b": "Debate is allowed only with the Speaker's special permission",
+        "c": "No debate is allowed",
+        "d": "Only the mover may speak"
+      },
+      "answer": "c",
+      "a": "No debate is allowed",
+      "e": "A Point of Order suspends the proceedings before the House and is an extraordinary device usually raised by an opposition member.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Half-an-Hour Discussion is meant for discussing a matter of sufficient public importance that has already been:",
+      "options": {
+        "a": "Subjected to a lot of debate, needing elucidation on a matter of fact",
+        "b": "Referred to a select committee",
+        "c": "Rejected by the Rajya Sabha",
+        "d": "Raised as a point of order"
+      },
+      "answer": "a",
+      "a": "Subjected to a lot of debate, needing elucidation on a matter of fact",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker can allot how many days in a week for Half-an-Hour Discussions?",
+      "options": {
+        "a": "Four days",
+        "b": "Three days",
+        "c": "Two days",
+        "d": "Five days"
+      },
+      "answer": "b",
+      "a": "Three days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Short Duration Discussion is also known as a two-hour discussion and has been in existence since:",
+      "options": {
+        "a": "1954",
+        "b": "1950",
+        "c": "1953",
+        "d": "1962"
+      },
+      "answer": "c",
+      "a": "1953",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Is there a formal motion or voting before the House during a Short Duration Discussion?",
+      "options": {
+        "a": "Yes, both are required",
+        "b": "Only voting is required",
+        "c": "No, neither is required",
+        "d": "Only a formal motion is required"
+      },
+      "answer": "c",
+      "a": "No, neither is required",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The equivalent procedural device to 'Special Mention' in the Rajya Sabha is known in the Lok Sabha as:",
+      "options": {
+        "a": "Notice (Mention) Under Rule 377",
+        "b": "Zero Hour",
+        "c": "Half-an-Hour Discussion",
+        "d": "Calling Attention Motion"
+      },
+      "answer": "a",
+      "a": "Notice (Mention) Under Rule 377",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is discussed only on alternate Fridays and in the afternoon sitting?",
+      "options": {
+        "a": "Private Member's Resolution",
+        "b": "Substantive Motion",
+        "c": "Statutory Resolution",
+        "d": "Government Resolution"
+      },
+      "answer": "a",
+      "a": "Private Member's Resolution",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding Government Resolutions:\n(I) They may approve international treaties, conventions, or agreements to which the government is a party.\n(II) They may declare or approve certain policies of the government.\n(III) They may approve recommendations of certain committees.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I, II and III",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "a",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Statutory Resolution is so called because it is moved in pursuance of:",
+      "options": {
+        "a": "A recommendation of the Finance Commission",
+        "b": "A Cabinet decision",
+        "c": "A ruling of the Supreme Court",
+        "d": "A provision in the Constitution or an Act of Parliament"
+      },
+      "answer": "d",
+      "a": "A provision in the Constitution or an Act of Parliament",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Are all resolutions substantive motions?",
+      "options": {
+        "a": "Only Statutory Resolutions are",
+        "b": "Only Government Resolutions are",
+        "c": "Yes, all resolutions are substantive motions",
+        "d": "No, only some are"
+      },
+      "answer": "c",
+      "a": "Yes, all resolutions are substantive motions",
+      "e": "However, not all motions are of a substantive character, since not all motions require to be voted upon in the House.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The scheme of Youth Parliament was started on the recommendation of which body?",
+      "options": {
+        "a": "The General Purposes Committee",
+        "b": "The Fourth All India Whips Conference",
+        "c": "The Business Advisory Committee",
+        "d": "The Rules Committee"
+      },
+      "answer": "b",
+      "a": "The Fourth All India Whips Conference",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Bills introduced in Parliament are of two kinds: public bills and private bills, also known respectively as:",
+      "options": {
+        "a": "Original bills and amending bills",
+        "b": "Ordinary bills and constitutional bills",
+        "c": "Government bills and private members' bills",
+        "d": "Money bills and financial bills"
+      },
+      "answer": "c",
+      "a": "Government bills and private members' bills",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A bill that seeks to modify, amend, or revise an existing Act is classified, based on content, as a/an:",
+      "options": {
+        "a": "Original bill",
+        "b": "Validating bill",
+        "c": "Amending bill",
+        "d": "Consolidating bill"
+      },
+      "answer": "c",
+      "a": "Amending bill",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Based on procedure required for their passage in Parliament, bills can be broadly classified into how many types?",
+      "options": {
+        "a": "Four",
+        "b": "Five",
+        "c": "Three",
+        "d": "Two"
+      },
+      "answer": "a",
+      "a": "Four",
+      "e": "These are ordinary bills, money bills, financial bills, and Constitution amendment bills.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Introducing a Public Bill in the House requires how many days' notice?",
+      "options": {
+        "a": "Fourteen days",
+        "b": "One month",
+        "c": "Seven days",
+        "d": "Three days"
+      },
+      "answer": "c",
+      "a": "Seven days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Introducing a Private Bill in the House requires:",
+      "options": {
+        "a": "Fourteen days' notice",
+        "b": "No notice at all",
+        "c": "One month's notice",
+        "d": "Seven days' notice"
+      },
+      "answer": "c",
+      "a": "One month's notice",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whose responsibility is it to draft a Private Bill?",
+      "options": {
+        "a": "The law department",
+        "b": "The member concerned",
+        "c": "The Attorney General",
+        "d": "The concerned government department"
+      },
+      "answer": "b",
+      "a": "The member concerned",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The introduction of an ordinary bill and its publication in the Gazette of India together constitute which stage?",
+      "options": {
+        "a": "Second Reading",
+        "b": "Third Reading",
+        "c": "Committee Stage",
+        "d": "First Reading"
+      },
+      "answer": "d",
+      "a": "First Reading",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At the Stage of General Discussion during the Second Reading, are the details of a bill discussed?",
+      "options": {
+        "a": "Only financial details are discussed",
+        "b": "Only if referred to a select committee",
+        "c": "Yes, in full detail",
+        "d": "No, only the principles and provisions are discussed generally"
+      },
+      "answer": "d",
+      "a": "No, only the principles and provisions are discussed generally",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding actions the House can take at the Stage of General Discussion:\n(I) It may take the bill into consideration immediately or on a fixed date.\n(II) It may refer the bill to a select committee or a joint committee.\n(III) It may circulate the bill to elicit public opinion.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I, II and III",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Select Committee, as distinguished from a Joint Committee, consists of members of:",
+      "options": {
+        "a": "Both Houses of Parliament",
+        "b": "Only the House where the bill originated",
+        "c": "The Cabinet",
+        "d": "The Rajya Sabha exclusively"
+      },
+      "answer": "b",
+      "a": "Only the House where the bill originated",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Can a select committee alter the underlying principles of a bill while examining it clause by clause?",
+      "options": {
+        "a": "No; it can amend provisions but not alter the principles underlying the bill",
+        "b": "Only if unanimously agreed",
+        "c": "Yes, freely",
+        "d": "Only with Presidential approval"
+      },
+      "answer": "a",
+      "a": "No; it can amend provisions but not alter the principles underlying the bill",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At which stage is the debate confined to acceptance or rejection of the bill as a whole, with no amendments allowed?",
+      "options": {
+        "a": "Consideration Stage",
+        "b": "First Reading",
+        "c": "Third Reading",
+        "d": "Stage of General Discussion"
+      },
+      "answer": "c",
+      "a": "Third Reading",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If the first House rejects amendments suggested by the second House, or the second House rejects a bill altogether, or does not act on it for six months, what is deemed to have occurred?",
+      "options": {
+        "a": "The bill is referred to the President for a decision",
+        "b": "The bill is deemed passed",
+        "c": "A deadlock",
+        "d": "The bill automatically lapses"
+      },
+      "answer": "c",
+      "a": "A deadlock",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What kind of veto does the President enjoy with respect to an ordinary bill, given that the President must give assent to a bill passed again after being returned for reconsideration?",
+      "options": {
+        "a": "Pocket veto",
+        "b": "Absolute veto",
+        "c": "Suspensive veto",
+        "d": "Qualified veto"
+      },
+      "answer": "c",
+      "a": "Suspensive veto",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article of the Constitution deals with the definition of money bills?",
+      "options": {
+        "a": "Article 110",
+        "b": "Article 117",
+        "c": "Article 112",
+        "d": "Article 109"
+      },
+      "answer": "a",
+      "a": "Article 110",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A bill is not deemed to be a money bill merely because it provides for:",
+      "options": {
+        "a": "The appropriation of money out of the Consolidated Fund of India",
+        "b": "The custody of the Consolidated Fund of India",
+        "c": "The demand or payment of fees for licenses or services rendered",
+        "d": "The regulation of borrowing of money by the Union government"
+      },
+      "answer": "c",
+      "a": "The demand or payment of fees for licenses or services rendered",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whose decision is final on whether a bill is a money bill, and cannot be questioned even by the President?",
+      "options": {
+        "a": "The Speaker of the Lok Sabha",
+        "b": "The Attorney General",
+        "c": "The Chairman of the Rajya Sabha",
+        "d": "The President"
+      },
+      "answer": "a",
+      "a": "The Speaker of the Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A money bill can only be introduced in the Lok Sabha, and that too on the recommendation of:",
+      "options": {
+        "a": "The Finance Minister",
+        "b": "The President",
+        "c": "The Speaker",
+        "d": "The Cabinet"
+      },
+      "answer": "b",
+      "a": "The President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Within how many days must the Rajya Sabha return a money bill to the Lok Sabha, with or without recommendations?",
+      "options": {
+        "a": "30 days",
+        "b": "14 days",
+        "c": "7 days",
+        "d": "21 days"
+      },
+      "answer": "b",
+      "a": "14 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If the Rajya Sabha does not return a money bill to the Lok Sabha within the prescribed period, the bill is deemed to have been passed by both Houses:",
+      "options": {
+        "a": "Only after Presidential intervention",
+        "b": "Only after a joint sitting",
+        "c": "In the form originally passed by the Lok Sabha",
+        "d": "In the form modified by the Rajya Sabha"
+      },
+      "answer": "c",
+      "a": "In the form originally passed by the Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When a money bill is presented to the President, which option is NOT available to him/her?",
+      "options": {
+        "a": "Both",
+        "b": "Return the bill for reconsideration of the Houses",
+        "c": "",
+        "d": "and"
+      },
+      "answer": "b",
+      "a": "Return the bill for reconsideration of the Houses",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Financial Bills (I) are dealt with under which Article of the Constitution?",
+      "options": {
+        "a": "Article 110",
+        "b": "Article 109",
+        "c": "Article 117(1)",
+        "d": "Article 117(3)"
+      },
+      "answer": "c",
+      "a": "Article 117(1)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which respects is a Financial Bill (I) similar to a money bill?",
+      "options": {
+        "a": "It cannot be rejected by the Rajya Sabha",
+        "b": "It can be introduced only in the Lok Sabha and only on the President's recommendation",
+        "c": "It requires Rajya Sabha's approval and cannot be amended",
+        "d": "It is exempt from Presidential assent"
+      },
+      "answer": "b",
+      "a": "It can be introduced only in the Lok Sabha and only on the President's recommendation",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For a Financial Bill (I), whose recommendation is NOT required to move an amendment for reduction or abolition of a tax?",
+      "options": {
+        "a": "The Finance Minister's",
+        "b": "The Speaker's",
+        "c": "The President's",
+        "d": "The Cabinet's"
+      },
+      "answer": "c",
+      "a": "The President's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Financial Bill (II), governed in all respects by the same legislative procedure as an ordinary bill, contains provisions involving expenditure from the Consolidated Fund of India but does NOT include:",
+      "options": {
+        "a": "Any reference to the Contingency Fund",
+        "b": "Any general legislative matters",
+        "c": "Any of the matters mentioned in Article 110",
+        "d": "Any reference to taxation"
+      },
+      "answer": "c",
+      "a": "Any of the matters mentioned in Article 110",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At what stage is the President's recommendation required for a Financial Bill (II)?",
+      "options": {
+        "a": "Recommendation is never required",
+        "b": "At both introduction and consideration stages",
+        "c": "At the consideration stage",
+        "d": "At the introduction stage"
+      },
+      "answer": "c",
+      "a": "At the consideration stage",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements about money bills and financial bills is correct?",
+      "options": {
+        "a": "All financial bills are money bills",
+        "b": "Financial bills and money bills are entirely unrelated categories",
+        "c": "Money bills are a subset of Financial Bills (II) only",
+        "d": "All money bills are financial bills, but not all financial bills are money bills"
+      },
+      "answer": "d",
+      "a": "All money bills are financial bills, but not all financial bills are money bills",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A deadlock between the two Houses of Parliament over a bill, warranting a joint sitting, is deemed to occur under which of the following situations?",
+      "options": {
+        "a": "All of the above",
+        "b": "If the Houses have finally disagreed on amendments",
+        "c": "If the bill is rejected by the other House",
+        "d": "If more than six months have elapsed without the bill being passed by the other House"
+      },
+      "answer": "a",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The provision for joint sitting is applicable to which type(s) of bills?",
+      "options": {
+        "a": "All types of bills including money bills",
+        "b": "Ordinary bills or financial bills only",
+        "c": "Money bills only",
+        "d": "Constitutional amendment bills only"
+      },
+      "answer": "b",
+      "a": "Ordinary bills or financial bills only",
+      "e": "Joint sitting does not apply to money bills, where the Lok Sabha has overriding powers, or to Constitutional amendment bills, which must be passed by each House separately.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who presides over a joint sitting of the two Houses of Parliament?",
+      "options": {
+        "a": "The Chairman of the Rajya Sabha",
+        "b": "The President",
+        "c": "The Vice-President",
+        "d": "The Speaker of the Lok Sabha"
+      },
+      "answer": "d",
+      "a": "The Speaker of the Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the absence of the Speaker and Deputy Speaker at a joint sitting, who presides?",
+      "options": {
+        "a": "The Chairman of Rajya Sabha",
+        "b": "The Prime Minister",
+        "c": "The Deputy Chairman of Rajya Sabha",
+        "d": "The senior-most Lok Sabha member"
+      },
+      "answer": "c",
+      "a": "The Deputy Chairman of Rajya Sabha",
+      "e": "If the Deputy Chairman is also absent, such other person as determined by the members present at the joint sitting presides; the Chairman of Rajya Sabha never presides since he/she is not a member of either House.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whose Rules of Procedure govern a joint sitting of the two Houses?",
+      "options": {
+        "a": "Lok Sabha's",
+        "b": "The President's own directions",
+        "c": "A jointly-drafted special set of rules",
+        "d": "Rajya Sabha's"
+      },
+      "answer": "a",
+      "a": "Lok Sabha's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At a joint sitting, new amendments to a bill cannot be proposed except in two specific cases. Which of the following is one of them?",
+      "options": {
+        "a": "Amendments relating to money matters",
+        "b": "Amendments that caused the final disagreement between the Houses",
+        "c": "Amendments suggested by the President",
+        "d": "Amendments proposed by the Rajya Sabha Chairman"
+      },
+      "answer": "b",
+      "a": "Amendments that caused the final disagreement between the Houses",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Since 1950, how many times has the provision for joint sitting of the two Houses actually been invoked?",
+      "options": {
+        "a": "Thrice",
+        "b": "Twice",
+        "c": "Four times",
+        "d": "Five times"
+      },
+      "answer": "a",
+      "a": "Thrice",
+      "e": "The three bills passed at joint sittings were the Dowry Prohibition Bill (1960), the Banking Service Commission (Repeal) Bill (1977), and the Prevention of Terrorism Bill (2002).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Constitution refers to the budget by which term, since the word 'budget' itself is not used anywhere in the Constitution?",
+      "options": {
+        "a": "Financial Statement",
+        "b": "Annual Financial Statement",
+        "c": "Union Statement",
+        "d": "Fiscal Statement"
+      },
+      "answer": "b",
+      "a": "Annual Financial Statement",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 'annual financial statement' is dealt with under which Article of the Constitution?",
+      "options": {
+        "a": "Article 112",
+        "b": "Article 113",
+        "c": "Article 110",
+        "d": "Article 116"
+      },
+      "answer": "a",
+      "a": "Article 112",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "India's financial year, for budget purposes, begins on 1 April and ends on:",
+      "options": {
+        "a": "30 April",
+        "b": "31 January",
+        "c": "31 December",
+        "d": "31 March"
+      },
+      "answer": "d",
+      "a": "31 March",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On the recommendations of which committee's report was the Railway Budget separated from the General Budget in 1924?",
+      "options": {
+        "a": "Acworth Committee Report, 1921",
+        "b": "Ayyangar Committee Report",
+        "c": "Sarkaria Commission Report",
+        "d": "Simon Commission Report"
+      },
+      "answer": "a",
+      "a": "Acworth Committee Report, 1921",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did the Central Government merge the Railway Budget into the General Budget?",
+      "options": {
+        "a": "2014",
+        "b": "2016",
+        "c": "2017",
+        "d": "2019"
+      },
+      "answer": "c",
+      "a": "2017",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "No demand for a grant shall be made except on the recommendation of the President, under which Article of the Constitution?",
+      "options": {
+        "a": "Article 112",
+        "b": "Article 113",
+        "c": "Article 114",
+        "d": "Article 265"
+      },
+      "answer": "b",
+      "a": "Article 113",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under which Article does the Constitution provide that no money shall be withdrawn from the Consolidated Fund of India except under appropriation made by law?",
+      "options": {
+        "a": "Article 112",
+        "b": "Article 113",
+        "c": "Article 117",
+        "d": "Article 114"
+      },
+      "answer": "d",
+      "a": "Article 114",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A money bill imposing tax shall not be introduced except on the recommendation of the President, and shall not be introduced in the Rajya Sabha, under which Article?",
+      "options": {
+        "a": "Article 109",
+        "b": "Article 265",
+        "c": "Article 113",
+        "d": "Article 117"
+      },
+      "answer": "d",
+      "a": "Article 117",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "\"No tax shall be levied or collected except by authority of law\" is provided under which Article?",
+      "options": {
+        "a": "Article 265",
+        "b": "Article 117",
+        "c": "Article 112",
+        "d": "Article 114"
+      },
+      "answer": "a",
+      "a": "Article 265",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Regarding the enactment of the budget, can Parliament increase a tax proposed in the budget?",
+      "options": {
+        "a": "No; Parliament can reduce or abolish a tax but cannot increase it",
+        "b": "Only with a special majority",
+        "c": "Yes, freely",
+        "d": "Only the Lok Sabha can increase a tax"
+      },
+      "answer": "a",
+      "a": "No; Parliament can reduce or abolish a tax but cannot increase it",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Rajya Sabha should return a money bill or finance bill dealing with taxation to the Lok Sabha within how many days, under Article 109?",
+      "options": {
+        "a": "21 days",
+        "b": "30 days",
+        "c": "7 days",
+        "d": "14 days"
+      },
+      "answer": "d",
+      "a": "14 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Voting on the demand for grants during the budget process is the exclusive privilege of which House?",
+      "options": {
+        "a": "Rajya Sabha",
+        "b": "Lok Sabha",
+        "c": "A joint sitting only",
+        "d": "Both Houses jointly"
+      },
+      "answer": "b",
+      "a": "Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Lok Sabha can make a grant in advance for a part of the financial year, pending completion of voting on demands for grants, under which Article?",
+      "options": {
+        "a": "Article 114",
+        "b": "Article 113",
+        "c": "Article 116",
+        "d": "Article 112"
+      },
+      "answer": "c",
+      "a": "Article 116",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of budget expenditure is non-votable by Parliament, being subject only to discussion?",
+      "options": {
+        "a": "Supplementary expenditure",
+        "b": "Votable expenditure",
+        "c": "Contingency expenditure",
+        "d": "Charged expenditure"
+      },
+      "answer": "d",
+      "a": "Charged expenditure",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is part of the 'charged' expenditure on the Consolidated Fund of India?",
+      "options": {
+        "a": "Salaries and allowances of the Speaker and Deputy Speaker of Lok Sabha",
+        "b": "Grants to state governments",
+        "c": "Salaries of all central government employees",
+        "d": "Salaries of all Members of Parliament"
+      },
+      "answer": "a",
+      "a": "Salaries and allowances of the Speaker and Deputy Speaker of Lok Sabha",
+      "e": "The salaries and allowances of the Chairman and Deputy Chairman of Rajya Sabha and the Speaker and Deputy Speaker of Lok Sabha are charged expenditure, along with items such as judges' salaries and the President's emoluments.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Pensions of judges of which court are listed as charged expenditure, but NOT their salaries and allowances (which are charged only for Supreme Court judges)?",
+      "options": {
+        "a": "High Courts",
+        "b": "Tribunals",
+        "c": "Supreme Court",
+        "d": "District Courts"
+      },
+      "answer": "a",
+      "a": "High Courts",
+      "e": "For Supreme Court judges, salaries, allowances, and pensions are all charged; for High Court judges, only pensions are listed as charged expenditure.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Since 2017, on which date is the Union Budget presented to the Lok Sabha, advanced from the earlier practice of the last working day of February?",
+      "options": {
+        "a": "1st February",
+        "b": "31st January",
+        "c": "1st March",
+        "d": "15th February"
+      },
+      "answer": "a",
+      "a": "1st February",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Conventionally, who presents the budget to the Lok Sabha with a speech known as the 'budget speech'?",
+      "options": {
+        "a": "The Finance Minister",
+        "b": "The President",
+        "c": "The Prime Minister",
+        "d": "The Speaker"
+      },
+      "answer": "a",
+      "a": "The Finance Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Can the Rajya Sabha vote on the demands for grants after the budget is laid before it?",
+      "options": {
+        "a": "Yes, fully",
+        "b": "Only with Lok Sabha's prior consent",
+        "c": "No; it can only discuss the budget",
+        "d": "Only on non-charged items"
+      },
+      "answer": "c",
+      "a": "No; it can only discuss the budget",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which report, prepared by the finance ministry and indicating the status of the national economy, is now presented one day or a few days before the budget?",
+      "options": {
+        "a": "Fiscal Policy Strategy Statement",
+        "b": "Annual Financial Statement",
+        "c": "Economic Survey",
+        "d": "Outcome Budget"
+      },
+      "answer": "c",
+      "a": "Economic Survey",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During the General Discussion stage on the budget, can a cut motion be moved or the budget submitted to a vote?",
+      "options": {
+        "a": "Only a vote is allowed",
+        "b": "Only a cut motion is allowed",
+        "c": "No; neither a cut motion nor a vote is permitted at this stage",
+        "d": "Yes, both are allowed"
+      },
+      "answer": "c",
+      "a": "No; neither a cut motion nor a vote is permitted at this stage",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the departmental standing committee system, which scrutinises demands for grants, established?",
+      "options": {
+        "a": "1998",
+        "b": "1993",
+        "c": "2004",
+        "d": "1989"
+      },
+      "answer": "b",
+      "a": "1993",
+      "e": "The system was later expanded in 2004.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many departmental standing committees of Parliament examine and discuss the demands for grants during the budget process?",
+      "options": {
+        "a": "20",
+        "b": "24",
+        "c": "17",
+        "d": "30"
+      },
+      "answer": "b",
+      "a": "24",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of cut motion represents disapproval of the policy underlying a demand, stating that the amount be reduced to ₹1?",
+      "options": {
+        "a": "Token Cut Motion",
+        "b": "Guillotine Motion",
+        "c": "Economy Cut Motion",
+        "d": "Policy Cut Motion"
+      },
+      "answer": "d",
+      "a": "Policy Cut Motion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of cut motion ventilates a specific grievance within the responsibility of the Government of India, stating that the demand be reduced by ₹100?",
+      "options": {
+        "a": "Economy Cut Motion",
+        "b": "Token Cut Motion",
+        "c": "Substantive Motion",
+        "d": "Policy Cut Motion"
+      },
+      "answer": "b",
+      "a": "Token Cut Motion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On the last day allotted for discussion and voting on demands for grants, the Speaker puts all remaining demands to vote regardless of whether they were discussed. This practice is called:",
+      "options": {
+        "a": "Guillotine",
+        "b": "Kangaroo Closure",
+        "c": "Simple Closure",
+        "d": "Vote of Credit"
+      },
+      "answer": "a",
+      "a": "Guillotine",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "After demands for grants are voted on and passed by the Lok Sabha, which bill is introduced to provide for appropriation of money from the Consolidated Fund of India?",
+      "options": {
+        "a": "Finance Bill",
+        "b": "Financial Bill (I)",
+        "c": "Appropriation Bill",
+        "d": "Vote on Account Bill"
+      },
+      "answer": "c",
+      "a": "Appropriation Bill",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The provision allowing the Lok Sabha to make a grant in advance, pending completion of the demands for grants voting and enactment of the appropriation bill, is known as the:",
+      "options": {
+        "a": "Vote of Credit",
+        "b": "Vote on Account",
+        "c": "Supplementary Grant",
+        "d": "Token Grant"
+      },
+      "answer": "b",
+      "a": "Vote on Account",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Vote on Account is generally granted for two months, for an amount equivalent to what fraction of the total estimation?",
+      "options": {
+        "a": "One-fifth",
+        "b": "One-fourth",
+        "c": "One-eighth",
+        "d": "One-sixth"
+      },
+      "answer": "d",
+      "a": "One-sixth",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In an election year, the Vote on Account may be taken for a longer period, of about:",
+      "options": {
+        "a": "3 to 5 months",
+        "b": "6 to 8 months",
+        "c": "The full financial year",
+        "d": "1 to 2 months"
+      },
+      "answer": "a",
+      "a": "3 to 5 months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 'Finance Bill' gives effect to the financial proposals of the Government of India and is subject to all conditions applicable to a:",
+      "options": {
+        "a": "Financial Bill (II)",
+        "b": "Financial Bill (I)",
+        "c": "Constitution Amendment Bill",
+        "d": "Money Bill"
+      },
+      "answer": "d",
+      "a": "Money Bill",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to the Provisional Collection of Taxes Act of 1931, within how many days must the Finance Bill be enacted?",
+      "options": {
+        "a": "75 days",
+        "b": "60 days",
+        "c": "30 days",
+        "d": "45 days"
+      },
+      "answer": "a",
+      "a": "75 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of grant is made when the amount authorised through the appropriation act for a service is found insufficient for that year?",
+      "options": {
+        "a": "Supplementary Grant",
+        "b": "Excess Grant",
+        "c": "Token Grant",
+        "d": "Additional Grant"
+      },
+      "answer": "a",
+      "a": "Supplementary Grant",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of grant is made when a need arises during the current financial year for expenditure on a new service not contemplated in the budget?",
+      "options": {
+        "a": "Supplementary Grant",
+        "b": "Excess Grant",
+        "c": "Additional Grant",
+        "d": "Exceptional Grant"
+      },
+      "answer": "c",
+      "a": "Additional Grant",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Before demands for excess grants are submitted to the Lok Sabha for voting, they must first be approved by which committee?",
+      "options": {
+        "a": "Public Accounts Committee",
+        "b": "Business Advisory Committee",
+        "c": "Estimates Committee",
+        "d": "Committee on Public Undertakings"
+      },
+      "answer": "a",
+      "a": "Public Accounts Committee",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of grant is described as being like a \"blank cheque\" given to the Executive by the Lok Sabha, for meeting an unexpected demand whose magnitude or character cannot be stated with the usual budget detail?",
+      "options": {
+        "a": "Excess Grant",
+        "b": "Exceptional Grant",
+        "c": "Token Grant",
+        "d": "Vote of Credit"
+      },
+      "answer": "d",
+      "a": "Vote of Credit",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Token Grant is granted when funds for a proposed new service can be made available through:",
+      "options": {
+        "a": "Reappropriation",
+        "b": "A vote of credit",
+        "c": "A supplementary budget",
+        "d": "An exceptional grant"
+      },
+      "answer": "a",
+      "a": "Reappropriation",
+      "e": "Reappropriation involves transfer of funds from one head to another and does not involve any additional expenditure.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which fund is a fund to which all receipts are credited and all payments are debited, with no money appropriated from it except in accordance with a parliamentary law?",
+      "options": {
+        "a": "Consolidated Fund of India",
+        "b": "Public Account of India",
+        "c": "Reserve Fund of India",
+        "d": "Contingency Fund of India"
+      },
+      "answer": "a",
+      "a": "Consolidated Fund of India",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Consolidated Fund of India and Public Account of India are both dealt with under which Article of the Constitution?",
+      "options": {
+        "a": "Article 266",
+        "b": "Article 267",
+        "c": "Article 265",
+        "d": "Article 268"
+      },
+      "answer": "a",
+      "a": "Article 266",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Payments from the Public Account of India, which includes provident fund deposits and savings bank deposits, can be made:",
+      "options": {
+        "a": "Only with Presidential assent",
+        "b": "Only with parliamentary appropriation",
+        "c": "Only via the Appropriation Act",
+        "d": "Without parliamentary appropriation, by executive action"
+      },
+      "answer": "d",
+      "a": "Without parliamentary appropriation, by executive action",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Contingency Fund of India, established under Article 267, is placed at the disposal of:",
+      "options": {
+        "a": "The President",
+        "b": "The Speaker",
+        "c": "The Comptroller and Auditor General",
+        "d": "The Finance Minister"
+      },
+      "answer": "a",
+      "a": "The President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Contingency Fund of India Act enacted by Parliament?",
+      "options": {
+        "a": "1948",
+        "b": "1950",
+        "c": "1958",
+        "d": "1953"
+      },
+      "answer": "b",
+      "a": "1950",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who holds the Contingency Fund of India on behalf of the President?",
+      "options": {
+        "a": "The Cabinet Secretary",
+        "b": "The Finance Secretary",
+        "c": "The Comptroller and Auditor General",
+        "d": "The Reserve Bank Governor"
+      },
+      "answer": "b",
+      "a": "The Finance Secretary",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many subjects does the Union List presently contain, as against 97 originally?",
+      "options": {
+        "a": "97",
+        "b": "98",
+        "c": "105",
+        "d": "100"
+      },
+      "answer": "b",
+      "a": "98",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many subjects does the Concurrent List presently contain, as against 47 originally?",
+      "options": {
+        "a": "47",
+        "b": "52",
+        "c": "66",
+        "d": "59"
+      },
+      "answer": "b",
+      "a": "52",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "With regard to the Concurrent List, whose law prevails in case of a conflict between Parliament and a state legislature?",
+      "options": {
+        "a": "Parliament's law",
+        "b": "Neither; the matter goes to the Supreme Court automatically",
+        "c": "The state legislature's law",
+        "d": "The President decides case by case"
+      },
+      "answer": "a",
+      "a": "Parliament's law",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many subjects does the State List presently contain, having been reduced from an original 66?",
+      "options": {
+        "a": "47",
+        "b": "52",
+        "c": "59",
+        "d": "61"
+      },
+      "answer": "c",
+      "a": "59",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding circumstances under which Parliament can make laws on subjects in the State List:\n(I) When the Rajya Sabha passes a resolution to that effect.\n(II) When two or more states make a joint request to Parliament.\n(III) When the Lok Sabha is dissolved.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I, II and III",
+        "c": "I and II only",
+        "d": "I and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "The five abnormal circumstances are: Rajya Sabha resolution, National Emergency, joint request by states, giving effect to international agreements, and President's Rule in the state — dissolution of the Lok Sabha is not among them.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Ordinances issued by the President during the recess of Parliament must be approved by Parliament within how many weeks after its reassembly?",
+      "options": {
+        "a": "Twelve weeks",
+        "b": "Four weeks",
+        "c": "Eight weeks",
+        "d": "Six weeks"
+      },
+      "answer": "d",
+      "a": "Six weeks",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Rules and regulations made by the Executive within the framework of a parent law, known as delegated legislation, are:",
+      "options": {
+        "a": "Placed before Parliament for examination",
+        "b": "Exempt from parliamentary scrutiny",
+        "c": "Automatically valid without any check",
+        "d": "Reviewed only by the judiciary"
+      },
+      "answer": "a",
+      "a": "Placed before Parliament for examination",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a way the Lok Sabha can express lack of confidence in the government, apart from a no-confidence motion?",
+      "options": {
+        "a": "By not passing a motion of thanks on the President's inaugural address",
+        "b": "By approving the budget",
+        "c": "By electing a new Speaker",
+        "d": "By passing a Vote on Account"
+      },
+      "answer": "a",
+      "a": "By not passing a motion of thanks on the President's inaugural address",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which financial committee examines cases of illegal, irregular, or improper usage of public expenditure, along with the Estimates Committee and Committee on Public Undertakings?",
+      "options": {
+        "a": "General Purposes Committee",
+        "b": "Public Accounts Committee",
+        "c": "Business Advisory Committee",
+        "d": "Rules Committee"
+      },
+      "answer": "b",
+      "a": "Public Accounts Committee",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Parliamentary control over the Executive in financial matters operates in two stages: budgetary control and:",
+      "options": {
+        "a": "Mid-year control",
+        "b": "Post-budgetary control",
+        "c": "Pre-budgetary control",
+        "d": "Emergency control"
+      },
+      "answer": "b",
+      "a": "Post-budgetary control",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The practice by which granted money not spent by the end of the financial year returns to the Consolidated Fund of India is known as the:",
+      "options": {
+        "a": "Rule of lapse",
+        "b": "Rule of guillotine",
+        "c": "Rule of reappropriation",
+        "d": "Rule of annuity"
+      },
+      "answer": "a",
+      "a": "Rule of lapse",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The heavy rush of government expenditure towards the close of the financial year, resulting from the rule of lapse, is popularly called:",
+      "options": {
+        "a": "March Rush",
+        "b": "Year-end surge",
+        "c": "Budget squeeze",
+        "d": "Fiscal crunch"
+      },
+      "answer": "a",
+      "a": "March Rush",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The major part of the Constitution can be amended by Parliament with which type of majority?",
+      "options": {
+        "a": "Simple majority",
+        "b": "Absolute majority",
+        "c": "Effective majority",
+        "d": "Special majority"
+      },
+      "answer": "d",
+      "a": "Special majority",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which authority alone has the power to initiate the process of Constitutional amendment, among the three ways of amendment?",
+      "options": {
+        "a": "The state legislatures",
+        "b": "The President",
+        "c": "Parliament exclusively",
+        "d": "The Supreme Court"
+      },
+      "answer": "c",
+      "a": "Parliament exclusively",
+      "e": "The one exception is that a state legislature can pass a resolution requesting Parliament for the creation or abolition of a legislative council in that state.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court rule that Parliament's constituent power is subject to the 'basic structure' of the Constitution?",
+      "options": {
+        "a": "Minerva Mills case",
+        "b": "Kihoto Hollohan case",
+        "c": "Kesavananda Bharati case",
+        "d": "Golaknath case"
+      },
+      "answer": "c",
+      "a": "Kesavananda Bharati case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a judicial power and function of Parliament?",
+      "options": {
+        "a": "Approving the budget",
+        "b": "Creating new All-India Services",
+        "c": "Impeaching the President for violation of the Constitution",
+        "d": "Electing the Vice-President"
+      },
+      "answer": "c",
+      "a": "Impeaching the President for violation of the Constitution",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under its electoral powers, the Rajya Sabha elects its:",
+      "options": {
+        "a": "Deputy Chairman",
+        "b": "Chairman",
+        "c": "Deputy Speaker",
+        "d": "Speaker"
+      },
+      "answer": "a",
+      "a": "Deputy Chairman",
+      "e": "The Lok Sabha elects its Speaker and Deputy Speaker, while the Rajya Sabha elects only its Deputy Chairman, since the Chairman is the ex-officio Vice-President.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act, enacted by Parliament under its electoral powers, regulates elections to the offices of President and Vice-President?",
+      "options": {
+        "a": "Presidential and Vice-Presidential Elections Act, 1952",
+        "b": "Representation of the People Act, 1950",
+        "c": "Representation of the People Act, 1951",
+        "d": "Delimitation Act, 1952"
+      },
+      "answer": "a",
+      "a": "Presidential and Vice-Presidential Elections Act, 1952",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a factor contributing to the ineffectiveness of parliamentary control over administration in India?",
+      "options": {
+        "a": "The small size of Parliament",
+        "b": "The excessive strength of the opposition",
+        "c": "The absence of financial committees",
+        "d": "The growth of delegated legislation increasing the powers of bureaucracy"
+      },
+      "answer": "d",
+      "a": "The growth of delegated legislation increasing the powers of bureaucracy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Financial committees like the Public Accounts Committee examine public expenditure only after it has been incurred by the Executive, meaning they do:",
+      "options": {
+        "a": "Pre-emptive work",
+        "b": "Post mortem work",
+        "c": "Real-time audits",
+        "d": "Predictive analysis"
+      },
+      "answer": "b",
+      "a": "Post mortem work",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which of the following matters is the Rajya Sabha's status equal to that of the Lok Sabha?",
+      "options": {
+        "a": "Passing a no-confidence motion",
+        "b": "Election and impeachment of the President",
+        "c": "Introduction of money bills",
+        "d": "Voting on demands for grants"
+      },
+      "answer": "b",
+      "a": "Election and impeachment of the President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Regarding removal of the Vice-President, which House alone can initiate the resolution for removal?",
+      "options": {
+        "a": "Lok Sabha",
+        "b": "Either House",
+        "c": "A joint sitting",
+        "d": "Rajya Sabha"
+      },
+      "answer": "d",
+      "a": "Rajya Sabha",
+      "e": "The resolution is passed by the Rajya Sabha with effective majority and then agreed to by the Lok Sabha with simple majority.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whose responsibility are ministers, including the Prime Minister, regardless of which House they belong to?",
+      "options": {
+        "a": "Responsible only to the Lok Sabha",
+        "b": "Responsible only to the Rajya Sabha",
+        "c": "Responsible to both Houses equally",
+        "d": "Responsible only to the President"
+      },
+      "answer": "a",
+      "a": "Responsible only to the Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Regarding a financial bill not containing solely the matters of Article 110, which House alone can it be introduced in?",
+      "options": {
+        "a": "Neither House; only via joint sitting",
+        "b": "Rajya Sabha",
+        "c": "Either House",
+        "d": "Lok Sabha"
+      },
+      "answer": "d",
+      "a": "Lok Sabha",
+      "e": "While it can be introduced only in the Lok Sabha, both Houses have equal powers regarding its passage.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Can the Rajya Sabha remove the council of ministers by passing a no-confidence motion?",
+      "options": {
+        "a": "No, because the council of ministers is collectively responsible only to the Lok Sabha",
+        "b": "Yes, freely",
+        "c": "Only during a national emergency",
+        "d": "Only with a two-thirds majority"
+      },
+      "answer": "a",
+      "a": "No, because the council of ministers is collectively responsible only to the Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an exclusive/special power of the Rajya Sabha, not enjoyed by the Lok Sabha?",
+      "options": {
+        "a": "Authorising Parliament to create new All-India Services",
+        "b": "Passing a no-confidence motion",
+        "c": "Voting on demands for grants",
+        "d": "Electing the Speaker"
+      },
+      "answer": "a",
+      "a": "Authorising Parliament to create new All-India Services",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If a proclamation of national emergency, President's Rule, or financial emergency is issued at a time when the Lok Sabha has been dissolved, the proclamation can remain effective if approved by:",
+      "options": {
+        "a": "The President alone",
+        "b": "A joint sitting",
+        "c": "The Lok Sabha alone, once reconstituted",
+        "d": "The Rajya Sabha alone"
+      },
+      "answer": "d",
+      "a": "The Rajya Sabha alone",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The position of the Rajya Sabha in India's constitutional system has been described as:",
+      "options": {
+        "a": "As weak as the House of Lords in Britain",
+        "b": "Neither as weak as the House of Lords nor as strong as the American Senate",
+        "c": "Identical in power to the Lok Sabha in all respects",
+        "d": "As strong as the Senate in the USA"
+      },
+      "answer": "b",
+      "a": "Neither as weak as the House of Lords nor as strong as the American Senate",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is cited as a ground supporting the utility of the Rajya Sabha, despite its lesser powers compared to the Lok Sabha?",
+      "options": {
+        "a": "It alone can pass money bills",
+        "b": "It alone can remove the council of ministers",
+        "c": "It checks hasty, defective, or ill-considered legislation made by the Lok Sabha",
+        "d": "It has exclusive power over the budget"
+      },
+      "answer": "c",
+      "a": "It checks hasty, defective, or ill-considered legislation made by the Lok Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Do parliamentary privileges extend to the President, who is also an integral part of Parliament?",
+      "options": {
+        "a": "Only during joint sittings",
+        "b": "No",
+        "c": "Yes, fully",
+        "d": "Only for freedom of speech"
+      },
+      "answer": "b",
+      "a": "No",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment Act restored the freedom of the press to publish true reports of parliamentary proceedings without prior permission of the House?",
+      "options": {
+        "a": "52nd Amendment Act, 1985",
+        "b": "42nd Amendment Act, 1976",
+        "c": "61st Amendment Act, 1988",
+        "d": "44th Amendment Act, 1978"
+      },
+      "answer": "d",
+      "a": "44th Amendment Act, 1978",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Does the collective privilege of publishing true reports of proceedings apply to a secret sitting of the House?",
+      "options": {
+        "a": "Only with Speaker's permission",
+        "b": "Only for the Lok Sabha",
+        "c": "Yes, always",
+        "d": "No, this is not applicable in the case of a secret sitting"
+      },
+      "answer": "d",
+      "a": "No, this is not applicable in the case of a secret sitting",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For how many days before the beginning and after the end of a session are members of Parliament protected from arrest, under individual privileges?",
+      "options": {
+        "a": "20 days",
+        "b": "40 days",
+        "c": "30 days",
+        "d": "60 days"
+      },
+      "answer": "b",
+      "a": "40 days",
+      "e": "This privilege from arrest is available only in civil cases, not in criminal cases or preventive detention cases.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A member's freedom of speech in Parliament, protecting them from court proceedings for anything said or voted, is subject to:",
+      "options": {
+        "a": "A two-thirds majority resolution",
+        "b": "Approval of the Speaker each time",
+        "c": "The provisions of the Constitution and rules regulating parliamentary procedure",
+        "d": "No restrictions whatsoever"
+      },
+      "answer": "c",
+      "a": "The provisions of the Constitution and rules regulating parliamentary procedure",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements distinguishing 'breach of privilege' from 'contempt of the House':\n(I) Contempt is not always a breach of privilege, but a breach of privilege is always contempt.\n(II) Breach of privilege is a clear violation of specific privileges, immunities, or powers.\n(III) Contempt applies only to actions taken by outsiders, never by members.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Contempt is a broader concept applying to any act or omission that obstructs the House or produces results against its dignity, and it can apply to members as well as outsiders.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Originally, Article 105 of the Constitution expressly mentioned freedom of speech in Parliament and which other privilege?",
+      "options": {
+        "a": "Immunity from arrest",
+        "b": "Exemption from jury service",
+        "c": "Right of publication of its proceedings",
+        "d": "Right to punish for contempt"
+      },
+      "answer": "c",
+      "a": "Right of publication of its proceedings",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "With regard to privileges other than those expressly mentioned, the Constitution originally provided that they were to be the same as those of which body, until defined by Parliament?",
+      "options": {
+        "a": "The American Congress",
+        "b": "The Canadian Parliament",
+        "c": "The British House of Commons",
+        "d": "The Australian Parliament"
+      },
+      "answer": "c",
+      "a": "The British House of Commons",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 44th Amendment Act of 1978 made only verbal changes regarding other privileges, by dropping direct reference to:",
+      "options": {
+        "a": "The British Crown",
+        "b": "The British House of Lords",
+        "c": "The American Senate",
+        "d": "The British House of Commons"
+      },
+      "answer": "d",
+      "a": "The British House of Commons",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Parliament's privileges are based on how many sources, given that Parliament has not made a special law to exhaustively codify them?",
+      "options": {
+        "a": "Five",
+        "b": "Four",
+        "c": "Three",
+        "d": "Six"
+      },
+      "answer": "a",
+      "a": "Five",
+      "e": "These are Constitutional provisions, laws made by Parliament, Rules of both Houses, Parliamentary conventions, and Judicial interpretations.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to A.V. Dicey, the doctrine of sovereignty of Parliament, a cardinal feature of the British constitutional system, has how many implications?",
+      "options": {
+        "a": "Five",
+        "b": "Four",
+        "c": "Three",
+        "d": "Two"
+      },
+      "answer": "c",
+      "a": "Three",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT among the factors that limit the sovereignty of the Indian Parliament, as compared to the British Parliament?",
+      "options": {
+        "a": "System of judicial review",
+        "b": "Written nature of the Constitution",
+        "c": "Federal system of government",
+        "d": "Absence of a written Constitution"
+      },
+      "answer": "d",
+      "a": "Absence of a written Constitution",
+      "e": "India has a written Constitution, unlike Britain, and this is precisely one of the factors limiting Indian parliamentary sovereignty, not its absence.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The incorporation of a code of justiciable fundamental rights, restricting Parliament's authority, is found under which Part of the Constitution?",
+      "options": {
+        "a": "Part III",
+        "b": "Part IV",
+        "c": "Part II",
+        "d": "Part V"
+      },
+      "answer": "a",
+      "a": "Part III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 13 prohibits the State from making a law that takes away or abrogates a fundamental right; consequently, a Parliamentary law contravening fundamental rights shall be:",
+      "options": {
+        "a": "Subject only to legislative correction",
+        "b": "Void",
+        "c": "Valid but unenforceable",
+        "d": "Referred to the President for review"
+      },
+      "answer": "b",
+      "a": "Void",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In terms of legal restriction on legislative sovereignty, the Indian Parliament is said to be similar to which legislature?",
+      "options": {
+        "a": "The Australian Parliament",
+        "b": "The American Congress",
+        "c": "The Canadian Parliament",
+        "d": "The British Parliament"
+      },
+      "answer": "b",
+      "a": "The American Congress",
+      "e": "Both are legally restricted by a written Constitution, a federal system, judicial review, and a Bill/Code of Rights.",
+      "table": null
+    }
+  ]
+}

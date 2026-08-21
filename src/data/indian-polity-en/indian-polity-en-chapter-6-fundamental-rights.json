@@ -1,0 +1,2991 @@
+{
+  "slug": "indian-polity-en-chapter-6-fundamental-rights",
+  "chapterNumber": 6,
+  "title": "Fundamental Rights",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following regarding \"State\" under Article 12:\n(I) Government and Parliament of India\n(II) All local authorities\n(III) Statutory or non-statutory authorities like LIC, ONGC, SAIL\nWhich of the above are included?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and II only",
+        "c": "All of the above",
+        "d": "I only"
+      },
+      "answer": "c",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A private body acting as an instrument of the State falls within \"State\" under which Article?",
+      "options": {
+        "a": "Article 32",
+        "b": "Article 14",
+        "c": "Article 12",
+        "d": "Article 13"
+      },
+      "answer": "c",
+      "a": "Article 12",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 13 expressly provides for which doctrine?",
+      "options": {
+        "a": "Judicial review",
+        "b": "Eclipse",
+        "c": "Colourable legislation",
+        "d": "Pith and substance"
+      },
+      "answer": "a",
+      "a": "Judicial review",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which is included within \"law\" under Article 13?\n(I) Ordinances issued by the President or Governors\n(II) Custom or usage having the force of law\n(III) A constitutional amendment",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "All of the above"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Article 13 declares a constitutional amendment is not \"law,\" though Kesavananda Bharati (1973) later allowed challenge if it violates the basic structure.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which case held a constitutional amendment can be challenged if it violates the basic structure?",
+      "options": {
+        "a": "Kesavananda Bharati case",
+        "b": "Minerva Mills case",
+        "c": "I.R. Coelho case",
+        "d": "Golaknath case"
+      },
+      "answer": "a",
+      "a": "Kesavananda Bharati case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "High Courts can declare a law unconstitutional under which Article?",
+      "options": {
+        "a": "Article 226",
+        "b": "Article 356",
+        "c": "Article 245",
+        "d": "Article 131"
+      },
+      "answer": "a",
+      "a": "Article 226",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 14 guarantees equality before law and equal protection of laws to:",
+      "options": {
+        "a": "Only natural persons",
+        "b": "All persons, including foreigners",
+        "c": "Citizens only",
+        "d": "Only corporations"
+      },
+      "answer": "b",
+      "a": "All persons, including foreigners",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Equality before law – British origin\n(II) Equal protection of laws – American origin",
+      "options": {
+        "a": "II only",
+        "b": "Neither",
+        "c": "I only",
+        "d": "Both I and II"
+      },
+      "answer": "d",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "\"Rule of Law\" was propounded by which jurist?",
+      "options": {
+        "a": "A.V. Dicey",
+        "b": "H.M. Seervai",
+        "c": "Ivor Jennings",
+        "d": "Blackstone"
+      },
+      "answer": "a",
+      "a": "A.V. Dicey",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which elements of Dicey's Rule of Law apply to the Indian system?\n(I) Absence of arbitrary power\n(II) Equality before the law\n(III) Constitution as a result of individual rights",
+      "options": {
+        "a": "II and III only",
+        "b": "All of the above",
+        "c": "I only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "In India, the Constitution is the source of individual rights, so the third element doesn't apply.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Presidential and gubernatorial immunity under Article 361 is an exception to which right?",
+      "options": {
+        "a": "Article 21",
+        "b": "Article 19",
+        "c": "Article 32",
+        "d": "Article 14"
+      },
+      "answer": "d",
+      "a": "Article 14",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Member of Parliament's immunity for anything said in Parliament is guaranteed under which Article?",
+      "options": {
+        "a": "Article 361-A",
+        "b": "Article 361",
+        "c": "Article 194",
+        "d": "Article 105"
+      },
+      "answer": "d",
+      "a": "Article 105",
+      "e": "The equivalent immunity for state legislators is under Article 194.",
+      "table": {
+        "headers": [
+          "Exception to Equality",
+          "Article"
+        ],
+        "rows": [
+          [
+            "Immunity of President/Governor",
+            "361"
+          ],
+          [
+            "Immunity for true report of legislative proceedings",
+            "361-A"
+          ],
+          [
+            "Immunity of MP",
+            "105"
+          ],
+          [
+            "Immunity of MLA",
+            "194"
+          ],
+          [
+            "Laws implementing Article 39(b)/(c)",
+            "31-C"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Article 15 is available to:",
+      "options": {
+        "a": "Religious minorities only",
+        "b": "Citizens only",
+        "c": "All persons, including foreigners",
+        "d": "Linguistic minorities only"
+      },
+      "answer": "b",
+      "a": "Citizens only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which clause of Article 15, added by the 1st Amendment Act, 1951, permits special provisions for SEBC/SC/ST?",
+      "options": {
+        "a": "15(5)",
+        "b": "15(6)",
+        "c": "15(4)",
+        "d": "15(3)"
+      },
+      "answer": "c",
+      "a": "15(4)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which clause of Article 15, added by the 103rd Amendment Act, 2019, provides 10% reservation for EWS?",
+      "options": {
+        "a": "15(4)",
+        "b": "15(5)",
+        "c": "16(6)",
+        "d": "15(6)"
+      },
+      "answer": "d",
+      "a": "15(6)",
+      "e": "",
+      "table": {
+        "headers": [
+          "Clause",
+          "Subject Matter"
+        ],
+        "rows": [
+          [
+            "15(1)",
+            "No discrimination on grounds only of religion, race, caste, sex, place of birth"
+          ],
+          [
+            "15(2)",
+            "No disability in access to shops, wells, roads maintained by State funds"
+          ],
+          [
+            "15(3)",
+            "Special provision for women and children"
+          ],
+          [
+            "15(4)",
+            "Special provision for SEBC/SC/ST (1st Amendment, 1951)"
+          ],
+          [
+            "15(5)",
+            "SEBC/SC/ST admission to educational institutions (93rd Amendment, 2005)"
+          ],
+          [
+            "15(6)",
+            "10% reservation for EWS (103rd Amendment, 2019)"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "The 27% OBC quota in central higher educational institutions was implemented via which Act?",
+      "options": {
+        "a": "Child Labour Act, 1986",
+        "b": "Protection of Civil Rights Act, 1955",
+        "c": "RTE Act, 2009",
+        "d": "Central Educational Institutions (Reservation in Admission) Act, 2006"
+      },
+      "answer": "d",
+      "a": "Central Educational Institutions (Reservation in Admission) Act, 2006",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which are classified as 'creamy layer' among OBCs?\n(I) Colonel and above in the Army\n(II) Group A officers of All India/Central/State Services\n(III) Persons holding agricultural land above a certain limit",
+      "options": {
+        "a": "I and II only",
+        "b": "All of the above",
+        "c": "II and III only",
+        "d": "I only"
+      },
+      "answer": "b",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the creamy-layer income ceiling when first introduced in 1993?",
+      "options": {
+        "a": "₹2.5 lakh",
+        "b": "₹6 lakh",
+        "c": "₹1 lakh",
+        "d": "₹4.5 lakh"
+      },
+      "answer": "c",
+      "a": "₹1 lakh",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Income Ceiling"
+        ],
+        "rows": [
+          [
+            "1993",
+            "₹1 lakh"
+          ],
+          [
+            "2004",
+            "₹2.5 lakh"
+          ],
+          [
+            "2008",
+            "₹4.5 lakh"
+          ],
+          [
+            "2013",
+            "₹6 lakh"
+          ],
+          [
+            "2017",
+            "₹8 lakh"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "For EWS eligibility, a residential plot of what size in notified municipalities disqualifies a family?",
+      "options": {
+        "a": "1000 sq.yards and above",
+        "b": "500 sq.yards and above",
+        "c": "200 sq.yards and above",
+        "d": "100 sq.yards and above"
+      },
+      "answer": "d",
+      "a": "100 sq.yards and above",
+      "e": "",
+      "table": {
+        "headers": [
+          "Asset",
+          "Exclusion Threshold"
+        ],
+        "rows": [
+          [
+            "Agricultural land",
+            "5 acres and above"
+          ],
+          [
+            "Residential flat",
+            "1000 sq.ft. and above"
+          ],
+          [
+            "Plot (notified municipalities)",
+            "100 sq.yards and above"
+          ],
+          [
+            "Plot (other areas)",
+            "200 sq.yards and above"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Article 16 is available to:",
+      "options": {
+        "a": "All persons, including foreigners",
+        "b": "Citizens only",
+        "c": "SCs/STs only",
+        "d": "Permanent residents only"
+      },
+      "answer": "b",
+      "a": "Citizens only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which clause of Article 16, added by the 77th Amendment Act, 1995, allows reservation in promotion for SCs/STs?",
+      "options": {
+        "a": "16(4)",
+        "b": "16(4B)",
+        "c": "16(6)",
+        "d": "16(4A)"
+      },
+      "answer": "d",
+      "a": "16(4A)",
+      "e": "The 85th Amendment Act, 2001 added \"consequential seniority\" retrospectively from June 1995.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which clause, added by the 81st Amendment Act, 2000, allows unfilled reserved vacancies to be carried forward as a separate class?",
+      "options": {
+        "a": "16(4)",
+        "b": "16(5)",
+        "c": "16(4B)",
+        "d": "16(4A)"
+      },
+      "answer": "c",
+      "a": "16(4B)",
+      "e": "",
+      "table": {
+        "headers": [
+          "Clause",
+          "Subject Matter"
+        ],
+        "rows": [
+          [
+            "16(1)",
+            "Equality of opportunity in public employment"
+          ],
+          [
+            "16(2)",
+            "No discrimination on grounds only of religion, race, caste, sex, descent, place of birth, residence"
+          ],
+          [
+            "16(3)",
+            "Parliament may prescribe residence as a condition"
+          ],
+          [
+            "16(4)",
+            "Reservation for backward classes not adequately represented"
+          ],
+          [
+            "16(4A)",
+            "Reservation in promotion for SC/ST (77th Amendment, 1995)"
+          ],
+          [
+            "16(4B)",
+            "Carry-forward of unfilled vacancies (81st Amendment, 2000)"
+          ],
+          [
+            "16(5)",
+            "Religious institution office bearer requirement"
+          ],
+          [
+            "16(6)",
+            "10% reservation for EWS (103rd Amendment, 2019)"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Residence-based reservation under Article 16(3) currently survives, via Article 371D, for which states?",
+      "options": {
+        "a": "J&K and Ladakh",
+        "b": "Sikkim and Mizoram",
+        "c": "Nagaland and Manipur",
+        "d": "Andhra Pradesh and Telangana"
+      },
+      "answer": "d",
+      "a": "Andhra Pradesh and Telangana",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Mandal Commission was appointed in 1979 under Article 340 by which government?",
+      "options": {
+        "a": "Narasimha Rao",
+        "b": "Indira Gandhi",
+        "c": "Morarji Desai",
+        "d": "V.P. Singh"
+      },
+      "answer": "c",
+      "a": "Morarji Desai",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who chaired the Mandal Commission?",
+      "options": {
+        "a": "Ram Nandan",
+        "b": "Kaka Kalelkar",
+        "c": "B.P. Mandal",
+        "d": "B.N. Kirpal"
+      },
+      "answer": "c",
+      "a": "B.P. Mandal",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many castes did the Mandal Commission identify as backward?",
+      "options": {
+        "a": "3743",
+        "b": "1257",
+        "c": "2399",
+        "d": "4200"
+      },
+      "answer": "a",
+      "a": "3743",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What reservation did the Mandal Commission recommend for OBCs?",
+      "options": {
+        "a": "33%",
+        "b": "27%",
+        "c": "22.5%",
+        "d": "15%"
+      },
+      "answer": "b",
+      "a": "27%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did the V.P. Singh Government implement 27% OBC reservation?",
+      "options": {
+        "a": "1990",
+        "b": "1994",
+        "c": "1988",
+        "d": "1992"
+      },
+      "answer": "a",
+      "a": "1990",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What changes did the Narasimha Rao Government introduce in 1991?\n(I) Economic criteria preference within the 27% OBC quota\n(II) Additional 10% reservation for other economically backward sections",
+      "options": {
+        "a": "Neither",
+        "b": "II only",
+        "c": "I only",
+        "d": "Both I and II"
+      },
+      "answer": "d",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 16(4) was examined by the Court in which case?",
+      "options": {
+        "a": "Champakam Dorairajan case",
+        "b": "Indra Sawhney case",
+        "c": "M. Nagaraj case",
+        "d": "Ashoka Kumar Thakur case"
+      },
+      "answer": "b",
+      "a": "Indra Sawhney case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In Indra Sawhney (1992), the Court upheld what percentage OBC reservation?",
+      "options": {
+        "a": "33%",
+        "b": "22.5%",
+        "c": "50%",
+        "d": "27%"
+      },
+      "answer": "d",
+      "a": "27%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which conditions did the Court lay down in Indra Sawhney?\n(I) Creamy layer excluded from reservation\n(II) Reservation confined to initial appointments, not promotions\n(III) Total quota not to exceed 50% except in extraordinary situations",
+      "options": {
+        "a": "I only",
+        "b": "All of the above",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "b",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Existing reservation in promotions could continue only up to which year, per Indra Sawhney?",
+      "options": {
+        "a": "1995",
+        "b": "1997",
+        "c": "2000",
+        "d": "2001"
+      },
+      "answer": "b",
+      "a": "1997",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which committee identified the OBC creamy layer, reporting in 1993?",
+      "options": {
+        "a": "Ram Nandan Committee",
+        "b": "Sachar Committee",
+        "c": "Kaka Kalelkar Committee",
+        "d": "Mandal Committee"
+      },
+      "answer": "a",
+      "a": "Ram Nandan Committee",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The National Commission for Backward Classes got constitutional status via which Amendment?",
+      "options": {
+        "a": "93rd Amendment Act",
+        "b": "102nd Amendment Act",
+        "c": "81st Amendment Act",
+        "d": "103rd Amendment Act"
+      },
+      "answer": "b",
+      "a": "102nd Amendment Act",
+      "e": "This inserted Article 338-B.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment placed the Tamil Nadu Reservations Act, 1993 (69% reservation) in the Ninth Schedule?",
+      "options": {
+        "a": "77th Amendment Act",
+        "b": "81st Amendment Act",
+        "c": "82nd Amendment Act",
+        "d": "76th Amendment Act"
+      },
+      "answer": "d",
+      "a": "76th Amendment Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment added a provision in Article 335 for relaxing SC/ST qualifying standards in promotions?",
+      "options": {
+        "a": "81st Amendment Act",
+        "b": "76th Amendment Act",
+        "c": "82nd Amendment Act",
+        "d": "85th Amendment Act"
+      },
+      "answer": "c",
+      "a": "82nd Amendment Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 17 abolishes which practice?",
+      "options": {
+        "a": "Bonded labour",
+        "b": "Child marriage",
+        "c": "Untouchability",
+        "d": "Sati"
+      },
+      "answer": "c",
+      "a": "Untouchability",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Untouchability (Offences) Act, 1955 was renamed in 1976 as:",
+      "options": {
+        "a": "Immoral Traffic (Prevention) Act, 1956",
+        "b": "Protection of Civil Rights Act, 1955",
+        "c": "SC/ST (Prevention of Atrocities) Act",
+        "d": "Bonded Labour System (Abolition) Act, 1976"
+      },
+      "answer": "b",
+      "a": "Protection of Civil Rights Act, 1955",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which High Court interpreted Article 17's scope as historical social practice, not the literal term?",
+      "options": {
+        "a": "Allahabad High Court",
+        "b": "Madras High Court",
+        "c": "Mysore High Court",
+        "d": "Bombay High Court"
+      },
+      "answer": "c",
+      "a": "Mysore High Court",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which case held Article 17's right is available against private individuals?",
+      "options": {
+        "a": "A.K. Gopalan case",
+        "b": "People's Union for Democratic Rights case",
+        "c": "Olga Tellis case",
+        "d": "Maneka Gandhi case"
+      },
+      "answer": "b",
+      "a": "People's Union for Democratic Rights case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 18 permits titles only of which kind?",
+      "options": {
+        "a": "Religious and social",
+        "b": "Military and academic",
+        "c": "Civil and criminal",
+        "d": "Political and economic"
+      },
+      "answer": "b",
+      "a": "Military and academic",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which case upheld National Awards as not being 'titles' under Article 18?",
+      "options": {
+        "a": "I.R. Coelho case",
+        "b": "Kesavananda Bharati case",
+        "c": "Minerva Mills case",
+        "d": "Balaji Raghavan case"
+      },
+      "answer": "d",
+      "a": "Balaji Raghavan case",
+      "e": "Recipients forfeit National Awards if they use them as a suffix or prefix to their name.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "National Awards were instituted in which year?",
+      "options": {
+        "a": "1954",
+        "b": "1950",
+        "c": "1962",
+        "d": "1958"
+      },
+      "answer": "a",
+      "a": "1954",
+      "e": "National Awards were discontinued in 1977 and revived in 1980 by the Indira Gandhi government.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Padma Awards in a year (excluding posthumous and NRI/foreigner/OCI awards) are capped at:",
+      "options": {
+        "a": "200",
+        "b": "120",
+        "c": "150",
+        "d": "100"
+      },
+      "answer": "b",
+      "a": "120",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Bharat Ratna awards in a year are capped at:",
+      "options": {
+        "a": "Two",
+        "b": "Three",
+        "c": "One",
+        "d": "Five"
+      },
+      "answer": "b",
+      "a": "Three",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The word \"only\" in Article 15 signifies that:",
+      "options": {
+        "a": "Private employment is excluded",
+        "b": "Discrimination applies only to State action",
+        "c": "Discrimination on other grounds is not prohibited",
+        "d": "The right applies only to adults"
+      },
+      "answer": "c",
+      "a": "Discrimination on other grounds is not prohibited",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 15's provision on access to shops, wells, and public places applies against:",
+      "options": {
+        "a": "Private individuals only",
+        "b": "Both State and private individuals",
+        "c": "Educational institutions only",
+        "d": "The State only"
+      },
+      "answer": "b",
+      "a": "Both State and private individuals",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 19 guarantees six rights to which category of persons?",
+      "options": {
+        "a": "Legal persons only",
+        "b": "Citizens only",
+        "c": "Shareholders only",
+        "d": "All persons"
+      },
+      "answer": "b",
+      "a": "Citizens only",
+      "e": "These rights are also available to shareholders of a company but not to foreigners or legal persons like companies/corporations themselves.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Originally, Article 19 contained how many rights?",
+      "options": {
+        "a": "Six",
+        "b": "Eight",
+        "c": "Seven",
+        "d": "Five"
+      },
+      "answer": "c",
+      "a": "Seven",
+      "e": "The right to acquire, hold and dispose of property was deleted by the 44th Amendment Act, 1978.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The right to acquire, hold and dispose of property under Article 19(1)(f) was deleted by which Amendment?",
+      "options": {
+        "a": "42nd Amendment Act",
+        "b": "86th Amendment Act",
+        "c": "25th Amendment Act",
+        "d": "44th Amendment Act"
+      },
+      "answer": "d",
+      "a": "44th Amendment Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The six rights under Article 19 are protected against:",
+      "options": {
+        "a": "Only State action",
+        "b": "Both State and private individuals",
+        "c": "Only judicial action",
+        "d": "Only private individuals"
+      },
+      "answer": "a",
+      "a": "Only State action",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the grounds for restricting freedom of speech under Article 19(2):\n(I) Sovereignty and integrity of India\n(II) Friendly relations with foreign states\n(III) Contempt of court\nWhich of the above is/are correct?",
+      "options": {
+        "a": "All of the above",
+        "b": "I only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "a",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which ground of restriction under Article 19(2) was added by the 16th Amendment Act, 1963?",
+      "options": {
+        "a": "Public order",
+        "b": "Defamation",
+        "c": "Sovereignty and integrity of India",
+        "d": "Decency or morality"
+      },
+      "answer": "c",
+      "a": "Sovereignty and integrity of India",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which grounds of restriction under Article 19(2) were added by the 1st Amendment Act, 1951?\n(I) Friendly relations with foreign states\n(II) Public order\n(III) Incitement to an offence\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "I, II and III",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The right to freedom of assembly under Article 19(1)(b) can be restricted on which grounds?",
+      "options": {
+        "a": "Sovereignty/integrity of India and public order",
+        "b": "Decency and defamation",
+        "c": "Security of the State only",
+        "d": "Public order and morality"
+      },
+      "answer": "a",
+      "a": "Sovereignty/integrity of India and public order",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 19 does NOT include which right regarding assembly?",
+      "options": {
+        "a": "Right to strike",
+        "b": "Right to demonstrate peacefully",
+        "c": "Right to take out processions",
+        "d": "Right to hold public meetings"
+      },
+      "answer": "a",
+      "a": "Right to strike",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under which Section of the Criminal Procedure Code, 1973 can a magistrate restrain an assembly likely to cause a disturbance of public tranquillity?",
+      "options": {
+        "a": "Section 161",
+        "b": "Section 141",
+        "c": "Section 154",
+        "d": "Section 144"
+      },
+      "answer": "d",
+      "a": "Section 144",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under which Section of the Indian Penal Code does an assembly of five or more persons become \"unlawful\"?",
+      "options": {
+        "a": "Section 141",
+        "b": "Section 144",
+        "c": "Section 153",
+        "d": "Section 124"
+      },
+      "answer": "a",
+      "a": "Section 141",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The right to form associations, unions or co-operative societies is guaranteed under which Article?",
+      "options": {
+        "a": "Article 19(1)(e)",
+        "b": "Article 19(1)(c)",
+        "c": "Article 19(1)(b)",
+        "d": "Article 19(1)(d)"
+      },
+      "answer": "b",
+      "a": "Article 19(1)(c)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The provision for \"co-operative societies\" under Article 19(1)(c) was added by which Amendment?",
+      "options": {
+        "a": "86th Amendment Act, 2002",
+        "b": "93rd Amendment Act, 2005",
+        "c": "44th Amendment Act, 1978",
+        "d": "97th Amendment Act, 2011"
+      },
+      "answer": "d",
+      "a": "97th Amendment Act, 2011",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Supreme Court held that trade unions do NOT have a guaranteed right to:",
+      "options": {
+        "a": "Form associations",
+        "b": "Effective bargaining, strike, or lock-out",
+        "c": "Elect office bearers",
+        "d": "Register as a society"
+      },
+      "answer": "b",
+      "a": "Effective bargaining, strike, or lock-out",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Freedom of movement under Article 19(1)(d) can be restricted on grounds of:",
+      "options": {
+        "a": "Decency and defamation",
+        "b": "Public order and morality",
+        "c": "Sovereignty and integrity of India only",
+        "d": "Interests of general public and protection of Scheduled Tribes"
+      },
+      "answer": "d",
+      "a": "Interests of general public and protection of Scheduled Tribes",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The freedom of movement's internal dimension is protected by Article 19; its external dimension (right to travel abroad) is dealt with by which Article?",
+      "options": {
+        "a": "Article 22",
+        "b": "Article 21",
+        "c": "Article 20",
+        "d": "Article 21A"
+      },
+      "answer": "b",
+      "a": "Article 21",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Freedom of residence and settlement is guaranteed under which Article?",
+      "options": {
+        "a": "Article 19(1)(g)",
+        "b": "Article 19(1)(e)",
+        "c": "Article 19(1)(d)",
+        "d": "Article 19(1)(f)"
+      },
+      "answer": "b",
+      "a": "Article 19(1)(e)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 19(1)(g), guaranteeing freedom to practise any profession or carry on any occupation, trade or business, can be restricted on grounds of:",
+      "options": {
+        "a": "Sovereignty and integrity of India",
+        "b": "Interests of general public and prescribed qualifications",
+        "c": "Decency and morality",
+        "d": "Public order alone"
+      },
+      "answer": "b",
+      "a": "Interests of general public and prescribed qualifications",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which ground of restriction under Article 19(6) was added by the 1st Amendment Act, 1951?",
+      "options": {
+        "a": "Requirement of technical qualification",
+        "b": "Decency or morality",
+        "c": "State monopoly in trade/business to exclusion of citizens",
+        "d": "Public order"
+      },
+      "answer": "c",
+      "a": "State monopoly in trade/business to exclusion of citizens",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which 2020 case did the Supreme Court hold that freedom to practise trade/profession via the internet is protected under Article 19(1)(g)?",
+      "options": {
+        "a": "Anuradha Bhasin case",
+        "b": "K.S. Puttaswamy case",
+        "c": "Maneka Gandhi case",
+        "d": "Shreya Singhal case"
+      },
+      "answer": "a",
+      "a": "Anuradha Bhasin case",
+      "e": "The Court held that an order suspending internet services indefinitely is impermissible under the Temporary Suspension of Telecom Services (Public Emergency or Public Safety) Rules, 2017.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 20 grants protection against arbitrary punishment to:",
+      "options": {
+        "a": "Any accused person, including companies",
+        "b": "Foreigners only",
+        "c": "Only persons under preventive detention",
+        "d": "Citizens only"
+      },
+      "answer": "a",
+      "a": "Any accused person, including companies",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following provisions of Article 20:\n(I) No ex-post-facto law\n(II) No double jeopardy\n(III) No self-incrimination\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "All of the above",
+        "c": "I only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The protection against ex-post-facto laws under Article 20 applies to:",
+      "options": {
+        "a": "Civil laws only",
+        "b": "Tax laws only",
+        "c": "Criminal and civil laws both",
+        "d": "Criminal laws only, not civil or tax laws"
+      },
+      "answer": "d",
+      "a": "Criminal laws only, not civil or tax laws",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The protection against double jeopardy under Article 20 is available in proceedings before:",
+      "options": {
+        "a": "Administrative authorities only",
+        "b": "Departmental authorities only",
+        "c": "Any authority, judicial or administrative",
+        "d": "A court of law or judicial tribunal only"
+      },
+      "answer": "d",
+      "a": "A court of law or judicial tribunal only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The protection against self-incrimination under Article 20 does NOT extend to:",
+      "options": {
+        "a": "Testimony against oneself",
+        "b": "Oral evidence",
+        "c": "Documentary evidence",
+        "d": "Compulsory production of material objects"
+      },
+      "answer": "d",
+      "a": "Compulsory production of material objects",
+      "e": "It also does not extend to compulsion to give a thumb impression, specimen signature, blood specimens, or compulsory exhibition of the body.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 21 protects life and personal liberty of which category of persons?",
+      "options": {
+        "a": "Only legal persons",
+        "b": "Only persons not under detention",
+        "c": "Both citizens and non-citizens",
+        "d": "Citizens only"
+      },
+      "answer": "c",
+      "a": "Both citizens and non-citizens",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court take a narrow interpretation of Article 21, holding the protection is available only against arbitrary executive action?",
+      "options": {
+        "a": "Gopalan case",
+        "b": "Unni Krishnan case",
+        "c": "Kesavananda Bharati case",
+        "d": "Maneka Gandhi case"
+      },
+      "answer": "a",
+      "a": "Gopalan case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court overrule its earlier narrow interpretation and introduce the American expression \"due process of law\" into Article 21?",
+      "options": {
+        "a": "Maneka case",
+        "b": "Golaknath case",
+        "c": "Minerva Mills case",
+        "d": "Gopalan case"
+      },
+      "answer": "a",
+      "a": "Maneka case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs of cases and rights declared under Article 21:\n(I) Olga Tellis vs. Bombay Municipal Corporation – Right to livelihood\n(II) K.S. Puttaswamy vs. Union of India – Right to privacy\n(III) Common Cause vs. Union of India – Right to fair trial\nWhich of the pairs is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "All of the above"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Common Cause (A Regd. Society) vs. Union of India (2018) declared the right to die with dignity (passive euthanasia), not the right to fair trial.",
+      "table": {
+        "headers": [
+          "Case (Year)",
+          "Right Declared under Article 21"
+        ],
+        "rows": [
+          [
+            "Satwant Singh Sawhney vs. Dr. Ramaratnam (1967)",
+            "Right to travel abroad"
+          ],
+          [
+            "M.H. Hoskot vs. State of Maharashtra (1978)",
+            "Right to free legal aid"
+          ],
+          [
+            "Hussainara Khatoon vs. Home Secretary, Bihar (1979)",
+            "Right to speedy trial"
+          ],
+          [
+            "Francis Coralie Mullin vs. Administrator, Delhi (1981)",
+            "Right to live with human dignity"
+          ],
+          [
+            "Sheela Barse vs. State of Maharashtra (1983)",
+            "Right against custodial harassment"
+          ],
+          [
+            "Rural Litigation and Entitlement Kendra vs. State of UP (1985)",
+            "Right to decent environment"
+          ],
+          [
+            "Olga Tellis vs. Bombay Municipal Corporation (1985)",
+            "Right to livelihood"
+          ],
+          [
+            "Parmanand Katara vs. Union of India (1989)",
+            "Right to emergency medical aid"
+          ],
+          [
+            "Shantistar Builders vs. N.K. Totame (1990)",
+            "Right to shelter"
+          ],
+          [
+            "K.S. Puttaswamy vs. Union of India (2017)",
+            "Right to privacy"
+          ],
+          [
+            "Common Cause vs. Union of India (2018)",
+            "Right to die with dignity"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Article 21A, making elementary education a Fundamental Right, was added by which Amendment?",
+      "options": {
+        "a": "86th Amendment Act, 2002",
+        "b": "42nd Amendment Act, 1976",
+        "c": "93rd Amendment Act, 2005",
+        "d": "44th Amendment Act, 1978"
+      },
+      "answer": "a",
+      "a": "86th Amendment Act, 2002",
+      "e": "Article 21A provides free and compulsory education to children aged 6 to 14 years. Before this Amendment, such education was contained only as a Directive Principle under Article 45. The same Amendment also added a parallel Fundamental Duty under Article 51A, requiring parents/guardians to provide educational opportunities to their child between six and fourteen years.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which 1993 case first recognised a Fundamental Right to primary education under Article 21?",
+      "options": {
+        "a": "T.M.A. Pai case",
+        "b": "Ashoka Kumar Thakur case",
+        "c": "Mohini Jain case",
+        "d": "Unni Krishnan case"
+      },
+      "answer": "d",
+      "a": "Unni Krishnan case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Unni Krishnan (1993) overruled which earlier judgement on the fundamental right to professional education?",
+      "options": {
+        "a": "Kesavananda Bharati case",
+        "b": "Gopalan case",
+        "c": "Golaknath case",
+        "d": "Mohini Jain case"
+      },
+      "answer": "d",
+      "a": "Mohini Jain case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Right of Children to Free and Compulsory Education (RTE) Act and the 86th Amendment Act both came into force with effect from which date?",
+      "options": {
+        "a": "1 April 2010",
+        "b": "1 January 2010",
+        "c": "26 January 2010",
+        "d": "15 August 2009"
+      },
+      "answer": "a",
+      "a": "1 April 2010",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 22 grants protection to persons who are:",
+      "options": {
+        "a": "Arrested or detained",
+        "b": "Convicted of an offence",
+        "c": "Denied bail",
+        "d": "Under preventive detention only"
+      },
+      "answer": "a",
+      "a": "Arrested or detained",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Detention aimed at preventing a person from committing a future offence, without trial, is called:",
+      "options": {
+        "a": "Preventive detention",
+        "b": "Civil detention",
+        "c": "Judicial custody",
+        "d": "Punitive detention"
+      },
+      "answer": "a",
+      "a": "Preventive detention",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the first part of Article 22 (ordinary law), an arrested person must be produced before a magistrate within how many hours, excluding journey time?",
+      "options": {
+        "a": "72 hours",
+        "b": "48 hours",
+        "c": "12 hours",
+        "d": "24 hours"
+      },
+      "answer": "d",
+      "a": "24 hours",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The safeguards under the first part of Article 22 are NOT available to:",
+      "options": {
+        "a": "An enemy alien or a person under preventive detention",
+        "b": "Citizens",
+        "c": "Persons arrested for bailable offences",
+        "d": "Persons arrested under ordinary law"
+      },
+      "answer": "a",
+      "a": "An enemy alien or a person under preventive detention",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the second part of Article 22 (preventive detention), detention beyond three months requires sufficient cause reported by which body, consisting of High Court judges?",
+      "options": {
+        "a": "Parliamentary Committee",
+        "b": "National Human Rights Commission",
+        "c": "Law Commission",
+        "d": "Advisory Board"
+      },
+      "answer": "d",
+      "a": "Advisory Board",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 44th Amendment Act, 1978 reduced the period of detention without an Advisory Board's opinion from three months to how many months? However, this provision has not been brought into force.",
+      "options": {
+        "a": "Six months",
+        "b": "Four months",
+        "c": "Two months",
+        "d": "One month"
+      },
+      "answer": "c",
+      "a": "Two months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which body has exclusive authority to make preventive detention laws for reasons connected with defence, foreign affairs, and security of India?",
+      "options": {
+        "a": "The President",
+        "b": "Parliament only",
+        "c": "State Legislatures only",
+        "d": "Both Parliament and State Legislatures concurrently"
+      },
+      "answer": "b",
+      "a": "Parliament only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following preventive detention laws:\n(I) Maintenance of Internal Security Act (MISA), 1971\n(II) National Security Act (NASA), 1980\n(III) Prevention of Terrorism Act (POTA), 2002\nWhich of the above has/have been repealed?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "MISA was repealed in 1978, and POTA was repealed in 2004. NASA, 1980 continues to remain in force.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which preventive detention law was repealed in 1995?",
+      "options": {
+        "a": "COFEPOSA, 1974",
+        "b": "PBMSECA, 1980",
+        "c": "UAPA, 1967",
+        "d": "TADA, 1985"
+      },
+      "answer": "d",
+      "a": "TADA, 1985",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The concept of preventive detention as an integral part of the Constitution, as done in India, is:",
+      "options": {
+        "a": "Common across all democracies",
+        "b": "Also found in the USA",
+        "c": "Unknown in the USA and used in Britain only during World Wars",
+        "d": "Used only in Britain permanently"
+      },
+      "answer": "c",
+      "a": "Unknown in the USA and used in Britain only during World Wars",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which colonial-era law provided for preventive detention even during British rule?",
+      "options": {
+        "a": "Indian Councils Act, 1909",
+        "b": "Rowlatt Act, 1919",
+        "c": "Bengal State Prisoners Regulation, 1818",
+        "d": "Government of India Act, 1935"
+      },
+      "answer": "c",
+      "a": "Bengal State Prisoners Regulation, 1818",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Freedom of speech and expression under Article 19(1)(a) has been held by the Supreme Court to include which of the following rights?\n(I) Right to know about government activities\n(II) Right against imposition of pre-censorship on a newspaper\n(III) Right to strike\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "All of the above",
+        "c": "II and III only",
+        "d": "I only"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "The right to strike is not included; it falls instead under freedom of association and can be controlled by industrial law.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The six rights under Article 19, along with their grounds of restriction, are available to which of the following, apart from citizens?",
+      "options": {
+        "a": "Enemy aliens",
+        "b": "Shareholders of a company",
+        "c": "Foreigners",
+        "d": "Companies and corporations directly"
+      },
+      "answer": "b",
+      "a": "Shareholders of a company",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Article 19(1)(f) right to acquire, hold and dispose of property, before its deletion, could be restricted on grounds under Article 19(6). What replaced this ground list after deletion?",
+      "options": {
+        "a": "It was merged into Article 21",
+        "b": "No restriction ground exists — the entry is now blank",
+        "c": "It was retained under Article 31C",
+        "d": "It was transferred to Article 300-A"
+      },
+      "answer": "b",
+      "a": "No restriction ground exists — the entry is now blank",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 23 prohibits which of the following?",
+      "options": {
+        "a": "Only bonded labour",
+        "b": "Traffic in human beings and forced labour",
+        "c": "Only forced labour",
+        "d": "Only child labour"
+      },
+      "answer": "b",
+      "a": "Traffic in human beings and forced labour",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 23's right against exploitation is available against:",
+      "options": {
+        "a": "Only private persons",
+        "b": "Only the State",
+        "c": "Only foreign entities",
+        "d": "Both the State and private persons"
+      },
+      "answer": "d",
+      "a": "Both the State and private persons",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following as included in \"traffic in human beings\" under Article 23:\n(I) Selling and buying of men, women and children like goods\n(II) Devadasis\n(III) Bonded labour\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I only",
+        "c": "All of the above",
+        "d": "II and III only"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Bonded labour falls under \"similar forms of forced labour,\" a separate limb of Article 23, not under \"traffic in human beings.\"",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act was implemented by Parliament to punish acts of traffic in human beings under Article 23?",
+      "options": {
+        "a": "Minimum Wages Act, 1948",
+        "b": "Bonded Labour System (Abolition) Act, 1976",
+        "c": "Contract Labour Act, 1970",
+        "d": "Immoral Traffic (Prevention) Act, 1956"
+      },
+      "answer": "d",
+      "a": "Immoral Traffic (Prevention) Act, 1956",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The term \"begar\" under Article 23 means:",
+      "options": {
+        "a": "Compulsory work without remuneration",
+        "b": "Employment of children",
+        "c": "Voluntary social service",
+        "d": "Bonded labour with wages"
+      },
+      "answer": "a",
+      "a": "Compulsory work without remuneration",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 23 permits the State to impose compulsory service for public purposes, such as military or social service, subject to which condition?",
+      "options": {
+        "a": "It requires judicial sanction",
+        "b": "It must be paid at minimum wage",
+        "c": "No discrimination on grounds only of religion, race, caste or class",
+        "d": "It applies only to men"
+      },
+      "answer": "c",
+      "a": "No discrimination on grounds only of religion, race, caste or class",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 24 prohibits the employment of children below what age in factories, mines, or hazardous employment?",
+      "options": {
+        "a": "18 years",
+        "b": "14 years",
+        "c": "12 years",
+        "d": "16 years"
+      },
+      "answer": "b",
+      "a": "14 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 24 does NOT prohibit the employment of children in:",
+      "options": {
+        "a": "Any harmless or innocent work",
+        "b": "Mines",
+        "c": "Factories",
+        "d": "Railway construction"
+      },
+      "answer": "a",
+      "a": "Any harmless or innocent work",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 1996, what fine per child did the Supreme Court direct employers to deposit for violating Article 24?",
+      "options": {
+        "a": "₹1,00,000",
+        "b": "₹20,000",
+        "c": "₹50,000",
+        "d": "₹10,000"
+      },
+      "answer": "b",
+      "a": "₹20,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Child Labour (Prohibition and Regulation) Amendment Act, 2016 renamed the principal 1986 Act as:",
+      "options": {
+        "a": "Child and Adolescent Labour (Prohibition and Regulation) Act",
+        "b": "Factories Regulation Act",
+        "c": "Employment of Children Act",
+        "d": "Bonded Labour System Act"
+      },
+      "answer": "a",
+      "a": "Child and Adolescent Labour (Prohibition and Regulation) Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 25 guarantees freedom of conscience and the right to freely profess, practice and propagate religion to:",
+      "options": {
+        "a": "Only Hindus",
+        "b": "All persons, citizens and non-citizens",
+        "c": "Citizens only",
+        "d": "Only religious denominations"
+      },
+      "answer": "b",
+      "a": "All persons, citizens and non-citizens",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following implications of Article 25:\n(I) Right to propagate includes the right to convert another person to one's own religion\n(II) Freedom of conscience is the inner freedom to mould one's relation with God\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "Neither I nor II",
+        "c": "Both I and II",
+        "d": "II only"
+      },
+      "answer": "d",
+      "a": "II only",
+      "e": "The right to propagate does not include a right to convert another person; forcible conversions impinge on the freedom of conscience guaranteed to all persons.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Article 25, the State is permitted to:\n(I) Regulate secular activity associated with religious practice\n(II) Throw open Hindu religious institutions of a public character to all classes of Hindus\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II only",
+        "b": "I only",
+        "c": "Both I and II",
+        "d": "Neither I nor II"
+      },
+      "answer": "c",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 25's explanation regarding the wearing and carrying of kirpans relates to the profession of which religion?",
+      "options": {
+        "a": "Sikh religion",
+        "b": "Jain religion",
+        "c": "Buddhist religion",
+        "d": "Hindu religion"
+      },
+      "answer": "a",
+      "a": "Sikh religion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For the purposes of Article 25, \"Hindus\" is explained to include which of the following?",
+      "options": {
+        "a": "Only Jains and Buddhists",
+        "b": "Only Sikhs",
+        "c": "Sikhs, Jains and Buddhists",
+        "d": "Only persons professing Hinduism"
+      },
+      "answer": "c",
+      "a": "Sikhs, Jains and Buddhists",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 26 guarantees the freedom to manage religious affairs to:",
+      "options": {
+        "a": "Every religious denomination or section thereof",
+        "b": "Only the State",
+        "c": "Individuals only",
+        "d": "Only registered trusts"
+      },
+      "answer": "a",
+      "a": "Every religious denomination or section thereof",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following rights under Article 26:\n(I) Right to establish institutions for religious and charitable purposes\n(II) Right to manage its own affairs in matters of religion\n(III) Right to own and acquire movable and immovable property\nWhich of the above is/are correct?",
+      "options": {
+        "a": "All of the above",
+        "b": "I only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "a",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Rights under Article 26, unlike those under Article 25, are subject to public order, morality and health but NOT subject to:",
+      "options": {
+        "a": "Reasonable restrictions",
+        "b": "State regulation",
+        "c": "Other provisions relating to Fundamental Rights",
+        "d": "Judicial review"
+      },
+      "answer": "c",
+      "a": "Other provisions relating to Fundamental Rights",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Supreme Court laid down conditions for a \"religious denomination.\" Which of the following is NOT one of them?",
+      "options": {
+        "a": "Registration under the Societies Act",
+        "b": "A distinctive name",
+        "c": "A common organisation",
+        "d": "A collection of individuals with a common system of beliefs"
+      },
+      "answer": "a",
+      "a": "Registration under the Societies Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Supreme Court held that which of the following is/are religious denominations within the Hindu religion?\n(I) Ramakrishna Mission\n(II) Ananda Marga\n(III) Aurobindo Society\nWhich of the above is/are correct?",
+      "options": {
+        "a": "All of the above",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "The Supreme Court held that Aurobindo Society is not a religious denomination.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 27 prohibits the State from compelling any person to pay taxes for:",
+      "options": {
+        "a": "Educational institutions",
+        "b": "Any public purpose",
+        "c": "Charitable trusts",
+        "d": "Promotion or maintenance of any particular religion"
+      },
+      "answer": "d",
+      "a": "Promotion or maintenance of any particular religion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 27 prohibits only the levy of a:",
+      "options": {
+        "a": "Fee",
+        "b": "Duty",
+        "c": "Cess",
+        "d": "Tax"
+      },
+      "answer": "d",
+      "a": "Tax",
+      "e": "A fee can still be levied on pilgrims for special services or safety measures, since a fee is meant to control secular administration, not promote religion.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Article 28, no religious instruction shall be provided in an educational institution:",
+      "options": {
+        "a": "Receiving aid from the State",
+        "b": "Recognised by the State",
+        "c": "Wholly maintained out of State funds",
+        "d": "Administered by the State but established under an endowment"
+      },
+      "answer": "c",
+      "a": "Wholly maintained out of State funds",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 28's prohibition on religious instruction does NOT apply to an educational institution:",
+      "options": {
+        "a": "Administered by the State but established under an endowment or trust requiring religious instruction",
+        "b": "Recognised by the State",
+        "c": "Wholly maintained by the State",
+        "d": "Receiving State aid"
+      },
+      "answer": "a",
+      "a": "Administered by the State but established under an endowment or trust requiring religious instruction",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following types of educational institutions under Article 28:\n(I) Institutions wholly maintained by the State — religious instruction completely prohibited\n(II) Institutions recognised by the State — religious instruction permitted on a voluntary basis\n(III) Institutions receiving aid from the State — religious instruction completely prohibited\nWhich of the above pairs is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "All of the above"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "In institutions receiving aid from the State, religious instruction is permitted on a voluntary basis, not completely prohibited.",
+      "table": {
+        "headers": [
+          "Type of Institution",
+          "Religious Instruction Status"
+        ],
+        "rows": [
+          [
+            "Wholly maintained by the State",
+            "Completely prohibited"
+          ],
+          [
+            "Administered by the State but established under endowment/trust",
+            "Permitted"
+          ],
+          [
+            "Recognised by the State",
+            "Permitted, voluntary basis"
+          ],
+          [
+            "Receiving aid from the State",
+            "Permitted, voluntary basis"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Under Article 28, whose consent is needed for a minor attending a religious institution to be exempt from religious instruction?",
+      "options": {
+        "a": "The institution head's consent",
+        "b": "No consent is required",
+        "c": "The minor's own consent",
+        "d": "The guardian's consent"
+      },
+      "answer": "d",
+      "a": "The guardian's consent",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 29 protects any section of citizens having a distinct language, script or culture, guaranteeing them the right to:",
+      "options": {
+        "a": "Form a political party",
+        "b": "Establish educational institutions",
+        "c": "Conserve the same",
+        "d": "Receive State funding"
+      },
+      "answer": "c",
+      "a": "Conserve the same",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The second provision of Article 29 prohibits denial of admission to any State-maintained or State-aided educational institution on grounds only of:",
+      "options": {
+        "a": "Nationality",
+        "b": "Sex or descent",
+        "c": "Religion, race, caste, or language",
+        "d": "Religion, race, caste, sex, or place of birth"
+      },
+      "answer": "c",
+      "a": "Religion, race, caste, or language",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 29 grants protection to:",
+      "options": {
+        "a": "Only religious minorities",
+        "b": "Both religious and linguistic minorities",
+        "c": "Only linguistic minorities",
+        "d": "Any section of citizens, including the majority"
+      },
+      "answer": "d",
+      "a": "Any section of citizens, including the majority",
+      "e": "The Supreme Court held that the scope of Article 29 is not necessarily restricted to minorities only, because of the use of the words \"section of citizens.\"",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Supreme Court held that the right to conserve language under Article 29 includes:",
+      "options": {
+        "a": "The right to a separate electorate",
+        "b": "The right to exclude other languages from education",
+        "c": "The right to agitate for the protection of the language",
+        "d": "The right to a separate state"
+      },
+      "answer": "c",
+      "a": "The right to agitate for the protection of the language",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Political speeches made for the conservation of the language of a section of citizens do NOT amount to a corrupt practice under which Act?",
+      "options": {
+        "a": "Representation of the People Act, 1951",
+        "b": "Official Languages Act, 1963",
+        "c": "Citizenship Act, 1955",
+        "d": "People's Representation Act, 1950"
+      },
+      "answer": "a",
+      "a": "Representation of the People Act, 1951",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 30 grants the right to establish and administer educational institutions of choice to:",
+      "options": {
+        "a": "Only religious minorities",
+        "b": "All minorities, whether religious or linguistic",
+        "c": "Any section of citizens",
+        "d": "All citizens"
+      },
+      "answer": "b",
+      "a": "All minorities, whether religious or linguistic",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment added the provision under Article 30 that compensation for compulsory acquisition of minority educational institution property shall not restrict or abrogate the right guaranteed?",
+      "options": {
+        "a": "42nd Amendment Act",
+        "b": "93rd Amendment Act",
+        "c": "86th Amendment Act",
+        "d": "44th Amendment Act"
+      },
+      "answer": "d",
+      "a": "44th Amendment Act",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike Article 29, the protection under Article 30 is confined only to:",
+      "options": {
+        "a": "Scheduled Castes and Scheduled Tribes",
+        "b": "Minorities, religious or linguistic",
+        "c": "Citizens residing in border states",
+        "d": "Any section of citizens"
+      },
+      "answer": "b",
+      "a": "Minorities, religious or linguistic",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following types of minority educational institutions:\n(I) Institutions seeking both recognition and aid from the State\n(II) Institutions seeking only recognition, not aid\n(III) Institutions seeking neither recognition nor aid\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "All of the above",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Institutions of which type under Article 30 are free to administer their affairs, subject only to general laws like contract law and tax law?",
+      "options": {
+        "a": "Institutions seeking only recognition",
+        "b": "Institutions seeking both recognition and aid",
+        "c": "Institutions seeking neither recognition nor aid",
+        "d": "All minority institutions equally"
+      },
+      "answer": "c",
+      "a": "Institutions seeking neither recognition nor aid",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which 2006 case summarised the principles on establishing and administering minority educational institutions?",
+      "options": {
+        "a": "Secretary of Malankara Syrian Catholic College case",
+        "b": "T.M.A. Pai case",
+        "c": "St. Stephen's College case",
+        "d": "Islamic Academy case"
+      },
+      "answer": "a",
+      "a": "Secretary of Malankara Syrian Catholic College case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Malankara Syrian Catholic College case, the right under Article 30 is intended to ensure:",
+      "options": {
+        "a": "Exemption from taxation",
+        "b": "Complete exemption from all general laws",
+        "c": "Equality with the majority, not a more advantageous position",
+        "d": "Reverse discrimination in favour of minorities"
+      },
+      "answer": "c",
+      "a": "Equality with the majority, not a more advantageous position",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 32 confers the right to move which court for the enforcement of Fundamental Rights?",
+      "options": {
+        "a": "The Supreme Court",
+        "b": "Any civil court",
+        "c": "The District Court",
+        "d": "The High Court"
+      },
+      "answer": "a",
+      "a": "The Supreme Court",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who described Article 32 as \"an Article without which this Constitution would be a nullity... the very soul of the Constitution and the very heart of it\"?",
+      "options": {
+        "a": "Sardar Patel",
+        "b": "Jawaharlal Nehru",
+        "c": "Dr. B.R. Ambedkar",
+        "d": "Dr. Rajendra Prasad"
+      },
+      "answer": "c",
+      "a": "Dr. B.R. Ambedkar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Supreme Court has ruled that Article 32 is a basic feature of the Constitution. This means it:",
+      "options": {
+        "a": "Can be modified by ordinary legislation",
+        "b": "Cannot be abridged or taken away even by constitutional amendment",
+        "c": "Can be suspended by the President at will",
+        "d": "Applies only during emergencies"
+      },
+      "answer": "b",
+      "a": "Cannot be abridged or taken away even by constitutional amendment",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Article 32, the Supreme Court has the power to issue directions, orders or writs for enforcement of Fundamental Rights. Parliament can empower which additional body to issue such writs?",
+      "options": {
+        "a": "Tribunals only",
+        "b": "Any other court, not including High Courts",
+        "c": "District Courts directly",
+        "d": "High Courts only"
+      },
+      "answer": "b",
+      "a": "Any other court, not including High Courts",
+      "e": "High Courts already possess this power independently under Article 226.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The right to move the Supreme Court under Article 32 can be suspended during which event, as per Article 359?",
+      "options": {
+        "a": "State Emergency",
+        "b": "Financial Emergency",
+        "c": "Martial law",
+        "d": "National Emergency"
+      },
+      "answer": "d",
+      "a": "National Emergency",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Article 32, the Supreme Court's jurisdiction for enforcement of Fundamental Rights is:",
+      "options": {
+        "a": "Original and exclusive",
+        "b": "Discretionary only",
+        "c": "Original but not exclusive",
+        "d": "Appellate only"
+      },
+      "answer": "c",
+      "a": "Original but not exclusive",
+      "e": "It is concurrent with the jurisdiction of the High Court under Article 226.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where relief through the High Court is available under Article 226, the Supreme Court has ruled that an aggrieved party should:",
+      "options": {
+        "a": "Move both simultaneously",
+        "b": "Approach the President",
+        "c": "Move the Supreme Court directly regardless",
+        "d": "First move the High Court"
+      },
+      "answer": "d",
+      "a": "First move the High Court",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following differences between Article 32 and Article 226:\n(I) Article 32 can be invoked only for enforcement of Fundamental Rights, while Article 226 can be invoked for Fundamental Rights and any other purpose\n(II) The Supreme Court's writ jurisdiction extends throughout India, while a High Court's is generally limited to its territorial jurisdiction\n(III) A remedy under Article 226 is itself a Fundamental Right, while Article 32 is discretionary\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "All of the above"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "It is the reverse of statement III — a remedy under Article 32 is itself a Fundamental Right, so the Supreme Court may not refuse to exercise its writ jurisdiction, whereas a remedy under Article 226 is discretionary.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Before 1950, only which High Courts had the power to issue writs?",
+      "options": {
+        "a": "Calcutta, Allahabad and Madras",
+        "b": "Calcutta, Bombay and Madras",
+        "c": "Delhi, Allahabad and Patna",
+        "d": "Bombay, Madras and Delhi"
+      },
+      "answer": "b",
+      "a": "Calcutta, Bombay and Madras",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Habeas Corpus literally means:",
+      "options": {
+        "a": "By what authority",
+        "b": "We command",
+        "c": "To have the body of",
+        "d": "To be certified"
+      },
+      "answer": "c",
+      "a": "To have the body of",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Habeas Corpus can be issued against:",
+      "options": {
+        "a": "Only public authorities",
+        "b": "Only private individuals",
+        "c": "Both public authorities and private individuals",
+        "d": "Only the government"
+      },
+      "answer": "c",
+      "a": "Both public authorities and private individuals",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Mandamus literally means:",
+      "options": {
+        "a": "We command",
+        "b": "To forbid",
+        "c": "To have the body of",
+        "d": "By what authority"
+      },
+      "answer": "a",
+      "a": "We command",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Mandamus cannot be issued against:",
+      "options": {
+        "a": "A public official who has failed to perform a duty",
+        "b": "A government department",
+        "c": "A tribunal",
+        "d": "A private individual or body"
+      },
+      "answer": "d",
+      "a": "A private individual or body",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Mandamus cannot be issued to enforce:",
+      "options": {
+        "a": "A judicial order",
+        "b": "A statutory duty",
+        "c": "A mandatory public duty",
+        "d": "A contractual obligation"
+      },
+      "answer": "d",
+      "a": "A contractual obligation",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Against whom can the writ of Mandamus NOT be issued?",
+      "options": {
+        "a": "A corporation",
+        "b": "An inferior court",
+        "c": "A public body",
+        "d": "The President of India or State Governors"
+      },
+      "answer": "d",
+      "a": "The President of India or State Governors",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Prohibition directs:",
+      "options": {
+        "a": "Compensation",
+        "b": "Inactivity",
+        "c": "Detention",
+        "d": "Activity"
+      },
+      "answer": "b",
+      "a": "Inactivity",
+      "e": "Unlike Mandamus, which directs activity, Prohibition directs inactivity — preventing a lower court or tribunal from exceeding its jurisdiction.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Prohibition can be issued only against:",
+      "options": {
+        "a": "Legislative bodies",
+        "b": "Private individuals",
+        "c": "Administrative authorities",
+        "d": "Judicial and quasi-judicial authorities"
+      },
+      "answer": "d",
+      "a": "Judicial and quasi-judicial authorities",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Certiorari is issued by a higher court to a lower court or tribunal to:",
+      "options": {
+        "a": "Quash an order already passed",
+        "b": "Command performance of a duty",
+        "c": "Produce a detained person",
+        "d": "Prevent it from exceeding jurisdiction"
+      },
+      "answer": "a",
+      "a": "Quash an order already passed",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following regarding the distinction between Prohibition and Certiorari:\n(I) Prohibition is issued before the final order to stop continuance of proceedings\n(II) Certiorari is issued after the final order to quash it\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II only",
+        "b": "I only",
+        "c": "Both I and II",
+        "d": "Neither I nor II"
+      },
+      "answer": "c",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Initially, the writ of Certiorari could be issued only against judicial and quasi-judicial authorities. The Supreme Court later ruled it can also be issued against:",
+      "options": {
+        "a": "Private individuals",
+        "b": "Legislative bodies",
+        "c": "Administrative authorities affecting rights of individuals",
+        "d": "Foreign governments"
+      },
+      "answer": "c",
+      "a": "Administrative authorities affecting rights of individuals",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Quo-Warranto literally means:",
+      "options": {
+        "a": "We command",
+        "b": "By what authority or warrant",
+        "c": "To have the body of",
+        "d": "To be informed"
+      },
+      "answer": "b",
+      "a": "By what authority or warrant",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Quo-Warranto can be issued only in case of:",
+      "options": {
+        "a": "A temporary government post",
+        "b": "A substantive public office of a permanent character",
+        "c": "Any private office",
+        "d": "A ministerial office"
+      },
+      "answer": "b",
+      "a": "A substantive public office of a permanent character",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The writ of Quo-Warranto can be sought by:",
+      "options": {
+        "a": "Only a government official",
+        "b": "Only a member of the legislature",
+        "c": "Any public-minded person",
+        "d": "Only the aggrieved person"
+      },
+      "answer": "c",
+      "a": "Any public-minded person",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following regarding the writ jurisdiction of the Supreme Court versus a High Court:\n(I) The Supreme Court can issue writs only for enforcement of Fundamental Rights, while a High Court can also issue writs for any other purpose\n(II) The territorial jurisdiction of the Supreme Court for issuing writs is narrower than that of a High Court\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "Neither I nor II",
+        "c": "Both I and II",
+        "d": "II only"
+      },
+      "answer": "a",
+      "a": "I only",
+      "e": "The territorial jurisdiction of the Supreme Court is actually wider, since it can issue writs against a person or government throughout the territory of India.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 33 empowers Parliament to restrict or abrogate Fundamental Rights of which category of persons?",
+      "options": {
+        "a": "Members of armed forces, para-military forces, police forces, intelligence agencies",
+        "b": "Government employees generally",
+        "c": "Only the armed forces",
+        "d": "All citizens during emergency"
+      },
+      "answer": "a",
+      "a": "Members of armed forces, para-military forces, police forces, intelligence agencies",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The power to make laws under Article 33 is conferred on:",
+      "options": {
+        "a": "State Legislatures only",
+        "b": "The President alone",
+        "c": "Parliament only",
+        "d": "Both Parliament and State Legislatures"
+      },
+      "answer": "c",
+      "a": "Parliament only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A law made by Parliament under Article 33 can be challenged in court on the ground of contravention of Fundamental Rights.",
+      "options": {
+        "a": "True, in the Supreme Court only",
+        "b": "True, in any court",
+        "c": "False, it cannot be challenged",
+        "d": "True, but only within one year"
+      },
+      "answer": "c",
+      "a": "False, it cannot be challenged",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The expression \"members of the armed forces\" under Article 33 also covers non-combatant employees such as:",
+      "options": {
+        "a": "Only combat officers",
+        "b": "Barbers, cooks, chowkidars, tailors",
+        "c": "Only medical staff",
+        "d": "Civilian contractors only"
+      },
+      "answer": "b",
+      "a": "Barbers, cooks, chowkidars, tailors",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A parliamentary law under Article 33 can exclude which tribunals from the writ jurisdiction of the Supreme Court and High Courts?",
+      "options": {
+        "a": "Family courts",
+        "b": "Court martial",
+        "c": "Consumer courts",
+        "d": "Revenue tribunals"
+      },
+      "answer": "b",
+      "a": "Court martial",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 34 provides for restrictions on Fundamental Rights while which condition is in force in any area?",
+      "options": {
+        "a": "Martial law",
+        "b": "National Emergency",
+        "c": "President's Rule",
+        "d": "Financial Emergency"
+      },
+      "answer": "a",
+      "a": "Martial law",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 34 empowers Parliament to indemnify a government servant for acts done in connection with:",
+      "options": {
+        "a": "Ordinary administrative duties",
+        "b": "Maintenance or restoration of order during martial law",
+        "c": "Tax collection",
+        "d": "Elections"
+      },
+      "answer": "b",
+      "a": "Maintenance or restoration of order during martial law",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "An Act of Indemnity made by Parliament under Article 34 can be challenged in court on the ground of contravention of Fundamental Rights.",
+      "options": {
+        "a": "True",
+        "b": "True, only in High Courts",
+        "c": "True, only within six months",
+        "d": "False"
+      },
+      "answer": "d",
+      "a": "False",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The term \"martial law\" is:",
+      "options": {
+        "a": "Defined under the Army Act",
+        "b": "Not defined anywhere in the Constitution",
+        "c": "Defined under Article 352",
+        "d": "Explicitly defined in the Constitution"
+      },
+      "answer": "b",
+      "a": "Not defined anywhere in the Constitution",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following regarding Martial Law versus National Emergency:\n(I) Martial law affects only Fundamental Rights, while National Emergency also affects Centre-State relations\n(II) Martial law suspends the government and ordinary law courts, while National Emergency continues them\n(III) Martial law has specific and detailed provision in the Constitution, while National Emergency is implicit\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "All of the above",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "It is the reverse of statement III — Martial law has no specific provision in the Constitution and is only implicit under Article 34, whereas National Emergency has explicit and detailed provision under Article 352.",
+      "table": {
+        "headers": [
+          "Aspect",
+          "Martial Law",
+          "National Emergency"
+        ],
+        "rows": [
+          [
+            "Scope",
+            "Affects only Fundamental Rights",
+            "Affects Fundamental Rights, Centre-State relations, revenue distribution"
+          ],
+          [
+            "Government/courts",
+            "Suspended",
+            "Continue"
+          ],
+          [
+            "Grounds",
+            "Breakdown of law and order due to any reason",
+            "War, external aggression, or armed rebellion only"
+          ],
+          [
+            "Area",
+            "Specific area",
+            "Whole country or any part"
+          ],
+          [
+            "Constitutional basis",
+            "Implicit (no specific provision)",
+            "Explicit and detailed provision"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "The Supreme Court held that a declaration of martial law does not ipso facto result in the suspension of which writ?",
+      "options": {
+        "a": "Habeas Corpus",
+        "b": "Mandamus",
+        "c": "Quo-Warranto",
+        "d": "Certiorari"
+      },
+      "answer": "a",
+      "a": "Habeas Corpus",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 35 vests the power to make laws to give effect to certain specified Fundamental Rights in:",
+      "options": {
+        "a": "The Governor",
+        "b": "Both Parliament and State Legislatures",
+        "c": "State Legislatures only",
+        "d": "Parliament only"
+      },
+      "answer": "d",
+      "a": "Parliament only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following matters on which only Parliament, and not State Legislatures, can make laws under Article 35:\n(I) Prescribing residence as a condition for employment (Article 16)\n(II) Empowering courts other than the Supreme Court and High Courts to issue writs (Article 32)\n(III) Restricting Fundamental Rights of armed forces members (Article 33)\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "All of the above"
+      },
+      "answer": "d",
+      "a": "All of the above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 35 also empowers Parliament exclusively to prescribe punishment for offences declared under which Fundamental Rights?\n(I) Untouchability (Article 17)\n(II) Traffic in human beings and forced labour (Article 23)\nWhich of the above is/are correct?",
+      "options": {
+        "a": "Both I and II",
+        "b": "Neither I nor II",
+        "c": "I only",
+        "d": "II only"
+      },
+      "answer": "a",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Originally, the right to property was dealt with by which two Articles?",
+      "options": {
+        "a": "Article 19(1)(f) and Article 300-A",
+        "b": "Article 21 and Article 31",
+        "c": "Article 19(1)(f) and Article 31",
+        "d": "Article 31 and Article 300-A"
+      },
+      "answer": "c",
+      "a": "Article 19(1)(f) and Article 31",
+      "e": "The 44th Amendment Act, 1978 abolished the right to property as a Fundamental Right by repealing these same two Articles, and instead inserted it as a legal right under Article 300-A in Part XII.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As a legal right rather than a Fundamental Right, property under Article 300-A:",
+      "options": {
+        "a": "Guarantees compensation on acquisition",
+        "b": "Can be regulated by ordinary law of Parliament without constitutional amendment",
+        "c": "Protects against both executive and legislative action",
+        "d": "Allows direct recourse to Article 32"
+      },
+      "answer": "b",
+      "a": "Can be regulated by ordinary law of Parliament without constitutional amendment",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In case of violation of the right to property under Article 300-A, an aggrieved person can move:",
+      "options": {
+        "a": "The Supreme Court directly under Article 32",
+        "b": "The National Human Rights Commission",
+        "c": "The High Court under Article 226",
+        "d": "Only the President"
+      },
+      "answer": "c",
+      "a": "The High Court under Article 226",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following two cases where Part III still guarantees compensation for State acquisition of private property:\n(I) Acquisition of property of a minority educational institution (Article 30)\n(II) Acquisition of land under personal cultivation within statutory ceiling limits (Article 31A)\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II only",
+        "b": "I only",
+        "c": "Both I and II",
+        "d": "Neither I nor II"
+      },
+      "answer": "c",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The provision guaranteeing compensation for acquisition of minority educational institution property was added by which Amendment?",
+      "options": {
+        "a": "25th Amendment Act, 1971",
+        "b": "44th Amendment Act, 1978",
+        "c": "17th Amendment Act, 1964",
+        "d": "42nd Amendment Act, 1976"
+      },
+      "answer": "b",
+      "a": "44th Amendment Act, 1978",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 31A saves certain categories of laws from being challenged on grounds of contravention of which Fundamental Rights?",
+      "options": {
+        "a": "Article 25 and Article 26",
+        "b": "Article 21 and Article 22",
+        "c": "Article 14 and Article 19",
+        "d": "Article 32 and Article 226"
+      },
+      "answer": "c",
+      "a": "Article 14 and Article 19",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 31A does NOT immunise a state law from judicial review unless it has been:",
+      "options": {
+        "a": "Passed by a two-thirds majority",
+        "b": "Approved by the Supreme Court in advance",
+        "c": "Reserved for the President's consideration and received assent",
+        "d": "Notified in the Official Gazette"
+      },
+      "answer": "c",
+      "a": "Reserved for the President's consideration and received assent",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 31B saves acts and regulations included in which Schedule from being challenged on grounds of contravention of Fundamental Rights?",
+      "options": {
+        "a": "Tenth Schedule",
+        "b": "Eighth Schedule",
+        "c": "Seventh Schedule",
+        "d": "Ninth Schedule"
+      },
+      "answer": "d",
+      "a": "Ninth Schedule",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court rule that acts in the Ninth Schedule are open to challenge if they violate the basic structure?",
+      "options": {
+        "a": "Minerva Mills case",
+        "b": "I.R. Coelho case",
+        "c": "Kesavananda Bharati case",
+        "d": "Golaknath case"
+      },
+      "answer": "c",
+      "a": "Kesavananda Bharati case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Waman Rao case (1980) clarified that acts included in the Ninth Schedule after which date are valid only if they do not damage the basic structure?",
+      "options": {
+        "a": "1 April 1978",
+        "b": "24 April 1973",
+        "c": "25 June 1975",
+        "d": "26 January 1950"
+      },
+      "answer": "b",
+      "a": "24 April 1973",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the I.R. Coelho case (2007), the Supreme Court reaffirmed that laws under the Ninth Schedule after 24 April 1973 are open to challenge if they violate Fundamental Rights under which Articles?",
+      "options": {
+        "a": "Articles 12, 13 and 32",
+        "b": "Articles 14, 19, and 21",
+        "c": "Articles 21 and 22 only",
+        "d": "Articles 14, 15, 19 and 21"
+      },
+      "answer": "d",
+      "a": "Articles 14, 15, 19 and 21",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Originally in 1951, the Ninth Schedule contained how many acts and regulations, compared to 282 at present?",
+      "options": {
+        "a": "100",
+        "b": "50",
+        "c": "25",
+        "d": "13"
+      },
+      "answer": "d",
+      "a": "13",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Article 31C was inserted by which Amendment Act?",
+      "options": {
+        "a": "44th Amendment Act, 1978",
+        "b": "25th Amendment Act, 1971",
+        "c": "1st Amendment Act, 1951",
+        "d": "42nd Amendment Act, 1976"
+      },
+      "answer": "b",
+      "a": "25th Amendment Act, 1971",
+      "e": "Article 31C saves laws implementing the socialistic directive principles specified in Article 39(b) and (c) from being void on grounds of contravening Articles 14 or 19.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In the Kesavananda Bharati case, the Supreme Court declared which provision of Article 31C unconstitutional?",
+      "options": {
+        "a": "The provision saving laws implementing Article 39",
+        "b": "Neither provision",
+        "c": "The provision barring judicial review of the declaration that a law gives effect to such policy",
+        "d": "Both provisions"
+      },
+      "answer": "c",
+      "a": "The provision barring judicial review of the declaration that a law gives effect to such policy",
+      "e": "This was held unconstitutional on the ground that judicial review is a basic feature; the provision saving such laws from Article 14/19 challenge was upheld as constitutional and valid.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 42nd Amendment's extension of Article 31C's protection to all Directive Principles was declared unconstitutional in which case?",
+      "options": {
+        "a": "Waman Rao case",
+        "b": "I. R. Coelho case",
+        "c": "Minerva Mills case",
+        "d": "Kesavananda Bharati case"
+      },
+      "answer": "c",
+      "a": "Minerva Mills case",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following criticisms of the Fundamental Rights:\n(I) They are stated in a vague, indefinite and ambiguous manner\n(II) They make no provision for social and economic rights like right to work\n(III) They are permanent and cannot be curtailed even by constitutional amendment\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "All of the above",
+        "c": "I and II only",
+        "d": "I only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Fundamental Rights are not permanent or sacrosanct — Parliament can curtail or abolish them by constitutional amendment, as with the abolition of the right to property in 1978; the only limitation is the judicially innovated doctrine of basic structure.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which critic remarked that the chapter on Fundamental Rights should be renamed \"Limitations on Fundamental Rights\" due to excessive restrictions?",
+      "options": {
+        "a": "Jaspat Roy Kapoor",
+        "b": "K.M. Munshi",
+        "c": "B.N. Rau",
+        "d": "Sir Ivor Jennings"
+      },
+      "answer": "a",
+      "a": "Jaspat Roy Kapoor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which jurist called the Constitution of India a \"paradise for lawyers\" due to its complicated language?",
+      "options": {
+        "a": "Sir Ivor Jennings",
+        "b": "Granville Austin",
+        "c": "H.M. Seervai",
+        "d": "A.V. Dicey"
+      },
+      "answer": "a",
+      "a": "Sir Ivor Jennings",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "During a National Emergency, enforcement of Fundamental Rights is suspended except for which two Articles?",
+      "options": {
+        "a": "Articles 20 and 21",
+        "b": "Articles 14 and 21",
+        "c": "Articles 21 and 22",
+        "d": "Articles 19 and 21"
+      },
+      "answer": "a",
+      "a": "Articles 20 and 21",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Critics argue that the judicial process for enforcing Fundamental Rights is too expensive, benefiting mainly:",
+      "options": {
+        "a": "Government employees",
+        "b": "Minorities",
+        "c": "The rich section of society",
+        "d": "Rural populations"
+      },
+      "answer": "c",
+      "a": "The rich section of society",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which provision is criticised for conferring arbitrary powers on the State and negating individual liberty, reflecting that the Constitution deals more with State rights against the individual?",
+      "options": {
+        "a": "Article 22 preventive detention",
+        "b": "Article 31C",
+        "c": "Article 33",
+        "d": "Article 19 restrictions"
+      },
+      "answer": "a",
+      "a": "Article 22 preventive detention",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Besides Fundamental Rights in Part III, which of the following is a constitutional/legal right located outside Part III?",
+      "options": {
+        "a": "No tax shall be levied except by authority of law (Article 265)",
+        "b": "Right to equality (Article 14)",
+        "c": "Right to freedom of religion (Article 25)",
+        "d": "Right to constitutional remedies (Article 32)"
+      },
+      "answer": "a",
+      "a": "No tax shall be levied except by authority of law (Article 265)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following rights outside Part III:\n(I) Trade, commerce and intercourse throughout India shall be free (Article 301)\n(II) Elections to Lok Sabha and State Assemblies shall be on the basis of adult suffrage (Article 326)\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II only",
+        "b": "Neither I nor II",
+        "c": "I only",
+        "d": "Both I and II"
+      },
+      "answer": "d",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In case of violation of rights outside Part III (like Article 301 or Article 326), the aggrieved person:",
+      "options": {
+        "a": "Has no legal remedy",
+        "b": "Can move the Supreme Court directly under Article 32",
+        "c": "Must approach Parliament",
+        "d": "Cannot avail the Article 32 remedy and must move the High Court"
+      },
+      "answer": "d",
+      "a": "Cannot avail the Article 32 remedy and must move the High Court",
+      "e": "",
+      "table": null
+    }
+  ]
+}

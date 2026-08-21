@@ -1,0 +1,837 @@
+{
+  "slug": "indian-polity-en-chapter-25-national-commissions-sc-st-bc",
+  "chapterNumber": 25,
+  "title": "National Commissions for SCs, STs and BCs",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following is a constitutional body under the Indian Constitution?",
+      "options": {
+        "a": "National Human Rights Commission",
+        "b": "Central Vigilance Commission",
+        "c": "Finance Commission",
+        "d": "Central Bureau of Investigation"
+      },
+      "answer": "c",
+      "a": "Finance Commission",
+      "e": "The Finance Commission is established directly by the Constitution, while NHRC, CVC and CBI are statutory/non-constitutional bodies.",
+      "table": {
+        "headers": [
+          "Sl No",
+          "Constitutional Body"
+        ],
+        "rows": [
+          [
+            "1",
+            "Election Commission"
+          ],
+          [
+            "2",
+            "Union Public Service Commission"
+          ],
+          [
+            "3",
+            "State Public Service Commission"
+          ],
+          [
+            "4",
+            "Finance Commission"
+          ],
+          [
+            "5",
+            "Goods and Services Tax Council"
+          ],
+          [
+            "6",
+            "National Commission for SCs"
+          ],
+          [
+            "7",
+            "National Commission for STs"
+          ],
+          [
+            "8",
+            "National Commission for BCs"
+          ],
+          [
+            "9",
+            "Special Officer for Linguistic Minorities"
+          ],
+          [
+            "10",
+            "Comptroller and Auditor General of India"
+          ],
+          [
+            "11",
+            "Attorney General of India"
+          ],
+          [
+            "12",
+            "Advocate General of the State"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following bodies:\n(I) Goods and Services Tax Council\n(II) National Commission for Women\n(III) Comptroller and Auditor General of India\nWhich of the above is/are constitutional bodies?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "The GST Council (Article 279-A) and CAG (Article 148) are constitutional bodies; the National Commission for Women is a statutory body set up by an Act of Parliament.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-constitutional (statutory/executive) body?",
+      "options": {
+        "a": "Union Public Service Commission",
+        "b": "Election Commission",
+        "c": "NITI Aayog",
+        "d": "Attorney General of India"
+      },
+      "answer": "c",
+      "a": "NITI Aayog",
+      "e": "NITI Aayog was set up by a Cabinet resolution (executive resolution), unlike UPSC, Election Commission and Attorney General, which are all constitutional bodies.",
+      "table": {
+        "headers": [
+          "Sl No",
+          "Non-Constitutional Body"
+        ],
+        "rows": [
+          [
+            "1",
+            "NITI Aayog"
+          ],
+          [
+            "2",
+            "National Human Rights Commission"
+          ],
+          [
+            "3",
+            "State Human Rights Commission"
+          ],
+          [
+            "4",
+            "National Commission for Women"
+          ],
+          [
+            "5",
+            "National Commission for Protection of Child Rights"
+          ],
+          [
+            "6",
+            "National Commission for Minorities"
+          ],
+          [
+            "7",
+            "Central Information Commission"
+          ],
+          [
+            "8",
+            "State Information Commission"
+          ],
+          [
+            "9",
+            "Central Vigilance Commission"
+          ],
+          [
+            "10",
+            "Central Bureau of Investigation"
+          ],
+          [
+            "11",
+            "Lokpal and Lokayuktas"
+          ],
+          [
+            "12",
+            "National Investigation Agency"
+          ],
+          [
+            "13",
+            "National Disaster Management Authority"
+          ],
+          [
+            "14",
+            "Bar Council of India"
+          ],
+          [
+            "15",
+            "Law Commission of India"
+          ],
+          [
+            "16",
+            "Delimitation Commission of India"
+          ],
+          [
+            "17",
+            "North Eastern Council"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "The National Commission for Scheduled Castes is a constitutional body directly established by which Article of the Constitution?",
+      "options": {
+        "a": "Article 335",
+        "b": "Article 338",
+        "c": "Article 338-A",
+        "d": "Article 342"
+      },
+      "answer": "b",
+      "a": "Article 338",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following national commissions:\n(I) National Commission for Women\n(II) National Commission for Minorities\n(III) National Human Rights Commission\nWhich of the above is/are statutory bodies established by an Act of Parliament?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "I, II and III",
+        "d": "None of the above"
+      },
+      "answer": "c",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the National Commission for Women established?",
+      "options": {
+        "a": "1990",
+        "b": "1992",
+        "c": "1993",
+        "d": "2007"
+      },
+      "answer": "b",
+      "a": "1992",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the National Commission for Protection of Child Rights established?",
+      "options": {
+        "a": "1992",
+        "b": "1993",
+        "c": "2003",
+        "d": "2007"
+      },
+      "answer": "d",
+      "a": "2007",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Originally, Article 338 of the Constitution provided for the appointment of which authority to investigate matters relating to constitutional safeguards for SCs and STs?",
+      "options": {
+        "a": "National Commission for SCs and STs",
+        "b": "Special Officer for SCs and STs",
+        "c": "Ministry of Social Justice and Empowerment",
+        "d": "Backward Classes Commission"
+      },
+      "answer": "b",
+      "a": "Special Officer for SCs and STs",
+      "e": "This officer was designated as the Commissioner for SCs and STs.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did the Government, through a Resolution, set up a non-statutory multi-member Commission for SCs and STs?",
+      "options": {
+        "a": "1978",
+        "b": "1987",
+        "c": "1990",
+        "d": "2003"
+      },
+      "answer": "a",
+      "a": "1978",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In 1987, the Government renamed the multi-member Commission for SCs and STs as which of the following?",
+      "options": {
+        "a": "Commissioner for SCs and STs",
+        "b": "National Commission for SCs and STs",
+        "c": "National Commission for Backward Classes",
+        "d": "National Human Rights Commission"
+      },
+      "answer": "b",
+      "a": "National Commission for SCs and STs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Constitutional Amendment Act provided for the establishment of a high-level multi-member National Commission for SCs and STs, replacing the single Special Officer?",
+      "options": {
+        "a": "65th Amendment Act, 1990",
+        "b": "73rd Amendment Act, 1992",
+        "c": "89th Amendment Act, 2003",
+        "d": "102nd Amendment Act, 2018"
+      },
+      "answer": "a",
+      "a": "65th Amendment Act, 1990",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Constitutional Amendment Act bifurcated the combined National Commission for SCs and STs into two separate bodies?",
+      "options": {
+        "a": "65th Amendment Act, 1990",
+        "b": "73rd Amendment Act, 1992",
+        "c": "89th Amendment Act, 2003",
+        "d": "102nd Amendment Act, 2018"
+      },
+      "answer": "c",
+      "a": "89th Amendment Act, 2003",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Following the 89th Amendment Act, 2003, the National Commission for Scheduled Tribes was established under which Article?",
+      "options": {
+        "a": "Article 338",
+        "b": "Article 338-A",
+        "c": "Article 338-B",
+        "d": "Article 342-A"
+      },
+      "answer": "b",
+      "a": "Article 338-A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did the separate National Commission for Scheduled Castes come into existence?",
+      "options": {
+        "a": "1990",
+        "b": "2003",
+        "c": "2004",
+        "d": "2007"
+      },
+      "answer": "c",
+      "a": "2004",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the composition of the National Commission for Scheduled Castes:\n(I) It consists of a chairperson, a vice-chairperson and three other members.\n(II) Its members are appointed by the President by warrant under his hand and seal.\n(III) Their conditions of service and tenure are determined by the Parliament.\nWhich of the above statements is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Conditions of service and tenure of members are determined by the President, not the Parliament.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Rules made by the President, members of the National Commission for Scheduled Castes hold office for a term of how many years?",
+      "options": {
+        "a": "Two years",
+        "b": "Three years",
+        "c": "Five years",
+        "d": "Six years"
+      },
+      "answer": "b",
+      "a": "Three years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A member of the National Commission for Scheduled Castes is not eligible for appointment for more than how many terms?",
+      "options": {
+        "a": "One term",
+        "b": "Two terms",
+        "c": "Three terms",
+        "d": "No limit"
+      },
+      "answer": "b",
+      "a": "Two terms",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a function of the National Commission for Scheduled Castes?",
+      "options": {
+        "a": "To fix reservation quotas for SCs in Parliament",
+        "b": "To inquire into specific complaints regarding deprivation of rights and safeguards of SCs",
+        "c": "To appoint the Special Officer for SCs",
+        "d": "To amend the Constitution regarding SC safeguards"
+      },
+      "answer": "b",
+      "a": "To inquire into specific complaints regarding deprivation of rights and safeguards of SCs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "To whom does the National Commission for Scheduled Castes present its annual report?",
+      "options": {
+        "a": "Prime Minister",
+        "b": "Parliament directly",
+        "c": "President",
+        "d": "Chief Justice of India"
+      },
+      "answer": "c",
+      "a": "President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The President forwards a report of the National Commission for Scheduled Castes pertaining to a state government to which authority?",
+      "options": {
+        "a": "Chief Minister of the state",
+        "b": "State legislature directly",
+        "c": "State governor",
+        "d": "State High Court"
+      },
+      "answer": "c",
+      "a": "State governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the powers of the National Commission for Scheduled Castes while investigating a matter:\n(I) It has all the powers of a civil court trying a suit.\n(II) It can summon and enforce the attendance of any person from any part of India.\n(III) It can requisition public records only from central government offices.\nWhich of the above statements is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The Commission can requisition public records from any court or office, not merely central government offices.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Besides Scheduled Castes, the National Commission for Scheduled Castes is also required to discharge similar functions with regard to which community?",
+      "options": {
+        "a": "Anglo-Indian Community",
+        "b": "Other Backward Classes",
+        "c": "Scheduled Tribes",
+        "d": "De-notified Tribes"
+      },
+      "answer": "a",
+      "a": "Anglo-Indian Community",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Till 2018, the National Commission for Scheduled Castes was also required to discharge similar functions with regard to Other Backward Classes (OBCs). Which Amendment Act relieved it of this responsibility?",
+      "options": {
+        "a": "89th Amendment Act, 2003",
+        "b": "101st Amendment Act, 2016",
+        "c": "102nd Amendment Act, 2018",
+        "d": "105th Amendment Act, 2021"
+      },
+      "answer": "c",
+      "a": "102nd Amendment Act, 2018",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The National Commission for Scheduled Tribes is a constitutional body directly established by which Article of the Constitution?",
+      "options": {
+        "a": "Article 338",
+        "b": "Article 338-A",
+        "c": "Article 338-B",
+        "d": "Article 342-A"
+      },
+      "answer": "b",
+      "a": "Article 338-A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The National Commission for SCs and STs came into being consequent upon which Constitutional Amendment Act?",
+      "options": {
+        "a": "65th Amendment Act, 1990",
+        "b": "73rd Amendment Act, 1992",
+        "c": "89th Amendment Act, 2003",
+        "d": "102nd Amendment Act, 2018"
+      },
+      "answer": "a",
+      "a": "65th Amendment Act, 1990",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Ministry of Tribal Affairs created to provide a sharp focus to the welfare and development of STs?",
+      "options": {
+        "a": "1990",
+        "b": "1993",
+        "c": "1999",
+        "d": "2003"
+      },
+      "answer": "c",
+      "a": "1999",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "It was felt administratively infeasible for which Ministry to coordinate all activities relating to STs, leading to the creation of a separate Ministry of Tribal Affairs?",
+      "options": {
+        "a": "Ministry of Home Affairs",
+        "b": "Ministry of Social Justice and Empowerment",
+        "c": "Ministry of Rural Development",
+        "d": "Ministry of Panchayati Raj"
+      },
+      "answer": "b",
+      "a": "Ministry of Social Justice and Empowerment",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Constitutional Amendment Act inserted Article 338-A into the Constitution to set up a separate National Commission for STs?",
+      "options": {
+        "a": "65th Amendment Act, 1990",
+        "b": "73rd Amendment Act, 1992",
+        "c": "89th Amendment Act, 2003",
+        "d": "102nd Amendment Act, 2018"
+      },
+      "answer": "c",
+      "a": "89th Amendment Act, 2003",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did the separate National Commission for Scheduled Tribes come into existence?",
+      "options": {
+        "a": "1999",
+        "b": "2003",
+        "c": "2004",
+        "d": "2005"
+      },
+      "answer": "c",
+      "a": "2004",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the National Commission for Scheduled Tribes:\n(I) It consists of a chairperson, a vice-chairperson and three other members.\n(II) Its members are appointed by the President by warrant under his/her hand and seal.\n(III) Members hold office for a term of five years and are eligible for reappointment any number of times.\nWhich of the above statements is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Members hold office for a term of three years and are not eligible for appointment for more than two terms.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A member of the National Commission for Scheduled Tribes is not eligible for appointment for more than how many terms?",
+      "options": {
+        "a": "One term",
+        "b": "Two terms",
+        "c": "Three terms",
+        "d": "No limit"
+      },
+      "answer": "b",
+      "a": "Two terms",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a function of the National Commission for Scheduled Tribes?",
+      "options": {
+        "a": "To fix reservation quotas for STs in Parliament",
+        "b": "To inquire into specific complaints regarding deprivation of rights and safeguards of STs",
+        "c": "To create the Ministry of Tribal Affairs",
+        "d": "To repeal laws affecting STs"
+      },
+      "answer": "b",
+      "a": "To inquire into specific complaints regarding deprivation of rights and safeguards of STs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did the President specify additional \"other functions\" of the National Commission for Scheduled Tribes relating to their protection, welfare and development?",
+      "options": {
+        "a": "1999",
+        "b": "2003",
+        "c": "2004",
+        "d": "2005"
+      },
+      "answer": "d",
+      "a": "2005",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following \"other functions\" specified for the National Commission for Scheduled Tribes:\n(I) Measures for conferring ownership rights over minor forest produce to STs living in forest areas.\n(II) Measures to ensure full implementation of the Provisions of Panchayats (Extension to the Scheduled Areas) Act, 1996.\n(III) Measures to promote shifting cultivation as a sustainable tribal livelihood strategy.\nWhich of the above is/are among the Commission's specified other functions?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The Commission's mandate is to reduce and ultimately eliminate shifting cultivation, not promote it.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "To whom does the National Commission for Scheduled Tribes present its annual report?",
+      "options": {
+        "a": "Prime Minister",
+        "b": "Parliament directly",
+        "c": "President",
+        "d": "Ministry of Tribal Affairs"
+      },
+      "answer": "c",
+      "a": "President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The President forwards a report of the National Commission for Scheduled Tribes pertaining to a state government to which authority?",
+      "options": {
+        "a": "Chief Minister of the state",
+        "b": "State legislature directly",
+        "c": "State governor",
+        "d": "State High Court"
+      },
+      "answer": "c",
+      "a": "State governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "While investigating any matter, the National Commission for Scheduled Tribes has all the powers of which of the following?",
+      "options": {
+        "a": "A civil court trying a suit",
+        "b": "A criminal court trying a case",
+        "c": "A tribunal under administrative law",
+        "d": "A quasi-judicial commission with advisory powers only"
+      },
+      "answer": "a",
+      "a": "A civil court trying a suit",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which government(s) are required to consult the National Commission for Scheduled Tribes on all major policy matters affecting STs?",
+      "options": {
+        "a": "Central government only",
+        "b": "State governments only",
+        "c": "Both central and state governments",
+        "d": "Neither, consultation is optional"
+      },
+      "answer": "c",
+      "a": "Both central and state governments",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which landmark case did the Supreme Court direct the central government to constitute a permanent statutory body to examine complaints regarding inclusion in the backward classes list?",
+      "options": {
+        "a": "Kesavananda Bharati case",
+        "b": "Indra Sawhney case",
+        "c": "Minerva Mills case",
+        "d": "Golaknath case"
+      },
+      "answer": "b",
+      "a": "Indra Sawhney case",
+      "e": "This is popularly known as the Mandal case judgement, delivered in 1992.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the National Commission for Backward Classes (NCBC) set up under the National Commission for Backward Classes Act?",
+      "options": {
+        "a": "1990",
+        "b": "1992",
+        "c": "1993",
+        "d": "2003"
+      },
+      "answer": "c",
+      "a": "1993",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Constitutional Amendment Act conferred constitutional status on the National Commission for Backward Classes?",
+      "options": {
+        "a": "89th Amendment Act, 2003",
+        "b": "101st Amendment Act, 2016",
+        "c": "102nd Amendment Act, 2018",
+        "d": "105th Amendment Act, 2021"
+      },
+      "answer": "c",
+      "a": "102nd Amendment Act, 2018",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 102nd Amendment Act, 2018 inserted which new Article into the Constitution to give constitutional status to the National Commission for Backward Classes?",
+      "options": {
+        "a": "Article 338",
+        "b": "Article 338-A",
+        "c": "Article 338-B",
+        "d": "Article 342-A"
+      },
+      "answer": "c",
+      "a": "Article 338-B",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act was repealed by the National Commission for Backward Classes (Repeal) Act, 2018, following the Commission's conversion to a constitutional body?",
+      "options": {
+        "a": "The Mandal Commission Act",
+        "b": "The National Commission for Backward Classes Act, 1993",
+        "c": "The National Commission for Scheduled Castes Act",
+        "d": "The Indra Sawhney Act, 1992"
+      },
+      "answer": "b",
+      "a": "The National Commission for Backward Classes Act, 1993",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which new Article did the 102nd Amendment Act, 2018 insert to enable the President to specify the socially and educationally backward classes?",
+      "options": {
+        "a": "Article 338",
+        "b": "Article 338-A",
+        "c": "Article 338-B",
+        "d": "Article 342-A"
+      },
+      "answer": "d",
+      "a": "Article 342-A",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the composition of the National Commission for Backward Classes:\n(I) It consists of a chairperson, a vice-chairperson and three other members.\n(II) Its members are appointed by the President by warrant under his/her hand and seal.\n(III) Members hold office for a term of three years and are eligible for appointment for more than two terms.\nWhich of the above statements is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Members are not eligible for appointment for more than two terms.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a function of the National Commission for Backward Classes?",
+      "options": {
+        "a": "To fix reservation percentages for backward classes in Parliament",
+        "b": "To inquire into specific complaints regarding deprivation of rights and safeguards of socially and educationally backward classes",
+        "c": "To conduct the national census",
+        "d": "To appoint state Backward Classes Commissions"
+      },
+      "answer": "b",
+      "a": "To inquire into specific complaints regarding deprivation of rights and safeguards of socially and educationally backward classes",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike the National Commissions for SCs and STs, the President forwards a report of the National Commission for Backward Classes pertaining to a state to which authority?",
+      "options": {
+        "a": "State governor",
+        "b": "State government",
+        "c": "State High Court",
+        "d": "State Public Service Commission"
+      },
+      "answer": "b",
+      "a": "State government",
+      "e": "Clause 7 of Article 338-B specifies the state government, not the governor, distinguishing it from the NCSC/NCST reporting procedure.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "While investigating any matter, the National Commission for Backward Classes has all the powers of which of the following?",
+      "options": {
+        "a": "A civil court trying a suit",
+        "b": "A criminal court trying a case",
+        "c": "A parliamentary committee",
+        "d": "An election tribunal"
+      },
+      "answer": "a",
+      "a": "A civil court trying a suit",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Constitutional Amendment Act exempted state governments from consulting the National Commission for Backward Classes regarding the preparation and maintenance of their own state list of socially and educationally backward classes?",
+      "options": {
+        "a": "89th Amendment Act, 2003",
+        "b": "102nd Amendment Act, 2018",
+        "c": "105th Amendment Act, 2021",
+        "d": "106th Amendment Act, 2023"
+      },
+      "answer": "c",
+      "a": "105th Amendment Act, 2021",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the National Commission for Backward Classes:\n(I) It was originally a statutory body set up in 1993 following the Mandal case judgement.\n(II) The 102nd Amendment Act, 2018 conferred constitutional status on it, at par with the NCSC and NCST.\n(III) The scope of its functions was enlarged under the new constitutional dispensation.\nWhich of the above statements is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    }
+  ]
+}

@@ -1,0 +1,3290 @@
+{
+  "slug": "indian-polity-en-chapter-19-state-council-of-ministers-and-state-legislature",
+  "chapterNumber": 19,
+  "title": "Chief Minister, State Council of Ministers and State Legislature",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In the parliamentary system of government, the Chief Minister represents which kind of executive authority?",
+      "options": {
+        "a": "Titular executive",
+        "b": "De facto executive",
+        "c": "Nominal executive",
+        "d": "De jure executive"
+      },
+      "answer": "b",
+      "a": "De facto executive",
+      "e": "The Governor is the de jure (nominal) executive, while the Chief Minister is the de facto (real) executive.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The position of the Chief Minister at the state level is analogous to which position at the Centre?",
+      "options": {
+        "a": "The Speaker of Lok Sabha",
+        "b": "The Prime Minister",
+        "c": "The President",
+        "d": "The Vice-President"
+      },
+      "answer": "b",
+      "a": "The Prime Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article of the Constitution provides that the Chief Minister shall be appointed by the Governor?",
+      "options": {
+        "a": "Article 164",
+        "b": "Article 167",
+        "c": "Article 166",
+        "d": "Article 163"
+      },
+      "answer": "a",
+      "a": "Article 164",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When no party has a clear majority in the assembly, the Governor usually asks the appointed Chief Minister to seek a vote of confidence within what period?",
+      "options": {
+        "a": "One month",
+        "b": "45 days",
+        "c": "15 days",
+        "d": "Two months"
+      },
+      "answer": "a",
+      "a": "One month",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A person who is not a member of the state legislature can be appointed Chief Minister for a maximum of how long before being elected to the legislature?",
+      "options": {
+        "a": "Six months",
+        "b": "Nine months",
+        "c": "One year",
+        "d": "Three months"
+      },
+      "answer": "a",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Chief Minister may be a member of which House(s) of the state legislature?",
+      "options": {
+        "a": "Only the Legislative Council",
+        "b": "Neither House, since the Chief Minister need not be a legislator",
+        "c": "Either the Legislative Assembly or the Legislative Council",
+        "d": "Only the Legislative Assembly"
+      },
+      "answer": "c",
+      "a": "Either the Legislative Assembly or the Legislative Council",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per Sarkaria Commission recommendations, if a single party has an absolute majority in the Legislative Assembly, who should automatically be asked to become Chief Minister?",
+      "options": {
+        "a": "The outgoing Chief Minister",
+        "b": "The leader of that party",
+        "c": "The Governor's nominee",
+        "d": "The senior-most MLA"
+      },
+      "answer": "b",
+      "a": "The leader of that party",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the Sarkaria Commission's order of preference for selecting a Chief Minister when no single party has a majority:\n(I) An alliance of parties formed prior to the elections\n(II) The largest single party staking a claim with the support of others, including independents\n(III) A post-electoral coalition of parties, with all partners joining the government\nWhich of the above is/are part of the recommended order of preference?",
+      "options": {
+        "a": "I and II only",
+        "b": "None of the above",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Sarkaria Commission, a Chief Minister who is not the leader of a party with absolute majority should seek a vote of confidence within how many days of taking over?",
+      "options": {
+        "a": "15 days",
+        "b": "45 days",
+        "c": "30 days",
+        "d": "60 days"
+      },
+      "answer": "c",
+      "a": "30 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Sarkaria Commission, when rival claims to majority support are contested before the Governor, what is the prudent course of action?",
+      "options": {
+        "a": "The rival claims should be tested on the floor of the House",
+        "b": "The Governor should dissolve the assembly",
+        "c": "The Governor should personally verify support through written affidavits",
+        "d": "The Governor should refer the matter to the President"
+      },
+      "answer": "a",
+      "a": "The rival claims should be tested on the floor of the House",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Before entering office, the Chief Minister is administered which two oaths by the Governor?",
+      "options": {
+        "a": "Oath of office and oath of allegiance",
+        "b": "Oath of office and oath of secrecy",
+        "c": "Oath of secrecy and oath of confidentiality",
+        "d": "Oath of allegiance and oath of secrecy"
+      },
+      "answer": "b",
+      "a": "Oath of office and oath of secrecy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The term of the Chief Minister is not fixed and he/she holds office during whose pleasure?",
+      "options": {
+        "a": "The ruling party's",
+        "b": "The state legislature's",
+        "c": "The Governor's",
+        "d": "The President's"
+      },
+      "answer": "c",
+      "a": "The Governor's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court rule that a Chief Minister cannot be dismissed by the Governor as long as he/she enjoys majority support in the assembly?",
+      "options": {
+        "a": "D.C. Wadhwa case",
+        "b": "S.R. Bommai case",
+        "c": "Hargovind Pant case",
+        "d": "Surya Narain case"
+      },
+      "answer": "b",
+      "a": "S.R. Bommai case",
+      "e": "Decided in 1994; despite this ruling, there have been instances of governors dismissing Chief Ministers without giving them an opportunity to prove majority.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The salary and allowances of the Chief Minister are determined by whom?",
+      "options": {
+        "a": "The Union Finance Ministry",
+        "b": "The Finance Commission",
+        "c": "The state legislature",
+        "d": "The Governor"
+      },
+      "answer": "c",
+      "a": "The state legislature",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Governor appoints only those persons as ministers who are recommended by whom?",
+      "options": {
+        "a": "The Speaker",
+        "b": "The Chief Minister",
+        "c": "The state legislature",
+        "d": "The Advocate General"
+      },
+      "answer": "b",
+      "a": "The Chief Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whose resignation or death automatically dissolves the entire council of ministers?",
+      "options": {
+        "a": "The Speaker's",
+        "b": "Any senior minister's",
+        "c": "The Advocate General's",
+        "d": "The Chief Minister's"
+      },
+      "answer": "d",
+      "a": "The Chief Minister's",
+      "e": "The resignation or death of any other minister merely creates a vacancy, which the Chief Minister may or may not choose to fill.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article specifically deals with the Chief Minister's duty to communicate Council of Ministers' decisions to the Governor?",
+      "options": {
+        "a": "Article 164",
+        "b": "Article 167",
+        "c": "Article 166",
+        "d": "Article 163"
+      },
+      "answer": "b",
+      "a": "Article 167",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Chief Minister advises the Governor on the appointment of which of the following officials?",
+      "options": {
+        "a": "Only the State Election Commissioner",
+        "b": "Only High Court judges",
+        "c": "Only the Advocate General",
+        "d": "Advocate General, State Public Service Commission members, and State Election Commissioner"
+      },
+      "answer": "d",
+      "a": "Advocate General, State Public Service Commission members, and State Election Commissioner",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who can recommend the dissolution of the legislative assembly to the Governor at any time?",
+      "options": {
+        "a": "The leader of the opposition",
+        "b": "The Advocate General",
+        "c": "The Chief Minister",
+        "d": "The Speaker"
+      },
+      "answer": "c",
+      "a": "The Chief Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Chief Minister acts as the chairman of which body?",
+      "options": {
+        "a": "The State Finance Commission",
+        "b": "The State Planning Board",
+        "c": "The State Public Service Commission",
+        "d": "NITI Aayog"
+      },
+      "answer": "b",
+      "a": "The State Planning Board",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Chief Minister acts as vice-chairman of the concerned zonal council by rotation, holding office for what period at a time?",
+      "options": {
+        "a": "Six months",
+        "b": "Two years",
+        "c": "Three years",
+        "d": "One year"
+      },
+      "answer": "d",
+      "a": "One year",
+      "e": "The Union Home Minister is the chairman of all the zonal councils.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Chief Minister is a member of the Inter-State Council and the Governing Council of NITI Aayog, both of which are headed by whom?",
+      "options": {
+        "a": "The President",
+        "b": "The Vice-President",
+        "c": "The Prime Minister",
+        "d": "The Union Home Minister"
+      },
+      "answer": "c",
+      "a": "The Prime Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article provides that ministers shall hold office during the pleasure of the Governor and that the Council of Ministers shall be collectively responsible to the legislative assembly?",
+      "options": {
+        "a": "Article 164",
+        "b": "Article 167",
+        "c": "Article 166",
+        "d": "Article 163"
+      },
+      "answer": "a",
+      "a": "Article 164",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the rights of Ministers as respects the Houses of the state legislature?\nThis chapter is dense (Articles 163/164/166/167/177, composition, cabinet, cabinet committees) — estimated around 40-45 atomic questions, within the single-batch threshold.",
+      "options": {
+        "a": "Article 167",
+        "b": "Article 177",
+        "c": "Article 164",
+        "d": "Article 166"
+      },
+      "answer": "b",
+      "a": "Article 177",
+      "e": "See table below for the full set of Articles related to the Chief Minister.",
+      "table": {
+        "headers": [
+          "Article No.",
+          "Subject-matter"
+        ],
+        "rows": [
+          [
+            "163",
+            "Council of Ministers to aid and advise Governor"
+          ],
+          [
+            "164",
+            "Other provisions as to Ministers"
+          ],
+          [
+            "166",
+            "Conduct of business of the Government of a State"
+          ],
+          [
+            "167",
+            "Duties of Chief Minister as respects furnishing information to Governor"
+          ],
+          [
+            "177",
+            "Rights of Ministers as respects the Houses"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article of the Constitution deals with the status of the Council of Ministers to aid and advise the Governor?",
+      "options": {
+        "a": "Article 166",
+        "b": "Article 163",
+        "c": "Article 164",
+        "d": "Article 167"
+      },
+      "answer": "b",
+      "a": "Article 163",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the appointment, tenure, responsibility, qualifications, oath, and salaries of ministers?",
+      "options": {
+        "a": "Article 164",
+        "b": "Article 177",
+        "c": "Article 163",
+        "d": "Article 166"
+      },
+      "answer": "a",
+      "a": "Article 164",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per Article 163, the advice tendered by Ministers to the Governor shall be enquired into by which authority?",
+      "options": {
+        "a": "The Election Commission",
+        "b": "No court",
+        "c": "The Supreme Court",
+        "d": "The state High Court"
+      },
+      "answer": "b",
+      "a": "No court",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment Act excluded Bihar from the requirement of having a tribal welfare minister?",
+      "options": {
+        "a": "94th Amendment Act, 2006",
+        "b": "98th Amendment Act, 2012",
+        "c": "91st Amendment Act, 2003",
+        "d": "104th Amendment Act, 2019"
+      },
+      "answer": "a",
+      "a": "94th Amendment Act, 2006",
+      "e": "Bihar was excluded as it has no Scheduled Areas and a very small Scheduled Tribes population; the same Amendment extended the provision to Chhattisgarh and Jharkhand.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment Act limited the total number of ministers, including the Chief Minister, to 15 per cent of the total strength of the legislative assembly?",
+      "options": {
+        "a": "101st Amendment Act, 2016",
+        "b": "94th Amendment Act, 2006",
+        "c": "91st Amendment Act, 2003",
+        "d": "97th Amendment Act, 2011"
+      },
+      "answer": "c",
+      "a": "91st Amendment Act, 2003",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the 91st Amendment Act, the minimum number of ministers, including the Chief Minister, in a state shall not be less than what?",
+      "options": {
+        "a": "10",
+        "b": "12",
+        "c": "15",
+        "d": "18"
+      },
+      "answer": "b",
+      "a": "12",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 91st Amendment Act, 2003 also disqualified a member of the state legislature from being appointed a minister if disqualified on which ground?",
+      "options": {
+        "a": "Non-residency",
+        "b": "Criminal conviction",
+        "c": "Age",
+        "d": "Defection"
+      },
+      "answer": "d",
+      "a": "Defection",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A minister who is not a member of the state legislature must become a member of either House within how many consecutive months, failing which he/she ceases to be a minister?",
+      "options": {
+        "a": "Three months",
+        "b": "Twelve months",
+        "c": "Nine months",
+        "d": "Six months"
+      },
+      "answer": "d",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per Article 166, all executive action of the Government of a State shall be expressed to be taken in whose name?",
+      "options": {
+        "a": "The Chief Minister's",
+        "b": "The Governor's",
+        "c": "The President's",
+        "d": "The Advocate General's"
+      },
+      "answer": "b",
+      "a": "The Governor's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under Article 166, who makes rules for the allocation of business among ministers, except where the Governor is required to act at discretion?",
+      "options": {
+        "a": "The Governor",
+        "b": "The Advocate General",
+        "c": "The Chief Minister",
+        "d": "The state legislature"
+      },
+      "answer": "a",
+      "a": "The Governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article lays down the duty of the Chief Minister to communicate all Council of Ministers' decisions to the Governor?",
+      "options": {
+        "a": "Article 164",
+        "b": "Article 166",
+        "c": "Article 163",
+        "d": "Article 167"
+      },
+      "answer": "d",
+      "a": "Article 167",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per Article 177, every minister has the right to speak and take part in proceedings of the Assembly and Council, but is not entitled to what?",
+      "options": {
+        "a": "Vote",
+        "b": "Introduce bills",
+        "c": "Ask questions",
+        "d": "Attend cabinet meetings"
+      },
+      "answer": "a",
+      "a": "Vote",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court hold that the Governor must act on the aid and advice of the Council of Ministers except in matters of discretion?",
+      "options": {
+        "a": "Shamsher Singh case",
+        "b": "S.R. Bommai case",
+        "c": "Hargovind Pant case",
+        "d": "Surya Narain case"
+      },
+      "answer": "a",
+      "a": "Shamsher Singh case",
+      "e": "Decided in 1974; the Court held that wherever the Constitution requires the Governor's satisfaction, it means the satisfaction of the Council of Ministers, not the Governor's personal satisfaction.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The other ministers, apart from the Chief Minister, are appointed by the Governor on whose advice?",
+      "options": {
+        "a": "The President's",
+        "b": "The Speaker's",
+        "c": "The Chief Minister's",
+        "d": "The Advocate General's"
+      },
+      "answer": "c",
+      "a": "The Chief Minister's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A minister who is a member of one House of the state legislature can speak in the other House but may vote only in which House?",
+      "options": {
+        "a": "The House of which he/she is a member",
+        "b": "Either House at his/her discretion",
+        "c": "Neither House",
+        "d": "Both Houses"
+      },
+      "answer": "a",
+      "a": "The House of which he/she is a member",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Before entering office, a minister is administered which two oaths by the Governor?",
+      "options": {
+        "a": "Oath of allegiance and oath of secrecy",
+        "b": "Oath of office and oath of secrecy",
+        "c": "Oath of secrecy and oath of confidentiality",
+        "d": "Oath of office and oath of allegiance"
+      },
+      "answer": "b",
+      "a": "Oath of office and oath of secrecy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The salaries and allowances of ministers are determined by whom?",
+      "options": {
+        "a": "The Union Finance Ministry",
+        "b": "The Chief Minister",
+        "c": "The Governor",
+        "d": "The state legislature"
+      },
+      "answer": "d",
+      "a": "The state legislature",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which fundamental principle underlies the working of the parliamentary system, as stated under Article 164?",
+      "options": {
+        "a": "Legal responsibility",
+        "b": "Collective responsibility",
+        "c": "Individual responsibility",
+        "d": "Vicarious responsibility"
+      },
+      "answer": "b",
+      "a": "Collective responsibility",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When the legislative assembly passes a no-confidence motion against the Council of Ministers, which ministers are required to resign?",
+      "options": {
+        "a": "Only the Chief Minister",
+        "b": "Only cabinet ministers",
+        "c": "All ministers, including those from the legislative council",
+        "d": "Only ministers from the legislative assembly"
+      },
+      "answer": "c",
+      "a": "All ministers, including those from the legislative council",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the principle of individual responsibility, the Governor can remove a minister only on whose advice?",
+      "options": {
+        "a": "The Advocate General's",
+        "b": "The President's",
+        "c": "The Speaker's",
+        "d": "The Chief Minister's"
+      },
+      "answer": "d",
+      "a": "The Chief Minister's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Is there a constitutional provision for legal responsibility of ministers in the states, requiring countersignature of a Governor's public act order?",
+      "options": {
+        "a": "No, there is no such provision",
+        "b": "Yes, mandatory countersignature is required",
+        "c": "Only during President's Rule",
+        "d": "Only for money bills"
+      },
+      "answer": "a",
+      "a": "No, there is no such provision",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who determines the size of the state Council of Ministers and the ranking of ministers, since the Constitution does not specify this?",
+      "options": {
+        "a": "The state legislature",
+        "b": "The Governor",
+        "c": "The President",
+        "d": "The Chief Minister"
+      },
+      "answer": "d",
+      "a": "The Chief Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the categories of ministers in a state Council of Ministers:\n(I) Cabinet ministers head important departments and attend cabinet meetings\n(II) Ministers of state are always members of the cabinet\n(III) Deputy ministers are not given independent charge of departments\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I, II and III",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I only"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "Ministers of state are not members of the cabinet and do not attend cabinet meetings unless specially invited.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Deputy Chief Ministers, when included in the Council of Ministers, are appointed mostly for what reason?",
+      "options": {
+        "a": "Local political reasons",
+        "b": "Judicial requirement",
+        "c": "Constitutional necessity",
+        "d": "Financial administration needs"
+      },
+      "answer": "a",
+      "a": "Local political reasons",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which smaller body, consisting only of cabinet ministers, is described as the real centre of authority in the state government?",
+      "options": {
+        "a": "The Zonal Council",
+        "b": "The Council of Ministers",
+        "c": "The Cabinet",
+        "d": "The State Planning Board"
+      },
+      "answer": "c",
+      "a": "The Cabinet",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Cabinet is described as an advisory body to whom?",
+      "options": {
+        "a": "The Governor",
+        "b": "The President",
+        "c": "The state legislature",
+        "d": "The Chief Minister"
+      },
+      "answer": "a",
+      "a": "The Governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Cabinet committees are of how many types?",
+      "options": {
+        "a": "Four",
+        "b": "Two",
+        "c": "Three",
+        "d": "One"
+      },
+      "answer": "b",
+      "a": "Two",
+      "e": "They are of two types — standing (permanent) and ad hoc (temporary).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Cabinet committees are set up by whom, causing their number, nomenclature, and composition to vary over time?",
+      "options": {
+        "a": "The Chief Minister",
+        "b": "The Advocate General",
+        "c": "The state legislature",
+        "d": "The Governor"
+      },
+      "answer": "a",
+      "a": "The Chief Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Decisions taken by cabinet committees can be reviewed by which body?",
+      "options": {
+        "a": "The Governor",
+        "b": "The Advocate General",
+        "c": "The state legislature",
+        "d": "The Cabinet"
+      },
+      "answer": "d",
+      "a": "The Cabinet",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The term \"ministry\" or \"ministries,\" referring to divisions of government, is used at which level of government in India?",
+      "options": {
+        "a": "Only at the state level",
+        "b": "Both Centre and states equally",
+        "c": "Neither Centre nor states",
+        "d": "Only at the Centre"
+      },
+      "answer": "d",
+      "a": "Only at the Centre",
+      "e": "The state government is divided into departments, not ministries.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the conduct of business of the Government of a State?",
+      "options": {
+        "a": "Article 167",
+        "b": "Article 163",
+        "c": "Article 166",
+        "d": "Article 164"
+      },
+      "answer": "c",
+      "a": "Article 166",
+      "e": "See table below for the full set of Articles related to the State Council of Ministers.",
+      "table": {
+        "headers": [
+          "Article No.",
+          "Subject-matter"
+        ],
+        "rows": [
+          [
+            "163",
+            "Council of Ministers to aid and advise Governor"
+          ],
+          [
+            "164",
+            "Other provisions as to Ministers"
+          ],
+          [
+            "166",
+            "Conduct of business of the Government of a State"
+          ],
+          [
+            "167",
+            "Duties of Chief Minister as respects furnishing information to Governor"
+          ],
+          [
+            "177",
+            "Rights of Ministers as respects the Houses"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which range of Articles in Part VI of the Constitution deals with the organisation, composition, duration, officers, procedures, privileges and powers of the state legislature?",
+      "options": {
+        "a": "Articles 152 to 167",
+        "b": "Articles 153 to 167",
+        "c": "Articles 168 to 212",
+        "d": "Articles 214 to 237"
+      },
+      "answer": "c",
+      "a": "Articles 168 to 212",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As of the current position described in the text, how many states have a bicameral legislature?",
+      "options": {
+        "a": "Four",
+        "b": "Five",
+        "c": "Six",
+        "d": "Seven"
+      },
+      "answer": "c",
+      "a": "Six",
+      "e": "These are Andhra Pradesh, Telangana, Uttar Pradesh, Bihar, Maharashtra and Karnataka.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding legislative councils in Indian states:\n(I) The Jammu and Kashmir Legislative Council was abolished by the Jammu and Kashmir Reorganisation Act, 2019\n(II) The Tamil Nadu Legislative Council Act, 2010 has come into force and is operational\n(III) The Legislative Council in Andhra Pradesh was revived by the Andhra Pradesh Legislative Council Act, 2005\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I only"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "The Tamil Nadu Legislative Council Act, 2010 has not come into force.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment Act provided for a Legislative Council in Madhya Pradesh, though it has never actually been notified?",
+      "options": {
+        "a": "91st Amendment Act, 2003",
+        "b": "94th Amendment Act, 2006",
+        "c": "42nd Amendment Act, 1976",
+        "d": "7th Amendment Act, 1956"
+      },
+      "answer": "d",
+      "a": "7th Amendment Act, 1956",
+      "e": "A notification to this effect must be made by the President, but so far none has been made, so Madhya Pradesh continues to have only one House.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In a unicameral state, the state legislature consists of the Governor and which other component?",
+      "options": {
+        "a": "Neither, since the Governor alone constitutes it",
+        "b": "The legislative council only",
+        "c": "Both the legislative council and assembly",
+        "d": "The legislative assembly only"
+      },
+      "answer": "d",
+      "a": "The legislative assembly only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The legislative council, being the upper house, is also known as the house of elders and is referred to in Hindi as what?",
+      "options": {
+        "a": "Vidhan Parishad",
+        "b": "Rajya Sabha",
+        "c": "Lok Sabha",
+        "d": "Vidhan Sabha"
+      },
+      "answer": "a",
+      "a": "Vidhan Parishad",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article of the Constitution provides for the abolition or creation of legislative councils in states?",
+      "options": {
+        "a": "Article 171",
+        "b": "Article 170",
+        "c": "Article 168",
+        "d": "Article 169"
+      },
+      "answer": "d",
+      "a": "Article 169",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "To abolish or create a legislative council, the concerned state legislative assembly must pass a resolution by what kind of majority?",
+      "options": {
+        "a": "Effective majority",
+        "b": "Absolute majority",
+        "c": "Simple majority",
+        "d": "Special majority"
+      },
+      "answer": "d",
+      "a": "Special majority",
+      "e": "This requires a majority of the total membership of the assembly and a majority of not less than two-thirds of members present and voting.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Is the Parliament's Act under Article 169 abolishing or creating a legislative council deemed to be a constitutional amendment for the purposes of Article 368?",
+      "options": {
+        "a": "Yes, it always requires the Article 368 procedure",
+        "b": "No, it is passed like an ordinary piece of legislation",
+        "c": "Only when a bicameral state is involved",
+        "d": "Only when creating a council, not abolishing one"
+      },
+      "answer": "b",
+      "a": "No, it is passed like an ordinary piece of legislation",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Legislative Council of Andhra Pradesh originally created, before its later abolition and revival?",
+      "options": {
+        "a": "1972",
+        "b": "1950",
+        "c": "1965",
+        "d": "1957"
+      },
+      "answer": "d",
+      "a": "1957",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Andhra Pradesh Legislative Council abolished, prior to its 2007 revival?",
+      "options": {
+        "a": "1985",
+        "b": "1975",
+        "c": "1969",
+        "d": "1986"
+      },
+      "answer": "a",
+      "a": "1985",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The legislative councils of Punjab and West Bengal were both abolished in which year?",
+      "options": {
+        "a": "1969",
+        "b": "1972",
+        "c": "1966",
+        "d": "1978"
+      },
+      "answer": "a",
+      "a": "1969",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the maximum strength fixed for a state legislative assembly?",
+      "options": {
+        "a": "545",
+        "b": "450",
+        "c": "500",
+        "d": "400"
+      },
+      "answer": "c",
+      "a": "500",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum strength fixed for a state legislative assembly under the general rule?",
+      "options": {
+        "a": "40",
+        "b": "70",
+        "c": "50",
+        "d": "60"
+      },
+      "answer": "d",
+      "a": "60",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In case of Arunachal Pradesh, Sikkim and Goa, the minimum strength of the legislative assembly is fixed at what number?",
+      "options": {
+        "a": "40",
+        "b": "30",
+        "c": "46",
+        "d": "50"
+      },
+      "answer": "b",
+      "a": "30",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum strength of the legislative assembly is fixed at 40 for Mizoram and at what number for Nagaland?",
+      "options": {
+        "a": "50",
+        "b": "46",
+        "c": "60",
+        "d": "42"
+      },
+      "answer": "b",
+      "a": "46",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The provision for nomination of one member from the Anglo-Indian community to the state legislative assembly ceased to have effect on which date?",
+      "options": {
+        "a": "26th January, 2020",
+        "b": "31st December, 2019",
+        "c": "25th January, 2020",
+        "d": "1st April, 2020"
+      },
+      "answer": "c",
+      "a": "25th January, 2020",
+      "e": "The 104th Amendment Act, 2019 discontinued the extension of this provision, which had last been extended up to 2020 by the 95th Amendment Act, 2009.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For the purpose of holding direct elections to the assembly, each state is divided into what?",
+      "options": {
+        "a": "Revenue districts",
+        "b": "Panchayat units",
+        "c": "Administrative zones",
+        "d": "Territorial constituencies"
+      },
+      "answer": "d",
+      "a": "Territorial constituencies",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The demarcation of territorial constituencies ensures uniformity of what, throughout the state?",
+      "options": {
+        "a": "Voter turnout per constituency",
+        "b": "Geographic area per constituency",
+        "c": "Number of polling booths per constituency",
+        "d": "The ratio between population of each constituency and seats allotted to it"
+      },
+      "answer": "d",
+      "a": "The ratio between population of each constituency and seats allotted to it",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment Act froze the total number of seats in each state's assembly and its division into territorial constituencies at the 1971 level, till the year 2000?",
+      "options": {
+        "a": "91st Amendment Act, 2003",
+        "b": "7th Amendment Act, 1956",
+        "c": "42nd Amendment Act, 1976",
+        "d": "84th Amendment Act, 2001"
+      },
+      "answer": "c",
+      "a": "42nd Amendment Act, 1976",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The 84th Amendment Act of 2001 extended the ban on readjustment of assembly seats up to which year?",
+      "options": {
+        "a": "2026",
+        "b": "2031",
+        "c": "2021",
+        "d": "2016"
+      },
+      "answer": "a",
+      "a": "2026",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Amendment Act provided that delimitation of constituencies would be done on the basis of the 2001 census rather than the 1991 census, without altering the total number of seats?",
+      "options": {
+        "a": "87th Amendment Act, 2003",
+        "b": "95th Amendment Act, 2009",
+        "c": "91st Amendment Act, 2003",
+        "d": "84th Amendment Act, 2001"
+      },
+      "answer": "a",
+      "a": "87th Amendment Act, 2003",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the 104th Amendment Act of 2019, reservation of seats for SCs and STs in state legislative assemblies is set to last until which year?",
+      "options": {
+        "a": "2025",
+        "b": "2030",
+        "c": "2035",
+        "d": "2020"
+      },
+      "answer": "b",
+      "a": "2030",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the maximum strength of a state legislative council, expressed as a fraction of the assembly's total strength?",
+      "options": {
+        "a": "One-fourth",
+        "b": "Two-fifths",
+        "c": "One-third",
+        "d": "One-half"
+      },
+      "answer": "c",
+      "a": "One-third",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum strength fixed for a state legislative council?",
+      "options": {
+        "a": "50",
+        "b": "30",
+        "c": "60",
+        "d": "40"
+      },
+      "answer": "d",
+      "a": "40",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Though the Constitution fixes the maximum and minimum limits for a legislative council's strength, its actual strength is fixed by whom?",
+      "options": {
+        "a": "Parliament",
+        "b": "The Governor",
+        "c": "The state legislature itself",
+        "d": "The Chief Minister"
+      },
+      "answer": "a",
+      "a": "Parliament",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Of the total members of a legislative council, what fraction is elected by members of local bodies such as municipalities and district boards?",
+      "options": {
+        "a": "1/12",
+        "b": "1/3",
+        "c": "1/6",
+        "d": "1/2"
+      },
+      "answer": "b",
+      "a": "1/3",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What fraction of legislative council members is elected by graduates of three years' standing residing within the state?",
+      "options": {
+        "a": "1/3",
+        "b": "1/24",
+        "c": "1/6",
+        "d": "1/12"
+      },
+      "answer": "d",
+      "a": "1/12",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What fraction of legislative council members is nominated by the Governor from persons with special knowledge or practical experience in literature, science, art, cooperative movement and social service?",
+      "options": {
+        "a": "1/3",
+        "b": "1/2",
+        "c": "1/12",
+        "d": "1/6"
+      },
+      "answer": "d",
+      "a": "1/6",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Members of a legislative council are elected in accordance with which electoral system?",
+      "options": {
+        "a": "Block voting",
+        "b": "List-based proportional representation",
+        "c": "First-past-the-post",
+        "d": "Proportional representation by single transferable vote"
+      },
+      "answer": "d",
+      "a": "Proportional representation by single transferable vote",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Among the states, which has the highest number of seats in its legislative assembly?",
+      "options": {
+        "a": "West Bengal",
+        "b": "Tamil Nadu",
+        "c": "Maharashtra",
+        "d": "Uttar Pradesh"
+      },
+      "answer": "d",
+      "a": "Uttar Pradesh",
+      "e": "See table below for the strength of legislative assemblies and councils and SC/ST reserved seats across major states.",
+      "table": {
+        "headers": [
+          "State",
+          "Assembly Seats",
+          "Council Seats"
+        ],
+        "rows": [
+          [
+            "Uttar Pradesh",
+            "403",
+            "100"
+          ],
+          [
+            "Maharashtra",
+            "288",
+            "78"
+          ],
+          [
+            "West Bengal",
+            "294",
+            "—"
+          ],
+          [
+            "Tamil Nadu",
+            "234",
+            "—"
+          ],
+          [
+            "Karnataka",
+            "224",
+            "75"
+          ],
+          [
+            "Bihar",
+            "243",
+            "75"
+          ],
+          [
+            "Andhra Pradesh",
+            "175",
+            "58"
+          ],
+          [
+            "Telangana",
+            "119",
+            "40"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the normal term of the state legislative assembly from the date of its first meeting after general elections?",
+      "options": {
+        "a": "Five years",
+        "b": "Four years",
+        "c": "Six years",
+        "d": "Seven years"
+      },
+      "answer": "a",
+      "a": "Five years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The term of the legislative assembly can be extended during a national emergency by a law of Parliament, for how long at a time?",
+      "options": {
+        "a": "One year",
+        "b": "Indefinitely, in a single extension",
+        "c": "Two years",
+        "d": "Six months"
+      },
+      "answer": "a",
+      "a": "One year",
+      "e": "This can be done for any length of time, but the extension cannot continue beyond six months after the emergency ceases to operate.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "After a national emergency ceases to operate, within how many months must the extended assembly be re-elected?",
+      "options": {
+        "a": "Twelve months",
+        "b": "Nine months",
+        "c": "Three months",
+        "d": "Six months"
+      },
+      "answer": "d",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Is the state legislative council, like the Rajya Sabha, subject to dissolution?",
+      "options": {
+        "a": "No, it is a permanent body not subject to dissolution",
+        "b": "Yes, every five years",
+        "c": "No, but it is subject to prorogation only once a decade",
+        "d": "Yes, at the Governor's discretion"
+      },
+      "answer": "a",
+      "a": "No, it is a permanent body not subject to dissolution",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What fraction of legislative council members retire on the expiration of every second year?",
+      "options": {
+        "a": "Two-thirds",
+        "b": "One-fourth",
+        "c": "One-half",
+        "d": "One-third"
+      },
+      "answer": "d",
+      "a": "One-third",
+      "e": "This means a member of the council continues in office for six years.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Vacant seats in the legislative council arising from retirement are filled by fresh elections and nominations at the beginning of every which year?",
+      "options": {
+        "a": "Fifth year",
+        "b": "Fourth year",
+        "c": "Third year",
+        "d": "Second year"
+      },
+      "answer": "c",
+      "a": "Third year",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum age prescribed for a person to be chosen as a member of the legislative council?",
+      "options": {
+        "a": "21 years",
+        "b": "30 years",
+        "c": "25 years",
+        "d": "35 years"
+      },
+      "answer": "b",
+      "a": "30 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the minimum age prescribed for a person to be chosen as a member of the legislative assembly?",
+      "options": {
+        "a": "21 years",
+        "b": "30 years",
+        "c": "35 years",
+        "d": "25 years"
+      },
+      "answer": "d",
+      "a": "25 years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Representation of the People Act, 1951, a person to be qualified for the Governor's nomination to the legislative council must satisfy which additional requirement?",
+      "options": {
+        "a": "Be a graduate",
+        "b": "Be a member of a recognized political party",
+        "c": "Have five years of political experience",
+        "d": "Be a resident in the concerned state"
+      },
+      "answer": "d",
+      "a": "Be a resident in the concerned state",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Constitution, a person is disqualified from being a member of the state legislature if he/she holds any office of profit under the Union or state government, except which office?",
+      "options": {
+        "a": "State Election Commissioner",
+        "b": "Advocate General",
+        "c": "Minister",
+        "d": "Chairman of the Public Service Commission"
+      },
+      "answer": "c",
+      "a": "Minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a constitutional ground for disqualification of a member of the state legislature?",
+      "options": {
+        "a": "Belonging to a minority community",
+        "b": "Not possessing a graduate degree",
+        "c": "Being of unsound mind and so declared by a court",
+        "d": "Failure to attend more than 30 days of sittings"
+      },
+      "answer": "c",
+      "a": "Being of unsound mind and so declared by a court",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Representation of the People Act, 1951, conviction for an offence resulting in imprisonment for how many years or more results in disqualification?",
+      "options": {
+        "a": "Two years",
+        "b": "Five years",
+        "c": "Three years",
+        "d": "One year"
+      },
+      "answer": "a",
+      "a": "Two years",
+      "e": "However, detention of a person under a preventive detention law is not a disqualification.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Representation of the People Act, a person is disqualified if they are a director or managing agent, or hold an office of profit, in a corporation in which the government has at least what percentage of share?",
+      "options": {
+        "a": "50 per cent",
+        "b": "20 per cent",
+        "c": "15 per cent",
+        "d": "25 per cent"
+      },
+      "answer": "d",
+      "a": "25 per cent",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On the question of whether a member has become subject to disqualification, whose decision is final?",
+      "options": {
+        "a": "The Governor's",
+        "b": "The Election Commission's",
+        "c": "The state High Court's",
+        "d": "The Speaker's"
+      },
+      "answer": "a",
+      "a": "The Governor's",
+      "e": "However, the Governor must obtain the opinion of the Election Commission and act accordingly.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Disqualification on the ground of defection is governed by which Schedule of the Constitution?",
+      "options": {
+        "a": "Twelfth Schedule",
+        "b": "Tenth Schedule",
+        "c": "Ninth Schedule",
+        "d": "Eleventh Schedule"
+      },
+      "answer": "b",
+      "a": "Tenth Schedule",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The question of disqualification on the ground of defection for a member of the legislative assembly is decided by whom?",
+      "options": {
+        "a": "The Speaker",
+        "b": "The Governor",
+        "c": "The Election Commission",
+        "d": "The Chairman"
+      },
+      "answer": "a",
+      "a": "The Speaker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which case did the Supreme Court rule that the Speaker/Chairman's decision on disqualification under the Tenth Schedule is subject to judicial review?",
+      "options": {
+        "a": "Kihoto Hollohan case",
+        "b": "S.R. Bommai case",
+        "c": "Minerva Mills case",
+        "d": "Shamsher Singh case"
+      },
+      "answer": "a",
+      "a": "Kihoto Hollohan case",
+      "e": "Decided in 1992.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Every member of either House of the state legislature must make and subscribe to an oath or affirmation before whom, before taking their seat?",
+      "options": {
+        "a": "The Governor or a person appointed by him/her",
+        "b": "The Speaker or Chairman",
+        "c": "The Chief Justice of the state High Court",
+        "d": "The Election Commission"
+      },
+      "answer": "a",
+      "a": "The Governor or a person appointed by him/her",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the daily penalty for a person who sits or votes as a member in a House before taking the prescribed oath?",
+      "options": {
+        "a": "₹500",
+        "b": "₹5,000",
+        "c": "₹1,000",
+        "d": "₹100"
+      },
+      "answer": "a",
+      "a": "₹500",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If a person is elected to both Houses of the state legislature simultaneously, what happens to their membership?",
+      "options": {
+        "a": "The Governor decides which seat they retain",
+        "b": "They automatically remain a member of only the assembly",
+        "c": "Their seat in one of the Houses falls vacant as per state legislature's law",
+        "d": "They must resign from the state legislature entirely"
+      },
+      "answer": "c",
+      "a": "Their seat in one of the Houses falls vacant as per state legislature's law",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A member's seat can be declared vacant by the House if he/she is absent from all its meetings for a period of how many days without permission?",
+      "options": {
+        "a": "Ninety days",
+        "b": "Forty-five days",
+        "c": "Thirty days",
+        "d": "Sixty days"
+      },
+      "answer": "d",
+      "a": "Sixty days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A member's resignation from a House takes effect and the seat falls vacant when what occurs?",
+      "options": {
+        "a": "A new election is announced",
+        "b": "The resignation letter is submitted",
+        "c": "The resignation is accepted by the Speaker/Chairman",
+        "d": "Thirty days elapse from submission"
+      },
+      "answer": "c",
+      "a": "The resignation is accepted by the Speaker/Chairman",
+      "e": "The Speaker/Chairman need not accept the resignation if not satisfied that it is voluntary or genuine.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Among the \"other cases\" of vacation of seat, a member must vacate his/her seat in the state legislature if elected to which office?",
+      "options": {
+        "a": "Chief Justice of a High Court",
+        "b": "Advocate General",
+        "c": "President or Vice-President",
+        "d": "Chief Minister"
+      },
+      "answer": "c",
+      "a": "President or Vice-President",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A member of the state legislature must also vacate his/her seat if appointed to which office?",
+      "options": {
+        "a": "Governor of a state",
+        "b": "Speaker of the Lok Sabha",
+        "c": "State Election Commissioner",
+        "d": "Chairman of the State Public Service Commission"
+      },
+      "answer": "a",
+      "a": "Governor of a state",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who elects the Speaker of the state legislative assembly?",
+      "options": {
+        "a": "The Election Commission",
+        "b": "The assembly itself from amongst its members",
+        "c": "The Governor",
+        "d": "The Chief Minister"
+      },
+      "answer": "b",
+      "a": "The assembly itself from amongst its members",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A resolution to remove the Speaker of the assembly can be moved only after giving how many days' advance notice?",
+      "options": {
+        "a": "7 days",
+        "b": "30 days",
+        "c": "21 days",
+        "d": "14 days"
+      },
+      "answer": "d",
+      "a": "14 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A resolution to remove the Speaker must be passed by what kind of majority?",
+      "options": {
+        "a": "Effective majority",
+        "b": "Simple majority",
+        "c": "Special majority",
+        "d": "Two-thirds majority of total membership"
+      },
+      "answer": "a",
+      "a": "Effective majority",
+      "e": "This means a majority of all the then members of the assembly.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker of the assembly resigns by writing to whom?",
+      "options": {
+        "a": "The Chief Minister",
+        "b": "The Deputy Speaker",
+        "c": "The Chairman of the council",
+        "d": "The Governor"
+      },
+      "answer": "b",
+      "a": "The Deputy Speaker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following powers is exercised by the Speaker but NOT by the Chairman of the Legislative Council?",
+      "options": {
+        "a": "Exercising a casting vote in case of a tie",
+        "b": "Adjourning the House in absence of quorum",
+        "c": "Deciding whether a bill is a Money Bill",
+        "d": "Maintaining order and decorum in the House"
+      },
+      "answer": "c",
+      "a": "Deciding whether a bill is a Money Bill",
+      "e": "The Speaker's decision on whether a bill is a Money Bill is final; this special power is not enjoyed by the Chairman of the council.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker does not vote in the first instance but may exercise what kind of vote in case of a tie?",
+      "options": {
+        "a": "Casting vote",
+        "b": "Deciding vote by lot",
+        "c": "Proxy vote",
+        "d": "Weighted vote"
+      },
+      "answer": "a",
+      "a": "Casting vote",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Speaker is the chairman of which of the following committees of the assembly?",
+      "options": {
+        "a": "Committee on Public Undertakings",
+        "b": "Public Accounts Committee",
+        "c": "Business Advisory Committee",
+        "d": "Estimates Committee"
+      },
+      "answer": "c",
+      "a": "Business Advisory Committee",
+      "e": "The Speaker is also chairman of the Rules Committee and the General Purpose Committee.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Deputy Speaker of the assembly is elected after the election of whom has taken place?",
+      "options": {
+        "a": "The Speaker",
+        "b": "The Leader of the Opposition",
+        "c": "The Chairman of the council",
+        "d": "The Chief Minister"
+      },
+      "answer": "a",
+      "a": "The Speaker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The Deputy Speaker resigns by writing to whom?",
+      "options": {
+        "a": "The Chairman",
+        "b": "The Chief Minister",
+        "c": "The Speaker",
+        "d": "The Governor"
+      },
+      "answer": "c",
+      "a": "The Speaker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The panel of chairman for the assembly, who may preside in the absence of both the Speaker and Deputy Speaker, is nominated by whom?",
+      "options": {
+        "a": "The assembly by resolution",
+        "b": "The Speaker",
+        "c": "The Governor",
+        "d": "The Chief Minister"
+      },
+      "answer": "b",
+      "a": "The Speaker",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The salaries and allowances of the Speaker, Deputy Speaker, Chairman and Deputy Chairman are charged on which fund, making them not subject to annual vote?",
+      "options": {
+        "a": "Public Account of the State",
+        "b": "Contingency Fund of the State",
+        "c": "State Disaster Response Fund",
+        "d": "Consolidated Fund of the State"
+      },
+      "answer": "d",
+      "a": "Consolidated Fund of the State",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who elects the Chairman of the legislative council?",
+      "options": {
+        "a": "The Governor",
+        "b": "The Speaker of the assembly",
+        "c": "The Chief Minister",
+        "d": "The council itself from amongst its members"
+      },
+      "answer": "d",
+      "a": "The council itself from amongst its members",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The panel of vice-chairman for the council, who may preside in the absence of both the Chairman and Deputy Chairman, is nominated by whom?",
+      "options": {
+        "a": "The Chairman",
+        "b": "The Governor",
+        "c": "The Chief Minister",
+        "d": "The council by resolution"
+      },
+      "answer": "a",
+      "a": "The Chairman",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the maximum permissible gap between two sessions of the state legislature?",
+      "options": {
+        "a": "Four months",
+        "b": "Twelve months",
+        "c": "Three months",
+        "d": "Six months"
+      },
+      "answer": "d",
+      "a": "Six months",
+      "e": "This means the state legislature must meet at least twice a year.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who has the power to summon each House of the state legislature to meet?",
+      "options": {
+        "a": "The Governor",
+        "b": "The Chief Minister",
+        "c": "The Speaker",
+        "d": "The Chairman of the council"
+      },
+      "answer": "a",
+      "a": "The Governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Termination of a sitting of the state legislature for an indefinite period is termed what?",
+      "options": {
+        "a": "Dissolution",
+        "b": "Recess",
+        "c": "Prorogation",
+        "d": "Adjournment sine die"
+      },
+      "answer": "d",
+      "a": "Adjournment sine die",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The power of adjournment, including adjournment sine die, lies with whom?",
+      "options": {
+        "a": "The Election Commission",
+        "b": "The Governor",
+        "c": "The presiding officer of the House",
+        "d": "The Chief Minister"
+      },
+      "answer": "c",
+      "a": "The presiding officer of the House",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike an adjournment, a prorogation terminates what?",
+      "options": {
+        "a": "Only the budget session",
+        "b": "The life of the House permanently",
+        "c": "Only a single day's sitting",
+        "d": "A session of the House"
+      },
+      "answer": "d",
+      "a": "A session of the House",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which House of the state legislature is subject to dissolution?",
+      "options": {
+        "a": "Only the legislative council",
+        "b": "Both Houses equally",
+        "c": "Only the legislative assembly",
+        "d": "Neither House"
+      },
+      "answer": "c",
+      "a": "Only the legislative assembly",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On dissolution of the assembly, what happens to a bill pending in the assembly?",
+      "options": {
+        "a": "It is reserved for the President",
+        "b": "It is transferred to the council",
+        "c": "It lapses",
+        "d": "It automatically becomes law"
+      },
+      "answer": "c",
+      "a": "It lapses",
+      "e": "This applies whether the bill originated in the assembly or was transmitted to it by the council.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "On dissolution of the assembly, does a bill passed by the assembly but pending assent of the Governor or President lapse?",
+      "options": {
+        "a": "Yes, it always lapses",
+        "b": "No, it does not lapse",
+        "c": "Only if pending for more than six months",
+        "d": "Only if it is a money bill"
+      },
+      "answer": "b",
+      "a": "No, it does not lapse",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the quorum required to transact business in a House of the state legislature?",
+      "options": {
+        "a": "Twenty members or one-fifth of total membership, whichever is greater",
+        "b": "Ten members or one-tenth of total membership, whichever is greater",
+        "c": "A simple majority of total membership",
+        "d": "Five members or one-twentieth of total membership, whichever is greater"
+      },
+      "answer": "b",
+      "a": "Ten members or one-tenth of total membership, whichever is greater",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If there is no quorum during a meeting, it is the duty of the presiding officer to do what?",
+      "options": {
+        "a": "Continue the sitting regardless",
+        "b": "Refer the matter to the Governor",
+        "c": "Immediately dissolve the House",
+        "d": "Adjourn the House or suspend the meeting until there is a quorum"
+      },
+      "answer": "d",
+      "a": "Adjourn the House or suspend the meeting until there is a quorum",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "All matters at any sitting of either House are decided by what kind of majority of members present and voting, excluding the presiding officer?",
+      "options": {
+        "a": "Effective majority as a default rule",
+        "b": "Simple majority as a default rule",
+        "c": "Two-thirds majority as a default rule",
+        "d": "Special majority as a default rule"
+      },
+      "answer": "b",
+      "a": "Simple majority as a default rule",
+      "e": "Only a few matters specifically mentioned in the Constitution require effective majority or special majority.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The state legislature was authorised to decide whether to continue or discontinue English as a floor language after how many years from the commencement of the Constitution, i.e., from 1965?",
+      "options": {
+        "a": "Ten years",
+        "b": "Fifteen years",
+        "c": "Twenty-five years",
+        "d": "Twenty years"
+      },
+      "answer": "b",
+      "a": "Fifteen years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For Himachal Pradesh, Manipur, Meghalaya and Tripura, the time limit for continuing English as a floor language was fixed at how many years?",
+      "options": {
+        "a": "Twenty years",
+        "b": "Fifteen years",
+        "c": "Twenty-five years",
+        "d": "Forty years"
+      },
+      "answer": "c",
+      "a": "Twenty-five years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "For Arunachal Pradesh, Goa and Mizoram, the time limit for continuing English as a floor language was fixed at how many years?",
+      "options": {
+        "a": "Thirty years",
+        "b": "Twenty-five years",
+        "c": "Thirty-five years",
+        "d": "Forty years"
+      },
+      "answer": "d",
+      "a": "Forty years",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Every minister and the Advocate General of the state have the right to speak and take part in proceedings of either House, but are subject to what restriction?",
+      "options": {
+        "a": "They can only speak on financial bills",
+        "b": "They are not entitled to vote",
+        "c": "They cannot address more than twice per session",
+        "d": "They must be members of at least one House"
+      },
+      "answer": "b",
+      "a": "They are not entitled to vote",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "An ordinary bill can be introduced in a bicameral state legislature by whom?",
+      "options": {
+        "a": "Only a private member",
+        "b": "Only the Chief Minister",
+        "c": "Either a minister or any other member",
+        "d": "Only a minister"
+      },
+      "answer": "c",
+      "a": "Either a minister or any other member",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "An ordinary bill passes through how many stages (readings) in the originating House?",
+      "options": {
+        "a": "Five",
+        "b": "Two",
+        "c": "Three",
+        "d": "Four"
+      },
+      "answer": "c",
+      "a": "Three",
+      "e": "These are the first reading, second reading, and third reading.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In a unicameral state legislature, a bill passed by the assembly is sent directly to whom for assent?",
+      "options": {
+        "a": "The President",
+        "b": "The Governor",
+        "c": "The Speaker",
+        "d": "The Advocate General"
+      },
+      "answer": "b",
+      "a": "The Governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When a bill passed by the assembly is transmitted to the council, how many alternatives does the council have before it?",
+      "options": {
+        "a": "Five",
+        "b": "Three",
+        "c": "Four",
+        "d": "Two"
+      },
+      "answer": "c",
+      "a": "Four",
+      "e": "These are: pass without amendments, pass with amendments and return for reconsideration, reject altogether, or take no action and keep it pending.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At most, for how long can the legislative council detain or delay an ordinary bill passed by the assembly?",
+      "options": {
+        "a": "Two months",
+        "b": "Three months",
+        "c": "Six months",
+        "d": "Four months"
+      },
+      "answer": "d",
+      "a": "Four months",
+      "e": "This is three months in the first instance and one month in the second instance.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If the council does not take any action on a bill for three months, what may the assembly do?",
+      "options": {
+        "a": "Nothing, it must wait indefinitely",
+        "b": "Dissolve the council",
+        "c": "Pass the bill again and transmit it to the council",
+        "d": "Directly send the bill to the Governor bypassing the council"
+      },
+      "answer": "c",
+      "a": "Pass the bill again and transmit it to the council",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Does the Constitution provide for a joint sitting mechanism to resolve a deadlock between the two Houses of a state legislature over an ordinary bill?",
+      "options": {
+        "a": "Only for money bills",
+        "b": "Only during a financial emergency",
+        "c": "Yes, similar to Parliament",
+        "d": "No, such a mechanism does not exist"
+      },
+      "answer": "d",
+      "a": "No, such a mechanism does not exist",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If an ordinary bill originates in the council, is sent to the assembly, and is rejected by the assembly, what happens to the bill?",
+      "options": {
+        "a": "It ends and becomes dead",
+        "b": "It is automatically reserved for the President",
+        "c": "It returns to the council for reconsideration",
+        "d": "It is referred to a joint committee"
+      },
+      "answer": "a",
+      "a": "It ends and becomes dead",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When the Governor returns a bill for reconsideration and it is passed again by the House(s) with or without amendments, what is the Governor's obligation?",
+      "options": {
+        "a": "The Governor may return it again for reconsideration",
+        "b": "The Governor may still withhold assent",
+        "c": "The Governor must give assent to the bill",
+        "d": "The Governor must reserve it for the President"
+      },
+      "answer": "c",
+      "a": "The Governor must give assent to the bill",
+      "e": "This means the Governor enjoys only a suspensive veto with respect to ordinary bills, the same position as at the Centre.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When the President returns a bill reserved by the Governor for reconsideration of the state legislature, within what period must the House(s) reconsider it?",
+      "options": {
+        "a": "One year",
+        "b": "Three months",
+        "c": "Four months",
+        "d": "Six months"
+      },
+      "answer": "d",
+      "a": "Six months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Is it obligatory under the Constitution for the President to give assent to a bill presented again after reconsideration following reservation by the Governor?",
+      "options": {
+        "a": "Yes, always obligatory",
+        "b": "No, this is not specified in the Constitution",
+        "c": "Only if passed unanimously",
+        "d": "Only if it is a money bill"
+      },
+      "answer": "b",
+      "a": "No, this is not specified in the Constitution",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Money Bill can be introduced in the state legislature only in which House?",
+      "options": {
+        "a": "The legislative council only",
+        "b": "Either House at the introducer's choice",
+        "c": "The legislative assembly only",
+        "d": "Both Houses simultaneously"
+      },
+      "answer": "c",
+      "a": "The legislative assembly only",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A Money Bill can be introduced only on whose recommendation, and only by whom?",
+      "options": {
+        "a": "The Speaker's recommendation, by any member",
+        "b": "The Chief Minister's recommendation, by any member",
+        "c": "The President's recommendation, by a minister",
+        "d": "The Governor's recommendation, by a minister"
+      },
+      "answer": "d",
+      "a": "The Governor's recommendation, by a minister",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "After a Money Bill is passed by the assembly and transmitted to the council, within how many days must the council return it?",
+      "options": {
+        "a": "30 days",
+        "b": "7 days",
+        "c": "21 days",
+        "d": "14 days"
+      },
+      "answer": "d",
+      "a": "14 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Can the legislative council reject or amend a Money Bill?",
+      "options": {
+        "a": "Yes, it can reject but not amend",
+        "b": "Yes, it can amend but not reject",
+        "c": "Yes, it has full powers equal to the assembly",
+        "d": "No, it can only make recommendations"
+      },
+      "answer": "d",
+      "a": "No, it can only make recommendations",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "If the council does not return a Money Bill to the assembly within 14 days, what is deemed to have happened?",
+      "options": {
+        "a": "The bill is automatically reserved for the President",
+        "b": "The bill is deemed passed by both Houses in the form originally passed by the assembly",
+        "c": "The bill must be reintroduced",
+        "d": "The bill lapses"
+      },
+      "answer": "b",
+      "a": "The bill is deemed passed by both Houses in the form originally passed by the assembly",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "When a Money Bill is presented to the Governor, which alternative is NOT available to him/her?",
+      "options": {
+        "a": "Reserve the bill for the President's consideration",
+        "b": "Return the bill for reconsideration of the state legislature",
+        "c": "Give assent",
+        "d": "Withhold assent"
+      },
+      "answer": "b",
+      "a": "Return the bill for reconsideration of the state legislature",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Sarkaria Commission's classification, a bill which so derogates from the powers of the High Court as to endanger its constitutional position must be reserved for the President's consideration under which Article?",
+      "options": {
+        "a": "Article 200",
+        "b": "Article 254",
+        "c": "Article 304",
+        "d": "Article 31A"
+      },
+      "answer": "a",
+      "a": "Article 200",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Sarkaria Commission's classification, a bill relating to the imposition of taxes on water or electricity in certain cases attracts the provisions of which Article, requiring mandatory reservation for the President?",
+      "options": {
+        "a": "Article 288",
+        "b": "Article 254",
+        "c": "Article 304",
+        "d": "Article 360"
+      },
+      "answer": "a",
+      "a": "Article 288",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As per the Sarkaria Commission's classification, bills relating to acquisition of estates, intended to secure immunity from Articles 14 and 19, may be reserved for the President's consideration under which Article?",
+      "options": {
+        "a": "Article 254",
+        "b": "Article 31A",
+        "c": "Article 31C",
+        "d": "Article 304"
+      },
+      "answer": "b",
+      "a": "Article 31A",
+      "e": "Bills giving effect to certain Directive Principles of State Policy for the same immunity purpose fall under Article 31C.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A bill relating to a subject in the Concurrent List, reserved for the President to secure operation despite repugnancy to a Union law, falls under which Article?",
+      "options": {
+        "a": "Article 200",
+        "b": "Article 288",
+        "c": "Article 254",
+        "d": "Article 360"
+      },
+      "answer": "c",
+      "a": "Article 254",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "A bill imposing restrictions on trade and commerce, requiring prior Presidential sanction not earlier obtained, relates to which Article?",
+      "options": {
+        "a": "Article 304",
+        "b": "Article 288",
+        "c": "Article 19",
+        "d": "Article 254"
+      },
+      "answer": "a",
+      "a": "Article 304",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike the Rajya Sabha at the Centre, does the Constitution provide for a joint sitting mechanism to resolve deadlocks between the two Houses of a state legislature over ordinary bills?",
+      "options": {
+        "a": "Only for bills originating in the council",
+        "b": "Only during a state of emergency",
+        "c": "No, no such mechanism exists at the state level",
+        "d": "Yes, identical to the Centre"
+      },
+      "answer": "c",
+      "a": "No, no such mechanism exists at the state level",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At the Centre, can the Lok Sabha override the Rajya Sabha on an ordinary bill by passing it a second time?",
+      "options": {
+        "a": "Yes",
+        "b": "Only with Presidential approval",
+        "c": "Only for money bills",
+        "d": "No, only a joint sitting can resolve such a deadlock"
+      },
+      "answer": "d",
+      "a": "No, only a joint sitting can resolve such a deadlock",
+      "e": "In contrast, at the state level, the legislative assembly can override the legislative council by passing the bill a second time.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements comparing the deadlock mechanism for ordinary bills at the Centre and in the states:\n(I) At the Centre, the mechanism of joint sitting applies to a bill originating in either the Lok Sabha or the Rajya Sabha\n(II) At the state level, the mechanism of passing the bill a second time applies only to a bill originating in the legislative assembly\n(III) At the state level, if a bill originating in the council is rejected by the assembly, the bill ends and becomes dead\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I, II and III",
+        "c": "II and III only",
+        "d": "I only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "With regard to money bills, both at the Centre and in the states, within how many days must the second House return the bill with or without recommendations?",
+      "options": {
+        "a": "21 days",
+        "b": "30 days",
+        "c": "14 days",
+        "d": "7 days"
+      },
+      "answer": "c",
+      "a": "14 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Regarding resolution of deadlocks over money bills, why does the Constitution not provide any resolution mechanism at either the Centre or the state level?",
+      "options": {
+        "a": "Because money bills cannot cause deadlocks by definition",
+        "b": "Because the will of the lower House (Lok Sabha/assembly) is made to prevail over that of the upper House (Rajya Sabha/council)",
+        "c": "Because money bills always require a joint sitting",
+        "d": "Because money bills lapse automatically if delayed"
+      },
+      "answer": "b",
+      "a": "Because the will of the lower House (Lok Sabha/assembly) is made to prevail over that of the upper House (Rajya Sabha/council)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which sphere are the powers and status of the legislative council broadly equal to that of the assembly?",
+      "options": {
+        "a": "Passage of money bills",
+        "b": "Approval of ordinances issued by the Governor",
+        "c": "Removal of the council of ministers",
+        "d": "Voting on demands for grants"
+      },
+      "answer": "b",
+      "a": "Approval of ordinances issued by the Governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Ministers, including the Chief Minister, can be members of either House of the state legislature, but are responsible only to which House?",
+      "options": {
+        "a": "Both Houses equally",
+        "b": "The legislative assembly",
+        "c": "The legislative council",
+        "d": "Neither House directly"
+      },
+      "answer": "b",
+      "a": "The legislative assembly",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following powers is exclusively vested in the legislative assembly and NOT shared with the council?",
+      "options": {
+        "a": "Considering reports of the State Finance Commission",
+        "b": "Voting on demands for grants",
+        "c": "Discussing the budget",
+        "d": "Approving ordinances issued by the Governor"
+      },
+      "answer": "b",
+      "a": "Voting on demands for grants",
+      "e": "The council can only discuss the budget but cannot vote on the demands for grants.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Can the legislative council remove the council of ministers by passing a no-confidence motion?",
+      "options": {
+        "a": "Yes, it has equal power with the assembly in this regard",
+        "b": "No, since the council of ministers is collectively responsible only to the assembly",
+        "c": "Only during a financial emergency",
+        "d": "Only if the Chief Minister belongs to the council"
+      },
+      "answer": "b",
+      "a": "No, since the council of ministers is collectively responsible only to the assembly",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The legislative council does not participate in the election of which two constitutional functionaries/bodies?",
+      "options": {
+        "a": "The Chief Minister and Governor",
+        "b": "The Speaker and Deputy Speaker",
+        "c": "The Advocate General and State Election Commissioner",
+        "d": "The President of India and representatives of the state in the Rajya Sabha"
+      },
+      "answer": "d",
+      "a": "The President of India and representatives of the state in the Rajya Sabha",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Whose will prevails over the council's in the ratification of a constitutional amendment bill by a state legislature?",
+      "options": {
+        "a": "The Speaker's",
+        "b": "The assembly's",
+        "c": "The President's",
+        "d": "The Governor's"
+      },
+      "answer": "b",
+      "a": "The assembly's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The very existence of the legislative council depends on the will of which body, since it can be abolished by Parliament on that body's recommendation?",
+      "options": {
+        "a": "The Governor",
+        "b": "The Chief Minister",
+        "c": "The Rajya Sabha",
+        "d": "The legislative assembly"
+      },
+      "answer": "d",
+      "a": "The legislative assembly",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The pattern of relationship between the two Houses of a state legislature, where the council must yield to the assembly, is adopted from which model?",
+      "options": {
+        "a": "The Canadian model",
+        "b": "The American model",
+        "c": "The Australian model",
+        "d": "The British model"
+      },
+      "answer": "d",
+      "a": "The British model",
+      "e": "In Britain, the House of Lords cannot oppose and obstruct the House of Commons and can only delay bills.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In Britain's House of Lords model, for how long can an ordinary bill be delayed at most?",
+      "options": {
+        "a": "Three years",
+        "b": "Two years",
+        "c": "Six months",
+        "d": "One year"
+      },
+      "answer": "d",
+      "a": "One year",
+      "e": "A money bill can be delayed for only one month.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Critics have described the weak and insignificant legislative council using which of the following terms?",
+      "options": {
+        "a": "\"Costly ornamental luxury\"",
+        "b": "\"Federal chamber\"",
+        "c": "\"Constitutional safeguard\"",
+        "d": "\"Judicial review body\""
+      },
+      "answer": "a",
+      "a": "\"Costly ornamental luxury\"",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is cited as a ground supporting the utility of the legislative council despite its lesser powers?",
+      "options": {
+        "a": "It has equal power to pass money bills",
+        "b": "It can veto constitutional amendments",
+        "c": "It can dismiss the council of ministers when needed",
+        "d": "It facilitates representation of eminent professionals and experts who cannot face direct elections"
+      },
+      "answer": "d",
+      "a": "It facilitates representation of eminent professionals and experts who cannot face direct elections",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "To whom has the Constitution extended the privileges of the state legislature, apart from members, among persons entitled to speak in its proceedings?",
+      "options": {
+        "a": "Only the Chief Minister",
+        "b": "Only the Governor",
+        "c": "The Advocate General and state ministers",
+        "d": "All state government employees"
+      },
+      "answer": "c",
+      "a": "The Advocate General and state ministers",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Do the privileges of the state legislature extend to the Governor, who is also an integral part of the state legislature?",
+      "options": {
+        "a": "No, they do not extend to the Governor",
+        "b": "Only during a joint sitting",
+        "c": "Yes, fully",
+        "d": "Only for freedom of speech"
+      },
+      "answer": "a",
+      "a": "No, they do not extend to the Governor",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a collective privilege enjoyed by each House of the state legislature?",
+      "options": {
+        "a": "Immunity from arrest at all times",
+        "b": "Exemption from jury service",
+        "c": "The right to publish its reports, debates and proceedings and to prohibit others from publishing the same",
+        "d": "Freedom from all forms of legal process"
+      },
+      "answer": "c",
+      "a": "The right to publish its reports, debates and proceedings and to prohibit others from publishing the same",
+      "e": "The 44th Amendment Act of 1978 restored the press's freedom to publish true reports of state legislature proceedings without prior permission, except for secret sittings.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As a collective privilege, no legal process can be served within the precincts of the House without whose permission?",
+      "options": {
+        "a": "The Chief Minister's",
+        "b": "The Governor's",
+        "c": "The presiding officer's",
+        "d": "The Advocate General's"
+      },
+      "answer": "c",
+      "a": "The presiding officer's",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As an individual privilege, members cannot be arrested during the session and for how many days before and after such session?",
+      "options": {
+        "a": "30 days",
+        "b": "60 days",
+        "c": "40 days",
+        "d": "45 days"
+      },
+      "answer": "c",
+      "a": "40 days",
+      "e": "This privilege applies only in civil cases, not in criminal cases or preventive detention cases.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The individual privilege of freedom of speech for a member of the state legislature is subject to what?",
+      "options": {
+        "a": "The provisions of the Constitution and the rules and standing orders regulating procedure",
+        "b": "No restrictions whatsoever",
+        "c": "Prior Governor's approval",
+        "d": "Approval of the Advocate General"
+      },
+      "answer": "a",
+      "a": "The provisions of the Constitution and the rules and standing orders regulating procedure",
+      "e": "Article 211 additionally bars discussion in the state legislature on the conduct of any Supreme Court or High Court judge in discharge of duties.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As an individual privilege, members of the state legislature are exempted from what civic duty?",
+      "options": {
+        "a": "Paying property tax",
+        "b": "Jury service",
+        "c": "Voting in elections",
+        "d": "Military conscription"
+      },
+      "answer": "b",
+      "a": "Jury service",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the constitution of legislatures in the states?",
+      "options": {
+        "a": "Article 170",
+        "b": "Article 168",
+        "c": "Article 169",
+        "d": "Article 172"
+      },
+      "answer": "b",
+      "a": "Article 168",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the composition of the legislative assemblies?",
+      "options": {
+        "a": "Article 169",
+        "b": "Article 171",
+        "c": "Article 170",
+        "d": "Article 172"
+      },
+      "answer": "c",
+      "a": "Article 170",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the composition of the legislative councils?",
+      "options": {
+        "a": "Article 171",
+        "b": "Article 169",
+        "c": "Article 173",
+        "d": "Article 170"
+      },
+      "answer": "a",
+      "a": "Article 171",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the duration of state legislatures?",
+      "options": {
+        "a": "Article 172",
+        "b": "Article 174",
+        "c": "Article 171",
+        "d": "Article 170"
+      },
+      "answer": "a",
+      "a": "Article 172",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the qualifications for membership of the state legislature?",
+      "options": {
+        "a": "Article 175",
+        "b": "Article 173",
+        "c": "Article 174",
+        "d": "Article 172"
+      },
+      "answer": "b",
+      "a": "Article 173",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with sessions of the state legislature, prorogation and dissolution?",
+      "options": {
+        "a": "Article 175",
+        "b": "Article 173",
+        "c": "Article 176",
+        "d": "Article 174"
+      },
+      "answer": "d",
+      "a": "Article 174",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article provides for the Governor's right to address and send messages to the House or Houses?",
+      "options": {
+        "a": "Article 177",
+        "b": "Article 176",
+        "c": "Article 175",
+        "d": "Article 174"
+      },
+      "answer": "c",
+      "a": "Article 175",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the special address by the Governor?",
+      "options": {
+        "a": "Article 178",
+        "b": "Article 176",
+        "c": "Article 175",
+        "d": "Article 177"
+      },
+      "answer": "b",
+      "a": "Article 176",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the rights of Ministers and the Advocate-General as respects the Houses of the state legislature?",
+      "options": {
+        "a": "Article 176",
+        "b": "Article 179",
+        "c": "Article 177",
+        "d": "Article 178"
+      },
+      "answer": "c",
+      "a": "Article 177",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article provides for the Speaker and Deputy Speaker of the Legislative Assembly?",
+      "options": {
+        "a": "Article 177",
+        "b": "Article 180",
+        "c": "Article 178",
+        "d": "Article 179"
+      },
+      "answer": "c",
+      "a": "Article 178",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with vacation and resignation of, and removal from, the offices of Speaker and Deputy Speaker?",
+      "options": {
+        "a": "Article 180",
+        "b": "Article 181",
+        "c": "Article 179",
+        "d": "Article 178"
+      },
+      "answer": "c",
+      "a": "Article 179",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article provides for the Chairman and Deputy Chairman of the Legislative Council?",
+      "options": {
+        "a": "Article 182",
+        "b": "Article 183",
+        "c": "Article 181",
+        "d": "Article 180"
+      },
+      "answer": "a",
+      "a": "Article 182",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with vacation and resignation of, and removal from, the offices of Chairman and Deputy Chairman?",
+      "options": {
+        "a": "Article 183",
+        "b": "Article 185",
+        "c": "Article 184",
+        "d": "Article 182"
+      },
+      "answer": "a",
+      "a": "Article 183",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the salaries and allowances of the Speaker, Deputy Speaker, Chairman and Deputy Chairman?",
+      "options": {
+        "a": "Article 186",
+        "b": "Article 187",
+        "c": "Article 188",
+        "d": "Article 185"
+      },
+      "answer": "a",
+      "a": "Article 186",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article provides for the Secretariat of the State Legislature?",
+      "options": {
+        "a": "Article 187",
+        "b": "Article 189",
+        "c": "Article 188",
+        "d": "Article 186"
+      },
+      "answer": "a",
+      "a": "Article 187",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with oath or affirmation by members of the state legislature?",
+      "options": {
+        "a": "Article 189",
+        "b": "Article 190",
+        "c": "Article 187",
+        "d": "Article 188"
+      },
+      "answer": "d",
+      "a": "Article 188",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with voting in Houses and the power of Houses to act notwithstanding vacancies, and quorum?",
+      "options": {
+        "a": "Article 189",
+        "b": "Article 191",
+        "c": "Article 190",
+        "d": "Article 188"
+      },
+      "answer": "a",
+      "a": "Article 189",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with vacation of seats?",
+      "options": {
+        "a": "Article 189",
+        "b": "Article 190",
+        "c": "Article 191",
+        "d": "Article 192"
+      },
+      "answer": "b",
+      "a": "Article 190",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article lays down the disqualifications for membership of the state legislature?",
+      "options": {
+        "a": "Article 191",
+        "b": "Article 193",
+        "c": "Article 190",
+        "d": "Article 192"
+      },
+      "answer": "a",
+      "a": "Article 191",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the decision on questions as to disqualifications of members?",
+      "options": {
+        "a": "Article 193",
+        "b": "Article 191",
+        "c": "Article 194",
+        "d": "Article 192"
+      },
+      "answer": "d",
+      "a": "Article 192",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article prescribes the penalty for sitting and voting before making oath or affirmation, or when not qualified or disqualified?",
+      "options": {
+        "a": "Article 195",
+        "b": "Article 194",
+        "c": "Article 193",
+        "d": "Article 192"
+      },
+      "answer": "c",
+      "a": "Article 193",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the powers, privileges, etc. of the House of Legislature and of its members and committees?",
+      "options": {
+        "a": "Article 194",
+        "b": "Article 193",
+        "c": "Article 195",
+        "d": "Article 196"
+      },
+      "answer": "a",
+      "a": "Article 194",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with salaries and allowances of members of the state legislature?",
+      "options": {
+        "a": "Article 195",
+        "b": "Article 197",
+        "c": "Article 196",
+        "d": "Article 194"
+      },
+      "answer": "a",
+      "a": "Article 195",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article contains provisions as to the introduction and passing of Bills?",
+      "options": {
+        "a": "Article 198",
+        "b": "Article 196",
+        "c": "Article 197",
+        "d": "Article 195"
+      },
+      "answer": "b",
+      "a": "Article 196",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the restriction on powers of the Legislative Council as to Bills other than Money Bills?",
+      "options": {
+        "a": "Article 197",
+        "b": "Article 199",
+        "c": "Article 198",
+        "d": "Article 196"
+      },
+      "answer": "a",
+      "a": "Article 197",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article lays down the special procedure in respect of Money Bills?",
+      "options": {
+        "a": "Article 197",
+        "b": "Article 198",
+        "c": "Article 200",
+        "d": "Article 199"
+      },
+      "answer": "b",
+      "a": "Article 198",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article provides the definition of \"Money Bills\"?",
+      "options": {
+        "a": "Article 201",
+        "b": "Article 199",
+        "c": "Article 198",
+        "d": "Article 200"
+      },
+      "answer": "b",
+      "a": "Article 199",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with assent to Bills?",
+      "options": {
+        "a": "Article 202",
+        "b": "Article 201",
+        "c": "Article 200",
+        "d": "Article 199"
+      },
+      "answer": "c",
+      "a": "Article 200",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with Bills reserved for consideration of the President?",
+      "options": {
+        "a": "Article 213",
+        "b": "Article 202",
+        "c": "Article 201",
+        "d": "Article 200"
+      },
+      "answer": "c",
+      "a": "Article 201",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the annual financial statement?",
+      "options": {
+        "a": "Article 202",
+        "b": "Article 201",
+        "c": "Article 203",
+        "d": "Article 204"
+      },
+      "answer": "a",
+      "a": "Article 202",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the procedure in the legislature with respect to estimates?",
+      "options": {
+        "a": "Article 204",
+        "b": "Article 203",
+        "c": "Article 202",
+        "d": "Article 205"
+      },
+      "answer": "b",
+      "a": "Article 203",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with Appropriation Bills?",
+      "options": {
+        "a": "Article 203",
+        "b": "Article 205",
+        "c": "Article 204",
+        "d": "Article 206"
+      },
+      "answer": "c",
+      "a": "Article 204",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with supplementary, additional or excess grants?",
+      "options": {
+        "a": "Article 207",
+        "b": "Article 204",
+        "c": "Article 205",
+        "d": "Article 206"
+      },
+      "answer": "c",
+      "a": "Article 205",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with votes on account, votes of credit and exceptional grants?",
+      "options": {
+        "a": "Article 208",
+        "b": "Article 207",
+        "c": "Article 206",
+        "d": "Article 205"
+      },
+      "answer": "c",
+      "a": "Article 206",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article contains special provisions as to Financial Bills?",
+      "options": {
+        "a": "Article 206",
+        "b": "Article 208",
+        "c": "Article 209",
+        "d": "Article 207"
+      },
+      "answer": "d",
+      "a": "Article 207",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with rules of procedure of the state legislature generally?",
+      "options": {
+        "a": "Article 210",
+        "b": "Article 208",
+        "c": "Article 207",
+        "d": "Article 209"
+      },
+      "answer": "b",
+      "a": "Article 208",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article deals with the language to be used in the state legislature?",
+      "options": {
+        "a": "Article 211",
+        "b": "Article 209",
+        "c": "Article 208",
+        "d": "Article 210"
+      },
+      "answer": "d",
+      "a": "Article 210",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article restricts discussion in the state legislature regarding the conduct of judges of the Supreme Court or High Courts?",
+      "options": {
+        "a": "Article 209",
+        "b": "Article 211",
+        "c": "Article 212",
+        "d": "Article 210"
+      },
+      "answer": "b",
+      "a": "Article 211",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article bars courts from inquiring into the proceedings of the state legislature?",
+      "options": {
+        "a": "Article 210",
+        "b": "Article 213",
+        "c": "Article 211",
+        "d": "Article 212"
+      },
+      "answer": "d",
+      "a": "Article 212",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Article empowers the Governor to promulgate ordinances during the recess of the state legislature?",
+      "options": {
+        "a": "Article 212",
+        "b": "Article 214",
+        "c": "Article 213",
+        "d": "Article 211"
+      },
+      "answer": "c",
+      "a": "Article 213",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act provided for the abolition of the Legislative Council of the State of Andhra Pradesh in 1985?",
+      "options": {
+        "a": "Andhra Pradesh Legislative Council Act, 1985",
+        "b": "Andhra Pradesh Reorganisation Act, 1985",
+        "c": "States Reorganisation Act, 1985",
+        "d": "Andhra Pradesh Legislative Council (Abolition) Act, 1985"
+      },
+      "answer": "d",
+      "a": "Andhra Pradesh Legislative Council (Abolition) Act, 1985",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Act provided for the creation of the Legislative Council for the State of Tamil Nadu in 2010?",
+      "options": {
+        "a": "Tamil Nadu Reorganisation Act, 2010",
+        "b": "Tamil Nadu Legislative Council (Abolition) Act, 1986",
+        "c": "Tamil Nadu Legislative Council Act, 2010",
+        "d": "Tamil Nadu Legislative Assembly Act, 2010"
+      },
+      "answer": "c",
+      "a": "Tamil Nadu Legislative Council Act, 2010",
+      "e": "See table below for the full set of laws made by Parliament under Article 169 for the abolition or creation of State Legislative Councils.",
+      "table": {
+        "headers": [
+          "Act",
+          "Provision"
+        ],
+        "rows": [
+          [
+            "West Bengal Legislative Council (Abolition) Act, 1969",
+            "Abolished the Legislative Council of West Bengal"
+          ],
+          [
+            "Punjab Legislative Council (Abolition) Act, 1969",
+            "Abolished the Legislative Council of Punjab"
+          ],
+          [
+            "Andhra Pradesh Legislative Council (Abolition) Act, 1985",
+            "Abolished the Legislative Council of Andhra Pradesh"
+          ],
+          [
+            "Tamil Nadu Legislative Council (Abolition) Act, 1986",
+            "Abolished the Legislative Council of Tamil Nadu"
+          ],
+          [
+            "Andhra Pradesh Legislative Council Act, 2005",
+            "Created the Legislative Council for Andhra Pradesh"
+          ],
+          [
+            "Tamil Nadu Legislative Council Act, 2010",
+            "Created the Legislative Council for Tamil Nadu (not yet in force)"
+          ]
+        ]
+      }
+    }
+  ]
+}
