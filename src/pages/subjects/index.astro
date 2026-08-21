@@ -20,13 +20,19 @@ for (const [path, mod] of Object.entries(chapterFiles)) {
 // folders (e.g. early-stage or test content) aren't ready to list publicly
 // yet. Chapter counts for whatever IS listed here are always live/automatic
 // from the scan above. Add a subject here once it's ready to announce.
+//
+// `tag` is a manual editorial choice — free text, no fixed word list.
+// Write anything ('Fast selling', 'Black Friday sale', 'Only 3 left'...)
+// and it always renders in the same highlighted pill below. Leave it out
+// (or set to null) for no tag. To change how the tag LOOKS, edit
+// .subject-tag in the CSS — the text itself never needs any code change.
 const PUBLIC_SUBJECTS = [
-  { slug: 'telangana-history-te', icon: 'book' },
-  { slug: 'telangana-economy-en', icon: 'chart' },
-  { slug: 'telangana-history-en', icon: 'book' },
-  { slug: 'telangana-economy-te', icon: 'chart' },
-  { slug: 'indian-polity-en', icon: 'gavel' },
-  { slug: 'indian-polity-te', icon: 'gavel' },
+  { slug: 'telangana-history-te', icon: 'book', tag: '1205+ Purchased' },
+  { slug: 'telangana-economy-en', icon: 'chart', tag: '320+ Purchased' },
+   { slug: 'telangana-economy-te', icon: 'chart', tag: '910+ Purchased' },
+  { slug: 'indian-polity-en', icon: 'gavel', tag: '1310+ Purchased' },
+   { slug: 'telangana-history-en', icon: 'book', tag: null },
+  { slug: 'indian-polity-te', icon: 'gavel', tag: null },
 ];
 
 // subjectsMeta.js only stores the native-script heading, not a separate
@@ -40,7 +46,7 @@ const ENGLISH_NAME = {
   'indian-polity-te': 'Telugu Version',
 };
 
-const subjects = PUBLIC_SUBJECTS.map(({ slug, icon }) => {
+const subjects = PUBLIC_SUBJECTS.map(({ slug, icon, tag }) => {
   const meta = getSubjectMeta(slug);
   const chapterCount = countsBySubject[slug] || 0;
   return {
@@ -49,6 +55,7 @@ const subjects = PUBLIC_SUBJECTS.map(({ slug, icon }) => {
     slug,
     chapterCount,
     icon,
+    tag,
     available: chapterCount > 0,
   };
 });
@@ -82,6 +89,9 @@ const iconMap = {
             <div class="subject-native">{s.titleNative}</div>
             <div class="subject-english">{s.titleEnglish}</div>
             <span class="subject-count">{s.chapterCount} {s.chapterCount === 1 ? 'chapter' : 'chapters'}</span>
+            {s.tag && (
+              <span class="subject-tag"><i class="ti ti-flame" aria-hidden="true"></i> {s.tag}</span>
+            )}
           </a>
         ) : (
           <div class="subject-card subject-card-soon">
@@ -176,9 +186,22 @@ const iconMap = {
     .subject-icon-muted { background: rgba(255, 255, 255, 0.08); }
     .subject-icon-muted i { color: rgba(255, 255, 255, 0.5); }
     .subject-native { font-weight: 700; font-size: 15px; color: #ffffff; }
-    .subject-english { font-size: 13px; color: rgba(255, 255, 255, 0.65); margin: 2px 0 10px; }
-    .subject-count { font-size: 12px; color: #ffcb8a; font-weight: 600; }
+    .subject-english { font-size: 13px; color: rgba(255, 255, 255, 0.65); margin: 2px 0 4px; }
+    .subject-count { font-size: 12px; color: #ffcb8a; font-weight: 600; display: block; }
     .subject-count-muted { font-size: 12px; color: rgba(255, 255, 255, 0.5); }
+    .subject-tag {
+      display: block;
+      width: fit-content;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-top: 14px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+    .subject-tag i { font-size: 13px; vertical-align: -1px; margin-right: 3px; }
 
     /* Mobile: compact 2-column capsule grid, same pattern as the homepage. */
     @media (max-width: 720px) {
@@ -209,11 +232,16 @@ const iconMap = {
       }
       .subject-english {
         font-size: 11px;
-        margin: 2px 0 8px;
+        margin: 2px 0 3px;
       }
       .subject-count,
       .subject-count-muted {
         font-size: 11px;
+      }
+      .subject-tag {
+        font-size: 12px;
+        padding: 5px 12px;
+        margin-top: 10px;
       }
     }
   </style>
