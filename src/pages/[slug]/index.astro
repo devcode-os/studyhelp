@@ -123,7 +123,7 @@ function formatMath(str) {
 
     {isReference ? (
       <Fragment>
-        <p style="font-size:13px; color:var(--muted); margin:6px 0 0;">Quick reference &middot; always free to browse &middot; not a quiz</p>
+        <p style="font-size:13px; color:var(--muted); margin:6px 0 0;">Quick reference &middot; Always free to browse</p>
 
         <div class="ref-tabs">
           <div class="ref-tab active" data-tab="articles">Articles</div>
@@ -236,7 +236,7 @@ function formatMath(str) {
             <button type="button" id="lock-close" class="lock-close" aria-label="Close">
               <i class="ti ti-x" aria-hidden="true"></i>
             </button>
-            <p id="lock-message" class="lock-message">Purchase this subject for 45 days of unlimited access.</p>
+            <p id="lock-message" class="lock-message">Purchase this subject for {meta.category === 'papers' ? 365 : 45} days of unlimited access.</p>
             <a id="lock-action" href="/plans/" class="rt-btn rt-btn-accent-solid lock-action">View plans</a>
           </div>
         </div>
@@ -1331,7 +1331,7 @@ function formatMath(str) {
   )}
 
   {!isReference && (
-  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage }}>
+  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
@@ -1431,11 +1431,12 @@ function formatMath(str) {
       });
     }
     let purchased = false;
-    // Default 45 until a real /check-access call confirms the subject's
-    // actual access_days (e.g. 365 for previous-papers subjects). Only
-    // used for CTA copy — the real entitlement duration always comes from
-    // the Worker/D1, this is display text only.
-    let subjectAccessDays = 45;
+    // Default by subject type until a real /check-access call confirms the
+    // subject's actual access_days: 365 for question-papers subjects,
+    // 45 for all other (regular chapter) subjects. Only used for CTA
+    // copy — the real entitlement duration always comes from the
+    // Worker/D1, this is display text only.
+    let subjectAccessDays = isPapersSubject ? 365 : 45;
 
     // ---------- Lazy entitlement check for premium toolbar features ----------
     // Only called when the student actually taps a premium feature (Reveal
@@ -1531,7 +1532,7 @@ function formatMath(str) {
     }
     const LIMIT_STORAGE_KEY = `sh_limit_${subject}_${todayKey()}`;
     let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
-    const DAILY_LIMIT_MESSAGE = "You've reached today's 15 free answers for this subject. Purchase for 45 days of unlimited access, or come back tomorrow.";
+    const DAILY_LIMIT_MESSAGE = `You've reached today's 15 free answers for this subject. Purchase for ${isPapersSubject ? 365 : 45} days of unlimited access, or come back tomorrow.`;
 
     function setLimitReached() {
       limitReached = true;
