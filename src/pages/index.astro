@@ -439,7 +439,7 @@ const iconMap = {
 
       const grid = document.querySelector('.subject-list');
       const available = subjects.filter((s) => s.available);
-      const ownedSlugs = [];
+      const ownedSet = new Set();
 
       await Promise.all(
         available.map((s) =>
@@ -447,7 +447,7 @@ const iconMap = {
             .then((res) => res.json())
             .then((d) => {
               if (!d.unlocked) return;
-              ownedSlugs.push(s.slug);
+              ownedSet.add(s.slug);
               const card = document.querySelector(`[data-subject-slug="${s.slug}"]`);
               const pill = card && card.querySelector('[data-pill]');
               if (pill) pill.textContent = 'Purchased';
@@ -456,9 +456,18 @@ const iconMap = {
         )
       );
 
+      // Rebuild in the ORIGINAL config order, not the order the parallel
+      // fetches happened to resolve in — Promise.all resolution order is
+      // network-timing dependent, not deterministic, so pushing into
+      // ownedSlugs directly inside the .then() above silently scrambled
+      // the intended English-then-Telugu pairing (and any other ordering)
+      // for logged-in users with multiple purchases.
+      const ownedSlugs = available.filter((s) => ownedSet.has(s.slug)).map((s) => s.slug);
+
       if (ownedSlugs.length > 0 && grid) {
-        // Insert purchased cards at the start, in the order they were found,
-        // ahead of Popular/available/coming-soon which already sit in order.
+        // Insert purchased cards at the start, in the (now correctly
+        // ordered) sequence above, ahead of Popular/available/coming-soon
+        // which already sit in order.
         ownedSlugs.slice().reverse().forEach((slug) => {
           const card = document.querySelector(`[data-subject-slug="${slug}"]`);
           if (card) grid.prepend(card);
