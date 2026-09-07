@@ -17,13 +17,61 @@ export function getStaticPaths() {
           ch &&
           ch.slug &&
           ch.chapterNumber &&
-          (Array.isArray(ch.faqs) || (ch.type === 'reference' && Array.isArray(ch.articles)))
+          (Array.isArray(ch.faqs) ||
+            (ch.type === 'reference' && Array.isArray(ch.articles)) ||
+            (ch.type === 'theory' && Array.isArray(ch.concepts)))
       )
       .map((ch) => ({ ...ch, subject }));
   });
 
   return chapters.map((ch) => {
     const isReference = ch.type === 'reference';
+    const isTheory = ch.type === 'theory';
+
+    if (isTheory) {
+      // SECURITY: locked concepts (c.free === false) carry ONLY their
+      // navigation metadata (conceptId/partNumber/partName) — every
+      // content field (bodyMd, and the grammar-chapter fields below) is
+      // stripped before it ever reaches props, so it never lands in the
+      // static build at all. This mirrors the FAQ branch's
+      // question-text-only pattern below. Only question TEXT ships for
+      // any attached MCQs (ch.faqs) — real answers still come from the
+      // existing Worker+D1 chapter-answers endpoint at reveal time,
+      // exactly like the plain FAQ branch.
+      //
+      // TODO: once the theory_content D1 table + Worker endpoint exist,
+      // wire the "Unlock" button below to fetch locked bodyMd after a
+      // real entitlement check (same pattern as ensureEntitlementChecked
+      // + the chapter-answers fetch), instead of linking to /plans/.
+      const hasFaqs = Array.isArray(ch.faqs) && ch.faqs.length > 0;
+      const safeConcepts = (ch.concepts || []).map((c) => {
+        if (c.free) return c; // free part — ship in full, as-is
+        // locked — strip every content field, keep only nav metadata
+        return {
+          conceptId: c.conceptId,
+          partNumber: c.partNumber,
+          partName: c.partName,
+          free: false,
+        };
+      });
+      return {
+        params: { slug: ch.slug },
+        props: {
+          chapterSlug: ch.slug,
+          subject: ch.subject,
+          chapterNumber: ch.chapterNumber,
+          title: ch.title,
+          isReference: false,
+          isTheory: true,
+          articles: [],
+          amendments: [],
+          questions: hasFaqs ? ch.faqs.map((f) => f.q) : [],
+          weightage: [],
+          concepts: safeConcepts,
+          chapterIntro: ch.chapterIntro || '',
+        },
+      };
+    }
 
     if (isReference) {
       // Reference chapters (e.g. Polity Articles & Amendments quick-lookup)
@@ -77,9 +125,17 @@ export function getStaticPaths() {
   });
 }
 
-const { chapterSlug, subject, chapterNumber, title, questions, isReference, articles, amendments, articlesSearchPlaceholder, amendmentsSearchPlaceholder, weightage } = Astro.props;
+const { chapterSlug, subject, chapterNumber, title, questions, isReference, isTheory, articles, amendments, concepts: rawConcepts, chapterIntro, articlesSearchPlaceholder, amendmentsSearchPlaceholder, weightage } = Astro.props;
 const meta = getSubjectMeta(subject);
 const isTelugu = meta.lang === 'te';
+
+// Sorted by partNumber so the jump-to-part dropdown and default part are
+// correct regardless of source JSON ordering. hasParts drives multi-part
+// vs single-concept layout; hasMcq shows the top-level MCQs/Theory tab bar
+// only when this chapter actually carries attached questions.
+const concepts = isTheory ? [...(rawConcepts || [])].sort((a, b) => (a.partNumber || 0) - (b.partNumber || 0)) : [];
+const hasParts = concepts.length > 1;
+const hasMcq = isTheory && Array.isArray(questions) && questions.length > 0;
 
 const backLabel = meta.category === 'papers' ? (isTelugu ? 'ప్రశ్నపత్రాలు' : 'Papers') : (isTelugu ? 'అధ్యాయాలు' : 'Chapters');
 const questionsLabel = isTelugu ? 'ప్రశ్నలు' : 'questions';
@@ -99,7 +155,7 @@ function formatMath(str) {
   );
 }
 ---
-<Layout title={isReference ? `${title} Reference` : `${title} FAQs`} description={isReference ? `${title} - ${articles.length} articles, ${amendments.length} amendments` : `${title} - ${questions.length} FAQs`}>
+<Layout title={isReference ? `${title} Reference` : isTheory ? `${title} - Theory` : `${title} FAQs`} description={isReference ? `${title} - ${articles.length} articles, ${amendments.length} amendments` : isTheory ? (chapterIntro || `${title} theory and rules`) : `${title} - ${questions.length} FAQs`}>
 
   <!-- Desktop keeps the full site header (nav, login, theme toggle) exactly as before.
        Mobile gets the compact reading-mode header — back arrow, chapter title, progress —
@@ -139,6 +195,14 @@ function formatMath(str) {
       </Fragment>
     ) : (
       <Fragment>
+        {hasMcq && (
+          <div class="ref-tabs" id="topLevelTabs">
+            <div class="ref-tab active" data-toptab="mcq">MCQs</div>
+            <div class="ref-tab" data-toptab="theory">Theory</div>
+          </div>
+        )}
+
+        <div id="mcqPaneWrap" style={isTheory ? (hasMcq ? undefined : 'display:none') : undefined}>
         {weightage && weightage.length > 0 && (
           <div id="pattern-weightage-accordion" class="pw-accordion">
             <button type="button" id="pw-accordion-toggle" class="pw-accordion-toggle" aria-expanded="false">
@@ -253,12 +317,16 @@ function formatMath(str) {
         <div id="mt-overlay" class="mt-overlay">
           <div class="mt-topbar">
             <div class="mt-timer"><i class="ti ti-clock" aria-hidden="true"></i> <span id="mt-timer-text">00:00</span></div>
-            <div class="mt-progress" id="mt-progress-text">Question 1 of 1</div>
+            <button type="button" id="mt-nav-toggle" class="mt-progress mt-nav-toggle">
+              <span id="mt-progress-text">Question 1 of 1</span>
+              <i class="ti ti-layout-grid" aria-hidden="true"></i>
+            </button>
             <button type="button" id="mt-exit-btn" class="mt-exit-btn">Exit</button>
           </div>
           <div class="mt-body" id="mt-body"></div>
           <div class="mt-footer">
             <button type="button" id="mt-prev-btn" class="mt-nav-btn">Previous</button>
+            <button type="button" id="mt-mark-btn" class="mt-nav-btn mt-mark-btn"><i class="ti ti-flag" aria-hidden="true"></i></button>
             <button type="button" id="mt-next-btn" class="mt-nav-btn">Next</button>
             <button type="button" id="mt-submit-btn" class="mt-nav-btn mt-submit-btn" style="display:none;">Submit Test</button>
           </div>
@@ -271,6 +339,23 @@ function formatMath(str) {
               <button type="button" id="mt-exit-cancel" class="rt-btn">Keep testing</button>
               <button type="button" id="mt-exit-confirm" class="rt-btn rt-btn-accent-solid">Exit &amp; show score</button>
             </div>
+          </div>
+        </div>
+
+        <div id="mt-drawer-overlay" class="mt-drawer-overlay" style="display:none;">
+          <div class="mt-drawer">
+            <div class="mt-drawer-header">
+              <span>Question Navigator</span>
+              <button type="button" id="mt-drawer-close" class="mt-drawer-close">&times;</button>
+            </div>
+            <div class="mt-drawer-legend">
+              <span><i class="mt-dot mt-dot-answered"></i> Answered</span>
+              <span><i class="mt-dot mt-dot-marked"></i> Marked</span>
+              <span><i class="mt-dot mt-dot-visited"></i> Visited</span>
+              <span><i class="mt-dot mt-dot-unvisited"></i> Not visited</span>
+            </div>
+            <div class="mt-drawer-grid" id="mt-drawer-grid"></div>
+            <button type="button" id="mt-drawer-submit" class="mt-nav-btn mt-submit-btn" style="width:100%;">Submit Test</button>
           </div>
         </div>
 
@@ -289,6 +374,31 @@ function formatMath(str) {
         </div>
 
         <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
+        </div>
+
+        <div id="theoryPaneWrap" style={hasMcq ? 'display:none' : (isTheory ? undefined : 'display:none')}>
+        {chapterIntro && (
+          <div class="intro-card">
+            <div class="intro-card-label">About this chapter</div>
+            <p class="chapter-intro-text">{chapterIntro}</p>
+          </div>
+        )}
+
+        {hasParts && (
+          <div class="part-select-row">
+            <div class="part-select-label">Jump to a part</div>
+            <select id="partSelect" class="part-select">
+              {concepts.map((c) => (
+                <option value={c.conceptId || c.partNumber}>
+                  {`Part ${c.partNumber}/${concepts.length} - ${c.partName}${c.free ? '' : ' 🔒'}`}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        <div id="conceptMount"></div>
+        </div>
       </Fragment>
     )}
   </div>
@@ -1198,6 +1308,76 @@ function formatMath(str) {
       border: none;
     }
     .mt-nav-btn:disabled { opacity: 0.5; cursor: default; }
+    .mt-nav-toggle {
+      display: flex; align-items: center; gap: 6px; cursor: pointer;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px; padding: 6px 10px; color: rgba(255,255,255,0.9);
+    }
+    .mt-mark-btn { flex: 0 0 44px; }
+    .mt-mark-btn.mt-marked { background: color-mix(in srgb, #a855f7 20%, var(--card)); border-color: #a855f7; color: #a855f7; }
+
+    .mt-drawer-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 230;
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    .mt-drawer {
+      background: var(--bg); width: 100%; max-width: 480px;
+      border-radius: 16px 16px 0 0; padding: 16px; max-height: 75vh;
+      display: flex; flex-direction: column; gap: 12px;
+      box-sizing: border-box; overflow: hidden;
+    }
+    .mt-drawer-header { display: flex; justify-content: space-between; align-items: center; font-weight: 800; font-size: 15px; }
+    .mt-drawer-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--muted); }
+    .mt-drawer-legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 11.5px; color: var(--muted); }
+    .mt-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+    .mt-dot-answered { background: #22c55e; }
+    .mt-dot-marked { background: #a855f7; }
+    .mt-dot-visited { background: #ffb35c; }
+    .mt-dot-unvisited { background: var(--border); }
+
+    .mt-drawer-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      gap: 8px; overflow-y: auto; flex: 1 1 auto; min-height: 0;
+      align-content: start;
+    }
+    .mt-grid-cell {
+      aspect-ratio: 1; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--card); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 13px; cursor: pointer; position: relative;
+    }
+    .mt-grid-cell.mt-cell-answered { background: color-mix(in srgb, #22c55e 18%, var(--card)); border-color: #22c55e; color: #16803c; }
+    .mt-grid-cell.mt-cell-visited { background: color-mix(in srgb, #ffb35c 18%, var(--card)); border-color: #ffb35c; color: #b45c0a; }
+    .mt-grid-cell.mt-cell-marked::after {
+      content: ''; position: absolute; top: 3px; right: 3px; width: 6px; height: 6px;
+      border-radius: 50%; background: #a855f7;
+    }
+    .mt-grid-cell.mt-cell-current { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .mt-drawer .mt-nav-btn.mt-submit-btn { flex: 0 0 auto; }
+
+    @media (min-width: 900px) {
+      .mt-overlay.active { right: 320px; }
+      .mt-overlay.active ~ .mt-drawer-overlay {
+        display: flex !important;
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: 320px;
+        background: transparent;
+        pointer-events: none;
+        align-items: stretch;
+        justify-content: flex-end;
+      }
+      .mt-drawer-overlay .mt-drawer {
+        pointer-events: auto;
+        width: 320px;
+        max-width: 320px;
+        height: 100%;
+        max-height: none;
+        border-radius: 0;
+        border-left: 1px solid var(--border);
+      }
+      .mt-drawer-close { display: none; }
+      .mt-nav-toggle { cursor: default; pointer-events: none; }
+    }
     .mt-trial-cta {
       margin-top: 14px;
       text-align: center;
@@ -1223,7 +1403,361 @@ function formatMath(str) {
       width: 100%;
       justify-content: center;
     }
+
+    /* ---------- Theory chapter UI ---------- */
+    .intro-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px 18px; margin:16px 0 20px;}
+    .intro-card-label{font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;}
+    .chapter-intro-text{font-size:16px; line-height:1.65; color:var(--text); margin:0;}
+
+    .part-select-row{margin-bottom:16px;}
+    .part-select-label{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+    .part-select{
+      width:100%; background:var(--card); border:1px solid var(--border); border-radius:12px;
+      padding:12px 14px; font-size:14.5px; font-weight:600; color:var(--text);
+    }
+
+    .theory-md{line-height:1.75; color:var(--text); font-size:15.5px;}
+    .theory-md h2{
+      font-size:18px; font-weight:800; margin:26px 0 14px; padding-bottom:8px;
+      border-bottom:2px solid var(--accent); color:var(--text);
+    }
+    .theory-md h2:first-child{margin-top:4px;}
+    .theory-md h3{
+      font-size:15px; font-weight:700; margin:22px 0 10px; color:var(--accent);
+      display:flex; align-items:center; gap:8px;
+    }
+    .theory-md h3::before{content:''; width:4px; height:16px; background:var(--accent); border-radius:2px; flex-shrink:0;}
+    .theory-md p{margin:0 0 14px;}
+    .theory-md ul,.theory-md ol{margin:0 0 16px; padding-left:0; list-style:none;}
+    .theory-md ul ul, .theory-md ol ul, .theory-md ul ol, .theory-md ol ol{margin:8px 0 8px; padding-left:22px;}
+    .theory-md li{
+      margin-bottom:10px; padding-left:22px; position:relative;
+    }
+    .theory-md > ul > li, .theory-md > ol > li{
+      background:var(--card, rgba(127,127,127,0.06));
+      border-radius:8px; padding:10px 14px 10px 30px; margin-bottom:8px;
+    }
+    .theory-md li::before{
+      content:'•'; position:absolute; left:8px; top:9px; color:var(--accent); font-weight:900; font-size:15px;
+    }
+    .theory-md ul ul li::before{content:'◦'; font-size:13px;}
+    .theory-md > ul > li::before, .theory-md > ol > li::before{left:12px; top:11px;}
+    .theory-md strong{color:var(--accent); font-weight:800;}
+    .theory-md em{color:var(--muted); font-style:italic;}
+    .theory-md hr{border:none; border-top:1px dashed var(--border,#e5e5e5); margin:26px 0;}
+    .theory-md code{background:rgba(127,127,127,0.15); padding:2px 6px; border-radius:4px; font-size:0.9em; font-family:ui-monospace,Consolas,monospace;}
+    .theory-md table{width:100%; border-collapse:collapse; margin:4px 0 18px; font-size:14px; border-radius:8px; overflow:hidden;}
+    .theory-md th{background:var(--accent); color:#fff; font-weight:700; padding:8px 10px; text-align:left;}
+    .theory-md td{border:1px solid var(--border,#e5e5e5); padding:8px 10px; text-align:left;}
+    .theory-md tr:nth-child(even) td{background:rgba(127,127,127,0.05);}
+    .concept-body-wrap{
+      position:relative; border-radius:16px; overflow:hidden; margin-bottom:20px;
+      max-height:340px;
+    }
+    .concept-locked-content{filter:blur(6px); pointer-events:none; user-select:none;}
+    .concept-lock-overlay{
+      position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      background:linear-gradient(180deg, color-mix(in srgb, var(--bg) 15%, transparent) 0%, var(--bg) 55%);
+      text-align:center; padding:24px;
+    }
+    .concept-lock-badge{
+      width:50px; height:50px; border-radius:50%; background:var(--accent); color:#fff;
+      display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:12px;
+    }
+    .concept-lock-title{font-size:15px; font-weight:700; color:var(--text); margin-bottom:5px;}
+    .concept-lock-sub{font-size:13px; color:var(--muted); margin-bottom:14px; max-width:32ch;}
+    /* Standalone variant: locked concepts ship with NO content to blur
+       behind them (stripped server-side), so this renders as a plain
+       centered card instead of an absolute overlay atop blurred text. */
+    .concept-lock-standalone{
+      position:static; inset:auto; background:var(--card); border:1px solid var(--border);
+      border-radius:16px; margin-bottom:20px; padding:40px 24px;
+    }
+    .concept-lock-standalone .concept-unlock-btn{
+      display:inline-block; text-decoration:none;
+    }
+    .concept-unlock-btn{
+      background:var(--accent); color:#fff; border:none; border-radius:10px; padding:11px 20px;
+      font-weight:700; font-size:13.5px; cursor:pointer;
+    }
+
+    .remember-card{
+      background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, var(--card)), var(--card));
+      border:1px solid var(--border); border-radius:14px; padding:18px; margin-bottom:14px;
+    }
+    .remember-tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin-bottom:10px;}
+    .remember-name{font-size:19px; font-weight:800; color:var(--text); margin-bottom:10px;}
+    .structure-line{
+      font-family:'Consolas', monospace; font-size:13.5px; color:#ffc56b;
+      background:linear-gradient(155deg, #1b1730 0%, #241f42 100%);
+      border:1px dashed rgba(255,197,107,0.4); border-radius:8px;
+      padding:11px 14px; margin-bottom:8px;
+      box-shadow:0 4px 14px -6px rgba(0,0,0,0.35);
+    }
+    .structure-gloss{font-size:12.5px; color:var(--muted); margin-bottom:12px;}
+    .usage-line{font-size:14px; color:var(--text); margin-bottom:14px; line-height:1.6;}
+
+    .forms-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;}
+    .form-cell{
+      background:linear-gradient(155deg, #1b1730 0%, #241f42 100%);
+      border-radius:12px; padding:14px 15px;
+      box-shadow:0 4px 14px -6px rgba(0,0,0,0.35);
+    }
+    .form-cell .lbl{
+      font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.07em;
+      color:#ffc56b; margin-bottom:7px; opacity:0.9;
+    }
+    .form-cell .val{font-family:'Consolas', monospace; font-size:12.5px; line-height:1.55; color:#f1eefc; word-break:break-word;}
+    .form-cell .val .form-sentence{margin:0 0 8px 0;}
+    .form-cell .val .form-sentence:last-child{margin-bottom:0;}
+    @media (max-width: 380px) {
+      .forms-grid{grid-template-columns:1fr;}
+    }
+
+    .signal-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
+    .signal-label{width:100%; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin-bottom:6px;}
+    .chip{
+      font-family:'Consolas', monospace; font-size:12px;
+      background:linear-gradient(155deg, #1b1730 0%, #241f42 100%);
+      border-radius:8px; padding:7px 12px; color:#f1eefc;
+      box-shadow:0 3px 10px -5px rgba(0,0,0,0.35);
+    }
+    .chip-note{color:#c9b8ff; font-size:11px; opacity:0.85;}
+
+    .examples-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .examples-label{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:10px;}
+    .ex-row{padding:8px 0; border-bottom:1px solid var(--border); font-size:14.5px; color:var(--text);}
+    .ex-row:last-child{border-bottom:none;}
+    .ex-gloss{font-size:12px; color:var(--muted); margin-top:3px;}
+
+    .scenario-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .scenario-row{padding:8px 0; border-bottom:1px solid var(--border);}
+    .scenario-row:last-child{border-bottom:none;}
+    .scenario-title{font-size:13.5px; font-weight:700; color:var(--text);}
+    .scenario-example{font-size:13.5px; color:var(--muted); margin-top:2px;}
+
+    .confuse-card{background:var(--amber-bg); border:1px solid color-mix(in srgb, var(--accent) 45%, var(--border)); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .confuse-label{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin-bottom:8px;}
+    .confuse-rule{font-size:13.5px; color:var(--text); margin-bottom:10px;}
+    .wr{display:grid; grid-template-columns:18px 1fr; gap:3px 8px; font-size:13.5px; margin-bottom:4px;}
+    .wr .x{color:#c0392b; font-weight:800;}
+    .wr .ok{color:var(--success-text); font-weight:800;}
+    .wr .wrong-text{color:var(--muted); text-decoration:line-through;}
+
+    .exceptions-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .exceptions-label{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:8px;}
+    .exceptions-list{margin:0; padding-left:18px; font-size:13.5px; color:var(--text); line-height:1.7;}
+
+    .examtip-card{background:var(--accent-bg); border-left:3px solid var(--accent); border-radius:8px; padding:12px 14px; margin-bottom:20px; font-size:13px; color:var(--text);}
+    .examtip-label{font-weight:700; color:var(--accent); font-size:11px; text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:4px;}
+
+    .practice-cta{
+      background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px;
+      display:flex; align-items:center; gap:12px; margin-bottom:16px; text-decoration:none;
+    }
+    .practice-cta .icon{
+      width:40px; height:40px; border-radius:10px; background:var(--accent-bg); color:var(--accent);
+      display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;
+    }
+    .practice-cta .txt{flex:1;}
+    .practice-cta .h{font-size:14.5px; font-weight:700; color:var(--text);}
+    .practice-cta .s{font-size:12px; color:var(--muted);}
+    .practice-cta .go{background:var(--accent); color:#fff; border-radius:9px; padding:9px 14px; font-weight:700; font-size:13px; flex-shrink:0;}
   </style>
+
+  {isTheory && <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>}
+  {hasMcq && (
+    <script>
+      // Top-level MCQs / Theory tab switch. Default active = MCQs. Purely
+      // a visibility toggle — both panes' own scripts run regardless of
+      // which is visible, same pattern as the ref-tabs toggle below.
+      document.querySelectorAll('#topLevelTabs .ref-tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('#topLevelTabs .ref-tab').forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          const which = tab.getAttribute('data-toptab');
+          const mcqPane = document.getElementById('mcqPaneWrap');
+          const theoryPane = document.getElementById('theoryPaneWrap');
+          if (mcqPane) mcqPane.style.display = which === 'mcq' ? '' : 'none';
+          if (theoryPane) theoryPane.style.display = which === 'theory' ? '' : 'none';
+        });
+      });
+    </script>
+  )}
+  {isTheory && (
+    <script define:vars={{ concepts, hasParts, subject }}>
+      // SECURITY: locked concepts never carry content fields (stripped at
+      // the getStaticPaths level above) — so a locked concept is detected
+      // and handled BEFORE any content field is touched, and the lock
+      // card renders with nothing behind it to blur or scrape. There is
+      // no client-side unlock toggle; "Unlock" sends the student to the
+      // real purchase flow, same as every other paywall on this site.
+      //
+      // TODO: once the theory_content D1 table + Worker endpoint exist,
+      // this can offer an in-place "reveal after purchase" fetch (same
+      // pattern as ensureEntitlementChecked + the chapter-answers fetch)
+      // instead of a plain link to /plans/.
+      const mount = document.getElementById('conceptMount');
+      const select = document.getElementById('partSelect');
+
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = String(str);
+        return div.innerHTML;
+      }
+
+      function renderConcept(c) {
+        if (!c.free) {
+          return `
+            <div class="concept-lock-overlay concept-lock-standalone">
+              <div class="concept-lock-badge">&#128274;</div>
+              <div class="concept-lock-title">${hasParts ? `Part ${c.partNumber} is locked` : 'Rest of this chapter is locked'}</div>
+              <div class="concept-lock-sub">Unlock this subject to read every part's rules, examples and practice MCQs.</div>
+              <a class="concept-unlock-btn" href="/plans/?highlight=${encodeURIComponent(subject)}">Unlock, &#8377;199</a>
+            </div>
+          `;
+        }
+
+        // Narrative theory chapters (history, economy, etc.) carry raw
+        // markdown in bodyMd instead of the grammar-rule fields below.
+        if (c.bodyMd) {
+          const mcqHrefMd = c.mcqSlug ? `/${c.mcqSlug}/${c.conceptId ? `#${c.conceptId}` : ''}` : '#';
+          const practiceHtmlMd = `
+            <a class="practice-cta" href="${mcqHrefMd}">
+              <div class="icon">&#128221;</div>
+              <div class="txt">
+                <div class="h">Practice MCQs - ${escapeHtml(c.partName || '')}</div>
+                <div class="s">Test what you just read with practice questions</div>
+              </div>
+              <div class="go">Practice &rarr;</div>
+            </a>
+          `;
+          // marked's CommonMark flanking-rule regex misclassifies Telugu
+          // (and other non-Latin) letters, so **bold**immediatelyFollowedByLetter
+          // silently fails when the closing ** sits right after punctuation
+          // with no space before the next word. Fix: convert ** pairs to
+          // <strong> ourselves first, then hand the result to marked.
+          const preBoldFixed = c.bodyMd.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
+          const mdHtml = (window.marked ? window.marked.parse(preBoldFixed) : `<pre>${escapeHtml(c.bodyMd)}</pre>`);
+          return `<div class="theory-md">${mdHtml}</div>${practiceHtmlMd}`;
+        }
+
+        const formsHtml = c.formsBreakdown ? `
+          <div class="forms-grid">
+            ${Object.entries(c.formsBreakdown).map(([k, v]) => `
+              <div class="form-cell">
+                <div class="lbl">${escapeHtml(k.replace(/_/g, ' '))}</div>
+                <div class="val">${
+                  Array.isArray(v)
+                    ? v.map((sentence) => `<p class="form-sentence">${escapeHtml(sentence)}</p>`).join('')
+                    : escapeHtml(v)
+                }</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const signalHtml = (c.signalWords && c.signalWords.length) ? `
+          <div class="signal-row">
+            <div class="signal-label">Signal words</div>
+            ${c.signalWords.map((s) => `<span class="chip">${escapeHtml(s.word)}${s.note ? ` <span class="chip-note">- ${escapeHtml(s.note)}</span>` : ''}</span>`).join('')}
+          </div>
+        ` : '';
+
+        const rememberHtml = `
+          <div class="remember-card">
+            <div class="remember-tag">&#9733; Rule to remember</div>
+            <div class="remember-name">${escapeHtml(c.partName || '')}</div>
+            ${c.structure ? `<div class="structure-line">${escapeHtml(c.structure)}</div>` : ''}
+            ${c.structureGloss ? `<div class="structure-gloss">${escapeHtml(c.structureGloss)}</div>` : ''}
+            ${c.explanation ? c.explanation.split('\n').filter(Boolean).map((p) => `<p class="usage-line">${escapeHtml(p)}</p>`).join('') : ''}
+            ${formsHtml}
+            ${signalHtml}
+          </div>
+        `;
+
+        const examplesHtml = (c.examples && c.examples.length) ? `
+          <div class="examples-card">
+            <div class="examples-label">Examples</div>
+            ${c.examples.map((e) => `
+              <div class="ex-row">
+                ${escapeHtml(e.sentence)}
+                ${e.gloss ? `<div class="ex-gloss">${escapeHtml(e.gloss)}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const scenariosHtml = (c.usageScenarios && c.usageScenarios.length) ? `
+          <div class="scenario-card">
+            <div class="examples-label">Usage scenarios</div>
+            ${c.usageScenarios.map((s) => `
+              <div class="scenario-row">
+                <div class="scenario-title">${escapeHtml(s.title)}</div>
+                <div class="scenario-example">${escapeHtml(s.example)}</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const confusionHtml = c.confusion ? `
+          <div class="confuse-card">
+            <div class="confuse-label">&#9888; ${escapeHtml(c.confusion.title || 'Common confusion')}</div>
+            ${c.confusion.rule ? `<div class="confuse-rule">${escapeHtml(c.confusion.rule)}</div>` : ''}
+            ${(c.confusion.wrongRight || []).map((wr) => `
+              <div class="wr"><span class="x">&#10007;</span><span class="wrong-text">${escapeHtml(wr.wrong)}</span></div>
+              <div class="wr"><span class="ok">&#10003;</span><span>${escapeHtml(wr.right)}</span></div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const exceptionsHtml = (c.exceptions && c.exceptions.length) ? `
+          <div class="exceptions-card">
+            <div class="exceptions-label">Exceptions</div>
+            <ul class="exceptions-list">${c.exceptions.map((ex) => `<li>${escapeHtml(ex)}</li>`).join('')}</ul>
+          </div>
+        ` : '';
+
+        const examTipHtml = c.examTip ? `
+          <div class="examtip-card">
+            <span class="examtip-label">Exam tip</span>
+            ${escapeHtml(c.examTip)}
+          </div>
+        ` : '';
+
+        const mcqHref = c.mcqSlug ? `/${c.mcqSlug}/${c.conceptId ? `#${c.conceptId}` : ''}` : '#';
+        const practiceHtml = `
+          <a class="practice-cta" href="${mcqHref}">
+            <div class="icon">&#128221;</div>
+            <div class="txt">
+              <div class="h">Practice MCQs - ${escapeHtml(c.partName || '')}</div>
+              <div class="s">Test what you just read with practice questions</div>
+            </div>
+            <div class="go">Practice &rarr;</div>
+          </a>
+        `;
+
+        return `${rememberHtml}${examplesHtml}${scenariosHtml}${confusionHtml}${exceptionsHtml}${examTipHtml}${practiceHtml}`;
+      }
+
+      function showConcept(idOrPartNumber) {
+        const c = concepts.find(
+          (x) => String(x.conceptId) === String(idOrPartNumber) || String(x.partNumber) === String(idOrPartNumber)
+        ) || concepts[0];
+        mount.innerHTML = renderConcept(c);
+      }
+
+      if (select) {
+        select.addEventListener('change', () => showConcept(select.value));
+      }
+
+      const initial = concepts.find((c) => c.free) || concepts[0];
+      if (initial) {
+        if (select) select.value = initial.conceptId || initial.partNumber;
+        showConcept(initial.conceptId || initial.partNumber);
+      }
+    </script>
+  )}
 
   {isReference && (
     <script define:vars={{ articles, amendments, articlesSearchPlaceholder, amendmentsSearchPlaceholder }}>
@@ -2154,6 +2688,61 @@ function formatMath(str) {
     const TRIAL_QUESTION_COUNT = 10;
     let knownRemainingClicks = null; // updated from the server's own `remaining` field on every answer fetch
 
+    // ---------- Question navigator (drawer): answered/visited/marked state ----------
+    const mtVisited = new Set();  // positions (mtCurrentPos values) ever rendered
+    const mtMarked = new Set();   // positions marked for review
+
+    function mtCellState(pos) {
+      const idx = mtOrder[pos];
+      if (mtSelections[idx]) return 'answered';
+      if (mtVisited.has(pos)) return 'visited';
+      return 'unvisited';
+    }
+
+    function renderMtDrawerGrid() {
+      const grid = document.getElementById('mt-drawer-grid');
+      if (!grid) return;
+      grid.innerHTML = mtOrder.map((_, pos) => {
+        const state = mtCellState(pos);
+        const marked = mtMarked.has(pos) ? ' mt-cell-marked' : '';
+        const current = pos === mtCurrentPos ? ' mt-cell-current' : '';
+        return `<div class="mt-grid-cell mt-cell-${state}${marked}${current}" data-pos="${pos}">${pos + 1}</div>`;
+      }).join('');
+      grid.querySelectorAll('.mt-grid-cell').forEach((cell) => {
+        cell.addEventListener('click', () => {
+          mtCurrentPos = parseInt(cell.getAttribute('data-pos'));
+          closeMtDrawer();
+          mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+        });
+      });
+    }
+
+    function openMtDrawer() {
+      renderMtDrawerGrid();
+      const overlay = document.getElementById('mt-drawer-overlay');
+      if (overlay) overlay.style.display = 'flex';
+    }
+    function closeMtDrawer() {
+      const overlay = document.getElementById('mt-drawer-overlay');
+      if (overlay) overlay.style.display = 'none';
+    }
+
+    const mtNavToggle = document.getElementById('mt-nav-toggle');
+    const mtDrawerClose = document.getElementById('mt-drawer-close');
+    const mtDrawerOverlay = document.getElementById('mt-drawer-overlay');
+    const mtDrawerSubmit = document.getElementById('mt-drawer-submit');
+    const mtMarkBtn = document.getElementById('mt-mark-btn');
+
+    if (mtNavToggle) mtNavToggle.addEventListener('click', openMtDrawer);
+    if (mtDrawerClose) mtDrawerClose.addEventListener('click', closeMtDrawer);
+    if (mtDrawerOverlay) mtDrawerOverlay.addEventListener('click', (e) => { if (e.target === mtDrawerOverlay) closeMtDrawer(); });
+    if (mtDrawerSubmit) mtDrawerSubmit.addEventListener('click', () => { closeMtDrawer(); finishMockTest(); });
+    if (mtMarkBtn) mtMarkBtn.addEventListener('click', () => {
+      if (mtMarked.has(mtCurrentPos)) mtMarked.delete(mtCurrentPos);
+      else mtMarked.add(mtCurrentPos);
+      mtMarkBtn.classList.toggle('mt-marked', mtMarked.has(mtCurrentPos));
+    });
+
     function shuffleArray(arr) {
       const a = arr.slice();
       for (let i = a.length - 1; i > 0; i--) {
@@ -2199,6 +2788,9 @@ function formatMath(str) {
     }
 
     async function renderMtQuestion() {
+      mtVisited.add(mtCurrentPos);
+      if (mtMarkBtn) mtMarkBtn.classList.toggle('mt-marked', mtMarked.has(mtCurrentPos));
+      renderMtDrawerGrid();
       const idx = mtOrder[mtCurrentPos];
       const q = questions[idx];
       mtProgressText.textContent = `Question ${mtCurrentPos + 1} of ${mtOrder.length}`;
@@ -2433,6 +3025,7 @@ function formatMath(str) {
     }
 
     function renderMtReviewQuestion() {
+      renderMtDrawerGrid();
       const idx = mtOrder[mtCurrentPos];
       const f = mtAnswers[idx];
       const pick = mtSelections[idx];

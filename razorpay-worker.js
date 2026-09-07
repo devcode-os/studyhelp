@@ -104,6 +104,9 @@ export default {
     if (url.pathname === "/content/questions" && request.method === "GET") {
       return getChapterQuestions(request, env);
     }
+    if (url.pathname === "/content/theory" && request.method === "GET") {
+      return getTheoryContent(request, env);
+    }
     if (url.pathname === "/master-access/login" && request.method === "POST") {
       return adminLogin(request, env);
     }
@@ -2130,6 +2133,75 @@ async function getChapterAnswers(request, env) {
   }
 
   return jsonAuth({ answers });
+}
+
+// ---------- 11b. Theory content (entitlement-gated, mirrors chapter answers) ----------
+// Serves locked concept bodyMd for a theory chapter. Same model as
+// getChapterAnswers above: nothing here is ever baked into the Astro
+// static build — the [slug]/index.astro page strips bodyMd from every
+// locked concept before it reaches props, so this endpoint is the ONLY
+// place a locked part's real text ever leaves the server.
+async function getTheoryContent(request, env) {
+  const jsonAuth = (data, status = 200) =>
+    json(data, status, corsHeadersWithCredentials(request));
+
+  const url = new URL(request.url);
+  const chapterSlug = url.searchParams.get("chapter_slug");
+
+  if (!chapterSlug) {
+    return jsonAuth({ error: "chapter_slug required" }, 400);
+  }
+
+  const chapter = await env.DB.prepare(
+    "SELECT subject_id, concepts_json FROM theory_content WHERE chapter_slug = ?"
+  )
+    .bind(chapterSlug)
+    .first();
+
+  if (!chapter) {
+    return jsonAuth({ error: "Chapter not found" }, 404);
+  }
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required", locked: true }, 401);
+  }
+
+  // Admin bypass: same ADMIN_PHONES check as getChapterAnswers, so admin
+  // accounts can review locked theory content without a purchase.
+  if (env.ADMIN_PHONES) {
+    const adminPhones = env.ADMIN_PHONES.split(",").map((p) => p.trim());
+    if (adminPhones.includes(user.phone)) {
+      let concepts;
+      try {
+        concepts = JSON.parse(chapter.concepts_json);
+      } catch (err) {
+        return jsonAuth({ error: "Content error" }, 500);
+      }
+      return jsonAuth({ concepts, admin: true });
+    }
+  }
+
+  const nowTs = Math.floor(Date.now() / 1000);
+  const entitlement = await env.DB.prepare(
+    "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
+  )
+    .bind(user.id, chapter.subject_id, nowTs)
+    .first();
+
+  if (!entitlement) {
+    return jsonAuth({ error: "This subject is not currently unlocked on your account. Purchase for 45 days of unlimited access.", locked: true }, 403);
+  }
+
+  // concepts_json is already a JSON string in D1 — parse then re-send as real JSON
+  let concepts;
+  try {
+    concepts = JSON.parse(chapter.concepts_json);
+  } catch (err) {
+    return jsonAuth({ error: "Content error" }, 500);
+  }
+
+  return jsonAuth({ concepts });
 }
 
 // Daily free-click limit for subjects NOT purchased — flat, same for everyone,

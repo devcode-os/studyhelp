@@ -1,0 +1,573 @@
+{
+  "mockNumber": 15,
+  "title": "Telangana History - Mock Test 15",
+  "totalQuestions": 30,
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Because political and social topics were banned at the third Mahasabha, the leaders devised a strategy of instead passing resolutions on:",
+      "options": {
+        "a": "Farmers' problems",
+        "b": "Trade regulations",
+        "c": "Religious conversion",
+        "d": "Educational reform"
+      },
+      "answer": "a",
+      "a": "Farmers' problems",
+      "e": "",
+      "table": null,
+      "sourceChapter": 19,
+      "sourceTitle": "Andhra Mahasabha"
+    },
+    {
+      "type": "mcq",
+      "q": "The meeting at which Andhra representatives faced insult in 1921 was organised as a:",
+      "options": {
+        "a": "Andhra Mahasabha",
+        "b": "Congress Working Committee meeting",
+        "c": "Hindu Samskar Sabha",
+        "d": "Osmania University convocation"
+      },
+      "answer": "c",
+      "a": "Hindu Samskar Sabha",
+      "e": "",
+      "table": null,
+      "sourceChapter": 18,
+      "sourceTitle": "Andhra Jana Sangham"
+    },
+    {
+      "type": "mcq",
+      "q": "Bahadur Shah I, who emerged victorious in the war of succession after Aurangzeb's death, appointed Zulfiqar Khan as Subedar of the Deccan in which year?",
+      "options": {
+        "a": "1708 CE",
+        "b": "1700 CE",
+        "c": "1713 CE",
+        "d": "1707 CE"
+      },
+      "answer": "a",
+      "a": "1708 CE",
+      "e": "",
+      "table": null,
+      "sourceChapter": 12,
+      "sourceTitle": "Mughal Interregnum and Rise of Asaf Jahi Dynasty"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following was the first English newspaper published from Hyderabad?",
+      "options": {
+        "a": "Hyderabad Recorder",
+        "b": "Hyderabad Bulletin",
+        "c": "Deccan Times",
+        "d": "Octareshfak"
+      },
+      "answer": "c",
+      "a": "Deccan Times",
+      "e": "Established in 1864 by Abdul Khader.",
+      "table": {
+        "headers": [
+          "Newspaper",
+          "Year",
+          "Language/Type"
+        ],
+        "rows": [
+          [
+            "Jubdoot-Ul-Akbar",
+            "1833",
+            "–"
+          ],
+          [
+            "Risala Tabbi",
+            "1859",
+            "Urdu (medical journal)"
+          ],
+          [
+            "Octareshfak",
+            "1878",
+            "Parsi"
+          ],
+          [
+            "Deccan Times",
+            "1864",
+            "English"
+          ],
+          [
+            "Hyderabad Recorder",
+            "1885",
+            "English"
+          ],
+          [
+            "Hyderabad Bulletin",
+            "1904",
+            "English"
+          ]
+        ]
+      },
+      "sourceChapter": 21,
+      "sourceTitle": "Newspapers and Literature in Telangana"
+    },
+    {
+      "type": "mcq",
+      "q": "Which two Congress members voted against their own government, causing the fall of the Prakasam ministry?",
+      "options": {
+        "a": "Tenneti Viswanatham and Kotireddy",
+        "b": "Alluri and Latchanna",
+        "c": "Shankar Reddy and Adusumilli Subrahmanyam",
+        "d": "Sanjeeva Reddy and Gopala Reddi"
+      },
+      "answer": "c",
+      "a": "Shankar Reddy and Adusumilli Subrahmanyam",
+      "e": "",
+      "table": null,
+      "sourceChapter": 29,
+      "sourceTitle": "Formation of Andhra Pradesh and Early State Politics"
+    },
+    {
+      "type": "mcq",
+      "q": "The land survey under Salarjung's administration was first successfully conducted at which place?",
+      "options": {
+        "a": "Warangal",
+        "b": "Aurangabad",
+        "c": "Gulbarga",
+        "d": "Naldurg"
+      },
+      "answer": "b",
+      "a": "Aurangabad",
+      "e": "",
+      "table": null,
+      "sourceChapter": 14,
+      "sourceTitle": "Salarjung Reforms"
+    },
+    {
+      "type": "mcq",
+      "q": "Which Chief Justice headed the five-member Supreme Court bench that cancelled G.O. No. 36 on 28 March 1969?",
+      "options": {
+        "a": "Pingali Jaganmohan Reddy",
+        "b": "Justice Chinnappa Reddy",
+        "c": "Justice Kuppuswamy",
+        "d": "M. Hidayatullah"
+      },
+      "answer": "d",
+      "a": "M. Hidayatullah",
+      "e": "",
+      "table": null,
+      "sourceChapter": 31,
+      "sourceTitle": "The 1969 Telangana Movement"
+    },
+    {
+      "type": "mcq",
+      "q": "How many successor kingdoms emerged from the breakdown of the Bahmani empire?",
+      "options": {
+        "a": "Five",
+        "b": "Six",
+        "c": "Four",
+        "d": "Three"
+      },
+      "answer": "a",
+      "a": "Five",
+      "e": "The Golconda Qutub Shahi kingdom was one of them.",
+      "table": null,
+      "sourceChapter": 30,
+      "sourceTitle": "Mulki Movement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which Hoyasala ruler defeated Someswara IV (son of Tailapa III) at Kalyani in C.E. 1183, effectively ending the Kalyani Chalukyan dynasty?",
+      "options": {
+        "a": "Vishnuvardhana",
+        "b": "Ballala III",
+        "c": "Someswara III",
+        "d": "Jagadekamalla"
+      },
+      "answer": "b",
+      "a": "Ballala III",
+      "e": "Someswara IV lived in exile thereafter and died in C.E. 1200, marking the definitive end of the Kalyani Chalukyan dynasty.",
+      "table": null,
+      "sourceChapter": 5,
+      "sourceTitle": "Chalukyan Age"
+    },
+    {
+      "type": "mcq",
+      "q": "Which British commander was sent to conduct war activities in Carnatic and captured French ships, later being ordered to leave by Anwaruddin?",
+      "options": {
+        "a": "Labordinies",
+        "b": "Robert Clive",
+        "c": "Lawrence",
+        "d": "Bornet"
+      },
+      "answer": "d",
+      "a": "Bornet",
+      "e": "",
+      "table": null,
+      "sourceChapter": 13,
+      "sourceTitle": "Asaf Jahi Dynasty — Rule and Administration"
+    },
+    {
+      "type": "mcq",
+      "q": "Kubja Vishnuvardhana is believed to have died fighting alongside his brother Pulakesi II in a battle against which Pallava ruler?",
+      "options": {
+        "a": "Mahendravarma",
+        "b": "Irivanolambadhi",
+        "c": "Nandivarma II",
+        "d": "Narasimhavarma"
+      },
+      "answer": "d",
+      "a": "Narasimhavarma",
+      "e": "",
+      "table": null,
+      "sourceChapter": 5,
+      "sourceTitle": "Chalukyan Age"
+    },
+    {
+      "type": "mcq",
+      "q": "During the Velama regions of Rachakonda and Devarakonda, the era witnessed the growth of which two religious traditions in Telangana?",
+      "options": {
+        "a": "Jainism and Buddhism",
+        "b": "Saivism and Jainism",
+        "c": "Saivism and Vaishnavism",
+        "d": "Vaishnavism and Buddhism"
+      },
+      "answer": "c",
+      "a": "Saivism and Vaishnavism",
+      "e": "",
+      "table": null,
+      "sourceChapter": 8,
+      "sourceTitle": "Rachakonda Rulers and Musunuri Nayakas"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following did the Nizam send for negotiations with Mountbatten?",
+      "options": {
+        "a": "Moin Nawaz Jung and Mohin Nawaz Jung",
+        "b": "Mehdi Yar Jung and Laiq Ali",
+        "c": "K.M. Munshi and Zain Yar Jung",
+        "d": "Walter Monckton, Chattari Nawab, and Sultan Ahmed"
+      },
+      "answer": "d",
+      "a": "Walter Monckton, Chattari Nawab, and Sultan Ahmed",
+      "e": "",
+      "table": null,
+      "sourceChapter": 28,
+      "sourceTitle": "Police Action (Operation Polo)"
+    },
+    {
+      "type": "mcq",
+      "q": "Who, as Madras state's Home Minister, reported the Razakar looting of border districts to the Madras legislative assembly on 27 February 1948?",
+      "options": {
+        "a": "Campbell Johnson",
+        "b": "Dr. Subbarayan",
+        "c": "Sardar Patel",
+        "d": "Dr. Latif"
+      },
+      "answer": "b",
+      "a": "Dr. Subbarayan",
+      "e": "",
+      "table": null,
+      "sourceChapter": 26,
+      "sourceTitle": "State Congress Movements"
+    },
+    {
+      "type": "mcq",
+      "q": "Which ruler of the Pravarapura-Nandivardhana branch reigned for the shortest period, from 380 to 385 CE?",
+      "options": {
+        "a": "Rudrasena II",
+        "b": "Narendrasena",
+        "c": "Divakarasena",
+        "d": "Prithivisena I"
+      },
+      "answer": "a",
+      "a": "Rudrasena II",
+      "e": "",
+      "table": null,
+      "sourceChapter": 3,
+      "sourceTitle": "Vakataka"
+    },
+    {
+      "type": "mcq",
+      "q": "The Shadnagar session marked the first-ever attendance at an Andhra Mahasabha of the engineer:",
+      "options": {
+        "a": "Aliyawar Jung",
+        "b": "Kotwal Venkatarama Reddy",
+        "c": "Valluri Basavaraju",
+        "d": "V. B. Raju"
+      },
+      "answer": "d",
+      "a": "V. B. Raju",
+      "e": "",
+      "table": null,
+      "sourceChapter": 19,
+      "sourceTitle": "Andhra Mahasabha"
+    },
+    {
+      "type": "mcq",
+      "q": "What administrative post in the Hyderabad Nizam's Court was abolished as a result of the mutiny's suppression?",
+      "options": {
+        "a": "Diwan",
+        "b": "Contingent-in-charge",
+        "c": "Resident",
+        "d": "Mughal Subedar"
+      },
+      "answer": "d",
+      "a": "Mughal Subedar",
+      "e": "",
+      "table": null,
+      "sourceChapter": 15,
+      "sourceTitle": "1857 Revolt in Hyderabad: Causes, Results"
+    },
+    {
+      "type": "mcq",
+      "q": "Who was appointed Prime Minister during the Second Phase, bringing new hope and zeal, including implementation of a new Education Policy and the first Primary School for girls?",
+      "options": {
+        "a": "Mir Osman Ali Khan",
+        "b": "Salar Jung",
+        "c": "Nizam Ali Khan",
+        "d": "Rukhnuddaula"
+      },
+      "answer": "b",
+      "a": "Salar Jung",
+      "e": "",
+      "table": null,
+      "sourceChapter": 17,
+      "sourceTitle": "Social Conditions and Land Revenue Systems during Asafjahi Rule"
+    },
+    {
+      "type": "mcq",
+      "q": "At what age did Sultan-Quli declare his independence in 1518 CE?",
+      "options": {
+        "a": "Fifty-one",
+        "b": "Sixty",
+        "c": "Sixty-seven",
+        "d": "Seventy-five"
+      },
+      "answer": "c",
+      "a": "Sixty-seven",
+      "e": "",
+      "table": null,
+      "sourceChapter": 11,
+      "sourceTitle": "Qutb Shahi Rule"
+    },
+    {
+      "type": "mcq",
+      "q": "In the villages, who conducted the administration, resolving disputes and holding judicial enquiries?",
+      "options": {
+        "a": "Mukhaddam and Gotas",
+        "b": "Khaji and Mufti",
+        "c": "Sadar and Havaldar",
+        "d": "Kotwal and Naib-Kotwal"
+      },
+      "answer": "a",
+      "a": "Mukhaddam and Gotas",
+      "e": "",
+      "table": null,
+      "sourceChapter": 10,
+      "sourceTitle": "Bahamani Sultans"
+    },
+    {
+      "type": "mcq",
+      "q": "Who succeeded Keshav Rao Koratkar as head of the state Arya Samaj after his death?",
+      "options": {
+        "a": "Lala Deshbandhu Gupta",
+        "b": "Pandit Narendraji",
+        "c": "Pandit Vinayakarao Vidyalankar",
+        "d": "Swamy Shraddhanand"
+      },
+      "answer": "c",
+      "a": "Pandit Vinayakarao Vidyalankar",
+      "e": "",
+      "table": null,
+      "sourceChapter": 22,
+      "sourceTitle": "Socio-Cultural Revival in Telangana"
+    },
+    {
+      "type": "mcq",
+      "q": "Who was the local Taluqdar of Asifabad against whom Komaram Bheem revolted and continued a guerrilla campaign?",
+      "options": {
+        "a": "Abdul Sattar",
+        "b": "Kurdupatel",
+        "c": "Nanjappa",
+        "d": "Mirza Ali Hyder"
+      },
+      "answer": "a",
+      "a": "Abdul Sattar",
+      "e": "",
+      "table": null,
+      "sourceChapter": 24,
+      "sourceTitle": "Peasant and Tribal Movements in Telangana"
+    },
+    {
+      "type": "mcq",
+      "q": "The book \"Rytu\" described farmers' hardships and called upon them to:",
+      "options": {
+        "a": "Support the Nizam government",
+        "b": "Pay taxes promptly",
+        "c": "Migrate to other regions",
+        "d": "Unite and struggle"
+      },
+      "answer": "d",
+      "a": "Unite and struggle",
+      "e": "",
+      "table": null,
+      "sourceChapter": 20,
+      "sourceTitle": "Libraries"
+    },
+    {
+      "type": "mcq",
+      "q": "Umamaheswaram, near Amaravati (Amrabad), the birthplace of the Vishnukunds, later became famous as the temple on the northern entrance to which pilgrimage centre?",
+      "options": {
+        "a": "Yeleswaram",
+        "b": "Alampuram",
+        "c": "Bhairava Kona",
+        "d": "Srisaila Devasthanam"
+      },
+      "answer": "d",
+      "a": "Srisaila Devasthanam",
+      "e": "",
+      "table": null,
+      "sourceChapter": 4,
+      "sourceTitle": "Vishnukundis"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs of Rashtrakuta rulers and their reign periods:\n(I) Dantidurga – 748 – 758 A.D.\n(II) Amoghavarsha – 814 – 880 A.D.\n(III) Krishna III – 939 – 966 A.D.\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "I, II and III",
+        "c": "I only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": {
+        "headers": [
+          "Ruler",
+          "Reign"
+        ],
+        "rows": [
+          [
+            "Dantidurga",
+            "748 – 758 A.D."
+          ],
+          [
+            "Krishna I",
+            "758 – 772 A.D."
+          ],
+          [
+            "Govinda II",
+            "772 – 780 A.D."
+          ],
+          [
+            "Dhruva Raja",
+            "780 – 792 A.D."
+          ],
+          [
+            "Govinda III",
+            "793 – 814 A.D."
+          ],
+          [
+            "Amoghavarsha",
+            "814 – 880 A.D."
+          ],
+          [
+            "Krishna II",
+            "880 – 914 A.D."
+          ],
+          [
+            "Krishna III",
+            "939 – 966 A.D."
+          ],
+          [
+            "Khottiga",
+            "967 – 972 A.D."
+          ],
+          [
+            "Karkaraja II",
+            "972 – 973 A.D."
+          ]
+        ],
+        "unit": "Reign period"
+      },
+      "sourceChapter": 6,
+      "sourceTitle": "Rashtrakutas"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1363, Chinna Gopi Reddy of Amarachintha obtained the Sarnadha Gowda Watan region as a sanad from whom?",
+      "options": {
+        "a": "Abdullah Qutub Shah",
+        "b": "Gona Buddha Reddy",
+        "c": "Katabhupala",
+        "d": "Aurangzeb"
+      },
+      "answer": "c",
+      "a": "Katabhupala",
+      "e": "",
+      "table": null,
+      "sourceChapter": 16,
+      "sourceTitle": "Samsthanas in Hyderabad State"
+    },
+    {
+      "type": "mcq",
+      "q": "The All-Party Agreement of 19 January 1969, attended by 45 politicians, was reached at which venue?",
+      "options": {
+        "a": "Reddy Hostel",
+        "b": "Vivekavardhini College",
+        "c": "Gandhi Bhavan",
+        "d": "Ananda Nilayam"
+      },
+      "answer": "d",
+      "a": "Ananda Nilayam",
+      "e": "Ananda Nilayam was Chief Minister Kasu Brahmananda Reddy's official residence; the agreement addressed two central issues — the employment issue and the surplus-funds issue.",
+      "table": null,
+      "sourceChapter": 31,
+      "sourceTitle": "The 1969 Telangana Movement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding architects who came to Bidar under Ahmad Shah Wali:\n(I) Architects came from Turkey and Baghdad.\n(II) Architects came from Iran and Arabia.\n(III) Architects came from Rome and North India.\nWhich of the above statements is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "sourceChapter": 10,
+      "sourceTitle": "Bahamani Sultans"
+    },
+    {
+      "type": "mcq",
+      "q": "Which title of Betaraja II is mentioned in his Khajipeta inscription of A.D. 1090 but not in his earlier Anumakonda inscription?",
+      "options": {
+        "a": "Vikramachakriya",
+        "b": "Rayapithamahanka",
+        "c": "Kakatipuradhinatha",
+        "d": "Mahamandaleshvara"
+      },
+      "answer": "a",
+      "a": "Vikramachakriya",
+      "e": "",
+      "table": null,
+      "sourceChapter": 7,
+      "sourceTitle": "Kakatiyas"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sadak Bandh of 21 March 2013 blocked traffic on which national highway?",
+      "options": {
+        "a": "NH-7",
+        "b": "NH-44",
+        "c": "NH-9",
+        "d": "NH-65"
+      },
+      "answer": "b",
+      "a": "NH-44",
+      "e": "Between Shamshabad and Alampur; non-bailable cases were registered against Prof. Kodandaram and TRS MLAs Etela Rajender and Jupally Krishna Rao.",
+      "table": null,
+      "sourceChapter": 34,
+      "sourceTitle": "TRS, Movement & State Formation"
+    }
+  ]
+}

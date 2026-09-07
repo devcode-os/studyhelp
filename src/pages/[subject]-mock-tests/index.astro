@@ -1,0 +1,87 @@
+---
+// src/pages/[subject]-mock-tests/index.astro
+// Generic across ALL subjects/exams: any folder in src/data named
+// "<subjectId>-mock-tests" (e.g. telangana-history-en-mock-tests, later
+// rrb-en-mock-tests) is auto-discovered here — no new page file needed
+// per subject. Route becomes /<subjectId>-mock-tests/.
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getSubjectMeta } from '../../data/subjectsMeta.js';
+
+export function getStaticPaths() {
+  const mockFiles = import.meta.glob('../../data/*/*-mock-tests/*.json', { eager: true });
+  const bySubject = {};
+
+  for (const [path, mod] of Object.entries(mockFiles)) {
+    const folder = path.split('/').slice(-2, -1)[0]; // e.g. "telangana-history-en-mock-tests"
+    const subject = folder.replace(/-mock-tests$/, '');
+    if (!bySubject[subject]) bySubject[subject] = [];
+    bySubject[subject].push(mod.default);
+  }
+
+  return Object.entries(bySubject).map(([subject, mocks]) => ({
+    params: { subject },
+    props: { subject, mocks: mocks.sort((a, b) => a.mockNumber - b.mockNumber) },
+  }));
+}
+
+const { subject, mocks } = Astro.props;
+const meta = getSubjectMeta(subject);
+// getSubjectMeta doesn't expose a display name — derive a readable one from
+// the mock's own title instead (e.g. "Telangana History - Mock Test 3" ->
+// "Telangana History"), rather than falling back to the raw slug.
+const firstMockTitle = mocks[0] ? mocks[0].title : subject;
+const subjectName = firstMockTitle.replace(/\s*-\s*Mock Test\s*\d+\s*$/i, '').trim() || subject;
+---
+<Layout title={`${subjectName} — Mock Tests`} description={`${mocks.length} full-length mock tests for ${subjectName}.`}>
+  <Header active="subjects" />
+
+  <div class="mock-list-page">
+    <a href={`/${subject}/`} class="back-pill">&larr; {subjectName}</a>
+
+    <h1>Mock Tests</h1>
+    <p class="mock-sub">{mocks.length} full-length papers &middot; {mocks[0]?.totalQuestions || 30} questions each</p>
+
+    <div class="mock-grid">
+      {mocks.map((mock) => {
+        const isFree = mock.mockNumber === 1;
+        return (
+          <a href={`/${subject}-mock-tests/${mock.mockNumber}/`} class="mock-card" data-mock={mock.mockNumber}>
+            <div class="mock-card-top">
+              <div class="mock-card-num">Mock {mock.mockNumber}</div>
+              {isFree
+                ? <span class="mock-tag mock-tag-free">Free</span>
+                : <span class="mock-tag mock-tag-locked"><i class="ti ti-lock" aria-hidden="true"></i></span>}
+            </div>
+            <div class="mock-card-meta">{mock.totalQuestions} questions</div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+
+  <style>
+    .mock-list-page { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
+    .back-pill { display: inline-block; margin-bottom: 14px; color: var(--muted); text-decoration: none; font-size: 13.5px; }
+    h1 { margin: 0 0 4px; font-size: 26px; }
+    .mock-sub { color: var(--muted); font-size: 13.5px; margin: 0 0 20px; }
+    .mock-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .mock-card {
+      display: block; text-decoration: none; color: var(--text);
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 16px; transition: border-color 0.15s;
+    }
+    .mock-card:hover { border-color: var(--accent); }
+    .mock-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .mock-card-num { font-size: 17px; font-weight: 800; }
+    .mock-card-meta { font-size: 12.5px; color: var(--muted); }
+    .mock-tag {
+      font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 6px;
+    }
+    .mock-tag-free { background: color-mix(in srgb, #22c55e 18%, var(--card)); color: #16803c; }
+    .mock-tag-locked { background: var(--border); color: var(--muted); }
+  </style>
+</Layout>

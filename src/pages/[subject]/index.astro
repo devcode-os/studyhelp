@@ -23,16 +23,29 @@ export function getStaticPaths() {
     bySubject[subject].push(...valid);
   }
 
+  // Mock-test counts, keyed by subject id derived from each
+  // "<subjectId>-mock-tests" folder name — same convention the
+  // [subject]-mock-tests pages use. A subject with no such folder simply
+  // gets 0, so the third stat pill only renders where mocks actually exist.
+  const mockFiles = import.meta.glob('../../data/*/*-mock-tests/*.json', { eager: true });
+  const mockCountsBySubject = {};
+  for (const path of Object.keys(mockFiles)) {
+    const mockFolder = path.split('/').slice(-2, -1)[0];
+    const mockSubject = mockFolder.replace(/-mock-tests$/, '');
+    mockCountsBySubject[mockSubject] = (mockCountsBySubject[mockSubject] || 0) + 1;
+  }
+
   return Object.entries(bySubject).map(([subject, chapters]) => ({
     params: { subject },
     props: {
       chapters: chapters.sort((a, b) => a.chapterNumber - b.chapterNumber),
+      mockCount: mockCountsBySubject[subject] || 0,
     },
   }));
 }
 
 const { subject } = Astro.params;
-const { chapters } = Astro.props;
+const { chapters, mockCount } = Astro.props;
 const meta = getSubjectMeta(subject);
 
 const totalQuestions = chapters.reduce((sum, ch) => sum + (ch.faqs ? ch.faqs.length : 0), 0);
@@ -90,6 +103,16 @@ for (const ch of chapters) {
                 <div class="stat-label">questions</div>
               </div>
             </div>
+          )}
+          {mockCount > 0 && (
+            <a href={`/${subject}-mock-tests/`} class="stat-pill stat-pill-mock stat-pill-link">
+              <i class="ti ti-clipboard-list" aria-hidden="true"></i>
+              <div>
+                <div class="stat-num">{mockCount}</div>
+                <div class="stat-label">mock tests</div>
+              </div>
+              <i class="ti ti-chevron-right stat-pill-arrow" aria-hidden="true"></i>
+            </a>
           )}
         </div>
       </div>
@@ -204,6 +227,18 @@ for (const ch of chapters) {
     .stat-pill-teal i { color: #5ce0c0; }
     .stat-pill-teal .stat-num { color: #9df0da; }
     .stat-pill-teal .stat-label { color: rgba(255, 255, 255, 0.6); }
+    .stat-pill-mock i { color: #c084fc; }
+    .stat-pill-mock .stat-num { color: #e0b3ff; text-align: center; }
+    .stat-pill-mock .stat-label { color: rgba(255, 255, 255, 0.6); text-align: center; }
+    .stat-pill-link {
+      text-decoration: none; cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .stat-pill-link:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(192, 132, 252, 0.5);
+    }
+    .stat-pill-arrow { font-size: 16px !important; color: rgba(255,255,255,0.4) !important; margin-left: 2px; }
     .stat-num { font-size: 17px; font-weight: 700; line-height: 1.1; text-align: left; }
     .stat-label { font-size: 11px; text-align: left; }
 

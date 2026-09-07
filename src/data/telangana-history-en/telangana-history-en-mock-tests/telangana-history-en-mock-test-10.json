@@ -1,0 +1,487 @@
+{
+  "mockNumber": 10,
+  "title": "Telangana History - Mock Test 10",
+  "totalQuestions": 30,
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Out of the kingdom's income, how many parts were allocated to army maintenance?",
+      "options": {
+        "a": "Three parts",
+        "b": "1/12th share",
+        "c": "One part",
+        "d": "Two parts"
+      },
+      "answer": "a",
+      "a": "Three parts",
+      "e": "One part was kept as reserve fund, and a 1/12th share was spent on charities, the palace, and maintenance of the kingdom.",
+      "table": null,
+      "sourceChapter": 6,
+      "sourceTitle": "Rashtrakutas"
+    },
+    {
+      "type": "mcq",
+      "q": "Who carried out the construction of Bidar town?",
+      "options": {
+        "a": "Firoz Shah",
+        "b": "Mohammad Gavan",
+        "c": "Muhammad Shah I",
+        "d": "Ahmad Shah Wali"
+      },
+      "answer": "d",
+      "a": "Ahmad Shah Wali",
+      "e": "",
+      "table": null,
+      "sourceChapter": 10,
+      "sourceTitle": "Bahamani Sultans"
+    },
+    {
+      "type": "mcq",
+      "q": "The first Andhra Mahasabha began with its first session in 1930 in which district?",
+      "options": {
+        "a": "Medak district",
+        "b": "Warangal district",
+        "c": "Nalgonda district",
+        "d": "Karimnagar district"
+      },
+      "answer": "a",
+      "a": "Medak district",
+      "e": "",
+      "table": null,
+      "sourceChapter": 19,
+      "sourceTitle": "Andhra Mahasabha"
+    },
+    {
+      "type": "mcq",
+      "q": "On what date did the Hyderabad legislature approve the Andhra Pradesh formation bill?",
+      "options": {
+        "a": "14 August 1956",
+        "b": "1 November 1956",
+        "c": "31 August 1956",
+        "d": "13 April 1956"
+      },
+      "answer": "d",
+      "a": "13 April 1956",
+      "e": "",
+      "table": null,
+      "sourceChapter": 29,
+      "sourceTitle": "Formation of Andhra Pradesh and Early State Politics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which official established a new judicial institution in 1860 to decide civil disputes in the Ilaka Peshkar areas?",
+      "options": {
+        "a": "Basheer-ud-Daula",
+        "b": "Munirjung Bahadur",
+        "c": "Govind Rao",
+        "d": "Mukaram-ud-Doula"
+      },
+      "answer": "c",
+      "a": "Govind Rao",
+      "e": "",
+      "table": null,
+      "sourceChapter": 14,
+      "sourceTitle": "Salarjung Reforms"
+    },
+    {
+      "type": "mcq",
+      "q": "On the same day as the first State Congress conference, what slogan did Ittehadul Muslimeen leaders raise?",
+      "options": {
+        "a": "\"Free Hyderabad\"",
+        "b": "\"Akhand Bharat\"",
+        "c": "\"Chalo Delhi\"",
+        "d": "\"Quit Hyderabad\""
+      },
+      "answer": "a",
+      "a": "\"Free Hyderabad\"",
+      "e": "It was on this day that Kasim Razvi's leadership of the Razakar movement began.",
+      "table": null,
+      "sourceChapter": 26,
+      "sourceTitle": "State Congress Movements"
+    },
+    {
+      "type": "mcq",
+      "q": "On what date did Abbott order the Cavalry shifted to Amba, near the river Kaum?",
+      "options": {
+        "a": "14 June 1857",
+        "b": "11 June 1857",
+        "c": "24 June 1857",
+        "d": "17 July 1857"
+      },
+      "answer": "a",
+      "a": "14 June 1857",
+      "e": "",
+      "table": null,
+      "sourceChapter": 15,
+      "sourceTitle": "1857 Revolt in Hyderabad: Causes, Results"
+    },
+    {
+      "type": "mcq",
+      "q": "At the Andhra Mahasabha around this period, how many distinct factions/groups (వర్గాలు) had emerged?",
+      "options": {
+        "a": "Four",
+        "b": "Five",
+        "c": "Three",
+        "d": "Two"
+      },
+      "answer": "c",
+      "a": "Three",
+      "e": "",
+      "table": null,
+      "sourceChapter": 19,
+      "sourceTitle": "Andhra Mahasabha"
+    },
+    {
+      "type": "mcq",
+      "q": "Who was appointed as the Indian Government's Agent-General in Hyderabad under the Standstill Agreement?",
+      "options": {
+        "a": "K.M. Munshi",
+        "b": "Allen Campbell",
+        "c": "Zain Yar Jung",
+        "d": "V.P. Menon"
+      },
+      "answer": "a",
+      "a": "K.M. Munshi",
+      "e": "",
+      "table": null,
+      "sourceChapter": 28,
+      "sourceTitle": "Police Action (Operation Polo)"
+    },
+    {
+      "type": "mcq",
+      "q": "Rudrasena I's only stone inscription has been found at which place?",
+      "options": {
+        "a": "Devtek",
+        "b": "Basim",
+        "c": "Ramtek",
+        "d": "Chandrapur"
+      },
+      "answer": "d",
+      "a": "Chandrapur",
+      "e": "",
+      "table": null,
+      "sourceChapter": 3,
+      "sourceTitle": "Vakataka"
+    },
+    {
+      "type": "mcq",
+      "q": "Which Jain scholar wrote \"Yasastilaka Champukavyam,\" also known as \"Yasodhara Charitra\"?",
+      "options": {
+        "a": "Jinavallabha",
+        "b": "Bilhana",
+        "c": "Somadevasuri",
+        "d": "Pampa"
+      },
+      "answer": "c",
+      "a": "Somadevasuri",
+      "e": "",
+      "table": null,
+      "sourceChapter": 5,
+      "sourceTitle": "Chalukyan Age"
+    },
+    {
+      "type": "mcq",
+      "q": "By which title did the Vishnukund rulers refer to themselves?",
+      "options": {
+        "a": "Parama Maheswara",
+        "b": "Sakala Bhuvanaikasraya",
+        "c": "Trikuta Malayadhipa",
+        "d": "Amarpuriswaras"
+      },
+      "answer": "d",
+      "a": "Amarpuriswaras",
+      "e": "The title means \"Lords of Amarapuram,\" their capital.",
+      "table": null,
+      "sourceChapter": 4,
+      "sourceTitle": "Vishnukundis"
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did Daasarathi Krishnamacharyulu found the Telangana Rachayithala Sangam (Telangana Writers' Association)?",
+      "options": {
+        "a": "1947",
+        "b": "1953",
+        "c": "1961",
+        "d": "1974"
+      },
+      "answer": "b",
+      "a": "1953",
+      "e": "",
+      "table": null,
+      "sourceChapter": 21,
+      "sourceTitle": "Newspapers and Literature in Telangana"
+    },
+    {
+      "type": "mcq",
+      "q": "The Peshwa rulers of Maharashtra granted which two paraganas to Timma Reddy-I of Amarachintha on an annual contract of 50,000?",
+      "options": {
+        "a": "Kadechur and Magatha",
+        "b": "Dharur and Munagala",
+        "c": "Bikkavolu and Chennur",
+        "d": "Amarachinta and Vaddemanu"
+      },
+      "answer": "d",
+      "a": "Amarachinta and Vaddemanu",
+      "e": "",
+      "table": null,
+      "sourceChapter": 16,
+      "sourceTitle": "Samsthanas in Hyderabad State"
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Aravamudam Iyengar Committee appointed by the Nizam's government for political reforms?",
+      "options": {
+        "a": "1935",
+        "b": "1938",
+        "c": "1939",
+        "d": "1937"
+      },
+      "answer": "d",
+      "a": "1937",
+      "e": "The committee submitted its report in 1938.",
+      "table": null,
+      "sourceChapter": 30,
+      "sourceTitle": "Mulki Movement"
+    },
+    {
+      "type": "mcq",
+      "q": "Who became the first minister to resign over the Telangana issue, on 28 March 1969?",
+      "options": {
+        "a": "JV Narsinga Rao",
+        "b": "Konda Laxman Bapuji",
+        "c": "PV Narasimha Rao",
+        "d": "VB Raju"
+      },
+      "answer": "b",
+      "a": "Konda Laxman Bapuji",
+      "e": "He resigned as Minister of State for Public Relations after the Centre rejected the proposal to grant Telangana territorial status; PV Narasimha Rao succeeded him.",
+      "table": null,
+      "sourceChapter": 31,
+      "sourceTitle": "The 1969 Telangana Movement"
+    },
+    {
+      "type": "mcq",
+      "q": "In the caste system of Hyderabad society, which caste occupied the highest status?",
+      "options": {
+        "a": "Kshatriyas",
+        "b": "Vaishyas",
+        "c": "Brahmins",
+        "d": "Shudras"
+      },
+      "answer": "c",
+      "a": "Brahmins",
+      "e": "",
+      "table": null,
+      "sourceChapter": 17,
+      "sourceTitle": "Social Conditions and Land Revenue Systems during Asafjahi Rule"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the Kayastha rebellion against Rudramadevi:\n(I) Kayastha Jennigadeva was Rudramadevi's most faithful subordinate in the Nandluru region\n(II) After Jennigadeva, his younger brother Tripuranthaka ruled and remained loyal\n(III) Ambadeva, who succeeded Tripuranthaka, rejected Rudramadevi's subordination and rebelled\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "I, II and III",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "sourceChapter": 7,
+      "sourceTitle": "Kakatiyas"
+    },
+    {
+      "type": "mcq",
+      "q": "The Khammam and Warangal areas together came to be known by which name during Mudigonda Chalukya times?",
+      "options": {
+        "a": "Koraviseema",
+        "b": "Manchikondanadu",
+        "c": "Kurravadi",
+        "d": "Natavadi"
+      },
+      "answer": "a",
+      "a": "Koraviseema",
+      "e": "",
+      "table": null,
+      "sourceChapter": 5,
+      "sourceTitle": "Chalukyan Age"
+    },
+    {
+      "type": "mcq",
+      "q": "Which traders purchased and exported Bijapur's Calico and Muslin cloth, per Barbosa's account?",
+      "options": {
+        "a": "Dutch traders",
+        "b": "Portuguese traders",
+        "c": "French traders",
+        "d": "British traders"
+      },
+      "answer": "b",
+      "a": "Portuguese traders",
+      "e": "",
+      "table": null,
+      "sourceChapter": 10,
+      "sourceTitle": "Bahamani Sultans"
+    },
+    {
+      "type": "mcq",
+      "q": "Who became ruler of Carnatic in 1742 A.D. as the son of Safdar Ali?",
+      "options": {
+        "a": "Chanda Sahib",
+        "b": "Murtiza Ali Khan",
+        "c": "Syed Muhammad Khan",
+        "d": "Anwaruddin Khan"
+      },
+      "answer": "c",
+      "a": "Syed Muhammad Khan",
+      "e": "",
+      "table": null,
+      "sourceChapter": 13,
+      "sourceTitle": "Asaf Jahi Dynasty — Rule and Administration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements on the objectives of the Telangana Armed Struggle in its 3rd Phase:\n(I) Seizing weapons from landlords, police, and Razakars\n(II) Occupying landlord and government wasteland for distribution among the poor\n(III) Boycotting government offices, courts, and educational institutions\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I, II and III",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I and II only"
+      },
+      "answer": "a",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "sourceChapter": 24,
+      "sourceTitle": "Peasant and Tribal Movements in Telangana"
+    },
+    {
+      "type": "mcq",
+      "q": "Abul-Hasan-Tanashah, the last Qutb Shahi ruler, was the son-in-law of which Sultan?",
+      "options": {
+        "a": "Muhammad-Quli-Qutb Shah",
+        "b": "Sultan-Muhammad-Qutb Shah",
+        "c": "Abdullah-Qutb Shah",
+        "d": "Ibrahim-Quli-Qutb Shah"
+      },
+      "answer": "c",
+      "a": "Abdullah-Qutb Shah",
+      "e": "",
+      "table": null,
+      "sourceChapter": 11,
+      "sourceTitle": "Qutb Shahi Rule"
+    },
+    {
+      "type": "mcq",
+      "q": "In September 1971, Indira Gandhi had Kasu Brahmananda Reddy resign, replacing him with which Telangana leader as Chief Minister?",
+      "options": {
+        "a": "PV Narasimha Rao",
+        "b": "J.V. Narsinga Rao",
+        "c": "Konda Laxman Bapuji",
+        "d": "Marri Chenna Reddy"
+      },
+      "answer": "a",
+      "a": "PV Narasimha Rao",
+      "e": "Within a short time afterward, the TPS merged into the Congress party, diluting the original statehood aspiration.",
+      "table": null,
+      "sourceChapter": 31,
+      "sourceTitle": "The 1969 Telangana Movement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which poet wrote a poem in honour of Pandit Narendraji after his release from Mannanuru jail?",
+      "options": {
+        "a": "Mandamula Ramachandra Rao",
+        "b": "Kaloji Narayan Rao",
+        "c": "Pabbati Yellaiah",
+        "d": "Aadipudi Somanatha Rao"
+      },
+      "answer": "b",
+      "a": "Kaloji Narayan Rao",
+      "e": "",
+      "table": null,
+      "sourceChapter": 22,
+      "sourceTitle": "Socio-Cultural Revival in Telangana"
+    },
+    {
+      "type": "mcq",
+      "q": "Despite the harsh restrictions imposed, the enthusiasm of library workers:",
+      "options": {
+        "a": "Did not diminish",
+        "b": "Disappeared entirely",
+        "c": "Shifted toward other causes",
+        "d": "Declined sharply"
+      },
+      "answer": "a",
+      "a": "Did not diminish",
+      "e": "",
+      "table": null,
+      "sourceChapter": 20,
+      "sourceTitle": "Libraries"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1722 CE, the Mughal emperor appointed Nizam-ul-Mulk to which important position?",
+      "options": {
+        "a": "Fauzdar of Gorakhpur",
+        "b": "Subedar of the Deccan",
+        "c": "Diwan",
+        "d": "Wazir"
+      },
+      "answer": "d",
+      "a": "Wazir",
+      "e": "",
+      "table": null,
+      "sourceChapter": 12,
+      "sourceTitle": "Mughal Interregnum and Rise of Asaf Jahi Dynasty"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following was NOT among the founders of the Andhra Jana Kendra Sangham?",
+      "options": {
+        "a": "Adiraju Veerabhadra Rao",
+        "b": "Mandumula Ramachandra Rao",
+        "c": "Pingali Venkatarama Reddy",
+        "d": "Konda Venkata Ranga Reddy"
+      },
+      "answer": "c",
+      "a": "Pingali Venkatarama Reddy",
+      "e": "Pingali Venkatarama Reddy later presided over a subsequent conference of the Sangham but was not one of its original founders.",
+      "table": null,
+      "sourceChapter": 18,
+      "sourceTitle": "Andhra Jana Sangham"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding Singama Nayaka I's reign:\n(I) He extended his kingdom as far as Eleshwaram on the banks of the Krishna while Kapaya Nayaka was fighting the Bahmanis.\n(II) He seized forts in the doab between the Krishna and the Tungabhadra.\n(III) He was assassinated by one Tambalajiyya at the instigation of the Chalukya princes.\nWhich of the above statements is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and II only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "sourceChapter": 8,
+      "sourceTitle": "Rachakonda Rulers and Musunuri Nayakas"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about religions prominent within the Satavahana empire:\n(I) Hindu\n(II) Buddhist\n(III) Jain\nWhich of the above is/are correct?",
+      "options": {
+        "a": "None of the above",
+        "b": "I, II and III only",
+        "c": "I only",
+        "d": "I and II only"
+      },
+      "answer": "b",
+      "a": "I, II and III only",
+      "e": "",
+      "table": null,
+      "sourceChapter": 1,
+      "sourceTitle": "Satavahanas"
+    }
+  ]
+}
