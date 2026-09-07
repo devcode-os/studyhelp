@@ -227,7 +227,19 @@ const isFreeMock = mock.mockNumber === 1;
     const mtDrawerOverlay = document.getElementById('mt-drawer-overlay');
     if (mtDrawerOverlay) mtDrawerOverlay.addEventListener('click', (e) => { if (e.target === mtDrawerOverlay) closeMtDrawer(); });
     const mtDrawerSubmit = document.getElementById('mt-drawer-submit');
-    if (mtDrawerSubmit) mtDrawerSubmit.addEventListener('click', () => { closeMtDrawer(); finishMockTest(); });
+    if (mtDrawerSubmit) mtDrawerSubmit.addEventListener('click', () => {
+      closeMtDrawer();
+      if (mtReviewMode) {
+        mtReviewMode = false;
+        if (mtSubmitBtn) mtSubmitBtn.textContent = 'Submit Test';
+        mtDrawerSubmit.textContent = 'Submit Test';
+        closeMockTestOverlay();
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        finishMockTest();
+      }
+    });
     if (mtMarkBtn) mtMarkBtn.addEventListener('click', () => {
       if (mtMarked.has(mtCurrentPos)) mtMarked.delete(mtCurrentPos); else mtMarked.add(mtCurrentPos);
       mtMarkBtn.classList.toggle('mt-marked', mtMarked.has(mtCurrentPos));
