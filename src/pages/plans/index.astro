@@ -42,23 +42,17 @@ const comingSoonSubjects = [
       <div id="active-subjects-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px;"></div>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin-bottom:1.5rem;" class="plan-grid" id="real-plan-grid">
-      <div class="plan-skeleton" style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">Loading subjects...</div>
+    <div id="subjects-section" style="margin-bottom:1.5rem;">
+      <div style="font-size:16px; font-weight:800; margin-bottom:12px; color:var(--text);">Subjects</div>
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px;" class="plan-grid" id="real-plan-grid">
+        <div class="plan-skeleton" style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">Loading subjects...</div>
+      </div>
     </div>
 
-    {comingSoonSubjects.length > 0 && (
-      <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px; margin-bottom:1.5rem;" class="plan-grid">
-        {comingSoonSubjects.map((s) => (
-          <div class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem; opacity:0.55; color:#ffffff;">
-            <div class="card-title" style="font-weight:700; font-size:15px; margin-top:26px; color:#ffffff;">{s.titleNative}</div>
-            <div style="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 12px;">{s.titleEnglish}</div>
-            <button disabled class="soon-btn" style="width:100%; font-size:13px; padding:8px; border:1px solid rgba(255,255,255,0.15); border-radius:8px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.5); cursor:not-allowed;">
-              Coming soon
-            </button>
-          </div>
-        ))}
-      </div>
-    )}
+    <div id="papers-section" style="display:none; margin-bottom:1.5rem;">
+      <div style="font-size:16px; font-weight:800; margin-bottom:12px; color:var(--text);">Question Papers</div>
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px;" class="plan-grid" id="real-papers-grid"></div>
+    </div>
 
     <div style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem; color:#ffffff;" class="whatyouget-card">
       <div style="font-size:14px; font-weight:600; margin-bottom:12px; color:#ffffff;">What you get</div>
@@ -156,7 +150,7 @@ const comingSoonSubjects = [
   </style>
 
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script>
+  <script define:vars={{ comingSoonSubjects }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
     let currentUser = null; // { user_id, name } once resolved, else null
@@ -312,6 +306,8 @@ const comingSoonSubjects = [
     // no longer exist at page-load time for these dynamically-created cards.
     async function loadRealSubjects() {
       const grid = document.getElementById('real-plan-grid');
+      const papersGrid = document.getElementById('real-papers-grid');
+      const papersSection = document.getElementById('papers-section');
       try {
         const res = await fetch(`${WORKER_URL}/subjects/public`);
         const data = await res.json();
@@ -327,12 +323,42 @@ const comingSoonSubjects = [
 
         subjectMeta = subjects;
 
-        if (subjects.length === 0) {
-          grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">No subjects available right now.</div>`;
-          return;
-        }
+        const papers = subjects.filter((s) => s.category === 'papers');
+        const nonPapers = subjects.filter((s) => s.category !== 'papers');
 
-        grid.innerHTML = subjects.map(renderPlanCard).join('');
+        // Display-order preference, separate from D1 insertion order —
+        // same pairing pattern as the homepage/subjects pages: English
+        // then Telugu for Telangana History sit first, rest keep whatever
+        // order the API returned them in.
+        const PRIORITY_ORDER = ['telangana-history-en', 'telangana-history-te'];
+        nonPapers.sort((a, b) => {
+          const ai = PRIORITY_ORDER.indexOf(a.slug);
+          const bi = PRIORITY_ORDER.indexOf(b.slug);
+          if (ai === -1 && bi === -1) return 0;
+          if (ai === -1) return 1;
+          if (bi === -1) return -1;
+          return ai - bi;
+        });
+
+        const comingSoonHtml = (comingSoonSubjects || []).map((s) => `
+          <div class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem; opacity:0.55; color:#ffffff;">
+            <div class="card-title" style="font-weight:700; font-size:15px; margin-top:26px; color:#ffffff;">${s.titleNative}</div>
+            <div style="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 12px;">${s.titleEnglish}</div>
+            <button disabled class="soon-btn" style="width:100%; font-size:13px; padding:8px; border:1px solid rgba(255,255,255,0.15); border-radius:8px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.5); cursor:not-allowed;">
+              Coming soon
+            </button>
+          </div>
+        `).join('');
+
+        const combinedHtml = nonPapers.map(renderPlanCard).join('') + comingSoonHtml;
+        grid.innerHTML = combinedHtml.trim().length
+          ? combinedHtml
+          : `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">No subjects available right now.</div>`;
+
+        if (papers.length) {
+          papersGrid.innerHTML = papers.map(renderPlanCard).join('');
+          papersSection.style.display = '';
+        }
 
         document.querySelectorAll('.buy-btn').forEach((btn) => {
           btn.addEventListener('click', () => {
