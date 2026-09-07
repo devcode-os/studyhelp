@@ -294,14 +294,95 @@ const isFreeMock = mock.mockNumber === 1;
       stopMtTimer();
       if (mtPopstateGuard) { window.removeEventListener('popstate', mtPopstateGuard); mtPopstateGuard = null; }
     }
-    function requestMtExit() { mtExitOverlay.style.display = 'flex'; }
+    let mtReviewMode = false;
+
+    function requestMtExit() {
+      if (mtReviewMode) {
+        mtReviewMode = false;
+        if (mtSubmitBtn) mtSubmitBtn.textContent = 'Submit Test';
+        closeMockTestOverlay();
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      mtExitOverlay.style.display = 'flex';
+    }
 
     if (mtExitBtn) mtExitBtn.addEventListener('click', requestMtExit);
     if (mtExitCancel) mtExitCancel.addEventListener('click', () => { mtExitOverlay.style.display = 'none'; });
     if (mtExitConfirm) mtExitConfirm.addEventListener('click', () => { mtExitOverlay.style.display = 'none'; finishMockTest(); });
-    if (mtPrevBtn) mtPrevBtn.addEventListener('click', () => { mtCurrentPos--; renderMtQuestion(); });
-    if (mtNextBtn) mtNextBtn.addEventListener('click', () => { mtCurrentPos++; renderMtQuestion(); });
-    if (mtSubmitBtn) mtSubmitBtn.addEventListener('click', finishMockTest);
+    if (mtPrevBtn) mtPrevBtn.addEventListener('click', () => {
+      mtCurrentPos--;
+      mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+    });
+    if (mtNextBtn) mtNextBtn.addEventListener('click', () => {
+      mtCurrentPos++;
+      mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+    });
+    if (mtSubmitBtn) mtSubmitBtn.addEventListener('click', () => {
+      if (mtReviewMode) {
+        mtReviewMode = false;
+        mtSubmitBtn.textContent = 'Submit Test';
+        closeMockTestOverlay();
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        finishMockTest();
+      }
+    });
+
+    function renderMtReviewQuestion() {
+      renderMtDrawerGrid();
+      const f = mockQuestions[mtCurrentPos];
+      const pick = mtSelections[mtCurrentPos];
+      const isMcq = f && f.type === 'mcq' && f.options;
+
+      mtProgressText.textContent = `Reviewing ${mtCurrentPos + 1} of ${mockQuestions.length}`;
+      mtTimerText.textContent = 'Review';
+
+      let bodyHtml = `
+        <div class="mt-q-num">Q${mtCurrentPos + 1}</div>
+        <div class="mt-q-text">${escapeHtml(f.q)}</div>
+      `;
+
+      if (isMcq) {
+        const optsHtml = Object.keys(f.options).map((letter) => {
+          const isCorrectLetter = letter === f.answer;
+          const isPick = letter === pick;
+          let cls = 'opt-row';
+          let icon = '';
+          if (isCorrectLetter) {
+            cls += ' opt-row-correct';
+            icon = '<span class="opt-icon opt-icon-correct"><i class="ti ti-check" aria-hidden="true"></i></span>';
+          } else if (isPick) {
+            cls += ' opt-row-wrong';
+            icon = '<span class="opt-icon opt-icon-wrong"><i class="ti ti-x" aria-hidden="true"></i></span>';
+          }
+          return `<div class="${cls}"><span class="opt-badge">${letter.toLowerCase()}</span><span class="opt-text">${escapeHtml(f.options[letter])}</span>${icon}</div>`;
+        }).join('');
+        bodyHtml += `<div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optsHtml}</div>`;
+        if (!pick) {
+          bodyHtml += `<p style="margin:10px 0 0; font-size:13px; color:var(--muted);">You did not attempt this question.</p>`;
+        }
+        if (f.e) {
+          bodyHtml += `<p style="margin:12px 0 0; font-size:13.5px; color:var(--text); line-height:1.6;"><strong>Explanation:</strong> ${escapeHtml(f.e)}</p>`;
+        }
+      }
+
+      mtBody.innerHTML = bodyHtml;
+      mtPrevBtn.disabled = mtCurrentPos === 0;
+      const isLast = mtCurrentPos === mockQuestions.length - 1;
+      mtNextBtn.style.display = isLast ? 'none' : '';
+      mtSubmitBtn.style.display = isLast ? '' : 'none';
+      if (mtSubmitBtn) mtSubmitBtn.textContent = 'Finish Review';
+    }
+
+    function openMtReview() {
+      mtReviewMode = true;
+      mtCurrentPos = 0;
+      openMockTestOverlay();
+      renderMtReviewQuestion();
+    }
 
     function finishMockTest() {
       closeMockTestOverlay();
@@ -323,9 +404,15 @@ const isFreeMock = mock.mockNumber === 1;
           <div class="rt-stat-box rt-stat-box-wrong"><div class="rt-stat-num">${wrong}</div><div class="rt-stat-label">Wrong</div></div>
           <div class="rt-stat-box rt-stat-box-notattempted"><div class="rt-stat-num">${notAttempted}</div><div class="rt-stat-label">Not attempted</div></div>
         </div>
-        <a href="/${subject}-mock-tests/" class="rt-btn rt-btn-accent" style="width:100%; justify-content:center; margin-top:14px;">Back to Mock Tests</a>
+        <button type="button" id="mt-review-btn" class="rt-btn rt-btn-accent" style="width:100%; justify-content:center; margin-top:14px;">
+          <i class="ti ti-list-check" aria-hidden="true"></i> Review Mock Test
+        </button>
+        <a href="/${subject}-mock-tests/" class="rt-btn" style="width:100%; justify-content:center; margin-top:10px;">Back to Mock Tests</a>
       `;
       summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      const reviewBtn = document.getElementById('mt-review-btn');
+      if (reviewBtn) reviewBtn.addEventListener('click', openMtReview);
     }
 
     if (startBtn) {
@@ -333,7 +420,8 @@ const isFreeMock = mock.mockNumber === 1;
         const ok = await ensureEntitlementChecked();
         if (!ok) { lockBanner.style.display = 'flex'; return; }
 
-        mtCurrentPos = 0; mtSelections = {}; mtVisited.clear(); mtMarked.clear();
+        mtCurrentPos = 0; mtSelections = {}; mtVisited.clear(); mtMarked.clear(); mtReviewMode = false;
+        if (mtSubmitBtn) mtSubmitBtn.textContent = 'Submit Test';
         document.getElementById('mt-starting-sub').textContent = mockTitle;
         const startingOverlay = document.getElementById('mt-starting-overlay');
         startingOverlay.classList.add('active');
