@@ -326,6 +326,23 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     .more-menu-wrap { display: block; }
   }
 
+  /* ---------- Bell dropdown on narrow screens — the fixed 320px width
+     plus `right: 0` anchoring overflows off the left edge on phones (the
+     header itself is only ~360-400px wide), cutting off "Notifications"
+     and the message text. Below 480px, switch to a viewport-relative width
+     anchored so it never runs past either screen edge, instead of a fixed
+     px width positioned only relative to the bell icon. ---------- */
+  @media (max-width: 480px) {
+    .bell-dropdown {
+      position: fixed;
+      top: 64px;
+      left: 12px;
+      right: 12px;
+      width: auto;
+      max-width: none;
+    }
+  }
+
   /* ---------- Mobile bottom tab bar ---------- */
   .mobile-tabbar {
     display: none;
@@ -438,6 +455,18 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
 </style>
 
 <script is:inline>
+  // WORKER_URL hoisted to top-of-script scope (was previously declared inside
+  // the window.__shSessionInit block below, out of reach for initBell() which
+  // is defined earlier in this same script — that scoping bug meant every
+  // announcements fetch silently threw ReferenceError inside its try/catch,
+  // so the bell rendered fine but never actually loaded data. Declared with
+  // `var` (not const) so re-running this script block on chapter pages'
+  // second Header instance doesn't throw "already declared" in the same scope.
+  if (typeof window.__shWorkerUrl === 'undefined') {
+    window.__shWorkerUrl = 'https://api.studyhelp.fdaytalk.com';
+  }
+  var WORKER_URL = window.__shWorkerUrl;
+
   // Chapter pages mount BOTH Header instances (compact + full desktop) at once —
   // CSS only hides one visually, both still exist in the DOM and this script
   // block runs once per instance. Binding a click listener directly to each
@@ -597,7 +626,10 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
   if (!window.__shSessionInit) {
     window.__shSessionInit = true;
 
-  const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+  // WORKER_URL now comes from the hoisted `var` at the top of this script
+  // (see comment there) — no longer re-declared here, since a second
+  // `const WORKER_URL` in the same script scope would throw on chapter
+  // pages' second Header instance.
   const SESSION_CACHE_KEY = 'sh_session_cache';
   const SESSION_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
