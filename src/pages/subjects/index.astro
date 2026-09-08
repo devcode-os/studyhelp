@@ -162,6 +162,10 @@ const iconMap = {
       padding: 3px 9px;
       border-radius: 20px;
     }
+    .avail-pill.purchased {
+      background: linear-gradient(90deg, #2fb35c, #4dd67e);
+      color: #06280f;
+    }
     .subject-icon {
       width: 36px;
       height: 36px;
@@ -246,7 +250,10 @@ const iconMap = {
               if (!d.unlocked) return;
               const card = document.querySelector(`[data-subject-slug="${s.slug}"]`);
               const pill = card && card.querySelector('[data-pill]');
-              if (pill) pill.textContent = 'Purchased';
+              if (pill) {
+                pill.textContent = 'Purchased';
+                pill.classList.add('purchased');
+              }
             })
             .catch(() => {})
         )

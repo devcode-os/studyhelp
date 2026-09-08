@@ -283,6 +283,14 @@ const iconMap = {
       padding: 3px 9px;
       border-radius: 20px;
     }
+    /* Purchased subjects need to be instantly distinguishable from ones
+       still available to buy — same orange pill for both read as
+       identical at a glance. Green is the universal "you already own
+       this" signal. */
+    .avail-pill.purchased {
+      background: linear-gradient(90deg, #2fb35c, #4dd67e);
+      color: #06280f;
+    }
     .popular-badge {
       position: absolute;
       top: 14px;
@@ -450,7 +458,10 @@ const iconMap = {
               ownedSlugs.push(s.slug);
               const card = document.querySelector(`[data-subject-slug="${s.slug}"]`);
               const pill = card && card.querySelector('[data-pill]');
-              if (pill) pill.textContent = 'Purchased';
+              if (pill) {
+                pill.textContent = 'Purchased';
+                pill.classList.add('purchased');
+              }
             })
             .catch(() => {})
         )
