@@ -1196,13 +1196,6 @@ function formatMath(str) {
     .mt-overlay {
       position: fixed;
       inset: 0;
-      /* See the identical fix in [num].astro's mock-test player for
-         the full explanation: env(safe-area-inset-*) doesn't reliably
-         resolve on descendants of a fixed/full-viewport box on this
-         Android WebView — applying it here, on the fixed container
-         itself, is what actually works. */
-      padding-top: env(safe-area-inset-top, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
       background: var(--bg);
       z-index: 200;
       display: none;
@@ -1326,8 +1319,6 @@ function formatMath(str) {
     .mt-drawer-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 230;
       display: flex; align-items: flex-end; justify-content: center;
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-      box-sizing: border-box;
     }
     .mt-drawer {
       background: var(--bg); width: 100%; max-width: 480px;
@@ -1594,70 +1585,20 @@ function formatMath(str) {
     </script>
   )}
   {isTheory && (
-    <script define:vars={{ concepts, hasParts, subject, chapterSlug }}>
+    <script define:vars={{ concepts, hasParts, subject }}>
       // SECURITY: locked concepts never carry content fields (stripped at
       // the getStaticPaths level above) — so a locked concept is detected
       // and handled BEFORE any content field is touched, and the lock
-      // card renders with nothing behind it to blur or scrape. If the
-      // visitor has genuinely purchased, full content is fetched in-place
-      // from the Worker (same entitlement-gated pattern as the MCQ
-      // chapter-answers reveal) instead of leaving the lock card up.
-      const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+      // card renders with nothing behind it to blur or scrape. There is
+      // no client-side unlock toggle; "Unlock" sends the student to the
+      // real purchase flow, same as every other paywall on this site.
+      //
+      // TODO: once the theory_content D1 table + Worker endpoint exist,
+      // this can offer an in-place "reveal after purchase" fetch (same
+      // pattern as ensureEntitlementChecked + the chapter-answers fetch)
+      // instead of a plain link to /plans/.
       const mount = document.getElementById('conceptMount');
       const select = document.getElementById('partSelect');
-
-      let purchased = false;
-      let entitlementChecked = false;
-      let theoryContentCache = null; // full concepts array, fetched once per page load
-
-      function getSession() {
-        if (window.__shSessionPromise) return window.__shSessionPromise;
-        return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
-          .then((res) => res.json())
-          .catch(() => ({ logged_in: false }));
-      }
-
-      async function checkEntitlement() {
-        if (purchased) return true;
-        if (entitlementChecked) return purchased;
-        try {
-          const session = await getSession();
-          if (!session.logged_in) { entitlementChecked = true; return false; }
-          const res = await fetch(
-            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`
-          );
-          const data = await res.json();
-          purchased = Boolean(data.unlocked);
-          entitlementChecked = true;
-        } catch (err) {
-          // Network error — don't cache as checked, so the next attempt retries.
-        }
-        return purchased;
-      }
-
-      async function fetchFullTheoryContent() {
-        if (theoryContentCache) return theoryContentCache;
-        try {
-          const res = await fetch(
-            `${WORKER_URL}/content/theory?chapter_slug=${encodeURIComponent(chapterSlug)}`,
-            { credentials: 'include' }
-          );
-          if (!res.ok) return null;
-          const data = await res.json();
-          // Worker returns concepts_json as a JSON-encoded string (same
-          // storage shape as the theory_content D1 column) — parse it if
-          // it comes back as a string; accept an already-parsed array too
-          // in case that ever changes server-side.
-          let parsed = data.concepts_json;
-          if (typeof parsed === 'string') parsed = JSON.parse(parsed);
-          if (!Array.isArray(parsed)) parsed = data.concepts;
-          if (!Array.isArray(parsed)) return null;
-          theoryContentCache = parsed;
-          return parsed;
-        } catch (err) {
-          return null;
-        }
-      }
 
       function escapeHtml(str) {
         const div = document.createElement('div');
@@ -1799,73 +1740,11 @@ function formatMath(str) {
         return `${rememberHtml}${examplesHtml}${scenariosHtml}${confusionHtml}${exceptionsHtml}${examTipHtml}${practiceHtml}`;
       }
 
-      // Check entitlement proactively, once, right at page load — same
-      // spirit as the subject page already knowing "45 days left" upfront
-      // via its own check-access call. Locked-part 🔒 marks (baked into
-      // the static build, since the server can't know purchase status
-      // ahead of time) get stripped immediately once this resolves,
-      // rather than lingering until the student happens to click a
-      // locked part first.
-      checkEntitlement().then((unlocked) => {
-        if (unlocked && select) {
-          Array.from(select.options).forEach((opt) => {
-            opt.textContent = opt.textContent.replace(/\s*🔒\s*$/, '');
-          });
-        }
-      });
-
-      async function showConcept(idOrPartNumber) {
+      function showConcept(idOrPartNumber) {
         const c = concepts.find(
           (x) => String(x.conceptId) === String(idOrPartNumber) || String(x.partNumber) === String(idOrPartNumber)
         ) || concepts[0];
-
-        if (c.free) {
-          mount.innerHTML = renderConcept(c);
-          return;
-        }
-
-        // Locked in the static build — briefly show a loading state while
-        // we check whether this visitor has actually purchased, before
-        // falling back to the lock card.
-        mount.innerHTML = `
-          <div class="concept-lock-overlay concept-lock-standalone">
-            <div class="concept-lock-badge">&#8987;</div>
-            <div class="concept-lock-title">Checking access&hellip;</div>
-          </div>
-        `;
-
-        const unlocked = await checkEntitlement();
-        if (!unlocked) {
-          mount.innerHTML = renderConcept(c); // original lock card w/ Unlock button
-          return;
-        }
-
-        // Purchased confirmed — the 🔒 marks on locked options were baked
-        // into the static build (server can't know purchase status ahead
-        // of time), so strip them client-side now that we actually know.
-        // Cheap no-op on repeat calls since entitlementChecked short-
-        // circuits checkEntitlement() after the first confirmation.
-        if (select) {
-          Array.from(select.options).forEach((opt) => {
-            opt.textContent = opt.textContent.replace(/\s*🔒\s*$/, '');
-          });
-        }
-
-        const fullConcepts = await fetchFullTheoryContent();
-        const fullC = fullConcepts && fullConcepts.find(
-          (x) => String(x.conceptId) === String(c.conceptId) || String(x.partNumber) === String(c.partNumber)
-        );
-
-        if (fullC) {
-          // Entitlement confirmed and real content fetched — render it as
-          // if it had shipped free, so renderConcept takes the normal
-          // (unlocked) content branch instead of the lock-card branch.
-          mount.innerHTML = renderConcept({ ...fullC, free: true });
-        } else {
-          // Purchased but the fetch failed or returned no matching part —
-          // fail safe back to the lock card rather than showing nothing.
-          mount.innerHTML = renderConcept(c);
-        }
+        mount.innerHTML = renderConcept(c);
       }
 
       if (select) {
@@ -2454,16 +2333,6 @@ function formatMath(str) {
       if (revealedAnswers[i]) return null;
       if (bulkAnswers && bulkAnswers[i]) return null;
       if (limitReached) return null;
-      // BUG FIX: prefetch fires on pointerdown, before the full click (and
-      // its currentPage>1 paywall check in openAnswerFor below) ever runs.
-      // Without this same restriction here, just touching a question row
-      // on page 2+ silently fired the real fetch and burned a free-click
-      // from the daily quota — even though the answer was then correctly
-      // hidden by the click-time check. `purchased` reuses the already-
-      // cached entitlement flag rather than triggering a new async check
-      // on every touch; if it hasn't been confirmed yet, this
-      // conservatively skips prefetching rather than risking a leak.
-      if (currentPage > 1 && !purchased) return null;
       if (inFlightFetches[i]) return inFlightFetches[i];
 
       inFlightFetches[i] = (async () => {
