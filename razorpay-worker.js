@@ -50,6 +50,9 @@ export default {
     if (url.pathname === "/create-order" && request.method === "POST") {
       return createOrder(request, env);
     }
+    if (url.pathname === "/payment-callback" && request.method === "POST") {
+      return handlePaymentCallback(request, env);
+    }
     if (url.pathname === "/webhook" && request.method === "POST") {
       return handleWebhook(request, env);
     }
@@ -239,6 +242,62 @@ async function createOrder(request, env) {
   } catch (err) {
     return json({ error: "Server error", detail: String(err) }, 500);
   }
+}
+
+// ---------- 1b. Payment callback (Capacitor app only) ----------
+// Razorpay's own docs state that WebView-based checkout (as opposed to a
+// real mobile browser tab) needs `redirect: true` + `callback_url` instead
+// of the client-side `handler` callback — this is specifically what was
+// missing and is the confirmed cause of UPI not appearing/working
+// correctly inside the Capacitor app (2026-09-08). Razorpay POSTs the
+// payment result here (form-urlencoded) after the user completes/cancels
+// payment; we verify it and redirect the browser on into the app's
+// existing /payment-processing/ page, which does its own polling wait
+// for the webhook (handleWebhook, below) to have granted the entitlement
+// — this endpoint does NOT grant access itself, only verifies+redirects.
+// The webhook remains the single source of truth for unlocking content,
+// exactly as before; this is purely about getting the WebView back to a
+// sane in-app screen after Razorpay's checkout finishes.
+async function handlePaymentCallback(request, env) {
+  const formData = await request.formData();
+  const razorpay_payment_id = formData.get("razorpay_payment_id");
+  const razorpay_order_id = formData.get("razorpay_order_id");
+  const razorpay_signature = formData.get("razorpay_signature");
+
+  const APP_URL = "https://studyhelp.fdaytalk.com";
+
+  // No payment fields at all — user cancelled/dismissed checkout rather
+  // than completing (or failing) a payment. Send them back to Plans, no
+  // error messaging needed for a plain cancel.
+  if (!razorpay_payment_id || !razorpay_order_id || !razorpay_signature) {
+    return Response.redirect(`${APP_URL}/plans/`, 302);
+  }
+
+  // Payment-level signature (order_id|payment_id, HMAC-SHA256 with the key
+  // secret) — a different verification from the webhook's raw-body
+  // signature above; this is Razorpay's documented formula specifically
+  // for this redirect/callback flow.
+  const expectedBody = `${razorpay_order_id}|${razorpay_payment_id}`;
+  const validSignature = await verifySignature(expectedBody, razorpay_signature, env.RAZORPAY_KEY_SECRET);
+
+  if (!validSignature) {
+    return Response.redirect(`${APP_URL}/plans/?payment_error=1`, 302);
+  }
+
+  const order = await env.DB.prepare(
+    "SELECT user_id, subject_id FROM orders WHERE id = ?"
+  )
+    .bind(razorpay_order_id)
+    .first();
+
+  if (!order) {
+    return Response.redirect(`${APP_URL}/plans/?payment_error=1`, 302);
+  }
+
+  return Response.redirect(
+    `${APP_URL}/payment-processing/?user_id=${encodeURIComponent(order.user_id)}&subject_id=${encodeURIComponent(order.subject_id)}`,
+    302
+  );
 }
 
 // ---------- 2. Webhook (source of truth for unlock) ----------

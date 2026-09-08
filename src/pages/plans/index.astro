@@ -411,6 +411,15 @@ const comingSoonSubjects = [
             return;
           }
 
+          // Razorpay's own docs specify that WebView-based checkout (as
+          // opposed to a real mobile browser tab) needs redirect:true +
+          // callback_url instead of the client-side handler callback —
+          // confirmed as the cause of UPI not appearing correctly inside
+          // the Capacitor app (2026-09-08). Web checkout (window.Capacitor
+          // undefined) keeps using the existing handler/modal flow
+          // unchanged, since that's already confirmed working there.
+          const isCapacitorApp = typeof window !== 'undefined' && !!window.Capacitor;
+
           const rzp = new Razorpay({
             key: order.key_id,
             amount: order.amount,
@@ -419,11 +428,18 @@ const comingSoonSubjects = [
             name: 'StudyHelp',
             description: subject_id,
             prefill: { name: currentUser.name },
-            handler: function () {
-              // Don't unlock here — redirect to processing page which waits for webhook confirmation
-              window.location.href =
-                `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
-            },
+            ...(isCapacitorApp
+              ? {
+                  redirect: true,
+                  callback_url: `${WORKER_URL}/payment-callback`,
+                }
+              : {
+                  handler: function () {
+                    // Don't unlock here — redirect to processing page which waits for webhook confirmation
+                    window.location.href =
+                      `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+                  },
+                }),
             modal: {
               ondismiss: function () {
                 btn.disabled = false;

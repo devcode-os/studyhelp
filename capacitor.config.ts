@@ -5,10 +5,10 @@ const config: CapacitorConfig = {
   appName: 'StudyHelp',
   webDir: 'dist',
   server: {
-    url: 'https://capacitor-testing.studyhelp-ea2.pages.dev',
-    cleartext: false,
-    allowNavigation: ['capacitor-testing.studyhelp-ea2.pages.dev', 'api.studyhelp.fdaytalk.com']
-  },
+  url: 'https://studyhelp.fdaytalk.com',
+  cleartext: false,
+  allowNavigation: ['studyhelp.fdaytalk.com', 'api.studyhelp.fdaytalk.com']
+},
   plugins: {
     CapacitorHttp: {
       enabled: false
