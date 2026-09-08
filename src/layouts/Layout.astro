@@ -438,6 +438,24 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       background: #b8341c;
       color: #fff;
     }
+
+    /* ---------- Instant tap/press feedback, site-wide ----------
+       Real page navigation (not an SPA) has a brief gap between tap and
+       the new page appearing, with nothing to confirm the tap itself
+       registered — easy to tap again, thinking it didn't work. Rather
+       than a separate loading indicator, the tapped element itself
+       presses/dims instantly, exactly like a native app button. Applies
+       to any link, button, or explicitly marked pressable card. */
+    a:active,
+    button:active,
+    .subject-card:active,
+    .plan-card:active,
+    .mock-card:active,
+    [role="button"]:active {
+      opacity: 0.65;
+      transform: scale(0.97);
+      transition: opacity 0.05s ease, transform 0.05s ease;
+    }
   </style>
 </head>
 <body>
