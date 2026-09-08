@@ -2454,6 +2454,16 @@ function formatMath(str) {
       if (revealedAnswers[i]) return null;
       if (bulkAnswers && bulkAnswers[i]) return null;
       if (limitReached) return null;
+      // BUG FIX: prefetch fires on pointerdown, before the full click (and
+      // its currentPage>1 paywall check in openAnswerFor below) ever runs.
+      // Without this same restriction here, just touching a question row
+      // on page 2+ silently fired the real fetch and burned a free-click
+      // from the daily quota — even though the answer was then correctly
+      // hidden by the click-time check. `purchased` reuses the already-
+      // cached entitlement flag rather than triggering a new async check
+      // on every touch; if it hasn't been confirmed yet, this
+      // conservatively skips prefetching rather than risking a leak.
+      if (currentPage > 1 && !purchased) return null;
       if (inFlightFetches[i]) return inFlightFetches[i];
 
       inFlightFetches[i] = (async () => {
