@@ -229,6 +229,13 @@ const comingSoonSubjects = [
               ${graceBannerHtml}
             `;
             activeList.appendChild(card);
+
+            // Already shown above in the "Your Active Subjects" banner —
+            // showing it again as a full priced card below is redundant
+            // and makes the buy-more grid harder to scan. Hide it there
+            // entirely rather than just relabeling its button.
+            const gridCard = document.getElementById(`plan-card-${subject_id}`);
+            if (gridCard) gridCard.style.display = 'none';
           }
         } catch (err) {
           // silently skip on network error — button stays as "Buy now", user can retry
