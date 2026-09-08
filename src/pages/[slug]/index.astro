@@ -1799,6 +1799,21 @@ function formatMath(str) {
         return `${rememberHtml}${examplesHtml}${scenariosHtml}${confusionHtml}${exceptionsHtml}${examTipHtml}${practiceHtml}`;
       }
 
+      // Check entitlement proactively, once, right at page load — same
+      // spirit as the subject page already knowing "45 days left" upfront
+      // via its own check-access call. Locked-part 🔒 marks (baked into
+      // the static build, since the server can't know purchase status
+      // ahead of time) get stripped immediately once this resolves,
+      // rather than lingering until the student happens to click a
+      // locked part first.
+      checkEntitlement().then((unlocked) => {
+        if (unlocked && select) {
+          Array.from(select.options).forEach((opt) => {
+            opt.textContent = opt.textContent.replace(/\s*🔒\s*$/, '');
+          });
+        }
+      });
+
       async function showConcept(idOrPartNumber) {
         const c = concepts.find(
           (x) => String(x.conceptId) === String(idOrPartNumber) || String(x.partNumber) === String(idOrPartNumber)
@@ -1823,6 +1838,17 @@ function formatMath(str) {
         if (!unlocked) {
           mount.innerHTML = renderConcept(c); // original lock card w/ Unlock button
           return;
+        }
+
+        // Purchased confirmed — the 🔒 marks on locked options were baked
+        // into the static build (server can't know purchase status ahead
+        // of time), so strip them client-side now that we actually know.
+        // Cheap no-op on repeat calls since entitlementChecked short-
+        // circuits checkEntitlement() after the first confirmation.
+        if (select) {
+          Array.from(select.options).forEach((opt) => {
+            opt.textContent = opt.textContent.replace(/\s*🔒\s*$/, '');
+          });
         }
 
         const fullConcepts = await fetchFullTheoryContent();
