@@ -411,14 +411,46 @@ const comingSoonSubjects = [
             return;
           }
 
-          // Razorpay's own docs specify that WebView-based checkout (as
-          // opposed to a real mobile browser tab) needs redirect:true +
-          // callback_url instead of the client-side handler callback —
-          // confirmed as the cause of UPI not appearing correctly inside
-          // the Capacitor app (2026-09-08). Web checkout (window.Capacitor
-          // undefined) keeps using the existing handler/modal flow
-          // unchanged, since that's already confirmed working there.
-          const isCapacitorApp = typeof window !== 'undefined' && !!window.Capacitor;
+          // UPI intent flows (Google Pay/PhonePe returning control after
+          // payment) require Razorpay's native Android SDK — a WebView-based
+          // checkout.js flow cannot receive that callback correctly, which is
+          // why UPI doesn't appear as an option inside the Capacitor app at
+          // all (confirmed 2026-09-08). The native RazorpayPlugin bridges to
+          // that SDK. Web checkout (running on the plain website, not inside
+          // the app) is completely unaffected and keeps using the existing
+          // window.Razorpay flow, where UPI already works correctly.
+          const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+
+          if (isNativeApp) {
+            window.Capacitor.Plugins.RazorpayNative.open({
+              key: order.key_id,
+              amount: order.amount,
+              currency: order.currency,
+              order_id: order.order_id,
+              name: 'StudyHelp',
+              description: subject_id,
+              prefill: { name: currentUser.name },
+            }).then((result) => {
+              if (result.success) {
+                // Don't unlock here — redirect to processing page which waits for webhook confirmation
+                window.location.href =
+                  `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+              } else {
+                if (window.showToast) {
+                  window.showToast('Payment failed. Please try again.', 'error');
+                } else {
+                  alert('Payment failed. Please try again.');
+                }
+                btn.disabled = false;
+                btn.textContent = 'Buy now';
+              }
+            }).catch((err) => {
+              alert('Error: ' + (err && err.message ? err.message : String(err)));
+              btn.disabled = false;
+              btn.textContent = 'Buy now';
+            });
+            return;
+          }
 
           const rzp = new Razorpay({
             key: order.key_id,
@@ -428,18 +460,11 @@ const comingSoonSubjects = [
             name: 'StudyHelp',
             description: subject_id,
             prefill: { name: currentUser.name },
-            ...(isCapacitorApp
-              ? {
-                  redirect: true,
-                  callback_url: `${WORKER_URL}/payment-callback`,
-                }
-              : {
-                  handler: function () {
-                    // Don't unlock here — redirect to processing page which waits for webhook confirmation
-                    window.location.href =
-                      `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
-                  },
-                }),
+            handler: function () {
+              // Don't unlock here — redirect to processing page which waits for webhook confirmation
+              window.location.href =
+                `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+            },
             modal: {
               ondismiss: function () {
                 btn.disabled = false;
