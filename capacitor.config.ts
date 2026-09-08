@@ -5,15 +5,9 @@ const config: CapacitorConfig = {
   appName: 'StudyHelp',
   webDir: 'dist',
   server: {
-    // TEMPORARY DIAGNOSTIC CHANGE: pointing directly at the live server
-    // instead of using `hostname` (which serves from the locally bundled
-    // dist/ files via Capacitor's own WebViewLocalServer). This bypasses
-    // Capacitor's local asset-serving layer entirely, to test whether the
-    // "URL updates but DOM content doesn't" bug is caused by that layer,
-    // or reproduces even against the real live site.
-    url: 'https://studyhelp.fdaytalk.com',
+    url: 'https://capacitor-testing.studyhelp-ea2.pages.dev',
     cleartext: false,
-    allowNavigation: ['studyhelp.fdaytalk.com', 'api.studyhelp.fdaytalk.com']
+    allowNavigation: ['capacitor-testing.studyhelp-ea2.pages.dev', 'api.studyhelp.fdaytalk.com']
   },
   plugins: {
     CapacitorHttp: {

@@ -1180,6 +1180,7 @@ const isFreeMock = mock.mockNumber === 1;
     .mt-topbar {
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
       padding: 14px 16px;
+      padding-top: calc(14px + env(safe-area-inset-top, 0px));
       display: flex;
       align-items: center;
       justify-content: space-between;

@@ -386,6 +386,7 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     background: linear-gradient(160deg, #14102b 0%, #241a4d 100%);
     color: #ffffff;
     padding: 13px 16px;
+    padding-top: calc(13px + env(safe-area-inset-top, 0px));
   }
   .chapter-back {
     display: flex;
