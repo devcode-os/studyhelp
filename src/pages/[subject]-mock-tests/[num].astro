@@ -1152,6 +1152,18 @@ const isFreeMock = mock.mockNumber === 1;
     .mt-overlay {
       position: fixed;
       inset: 0;
+      /* Applied HERE, on the position:fixed full-viewport container
+         itself, not on .mt-topbar/.mt-footer individually — env()
+         safe-area values were confirmed (via remote debugging) to
+         resolve to 0px on the inner elements, a known quirk where
+         nested descendants of a fixed/full-viewport box don't reliably
+         inherit safe-area insets the same way normal in-flow elements
+         do. Padding the outer fixed box itself, which sits directly
+         against the true viewport, is the reliable place for this to
+         resolve. inset:0 keeps the background bleeding fully edge-to-
+         edge; this padding only insets the CONTENT within it. */
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
       background: var(--bg);
       z-index: 200;
       display: none;
@@ -1180,7 +1192,6 @@ const isFreeMock = mock.mockNumber === 1;
     .mt-topbar {
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
       padding: 14px 16px;
-      padding-top: calc(14px + env(safe-area-inset-top, 0px));
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1241,7 +1252,7 @@ const isFreeMock = mock.mockNumber === 1;
       flex-shrink: 0;
       display: flex;
       gap: 10px;
-      padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
+      padding: 14px 16px;
       border-top: 1px solid var(--border);
       max-width: 720px;
       margin: 0 auto;
@@ -1280,7 +1291,7 @@ const isFreeMock = mock.mockNumber === 1;
     .mt-drawer {
       background: var(--bg); width: 100%; max-width: 480px;
       border-radius: 16px 16px 0 0; padding: 16px;
-      padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      padding-bottom: 16px;
       max-height: 75vh;
       display: flex; flex-direction: column; gap: 12px;
       box-sizing: border-box; overflow: hidden;
