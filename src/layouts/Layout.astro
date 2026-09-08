@@ -526,16 +526,49 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
     //   showToast('Payment failed. Please try again.', 'error')
     // Kept as a plain global so existing inline <script> blocks (e.g. Plans
     // page Razorpay handler) can call it with a one-line swap from alert(...).
+    //
+    // Container position/appearance is set via inline styles here (not just
+    // the .toast/#toast-container CSS classes) as a defense against any
+    // scoped-style/cascade issue — inline styles always apply regardless,
+    // so the toast can never silently render as unstyled plain text.
     window.showToast = function (message, type = 'default', duration = 3500) {
-      const container = document.getElementById('toast-container');
+      let container = document.getElementById('toast-container');
       if (!container) return;
+
+      container.style.position = 'fixed';
+      container.style.left = '50%';
+      container.style.bottom = 'calc(20px + env(safe-area-inset-bottom, 0px) + 64px)';
+      container.style.transform = 'translateX(-50%)';
+      container.style.zIndex = '2147483000';
+      container.style.display = 'flex';
+      container.style.flexDirection = 'column';
+      container.style.gap = '8px';
+      container.style.width = 'calc(100% - 32px)';
+      container.style.maxWidth = '420px';
+      container.style.pointerEvents = 'none';
+
       const el = document.createElement('div');
       el.className = 'toast' + (type === 'error' ? ' toast-error' : '');
       el.textContent = message;
+      el.style.pointerEvents = 'auto';
+      el.style.background = type === 'error' ? '#b8341c' : '#1c1c1a';
+      el.style.color = '#fff';
+      el.style.fontSize = '14px';
+      el.style.padding = '12px 16px';
+      el.style.borderRadius = '10px';
+      el.style.boxShadow = '0 4px 14px rgba(0,0,0,0.25)';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(8px)';
+      el.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+
       container.appendChild(el);
-      requestAnimationFrame(() => el.classList.add('toast-show'));
+      requestAnimationFrame(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
       setTimeout(() => {
-        el.classList.remove('toast-show');
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(8px)';
         setTimeout(() => el.remove(), 220);
       }, duration);
     };
