@@ -388,6 +388,13 @@ const comingSoonSubjects = [
     }
 
     function startPurchase(btn, subject_id) {
+      // Short confirming buzz the moment "Buy now" is tapped — same
+      // purpose as Razorpay's own in-checkout haptics: reassures the user
+      // their tap registered, especially useful right before the
+      // create-order network call, which can take a moment. Silently
+      // does nothing on devices/browsers without vibration support.
+      if (navigator.vibrate) navigator.vibrate(30);
+
       btn.disabled = true;
       btn.textContent = 'Loading...';
 
