@@ -40,6 +40,22 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
             <i class="ti ti-moon icon-dark" aria-hidden="true"></i>
           </button>
 
+          <div class="bell-wrap" style="display:none;">
+            <button id="bell-btn" class="theme-toggle bell-btn" aria-label="Notifications" aria-haspopup="true" aria-expanded="false">
+              <i class="ti ti-bell" aria-hidden="true"></i>
+              <span id="bell-badge" class="bell-badge" style="display:none;"></span>
+            </button>
+            <div id="bell-dropdown" class="more-menu-dropdown bell-dropdown" role="menu">
+              <div class="bell-dropdown-header">
+                <span>Notifications</span>
+                <button type="button" id="bell-clear-all" class="bell-clear-all">Clear all</button>
+              </div>
+              <div id="bell-list" class="bell-list">
+                <div class="bell-empty">No notifications</div>
+              </div>
+            </div>
+          </div>
+
           <div class="more-menu-wrap">
             <button id="more-menu-btn" class="theme-toggle more-menu-btn" aria-label="More" aria-haspopup="true" aria-expanded="false">
               <i class="ti ti-dots-vertical" aria-hidden="true"></i>
@@ -173,6 +189,92 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* ---------- Notification bell — logged-in users only, JS toggles
+     .bell-wrap's display from none to flex once /me confirms a session.
+     Reuses .more-menu-dropdown's positioning/shadow/border so it feels
+     like one consistent dropdown language, not a new visual pattern. ---------- */
+  .bell-wrap {
+    position: relative;
+  }
+  .bell-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 9px;
+    height: 9px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    border: 1.5px solid #1a1438;
+  }
+  .bell-dropdown {
+    width: 320px;
+    max-height: 420px;
+    display: none;
+    flex-direction: column;
+    padding: 0;
+  }
+  .bell-dropdown.open {
+    display: flex;
+  }
+  .bell-dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    flex-shrink: 0;
+  }
+  .bell-clear-all {
+    background: none;
+    border: none;
+    color: #ffb35c;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+  }
+  .bell-list {
+    overflow-y: auto;
+    max-height: 360px;
+    padding: 6px;
+  }
+  .bell-item {
+    padding: 10px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .bell-item:hover {
+    background: rgba(255,255,255,0.06);
+  }
+  .bell-item.unread {
+    background: rgba(255,107,107,0.08);
+  }
+  .bell-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 3px;
+  }
+  .bell-item-body {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.4;
+  }
+  .bell-item-time {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+  }
+  .bell-empty {
+    padding: 22px 14px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
   }
   .icon-dark { display: none; }
   html[data-theme="dark"] .icon-light { display: none; }
@@ -378,6 +480,110 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     });
   }
 
+  // ---------- Notification bell — logged-in users only. Bell markup stays
+  // display:none (set inline in the HTML above) until the session check
+  // below confirms a real login; a logged-out visitor never sees the icon
+  // render, and this function is never even called for them. ----------
+  // GUARD: like the theme-toggle listener above, chapter pages mount TWO
+  // Header instances at once, so this needs the same once-only binding
+  // pattern — attaching per-instance would double-fire dropdown toggles.
+  let bellAnnouncements = [];
+
+  function initBell() {
+    if (window.__shBellBound) return;
+    window.__shBellBound = true;
+
+    const bellBtn = document.getElementById('bell-btn');
+    const bellDropdown = document.getElementById('bell-dropdown');
+    const bellBadge = document.getElementById('bell-badge');
+    const bellList = document.getElementById('bell-list');
+    const bellClearAll = document.getElementById('bell-clear-all');
+    if (!bellBtn || !bellDropdown) return;
+
+    function renderBell() {
+      const unreadCount = bellAnnouncements.filter((a) => a.is_new).length;
+      if (bellBadge) bellBadge.style.display = unreadCount > 0 ? 'block' : 'none';
+
+      if (bellAnnouncements.length === 0) {
+        bellList.innerHTML = '<div class="bell-empty">No notifications</div>';
+        return;
+      }
+
+      bellList.innerHTML = bellAnnouncements.map((a) => `
+        <div class="bell-item ${a.is_new ? 'unread' : ''}" data-id="${a.id}" data-link="${a.link_url || ''}">
+          <div class="bell-item-title">${a.title}</div>
+          <div class="bell-item-body">${a.body}</div>
+          <div class="bell-item-time">${new Date(a.created_at * 1000).toLocaleDateString()}</div>
+        </div>
+      `).join('');
+
+      bellList.querySelectorAll('.bell-item').forEach((item) => {
+        item.addEventListener('click', () => {
+          const link = item.getAttribute('data-link');
+          if (link) window.location.href = link;
+        });
+      });
+    }
+
+    async function loadBellAnnouncements() {
+      try {
+        const res = await fetch(`${WORKER_URL}/announcements/list`, { credentials: 'include' });
+        if (!res.ok) return;
+        const data = await res.json();
+        bellAnnouncements = data.announcements || [];
+        renderBell();
+      } catch (err) {
+        // fail silently — notifications are non-critical
+      }
+    }
+
+    bellBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = bellDropdown.classList.toggle('open');
+      bellBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      // Marks whatever is currently unread as seen the moment the dropdown
+      // opens — clears the red flag for those, but anything added to the
+      // list AFTER this point stays flagged red until opened again.
+      if (isOpen) {
+        const unseenIds = bellAnnouncements.filter((a) => a.is_new).map((a) => a.id);
+        if (unseenIds.length > 0) {
+          if (bellBadge) bellBadge.style.display = 'none';
+          bellAnnouncements.forEach((a) => { a.is_new = false; });
+          fetch(`${WORKER_URL}/announcements/mark-seen`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ids: unseenIds }),
+          }).catch(() => {});
+        }
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!bellDropdown.contains(e.target) && e.target !== bellBtn) {
+        bellDropdown.classList.remove('open');
+        bellBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    if (bellClearAll) {
+      bellClearAll.addEventListener('click', (e) => {
+        e.stopPropagation();
+        bellAnnouncements = [];
+        renderBell();
+        fetch(`${WORKER_URL}/announcements/clear`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ all: true }),
+        }).catch(() => {});
+      });
+    }
+
+    loadBellAnnouncements();
+  }
+
   // Real session check via cookie-backed /me endpoint. UNCHANGED from previous version —
   // same Worker URL, same caching, same entitlement check. Only the DOM targets are
   // extended to also update the new mobile tab bar's Account tab.
@@ -444,6 +650,13 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
 
   window.__shSessionPromise.then((data) => {
       if (!data.logged_in) return;
+
+      // Bell only shown once a real session is confirmed — a guest never
+      // sees the icon appear, not just an empty dropdown behind it.
+      document.querySelectorAll('.bell-wrap').forEach((el) => {
+        el.style.display = 'flex';
+      });
+      initBell();
 
       [loginLink, loginLinkMobile].forEach((el) => {
         if (!el) return;

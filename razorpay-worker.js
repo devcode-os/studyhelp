@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -145,6 +145,15 @@ export default {
     }
     if (url.pathname === "/master-access/revoke" && request.method === "POST") {
       return adminRevoke(request, env);
+    }
+    if (url.pathname === "/announcements/list" && request.method === "GET") {
+      return listAnnouncements(request, env);
+    }
+    if (url.pathname === "/announcements/mark-seen" && request.method === "POST") {
+      return markAnnouncementsSeen(request, env);
+    }
+    if (url.pathname === "/announcements/clear" && request.method === "POST") {
+      return clearAnnouncement(request, env);
     }
 
     return new Response("Not found", { status: 404, headers: CORS_HEADERS });
@@ -2419,4 +2428,134 @@ async function getChapterQuestions(request, env) {
   });
 
   return jsonPublic({ questions });
+}
+
+// ---------- 14. Notification bell — announcements (login required) ----------
+// Same pattern as changePasscode/deleteAccount: getUserFromSession(request, env)
+// returns null for a guest/expired session, in which case we return 401 rather
+// than any announcement data. Two D1 tables:
+//   announcements               — admin-authored, shared across all users
+//   user_announcement_state     — per-user seen/cleared state against each one
+//
+// Schema (run once via wrangler d1 execute):
+//   CREATE TABLE IF NOT EXISTS announcements (
+//     id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     title TEXT NOT NULL,
+//     body TEXT NOT NULL,
+//     link_url TEXT,
+//     created_at INTEGER NOT NULL,
+//     active INTEGER DEFAULT 1
+//   );
+//   CREATE TABLE IF NOT EXISTS user_announcement_state (
+//     user_id TEXT NOT NULL,
+//     announcement_id INTEGER NOT NULL,
+//     seen_at INTEGER,
+//     cleared_at INTEGER,
+//     PRIMARY KEY (user_id, announcement_id)
+//   );
+
+async function listAnnouncements(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required" }, 401);
+  }
+
+  try {
+    const { results } = await env.DB.prepare(
+      `SELECT a.id, a.title, a.body, a.link_url, a.created_at, s.seen_at
+       FROM announcements a
+       LEFT JOIN user_announcement_state s
+         ON s.announcement_id = a.id AND s.user_id = ?
+       WHERE a.active = 1 AND s.cleared_at IS NULL
+       ORDER BY a.created_at DESC`
+    )
+      .bind(user.id)
+      .all();
+
+    const announcements = results.map((r) => ({
+      id: r.id,
+      title: r.title,
+      body: r.body,
+      link_url: r.link_url,
+      created_at: r.created_at,
+      is_new: r.seen_at === null,
+    }));
+
+    return jsonAuth({ announcements });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function markAnnouncementsSeen(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required" }, 401);
+  }
+
+  try {
+    const { ids } = await request.json();
+    if (!Array.isArray(ids) || ids.length === 0) {
+      return jsonAuth({ error: "ids array required" }, 400);
+    }
+
+    const now = Math.floor(Date.now() / 1000);
+    const stmts = ids.map((id) =>
+      env.DB.prepare(
+        `INSERT INTO user_announcement_state (user_id, announcement_id, seen_at)
+         VALUES (?, ?, ?)
+         ON CONFLICT(user_id, announcement_id) DO UPDATE SET seen_at = excluded.seen_at`
+      ).bind(user.id, id, now)
+    );
+    await env.DB.batch(stmts);
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function clearAnnouncement(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required" }, 401);
+  }
+
+  try {
+    const body = await request.json();
+    const now = Math.floor(Date.now() / 1000);
+
+    if (body.all) {
+      // Clears every currently-active announcement for this user in one
+      // shot — any announcement added AFTER this moment still appears
+      // normally, since it's a fresh row this INSERT never touched.
+      await env.DB.prepare(
+        `INSERT INTO user_announcement_state (user_id, announcement_id, cleared_at)
+         SELECT ?, id, ? FROM announcements WHERE active = 1
+         ON CONFLICT(user_id, announcement_id) DO UPDATE SET cleared_at = excluded.cleared_at`
+      )
+        .bind(user.id, now)
+        .run();
+    } else if (body.id) {
+      await env.DB.prepare(
+        `INSERT INTO user_announcement_state (user_id, announcement_id, cleared_at)
+         VALUES (?, ?, ?)
+         ON CONFLICT(user_id, announcement_id) DO UPDATE SET cleared_at = excluded.cleared_at`
+      )
+        .bind(user.id, body.id, now)
+        .run();
+    } else {
+      return jsonAuth({ error: "id or all required" }, 400);
+    }
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
 }
