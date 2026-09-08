@@ -1196,6 +1196,13 @@ function formatMath(str) {
     .mt-overlay {
       position: fixed;
       inset: 0;
+      /* See the identical fix in [num].astro's mock-test player for
+         the full explanation: env(safe-area-inset-*) doesn't reliably
+         resolve on descendants of a fixed/full-viewport box on this
+         Android WebView — applying it here, on the fixed container
+         itself, is what actually works. */
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
       background: var(--bg);
       z-index: 200;
       display: none;
@@ -1319,6 +1326,8 @@ function formatMath(str) {
     .mt-drawer-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 230;
       display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      box-sizing: border-box;
     }
     .mt-drawer {
       background: var(--bg); width: 100%; max-width: 480px;
