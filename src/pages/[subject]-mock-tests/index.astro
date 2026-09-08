@@ -46,7 +46,7 @@ const subjectName = firstMockTitle.replace(/\s*-\s*Mock Test\s*\d+\s*$/i, '').tr
       {mocks.map((mock) => {
         const isFree = mock.mockNumber === 1;
         return (
-          <a href={`/${subject}-mock-tests/${mock.mockNumber}/`} class="mock-card" data-mock={mock.mockNumber}>
+          <a href={`/${subject}-mock-tests/${mock.mockNumber}/`} class="mock-card" data-mock={mock.mockNumber} data-locked={isFree ? undefined : 'true'}>
             <div class="mock-card-top">
               <div class="mock-card-num">Mock {mock.mockNumber}</div>
               {isFree
@@ -59,6 +59,43 @@ const subjectName = firstMockTitle.replace(/\s*-\s*Mock Test\s*\d+\s*$/i, '').tr
       })}
     </div>
   </div>
+
+  <script define:vars={{ subject }}>
+    // Same class of issue as the theory-tab lock icons: this list is
+    // static-generated, so the server can't know at build time whether a
+    // given visitor has purchased. Check once, proactively, right at page
+    // load (mirrors the subject page's own "45 days left" check-access
+    // call) and strip the lock badges immediately if unlocked — no click
+    // or navigation needed first.
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
+    function getSession() {
+      if (window.__shSessionPromise) return window.__shSessionPromise;
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .catch(() => ({ logged_in: false }));
+    }
+
+    (async () => {
+      try {
+        const session = await getSession();
+        if (!session.logged_in) return; // guest — can't have purchased, leave locks as-is
+
+        const res = await fetch(
+          `${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`
+        );
+        const data = await res.json();
+        if (!data.unlocked) return;
+
+        document.querySelectorAll('[data-locked="true"] .mock-tag-locked').forEach((el) => {
+          el.remove();
+        });
+      } catch (err) {
+        // Network error — leave locks showing as a safe default; they were
+        // never wrong, just possibly stale for a purchased visitor.
+      }
+    })();
+  </script>
 
   <style>
     .mock-list-page { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
