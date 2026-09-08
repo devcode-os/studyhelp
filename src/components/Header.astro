@@ -243,39 +243,13 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     max-height: 360px;
     padding: 6px;
   }
-  .bell-item {
-    padding: 10px 8px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .bell-item:hover {
-    background: rgba(255,255,255,0.06);
-  }
-  .bell-item.unread {
-    background: rgba(255,107,107,0.08);
-  }
-  .bell-item-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 3px;
-  }
-  .bell-item-body {
-    font-size: 13px;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.4;
-  }
-  .bell-item-time {
-    font-size: 11px;
-    color: rgba(255,255,255,0.4);
-    margin-top: 4px;
-  }
-  .bell-empty {
-    padding: 22px 14px;
-    text-align: center;
-    color: rgba(255,255,255,0.5);
-    font-size: 13px;
-  }
+  /* .bell-item, .bell-item-title, .bell-item-body, .bell-empty are injected
+     at RUNTIME via innerHTML in renderBell() below — Astro can only scope
+     elements present in this file's own static template, so these classes
+     are declared again in a separate <style is:global> block further down,
+     not here. Leaving them in this scoped block would silently never apply,
+     which is exactly what caused the huge/near-invisible default-black text
+     bug — Astro's scoping attribute never reached these JS-created nodes. */
   .icon-dark { display: none; }
   html[data-theme="dark"] .icon-light { display: none; }
   html[data-theme="dark"] .icon-dark { display: inline; }
@@ -454,6 +428,47 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
   }
 </style>
 
+<style is:global>
+  /* ---------- Notification bell — runtime-injected content ----------
+     These elements are created via innerHTML inside renderBell() in the
+     script below, at runtime in the browser, not at Astro build time.
+     Astro's scoped <style> above only reaches elements physically written
+     in this file's own template, so anything JS creates later needs its
+     styling declared here instead, in a global (unscoped) block, or the
+     rules above silently never match and the browser falls back to
+     unstyled defaults — oversized, near-black text, exactly what showed
+     up before this fix. */
+  .bell-item {
+    padding: 10px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .bell-item:hover {
+    background: rgba(255,255,255,0.06);
+  }
+  .bell-item.unread {
+    background: rgba(255,107,107,0.08);
+  }
+  .bell-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 3px;
+    line-height: 1.35;
+  }
+  .bell-item-body {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.4;
+  }
+  .bell-empty {
+    padding: 22px 14px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+</style>
+
 <script is:inline>
   // WORKER_URL hoisted to top-of-script scope (was previously declared inside
   // the window.__shSessionInit block below, out of reach for initBell() which
@@ -542,7 +557,6 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
         <div class="bell-item ${a.is_new ? 'unread' : ''}" data-id="${a.id}" data-link="${a.link_url || ''}">
           <div class="bell-item-title">${a.title}</div>
           <div class="bell-item-body">${a.body}</div>
-          <div class="bell-item-time">${new Date(a.created_at * 1000).toLocaleDateString()}</div>
         </div>
       `).join('');
 
