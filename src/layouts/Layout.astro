@@ -244,6 +244,21 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       }
     }
 
+    /* Belt-and-suspenders for the status bar gap: the JS StatusBar.
+       setOverlaysWebView(false) call below is async (dynamically
+       imported), so there's a brief window on first paint before it
+       takes effect. This CSS applies immediately, no JS wait, and
+       pushes the header's own content down WITHIN its own colored
+       background — so the gap appears in the header's color, not a
+       mismatched body-background gap above it. Harmless on the web
+       (env() safe-area vars default to 0px there).
+       Only ever matters inside the native app (window.Capacitor) —
+       this rule is a no-op everywhere else since the var defaults to 0. */
+    :global(.site-header),
+    :global(.chapter-header) {
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+
     /* ---------- Smart app install banner. Shown only to Android visitors
        browsing in a regular tab (not already inside the installed TWA),
        who haven't dismissed it before. Sits at the very top of the page,
@@ -472,9 +487,10 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
         const isAndroid = /Android/i.test(navigator.userAgent);
         if (!isAndroid) return;
 
-        const isTwa = document.referrer.startsWith('android-app://')
+        const isAlreadyInApp = window.Capacitor
+          || document.referrer.startsWith('android-app://')
           || window.matchMedia('(display-mode: standalone)').matches;
-        if (isTwa) return;
+        if (isAlreadyInApp) return;
 
         const banner = document.getElementById('app-install-banner');
         if (!banner) return;
@@ -523,6 +539,73 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
         setTimeout(() => el.remove(), 220);
       }, duration);
     };
+  </script>
+
+  <script>
+    // ---------- Capacitor hardware/gesture back-button handling ----------
+    // TWA delegated this to Chrome automatically; Capacitor does not, so
+    // without this, Android's back gesture/button can exit the app
+    // unexpectedly instead of navigating back within it.
+    // `window.Capacitor` only exists when this page is running inside the
+    // native app shell — never in a normal browser tab — so this whole
+    // block is a no-op on studyhelp.fdaytalk.com itself and never affects
+    // web users. The dynamic import() means @capacitor/app is only ever
+    // fetched on that native-app code path too, not bundled into the
+    // regular web page load.
+    if (typeof window !== 'undefined' && window.Capacitor) {
+      import('@capacitor/app').then(({ App }) => {
+        App.addListener('backButton', ({ canGoBack }) => {
+          // Close mock-test drawer/overlay first if open, else navigate
+          // history, else exit.
+          const mtDrawerOverlay = document.getElementById('mt-drawer-overlay');
+          if (mtDrawerOverlay && mtDrawerOverlay.style.display === 'flex') {
+            mtDrawerOverlay.style.display = 'none';
+            return;
+          }
+          const mtOverlay = document.getElementById('mt-overlay');
+          if (mtOverlay && mtOverlay.classList.contains('active')) {
+            document.getElementById('mt-exit-btn')?.click();
+            return;
+          }
+          // Explicit root-path check as a safety net: on some Astro
+          // view-transition navigations, window.history.length/canGoBack
+          // can desync from Android's native WebView history, which would
+          // otherwise leave the back button stuck doing nothing at the
+          // root page instead of exiting cleanly.
+          if (window.location.pathname === '/' || window.location.pathname === '') {
+            App.exitApp();
+          } else if (canGoBack) {
+            window.history.back();
+          } else {
+            App.exitApp();
+          }
+        });
+      });
+    }
+
+    // ---------- Capacitor native status bar ----------
+    // The web `theme-color` meta tag above has zero effect inside
+    // Capacitor's native WebView — the status bar only follows it in a
+    // real mobile browser tab. Left unset here, Capacitor defaults to a
+    // color that can clash with the app's actual light/dark background
+    // (this exact mismatch is what started this whole migration thread).
+    // Reads the same data-theme attribute the inline theme script at the
+    // top of <head> already set before paint, so this stays in sync with
+    // whatever the user last chose.
+    if (typeof window !== 'undefined' && window.Capacitor) {
+      import('@capacitor/status-bar').then(({ StatusBar, Style }) => {
+        // overlaysWebView(false) is the critical part here: by default
+        // Capacitor draws the status bar ON TOP of the page content
+        // (transparent overlay) rather than pushing content down below
+        // it — that's what causes the header to sit flush against the
+        // very top of the screen with no gap. Setting this false makes
+        // the WebView's content start below the status bar instead.
+        StatusBar.setOverlaysWebView({ overlay: false });
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        StatusBar.setBackgroundColor({ color: isDark ? '#14161a' : '#14102B' });
+        StatusBar.setStyle({ style: isDark ? Style.Dark : Style.Light });
+      });
+    }
   </script>
 </body>
 </html>

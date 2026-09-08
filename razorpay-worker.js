@@ -518,7 +518,10 @@ async function logout(request, env) {
     { ok: true },
     200,
     {
-      "Set-Cookie": "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax",
+      "Set-Cookie": [
+        "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax",
+        "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax; Domain=.fdaytalk.com",
+      ],
       ...corsHeadersWithCredentials(request),
     }
   );
@@ -847,7 +850,12 @@ async function deleteAccount(request, env) {
     return jsonAuth(
       { message: "Account and all associated data deleted." },
       200,
-      { "Set-Cookie": "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax" }
+      {
+        "Set-Cookie": [
+          "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax",
+          "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax; Domain=.fdaytalk.com",
+        ],
+      }
     );
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
@@ -1452,15 +1460,46 @@ function sessionCookie({ token, expiresAt }, request) {
   const origin = request?.headers.get("Origin") || "";
   const isLocalDev = origin.includes("localhost") || origin.includes("127.0.0.1");
 
-  return isLocalDev
-    ? `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=None`
-    : `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`;
+  if (isLocalDev) {
+    return `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=None`;
+  }
+
+  // Returns an ARRAY (see json()'s Headers.append handling above): the
+  // first entry clears any pre-existing host-only cookie (no Domain
+  // attribute — the shape every session used before the .fdaytalk.com
+  // migration on 2026-09-08), the second sets the new one. Without the
+  // clear, a user who logs in again after the migration ends up holding
+  // BOTH cookies at once; requests to api.studyhelp.fdaytalk.com match
+  // both, the browser sends the older (now-stale) one first, and
+  // getSessionTokenFromRequest()'s first-match regex picks the dead
+  // token — session looks evicted/logged-out in a loop. Safe to keep
+  // this clear line indefinitely; once a browser has no host-only
+  // cookie left it's simply a harmless no-op Set-Cookie.
+  return [
+    `sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`,
+    `sh_session=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax; Domain=.fdaytalk.com`,
+  ];
+}
+
+// Returns EVERY sh_session value present, in the order the browser sent
+// them (not just the first). A browser can legitimately hold two cookies
+// with this same name at once — e.g. mid-transition after the
+// .fdaytalk.com domain migration (2026-09-08), before its clear-cookie
+// response has been processed — so callers that care about validity
+// should try each candidate rather than trusting position in the header.
+function getAllSessionTokensFromRequest(request) {
+  const cookieHeader = request.headers.get("Cookie") || "";
+  return cookieHeader
+    .split(";")
+    .map((c) => c.trim())
+    .filter((c) => c.startsWith("sh_session="))
+    .map((c) => c.slice("sh_session=".length))
+    .filter(Boolean);
 }
 
 function getSessionTokenFromRequest(request) {
-  const cookieHeader = request.headers.get("Cookie") || "";
-  const match = cookieHeader.match(/sh_session=([^;]+)/);
-  return match ? match[1] : null;
+  const tokens = getAllSessionTokensFromRequest(request);
+  return tokens.length ? tokens[0] : null;
 }
 
 // Returns { user, reason }. reason is null when a user is returned or when
@@ -1470,30 +1509,41 @@ function getSessionTokenFromRequest(request) {
 // 'passcode_reset', or 'expired'. Used by /me to show the right message on
 // the device that got kicked out, without needing any email notification.
 async function getSessionState(request, env) {
-  const token = getSessionTokenFromRequest(request);
-  if (!token) return { user: null, reason: null };
+  const tokens = getAllSessionTokensFromRequest(request);
+  if (!tokens.length) return { user: null, reason: null };
 
-  const tokenHash = await sha256Hex(token);
-  const session = await env.DB.prepare(
-    "SELECT user_id, expires_at, revoked_reason FROM login_sessions WHERE session_token_hash = ?"
-  )
-    .bind(tokenHash)
-    .first();
+  // Try every sh_session cookie the browser sent, not just the first —
+  // see getAllSessionTokensFromRequest's comment. Remember the first dead
+  // session's reason so we can still surface a useful message (e.g.
+  // "evicted_by_new_login") if none of the candidates turn out valid.
+  let fallbackReason = null;
+  for (const token of tokens) {
+    const tokenHash = await sha256Hex(token);
+    const session = await env.DB.prepare(
+      "SELECT user_id, expires_at, revoked_reason FROM login_sessions WHERE session_token_hash = ?"
+    )
+      .bind(tokenHash)
+      .first();
 
-  if (!session) return { user: null, reason: null };
+    if (!session) continue;
 
-  if (session.revoked_reason) {
-    return { user: null, reason: session.revoked_reason };
+    if (session.revoked_reason) {
+      if (fallbackReason === null) fallbackReason = session.revoked_reason;
+      continue;
+    }
+    if (session.expires_at < Math.floor(Date.now() / 1000)) {
+      if (fallbackReason === null) fallbackReason = "expired";
+      continue;
+    }
+
+    const user = await env.DB.prepare("SELECT id, name, phone, recovery_email, email_verified FROM users WHERE id = ?")
+      .bind(session.user_id)
+      .first();
+
+    if (user) return { user, reason: null };
   }
-  if (session.expires_at < Math.floor(Date.now() / 1000)) {
-    return { user: null, reason: "expired" };
-  }
 
-  const user = await env.DB.prepare("SELECT id, name, phone, recovery_email, email_verified FROM users WHERE id = ?")
-    .bind(session.user_id)
-    .first();
-
-  return { user: user || null, reason: null };
+  return { user: null, reason: fallbackReason };
 }
 
 // Thin wrapper kept for every existing call site (logout, chapter-answers,
@@ -2374,10 +2424,21 @@ async function getSingleAnswer(request, env) {
 }
 
 function json(data, status = 200, extraHeaders = {}) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS, ...extraHeaders },
-  });
+  // Most header values are plain strings and go through as-is. A few
+  // (Set-Cookie, when we need to clear a stale cookie variant AND set a
+  // fresh one in the same response) are passed as an ARRAY of strings —
+  // Headers.append is required for those, since a plain object literal
+  // can only hold one value per key name and would silently drop all but
+  // the last "Set-Cookie" entry.
+  const headers = new Headers({ "Content-Type": "application/json", ...CORS_HEADERS });
+  for (const [key, value] of Object.entries(extraHeaders)) {
+    if (Array.isArray(value)) {
+      for (const v of value) headers.append(key, v);
+    } else {
+      headers.set(key, value);
+    }
+  }
+  return new Response(JSON.stringify(data), { status, headers });
 }
 
 // ---------- 13. Chapter questions + options (free, no gating) ----------

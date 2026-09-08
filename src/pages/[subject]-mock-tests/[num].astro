@@ -1240,7 +1240,7 @@ const isFreeMock = mock.mockNumber === 1;
       flex-shrink: 0;
       display: flex;
       gap: 10px;
-      padding: 14px 16px;
+      padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px));
       border-top: 1px solid var(--border);
       max-width: 720px;
       margin: 0 auto;
@@ -1278,7 +1278,9 @@ const isFreeMock = mock.mockNumber === 1;
     }
     .mt-drawer {
       background: var(--bg); width: 100%; max-width: 480px;
-      border-radius: 16px 16px 0 0; padding: 16px; max-height: 75vh;
+      border-radius: 16px 16px 0 0; padding: 16px;
+      padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      max-height: 75vh;
       display: flex; flex-direction: column; gap: 12px;
       box-sizing: border-box; overflow: hidden;
     }

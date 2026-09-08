@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -89,11 +89,23 @@ export default {
     if (url.pathname === "/account/change-email/confirm" && request.method === "POST") {
       return confirmChangeEmailOtp(request, env);
     }
+    if (url.pathname === "/account/change-passcode" && request.method === "POST") {
+      return changePasscode(request, env);
+    }
+    if (url.pathname === "/account/delete" && request.method === "POST") {
+      return deleteAccount(request, env);
+    }
     if (url.pathname === "/content/chapter-answers" && request.method === "GET") {
       return getChapterAnswers(request, env);
     }
     if (url.pathname === "/content/answer" && request.method === "GET") {
       return getSingleAnswer(request, env);
+    }
+    if (url.pathname === "/content/questions" && request.method === "GET") {
+      return getChapterQuestions(request, env);
+    }
+    if (url.pathname === "/content/theory" && request.method === "GET") {
+      return getTheoryContent(request, env);
     }
     if (url.pathname === "/master-access/login" && request.method === "POST") {
       return adminLogin(request, env);
@@ -116,8 +128,32 @@ export default {
     if (url.pathname === "/master-access/grant" && request.method === "POST") {
       return adminGrant(request, env);
     }
+    if (url.pathname === "/master-access/extend" && request.method === "POST") {
+      return adminExtend(request, env);
+    }
+    if (url.pathname === "/subjects/public" && request.method === "GET") {
+      return publicListSubjects(request, env);
+    }
+    if (url.pathname === "/master-access/subjects" && request.method === "GET") {
+      return adminListSubjects(request, env);
+    }
+    if (url.pathname === "/master-access/subjects/update" && request.method === "POST") {
+      return adminUpdateSubject(request, env);
+    }
+    if (url.pathname === "/master-access/subjects/create" && request.method === "POST") {
+      return adminCreateSubject(request, env);
+    }
     if (url.pathname === "/master-access/revoke" && request.method === "POST") {
       return adminRevoke(request, env);
+    }
+    if (url.pathname === "/announcements/list" && request.method === "GET") {
+      return listAnnouncements(request, env);
+    }
+    if (url.pathname === "/announcements/mark-seen" && request.method === "POST") {
+      return markAnnouncementsSeen(request, env);
+    }
+    if (url.pathname === "/announcements/clear" && request.method === "POST") {
+      return clearAnnouncement(request, env);
     }
 
     return new Response("Not found", { status: 404, headers: CORS_HEADERS });
@@ -236,11 +272,19 @@ async function handleWebhook(request, env) {
 
     // Idempotent: if this exact order was already processed (webhook retry),
     // do nothing. If it's a genuine new/renewal purchase (different order_id
-    // for this user+subject — e.g. buying again after the 45-day window
-    // lapsed), extend access fresh from now. Always 45 days from time of
-    // payment, no stacking on top of remaining time — matches the simple
-    // "45 days unlimited access" pricing, not a top-up model.
-    const ACCESS_DURATION_SECONDS = 45 * 24 * 60 * 60;
+    // for this user+subject — e.g. buying again after access lapsed), extend
+    // access fresh from now. Always the subject's full access_days from time
+    // of payment, no stacking on top of remaining time — matches the simple
+    // "unlimited access for N days" pricing, not a top-up model. Most
+    // subjects are 45 days; access_days lets specific subjects (e.g.
+    // previous-papers, sold as a longer-window product) differ per D1 row.
+    const subjectRow = await env.DB.prepare(
+      "SELECT access_days FROM subjects WHERE id = ?"
+    )
+      .bind(order.subject_id)
+      .first();
+    const accessDays = (subjectRow && subjectRow.access_days) || 45;
+    const ACCESS_DURATION_SECONDS = accessDays * 24 * 60 * 60;
     const expiresAt = Math.floor(Date.now() / 1000) + ACCESS_DURATION_SECONDS;
 
     await env.DB.prepare(
@@ -305,15 +349,26 @@ async function checkAccess(request, env) {
     .bind(user_id, subject_id, nowTs)
     .first();
 
+  const subjectRow = await env.DB.prepare(
+    "SELECT access_days FROM subjects WHERE id = ?"
+  )
+    .bind(subject_id)
+    .first();
+  const totalAccessDays = (subjectRow && subjectRow.access_days) || 45;
+
   if (!entitlement) {
-    return json({ unlocked: false, expires_at: null });
+    return json({ unlocked: false, expires_at: null, total_access_days: totalAccessDays });
   }
 
-  // A manual grant (granted_reason set) shorter than the standard 45-day
-  // window is a "grace grant" — temporary access while a payment issue is
-  // sorted out, not a real purchase. Frontend uses this to show a banner
-  // instead of treating it like normal unlimited access.
-  const FULL_ACCESS_SECONDS = 45 * 24 * 60 * 60;
+  // A manual grant (granted_reason set) shorter than this subject's full
+  // access window is a "grace grant" — temporary access while a payment
+  // issue is sorted out, not a real purchase. Frontend uses this to show a
+  // banner instead of treating it like normal unlimited access. Compared
+  // against the subject's own access_days (most are 45, some differ —
+  // e.g. previous-papers subjects sold with a longer window) rather than a
+  // fixed constant, so a full-length grant on a 365-day subject is never
+  // mistaken for a grace grant.
+  const FULL_ACCESS_SECONDS = totalAccessDays * 24 * 60 * 60;
   const grantedDurationSeconds = entitlement.granted_at
     ? entitlement.expires_at - entitlement.granted_at
     : null;
@@ -325,6 +380,7 @@ async function checkAccess(request, env) {
   return json({
     unlocked: true,
     expires_at: entitlement.expires_at,
+    total_access_days: totalAccessDays,
     is_grace_grant: isGraceGrant,
     grace_days_remaining: isGraceGrant
       ? Math.max(0, Math.ceil((entitlement.expires_at - nowTs) / (24 * 60 * 60)))
@@ -424,8 +480,17 @@ async function login(request, env) {
     // previous session for this account, everywhere. No device limit to
     // hit, no management UI needed — there is never more than one active
     // session to manage.
-    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?")
-      .bind(user.id)
+    //
+    // Soft-revoke (Option B, Aug 11 2026) instead of hard-delete: the old
+    // session row stays around with revoked_reason set, so when the evicted
+    // device's browser next calls /me with its now-dead cookie, the worker
+    // can tell it WHY the session died ("logged in elsewhere") instead of a
+    // generic "please log in" — the evicted device finds out the moment
+    // it's next active, with zero extra email sends.
+    await env.DB.prepare(
+      "UPDATE login_sessions SET revoked_reason = 'evicted_by_new_login', revoked_at = ? WHERE user_id = ? AND revoked_reason IS NULL"
+    )
+      .bind(Math.floor(Date.now() / 1000), user.id)
       .run();
 
     const session = await createSession(env, user.id);
@@ -461,9 +526,9 @@ async function logout(request, env) {
 
 // ---------- 7. Me (check current session) ----------
 async function me(request, env) {
-  const user = await getUserFromSession(request, env);
+  const { user, reason } = await getSessionState(request, env);
   if (!user) {
-    return json({ logged_in: false }, 200, corsHeadersWithCredentials(request));
+    return json({ logged_in: false, reason: reason || null }, 200, corsHeadersWithCredentials(request));
   }
   const fullUser = await env.DB.prepare(
     "SELECT pending_recovery_email FROM users WHERE id = ?"
@@ -563,7 +628,13 @@ async function sendOtp(request, env) {
       );
     }
 
-    return jsonAuth(genericResponse);
+    // masked_email is only ever attached here, on the genuine success path
+    // (user exists, has a recovery email, OTP was generated and actually
+    // emailed) — never on the early generic-response branch above, which
+    // must stay identical whether the phone is unregistered or simply has
+    // no recovery email on file, to preserve that endpoint's enumeration
+    // protection.
+    return jsonAuth({ ...genericResponse, masked_email: maskEmail(user.recovery_email) });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
@@ -631,9 +702,17 @@ async function resetPasscode(request, env) {
       .bind(newHash, user.id)
       .run();
 
-    // Invalidate all existing sessions on passcode reset (security best practice)
-    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?")
-      .bind(user.id)
+    // Invalidate all existing sessions on passcode reset (security best
+    // practice). Soft-revoke rather than hard-delete: this is the OTP-based
+    // "forgot passcode" flow, so if there IS an active session elsewhere
+    // when this fires, that could mean account takeover — the device on
+    // that other session finding out "your passcode was reset" the next
+    // time it's used is more important here than in the plain login-eviction
+    // case, not less.
+    await env.DB.prepare(
+      "UPDATE login_sessions SET revoked_reason = 'passcode_reset', revoked_at = ? WHERE user_id = ? AND revoked_reason IS NULL"
+    )
+      .bind(Math.floor(Date.now() / 1000), user.id)
       .run();
 
     return jsonAuth({ message: "Passcode reset successfully. Please log in with your new passcode." });
@@ -642,7 +721,140 @@ async function resetPasscode(request, env) {
   }
 }
 
-// ---------- 8a. Verify Email: Send OTP (on-demand, 60s rate limit) ----------
+// ---------- 9a. Change Passcode (logged-in account settings flow) ----------
+// Distinct from resetPasscode (Section 9), which is the logged-OUT
+// forgot-passcode OTP flow. This one is for a logged-in student changing
+// their passcode from account settings — needs current passcode instead of
+// an OTP, and only revokes OTHER sessions (this device stays logged in).
+async function changePasscode(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+
+    const { current_passcode, new_passcode, confirm_new_passcode } = await request.json();
+
+    if (!current_passcode || !new_passcode || !confirm_new_passcode) {
+      return jsonAuth({ error: "All fields are required" }, 400);
+    }
+    if (!/^\d{6}$/.test(new_passcode)) {
+      return jsonAuth({ error: "New passcode must be exactly 6 digits" }, 400);
+    }
+    if (new_passcode !== confirm_new_passcode) {
+      return jsonAuth({ error: "New passcodes do not match" }, 400);
+    }
+    if (new_passcode === current_passcode) {
+      return jsonAuth({ error: "New passcode must be different from your current passcode" }, 400);
+    }
+
+    const fullUser = await env.DB.prepare("SELECT passcode_hash FROM users WHERE id = ?")
+      .bind(user.id)
+      .first();
+
+    if (!fullUser || !fullUser.passcode_hash) {
+      return jsonAuth({ error: "Current passcode is incorrect" }, 401);
+    }
+
+    const valid = await verifyPasscode(current_passcode, fullUser.passcode_hash);
+    if (!valid) {
+      return jsonAuth({ error: "Current passcode is incorrect" }, 401);
+    }
+
+    const newHash = await hashPasscode(new_passcode);
+    await env.DB.prepare("UPDATE users SET passcode_hash = ? WHERE id = ?")
+      .bind(newHash, user.id)
+      .run();
+
+    // Soft-revoke every OTHER active session for this account (never the
+    // one making this request, so the device the student is actively using
+    // stays logged in). Same reasoning as resetPasscode: a passcode change
+    // is worth surfacing to any other logged-in device, not silently
+    // dropping its access with no explanation.
+    const currentToken = getSessionTokenFromRequest(request);
+    const currentTokenHash = currentToken ? await sha256Hex(currentToken) : "";
+
+    await env.DB.prepare(
+      `UPDATE login_sessions
+       SET revoked_reason = 'passcode_changed', revoked_at = ?
+       WHERE user_id = ? AND revoked_reason IS NULL AND session_token_hash != ?`
+    )
+      .bind(Math.floor(Date.now() / 1000), user.id, currentTokenHash)
+      .run();
+
+    return jsonAuth({ message: "Passcode changed successfully." });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- Delete account (self-service, Play Store data-safety requirement) ----------
+// Requires an active session AND the current passcode re-entered, same
+// confirmation pattern as changePasscode, since this is irreversible.
+// Deletes in FK-safe order (children before the users row) — same order
+// used for the manual D1 test-data cleanup: entitlements -> orders ->
+// device_sessions -> login_sessions -> otp_codes -> otp_send_log ->
+// free_click_log -> support_requests (user's own) -> users.
+async function deleteAccount(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return jsonAuth({ error: "Login required" }, 401);
+    }
+
+    const { passcode } = await request.json();
+    if (!passcode) {
+      return jsonAuth({ error: "Passcode is required to confirm deletion" }, 400);
+    }
+
+    const fullUser = await env.DB.prepare("SELECT passcode_hash FROM users WHERE id = ?")
+      .bind(user.id)
+      .first();
+
+    if (!fullUser || !fullUser.passcode_hash) {
+      return jsonAuth({ error: "Passcode is incorrect" }, 401);
+    }
+
+    const valid = await verifyPasscode(passcode, fullUser.passcode_hash);
+    if (!valid) {
+      return jsonAuth({ error: "Passcode is incorrect" }, 401);
+    }
+
+    // FK-safe cascade — children before parent, matching the manual D1
+    // cleanup order used earlier for test-data removal. otp_send_log and
+    // support_requests key by phone, not user_id — verified directly
+    // against the live schema. free_click_log is intentionally NOT
+    // touched here: it only ever tracks anonymous/fingerprint-based free
+    // trial clicks (actor_type is 'fp' or 'anon'), never a logged-in
+    // user_id, so a registered account has nothing to delete there.
+    await env.DB.prepare("DELETE FROM entitlements WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM orders WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM device_sessions WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM login_sessions WHERE user_id = ?").bind(user.id).run();
+    await env.DB.prepare("DELETE FROM otp_codes WHERE user_id = ?").bind(user.id).run();
+    if (user.phone) {
+      await env.DB.prepare("DELETE FROM otp_send_log WHERE phone = ?").bind(user.phone).run();
+      await env.DB.prepare("DELETE FROM support_requests WHERE phone = ?").bind(user.phone).run();
+    }
+    await env.DB.prepare("DELETE FROM users WHERE id = ?").bind(user.id).run();
+
+    return jsonAuth(
+      { message: "Account and all associated data deleted." },
+      200,
+      { "Set-Cookie": "sh_session=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax" }
+    );
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+
 // Triggered only when the logged-in student clicks "Verify now" on the
 // dashboard banner — never sent automatically at signup/payment, so it
 // doesn't compete with forgot-passcode for Resend's free-tier daily quota.
@@ -1144,7 +1356,7 @@ async function hashPasscode(passcode) {
     ["deriveBits"]
   );
   const derivedBits = await crypto.subtle.deriveBits(
-    { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+    { name: "PBKDF2", salt, iterations: 50000, hash: "SHA-256" },
     keyMaterial,
     256
   );
@@ -1168,7 +1380,7 @@ async function verifyPasscode(passcode, storedHash) {
     ["deriveBits"]
   );
   const derivedBits = await crypto.subtle.deriveBits(
-    { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+    { name: "PBKDF2", salt, iterations: 50000, hash: "SHA-256" },
     keyMaterial,
     256
   );
@@ -1182,6 +1394,21 @@ async function sha256Hex(text) {
   const enc = new TextEncoder();
   const digest = await crypto.subtle.digest("SHA-256", enc.encode(text));
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+// Masks a recovery email for safe display on the frontend, e.g.
+// "farooq123@gmail.com" -> "f***@gmail.com". Only the first character of
+// the local part is shown; the rest is a fixed "***" rather than a
+// length-revealing mask, so the masked string doesn't leak how long the
+// real address is. Used by sendOtp() on the genuine success path only —
+// never in the generic enumeration-safe response, since including it
+// there would let a caller distinguish "registered with recovery email"
+// from "not registered" purely by whether masked_email is present.
+function maskEmail(email) {
+  if (!email || typeof email !== "string" || !email.includes("@")) return null;
+  const [local, domain] = email.split("@");
+  if (!local || !domain) return null;
+  return `${local[0]}***@${domain}`;
 }
 
 // Session lifetime: 30 days
@@ -1236,26 +1463,45 @@ function getSessionTokenFromRequest(request) {
   return match ? match[1] : null;
 }
 
-async function getUserFromSession(request, env) {
+// Returns { user, reason }. reason is null when a user is returned or when
+// there's simply no session at all (never-logged-in / unknown token — not
+// worth surfacing a specific message for). reason is set to explain WHY a
+// previously-valid-looking session is dead: 'evicted_by_new_login',
+// 'passcode_reset', or 'expired'. Used by /me to show the right message on
+// the device that got kicked out, without needing any email notification.
+async function getSessionState(request, env) {
   const token = getSessionTokenFromRequest(request);
-  if (!token) return null;
+  if (!token) return { user: null, reason: null };
 
   const tokenHash = await sha256Hex(token);
   const session = await env.DB.prepare(
-    "SELECT user_id, expires_at FROM login_sessions WHERE session_token_hash = ?"
+    "SELECT user_id, expires_at, revoked_reason FROM login_sessions WHERE session_token_hash = ?"
   )
     .bind(tokenHash)
     .first();
 
-  if (!session || session.expires_at < Math.floor(Date.now() / 1000)) {
-    return null;
+  if (!session) return { user: null, reason: null };
+
+  if (session.revoked_reason) {
+    return { user: null, reason: session.revoked_reason };
+  }
+  if (session.expires_at < Math.floor(Date.now() / 1000)) {
+    return { user: null, reason: "expired" };
   }
 
   const user = await env.DB.prepare("SELECT id, name, phone, recovery_email, email_verified FROM users WHERE id = ?")
     .bind(session.user_id)
     .first();
 
-  return user || null;
+  return { user: user || null, reason: null };
+}
+
+// Thin wrapper kept for every existing call site (logout, chapter-answers,
+// single-answer, change-email, etc.) that only ever needed the user, not the
+// reason a dead session died.
+async function getUserFromSession(request, env) {
+  const { user } = await getSessionState(request, env);
+  return user;
 }
 
 // ---------- Admin console (Stage 6, core: login, search, grant, revoke) ----------
@@ -1360,12 +1606,31 @@ async function adminListUsers(request, env) {
 
   const users = before
     ? await env.DB.prepare(
-        "SELECT id, name, phone, recovery_email, created_at FROM users WHERE created_at < ? ORDER BY created_at DESC LIMIT ?"
+        `SELECT * FROM (
+           SELECT u.id, u.name, u.phone, u.recovery_email, u.created_at,
+                  COALESCE(
+                    (SELECT MAX(o.created_at) FROM orders o WHERE o.user_id = u.id AND o.status = 'paid'),
+                    (SELECT MAX(e.granted_at) FROM entitlements e WHERE e.user_id = u.id),
+                    u.created_at
+                  ) AS latest_activity
+           FROM users u
+         ) t
+         WHERE latest_activity < ?
+         ORDER BY latest_activity DESC LIMIT ?`
       )
         .bind(Number(before), limit)
         .all()
     : await env.DB.prepare(
-        "SELECT id, name, phone, recovery_email, created_at FROM users ORDER BY created_at DESC LIMIT ?"
+        `SELECT * FROM (
+           SELECT u.id, u.name, u.phone, u.recovery_email, u.created_at,
+                  COALESCE(
+                    (SELECT MAX(o.created_at) FROM orders o WHERE o.user_id = u.id AND o.status = 'paid'),
+                    (SELECT MAX(e.granted_at) FROM entitlements e WHERE e.user_id = u.id),
+                    u.created_at
+                  ) AS latest_activity
+           FROM users u
+         ) t
+         ORDER BY latest_activity DESC LIMIT ?`
       )
         .bind(limit)
         .all();
@@ -1398,7 +1663,7 @@ async function adminListUsers(request, env) {
     subjects_active_manual: countsByUser[u.id]?.activeManual || 0,
   }));
 
-  const nextCursor = rows.length === limit ? rows[rows.length - 1].created_at : null;
+  const nextCursor = rows.length === limit ? rows[rows.length - 1].latest_activity : null;
 
   return jsonAuth({ users: usersWithCounts, next_cursor: nextCursor });
 }
@@ -1507,6 +1772,129 @@ async function adminSearch(request, env) {
   });
 }
 
+// ---------- Public: subjects for /plans/ (no auth — public pricing info) ----------
+async function publicListSubjects(request, env) {
+  const subjects = await env.DB.prepare(
+    "SELECT id, name, title_native, title_english, price_paise, popular, access_days, category FROM subjects ORDER BY popular DESC, name ASC"
+  ).all();
+
+  return json(
+    { subjects: (subjects.results || []).map((s) => ({ ...s, popular: !!s.popular })) },
+    200,
+    CORS_HEADERS
+  );
+}
+
+// ---------- Admin: subject pricing (list / update / create) ----------
+async function adminListSubjects(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const nowTs = Math.floor(Date.now() / 1000);
+  const subjects = await env.DB.prepare(
+    `SELECT s.id, s.name, s.price_paise, s.title_native, s.title_english, s.popular,
+            (SELECT COUNT(*) FROM entitlements e
+              WHERE e.subject_id = s.id AND e.revoked_at IS NULL AND e.expires_at > ?) AS active_entitlements
+     FROM subjects s
+     ORDER BY s.name ASC`
+  )
+    .bind(nowTs)
+    .all();
+
+  return jsonAuth({ subjects: (subjects.results || []).map((s) => ({ ...s, popular: !!s.popular })) });
+}
+
+async function adminUpdateSubject(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  try {
+    const { id, name, price_paise, title_native, title_english, popular } = await request.json();
+    if (!id) return jsonAuth({ error: "id is required" }, 400);
+    if (!name || !name.trim()) return jsonAuth({ error: "name is required" }, 400);
+    const price = Number(price_paise);
+    if (!Number.isInteger(price) || price < 100 || price > 100000000) {
+      return jsonAuth({ error: "price_paise must be a whole number between 100 (₹1) and 100000000 (₹10,00,000)" }, 400);
+    }
+
+    const existing = await env.DB.prepare("SELECT id, name, price_paise FROM subjects WHERE id = ?").bind(id).first();
+    if (!existing) return jsonAuth({ error: "Subject not found" }, 404);
+
+    await env.DB.prepare(
+      "UPDATE subjects SET name = ?, price_paise = ?, title_native = ?, title_english = ?, popular = ? WHERE id = ?"
+    )
+      .bind(name.trim(), price, (title_native || "").trim() || null, (title_english || "").trim() || null, popular ? 1 : 0, id)
+      .run();
+
+    const nowTs = Math.floor(Date.now() / 1000);
+    await env.DB.prepare(
+      `INSERT INTO admin_audit_log (id, action, admin_identifier, subject_id, reason, created_at)
+       VALUES (?, 'subject_update', ?, ?, ?, ?)`
+    )
+      .bind(
+        crypto.randomUUID(),
+        admin.admin_identifier,
+        id,
+        `name: "${existing.name}" → "${name.trim()}", price: ₹${(existing.price_paise / 100).toFixed(2)} → ₹${(price / 100).toFixed(2)}`,
+        nowTs
+      )
+      .run();
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function adminCreateSubject(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  try {
+    const { id, name, price_paise, title_native, title_english, popular } = await request.json();
+    if (!id || !/^[a-z0-9-]+$/.test(id)) {
+      return jsonAuth({ error: "id (slug) is required and must be lowercase letters, numbers, and hyphens only" }, 400);
+    }
+    if (!name || !name.trim()) return jsonAuth({ error: "name is required" }, 400);
+    const price = Number(price_paise);
+    if (!Number.isInteger(price) || price < 100 || price > 100000000) {
+      return jsonAuth({ error: "price_paise must be a whole number between 100 (₹1) and 100000000 (₹10,00,000)" }, 400);
+    }
+
+    const existing = await env.DB.prepare("SELECT id FROM subjects WHERE id = ?").bind(id).first();
+    if (existing) return jsonAuth({ error: `Subject id "${id}" already exists` }, 400);
+
+    await env.DB.prepare(
+      "INSERT INTO subjects (id, name, price_paise, title_native, title_english, popular) VALUES (?, ?, ?, ?, ?, ?)"
+    )
+      .bind(id, name.trim(), price, (title_native || "").trim() || null, (title_english || "").trim() || null, popular ? 1 : 0)
+      .run();
+
+    const nowTs = Math.floor(Date.now() / 1000);
+    await env.DB.prepare(
+      `INSERT INTO admin_audit_log (id, action, admin_identifier, subject_id, reason, created_at)
+       VALUES (?, 'subject_create', ?, ?, ?, ?)`
+    )
+      .bind(crypto.randomUUID(), admin.admin_identifier, id, `"${name.trim()}" at ₹${(price / 100).toFixed(2)}`, nowTs)
+      .run();
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+// ---------- Admin: manual entitlement grant ----------
+// GUARD ADDED: never let a manual grant silently blank order_id/payment_id
+// on an entitlement that is already a genuine paid purchase. Previously the
+// ON CONFLICT upsert unconditionally set order_id/payment_id to '' for any
+// existing row on this (user_id, subject_id) pair, which would erase the
+// Razorpay payment trail on a real purchase and make adminRevoke/adminExtend's
+// "is this manual?" check (order_id/payment_id empty) wrongly treat a paid
+// entitlement as revocable/extendable manual access.
 async function adminGrant(request, env) {
   const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
   const admin = await getAdminFromSession(request, env);
@@ -1521,6 +1909,27 @@ async function adminGrant(request, env) {
     const days = Number(duration_days) || 45;
     if (days < 1 || days > 365) {
       return jsonAuth({ error: "duration_days must be between 1 and 365" }, 400);
+    }
+
+    // Guard: refuse to overwrite an existing PAID entitlement via grant.
+    // Grant is for creating/refreshing a MANUAL entitlement only. If the
+    // user already has an active or expired paid entitlement row for this
+    // subject, admin should use extend (for manual grants) — never grant
+    // over a paid row, since it would zero out order_id/payment_id.
+    const existingEntitlement = await env.DB.prepare(
+      "SELECT order_id, payment_id FROM entitlements WHERE user_id = ? AND subject_id = ?"
+    )
+      .bind(user_id, subject_id)
+      .first();
+
+    if (existingEntitlement && (existingEntitlement.order_id || existingEntitlement.payment_id)) {
+      return jsonAuth(
+        {
+          error:
+            "This user already has a paid entitlement for this subject. Grant only creates manual entitlements — use extend to add time to an existing manual grant, or contact support to handle a paid entitlement issue.",
+        },
+        400
+      );
     }
 
     const nowTs = Math.floor(Date.now() / 1000);
@@ -1558,6 +1967,65 @@ async function adminGrant(request, env) {
       .run();
 
     return jsonAuth({ ok: true, expires_at: expiresAt, days_granted: days });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function adminExtend(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  try {
+    const { entitlement_id, duration_days, reason } = await request.json();
+    if (!entitlement_id || !reason || !reason.trim()) {
+      return jsonAuth({ error: "entitlement_id and reason are required" }, 400);
+    }
+
+    const days = Number(duration_days);
+    if (!days || days < 1 || days > 365) {
+      return jsonAuth({ error: "duration_days must be between 1 and 365" }, 400);
+    }
+
+    const entitlement = await env.DB.prepare(
+      "SELECT id, user_id, subject_id, order_id, payment_id, granted_at, revoked_at FROM entitlements WHERE id = ?"
+    )
+      .bind(entitlement_id)
+      .first();
+
+    if (!entitlement) return jsonAuth({ error: "Entitlement not found" }, 404);
+
+    // Same rule as revoke: only manual entitlements can be touched from this console.
+    if (entitlement.order_id || entitlement.payment_id) {
+      return jsonAuth({ error: "This is a paid entitlement, not a manual grant — cannot extend from here" }, 400);
+    }
+    if (entitlement.revoked_at) {
+      return jsonAuth({ error: "This grant was revoked — issue a fresh grant instead of extending" }, 400);
+    }
+    if (!entitlement.granted_at) {
+      return jsonAuth({ error: "No granted_at on this entitlement — cannot compute extension" }, 400);
+    }
+
+    // Key difference from Grant: expires_at is computed from the ORIGINAL
+    // granted_at, not from now. A 3-day grace grant extended to 45 days ends
+    // up expiring 45 days after it was first granted, not 45 days from
+    // whenever the extension happened. granted_at itself is left untouched.
+    const newExpiresAt = entitlement.granted_at + days * 24 * 60 * 60;
+    const nowTs = Math.floor(Date.now() / 1000);
+
+    await env.DB.prepare(`UPDATE entitlements SET expires_at = ? WHERE id = ?`)
+      .bind(newExpiresAt, entitlement_id)
+      .run();
+
+    await env.DB.prepare(
+      `INSERT INTO admin_audit_log (id, action, admin_identifier, user_id, subject_id, entitlement_id, reason, created_at)
+       VALUES (?, 'extend', ?, ?, ?, ?, ?, ?)`
+    )
+      .bind(crypto.randomUUID(), admin.admin_identifier, entitlement.user_id, entitlement.subject_id, entitlement_id, reason.trim(), nowTs)
+      .run();
+
+    return jsonAuth({ ok: true, expires_at: newExpiresAt, total_days_from_grant: days });
   } catch (err) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
@@ -1674,6 +2142,75 @@ async function getChapterAnswers(request, env) {
   }
 
   return jsonAuth({ answers });
+}
+
+// ---------- 11b. Theory content (entitlement-gated, mirrors chapter answers) ----------
+// Serves locked concept bodyMd for a theory chapter. Same model as
+// getChapterAnswers above: nothing here is ever baked into the Astro
+// static build — the [slug]/index.astro page strips bodyMd from every
+// locked concept before it reaches props, so this endpoint is the ONLY
+// place a locked part's real text ever leaves the server.
+async function getTheoryContent(request, env) {
+  const jsonAuth = (data, status = 200) =>
+    json(data, status, corsHeadersWithCredentials(request));
+
+  const url = new URL(request.url);
+  const chapterSlug = url.searchParams.get("chapter_slug");
+
+  if (!chapterSlug) {
+    return jsonAuth({ error: "chapter_slug required" }, 400);
+  }
+
+  const chapter = await env.DB.prepare(
+    "SELECT subject_id, concepts_json FROM theory_content WHERE chapter_slug = ?"
+  )
+    .bind(chapterSlug)
+    .first();
+
+  if (!chapter) {
+    return jsonAuth({ error: "Chapter not found" }, 404);
+  }
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required", locked: true }, 401);
+  }
+
+  // Admin bypass: same ADMIN_PHONES check as getChapterAnswers, so admin
+  // accounts can review locked theory content without a purchase.
+  if (env.ADMIN_PHONES) {
+    const adminPhones = env.ADMIN_PHONES.split(",").map((p) => p.trim());
+    if (adminPhones.includes(user.phone)) {
+      let concepts;
+      try {
+        concepts = JSON.parse(chapter.concepts_json);
+      } catch (err) {
+        return jsonAuth({ error: "Content error" }, 500);
+      }
+      return jsonAuth({ concepts, admin: true });
+    }
+  }
+
+  const nowTs = Math.floor(Date.now() / 1000);
+  const entitlement = await env.DB.prepare(
+    "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
+  )
+    .bind(user.id, chapter.subject_id, nowTs)
+    .first();
+
+  if (!entitlement) {
+    return jsonAuth({ error: "This subject is not currently unlocked on your account. Purchase for 45 days of unlimited access.", locked: true }, 403);
+  }
+
+  // concepts_json is already a JSON string in D1 — parse then re-send as real JSON
+  let concepts;
+  try {
+    concepts = JSON.parse(chapter.concepts_json);
+  } catch (err) {
+    return jsonAuth({ error: "Content error" }, 500);
+  }
+
+  return jsonAuth({ concepts });
 }
 
 // Daily free-click limit for subjects NOT purchased — flat, same for everyone,
@@ -1841,4 +2378,184 @@ function json(data, status = 200, extraHeaders = {}) {
     status,
     headers: { "Content-Type": "application/json", ...CORS_HEADERS, ...extraHeaders },
   });
+}
+
+// ---------- 13. Chapter questions + options (free, no gating) ----------
+// Frontend fix: show Q+options open for ALL users without an accordion tap.
+// Deliberately public — NO session check, NO entitlement check, NO
+// free-click counting, since nothing paywalled is returned here.
+// Strips `answer` (the correct-letter key), `explanation`/`e`, and `table`
+// from every question before sending — those remain exclusive to
+// /content/answer and /content/chapter-answers, unchanged and still fully
+// gated as before. Only `type` and `options` (the 4 choices, unmarked) go
+// out. For non-MCQ (plain FAQ) items, `options` is simply absent — nothing
+// to preview before the gated reveal.
+async function getChapterQuestions(request, env) {
+  const jsonPublic = (data, status = 200) => json(data, status, CORS_HEADERS);
+
+  const url = new URL(request.url);
+  const chapterSlug = url.searchParams.get("chapter_slug");
+
+  if (!chapterSlug) {
+    return jsonPublic({ error: "chapter_slug required" }, 400);
+  }
+
+  const chapter = await env.DB.prepare(
+    "SELECT answers_json FROM chapter_content WHERE chapter_slug = ?"
+  )
+    .bind(chapterSlug)
+    .first();
+
+  if (!chapter) {
+    return jsonPublic({ error: "Chapter not found" }, 404);
+  }
+
+  let answersArr;
+  try {
+    answersArr = JSON.parse(chapter.answers_json);
+  } catch (err) {
+    return jsonPublic({ error: "Content error" }, 500);
+  }
+
+  // Build an object keyed by index (matching the shape the frontend already
+  // uses for bulkAnswers), stripped down to only type + options.
+  const questions = {};
+  answersArr.forEach((item, idx) => {
+    if (item && item.type === "mcq" && item.options) {
+      questions[idx] = { type: "mcq", options: item.options };
+    }
+    // Non-MCQ items intentionally omitted — nothing to preview for those.
+  });
+
+  return jsonPublic({ questions });
+}
+
+// ---------- 14. Notification bell — announcements (login required) ----------
+// Same pattern as changePasscode/deleteAccount: getUserFromSession(request, env)
+// returns null for a guest/expired session, in which case we return 401 rather
+// than any announcement data. Two D1 tables:
+//   announcements               — admin-authored, shared across all users
+//   user_announcement_state     — per-user seen/cleared state against each one
+//
+// Schema (run once via wrangler d1 execute):
+//   CREATE TABLE IF NOT EXISTS announcements (
+//     id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     title TEXT NOT NULL,
+//     body TEXT NOT NULL,
+//     link_url TEXT,
+//     created_at INTEGER NOT NULL,
+//     active INTEGER DEFAULT 1
+//   );
+//   CREATE TABLE IF NOT EXISTS user_announcement_state (
+//     user_id TEXT NOT NULL,
+//     announcement_id INTEGER NOT NULL,
+//     seen_at INTEGER,
+//     cleared_at INTEGER,
+//     PRIMARY KEY (user_id, announcement_id)
+//   );
+
+async function listAnnouncements(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required" }, 401);
+  }
+
+  try {
+    const { results } = await env.DB.prepare(
+      `SELECT a.id, a.title, a.body, a.link_url, a.created_at, s.seen_at
+       FROM announcements a
+       LEFT JOIN user_announcement_state s
+         ON s.announcement_id = a.id AND s.user_id = ?
+       WHERE a.active = 1 AND s.cleared_at IS NULL
+       ORDER BY a.created_at DESC`
+    )
+      .bind(user.id)
+      .all();
+
+    const announcements = results.map((r) => ({
+      id: r.id,
+      title: r.title,
+      body: r.body,
+      link_url: r.link_url,
+      created_at: r.created_at,
+      is_new: r.seen_at === null,
+    }));
+
+    return jsonAuth({ announcements });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function markAnnouncementsSeen(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required" }, 401);
+  }
+
+  try {
+    const { ids } = await request.json();
+    if (!Array.isArray(ids) || ids.length === 0) {
+      return jsonAuth({ error: "ids array required" }, 400);
+    }
+
+    const now = Math.floor(Date.now() / 1000);
+    const stmts = ids.map((id) =>
+      env.DB.prepare(
+        `INSERT INTO user_announcement_state (user_id, announcement_id, seen_at)
+         VALUES (?, ?, ?)
+         ON CONFLICT(user_id, announcement_id) DO UPDATE SET seen_at = excluded.seen_at`
+      ).bind(user.id, id, now)
+    );
+    await env.DB.batch(stmts);
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
+async function clearAnnouncement(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Login required" }, 401);
+  }
+
+  try {
+    const body = await request.json();
+    const now = Math.floor(Date.now() / 1000);
+
+    if (body.all) {
+      // Clears every currently-active announcement for this user in one
+      // shot — any announcement added AFTER this moment still appears
+      // normally, since it's a fresh row this INSERT never touched.
+      await env.DB.prepare(
+        `INSERT INTO user_announcement_state (user_id, announcement_id, cleared_at)
+         SELECT ?, id, ? FROM announcements WHERE active = 1
+         ON CONFLICT(user_id, announcement_id) DO UPDATE SET cleared_at = excluded.cleared_at`
+      )
+        .bind(user.id, now)
+        .run();
+    } else if (body.id) {
+      await env.DB.prepare(
+        `INSERT INTO user_announcement_state (user_id, announcement_id, cleared_at)
+         VALUES (?, ?, ?)
+         ON CONFLICT(user_id, announcement_id) DO UPDATE SET cleared_at = excluded.cleared_at`
+      )
+        .bind(user.id, body.id, now)
+        .run();
+    } else {
+      return jsonAuth({ error: "id or all required" }, 400);
+    }
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Server error", detail: String(err) }, 500);
+  }
 }
