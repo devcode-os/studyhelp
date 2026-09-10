@@ -5,10 +5,16 @@ const config: CapacitorConfig = {
   appName: 'StudyHelp',
   webDir: 'dist',
   server: {
-  url: 'https://studyhelp.fdaytalk.com',
-  cleartext: false,
-  allowNavigation: ['studyhelp.fdaytalk.com', 'api.studyhelp.fdaytalk.com']
-},
+    url: 'https://studyhelp.fdaytalk.com',
+    cleartext: false,
+    allowNavigation: [
+      'studyhelp.fdaytalk.com',
+      'api.studyhelp.fdaytalk.com',
+      'checkout.razorpay.com',
+      'api.razorpay.com',
+      '*.razorpay.com'
+    ]
+  },
   plugins: {
     CapacitorHttp: {
       enabled: false

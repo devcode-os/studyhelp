@@ -51,6 +51,14 @@ import Layout from '../../layouts/Layout.astro';
           if (data.unlocked) {
             titleEl.textContent = 'Payment confirmed!';
             detailEl.textContent = 'Redirecting to your subject...';
+            // Fire Meta Pixel Purchase event here, since this is the point
+            // where the backend has actually confirmed payment — not just a
+            // Razorpay popup closing client-side.
+            try {
+              if (typeof fbq === 'function') {
+                fbq('track', 'Purchase', { value: 199, currency: 'INR' });
+              }
+            } catch (err) {}
             // Best-effort — don't let a slow/failed /me call delay the redirect.
             flagVerifyToastIfNeeded().finally(() => {
               window.location.href = `/${subject_id}/`;
