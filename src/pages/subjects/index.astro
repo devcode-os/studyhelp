@@ -253,22 +253,24 @@ const iconMap = {
     document.addEventListener('DOMContentLoaded', () => {
       if (!showedBundleToast) return;
       const message = 'Bundle purchased successfully — loading your subjects…';
-      if (window.showToast) {
-        window.showToast(message, 'success');
-      } else {
-        const container = document.getElementById('toast-container');
-        if (container) {
-          bundleLoadingToast = document.createElement('div');
-          bundleLoadingToast.textContent = message;
-          bundleLoadingToast.style.cssText = `
-            background: linear-gradient(90deg, #2fbf71, #3fd88a);
-            color: #063a1e; font-weight: 700; font-size: 13px;
-            padding: 12px 18px; border-radius: 10px;
-            box-shadow: 0 8px 20px -6px rgba(0,0,0,0.4);
-            max-width: 360px; text-align: center;
-          `;
-          container.appendChild(bundleLoadingToast);
-        }
+      // Layout's shared window.showToast() only has two colors — red for
+      // 'error', dark/black for everything else, including 'success'. It
+      // has no green variant to call into, and this message should read
+      // as a celebratory success, not a neutral black notice — so this
+      // always builds its own green-styled toast directly rather than
+      // deferring to the shared function.
+      const container = document.getElementById('toast-container');
+      if (container) {
+        bundleLoadingToast = document.createElement('div');
+        bundleLoadingToast.textContent = message;
+        bundleLoadingToast.style.cssText = `
+          background: linear-gradient(90deg, #2fbf71, #3fd88a);
+          color: #063a1e; font-weight: 700; font-size: 13px;
+          padding: 12px 18px; border-radius: 10px;
+          box-shadow: 0 8px 20px -6px rgba(0,0,0,0.4);
+          max-width: 360px; text-align: center;
+        `;
+        container.appendChild(bundleLoadingToast);
       }
       window.history.replaceState({}, '', '/subjects/');
       // Safety net: remove no matter what, even if some unexpected error
