@@ -258,6 +258,10 @@ const iconMap = {
         }
       }
       window.history.replaceState({}, '', '/subjects/');
+      // Safety net: remove no matter what, even if some unexpected error
+      // path above never fires the removal — this is payment-confirmation
+      // UX, it should never get stuck on screen.
+      setTimeout(() => { if (bundleLoadingToast) bundleLoadingToast.remove(); }, 8000);
     }
 
     // Session is fetched ONCE per page by Header.astro (runs synchronously
@@ -274,7 +278,10 @@ const iconMap = {
     // that same card swaps from "Available" to "Purchased". Layout, card
     // count, grid — everything else stays identical to the guest view.
     getSession().then(async (session) => {
-      if (!session.logged_in) return;
+      if (!session.logged_in) {
+        if (bundleLoadingToast) bundleLoadingToast.remove();
+        return;
+      }
 
       const available = subjects.filter((s) => s.available);
       await Promise.all(
