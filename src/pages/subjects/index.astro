@@ -235,10 +235,23 @@ const iconMap = {
     // native dialog and not how this app surfaces these messages anywhere
     // else. Cleaning the URL now also prevents the toast from reappearing
     // on a manual refresh of this page.
+    //
+    // Deferred to DOMContentLoaded deliberately: in Layout.astro, both
+    // #toast-container and the <script> defining window.showToast are
+    // placed AFTER <slot /> — i.e. after this page's own content in
+    // source order. Since inline scripts run synchronously the instant
+    // the parser reaches them, running this immediately (un-deferred)
+    // meant neither window.showToast nor #toast-container existed yet at
+    // that point — both checks below silently failed and nothing ever
+    // appeared. Waiting for DOMContentLoaded guarantees the entire
+    // document, including Layout's trailing script/markup, has already
+    // been parsed and executed first.
     let bundleLoadingToast = null;
     const params = new URLSearchParams(window.location.search);
     const showedBundleToast = params.get('bundle_success') === '1';
-    if (showedBundleToast) {
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!showedBundleToast) return;
       const message = 'Bundle purchased successfully — loading your subjects…';
       if (window.showToast) {
         window.showToast(message, 'success');
@@ -262,7 +275,7 @@ const iconMap = {
       // path above never fires the removal — this is payment-confirmation
       // UX, it should never get stuck on screen.
       setTimeout(() => { if (bundleLoadingToast) bundleLoadingToast.remove(); }, 8000);
-    }
+    });
 
     // Session is fetched ONCE per page by Header.astro (runs synchronously
     // inline, before this script) and exposed on window.__shSessionPromise.
