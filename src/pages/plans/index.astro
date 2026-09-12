@@ -47,8 +47,8 @@ const comingSoonSubjects = [
 
       <!-- BUNDLE FEATURE: mode toggle (design-review only, no backend wiring yet) -->
       <div style="display:flex; gap:8px; margin-bottom:14px;" id="mode-toggle">
-        <button id="mode-single-btn" class="mode-btn mode-btn-active" onclick="setBundleMode(false)">Buy Single</button>
-        <button id="mode-bundle-btn" class="mode-btn" onclick="setBundleMode(true)">Bundle: Pick any 3 — ₹399</button>
+        <button id="mode-single-btn" class="mode-btn mode-btn-active" type="button">Buy Single</button>
+        <button id="mode-bundle-btn" class="mode-btn" type="button">Bundle: Pick any 3 — ₹399</button>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px;" class="plan-grid" id="real-plan-grid">
@@ -58,7 +58,7 @@ const comingSoonSubjects = [
       <!-- BUNDLE FEATURE: sticky bottom bar, appears only in bundle mode -->
       <div id="bundle-sticky-bar" style="display:none;">
         <span id="bundle-counter">0 of 3 selected</span>
-        <button id="bundle-buy-btn" disabled onclick="onBuyBundleClick()">Buy Bundle — ₹399</button>
+        <button id="bundle-buy-btn" disabled type="button">Buy Bundle — ₹399</button>
       </div>
     </div>
 
@@ -138,6 +138,39 @@ const comingSoonSubjects = [
     .bundle-mode .bundle-check { display: block; }
     .plan-card.bundle-selected .bundle-check { background: #ff9a3c; border-color: #ff9a3c; }
     .plan-card { position: relative; } /* needed so .bundle-check absolute positioning anchors to the card */
+
+    /* ---------- Compact chip layout, ONLY while bundle mode is active.
+       Single-purchase mode keeps the original big marketing cards
+       untouched — this only kicks in via the .bundle-mode class on the
+       grid, added/removed by setBundleMode(). Goal: fit many subjects on
+       screen at once so picking 3 is a quick glance-and-tap, not scrolling
+       through full-size cards. ---------- */
+    #real-plan-grid.bundle-mode {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+      gap: 8px !important;
+    }
+    .bundle-mode .plan-card {
+      padding: 0.75rem !important;
+      min-height: 0 !important;
+    }
+    .bundle-mode .card-title {
+      font-size: 13px !important;
+      margin-top: 4px !important;
+      line-height: 1.25 !important;
+    }
+    .bundle-mode .plan-card > div[style*="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 4px;"] {
+      font-size: 11px !important;
+    }
+    /* Hide access-days line and price entirely in bundle mode — irrelevant
+       while picking, since the bundle has one flat price regardless of
+       which 3 subjects are chosen. */
+    .bundle-mode .plan-price,
+    .bundle-mode .plan-card > div[style*="days unlimited access"] {
+      display: none !important;
+    }
+    .bundle-mode .badge-popular {
+      display: none !important;
+    }
 
     /* ---------- Mobile-only capsule redesign. Every rule below uses
        !important because the desktop markup styles each element with
@@ -259,6 +292,16 @@ const comingSoonSubjects = [
       console.log('Bundle selected:', selectedBundleSlugs);
       alert('Bundle selected: ' + selectedBundleSlugs.join(', ') + '\n(Checkout not wired yet — design review only)');
     }
+
+    // Wired via addEventListener (not inline onclick=""), because this
+    // <script> block is compiled as an ES module by Astro (define:vars) —
+    // top-level function declarations are module-scoped, NOT attached to
+    // window, so inline onclick="fnName()" HTML attributes silently fail
+    // to find them. Every other interactive element in this file already
+    // follows this same addEventListener pattern for that reason.
+    document.getElementById('mode-single-btn').addEventListener('click', () => setBundleMode(false));
+    document.getElementById('mode-bundle-btn').addEventListener('click', () => setBundleMode(true));
+    document.getElementById('bundle-buy-btn').addEventListener('click', onBuyBundleClick);
 
     // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
     // from a unix-seconds expires_at timestamp.
