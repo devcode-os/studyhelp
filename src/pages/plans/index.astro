@@ -34,6 +34,7 @@ const comingSoonSubjects = [
       <h1 class="plans-h1">Unlock Unlimited Access</h1>
       <p class="plans-sub">One-time payment per subject. No subscription.</p>
     </div>
+    <div class="plans-divider"></div>
 
     <div id="active-subjects-section" class="active-subjects-section">
       <div class="section-label">
@@ -62,7 +63,7 @@ const comingSoonSubjects = [
       <!-- Sticky bundle bar — appears only in bundle mode -->
       <div id="bundle-sticky-bar" class="bundle-sticky-bar">
         <span id="bundle-counter">0 of 3 selected</span>
-        <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Buy Bundle — ₹399</button>
+        <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Buy</button>
       </div>
     </div>
 
@@ -107,22 +108,18 @@ const comingSoonSubjects = [
       }
     }
 
-    /* ================= Hero — compact banner, not a big hero block ================= */
+    /* ================= Hero — plain header text, no box at all ================= */
     .plans-intro {
-      text-align: left;
-      margin-bottom: 1rem;
-      position: relative;
-      overflow: hidden;
-      border-radius: 14px;
-      padding: 0.85rem 1rem;
-      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      box-shadow: 0 6px 16px -8px rgba(20, 16, 43, 0.5);
+      padding: 0;
+      margin-bottom: 0.6rem;
+      background: none;
+      box-shadow: none;
     }
-    .plans-h1 { margin: 0 0 2px; color: #ffffff; font-size: 16px; font-weight: 700; }
-    .plans-sub { color: rgba(255,255,255,0.65); font-size: 12px; margin: 0; }
+    .plans-h1 { margin: 0 0 2px; color: var(--text); font-size: 17px; font-weight: 700; }
+    .plans-sub { color: var(--muted); font-size: 12px; margin: 0; }
+    .plans-divider { height: 1px; background: rgba(128,128,128,0.15); margin-bottom: 1rem; }
     @media (max-width: 720px) {
-      .plans-intro { margin-bottom: 0.85rem; padding: 0.75rem 0.9rem; }
-      .plans-h1 { font-size: 14.5px; }
+      .plans-h1 { font-size: 15px; }
       .plans-sub { font-size: 11px; }
     }
 
@@ -139,80 +136,107 @@ const comingSoonSubjects = [
     .subjects-section { margin-bottom: 1.5rem; }
     .papers-section { display: none; margin-bottom: 1.5rem; }
 
-    /* ================= Mode toggle (segmented control) ================= */
+    /* ================= Mode toggle (segmented control) =================
+       Both states are equal-weight boxes so it's always unambiguous which
+       mode is active — active = solid green fill, inactive = outlined
+       muted box. (Color is just a clear on/off signal, not brand-tied —
+       change --toggle-active below if a different accent is wanted.) */
     .mode-toggle {
-      display: flex; gap: 6px; margin-bottom: 14px;
-      background: rgba(255,255,255,0.05); padding: 4px; border-radius: 12px;
+      display: flex; gap: 8px; margin-bottom: 14px;
     }
     .mode-btn {
-      flex: 1; padding: 10px 12px; border-radius: 9px; font-size: 13px; font-weight: 700;
-      border: none; background: transparent; color: var(--text); cursor: pointer;
-      white-space: nowrap;
+      flex: 1; padding: 10px 12px; border-radius: 10px; font-size: 13px; font-weight: 700;
+      cursor: pointer; white-space: nowrap;
+      background: transparent; color: var(--muted);
+      border: 1.5px solid rgba(128,128,128,0.3);
     }
     .mode-btn-active {
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400;
+      background: #2fb35c; color: #ffffff; border-color: #2fb35c;
     }
     @media (max-width: 400px) {
       .mode-btn { font-size: 11.5px; padding: 10px 6px; }
     }
 
-    /* ================= Subject rows (Android list-item style) ================= */
+    /* ================= Subject rows — flat divided list (Android Material
+       list style), NOT individually-bordered boxes. Removes the "boxes
+       inside boxes" look; only the popular/selected row gets a visible
+       accent, everything else is a plain row separated by a thin line. */
     .subject-rows {
-      display: flex; flex-direction: column; gap: 8px;
+      display: flex; flex-direction: column;
+      background: var(--card, rgba(255,255,255,0.02));
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(128,128,128,0.12);
     }
     .row-skeleton {
       text-align: center; padding: 2rem; color: var(--muted); font-size: 13px;
     }
     .subject-row {
       display: flex; align-items: center; gap: 12px;
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(128,128,128,0.12);
+      border-radius: 0;
       padding: 12px 14px;
       text-decoration: none;
-      color: #ffffff;
+      color: var(--text);
       cursor: pointer;
-      transition: border-color 0.15s, box-shadow 0.15s;
     }
+    .subject-rows > .subject-row:last-child { border-bottom: none; }
     .subject-row.row-popular {
-      border-color: #ff9a3c;
+      background: rgba(255,154,60,0.07);
+      border-left: 3px solid #ff9a3c;
     }
     .subject-row.row-selected {
-      border-color: #ff9a3c;
-      box-shadow: 0 0 0 3px rgba(255,154,60,0.18);
+      background: rgba(47,179,92,0.1);
+      border-left: 3px solid #2fb35c;
     }
     .subject-row.row-soon {
       opacity: 0.5;
       cursor: not-allowed;
     }
 
-    /* Leading icon (single mode) / checkbox (bundle mode) */
+    /* Leading icon (single mode) / selection indicator (bundle mode) */
     .row-leading {
-      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      background: rgba(255,154,60,0.15);
+      background: rgba(255,154,60,0.12);
     }
-    .row-leading i { font-size: 18px; color: #ff9a3c; }
+    .row-leading i { font-size: 17px; color: #ff9a3c; }
+    /* Outline circle that only shows a checkmark once selected — not a
+       solid filled square, so it reads as "tick to select", not "filled
+       box = something is on". */
     .row-checkbox {
-      display: none; width: 22px; height: 22px; border-radius: 6px;
-      border: 2px solid rgba(255,255,255,0.3); background: rgba(0,0,0,0.2); flex-shrink: 0;
+      display: none; width: 24px; height: 24px; border-radius: 50%;
+      border: 2px solid rgba(128,128,128,0.4); flex-shrink: 0;
+      align-items: center; justify-content: center;
     }
-    .row-selected .row-checkbox { background: #ff9a3c; border-color: #ff9a3c; }
+    .row-checkbox::after {
+      content: '';
+      width: 12px; height: 12px;
+    }
+    .row-selected .row-checkbox {
+      border-color: #2fb35c; background: #2fb35c;
+    }
+    .row-selected .row-checkbox::after {
+      content: '✓';
+      color: #ffffff; font-size: 13px; font-weight: 900; line-height: 1;
+    }
 
     /* Middle: title + subtitle + meta */
     .row-body { flex: 1; min-width: 0; }
-    .row-title { font-weight: 700; font-size: 14.5px; color: #ffffff; line-height: 1.3; }
-    .row-sub { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-top: 2px; }
-    .row-meta { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+    .row-title { font-weight: 700; font-size: 14.5px; color: var(--text); line-height: 1.3; }
+    .row-sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+    .row-meta { font-size: 11px; color: var(--muted); opacity: 0.75; margin-top: 3px; }
 
     /* Trailing: price + buy button (single mode) */
     .row-trailing { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
-    .row-price { font-size: 15px; font-weight: 700; color: #ffcb8a; }
+    .row-price { font-size: 15px; font-weight: 700; color: #ff9a3c; }
     .row-buy-btn {
       font-size: 12px; font-weight: 700; padding: 7px 14px; border: none; border-radius: 8px;
       background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; cursor: pointer; white-space: nowrap;
     }
-    .row-soon-label { font-size: 11px; color: rgba(255,255,255,0.45); }
+    .row-soon-label { font-size: 11px; color: var(--muted); }
     .row-badge-popular {
       font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
       background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; margin-bottom: 4px; display: inline-block;
@@ -223,25 +247,22 @@ const comingSoonSubjects = [
     }
 
     /* ================= Bundle mode overrides ================= */
-    /* In bundle mode: hide icon (show checkbox instead), hide price/buy
-       button entirely (flat bundle price shown only in the sticky bar),
-       whole row becomes the tap target. */
     .subject-rows.bundle-mode .row-leading { display: none; }
-    .subject-rows.bundle-mode .row-checkbox { display: block; }
+    .subject-rows.bundle-mode .row-checkbox { display: flex; }
     .subject-rows.bundle-mode .row-trailing { display: none; }
     .subject-rows.bundle-mode .subject-row.row-soon { pointer-events: none; }
 
-    /* ================= Sticky bundle bar ================= */
+    /* ================= Sticky bundle bar — compact, count + short "Buy" ================= */
     .bundle-sticky-bar {
       display: none;
       position: sticky; bottom: 12px; z-index: 20; margin-top: 12px;
-      background: #1a1438; border: 1px solid #ff9a3c; border-radius: 14px;
-      padding: 14px 18px; justify-content: space-between; align-items: center;
-      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.5); color: #ffffff; font-size: 13px; font-weight: 600;
+      background: var(--card, #1a1438); border: 1.5px solid #2fb35c; border-radius: 12px;
+      padding: 10px 14px; justify-content: space-between; align-items: center;
+      box-shadow: 0 10px 24px -8px rgba(0,0,0,0.4); color: var(--text); font-size: 13px; font-weight: 600;
     }
     .bundle-buy-btn {
-      padding: 10px 20px; border-radius: 10px; border: none; font-weight: 700; font-size: 13px;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; cursor: pointer;
+      padding: 8px 22px; border-radius: 8px; border: none; font-weight: 700; font-size: 13px;
+      background: #2fb35c; color: #ffffff; cursor: pointer;
     }
     .bundle-buy-btn:disabled { opacity: 0.4; cursor: not-allowed; }
     @media (max-width: 480px) {
@@ -310,6 +331,13 @@ const comingSoonSubjects = [
       const buyBtn = document.getElementById('bundle-buy-btn');
       if (counter) counter.textContent = `${selectedBundleSlugs.length} of 3 selected`;
       if (buyBtn) buyBtn.disabled = selectedBundleSlugs.length !== 3;
+
+      // Toast the moment the 3rd item is picked — uses the site's existing
+      // toast system (already used elsewhere for payment-failed messages);
+      // falls back silently if it isn't available rather than alert()ing.
+      if (selectedBundleSlugs.length === 3 && window.showToast) {
+        window.showToast('3 selected — ready to buy', 'success');
+      }
     }
 
     function toggleBundleSelect(slug) {
@@ -676,7 +704,10 @@ const comingSoonSubjects = [
       const yoursWrap = targetRow.querySelector('.badge-yours-wrap');
       if (yoursWrap) yoursWrap.style.display = 'inline-block';
 
-      targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Intentionally NOT calling scrollIntoView() here — auto-scrolling
+      // the page on load felt jarring and was removed per feedback. The
+      // row-popular highlight styling above is enough to show which
+      // subject was intended.
     }
 
     // Boot
