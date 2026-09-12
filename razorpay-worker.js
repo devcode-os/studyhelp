@@ -196,7 +196,7 @@ async function createOrder(request, env) {
       .bind(user_id, user_id)
       .run();
 
-    // Already entitled AND still within the 45-day window? Don't let them pay twice.
+    // Already entitled AND still within the subject's access window? Don't let them pay twice.
     // Once expired, this correctly falls through and lets them buy again.
     const nowTs = Math.floor(Date.now() / 1000);
     const existing = await env.DB.prepare(
@@ -510,14 +510,14 @@ async function handleWebhook(request, env) {
     // access fresh from now. Always the subject's full access_days from time
     // of payment, no stacking on top of remaining time — matches the simple
     // "unlimited access for N days" pricing, not a top-up model. Most
-    // subjects are 45 days; access_days lets specific subjects (e.g.
+    // subjects are 90 days; access_days lets specific subjects (e.g.
     // previous-papers, sold as a longer-window product) differ per D1 row.
     const subjectRow = await env.DB.prepare(
       "SELECT access_days FROM subjects WHERE id = ?"
     )
       .bind(order.subject_id)
       .first();
-    const accessDays = (subjectRow && subjectRow.access_days) || 45;
+    const accessDays = (subjectRow && subjectRow.access_days) || 90;
     const ACCESS_DURATION_SECONDS = accessDays * 24 * 60 * 60;
     const expiresAt = Math.floor(Date.now() / 1000) + ACCESS_DURATION_SECONDS;
 
@@ -588,7 +588,7 @@ async function checkAccess(request, env) {
   )
     .bind(subject_id)
     .first();
-  const totalAccessDays = (subjectRow && subjectRow.access_days) || 45;
+  const totalAccessDays = (subjectRow && subjectRow.access_days) || 90;
 
   if (!entitlement) {
     return json({ unlocked: false, expires_at: null, total_access_days: totalAccessDays });
@@ -2260,7 +2260,7 @@ async function adminGrant(request, env) {
       return jsonAuth({ error: "user_id, subject_id, and reason are all required" }, 400);
     }
 
-    const days = Number(duration_days) || 45;
+    const days = Number(duration_days) || 90;
     if (days < 1 || days > 365) {
       return jsonAuth({ error: "duration_days must be between 1 and 365" }, 400);
     }
@@ -2484,7 +2484,13 @@ async function getChapterAnswers(request, env) {
     .first();
 
   if (!entitlement) {
-    return jsonAuth({ error: "This subject is not currently unlocked on your account. Purchase for 45 days of unlimited access.", locked: true }, 403);
+    const subjectRow = await env.DB.prepare(
+      "SELECT access_days FROM subjects WHERE id = ?"
+    )
+      .bind(chapter.subject_id)
+      .first();
+    const accessDays = (subjectRow && subjectRow.access_days) || 90;
+    return jsonAuth({ error: `This subject is not currently unlocked on your account. Purchase for ${accessDays} days of unlimited access.`, locked: true }, 403);
   }
 
   // answers_json is already a JSON string in D1 — parse then re-send as real JSON
@@ -2553,7 +2559,13 @@ async function getTheoryContent(request, env) {
     .first();
 
   if (!entitlement) {
-    return jsonAuth({ error: "This subject is not currently unlocked on your account. Purchase for 45 days of unlimited access.", locked: true }, 403);
+    const subjectRow = await env.DB.prepare(
+      "SELECT access_days FROM subjects WHERE id = ?"
+    )
+      .bind(chapter.subject_id)
+      .first();
+    const accessDays = (subjectRow && subjectRow.access_days) || 90;
+    return jsonAuth({ error: `This subject is not currently unlocked on your account. Purchase for ${accessDays} days of unlimited access.`, locked: true }, 403);
   }
 
   // concepts_json is already a JSON string in D1 — parse then re-send as real JSON
@@ -2634,7 +2646,7 @@ async function getSingleAnswer(request, env) {
     }
   }
 
-  // 1. Logged in AND purchased this subject (within the 45-day window) ->
+  // 1. Logged in AND purchased this subject (within the access window) ->
   // always unlimited, no counting at all. Once expired, this correctly
   // falls through to the free-click budget below like any unpurchased user.
   if (user) {
@@ -2707,9 +2719,15 @@ async function getSingleAnswer(request, env) {
   const newCount = newCountRow.count;
 
   if (newCount > dailyLimit) {
+    const subjectRow = await env.DB.prepare(
+      "SELECT access_days FROM subjects WHERE id = ?"
+    )
+      .bind(chapter.subject_id)
+      .first();
+    const accessDays = (subjectRow && subjectRow.access_days) || 90;
     return jsonAuth(
       {
-        error: `You've reached today's ${dailyLimit} free answers for this subject. Purchase for 45 days of unlimited access, or come back tomorrow.`,
+        error: `You've reached today's ${dailyLimit} free answers for this subject. Purchase for ${accessDays} days of unlimited access, or come back tomorrow.`,
         locked: true,
         limitReached: true,
         remaining: 0,
