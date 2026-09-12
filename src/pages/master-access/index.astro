@@ -102,12 +102,14 @@
         <div class="tab" data-tab="grants">Manual Grants</div>
         <div class="tab" data-tab="search">Search</div>
         <div class="tab" data-tab="pricing">Subject Pricing</div>
+        <div class="tab" data-tab="loggedin">Logged In</div>
       </div>
 
       <div id="tab-users"></div>
       <div id="tab-grants" style="display:none"></div>
       <div id="tab-search" style="display:none"></div>
       <div id="tab-pricing" style="display:none"></div>
+      <div id="tab-loggedin" style="display:none"></div>
     </div>
   </div>
 
@@ -182,12 +184,13 @@
       tabEl.onclick = () => {
         document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
         tabEl.classList.add("active");
-        ["users", "grants", "search", "pricing"].forEach((name) => {
+        ["users", "grants", "search", "pricing", "loggedin"].forEach((name) => {
           $("tab-" + name).style.display = name === tabEl.dataset.tab ? "block" : "none";
         });
         if (tabEl.dataset.tab === "grants") loadManualGrants();
         if (tabEl.dataset.tab === "users") loadUsers();
         if (tabEl.dataset.tab === "pricing") loadSubjectPricing();
+        if (tabEl.dataset.tab === "loggedin") loadLoggedInUsers();
       };
     });
 
@@ -292,6 +295,44 @@
       `;
 
       document.querySelectorAll("#tab-grants .user-row").forEach((row) => {
+        row.onclick = () => goToSearchFor(row.dataset.phone);
+      });
+    }
+
+    // ---------- Tab: Logged In / Active Now ----------
+    async function loadLoggedInUsers() {
+      $("tab-loggedin").innerHTML = `<div class="card"><div class="card-body"><span class="spinner"></span> Loading...</div></div>`;
+      const { ok, data } = await api("/master-access/active-users?window_minutes=5");
+      if (!ok) { $("tab-loggedin").innerHTML = `<div class="card"><div class="card-body err">${esc(data.error || "Failed to load")}</div></div>`; return; }
+
+      const rows = (data.active_users || []).map((u) => {
+        const minsAgo = Math.max(0, Math.round((Date.now() / 1000 - u.last_seen_at) / 60));
+        return `
+          <tr class="user-row" data-phone="${esc(u.phone)}">
+            <td><strong>${esc(u.name || "(no name)")}</strong><div class="muted">${esc(u.phone)}</div></td>
+            <td><span class="badge active">${minsAgo === 0 ? "just now" : minsAgo + "m ago"}</span></td>
+          </tr>`;
+      }).join("");
+
+      $("tab-loggedin").innerHTML = `
+        <div class="card" style="margin-bottom:14px">
+          <div class="card-body">
+            <div style="display:flex; gap:24px; flex-wrap:wrap">
+              <div><div class="muted" style="font-size:12px">Currently logged in (any valid session)</div><div style="font-size:22px; font-weight:700">${data.logged_in_count}</div></div>
+              <div><div class="muted" style="font-size:12px">Active in last ${data.active_window_minutes} min</div><div style="font-size:22px; font-weight:700">${data.active_count}</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h4 class="section-label">${(data.active_users || []).length} user${(data.active_users || []).length === 1 ? "" : "s"} active in the last ${data.active_window_minutes} minutes — click a row for full details</h4>
+          <table>
+            <thead><tr><th>User</th><th>Last seen</th></tr></thead>
+            <tbody>${rows || `<tr><td colspan="2" class="muted" style="padding:16px">No one active in this window.</td></tr>`}</tbody>
+          </table>
+        </div>
+      `;
+
+      document.querySelectorAll("#tab-loggedin .user-row").forEach((row) => {
         row.onclick = () => goToSearchFor(row.dataset.phone);
       });
     }

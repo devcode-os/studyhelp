@@ -40,7 +40,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -127,6 +127,9 @@ export default {
     }
     if (url.pathname === "/master-access/manual-grants" && request.method === "GET") {
       return adminManualGrants(request, env);
+    }
+    if (url.pathname === "/master-access/active-users" && request.method === "GET") {
+      return adminActiveUsers(request, env);
     }
     if (url.pathname === "/master-access/grant" && request.method === "POST") {
       return adminGrant(request, env);
@@ -1579,7 +1582,7 @@ async function getSessionState(request, env) {
   for (const token of tokens) {
     const tokenHash = await sha256Hex(token);
     const session = await env.DB.prepare(
-      "SELECT user_id, expires_at, revoked_reason FROM login_sessions WHERE session_token_hash = ?"
+      "SELECT user_id, expires_at, revoked_reason, last_seen_at FROM login_sessions WHERE session_token_hash = ?"
     )
       .bind(tokenHash)
       .first();
@@ -1599,7 +1602,25 @@ async function getSessionState(request, env) {
       .bind(session.user_id)
       .first();
 
-    if (user) return { user, reason: null };
+    if (user) {
+      // "Active now" tracking (throttled write): only touch last_seen_at if
+      // it's unset or more than 2 minutes stale, so a chatty client hitting
+      // /me or content endpoints repeatedly doesn't turn into a D1 write on
+      // every single request. 2-minute granularity is plenty for an
+      // "active in the last N minutes" admin stat — no need for per-request
+      // precision here.
+      const nowTs = Math.floor(Date.now() / 1000);
+      if (!session.last_seen_at || nowTs - session.last_seen_at > 120) {
+        // Fire-and-forget: don't block the response on this write, and
+        // don't fail the whole request if it errors — this is a
+        // best-effort admin stat, not something correctness depends on.
+        env.DB.prepare("UPDATE login_sessions SET last_seen_at = ? WHERE session_token_hash = ?")
+          .bind(nowTs, tokenHash)
+          .run()
+          .catch(() => {});
+      }
+      return { user, reason: null };
+    }
   }
 
   return { user: null, reason: fallbackReason };
@@ -1807,6 +1828,50 @@ async function adminManualGrants(request, env) {
   }));
 
   return jsonAuth({ grants: results });
+}
+
+// "Active now" admin stat. Two numbers, both from login_sessions:
+// - "logged in": any valid (unexpired, unrevoked) session — could be
+//   someone who logged in weeks ago and never came back, since sessions
+//   are 30 days.
+// - "active in last N minutes": sessions with a recent last_seen_at,
+//   which getSessionState() updates (throttled to once per 2 min) on
+//   every authenticated request. This is the real "browsing right now"
+//   signal — "logged in" alone cannot tell the two apart.
+// window_minutes query param controls the "active" cutoff; defaults to 5.
+async function adminActiveUsers(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const url = new URL(request.url);
+  const windowMinutes = Math.max(1, Math.min(1440, Number(url.searchParams.get("window_minutes")) || 5));
+  const nowTs = Math.floor(Date.now() / 1000);
+  const activeSince = nowTs - windowMinutes * 60;
+
+  const loggedInCountRow = await env.DB.prepare(
+    `SELECT COUNT(DISTINCT user_id) AS c FROM login_sessions
+     WHERE expires_at > ? AND revoked_reason IS NULL`
+  )
+    .bind(nowTs)
+    .first();
+
+  const activeUsers = await env.DB.prepare(
+    `SELECT DISTINCT u.id, u.name, u.phone, ls.last_seen_at
+     FROM login_sessions ls
+     JOIN users u ON u.id = ls.user_id
+     WHERE ls.expires_at > ? AND ls.revoked_reason IS NULL AND ls.last_seen_at > ?
+     ORDER BY ls.last_seen_at DESC`
+  )
+    .bind(nowTs, activeSince)
+    .all();
+
+  return jsonAuth({
+    logged_in_count: loggedInCountRow?.c || 0,
+    active_count: (activeUsers.results || []).length,
+    active_window_minutes: windowMinutes,
+    active_users: activeUsers.results || [],
+  });
 }
 
 async function adminSearch(request, env) {
