@@ -227,6 +227,39 @@ const iconMap = {
   <script define:vars={{ subjects }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
+    // Show immediately (don't wait on session/ownership check) so the user
+    // sees confirmation the instant the page loads, right after redirecting
+    // back from a successful bundle payment. Uses the same fixed-bottom
+    // #toast-container Layout.astro already uses for other messages (e.g.
+    // "Payment failed") — never falls back to alert(), which is a blocking
+    // native dialog and not how this app surfaces these messages anywhere
+    // else. Cleaning the URL now also prevents the toast from reappearing
+    // on a manual refresh of this page.
+    let bundleLoadingToast = null;
+    const params = new URLSearchParams(window.location.search);
+    const showedBundleToast = params.get('bundle_success') === '1';
+    if (showedBundleToast) {
+      const message = 'Bundle purchased successfully — loading your subjects…';
+      if (window.showToast) {
+        window.showToast(message, 'success');
+      } else {
+        const container = document.getElementById('toast-container');
+        if (container) {
+          bundleLoadingToast = document.createElement('div');
+          bundleLoadingToast.textContent = message;
+          bundleLoadingToast.style.cssText = `
+            background: linear-gradient(90deg, #2fbf71, #3fd88a);
+            color: #063a1e; font-weight: 700; font-size: 13px;
+            padding: 12px 18px; border-radius: 10px;
+            box-shadow: 0 8px 20px -6px rgba(0,0,0,0.4);
+            max-width: 360px; text-align: center;
+          `;
+          container.appendChild(bundleLoadingToast);
+        }
+      }
+      window.history.replaceState({}, '', '/subjects/');
+    }
+
     // Session is fetched ONCE per page by Header.astro (runs synchronously
     // inline, before this script) and exposed on window.__shSessionPromise.
     // Reusing it here avoids a duplicate /me call on every /subjects/ load.
@@ -260,23 +293,14 @@ const iconMap = {
             .catch(() => {})
         )
       );
-    });
 
-    // After a bundle purchase, the Worker's Razorpay callback (and the
-    // Plans page's web-checkout handler) redirect here with this flag —
-    // the ownership check above already runs on this same page load and
-    // will naturally show the 3 newly-bought subjects as "Purchased", so
-    // this only needs to surface a confirmation and clean the URL.
-    (function showBundleSuccessIfFlagged() {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('bundle_success') !== '1') return;
-
-      if (window.showToast) {
-        window.showToast('Bundle purchased — your 3 subjects are now unlocked.', 'success');
-      } else {
-        alert('Bundle purchased — your 3 subjects are now unlocked.');
+      // The 3 newly-bought subjects now show "Purchased" above — the
+      // "loading…" toast has done its job, remove it (only relevant for
+      // the manual-toast fallback path; window.showToast auto-dismisses
+      // on its own).
+      if (bundleLoadingToast) {
+        bundleLoadingToast.remove();
       }
-      window.history.replaceState({}, '', '/subjects/');
-    })();
+    });
   </script>
 </Layout>
