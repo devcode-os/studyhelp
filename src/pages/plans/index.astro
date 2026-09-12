@@ -47,8 +47,8 @@ const comingSoonSubjects = [
 
       <!-- BUNDLE FEATURE: mode toggle (design-review only, no backend wiring yet) -->
       <div style="display:flex; gap:8px; margin-bottom:14px;" id="mode-toggle">
-        <button id="mode-single-btn" class="mode-btn mode-btn-active" onclick="setBundleMode(false)">Buy Single</button>
-        <button id="mode-bundle-btn" class="mode-btn" onclick="setBundleMode(true)">Bundle: Pick any 3 — ₹399</button>
+        <button id="mode-single-btn" class="mode-btn mode-btn-active" type="button">Buy Single</button>
+        <button id="mode-bundle-btn" class="mode-btn" type="button">Bundle: Pick any 3 — ₹399</button>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px;" class="plan-grid" id="real-plan-grid">
@@ -58,7 +58,7 @@ const comingSoonSubjects = [
       <!-- BUNDLE FEATURE: sticky bottom bar, appears only in bundle mode -->
       <div id="bundle-sticky-bar" style="display:none;">
         <span id="bundle-counter">0 of 3 selected</span>
-        <button id="bundle-buy-btn" disabled onclick="onBuyBundleClick()">Buy Bundle — ₹399</button>
+        <button id="bundle-buy-btn" disabled type="button">Buy Bundle — ₹399</button>
       </div>
     </div>
 
@@ -260,6 +260,15 @@ const comingSoonSubjects = [
       alert('Bundle selected: ' + selectedBundleSlugs.join(', ') + '\n(Checkout not wired yet — design review only)');
     }
 
+    // Wired via addEventListener (not inline onclick=""), because this
+    // <script> block is compiled as an ES module by Astro (define:vars) —
+    // top-level function declarations are module-scoped, NOT attached to
+    // window, so inline onclick="fnName()" HTML attributes silently fail
+    // to find them. This was the actual cause of the toggle not working.
+    document.getElementById('mode-single-btn').addEventListener('click', () => setBundleMode(false));
+    document.getElementById('mode-bundle-btn').addEventListener('click', () => setBundleMode(true));
+    document.getElementById('bundle-buy-btn').addEventListener('click', onBuyBundleClick);
+
     // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
     // from a unix-seconds expires_at timestamp.
     function formatDaysLeft(expiresAtSeconds) {
@@ -395,15 +404,15 @@ const comingSoonSubjects = [
       // need to show/hide the existing badge, never rewrite its text.
       const yoursLabel = s.category === 'papers' ? '&#10003; your paper set' : '&#10003; your subject';
       return `
-        <div id="plan-card-${s.slug}" data-slug="${s.slug}" data-popular="${s.popular ? 'true' : 'false'}" class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:${s.popular ? '2px solid #ff9a3c' : '1px solid rgba(255,255,255,0.08)'}; border-radius:12px; padding:1.25rem; color:#ffffff; transition:box-shadow 0.2s, border-color 0.2s;">
+        <div id="plan-card-${s.slug}" data-slug="${s.slug}" data-popular="${s.popular ? 'true' : 'false'}" class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:${s.popular ? '2px solid #ff9a3c' : '1px solid rgba(255,255,255,0.08)'}; border-radius:10px; padding:0.85rem; color:#ffffff; transition:box-shadow 0.2s, border-color 0.2s;">
           <div class="bundle-check"></div>
           ${popularBadge}
-          <span class="badge-yours" style="font-size:12px; background:rgba(93, 224, 192, 0.15); color:#5ce0c0; font-weight:700; padding:2px 10px; border-radius:6px; display:none;">${yoursLabel}</span>
-          <div class="card-title" style="font-weight:700; font-size:15px; color:#ffffff; ${s.popular ? 'margin-top:10px;' : 'margin-top:26px;'}">${s.titleNative}</div>
-          <div style="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 4px;">${s.titleEnglish || ''}</div>
-          <div style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px;">${s.accessDays} days unlimited access</div>
-          <div style="font-size:22px; font-weight:700; margin-bottom:12px; color:#ffcb8a;" class="plan-price">Rs. ${s.price}</div>
-          <button data-subject="${s.slug}" data-price="${s.price}" class="buy-btn" style="width:100%; font-size:13px; font-weight:700; padding:8px; border:none; border-radius:8px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; cursor:pointer;">
+          <span class="badge-yours" style="font-size:11px; background:rgba(93, 224, 192, 0.15); color:#5ce0c0; font-weight:700; padding:2px 8px; border-radius:6px; display:none;">${yoursLabel}</span>
+          <div class="card-title" style="font-weight:700; font-size:13.5px; color:#ffffff; ${s.popular ? 'margin-top:6px;' : 'margin-top:16px;'}">${s.titleNative}</div>
+          <div style="font-size:11.5px; color:rgba(255,255,255,0.6); margin:2px 0 3px;">${s.titleEnglish || ''}</div>
+          <div style="font-size:10px; color:rgba(255,255,255,0.5); margin-bottom:6px;">${s.accessDays} days unlimited access</div>
+          <div style="font-size:17px; font-weight:700; margin-bottom:8px; color:#ffcb8a;" class="plan-price">Rs. ${s.price}</div>
+          <button data-subject="${s.slug}" data-price="${s.price}" class="buy-btn" style="width:100%; font-size:12px; font-weight:700; padding:6px; border:none; border-radius:7px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; cursor:pointer;">
             Buy now
           </button>
         </div>
