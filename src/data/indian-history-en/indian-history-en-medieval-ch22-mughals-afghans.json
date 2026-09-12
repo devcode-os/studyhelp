@@ -1,0 +1,931 @@
+{
+  "slug": "indian-history-en-medieval-ch22-mughals-afghans",
+  "chapterNumber": 22,
+  "title": "Mughals and Afghans (1525–1555)",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Babur belonged to which Central Asian ruling house?",
+      "options": {
+        "a": "Uzbek",
+        "b": "Timurid",
+        "c": "Ottoman",
+        "d": "Safavid"
+      },
+      "answer": "b",
+      "a": "Timurid",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which ruler united Iran and Turan under one rule after the disintegration of the Mongol empire?",
+      "options": {
+        "a": "Shah Ismail",
+        "b": "Timur",
+        "c": "Shahrukh Mirza",
+        "d": "Shaibani Khan"
+      },
+      "answer": "b",
+      "a": "Timur",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In whose time did Samarqand and Herat become cultural centres of West Asia?",
+      "options": {
+        "a": "Shahrukh Mirza",
+        "b": "Shaibani Khan",
+        "c": "Babur",
+        "d": "Timur"
+      },
+      "answer": "a",
+      "a": "Shahrukh Mirza",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the decline of Timurid power in the late fifteenth century:\n(I) The Timurid tradition of partitioning the empire weakened it\n(II) The Uzbeks thrust into Trans-Oxiana from the north\n(III) The Safavid dynasty began to dominate Iran from the west\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I, II and III",
+        "c": "I only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which sect of Islam did the Safavid dynasty support?",
+      "options": {
+        "a": "Shiite",
+        "b": "Sufi",
+        "c": "Ismaili",
+        "d": "Sunni"
+      },
+      "answer": "a",
+      "a": "Shiite",
+      "e": "The Uzbeks were Sunnis, so the Uzbek-Safavid political conflict was embittered by this sectarian divide.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who defeated and killed the Uzbek chief Shaibani Khan near Merv in 1510?",
+      "options": {
+        "a": "Shah Ismail",
+        "b": "The Ottoman sultan",
+        "c": "Shahrukh Mirza",
+        "d": "Babur"
+      },
+      "answer": "a",
+      "a": "Shah Ismail",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did Babur succeed to Farghana?",
+      "options": {
+        "a": "1510",
+        "b": "1504",
+        "c": "1494",
+        "d": "1514"
+      },
+      "answer": "c",
+      "a": "1494",
+      "e": "He was twelve years old at the time.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about Babur's early career:\n(I) He conquered Kabul in 1504\n(II) He recovered Samarqand with Iranian military help but chafed under Iranian control\n(III) Shah Ismail was defeated by the Ottoman sultan in 1514, leaving the Uzbeks masters of Trans-Oxiana\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who occupied Bhira after Babur returned to Kabul following its capture in 1518-19?",
+      "options": {
+        "a": "Ibrahim Lodi",
+        "b": "Rana Sanga",
+        "c": "Daulat Khan Lodi",
+        "d": "Shaibani Khan"
+      },
+      "answer": "c",
+      "a": "Daulat Khan Lodi",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Daulat Khan Lodi was the governor of which region?",
+      "options": {
+        "a": "Malwa",
+        "b": "Sindh",
+        "c": "Punjab",
+        "d": "Bihar"
+      },
+      "answer": "c",
+      "a": "Punjab",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who succeeded Sikandar Lodi as ruler of Delhi?",
+      "options": {
+        "a": "Mahmud Lodi",
+        "b": "Ibrahim Lodi",
+        "c": "Ismail Lodi",
+        "d": "Daulat Khan Lodi"
+      },
+      "answer": "b",
+      "a": "Ibrahim Lodi",
+      "e": "Sikandar Lodi died in 1517.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the invitations extended to Babur before his invasion of India:\n(I) Daulat Khan Lodi's son, Dilawar Khan, led an embassy inviting Babur to displace Ibrahim Lodi\n(II) A messenger from Rana Sanga also arrived around the same time inviting Babur to invade India\nWhich of the above is/are correct?",
+      "options": {
+        "a": "Neither I nor II",
+        "b": "Both I and II",
+        "c": "II only",
+        "d": "I only"
+      },
+      "answer": "b",
+      "a": "Both I and II",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Within how many weeks of crossing the Indus in 1525 did Babur become master of the Punjab?",
+      "options": {
+        "a": "Ten weeks",
+        "b": "Three weeks",
+        "c": "One week",
+        "d": "Six weeks"
+      },
+      "answer": "b",
+      "a": "Three weeks",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Battle of Panipat fought?",
+      "options": {
+        "a": "1527",
+        "b": "1529",
+        "c": "1526",
+        "d": "1525"
+      },
+      "answer": "c",
+      "a": "1526",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs regarding the Battle of Panipat:\n(I) Babur's device of lashing carts together – called a Rumi (Ottoman) device\n(II) Ibrahim Lodi's forces – estimated at 100,000 men and 1000 elephants\n(III) Babur's force crossing the Indus – 12,000 men\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "I, II and III",
+        "c": "I only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who were the two Ottoman master-gunners in Babur's service at Panipat?",
+      "options": {
+        "a": "Ali Quli and Mustafa",
+        "b": "Ustad Ali and Mustafa",
+        "c": "Mustafa and Rumi Khan",
+        "d": "Rumi Khan and Ustad Ali"
+      },
+      "answer": "b",
+      "a": "Ustad Ali and Mustafa",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to the account, to what did Babur give a large part of the credit for his victory at Panipat?",
+      "options": {
+        "a": "His bowmen",
+        "b": "Ibrahim Lodi's hesitation",
+        "c": "His cavalry alone",
+        "d": "His elephants"
+      },
+      "answer": "a",
+      "a": "His bowmen",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Ibrahim Lodi was killed in the Battle of Panipat along with how many of his men, as estimated in the account?",
+      "options": {
+        "a": "More than 10,000",
+        "b": "More than 20,000",
+        "c": "More than 5,000",
+        "d": "More than 15,000"
+      },
+      "answer": "d",
+      "a": "More than 15,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is described as the real importance of the Battle of Panipat, rather than being politically decisive by itself?",
+      "options": {
+        "a": "It secured Bengal for Babur",
+        "b": "It brought all of Rajasthan under Mughal control",
+        "c": "It opened a new phase in the struggle for domination in north India",
+        "d": "It ended Mughal-Afghan conflict permanently"
+      },
+      "answer": "c",
+      "a": "It opened a new phase in the struggle for domination in north India",
+      "e": "Babur still had to fight Rana Sanga and the eastern Afghans before consolidating his hold on the region.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Battle of Khanwa fought?",
+      "options": {
+        "a": "1526",
+        "b": "1527",
+        "c": "1529",
+        "d": "1530"
+      },
+      "answer": "b",
+      "a": "1527",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Against whom did Babur fight at the Battle of Khanwa?",
+      "options": {
+        "a": "Ibrahim Lodi",
+        "b": "Sher Khan",
+        "c": "Bahadur Shah",
+        "d": "Rana Sanga"
+      },
+      "answer": "d",
+      "a": "Rana Sanga",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the Battle of Khanwa:\n(I) Babur declared the war against Rana Sanga to be a jihad\n(II) Babur emptied wine jars and banned the sale of wine to demonstrate his piety before the battle\n(III) Babur assumed the title of ghazi after the victory\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who was the ruler of Mewat that joined Rana Sanga against Babur?",
+      "options": {
+        "a": "Mahmud Lodi",
+        "b": "Silhadi",
+        "c": "Medini Rai",
+        "d": "Hasan Khan Mewati"
+      },
+      "answer": "d",
+      "a": "Hasan Khan Mewati",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which younger brother of Ibrahim Lodi rallied to Rana Sanga in the hope of regaining the throne of Delhi?",
+      "options": {
+        "a": "Islam Shah",
+        "b": "Sikandar Lodi",
+        "c": "Daulat Khan Lodi",
+        "d": "Mahmud Lodi"
+      },
+      "answer": "d",
+      "a": "Mahmud Lodi",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What happened to Rana Sanga after his defeat and escape from the Battle of Khanwa?",
+      "options": {
+        "a": "He was poisoned by his own nobles",
+        "b": "He was captured by Babur and executed",
+        "c": "He fled to Mewar and ruled peacefully thereafter",
+        "d": "He allied with Babur against the Afghans"
+      },
+      "answer": "a",
+      "a": "He was poisoned by his own nobles",
+      "e": "His nobles considered his plan to renew the conflict with Babur to be dangerous and suicidal.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At which river crossing did Babur face the combined forces of the Afghans and Nusrat Shah of Bengal in 1529?",
+      "options": {
+        "a": "Ghagra",
+        "b": "Karmnasa",
+        "c": "Indus",
+        "d": "Chenab"
+      },
+      "answer": "a",
+      "a": "Ghagra",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who was the ruler of Bengal that backed the Afghan sardars against Babur, and had married a daughter of Ibrahim Lodi?",
+      "options": {
+        "a": "Hasan Khan Mewati",
+        "b": "Sher Khan",
+        "c": "Mahmud Lodi",
+        "d": "Nusrat Shah"
+      },
+      "answer": "d",
+      "a": "Nusrat Shah",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Babur died while on his way to which city?",
+      "options": {
+        "a": "Agra",
+        "b": "Qandhar",
+        "c": "Delhi",
+        "d": "Kabul"
+      },
+      "answer": "d",
+      "a": "Kabul",
+      "e": "He died near Lahore while travelling towards Kabul, shortly after returning from the Ghagra campaign.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the significance of Babur's advent into India:\n(I) For the first time since the downfall of the Kushan empire, Kabul and Qandhar became integral parts of an empire comprising north India\n(II) His control of Kabul and Qandhar strengthened India's foreign trade with China and the Mediterranean\n(III) He smashed the power of the Lodis and the Rajput confederacy led by Rana Sanga\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I, II and III",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What effect did Babur's introduction of a skilled combination of artillery and cavalry have on Indian polity, according to the account?",
+      "options": {
+        "a": "It ended the use of elephants in warfare",
+        "b": "It favoured rulers with large resources and ended the era of small kingdoms",
+        "c": "It made cavalry warfare obsolete",
+        "d": "It had no lasting political effect"
+      },
+      "answer": "b",
+      "a": "It favoured rulers with large resources and ended the era of small kingdoms",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the title of Babur's famous memoirs?",
+      "options": {
+        "a": "Humayun-nama",
+        "b": "Akbarnama",
+        "c": "Ain-i-Babri",
+        "d": "Tuzuk-i-Baburi"
+      },
+      "answer": "d",
+      "a": "Tuzuk-i-Baburi",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did Humayun succeed Babur?",
+      "options": {
+        "a": "1526",
+        "b": "1540",
+        "c": "1530",
+        "d": "1527"
+      },
+      "answer": "c",
+      "a": "1530",
+      "e": "Humayun ascended the throne at the young age of 23.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which of Humayun's brothers was given charge of Kabul and Qandhar, and later also occupied Lahore and Multan?",
+      "options": {
+        "a": "Askari",
+        "b": "Hindal",
+        "c": "Kamran",
+        "d": "Mahmud"
+      },
+      "answer": "c",
+      "a": "Kamran",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding Humayun's early campaigns:\n(I) In 1532, Humayun defeated Afghan forces at Dadrah\n(II) He then besieged the fort of Chunar, held by Sher Khan\n(III) Sher Khan was allowed to retain Chunar after sending one of his sons to Humayun as a hostage\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I, II and III",
+        "b": "I only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "a",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Chunar was described in the account as the gateway to which region?",
+      "options": {
+        "a": "Eastern India",
+        "b": "Rajasthan",
+        "c": "Western India",
+        "d": "Gujarat"
+      },
+      "answer": "a",
+      "a": "Eastern India",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did Bahadur Shah ascend the throne of Gujarat?",
+      "options": {
+        "a": "1526",
+        "b": "1530",
+        "c": "1535",
+        "d": "1520"
+      },
+      "answer": "a",
+      "a": "1526",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What name did Humayun give to the new city he built at Delhi?",
+      "options": {
+        "a": "Dinpanah",
+        "b": "Purana Qila",
+        "c": "Fatehpur",
+        "d": "Shergarh"
+      },
+      "answer": "a",
+      "a": "Dinpanah",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding Humayun's Gujarat campaign:\n(I) Bahadur Shah abandoned Chittor and fortified himself at Mandsor, then fled to Mandu after spiking his guns\n(II) Humayun was the 41st man to scale the walls of the fort of Champaner\n(III) Bahadur Shah eventually fled to Kathiawar\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I only"
+      },
+      "answer": "c",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "After the Gujarat victory, Humayun placed the province under the command of which brother?",
+      "options": {
+        "a": "Hindal",
+        "b": "Kamran",
+        "c": "Mahmud",
+        "d": "Askari"
+      },
+      "answer": "d",
+      "a": "Askari",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How did Bahadur Shah of Gujarat eventually die?",
+      "options": {
+        "a": "He died of illness at Ahmedabad",
+        "b": "He was poisoned by his own nobles",
+        "c": "He drowned in a scuffle with the Portuguese",
+        "d": "He was killed in battle against Humayun"
+      },
+      "answer": "c",
+      "a": "He drowned in a scuffle with the Portuguese",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Sher Khan's original name?",
+      "options": {
+        "a": "Islam",
+        "b": "Hasan",
+        "c": "Farid",
+        "d": "Salim"
+      },
+      "answer": "c",
+      "a": "Farid",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the rise of Sher Khan:\n(I) He acquired administrative experience managing his father's jagir at Jaunpur\n(II) He received the title \"Sher Khan\" for killing a tiger, or for services rendered\n(III) He emerged as the master of Bihar in all but name even before the death of Babur\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I, II and III",
+        "c": "I and II only",
+        "d": "I only"
+      },
+      "answer": "b",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many elephants did Sher Khan's army reportedly include when he defeated the king of Bengal and extracted an indemnity?",
+      "options": {
+        "a": "2000",
+        "b": "800",
+        "c": "1200",
+        "d": "500"
+      },
+      "answer": "c",
+      "a": "1200",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which fort did Sher Khan capture by treachery, using it to keep his family in safety, before invading Bengal a second time?",
+      "options": {
+        "a": "Kalinjar",
+        "b": "Chunar",
+        "c": "Gaur",
+        "d": "Rohtas"
+      },
+      "answer": "d",
+      "a": "Rohtas",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which battle did Humayun suffer a disastrous defeat to Sher Khan in March 1539?",
+      "options": {
+        "a": "Khanwa",
+        "b": "Panipat",
+        "c": "Kanauj",
+        "d": "Chausa"
+      },
+      "answer": "d",
+      "a": "Chausa",
+      "e": "About 7000 Mughal soldiers and many prominent nobles were killed; Humayun escaped by swimming across the river with a water-carrier's help.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which battle of May 1540 did Sher Khan decisively defeat Humayun, ending Mughal rule in north India for the time being?",
+      "options": {
+        "a": "Ghagra",
+        "b": "Chausa",
+        "c": "Samel",
+        "d": "Kanauj"
+      },
+      "answer": "d",
+      "a": "Kanauj",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At whose court did Humayun ultimately take shelter, with whose help he recaptured Qandhar and Kabul in 1545?",
+      "options": {
+        "a": "The ruler of Sindh",
+        "b": "The Iranian king",
+        "c": "The Uzbek khan",
+        "d": "The Ottoman sultan"
+      },
+      "answer": "b",
+      "a": "The Iranian king",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did Humayun recover Delhi following the breakup of the Sur empire?",
+      "options": {
+        "a": "1550",
+        "b": "1555",
+        "c": "1545",
+        "d": "1556"
+      },
+      "answer": "b",
+      "a": "1555",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How did Humayun die shortly after recovering Delhi?",
+      "options": {
+        "a": "He died of illness while returning to Kabul",
+        "b": "He was killed in battle",
+        "c": "He died from a fall from the library building in his fort at Delhi",
+        "d": "He was poisoned by a noble"
+      },
+      "answer": "c",
+      "a": "He died from a fall from the library building in his fort at Delhi",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who was the powerful ruler of Marwar that Sher Shah confronted at the Battle of Samel?",
+      "options": {
+        "a": "Maldeo",
+        "b": "Biram Deb",
+        "c": "Kalyan Das",
+        "d": "Rana Sanga"
+      },
+      "answer": "a",
+      "a": "Maldeo",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Battle of Samel fought, between Ajmer and Jodhpur?",
+      "options": {
+        "a": "1547",
+        "b": "1542",
+        "c": "1544",
+        "d": "1540"
+      },
+      "answer": "c",
+      "a": "1544",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding the Battle of Samel:\n(I) Sher Shah dropped letters near Maldeo's camp addressed to Rajput commanders to sow suspicion\n(II) Some Rajput sardars, refusing to retreat, attacked Sher Shah's centre with a small force of about 10,000\n(III) Superior numbers and Afghan gunfire eventually defeated the Rajput charge\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I, II and III",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "I and II only"
+      },
+      "answer": "a",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where did Maldeo take shelter and eventually die after his defeat at Samel?",
+      "options": {
+        "a": "Jodhpur",
+        "b": "Ajmer",
+        "c": "Siwana",
+        "d": "Chittor"
+      },
+      "answer": "c",
+      "a": "Siwana",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Sher Shah died in 1545 during the siege of which fort, after a gun burst and severely injured him?",
+      "options": {
+        "a": "Chittor",
+        "b": "Rohtas",
+        "c": "Chunar",
+        "d": "Kalinjar"
+      },
+      "answer": "d",
+      "a": "Kalinjar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which imperial road did Sher Shah restore, running from the Indus to Sonargaon in Bengal?",
+      "options": {
+        "a": "The Delhi-Agra Road",
+        "b": "The Silk Road",
+        "c": "The Royal Road",
+        "d": "The Grand Trunk Road"
+      },
+      "answer": "d",
+      "a": "The Grand Trunk Road",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At what interval did Sher Shah build a sarai for the convenience of travellers on his roads?",
+      "options": {
+        "a": "Every kos",
+        "b": "Every ten kos",
+        "c": "Every two kos",
+        "d": "Every five kos"
+      },
+      "answer": "c",
+      "a": "Every two kos",
+      "e": "About eight km; some sarais developed into market-towns (qasbas) and also served as stages for the dak-chowki news service.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At how many places in his entire empire did Sher Shah permit customs duty to be levied on goods?",
+      "options": {
+        "a": "One",
+        "b": "Two",
+        "c": "Three",
+        "d": "Four"
+      },
+      "answer": "b",
+      "a": "Two",
+      "e": "At Sikrigali (Bengal-Bihar border) for Bengal goods, and at the Indus for goods from West and Central Asia.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What metals did Sher Shah's reformed coinage use in place of the earlier debased mixed-metal coins?",
+      "options": {
+        "a": "Gold and silver only",
+        "b": "Silver and copper only",
+        "c": "Gold only",
+        "d": "Gold, silver and copper"
+      },
+      "answer": "d",
+      "a": "Gold, silver and copper",
+      "e": "His silver rupee remained a standard coin for centuries afterward.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What fraction of the produce constituted the state's share of land revenue under Sher Shah's system?",
+      "options": {
+        "a": "One-half",
+        "b": "Two-thirds",
+        "c": "One-third",
+        "d": "One-fourth"
+      },
+      "answer": "c",
+      "a": "One-third",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the document called that recorded the area sown, crop type, and amount each peasant had to pay under Sher Shah?",
+      "options": {
+        "a": "Dagh",
+        "b": "Chehra",
+        "c": "Ray",
+        "d": "Patta"
+      },
+      "answer": "d",
+      "a": "Patta",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements regarding Sher Shah's land revenue system:\n(I) He insisted on measurement of the sown land rather than guesswork\n(II) A crop rate called \"ray\" laid down the state's share of different crop types\n(III) A cess of two and a half seers per bigha was levied to guard against famine\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I, II and III",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I and II only"
+      },
+      "answer": "a",
+      "a": "I, II and III",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the name of Sher Shah's system of recording a soldier's descriptive roll and branding his horse with the imperial sign?",
+      "options": {
+        "a": "Chehra system",
+        "b": "Dagh system",
+        "c": "Patta system",
+        "d": "Ray system"
+      },
+      "answer": "b",
+      "a": "Dagh system",
+      "e": "The soldier's own descriptive roll was called the chehra; Sher Shah is said to have borrowed the branding system from Alauddin Khalji's military reforms.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where did Sher Shah build his own tomb during his lifetime, regarded as a masterpiece of architecture?",
+      "options": {
+        "a": "Sasaram",
+        "b": "Chunar",
+        "c": "Delhi",
+        "d": "Agra"
+      },
+      "answer": "a",
+      "a": "Sasaram",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the surviving structure of the city Sher Shah built on the bank of the Yamuna near Delhi known as?",
+      "options": {
+        "a": "Dinpanah",
+        "b": "Purana Qila",
+        "c": "Agra Fort",
+        "d": "Red Fort"
+      },
+      "answer": "b",
+      "a": "Purana Qila",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Who succeeded Sher Shah as ruler of the Sur empire and ruled till 1553?",
+      "options": {
+        "a": "Hemu",
+        "b": "Islam Shah",
+        "c": "Adil Shah",
+        "d": "Mahmud Lodi"
+      },
+      "answer": "b",
+      "a": "Islam Shah",
+      "e": "Islam Shah codified the laws, curbed noble privileges, and tried to pay cash salaries to soldiers, though most reforms lapsed after his death.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which famous Hindi work was completed during Sher Shah's reign under his patronage?",
+      "options": {
+        "a": "Prithviraj Raso",
+        "b": "Padmavat",
+        "c": "Ramcharitmanas",
+        "d": "Kabir Bijak"
+      },
+      "answer": "b",
+      "a": "Padmavat",
+      "e": "Written by Malik Muhammad Jaisi.",
+      "table": null
+    }
+  ]
+}

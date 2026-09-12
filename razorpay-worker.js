@@ -1611,13 +1611,21 @@ async function getSessionState(request, env) {
       // precision here.
       const nowTs = Math.floor(Date.now() / 1000);
       if (!session.last_seen_at || nowTs - session.last_seen_at > 120) {
-        // Fire-and-forget: don't block the response on this write, and
-        // don't fail the whole request if it errors — this is a
-        // best-effort admin stat, not something correctness depends on.
-        env.DB.prepare("UPDATE login_sessions SET last_seen_at = ? WHERE session_token_hash = ?")
-          .bind(nowTs, tokenHash)
-          .run()
-          .catch(() => {});
+        // Awaited (not fire-and-forget): in Cloudflare Workers an
+        // un-awaited promise can be silently dropped if the isolate
+        // finishes the response before it resolves, which would make this
+        // stat quietly go stale. Awaiting guarantees the write actually
+        // happens, at the cost of one extra D1 round-trip — but only once
+        // every 2 minutes per session, so the added latency is negligible.
+        // Still wrapped in try/catch so a D1 hiccup here never breaks the
+        // actual session check this function exists to do.
+        try {
+          await env.DB.prepare("UPDATE login_sessions SET last_seen_at = ? WHERE session_token_hash = ?")
+            .bind(nowTs, tokenHash)
+            .run();
+        } catch (_err) {
+          // best-effort admin stat — a failed write here is not fatal
+        }
       }
       return { user, reason: null };
     }

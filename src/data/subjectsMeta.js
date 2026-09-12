@@ -32,6 +32,14 @@ export const subjectsMeta = {
     seoTitle: 'తెలంగాణ ఆర్థిక వ్యవస్థ MCQs',
     seoDescription: 'TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం తెలంగాణ ఆర్థిక వ్యవస్థ ప్రశ్నలు, అధ్యాయాల వారీగా',
   },
+
+  'indian-history-en': {
+  lang: 'en',
+  heading: 'Indian History (Ancient, Medieval and Modern)',
+  breadcrumb: 'Indian History',
+  seoTitle: 'Indian History MCQs',
+  seoDescription: 'UPSC, SSC, TSPSC, Telangana Police SI, Constable and other competitive exam preparation - Indian history questions, chapter by chapter',
+},
   'indian-polity-en': {
     lang: 'en',
     heading: 'Indian Polity',
