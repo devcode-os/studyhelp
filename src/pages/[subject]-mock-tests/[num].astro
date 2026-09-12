@@ -1152,6 +1152,16 @@ const isFreeMock = mock.mockNumber === 1;
     .mt-overlay {
       position: fixed;
       inset: 0;
+      /* Explicit dvh height (not just inset:0) — on some Android WebViews,
+         a fixed box with only inset:0 can pin against the STATIC viewport
+         (which includes the area the system nav bar occupies) rather than
+         the visually available one, leaving the true bottom edge sitting
+         behind the nav bar even with correct padding. 100dvh is the
+         viewport unit designed specifically to track the actual visible
+         area as browser/OS chrome shows or hides. 100vh kept as a fallback
+         for older browsers that don't support dvh at all. */
+      height: 100vh;
+      height: 100dvh;
       /* Applied HERE, on the position:fixed full-viewport container
          itself, not on .mt-topbar/.mt-footer individually — env()
          safe-area values were confirmed (via remote debugging) to
@@ -1161,9 +1171,14 @@ const isFreeMock = mock.mockNumber === 1;
          do. Padding the outer fixed box itself, which sits directly
          against the true viewport, is the reliable place for this to
          resolve. inset:0 keeps the background bleeding fully edge-to-
-         edge; this padding only insets the CONTENT within it. */
-      padding-top: env(safe-area-inset-top, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
+         edge; this padding only insets the CONTENT within it.
+         max(...) guarantees a small floor even where env() itself
+         resolves to 0px (e.g. viewport-fit=cover missing from the page's
+         meta viewport tag) — better a few px of unnecessary padding on a
+         device that didn't need it than a header/footer flush against
+         zero clearance on one that did. */
+      padding-top: max(env(safe-area-inset-top, 0px), 8px);
+      padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
       background: var(--bg);
       z-index: 200;
       display: none;
