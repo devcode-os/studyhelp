@@ -300,7 +300,7 @@ function formatMath(str) {
             <button type="button" id="lock-close" class="lock-close" aria-label="Close">
               <i class="ti ti-x" aria-hidden="true"></i>
             </button>
-            <p id="lock-message" class="lock-message">Purchase this subject for {meta.category === 'papers' ? 365 : 45} days of unlimited access.</p>
+            <p id="lock-message" class="lock-message">Purchase this {meta.category === 'papers' ? 'paper' : 'subject'} for {meta.category === 'papers' ? 365 : 45} days of unlimited access.</p>
             <a id="lock-action" href="/plans/" class="rt-btn rt-btn-accent-solid lock-action">View plans</a>
           </div>
         </div>
@@ -1975,6 +1975,12 @@ function formatMath(str) {
     // Worker/D1, this is display text only.
     let subjectAccessDays = isPapersSubject ? 365 : 45;
 
+    // Used in every "Purchase this ___" / "for this ___" lock message below
+    // so papers pages correctly say "paper" instead of the generic
+    // "subject" (which reads oddly for something like "Purchase this
+    // subject to unlock it" on an individual previous-paper page).
+    const unitWord = isPapersSubject ? 'paper' : 'subject';
+
     // ---------- Lazy entitlement check for premium toolbar features ----------
     // Only called when the student actually taps a premium feature (Reveal
     // all, Check my score, Filter, Jump) — NOT on page load. Reuses the
@@ -2069,7 +2075,7 @@ function formatMath(str) {
     }
     const LIMIT_STORAGE_KEY = `sh_limit_${subject}_${todayKey()}`;
     let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
-    const DAILY_LIMIT_MESSAGE = `You've reached today's 15 free answers for this subject. Purchase for ${isPapersSubject ? 365 : 45} days of unlimited access, or come back tomorrow.`;
+    const DAILY_LIMIT_MESSAGE = `You've reached today's 15 free answers for this ${unitWord}. Purchase for ${isPapersSubject ? 365 : 45} days of unlimited access, or come back tomorrow.`;
 
     function setLimitReached() {
       limitReached = true;
@@ -2445,7 +2451,7 @@ function formatMath(str) {
         if (!isPurchased) {
           aRow.style.display = 'none';
           faqItem.classList.remove('open');
-          showLimitReached('Free clicks are only available on the first 20 questions. Purchase this subject for full access.');
+          showLimitReached(`Free clicks are only available on the first 20 questions. Purchase this ${unitWord} for full access.`);
           return false;
         }
       }
@@ -2618,7 +2624,7 @@ function formatMath(str) {
         if (!allRevealed) {
           const ok = await withButtonLoading(revealAllBtn, () => ensureEntitlementChecked());
           if (!ok) {
-            showLimitReached('Reveal all is a premium feature. Purchase this subject to unlock it.');
+            showLimitReached(`Reveal all is a premium feature. Purchase this ${unitWord} to unlock it.`);
             return;
           }
           if (answeredSet.size > 0 && answeredSet.size < totalQuestions) {
@@ -3296,7 +3302,7 @@ function formatMath(str) {
         filterSelect.disabled = false;
         if (!ok) {
           filterSelect.value = 'all';
-          showLimitReached('Filtering by unanswered/wrong is a premium feature. Purchase this subject to unlock it.');
+          showLimitReached(`Filtering by unanswered/wrong is a premium feature. Purchase this ${unitWord} to unlock it.`);
           return;
         }
       }
@@ -3341,7 +3347,7 @@ function formatMath(str) {
 
       const ok = await withButtonLoading(jumpBtn, () => ensureEntitlementChecked());
       if (!ok) {
-        showLimitReached('Jump to question is a premium feature. Purchase this subject to unlock it.');
+        showLimitReached(`Jump to question is a premium feature. Purchase this ${unitWord} to unlock it.`);
         return;
       }
 
