@@ -3214,10 +3214,15 @@ function formatMath(str) {
         `;
       }).join('');
 
+      // Paper count for the CTA label — derived from the subject slug since
+      // this template is shared by both the English (7 papers) and Telugu
+      // (6 papers) previous-papers packs, and no explicit count is passed in.
+      const papersCount = subject.endsWith('-te') ? 6 : 7;
       const unlockCta = unlocked ? '' : `
         <div class="rt-weightage-unlock">
           <p>Unlock exact question counts and percentage weightage for every subject</p>
-          <a href="/plans/?highlight=${encodeURIComponent(subject)}" class="rt-btn rt-btn-accent">Unlock ${subjectAccessDays} days, Rs. 199</a>
+          <a href="/plans/?highlight=${encodeURIComponent(subject)}" class="rt-btn rt-btn-accent">Unlock Pattern (${papersCount} Papers) &ndash; Rs 99</a>
+          <p class="rt-weightage-unlock-sub">Includes ${subjectAccessDays} days unlimited access</p>
         </div>
       `;
 

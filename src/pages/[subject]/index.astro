@@ -122,7 +122,11 @@ for (const ch of chapters) {
         ) : (
           <div id="free-trial-text" class="trial-text">15 free answers/day, no login needed &middot; <span id="access-days-text">45</span> days unlimited once purchased</div>
         )}
-        <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock <span id="unlock-btn-days">{meta.category === 'papers' ? '365' : '45'}</span> days, Rs. 199</a>
+        {meta.category === 'papers' ? (
+          <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock {chapters.length} Papers &ndash; Rs 99</a>
+        ) : (
+          <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock <span id="unlock-btn-days">45</span> days, Rs. 199</a>
+        )}
       </div>
     </div>
 
