@@ -44,8 +44,21 @@ const comingSoonSubjects = [
 
     <div id="subjects-section" style="margin-bottom:1.5rem;">
       <div style="font-size:16px; font-weight:800; margin-bottom:12px; color:var(--text);">Subjects</div>
+
+      <!-- BUNDLE FEATURE: mode toggle (design-review only, no backend wiring yet) -->
+      <div style="display:flex; gap:8px; margin-bottom:14px;" id="mode-toggle">
+        <button id="mode-single-btn" class="mode-btn mode-btn-active" onclick="setBundleMode(false)">Buy Single</button>
+        <button id="mode-bundle-btn" class="mode-btn" onclick="setBundleMode(true)">Bundle: Pick any 3 — ₹399</button>
+      </div>
+
       <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px;" class="plan-grid" id="real-plan-grid">
         <div class="plan-skeleton" style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">Loading subjects...</div>
+      </div>
+
+      <!-- BUNDLE FEATURE: sticky bottom bar, appears only in bundle mode -->
+      <div id="bundle-sticky-bar" style="display:none;">
+        <span id="bundle-counter">0 of 3 selected</span>
+        <button id="bundle-buy-btn" disabled onclick="onBuyBundleClick()">Buy Bundle — ₹399</button>
       </div>
     </div>
 
@@ -92,6 +105,39 @@ const comingSoonSubjects = [
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       }
     }
+
+    /* ---------- BUNDLE FEATURE: toggle buttons + sticky bar + selection state.
+       All additive — nothing here touches the existing .buy-btn / .plan-card
+       styling used by the single-purchase flow above. ---------- */
+    .mode-btn {
+      padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.15); background: transparent; color: var(--text);
+      cursor: pointer;
+    }
+    .mode-btn-active {
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; border-color: transparent;
+    }
+    #bundle-sticky-bar {
+      position: sticky; bottom: 12px; z-index: 20; margin-top: 12px;
+      background: #1a1438; border: 1px solid #ff9a3c; border-radius: 14px;
+      padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.5); color: #ffffff;
+    }
+    #bundle-buy-btn {
+      padding: 10px 20px; border-radius: 10px; border: none; font-weight: 700;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; cursor: pointer;
+    }
+    #bundle-buy-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .plan-card.bundle-selectable { cursor: pointer; }
+    .plan-card.bundle-selected { border: 2px solid #ff9a3c !important; box-shadow: 0 0 0 4px rgba(255,154,60,0.18); }
+    .bundle-mode .buy-btn { display: none !important; }
+    .bundle-check {
+      display: none; position: absolute; top: 12px; right: 12px; width: 22px; height: 22px;
+      border-radius: 6px; border: 2px solid rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);
+    }
+    .bundle-mode .bundle-check { display: block; }
+    .plan-card.bundle-selected .bundle-check { background: #ff9a3c; border-color: #ff9a3c; }
+    .plan-card { position: relative; } /* needed so .bundle-check absolute positioning anchors to the card */
 
     /* ---------- Mobile-only capsule redesign. Every rule below uses
        !important because the desktop markup styles each element with
@@ -146,6 +192,17 @@ const comingSoonSubjects = [
         grid-template-columns: 1fr !important;
         gap: 12px !important;
       }
+
+      /* Bundle bar on mobile: stack counter above the button so it doesn't
+         get cramped in the narrow 2-column layout width. */
+      #bundle-sticky-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      #bundle-buy-btn {
+        width: 100%;
+      }
     }
   </style>
 
@@ -155,6 +212,53 @@ const comingSoonSubjects = [
 
     let currentUser = null; // { user_id, name } once resolved, else null
     let subjectMeta = []; // populated by loadRealSubjects() before anything else runs
+
+    // ---------- BUNDLE FEATURE state (design-review only — no backend call
+    // yet from onBuyBundleClick). Fully additive: does not touch currentUser,
+    // subjectMeta, or any existing single-purchase function below. ----------
+    let bundleModeOn = false;
+    let selectedBundleSlugs = [];
+
+    function setBundleMode(on) {
+      bundleModeOn = on;
+      selectedBundleSlugs = [];
+      document.getElementById('real-plan-grid').classList.toggle('bundle-mode', on);
+      document.getElementById('bundle-sticky-bar').style.display = on ? 'flex' : 'none';
+      document.getElementById('mode-single-btn').classList.toggle('mode-btn-active', !on);
+      document.getElementById('mode-bundle-btn').classList.toggle('mode-btn-active', on);
+      document.querySelectorAll('.plan-card').forEach((c) => c.classList.remove('bundle-selected'));
+      updateBundleBar();
+    }
+
+    function updateBundleBar() {
+      const counter = document.getElementById('bundle-counter');
+      const buyBtn = document.getElementById('bundle-buy-btn');
+      if (counter) counter.textContent = `${selectedBundleSlugs.length} of 3 selected`;
+      if (buyBtn) buyBtn.disabled = selectedBundleSlugs.length !== 3;
+    }
+
+    function toggleBundleSelect(slug) {
+      const card = document.getElementById(`plan-card-${slug}`);
+      if (!card) return;
+      const idx = selectedBundleSlugs.indexOf(slug);
+      if (idx > -1) {
+        selectedBundleSlugs.splice(idx, 1);
+        card.classList.remove('bundle-selected');
+      } else {
+        if (selectedBundleSlugs.length >= 3) return; // cap at 3
+        selectedBundleSlugs.push(slug);
+        card.classList.add('bundle-selected');
+      }
+      updateBundleBar();
+    }
+
+    function onBuyBundleClick() {
+      // Placeholder for design-review phase — intentionally NOT calling any
+      // Worker/D1 endpoint yet. Wire this to /create-bundle-order only after
+      // the UX here is approved and the D1 schema change is made.
+      console.log('Bundle selected:', selectedBundleSlugs);
+      alert('Bundle selected: ' + selectedBundleSlugs.join(', ') + '\n(Checkout not wired yet — design review only)');
+    }
 
     // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
     // from a unix-seconds expires_at timestamp.
@@ -292,6 +396,7 @@ const comingSoonSubjects = [
       const yoursLabel = s.category === 'papers' ? '&#10003; your paper set' : '&#10003; your subject';
       return `
         <div id="plan-card-${s.slug}" data-slug="${s.slug}" data-popular="${s.popular ? 'true' : 'false'}" class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:${s.popular ? '2px solid #ff9a3c' : '1px solid rgba(255,255,255,0.08)'}; border-radius:12px; padding:1.25rem; color:#ffffff; transition:box-shadow 0.2s, border-color 0.2s;">
+          <div class="bundle-check"></div>
           ${popularBadge}
           <span class="badge-yours" style="font-size:12px; background:rgba(93, 224, 192, 0.15); color:#5ce0c0; font-weight:700; padding:2px 10px; border-radius:6px; display:none;">${yoursLabel}</span>
           <div class="card-title" style="font-weight:700; font-size:15px; color:#ffffff; ${s.popular ? 'margin-top:10px;' : 'margin-top:26px;'}">${s.titleNative}</div>
@@ -380,6 +485,22 @@ const comingSoonSubjects = [
               return;
             }
             startPurchase(btn, subject_id);
+          });
+        });
+
+        // ---------- BUNDLE FEATURE: click-to-select on the card itself.
+        // Only acts when bundleModeOn is true, and ignores clicks that
+        // originated on the (hidden, in bundle mode) Buy now button — so
+        // this can never interfere with the single-purchase click handler
+        // registered just above. ----------
+        document.querySelectorAll('.plan-card').forEach((card) => {
+          card.classList.add('bundle-selectable');
+          card.addEventListener('click', (e) => {
+            if (!bundleModeOn) return;
+            if (e.target.closest('.buy-btn')) return;
+            const slug = card.dataset.slug;
+            if (!slug) return; // skip "coming soon" cards, which have no data-slug
+            toggleBundleSelect(slug);
           });
         });
       } catch (err) {
