@@ -854,6 +854,16 @@ import Header from '../../components/Header.astro';
       const highlightSlug = params.get('highlight');
       if (!highlightSlug) return;
 
+      // If this subject is a papers subject, its row lives in the
+      // Question Papers grid, which is hidden while the Subjects tab is
+      // active — switch tabs first, otherwise everything below still
+      // "works" (the row gets ticked/marked) but invisibly, on a tab the
+      // person never sees.
+      const meta = subjectMeta.find((s) => s.slug === highlightSlug);
+      if (meta && meta.category === 'papers') {
+        setActiveCatalogTab('papers');
+      }
+
       const targetRow = document.getElementById(`plan-card-${highlightSlug}`);
       if (!targetRow) return;
 
@@ -871,6 +881,16 @@ import Header from '../../components/Header.astro';
       // with no scroll or page jump — replaces the old auto-scroll approach.
       const parentGrid = targetRow.parentElement;
       if (parentGrid) parentGrid.prepend(targetRow);
+
+      // Arrived via the subject page's Bundle link (?highlight=X&mode=bundle)
+      // — the whole point of that link is "I want to bundle this subject",
+      // so auto-check it (count becomes 1 of 3) instead of leaving it just
+      // visually marked with nothing actually selected. Requires
+      // applyRequestedMode() to have already run (bundleModeOn already
+      // true) — see the call order in Boot below.
+      if (bundleModeOn) {
+        toggleBundleSelect(highlightSlug);
+      }
     }
 
     // If the subject page's Bundle button sent the user here (?mode=bundle),
@@ -887,8 +907,11 @@ import Header from '../../components/Header.astro';
       getSession().then((session) => {
         currentUser = session;
         checkOwnershipForAllSubjects().then(() => {
-          highlightIntendedSubject();
+          // Order matters: applyRequestedMode() must run first so
+          // bundleModeOn is already true by the time highlightIntendedSubject()
+          // checks it — otherwise the auto-select above never fires.
           applyRequestedMode();
+          highlightIntendedSubject();
           const params = new URLSearchParams(window.location.search);
           const buySubject = params.get('buy');
           if (buySubject && currentUser) {
