@@ -247,8 +247,24 @@ const iconMap = {
     // document, including Layout's trailing script/markup, has already
     // been parsed and executed first.
     let bundleLoadingToast = null;
+    let bundleToastShownAt = null;
+    const BUNDLE_TOAST_MIN_VISIBLE_MS = 2500;
     const params = new URLSearchParams(window.location.search);
     const showedBundleToast = params.get('bundle_success') === '1';
+
+    // Removing the instant the ownership check resolves can mean the toast
+    // is only on screen for a fraction of a second if that check happens
+    // to finish fast (cached session, quick network) — enforces at least
+    // BUNDLE_TOAST_MIN_VISIBLE_MS of visible time regardless of how fast
+    // the underlying work actually finishes.
+    function removeBundleToastAfterMinDelay() {
+      if (!bundleLoadingToast) return;
+      const elapsed = Date.now() - bundleToastShownAt;
+      const remaining = Math.max(0, BUNDLE_TOAST_MIN_VISIBLE_MS - elapsed);
+      setTimeout(() => {
+        if (bundleLoadingToast) bundleLoadingToast.remove();
+      }, remaining);
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
       if (!showedBundleToast) return;
@@ -271,6 +287,7 @@ const iconMap = {
           max-width: 360px; text-align: center;
         `;
         container.appendChild(bundleLoadingToast);
+        bundleToastShownAt = Date.now();
       }
       window.history.replaceState({}, '', '/subjects/');
       // Safety net: remove no matter what, even if some unexpected error
@@ -294,7 +311,7 @@ const iconMap = {
     // count, grid — everything else stays identical to the guest view.
     getSession().then(async (session) => {
       if (!session.logged_in) {
-        if (bundleLoadingToast) bundleLoadingToast.remove();
+        removeBundleToastAfterMinDelay();
         return;
       }
 
@@ -317,12 +334,9 @@ const iconMap = {
       );
 
       // The 3 newly-bought subjects now show "Purchased" above — the
-      // "loading…" toast has done its job, remove it (only relevant for
-      // the manual-toast fallback path; window.showToast auto-dismisses
-      // on its own).
-      if (bundleLoadingToast) {
-        bundleLoadingToast.remove();
-      }
+      // "loading…" toast has done its job, remove it (respecting the
+      // minimum-visible-duration floor).
+      removeBundleToastAfterMinDelay();
     });
   </script>
 </Layout>
