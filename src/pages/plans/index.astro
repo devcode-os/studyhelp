@@ -91,7 +91,7 @@ const comingSoonSubjects = [
 
   </div>
 
-  <style>
+  <style is:global>
     /* ================= Layout shell ================= */
     .page-wide {
       max-width: 640px; /* list UI reads best narrow, even on desktop —
@@ -107,23 +107,23 @@ const comingSoonSubjects = [
       }
     }
 
-    /* ================= Hero ================= */
+    /* ================= Hero — compact banner, not a big hero block ================= */
     .plans-intro {
-      text-align: center;
-      margin-bottom: 1.5rem;
+      text-align: left;
+      margin-bottom: 1rem;
       position: relative;
       overflow: hidden;
-      border-radius: 20px;
-      padding: 2rem 1.25rem;
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      box-shadow: 0 12px 30px -12px rgba(20, 16, 43, 0.5);
+      box-shadow: 0 6px 16px -8px rgba(20, 16, 43, 0.5);
     }
-    .plans-h1 { margin: 0 0 6px; color: #ffffff; font-size: 26px; }
-    .plans-sub { color: rgba(255,255,255,0.72); font-size: 14px; margin: 0; }
+    .plans-h1 { margin: 0 0 2px; color: #ffffff; font-size: 16px; font-weight: 700; }
+    .plans-sub { color: rgba(255,255,255,0.65); font-size: 12px; margin: 0; }
     @media (max-width: 720px) {
-      .plans-intro { margin-bottom: 1rem; padding: 1.5rem 1rem; }
-      .plans-h1 { font-size: 22px; }
-      .plans-sub { font-size: 13px; }
+      .plans-intro { margin-bottom: 0.85rem; padding: 0.75rem 0.9rem; }
+      .plans-h1 { font-size: 14.5px; }
+      .plans-sub { font-size: 11px; }
     }
 
     /* ================= Section labels ================= */
