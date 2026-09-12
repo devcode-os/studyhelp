@@ -118,12 +118,15 @@ for (const ch of chapters) {
       </div>
       <div class="subject-header-right">
         {meta.category === 'papers' ? (
-          <div id="free-trial-text" class="trial-text">Question paper pattern &amp; subject weightage inside &middot; <span id="access-days-text">365</span> days unlimited once purchased</div>
+          <div id="free-trial-text" class="trial-text">Question paper pattern &amp; subject weightage inside</div>
         ) : (
-          <div id="free-trial-text" class="trial-text">15 free answers/day, no login needed &middot; <span id="access-days-text">45</span> days unlimited once purchased</div>
+          <div id="free-trial-text" class="trial-text">15 free answers/day, no login needed</div>
         )}
         {meta.category === 'papers' ? (
-          <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock {chapters.length} Papers &ndash; Rs 99</a>
+          <div class="unlock-btn-group">
+            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock {chapters.length} Papers &ndash; Rs 99</a>
+            <p class="unlock-btn-sub">Includes <span id="unlock-btn-days">365</span> days unlimited access</p>
+          </div>
         ) : (
           <div class="unlock-btn-group">
             <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock Full Subject &ndash; Rs. 199</a>
