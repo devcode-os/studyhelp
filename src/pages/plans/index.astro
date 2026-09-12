@@ -406,7 +406,7 @@ import Header from '../../components/Header.astro';
       if (selectedBundleSlugs.length !== 3) return;
 
       if (!currentUser) {
-        const returnTo = `/plans/?mode=bundle`;
+        const returnTo = `/plans/?mode=bundle&subjects=${encodeURIComponent(selectedBundleSlugs.join(','))}`;
         window.location.href = `/signup/?next=${encodeURIComponent(returnTo)}`;
         return;
       }
@@ -894,6 +894,30 @@ import Header from '../../components/Header.astro';
           if (buySubject && currentUser) {
             const btn = document.querySelector(`.row-buy-btn[data-subject="${CSS.escape(buySubject)}"]`);
             if (btn) startPurchase(btn, buySubject);
+            window.history.replaceState({}, '', '/plans/');
+          }
+
+          // Mirrors the single-subject buy= auto-trigger above: someone who
+          // picked 3 subjects, hit Buy Bundle, got sent to sign up, and just
+          // created an account lands back here with their 3 slugs carried
+          // in the URL (since the in-memory selection was wiped by that
+          // full-page redirect). Re-select those same 3 and fire the
+          // purchase immediately — no re-picking required.
+          const bundleSubjectsParam = params.get('subjects');
+          if (bundleSubjectsParam && currentUser) {
+            const slugs = bundleSubjectsParam.split(',').filter(Boolean);
+            if (slugs.length === 3) {
+              setBundleMode(true);
+              slugs.forEach((slug) => toggleBundleSelect(slug));
+              // toggleBundleSelect silently no-ops on a slug with no
+              // matching row (e.g. since removed/renamed) — only fire if
+              // all 3 actually got selected, otherwise leave the user to
+              // finish picking manually rather than charging for fewer
+              // than 3 subjects.
+              if (selectedBundleSlugs.length === 3) {
+                onBuyBundleClick();
+              }
+            }
             window.history.replaceState({}, '', '/plans/');
           }
         });

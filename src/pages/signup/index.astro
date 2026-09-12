@@ -344,14 +344,20 @@ import Header from '../../components/Header.astro';
       if (!rawNext) return;
 
       let buySlug = null;
+      let isBundle = false;
+      let bundleSlugs = [];
       try {
         // 'next' is itself a URL-encoded path+query string, e.g.
         // "/plans/?buy=telangana-economy-en" — parse it as one.
         const nextParams = new URLSearchParams(rawNext.split('?')[1] || '');
         buySlug = nextParams.get('buy');
+        isBundle = nextParams.get('mode') === 'bundle';
+        if (isBundle) {
+          bundleSlugs = (nextParams.get('subjects') || '').split(',').filter(Boolean);
+        }
       } catch (err) {}
 
-      if (!buySlug) return;
+      if (!buySlug && !isBundle) return;
 
       const banner = document.getElementById('purchase-context-banner');
       const leadEl = document.getElementById('purchase-context-lead');
@@ -359,11 +365,6 @@ import Header from '../../components/Header.astro';
       const tailEl = document.getElementById('purchase-context-tail');
       const subEl = document.getElementById('signup-sub');
       if (!banner || !leadEl || !pillEl || !tailEl) return;
-
-      const fallbackName = buySlug
-        .replace(/-(en|te)$/, '')
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, (c) => c.toUpperCase());
 
       function showBanner(subjectName) {
         // Three separate text nodes (lead / pill / tail) instead of one
@@ -380,6 +381,50 @@ import Header from '../../components/Header.astro';
         // OTP-free detail still matters, so it's folded in rather than cut.
         if (subEl) subEl.style.display = 'none';
       }
+
+      // Bundle path: unlike the single-subject case, the 3 subjects they
+      // picked don't survive this full-page redirect (that selection lives
+      // only in the Plans page's in-memory JS state), so this can't
+      // honestly promise "straight to payment" — they'll need to re-pick
+      // their 3 subjects once back on Plans. Said plainly rather than
+      // overpromising.
+      if (isBundle) {
+        leadEl.textContent = 'Create your account to continue your bundle purchase';
+        pillEl.textContent = `Bundle: 3 subjects for ₹399`;
+        tailEl.textContent = "You'll be sent straight to payment right after.";
+        banner.style.display = 'flex';
+        if (subEl) subEl.style.display = 'none';
+
+        // Best-effort: swap the generic pill text for the 3 actual subject
+        // names, same pattern as the single-subject path below. If this
+        // fails or is slow, the generic "Bundle: 3 subjects for ₹399" pill
+        // already shown is good enough — never blocks on this.
+        if (bundleSlugs.length === 3) {
+          fetch(`${WORKER_URL}/subjects/public`)
+            .then((res) => res.json())
+            .then((data) => {
+              const all = data.subjects || [];
+              const names = bundleSlugs.map((slug) => {
+                const match = all.find((s) => s.id === slug);
+                if (!match) return null;
+                const niceName = match.title_native || match.name || match.title_english;
+                return niceName
+                  ? niceName.replace(/\b[a-zA-Z]+\b/g, (w) => w.charAt(0).toUpperCase() + w.slice(1))
+                  : null;
+              });
+              if (names.every(Boolean)) {
+                pillEl.textContent = `Bundle: ${names.join(', ')}`;
+              }
+            })
+            .catch(() => {});
+        }
+        return;
+      }
+
+      const fallbackName = buySlug
+        .replace(/-(en|te)$/, '')
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, (c) => c.toUpperCase());
 
       // Best-effort: try to resolve the real title from the live subjects
       // list so the banner reads naturally ("తెలంగాణ చరిత్ర" instead of
