@@ -30,75 +30,70 @@ const comingSoonSubjects = [
 
   <div class="page-wide">
 
-    <div class="plans-intro">
-      <h1 class="plans-h1">Unlock Unlimited Access</h1>
-      <p class="plans-sub">One-time payment per subject. No subscription.</p>
+    <div style="text-align:center; margin-bottom:1.5rem; position:relative; overflow:hidden; border-radius:20px; padding:2rem 1.25rem; background:linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%); box-shadow:0 12px 30px -12px rgba(20, 16, 43, 0.5);" class="plans-intro">
+      <h1 style="margin:0 0 6px; color:#ffffff; position:relative;" class="plans-h1">Unlock Unlimited Access</h1>
+      <p style="color:rgba(255,255,255,0.72); font-size:14px; margin:0; position:relative;" class="plans-sub">One-time payment per subject. No subscription.</p>
     </div>
-    <div class="plans-divider"></div>
 
-    <div id="active-subjects-section" class="active-subjects-section">
-      <div class="section-label">
+    <div id="active-subjects-section" style="display:none; margin-bottom:1.5rem;">
+      <div style="font-size:14px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:6px;">
         <i class="ti ti-circle-check" style="color:var(--success-text, #065f46);"></i> Your Active Subjects
       </div>
-      <div id="active-subjects-list" class="active-subjects-list"></div>
+      <div id="active-subjects-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px;"></div>
     </div>
 
-    <div id="subjects-section" class="subjects-section">
-      <div class="section-heading">Subjects</div>
+    <div id="subjects-section" style="margin-bottom:1.5rem;">
+      <div style="font-size:16px; font-weight:800; margin-bottom:12px; color:var(--text);">Subjects</div>
 
-      <!-- Mode toggle: segmented control, Android/iOS style -->
-      <div class="mode-toggle" id="mode-toggle">
-        <button id="mode-single-btn" class="mode-btn mode-btn-active" type="button">Buy Single</button>
-        <button id="mode-bundle-btn" class="mode-btn" type="button">Bundle: Pick any 3 — ₹399</button>
+      <!-- BUNDLE FEATURE: mode toggle (design-review only, no backend wiring yet) -->
+      <div style="display:flex; gap:8px; margin-bottom:14px;" id="mode-toggle">
+        <button id="mode-single-btn" class="mode-btn mode-btn-active" onclick="setBundleMode(false)">Buy Single</button>
+        <button id="mode-bundle-btn" class="mode-btn" onclick="setBundleMode(true)">Bundle: Pick any 3 — ₹399</button>
       </div>
 
-      <!-- List of subject rows — replaces the old big marketing cards.
-           Same list markup is used for both Single and Bundle mode; only a
-           class on the container (.bundle-mode) and per-row state
-           (.row-selected) change how a row looks/behaves. -->
-      <div class="subject-rows" id="real-plan-grid">
-        <div class="row-skeleton">Loading subjects...</div>
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px;" class="plan-grid" id="real-plan-grid">
+        <div class="plan-skeleton" style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">Loading subjects...</div>
       </div>
 
-      <!-- Sticky bundle bar — appears only in bundle mode -->
-      <div id="bundle-sticky-bar" class="bundle-sticky-bar">
+      <!-- BUNDLE FEATURE: sticky bottom bar, appears only in bundle mode -->
+      <div id="bundle-sticky-bar" style="display:none;">
         <span id="bundle-counter">0 of 3 selected</span>
-        <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Buy</button>
+        <button id="bundle-buy-btn" disabled onclick="onBuyBundleClick()">Buy Bundle — ₹399</button>
       </div>
     </div>
 
-    <div id="papers-section" class="papers-section">
-      <div class="section-heading">Question Papers</div>
-      <div class="subject-rows" id="real-papers-grid"></div>
+    <div id="papers-section" style="display:none; margin-bottom:1.5rem;">
+      <div style="font-size:16px; font-weight:800; margin-bottom:12px; color:var(--text);">Question Papers</div>
+      <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:12px;" class="plan-grid" id="real-papers-grid"></div>
     </div>
 
-    <div class="whatyouget-card">
-      <div class="whatyouget-title">What you get</div>
-      <div class="whatyouget-grid">
+    <div style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem; color:#ffffff;" class="whatyouget-card">
+      <div style="font-size:14px; font-weight:600; margin-bottom:12px; color:#ffffff;">What you get</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px;">
         <div>
-          <div class="whatyouget-item-title">Unlimited reading</div>
-          <div class="whatyouget-item-sub">All chapters, all FAQs</div>
+          <div style="font-size:13px; font-weight:600; color:#ffffff;">Unlimited reading</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6);">All chapters, all FAQs</div>
         </div>
         <div>
-          <div class="whatyouget-item-title">Log in anywhere</div>
-          <div class="whatyouget-item-sub">Switch devices anytime, no limit</div>
+          <div style="font-size:13px; font-weight:600; color:#ffffff;">Log in anywhere</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6);">Switch devices anytime, no limit</div>
         </div>
         <div>
-          <div class="whatyouget-item-title">Unlimited access</div>
-          <div class="whatyouget-item-sub">One-time payment, duration shown on each subject</div>
+          <div style="font-size:13px; font-weight:600; color:#ffffff;">Unlimited access</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.6);">One-time payment, duration shown on each subject</div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <style is:global>
-    /* ================= Layout shell ================= */
+  <style>
+    /* Mobile-only addition: reserves space at the bottom so content isn't
+       hidden behind the fixed tab bar. Desktop max-width/padding matches
+       the original inline style exactly (1100px / 24px) — nothing else
+       on this page was changed. */
     .page-wide {
-      max-width: 640px; /* list UI reads best narrow, even on desktop —
-                            this is intentionally NOT a wide grid page
-                            anymore, avoiding the old desktop card-grid
-                            problems entirely. */
+      max-width: 1100px;
       margin: 0 auto;
       padding: 24px;
     }
@@ -106,200 +101,108 @@ const comingSoonSubjects = [
       .page-wide {
         padding: 16px 16px calc(64px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
       }
+      .plan-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
     }
 
-    /* ================= Hero — plain header text, no box at all ================= */
-    .plans-intro {
-      padding: 0;
-      margin-bottom: 0.6rem;
-      background: none;
-      box-shadow: none;
-    }
-    .plans-h1 { margin: 0 0 2px; color: var(--text); font-size: 17px; font-weight: 700; }
-    .plans-sub { color: var(--muted); font-size: 12px; margin: 0; }
-    .plans-divider { height: 1px; background: rgba(128,128,128,0.15); margin-bottom: 1rem; }
-    @media (max-width: 720px) {
-      .plans-h1 { font-size: 15px; }
-      .plans-sub { font-size: 11px; }
-    }
-
-    /* ================= Section labels ================= */
-    .section-label {
-      font-size: 14px; font-weight: 700; margin-bottom: 10px;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .section-heading {
-      font-size: 16px; font-weight: 800; margin-bottom: 12px; color: var(--text);
-    }
-    .active-subjects-section { display: none; margin-bottom: 1.5rem; }
-    .active-subjects-list { display: flex; flex-direction: column; gap: 10px; }
-    .subjects-section { margin-bottom: 1.5rem; }
-    .papers-section { display: none; margin-bottom: 1.5rem; }
-
-    /* ================= Mode toggle (segmented control) =================
-       Both states are equal-weight boxes so it's always unambiguous which
-       mode is active — active = solid green fill, inactive = outlined
-       muted box. (Color is just a clear on/off signal, not brand-tied —
-       change --toggle-active below if a different accent is wanted.) */
-    .mode-toggle {
-      display: flex; gap: 8px; margin-bottom: 14px;
-    }
+    /* ---------- BUNDLE FEATURE: toggle buttons + sticky bar + selection state.
+       All additive — nothing here touches the existing .buy-btn / .plan-card
+       styling used by the single-purchase flow above. ---------- */
     .mode-btn {
-      flex: 1; padding: 10px 12px; border-radius: 10px; font-size: 13px; font-weight: 700;
-      cursor: pointer; white-space: nowrap;
-      background: transparent; color: var(--muted);
-      border: 1.5px solid rgba(128,128,128,0.3);
+      padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.15); background: transparent; color: var(--text);
+      cursor: pointer;
     }
     .mode-btn-active {
       background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; border-color: transparent;
     }
-    @media (max-width: 400px) {
-      .mode-btn { font-size: 11.5px; padding: 10px 6px; }
-    }
-
-    /* ================= Subject rows — flat divided list (Android Material
-       list style), NOT individually-bordered boxes. Removes the "boxes
-       inside boxes" look; only the popular/selected row gets a visible
-       accent, everything else is a plain row separated by a thin line. */
-    .subject-rows {
-      display: flex; flex-direction: column;
-      background: var(--card, rgba(255,255,255,0.02));
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(128,128,128,0.12);
-    }
-    .row-skeleton {
-      text-align: center; padding: 2rem; color: var(--muted); font-size: 13px;
-    }
-    .subject-row {
-      display: flex; align-items: center; gap: 12px;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(128,128,128,0.12);
-      border-radius: 0;
-      padding: 12px 14px;
-      text-decoration: none;
-      color: var(--text);
-      cursor: pointer;
-    }
-    .subject-rows > .subject-row:last-child { border-bottom: none; }
-    .subject-row.row-popular {
-      background: rgba(255,154,60,0.07);
-      border-left: 3px solid #ff9a3c;
-    }
-    .subject-row.row-selected {
-      background: rgba(255,154,60,0.14);
-      border-left: 3px solid #ff9a3c;
-    }
-    .subject-row.row-soon {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    /* Leading icon (single mode) / selection indicator (bundle mode) */
-    .row-leading {
-      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,154,60,0.12);
-    }
-    .row-leading i { font-size: 17px; color: #ff9a3c; }
-    /* Outline circle that only shows a checkmark once selected — not a
-       solid filled square, so it reads as "tick to select", not "filled
-       box = something is on". */
-    .row-checkbox {
-      display: none; width: 24px; height: 24px; border-radius: 50%;
-      border: 2px solid rgba(128,128,128,0.4); flex-shrink: 0;
-      align-items: center; justify-content: center;
-    }
-    .row-checkbox::after {
-      content: '';
-      width: 12px; height: 12px;
-    }
-    .row-selected .row-checkbox {
-      border-color: #ff9a3c; background: #ff9a3c;
-    }
-    .row-selected .row-checkbox::after {
-      content: '✓';
-      color: #ffffff; font-size: 13px; font-weight: 900; line-height: 1;
-    }
-
-    /* Middle: title + subtitle + meta */
-    .row-body { flex: 1; min-width: 0; }
-    .row-title { font-weight: 700; font-size: 14.5px; color: var(--text); line-height: 1.3; }
-    .row-sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
-    .row-meta { font-size: 11px; color: var(--muted); opacity: 0.75; margin-top: 3px; }
-
-    /* Trailing: price + buy button (single mode) */
-    .row-trailing { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
-    .row-price { font-size: 15px; font-weight: 700; color: #ff9a3c; }
-    .row-buy-btn {
-      font-size: 12px; font-weight: 700; padding: 7px 14px; border: none; border-radius: 8px;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; cursor: pointer; white-space: nowrap;
-    }
-    .row-soon-label { font-size: 11px; color: var(--muted); }
-    .row-badge-popular {
-      font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; margin-bottom: 4px; display: inline-block;
-    }
-    .row-badge-yours {
-      font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
-      background: rgba(93,224,192,0.15); color: #5ce0c0; margin-bottom: 4px; display: inline-block;
-    }
-
-    /* ================= Bundle mode overrides ================= */
-    .subject-rows.bundle-mode .row-leading { display: none; }
-    .subject-rows.bundle-mode .row-checkbox { display: flex; }
-    .subject-rows.bundle-mode .row-trailing { display: none; }
-    .subject-rows.bundle-mode .subject-row.row-soon { pointer-events: none; }
-
-    /* ================= Sticky bundle bar — compact, count + short "Buy" ================= */
-    .bundle-sticky-bar {
-      display: none;
+    #bundle-sticky-bar {
       position: sticky; bottom: 12px; z-index: 20; margin-top: 12px;
-      background: var(--card, #1a1438); border: 1.5px solid #ff9a3c; border-radius: 12px;
-      padding: 10px 14px; justify-content: space-between; align-items: center;
-      box-shadow: 0 10px 24px -8px rgba(0,0,0,0.4); color: var(--text); font-size: 13px; font-weight: 600;
+      background: #1a1438; border: 1px solid #ff9a3c; border-radius: 14px;
+      padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 12px 30px -8px rgba(0,0,0,0.5); color: #ffffff;
     }
-    .bundle-buy-btn {
-      padding: 8px 22px; border-radius: 8px; border: none; font-weight: 700; font-size: 13px;
+    #bundle-buy-btn {
+      padding: 10px 20px; border-radius: 10px; border: none; font-weight: 700;
       background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; cursor: pointer;
     }
-    .bundle-buy-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    @media (max-width: 480px) {
-      .bundle-sticky-bar { flex-direction: column; align-items: stretch; gap: 10px; }
-      .bundle-buy-btn { width: 100%; }
+    #bundle-buy-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .plan-card.bundle-selectable { cursor: pointer; }
+    .plan-card.bundle-selected { border: 2px solid #ff9a3c !important; box-shadow: 0 0 0 4px rgba(255,154,60,0.18); }
+    .bundle-mode .buy-btn { display: none !important; }
+    .bundle-check {
+      display: none; position: absolute; top: 12px; right: 12px; width: 22px; height: 22px;
+      border-radius: 6px; border: 2px solid rgba(255,255,255,0.3); background: rgba(0,0,0,0.2);
     }
+    .bundle-mode .bundle-check { display: block; }
+    .plan-card.bundle-selected .bundle-check { background: #ff9a3c; border-color: #ff9a3c; }
+    .plan-card { position: relative; } /* needed so .bundle-check absolute positioning anchors to the card */
 
-    /* ================= Active subjects (owned) card ================= */
-    .active-row {
-      background: var(--success-bg, #d1fae5); border: 1px solid var(--success-text, #065f46);
-      border-radius: 12px; padding: 1rem 1.25rem; display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center; gap: 12px;
-    }
-    .active-row-title { font-weight: 700; font-size: 14px; color: var(--success-text, #065f46); }
-    .active-row-sub { font-size: 12px; color: var(--muted); }
-    .active-row-open {
-      font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 8px;
-      background: var(--success-text, #065f46); color: #fff; text-decoration: none; flex-shrink: 0;
-    }
-    .grace-banner {
-      width: 100%; margin-top: 10px; padding: 10px 12px; border-radius: 8px;
-      background: #fff4e0; border: 1px solid #e8c876; color: #6b4a00; font-size: 12px; line-height: 1.5;
-    }
-    .grace-banner a { color: #6b4a00; font-weight: 600; }
-
-    /* ================= What you get ================= */
-    .whatyouget-card {
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
-    }
-    .whatyouget-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #ffffff; }
-    .whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
-    .whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
-    .whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+    /* ---------- Mobile-only capsule redesign. Every rule below uses
+       !important because the desktop markup styles each element with
+       inline style="" attributes, which otherwise always win over a
+       stylesheet rule regardless of media query. No inline style itself
+       was edited — desktop renders exactly as before at any width above
+       720px, since these rules simply don't apply there. ---------- */
     @media (max-width: 720px) {
-      .whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 12px; }
-      .whatyouget-grid { grid-template-columns: 1fr; gap: 12px; }
+      .plans-intro { margin-bottom: 1rem !important; }
+      .plans-h1 { font-size: 22px !important; }
+      .plans-sub { font-size: 13px !important; }
+
+      #active-subjects-list {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+
+      .plan-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+      }
+      .plan-card {
+        border-radius: 16px !important;
+        padding: 0.9rem !important;
+      }
+      .badge-popular,
+      .badge-yours {
+        font-size: 10px !important;
+        padding: 2px 8px !important;
+      }
+      .card-title {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+      }
+      .plan-price {
+        font-size: 17px !important;
+        margin-bottom: 8px !important;
+      }
+      .buy-btn,
+      .soon-btn {
+        font-size: 12px !important;
+        padding: 8px !important;
+        border-radius: 10px !important;
+      }
+
+      .whatyouget-card {
+        border-radius: 16px !important;
+        padding: 1rem !important;
+        margin-bottom: 12px !important;
+      }
+      .whatyouget-card > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* Bundle bar on mobile: stack counter above the button so it doesn't
+         get cramped in the narrow 2-column layout width. */
+      #bundle-sticky-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      #bundle-buy-btn {
+        width: 100%;
+      }
     }
   </style>
 
@@ -311,7 +214,8 @@ const comingSoonSubjects = [
     let subjectMeta = []; // populated by loadRealSubjects() before anything else runs
 
     // ---------- BUNDLE FEATURE state (design-review only — no backend call
-    // yet from onBuyBundleClick). ----------
+    // yet from onBuyBundleClick). Fully additive: does not touch currentUser,
+    // subjectMeta, or any existing single-purchase function below. ----------
     let bundleModeOn = false;
     let selectedBundleSlugs = [];
 
@@ -322,7 +226,7 @@ const comingSoonSubjects = [
       document.getElementById('bundle-sticky-bar').style.display = on ? 'flex' : 'none';
       document.getElementById('mode-single-btn').classList.toggle('mode-btn-active', !on);
       document.getElementById('mode-bundle-btn').classList.toggle('mode-btn-active', on);
-      document.querySelectorAll('.subject-row').forEach((r) => r.classList.remove('row-selected'));
+      document.querySelectorAll('.plan-card').forEach((c) => c.classList.remove('bundle-selected'));
       updateBundleBar();
     }
 
@@ -331,26 +235,19 @@ const comingSoonSubjects = [
       const buyBtn = document.getElementById('bundle-buy-btn');
       if (counter) counter.textContent = `${selectedBundleSlugs.length} of 3 selected`;
       if (buyBtn) buyBtn.disabled = selectedBundleSlugs.length !== 3;
-
-      // Toast the moment the 3rd item is picked — uses the site's existing
-      // toast system (already used elsewhere for payment-failed messages);
-      // falls back silently if it isn't available rather than alert()ing.
-      if (selectedBundleSlugs.length === 3 && window.showToast) {
-        window.showToast('3 selected — ready to buy', 'success');
-      }
     }
 
     function toggleBundleSelect(slug) {
-      const row = document.getElementById(`plan-card-${slug}`);
-      if (!row) return;
+      const card = document.getElementById(`plan-card-${slug}`);
+      if (!card) return;
       const idx = selectedBundleSlugs.indexOf(slug);
       if (idx > -1) {
         selectedBundleSlugs.splice(idx, 1);
-        row.classList.remove('row-selected');
+        card.classList.remove('bundle-selected');
       } else {
         if (selectedBundleSlugs.length >= 3) return; // cap at 3
         selectedBundleSlugs.push(slug);
-        row.classList.add('row-selected');
+        card.classList.add('bundle-selected');
       }
       updateBundleBar();
     }
@@ -362,15 +259,6 @@ const comingSoonSubjects = [
       console.log('Bundle selected:', selectedBundleSlugs);
       alert('Bundle selected: ' + selectedBundleSlugs.join(', ') + '\n(Checkout not wired yet — design review only)');
     }
-
-    // Wired via addEventListener (not inline onclick=""), because this
-    // <script> block is compiled as an ES module by Astro (define:vars) —
-    // top-level function declarations are module-scoped, NOT attached to
-    // window, so inline onclick="fnName()" HTML attributes silently fail
-    // to find them.
-    document.getElementById('mode-single-btn').addEventListener('click', () => setBundleMode(false));
-    document.getElementById('mode-bundle-btn').addEventListener('click', () => setBundleMode(true));
-    document.getElementById('bundle-buy-btn').addEventListener('click', onBuyBundleClick);
 
     // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
     // from a unix-seconds expires_at timestamp.
@@ -391,6 +279,8 @@ const comingSoonSubjects = [
     // Session is fetched ONCE per page by Header.astro (runs synchronously
     // inline, before this script) and exposed on window.__shSessionPromise.
     // Reusing it here avoids a duplicate /me call on every Plans page load.
+    // Preserves this page's original contract: resolves to the session data
+    // object if logged in, or null if not (callers below check for null).
     async function getSession() {
       const source = window.__shSessionPromise
         || fetch(`${WORKER_URL}/me`, { credentials: 'include' })
@@ -402,15 +292,17 @@ const comingSoonSubjects = [
     }
 
     // On page load: check ownership for every available subject, swap button to
-    // "Open" if owned, and build the prominent "Your Active Subjects" section.
+    // "Open" if owned, and build the prominent "Your Active Subjects" section
+    // so a purchased subject isn't just a relabeled button buried in the
+    // pricing grid — easy to miss there.
     async function checkOwnershipForAllSubjects() {
-      if (!currentUser) return; // not logged in — every row stays "Buy now"
+      if (!currentUser) return; // not logged in — every button stays "Buy now"
 
       const activeList = document.getElementById('active-subjects-list');
       const activeSection = document.getElementById('active-subjects-section');
       let anyActive = false;
 
-      const buttons = document.querySelectorAll('.row-buy-btn');
+      const buttons = document.querySelectorAll('.buy-btn');
       for (const btn of buttons) {
         const subject_id = btn.getAttribute('data-subject');
         try {
@@ -423,29 +315,31 @@ const comingSoonSubjects = [
             anyActive = true;
 
             const meta = subjectMeta.find((s) => s.slug === subject_id);
-            const row = document.createElement('div');
+            const card = document.createElement('div');
 
             const graceBannerHtml = data.is_grace_grant ? `
-              <div class="grace-banner">
-                We haven't yet confirmed your payment. You've been given ${data.grace_days_remaining ?? ''} day${data.grace_days_remaining === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/">contact us</a>.
+              <div style="width:100%; margin-top:10px; padding:10px 12px; border-radius:8px; background:#fff4e0; border:1px solid #e8c876; color:#6b4a00; font-size:12px; line-height:1.5;">
+                We haven't yet confirmed your payment. You've been given ${data.grace_days_remaining ?? ''} day${data.grace_days_remaining === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/" style="color:#6b4a00; font-weight:600;">contact us</a>.
               </div>
             ` : '';
 
-            row.className = 'active-row';
-            row.innerHTML = `
+            card.style.cssText = `background:var(--success-bg, #d1fae5); border:1px solid var(--success-text, #065f46); border-radius:12px; padding:1rem 1.25rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;`;
+            card.innerHTML = `
               <div>
-                <div class="active-row-title">${meta ? meta.titleNative : subject_id}</div>
-                <div class="active-row-sub">${data.expires_at ? formatDaysLeft(data.expires_at) + ' &middot; until ' + formatExpiryDate(data.expires_at) : 'Active'}</div>
+                <div style="font-weight:700; font-size:14px; color:var(--success-text, #065f46);">${meta ? meta.titleNative : subject_id}</div>
+                <div style="font-size:12px; color:var(--muted);">${data.expires_at ? formatDaysLeft(data.expires_at) + ' &middot; until ' + formatExpiryDate(data.expires_at) : 'Active'}</div>
               </div>
-              <a href="/${subject_id}/" class="active-row-open">Open</a>
+              <a href="/${subject_id}/" style="font-size:13px; font-weight:600; padding:8px 16px; border-radius:8px; background:var(--success-text, #065f46); color:#fff; text-decoration:none; flex-shrink:0;">Open</a>
               ${graceBannerHtml}
             `;
-            activeList.appendChild(row);
+            activeList.appendChild(card);
 
-            // Already shown above in "Your Active Subjects" — hide the
-            // priced row below entirely rather than just relabeling it.
-            const gridRow = document.getElementById(`plan-card-${subject_id}`);
-            if (gridRow) gridRow.style.display = 'none';
+            // Already shown above in the "Your Active Subjects" banner —
+            // showing it again as a full priced card below is redundant
+            // and makes the buy-more grid harder to scan. Hide it there
+            // entirely rather than just relabeling its button.
+            const gridCard = document.getElementById(`plan-card-${subject_id}`);
+            if (gridCard) gridCard.style.display = 'none';
           }
         } catch (err) {
           // silently skip on network error — button stays as "Buy now", user can retry
@@ -466,43 +360,62 @@ const comingSoonSubjects = [
       btn.parentNode.replaceChild(freshBtn, btn);
 
       freshBtn.disabled = false;
+      // On mobile, the "Your Active Subjects" banner above already shows
+      // the days-left countdown for this exact subject — repeating it on
+      // the narrow 2-column card button caused "Open — 43 days left" to
+      // wrap to 2 lines. Mobile gets a short "Open" label instead; desktop
+      // keeps the full text since there's room and no banner duplication.
       const isMobile = window.matchMedia('(max-width: 720px)').matches;
       freshBtn.textContent = expiresAt && !isMobile
         ? `Open — ${formatDaysLeft(expiresAt)}`
         : 'Open';
       freshBtn.title = expiresAt ? `Access until ${formatExpiryDate(expiresAt)}` : '';
-      freshBtn.onclick = (e) => {
-        e.stopPropagation();
+      // Keep the buy-btn class (only override its color inline below) so
+      // this button keeps the same consistent padding/border-radius/width
+      // sizing as every other card button — removing the class entirely
+      // was causing it to fall back to unstyled browser defaults.
+      freshBtn.style.background = 'linear-gradient(90deg, #ff9a3c, #ffb35c)';
+      freshBtn.style.color = '#2a1400';
+      freshBtn.style.borderColor = 'transparent';
+      freshBtn.onclick = () => {
         window.location.href = `/${subject_id}/`;
       };
       return freshBtn;
     }
 
-    function renderPlanRow(s) {
+    function renderPlanCard(s) {
       // s: { slug, titleNative, titleEnglish, price, popular, accessDays, category }
-      const popularBadge = s.popular ? `<span class="row-badge-popular">most popular</span>` : '';
+      const popularBadge = s.popular
+        ? `<span class="badge-popular" style="font-size:12px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; font-weight:700; padding:2px 10px; border-radius:6px; display:inline-block;">most popular</span>`
+        : `<span class="badge-popular" style="font-size:12px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; font-weight:700; padding:2px 10px; border-radius:6px; display:none;">most popular</span>`;
+      // "your subject" reads oddly for a previous-papers product — swap to
+      // "your paper set" for category === 'papers', keep the original text
+      // for everything else. Both are set here (not just one, toggled by
+      // JS below) so highlightIntendedSubject/checkOwnership only ever
+      // need to show/hide the existing badge, never rewrite its text.
       const yoursLabel = s.category === 'papers' ? '&#10003; your paper set' : '&#10003; your subject';
       return `
-        <div id="plan-card-${s.slug}" data-slug="${s.slug}" class="subject-row ${s.popular ? 'row-popular' : ''}">
-          <div class="row-checkbox"></div>
-          <div class="row-leading"><i class="ti ${s.icon || 'ti-book'}"></i></div>
-          <div class="row-body">
-            <span class="badge-yours-wrap" style="display:none;"><span class="row-badge-yours">${yoursLabel}</span></span>
-            ${popularBadge}
-            <div class="row-title">${s.titleNative}</div>
-            <div class="row-sub">${s.titleEnglish || ''}</div>
-            <div class="row-meta">${s.accessDays} days unlimited access</div>
-          </div>
-          <div class="row-trailing">
-            <div class="row-price">Rs. ${s.price}</div>
-            <button data-subject="${s.slug}" data-price="${s.price}" class="row-buy-btn">Buy now</button>
-          </div>
+        <div id="plan-card-${s.slug}" data-slug="${s.slug}" data-popular="${s.popular ? 'true' : 'false'}" class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:${s.popular ? '2px solid #ff9a3c' : '1px solid rgba(255,255,255,0.08)'}; border-radius:12px; padding:1.25rem; color:#ffffff; transition:box-shadow 0.2s, border-color 0.2s;">
+          <div class="bundle-check"></div>
+          ${popularBadge}
+          <span class="badge-yours" style="font-size:12px; background:rgba(93, 224, 192, 0.15); color:#5ce0c0; font-weight:700; padding:2px 10px; border-radius:6px; display:none;">${yoursLabel}</span>
+          <div class="card-title" style="font-weight:700; font-size:15px; color:#ffffff; ${s.popular ? 'margin-top:10px;' : 'margin-top:26px;'}">${s.titleNative}</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 4px;">${s.titleEnglish || ''}</div>
+          <div style="font-size:11px; color:rgba(255,255,255,0.5); margin-bottom:10px;">${s.accessDays} days unlimited access</div>
+          <div style="font-size:22px; font-weight:700; margin-bottom:12px; color:#ffcb8a;" class="plan-price">Rs. ${s.price}</div>
+          <button data-subject="${s.slug}" data-price="${s.price}" class="buy-btn" style="width:100%; font-size:13px; font-weight:700; padding:8px; border:none; border-radius:8px; background:linear-gradient(90deg, #ff9a3c, #ffb35c); color:#2a1400; cursor:pointer;">
+            Buy now
+          </button>
         </div>
       `;
     }
 
     // Fetches live subjects+prices from D1 (via the Worker's public endpoint)
-    // and renders the real subject rows.
+    // and renders the real plan cards. Must complete before ownership checks,
+    // the buy-button click flow, or ?highlight=/?buy= handling run, since
+    // all of those depend on these cards already being in the DOM. Buy-button
+    // click handlers are attached here too, since the old static ones (below)
+    // no longer exist at page-load time for these dynamically-created cards.
     async function loadRealSubjects() {
       const grid = document.getElementById('real-plan-grid');
       const papersGrid = document.getElementById('real-papers-grid');
@@ -525,6 +438,10 @@ const comingSoonSubjects = [
         const papers = subjects.filter((s) => s.category === 'papers');
         const nonPapers = subjects.filter((s) => s.category !== 'papers');
 
+        // Display-order preference, separate from D1 insertion order —
+        // same pairing pattern as the homepage/subjects pages: English
+        // then Telugu for Telangana History sit first, rest keep whatever
+        // order the API returned them in.
         const PRIORITY_ORDER = ['telangana-history-en', 'telangana-history-te'];
         nonPapers.sort((a, b) => {
           const ai = PRIORITY_ORDER.indexOf(a.slug);
@@ -536,35 +453,34 @@ const comingSoonSubjects = [
         });
 
         const comingSoonHtml = (comingSoonSubjects || []).map((s) => `
-          <div class="subject-row row-soon">
-            <div class="row-checkbox"></div>
-            <div class="row-leading"><i class="ti ti-book"></i></div>
-            <div class="row-body">
-              <div class="row-title">${s.titleNative}</div>
-              <div class="row-sub">${s.titleEnglish}</div>
-            </div>
-            <div class="row-trailing">
-              <span class="row-soon-label">Coming soon</span>
-            </div>
+          <div class="plan-card" style="background:linear-gradient(160deg, #1a1438 0%, #241a4d 100%); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem; opacity:0.55; color:#ffffff;">
+            <div class="card-title" style="font-weight:700; font-size:15px; margin-top:26px; color:#ffffff;">${s.titleNative}</div>
+            <div style="font-size:13px; color:rgba(255,255,255,0.6); margin:2px 0 12px;">${s.titleEnglish}</div>
+            <button disabled class="soon-btn" style="width:100%; font-size:13px; padding:8px; border:1px solid rgba(255,255,255,0.15); border-radius:8px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.5); cursor:not-allowed;">
+              Coming soon
+            </button>
           </div>
         `).join('');
 
-        const combinedHtml = nonPapers.map(renderPlanRow).join('') + comingSoonHtml;
+        const combinedHtml = nonPapers.map(renderPlanCard).join('') + comingSoonHtml;
         grid.innerHTML = combinedHtml.trim().length
           ? combinedHtml
-          : `<div class="row-skeleton">No subjects available right now.</div>`;
+          : `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">No subjects available right now.</div>`;
 
         if (papers.length) {
-          papersGrid.innerHTML = papers.map(renderPlanRow).join('');
+          papersGrid.innerHTML = papers.map(renderPlanCard).join('');
           papersSection.style.display = '';
         }
 
-        document.querySelectorAll('.row-buy-btn').forEach((btn) => {
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // don't let the row-level bundle-select listener also fire
+        document.querySelectorAll('.buy-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
             const subject_id = btn.getAttribute('data-subject');
             if (!currentUser) {
               const returnTo = `/plans/?buy=${encodeURIComponent(subject_id)}`;
+              // The signup page now shows its own persistent purchase-context
+              // banner (subject name + "you'll be sent straight to payment"),
+              // which explains this better than a timed toast ever could —
+              // so no toast needed here anymore, just a direct redirect.
               window.location.href = `/signup/?next=${encodeURIComponent(returnTo)}`;
               return;
             }
@@ -572,25 +488,32 @@ const comingSoonSubjects = [
           });
         });
 
-        // Row click: only acts as bundle-select when bundle mode is active.
-        // In single mode, the row itself does nothing extra — the Buy now
-        // button (with its own stopPropagation'd listener above) is the
-        // only actionable element, so this never interferes with it.
-        document.querySelectorAll('.subject-row').forEach((row) => {
-          row.addEventListener('click', () => {
+        // ---------- BUNDLE FEATURE: click-to-select on the card itself.
+        // Only acts when bundleModeOn is true, and ignores clicks that
+        // originated on the (hidden, in bundle mode) Buy now button — so
+        // this can never interfere with the single-purchase click handler
+        // registered just above. ----------
+        document.querySelectorAll('.plan-card').forEach((card) => {
+          card.classList.add('bundle-selectable');
+          card.addEventListener('click', (e) => {
             if (!bundleModeOn) return;
-            if (row.classList.contains('row-soon')) return;
-            const slug = row.dataset.slug;
-            if (!slug) return;
+            if (e.target.closest('.buy-btn')) return;
+            const slug = card.dataset.slug;
+            if (!slug) return; // skip "coming soon" cards, which have no data-slug
             toggleBundleSelect(slug);
           });
         });
       } catch (err) {
-        grid.innerHTML = `<div class="row-skeleton">Couldn't load subjects. Please refresh the page.</div>`;
+        grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:var(--muted); font-size:13px;">Couldn't load subjects. Please refresh the page.</div>`;
       }
     }
 
     function startPurchase(btn, subject_id) {
+      // Short confirming buzz the moment "Buy now" is tapped — same
+      // purpose as Razorpay's own in-checkout haptics: reassures the user
+      // their tap registered, especially useful right before the
+      // create-order network call, which can take a moment. Silently
+      // does nothing on devices/browsers without vibration support.
       if (navigator.vibrate) navigator.vibrate(30);
 
       btn.disabled = true;
@@ -605,8 +528,13 @@ const comingSoonSubjects = [
         .then(({ res, order }) => {
           if (!res.ok) {
             if (order.error === 'Already purchased') {
+              // Don't just relabel and wait for a second click — that leaves
+              // the user unsure whether anything happened. Show a clear
+              // confirmation and auto-redirect straight to their content.
               btn.disabled = true;
               btn.textContent = '✓ Already purchased — opening...';
+              btn.style.background = 'linear-gradient(90deg, #ff9a3c, #ffb35c)';
+              btn.style.color = '#fff';
               setTimeout(() => {
                 window.location.href = `/${subject_id}/`;
               }, 800);
@@ -618,6 +546,14 @@ const comingSoonSubjects = [
             return;
           }
 
+          // UPI intent flows (Google Pay/PhonePe returning control after
+          // payment) require Razorpay's native Android SDK — a WebView-based
+          // checkout.js flow cannot receive that callback correctly, which is
+          // why UPI doesn't appear as an option inside the Capacitor app at
+          // all (confirmed 2026-09-08). The native RazorpayPlugin bridges to
+          // that SDK. Web checkout (running on the plain website, not inside
+          // the app) is completely unaffected and keeps using the existing
+          // window.Razorpay flow, where UPI already works correctly.
           const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
 
           if (isNativeApp) {
@@ -631,6 +567,7 @@ const comingSoonSubjects = [
               prefill: { name: currentUser.name },
             }).then((result) => {
               if (result.success) {
+                // Don't unlock here — redirect to processing page which waits for webhook confirmation
                 window.location.href =
                   `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
               } else {
@@ -659,6 +596,7 @@ const comingSoonSubjects = [
             description: subject_id,
             prefill: { name: currentUser.name },
             handler: function () {
+              // Don't unlock here — redirect to processing page which waits for webhook confirmation
               window.location.href =
                 `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
             },
@@ -685,32 +623,47 @@ const comingSoonSubjects = [
         });
     }
 
-    // Highlight the specific subject someone came here to buy.
+    // Highlight the specific subject someone came here to buy (from a
+    // subject page's "Unlock unlimited" button), so it's unmistakable which
+    // card to click — instead of the generic "most popular" badge misleading
+    // them into buying a different subject by habit. Now called explicitly
+    // from boot, after loadRealSubjects() has put the cards in the DOM —
+    // it used to run as an immediately-invoked function against
+    // server-rendered cards that existed at parse time; those cards are
+    // fetched client-side now, so this can no longer run immediately.
     function highlightIntendedSubject() {
       const params = new URLSearchParams(window.location.search);
       const highlightSlug = params.get('highlight');
-      if (!highlightSlug) return;
+      if (!highlightSlug) return; // no specific intent — leave default "most popular" styling as-is
 
-      const targetRow = document.getElementById(`plan-card-${highlightSlug}`);
-      if (!targetRow) return;
+      const targetCard = document.getElementById(`plan-card-${highlightSlug}`);
+      if (!targetCard) return;
 
-      document.querySelectorAll('[id^="plan-card-"]').forEach((row) => {
-        row.classList.remove('row-popular');
-        const popularBadge = row.querySelector('.row-badge-popular');
+      // Demote the generic "most popular" badge/border on every card —
+      // it's misleading once the person has a specific subject in mind.
+      document.querySelectorAll('[id^="plan-card-"]').forEach((card) => {
+        card.style.border = '1px solid rgba(255,255,255,0.08)';
+        const popularBadge = card.querySelector('.badge-popular');
         if (popularBadge) popularBadge.style.display = 'none';
+        const title = card.querySelector('.card-title');
+        if (title) title.style.marginTop = '26px';
       });
 
-      targetRow.classList.add('row-popular');
-      const yoursWrap = targetRow.querySelector('.badge-yours-wrap');
-      if (yoursWrap) yoursWrap.style.display = 'inline-block';
+      // Mark the correct card clearly.
+      targetCard.style.border = '2px solid #ff9a3c';
+      targetCard.style.boxShadow = '0 0 0 4px rgba(255, 154, 60, 0.18)';
+      const yoursBadge = targetCard.querySelector('.badge-yours');
+      if (yoursBadge) yoursBadge.style.display = 'inline-block';
+      const targetTitle = targetCard.querySelector('.card-title');
+      if (targetTitle) targetTitle.style.marginTop = '10px';
 
-      // Intentionally NOT calling scrollIntoView() here — auto-scrolling
-      // the page on load felt jarring and was removed per feedback. The
-      // row-popular highlight styling above is enough to show which
-      // subject was intended.
+      targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // Boot
+    // Boot: load the real subject cards first (they must exist in the DOM
+    // before anything below can query them), then resolve session, check
+    // ownership, apply the highlight, and auto-resume a purchase if we
+    // arrived here via the ?buy= redirect after login/signup.
     loadRealSubjects().then(() => {
       getSession().then((session) => {
         currentUser = session;
@@ -719,8 +672,9 @@ const comingSoonSubjects = [
           const params = new URLSearchParams(window.location.search);
           const buySubject = params.get('buy');
           if (buySubject && currentUser) {
-            const btn = document.querySelector(`.row-buy-btn[data-subject="${CSS.escape(buySubject)}"]`);
+            const btn = document.querySelector(`.buy-btn[data-subject="${CSS.escape(buySubject)}"]`);
             if (btn) startPurchase(btn, buySubject);
+            // Clean the URL so a page refresh doesn't re-trigger the purchase
             window.history.replaceState({}, '', '/plans/');
           }
         });
