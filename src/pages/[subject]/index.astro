@@ -118,19 +118,18 @@ for (const ch of chapters) {
       </div>
       <div class="subject-header-right">
         {meta.category === 'papers' ? (
-          <div id="free-trial-text" class="trial-text">Question paper pattern &amp; subject weightage inside</div>
-        ) : (
-          <div id="free-trial-text" class="trial-text">15 free answers/day, no login needed</div>
-        )}
-        {meta.category === 'papers' ? (
           <div class="unlock-btn-group">
             <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock {chapters.length} Papers &ndash; Rs 99</a>
             <p class="unlock-btn-sub">Includes <span id="unlock-btn-days">365</span> days unlimited access</p>
           </div>
         ) : (
           <div class="unlock-btn-group">
-            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock Full Subject &ndash; Rs. 199</a>
-            <p class="unlock-btn-sub">Includes <span id="unlock-btn-days">45</span> days unlimited access</p>
+            <a id="bundle-btn" href={`/plans/?highlight=${subject}&mode=bundle`} class="unlock-btn">
+              <span class="unlock-btn-label">Bundle</span>
+              <span class="unlock-btn-detail">Pick any 3 subjects for ₹399</span>
+            </a>
+            <p class="unlock-btn-sub">Includes 3 months (<span id="unlock-btn-days">90</span> days) unlimited access</p>
+            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-secondary-link">Unlock just this subject &ndash; Rs. 199</a>
           </div>
         )}
       </div>
@@ -208,18 +207,9 @@ for (const ch of chapters) {
       gap: 16px;
       box-shadow: 0 12px 30px -12px rgba(20, 16, 43, 0.5);
     }
-    .subject-header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.18), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.25), transparent 45%);
-      pointer-events: none;
-    }
     .subject-header-left { position: relative; flex: 1; min-width: 220px; }
     .subject-header-right { position: relative; flex: 1; min-width: 220px; }
-    .subject-h1 { margin: 0 0 10px; font-size: 21px; color: #ffffff; }
+    .subject-h1 { margin: 0 0 10px; font-size: 21px; font-weight: 800; color: #ffffff; }
     .stat-pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
     .stat-pill {
       border-radius: 12px;
@@ -252,25 +242,59 @@ for (const ch of chapters) {
     .stat-num { font-size: 17px; font-weight: 700; line-height: 1.1; text-align: left; }
     .stat-label { font-size: 11px; text-align: left; }
 
-    .trial-text { font-size: 12px; color: rgba(255, 255, 255, 0.65); margin-bottom: 6px; }
     .unlock-btn-group { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 10px; }
-    .unlock-btn-sub { font-size: 12px; color: rgba(255, 255, 255, 0.65); margin: 0; text-align: center; }
+    .unlock-btn-sub { font-size: 12px; color: rgba(255, 255, 255, 0.8); margin: 0; text-align: center; }
+    .unlock-secondary-link {
+      display: inline-block;
+      font-size: 12.5px; font-weight: 700; color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 14px; border-radius: 999px; text-decoration: none;
+    }
     .unlock-btn {
       font-size: 13px;
       font-weight: 700;
-      padding: 10px 18px;
+      padding: 10px 16px;
       border: none;
       border-radius: 999px;
       text-decoration: none;
       background: linear-gradient(90deg, #ff9a3c, #ffb35c);
       color: #2a1400;
-      display: inline-block;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.55);
     }
+    .unlock-btn-label {
+      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em;
+      color: #2a1400; opacity: 0.7;
+      border-right: 1px solid rgba(42,20,0,0.3); padding-right: 8px;
+    }
+    .unlock-btn-detail { font-size: 13px; font-weight: 700; }
 
     @media (max-width: 900px) {
       .subject-header-left, .subject-header-right { text-align: center; }
       .stat-pill-row { justify-content: center; }
+    }
+
+    @media (max-width: 640px) {
+      .subject-header { padding: 1rem; gap: 10px; border-radius: 16px; }
+      .subject-h1 { font-size: 20px; margin-bottom: 8px; }
+      .stat-pill-row {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+      }
+      .stat-pill { padding: 0.45rem 0.4rem; gap: 5px; border-radius: 9px; }
+      .stat-pill i { font-size: 15px; }
+      .stat-num { font-size: 13px; }
+      .stat-label { font-size: 9.5px; }
+      .stat-pill-arrow { display: none; }
+      .unlock-btn-group { margin-top: 10px; gap: 10px; }
+      .unlock-btn { font-size: 12px; padding: 8px 16px; }
+      .unlock-btn-label { font-size: 9px; }
+      .unlock-btn-detail { font-size: 12.5px; }
+      .unlock-btn-sub { font-size: 11px; }
+      .unlock-secondary-link { font-size: 11px; padding: 5px 12px; }
     }
 
     .grace-banner {
@@ -380,11 +404,13 @@ for (const ch of chapters) {
       .chapter-card-title {
         grid-column: 2;
         grid-row: 1;
+        text-align: center;
       }
       .chapter-card-qcount {
         grid-column: 2;
         grid-row: 2;
         margin-top: 2px;
+        text-align: center;
       }
       .chapter-card::after {
         content: '';
@@ -530,21 +556,23 @@ for (const ch of chapters) {
           .then((data) => {
             if (data.unlocked) {
               const btn = document.getElementById('unlock-btn');
-              const trialText = document.getElementById('free-trial-text');
-              if (trialText) trialText.style.display = 'none';
               if (btn) {
                 const daysLeft = data.expires_at
                   ? formatDaysLeft(data.expires_at)
                   : 'Unlimited access unlocked';
-                btn.textContent = `✓ ${daysLeft}`;
+                btn.textContent = data.expires_at ? `Access active — ${daysLeft} ✓` : `${daysLeft} ✓`;
                 if (data.expires_at) {
                   btn.title = `Access until ${formatExpiryDate(data.expires_at)}`;
                 }
                 btn.removeAttribute('href');
                 btn.style.cursor = 'default';
-                btn.style.background = 'var(--success-bg)';
-                btn.style.color = 'var(--success-text)';
-                btn.style.borderColor = 'transparent';
+                btn.style.color = '#5ce0c0';
+
+                const bundleBtn = document.getElementById('bundle-btn');
+                if (bundleBtn) bundleBtn.style.display = 'none';
+
+                const durationCaption = document.querySelector('.unlock-btn-sub');
+                if (durationCaption) durationCaption.style.display = 'none';
               }
 
               if (data.is_grace_grant) {

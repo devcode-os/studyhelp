@@ -261,5 +261,22 @@ const iconMap = {
         )
       );
     });
+
+    // After a bundle purchase, the Worker's Razorpay callback (and the
+    // Plans page's web-checkout handler) redirect here with this flag —
+    // the ownership check above already runs on this same page load and
+    // will naturally show the 3 newly-bought subjects as "Purchased", so
+    // this only needs to surface a confirmation and clean the URL.
+    (function showBundleSuccessIfFlagged() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('bundle_success') !== '1') return;
+
+      if (window.showToast) {
+        window.showToast('Bundle purchased — your 3 subjects are now unlocked.', 'success');
+      } else {
+        alert('Bundle purchased — your 3 subjects are now unlocked.');
+      }
+      window.history.replaceState({}, '', '/subjects/');
+    })();
   </script>
 </Layout>

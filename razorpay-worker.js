@@ -50,6 +50,9 @@ export default {
     if (url.pathname === "/create-order" && request.method === "POST") {
       return createOrder(request, env);
     }
+    if (url.pathname === "/create-bundle-order" && request.method === "POST") {
+      return createBundleOrder(request, env);
+    }
     if (url.pathname === "/payment-callback" && request.method === "POST") {
       return handlePaymentCallback(request, env);
     }
@@ -247,6 +250,127 @@ async function createOrder(request, env) {
   }
 }
 
+// ---------- 1c. Create Bundle Order (pick any 3 subjects, flat price) ----------
+// Mirrors createOrder's shape/response exactly (order_id, amount, currency,
+// key_id) so the frontend can reuse the same Razorpay checkout code for
+// both flows. Differs in what it writes to D1: a bundle buys 3 subjects
+// under ONE order, but `orders.subject_id` is NOT NULL with a foreign key
+// to subjects — rather than risk a live-table rebuild to make it nullable,
+// we keep that column pointing at one of the three (arbitrarily the
+// first — it's never read for bundle orders) and record the real list of
+// 3 in a separate `order_items` table instead. `orders.is_bundle` flags
+// which code path the webhook should take.
+async function createBundleOrder(request, env) {
+  try {
+    const { user_id, subject_ids } = await request.json();
+
+    if (!user_id || !Array.isArray(subject_ids)) {
+      return json({ error: "user_id and subject_ids array required" }, 400);
+    }
+
+    // Exactly 3 unique subjects — matches the "Pick any 3" pricing, not a
+    // general N-subject bundle.
+    const uniqueIds = [...new Set(subject_ids)];
+    if (uniqueIds.length !== 3) {
+      return json({ error: "Bundle requires exactly 3 unique subjects" }, 400);
+    }
+
+    // Confirm all 3 are real subjects (never trust IDs from the client).
+    const placeholders = uniqueIds.map(() => "?").join(",");
+    const { results: foundSubjects } = await env.DB.prepare(
+      `SELECT id FROM subjects WHERE id IN (${placeholders})`
+    )
+      .bind(...uniqueIds)
+      .all();
+
+    if (!foundSubjects || foundSubjects.length !== 3) {
+      return json({ error: "One or more subjects are invalid" }, 400);
+    }
+
+    // Auto-create user if not exists (identity = email for now, pre-OTP-login)
+    await env.DB.prepare(
+      `INSERT INTO users (id, email) VALUES (?, ?) ON CONFLICT(id) DO NOTHING`
+    )
+      .bind(user_id, user_id)
+      .run();
+
+    // Defensive only — the Plans page UI already hides/excludes subjects
+    // the user owns from bundle selection, so this should never actually
+    // trigger. Never trust the client though: reject rather than silently
+    // re-granting/extending anything already unexpired.
+    const nowTs = Math.floor(Date.now() / 1000);
+    const { results: alreadyOwned } = await env.DB.prepare(
+      `SELECT subject_id FROM entitlements WHERE user_id = ? AND expires_at > ? AND subject_id IN (${placeholders})`
+    )
+      .bind(user_id, nowTs, ...uniqueIds)
+      .all();
+
+    if (alreadyOwned && alreadyOwned.length > 0) {
+      return json(
+        { error: "Already purchased", subject_ids: alreadyOwned.map((r) => r.subject_id) },
+        409
+      );
+    }
+
+    // Bundle price lives in D1 (settings table), same "editable without a
+    // redeploy" convention as subjects.price_paise — falls back to the
+    // current ₹399 if the row is somehow missing.
+    const priceRow = await env.DB.prepare(
+      "SELECT value FROM settings WHERE key = 'bundle_price_paise'"
+    ).first();
+    const bundlePricePaise = priceRow ? parseInt(priceRow.value, 10) : 39900;
+
+    // Call Razorpay Orders API
+    const auth = btoa(`${env.RAZORPAY_KEY_ID}:${env.RAZORPAY_KEY_SECRET}`);
+    const rpRes = await fetch("https://api.razorpay.com/v1/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${auth}`,
+      },
+      body: JSON.stringify({
+        amount: bundlePricePaise,
+        currency: "INR",
+        notes: { user_id, subject_ids: uniqueIds.join(","), type: "bundle" },
+      }),
+    });
+
+    if (!rpRes.ok) {
+      const errBody = await rpRes.text();
+      return json({ error: "Razorpay order creation failed", detail: errBody }, 502);
+    }
+
+    const rpOrder = await rpRes.json();
+
+    // orders.subject_id is NOT NULL + FK — point it at the first chosen
+    // subject purely to satisfy that constraint; the webhook never reads
+    // it for a bundle order (it reads order_items instead).
+    await env.DB.prepare(
+      `INSERT INTO orders (id, user_id, subject_id, amount_paise, status, is_bundle)
+       VALUES (?, ?, ?, ?, 'created', 1)`
+    )
+      .bind(rpOrder.id, user_id, uniqueIds[0], bundlePricePaise)
+      .run();
+
+    await env.DB.batch(
+      uniqueIds.map((sid) =>
+        env.DB.prepare(
+          `INSERT INTO order_items (order_id, subject_id) VALUES (?, ?)`
+        ).bind(rpOrder.id, sid)
+      )
+    );
+
+    return json({
+      order_id: rpOrder.id,
+      amount: rpOrder.amount,
+      currency: rpOrder.currency,
+      key_id: env.RAZORPAY_KEY_ID, // public key, safe to expose to client
+    });
+  } catch (err) {
+    return json({ error: "Server error", detail: String(err) }, 500);
+  }
+}
+
 // ---------- 1b. Payment callback (Capacitor app only) ----------
 // Razorpay's own docs state that WebView-based checkout (as opposed to a
 // real mobile browser tab) needs `redirect: true` + `callback_url` instead
@@ -288,13 +412,17 @@ async function handlePaymentCallback(request, env) {
   }
 
   const order = await env.DB.prepare(
-    "SELECT user_id, subject_id FROM orders WHERE id = ?"
+    "SELECT user_id, subject_id, is_bundle FROM orders WHERE id = ?"
   )
     .bind(razorpay_order_id)
     .first();
 
   if (!order) {
     return Response.redirect(`${APP_URL}/plans/?payment_error=1`, 302);
+  }
+
+  if (order.is_bundle) {
+    return Response.redirect(`${APP_URL}/subjects/?bundle_success=1`, 302);
   }
 
   return Response.redirect(
@@ -329,6 +457,50 @@ async function handleWebhook(request, env) {
 
     if (!order) {
       // Order not found — log and ignore, don't error (Razorpay retries on non-2xx)
+      return new Response("ok", { status: 200 });
+    }
+
+    if (order.is_bundle) {
+      // Bundle: grant an entitlement for every subject in order_items,
+      // each using ITS OWN access_days (subjects can differ — e.g.
+      // previous-papers subjects use a longer window), not one shared
+      // duration. Same idempotent upsert pattern as the single-subject
+      // path below, just repeated per subject.
+      const { results: items } = await env.DB.prepare(
+        "SELECT subject_id FROM order_items WHERE order_id = ?"
+      )
+        .bind(orderId)
+        .all();
+
+      const nowTs = Math.floor(Date.now() / 1000);
+      const stmts = [];
+      for (const item of items) {
+        const subjectRow = await env.DB.prepare(
+          "SELECT access_days FROM subjects WHERE id = ?"
+        )
+          .bind(item.subject_id)
+          .first();
+        const accessDays = (subjectRow && subjectRow.access_days) || 90;
+        const expiresAt = nowTs + accessDays * 24 * 60 * 60;
+
+        stmts.push(
+          env.DB.prepare(
+            `INSERT INTO entitlements (id, user_id, subject_id, order_id, payment_id, expires_at)
+             VALUES (?, ?, ?, ?, ?, ?)
+             ON CONFLICT(user_id, subject_id) DO UPDATE SET
+               order_id = excluded.order_id,
+               payment_id = excluded.payment_id,
+               expires_at = excluded.expires_at
+             WHERE entitlements.order_id != excluded.order_id`
+          ).bind(crypto.randomUUID(), order.user_id, item.subject_id, orderId, paymentId, expiresAt)
+        );
+      }
+      await env.DB.batch(stmts);
+
+      await env.DB.prepare("UPDATE orders SET status = 'paid' WHERE id = ?")
+        .bind(orderId)
+        .run();
+
       return new Response("ok", { status: 200 });
     }
 
