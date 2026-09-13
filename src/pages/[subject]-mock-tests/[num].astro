@@ -79,12 +79,14 @@ const isFreeMock = mock.mockNumber === 1;
       </button>
       <button type="button" id="mt-exit-btn" class="mt-exit-btn">Exit</button>
     </div>
-    <div class="mt-body" id="mt-body"></div>
-    <div class="mt-footer">
-      <button type="button" id="mt-prev-btn" class="mt-nav-btn">Previous</button>
-      <button type="button" id="mt-mark-btn" class="mt-nav-btn mt-mark-btn"><i class="ti ti-flag" aria-hidden="true"></i></button>
-      <button type="button" id="mt-next-btn" class="mt-nav-btn">Next</button>
-      <button type="button" id="mt-submit-btn" class="mt-nav-btn mt-submit-btn" style="display:none;">Submit Test</button>
+    <div class="mt-scroll" id="mt-scroll">
+      <div class="mt-body" id="mt-body"></div>
+      <div class="mt-footer">
+        <button type="button" id="mt-prev-btn" class="mt-nav-btn">Previous</button>
+        <button type="button" id="mt-mark-btn" class="mt-nav-btn mt-mark-btn"><i class="ti ti-flag" aria-hidden="true"></i></button>
+        <button type="button" id="mt-next-btn" class="mt-nav-btn">Next</button>
+        <button type="button" id="mt-submit-btn" class="mt-nav-btn mt-submit-btn" style="display:none;">Submit Test</button>
+      </div>
     </div>
   </div>
 
@@ -294,15 +296,38 @@ const isFreeMock = mock.mockNumber === 1;
     }
     function stopMtTimer() { if (mtTimerInterval) clearInterval(mtTimerInterval); mtTimerInterval = null; }
 
+    // ---------- Real fix for footer buttons hidden behind the Android
+    // system nav bar: 100dvh (CSS) can still include that bar's height
+    // on some WebViews. window.visualViewport.height is the one number
+    // that reliably reports ONLY the actually-visible area above any
+    // system/browser chrome, so we pin the overlay to that in pixels
+    // instead of trusting dvh alone. Re-run on resize (nav bar
+    // show/hide, keyboard, rotation) and once shortly after opening
+    // (some browsers report a stale value on the very first paint).
+    function syncMtOverlayHeight() {
+      if (!mtOverlay.classList.contains('active')) return;
+      const vv = window.visualViewport;
+      const h = vv ? vv.height : window.innerHeight;
+      mtOverlay.style.height = h + 'px';
+    }
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', syncMtOverlayHeight);
+    }
+    window.addEventListener('resize', syncMtOverlayHeight);
+    window.addEventListener('orientationchange', () => setTimeout(syncMtOverlayHeight, 200));
+
     let mtPopstateGuard = null;
     function openMockTestOverlay() {
       mtOverlay.classList.add('active');
+      syncMtOverlayHeight();
+      setTimeout(syncMtOverlayHeight, 150); // catch late/incorrect first reading
       history.pushState({ mockTest: true }, '');
       mtPopstateGuard = () => { history.pushState({ mockTest: true }, ''); requestMtExit(); };
       window.addEventListener('popstate', mtPopstateGuard);
     }
     function closeMockTestOverlay() {
       mtOverlay.classList.remove('active');
+      mtOverlay.style.height = ''; // let CSS dvh govern again while hidden
       stopMtTimer();
       if (mtPopstateGuard) { window.removeEventListener('popstate', mtPopstateGuard); mtPopstateGuard = null; }
     }
@@ -1178,7 +1203,16 @@ const isFreeMock = mock.mockNumber === 1;
          device that didn't need it than a header/footer flush against
          zero clearance on one that did. */
       padding-top: max(env(safe-area-inset-top, 0px), 8px);
-      padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+      /* Raised the floor from 16px to 28px: on Android 3-button-nav
+         devices env(safe-area-inset-bottom) resolves to 0 (that bar
+         isn't a "notch/gesture" safe area to the browser), so the old
+         16px floor wasn't enough clearance — the Next/Previous row sat
+         partly under the system nav and taps landed on it instead
+         (misread as a Back gesture). JS below also pins an exact pixel
+         height via visualViewport as the real fix; this floor is the
+         fallback for the moment before that JS runs / if it's ever
+         unavailable. */
+      padding-bottom: max(env(safe-area-inset-bottom, 0px), 28px);
       background: var(--bg);
       z-index: 200;
       display: none;
@@ -1206,12 +1240,15 @@ const isFreeMock = mock.mockNumber === 1;
     .mt-starting-sub { font-size: 13.5px; color: rgba(255,255,255,0.7); }
     .mt-topbar {
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      padding: 14px 16px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      .mt-topbar { padding: 8px 14px; }
     }
     .mt-timer {
       font-size: 18px;
@@ -1237,40 +1274,52 @@ const isFreeMock = mock.mockNumber === 1;
       font-weight: 700;
       cursor: pointer;
     }
-    .mt-body {
+    /* .mt-scroll wraps mt-body + mt-footer together: this element is the
+       one that stretches/scrolls, so the footer flows in normal document
+       order right after the last option instead of being pinned to the
+       screen's bottom edge. Short questions leave empty space below the
+       buttons; long ones need a scroll to reach them — both intentional,
+       per requested behavior. */
+    .mt-scroll {
       flex: 1;
       overflow-y: auto;
-      padding: 20px 16px;
+    }
+    .mt-body {
+      padding: 16px 16px;
       max-width: 720px;
       margin: 0 auto;
       width: 100%;
       box-sizing: border-box;
     }
-    .mt-q-num { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
-    .mt-q-text { font-size: 17px; font-weight: 600; line-height: 1.5; margin-bottom: 18px; white-space: pre-wrap; }
+    .mt-q-num { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+    .mt-q-text { font-size: 16.5px; font-weight: 600; line-height: 1.45; margin-bottom: 14px; white-space: pre-wrap; }
     .mt-opt-row {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 13px 14px;
+      padding: 12px 13px;
       border-radius: 10px;
       border: 1px solid var(--border);
       background: var(--card);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       cursor: pointer;
+    }
+    @media (max-width: 480px) {
+      .mt-body { padding: 12px 16px; }
+      .mt-q-text { font-size: 15.5px; margin-bottom: 12px; }
+      .mt-opt-row { padding: 10px 12px; margin-bottom: 7px; }
     }
     .mt-opt-row.mt-opt-selected {
       border-color: var(--accent);
       background: color-mix(in srgb, var(--accent) 10%, var(--card));
     }
     .mt-footer {
-      flex-shrink: 0;
       display: flex;
       gap: 10px;
-      padding: 14px 16px;
+      padding: 16px;
       border-top: 1px solid var(--border);
       max-width: 720px;
-      margin: 0 auto;
+      margin: 8px auto 0;
       width: 100%;
       box-sizing: border-box;
     }
@@ -1291,6 +1340,15 @@ const isFreeMock = mock.mockNumber === 1;
       border: none;
     }
     .mt-nav-btn:disabled { opacity: 0.5; cursor: default; }
+
+    /* Extra safety net on very short viewports (small phones, landscape):
+       spacing above is already compact by default now, this trims a
+       little further only when height is genuinely tight. */
+    @media (max-height: 600px) {
+      .mt-q-text { margin-bottom: 10px; }
+      .mt-opt-row { padding: 9px 12px; margin-bottom: 6px; }
+      .mt-nav-btn { padding: 10px; font-size: 13.5px; }
+    }
     .mt-nav-toggle {
       display: flex; align-items: center; gap: 6px; cursor: pointer;
       background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);

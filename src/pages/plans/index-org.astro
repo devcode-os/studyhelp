@@ -1,0 +1,950 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+// Real, purchasable subjects are fetched client-side from GET
+// /subjects/public (Worker → D1 `subjects` table) so price/title changes
+// made in the master-access Pricing tab show up here immediately, with no
+// code edit or redeploy needed.
+---
+<Layout title="Plans - StudyHelp" description="Unlock unlimited access to StudyHelp subjects. One-time payment, no subscription.">
+
+  <Header active="plans" />
+
+  <div class="page-wide">
+
+    <div class="plans-intro">
+      <h1 class="plans-h1">Unlock Unlimited Access <span id="plans-duration-badge" class="plans-duration-badge">3 Month (90 Days)</span></h1>
+      <p class="plans-sub">One-time payment. No subscription.</p>
+    </div>
+
+    <div id="active-subjects-section" class="active-subjects-section">
+      <button type="button" id="active-subjects-toggle" class="section-label active-subjects-toggle" aria-expanded="false">
+        <i class="ti ti-circle-check" style="color:#3fd88a;"></i>
+        <span>Your Active Subjects</span>
+        <span id="active-subjects-count" class="active-subjects-count"></span>
+        <i class="ti ti-chevron-down active-subjects-chevron"></i>
+      </button>
+      <div id="active-subjects-list" class="active-subjects-list"></div>
+    </div>
+
+    <!-- Sticky group: catalog tabs (Subjects / Question Papers) plus the
+         Buy Single/Bundle toggle underneath — both stay pinned to the top
+         of the viewport while scrolling the list below. -->
+    <div id="catalog-sticky" class="catalog-sticky">
+      <div class="catalog-tabs" id="catalog-tabs">
+        <button id="tab-subjects-btn" class="catalog-tab-btn catalog-tab-active" type="button">Subjects</button>
+        <button id="tab-papers-btn" class="catalog-tab-btn" type="button" style="display:none;">Question Papers</button>
+      </div>
+
+      <!-- Mode toggle: segmented control, Android/iOS style. Only meaningful
+           for Subjects — Question Papers is single-buy only, no bundle. -->
+      <div class="mode-toggle" id="mode-toggle">
+        <button id="mode-single-btn" class="mode-btn mode-btn-active" type="button">Buy Single</button>
+        <button id="mode-bundle-btn" class="mode-btn" type="button">Bundle: Pick any 3 — ₹399</button>
+      </div>
+    </div>
+
+    <div id="subjects-section" class="subjects-section">
+      <!-- List of subject rows — replaces the old big marketing cards.
+           Same list markup is used for both Single and Bundle mode; only a
+           class on the container (.bundle-mode) and per-row state
+           (.row-selected) change how a row looks/behaves. -->
+      <div class="subject-rows" id="real-plan-grid">
+        <div class="row-skeleton">Loading subjects...</div>
+      </div>
+
+      <!-- Sticky bundle bar — appears only in bundle mode -->
+      <div id="bundle-sticky-bar" class="bundle-sticky-bar">
+        <span id="bundle-counter">0 of 3 selected</span>
+        <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Buy Bundle — ₹399</button>
+      </div>
+    </div>
+
+    <div id="papers-section" class="papers-section" style="display:none;">
+      <div class="subject-rows" id="real-papers-grid"></div>
+    </div>
+
+    <div class="whatyouget-card">
+      <div class="whatyouget-title">What you get</div>
+      <div class="whatyouget-grid">
+        <div>
+          <div class="whatyouget-item-title">Unlimited reading</div>
+          <div class="whatyouget-item-sub">All chapters, all FAQs</div>
+        </div>
+        <div>
+          <div class="whatyouget-item-title">Log in anywhere</div>
+          <div class="whatyouget-item-sub">Switch devices anytime, no limit</div>
+        </div>
+        <div>
+          <div class="whatyouget-item-title">Unlimited access</div>
+          <div class="whatyouget-item-sub">One-time payment, duration shown on each subject</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <style is:global>
+    /* The install-app banner is injected globally by the shared layout, but
+       on this page it overlaps the fixed bundle bar / row content, so it's
+       hidden here specifically for /plans/. */
+    #app-install-banner { display: none !important; }
+
+    /* ================= Layout shell ================= */
+    .page-wide {
+      max-width: 640px; /* list UI reads best narrow, even on desktop —
+                            this is intentionally NOT a wide grid page
+                            anymore, avoiding the old desktop card-grid
+                            problems entirely. */
+      margin: 0 auto;
+      padding: 24px;
+    }
+    @media (max-width: 900px) {
+      .page-wide {
+        padding: 16px 16px calc(64px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    /* ================= Hero — compact banner, not a big hero block ================= */
+    .plans-intro {
+      text-align: left;
+      margin-bottom: 0.7rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+    }
+    .plans-h1 {
+      margin: 0 0 4px; color: #ffffff; font-size: 16px; font-weight: 700;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 6px; row-gap: 6px;
+    }
+    .plans-duration-badge {
+      font-size: 10.5px; font-weight: 700; color: #2a1400; white-space: nowrap;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      padding: 2px 8px; border-radius: 999px;
+    }
+    .plans-sub { color: rgba(255,255,255,0.65); font-size: 12px; margin: 0; }
+    @media (min-width: 721px) {
+      .plans-intro { position: relative; }
+      .plans-duration-badge {
+        position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
+        font-size: 12px; padding: 5px 14px;
+      }
+    }
+    @media (max-width: 720px) {
+      .plans-intro { margin-bottom: 0.6rem; padding: 0.75rem 0.9rem; text-align: center; }
+      .plans-h1 { font-size: 14.5px; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+      .plans-duration-badge { font-size: 10px; }
+      .plans-sub { font-size: 11px; }
+    }
+
+    /* ================= Section labels ================= */
+    .section-label {
+      font-size: 14px; font-weight: 700; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .active-subjects-section { display: none; margin-bottom: 0.9rem; }
+    .active-subjects-toggle {
+      width: 100%; cursor: pointer;
+      color: #ffffff; text-align: left;
+      display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700;
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(93,224,192,0.3);
+      border-radius: 10px; padding: 9px 12px;
+    }
+    .active-subjects-toggle:active { border-color: rgba(93,224,192,0.6); }
+    .active-subjects-toggle span:first-of-type { flex: 0 0 auto; }
+    .active-subjects-count {
+      font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); margin-left: 2px;
+    }
+    .active-subjects-chevron { margin-left: auto; transition: transform 0.15s; color: rgba(255,255,255,0.5); }
+    .active-subjects-toggle[aria-expanded="true"] .active-subjects-chevron { transform: rotate(180deg); }
+    .active-subjects-list {
+      display: flex; flex-direction: column; gap: 10px;
+      overflow: hidden; max-height: 0;
+    }
+    .active-subjects-section.expanded .active-subjects-list {
+      max-height: none; margin-top: 10px;
+    }
+    .subjects-section { margin-bottom: 1.5rem; }
+    .papers-section { margin-bottom: 1.5rem; }
+
+    /* ================= Sticky catalog header (tabs + mode toggle) ================= */
+    .catalog-sticky {
+      position: sticky; top: 0; z-index: 25;
+      background: var(--bg, #faf9f6);
+      padding-top: 8px; padding-bottom: 4px; margin: 0 -24px; padding-left: 24px; padding-right: 24px;
+    }
+    @media (max-width: 900px) {
+      .catalog-sticky { margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+    }
+    .catalog-tabs {
+      display: flex; gap: 22px; margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .catalog-tab-btn {
+      flex: none; padding: 6px 2px 10px; font-size: 14px; font-weight: 700;
+      border: none; border-bottom: 2px solid transparent; border-radius: 0;
+      background: transparent; color: var(--muted); cursor: pointer; white-space: nowrap;
+      margin-bottom: -1px; /* sit on top of the tabs border */
+    }
+    .catalog-tab-active {
+      color: var(--text); border-bottom-color: #ff9a3c;
+    }
+
+    /* ================= Mode toggle (segmented control) ================= */
+    .mode-toggle {
+      display: flex; gap: 6px; margin-bottom: 8px;
+      background: rgba(255,255,255,0.05); padding: 4px; border-radius: 4px;
+    }
+    .mode-btn {
+      flex: 1; padding: 10px 12px; border-radius: 2px; font-size: 13px; font-weight: 700;
+      cursor: pointer; white-space: nowrap; border: none;
+      background: linear-gradient(90deg, #f6c343, #ffd76a); color: #3a2b00; /* inactive = yellow */
+    }
+    .mode-btn-active {
+      background: linear-gradient(90deg, #2fbf71, #3fd88a); color: #063a1e; /* active = green */
+    }
+    @media (max-width: 400px) {
+      .mode-btn { font-size: 11.5px; padding: 10px 6px; }
+    }
+
+    /* ================= Subject rows (Android list-item style) ================= */
+    .subject-rows {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .row-skeleton {
+      text-align: center; padding: 2rem; color: var(--muted); font-size: 13px;
+    }
+    .subject-row {
+      display: flex; align-items: center; gap: 10px;
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 9px 11px;
+      text-decoration: none;
+      color: #ffffff;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .subject-row.row-popular {
+      border-color: #ff9a3c;
+    }
+    .subject-row.row-selected {
+      border-color: #ff9a3c;
+      box-shadow: 0 0 0 3px rgba(255,154,60,0.18);
+    }
+    /* Leading checkbox (bundle mode only now — icon removed from single mode) */
+    .row-checkbox {
+      display: none; width: 22px; height: 22px; border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.3); background: rgba(0,0,0,0.2); flex-shrink: 0;
+      align-items: center; justify-content: center; color: transparent; font-size: 14px; font-weight: 900;
+    }
+    .row-selected .row-checkbox { background: #ff9a3c; border-color: #ff9a3c; color: #ffffff; }
+
+    /* Middle: title + subtitle + meta */
+    .row-body { flex: 1; min-width: 0; }
+    .row-title { font-weight: 700; font-size: 14.5px; color: #ffffff; line-height: 1.3; }
+    .row-sub { font-size: 12.5px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+    /* Trailing: price + buy button (single mode) */
+    .row-trailing { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+    .row-price { font-size: 14px; font-weight: 700; color: #ffcb8a; }
+    .row-buy-btn {
+      font-size: 12px; font-weight: 700; padding: 7px 14px; border: none; border-radius: 8px;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; cursor: pointer; white-space: nowrap;
+    }
+    .row-badge-popular {
+      font-size: 8px; font-weight: 700; padding: 1px 6px; border-radius: 4px;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; margin-bottom: 2px; display: inline-block;
+    }
+    .row-badge-yours {
+      font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px;
+      background: rgba(93,224,192,0.15); color: #5ce0c0; margin-bottom: 2px; display: inline-block;
+    }
+
+    /* ================= Bundle mode overrides ================= */
+    /* In bundle mode: hide icon (show checkbox instead), hide price/buy
+       button entirely (flat bundle price shown only in the sticky bar),
+       whole row becomes the tap target. */
+    .subject-rows.bundle-mode .row-checkbox { display: flex; }
+    .subject-rows.bundle-mode .row-trailing { display: none; }
+    @media (max-width: 900px) {
+      .subjects-section:has(.bundle-mode) { padding-bottom: 76px; }
+    }
+
+    /* ================= Sticky bundle bar ================= */
+    /* Fixed (not sticky) so it stays visible on screen at all times while
+       bundle mode is on, regardless of scroll position — floats just above
+       the mobile bottom tab bar. */
+    .bundle-sticky-bar {
+      display: none;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+      padding: 4px; justify-content: space-between; align-items: center;
+      box-shadow: 0 8px 20px -6px rgba(0,0,0,0.4);
+      color: #ffffff; font-size: 13px; font-weight: 700;
+    }
+    #bundle-counter { flex: 1; min-width: 0; padding-left: 8px; }
+    @media (max-width: 900px) {
+      .bundle-sticky-bar {
+        position: fixed;
+        left: 50%; transform: translateX(-50%);
+        width: calc(100% - 64px);
+        bottom: calc(6px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
+        z-index: 30;
+        max-width: 320px;
+        background: rgba(20, 16, 43, 0.96);
+      }
+    }
+    @media (min-width: 901px) {
+      /* position: sticky (not fixed) — floats at the bottom of the viewport
+         while scrolling through the subject list, then naturally releases
+         once its parent section ends, so it never overlaps the footer. */
+      .bundle-sticky-bar {
+        position: sticky; bottom: 16px;
+        margin: 12px auto 0; max-width: 360px; background: rgba(20, 16, 43, 0.96);
+      }
+    }
+    .bundle-buy-btn {
+      flex: 1; padding: 10px 12px; border-radius: 2px; border: none; font-weight: 700; font-size: 13px;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; cursor: pointer;
+      white-space: nowrap;
+    }
+    .bundle-buy-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    @media (max-width: 480px) {
+      .bundle-sticky-bar { width: calc(100% - 40px); font-size: 12px; }
+      .bundle-buy-btn { font-size: 12px; }
+    }
+
+    /* ================= Active subjects (owned) card ================= */
+    .active-row {
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(93,224,192,0.35);
+      border-radius: 14px; padding: 12px 14px; display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .active-row-title { font-weight: 700; font-size: 14.5px; color: #ffffff; }
+    .active-row-sub { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+    .active-row-open {
+      font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 8px;
+      background: linear-gradient(90deg, #2fbf71, #3fd88a); color: #063a1e;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .grace-banner {
+      width: 100%; margin-top: 10px; padding: 10px 12px; border-radius: 8px;
+      background: rgba(255,203,138,0.12); border: 1px solid rgba(255,203,138,0.4);
+      color: #ffcb8a; font-size: 12px; line-height: 1.5;
+    }
+    .grace-banner a { color: #ffcb8a; font-weight: 700; text-decoration: underline; }
+
+    /* ================= What you get ================= */
+    .whatyouget-card {
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
+    }
+    .whatyouget-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #ffffff; }
+    .whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
+    .whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+    @media (max-width: 720px) {
+      .whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 12px; }
+      .whatyouget-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+  </style>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
+    let currentUser = null; // { user_id, name } once resolved, else null
+    let subjectMeta = []; // populated by loadRealSubjects() before anything else runs
+
+    // ---------- BUNDLE FEATURE state ----------
+    let bundleModeOn = false;
+    let selectedBundleSlugs = [];
+
+    function setBundleMode(on) {
+      bundleModeOn = on;
+      selectedBundleSlugs = [];
+      document.getElementById('real-plan-grid').classList.toggle('bundle-mode', on);
+      document.getElementById('bundle-sticky-bar').style.display = on ? 'flex' : 'none';
+      document.getElementById('mode-single-btn').classList.toggle('mode-btn-active', !on);
+      document.getElementById('mode-bundle-btn').classList.toggle('mode-btn-active', on);
+      document.querySelectorAll('.subject-row').forEach((r) => r.classList.remove('row-selected'));
+      const scrollTopBtn = document.getElementById('scroll-top-btn');
+      if (scrollTopBtn) scrollTopBtn.style.display = on ? 'none' : '';
+      updateBundleBar();
+    }
+
+    function updateBundleBar() {
+      const counter = document.getElementById('bundle-counter');
+      const buyBtn = document.getElementById('bundle-buy-btn');
+      if (counter) counter.textContent = `${selectedBundleSlugs.length} of 3 selected`;
+      if (buyBtn) buyBtn.disabled = selectedBundleSlugs.length !== 3;
+    }
+
+    function toggleBundleSelect(slug) {
+      const row = document.getElementById(`plan-card-${slug}`);
+      if (!row) return;
+      const idx = selectedBundleSlugs.indexOf(slug);
+      if (idx > -1) {
+        selectedBundleSlugs.splice(idx, 1);
+        row.classList.remove('row-selected');
+      } else {
+        if (selectedBundleSlugs.length >= 3) return; // cap at 3
+        selectedBundleSlugs.push(slug);
+        row.classList.add('row-selected');
+      }
+      updateBundleBar();
+    }
+
+    function onBuyBundleClick() {
+      if (selectedBundleSlugs.length !== 3) return;
+
+      if (!currentUser) {
+        const returnTo = `/plans/?mode=bundle&subjects=${encodeURIComponent(selectedBundleSlugs.join(','))}`;
+        window.location.href = `/signup/?next=${encodeURIComponent(returnTo)}`;
+        return;
+      }
+
+      const btn = document.getElementById('bundle-buy-btn');
+      const subjectIds = selectedBundleSlugs.slice(); // snapshot — selection stays visible while the request is in flight
+      btn.disabled = true;
+      const originalLabel = btn.textContent;
+      btn.textContent = 'Loading...';
+
+      fetch(`${WORKER_URL}/create-bundle-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id: currentUser.user_id, subject_ids: subjectIds }),
+      })
+        .then((res) => res.json().then((order) => ({ res, order })))
+        .then(({ res, order }) => {
+          if (!res.ok) {
+            if (order.error === 'Already purchased') {
+              if (window.showToast) {
+                window.showToast('One of the selected subjects is already unlocked — pick a different one.', 'error');
+              } else {
+                alert('One of the selected subjects is already unlocked — pick a different one.');
+              }
+            } else {
+              alert(order.error || 'Could not start payment');
+            }
+            btn.disabled = false;
+            btn.textContent = originalLabel;
+            return;
+          }
+
+          const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+
+          if (isNativeApp) {
+            window.Capacitor.Plugins.RazorpayNative.open({
+              key: order.key_id,
+              amount: order.amount,
+              currency: order.currency,
+              order_id: order.order_id,
+              name: 'StudyHelp',
+              description: 'Bundle: 3 subjects',
+              prefill: { name: currentUser.name },
+            }).then((result) => {
+              if (result.success) {
+                window.location.href = '/subjects/?bundle_success=1';
+              } else {
+                if (window.showToast) {
+                  window.showToast('Payment failed. Please try again.', 'error');
+                } else {
+                  alert('Payment failed. Please try again.');
+                }
+                btn.disabled = false;
+                btn.textContent = originalLabel;
+              }
+            }).catch((err) => {
+              alert('Error: ' + (err && err.message ? err.message : String(err)));
+              btn.disabled = false;
+              btn.textContent = originalLabel;
+            });
+            return;
+          }
+
+          const rzp = new Razorpay({
+            key: order.key_id,
+            amount: order.amount,
+            currency: order.currency,
+            order_id: order.order_id,
+            name: 'StudyHelp',
+            description: 'Bundle: 3 subjects',
+            prefill: { name: currentUser.name },
+            handler: function () {
+              window.location.href = '/subjects/?bundle_success=1';
+            },
+            modal: {
+              ondismiss: function () {
+                btn.disabled = false;
+                btn.textContent = originalLabel;
+              },
+            },
+          });
+
+          rzp.on('payment.failed', function () {
+            alert('Payment failed. Please try again.');
+            btn.disabled = false;
+            btn.textContent = originalLabel;
+          });
+
+          rzp.open();
+        })
+        .catch((err) => {
+          alert('Error: ' + err.message);
+          btn.disabled = false;
+          btn.textContent = originalLabel;
+        });
+    }
+
+    // Wired via addEventListener (not inline onclick=""), because this
+    // <script> block is compiled as an ES module by Astro (define:vars) —
+    // top-level function declarations are module-scoped, NOT attached to
+    // window, so inline onclick="fnName()" HTML attributes silently fail
+    // to find them.
+    document.getElementById('mode-single-btn').addEventListener('click', () => setBundleMode(false));
+    document.getElementById('mode-bundle-btn').addEventListener('click', () => setBundleMode(true));
+    document.getElementById('bundle-buy-btn').addEventListener('click', onBuyBundleClick);
+
+    document.getElementById('active-subjects-toggle').addEventListener('click', () => {
+      const section = document.getElementById('active-subjects-section');
+      const toggle = document.getElementById('active-subjects-toggle');
+      const expanded = section.classList.toggle('expanded');
+      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    });
+
+    // Top-level catalog tabs: Subjects vs Question Papers. Only one list is
+    // visible at a time. Question Papers is single-buy only — the whole
+    // Buy Single/Bundle toggle is hidden on that tab, and bundle mode is
+    // reset if it was on when the user switches away.
+    function setActiveCatalogTab(tab) {
+      const subjectsSection = document.getElementById('subjects-section');
+      const papersSection = document.getElementById('papers-section');
+      const modeToggle = document.getElementById('mode-toggle');
+      const subjectsTabBtn = document.getElementById('tab-subjects-btn');
+      const papersTabBtn = document.getElementById('tab-papers-btn');
+
+      const showPapers = tab === 'papers';
+      if (showPapers && bundleModeOn) setBundleMode(false);
+
+      subjectsSection.style.display = showPapers ? 'none' : '';
+      papersSection.style.display = showPapers ? '' : 'none';
+      modeToggle.style.display = showPapers ? 'none' : 'flex';
+      subjectsTabBtn.classList.toggle('catalog-tab-active', !showPapers);
+      papersTabBtn.classList.toggle('catalog-tab-active', showPapers);
+
+      const durationBadge = document.getElementById('plans-duration-badge');
+      if (durationBadge) durationBadge.textContent = showPapers ? '1 Year (365 Days)' : '3 Month (90 Days)';
+    }
+
+    document.getElementById('tab-subjects-btn').addEventListener('click', () => setActiveCatalogTab('subjects'));
+    document.getElementById('tab-papers-btn').addEventListener('click', () => setActiveCatalogTab('papers'));
+
+    // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
+    // from a unix-seconds expires_at timestamp.
+    function formatDaysLeft(expiresAtSeconds) {
+      const msLeft = expiresAtSeconds * 1000 - Date.now();
+      const daysLeft = Math.ceil(msLeft / (24 * 60 * 60 * 1000));
+      if (daysLeft <= 0) return 'Expires today';
+      if (daysLeft === 1) return '1 day left';
+      return `${daysLeft} days left`;
+    }
+
+    function formatExpiryDate(expiresAtSeconds) {
+      return new Date(expiresAtSeconds * 1000).toLocaleDateString('en-IN', {
+        day: 'numeric', month: 'short', year: 'numeric',
+      });
+    }
+
+    // Session is fetched ONCE per page by Header.astro (runs synchronously
+    // inline, before this script) and exposed on window.__shSessionPromise.
+    // Reusing it here avoids a duplicate /me call on every Plans page load.
+    async function getSession() {
+      const source = window.__shSessionPromise
+        || fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+            .then((res) => res.json())
+            .catch(() => ({ logged_in: false }));
+
+      const data = await source;
+      return data.logged_in ? data : null;
+    }
+
+    // On page load: check ownership for every available subject, swap button to
+    // "Open" if owned, and build the prominent "Your Active Subjects" section.
+    async function checkOwnershipForAllSubjects() {
+      if (!currentUser) return; // not logged in — every row stays "Buy now"
+
+      const activeList = document.getElementById('active-subjects-list');
+      const activeSection = document.getElementById('active-subjects-section');
+      activeList.innerHTML = ''; // rebuilt fresh below — safe to call this function more than once
+      let anyActive = false;
+      let activeCount = 0;
+
+      const buttons = document.querySelectorAll('.row-buy-btn');
+      for (const btn of buttons) {
+        const subject_id = btn.getAttribute('data-subject');
+        try {
+          const res = await fetch(
+            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`
+          );
+          const data = await res.json();
+          if (data.unlocked) {
+            setButtonToOpen(btn, subject_id, data.expires_at);
+            anyActive = true;
+            activeCount += 1;
+
+            const meta = subjectMeta.find((s) => s.slug === subject_id);
+            const row = document.createElement('div');
+
+            const graceBannerHtml = data.is_grace_grant ? `
+              <div class="grace-banner">
+                We haven't yet confirmed your payment. You've been given ${data.grace_days_remaining ?? ''} day${data.grace_days_remaining === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/">contact us</a>.
+              </div>
+            ` : '';
+
+            row.className = 'active-row';
+            row.innerHTML = `
+              <div>
+                <div class="active-row-title">${meta ? meta.titleNative : subject_id}</div>
+                <div class="active-row-sub">${data.expires_at ? formatDaysLeft(data.expires_at) + ' &middot; until ' + formatExpiryDate(data.expires_at) : 'Active'}</div>
+              </div>
+              <a href="/${subject_id}/" class="active-row-open">Open</a>
+              ${graceBannerHtml}
+            `;
+            activeList.appendChild(row);
+
+            // Already shown above in "Your Active Subjects" — hide the
+            // priced row below entirely rather than just relabeling it.
+            const gridRow = document.getElementById(`plan-card-${subject_id}`);
+            if (gridRow) gridRow.style.display = 'none';
+          }
+        } catch (err) {
+          // silently skip on network error — button stays as "Buy now", user can retry
+        }
+      }
+
+      if (anyActive) {
+        activeSection.style.display = 'block';
+        const countEl = document.getElementById('active-subjects-count');
+        if (countEl) countEl.textContent = `(${activeCount})`;
+      }
+    }
+
+    function setButtonToOpen(btn, subject_id, expiresAt) {
+      // Clone the node to strip any previously attached addEventListener
+      // handlers (the buy-flow listener below), so this button can never
+      // have both a "buy" listener and an "open" handler firing on the
+      // same click.
+      const freshBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(freshBtn, btn);
+
+      freshBtn.disabled = false;
+      const isMobile = window.matchMedia('(max-width: 720px)').matches;
+      freshBtn.textContent = expiresAt && !isMobile
+        ? `Open — ${formatDaysLeft(expiresAt)}`
+        : 'Open';
+      freshBtn.title = expiresAt ? `Access until ${formatExpiryDate(expiresAt)}` : '';
+      freshBtn.onclick = (e) => {
+        e.stopPropagation();
+        window.location.href = `/${subject_id}/`;
+      };
+      return freshBtn;
+    }
+
+    function renderPlanRow(s) {
+      // s: { slug, titleNative, titleEnglish, price, popular, accessDays, category }
+      const popularBadge = s.popular ? `<span class="row-badge-popular">most popular</span>` : '';
+      const yoursLabel = s.category === 'papers' ? '&#10003; your paper set' : '&#10003; your subject';
+      return `
+        <div id="plan-card-${s.slug}" data-slug="${s.slug}" class="subject-row ${s.popular ? 'row-popular' : ''}">
+          <div class="row-checkbox">&#10003;</div>
+          <div class="row-body">
+            <span class="badge-yours-wrap" style="display:none;"><span class="row-badge-yours">${yoursLabel}</span></span>
+            ${popularBadge}
+            <div class="row-title">${s.titleNative}</div>
+            <div class="row-sub">${s.titleEnglish || ''}</div>
+          </div>
+          <div class="row-trailing">
+            <div class="row-price">Rs. ${s.price}</div>
+            <button data-subject="${s.slug}" data-price="${s.price}" class="row-buy-btn">Buy now</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Fetches live subjects+prices from D1 (via the Worker's public endpoint)
+    // and renders the real subject rows.
+    async function loadRealSubjects() {
+      const grid = document.getElementById('real-plan-grid');
+      const papersGrid = document.getElementById('real-papers-grid');
+      const papersSection = document.getElementById('papers-section');
+      try {
+        const res = await fetch(`${WORKER_URL}/subjects/public`);
+        const data = await res.json();
+        const subjects = (data.subjects || []).map((s) => ({
+          slug: s.id,
+          titleNative: s.title_native || s.name,
+          titleEnglish: s.title_english || '',
+          price: s.price_paise / 100,
+          popular: !!s.popular,
+          accessDays: s.access_days || 45,
+          category: s.category || 'subject',
+        }));
+
+        subjectMeta = subjects;
+
+        const papers = subjects.filter((s) => s.category === 'papers');
+        const nonPapers = subjects.filter((s) => s.category !== 'papers');
+
+        const PRIORITY_ORDER = ['telangana-history-en', 'telangana-history-te'];
+        nonPapers.sort((a, b) => {
+          const ai = PRIORITY_ORDER.indexOf(a.slug);
+          const bi = PRIORITY_ORDER.indexOf(b.slug);
+          if (ai === -1 && bi === -1) return 0;
+          if (ai === -1) return 1;
+          if (bi === -1) return -1;
+          return ai - bi;
+        });
+
+        const combinedHtml = nonPapers.map(renderPlanRow).join('');
+        grid.innerHTML = combinedHtml.trim().length
+          ? combinedHtml
+          : `<div class="row-skeleton">No subjects available right now.</div>`;
+
+        if (papers.length) {
+          papersGrid.innerHTML = papers.map(renderPlanRow).join('');
+          document.getElementById('tab-papers-btn').style.display = '';
+        }
+
+        document.querySelectorAll('.row-buy-btn').forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // don't let the row-level bundle-select listener also fire
+            const subject_id = btn.getAttribute('data-subject');
+            if (!currentUser) {
+              const returnTo = `/plans/?buy=${encodeURIComponent(subject_id)}`;
+              window.location.href = `/signup/?next=${encodeURIComponent(returnTo)}`;
+              return;
+            }
+            startPurchase(btn, subject_id);
+          });
+        });
+
+        // Row click: only acts as bundle-select when bundle mode is active.
+        // In single mode, the row itself does nothing extra — the Buy now
+        // button (with its own stopPropagation'd listener above) is the
+        // only actionable element, so this never interferes with it.
+        document.querySelectorAll('.subject-row').forEach((row) => {
+          row.addEventListener('click', () => {
+            if (!bundleModeOn) return;
+            const slug = row.dataset.slug;
+            if (!slug) return;
+            toggleBundleSelect(slug);
+          });
+        });
+      } catch (err) {
+        grid.innerHTML = `<div class="row-skeleton">Couldn't load subjects. Please refresh the page.</div>`;
+      }
+    }
+
+    function startPurchase(btn, subject_id) {
+      if (navigator.vibrate) navigator.vibrate(30);
+
+      btn.disabled = true;
+      btn.textContent = 'Loading...';
+
+      fetch(`${WORKER_URL}/create-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id: currentUser.user_id, subject_id }),
+      })
+        .then((res) => res.json().then((order) => ({ res, order })))
+        .then(({ res, order }) => {
+          if (!res.ok) {
+            if (order.error === 'Already purchased') {
+              btn.disabled = true;
+              btn.textContent = '✓ Already purchased — opening...';
+              setTimeout(() => {
+                window.location.href = `/${subject_id}/`;
+              }, 800);
+              return;
+            }
+            alert(order.error || 'Could not start payment');
+            btn.disabled = false;
+            btn.textContent = 'Buy now';
+            return;
+          }
+
+          const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+
+          if (isNativeApp) {
+            window.Capacitor.Plugins.RazorpayNative.open({
+              key: order.key_id,
+              amount: order.amount,
+              currency: order.currency,
+              order_id: order.order_id,
+              name: 'StudyHelp',
+              description: subject_id,
+              prefill: { name: currentUser.name },
+            }).then((result) => {
+              if (result.success) {
+                window.location.href =
+                  `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+              } else {
+                if (window.showToast) {
+                  window.showToast('Payment failed. Please try again.', 'error');
+                } else {
+                  alert('Payment failed. Please try again.');
+                }
+                btn.disabled = false;
+                btn.textContent = 'Buy now';
+              }
+            }).catch((err) => {
+              alert('Error: ' + (err && err.message ? err.message : String(err)));
+              btn.disabled = false;
+              btn.textContent = 'Buy now';
+            });
+            return;
+          }
+
+          const rzp = new Razorpay({
+            key: order.key_id,
+            amount: order.amount,
+            currency: order.currency,
+            order_id: order.order_id,
+            name: 'StudyHelp',
+            description: subject_id,
+            prefill: { name: currentUser.name },
+            handler: function () {
+              window.location.href =
+                `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+            },
+            modal: {
+              ondismiss: function () {
+                btn.disabled = false;
+                btn.textContent = 'Buy now';
+              },
+            },
+          });
+
+          rzp.on('payment.failed', function () {
+            alert('Payment failed. Please try again.');
+            btn.disabled = false;
+            btn.textContent = 'Buy now';
+          });
+
+          rzp.open();
+        })
+        .catch((err) => {
+          alert('Error: ' + err.message);
+          btn.disabled = false;
+          btn.textContent = 'Buy now';
+        });
+    }
+
+    // Highlight the specific subject someone came here to buy.
+    function highlightIntendedSubject() {
+      const params = new URLSearchParams(window.location.search);
+      const highlightSlug = params.get('highlight');
+      if (!highlightSlug) return;
+
+      // If this subject is a papers subject, its row lives in the
+      // Question Papers grid, which is hidden while the Subjects tab is
+      // active — switch tabs first, otherwise everything below still
+      // "works" (the row gets ticked/marked) but invisibly, on a tab the
+      // person never sees.
+      const meta = subjectMeta.find((s) => s.slug === highlightSlug);
+      if (meta && meta.category === 'papers') {
+        setActiveCatalogTab('papers');
+      }
+
+      const targetRow = document.getElementById(`plan-card-${highlightSlug}`);
+      if (!targetRow) return;
+
+      document.querySelectorAll('[id^="plan-card-"]').forEach((row) => {
+        row.classList.remove('row-popular');
+        const popularBadge = row.querySelector('.row-badge-popular');
+        if (popularBadge) popularBadge.style.display = 'none';
+      });
+
+      targetRow.classList.add('row-popular');
+      const yoursWrap = targetRow.querySelector('.badge-yours-wrap');
+      if (yoursWrap) yoursWrap.style.display = 'inline-block';
+
+      // Move it to the very top of its grid so it's visible at a glance
+      // with no scroll or page jump — replaces the old auto-scroll approach.
+      const parentGrid = targetRow.parentElement;
+      if (parentGrid) parentGrid.prepend(targetRow);
+
+      // Arrived via the subject page's Bundle link (?highlight=X&mode=bundle)
+      // — the whole point of that link is "I want to bundle this subject",
+      // so auto-check it (count becomes 1 of 3) instead of leaving it just
+      // visually marked with nothing actually selected. Requires
+      // applyRequestedMode() to have already run (bundleModeOn already
+      // true) — see the call order in Boot below.
+      if (bundleModeOn) {
+        toggleBundleSelect(highlightSlug);
+      }
+    }
+
+    // If the subject page's Bundle button sent the user here (?mode=bundle),
+    // open directly in Bundle mode instead of the normal Single default.
+    // Arriving with no mode param (or from the "unlock just this subject"
+    // link) keeps the ordinary Single default untouched.
+    function applyRequestedMode() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('mode') === 'bundle') setBundleMode(true);
+    }
+
+    // Boot
+    loadRealSubjects().then(() => {
+      getSession().then((session) => {
+        currentUser = session;
+        checkOwnershipForAllSubjects().then(() => {
+          // Order matters: applyRequestedMode() must run first so
+          // bundleModeOn is already true by the time highlightIntendedSubject()
+          // checks it — otherwise the auto-select above never fires.
+          applyRequestedMode();
+          highlightIntendedSubject();
+          const params = new URLSearchParams(window.location.search);
+          const buySubject = params.get('buy');
+          if (buySubject && currentUser) {
+            const btn = document.querySelector(`.row-buy-btn[data-subject="${CSS.escape(buySubject)}"]`);
+            if (btn) startPurchase(btn, buySubject);
+            window.history.replaceState({}, '', '/plans/');
+          }
+
+          // Mirrors the single-subject buy= auto-trigger above: someone who
+          // picked 3 subjects, hit Buy Bundle, got sent to sign up, and just
+          // created an account lands back here with their 3 slugs carried
+          // in the URL (since the in-memory selection was wiped by that
+          // full-page redirect). Re-select those same 3 and fire the
+          // purchase immediately — no re-picking required.
+          const bundleSubjectsParam = params.get('subjects');
+          if (bundleSubjectsParam && currentUser) {
+            const slugs = bundleSubjectsParam.split(',').filter(Boolean);
+            if (slugs.length === 3) {
+              setBundleMode(true);
+              slugs.forEach((slug) => toggleBundleSelect(slug));
+              // toggleBundleSelect silently no-ops on a slug with no
+              // matching row (e.g. since removed/renamed) — only fire if
+              // all 3 actually got selected, otherwise leave the user to
+              // finish picking manually rather than charging for fewer
+              // than 3 subjects.
+              if (selectedBundleSlugs.length === 3) {
+                onBuyBundleClick();
+              }
+            }
+            window.history.replaceState({}, '', '/plans/');
+          }
+        });
+      });
+    });
+  </script>
+</Layout>
