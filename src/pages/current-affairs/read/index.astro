@@ -1,1049 +1,491 @@
 ---
-// src/pages/current-affairs/index.astro
-// Picker: Monthly / Last 3 / Last 6 -> straight to the read page (no
-// separate sections page). Read page owns the section dropdown itself.
+// src/pages/current-affairs/read/index.astro
 //
-// Hero now has two modes: Read for Free (existing free picker, unchanged)
-// and Download PDF (new — Buy Now / Download, reusing the same D1 +
-// Razorpay pattern already live on /plans/). See TODO markers below for
-// the three backend integration points this page assumes exist.
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import { listAvailableMonths } from '../../lib/currentAffairs.js';
+// Single combined reading page. Replaces the earlier picker->sections->
+// per-section-page flow: this one page owns the section dropdown AND the
+// question list, switching entirely client-side (no page reloads) since
+// all CA content is free and lightweight enough to ship in one go.
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import { getFullDataset } from '../../../lib/currentAffairs.js';
 
-const months = listAvailableMonths(); // newest-first
-const bundle3 = months.slice(0, 3);
-const bundle6 = months.slice(0, 6);
-const PRICE_MONTHLY = 99;
-const PRICE_BUNDLE3 = 199;
-const PRICE_BUNDLE6 = 299;
-
-// Backend item_id is always the R2 filename minus ".pdf" (see caCatalog.js
-// on the Worker). m.slug SHOULD already equal that exact id — normalized
-// defensively here in case it doesn't carry the "current-affairs-" prefix.
-function toBackendId(slug) {
-  return slug.startsWith('current-affairs-') ? slug : `current-affairs-${slug}`;
-}
-
-// Combined-bundle backend id must exactly match the real R2 filename the
-// pdf_ca_month.py tool generated: current-affairs-last<N>-<months oldest
-// to newest>-<year>.pdf. months[] here is newest-first, so reverse for
-// chronological (oldest-to-newest) order to match.
-function combinedBundleId(bundleMonths) {
-  const chronological = [...bundleMonths].reverse();
-  const abbrevs = chronological.map((m) => m.label.slice(0, 3).toLowerCase());
-  const year = chronological[chronological.length - 1].label.split(' ')[1];
-  return `current-affairs-last${bundleMonths.length}-${abbrevs.join('-')}-${year}`;
-}
-
-const bundle3CombinedId = bundle3.length === 3 ? combinedBundleId(bundle3) : null;
-const bundle6CombinedId = bundle6.length === 6 ? combinedBundleId(bundle6) : null;
-const bundle3IndividualIds = bundle3.map((m) => toBackendId(m.slug));
-const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
+const dataset = getFullDataset(); // every month, every section, every question
 ---
-<Layout title="Current Affairs" description="Read Current Affairs free, or download a PDF — pick a month, last 3, or last 6 months.">
+<Layout title="Current Affairs" description="Read Current Affairs MCQs by section, free.">
   <Header active="subjects" />
 
   <div class="ca-wrap">
     <div class="ca-header-card">
-      <button
-        type="button"
-        id="ca-purchases-icon"
-        class="ca-purchases-icon"
-        style="display:none"
-        aria-label="Your purchases"
-        title="Your purchases"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 2 5 5v15a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5l-1-3z"></path>
-          <path d="M3 6h18"></path>
-          <path d="M16 10a4 4 0 0 1-8 0"></path>
-        </svg>
-        <span id="ca-purchases-badge" class="ca-purchases-badge" style="display:none"></span>
-      </button>
-
-      <div class="breadcrumb">
-        <a href="/">Home</a> / <a href="/subjects/">Subjects</a> / Current Affairs
-      </div>
-      <h1>Current Affairs</h1>
-      <div class="ca-hero-tabs" role="tablist">
-        <button type="button" class="ca-hero-tab active" id="ca-hero-tab-free" role="tab" aria-selected="true">Read for Free</button>
-        <button type="button" class="ca-hero-tab" id="ca-hero-tab-pdf" role="tab" aria-selected="false">Download PDF</button>
-      </div>
-    </div>
-
-    <!-- ============ READ FOR FREE (existing picker, unchanged) ============ -->
-    <div id="ca-panel-free">
-      <div class="ca-picker-tabs" role="tablist">
-        <button type="button" class="ca-tab active" data-mode="1">Monthly</button>
-        <button type="button" class="ca-tab" data-mode="3">Last 3 months</button>
-        <button type="button" class="ca-tab" data-mode="6">Last 6 months</button>
-      </div>
-
-      <p class="ca-hint" id="ca-hint">Pick 1 month.</p>
-
-      <div class="ca-month-grid" id="ca-month-grid">
-        {months.map((m) => (
-          <label class="ca-month-card">
-            <input type="checkbox" class="ca-month-checkbox" value={m.slug} data-label={m.label} />
-            <span class="ca-month-text">
-              <span class="ca-month-label">{m.label}</span>
-              <span class="ca-month-meta">{m.sectionCount} sections · {m.questionCount} questions</span>
-            </span>
-          </label>
-        ))}
-      </div>
-
-      {months.length === 0 && (
-        <div class="ca-empty"><p>Current Affairs content is coming soon.</p></div>
-      )}
-
-      <button type="button" id="ca-continue-btn" class="ca-continue-btn" disabled>
-        Select a month
-      </button>
-    </div>
-
-    <!-- ============ DOWNLOAD PDF (new) ============ -->
-    <div id="ca-panel-pdf" style="display:none">
-      <div class="ca-picker-tabs" role="tablist">
-        <button type="button" class="ca-tab active" data-pdf-mode="1">Monthly · ₹{PRICE_MONTHLY}</button>
-        <button type="button" class="ca-tab" data-pdf-mode="3">Last 3 months · ₹{PRICE_BUNDLE3}</button>
-        <button type="button" class="ca-tab" data-pdf-mode="6">Last 6 months · ₹{PRICE_BUNDLE6}</button>
-      </div>
-
-      <!-- Monthly: multi-select — pick any months, price scales with count -->
-      <div id="ca-pdf-monthly-section">
-        <p class="ca-hint">Pick any months.</p>
-        <div class="ca-month-grid" id="ca-pdf-month-grid">
-          {months.map((m) => (
-            <label class="ca-month-card">
-              <input
-                type="checkbox"
-                class="ca-pdf-month-checkbox"
-                value={m.slug}
-                data-label={m.label}
-                data-item-id={m.slug.startsWith("current-affairs-") ? m.slug : `current-affairs-${m.slug}`}
-              />
-              <span class="ca-month-text">
-                <span class="ca-month-label">{m.label}</span>
-                <span class="ca-month-meta">{m.sectionCount} sections · {m.questionCount} questions</span>
-              </span>
-            </label>
-          ))}
+      <div class="ca-header-left">
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="/current-affairs/">CA</a> / <span id="ca-crumb-section">Appointments</span>
         </div>
-        <button
-          type="button"
-          id="ca-pdf-monthly-btn"
-          class="ca-continue-btn ca-buy-btn"
-          data-price={PRICE_MONTHLY}
-          disabled
-        >
-          Select a month
-        </button>
+        <div class="ca-title-row">
+          <h1 id="ca-title">Current Affairs</h1>
+          <span class="ca-sub" id="ca-sub">Loading…</span>
+        </div>
       </div>
+      <a href="/current-affairs/" class="ca-change-btn">
+        <i class="ti ti-calendar" aria-hidden="true"></i> Change
+      </a>
+    </div>
 
-      <!-- Last 3 / Last 6: no picker — always the current rolling window,
-           shown plainly since there's nothing to choose. -->
-      <div id="ca-pdf-bundle3-section" style="display:none">
-        {bundle3.length < 3 ? (
-          <div class="ca-empty"><p>Need 3 published months for this bundle — check back soon.</p></div>
-        ) : (
-          <>
-            <div class="ca-bundle-card">
-              <div class="ca-bundle-range">
-                {bundle3.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle3[0].label.split(' ')[1]}
-              </div>
-              <div class="ca-bundle-total-badge" id="ca-bundle3-badge" data-default-text={`${bundle3.reduce((sum, m) => sum + m.questionCount, 0)} questions`}>{bundle3.reduce((sum, m) => sum + m.questionCount, 0)} questions</div>
-            </div>
-
-            <div class="ca-format-toggle" role="tablist" data-bundle="3">
-              <button type="button" class="ca-format-btn active" data-format="individual">Individual</button>
-              <button type="button" class="ca-format-btn" data-format="combined">Combined</button>
-            </div>
-            <p class="ca-format-hint" data-bundle-hint="3">
-              3 separate monthly PDFs.
-            </p>
-
-            <button
-              type="button"
-              class="ca-continue-btn ca-buy-btn"
-              data-bundle="3"
-              data-item-ids-individual={JSON.stringify(bundle3IndividualIds)}
-              data-kind-individual="individual_bundle"
-              data-item-ids-combined={JSON.stringify(bundle3CombinedId ? [bundle3CombinedId] : [])}
-              data-kind-combined="items"
-              data-price={PRICE_BUNDLE3}
-            >
-              Buy Now — ₹{PRICE_BUNDLE3}
-            </button>
-          </>
-        )}
-      </div>
-
-      <div id="ca-pdf-bundle6-section" style="display:none">
-        {bundle6.length < 6 ? (
-          <div class="ca-empty"><p>Need 6 published months for this bundle — check back soon.</p></div>
-        ) : (
-          <>
-            <div class="ca-bundle-card">
-              <div class="ca-bundle-range">
-                {bundle6.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle6[0].label.split(' ')[1]}
-              </div>
-              <div class="ca-bundle-total-badge" id="ca-bundle6-badge" data-default-text={`${bundle6.reduce((sum, m) => sum + m.questionCount, 0)} questions`}>{bundle6.reduce((sum, m) => sum + m.questionCount, 0)} questions</div>
-            </div>
-
-            <div class="ca-format-toggle" role="tablist" data-bundle="6">
-              <button type="button" class="ca-format-btn active" data-format="individual">Individual</button>
-              <button type="button" class="ca-format-btn" data-format="combined">Combined</button>
-            </div>
-            <p class="ca-format-hint" data-bundle-hint="6">
-              6 separate monthly PDFs.
-            </p>
-
-            <button
-              type="button"
-              class="ca-continue-btn ca-buy-btn"
-              data-bundle="6"
-              data-item-ids-individual={JSON.stringify(bundle6IndividualIds)}
-              data-kind-individual="individual_bundle"
-              data-item-ids-combined={JSON.stringify(bundle6CombinedId ? [bundle6CombinedId] : [])}
-              data-kind-combined="items"
-              data-price={PRICE_BUNDLE6}
-            >
-              Buy Now — ₹{PRICE_BUNDLE6}
-            </button>
-          </>
-        )}
+    <div id="ca-limit-overlay" class="ca-limit-overlay" style="display:none">
+      <div class="ca-limit-card">
+        <h2>Free reading limit reached</h2>
+        <p>You've been reading for 5 minutes. Create a free account to keep reading — it takes a few seconds, no OTP needed.</p>
+        <button type="button" id="ca-limit-signup-btn" class="ca-limit-btn">Create free account to continue</button>
+        <a href="/current-affairs/" class="ca-limit-link">Back to Current Affairs</a>
       </div>
     </div>
 
-    <!-- ============ PURCHASES (in-card swap, mock data for now) ============ -->
-    <div id="ca-panel-purchases" style="display:none">
-      <div class="ca-purchases-head">
-        <h2>Your Purchases</h2>
-      </div>
-      <div id="ca-purchases-list"></div>
-      <div id="ca-purchases-empty" class="ca-empty" style="display:none">
-        <p>No purchases yet — grab your first pack below.</p>
-        <button type="button" id="ca-purchases-empty-btn" class="ca-continue-btn" style="position:static; width:auto; padding:10px 20px;">
-          Browse Download PDF
-        </button>
-      </div>
+    <div class="ca-controls">
+      <select id="ca-section-select" class="ca-section-select"></select>
+    </div>
+
+    <div id="ca-question-list"></div>
+
+    <div class="ca-pagination" id="ca-pagination">
+      <button type="button" id="ca-prev-btn" class="ca-page-btn">← Prev</button>
+      <span id="ca-page-indicator">Page 1</span>
+      <button type="button" id="ca-next-btn" class="ca-page-btn">Next →</button>
+    </div>
+
+    <div class="ca-empty" id="ca-empty" style="display:none;">
+      <p>No months selected yet.</p>
+      <a href="/current-affairs/" class="ca-change-link">Pick months to start</a>
     </div>
   </div>
 
+  <script type="application/json" id="ca-dataset" set:html={JSON.stringify(dataset)} />
+
   <style is:global>
-    /* is:global (not scoped): the Purchases panel's cards and the
-       Monthly grid's "Purchased" badge are built with innerHTML /
-       document.createElement in JS after page load, so Astro's scoped
-       style attribute never gets attached to them — scoped CSS would
-       silently not match. Same fix already used on the read page for
-       the same reason. */
-    .ca-wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+    .ca-wrap { max-width: 800px; margin: 0 auto; padding: 24px 24px calc(48px + var(--tabbar-h, 0px)); }
 
     .ca-header-card {
       position: relative; overflow: hidden;
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      border-radius: 16px; padding: 18px 22px; margin-bottom: 20px;
-      box-shadow: 0 8px 20px -10px rgba(20, 16, 43, 0.5);
+      border-radius: 14px; padding: 12px 16px; margin-bottom: 10px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; box-shadow: 0 6px 16px -8px rgba(20, 16, 43, 0.5);
     }
     .ca-header-card::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
       background:
-        radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.16), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.22), transparent 45%);
+        radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.2), transparent 45%);
     }
-    .ca-header-card .breadcrumb, .ca-header-card h1, .ca-header-card .ca-hero-tabs {
-      position: relative; z-index: 1;
+    .ca-header-left { position: relative; z-index: 1; min-width: 0; flex: 1; }
+    .breadcrumb {
+      font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 2px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
-    .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
-    .breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
     @media (max-width: 900px) {
       .breadcrumb { display: none; }
     }
-    .ca-header-card h1 { font-size: 22px; margin: 0 0 10px; color: #fff; font-weight: 800; }
+    .ca-title-row { display: flex; align-items: baseline; gap: 8px; min-width: 0; flex-wrap: wrap; }
+    .ca-title-row h1 {
+      font-size: 17px; margin: 0; color: #fff; font-weight: 800;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .ca-sub { color: rgba(255,255,255,0.6); font-size: 12px; }
 
-    .ca-hero-tabs { display: flex; gap: 6px; }
-    .ca-hero-tab {
-      padding: 9px 16px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.25);
-      background: transparent; color: rgba(255,255,255,0.75); font-weight: 700; font-size: 13.5px;
-      cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+    .ca-change-btn {
+      position: relative; z-index: 1; flex-shrink: 0; white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      background: rgba(255,255,255,0.12); color: #fff; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25); transition: background 0.15s;
     }
-    .ca-hero-tab.active {
-      background: #fff; color: #14102b; border-color: #fff;
-    }
+    .ca-change-btn:hover { background: rgba(255,255,255,0.22); }
+    .ca-change-btn i { font-size: 13px; }
 
-    /* Purchases icon: top-right of header card. Hidden for guests
-       (no session), shown for any logged-in user regardless of purchase
-       count — empty state is handled inside the panel itself. */
-    .ca-purchases-icon {
-      position: absolute; top: 16px; right: 16px; z-index: 2;
-      width: 34px; height: 34px; border-radius: 50%;
-      background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.3);
-      color: #fff; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: background 0.15s;
-    }
-    .ca-purchases-icon:hover { background: rgba(255,255,255,0.22); }
-
-    /* First-login attention badge — a small red dot signaling "check this,
-       it's your purchases." Shown only until the icon is clicked once,
-       ever (tracked in localStorage, not per-session, so it stays gone on
-       future visits too). */
-    .ca-purchases-badge {
-      position: absolute; top: -2px; right: -2px;
-      width: 11px; height: 11px; border-radius: 50%;
-      background: #e5484d; border: 2px solid #241a4d;
-    }
-    .ca-purchases-badge::after {
-      content: ""; position: absolute; inset: -3px; border-radius: 50%;
-      border: 1.5px solid rgba(229,72,77,0.5);
-      animation: ca-purchases-badge-pulse 2s ease-out infinite;
-    }
-    @keyframes ca-purchases-badge-pulse {
-      0%   { transform: scale(0.8); opacity: 0.8; }
-      100% { transform: scale(1.6); opacity: 0; }
+    .ca-controls { margin: 0 0 14px; }
+    .ca-section-select {
+      width: 100%; padding: 8px 32px 8px 12px; border-radius: 10px; border: 1px solid var(--border, #ddd);
+      background: var(--card, #fff); color: var(--text, #111); font-weight: 700; font-size: 14px;
+      cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center;
     }
 
-    /* Purchases panel */
-    .ca-purchases-head { margin-bottom: 14px; }
-    .ca-purchases-head h2 { margin: 0; font-size: 17px; }
+    .ca-q-card {
+      border: 1px solid var(--border, #ddd); border-radius: 14px; padding: 18px;
+      margin-bottom: 14px; background: var(--card, #fff);
+    }
+    .ca-q-tag {
+      display: inline-block; font-size: 11px; font-weight: 700; color: var(--accent, #ff6b1a);
+      background: rgba(255,107,26,0.12);
+      padding: 2px 8px; border-radius: 999px; margin-bottom: 10px;
+    }
+    .ca-q-text { font-weight: 700; font-size: 15px; margin: 0 0 14px; line-height: 1.4; color: var(--text, #111); }
 
-    .ca-purchase-card {
-      border: 1.5px solid var(--border, #ddd); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px;
+    .ca-opt-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+    .ca-opt-btn {
+      display: flex; gap: 8px; align-items: flex-start; text-align: left; padding: 11px 14px;
+      border-radius: 10px; border: 1px solid var(--border, #ddd); background: var(--bg, #f7f7f9);
+      color: var(--text, #111); cursor: pointer; font-size: 14px; line-height: 1.35;
+      transition: border-color 0.15s, background 0.15s; width: 100%;
     }
-    .ca-purchase-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
-    .ca-purchase-range { font-weight: 800; font-size: 14.5px; }
-    .ca-purchase-badge {
-      flex-shrink: 0; font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px;
-      background: var(--accent-bg, #fff1e6); color: var(--accent, #ff6b1a); text-transform: capitalize;
+    .ca-opt-btn:hover:not(:disabled) { border-color: var(--accent, #ff6b1a); }
+    .ca-opt-letter {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent-bg, #e6f1fb); color: var(--accent, #185fa5);
+      font-weight: 700; font-size: 13px;
     }
-    .ca-purchase-meta { color: var(--muted, #888); font-size: 12px; margin-bottom: 2px; }
-    .ca-purchase-date { color: var(--muted, #888); font-size: 11px; margin-bottom: 10px; }
-    .ca-purchase-dl-btn {
-      width: 100%; padding: 10px; border-radius: 9px; border: none;
-      background: #2e7d32; color: #fff; font-weight: 700; font-size: 13px; cursor: pointer;
-    }
+    .ca-opt-btn.correct { border-color: #2e7d32; background: rgba(46,125,50,0.12); }
+    .ca-opt-btn.correct .ca-opt-letter { background: #2e7d32; color: #fff; }
+    .ca-opt-btn.wrong { border-color: #c62828; background: rgba(198,40,40,0.12); }
+    .ca-opt-btn.wrong .ca-opt-letter { background: #c62828; color: #fff; }
+    .ca-opt-btn:disabled { cursor: default; }
 
-    /* Monthly grid: an owned month becomes a locked, non-interactive card
-       instead of a checkbox — never selectable again as part of a new
-       purchase. Only months bought individually via this tab count here;
-       being included in a bundle purchase does NOT mark it owned here —
-       that stays separate, visible only in the Purchases panel. */
-    .ca-month-card.ca-month-owned {
-      cursor: default; border-color: #2e7d32; background: rgba(46,125,50,0.06);
+    .ca-explain-toggle {
+      display: none; align-items: center; gap: 4px; background: none; border: none;
+      color: var(--accent, #ff6b1a); font-weight: 700; font-size: 13px; cursor: pointer;
+      padding: 8px 0 0; margin: 0;
     }
-    .ca-month-owned-badge {
-      font-size: 10.5px; font-weight: 700; color: #2e7d32;
-    }
+    .ca-explain-toggle:hover { text-decoration: underline; }
 
-    .ca-picker-tabs { display: flex; gap: 8px; margin-bottom: 6px; }
-    .ca-tab {
-      padding: 9px 16px; border-radius: 999px; border: 1px solid var(--border, #ddd);
-      background: var(--card, #fff); color: var(--text, #111); font-weight: 700; font-size: 13px;
-      cursor: pointer; transition: background 0.15s, border-color 0.15s;
+    .ca-explanation {
+      display: none; border-top: 1px dashed var(--border, #ddd); padding-top: 14px; margin-top: 14px;
     }
-    .ca-tab:hover { border-color: var(--accent, #ff6b1a); }
-    .ca-tab.active { background: var(--accent, #ff6b1a); color: #fff; border-color: var(--accent, #ff6b1a); }
-
-    .ca-hint { color: var(--muted, #888); font-size: 12px; margin: 0 0 14px; }
-
-    .ca-month-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;
-      /* Extra clearance so the sticky Continue button (below) never visually
-         covers the last card while scrolling — same amount of space the
-         button + its bottom offset actually occupy. */
-      margin-bottom: 90px;
+    .ca-explanation.shown { display: block; }
+    .ca-explanation-text {
+      font-size: 14px; color: var(--text, #222); line-height: 1.6; margin: 0 0 12px;
     }
-    .ca-month-card {
-      display: flex; align-items: center; gap: 12px;
-      border: 1.5px solid var(--border, #ddd); border-radius: 12px; padding: 14px 16px;
-      cursor: pointer; background: var(--card, #fff); position: relative;
-      transition: border-color 0.15s, box-shadow 0.15s;
+    .ca-keypoints-label {
+      font-size: 12px; font-weight: 800; color: var(--accent, #ff6b1a);
+      text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px;
     }
-    .ca-month-card:hover { border-color: var(--accent, #ff6b1a); }
-    .ca-month-card:has(.ca-month-checkbox:checked),
-    .ca-month-card:has(.ca-pdf-month-checkbox:checked) {
-      border-color: var(--accent, #ff6b1a);
-      box-shadow: 0 0 0 1px var(--accent, #ff6b1a) inset;
-      background: rgba(255,107,26,0.05);
+    .ca-keypoints-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .ca-keypoints-list li {
+      font-size: 14px; color: var(--text, #222); line-height: 1.5; padding-left: 16px; position: relative;
+    }
+    .ca-keypoints-list li::before {
+      content: '•'; position: absolute; left: 0; color: var(--accent, #ff6b1a); font-weight: 800;
     }
 
-    /* Custom checkbox: hide the native box, draw our own circle + check.
-       Shared by both the free-reading grid and the PDF monthly grid. */
-    .ca-month-checkbox, .ca-pdf-month-checkbox {
-      appearance: none; -webkit-appearance: none; flex-shrink: 0;
-      width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border, #ccc);
-      cursor: pointer; margin: 0; position: relative; transition: border-color 0.15s, background 0.15s;
+    .ca-pagination {
+      display: flex; align-items: center; justify-content: center; gap: 16px; margin: 24px 0 40px;
     }
-    .ca-month-checkbox:checked, .ca-pdf-month-checkbox:checked {
-      background: var(--accent, #ff6b1a); border-color: var(--accent, #ff6b1a);
+    .ca-page-btn {
+      padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border, #ddd);
+      background: var(--card, #fff); color: var(--text, #111); font-weight: 600; cursor: pointer;
     }
-    .ca-month-checkbox:checked::after, .ca-pdf-month-checkbox:checked::after {
-      content: ''; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px;
-      border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg);
-    }
-
-    .ca-month-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-    .ca-month-label { font-weight: 700; font-size: 14px; }
-    .ca-month-meta { font-size: 11px; color: var(--muted, #888); }
-    .ca-month-card.ca-disabled { opacity: 0.4; pointer-events: none; }
-
-    .ca-continue-btn {
-      width: 100%; padding: 14px; border-radius: 12px; border: none;
-      background: var(--accent, #ff6b1a); color: #fff; font-weight: 700; font-size: 15px;
-      cursor: pointer; transition: opacity 0.15s;
-      margin-top: 18px;
-    }
-    .ca-continue-btn:hover:not(:disabled) { opacity: 0.92; }
-    .ca-continue-btn:disabled { background: var(--border, #ddd); color: var(--muted, #888); cursor: not-allowed; }
-
-    /* Desktop: a full-width button looks stretched/oversized against a
-       900px-wide container — cap it to a normal CTA width instead. Mobile
-       keeps full-width, which reads correctly there. */
-    @media (min-width: 641px) {
-      .ca-continue-btn { max-width: 340px; margin-left: auto; margin-right: auto; display: block; }
-    }
-
-    /* Keeps total page height roughly consistent across the three
-       Download PDF tabs — Monthly's 8-card grid is naturally much taller
-       than a single bundle card, so without this, switching tabs made
-       the footer jump into/out of view depending which tab was active. */
-    #ca-panel-pdf { min-height: 480px; }
+    .ca-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    #ca-page-indicator { font-size: 13px; color: var(--muted, #888); font-weight: 600; }
 
     .ca-empty { text-align: center; padding: 40px; color: var(--muted, #888); }
 
-    /* Download PDF: bundle range shown as a card, not plain stacked text */
-    .ca-bundle-card {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      background: var(--accent-bg, #fff1e6); border: 1.5px solid var(--accent, #ff6b1a);
-      border-radius: 14px; padding: 16px 18px; margin-bottom: 16px;
+    /* Guest reading-limit popup — blocks interaction with the page
+       underneath (no dismiss button) until the person either signs up or
+       navigates away, since the whole point is to require an account to
+       continue past the free preview window. */
+    .ca-limit-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(10, 8, 20, 0.72);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
     }
-    .ca-bundle-range {
-      font-weight: 800; font-size: 16px; line-height: 1.35;
+    .ca-limit-card {
+      background: var(--card, #fff); border-radius: 16px; padding: 28px 24px;
+      max-width: 360px; width: 100%; text-align: center;
+      box-shadow: 0 20px 50px -12px rgba(0,0,0,0.4);
     }
-    .ca-bundle-total-badge {
-      flex-shrink: 0; background: var(--accent, #ff6b1a); color: #fff;
-      font-weight: 700; font-size: 12px; padding: 6px 12px; border-radius: 999px;
-      white-space: nowrap;
+    .ca-limit-card h2 { font-size: 18px; margin: 0 0 10px; color: var(--text, #111); }
+    .ca-limit-card p { font-size: 14px; color: var(--muted, #666); line-height: 1.5; margin: 0 0 20px; }
+    .ca-limit-btn {
+      width: 100%; padding: 13px; border-radius: 10px; border: none;
+      background: var(--accent, #185fa5); color: #fff; font-weight: 700; font-size: 14.5px;
+      cursor: pointer; margin-bottom: 12px;
     }
+    .ca-limit-link { font-size: 13px; color: var(--muted, #888); text-decoration: none; }
+    .ca-limit-link:hover { text-decoration: underline; }
 
-    /* Individual / Combined format toggle */
-    .ca-format-toggle {
-      display: flex; gap: 8px; margin-bottom: 8px;
-    }
-    .ca-format-btn {
-      flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid var(--border, #ddd);
-      background: var(--card, #fff); color: var(--text, #111); font-weight: 700; font-size: 13px;
-      cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s;
-    }
-    .ca-format-btn.active {
-      background: var(--accent, #ff6b1a); color: #fff; border-color: var(--accent, #ff6b1a);
-    }
-    .ca-format-hint {
-      color: var(--muted, #888); font-size: 12px; margin: 0 0 16px;
-    }
-
-    /* Buy Now vs Owned/Download button states. Same base as ca-continue-btn
-       (already sticky/positioned via that class); this only overrides color. */
-    .ca-buy-btn.ca-owned {
-      background: #2e7d32;
-    }
-
-    /* Sticky Continue button: stays pinned near the bottom of the
-       viewport while scrolling through the month grid, but — because
-       it's sticky (not fixed) — it scrolls away normally once the
-       footer is reached, instead of floating on top of it.
-       --bottom-nav-height accounts for the site's fixed bottom tab bar,
-       which only exists on mobile — 0 on desktop. */
-    :root { --bottom-nav-height: 0px; }
-    .ca-continue-btn {
-      position: sticky;
-      bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + 20px);
-      z-index: 40;
-      box-shadow: 0 4px 14px -4px rgba(0,0,0,0.3);
-    }
-
-    /* Mobile: the site has a fixed bottom nav bar (Subjects / Plans /
-       Login). Sit just above it, and use a slightly tighter button to
-       match. Adjust --bottom-nav-height if the nav's real height differs. */
-    @media (max-width: 640px) {
-      :root { --bottom-nav-height: 64px; }
-      .ca-continue-btn {
-        bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + 10px);
-        padding: 13px;
-        font-size: 14px;
-      }
-      .ca-month-grid { margin-bottom: 130px; }
+    @media (max-width: 480px) {
+      .ca-header-card { flex-wrap: wrap; }
+      .ca-title-row { flex-wrap: wrap; }
+      .ca-sub { flex-basis: 100%; }
     }
   </style>
 
   <script>
-    // ============================================================
-    // Real backend wiring — one /ca/purchases call powers every
-    // Buy/Download button and the Purchases panel. Cached for the page
-    // load; nothing here trusts anything from the client for price or
-    // ownership — every check is a real fetch to the Worker, which
-    // itself re-verifies the session and re-checks D1 on every call.
-    // ============================================================
-    const CA_API = 'https://api.studyhelp.fdaytalk.com';
+    const dataset = JSON.parse(document.getElementById('ca-dataset').textContent);
+    const PER_PAGE = 20;
+    const LETTER_LABEL = { a: 'A', b: 'B', c: 'C', d: 'D', e: 'E', f: 'F' };
 
-    let caPurchasesCache = null; // null = not yet loaded, { loggedIn, items: Map } once loaded
-
-    async function loadCaPurchases() {
-      if (caPurchasesCache) return caPurchasesCache;
-      try {
-        const res = await fetch(`${CA_API}/ca/purchases`, { credentials: 'include' });
-        if (res.status === 401) {
-          caPurchasesCache = { loggedIn: false, items: new Map() };
-        } else {
-          const data = await res.json();
-          const items = new Map();
-          (data.purchases || []).forEach((p) => items.set(p.item_id, p));
-          caPurchasesCache = { loggedIn: true, items };
-        }
-      } catch (err) {
-        caPurchasesCache = { loggedIn: false, items: new Map() };
-      }
-      return caPurchasesCache;
-    }
-
-    async function checkOwnership(itemId) {
-      const state = await loadCaPurchases();
-      return state.items.has(itemId);
-    }
-
-    // Applies the correct button state (Buy Now vs Download) for one
-    // buy button, given its item id and price.
-    async function applyOwnershipState(btn, itemId, price) {
-      btn.dataset.itemId = itemId;
-      const owned = await checkOwnership(itemId);
-      if (owned) {
-        btn.textContent = 'Download PDF';
-        btn.classList.add('ca-owned');
-      } else {
-        btn.textContent = `Buy Now — ₹${price}`;
-        btn.classList.remove('ca-owned');
-      }
-    }
-
-    // Loads the Razorpay checkout script once, lazily.
-    let razorpayScriptPromise = null;
-    function loadRazorpayScript() {
-      if (razorpayScriptPromise) return razorpayScriptPromise;
-      razorpayScriptPromise = new Promise((resolve, reject) => {
-        if (window.Razorpay) return resolve();
-        const script = document.createElement('script');
-        script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error('Failed to load Razorpay checkout'));
-        document.head.appendChild(script);
-      });
-      return razorpayScriptPromise;
-    }
-
-    // Triggers a purchase for one or more item_ids. `kind` is either
-    // 'items' (single month / single combined bundle / arbitrary
-    // multi-month picker) or 'individual_bundle' (fixed discounted price
-    // for 3 or 6 real months, each granted separately).
-    async function triggerPurchase(itemIds, kind) {
-      const state = await loadCaPurchases();
-      if (!state.loggedIn) {
-        const caBuyPayload = btoa(JSON.stringify({ kind, item_ids: itemIds }));
-        const next = encodeURIComponent(`/current-affairs/?ca_buy=${caBuyPayload}`);
-        window.location.href = `/signup/?next=${next}`;
-        return;
-      }
-
-      let orderRes;
-      try {
-        orderRes = await fetch(`${CA_API}/ca/create-order`, {
-          method: 'POST',
-          credentials: 'include',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ kind, item_ids: itemIds }),
-        });
-      } catch (err) {
-        alert('Could not start checkout. Please try again.');
-        return;
-      }
-
-      const orderData = await orderRes.json();
-      if (!orderRes.ok) {
-        alert(orderData.error || 'Could not start checkout.');
-        return;
-      }
-
-      await loadRazorpayScript();
-
-      const rzp = new window.Razorpay({
-        key: orderData.key_id,
-        order_id: orderData.order_id,
-        amount: orderData.amount,
-        currency: orderData.currency,
-        name: 'StudyHelp',
-        description: 'Current Affairs PDF',
-        handler: function (response) {
-          // Submit via a real form POST so the browser navigates through
-          // /ca/payment-callback exactly like the redirect flow — that
-          // endpoint verifies the signature and redirects to
-          // /current-affairs/?ca_success=1 (the actual unlock happens via
-          // webhook server-to-server, independent of this redirect).
-          const form = document.createElement('form');
-          form.method = 'POST';
-          form.action = `${CA_API}/ca/payment-callback`;
-          ['razorpay_payment_id', 'razorpay_order_id', 'razorpay_signature'].forEach((key) => {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = response[key];
-            form.appendChild(input);
-          });
-          document.body.appendChild(form);
-          form.submit();
-        },
-        modal: {
-          ondismiss: function () {
-            // User closed the checkout without paying — nothing to do,
-            // order stays 'created' in ca_orders, harmlessly unused.
-          },
-        },
-      });
-      rzp.open();
-    }
-
-    // Re-checks ownership server-side, then navigates to the actual
-    // download — the Worker streams the PDF directly after re-verifying
-    // the session + purchase row, so this link is never independently
-    // shareable/guessable.
-    function triggerDownload(itemId) {
-      window.location.href = `${CA_API}/ca/download?item_id=${encodeURIComponent(itemId)}`;
-    }
-
-    (async function initPurchasesIcon() {
-      const state = await loadCaPurchases();
-      purchasesIcon.style.display = state.loggedIn ? 'flex' : 'none';
-
-      if (state.loggedIn) {
-        let alreadySeen = false;
-        try {
-          alreadySeen = localStorage.getItem('ca_purchases_icon_seen') === '1';
-        } catch (err) {}
-        purchasesBadge.style.display = alreadySeen ? 'none' : 'block';
-      }
-
-      const params = new URLSearchParams(window.location.search);
-
-      // Land directly on the Purchases panel after a successful payment
-      // redirect, instead of back on whichever hero tab was open before.
-      if (params.get('ca_success') === '1' && state.loggedIn) {
-        caPurchasesCache = null; // force a fresh fetch — payment just landed
-        purchasesIcon.click();
-        return;
-      }
-
-      // Guest clicked Buy, got sent through signup, is now back here
-      // logged in — automatically resume the purchase they originally
-      // asked for instead of making them find and click Buy again.
-      const caBuyRaw = params.get('ca_buy');
-      if (caBuyRaw && state.loggedIn) {
-        try {
-          const { kind, item_ids } = JSON.parse(atob(caBuyRaw));
-          if (kind && Array.isArray(item_ids) && item_ids.length) {
-            // Strip the param so a page refresh doesn't re-trigger checkout.
-            const cleanUrl = window.location.pathname;
-            window.history.replaceState({}, '', cleanUrl);
-            triggerPurchase(item_ids, kind);
-          }
-        } catch (err) {
-          // Malformed/tampered param — ignore silently, no purchase to resume.
-        }
-      }
-    })();
-
-
-    const tabs = document.querySelectorAll('.ca-tab[data-mode]');
-    const grid = document.getElementById('ca-month-grid');
-    const hint = document.getElementById('ca-hint');
-    const continueBtn = document.getElementById('ca-continue-btn');
-    const checkboxes = () => Array.from(grid.querySelectorAll('.ca-month-checkbox'));
-    let maxPick = 1;
-
-    function updateContinueState() {
-      const checked = checkboxes().filter((c) => c.checked);
-      continueBtn.textContent = checked.length > 0 ? 'Continue to Read' : 'Select a month';
-      continueBtn.disabled = checked.length === 0;
-    }
-
-    function enforceLimit() {
-      const boxes = checkboxes();
-      const checkedCount = boxes.filter((c) => c.checked).length;
-      boxes.forEach((c) => {
-        const card = c.closest('.ca-month-card');
-        // Only disable unchecked cards once the cap is hit in multi-select
-        // mode. In single-select (maxPick === 1) cards must stay clickable
-        // so picking a new month can swap the selection directly.
-        if (maxPick > 1 && !c.checked && checkedCount >= maxPick) card.classList.add('ca-disabled');
-        else card.classList.remove('ca-disabled');
-      });
-      updateContinueState();
-    }
-
-    function handleCheckboxChange(changed) {
-      if (maxPick === 1) {
-        // Single-select: picking a new month swaps the selection instead
-        // of requiring the old one to be unticked first.
-        if (changed.checked) {
-          checkboxes().forEach((c) => { if (c !== changed) c.checked = false; });
-        }
-      } else {
-        // Multi-select: if over the cap, drop the change rather than
-        // silently exceeding maxPick.
-        const checkedCount = checkboxes().filter((c) => c.checked).length;
-        if (checkedCount > maxPick) changed.checked = false;
-      }
-      enforceLimit();
-    }
-
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach((t) => t.classList.remove('active'));
-        tab.classList.add('active');
-        maxPick = parseInt(tab.dataset.mode, 10);
-        hint.textContent = maxPick === 1 ? 'Pick 1 month.' : `Pick up to ${maxPick} months.`;
-        const boxes = checkboxes();
-        boxes.forEach((c, i) => { c.checked = i < maxPick; });
-        enforceLimit();
-      });
-    });
-
-    checkboxes().forEach((c) => c.addEventListener('change', () => handleCheckboxChange(c)));
-    if (checkboxes().length) { checkboxes()[0].checked = true; enforceLimit(); }
-
-    continueBtn.addEventListener('click', () => {
-      const chosen = checkboxes().filter((c) => c.checked).map((c) => c.value);
-      if (!chosen.length) return;
-      sessionStorage.setItem('ca_selected_months', JSON.stringify(chosen));
-      window.location.href = '/current-affairs/read/';
-    });
-
-    // ============================================================
-    // Hero tabs: Read for Free <-> Download PDF
-    // ============================================================
-    const heroFreeTab = document.getElementById('ca-hero-tab-free');
-    const heroPdfTab = document.getElementById('ca-hero-tab-pdf');
-    const panelFree = document.getElementById('ca-panel-free');
-    const panelPdf = document.getElementById('ca-panel-pdf');
-
-    function setHeroTab(which) {
-      const onFree = which === 'free';
-      heroFreeTab.classList.toggle('active', onFree);
-      heroPdfTab.classList.toggle('active', !onFree);
-      heroFreeTab.setAttribute('aria-selected', String(onFree));
-      heroPdfTab.setAttribute('aria-selected', String(!onFree));
-      panelFree.style.display = onFree ? '' : 'none';
-      panelPdf.style.display = onFree ? 'none' : '';
-      document.getElementById('ca-panel-purchases').style.display = 'none';
-      try {
-        sessionStorage.setItem('ca_last_hero_tab', which);
-      } catch (err) {}
-    }
-    heroFreeTab.addEventListener('click', () => setHeroTab('free'));
-    heroPdfTab.addEventListener('click', () => setHeroTab('pdf'));
-
-    // Restore whichever hero tab was last active — covers both a plain
-    // browser Back from signup/login, and a page reload. Buy-flow redirects
-    // (guest -> signup -> back) always force 'pdf' explicitly below,
-    // regardless of what was saved, since that's unambiguous: they can
-    // only have landed on signup by clicking Buy from the PDF tab.
+    let selectedMonthSlugs = [];
     try {
-      const savedTab = sessionStorage.getItem('ca_last_hero_tab');
-      const cameFromBuyRedirect = new URLSearchParams(window.location.search).has('ca_buy');
-      if (cameFromBuyRedirect) {
-        setHeroTab('pdf');
-      } else if (savedTab === 'pdf') {
-        setHeroTab('pdf');
+      selectedMonthSlugs = JSON.parse(sessionStorage.getItem('ca_selected_months') || '[]');
+    } catch (e) { selectedMonthSlugs = []; }
+
+    const emptyEl = document.getElementById('ca-empty');
+    if (!selectedMonthSlugs.length) {
+      if (!dataset.length) {
+        emptyEl.style.display = 'block';
+      } else {
+        // Fallback: no selection stored (e.g. direct link) -> most recent month.
+        selectedMonthSlugs = [dataset[0].slug];
       }
-      // else: leave the server-rendered default ('free') as-is.
+    }
+
+    const selectedMonths = dataset.filter((m) => selectedMonthSlugs.includes(m.slug));
+    const subEl = document.getElementById('ca-sub');
+
+    // Build "August, July, June 2026" style label: only show the year when
+    // it differs from the next month in the list (or on the last month),
+    // instead of repeating it after every month. Still handles selections
+    // that cross a year boundary, e.g. "December 2026, January, February 2027".
+    function formatMonthRange(months) {
+      if (!months.length) return '';
+      return months
+        .map((m, i) => {
+          const isLast = i === months.length - 1;
+          const nextYearDiffers = !isLast && months[i + 1].year !== m.year;
+          const showYear = isLast || nextYearDiffers;
+          return showYear ? `${m.month} ${m.year}` : m.month;
+        })
+        .join(', ');
+    }
+
+    subEl.textContent = selectedMonths.length
+      ? formatMonthRange(selectedMonths)
+      : 'No data available yet.';
+
+    // Fixed display order for the section dropdown, tuned for exam prep
+    // priority (highest MCQ-frequency topics first, reference/static
+    // material near the bottom, Miscellaneous always last). Section names
+    // not in this list fall back to just before Miscellaneous.
+    const SECTION_ORDER = [
+      'Appointments & Resignations',
+      'Awards',
+      'Summits, Events & Conference',
+      "MoU's & Agreements",
+      'Govt Schemes',
+      'Defence',
+      'Science & Technology',
+      'Sports',
+      'Banking, Economy, Business & Finance',
+      'National News',
+      'International Affairs',
+      'Index & Ranks',
+      'Obituary',
+      'Books & Authors',
+      'General Awareness',
+      'Important Days',
+      'Miscellaneous',
+    ];
+
+    // Old JSON files still use the old section name in places; treat it as
+    // the same section as the renamed one so counts/questions merge
+    // correctly regardless of which name a given month's file used.
+    const SECTION_ALIASES = { 'Static Takeaways': 'General Awareness' };
+
+    // Merge section -> question list across selected months.
+    const sectionMap = new Map();
+    selectedMonths.forEach((m) => {
+      Object.entries(m.sections).forEach(([rawName, items]) => {
+        const sectionName = SECTION_ALIASES[rawName] || rawName;
+        if (!sectionMap.has(sectionName)) sectionMap.set(sectionName, []);
+        sectionMap.get(sectionName).push(...items.map((it) => ({ ...it, _month: m.month, _year: m.year })));
+      });
+    });
+
+    const sectionNames = Array.from(sectionMap.keys()).sort((a, b) => {
+      const rankOf = (name) => {
+        const idx = SECTION_ORDER.indexOf(name);
+        if (idx !== -1) return idx;
+        // Unknown section: sit just before Miscellaneous rather than at
+        // a random spot from file order.
+        const miscIdx = SECTION_ORDER.indexOf('Miscellaneous');
+        return miscIdx === -1 ? SECTION_ORDER.length : miscIdx;
+      };
+      return rankOf(a) - rankOf(b);
+    });
+    const select = document.getElementById('ca-section-select');
+    sectionNames.forEach((name) => {
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = `${name} (${sectionMap.get(name).length})`;
+      select.appendChild(opt);
+    });
+
+    // Default to "Appointments" if present, else the first section.
+    const defaultSection = sectionNames.includes('Appointments') ? 'Appointments' : sectionNames[0];
+    if (defaultSection) select.value = defaultSection;
+
+    let currentPage = 1;
+
+    // Resume exactly where a guest left off after being sent to sign up
+    // (5-min limit popup) — restored once on load, saved on every change.
+    // Survives the redirect naturally since it's the same browser tab.
+    try {
+      const savedState = JSON.parse(sessionStorage.getItem('ca_read_state') || 'null');
+      if (savedState && sectionNames.includes(savedState.section)) {
+        select.value = savedState.section;
+        currentPage = savedState.page || 1;
+      }
     } catch (err) {}
 
-    // ============================================================
-    // Download PDF: Monthly / Last 3 / Last 6 mode tabs
-    // ============================================================
-    const pdfTabs = document.querySelectorAll('.ca-tab[data-pdf-mode]');
-    const pdfMonthlySection = document.getElementById('ca-pdf-monthly-section');
-    const pdfBundle3Section = document.getElementById('ca-pdf-bundle3-section');
-    const pdfBundle6Section = document.getElementById('ca-pdf-bundle6-section');
-
-    function setPdfMode(mode) {
-      pdfTabs.forEach((t) => t.classList.toggle('active', t.dataset.pdfMode === mode));
-      pdfMonthlySection.style.display = mode === '1' ? '' : 'none';
-      pdfBundle3Section.style.display = mode === '3' ? '' : 'none';
-      pdfBundle6Section.style.display = mode === '6' ? '' : 'none';
+    function saveReadState() {
       try {
-        sessionStorage.setItem('ca_last_pdf_mode', mode);
+        sessionStorage.setItem('ca_read_state', JSON.stringify({ section: select.value, page: currentPage }));
       } catch (err) {}
     }
 
-    pdfTabs.forEach((tab) => {
-      tab.addEventListener('click', () => setPdfMode(tab.dataset.pdfMode));
-    });
+    function render() {
+      const sectionName = select.value;
+      const questions = sectionMap.get(sectionName) || [];
+      const totalPages = Math.max(1, Math.ceil(questions.length / PER_PAGE));
+      if (currentPage > totalPages) currentPage = totalPages;
 
-    // Restore whichever PDF sub-tab (Monthly / Last 3 / Last 6) was last
-    // active — same reasoning as the hero-tab restore above: a Buy click
-    // only exists inside one specific sub-tab, so returning from signup/
-    // login should land back on that exact one, not reset to Monthly.
-    try {
-      const savedMode = sessionStorage.getItem('ca_last_pdf_mode');
-      if (savedMode && savedMode !== '1') {
-        setPdfMode(savedMode);
-      }
-      // savedMode === '1' (Monthly) needs no action — it's already the
-      // server-rendered default.
-    } catch (err) {}
+      document.getElementById('ca-crumb-section').textContent = sectionName || '';
+      document.getElementById('ca-title').textContent = sectionName || 'Current Affairs';
 
-    // Monthly grid: genuine multi-select — pick any number of months,
-    // price scales with how many are checked. (Ownership here is checked
-    // against the exact combination picked; if a backend later wants to
-    // recognize "some of these are already owned individually" and only
-    // charge for the new ones, that's a refinement on top of this, not
-    // a change to this picker.)
-    const pdfGrid = document.getElementById('ca-pdf-month-grid');
-    const pdfMonthlyBtn = document.getElementById('ca-pdf-monthly-btn');
-    const pdfCheckboxes = () => Array.from(pdfGrid.querySelectorAll('.ca-pdf-month-checkbox'));
+      const start = (currentPage - 1) * PER_PAGE;
+      const pageItems = questions.slice(start, start + PER_PAGE);
 
-    function selectedPdfMonths() {
-      return pdfCheckboxes().filter((c) => c.checked);
-    }
-
-    function updatePdfMonthlyButton() {
-      const picked = selectedPdfMonths();
-      if (!picked.length) {
-        pdfMonthlyBtn.textContent = 'Select a month';
-        pdfMonthlyBtn.disabled = true;
-        return;
-      }
-      pdfMonthlyBtn.disabled = false;
-      const totalPrice = picked.length * PRICE_MONTHLY_JS;
-      pdfMonthlyBtn.textContent = `Buy Now — ₹${totalPrice}`;
-      pdfMonthlyBtn.dataset.itemIds = JSON.stringify(picked.map((c) => c.dataset.itemId));
-    }
-
-    pdfCheckboxes().forEach((c) => {
-      c.addEventListener('change', updatePdfMonthlyButton);
-    });
-
-    pdfMonthlyBtn.addEventListener('click', () => {
-      const itemIds = JSON.parse(pdfMonthlyBtn.dataset.itemIds || '[]');
-      if (!itemIds.length) return;
-      triggerPurchase(itemIds, 'items');
-    });
-
-    const PRICE_MONTHLY_JS = Number(pdfMonthlyBtn.dataset.price);
-
-    // Owned months become locked, non-interactive cards instead of
-    // checkboxes — never re-selectable for a new purchase. Only months
-    // bought individually through THIS tab count as owned here; being
-    // part of a bundle purchase does not mark a month owned in this grid
-    // (that history stays in the Purchases panel only — kept deliberately
-    // simple, no cross-referencing between bundle and monthly ownership).
-    async function markOwnedMonths() {
-      for (const cb of pdfCheckboxes()) {
-        const owned = await checkOwnership(cb.dataset.itemId);
-        if (owned) {
-          const card = cb.closest('.ca-month-card');
-          card.classList.add('ca-month-owned');
-          cb.checked = false;
-          cb.disabled = true;
-          const meta = card.querySelector('.ca-month-meta');
-          if (meta) meta.outerHTML = '<span class="ca-month-owned-badge">✓ Purchased</span>';
-        }
-      }
-    }
-
-    async function initMonthlyGrid() {
-      await markOwnedMonths();
-      const firstAvailable = pdfCheckboxes().find((c) => !c.disabled);
-      if (firstAvailable) firstAvailable.checked = true;
-      updatePdfMonthlyButton();
-    }
-    initMonthlyGrid();
-
-    // ============================================================
-    // Individual / Combined format toggle (Last 3 / Last 6 months).
-    // Swaps which item_ids/kind the bundle's buy button will actually
-    // purchase — Individual grants each real month separately at a fixed
-    // discount price; Combined buys the single merged-PDF bundle item.
-    // ============================================================
-    const FORMAT_HINTS = {
-      individual: (n) => `${n} separate monthly PDFs.`,
-      combined: (n) => `One merged PDF, sections combined across months — same as reading online experience.`,
-    };
-
-    function setupFormatToggle(bundleNum) {
-      const toggle = document.querySelector(`.ca-format-toggle[data-bundle="${bundleNum}"]`);
-      if (!toggle) return;
-      const hint = document.querySelector(`.ca-format-hint[data-bundle-hint="${bundleNum}"]`);
-      const buyBtn = document.querySelector(`.ca-buy-btn[data-bundle="${bundleNum}"]`);
-      const price = Number(buyBtn.dataset.price);
-      const storageKey = `ca_last_format_bundle${bundleNum}`;
-
-      function applyFormat(format) {
-        const itemIds = JSON.parse(buyBtn.dataset[format === 'individual' ? 'itemIdsIndividual' : 'itemIdsCombined']);
-        const kind = buyBtn.dataset[format === 'individual' ? 'kindIndividual' : 'kindCombined'];
-        buyBtn.dataset.activeItemIds = JSON.stringify(itemIds);
-        buyBtn.dataset.activeKind = kind;
-        applyOwnershipStateMulti(buyBtn, itemIds, price);
-        try {
-          sessionStorage.setItem(storageKey, format);
-        } catch (err) {}
-      }
-
-      toggle.querySelectorAll('.ca-format-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          toggle.querySelectorAll('.ca-format-btn').forEach((b) => b.classList.remove('active'));
-          btn.classList.add('active');
-          const format = btn.dataset.format;
-          hint.textContent = FORMAT_HINTS[format](bundleNum);
-          applyFormat(format);
-        });
-      });
-
-      // Restore whichever format (Individual/Combined) was last picked
-      // for THIS bundle — a Buy click carries only one format's item_ids,
-      // so returning from signup/login should show the same one that was
-      // actually being purchased, not silently reset to Individual.
-      let initialFormat = 'individual';
-      try {
-        const saved = sessionStorage.getItem(storageKey);
-        if (saved === 'combined' || saved === 'individual') initialFormat = saved;
-      } catch (err) {}
-
-      if (initialFormat === 'combined') {
-        toggle.querySelectorAll('.ca-format-btn').forEach((b) => {
-          b.classList.toggle('active', b.dataset.format === 'combined');
-        });
-        hint.textContent = FORMAT_HINTS.combined(bundleNum);
-      }
-      applyFormat(initialFormat);
-    }
-
-    // Bundle ownership: "owned" only when EVERY item in the current
-    // format's item_ids is already owned (Individual = all N months;
-    // Combined = the single bundle item). This is always checked against
-    // the CURRENT rolling window's item_ids (computed fresh from the
-    // server-rendered month list on every page load) — so once a new
-    // month is published and the window shifts (e.g. Jun-Aug becomes
-    // Jul-Sep), the item_ids change and this naturally goes back to
-    // "Buy Now" with no extra logic needed.
-    //
-    // Owned bundles show a "✓ Purchased" badge (matching the monthly
-    // grid's pattern) and a disabled button — no download here. Actual
-    // downloads only ever happen from the Purchases panel, which lists
-    // each real purchased item individually regardless of how it was
-    // bought (single month, combined bundle, or granted via an
-    // Individual-format bundle).
-    async function applyOwnershipStateMulti(btn, itemIds, price) {
-      const state = await loadCaPurchases();
-      const allOwned = itemIds.length > 0 && itemIds.every((id) => state.items.has(id));
-      const badge = document.getElementById(`ca-bundle${btn.dataset.bundle}-badge`);
-
-      if (allOwned) {
-        btn.textContent = 'Purchased — see Purchases tab';
-        btn.disabled = true;
-        btn.classList.add('ca-owned');
-        if (badge) badge.textContent = '✓ Purchased';
-      } else {
-        btn.textContent = `Buy Now — ₹${price}`;
-        btn.disabled = false;
-        btn.classList.remove('ca-owned');
-        if (badge) badge.textContent = badge.dataset.defaultText;
-      }
-    }
-
-    document.querySelectorAll('.ca-buy-btn[data-bundle]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (btn.disabled) return;
-        const itemIds = JSON.parse(btn.dataset.activeItemIds || '[]');
-        const kind = btn.dataset.activeKind;
-        if (!itemIds.length) return;
-        if (btn.classList.contains('ca-owned')) {
-          // Download every item this format grants — for Individual
-          // format that's multiple separate PDFs, opened as sequential
-          // downloads; for Combined it's the single merged file.
-          itemIds.forEach((id, i) => setTimeout(() => triggerDownload(id), i * 400));
-        } else {
-          triggerPurchase(itemIds, kind);
-        }
-      });
-    });
-
-    setupFormatToggle('3');
-    setupFormatToggle('6');
-
-    // ============================================================
-    // Purchases panel — real data from loadCaPurchases(), same card UI
-    // that was already validated with mock data.
-    // ============================================================
-    function badgeForItemType(itemType) {
-      if (itemType === 'bundle3' || itemType === 'bundle6') return 'Combined';
-      return 'Monthly';
-    }
-
-    async function renderPurchasesList() {
-      const listEl = document.getElementById('ca-purchases-list');
-      const emptyEl = document.getElementById('ca-purchases-empty');
+      const listEl = document.getElementById('ca-question-list');
       listEl.innerHTML = '';
 
-      const state = await loadCaPurchases();
-      const purchases = Array.from(state.items.values()).sort(
-        (a, b) => new Date(b.purchase_date) - new Date(a.purchase_date)
-      );
-
-      if (!purchases.length) {
-        emptyEl.style.display = '';
-        return;
-      }
-      emptyEl.style.display = 'none';
-
-      purchases.forEach((p) => {
+      pageItems.forEach((item, idx) => {
         const card = document.createElement('div');
-        card.className = 'ca-purchase-card';
-        card.innerHTML = `
-          <div class="ca-purchase-top">
-            <div class="ca-purchase-range">${p.month_range}</div>
-            <div class="ca-purchase-badge">${badgeForItemType(p.item_type)}</div>
-          </div>
-          <div class="ca-purchase-date">Purchased on ${new Date(p.purchase_date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</div>
-          <button type="button" class="ca-purchase-dl-btn" data-item-id="${p.item_id}">Download PDF</button>
-        `;
+        card.className = 'ca-q-card';
+
+        const tag = document.createElement('span');
+        tag.className = 'ca-q-tag';
+        tag.textContent = `${item._month || ''} ${item._year || ''}`.trim();
+        card.appendChild(tag);
+
+        const qText = document.createElement('p');
+        qText.className = 'ca-q-text';
+        qText.textContent = `${start + idx + 1}. ${item.q}`;
+        card.appendChild(qText);
+
+        const optRow = document.createElement('div');
+        optRow.className = 'ca-opt-row';
+
+        const explanationEl = document.createElement('div');
+        explanationEl.className = 'ca-explanation';
+        const rawExplanation = item.e || '';
+        const splitIdx = rawExplanation.indexOf('Key Points:');
+        const mainText = (splitIdx >= 0 ? rawExplanation.slice(0, splitIdx) : rawExplanation).trim();
+        const keyPointsBlock = splitIdx >= 0 ? rawExplanation.slice(splitIdx + 'Key Points:'.length).trim() : '';
+        const keyPoints = keyPointsBlock
+          ? keyPointsBlock.split('\n').map((l) => l.replace(/^•\s*/, '').trim()).filter(Boolean)
+          : [];
+
+        if (mainText) {
+          const p = document.createElement('p');
+          p.className = 'ca-explanation-text';
+          p.textContent = mainText;
+          explanationEl.appendChild(p);
+        }
+        if (keyPoints.length) {
+          const label = document.createElement('div');
+          label.className = 'ca-keypoints-label';
+          label.textContent = 'Key Points';
+          explanationEl.appendChild(label);
+
+          const ul = document.createElement('ul');
+          ul.className = 'ca-keypoints-list';
+          keyPoints.forEach((kp) => {
+            const li = document.createElement('li');
+            li.textContent = kp;
+            ul.appendChild(li);
+          });
+          explanationEl.appendChild(ul);
+        }
+
+        // Explanation toggle — hidden until the student explicitly asks for
+        // it, even after answering. Answering a question just reveals
+        // which option was correct/wrong; the explanation is a separate,
+        // deliberate action so it isn't skimmed past unintentionally.
+        const explainToggle = document.createElement('button');
+        explainToggle.type = 'button';
+        explainToggle.className = 'ca-explain-toggle';
+        explainToggle.textContent = 'Show explanation ▾';
+        explainToggle.style.display = 'none';
+        explainToggle.addEventListener('click', () => {
+          const isShown = explanationEl.classList.toggle('shown');
+          explainToggle.textContent = isShown ? 'Hide explanation ▴' : 'Show explanation ▾';
+        });
+
+        const options = item.options || {};
+        Object.entries(options).forEach(([letter, text]) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'ca-opt-btn';
+          btn.innerHTML = `<span class="ca-opt-letter">${letter}</span> <span>${text}</span>`;
+          btn.addEventListener('click', () => {
+            optRow.querySelectorAll('.ca-opt-btn').forEach((b, i) => {
+              b.disabled = true;
+              const bLetter = Object.keys(options)[i];
+              if (bLetter === item.answer) b.classList.add('correct');
+            });
+            if (letter !== item.answer) btn.classList.add('wrong');
+            explainToggle.style.display = 'inline-flex';
+          });
+          optRow.appendChild(btn);
+        });
+
+        card.appendChild(optRow);
+        card.appendChild(explainToggle);
+        card.appendChild(explanationEl);
         listEl.appendChild(card);
       });
 
-      listEl.querySelectorAll('.ca-purchase-dl-btn').forEach((dlBtn) => {
-        dlBtn.addEventListener('click', () => triggerDownload(dlBtn.dataset.itemId));
-      });
+      document.getElementById('ca-page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
+      document.getElementById('ca-prev-btn').disabled = currentPage <= 1;
+      document.getElementById('ca-next-btn').disabled = currentPage >= totalPages;
+      document.getElementById('ca-pagination').style.display = questions.length > PER_PAGE ? 'flex' : 'none';
+
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
-    const purchasesIcon = document.getElementById('ca-purchases-icon');
-    const purchasesBadge = document.getElementById('ca-purchases-badge');
-    const purchasesPanel = document.getElementById('ca-panel-purchases');
-    const purchasesEmptyBtn = document.getElementById('ca-purchases-empty-btn');
+    select.addEventListener('change', () => { currentPage = 1; saveReadState(); render(); });
+    document.getElementById('ca-prev-btn').addEventListener('click', () => { currentPage--; saveReadState(); render(); });
+    document.getElementById('ca-next-btn').addEventListener('click', () => { currentPage++; saveReadState(); render(); });
 
-    purchasesIcon.addEventListener('click', () => {
-      panelFree.style.display = 'none';
-      panelPdf.style.display = 'none';
-      purchasesPanel.style.display = '';
-      renderPurchasesList();
-      purchasesBadge.style.display = 'none';
+    if (sectionNames.length) render();
+
+    // ============================================================
+    // Guest 5-minute reading limit.
+    //
+    // Logged-in users: unaffected, no timer runs at all.
+    // Guests: after 5 minutes of being on this page, a full-screen popup
+    // blocks further reading and explains why (free limit reached) and
+    // what to do (create a free, OTP-free account to continue). Section
+    // + page were already being saved above, so after signup they land
+    // right back on this exact question, not the top of the page.
+    // ============================================================
+    (async function initGuestReadingLimit() {
+      let loggedIn = false;
       try {
-        localStorage.setItem('ca_purchases_icon_seen', '1');
-      } catch (err) {}
-    });
+        const res = await fetch('https://api.studyhelp.fdaytalk.com/me', { credentials: 'include' });
+        loggedIn = res.ok;
+      } catch (err) {
+        loggedIn = false; // network hiccup — fail open to guest limit, safer default
+      }
+      if (loggedIn) return;
 
-    purchasesEmptyBtn.addEventListener('click', () => {
-      purchasesPanel.style.display = 'none';
-      setHeroTab('pdf');
-    });
+      const FREE_READING_MS = 5 * 60 * 1000;
+      const overlay = document.getElementById('ca-limit-overlay');
+      const signupBtn = document.getElementById('ca-limit-signup-btn');
 
+      const timerId = setTimeout(() => {
+        saveReadState();
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // block scrolling the page behind the popup
+      }, FREE_READING_MS);
+
+      signupBtn.addEventListener('click', () => {
+        clearTimeout(timerId);
+        const next = encodeURIComponent('/current-affairs/read/');
+        window.location.href = `/signup/?next=${next}`;
+      });
+    })();
   </script>
 </Layout>
