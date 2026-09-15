@@ -471,7 +471,14 @@ const dataset = getFullDataset(); // every month, every section, every question
       }
       if (loggedIn) return;
 
-      const FREE_READING_MS = 5 * 60 * 1000;
+      // Testing shortcut only: ?ca_test_limit=10 (seconds) shortens the
+      // wait for manual QA without touching the real 5-minute default.
+      // Never affects production behavior unless someone deliberately
+      // adds this param to the URL themselves.
+      const testLimitSeconds = Number(new URLSearchParams(window.location.search).get('ca_test_limit'));
+      const FREE_READING_MS = testLimitSeconds > 0
+        ? testLimitSeconds * 1000
+        : 5 * 60 * 1000;
       const overlay = document.getElementById('ca-limit-overlay');
       const signupBtn = document.getElementById('ca-limit-signup-btn');
 

@@ -1,0 +1,12 @@
+name = "studyhelp-payments"
+main = "razorpay-worker.js"
+compatibility_date = "2026-07-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "studyhelp-db"
+database_id = "ac887bc5-8275-4879-8ae0-6b776ac78c65"
+
+[[r2_buckets]]
+binding = "CA_PDFS"
+bucket_name = "studyhelp-current-affair-pdfs"
