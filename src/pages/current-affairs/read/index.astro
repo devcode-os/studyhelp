@@ -46,9 +46,9 @@ const dataset = getFullDataset(); // every month, every section, every question
     <div id="ca-question-list"></div>
 
     <div class="ca-pagination" id="ca-pagination">
-      <button type="button" id="ca-prev-btn" class="ca-page-btn">← Prev</button>
-      <span id="ca-page-indicator">Page 1</span>
-      <button type="button" id="ca-next-btn" class="ca-page-btn">Next →</button>
+      <button type="button" id="ca-prev-btn" class="ca-page-btn">Previous</button>
+      <div id="ca-page-numbers" class="ca-page-numbers"></div>
+      <button type="button" id="ca-next-btn" class="ca-page-btn">Next</button>
     </div>
 
     <div class="ca-empty" id="ca-empty" style="display:none;">
@@ -168,14 +168,22 @@ const dataset = getFullDataset(); // every month, every section, every question
     }
 
     .ca-pagination {
-      display: flex; align-items: center; justify-content: center; gap: 16px; margin: 24px 0 40px;
+      display: flex; align-items: center; justify-content: center; gap: 8px; margin: 24px 0 40px;
+      flex-wrap: wrap;
     }
     .ca-page-btn {
       padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border, #ddd);
       background: var(--card, #fff); color: var(--text, #111); font-weight: 600; cursor: pointer;
     }
     .ca-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    #ca-page-indicator { font-size: 13px; color: var(--muted, #888); font-weight: 600; }
+    .ca-page-numbers { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .ca-page-num-btn {
+      width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border, #ddd);
+      background: var(--card, #fff); color: var(--text, #111); font-weight: 600; cursor: pointer;
+    }
+    .ca-page-num-btn.active {
+      border-color: var(--accent, #185fa5); color: var(--accent, #185fa5);
+    }
 
     .ca-empty { text-align: center; padding: 40px; color: var(--muted, #888); }
 
@@ -437,7 +445,21 @@ const dataset = getFullDataset(); // every month, every section, every question
         listEl.appendChild(card);
       });
 
-      document.getElementById('ca-page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
+      const pageNumbers = document.getElementById('ca-page-numbers');
+      pageNumbers.innerHTML = '';
+      for (let p = 1; p <= totalPages; p++) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'ca-page-num-btn' + (p === currentPage ? ' active' : '');
+        btn.textContent = String(p);
+        btn.addEventListener('click', () => {
+          currentPage = p;
+          saveReadState();
+          render();
+        });
+        pageNumbers.appendChild(btn);
+      }
+
       document.getElementById('ca-prev-btn').disabled = currentPage <= 1;
       document.getElementById('ca-next-btn').disabled = currentPage >= totalPages;
       document.getElementById('ca-pagination').style.display = questions.length > PER_PAGE ? 'flex' : 'none';

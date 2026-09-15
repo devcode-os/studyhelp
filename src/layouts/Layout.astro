@@ -391,6 +391,21 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       fill: none;
       stroke-width: 2;
     }
+    /* Attention hint — a gentle bounce, only until the icon is clicked
+       once, ever (tracked in localStorage below, permanent per browser,
+       same pattern as the purchases-icon badge). */
+    #ca-fab.show.ca-fab-hint {
+      animation: ca-fab-bounce 1.6s ease-in-out infinite,
+                 ca-fab-glow 1.6s ease-in-out infinite;
+    }
+    @keyframes ca-fab-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes ca-fab-glow {
+      0%, 100% { box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(24, 95, 165, 0.5); }
+      50% { box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5), 0 0 16px 6px rgba(24, 95, 165, 0.5); }
+    }
     @media (max-width: 900px) {
       #ca-fab {
         bottom: calc(16px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
@@ -584,7 +599,9 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
           sessionStorage.removeItem('ca_last_pdf_mode');
           sessionStorage.removeItem('ca_last_format_bundle3');
           sessionStorage.removeItem('ca_last_format_bundle6');
+          localStorage.setItem('ca_fab_hint_seen', '1');
         } catch (err) {}
+        caFab.classList.remove('ca-fab-hint');
       });
 
       const isHome = window.location.pathname === '/';
@@ -596,6 +613,11 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
 
       if (isHome || isSubjectsPage || isListingPage) {
         caFab.classList.add('show');
+        let hintSeen = false;
+        try {
+          hintSeen = localStorage.getItem('ca_fab_hint_seen') === '1';
+        } catch (err) {}
+        if (!hintSeen) caFab.classList.add('ca-fab-hint');
         const banner = document.getElementById('app-install-banner');
         if (banner) banner.style.display = 'none';
       }

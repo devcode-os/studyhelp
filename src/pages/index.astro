@@ -99,7 +99,7 @@ const iconMap = {
       <div class="hero-hook-row">
         <span class="hero-hook-pill"><span class="hero-hook-spark">&#9889;</span>Free to start</span>
         <span class="hero-hook-pill">15000+ questions</span>
-        <span class="hero-hook-pill">2025-26 syllabus</span>
+        <a href="/current-affairs/" class="hero-hook-pill hero-hook-pill-ca">Current Affairs 2026</a>
       </div>
       <a href="/papers/" class="hero-papers-btn">
         <i class="ti ti-file-text hero-papers-icon" aria-hidden="true"></i>
@@ -212,6 +212,18 @@ const iconMap = {
       box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.55);
     }
     .hero-hook-spark { font-size: 14px; line-height: 1; }
+
+    /* Current Affairs pill: deliberately a different color from the two
+       "Free to start"/"15000+ questions" pills — those are plain
+       informational badges, this one is an actual link to a different
+       page, so it needs to visually read as a separate, clickable thing
+       rather than a third badge in the same set (especially on mobile,
+       where the row wraps and a same-colored third pill blends into the
+       first two as one continuous phrase). */
+    .hero-hook-pill-ca {
+      text-decoration: none;
+      cursor: pointer;
+    }
 
     .hero-papers-btn {
       position: relative;
