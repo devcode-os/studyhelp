@@ -573,6 +573,51 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         return;
       }
 
+      // Name for Razorpay's prefill — best-effort, checkout still works
+      // fine without it if this fails.
+      let userName = '';
+      try {
+        const meRes = await fetch(`${CA_API}/me`, { credentials: 'include' });
+        const meData = await meRes.json();
+        userName = meData.name || '';
+      } catch (err) {}
+
+      const description = itemIds.length === 1
+        ? 'Current Affairs PDF'
+        : `Current Affairs — ${itemIds.length} months`;
+      const successUrl = '/current-affairs/?ca_success=1';
+
+      // Native app (Capacitor): the plain web Razorpay SDK only offers
+      // Cards inside the app's WebView — UPI and other methods require
+      // the native plugin instead. Same pattern already proven on
+      // Subjects/Plans checkout.
+      const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+
+      if (isNativeApp) {
+        window.Capacitor.Plugins.RazorpayNative.open({
+          key: orderData.key_id,
+          amount: orderData.amount,
+          currency: orderData.currency,
+          order_id: orderData.order_id,
+          name: 'StudyHelp',
+          description,
+          prefill: { name: userName },
+        }).then((result) => {
+          if (result.success) {
+            window.location.href = successUrl;
+          } else {
+            if (window.showToast) {
+              window.showToast('Payment failed. Please try again.', 'error');
+            } else {
+              alert('Payment failed. Please try again.');
+            }
+          }
+        }).catch((err) => {
+          alert('Error: ' + (err && err.message ? err.message : String(err)));
+        });
+        return;
+      }
+
       await loadRazorpayScript();
 
       const rzp = new window.Razorpay({
@@ -581,33 +626,26 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         amount: orderData.amount,
         currency: orderData.currency,
         name: 'StudyHelp',
-        description: 'Current Affairs PDF',
-        handler: function (response) {
-          // Submit via a real form POST so the browser navigates through
-          // /ca/payment-callback exactly like the redirect flow — that
-          // endpoint verifies the signature and redirects to
-          // /current-affairs/?ca_success=1 (the actual unlock happens via
-          // webhook server-to-server, independent of this redirect).
-          const form = document.createElement('form');
-          form.method = 'POST';
-          form.action = `${CA_API}/ca/payment-callback`;
-          ['razorpay_payment_id', 'razorpay_order_id', 'razorpay_signature'].forEach((key) => {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = response[key];
-            form.appendChild(input);
-          });
-          document.body.appendChild(form);
-          form.submit();
+        description,
+        prefill: { name: userName },
+        handler: function () {
+          // Same as Subjects: redirect immediately, trust the webhook
+          // (server-to-server) to have written the actual ca_purchases
+          // row — no client-side signature verification needed here.
+          window.location.href = successUrl;
         },
         modal: {
           ondismiss: function () {
-            // User closed the checkout without paying — nothing to do,
-            // order stays 'created' in ca_orders, harmlessly unused.
+            // User closed the checkout without paying — order stays
+            // 'created' in ca_orders, harmlessly unused.
           },
         },
       });
+
+      rzp.on('payment.failed', function () {
+        alert('Payment failed. Please try again.');
+      });
+
       rzp.open();
     }
 
