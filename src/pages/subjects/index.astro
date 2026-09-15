@@ -59,7 +59,34 @@ const iconMap = {
   book: 'ti-book',
   chart: 'ti-chart-bar',
   gavel: 'ti-gavel',
+  file: 'ti-file-text',
 };
+
+// Question Papers — same source list/pattern as /papers/index.astro, shown
+// as a second section here since the app has no homepage and /subjects/ is
+// the first screen people land on.
+const PUBLIC_PAPERS = [
+  { slug: 'ts-constable-previous-papers-en', icon: 'file' },
+  { slug: 'ts-constable-previous-papers-te', icon: 'file' },
+];
+
+const PAPERS_ENGLISH_NAME = {
+  'ts-constable-previous-papers-en': 'Previous Question Papers',
+  'ts-constable-previous-papers-te': 'Previous Question Papers (Telugu)',
+};
+
+const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
+  const meta = getSubjectMeta(slug);
+  const chapterCount = countsBySubject[slug] || 0;
+  return {
+    titleNative: meta.heading,
+    titleEnglish: PAPERS_ENGLISH_NAME[slug] || 'Previous Question Papers',
+    slug,
+    chapterCount,
+    icon,
+    available: chapterCount > 0,
+  };
+});
 ---
 <Layout title="Subjects - StudyHelp" description="All subjects available on StudyHelp for TSPSC and TS exam preparation.">
 
@@ -98,6 +125,33 @@ const iconMap = {
       ))}
     </div>
 
+    <h2 class="page-h2">Question Papers</h2>
+
+    <div class="subject-list">
+      {papers.map((p) => (
+        p.available ? (
+          <a href={`/${p.slug}/`} class="subject-card subject-card-live">
+            <span class="avail-pill">Free</span>
+            <div class="subject-icon">
+              <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+            </div>
+            <div class="subject-native">{p.titleNative}</div>
+            <div class="subject-english">{p.titleEnglish}</div>
+            <span class="subject-count">{p.chapterCount} {p.chapterCount === 1 ? 'paper' : 'papers'}</span>
+          </a>
+        ) : (
+          <div class="subject-card subject-card-soon">
+            <div class="subject-icon subject-icon-muted">
+              <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+            </div>
+            <div class="subject-native">{p.titleNative}</div>
+            <div class="subject-english">{p.titleEnglish}</div>
+            <span class="subject-count-muted">coming soon</span>
+          </div>
+        )
+      ))}
+    </div>
+
   </div>
 
   <style is:global>
@@ -119,10 +173,12 @@ const iconMap = {
     }
     .breadcrumb a { color: var(--muted); text-decoration: none; }
     .page-h1 { margin: 0 0 16px; }
+    .page-h2 { margin: 28px 0 16px; font-size: 20px; }
 
     @media (max-width: 720px) {
       .breadcrumb { display: none; }
       .page-h1 { display: none; }
+      .page-h2 { font-size: 17px; margin: 22px 0 10px; }
     }
 
     .subject-list {
