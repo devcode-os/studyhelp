@@ -649,11 +649,45 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       rzp.open();
     }
 
-    // Re-checks ownership server-side, then navigates to the actual
-    // download — the Worker streams the PDF directly after re-verifying
-    // the session + purchase row, so this link is never independently
-    // shareable/guessable.
-    function triggerDownload(itemId) {
+    // Re-checks ownership server-side, then delivers the actual PDF.
+    //
+    // Inside the Capacitor app: the embedded WebView doesn't know how to
+    // hand off a Content-Disposition: attachment response to Android's
+    // download manager — navigating it there just silently does nothing
+    // (this is exactly why "Download PDF" appeared unresponsive on the
+    // phone app while working fine on desktop/web). Fix: open the
+    // download in the SYSTEM browser instead (which has a real download
+    // manager) — but that's a separate browsing context without the
+    // app's session cookie, so a short-lived signed token is fetched
+    // first (that fetch call itself runs inside the WebView, where the
+    // cookie IS available) and carried in the URL instead.
+    async function triggerDownload(itemId) {
+      const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+
+      if (isNativeApp) {
+        try {
+          const tokenRes = await fetch(`${CA_API}/ca/download-token?item_id=${encodeURIComponent(itemId)}`, {
+            credentials: 'include',
+          });
+          const tokenData = await tokenRes.json();
+          if (!tokenRes.ok || !tokenData.token) {
+            alert(tokenData.error || 'Could not start download. Please try again.');
+            return;
+          }
+          const url = `${CA_API}/ca/download?item_id=${encodeURIComponent(itemId)}&token=${encodeURIComponent(tokenData.token)}`;
+          if (window.Capacitor.Plugins && window.Capacitor.Plugins.Browser) {
+            window.Capacitor.Plugins.Browser.open({ url });
+          } else {
+            // Browser plugin not present for some reason — fall back to
+            // in-WebView navigation rather than doing nothing at all.
+            window.location.href = url;
+          }
+        } catch (err) {
+          alert('Could not start download. Please check your connection and try again.');
+        }
+        return;
+      }
+
       window.location.href = `${CA_API}/ca/download?item_id=${encodeURIComponent(itemId)}`;
     }
 
