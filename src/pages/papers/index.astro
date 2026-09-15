@@ -62,8 +62,8 @@ const iconMap = {
     <div class="subject-list">
       {papers.map((s) => (
         s.available ? (
-          <a href={`/${s.slug}/`} class="subject-card subject-card-live" data-subject-slug={s.slug}>
-            <span class="avail-pill" data-pill>Available</span>
+          <a href={`/${s.slug}/`} class="subject-card subject-card-live">
+            <span class="avail-pill">Available</span>
             <div class="subject-icon">
               <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
             </div>
@@ -206,33 +206,4 @@ const iconMap = {
     }
   </style>
 
-  <script define:vars={{ papers }}>
-    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
-
-    function getSession() {
-      if (window.__shSessionPromise) return window.__shSessionPromise;
-      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
-        .then((res) => res.json())
-        .catch(() => ({ logged_in: false }));
-    }
-
-    getSession().then(async (session) => {
-      if (!session.logged_in) return;
-
-      const available = papers.filter((s) => s.available);
-      await Promise.all(
-        available.map((s) =>
-          fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(s.slug)}`)
-            .then((res) => res.json())
-            .then((d) => {
-              if (!d.unlocked) return;
-              const card = document.querySelector(`[data-subject-slug="${s.slug}"]`);
-              const pill = card && card.querySelector('[data-pill]');
-              if (pill) pill.textContent = 'Purchased';
-            })
-            .catch(() => {})
-        )
-      );
-    });
-  </script>
 </Layout>

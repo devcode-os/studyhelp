@@ -28,17 +28,10 @@ import Header from '../../components/Header.astro';
       <div id="active-subjects-list" class="active-subjects-list"></div>
     </div>
 
-    <!-- Sticky group: catalog tabs (Subjects / Question Papers) plus the
-         Buy Single/Bundle toggle underneath — both stay pinned to the top
-         of the viewport while scrolling the list below. -->
+    <!-- Sticky group: mode toggle only. The Question Papers tab was removed
+         when papers went free — Plans now lists Subjects exclusively. -->
     <div id="catalog-sticky" class="catalog-sticky">
-      <div class="catalog-tabs" id="catalog-tabs">
-        <button id="tab-subjects-btn" class="catalog-tab-btn catalog-tab-active" type="button">Subjects</button>
-        <button id="tab-papers-btn" class="catalog-tab-btn" type="button" style="display:none;">Question Papers</button>
-      </div>
-
-      <!-- Mode toggle: segmented control, Android/iOS style. Only meaningful
-           for Subjects — Question Papers is single-buy only, no bundle. -->
+      <!-- Mode toggle: segmented control, Android/iOS style. -->
       <div class="mode-toggle" id="mode-toggle">
         <button id="mode-single-btn" class="mode-btn mode-btn-active" type="button">Buy Single</button>
         <button id="mode-bundle-btn" class="mode-btn" type="button">Bundle: Pick any 3 — ₹399</button>
@@ -59,10 +52,6 @@ import Header from '../../components/Header.astro';
         <span id="bundle-counter">0 of 3 selected</span>
         <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Buy Bundle — ₹399</button>
       </div>
-    </div>
-
-    <div id="papers-section" class="papers-section" style="display:none;">
-      <div class="subject-rows" id="real-papers-grid"></div>
     </div>
 
     <div class="whatyouget-card">
@@ -169,7 +158,6 @@ import Header from '../../components/Header.astro';
       max-height: none; margin-top: 10px;
     }
     .subjects-section { margin-bottom: 1.5rem; }
-    .papers-section { margin-bottom: 1.5rem; }
 
     /* ================= Sticky catalog header (tabs + mode toggle) ================= */
     .catalog-sticky {
@@ -528,33 +516,6 @@ import Header from '../../components/Header.astro';
       toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     });
 
-    // Top-level catalog tabs: Subjects vs Question Papers. Only one list is
-    // visible at a time. Question Papers is single-buy only — the whole
-    // Buy Single/Bundle toggle is hidden on that tab, and bundle mode is
-    // reset if it was on when the user switches away.
-    function setActiveCatalogTab(tab) {
-      const subjectsSection = document.getElementById('subjects-section');
-      const papersSection = document.getElementById('papers-section');
-      const modeToggle = document.getElementById('mode-toggle');
-      const subjectsTabBtn = document.getElementById('tab-subjects-btn');
-      const papersTabBtn = document.getElementById('tab-papers-btn');
-
-      const showPapers = tab === 'papers';
-      if (showPapers && bundleModeOn) setBundleMode(false);
-
-      subjectsSection.style.display = showPapers ? 'none' : '';
-      papersSection.style.display = showPapers ? '' : 'none';
-      modeToggle.style.display = showPapers ? 'none' : 'flex';
-      subjectsTabBtn.classList.toggle('catalog-tab-active', !showPapers);
-      papersTabBtn.classList.toggle('catalog-tab-active', showPapers);
-
-      const durationBadge = document.getElementById('plans-duration-badge');
-      if (durationBadge) durationBadge.textContent = showPapers ? '1 Year (365 Days)' : '3 Month (90 Days)';
-    }
-
-    document.getElementById('tab-subjects-btn').addEventListener('click', () => setActiveCatalogTab('subjects'));
-    document.getElementById('tab-papers-btn').addEventListener('click', () => setActiveCatalogTab('papers'));
-
     // "12 days left" / "Last day" / "Expires today" — human-friendly countdown
     // from a unix-seconds expires_at timestamp.
     function formatDaysLeft(expiresAtSeconds) {
@@ -669,7 +630,7 @@ import Header from '../../components/Header.astro';
     function renderPlanRow(s) {
       // s: { slug, titleNative, titleEnglish, price, popular, accessDays, category }
       const popularBadge = s.popular ? `<span class="row-badge-popular">most popular</span>` : '';
-      const yoursLabel = s.category === 'papers' ? '&#10003; your paper set' : '&#10003; your subject';
+      const yoursLabel = '&#10003; your subject';
       return `
         <div id="plan-card-${s.slug}" data-slug="${s.slug}" class="subject-row ${s.popular ? 'row-popular' : ''}">
           <div class="row-checkbox">&#10003;</div>
@@ -688,31 +649,30 @@ import Header from '../../components/Header.astro';
     }
 
     // Fetches live subjects+prices from D1 (via the Worker's public endpoint)
-    // and renders the real subject rows.
+    // and renders the real subject rows. Papers are now free and no longer
+    // sold here, so any category:'papers' rows returned by the API are
+    // filtered out rather than rendered.
     async function loadRealSubjects() {
       const grid = document.getElementById('real-plan-grid');
-      const papersGrid = document.getElementById('real-papers-grid');
-      const papersSection = document.getElementById('papers-section');
       try {
         const res = await fetch(`${WORKER_URL}/subjects/public`);
         const data = await res.json();
-        const subjects = (data.subjects || []).map((s) => ({
-          slug: s.id,
-          titleNative: s.title_native || s.name,
-          titleEnglish: s.title_english || '',
-          price: s.price_paise / 100,
-          popular: !!s.popular,
-          accessDays: s.access_days || 45,
-          category: s.category || 'subject',
-        }));
+        const subjects = (data.subjects || [])
+          .map((s) => ({
+            slug: s.id,
+            titleNative: s.title_native || s.name,
+            titleEnglish: s.title_english || '',
+            price: s.price_paise / 100,
+            popular: !!s.popular,
+            accessDays: s.access_days || 45,
+            category: s.category || 'subject',
+          }))
+          .filter((s) => s.category !== 'papers');
 
         subjectMeta = subjects;
 
-        const papers = subjects.filter((s) => s.category === 'papers');
-        const nonPapers = subjects.filter((s) => s.category !== 'papers');
-
         const PRIORITY_ORDER = ['telangana-history-en', 'telangana-history-te'];
-        nonPapers.sort((a, b) => {
+        subjects.sort((a, b) => {
           const ai = PRIORITY_ORDER.indexOf(a.slug);
           const bi = PRIORITY_ORDER.indexOf(b.slug);
           if (ai === -1 && bi === -1) return 0;
@@ -721,15 +681,10 @@ import Header from '../../components/Header.astro';
           return ai - bi;
         });
 
-        const combinedHtml = nonPapers.map(renderPlanRow).join('');
+        const combinedHtml = subjects.map(renderPlanRow).join('');
         grid.innerHTML = combinedHtml.trim().length
           ? combinedHtml
           : `<div class="row-skeleton">No subjects available right now.</div>`;
-
-        if (papers.length) {
-          papersGrid.innerHTML = papers.map(renderPlanRow).join('');
-          document.getElementById('tab-papers-btn').style.display = '';
-        }
 
         document.querySelectorAll('.row-buy-btn').forEach((btn) => {
           btn.addEventListener('click', (e) => {
@@ -861,16 +816,6 @@ import Header from '../../components/Header.astro';
       const params = new URLSearchParams(window.location.search);
       const highlightSlug = params.get('highlight');
       if (!highlightSlug) return;
-
-      // If this subject is a papers subject, its row lives in the
-      // Question Papers grid, which is hidden while the Subjects tab is
-      // active — switch tabs first, otherwise everything below still
-      // "works" (the row gets ticked/marked) but invisibly, on a tab the
-      // person never sees.
-      const meta = subjectMeta.find((s) => s.slug === highlightSlug);
-      if (meta && meta.category === 'papers') {
-        setActiveCatalogTab('papers');
-      }
 
       const targetRow = document.getElementById(`plan-card-${highlightSlug}`);
       if (!targetRow) return;

@@ -84,26 +84,30 @@ for (const ch of chapters) {
       {meta.breadcrumb}
     </div>
 
-    <div class="subject-header">
+    <div class={`subject-header ${meta.category === 'papers' ? 'subject-header-papers' : ''}`}>
       <div class="subject-header-left">
         <h1 class="subject-h1">{meta.heading}</h1>
+        {meta.category === 'papers' ? (
+          <div class="papers-count-capsule">
+            <i class="ti ti-books" aria-hidden="true"></i>
+            <span>{chapters.length} {chapters.length === 1 ? 'Paper' : 'Papers'}</span>
+          </div>
+        ) : (
         <div class="stat-pill-row">
           <div class="stat-pill stat-pill-amber">
             <i class="ti ti-books" aria-hidden="true"></i>
             <div>
               <div class="stat-num">{chapters.length}</div>
-              <div class="stat-label">{meta.category === 'papers' ? 'papers' : 'chapters'}</div>
+              <div class="stat-label">chapters</div>
             </div>
           </div>
-          {meta.category !== 'papers' && (
-            <div class="stat-pill stat-pill-teal">
-              <i class="ti ti-help-circle" aria-hidden="true"></i>
-              <div>
-                <div class="stat-num">{totalQuestions}</div>
-                <div class="stat-label">questions</div>
-              </div>
+          <div class="stat-pill stat-pill-teal">
+            <i class="ti ti-help-circle" aria-hidden="true"></i>
+            <div>
+              <div class="stat-num">{totalQuestions}</div>
+              <div class="stat-label">questions</div>
             </div>
-          )}
+          </div>
           {mockCount > 0 && (
             <a href={`/${subject}-mock-tests/`} class="stat-pill stat-pill-mock stat-pill-link">
               <i class="ti ti-clipboard-list" aria-hidden="true"></i>
@@ -115,14 +119,10 @@ for (const ch of chapters) {
             </a>
           )}
         </div>
+        )}
       </div>
-      <div class="subject-header-right">
-        {meta.category === 'papers' ? (
-          <div class="unlock-btn-group">
-            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn">Unlock {chapters.length} Papers &ndash; Rs 99</a>
-            <p class="unlock-btn-sub">Get <span id="unlock-btn-days">365</span> days unlimited access</p>
-          </div>
-        ) : (
+      {meta.category !== 'papers' && (
+        <div class="subject-header-right">
           <div class="unlock-btn-group">
             <a id="bundle-btn" href={`/plans/?highlight=${subject}&mode=bundle`} class="unlock-btn">
               <span class="unlock-btn-label">Bundle</span>
@@ -131,8 +131,8 @@ for (const ch of chapters) {
             <p class="unlock-btn-sub">Get 3 months (<span id="unlock-btn-days">90</span> days) unlimited access</p>
             <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-secondary-link">Unlock just this subject &ndash; Rs. 199</a>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
 
     <div id="grace-grant-banner" class="grace-banner" style="display:none;"></div>
@@ -242,6 +242,25 @@ for (const ch of chapters) {
     .stat-num { font-size: 17px; font-weight: 700; line-height: 1.1; text-align: left; }
     .stat-label { font-size: 11px; text-align: left; }
 
+    /* Papers header: centered single column, no unlock/right column. The
+       chapter count is a compact "N Papers" capsule sized to its content
+       (not a full-width block), matching a native app's chip styling. */
+    .subject-header-papers { justify-content: center; }
+    .subject-header-papers .subject-header-left {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      width: 100%; max-width: 100%;
+    }
+    .papers-count-capsule {
+      display: inline-flex; align-items: center; gap: 6px; width: fit-content;
+      padding: 5px 14px;
+      background: linear-gradient(135deg, rgba(255, 154, 60, 0.22), rgba(255, 179, 92, 0.08));
+      border: 1px solid rgba(255, 154, 60, 0.45);
+      border-radius: 999px;
+      font-size: 13px; font-weight: 700; color: #ffcb8a;
+      white-space: nowrap;
+    }
+    .papers-count-capsule i { font-size: 14px; color: #ff9a3c; }
+
     .unlock-btn-group { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 10px; }
     .unlock-btn-sub { font-size: 12px; color: rgba(255, 255, 255, 0.8); margin: 0; text-align: center; }
     .unlock-secondary-link {
@@ -289,6 +308,13 @@ for (const ch of chapters) {
       .stat-num { font-size: 13px; }
       .stat-label { font-size: 9.5px; }
       .stat-pill-arrow { display: none; }
+
+      /* Hero pill keeps its own bigger sizing even in the 3-col mobile
+         grid — it's the sole/lead stat on papers pages, not a peer of the
+         other small pills. */
+      .papers-count-capsule { font-size: 12px; padding: 4px 12px; }
+      .papers-count-capsule i { font-size: 13px; }
+
       .unlock-btn-group { margin-top: 10px; gap: 10px; }
       .unlock-btn { font-size: 12px; padding: 8px 16px; }
       .unlock-btn-label { font-size: 9px; }
@@ -499,7 +525,7 @@ for (const ch of chapters) {
     }
   </style>
 
-  <script define:vars={{ subject }}>
+  <script define:vars={{ subject, isPapers: meta.category === 'papers' }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
     // Session is fetched ONCE per page by Header.astro and exposed on
@@ -529,66 +555,72 @@ for (const ch of chapters) {
       });
     }
 
-    // Fetch this subject's real access_days from D1 (via the public
-    // subjects endpoint) and update the two static "45"/"365" placeholders
-    // in the header. Static markup already shows a sensible default per
-    // category so there's no layout flash if this fetch is slow — this
-    // just corrects the number once the real value is known.
-    fetch(`${WORKER_URL}/subjects/public`)
-      .then((res) => res.json())
-      .then((data) => {
-        const match = (data.subjects || []).find((s) => s.id === subject);
-        if (!match || !match.access_days) return;
-        document.querySelectorAll('#access-days-text, #unlock-btn-days').forEach((el) => {
-          el.textContent = match.access_days;
-        });
-      })
-      .catch(() => {
-        // silently ignore — static default (45 or 365 based on category) stays as-is
-      });
-
-    getSession()
-      .then((session) => {
-        if (!session.logged_in) return;
-
-        return fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`)
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.unlocked) {
-              const btn = document.getElementById('unlock-btn');
-              if (btn) {
-                const daysLeft = data.expires_at
-                  ? formatDaysLeft(data.expires_at)
-                  : 'Unlimited access unlocked';
-                btn.textContent = data.expires_at ? `Access active — ${daysLeft} ✓` : `${daysLeft} ✓`;
-                if (data.expires_at) {
-                  btn.title = `Access until ${formatExpiryDate(data.expires_at)}`;
-                }
-                btn.removeAttribute('href');
-                btn.style.cursor = 'default';
-                btn.style.color = '#5ce0c0';
-
-                const bundleBtn = document.getElementById('bundle-btn');
-                if (bundleBtn) bundleBtn.style.display = 'none';
-
-                const durationCaption = document.querySelector('.unlock-btn-sub');
-                if (durationCaption) durationCaption.style.display = 'none';
-              }
-
-              if (data.is_grace_grant) {
-                const banner = document.getElementById('grace-grant-banner');
-                if (banner) {
-                  const days = data.grace_days_remaining;
-                  banner.innerHTML = `We haven't yet confirmed your payment. You've been given ${days ?? ''} day${days === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/" style="color:#6b4a00; font-weight:600;">contact us</a>.`;
-                  banner.style.display = 'block';
-                }
-              }
-            }
+    // Fetch this subject's real access_days from D1 — only meaningful for
+    // paid subjects (the unlock button's duration caption). Papers are
+    // free and have no such button, so this whole block is skipped for them.
+    if (!isPapers) {
+      fetch(`${WORKER_URL}/subjects/public`)
+        .then((res) => res.json())
+        .then((data) => {
+          const match = (data.subjects || []).find((s) => s.id === subject);
+          if (!match || !match.access_days) return;
+          document.querySelectorAll('#access-days-text, #unlock-btn-days').forEach((el) => {
+            el.textContent = match.access_days;
           });
-      })
-      .catch(() => {
-        // silently ignore — button stays as its static category-based default on network error
-      });
+        })
+        .catch(() => {
+          // silently ignore — static default (45 or 365 based on category) stays as-is
+        });
+    }
+
+    // Ownership/unlock-state check — only relevant for paid subjects.
+    // Papers have no unlock button and no purchase to check, so this
+    // network call (and the grace-grant banner it can trigger) is skipped
+    // entirely for them.
+    if (!isPapers) {
+      getSession()
+        .then((session) => {
+          if (!session.logged_in) return;
+
+          return fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`)
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.unlocked) {
+                const btn = document.getElementById('unlock-btn');
+                if (btn) {
+                  const daysLeft = data.expires_at
+                    ? formatDaysLeft(data.expires_at)
+                    : 'Unlimited access unlocked';
+                  btn.textContent = data.expires_at ? `Access active — ${daysLeft} ✓` : `${daysLeft} ✓`;
+                  if (data.expires_at) {
+                    btn.title = `Access until ${formatExpiryDate(data.expires_at)}`;
+                  }
+                  btn.removeAttribute('href');
+                  btn.style.cursor = 'default';
+                  btn.style.color = '#5ce0c0';
+
+                  const bundleBtn = document.getElementById('bundle-btn');
+                  if (bundleBtn) bundleBtn.style.display = 'none';
+
+                  const durationCaption = document.querySelector('.unlock-btn-sub');
+                  if (durationCaption) durationCaption.style.display = 'none';
+                }
+
+                if (data.is_grace_grant) {
+                  const banner = document.getElementById('grace-grant-banner');
+                  if (banner) {
+                    const days = data.grace_days_remaining;
+                    banner.innerHTML = `We haven't yet confirmed your payment. You've been given ${days ?? ''} day${days === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/" style="color:#6b4a00; font-weight:600;">contact us</a>.`;
+                    banner.style.display = 'block';
+                  }
+                }
+              }
+            });
+        })
+        .catch(() => {
+          // silently ignore — button stays as its static category-based default on network error
+        });
+    }
 
     // One-time post-purchase toast: flag is set by payment-processing/index.astro
     // right before redirecting here, only if the account's email was still

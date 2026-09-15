@@ -139,8 +139,8 @@ const hasMcq = isTheory && Array.isArray(questions) && questions.length > 0;
 
 const backLabel = meta.category === 'papers' ? (isTelugu ? 'ప్రశ్నపత్రాలు' : 'Papers') : (isTelugu ? 'అధ్యాయాలు' : 'Chapters');
 const questionsLabel = isTelugu ? 'ప్రశ్నలు' : 'questions';
-const prevLabel = isTelugu ? 'మునుపటి' : 'Previous';
-const nextLabel = isTelugu ? 'తర్వాత' : 'Next';
+const prevLabel = 'Previous';
+const nextLabel = 'Next';
 
 const PER_PAGE = 20;
 const totalPages = Math.ceil(questions.length / PER_PAGE);
@@ -300,8 +300,8 @@ function formatMath(str) {
             <button type="button" id="lock-close" class="lock-close" aria-label="Close">
               <i class="ti ti-x" aria-hidden="true"></i>
             </button>
-            <p id="lock-message" class="lock-message">Purchase this subject for {meta.category === 'papers' ? 365 : 45} days of unlimited access.</p>
-            <a id="lock-action" href="/plans/" class="rt-btn rt-btn-accent-solid lock-action">View plans</a>
+            <p id="lock-message" class="lock-message">{meta.category === 'papers' ? 'Login to unlock this.' : 'Purchase this subject for 45 days of unlimited access.'}</p>
+            <a id="lock-action" href={meta.category === 'papers' ? '/login/' : '/plans/'} class="rt-btn rt-btn-accent-solid lock-action">{meta.category === 'papers' ? 'Login / Sign up' : 'View plans'}</a>
           </div>
         </div>
 
@@ -1018,6 +1018,18 @@ function formatMath(str) {
       padding-top: 16px;
       border-top: 1px solid var(--border);
       text-align: center;
+    }
+    /* Papers (logged-out): the CTA renders BEFORE the blurred list instead
+       of after it, so the border/margin need to sit on the bottom edge
+       instead of the top — otherwise it looks like a floating rule with
+       nothing above it. */
+    .rt-weightage-unlock-lead {
+      margin-top: 0;
+      margin-bottom: 16px;
+      padding-top: 0;
+      padding-bottom: 16px;
+      border-top: none;
+      border-bottom: 1px solid var(--border);
     }
     .rt-weightage-unlock p {
       font-size: 13px;
@@ -1895,6 +1907,7 @@ function formatMath(str) {
   {!isReference && (
   <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
+    const LOGIN_URL = `/login/?next=${encodeURIComponent(window.location.pathname)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
     // Device fingerprint for the free-click counter: a hash of stable
@@ -2029,12 +2042,24 @@ function formatMath(str) {
         try {
           const session = await getSession();
           if (!session.logged_in) {
-            // Guest — can never have purchased anything. No /check-access
-            // call needed at all.
+            // Guest — for a regular subject this means "can never have
+            // purchased anything"; for a papers subject it means "not
+            // logged in yet" — papers are free but still require an
+            // account, so a guest is treated as locked either way.
             entitlementChecked = true;
             entitlementCheckPromise = null;
             return false;
           }
+
+          if (isPapersSubject) {
+            // Papers are free for any logged-in user — no purchase check
+            // needed, just confirmed login.
+            purchased = true;
+            entitlementChecked = true;
+            entitlementCheckPromise = null;
+            return true;
+          }
+
           const accessRes = await fetch(
             `${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`
           );
@@ -2094,7 +2119,9 @@ function formatMath(str) {
     }
     const LIMIT_STORAGE_KEY = `sh_limit_${subject}_${todayKey()}`;
     let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
-    const DAILY_LIMIT_MESSAGE = `You've reached today's 15 free answers for this subject. Purchase for ${isPapersSubject ? 365 : 45} days of unlimited access, or come back tomorrow.`;
+    const DAILY_LIMIT_MESSAGE = isPapersSubject
+      ? `You've reached today's 15 free answers for this subject. Login for unlimited access, or come back tomorrow.`
+      : `You've reached today's 15 free answers for this subject. Purchase for 45 days of unlimited access, or come back tomorrow.`;
 
     function setLimitReached() {
       limitReached = true;
@@ -2332,19 +2359,31 @@ function formatMath(str) {
       if (nextBtn) nextBtn.addEventListener('click', () => showPage(currentPage + 1));
     }
 
-    function showLimitReached(message) {
+    // ctaMode: 'plans' (default, paid subjects) or 'login' (papers — free
+    // once logged in, so the CTA sends them to log in, not to checkout).
+    function showLimitReached(message, ctaMode) {
       lockBanner.style.display = 'flex';
       lockMessage.textContent = message;
-      lockAction.textContent = 'View plans';
-      lockAction.href = PLANS_URL;
+      if (ctaMode === 'login') {
+        lockAction.textContent = 'Login / Sign up';
+        lockAction.href = LOGIN_URL;
+      } else {
+        lockAction.textContent = 'View plans';
+        lockAction.href = PLANS_URL;
+      }
     }
 
     function showRemainingHint(remaining, dailyLimit) {
       if (remaining <= 3) {
         lockBanner.style.display = 'flex';
         lockMessage.textContent = `${remaining} of ${dailyLimit} free answers left for this subject today. Resets tomorrow.`;
-        lockAction.textContent = 'View plans';
-        lockAction.href = PLANS_URL;
+        if (isPapersSubject) {
+          lockAction.textContent = 'Login / Sign up';
+          lockAction.href = LOGIN_URL;
+        } else {
+          lockAction.textContent = 'View plans';
+          lockAction.href = PLANS_URL;
+        }
       }
     }
 
@@ -2453,7 +2492,7 @@ function formatMath(str) {
         } else {
           aRow.style.display = 'none';
           faqItem.classList.remove('open');
-          showLimitReached(DAILY_LIMIT_MESSAGE);
+          showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
           return false;
         }
       }
@@ -2517,7 +2556,7 @@ function formatMath(str) {
         faqItem.classList.remove('open');
         if (data.limitReached) {
           setLimitReached();
-          showLimitReached(DAILY_LIMIT_MESSAGE);
+          showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
         } else {
           showLimitReached(data.error || DAILY_LIMIT_MESSAGE);
         }
@@ -2643,7 +2682,12 @@ function formatMath(str) {
         if (!allRevealed) {
           const ok = await withButtonLoading(revealAllBtn, () => ensureEntitlementChecked());
           if (!ok) {
-            showLimitReached('Reveal all is a premium feature. Purchase this subject to unlock it.');
+            showLimitReached(
+              isPapersSubject
+                ? 'Login to reveal all answers.'
+                : 'Reveal all is a premium feature. Purchase this subject to unlock it.',
+              isPapersSubject ? 'login' : 'plans'
+            );
             return;
           }
           if (answeredSet.size > 0 && answeredSet.size < totalQuestions) {
@@ -2844,7 +2888,7 @@ function formatMath(str) {
           // Free-click limit hit mid-trial — stop here, show whatever was
           // answered so far via the normal finish flow.
           mtTrialBlocked = true;
-          showLimitReached(result.data && result.data.limitReached ? DAILY_LIMIT_MESSAGE : (result.data.error || DAILY_LIMIT_MESSAGE));
+          showLimitReached(result.data && result.data.limitReached ? DAILY_LIMIT_MESSAGE : (result.data.error || DAILY_LIMIT_MESSAGE), isPapersSubject ? 'login' : 'plans');
           if (result.data && result.data.limitReached) setLimitReached();
           finishMockTest();
           return;
@@ -3154,7 +3198,7 @@ function formatMath(str) {
           mtTrialMode = true;
 
           if (limitReached || knownRemainingClicks === 0) {
-            showLimitReached(DAILY_LIMIT_MESSAGE);
+            showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
             return;
           }
 
@@ -3162,7 +3206,7 @@ function formatMath(str) {
           const trialCount = Math.min(TRIAL_QUESTION_COUNT, totalQuestions, availableClicks);
 
           if (trialCount <= 0) {
-            showLimitReached(DAILY_LIMIT_MESSAGE);
+            showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
             return;
           }
 
@@ -3268,15 +3312,26 @@ function formatMath(str) {
       // this template is shared by both the English (7 papers) and Telugu
       // (6 papers) previous-papers packs, and no explicit count is passed in.
       const papersCount = subject.endsWith('-te') ? 6 : 7;
-      const unlockCta = unlocked ? '' : `
+      const unlockCta = unlocked ? '' : (
+        isPapersSubject
+          ? `
+        <div class="rt-weightage-unlock rt-weightage-unlock-lead">
+          <p>Unlock exact question counts and percentage weightage for every subject</p>
+          <a href="${LOGIN_URL}" class="rt-btn rt-btn-accent">Login to view pattern</a>
+        </div>
+      `
+          : `
         <div class="rt-weightage-unlock">
           <p>Unlock exact question counts and percentage weightage for every subject</p>
           <a href="/plans/?highlight=${encodeURIComponent(subject)}" class="rt-btn rt-btn-accent">Unlock Pattern (${papersCount} Papers) &ndash; Rs 99</a>
           <p class="rt-weightage-unlock-sub">Includes ${subjectAccessDays} days unlimited access</p>
         </div>
-      `;
+      `
+      );
 
-      content.innerHTML = `${rows}${unlockCta}`;
+      content.innerHTML = unlocked || !isPapersSubject
+        ? `${rows}${unlockCta}`
+        : `${unlockCta}${rows}`; // papers, logged out: CTA first so it's visible without scrolling past the blurred list
     }
 
     function showScoreSummary() {
@@ -3343,7 +3398,12 @@ function formatMath(str) {
         filterSelect.disabled = false;
         if (!ok) {
           filterSelect.value = 'all';
-          showLimitReached('Filtering by unanswered/wrong is a premium feature. Purchase this subject to unlock it.');
+          showLimitReached(
+            isPapersSubject
+              ? 'Login to filter by unanswered/wrong.'
+              : 'Filtering by unanswered/wrong is a premium feature. Purchase this subject to unlock it.',
+            isPapersSubject ? 'login' : 'plans'
+          );
           return;
         }
       }
@@ -3388,7 +3448,12 @@ function formatMath(str) {
 
       const ok = await withButtonLoading(jumpBtn, () => ensureEntitlementChecked());
       if (!ok) {
-        showLimitReached('Jump to question is a premium feature. Purchase this subject to unlock it.');
+        showLimitReached(
+          isPapersSubject
+            ? 'Login to jump to a question.'
+            : 'Jump to question is a premium feature. Purchase this subject to unlock it.',
+          isPapersSubject ? 'login' : 'plans'
+        );
         return;
       }
 
