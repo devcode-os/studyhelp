@@ -1,3 +1,4 @@
+import { CA_CATALOG, getCaR2Key, INDIVIDUAL_BUNDLE_PRICES } from './caCatalog.js';
 // studyhelp — Razorpay payment Worker
 // Bindings needed (set in wrangler.toml or dashboard):
 //   DB                  -> D1 database binding
@@ -40,7 +41,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/ca/create-order", "/ca/purchases"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -61,6 +62,18 @@ export default {
     }
     if (url.pathname === "/check-access" && request.method === "GET") {
       return checkAccess(request, env);
+    }
+    if (url.pathname === "/ca/create-order" && request.method === "POST") {
+      return createCaOrder(request, env);
+    }
+    if (url.pathname === "/ca/payment-callback" && request.method === "POST") {
+      return handleCaPaymentCallback(request, env);
+    }
+    if (url.pathname === "/ca/purchases" && request.method === "GET") {
+      return getCaPurchases(request, env);
+    }
+    if (url.pathname === "/ca/download" && request.method === "GET") {
+      return downloadCaPdf(request, env);
     }
     if (url.pathname === "/signup" && request.method === "POST") {
       return signup(request, env);
@@ -456,7 +469,64 @@ async function handleWebhook(request, env) {
       .first();
 
     if (!order) {
-      // Order not found — log and ignore, don't error (Razorpay retries on non-2xx)
+      // Not a Subjects order — check if it's a CA order before giving up.
+      const caOrder = await env.DB.prepare(
+        "SELECT * FROM ca_orders WHERE id = ?"
+      )
+        .bind(orderId)
+        .first();
+
+      if (!caOrder) {
+        // Genuinely unknown order — log and ignore, don't error
+        // (Razorpay retries on non-2xx).
+        return new Response("ok", { status: 200 });
+      }
+
+      let itemIds = [];
+      try {
+        itemIds = JSON.parse(caOrder.item_ids);
+      } catch (_err) {
+        itemIds = [];
+      }
+
+      // Grant every item in the order. Each gets its OWN catalog data
+      // (type/monthRange/r2 key) — item_ids may mix a real bundle id and/or
+      // several individual month ids in one order. amount_paise is split
+      // evenly across the granted rows purely for display in the
+      // Purchases panel; actual revenue is tracked by ca_orders.amount_paise
+      // (verified against the real Razorpay charge) and Razorpay's own
+      // records, not by this per-row figure.
+      const perItemPaise = itemIds.length
+        ? Math.round(caOrder.amount_paise / itemIds.length)
+        : 0;
+
+      for (const itemId of itemIds) {
+        const item = CA_CATALOG[itemId];
+        if (!item) continue;
+        try {
+          await env.DB.prepare(
+            `INSERT INTO ca_purchases (user_id, item_id, item_type, month_range, amount_paise, r2_object_key)
+             VALUES (?, ?, ?, ?, ?, ?)`
+          )
+            .bind(
+              caOrder.user_id,
+              itemId,
+              item.itemType,
+              item.monthRange,
+              perItemPaise,
+              getCaR2Key(itemId)
+            )
+            .run();
+        } catch (err) {
+          // UNIQUE(user_id, item_id) hit = webhook retry or already owned
+          // individually — not an error, just skip this one.
+        }
+      }
+
+      await env.DB.prepare("UPDATE ca_orders SET status = 'paid' WHERE id = ?")
+        .bind(orderId)
+        .run();
+
       return new Response("ok", { status: 200 });
     }
 
@@ -619,6 +689,205 @@ async function checkAccess(request, env) {
     grace_days_remaining: isGraceGrant
       ? Math.max(0, Math.ceil((entitlement.expires_at - nowTs) / (24 * 60 * 60)))
       : null,
+  });
+}
+
+// ---------- Current Affairs PDF purchases ----------
+// Session-gated (unlike checkAccess/createOrder above, which trust a
+// client-supplied user_id) -- CA PDF downloads require a real logged-in
+// session, no exceptions, per spec. user_id always comes from the
+// verified session, never from the request body/query for any of these
+// four endpoints. Price is always looked up from CA_CATALOG server-side
+// -- never trusted from the client.
+
+// POST /ca/create-order  { item_id }
+// POST /ca/create-order  { kind: "items" | "individual_bundle", item_ids: [...] }
+//
+// kind "items": buying one or more real catalog items directly (a single
+// month, a single combined bundle, or an arbitrary multi-month custom
+// selection from the monthly picker). Price = sum of each item's own
+// CA_CATALOG price. Every id must be a real, file-backed CA_CATALOG entry.
+//
+// kind "individual_bundle": buying 3 or 6 real months at the fixed
+// discounted bundle price (NOT the sum of the parts) -- each month still
+// gets granted as its own separate purchase row. item_ids.length must be
+// exactly 3 or 6, and every id must be a real "month" entry in
+// CA_CATALOG; the price is always looked up from INDIVIDUAL_BUNDLE_PRICES
+// server-side, never accepted from the client.
+async function createCaOrder(request, env) {
+  const jsonAuth = (data, status = 200) =>
+    json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ error: "Please log in to purchase." }, 401);
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch (_err) {
+    return jsonAuth({ error: "Invalid request body" }, 400);
+  }
+
+  const { kind, item_ids } = body || {};
+  if (!Array.isArray(item_ids) || item_ids.length === 0) {
+    return jsonAuth({ error: "item_ids must be a non-empty array" }, 400);
+  }
+
+  let amountPaise;
+
+  if (kind === "individual_bundle") {
+    if (item_ids.length !== 3 && item_ids.length !== 6) {
+      return jsonAuth({ error: "individual_bundle must have exactly 3 or 6 item_ids" }, 400);
+    }
+    const allRealMonths = item_ids.every((id) => CA_CATALOG[id] && CA_CATALOG[id].itemType === "month");
+    if (!allRealMonths) {
+      return jsonAuth({ error: "individual_bundle item_ids must all be real months" }, 400);
+    }
+    const uniqueCount = new Set(item_ids).size;
+    if (uniqueCount !== item_ids.length) {
+      return jsonAuth({ error: "Duplicate item_ids in individual_bundle" }, 400);
+    }
+    amountPaise = INDIVIDUAL_BUNDLE_PRICES[item_ids.length];
+  } else if (kind === "items") {
+    const allReal = item_ids.every((id) => !!CA_CATALOG[id]);
+    if (!allReal) {
+      return jsonAuth({ error: "Unknown item_id in item_ids" }, 400);
+    }
+    // Filter out anything already owned so a repeat purchase of a mixed
+    // selection only charges for the new ones.
+    const { results: owned } = await env.DB.prepare(
+      "SELECT item_id FROM ca_purchases WHERE user_id = ?"
+    )
+      .bind(user.id)
+      .all();
+    const ownedSet = new Set((owned || []).map((r) => r.item_id));
+    const toCharge = item_ids.filter((id) => !ownedSet.has(id));
+    if (toCharge.length === 0) {
+      return jsonAuth({ error: "You already own all selected items" }, 409);
+    }
+    item_ids.length = 0;
+    item_ids.push(...toCharge);
+    amountPaise = item_ids.reduce((sum, id) => sum + CA_CATALOG[id].amountPaise, 0);
+  } else {
+    return jsonAuth({ error: "kind must be 'items' or 'individual_bundle'" }, 400);
+  }
+
+  const auth = btoa(`${env.RAZORPAY_KEY_ID}:${env.RAZORPAY_KEY_SECRET}`);
+  const rpRes = await fetch("https://api.razorpay.com/v1/orders", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${auth}`,
+    },
+    body: JSON.stringify({
+      amount: amountPaise,
+      currency: "INR",
+      notes: { user_id: user.id, kind, item_count: String(item_ids.length) },
+    }),
+  });
+
+  if (!rpRes.ok) {
+    const errBody = await rpRes.text();
+    return jsonAuth({ error: "Razorpay order creation failed", detail: errBody }, 502);
+  }
+
+  const rpOrder = await rpRes.json();
+
+  await env.DB.prepare(
+    `INSERT INTO ca_orders (id, user_id, item_ids, amount_paise, status)
+     VALUES (?, ?, ?, ?, 'created')`
+  )
+    .bind(rpOrder.id, user.id, JSON.stringify(item_ids), amountPaise)
+    .run();
+
+  return jsonAuth({
+    order_id: rpOrder.id,
+    amount: rpOrder.amount,
+    currency: rpOrder.currency,
+    key_id: env.RAZORPAY_KEY_ID,
+  });
+}
+
+// POST /ca/payment-callback (form POST from Razorpay checkout redirect)
+async function handleCaPaymentCallback(request, env) {
+  const formData = await request.formData();
+  const razorpay_payment_id = formData.get("razorpay_payment_id");
+  const razorpay_order_id = formData.get("razorpay_order_id");
+  const razorpay_signature = formData.get("razorpay_signature");
+
+  const APP_URL = "https://studyhelp.fdaytalk.com";
+
+  if (!razorpay_payment_id || !razorpay_order_id || !razorpay_signature) {
+    return Response.redirect(`${APP_URL}/current-affairs/`, 302);
+  }
+
+  const expectedBody = `${razorpay_order_id}|${razorpay_payment_id}`;
+  const validSignature = await verifySignature(expectedBody, razorpay_signature, env.RAZORPAY_KEY_SECRET);
+
+  if (!validSignature) {
+    return Response.redirect(`${APP_URL}/current-affairs/?payment_error=1`, 302);
+  }
+
+  return Response.redirect(`${APP_URL}/current-affairs/?ca_success=1`, 302);
+}
+
+// GET /ca/purchases
+async function getCaPurchases(request, env) {
+  const jsonAuth = (data, status = 200) =>
+    json(data, status, corsHeadersWithCredentials(request));
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return jsonAuth({ purchases: [] }, 401);
+  }
+
+  const { results } = await env.DB.prepare(
+    "SELECT item_id, item_type, month_range, purchase_date FROM ca_purchases WHERE user_id = ?"
+  )
+    .bind(user.id)
+    .all();
+
+  return jsonAuth({ purchases: results || [] });
+}
+
+// GET /ca/download?item_id=...
+async function downloadCaPdf(request, env) {
+  const url = new URL(request.url);
+  const item_id = url.searchParams.get("item_id");
+
+  const user = await getUserFromSession(request, env);
+  if (!user) {
+    return new Response("Please log in to download this file.", { status: 401 });
+  }
+
+  if (!item_id || !CA_CATALOG[item_id]) {
+    return new Response("Unknown item.", { status: 400 });
+  }
+
+  const owns = await env.DB.prepare(
+    "SELECT id FROM ca_purchases WHERE user_id = ? AND item_id = ?"
+  )
+    .bind(user.id, item_id)
+    .first();
+
+  if (!owns) {
+    return new Response("You have not purchased this item.", { status: 403 });
+  }
+
+  const r2ObjectKey = getCaR2Key(item_id);
+  const object = await env.CA_PDFS.get(r2ObjectKey);
+  if (!object) {
+    return new Response("File not found.", { status: 404 });
+  }
+
+  return new Response(object.body, {
+    headers: {
+      "Content-Type": "application/pdf",
+      "Content-Disposition": `attachment; filename="${r2ObjectKey}"`,
+      "Cache-Control": "private, no-store",
+    },
   });
 }
 

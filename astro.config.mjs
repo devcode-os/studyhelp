@@ -22,7 +22,9 @@ export default defineConfig({
   vite: {
     plugins: [mkcert()],
     server: {
-      https: true
+      https: true,
+      port: 4321,
+      strictPort: true
     }
   }
 });

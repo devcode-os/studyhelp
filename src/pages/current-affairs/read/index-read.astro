@@ -1,0 +1,400 @@
+---
+// src/pages/current-affairs/read/index.astro
+//
+// Single combined reading page. Replaces the earlier picker->sections->
+// per-section-page flow: this one page owns the section dropdown AND the
+// question list, switching entirely client-side (no page reloads) since
+// all CA content is free and lightweight enough to ship in one go.
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import { getFullDataset } from '../../../lib/currentAffairs.js';
+
+const dataset = getFullDataset(); // every month, every section, every question
+---
+<Layout title="Current Affairs" description="Read Current Affairs MCQs by section, free.">
+  <Header active="subjects" />
+
+  <div class="ca-wrap">
+    <div class="ca-header-card">
+      <div class="ca-header-left">
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="/current-affairs/">CA</a> / <span id="ca-crumb-section">Appointments</span>
+        </div>
+        <div class="ca-title-row">
+          <h1 id="ca-title">Current Affairs</h1>
+          <span class="ca-sub" id="ca-sub">Loading…</span>
+        </div>
+      </div>
+      <a href="/current-affairs/" class="ca-change-btn">
+        <i class="ti ti-calendar" aria-hidden="true"></i> Change
+      </a>
+    </div>
+
+    <div class="ca-controls">
+      <select id="ca-section-select" class="ca-section-select"></select>
+    </div>
+
+    <div id="ca-question-list"></div>
+
+    <div class="ca-pagination" id="ca-pagination">
+      <button type="button" id="ca-prev-btn" class="ca-page-btn">← Prev</button>
+      <span id="ca-page-indicator">Page 1</span>
+      <button type="button" id="ca-next-btn" class="ca-page-btn">Next →</button>
+    </div>
+
+    <div class="ca-empty" id="ca-empty" style="display:none;">
+      <p>No months selected yet.</p>
+      <a href="/current-affairs/" class="ca-change-link">Pick months to start</a>
+    </div>
+  </div>
+
+  <script type="application/json" id="ca-dataset" set:html={JSON.stringify(dataset)} />
+
+  <style is:global>
+    .ca-wrap { max-width: 800px; margin: 0 auto; padding: 24px 24px calc(48px + var(--tabbar-h, 0px)); }
+
+    .ca-header-card {
+      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      border-radius: 14px; padding: 12px 16px; margin-bottom: 10px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; box-shadow: 0 6px 16px -8px rgba(20, 16, 43, 0.5);
+    }
+    .ca-header-card::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.2), transparent 45%);
+    }
+    .ca-header-left { position: relative; z-index: 1; min-width: 0; flex: 1; }
+    .breadcrumb {
+      font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 2px;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .ca-title-row { display: flex; align-items: baseline; gap: 8px; min-width: 0; flex-wrap: wrap; }
+    .ca-title-row h1 {
+      font-size: 17px; margin: 0; color: #fff; font-weight: 800;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .ca-sub { color: rgba(255,255,255,0.6); font-size: 12px; }
+
+    .ca-change-btn {
+      position: relative; z-index: 1; flex-shrink: 0; white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      background: rgba(255,255,255,0.12); color: #fff; text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25); transition: background 0.15s;
+    }
+    .ca-change-btn:hover { background: rgba(255,255,255,0.22); }
+    .ca-change-btn i { font-size: 13px; }
+
+    .ca-controls { margin: 0 0 14px; }
+    .ca-section-select {
+      width: 100%; padding: 8px 32px 8px 12px; border-radius: 10px; border: 1px solid var(--border, #ddd);
+      background: var(--card, #fff); color: var(--text, #111); font-weight: 700; font-size: 14px;
+      cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 10px center;
+    }
+
+    .ca-q-card {
+      border: 1px solid var(--border, #ddd); border-radius: 14px; padding: 18px;
+      margin-bottom: 14px; background: var(--card, #fff);
+    }
+    .ca-q-tag {
+      display: inline-block; font-size: 11px; font-weight: 700; color: var(--accent, #ff6b1a);
+      background: rgba(255,107,26,0.12);
+      padding: 2px 8px; border-radius: 999px; margin-bottom: 10px;
+    }
+    .ca-q-text { font-weight: 700; font-size: 15px; margin: 0 0 14px; line-height: 1.4; color: var(--text, #111); }
+
+    .ca-opt-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+    .ca-opt-btn {
+      display: flex; gap: 8px; align-items: flex-start; text-align: left; padding: 11px 14px;
+      border-radius: 10px; border: 1px solid var(--border, #ddd); background: var(--bg, #f7f7f9);
+      color: var(--text, #111); cursor: pointer; font-size: 14px; line-height: 1.35;
+      transition: border-color 0.15s, background 0.15s; width: 100%;
+    }
+    .ca-opt-btn:hover:not(:disabled) { border-color: var(--accent, #ff6b1a); }
+    .ca-opt-letter {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent-bg, #e6f1fb); color: var(--accent, #185fa5);
+      font-weight: 700; font-size: 13px;
+    }
+    .ca-opt-btn.correct { border-color: #2e7d32; background: rgba(46,125,50,0.12); }
+    .ca-opt-btn.correct .ca-opt-letter { background: #2e7d32; color: #fff; }
+    .ca-opt-btn.wrong { border-color: #c62828; background: rgba(198,40,40,0.12); }
+    .ca-opt-btn.wrong .ca-opt-letter { background: #c62828; color: #fff; }
+    .ca-opt-btn:disabled { cursor: default; }
+
+    .ca-explain-toggle {
+      display: none; align-items: center; gap: 4px; background: none; border: none;
+      color: var(--accent, #ff6b1a); font-weight: 700; font-size: 13px; cursor: pointer;
+      padding: 8px 0 0; margin: 0;
+    }
+    .ca-explain-toggle:hover { text-decoration: underline; }
+
+    .ca-explanation {
+      display: none; border-top: 1px dashed var(--border, #ddd); padding-top: 14px; margin-top: 14px;
+    }
+    .ca-explanation.shown { display: block; }
+    .ca-explanation-text {
+      font-size: 14px; color: var(--text, #222); line-height: 1.6; margin: 0 0 12px;
+    }
+    .ca-keypoints-label {
+      font-size: 12px; font-weight: 800; color: var(--accent, #ff6b1a);
+      text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px;
+    }
+    .ca-keypoints-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .ca-keypoints-list li {
+      font-size: 14px; color: var(--text, #222); line-height: 1.5; padding-left: 16px; position: relative;
+    }
+    .ca-keypoints-list li::before {
+      content: '•'; position: absolute; left: 0; color: var(--accent, #ff6b1a); font-weight: 800;
+    }
+
+    .ca-pagination {
+      display: flex; align-items: center; justify-content: center; gap: 16px; margin: 24px 0 40px;
+    }
+    .ca-page-btn {
+      padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border, #ddd);
+      background: var(--card, #fff); color: var(--text, #111); font-weight: 600; cursor: pointer;
+    }
+    .ca-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    #ca-page-indicator { font-size: 13px; color: var(--muted, #888); font-weight: 600; }
+
+    .ca-empty { text-align: center; padding: 40px; color: var(--muted, #888); }
+
+    @media (max-width: 480px) {
+      .ca-header-card { flex-wrap: wrap; }
+      .ca-title-row { flex-wrap: wrap; }
+      .ca-sub { flex-basis: 100%; }
+    }
+  </style>
+
+  <script>
+    const dataset = JSON.parse(document.getElementById('ca-dataset').textContent);
+    const PER_PAGE = 20;
+    const LETTER_LABEL = { a: 'A', b: 'B', c: 'C', d: 'D', e: 'E', f: 'F' };
+
+    let selectedMonthSlugs = [];
+    try {
+      selectedMonthSlugs = JSON.parse(sessionStorage.getItem('ca_selected_months') || '[]');
+    } catch (e) { selectedMonthSlugs = []; }
+
+    const emptyEl = document.getElementById('ca-empty');
+    if (!selectedMonthSlugs.length) {
+      if (!dataset.length) {
+        emptyEl.style.display = 'block';
+      } else {
+        // Fallback: no selection stored (e.g. direct link) -> most recent month.
+        selectedMonthSlugs = [dataset[0].slug];
+      }
+    }
+
+    const selectedMonths = dataset.filter((m) => selectedMonthSlugs.includes(m.slug));
+    const subEl = document.getElementById('ca-sub');
+
+    // Build "August, July, June 2026" style label: only show the year when
+    // it differs from the next month in the list (or on the last month),
+    // instead of repeating it after every month. Still handles selections
+    // that cross a year boundary, e.g. "December 2026, January, February 2027".
+    function formatMonthRange(months) {
+      if (!months.length) return '';
+      return months
+        .map((m, i) => {
+          const isLast = i === months.length - 1;
+          const nextYearDiffers = !isLast && months[i + 1].year !== m.year;
+          const showYear = isLast || nextYearDiffers;
+          return showYear ? `${m.month} ${m.year}` : m.month;
+        })
+        .join(', ');
+    }
+
+    subEl.textContent = selectedMonths.length
+      ? formatMonthRange(selectedMonths)
+      : 'No data available yet.';
+
+    // Fixed display order for the section dropdown, tuned for exam prep
+    // priority (highest MCQ-frequency topics first, reference/static
+    // material near the bottom, Miscellaneous always last). Section names
+    // not in this list fall back to just before Miscellaneous.
+    const SECTION_ORDER = [
+      'Appointments & Resignations',
+      'Awards',
+      'Summits, Events & Conference',
+      "MoU's & Agreements",
+      'Govt Schemes',
+      'Defence',
+      'Science & Technology',
+      'Sports',
+      'Banking, Economy, Business & Finance',
+      'National News',
+      'International Affairs',
+      'Index & Ranks',
+      'Obituary',
+      'Books & Authors',
+      'General Awareness',
+      'Important Days',
+      'Miscellaneous',
+    ];
+
+    // Old JSON files still use the old section name in places; treat it as
+    // the same section as the renamed one so counts/questions merge
+    // correctly regardless of which name a given month's file used.
+    const SECTION_ALIASES = { 'Static Takeaways': 'General Awareness' };
+
+    // Merge section -> question list across selected months.
+    const sectionMap = new Map();
+    selectedMonths.forEach((m) => {
+      Object.entries(m.sections).forEach(([rawName, items]) => {
+        const sectionName = SECTION_ALIASES[rawName] || rawName;
+        if (!sectionMap.has(sectionName)) sectionMap.set(sectionName, []);
+        sectionMap.get(sectionName).push(...items.map((it) => ({ ...it, _month: m.month, _year: m.year })));
+      });
+    });
+
+    const sectionNames = Array.from(sectionMap.keys()).sort((a, b) => {
+      const rankOf = (name) => {
+        const idx = SECTION_ORDER.indexOf(name);
+        if (idx !== -1) return idx;
+        // Unknown section: sit just before Miscellaneous rather than at
+        // a random spot from file order.
+        const miscIdx = SECTION_ORDER.indexOf('Miscellaneous');
+        return miscIdx === -1 ? SECTION_ORDER.length : miscIdx;
+      };
+      return rankOf(a) - rankOf(b);
+    });
+    const select = document.getElementById('ca-section-select');
+    sectionNames.forEach((name) => {
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = `${name} (${sectionMap.get(name).length})`;
+      select.appendChild(opt);
+    });
+
+    // Default to "Appointments" if present, else the first section.
+    const defaultSection = sectionNames.includes('Appointments') ? 'Appointments' : sectionNames[0];
+    if (defaultSection) select.value = defaultSection;
+
+    let currentPage = 1;
+
+    function render() {
+      const sectionName = select.value;
+      const questions = sectionMap.get(sectionName) || [];
+      const totalPages = Math.max(1, Math.ceil(questions.length / PER_PAGE));
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      document.getElementById('ca-crumb-section').textContent = sectionName || '';
+      document.getElementById('ca-title').textContent = sectionName || 'Current Affairs';
+
+      const start = (currentPage - 1) * PER_PAGE;
+      const pageItems = questions.slice(start, start + PER_PAGE);
+
+      const listEl = document.getElementById('ca-question-list');
+      listEl.innerHTML = '';
+
+      pageItems.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'ca-q-card';
+
+        const tag = document.createElement('span');
+        tag.className = 'ca-q-tag';
+        tag.textContent = `${item._month || ''} ${item._year || ''}`.trim();
+        card.appendChild(tag);
+
+        const qText = document.createElement('p');
+        qText.className = 'ca-q-text';
+        qText.textContent = `${start + idx + 1}. ${item.q}`;
+        card.appendChild(qText);
+
+        const optRow = document.createElement('div');
+        optRow.className = 'ca-opt-row';
+
+        const explanationEl = document.createElement('div');
+        explanationEl.className = 'ca-explanation';
+        const rawExplanation = item.e || '';
+        const splitIdx = rawExplanation.indexOf('Key Points:');
+        const mainText = (splitIdx >= 0 ? rawExplanation.slice(0, splitIdx) : rawExplanation).trim();
+        const keyPointsBlock = splitIdx >= 0 ? rawExplanation.slice(splitIdx + 'Key Points:'.length).trim() : '';
+        const keyPoints = keyPointsBlock
+          ? keyPointsBlock.split('\n').map((l) => l.replace(/^•\s*/, '').trim()).filter(Boolean)
+          : [];
+
+        if (mainText) {
+          const p = document.createElement('p');
+          p.className = 'ca-explanation-text';
+          p.textContent = mainText;
+          explanationEl.appendChild(p);
+        }
+        if (keyPoints.length) {
+          const label = document.createElement('div');
+          label.className = 'ca-keypoints-label';
+          label.textContent = 'Key Points';
+          explanationEl.appendChild(label);
+
+          const ul = document.createElement('ul');
+          ul.className = 'ca-keypoints-list';
+          keyPoints.forEach((kp) => {
+            const li = document.createElement('li');
+            li.textContent = kp;
+            ul.appendChild(li);
+          });
+          explanationEl.appendChild(ul);
+        }
+
+        // Explanation toggle — hidden until the student explicitly asks for
+        // it, even after answering. Answering a question just reveals
+        // which option was correct/wrong; the explanation is a separate,
+        // deliberate action so it isn't skimmed past unintentionally.
+        const explainToggle = document.createElement('button');
+        explainToggle.type = 'button';
+        explainToggle.className = 'ca-explain-toggle';
+        explainToggle.textContent = 'Show explanation ▾';
+        explainToggle.style.display = 'none';
+        explainToggle.addEventListener('click', () => {
+          const isShown = explanationEl.classList.toggle('shown');
+          explainToggle.textContent = isShown ? 'Hide explanation ▴' : 'Show explanation ▾';
+        });
+
+        const options = item.options || {};
+        Object.entries(options).forEach(([letter, text]) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'ca-opt-btn';
+          btn.innerHTML = `<span class="ca-opt-letter">${letter}</span> <span>${text}</span>`;
+          btn.addEventListener('click', () => {
+            optRow.querySelectorAll('.ca-opt-btn').forEach((b, i) => {
+              b.disabled = true;
+              const bLetter = Object.keys(options)[i];
+              if (bLetter === item.answer) b.classList.add('correct');
+            });
+            if (letter !== item.answer) btn.classList.add('wrong');
+            explainToggle.style.display = 'inline-flex';
+          });
+          optRow.appendChild(btn);
+        });
+
+        card.appendChild(optRow);
+        card.appendChild(explainToggle);
+        card.appendChild(explanationEl);
+        listEl.appendChild(card);
+      });
+
+      document.getElementById('ca-page-indicator').textContent = `Page ${currentPage} of ${totalPages}`;
+      document.getElementById('ca-prev-btn').disabled = currentPage <= 1;
+      document.getElementById('ca-next-btn').disabled = currentPage >= totalPages;
+      document.getElementById('ca-pagination').style.display = questions.length > PER_PAGE ? 'flex' : 'none';
+
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    select.addEventListener('change', () => { currentPage = 1; render(); });
+    document.getElementById('ca-prev-btn').addEventListener('click', () => { currentPage--; render(); });
+    document.getElementById('ca-next-btn').addEventListener('click', () => { currentPage++; render(); });
+
+    if (sectionNames.length) render();
+  </script>
+</Layout>

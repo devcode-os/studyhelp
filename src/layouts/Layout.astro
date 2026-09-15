@@ -360,30 +360,39 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
     }
     .app-install-banner-dismiss:hover { color: var(--text); }
 
-    /* Scroll-to-top button, positioned above mobile browser nav bars AND
-       the fixed tab bar. */
-    #scroll-top-btn {
+    /* Sticky "Current Affairs" floating icon. Hidden by default — shown
+       only via JS detection (see script near bottom), which checks the
+       page's own DOM for markers unique to home/listing pages. Sits in
+       the same bottom-right slot the old scroll-to-top button used. */
+    #ca-fab {
       position: fixed;
       right: 16px;
       bottom: 24px;
-      width: 44px;
-      height: 44px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      color: #2a1400;
-      border: none;
-      font-size: 18px;
-      font-weight: 700;
       display: none;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.55);
       z-index: 40;
+      text-decoration: none;
+
+      background: #ffffff;
+      box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s ease;
     }
-    #scroll-top-btn.show { display: flex; }
+    #ca-fab.show { display: flex; }
+    #ca-fab:hover { transform: scale(1.06); }
+    #ca-fab svg {
+      width: 24px;
+      height: 24px;
+      stroke: #185fa5;
+      fill: none;
+      stroke-width: 2;
+    }
     @media (max-width: 900px) {
-      #scroll-top-btn {
+      #ca-fab {
         bottom: calc(16px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
       }
     }
@@ -499,7 +508,12 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
 
   <Footer />
 
-  <button id="scroll-top-btn" aria-label="Scroll to top">&#8593;</button>
+  <a id="ca-fab" href="/current-affairs/" title="Current Affairs" aria-label="Current Affairs">
+    <svg viewBox="0 0 24 24">
+      <path d="M4 4h16v13H7l-3 3V4z" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 9h8M8 13h5" stroke-linecap="round"/>
+    </svg>
+  </a>
 
   <div id="toast-container" aria-live="polite"></div>
 
@@ -544,19 +558,58 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       }
     })();
 
-    const scrollBtn = document.getElementById('scroll-top-btn');
-    if (scrollBtn) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-          scrollBtn.classList.add('show');
-        } else {
-          scrollBtn.classList.remove('show');
-        }
+    // CA floating icon visibility — self-contained, no page passes any
+    // prop for this. Shown on: homepage, /subjects/, and any page
+    // rendering a .chapter-grid/.subject-header-left/-right element
+    // (both existing classes used only by subject listing pages).
+    // Hidden everywhere else by default (reading/MCQ pages, mock test,
+    // CA pages themselves, login/signup, Plans, etc.)
+    //
+    // Wherever the fab shows, the install banner is force-hidden instead
+    // of the two competing for the same bottom-right space — simpler than
+    // repositioning, and these are exactly the pages where funnelling
+    // toward CA matters more than the install nudge.
+    (function () {
+      const caFab = document.getElementById('ca-fab');
+      if (!caFab) return;
+
+      // Same deliberate-fresh-entry reasoning as the Header's "Current
+      // Affairs" nav links: clicking this icon should always land on the
+      // default CA view, not wherever the tab state happened to be left
+      // from an earlier visit. Browser Back never runs this handler, so
+      // it still restores correctly on its own.
+      caFab.addEventListener('click', () => {
+        try {
+          sessionStorage.removeItem('ca_last_hero_tab');
+          sessionStorage.removeItem('ca_last_pdf_mode');
+          sessionStorage.removeItem('ca_last_format_bundle3');
+          sessionStorage.removeItem('ca_last_format_bundle6');
+        } catch (err) {}
       });
-      scrollBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
+
+      const isHome = window.location.pathname === '/';
+      const isSubjectsPage = window.location.pathname === '/subjects/'
+        || window.location.pathname === '/subjects';
+      const isListingPage = !!document.querySelector(
+        '.chapter-grid, .subject-header-left, .subject-header-right'
+      );
+
+      if (isHome || isSubjectsPage || isListingPage) {
+        caFab.classList.add('show');
+        const banner = document.getElementById('app-install-banner');
+        if (banner) banner.style.display = 'none';
+      }
+
+      // CA pages themselves don't show the fab (by design — it links TO
+      // these pages, showing it here would be pointless), but the banner
+      // still needs to stay off here: it was covering the "Continue to
+      // Read" button at the bottom of the CA picker/read pages.
+      const isCaPage = window.location.pathname.startsWith('/current-affairs');
+      if (isCaPage) {
+        const banner = document.getElementById('app-install-banner');
+        if (banner) banner.style.display = 'none';
+      }
+    })();
 
     // Global toast helper — replaces alert() calls site-wide. Usage:
     //   showToast('Payment failed. Please try again.', 'error')

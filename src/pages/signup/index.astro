@@ -346,6 +346,7 @@ import Header from '../../components/Header.astro';
       let buySlug = null;
       let isBundle = false;
       let bundleSlugs = [];
+      let caBuy = null;
       try {
         // 'next' is itself a URL-encoded path+query string, e.g.
         // "/plans/?buy=telangana-economy-en" — parse it as one.
@@ -355,7 +356,77 @@ import Header from '../../components/Header.astro';
         if (isBundle) {
           bundleSlugs = (nextParams.get('subjects') || '').split(',').filter(Boolean);
         }
+        const caBuyRaw = nextParams.get('ca_buy');
+        if (caBuyRaw) {
+          caBuy = JSON.parse(atob(decodeURIComponent(caBuyRaw)));
+        }
       } catch (err) {}
+
+      // Current Affairs PDF purchase — same context-banner treatment as
+      // the Subjects buy flow, just a CA-specific pill instead of a
+      // subject name. The actual item_ids/kind survive the redirect
+      // inside the ca_buy param itself (base64 JSON), decoded here only
+      // for display — the CA page re-decodes it after login to actually
+      // resume the purchase (this banner never triggers payment itself).
+      //
+      // Pill text is derived directly from the item_id(s) themselves —
+      // no extra fetch needed, since CA item_ids already encode exactly
+      // what was picked (e.g. "current-affairs-august-2026" or
+      // "current-affairs-last3-jun-jul-aug-2026").
+      const MONTH_NAMES = {
+        jan: 'January', feb: 'February', mar: 'March', apr: 'April',
+        may: 'May', jun: 'June', jul: 'July', aug: 'August',
+        sep: 'September', oct: 'October', nov: 'November', dec: 'December',
+      };
+      function prettifyCaItemId(id) {
+        // Combined bundle: current-affairs-last3-jun-jul-aug-2026
+        const bundleMatch = id.match(/^current-affairs-last\d+-([a-z-]+)-(\d{4})$/);
+        if (bundleMatch) {
+          const monthAbbrevs = bundleMatch[1].split('-');
+          const year = bundleMatch[2];
+          const names = monthAbbrevs.map((abbr) => MONTH_NAMES[abbr] || abbr);
+          return `${names.join(', ')} ${year}`;
+        }
+        // Single month: current-affairs-august-2026
+        const monthMatch = id.match(/^current-affairs-([a-z]+)-(\d{4})$/);
+        if (monthMatch) {
+          const fullName = monthMatch[1].charAt(0).toUpperCase() + monthMatch[1].slice(1);
+          return `${fullName} ${monthMatch[2]}`;
+        }
+        return null; // unrecognized shape — caller falls back to a generic label
+      }
+
+      if (caBuy && Array.isArray(caBuy.item_ids) && caBuy.item_ids.length) {
+        const banner = document.getElementById('purchase-context-banner');
+        const leadEl = document.getElementById('purchase-context-lead');
+        const pillEl = document.getElementById('purchase-context-pill');
+        const tailEl = document.getElementById('purchase-context-tail');
+        const subEl = document.getElementById('signup-sub');
+        if (banner && leadEl && pillEl && tailEl) {
+          leadEl.textContent = 'Create your account to complete your purchase';
+
+          const prettyNames = caBuy.item_ids.map(prettifyCaItemId);
+          const allResolved = prettyNames.every(Boolean);
+          if (allResolved) {
+            // Single item -> just that month/bundle range. Multiple items
+            // (custom multi-month pick, or an "Individual" format bundle
+            // granting several months) -> join them, e.g.
+            // "June 2026, July 2026, August 2026".
+            pillEl.textContent = prettyNames.length === 1
+              ? `Current Affairs ${prettyNames[0]} PDF`
+              : `Current Affairs ${prettyNames.join(', ')} PDF`;
+          } else {
+            pillEl.textContent = caBuy.item_ids.length === 1
+              ? 'Current Affairs PDF'
+              : `Current Affairs — ${caBuy.item_ids.length} months`;
+          }
+
+          tailEl.textContent = "You'll be sent straight to payment right after.";
+          banner.style.display = 'flex';
+          if (subEl) subEl.style.display = 'none';
+        }
+        return;
+      }
 
       if (!buySlug && !isBundle) return;
 
