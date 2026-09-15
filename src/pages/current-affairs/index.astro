@@ -75,12 +75,12 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     <!-- ============ READ FOR FREE (existing picker, unchanged) ============ -->
     <div id="ca-panel-free">
       <div class="ca-picker-tabs" role="tablist">
-        <button type="button" class="ca-tab active" data-mode="1">Monthly</button>
-        <button type="button" class="ca-tab" data-mode="3">Last 3 months</button>
+        <button type="button" class="ca-tab" data-mode="1">Monthly</button>
+        <button type="button" class="ca-tab active" data-mode="3">Last 3 months</button>
         <button type="button" class="ca-tab" data-mode="6">Last 6 months</button>
       </div>
 
-      <p class="ca-hint" id="ca-hint">Pick 1 month.</p>
+      <p class="ca-hint" id="ca-hint">Pick up to 3 months.</p>
 
       <div class="ca-month-grid" id="ca-month-grid">
         {months.map((m) => (
@@ -783,7 +783,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     const hint = document.getElementById('ca-hint');
     const continueBtn = document.getElementById('ca-continue-btn');
     const checkboxes = () => Array.from(grid.querySelectorAll('.ca-month-checkbox'));
-    let maxPick = 1;
+    let maxPick = 3;
 
     function updateContinueState() {
       const checked = checkboxes().filter((c) => c.checked);
@@ -834,7 +834,10 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     });
 
     checkboxes().forEach((c) => c.addEventListener('change', () => handleCheckboxChange(c)));
-    if (checkboxes().length) { checkboxes()[0].checked = true; enforceLimit(); }
+    if (checkboxes().length) {
+      checkboxes().forEach((c, i) => { c.checked = i < maxPick; });
+      enforceLimit();
+    }
 
     continueBtn.addEventListener('click', () => {
       const chosen = checkboxes().filter((c) => c.checked).map((c) => c.value);
