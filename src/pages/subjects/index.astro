@@ -160,6 +160,17 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       margin: 0 auto;
       padding: 24px;
     }
+    /* Bottom clearance for the fixed mobile tabbar. This needs a wider
+       breakpoint than the phone-only layout tweaks below (720px) — the
+       tabbar itself stays visible up through tablet widths, so a page
+       between 721px and 900px was getting no bottom padding at all,
+       leaving no room to scroll the last section (Question Papers) out
+       from under the fixed bar. */
+    @media (max-width: 900px) {
+      .page-wide {
+        padding-bottom: calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+      }
+    }
     @media (max-width: 720px) {
       .page-wide {
         padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));

@@ -29,28 +29,43 @@ import Header from '../../components/Header.astro';
     </div>
 
     <!-- Sticky group: mode toggle only. The Question Papers tab was removed
-         when papers went free — Plans now lists Subjects exclusively. -->
+         when papers went free — Plans now lists Subjects exclusively.
+         Bundle is now the server-rendered default (better value, and most
+         direct /plans/ visits have no single-subject intent) — JS below
+         switches back to Single only when a ?highlight= link signals a
+         specific single-subject purchase intent. -->
     <div id="catalog-sticky" class="catalog-sticky">
       <!-- Mode toggle: segmented control, Android/iOS style. -->
       <div class="mode-toggle" id="mode-toggle">
-        <button id="mode-single-btn" class="mode-btn mode-btn-active" type="button">Buy Single</button>
-        <button id="mode-bundle-btn" class="mode-btn" type="button">Bundle: Pick any 3 — ₹399</button>
+        <button id="mode-single-btn" class="mode-btn" type="button">Buy Single</button>
+        <button id="mode-bundle-btn" class="mode-btn mode-btn-active" type="button">Buy Bundle</button>
       </div>
     </div>
 
     <div id="subjects-section" class="subjects-section">
+      <!-- Bundle value banner — only shown in Bundle mode, gives the ₹399
+         bundle its own highlighted moment instead of just silently turning
+         on checkboxes. Same tag-ribbon + left-accent-stripe treatment as
+         the Current Affairs "Best Value" card, for visual consistency. -->
+      <div id="bundle-value-banner" class="bundle-value-banner bundle-value-visible">
+        <span class="bundle-value-ribbon">Best Value</span>
+        <div class="bundle-value-text">
+          Buy 2 Subjects — Get 1 Subject <span class="bundle-value-free">Free!</span>
+        </div>
+      </div>
+
       <!-- List of subject rows — replaces the old big marketing cards.
            Same list markup is used for both Single and Bundle mode; only a
            class on the container (.bundle-mode) and per-row state
            (.row-selected) change how a row looks/behaves. -->
-      <div class="subject-rows" id="real-plan-grid">
+      <div class="subject-rows bundle-mode" id="real-plan-grid">
         <div class="row-skeleton">Loading subjects...</div>
       </div>
 
       <!-- Sticky bundle bar — appears only in bundle mode -->
-      <div id="bundle-sticky-bar" class="bundle-sticky-bar">
+      <div id="bundle-sticky-bar" class="bundle-sticky-bar" style="display:flex">
         <span id="bundle-counter">0 of 3 selected</span>
-        <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Buy Bundle — ₹399</button>
+        <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Bundle Buy — ₹399</button>
       </div>
     </div>
 
@@ -184,20 +199,61 @@ import Header from '../../components/Header.astro';
 
     /* ================= Mode toggle (segmented control) ================= */
     .mode-toggle {
-      display: flex; gap: 6px; margin-bottom: 8px;
-      background: rgba(255,255,255,0.05); padding: 4px; border-radius: 4px;
+      display: flex; gap: 8px; margin-bottom: 8px;
     }
     .mode-btn {
-      flex: 1; padding: 10px 12px; border-radius: 2px; font-size: 13px; font-weight: 700;
-      cursor: pointer; white-space: nowrap; border: none;
-      background: linear-gradient(90deg, #f6c343, #ffd76a); color: #3a2b00; /* inactive = yellow */
+      flex: 1; padding: 10px 12px; border-radius: 10px; font-size: 13px; font-weight: 700;
+      cursor: pointer; white-space: nowrap;
+      /* Sits directly on the page's light background (not inside one of
+         the dark navy cards), so this needs real light-theme colors —
+         not translucent white, which was invisible here. Inactive =
+         plain neutral card; active = the same orange accent already used
+         by the Best-Value ribbon right below it, so the two feel like
+         one connected idea instead of two different color systems. */
+      background: #ffffff; border: 1.5px solid #e2e0d8; color: #2b2a25;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
     }
     .mode-btn-active {
-      background: linear-gradient(90deg, #2fbf71, #3fd88a); color: #063a1e; /* active = green */
+      background: linear-gradient(135deg, #ff9a3c, #ffb35c); color: #2a1400;
+      border-color: transparent;
+      box-shadow: 0 3px 10px rgba(255, 154, 60, 0.3);
     }
     @media (max-width: 400px) {
       .mode-btn { font-size: 11.5px; padding: 10px 6px; }
     }
+
+    /* Bundle value banner — same "tag ribbon + left accent stripe"
+       treatment used on the Current Affairs Best-Value card, for a
+       consistent visual language across the site. Hidden by default;
+       JS shows it only while Bundle mode is active. */
+    .bundle-value-banner {
+      display: none;
+      position: relative;
+      background: #fff8e1;
+      border: 2px solid #f5b301;
+      border-radius: 14px;
+      padding: 18px 16px 14px 18px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 0 0 4px rgba(245, 179, 1, 0.12), 0 6px 18px rgba(245, 179, 1, 0.2);
+    }
+    .bundle-value-banner.bundle-value-visible { display: block; }
+    .bundle-value-ribbon {
+      position: absolute; top: -11px; left: 16px;
+      display: inline-flex; align-items: center; gap: 4px;
+      background: #f5b301;
+      color: #4a3600;
+      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
+      padding: 4px 12px 4px 10px;
+      clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .bundle-value-ribbon::before { content: '★'; font-size: 9px; }
+    .bundle-value-text {
+      font-size: 15px; font-weight: 800; color: #2b2000;
+    }
+    .bundle-value-free { color: #c98a00; }
+
 
     /* ================= Subject rows (Android list-item style) ================= */
     .subject-rows {
@@ -248,6 +304,11 @@ import Header from '../../components/Header.astro';
       font-size: 8px; font-weight: 700; padding: 1px 6px; border-radius: 4px;
       background: linear-gradient(90deg, #ff9a3c, #ffb35c); color: #2a1400; margin-bottom: 2px; display: inline-block;
     }
+    /* "Most popular" is a single-subject decision signal — not relevant
+       once you're picking 3 subjects as a bundle (checkboxes, not a
+       single choice), and it visually competes with the bundle-mode
+       checkbox for the same corner of the row. Hidden in bundle mode. */
+    .bundle-mode .row-badge-popular { display: none; }
     .row-badge-yours {
       font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 5px;
       background: #1fae5f; color: #ffffff; margin-bottom: 2px; display: inline-block;
@@ -360,7 +421,9 @@ import Header from '../../components/Header.astro';
     let subjectMeta = []; // populated by loadRealSubjects() before anything else runs
 
     // ---------- BUNDLE FEATURE state ----------
-    let bundleModeOn = false;
+    // Bundle is the default now (server-rendered markup already shows it
+    // active) — this just keeps JS state in sync with that markup on load.
+    let bundleModeOn = true;
     let selectedBundleSlugs = [];
 
     function setBundleMode(on) {
@@ -368,6 +431,7 @@ import Header from '../../components/Header.astro';
       selectedBundleSlugs = [];
       document.getElementById('real-plan-grid').classList.toggle('bundle-mode', on);
       document.getElementById('bundle-sticky-bar').style.display = on ? 'flex' : 'none';
+      document.getElementById('bundle-value-banner').classList.toggle('bundle-value-visible', on);
       document.getElementById('mode-single-btn').classList.toggle('mode-btn-active', !on);
       document.getElementById('mode-bundle-btn').classList.toggle('mode-btn-active', on);
       document.querySelectorAll('.subject-row').forEach((r) => r.classList.remove('row-selected'));
@@ -846,13 +910,20 @@ import Header from '../../components/Header.astro';
       }
     }
 
-    // If the subject page's Bundle button sent the user here (?mode=bundle),
-    // open directly in Bundle mode instead of the normal Single default.
-    // Arriving with no mode param (or from the "unlock just this subject"
-    // link) keeps the ordinary Single default untouched.
+    // Bundle is now the default landing state for a plain /plans/ visit.
+    // But a ?highlight=X link with no explicit ?mode=bundle means someone
+    // came from a specific subject's "Unlock just this subject" link —
+    // that's a single-subject purchase intent, and must still land in
+    // Single mode, overriding the new default, so it opens on the
+    // correct pick. Only an explicit ?mode=bundle (the subject page's
+    // Bundle button) or a bare /plans/ visit keeps the Bundle default.
     function applyRequestedMode() {
       const params = new URLSearchParams(window.location.search);
-      if (params.get('mode') === 'bundle') setBundleMode(true);
+      const singleSubjectIntent = params.get('highlight') && params.get('mode') !== 'bundle';
+      if (singleSubjectIntent) {
+        setBundleMode(false);
+      }
+      // else: markup + bundleModeOn already default to Bundle — nothing to do.
     }
 
     // Boot
