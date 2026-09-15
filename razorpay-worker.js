@@ -651,19 +651,28 @@ async function checkAccess(request, env) {
     return json({ error: "user_id and subject_id required" }, 400);
   }
 
+  const subjectRow = await env.DB.prepare(
+    "SELECT access_days, category FROM subjects WHERE id = ?"
+  )
+    .bind(subject_id)
+    .first();
+  const totalAccessDays = (subjectRow && subjectRow.access_days) || 90;
+
+  // Question-paper subjects are free for any logged-in user — no
+  // entitlement/purchase record required. checkAccess is only ever
+  // called by the frontend for a session it has already confirmed is
+  // logged in (user_id comes from that confirmed session), so no
+  // separate login check is needed here.
+  if (subjectRow && subjectRow.category === "papers") {
+    return json({ unlocked: true, expires_at: null, total_access_days: totalAccessDays });
+  }
+
   const nowTs = Math.floor(Date.now() / 1000);
   const entitlement = await env.DB.prepare(
     "SELECT id, expires_at, granted_reason, granted_by, granted_at FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
   )
     .bind(user_id, subject_id, nowTs)
     .first();
-
-  const subjectRow = await env.DB.prepare(
-    "SELECT access_days FROM subjects WHERE id = ?"
-  )
-    .bind(subject_id)
-    .first();
-  const totalAccessDays = (subjectRow && subjectRow.access_days) || 90;
 
   if (!entitlement) {
     return json({ unlocked: false, expires_at: null, total_access_days: totalAccessDays });
@@ -2847,6 +2856,26 @@ async function getChapterAnswers(request, env) {
   }
 
   const nowTs = Math.floor(Date.now() / 1000);
+
+  const subjectRowForBypass = await env.DB.prepare(
+    "SELECT access_days, category FROM subjects WHERE id = ?"
+  )
+    .bind(chapter.subject_id)
+    .first();
+
+  // Question-paper subjects are free for any logged-in user — skip the
+  // entitlement lookup entirely, same bypass as check-access and the
+  // single-answer endpoint.
+  if (subjectRowForBypass && subjectRowForBypass.category === "papers") {
+    let papersAnswers;
+    try {
+      papersAnswers = JSON.parse(chapter.answers_json);
+    } catch (err) {
+      return jsonAuth({ error: "Content error" }, 500);
+    }
+    return jsonAuth({ answers: papersAnswers });
+  }
+
   const entitlement = await env.DB.prepare(
     "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
   )
@@ -2854,12 +2883,7 @@ async function getChapterAnswers(request, env) {
     .first();
 
   if (!entitlement) {
-    const subjectRow = await env.DB.prepare(
-      "SELECT access_days FROM subjects WHERE id = ?"
-    )
-      .bind(chapter.subject_id)
-      .first();
-    const accessDays = (subjectRow && subjectRow.access_days) || 90;
+    const accessDays = (subjectRowForBypass && subjectRowForBypass.access_days) || 90;
     return jsonAuth({ error: `This subject is not currently unlocked on your account. Purchase for ${accessDays} days of unlimited access.`, locked: true }, 403);
   }
 
@@ -2922,6 +2946,25 @@ async function getTheoryContent(request, env) {
   }
 
   const nowTs = Math.floor(Date.now() / 1000);
+
+  const subjectRowForBypass = await env.DB.prepare(
+    "SELECT access_days, category FROM subjects WHERE id = ?"
+  )
+    .bind(chapter.subject_id)
+    .first();
+
+  // Question-paper subjects are free for any logged-in user — same
+  // bypass as check-access, getChapterAnswers, and getSingleAnswer.
+  if (subjectRowForBypass && subjectRowForBypass.category === "papers") {
+    let papersConcepts;
+    try {
+      papersConcepts = JSON.parse(chapter.concepts_json);
+    } catch (err) {
+      return jsonAuth({ error: "Content error" }, 500);
+    }
+    return jsonAuth({ concepts: papersConcepts });
+  }
+
   const entitlement = await env.DB.prepare(
     "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
   )
@@ -2929,12 +2972,7 @@ async function getTheoryContent(request, env) {
     .first();
 
   if (!entitlement) {
-    const subjectRow = await env.DB.prepare(
-      "SELECT access_days FROM subjects WHERE id = ?"
-    )
-      .bind(chapter.subject_id)
-      .first();
-    const accessDays = (subjectRow && subjectRow.access_days) || 90;
+    const accessDays = (subjectRowForBypass && subjectRowForBypass.access_days) || 90;
     return jsonAuth({ error: `This subject is not currently unlocked on your account. Purchase for ${accessDays} days of unlimited access.`, locked: true }, 403);
   }
 
@@ -3019,7 +3057,22 @@ async function getSingleAnswer(request, env) {
   // 1. Logged in AND purchased this subject (within the access window) ->
   // always unlimited, no counting at all. Once expired, this correctly
   // falls through to the free-click budget below like any unpurchased user.
+  //
+  // 1b. Logged in AND this is a question-papers subject -> also always
+  // unlimited, no entitlement/purchase record needed at all — papers are
+  // free for any logged-in user. Guests (no user) still fall through to
+  // the free-click budget below exactly as before.
   if (user) {
+    const subjectRowForBypass = await env.DB.prepare(
+      "SELECT category FROM subjects WHERE id = ?"
+    )
+      .bind(chapter.subject_id)
+      .first();
+
+    if (subjectRowForBypass && subjectRowForBypass.category === "papers") {
+      return jsonAuth({ answer, unlimited: true });
+    }
+
     const nowTs = Math.floor(Date.now() / 1000);
     const entitlement = await env.DB.prepare(
       "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
@@ -3090,14 +3143,17 @@ async function getSingleAnswer(request, env) {
 
   if (newCount > dailyLimit) {
     const subjectRow = await env.DB.prepare(
-      "SELECT access_days FROM subjects WHERE id = ?"
+      "SELECT access_days, category FROM subjects WHERE id = ?"
     )
       .bind(chapter.subject_id)
       .first();
     const accessDays = (subjectRow && subjectRow.access_days) || 90;
+    const isPapersSubject = subjectRow && subjectRow.category === "papers";
     return jsonAuth(
       {
-        error: `You've reached today's ${dailyLimit} free answers for this subject. Purchase for ${accessDays} days of unlimited access, or come back tomorrow.`,
+        error: isPapersSubject
+          ? `You've reached today's ${dailyLimit} free answers for this subject. Login or sign up to continue reading, or come back tomorrow.`
+          : `You've reached today's ${dailyLimit} free answers for this subject. Purchase for ${accessDays} days of unlimited access, or come back tomorrow.`,
         locked: true,
         limitReached: true,
         remaining: 0,

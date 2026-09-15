@@ -2509,7 +2509,12 @@ function formatMath(str) {
         if (!isPurchased) {
           aRow.style.display = 'none';
           faqItem.classList.remove('open');
-          showLimitReached('Free clicks are only available on the first 20 questions. Purchase this subject for full access.');
+          showLimitReached(
+            isPapersSubject
+              ? 'Login or sign up to continue reading past the first 20 questions.'
+              : 'Free clicks are only available on the first 20 questions. Purchase this subject for full access.',
+            isPapersSubject ? 'login' : 'plans'
+          );
           return false;
         }
       }
