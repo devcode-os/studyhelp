@@ -455,11 +455,13 @@ const dataset = getFullDataset(); // every month, every section, every question
     // Guest 5-minute reading limit.
     //
     // Logged-in users: unaffected, no timer runs at all.
-    // Guests: after 5 minutes of being on this page, a full-screen popup
-    // blocks further reading and explains why (free limit reached) and
-    // what to do (create a free, OTP-free account to continue). Section
-    // + page were already being saved above, so after signup they land
-    // right back on this exact question, not the top of the page.
+    // Guests: after 5 minutes total of being on this page (accumulated
+    // across visits, not reset each time they navigate away and back —
+    // see LIMIT_KEY below), a full-screen popup blocks further reading
+    // and explains why (free limit reached) and what to do (create a
+    // free, OTP-free account to continue). Section + page were already
+    // being saved above, so after signup they land right back on this
+    // exact question, not the top of the page.
     // ============================================================
     (async function initGuestReadingLimit() {
       let loggedIn = false;
@@ -471,25 +473,46 @@ const dataset = getFullDataset(); // every month, every section, every question
       }
       if (loggedIn) return;
 
-      // Testing shortcut only: ?ca_test_limit=10 (seconds) shortens the
-      // wait for manual QA without touching the real 5-minute default.
-      // Never affects production behavior unless someone deliberately
-      // adds this param to the URL themselves.
-      const testLimitSeconds = Number(new URLSearchParams(window.location.search).get('ca_test_limit'));
-      const FREE_READING_MS = testLimitSeconds > 0
-        ? testLimitSeconds * 1000
-        : 5 * 60 * 1000;
       const overlay = document.getElementById('ca-limit-overlay');
       const signupBtn = document.getElementById('ca-limit-signup-btn');
 
-      const timerId = setTimeout(() => {
+      function blockReading() {
         saveReadState();
         overlay.style.display = 'flex';
         document.body.style.overflow = 'hidden'; // block scrolling the page behind the popup
-      }, FREE_READING_MS);
+      }
+
+      // Persisted in localStorage (survives navigating away and back, new
+      // tabs, reloads — NOT just sessionStorage, which a "Back to Current
+      // Affairs then Continue to Read again" loop would otherwise reset
+      // every time, letting a guest read indefinitely). Once this flag is
+      // set, every future visit blocks immediately — no new 5-minute
+      // window is ever granted again on this browser until they log in.
+      const LIMIT_KEY = 'ca_guest_limit_reached';
+      let alreadyReached = false;
+      try {
+        alreadyReached = localStorage.getItem(LIMIT_KEY) === '1';
+      } catch (err) {}
+
+      if (alreadyReached) {
+        blockReading();
+      } else {
+        // Testing shortcut only: ?ca_test_limit=10 (seconds) shortens the
+        // wait for manual QA without touching the real 5-minute default.
+        const testLimitSeconds = Number(new URLSearchParams(window.location.search).get('ca_test_limit'));
+        const FREE_READING_MS = testLimitSeconds > 0
+          ? testLimitSeconds * 1000
+          : 5 * 60 * 1000;
+
+        setTimeout(() => {
+          try {
+            localStorage.setItem(LIMIT_KEY, '1');
+          } catch (err) {}
+          blockReading();
+        }, FREE_READING_MS);
+      }
 
       signupBtn.addEventListener('click', () => {
-        clearTimeout(timerId);
         const next = encodeURIComponent('/current-affairs/read/');
         window.location.href = `/signup/?next=${next}`;
       });
