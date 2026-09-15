@@ -661,10 +661,30 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     // app's session cookie, so a short-lived signed token is fetched
     // first (that fetch call itself runs inside the WebView, where the
     // cookie IS available) and carried in the URL instead.
+    //
+    // Users on an app version installed BEFORE this fix shipped won't
+    // have the @capacitor/browser plugin at all — there's no in-app
+    // notification/banner system to warn them proactively, so this is
+    // the one moment they'd actually notice anything's different: right
+    // here, at the point of clicking Download. Its absence is checked
+    // and, instead of silently doing nothing (the old broken behavior),
+    // shows a clear message with a direct link to update from the Play
+    // Store — this is the only place in the app currently capable of
+    // catching an out-of-date install for this specific feature.
     async function triggerDownload(itemId) {
       const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
 
       if (isNativeApp) {
+        if (!(window.Capacitor.Plugins && window.Capacitor.Plugins.Browser)) {
+          const wantsUpdate = confirm(
+            'Please update the StudyHelp app to download PDFs.\n\nTap OK to open the Play Store, or Cancel to stay here.'
+          );
+          if (wantsUpdate) {
+            window.location.href = 'https://play.google.com/store/apps/details?id=com.fdaytalk.studyhelp';
+          }
+          return;
+        }
+
         try {
           const tokenRes = await fetch(`${CA_API}/ca/download-token?item_id=${encodeURIComponent(itemId)}`, {
             credentials: 'include',
@@ -675,13 +695,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
             return;
           }
           const url = `${CA_API}/ca/download?item_id=${encodeURIComponent(itemId)}&token=${encodeURIComponent(tokenData.token)}`;
-          if (window.Capacitor.Plugins && window.Capacitor.Plugins.Browser) {
-            window.Capacitor.Plugins.Browser.open({ url });
-          } else {
-            // Browser plugin not present for some reason — fall back to
-            // in-WebView navigation rather than doing nothing at all.
-            window.location.href = url;
-          }
+          window.Capacitor.Plugins.Browser.open({ url });
         } catch (err) {
           alert('Could not start download. Please check your connection and try again.');
         }

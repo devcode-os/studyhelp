@@ -21,6 +21,8 @@ const ALLOWED_ORIGINS = [
   "https://studyhelp.fdaytalk.com",
   "http://localhost:4321",
   "https://localhost:4321",
+  "http://localhost:4322",
+  "https://localhost:4322",
   "http://localhost:3000",
 ];
 
@@ -41,7 +43,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/ca/create-order", "/ca/purchases"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -71,6 +73,9 @@ export default {
     }
     if (url.pathname === "/ca/purchases" && request.method === "GET") {
       return getCaPurchases(request, env);
+    }
+    if (url.pathname === "/ca/download-token" && request.method === "GET") {
+      return getCaDownloadToken(request, env);
     }
     if (url.pathname === "/ca/download" && request.method === "GET") {
       return downloadCaPdf(request, env);
@@ -853,23 +858,119 @@ async function getCaPurchases(request, env) {
 }
 
 // GET /ca/download?item_id=...
-async function downloadCaPdf(request, env) {
+// HMAC-SHA256 helpers for short-lived CA download tokens (base64url
+// payload + "." + hex signature). Needed for the Capacitor app: opening
+// a download in the SYSTEM browser (required since the embedded WebView
+// doesn't handle Content-Disposition: attachment at all) means the
+// request arrives without the app's session cookie -- this token lets
+// that one request authenticate on its own instead.
+async function signCaToken(payload, secret) {
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const sigBuf = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(payload));
+  return Array.from(new Uint8Array(sigBuf)).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function verifyCaToken(payload, signatureHex, secret) {
+  const expected = await signCaToken(payload, secret);
+  if (expected.length !== signatureHex.length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= expected.charCodeAt(i) ^ signatureHex.charCodeAt(i);
+  return diff === 0;
+}
+
+// GET /ca/download-token?item_id=...
+// Session-authenticated (same as downloadCaPdf's own check) -- called
+// from inside the app's WebView, where the session cookie IS available.
+// Returns a short-lived (5 min) signed token the download URL can carry
+// instead, for opening in the system browser afterwards.
+async function getCaDownloadToken(request, env) {
+  const jsonAuth = (data, status = 200) =>
+    json(data, status, corsHeadersWithCredentials(request));
+
   const url = new URL(request.url);
   const item_id = url.searchParams.get("item_id");
 
   const user = await getUserFromSession(request, env);
   if (!user) {
-    return new Response("Please log in to download this file.", { status: 401 });
+    return jsonAuth({ error: "Please log in." }, 401);
   }
-
   if (!item_id || !CA_CATALOG[item_id]) {
-    return new Response("Unknown item.", { status: 400 });
+    return jsonAuth({ error: "Unknown item." }, 400);
   }
 
   const owns = await env.DB.prepare(
     "SELECT id FROM ca_purchases WHERE user_id = ? AND item_id = ?"
   )
     .bind(user.id, item_id)
+    .first();
+  if (!owns) {
+    return jsonAuth({ error: "You have not purchased this item." }, 403);
+  }
+
+  const expiresAt = Date.now() + 5 * 60 * 1000;
+  const payload = `${user.id}:${item_id}:${expiresAt}`;
+  const signature = await signCaToken(payload, env.RAZORPAY_KEY_SECRET);
+  const token = `${btoa(payload)}.${signature}`;
+
+  return jsonAuth({ token });
+}
+
+async function downloadCaPdf(request, env) {
+  const url = new URL(request.url);
+  const item_id = url.searchParams.get("item_id");
+  const token = url.searchParams.get("token");
+
+  if (!item_id || !CA_CATALOG[item_id]) {
+    return new Response("Unknown item.", { status: 400 });
+  }
+
+  let userId = null;
+
+  if (token) {
+    // Token path (system browser, no session cookie available there).
+    const dotIdx = token.indexOf(".");
+    if (dotIdx === -1) {
+      return new Response("Invalid download link.", { status: 400 });
+    }
+    const payloadB64 = token.slice(0, dotIdx);
+    const signatureHex = token.slice(dotIdx + 1);
+    let payload;
+    try {
+      payload = atob(payloadB64);
+    } catch (err) {
+      return new Response("Invalid download link.", { status: 400 });
+    }
+    const valid = await verifyCaToken(payload, signatureHex, env.RAZORPAY_KEY_SECRET);
+    if (!valid) {
+      return new Response("Invalid or tampered download link.", { status: 403 });
+    }
+    const [tokenUserId, tokenItemId, expiresAtStr] = payload.split(":");
+    if (tokenItemId !== item_id) {
+      return new Response("This link is for a different item.", { status: 403 });
+    }
+    if (Date.now() > Number(expiresAtStr)) {
+      return new Response("This download link has expired. Please try again from the app.", { status: 403 });
+    }
+    userId = tokenUserId;
+  } else {
+    // Session-cookie path (plain web/desktop, unchanged).
+    const user = await getUserFromSession(request, env);
+    if (!user) {
+      return new Response("Please log in to download this file.", { status: 401 });
+    }
+    userId = user.id;
+  }
+
+  const owns = await env.DB.prepare(
+    "SELECT id FROM ca_purchases WHERE user_id = ? AND item_id = ?"
+  )
+    .bind(userId, item_id)
     .first();
 
   if (!owns) {
