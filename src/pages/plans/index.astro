@@ -313,6 +313,22 @@ import Header from '../../components/Header.astro';
       font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 5px;
       background: #1fae5f; color: #ffffff; margin-bottom: 2px; display: inline-block;
     }
+    /* Bundle mode only: diagonal corner-ribbon tag on whichever row is the
+       3rd (last) selection — the one "Buy 2 Get 1 Free" is giving away
+       free. Sits across the row's top-right corner, absolutely positioned
+       (not in flex flow) so it never pushes the title/subtitle down. */
+    .subject-row { position: relative; overflow: hidden; }
+    .row-badge-free {
+      display: none;
+      position: absolute; top: 10px; right: -32px;
+      width: 120px; text-align: center;
+      transform: rotate(45deg);
+      font-size: 9.5px; font-weight: 800; padding: 3px 0; letter-spacing: 0.05em;
+      background: #1fae5f; color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      pointer-events: none;
+    }
+    .subject-rows.bundle-mode .row-free-badge .row-badge-free { display: block; }
 
     /* ================= Bundle mode overrides ================= */
     /* In bundle mode: hide icon (show checkbox instead), hide price/buy
@@ -445,6 +461,19 @@ import Header from '../../components/Header.astro';
       const buyBtn = document.getElementById('bundle-buy-btn');
       if (counter) counter.textContent = `${selectedBundleSlugs.length} of 3 selected`;
       if (buyBtn) buyBtn.disabled = selectedBundleSlugs.length !== 3;
+      updateFreeBadge();
+    }
+
+    // The FREE badge always sits on whichever subject is the 3rd (last)
+    // one selected — not a fixed subject — so it follows the user's pick
+    // even if they uncheck and choose a different 3rd item.
+    function updateFreeBadge() {
+      document.querySelectorAll('.subject-row').forEach((r) => r.classList.remove('row-free-badge'));
+      if (selectedBundleSlugs.length === 3) {
+        const freeSlug = selectedBundleSlugs[2];
+        const freeRow = document.getElementById(`plan-card-${freeSlug}`);
+        if (freeRow) freeRow.classList.add('row-free-badge');
+      }
     }
 
     function toggleBundleSelect(slug) {
@@ -698,6 +727,7 @@ import Header from '../../components/Header.astro';
       return `
         <div id="plan-card-${s.slug}" data-slug="${s.slug}" class="subject-row ${s.popular ? 'row-popular' : ''}">
           <div class="row-checkbox">&#10003;</div>
+          <span class="row-badge-free">FREE</span>
           <div class="row-body">
             <span class="badge-yours-wrap" style="display:none;"><span class="row-badge-yours">${yoursLabel}</span></span>
             ${popularBadge}
