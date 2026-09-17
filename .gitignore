@@ -12,3 +12,6 @@ Untitled*
 *.download
 !public/**
 !src/assets/**
+
+studyhelp-backups/
+cleanup-studyhelp-repo.ps1
