@@ -103,6 +103,7 @@
         <div class="tab" data-tab="search">Search</div>
         <div class="tab" data-tab="pricing">Subject Pricing</div>
         <div class="tab" data-tab="loggedin">Logged In</div>
+        <div class="tab" data-tab="capurchases">CA Purchases</div>
       </div>
 
       <div id="tab-users"></div>
@@ -110,6 +111,7 @@
       <div id="tab-search" style="display:none"></div>
       <div id="tab-pricing" style="display:none"></div>
       <div id="tab-loggedin" style="display:none"></div>
+      <div id="tab-capurchases" style="display:none"></div>
     </div>
   </div>
 
@@ -184,13 +186,14 @@
       tabEl.onclick = () => {
         document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
         tabEl.classList.add("active");
-        ["users", "grants", "search", "pricing", "loggedin"].forEach((name) => {
+        ["users", "grants", "search", "pricing", "loggedin", "capurchases"].forEach((name) => {
           $("tab-" + name).style.display = name === tabEl.dataset.tab ? "block" : "none";
         });
         if (tabEl.dataset.tab === "grants") loadManualGrants();
         if (tabEl.dataset.tab === "users") loadUsers();
         if (tabEl.dataset.tab === "pricing") loadSubjectPricing();
         if (tabEl.dataset.tab === "loggedin") loadLoggedInUsers();
+        if (tabEl.dataset.tab === "capurchases") loadCaPurchases();
       };
     });
 
@@ -336,6 +339,59 @@
         row.onclick = () => goToSearchFor(row.dataset.phone);
       });
     }
+
+    // ---------- Tab: CA (Current Affairs) Purchases ----------
+    let caPurchasesCursor = null;
+    let caPurchasesCache = [];
+
+    async function loadCaPurchases(cursor) {
+      if (!cursor) $("tab-capurchases").innerHTML = `<div class="card"><div class="card-body"><span class="spinner"></span> Loading...</div></div>`;
+      const { ok, data } = await api("/master-access/ca-purchases" + (cursor ? `?before=${cursor}` : ""));
+      if (!ok) { $("tab-capurchases").innerHTML = `<div class="card"><div class="card-body err">${esc(data.error || "Failed to load")}</div></div>`; return; }
+
+      if (!cursor) caPurchasesCache = data.purchases || [];
+      else caPurchasesCache = caPurchasesCache.concat(data.purchases || []);
+      caPurchasesCursor = data.next_cursor;
+
+      renderCaPurchasesTab(data);
+    }
+
+    function renderCaPurchasesTab(data) {
+      const rows = caPurchasesCache.map((p) => `
+        <tr class="user-row" data-phone="${esc(p.phone)}">
+          <td><strong>${esc(p.user_name || "(no name)")}</strong><div class="muted">${esc(p.phone)}</div></td>
+          <td>${esc(p.month_range || p.item_id)}<div class="muted">${esc(p.item_type || "")} · ${esc(p.item_id)}</div></td>
+          <td>₹${((p.amount_paise || 0) / 100).toFixed(2)}</td>
+          <td class="muted">${p.purchase_date ? new Date(p.purchase_date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : "—"}</td>
+        </tr>`
+      ).join("");
+
+      $("tab-capurchases").innerHTML = `
+        <div class="card" style="margin-bottom:14px">
+          <div class="card-body">
+            <div style="display:flex; gap:24px; flex-wrap:wrap">
+              <div><div class="muted" style="font-size:12px">Total CA purchases</div><div style="font-size:22px; font-weight:700">${data.total_count || 0}</div></div>
+              <div><div class="muted" style="font-size:12px">Total CA revenue</div><div style="font-size:22px; font-weight:700">₹${((data.total_amount_paise || 0) / 100).toFixed(2)}</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h4 class="section-label">${caPurchasesCache.length} purchase${caPurchasesCache.length === 1 ? "" : "s"} loaded (newest first) — click a row for full user details</h4>
+          <table>
+            <thead><tr><th>User</th><th>Item</th><th>Amount</th><th>Date</th></tr></thead>
+            <tbody>${rows || `<tr><td colspan="4" class="muted" style="padding:16px">No CA purchases yet.</td></tr>`}</tbody>
+          </table>
+        </div>
+        ${caPurchasesCursor ? `<button class="secondary load-more" id="caPurchasesLoadMoreBtn">Load more</button>` : ""}
+      `;
+
+      if (caPurchasesCursor) $("caPurchasesLoadMoreBtn").onclick = () => loadCaPurchases(caPurchasesCursor);
+
+      document.querySelectorAll("#tab-capurchases .user-row").forEach((row) => {
+        row.onclick = () => goToSearchFor(row.dataset.phone);
+      });
+    }
+
 
     // ---------- Tab: Subject Pricing ----------
     async function loadSubjectPricing() {

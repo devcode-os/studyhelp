@@ -43,7 +43,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -151,6 +151,9 @@ export default {
     }
     if (url.pathname === "/master-access/active-users" && request.method === "GET") {
       return adminActiveUsers(request, env);
+    }
+    if (url.pathname === "/master-access/ca-purchases" && request.method === "GET") {
+      return adminCaPurchases(request, env);
     }
     if (url.pathname === "/master-access/grant" && request.method === "POST") {
       return adminGrant(request, env);
@@ -2387,6 +2390,61 @@ async function adminManualGrants(request, env) {
   }));
 
   return jsonAuth({ grants: results });
+}
+
+// ---------- Admin: CA (Current Affairs) purchase tracker ----------
+// Separate from Subjects tracking entirely -- ca_purchases/ca_orders are
+// their own tables (see ca-worker-additions-v2.js), so this needed its
+// own endpoint; nothing in the existing admin routes touches these
+// tables, which is why CA purchases were invisible in master-access
+// until this was added.
+async function adminCaPurchases(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const url = new URL(request.url);
+  const before = url.searchParams.get("before"); // ca_purchases.id cursor for "Load more"
+  const limit = 30;
+
+  const purchases = before
+    ? await env.DB.prepare(
+        `SELECT p.id, p.user_id, u.name AS user_name, u.phone,
+                p.item_id, p.item_type, p.month_range, p.amount_paise, p.purchase_date
+         FROM ca_purchases p
+         JOIN users u ON u.id = p.user_id
+         WHERE p.id < ?
+         ORDER BY p.id DESC LIMIT ?`
+      )
+        .bind(Number(before), limit)
+        .all()
+    : await env.DB.prepare(
+        `SELECT p.id, p.user_id, u.name AS user_name, u.phone,
+                p.item_id, p.item_type, p.month_range, p.amount_paise, p.purchase_date
+         FROM ca_purchases p
+         JOIN users u ON u.id = p.user_id
+         ORDER BY p.id DESC LIMIT ?`
+      )
+        .bind(limit)
+        .all();
+
+  const rows = purchases.results || [];
+  const nextCursor = rows.length === limit ? rows[rows.length - 1].id : null;
+
+  // Simple lifetime totals -- revenue (sum of amount_paise on ca_purchases,
+  // the actual paid/granted rows) and a count, shown once at the top of
+  // the admin view rather than requiring a second manual query.
+  const totals = await env.DB.prepare(
+    `SELECT COUNT(*) AS total_count, COALESCE(SUM(amount_paise), 0) AS total_amount_paise
+     FROM ca_purchases`
+  ).first();
+
+  return jsonAuth({
+    purchases: rows,
+    next_cursor: nextCursor,
+    total_count: totals?.total_count || 0,
+    total_amount_paise: totals?.total_amount_paise || 0,
+  });
 }
 
 // "Active now" admin stat. Two numbers, both from login_sessions:
