@@ -217,6 +217,26 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
           </>
         )}
       </div>
+
+      <div class="ca-whatyouget-wrap">
+        <div class="ca-whatyouget-card">
+          <div class="ca-whatyouget-title">What you get</div>
+          <div class="ca-whatyouget-grid">
+            <div>
+              <div class="ca-whatyouget-item-title">Monthly MCQs</div>
+              <div class="ca-whatyouget-item-sub">Current affairs questions with explanations, updated every month</div>
+            </div>
+            <div>
+              <div class="ca-whatyouget-item-title">Study offline</div>
+              <div class="ca-whatyouget-item-sub">Download once, no internet needed after that</div>
+            </div>
+            <div>
+              <div class="ca-whatyouget-item-title">One-time payment</div>
+              <div class="ca-whatyouget-item-sub">No subscription — pay per month or bundle</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ============ PURCHASES (in-card swap, mock data for now) ============ -->
@@ -413,6 +433,28 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     #ca-panel-pdf { min-height: 480px; }
 
     .ca-empty { text-align: center; padding: 40px; color: var(--muted, #888); }
+
+    /* ================= What you get (matches /plans/ page pattern) ================= */
+    .ca-whatyouget-card {
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
+      margin-bottom: 20px;
+    }
+    /* Wrapper (not the card itself) carries the top spacing, as padding
+       rather than margin — padding on a block-level element never
+       collapses against a preceding sibling's margin the way two
+       adjacent margins can, so this reliably shows a gap regardless of
+       what spacing the Buy Now button above it carries. */
+    .ca-whatyouget-wrap { padding-top: 32px; }
+    .ca-whatyouget-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #ffffff; }
+    .ca-whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .ca-whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
+    .ca-whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+    @media (max-width: 720px) {
+      .ca-whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 16px; }
+      .ca-whatyouget-wrap { padding-top: 24px; }
+      .ca-whatyouget-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
 
     /* Download PDF: bundle range shown as a plain info card by default
        (bundle6) — neutral, not competing visually with the price tabs or
@@ -826,7 +868,15 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
     function updateContinueState() {
       const checked = checkboxes().filter((c) => c.checked);
-      continueBtn.textContent = checked.length > 0 ? 'Continue to Read' : 'Select a month';
+      if (checked.length === 0) {
+        continueBtn.textContent = 'Select a month';
+      } else if (checked.length === 1) {
+        // Single month: already obvious from the one highlighted card,
+        // no need to clutter the button with "(1 month)".
+        continueBtn.textContent = 'Continue to Read';
+      } else {
+        continueBtn.textContent = `Continue to Read (${checked.length} Months)`;
+      }
       continueBtn.disabled = checked.length === 0;
     }
 
@@ -919,13 +969,27 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     heroFreeTab.addEventListener('click', () => setHeroTab('free'));
     heroPdfTab.addEventListener('click', () => setHeroTab('pdf'));
 
+    // Ad/campaign traffic: ?tab=pdf in the URL lands directly on Download
+    // PDF, skipping the default Read for Free view. This is separate from
+    // (and takes priority over) the sessionStorage restore below — a
+    // fresh ad click should always honor its own link, even if this
+    // browser happens to have an old 'free' tab state saved from a
+    // previous visit.
+    const caUrlParams = new URLSearchParams(window.location.search);
+    const caTabParam = caUrlParams.get('tab');
+    if (caTabParam === 'pdf') {
+      setHeroTab('pdf');
+    }
+
     // Restore whichever tab was last active. Reliable on browser Back
     // (sessionStorage carries over untouched), and correct after a Buy ->
     // signup/login -> redirect-back too (sessionStorage already holds
     // 'pdf' from when Buy was clicked, since Buy only exists on that tab).
     // A genuinely fresh visit starts clean because the real entry points
     // (Header nav, floating icon) clear these keys before navigating here.
-    if (caShouldRestoreState) {
+    // Skipped entirely if the URL param above already set the tab, so a
+    // stale saved 'free' state can't override an explicit ad link.
+    if (caShouldRestoreState && caTabParam !== 'pdf') {
       try {
         const savedTab = sessionStorage.getItem('ca_last_hero_tab');
         if (savedTab === 'pdf') setHeroTab('pdf');
