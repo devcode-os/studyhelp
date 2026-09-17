@@ -2121,7 +2121,7 @@ function formatMath(str) {
     let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
     const DAILY_LIMIT_MESSAGE = isPapersSubject
       ? `You've reached today's 15 free answers for this subject. Login for unlimited access, or come back tomorrow.`
-      : `You've reached today's 15 free answers for this subject. Purchase for 3 months (90 days) of unlimited access, or come back tomorrow.`;
+      : `You've reached today's 15 free answers for this subject. Purchase this subject to get unlimited access for 3 months (90 days), or come back tomorrow.`;
 
     function setLimitReached() {
       limitReached = true;
