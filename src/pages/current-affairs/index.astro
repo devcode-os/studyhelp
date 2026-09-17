@@ -1260,7 +1260,17 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       });
 
       listEl.querySelectorAll('.ca-purchase-dl-btn').forEach((dlBtn) => {
-        dlBtn.addEventListener('click', () => triggerDownload(dlBtn.dataset.itemId));
+        dlBtn.addEventListener('click', () => {
+          triggerDownload(dlBtn.dataset.itemId);
+          // "Started" not "successful" — a direct-link download redirect
+          // gives JS no signal for actual file-download completion, only
+          // for the moment it was triggered. Claiming "successful" here
+          // would be inaccurate if the download were ever slow or failed
+          // silently after the redirect.
+          if (window.showToast) {
+            window.showToast('Download started');
+          }
+        });
       });
     }
 
