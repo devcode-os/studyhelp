@@ -300,7 +300,7 @@ function formatMath(str) {
             <button type="button" id="lock-close" class="lock-close" aria-label="Close">
               <i class="ti ti-x" aria-hidden="true"></i>
             </button>
-            <p id="lock-message" class="lock-message">{meta.category === 'papers' ? 'Login to unlock this.' : 'Purchase this subject for 45 days of unlimited access.'}</p>
+            <p id="lock-message" class="lock-message">{meta.category === 'papers' ? 'Login to unlock this.' : 'Purchase this subject for 3 months (90 days) of unlimited access.'}</p>
             <a id="lock-action" href={meta.category === 'papers' ? '/login/' : '/plans/'} class="rt-btn rt-btn-accent-solid lock-action">{meta.category === 'papers' ? 'Login / Sign up' : 'View plans'}</a>
           </div>
         </div>
@@ -2011,7 +2011,7 @@ function formatMath(str) {
     // 45 for all other (regular chapter) subjects. Only used for CTA
     // copy — the real entitlement duration always comes from the
     // Worker/D1, this is display text only.
-    let subjectAccessDays = isPapersSubject ? 365 : 45;
+    let subjectAccessDays = isPapersSubject ? 365 : 90;
 
     // ---------- Lazy entitlement check for premium toolbar features ----------
     // Only called when the student actually taps a premium feature (Reveal
@@ -2121,7 +2121,7 @@ function formatMath(str) {
     let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
     const DAILY_LIMIT_MESSAGE = isPapersSubject
       ? `You've reached today's 15 free answers for this subject. Login for unlimited access, or come back tomorrow.`
-      : `You've reached today's 15 free answers for this subject. Purchase for 45 days of unlimited access, or come back tomorrow.`;
+      : `You've reached today's 15 free answers for this subject. Purchase for 3 months (90 days) of unlimited access, or come back tomorrow.`;
 
     function setLimitReached() {
       limitReached = true;
