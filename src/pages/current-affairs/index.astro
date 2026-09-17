@@ -808,6 +808,16 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
           }
           const url = `${CA_API}/ca/download?item_id=${encodeURIComponent(itemId)}&token=${encodeURIComponent(tokenData.token)}`;
           window.Capacitor.Plugins.Browser.open({ url });
+          // Brief flash, not a wait for completion — the download hands
+          // off to Android's own download manager immediately on open,
+          // so it keeps running in the background after this closes.
+          // The "Download is starting" toast (elsewhere) is what
+          // reassures the user, not watching the browser sit open.
+          setTimeout(() => {
+            if (window.Capacitor.Plugins.Browser.close) {
+              window.Capacitor.Plugins.Browser.close();
+            }
+          }, 1000);
         } catch (err) {
           alert('Could not start download. Please check your connection and try again.');
         }
