@@ -114,6 +114,7 @@
         <option value="pricing">Subject Pricing</option>
         <option value="loggedin">Logged In</option>
         <option value="capurchases">CA Purchases</option>
+        <option value="export">Export</option>
       </select>
 
       <div class="tabs">
@@ -123,6 +124,7 @@
         <div class="tab" data-tab="pricing">Subject Pricing</div>
         <div class="tab" data-tab="loggedin">Logged In</div>
         <div class="tab" data-tab="capurchases">CA Purchases</div>
+        <div class="tab" data-tab="export">Export</div>
       </div>
 
       <div id="tab-users"></div>
@@ -131,6 +133,7 @@
       <div id="tab-pricing" style="display:none"></div>
       <div id="tab-loggedin" style="display:none"></div>
       <div id="tab-capurchases" style="display:none"></div>
+      <div id="tab-export" style="display:none"></div>
     </div>
   </div>
 
@@ -208,7 +211,7 @@
     function activateTab(tabName) {
       document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === tabName));
       $("tabSelect").value = tabName;
-      ["users", "grants", "search", "pricing", "loggedin", "capurchases"].forEach((name) => {
+      ["users", "grants", "search", "pricing", "loggedin", "capurchases", "export"].forEach((name) => {
         $("tab-" + name).style.display = name === tabName ? "block" : "none";
       });
       if (tabName === "grants") loadManualGrants();
@@ -216,6 +219,7 @@
       if (tabName === "pricing") loadSubjectPricing();
       if (tabName === "loggedin") loadLoggedInUsers();
       if (tabName === "capurchases") loadCaPurchases();
+      if (tabName === "export") renderExportTab();
     }
 
     document.querySelectorAll(".tab").forEach((tabEl) => {
@@ -262,9 +266,8 @@
 
       $("tab-users").innerHTML = `
         <div class="card">
-          <div class="card-body" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center">
-            <input id="userFilter" placeholder="Filter by phone or name..." style="flex:1; min-width:200px" value="${esc(filterText || "")}" />
-            <button class="secondary" id="exportUsersBtn">Export all (CSV)</button>
+          <div class="card-body">
+            <input id="userFilter" placeholder="Filter by phone or name..." style="width:100%" value="${esc(filterText || "")}" />
           </div>
         </div>
         <div class="card">
@@ -279,49 +282,56 @@
 
       $("userFilter").oninput = (e) => renderUsersTab(e.target.value);
       if (usersCursor && !filter) $("loadMoreBtn").onclick = () => loadUsers(usersCursor);
-      $("exportUsersBtn").onclick = exportAllUsersCsv;
 
       document.querySelectorAll(".user-row").forEach((row) => {
         row.onclick = () => goToSearchFor(row.dataset.phone);
       });
     }
 
-    // Loops /master-access/users to completion (ignores the on-screen
-    // 30-at-a-time pagination — export always covers every user, not
-    // just whatever's currently loaded on screen) and downloads a CSV of
-    // name/phone/email, ready for Hostinger's bulk-email import.
-    async function exportAllUsersCsv() {
-      const btn = $("exportUsersBtn");
+    // ---------- Tab: Export ----------
+    // One-time fetch-everything helper shared by all three export
+    // buttons below — /master-access/users only returns 30 at a time
+    // (same pagination the All Users tab uses on screen), so exporting
+    // means looping until next_cursor runs out, regardless of which
+    // column(s) the export ends up using.
+    async function fetchAllUsersForExport() {
+      let all = [];
+      let cursor = null;
+      do {
+        const { ok, data } = await api("/master-access/users" + (cursor ? `?before=${cursor}` : ""));
+        if (!ok) throw new Error(data.error || "Failed to load users");
+        all = all.concat(data.users || []);
+        cursor = data.next_cursor;
+      } while (cursor);
+      return all;
+    }
+
+    function downloadCsv(filename, header, rows) {
+      const csvEscape = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+      const csv = [header.join(","), ...rows.map((r) => r.map(csvEscape).join(","))].join("\r\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // Runs one export button through the shared fetch + CSV-download
+    // pipeline, swapping its label to a loading state meanwhile so a
+    // slow fetch (many users) doesn't look like a dead click.
+    async function runExport(btnId, buildRowsFn, filenamePrefix) {
+      const btn = $(btnId);
       const originalText = btn.textContent;
       btn.textContent = "Exporting...";
       btn.disabled = true;
-
       try {
-        let all = [];
-        let cursor = null;
-        do {
-          const { ok, data } = await api("/master-access/users" + (cursor ? `?before=${cursor}` : ""));
-          if (!ok) throw new Error(data.error || "Failed to load users");
-          all = all.concat(data.users || []);
-          cursor = data.next_cursor;
-        } while (cursor);
-
-        const csvEscape = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
-        const header = ["Name", "Phone", "Email", "Joined"].join(",");
-        const lines = all.map((u) =>
-          [csvEscape(u.name || ""), csvEscape(u.phone || ""), csvEscape(u.recovery_email || ""), csvEscape(u.created_at ? fmtDateShort(u.created_at) : "")].join(",")
-        );
-        const csv = [header, ...lines].join("\r\n");
-
-        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `studyhelp-users-${new Date().toISOString().slice(0, 10)}.csv`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        const all = await fetchAllUsersForExport();
+        const { header, rows } = buildRowsFn(all);
+        downloadCsv(`${filenamePrefix}-${new Date().toISOString().slice(0, 10)}.csv`, header, rows);
       } catch (err) {
         alert("Export failed: " + (err.message || "unknown error"));
       } finally {
@@ -330,13 +340,50 @@
       }
     }
 
+    function renderExportTab() {
+      $("tab-export").innerHTML = `
+        <div class="card">
+          <h4 class="section-label">Export registered users — for promotional/bulk mail use</h4>
+          <div class="card-body" style="display:flex; flex-direction:column; gap:12px; align-items:flex-start">
+            <div>
+              <button class="secondary" id="exportAllBtn">Export all (Name, Phone, Email, Joined)</button>
+              <div class="muted" style="font-size:12px; margin-top:4px">Full details, one row per user.</div>
+            </div>
+            <div>
+              <button class="secondary" id="exportEmailsBtn">Export emails only</button>
+              <div class="muted" style="font-size:12px; margin-top:4px">Single "Email" column, blank/missing emails skipped — ready for Hostinger bulk mail import.</div>
+            </div>
+            <div>
+              <button class="secondary" id="exportPhonesBtn">Export phone numbers only</button>
+              <div class="muted" style="font-size:12px; margin-top:4px">Single "Phone" column, blank/missing numbers skipped.</div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      $("exportAllBtn").onclick = () => runExport("exportAllBtn", (all) => ({
+        header: ["Name", "Phone", "Email", "Joined"],
+        rows: all.map((u) => [u.name || "", u.phone || "", u.recovery_email || "", u.created_at ? fmtDateShort(u.created_at) : ""]),
+      }), "studyhelp-users");
+
+      $("exportEmailsBtn").onclick = () => runExport("exportEmailsBtn", (all) => ({
+        header: ["Email"],
+        rows: all.filter((u) => u.recovery_email).map((u) => [u.recovery_email]),
+      }), "studyhelp-emails");
+
+      $("exportPhonesBtn").onclick = () => runExport("exportPhonesBtn", (all) => ({
+        header: ["Phone"],
+        rows: all.filter((u) => u.phone).map((u) => [u.phone]),
+      }), "studyhelp-phones");
+    }
+
 
     // Jumps straight to the Search tab with full detail already loaded —
     // no more copy/paste of the phone number required.
     function goToSearchFor(phone) {
       document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === "search"));
       $("tabSelect").value = "search";
-      ["users", "grants", "search", "pricing", "loggedin", "capurchases"].forEach((name) => {
+      ["users", "grants", "search", "pricing", "loggedin", "capurchases", "export"].forEach((name) => {
         $("tab-" + name).style.display = name === "search" ? "block" : "none";
       });
       $("q").value = phone;
