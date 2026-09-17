@@ -107,8 +107,8 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     <div id="ca-panel-pdf" style="display:none">
       <div class="ca-picker-tabs" role="tablist">
         <button type="button" class="ca-tab" data-pdf-mode="1">Monthly · ₹{PRICE_MONTHLY}</button>
-        <button type="button" class="ca-tab active" data-pdf-mode="3">Last 3 months · ₹{PRICE_BUNDLE3}</button>
-        <button type="button" class="ca-tab" data-pdf-mode="6">Last 6 months · ₹{PRICE_BUNDLE6}</button>
+        <button type="button" class="ca-tab" data-pdf-mode="3">Last 3 months · ₹{PRICE_BUNDLE3}</button>
+        <button type="button" class="ca-tab active" data-pdf-mode="6">Last 6 months · ₹{PRICE_BUNDLE6}</button>
       </div>
 
       <!-- Monthly: multi-select — pick any months, price scales with count -->
@@ -144,7 +144,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
       <!-- Last 3 / Last 6: no picker — always the current rolling window,
            shown plainly since there's nothing to choose. -->
-      <div id="ca-pdf-bundle3-section">
+      <div id="ca-pdf-bundle3-section" style="display:none">
         {bundle3.length < 3 ? (
           <div class="ca-empty"><p>Need 3 published months for this bundle — check back soon.</p></div>
         ) : (
@@ -181,12 +181,13 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         )}
       </div>
 
-      <div id="ca-pdf-bundle6-section" style="display:none">
+      <div id="ca-pdf-bundle6-section">
         {bundle6.length < 6 ? (
           <div class="ca-empty"><p>Need 6 published months for this bundle — check back soon.</p></div>
         ) : (
           <>
-            <div class="ca-bundle-card">
+            <div class="ca-bundle-card ca-bundle-card-max">
+              <span class="ca-bundle-max-ribbon">Max Savings</span>
               <div class="ca-bundle-range">
                 {bundle6.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle6[0].label.split(' ')[1]}
               </div>
@@ -194,11 +195,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
             </div>
 
             <div class="ca-format-toggle" role="tablist" data-bundle="6">
-              <button type="button" class="ca-format-btn active" data-format="individual">Individual</button>
-              <button type="button" class="ca-format-btn" data-format="combined">Combined</button>
+              <button type="button" class="ca-format-btn" data-format="individual">Individual</button>
+              <button type="button" class="ca-format-btn active" data-format="combined">Combined</button>
             </div>
             <p class="ca-format-hint" data-bundle-hint="6">
-              6 separate monthly PDFs.
+              One merged PDF, sections combined across months.
             </p>
 
             <button
@@ -215,6 +216,26 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
             </button>
           </>
         )}
+      </div>
+
+      <div class="ca-whatyouget-wrap">
+        <div class="ca-whatyouget-card">
+          <div class="ca-whatyouget-title">What you get</div>
+          <div class="ca-whatyouget-grid">
+            <div>
+              <div class="ca-whatyouget-item-title">Monthly MCQs</div>
+              <div class="ca-whatyouget-item-sub">Current affairs questions with explanations, updated every month</div>
+            </div>
+            <div>
+              <div class="ca-whatyouget-item-title">Study offline</div>
+              <div class="ca-whatyouget-item-sub">Download once, no internet needed after that</div>
+            </div>
+            <div>
+              <div class="ca-whatyouget-item-title">One-time payment</div>
+              <div class="ca-whatyouget-item-sub">No subscription — pay per month or bundle</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -413,6 +434,28 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
     .ca-empty { text-align: center; padding: 40px; color: var(--muted, #888); }
 
+    /* ================= What you get (matches /plans/ page pattern) ================= */
+    .ca-whatyouget-card {
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
+      margin-bottom: 20px;
+    }
+    /* Wrapper (not the card itself) carries the top spacing, as padding
+       rather than margin — padding on a block-level element never
+       collapses against a preceding sibling's margin the way two
+       adjacent margins can, so this reliably shows a gap regardless of
+       what spacing the Buy Now button above it carries. */
+    .ca-whatyouget-wrap { padding-top: 32px; }
+    .ca-whatyouget-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #ffffff; }
+    .ca-whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .ca-whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
+    .ca-whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+    @media (max-width: 720px) {
+      .ca-whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 16px; }
+      .ca-whatyouget-wrap { padding-top: 24px; }
+      .ca-whatyouget-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+
     /* Download PDF: bundle range shown as a plain info card by default
        (bundle6) — neutral, not competing visually with the price tabs or
        Buy button. The Last 3 months card additionally gets
@@ -421,7 +464,8 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
        page, so it reads as "this one's special" rather than just another
        button-colored pill. */
     .ca-bundle-card {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      text-align: center;
       background: var(--card, #fff); border: 1px solid var(--border, #e2e0d8);
       border-radius: 14px; padding: 14px 18px; margin-bottom: 20px;
       position: relative;
@@ -448,6 +492,34 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       content: '★';
       font-size: 9px;
     }
+
+    /* Last 6 months' "Max Savings" badge — same ribbon shape/mechanics as
+       Best Value above (deliberately, so the two read as one cohesive
+       badge system), but amber/gold instead of blue so the two bundles
+       stay visually distinct from each other. Last 6 is now the default
+       tab shown on page load, so this needs to hold its own without
+       looking identical to Last 3's badge. */
+    .ca-bundle-card-max {
+      background: linear-gradient(135deg, #fff7e6 0%, var(--card, #fff) 100%);
+      border: 1px solid #c9860a;
+      border-left: 4px solid #c9860a;
+      padding-top: 22px; padding-left: 22px; margin-top: 14px;
+    }
+    .ca-bundle-max-ribbon {
+      position: absolute; top: -11px; left: 18px;
+      display: inline-flex; align-items: center; gap: 4px;
+      background: linear-gradient(135deg, #d99a1b, #8f5c05);
+      color: #fff;
+      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
+      padding: 4px 12px 4px 10px;
+      clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%);
+      box-shadow: 0 2px 6px rgba(201, 134, 10, 0.35);
+    }
+    .ca-bundle-max-ribbon::before {
+      content: '🔥';
+      font-size: 9px;
+    }
+    .ca-bundle-card-max .ca-bundle-range { font-weight: 800; font-size: 16px; }
     .ca-bundle-range {
       font-weight: 700; font-size: 14px; line-height: 1.35; color: var(--text, #111);
     }
@@ -456,6 +528,15 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       flex-shrink: 0; background: var(--accent, #ff6b1a); color: #fff;
       font-weight: 700; font-size: 12px; padding: 5px 11px; border-radius: 999px;
       white-space: nowrap;
+    }
+    /* Badge color matches each card's own ribbon, not the site's generic
+       orange accent — keeps the badge visually "part of" that card's
+       color story instead of looking like a mismatched default. */
+    .ca-bundle-card-best .ca-bundle-total-badge {
+      background: linear-gradient(135deg, var(--accent, #185fa5), #0e3a5f);
+    }
+    .ca-bundle-card-max .ca-bundle-total-badge {
+      background: linear-gradient(135deg, #d99a1b, #8f5c05);
     }
 
     /* Individual / Combined format toggle */
@@ -787,7 +868,15 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
     function updateContinueState() {
       const checked = checkboxes().filter((c) => c.checked);
-      continueBtn.textContent = checked.length > 0 ? 'Continue to Read' : 'Select a month';
+      if (checked.length === 0) {
+        continueBtn.textContent = 'Select a month';
+      } else if (checked.length === 1) {
+        // Single month: already obvious from the one highlighted card,
+        // no need to clutter the button with "(1 month)".
+        continueBtn.textContent = 'Continue to Read';
+      } else {
+        continueBtn.textContent = `Continue to Read (${checked.length} Months)`;
+      }
       continueBtn.disabled = checked.length === 0;
     }
 
@@ -880,13 +969,27 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     heroFreeTab.addEventListener('click', () => setHeroTab('free'));
     heroPdfTab.addEventListener('click', () => setHeroTab('pdf'));
 
+    // Ad/campaign traffic: ?tab=pdf in the URL lands directly on Download
+    // PDF, skipping the default Read for Free view. This is separate from
+    // (and takes priority over) the sessionStorage restore below — a
+    // fresh ad click should always honor its own link, even if this
+    // browser happens to have an old 'free' tab state saved from a
+    // previous visit.
+    const caUrlParams = new URLSearchParams(window.location.search);
+    const caTabParam = caUrlParams.get('tab');
+    if (caTabParam === 'pdf') {
+      setHeroTab('pdf');
+    }
+
     // Restore whichever tab was last active. Reliable on browser Back
     // (sessionStorage carries over untouched), and correct after a Buy ->
     // signup/login -> redirect-back too (sessionStorage already holds
     // 'pdf' from when Buy was clicked, since Buy only exists on that tab).
     // A genuinely fresh visit starts clean because the real entry points
     // (Header nav, floating icon) clear these keys before navigating here.
-    if (caShouldRestoreState) {
+    // Skipped entirely if the URL param above already set the tab, so a
+    // stale saved 'free' state can't override an explicit ad link.
+    if (caShouldRestoreState && caTabParam !== 'pdf') {
       try {
         const savedTab = sessionStorage.getItem('ca_last_hero_tab');
         if (savedTab === 'pdf') setHeroTab('pdf');
@@ -918,13 +1021,13 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     // Restore whichever PDF sub-tab (Monthly / Last 3 / Last 6) was last
     // active — same reasoning as the hero-tab restore above: only on
     // genuine browser Back or a completed Buy redirect, never a fresh
-    // visit (which always starts at Last 3 months, the server-rendered
-    // default — the best-value option, shown first so it anchors the
+    // visit (which always starts at Last 6 months, the server-rendered
+    // default — the max-savings option, shown first so it anchors the
     // price comparison instead of the cheapest single-month option).
     if (caShouldRestoreState) {
       try {
         const savedMode = sessionStorage.getItem('ca_last_pdf_mode');
-        if (savedMode && savedMode !== '3') {
+        if (savedMode && savedMode !== '6') {
           setPdfMode(savedMode);
         }
       } catch (err) {}
@@ -1005,10 +1108,10 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     // ============================================================
     const FORMAT_HINTS = {
       individual: (n) => `${n} separate monthly PDFs.`,
-      combined: (n) => `One merged PDF, sections combined across months — same as reading online experience.`,
+      combined: (n) => `One merged PDF, sections combined across months.`,
     };
 
-    function setupFormatToggle(bundleNum) {
+    function setupFormatToggle(bundleNum, defaultFormat) {
       const toggle = document.querySelector(`.ca-format-toggle[data-bundle="${bundleNum}"]`);
       if (!toggle) return;
       const hint = document.querySelector(`.ca-format-hint[data-bundle-hint="${bundleNum}"]`);
@@ -1039,9 +1142,10 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
       // Restore whichever format (Individual/Combined) was last picked
       // for THIS bundle — only on genuine browser Back or a completed
-      // Buy redirect, never a fresh visit (always starts at Individual,
-      // the server-rendered default).
-      let initialFormat = 'individual';
+      // Buy redirect, never a fresh visit (always starts at this
+      // bundle's own default format, passed in by the caller — Last 3
+      // defaults to Individual, Last 6 defaults to Combined).
+      let initialFormat = defaultFormat;
       if (caShouldRestoreState) {
         try {
           const saved = sessionStorage.getItem(storageKey);
@@ -1054,6 +1158,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
           b.classList.toggle('active', b.dataset.format === 'combined');
         });
         hint.textContent = FORMAT_HINTS.combined(bundleNum);
+      } else {
+        toggle.querySelectorAll('.ca-format-btn').forEach((b) => {
+          b.classList.toggle('active', b.dataset.format === 'individual');
+        });
+        hint.textContent = FORMAT_HINTS.individual(bundleNum);
       }
       applyFormat(initialFormat);
     }
@@ -1108,8 +1217,8 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       });
     });
 
-    setupFormatToggle('3');
-    setupFormatToggle('6');
+    setupFormatToggle('3', 'individual');
+    setupFormatToggle('6', 'combined');
 
     // ============================================================
     // Purchases panel — real data from loadCaPurchases(), same card UI
@@ -1151,7 +1260,17 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       });
 
       listEl.querySelectorAll('.ca-purchase-dl-btn').forEach((dlBtn) => {
-        dlBtn.addEventListener('click', () => triggerDownload(dlBtn.dataset.itemId));
+        dlBtn.addEventListener('click', () => {
+          triggerDownload(dlBtn.dataset.itemId);
+          // "Started" not "successful" — a direct-link download redirect
+          // gives JS no signal for actual file-download completion, only
+          // for the moment it was triggered. Claiming "successful" here
+          // would be inaccurate if the download were ever slow or failed
+          // silently after the redirect.
+          if (window.showToast) {
+            window.showToast('Download started');
+          }
+        });
       });
     }
 
