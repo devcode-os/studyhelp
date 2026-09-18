@@ -10,14 +10,12 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import { listAvailableMonths } from '../../lib/currentAffairs.js';
-// Ad/campaign traffic lands here with ?tab=pdf and should see the
-// Download PDF panel as the FIRST thing rendered — not the default Read
-// for Free view briefly flashing before client JS swaps it. Decided
-// server-side (Astro.url.searchParams) so the correct panel is present
-// in the actual HTML response, before any JS runs: matters for ad
-// review/crawlers that may not execute JS, and removes the flash of
-// wrong content for real users on slow connections.
-const initialTab = Astro.url.searchParams.get('tab') === 'pdf' ? 'pdf' : 'free';
+// Download PDF is now the default landing state for this page (was Read
+// for Free) — rendered server-side so it's correct from the first byte,
+// no flash, no JS dependency. ?tab=free is the only way to land on the
+// Read for Free picker instead; any other/no param (including the old
+// ad-traffic ?tab=pdf, now redundant but harmless) shows PDF.
+const initialTab = Astro.url.searchParams.get('tab') === 'free' ? 'free' : 'pdf';
 
 const months = listAvailableMonths(); // newest-first
 const bundle3 = months.slice(0, 3);
@@ -75,8 +73,8 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       </div>
       <h1>Current Affairs</h1>
       <div class="ca-hero-tabs" role="tablist">
-        <button type="button" class:list={["ca-hero-tab", { active: initialTab === 'free' }]} id="ca-hero-tab-free" role="tab" aria-selected={initialTab === 'free' ? 'true' : 'false'}>Read for Free</button>
         <button type="button" class:list={["ca-hero-tab", { active: initialTab === 'pdf' }]} id="ca-hero-tab-pdf" role="tab" aria-selected={initialTab === 'pdf' ? 'true' : 'false'}>Download PDF</button>
+        <button type="button" class:list={["ca-hero-tab", { active: initialTab === 'free' }]} id="ca-hero-tab-free" role="tab" aria-selected={initialTab === 'free' ? 'true' : 'false'}>Read for Free</button>
       </div>
     </div>
 
