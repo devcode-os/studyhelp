@@ -5,14 +5,14 @@
 // used only on the chapter page. Desktop nav and mobile tab bar are both suppressed in compact mode.
 //
 // Mobile tab bar hide-on-scroll is OFF (bar stays sticky/always-visible)
-// on Plans and the account-flow pages — Login and Accounts pass
-// active="account", Signup passes active="signup". Losing bottom-nav
-// access mid-scroll on a pricing or auth page is disruptive; everywhere
-// else it hides normally while reading. Centralized here by `active`
-// value so those pages need no changes of their own — they already pass
-// this prop.
+// on Plans and the account-flow pages — Accounts passes active="account",
+// Signup passes active="signup", Login passes active="login". Losing
+// bottom-nav access mid-scroll on a pricing or auth page is disruptive;
+// everywhere else it hides normally while reading. Centralized here by
+// `active` value so those pages need no changes of their own — they
+// already pass this prop.
 const { active = '', compact = false, backHref = '/', title = '', progress = '' } = Astro.props;
-const stickyTabbar = active === 'plans' || active === 'account' || active === 'signup';
+const stickyTabbar = active === 'plans' || active === 'account' || active === 'signup' || active === 'login';
 ---
 
 {compact ? (
