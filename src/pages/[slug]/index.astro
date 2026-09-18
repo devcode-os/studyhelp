@@ -2120,8 +2120,8 @@ function formatMath(str) {
     const LIMIT_STORAGE_KEY = `sh_limit_${subject}_${todayKey()}`;
     let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
     const DAILY_LIMIT_MESSAGE = isPapersSubject
-      ? `You've reached today's 15 free answers for this subject. Login for unlimited access, or come back tomorrow.`
-      : `You've reached today's 15 free answers for this subject. Purchase this subject to get unlimited access for 3 months (90 days), or come back tomorrow.`;
+      ? `Login or sign up to continue.`
+      : `Purchase to continue reading.`;
 
     function setLimitReached() {
       limitReached = true;
@@ -2335,7 +2335,6 @@ function formatMath(str) {
         item.style.display = itemPage === page ? 'block' : 'none';
       });
       renderPagination();
-      closeOptionsPanel();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -2376,7 +2375,9 @@ function formatMath(str) {
     function showRemainingHint(remaining, dailyLimit) {
       if (remaining <= 3) {
         lockBanner.style.display = 'flex';
-        lockMessage.textContent = `${remaining} of ${dailyLimit} free answers left for this subject today. Resets tomorrow.`;
+        lockMessage.textContent = isPapersSubject
+          ? `Login or sign up to continue.`
+          : `Purchase to continue reading.`;
         if (isPapersSubject) {
           lockAction.textContent = 'Login / Sign up';
           lockAction.href = LOGIN_URL;
@@ -2511,8 +2512,8 @@ function formatMath(str) {
           faqItem.classList.remove('open');
           showLimitReached(
             isPapersSubject
-              ? 'Login or sign up to continue reading past the first 20 questions.'
-              : 'Free clicks are only available on the first 20 questions. Purchase this subject for full access.',
+              ? 'Login or sign up to continue.'
+              : 'Purchase to continue reading.',
             isPapersSubject ? 'login' : 'plans'
           );
           return false;
@@ -2690,7 +2691,7 @@ function formatMath(str) {
             showLimitReached(
               isPapersSubject
                 ? 'Login to reveal all answers.'
-                : 'Reveal all is a premium feature. Purchase this subject to unlock it.',
+                : 'Purchase this subject to reveal all answers.',
               isPapersSubject ? 'login' : 'plans'
             );
             return;
@@ -3321,8 +3322,8 @@ function formatMath(str) {
         isPapersSubject
           ? `
         <div class="rt-weightage-unlock rt-weightage-unlock-lead">
-          <p>Unlock exact question counts and percentage weightage for every subject</p>
-          <a href="${LOGIN_URL}" class="rt-btn rt-btn-accent">Login to view pattern</a>
+          <p>Login to unlock weightage &amp; question counts</p>
+          <a href="${LOGIN_URL}" class="rt-btn rt-btn-accent">Login / Sign up</a>
         </div>
       `
           : `
@@ -3406,7 +3407,7 @@ function formatMath(str) {
           showLimitReached(
             isPapersSubject
               ? 'Login to filter by unanswered/wrong.'
-              : 'Filtering by unanswered/wrong is a premium feature. Purchase this subject to unlock it.',
+              : 'Purchase this subject to filter by unanswered/wrong.',
             isPapersSubject ? 'login' : 'plans'
           );
           return;
@@ -3456,7 +3457,7 @@ function formatMath(str) {
         showLimitReached(
           isPapersSubject
             ? 'Login to jump to a question.'
-            : 'Jump to question is a premium feature. Purchase this subject to unlock it.',
+            : 'Purchase this subject to jump to a question.',
           isPapersSubject ? 'login' : 'plans'
         );
         return;
