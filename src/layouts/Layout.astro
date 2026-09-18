@@ -498,9 +498,110 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       transform: scale(0.97);
       transition: opacity 0.05s ease, transform 0.05s ease;
     }
+
+    /* ---------- Global navigation blur overlay ----------
+       Site-wide navigation feedback, separate from per-button loading
+       spinners. This covers PAGE-TO-PAGE navigation — clicking a link, a
+       form submit, or a script doing window.location.href = ... — none
+       of which a button-local spinner can cover once the browser actually
+       starts leaving the page. Button spinners remain the right tool for
+       in-place async actions (Buy Now opening Razorpay on the same page,
+       login, OTP) — this overlay is only for actual navigations. Both
+       together, not one replacing the other. */
+    #sh-nav-overlay {
+      position: fixed; inset: 0;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 99999;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    [data-theme="dark"] #sh-nav-overlay {
+      background: rgba(20,20,30,0.55);
+    }
+    #sh-nav-overlay.sh-nav-overlay-active {
+      opacity: 1; pointer-events: all;
+    }
+    .sh-nav-dots {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .sh-nav-dots span {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent);
+      animation: sh-nav-dot-bounce 1.1s ease-in-out infinite;
+    }
+    .sh-nav-dots span:nth-child(2) { animation-delay: 0.15s; }
+    .sh-nav-dots span:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes sh-nav-dot-bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.6; }
+      30% { transform: translateY(-8px); opacity: 1; }
+    }
   </style>
 </head>
 <body>
+  <div id="sh-nav-overlay"><div class="sh-nav-dots"><span></span><span></span><span></span></div></div>
+  <script is:inline>
+    // ---------- Global navigation blur overlay ----------
+    // Starts on: same-origin link clicks, form submits, and the
+    // beforeunload event (a catch-all that also covers programmatic
+    // window.location.href redirects anywhere on the site, with no
+    // per-page wiring needed). Overlay is left showing on purpose when
+    // navigation actually happens — the page unloading removes it, no
+    // explicit "finish" step required. If a click turns out NOT to
+    // navigate (e.g. preventDefault'd by other JS, or opens a modal),
+    // the overlay quietly hides itself after a short timeout so it never
+    // gets stuck blocking the page.
+    (function () {
+      var overlay = document.getElementById('sh-nav-overlay');
+      if (!overlay) return;
+      var showTimer = null;
+      var hideTimer = null;
+      // Don't show the overlay at all for navigations faster than this —
+      // avoids a flash-of-blur on fast/local/cached page loads, where the
+      // browser has already left this page before the delay even elapses
+      // (page unload destroys this timer along with everything else, so
+      // nothing needs to explicitly cancel it in that case).
+      var SHOW_DELAY = 300;
+      // If a click never actually results in navigation (prevented by
+      // other JS, opens a modal, etc.), don't leave the overlay stuck.
+      var SAFETY_TIMEOUT = 6000;
+
+      function start() {
+        clearTimeout(showTimer);
+        clearTimeout(hideTimer);
+        showTimer = setTimeout(function () {
+          overlay.classList.add('sh-nav-overlay-active');
+        }, SHOW_DELAY);
+        hideTimer = setTimeout(function () {
+          clearTimeout(showTimer);
+          overlay.classList.remove('sh-nav-overlay-active');
+        }, SAFETY_TIMEOUT);
+      }
+      window.__shStartTopLoading = start;
+
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href]');
+        if (!a) return;
+        if (a.target === '_blank' || a.hasAttribute('download')) return;
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        var url;
+        try { url = new URL(a.href, window.location.href); } catch (err) { return; }
+        if (url.origin !== window.location.origin) return;
+        // Same-page anchor / hash link — not a real navigation.
+        if (url.pathname === window.location.pathname && url.search === window.location.search) return;
+        start();
+      });
+
+      document.addEventListener('submit', function (e) {
+        if (e.defaultPrevented) return;
+        start();
+      });
+
+      window.addEventListener('beforeunload', start);
+    })();
+  </script>
   <div id="app-install-banner" class="app-install-banner" style="display:none;">
     <div class="app-install-banner-icon">
       <img src="/apple-touch-icon.png" alt="" width="36" height="36" />

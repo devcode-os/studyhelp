@@ -656,7 +656,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     // Triggers a purchase for one or more item_ids. `kind` is either
     // 'items' (single month / single combined bundle / arbitrary
     // multi-month picker) or 'individual_bundle' (fixed discounted price
-    // for 3 or 6 real months, each granted separately).
+    // for 3 or 6 real months, each granted separately). No per-button
+    // loading state here — the global nav blur overlay (Layout.astro)
+    // now covers the guest→signup redirect, and the logged-in path opens
+    // Razorpay in place quickly enough on real networks that a button
+    // spinner isn't needed.
     async function triggerPurchase(itemIds, kind) {
       const state = await loadCaPurchases();
       if (!state.loggedIn) {

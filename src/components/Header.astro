@@ -330,6 +330,10 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     background: linear-gradient(160deg, #14102b 0%, #241a4d 100%);
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-bottom: env(safe-area-inset-bottom, 0px);
+    transition: transform 0.25s ease;
+  }
+  .mobile-tabbar.tabbar-hidden {
+    transform: translateY(100%);
   }
   .mobile-tabbar {
     display: none;
@@ -776,4 +780,42 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     })
     .catch(() => {});
   } // end window.__shSessionInit guard
+
+  // ---------- Mobile tab bar: hide on scroll down, reveal on scroll up ----------
+  // "App feel" scroll behavior — hides while actively reading further down
+  // the page (frees up screen space), reveals the moment the user scrolls
+  // back up (they're likely about to navigate). CSS transform (not
+  // display:none) so it stays a fixed element and just slides off/on
+  // screen. Runs once per page load; guarded like the session init above
+  // so re-mounted script tags (view transitions, etc.) don't double-bind.
+  if (!window.__shTabbarScrollInit) {
+    window.__shTabbarScrollInit = true;
+    (function () {
+      const tabbar = document.querySelector('.mobile-tabbar');
+      if (!tabbar) return;
+
+      let lastY = window.scrollY;
+      let ticking = false;
+      const THRESHOLD = 8; // ignore tiny jitters from momentum scroll
+
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          const diff = currentY - lastY;
+
+          if (Math.abs(diff) > THRESHOLD) {
+            if (diff > 0 && currentY > 60) {
+              tabbar.classList.add('tabbar-hidden');   // scrolling down (reading) → hide
+            } else {
+              tabbar.classList.remove('tabbar-hidden'); // scrolling up → reveal
+            }
+            lastY = currentY;
+          }
+          ticking = false;
+        });
+      }, { passive: true });
+    })();
+  }
 </script>
