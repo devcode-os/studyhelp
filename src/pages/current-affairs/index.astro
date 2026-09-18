@@ -10,6 +10,14 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import { listAvailableMonths } from '../../lib/currentAffairs.js';
+// Ad/campaign traffic lands here with ?tab=pdf and should see the
+// Download PDF panel as the FIRST thing rendered — not the default Read
+// for Free view briefly flashing before client JS swaps it. Decided
+// server-side (Astro.url.searchParams) so the correct panel is present
+// in the actual HTML response, before any JS runs: matters for ad
+// review/crawlers that may not execute JS, and removes the flash of
+// wrong content for real users on slow connections.
+const initialTab = Astro.url.searchParams.get('tab') === 'pdf' ? 'pdf' : 'free';
 
 const months = listAvailableMonths(); // newest-first
 const bundle3 = months.slice(0, 3);
@@ -67,13 +75,13 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       </div>
       <h1>Current Affairs</h1>
       <div class="ca-hero-tabs" role="tablist">
-        <button type="button" class="ca-hero-tab active" id="ca-hero-tab-free" role="tab" aria-selected="true">Read for Free</button>
-        <button type="button" class="ca-hero-tab" id="ca-hero-tab-pdf" role="tab" aria-selected="false">Download PDF</button>
+        <button type="button" class:list={["ca-hero-tab", { active: initialTab === 'free' }]} id="ca-hero-tab-free" role="tab" aria-selected={initialTab === 'free' ? 'true' : 'false'}>Read for Free</button>
+        <button type="button" class:list={["ca-hero-tab", { active: initialTab === 'pdf' }]} id="ca-hero-tab-pdf" role="tab" aria-selected={initialTab === 'pdf' ? 'true' : 'false'}>Download PDF</button>
       </div>
     </div>
 
     <!-- ============ READ FOR FREE (existing picker, unchanged) ============ -->
-    <div id="ca-panel-free">
+    <div id="ca-panel-free" style={initialTab === 'pdf' ? 'display:none' : ''}>
       <div class="ca-picker-tabs" role="tablist">
         <button type="button" class="ca-tab" data-mode="1">Monthly</button>
         <button type="button" class="ca-tab active" data-mode="3">Last 3 months</button>
@@ -104,7 +112,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     </div>
 
     <!-- ============ DOWNLOAD PDF (new) ============ -->
-    <div id="ca-panel-pdf" style="display:none">
+    <div id="ca-panel-pdf" style={initialTab === 'pdf' ? '' : 'display:none'}>
       <div class="ca-picker-tabs" role="tablist">
         <button type="button" class="ca-tab" data-pdf-mode="1">Monthly · ₹{PRICE_MONTHLY}</button>
         <button type="button" class="ca-tab" data-pdf-mode="3">Last 3 months · ₹{PRICE_BUNDLE3}</button>
