@@ -3,7 +3,16 @@
 // Highlights the current page's nav link if `active` prop is passed (e.g. active="home")
 // `compact` prop: when true, renders the reading-mode header (back arrow + title + progress)
 // used only on the chapter page. Desktop nav and mobile tab bar are both suppressed in compact mode.
+//
+// Mobile tab bar hide-on-scroll is OFF (bar stays sticky/always-visible)
+// on Plans and the account-flow pages — Login and Accounts pass
+// active="account", Signup passes active="signup". Losing bottom-nav
+// access mid-scroll on a pricing or auth page is disruptive; everywhere
+// else it hides normally while reading. Centralized here by `active`
+// value so those pages need no changes of their own — they already pass
+// this prop.
 const { active = '', compact = false, backHref = '/', title = '', progress = '' } = Astro.props;
+const stickyTabbar = active === 'plans' || active === 'account' || active === 'signup';
 ---
 
 {compact ? (
@@ -86,7 +95,7 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
          Home dropped — the "StudyHelp" logo (visible on every page, already
          linked to "/") serves as the way back to Home instead, freeing up
          the tab bar for 3 clear destinations. -->
-    <nav class="mobile-tabbar" aria-label="Primary">
+    <nav class="mobile-tabbar" aria-label="Primary" data-hide-on-scroll={stickyTabbar ? 'false' : 'true'}>
       <a href="/subjects/" class:list={{ 'tab-active': active === 'subjects' }}>
         <i class="ti ti-books" aria-hidden="true"></i>
         <span>Subjects</span>
@@ -793,6 +802,7 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '' 
     (function () {
       const tabbar = document.querySelector('.mobile-tabbar');
       if (!tabbar) return;
+      if (tabbar.getAttribute('data-hide-on-scroll') === 'false') return; // Plans / account-flow pages — stays sticky
 
       let lastY = window.scrollY;
       let ticking = false;
