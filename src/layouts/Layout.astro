@@ -554,6 +554,8 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
     // the overlay quietly hides itself after a short timeout so it never
     // gets stuck blocking the page.
     (function () {
+      if (window.__shNavOverlayInit) return;
+      window.__shNavOverlayInit = true;
       var overlay = document.getElementById('sh-nav-overlay');
       if (!overlay) return;
       var showTimer = null;
@@ -563,7 +565,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       // browser has already left this page before the delay even elapses
       // (page unload destroys this timer along with everything else, so
       // nothing needs to explicitly cancel it in that case).
-      var SHOW_DELAY = 300;
+      var SHOW_DELAY = 450;
       // If a click never actually results in navigation (prevented by
       // other JS, opens a modal, etc.), don't leave the overlay stuck.
       var SAFETY_TIMEOUT = 6000;
