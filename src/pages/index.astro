@@ -133,7 +133,7 @@ const iconMap = {
       {subjects.map((s) => (
         s.available ? (
           <a href={`/${s.slug}/`} class="subject-card subject-card-live" data-subject-slug={s.slug}>
-            <span class="avail-pill" data-pill hidden>Purchased</span>
+            <span class="avail-pill" data-pill hidden aria-label="Purchased"><i class="ti ti-check" aria-hidden="true"></i></span>
             <div class="subject-card-header">
               <div class="subject-icon">
                 <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
@@ -324,6 +324,13 @@ const iconMap = {
     .subject-card-live:active {
       transform: scale(0.98);
     }
+    /* Owned subjects: swap the orange border for a soft green glow so the
+       card itself reads as "yours" at a glance, not just the badge. */
+    .subject-card-live.has-pill {
+      border-color: #3fd88a;
+      box-shadow: 0 0 0 1px rgba(63, 216, 138, 0.35), 0 0 16px rgba(63, 216, 138, 0.35);
+      overflow: visible; /* lets the checkmark badge sit half outside the card edge */
+    }
     .subject-card-soon {
       background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -337,38 +344,29 @@ const iconMap = {
     .subject-card-soon .subject-count-muted { color: rgba(255, 255, 255, 0.5); }
     .avail-pill {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      color: #2a1400;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
-    .avail-pill[hidden] { display: none; }
-    /* Purchased subjects need to be instantly distinguishable from ones
-       still available to buy — same orange pill for both read as
-       identical at a glance. Green is the universal "you already own
-       this" signal. */
-    .avail-pill.purchased {
+      top: -8px;
+      right: -8px;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: linear-gradient(90deg, #2fb35c, #4dd67e);
       color: #06280f;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.5);
     }
+    .avail-pill i { font-size: 13px; font-weight: 700; }
+    .avail-pill[hidden] { display: none; }
     .subject-card-header {
       display: flex;
       align-items: flex-start;
       gap: 10px;
       margin-bottom: 0;
     }
-    /* Reserve room for the top-right pill (Purchased) so a long title
-       wraps before reaching it instead of running underneath — only
-       applies once the card actually gets the pill (see has-pill,
-       toggled by the script below at the same time it un-hides the
-       pill), so guests/non-owners get the card's full width. */
-    .subject-card-live.has-pill .subject-card-header {
-      padding-right: 56px;
-    }
+    /* The Purchased checkmark badge is a small 22px corner circle, not a
+       text pill — it no longer needs to reserve header space; titles wrap
+       exactly the same as on non-owned cards. */
     .subject-icon {
       flex-shrink: 0;
       width: 32px;
@@ -418,17 +416,15 @@ const iconMap = {
         padding: 0.9rem;
       }
       .avail-pill {
-        top: 10px;
-        right: 10px;
-        font-size: 10px;
-        padding: 2px 8px;
+        top: -6px;
+        right: -6px;
+        width: 18px;
+        height: 18px;
       }
+      .avail-pill i { font-size: 11px; }
       .subject-card-header {
         gap: 8px;
         margin-bottom: 0;
-      }
-      .subject-card-live.has-pill .subject-card-header {
-        padding-right: 46px;
       }
       .subject-icon {
         width: 26px;
@@ -537,8 +533,6 @@ const iconMap = {
               const card = document.querySelector(`[data-subject-slug="${s.slug}"]`);
               const pill = card && card.querySelector('[data-pill]');
               if (pill) {
-                pill.textContent = 'Purchased';
-                pill.classList.add('purchased');
                 pill.hidden = false;
                 card.classList.add('has-pill');
               }
