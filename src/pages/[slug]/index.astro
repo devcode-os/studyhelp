@@ -1652,8 +1652,8 @@ function formatMath(str) {
             <div class="concept-lock-overlay concept-lock-standalone">
               <div class="concept-lock-badge">&#128274;</div>
               <div class="concept-lock-title">${hasParts ? `Part ${c.partNumber} is locked` : 'Rest of this chapter is locked'}</div>
-              <div class="concept-lock-sub">Unlock this subject to read every part's rules, examples and practice MCQs.</div>
-              <a class="concept-unlock-btn" href="/plans/?highlight=${encodeURIComponent(subject)}">Unlock, &#8377;199</a>
+              <div class="concept-lock-sub">Purchase to continue reading.</div>
+              <a class="concept-unlock-btn" href="/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle">View Plans</a>
             </div>
           `;
         }
@@ -1906,7 +1906,7 @@ function formatMath(str) {
 
   {!isReference && (
   <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
-    const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}`;
+    const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle`;
     const LOGIN_URL = `/login/?next=${encodeURIComponent(window.location.pathname)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
@@ -3329,7 +3329,7 @@ function formatMath(str) {
           : `
         <div class="rt-weightage-unlock">
           <p>Unlock exact question counts and percentage weightage for every subject</p>
-          <a href="/plans/?highlight=${encodeURIComponent(subject)}" class="rt-btn rt-btn-accent">Unlock Pattern (${papersCount} Papers) &ndash; Rs 99</a>
+          <a href="/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle" class="rt-btn rt-btn-accent">Unlock Pattern (${papersCount} Papers) &ndash; Rs 99</a>
           <p class="rt-weightage-unlock-sub">Includes ${subjectAccessDays} days unlimited access</p>
         </div>
       `
