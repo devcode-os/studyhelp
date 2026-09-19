@@ -1,0 +1,856 @@
+{
+  "slug": "ap-economy-ch10-poverty-employment-and-unemployment",
+  "chapterNumber": 10,
+  "title": "Poverty, Employment, and Unemployment",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "What is the World Bank's extreme poverty threshold per day in PPP terms?",
+      "options": {
+        "a": "$3.10",
+        "b": "$2.15",
+        "c": "$2.50",
+        "d": "$1.90"
+      },
+      "answer": "b",
+      "a": "$2.15",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many people were lifted out of multidimensional poverty in India over the last 15 years according to the UNDP Global MPI Report?",
+      "options": {
+        "a": "315 million",
+        "b": "415 million",
+        "c": "215 million",
+        "d": "515 million"
+      },
+      "answer": "b",
+      "a": "415 million",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many children in India are currently living in poverty according to the Socio-Economic Survey?",
+      "options": {
+        "a": "87 million",
+        "b": "77 million",
+        "c": "97 million",
+        "d": "67 million"
+      },
+      "answer": "c",
+      "a": "97 million",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What rural daily calorie intake requirement was defined for the poverty line by the Lakdawala Committee (1993)?",
+      "options": {
+        "a": "2,100 kcal",
+        "b": "2,500 kcal",
+        "c": "2,400 kcal",
+        "d": "2,200 kcal"
+      },
+      "answer": "c",
+      "a": "2,400 kcal",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What urban daily calorie intake requirement was defined for the poverty line by the Lakdawala Committee (1993)?",
+      "options": {
+        "a": "2,400 kcal",
+        "b": "2,000 kcal",
+        "c": "2,100 kcal",
+        "d": "2,200 kcal"
+      },
+      "answer": "c",
+      "a": "2,100 kcal",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the rural monthly per capita expenditure poverty line recommended by the Tendulkar Committee for 2011-12?",
+      "options": {
+        "a": "₹972",
+        "b": "₹816",
+        "c": "₹1,407",
+        "d": "₹2,100"
+      },
+      "answer": "a",
+      "a": "₹972",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the urban monthly per capita expenditure poverty line recommended by the Tendulkar Committee for 2011-12?",
+      "options": {
+        "a": "₹1,200",
+        "b": "₹2,100",
+        "c": "₹972",
+        "d": "₹1,407"
+      },
+      "answer": "d",
+      "a": "₹1,407",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the rural monthly per capita expenditure poverty threshold revised to by the Rangarajan Committee (2014)?",
+      "options": {
+        "a": "₹2,100",
+        "b": "₹1,407",
+        "c": "₹1,210",
+        "d": "₹972"
+      },
+      "answer": "b",
+      "a": "₹1,407",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the urban monthly per capita expenditure poverty threshold revised to by the Rangarajan Committee (2014)?",
+      "options": {
+        "a": "₹2,100",
+        "b": "₹1,407",
+        "c": "₹1,800",
+        "d": "₹2,400"
+      },
+      "answer": "a",
+      "a": "₹2,100",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year did India adopt the Multidimensional Poverty Index (MPI) framework?",
+      "options": {
+        "a": "2014",
+        "b": "2018",
+        "c": "2016",
+        "d": "2010"
+      },
+      "answer": "b",
+      "a": "2018",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the overall poverty Headcount Ratio for Andhra Pradesh as per the Planning Commission (2011-12)?",
+      "options": {
+        "a": "10.96%",
+        "b": "5.81%",
+        "c": "9.20%",
+        "d": "21.92%"
+      },
+      "answer": "c",
+      "a": "9.20%",
+      "e": "Rural poverty was 10.96% and urban poverty was 5.81%, while the national overall figure was 21.92%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was Andhra Pradesh's MPI score in 2019-21 according to the NITI Aayog Multidimensional Poverty Index Report 2023?",
+      "options": {
+        "a": "0.053",
+        "b": "0.009",
+        "c": "0.032",
+        "d": "0.025"
+      },
+      "answer": "d",
+      "a": "0.025",
+      "e": "The state's MPI score decreased from 0.053 in 2015-16 to 0.025 in 2019-21, indicating a 50% reduction.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total indicators are grouped across the 3 dimensions in the Multidimensional Poverty Index?",
+      "options": {
+        "a": "12",
+        "b": "18",
+        "c": "10",
+        "d": "15"
+      },
+      "answer": "a",
+      "a": "12",
+      "e": "The 12 indicators are distributed across Health (3 indicators), Education (2 indicators), and Standard of Living (7 indicators).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the overall Multidimensional Poverty Index score for Andhra Pradesh compared to All India?",
+      "options": {
+        "a": "0.066",
+        "b": "0.009",
+        "c": "0.025",
+        "d": "0.032"
+      },
+      "answer": "c",
+      "a": "0.025",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Type",
+          "Andhra Pradesh",
+          "All India"
+        ],
+        "rows": [
+          [
+            "Overall Headcount Ratio",
+            "6.06%",
+            "14.96%"
+          ],
+          [
+            "Overall Intensity",
+            "41.12%",
+            "44.39%"
+          ],
+          [
+            "Overall MPI",
+            "0.025",
+            "0.066"
+          ],
+          [
+            "Rural Headcount Ratio",
+            "7.71%",
+            "19.28%"
+          ],
+          [
+            "Rural Intensity",
+            "41.41%",
+            "44.55%"
+          ],
+          [
+            "Rural MPI",
+            "0.032",
+            "0.086"
+          ],
+          [
+            "Urban Headcount Ratio",
+            "2.20%",
+            "5.27%"
+          ],
+          [
+            "Urban Intensity",
+            "38.77%",
+            "43.10%"
+          ],
+          [
+            "Urban MPI",
+            "0.009",
+            "0.023"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What rank does Andhra Pradesh hold among Indian states based on its Multidimensional Poverty Index score?",
+      "options": {
+        "a": "3rd",
+        "b": "8th",
+        "c": "9th",
+        "d": "7th"
+      },
+      "answer": "c",
+      "a": "9th",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Sl. No",
+          "State",
+          "MPI Score"
+        ],
+        "rows": [
+          [
+            "1",
+            "Kerala",
+            "0.002"
+          ],
+          [
+            "2",
+            "Goa",
+            "0.003"
+          ],
+          [
+            "3",
+            "Tamil Nadu",
+            "0.009"
+          ],
+          [
+            "4",
+            "Sikkim",
+            "0.011"
+          ],
+          [
+            "5",
+            "Punjab",
+            "0.020"
+          ],
+          [
+            "24",
+            "Madhya Pradesh",
+            "0.090"
+          ],
+          [
+            "25",
+            "Uttar Pradesh",
+            "0.103"
+          ],
+          [
+            "26",
+            "Jharkhand",
+            "0.131"
+          ],
+          [
+            "27",
+            "Meghalaya",
+            "0.133"
+          ],
+          [
+            "28",
+            "Bihar",
+            "0.160"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Among the MPI indicators, in which category does Andhra Pradesh hold its best relative rank across Indian states?",
+      "options": {
+        "a": "Maternal Health",
+        "b": "Nutrition",
+        "c": "Housing",
+        "d": "Cooking Fuel"
+      },
+      "answer": "c",
+      "a": "Housing",
+      "e": "Andhra Pradesh holds the 3rd relative position nationally in Housing (deprivation rate of 14.67%).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which MPI indicator shows the weakest relative position for Andhra Pradesh among Indian states?",
+      "options": {
+        "a": "Nutrition",
+        "b": "Drinking Water",
+        "c": "Years of Schooling",
+        "d": "Sanitation"
+      },
+      "answer": "c",
+      "a": "Years of Schooling",
+      "e": "Andhra Pradesh ranks 25th nationally in Years of Schooling with a deprivation level of 15.81%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of the population in Andhra Pradesh is deprived in terms of Nutrition as per the MPI findings?",
+      "options": {
+        "a": "15.81%",
+        "b": "10.77%",
+        "c": "22.84%",
+        "d": "22.94%"
+      },
+      "answer": "d",
+      "a": "22.94%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district in Andhra Pradesh has the lowest Multidimensional Poverty Index score?",
+      "options": {
+        "a": "Guntur",
+        "b": "West Godavari",
+        "c": "Y.S.R. (Kadapa)",
+        "d": "Krishna"
+      },
+      "answer": "b",
+      "a": "West Godavari",
+      "e": ":",
+      "table": {
+        "headers": [
+          "District",
+          "Headcount Poverty Ratio (%)",
+          "MPI Score"
+        ],
+        "rows": [
+          [
+            "West Godavari",
+            "2.42%",
+            "0.010"
+          ],
+          [
+            "Y.S.R. (Kadapa)",
+            "3.34%",
+            "0.013"
+          ],
+          [
+            "Guntur",
+            "4.36%",
+            "0.016"
+          ],
+          [
+            "Krishna",
+            "4.38%",
+            "0.017"
+          ],
+          [
+            "Srikakulam",
+            "5.20%",
+            "0.022"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which district in Andhra Pradesh has the highest poverty Headcount Ratio and MPI score?",
+      "options": {
+        "a": "Visakhapatnam",
+        "b": "East Godavari",
+        "c": "Vizianagaram",
+        "d": "Kurnool"
+      },
+      "answer": "d",
+      "a": "Kurnool",
+      "e": ":",
+      "table": {
+        "headers": [
+          "District",
+          "Headcount Poverty Ratio (%)",
+          "MPI Score"
+        ],
+        "rows": [
+          [
+            "Kurnool",
+            "12.84%",
+            "0.054"
+          ],
+          [
+            "Vizianagaram",
+            "8.66%",
+            "0.035"
+          ],
+          [
+            "Visakhapatnam",
+            "7.60%",
+            "0.031"
+          ],
+          [
+            "East Godavari",
+            "6.13%",
+            "0.027"
+          ],
+          [
+            "Prakasam",
+            "6.28%",
+            "0.027"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How many rural workers benefited under MGNREGS in Andhra Pradesh during 2023-24?",
+      "options": {
+        "a": "Over 45 lakh",
+        "b": "Over 65 lakh",
+        "c": "Over 50 lakh",
+        "d": "Over 55 lakh"
+      },
+      "answer": "b",
+      "a": "Over 65 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many housing units were sanctioned for Andhra Pradesh under Pradhan Mantri Awas Yojana (PMAY)?",
+      "options": {
+        "a": "12 lakh+",
+        "b": "25 lakh+",
+        "c": "15 lakh+",
+        "d": "19 lakh+"
+      },
+      "answer": "d",
+      "a": "19 lakh+",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many people in Andhra Pradesh benefited from free rations under PM Garib Kalyan Yojana during COVID-19?",
+      "options": {
+        "a": "Over 2.5 crore",
+        "b": "Over 1.5 crore",
+        "c": "Over 2 crore",
+        "d": "Over 1 crore"
+      },
+      "answer": "c",
+      "a": "Over 2 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many small and marginal farmers in Andhra Pradesh are covered under the PM Kisan Samman Nidhi scheme?",
+      "options": {
+        "a": "Over 30 lakh",
+        "b": "Over 50 lakh",
+        "c": "Over 60 lakh",
+        "d": "Over 40 lakh"
+      },
+      "answer": "b",
+      "a": "Over 50 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What amount was sanctioned for MSME businesses in Andhra Pradesh under the Stand-Up India and Mudra Loan schemes?",
+      "options": {
+        "a": "Over ₹10,000 crore",
+        "b": "Over ₹7,500 crore",
+        "c": "Over ₹6,500 crore",
+        "d": "Over ₹5,000 crore"
+      },
+      "answer": "b",
+      "a": "Over ₹7,500 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the overall Labour Force Participation Rate (LFPR) for all age groups in Andhra Pradesh according to PLFS 2023-24?",
+      "options": {
+        "a": "50.1%",
+        "b": "60.2%",
+        "c": "45.1%",
+        "d": "47.5%"
+      },
+      "answer": "d",
+      "a": "47.5%",
+      "e": "Rural LFPR was 50.1% and Urban LFPR was 41.3%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the female Labour Force Participation Rate (LFPR) in Andhra Pradesh for all age groups as per PLFS 2023-24?",
+      "options": {
+        "a": "44.8%",
+        "b": "31.7%",
+        "c": "35.8%",
+        "d": "28.8%"
+      },
+      "answer": "c",
+      "a": "35.8%",
+      "e": "The national female LFPR was 31.7%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Labour Force Participation Rate (LFPR) for youth aged 15-29 years in Andhra Pradesh according to PLFS 2023-24?",
+      "options": {
+        "a": "39.3%",
+        "b": "45.6%",
+        "c": "67.1%",
+        "d": "48.6%"
+      },
+      "answer": "b",
+      "a": "45.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What threshold of working hours during a day classifies a person as working under Current Daily Status in PLFS?",
+      "options": {
+        "a": "6 hours or more",
+        "b": "4 hours or more",
+        "c": "2 hours or more",
+        "d": "8 hours or more"
+      },
+      "answer": "b",
+      "a": "4 hours or more",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Worker Population Ratio (WPR) for all age groups in Andhra Pradesh according to PLFS 2023-24?",
+      "options": {
+        "a": "43.7%",
+        "b": "57.8%",
+        "c": "45.6%",
+        "d": "41.7%"
+      },
+      "answer": "c",
+      "a": "45.6%",
+      "e": "The All India WPR for all age groups was 43.7%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the urban female Worker Population Ratio (WPR) for youth aged 15-29 years in Andhra Pradesh?",
+      "options": {
+        "a": "19.0%",
+        "b": "22.8%",
+        "c": "15.9%",
+        "d": "28.0%"
+      },
+      "answer": "c",
+      "a": "15.9%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the overall Unemployment Rate (UR) according to usual status (ps+ss) in Andhra Pradesh in 2023-24?",
+      "options": {
+        "a": "3.4%",
+        "b": "3.2%",
+        "c": "4.1%",
+        "d": "4.4%"
+      },
+      "answer": "c",
+      "a": "4.1%",
+      "e": "The All India overall Unemployment Rate was 3.2%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Unemployment Rate for youth aged 15-29 years in Andhra Pradesh according to PLFS 2023-24?",
+      "options": {
+        "a": "22.7%",
+        "b": "15.5%",
+        "c": "17.5%",
+        "d": "10.2%"
+      },
+      "answer": "c",
+      "a": "17.5%",
+      "e": "The national youth unemployment rate was 10.2%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Unemployment Rate among urban females aged 15-29 years in Andhra Pradesh?",
+      "options": {
+        "a": "29.1%",
+        "b": "22.7%",
+        "c": "19.7%",
+        "d": "20.1%"
+      },
+      "answer": "a",
+      "a": "29.1%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many government ITIs operate in Andhra Pradesh under the Craftsmen Training Scheme?",
+      "options": {
+        "a": "65",
+        "b": "83",
+        "c": "154",
+        "d": "435"
+      },
+      "answer": "b",
+      "a": "83",
+      "e": "There are 83 government ITIs and 435 private ITIs in the state.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What proportion of practical training is specified under DGT norms for ITI trainees?",
+      "options": {
+        "a": "70%",
+        "b": "80%",
+        "c": "60%",
+        "d": "50%"
+      },
+      "answer": "b",
+      "a": "80%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "At which location was an existing Government ITI selected for upgrade to a Model ITI with a ₹10 crore outlay?",
+      "options": {
+        "a": "Mangalagiri",
+        "b": "Tirupati",
+        "c": "Amadalavalasa",
+        "d": "New Gajuwaka"
+      },
+      "answer": "d",
+      "a": "New Gajuwaka",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What maximum monthly stipend per apprentice is shared by employers under the National Apprenticeship Promotion Scheme (NAPS)?",
+      "options": {
+        "a": "₹1,500",
+        "b": "₹2,000",
+        "c": "₹1,200",
+        "d": "₹1,000"
+      },
+      "answer": "a",
+      "a": "₹1,500",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Model Career Centers (MCCs) were sanctioned for Andhra Pradesh under the National Career Service (NCS) project?",
+      "options": {
+        "a": "18",
+        "b": "12",
+        "c": "29",
+        "d": "26"
+      },
+      "answer": "c",
+      "a": "29",
+      "e": "Out of 29 sanctioned MCCs, 12 Employment Exchanges have been transformed so far.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many job opportunities does the AP government aim to create for youth over 5 years under the Super Six scheme?",
+      "options": {
+        "a": "15 lakh",
+        "b": "10 lakh",
+        "c": "25 lakh",
+        "d": "20 lakh"
+      },
+      "answer": "d",
+      "a": "20 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total candidates were trained by APSSDC during 2024-25 up to December 31, 2024?",
+      "options": {
+        "a": "2,39,000",
+        "b": "2,57,575",
+        "c": "3,59,000",
+        "d": "1,58,606"
+      },
+      "answer": "b",
+      "a": "2,57,575",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many beneficiaries were trained under PM Vishwakarma Yojana in AP up to December 2024?",
+      "options": {
+        "a": "1,18,837",
+        "b": "63,406",
+        "c": "98,969",
+        "d": "30,500"
+      },
+      "answer": "a",
+      "a": "1,18,837",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which mandals was the pilot Skill Census launched in Andhra Pradesh?",
+      "options": {
+        "a": "Amadalavalasa and Gajuwaka",
+        "b": "Tirupati and Chandragiri",
+        "c": "Mangalagiri and Thullur",
+        "d": "Vijayawada and Guntur"
+      },
+      "answer": "c",
+      "a": "Mangalagiri and Thullur",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the AP Skill University being established as part of the Skill-focused Institutional Cascade?",
+      "options": {
+        "a": "Tirupati",
+        "b": "Amaravati",
+        "c": "Visakhapatnam",
+        "d": "Kurnool"
+      },
+      "answer": "a",
+      "a": "Tirupati",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Integrated Institutes are planned under the skill institutional cascade in Andhra Pradesh?",
+      "options": {
+        "a": "150",
+        "b": "350",
+        "c": "18",
+        "d": "26"
+      },
+      "answer": "d",
+      "a": "26",
+      "e": "The framework includes 1 AP Skill University in Tirupati, 26 Integrated Institutes, 350 Skill hubs, and over 150 Skill Spokes.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What target year has Andhra Pradesh set to achieve Zero Poverty in line with SDG Goal 1?",
+      "options": {
+        "a": "2030",
+        "b": "2029",
+        "c": "2028",
+        "d": "2047"
+      },
+      "answer": "a",
+      "a": "2030",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What does the P4 framework for poverty eradication stand for?",
+      "options": {
+        "a": "Poverty-Prevention-Progress Policy",
+        "b": "Public-People-Philanthropic Partnership",
+        "c": "People-Poverty-Plan Policy",
+        "d": "Public-Private Partnership Program"
+      },
+      "answer": "b",
+      "a": "Public-People-Philanthropic Partnership",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which income groups does the P4 policy specifically target to bridge income and wealth inequality?",
+      "options": {
+        "a": "Top 10% and Bottom 20%",
+        "b": "Top 5% and Bottom 10%",
+        "c": "Top 20% and Bottom 30%",
+        "d": "Top 15% and Bottom 25%"
+      },
+      "answer": "a",
+      "a": "Top 10% and Bottom 20%",
+      "e": "",
+      "table": null
+    }
+  ]
+}

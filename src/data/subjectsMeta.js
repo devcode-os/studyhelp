@@ -32,6 +32,13 @@ export const subjectsMeta = {
     seoTitle: 'తెలంగాణ ఆర్థిక వ్యవస్థ MCQs',
     seoDescription: 'TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం తెలంగాణ ఆర్థిక వ్యవస్థ ప్రశ్నలు, అధ్యాయాల వారీగా',
   },
+  'andhra-pradesh-economy': {
+    lang: 'en',
+    heading: 'Andhra Pradesh Economy',
+    breadcrumb: 'AP Economy',
+    seoTitle: 'Andhra Pradesh Economy MCQs',
+    seoDescription: 'APPSC and AP exam preparation - Andhra Pradesh economy questions, chapter by chapter',
+  },
 
   'indian-history-en': {
   lang: 'en',

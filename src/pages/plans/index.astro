@@ -765,7 +765,15 @@ import Header from '../../components/Header.astro';
 
         subjectMeta = subjects;
 
-        const PRIORITY_ORDER = ['telangana-history-en', 'telangana-history-te'];
+        const PRIORITY_ORDER = [
+          'indian-history-en',
+          'indian-polity-en',
+          'telangana-history-en',
+          'telangana-history-te',
+          'telangana-economy-en',
+          'telangana-economy-te',
+          'andhra-pradesh-economy',
+        ];
         subjects.sort((a, b) => {
           const ai = PRIORITY_ORDER.indexOf(a.slug);
           const bi = PRIORITY_ORDER.indexOf(b.slug);

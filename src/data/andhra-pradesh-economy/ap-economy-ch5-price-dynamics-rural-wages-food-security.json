@@ -1,0 +1,651 @@
+{
+  "slug": "ap-economy-ch5-price-dynamics-rural-wages-food-security",
+  "chapterNumber": 5,
+  "title": "Price Dynamics, Rural Wages and Food Security",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "What was the percentage variation in the State average daily retail price of onions (Gr II) in Andhra Pradesh during April–December 2024 compared to April–December 2023?",
+      "options": {
+        "a": "3.14%",
+        "b": "11.29%",
+        "c": "40.24%",
+        "d": "-22.94%"
+      },
+      "answer": "c",
+      "a": "40.24%",
+      "e": "The average daily retail price of onions rose from Rs. 28.85/kg in 2023-24 to Rs. 40.46/kg in 2024-25 (Apr–Dec), marking a 40.24% increase.",
+      "table": {
+        "headers": [
+          "Commodity",
+          "2023-24 (Apr-Dec) (Rs./Kg/Ltr.)",
+          "2024-25 (Apr-Dec) (Rs./Kg/Ltr.)",
+          "% Variation"
+        ],
+        "rows": [
+          [
+            "Rice (II sort)",
+            "38.45",
+            "42.79",
+            "11.29%"
+          ],
+          [
+            "Redgramdal (II sort)",
+            "143.48",
+            "160.57",
+            "11.91%"
+          ],
+          [
+            "Sunflower Oil",
+            "118.28",
+            "123.51",
+            "4.42%"
+          ],
+          [
+            "Tamarind Common (without seed)",
+            "123.78",
+            "127.67",
+            "3.14%"
+          ],
+          [
+            "Red Chillies Dry (Gr II)",
+            "258.91",
+            "199.52",
+            "-22.94%"
+          ],
+          [
+            "Onions (Gr II)",
+            "28.85",
+            "40.46",
+            "40.24%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which essential commodity recorded a sharp price decline of 22.94% in Andhra Pradesh during April–December 2024 compared to the same period in 2023?",
+      "options": {
+        "a": "Redgramdal (II sort)",
+        "b": "Sunflower Oil",
+        "c": "Red Chillies Dry (Gr II)",
+        "d": "Tamarind Common"
+      },
+      "answer": "c",
+      "a": "Red Chillies Dry (Gr II)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the CPI-IW growth rate for Andhra Pradesh in 2024-25 (April to September) over 2023-24 (April to September)?",
+      "options": {
+        "a": "3.43%",
+        "b": "4.89%",
+        "c": "6.15%",
+        "d": "5.93%"
+      },
+      "answer": "b",
+      "a": "4.89%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Andhra Pradesh Index (Base: 2001=100)",
+          "All India Index (Base: 2016=100)"
+        ],
+        "rows": [
+          [
+            "2021-22",
+            "357",
+            "123.6"
+          ],
+          [
+            "2022-23",
+            "383",
+            "131.1"
+          ],
+          [
+            "2023-24 (Apr to Sep)",
+            "409",
+            "136.9"
+          ],
+          [
+            "2024-25 (Apr to Sep)",
+            "429",
+            "141.6"
+          ],
+          [
+            "Growth Rate (%) 2024-25 over 2023-24 (Apr to Sep)",
+            "4.89%",
+            "3.43%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which complex centre of NTR District under the old CPI-IW base year (2001=100) was dropped when compiling the new base year (2016=100) series for Andhra Pradesh?",
+      "options": {
+        "a": "Vijayawada",
+        "b": "Nellore",
+        "c": "Visakhapatnam",
+        "d": "Guntur"
+      },
+      "answer": "a",
+      "a": "Vijayawada",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many complex centres are covered under the Andhra Pradesh state series for CPI-IW (Base: 2001=100) compiled by the Directorate of Economics & Statistics?",
+      "options": {
+        "a": "5",
+        "b": "4",
+        "c": "6",
+        "d": "3"
+      },
+      "answer": "b",
+      "a": "4",
+      "e": "The 4 complex centres are Vizianagaram-Chittivalasa, Kakinada-Rajahmundry, Jaggaiahpet & Miryalaguda, and Tirupati-Renigunta.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the growth rate of the Consumer Price Index Numbers for Agricultural Labour (CPI-AL) in Andhra Pradesh during 2024-25 (April to December) over 2023-24?",
+      "options": {
+        "a": "6.15%",
+        "b": "4.89%",
+        "c": "3.43%",
+        "d": "5.93%"
+      },
+      "answer": "d",
+      "a": "5.93%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Year",
+          "Andhra Pradesh",
+          "All India"
+        ],
+        "rows": [
+          [
+            "2021-22",
+            "1226",
+            "1075"
+          ],
+          [
+            "2022-23",
+            "1302",
+            "1148"
+          ],
+          [
+            "2023-24 (Apr to Dec)",
+            "1400",
+            "1220"
+          ],
+          [
+            "2024-25 (Apr to Dec)",
+            "1483",
+            "1295"
+          ],
+          [
+            "Growth rate (%) 2024-25 over 2023-24",
+            "5.93%",
+            "6.15%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the base year used by the Labour Bureau, Chandigarh for compiling the Consumer Price Index Numbers for Agricultural Labour (CPI-AL)?",
+      "options": {
+        "a": "1986-87",
+        "b": "2010-11",
+        "c": "2011-12",
+        "d": "2001-02"
+      },
+      "answer": "a",
+      "a": "1986-87",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the base year of the Consumer Price Index (CPI) revised from 2010 to 2012 by the Central Statistics Office?",
+      "options": {
+        "a": "2020",
+        "b": "2015",
+        "c": "2012",
+        "d": "2016"
+      },
+      "answer": "b",
+      "a": "2015",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Combined Consumer Price Index (CPI) value for Andhra Pradesh during April 2024 – December 2024?",
+      "options": {
+        "a": "197.9",
+        "b": "189.9",
+        "c": "192.6",
+        "d": "197.8"
+      },
+      "answer": "a",
+      "a": "197.9",
+      "e": "",
+      "table": {
+        "headers": [
+          "CPI Trends (Base Year: 2012 = 100)",
+          "Andhra Pradesh (Apr 2024 - Dec 2024)",
+          "All India (Apr 2024 - Dec 2024)"
+        ],
+        "rows": [
+          [
+            "Rural CPI",
+            "197.9",
+            "195.0"
+          ],
+          [
+            "Urban CPI",
+            "197.8",
+            "189.9"
+          ],
+          [
+            "Combined CPI",
+            "197.9",
+            "192.6"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "In which month during 2024 did the Andhra Pradesh Combined CPI reach its peak value of 201.3?",
+      "options": {
+        "a": "July 2024",
+        "b": "October 2024",
+        "c": "December 2024",
+        "d": "June 2024"
+      },
+      "answer": "b",
+      "a": "October 2024",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total commodities are covered under the Wholesale Price Index (WPI) released by the Office of the Economic Adviser?",
+      "options": {
+        "a": "1483",
+        "b": "429",
+        "c": "697",
+        "d": "409"
+      },
+      "answer": "c",
+      "a": "697",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the percentage variation in the Wholesale Price Index (WPI) for Fuel & Power during April 2024 – December 2024 compared to April 2023 – December 2023?",
+      "options": {
+        "a": "2.18%",
+        "b": "1.28%",
+        "c": "4.42%",
+        "d": "-1.79%"
+      },
+      "answer": "d",
+      "a": "-1.79%",
+      "e": "",
+      "table": {
+        "headers": [
+          "WPI Trends (Base Year: 2011-12 = 100)",
+          "Apr 2023 - Dec 2023",
+          "Apr 2024 - Dec 2024",
+          "% Variation"
+        ],
+        "rows": [
+          [
+            "All Commodities",
+            "151.5",
+            "154.8",
+            "2.18%"
+          ],
+          [
+            "Manufactured Products",
+            "140.3",
+            "142.1",
+            "1.28%"
+          ],
+          [
+            "Fuel & Power",
+            "151.4",
+            "148.7",
+            "-1.79%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Who chairs the State-Level Price Monitoring Committee in Andhra Pradesh?",
+      "options": {
+        "a": "Finance Secretary",
+        "b": "Chief Minister",
+        "c": "Minister for Consumer Affairs",
+        "d": "Chief Secretary"
+      },
+      "answer": "d",
+      "a": "Chief Secretary",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many selected centers spread across Andhra Pradesh are monitored to collect wage data for rural occupations?",
+      "options": {
+        "a": "77",
+        "b": "123",
+        "c": "44",
+        "d": "16"
+      },
+      "answer": "c",
+      "a": "44",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many occupations are covered in the rural wage data collection framework of Andhra Pradesh?",
+      "options": {
+        "a": "12",
+        "b": "16",
+        "c": "6",
+        "d": "24"
+      },
+      "answer": "b",
+      "a": "16",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the percentage growth in the average daily wage of male field labor in Andhra Pradesh from 2023-24 to 2024-25 (April–November)?",
+      "options": {
+        "a": "7.74%",
+        "b": "2.58%",
+        "c": "4.59%",
+        "d": "5.65%"
+      },
+      "answer": "d",
+      "a": "5.65%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Occupation",
+          "Apr 23 - Nov 23 (Rs./Day)",
+          "Apr 24 - Nov 24 (Rs./Day)",
+          "% Growth"
+        ],
+        "rows": [
+          [
+            "Carpenter",
+            "659",
+            "710",
+            "7.74%"
+          ],
+          [
+            "Blacksmith",
+            "545",
+            "570",
+            "4.59%"
+          ],
+          [
+            "Cobbler",
+            "675",
+            "669",
+            "-0.89%"
+          ],
+          [
+            "Field Labor (Men)",
+            "531",
+            "561",
+            "5.65%"
+          ],
+          [
+            "Field Labor (Women)",
+            "388",
+            "398",
+            "2.58%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "Which occupation in Andhra Pradesh registered a negative wage growth of -0.89% during April–November 2024 compared to the previous year?",
+      "options": {
+        "a": "Blacksmith",
+        "b": "Cobbler",
+        "c": "Field Labor (Women)",
+        "d": "Carpenter"
+      },
+      "answer": "b",
+      "a": "Cobbler",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Fair Price Shops (FPS) operate under the Public Distribution System in Andhra Pradesh?",
+      "options": {
+        "a": "16,000",
+        "b": "9,260",
+        "c": "44,000",
+        "d": "29,796"
+      },
+      "answer": "d",
+      "a": "29,796",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of ration cards in Andhra Pradesh are linked with Aadhaar?",
+      "options": {
+        "a": "90%",
+        "b": "95%",
+        "c": "98%",
+        "d": "100%"
+      },
+      "answer": "c",
+      "a": "98%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total number of PDS beneficiaries covered in Andhra Pradesh?",
+      "options": {
+        "a": "2.35 crore",
+        "b": "1.48 crore",
+        "c": "1.25 crore",
+        "d": "1.39 crore"
+      },
+      "answer": "b",
+      "a": "1.48 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the monthly rice allocation under PDS in Andhra Pradesh during 2024-25?",
+      "options": {
+        "a": "2.35 lakh metric tonnes",
+        "b": "2.04 lakh metric tonnes",
+        "c": "5.00 lakh metric tonnes",
+        "d": "3.14 lakh metric tonnes"
+      },
+      "answer": "a",
+      "a": "2.35 lakh metric tonnes",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Mobile Dispensing Units (MDUs) are operating under the Public Distribution System in Andhra Pradesh?",
+      "options": {
+        "a": "4,250",
+        "b": "9,260",
+        "c": "8,300",
+        "d": "6,590"
+      },
+      "answer": "b",
+      "a": "9,260",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many beneficiaries belong to the Priority Household (PHH) category under the ration card system in Andhra Pradesh?",
+      "options": {
+        "a": "160.57 lakh",
+        "b": "148.46 lakh",
+        "c": "9.00 lakh",
+        "d": "139.46 lakh"
+      },
+      "answer": "d",
+      "a": "139.46 lakh",
+      "e": "",
+      "table": {
+        "headers": [
+          "Type of Ration Card",
+          "Beneficiaries (in Lakhs)"
+        ],
+        "rows": [
+          [
+            "Priority Household (PHH)",
+            "139.46"
+          ],
+          [
+            "Antyodaya Anna Yojana (AAY)",
+            "9.00"
+          ],
+          [
+            "Total",
+            "148.46"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the monthly allocation of Sortex Fortified Rice per card for Antyodaya Anna Yojana (AAY) beneficiaries under PDS?",
+      "options": {
+        "a": "5 kg per unit",
+        "b": "35 kg per card",
+        "c": "16 kg per card",
+        "d": "40 kg per card"
+      },
+      "answer": "b",
+      "a": "35 kg per card",
+      "e": "",
+      "table": {
+        "headers": [
+          "Commodity",
+          "Monthly Allocation per Ration Card",
+          "Price for Beneficiaries (per kg)"
+        ],
+        "rows": [
+          [
+            "Sortex Fortified Rice (PHH)",
+            "5 kg per unit",
+            "Free"
+          ],
+          [
+            "Sortex Fortified Rice (AAY)",
+            "35 kg per card",
+            "Free"
+          ],
+          [
+            "Ragi",
+            "Up to 3 kg per card",
+            "Free"
+          ],
+          [
+            "Jowar (Rayalaseema Districts)",
+            "Up to 3 kg per card",
+            "Free"
+          ],
+          [
+            "Wheat",
+            "1 kg per card",
+            "Rs. 16.00"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the price per kg charged to beneficiaries for wheat distributed through PDS in Andhra Pradesh?",
+      "options": {
+        "a": "Free",
+        "b": "Rs. 5.00",
+        "c": "Rs. 16.00",
+        "d": "Rs. 12.00"
+      },
+      "answer": "c",
+      "a": "Rs. 16.00",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many free LPG gas cylinders per year are provided to eligible families under the Deepam-2 Scheme launched in 2024?",
+      "options": {
+        "a": "6",
+        "b": "2",
+        "c": "4",
+        "d": "3"
+      },
+      "answer": "d",
+      "a": "3",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many eligible families are targeted to benefit from the Deepam-2 Scheme in Andhra Pradesh?",
+      "options": {
+        "a": "44 lakh",
+        "b": "83 lakh",
+        "c": "65 lakh",
+        "d": "139 lakh"
+      },
+      "answer": "b",
+      "a": "83 lakh",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the expected annual cost to the state government for implementing the Deepam-2 Scheme?",
+      "options": {
+        "a": "Rs. 710.00 crore",
+        "b": "Rs. 388.00 crore",
+        "c": "Rs. 531.00 crore",
+        "d": "Rs. 659.01 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 659.01 crore",
+      "e": "",
+      "table": null
+    }
+  ]
+}

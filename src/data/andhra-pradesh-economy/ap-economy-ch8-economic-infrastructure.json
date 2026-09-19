@@ -1,0 +1,1494 @@
+{
+  "slug": "ap-economy-ch8-economic-infrastructure",
+  "chapterNumber": 8,
+  "title": "Economic Infrastructure",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "How many prominent rivers in peninsular India supply water to Andhra Pradesh for its irrigation needs?",
+      "options": {
+        "a": "3",
+        "b": "12",
+        "c": "8",
+        "d": "5"
+      },
+      "answer": "d",
+      "a": "5",
+      "e": "Godavari, Krishna, Pennar, Vamsadhara, and Nagavali are the five primary rivers supplying irrigation water to the state.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total rivers are shared between Andhra Pradesh and surrounding states?",
+      "options": {
+        "a": "12",
+        "b": "18",
+        "c": "10",
+        "d": "15"
+      },
+      "answer": "d",
+      "a": "15",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the cumulative irrigation potential created under major anicuts in Andhra Pradesh up to December 2024?",
+      "options": {
+        "a": "106.15 lakh acres",
+        "b": "66.81 lakh acres",
+        "c": "85.50 lakh acres",
+        "d": "120.40 lakh acres"
+      },
+      "answer": "a",
+      "a": "106.15 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the sector-wise breakdown of irrigation potential created in Andhra Pradesh up to December 31, 2024?",
+      "options": {
+        "a": "Major: 50.00, Medium: 10.00, Minor: 20.00, APSIDC: 5.00",
+        "b": "Major: 60.15, Medium: 8.20, Minor: 30.10, APSIDC: 7.70",
+        "c": "Major: 75.20, Medium: 4.30, Minor: 18.50, APSIDC: 6.20",
+        "d": "Major: 66.81, Medium: 5.62, Minor: 25.60, APSIDC: 8.12"
+      },
+      "answer": "d",
+      "a": "Major: 66.81, Medium: 5.62, Minor: 25.60, APSIDC: 8.12",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Sector",
+          "Ayacut (Lakh acres)"
+        ],
+        "rows": [
+          [
+            "Major Irrigation",
+            "66.81"
+          ],
+          [
+            "Medium Irrigation",
+            "5.62"
+          ],
+          [
+            "Minor Irrigation",
+            "25.60"
+          ],
+          [
+            "APSIDC",
+            "8.12"
+          ],
+          [
+            "Total",
+            "106.15"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How many total irrigation projects are being implemented through Special Purpose Vehicles (SPVs) in Andhra Pradesh?",
+      "options": {
+        "a": "40",
+        "b": "33",
+        "c": "54",
+        "d": "99"
+      },
+      "answer": "c",
+      "a": "54",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total cumulative cost of the 54 irrigation projects implemented through Special Purpose Vehicles?",
+      "options": {
+        "a": "Rs. 92,770 crore",
+        "b": "Rs. 77,845 crore",
+        "c": "Rs. 40,480 crore",
+        "d": "Rs. 52,100 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 77,845 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the gross storage capacity of the Polavaram Irrigation Project reservoir?",
+      "options": {
+        "a": "80 TMC",
+        "b": "322.73 TMC",
+        "c": "450 TMC",
+        "d": "194.6 TMC"
+      },
+      "answer": "d",
+      "a": "194.6 TMC",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How much water is envisioned to be diverted from the Godavari River to the Krishna River through the Polavaram Irrigation Project?",
+      "options": {
+        "a": "80 TMC",
+        "b": "50 TMC",
+        "c": "23.44 TMC",
+        "d": "120 TMC"
+      },
+      "answer": "a",
+      "a": "80 TMC",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the proposed hydropower generation capacity of the Polavaram Irrigation Project?",
+      "options": {
+        "a": "750 MW",
+        "b": "500 MW",
+        "c": "1200 MW",
+        "d": "960 MW"
+      },
+      "answer": "d",
+      "a": "960 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the overall progress percentage achieved on the Polavaram Irrigation Project as of December 2024?",
+      "options": {
+        "a": "53.47%",
+        "b": "65.20%",
+        "c": "74.92%",
+        "d": "77.00%"
+      },
+      "answer": "a",
+      "a": "53.47%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total approved funding amount for the National Hydrology Project (NHP) implementation plan in Andhra Pradesh?",
+      "options": {
+        "a": "Rs. 100.00 crore",
+        "b": "Rs. 76.39 crore",
+        "c": "Rs. 23.50 crore",
+        "d": "Rs. 50.00 crore"
+      },
+      "answer": "b",
+      "a": "Rs. 76.39 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many priority projects were identified in Andhra Pradesh under the Accelerated Irrigation Benefit Programme (AIBP/PMKSY)?",
+      "options": {
+        "a": "12",
+        "b": "15",
+        "c": "5",
+        "d": "8"
+      },
+      "answer": "d",
+      "a": "8",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which project under AIBP in East Godavari district has been fully completed?",
+      "options": {
+        "a": "Thotapalli",
+        "b": "Polavaram",
+        "c": "Maddigedda",
+        "d": "Vamsadhara"
+      },
+      "answer": "c",
+      "a": "Maddigedda",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the approved cost share borne by the Central Government under the Command Area Development and Water Management (CADWM) scheme?",
+      "options": {
+        "a": "50%",
+        "b": "75%",
+        "c": "40%",
+        "d": "60%"
+      },
+      "answer": "a",
+      "a": "50%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under HKKP-Repair, Renovation and Restoration (RRR), how many water bodies were approved by the Government of India for Andhra Pradesh?",
+      "options": {
+        "a": "97",
+        "b": "50",
+        "c": "36",
+        "d": "100"
+      },
+      "answer": "d",
+      "a": "100",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total restructured cost of downsized activities planned under APILIP-II?",
+      "options": {
+        "a": "Rs. 1,050 crore",
+        "b": "Rs. 1,800 crore",
+        "c": "Rs. 2,000 crore",
+        "d": "Rs. 720 crore"
+      },
+      "answer": "a",
+      "a": "Rs. 1,050 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of financial assistance is provided by the World Bank for the AP Integrated Irrigation & Agriculture Transformation Project (APIATP)?",
+      "options": {
+        "a": "60%",
+        "b": "70%",
+        "c": "50%",
+        "d": "84%"
+      },
+      "answer": "b",
+      "a": "70%",
+      "e": "APIATP has a total cost of Rs. 720 crore, with World Bank contributing 70% (Rs. 504 crore) and the state sharing the remainder.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total minor irrigation tanks are maintained in Andhra Pradesh with a registered ayacut of 25.60 lakh acres?",
+      "options": {
+        "a": "45,000",
+        "b": "28,120",
+        "c": "15,400",
+        "d": "38,862"
+      },
+      "answer": "d",
+      "a": "38,862",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of gross irrigated area in Andhra Pradesh relies on groundwater?",
+      "options": {
+        "a": "41%",
+        "b": "25%",
+        "c": "33%",
+        "d": "55%"
+      },
+      "answer": "a",
+      "a": "41%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to GEC 2023-24, what is the overall stage of groundwater development in Andhra Pradesh?",
+      "options": {
+        "a": "37.4%",
+        "b": "45.2%",
+        "c": "22.58%",
+        "d": "29.8%"
+      },
+      "answer": "d",
+      "a": "29.8%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total watersheds (basins) are categorized for estimation of groundwater resources in Andhra Pradesh?",
+      "options": {
+        "a": "679",
+        "b": "830",
+        "c": "748",
+        "d": "500"
+      },
+      "answer": "c",
+      "a": "748",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many watersheds in Andhra Pradesh are categorized as \"Over Exploited\" under the GEC 2023-24 report?",
+      "options": {
+        "a": "33",
+        "b": "7",
+        "c": "60",
+        "d": "20"
+      },
+      "answer": "d",
+      "a": "20",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to GEC 2023-24, what is the groundwater category classification of watersheds, mandals, and villages in Andhra Pradesh?",
+      "options": {
+        "a": "OE: 33 watersheds / 38 mandals / 1271 villages; Critical: 20 watersheds / 9 mandals / 830 villages",
+        "b": "OE: 7 watersheds / 2 mandals / 450 villages; Critical: 20 watersheds / 9 mandals / 830 villages",
+        "c": "OE: 10 watersheds / 5 mandals / 500 villages; Critical: 12 watersheds / 8 mandals / 300 villages",
+        "d": "OE: 20 watersheds / 9 mandals / 830 villages; Critical: 7 watersheds / 2 mandals / 450 villages"
+      },
+      "answer": "d",
+      "a": "OE: 20 watersheds / 9 mandals / 830 villages; Critical: 7 watersheds / 2 mandals / 450 villages",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Category",
+          "Watersheds (No.)",
+          "Mandals (No.)",
+          "Villages (No.)"
+        ],
+        "rows": [
+          [
+            "Over Exploited",
+            "20",
+            "9",
+            "830"
+          ],
+          [
+            "Critical",
+            "7",
+            "2",
+            "450"
+          ],
+          [
+            "Semi-critical",
+            "33",
+            "38",
+            "1271"
+          ],
+          [
+            "Safe & Saline",
+            "688",
+            "630",
+            "14916"
+          ],
+          [
+            "Total",
+            "748",
+            "679",
+            "17467"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How many river sub-basins in Andhra Pradesh were identified as deficit under the micro-level Water Audit programme?",
+      "options": {
+        "a": "29",
+        "b": "50",
+        "c": "45",
+        "d": "74"
+      },
+      "answer": "a",
+      "a": "29",
+      "e": "Out of 74 micro-level river sub-basins audited, 45 were identified as surplus and 29 as deficit.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the target groundwater depth range aimed to be maintained under the Swarna Andhra Vision?",
+      "options": {
+        "a": "3–8 meters",
+        "b": "8–20 meters",
+        "c": "> 20 meters",
+        "d": "< 3 meters"
+      },
+      "answer": "a",
+      "a": "3–8 meters",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total installed power generation capacity of Andhra Pradesh as of 2024-25?",
+      "options": {
+        "a": "27,392 MW",
+        "b": "18,250 MW",
+        "c": "33,500 MW",
+        "d": "21,400 MW"
+      },
+      "answer": "a",
+      "a": "27,392 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the peak energy demand recorded in Andhra Pradesh during FY 2024-25?",
+      "options": {
+        "a": "12,100 MW",
+        "b": "13,255 MW",
+        "c": "13,712 MW",
+        "d": "15,000 MW"
+      },
+      "answer": "c",
+      "a": "13,712 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of Transmission & Distribution (T&D) losses was recorded in Andhra Pradesh during FY 2024-25?",
+      "options": {
+        "a": "6.50%",
+        "b": "9.32%",
+        "c": "12.10%",
+        "d": "2.63%"
+      },
+      "answer": "b",
+      "a": "9.32%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many hours of free daytime power supply are provided to agricultural pumpsets in Andhra Pradesh?",
+      "options": {
+        "a": "12 hours",
+        "b": "9 hours",
+        "c": "24 hours",
+        "d": "7 hours"
+      },
+      "answer": "b",
+      "a": "9 hours",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What subsidized power tariff per unit is extended to aqua farmers in Andhra Pradesh?",
+      "options": {
+        "a": "Rs. 2.50 per unit",
+        "b": "Rs. 1.50 per unit",
+        "c": "Re. 1.00 per unit",
+        "d": "Rs. 2.00 per unit"
+      },
+      "answer": "b",
+      "a": "Rs. 1.50 per unit",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many free units of power per month are provided to Below Poverty Line (BPL) SC/ST households in the state?",
+      "options": {
+        "a": "250 units",
+        "b": "100 units",
+        "c": "150 units",
+        "d": "200 units"
+      },
+      "answer": "d",
+      "a": "200 units",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What score did Andhra Pradesh achieve in the State Energy Efficiency Index (SEEI) 2024?",
+      "options": {
+        "a": "75.00 points",
+        "b": "87.25 points",
+        "c": "83.25 points",
+        "d": "92.50 points"
+      },
+      "answer": "b",
+      "a": "87.25 points",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the estimated total wind energy potential in Andhra Pradesh?",
+      "options": {
+        "a": "38 GW",
+        "b": "50 GW",
+        "c": "44 GW",
+        "d": "25 GW"
+      },
+      "answer": "c",
+      "a": "44 GW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total installed capacity of Renewable Energy in Andhra Pradesh as of FY 2024-25?",
+      "options": {
+        "a": "11,544.00 MW",
+        "b": "9,068.46 MW",
+        "c": "4,357.33 MW",
+        "d": "7,522.236 MW"
+      },
+      "answer": "b",
+      "a": "9,068.46 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which foreign bank is funding the Green Energy Corridor Projects (Phase-1) in Andhra Pradesh?",
+      "options": {
+        "a": "New Development Bank (NDB)",
+        "b": "World Bank",
+        "c": "KfW (German Bank)",
+        "d": "Asian Development Bank (ADB)"
+      },
+      "answer": "c",
+      "a": "KfW (German Bank)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under PM JANMAN, how many PVTG households were electrified through ON GRID infrastructure?",
+      "options": {
+        "a": "15,475",
+        "b": "32,000",
+        "c": "24,691",
+        "d": "20,260"
+      },
+      "answer": "c",
+      "a": "24,691",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What target has the Government of Andhra Pradesh set for covering households under the PM Surya Ghar Muft Bijli Yojana before 2026-27?",
+      "options": {
+        "a": "5 lakh households",
+        "b": "20 lakh households",
+        "c": "10 lakh households",
+        "d": "15 lakh households"
+      },
+      "answer": "c",
+      "a": "10 lakh households",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the progress of DISCOM-wise installations and capacity added under PM Surya Ghar Yojana as of January 2025?",
+      "options": {
+        "a": "APEPDCL: 5,158 / 19,072.84 kWp; APCPDCL: 3,250 / 11,734.07 kWp; APSPDCL: 1,870 / 6,774.76 kWp",
+        "b": "APEPDCL: 3,250 / 11,734.07 kWp; APCPDCL: 5,158 / 19,072.84 kWp; APSPDCL: 1,870 / 6,774.76 kWp",
+        "c": "APEPDCL: 5,158 / 11,734.07 kWp; APCPDCL: 1,870 / 19,072.84 kWp; APSPDCL: 3,250 / 6,774.76 kWp",
+        "d": "APEPDCL: 1,870 / 6,774.76 kWp; APCPDCL: 3,250 / 11,734.07 kWp; APSPDCL: 5,158 / 19,072.84 kWp"
+      },
+      "answer": "a",
+      "a": "APEPDCL: 5,158 / 19,072.84 kWp; APCPDCL: 3,250 / 11,734.07 kWp; APSPDCL: 1,870 / 6,774.76 kWp",
+      "e": ":",
+      "table": {
+        "headers": [
+          "DISCOM",
+          "No. of Applications Registered",
+          "No. of Installations Completed",
+          "Total Capacity Installed (kWp)"
+        ],
+        "rows": [
+          [
+            "APEPDCL",
+            "4,87,400",
+            "5,158",
+            "19,072.84"
+          ],
+          [
+            "APCPDCL",
+            "5,56,482",
+            "3,250",
+            "11,734.07"
+          ],
+          [
+            "APSPDCL",
+            "5,91,790",
+            "1,870",
+            "6,774.76"
+          ],
+          [
+            "Total",
+            "16,35,672",
+            "10,278",
+            "37,581.67"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How much additional generation capacity is projected in the Resource Plan for the 5th Control Period (FY 2024-25 to FY 2028-29)?",
+      "options": {
+        "a": "15,000 MW",
+        "b": "7,000 MW",
+        "c": "11,544 MW",
+        "d": "9,068 MW"
+      },
+      "answer": "c",
+      "a": "11,544 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the proposed installed capacity of the Upper Sileru Pumped Storage Hydro Project?",
+      "options": {
+        "a": "1x800 MW",
+        "b": "2x115 MW",
+        "c": "9x150 MW",
+        "d": "12x80 MW"
+      },
+      "answer": "c",
+      "a": "9x150 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How much solar power has APRAPSCom sought approval to procure under the SECI manufacturing-linked scheme?",
+      "options": {
+        "a": "10,000 MW",
+        "b": "5,000 MW",
+        "c": "7,000 MW",
+        "d": "3,000 MW"
+      },
+      "answer": "c",
+      "a": "7,000 MW",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Excluding National Highways, what was the total road network length in Andhra Pradesh as of December 2023?",
+      "options": {
+        "a": "54,123 km",
+        "b": "45,379 km",
+        "c": "80,635 km",
+        "d": "26,486 km"
+      },
+      "answer": "b",
+      "a": "45,379 km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the breakdown of R&B roads by lane width and surface type in Andhra Pradesh?",
+      "options": {
+        "a": "Four Lane: 1,200 km, Two Lane: 15,000 km, Single Lane: 25,000 km; CC: 5,000 km, BT: 35,000 km",
+        "b": "Four Lane: 660 km, Two Lane: 11,650 km, Single Lane: 30,433 km; CC: 3,031 km, BT: 40,898 km",
+        "c": "Four Lane: 3,031 km, Two Lane: 26,486 km, Single Lane: 12,653 km; CC: 660 km, BT: 40,898 km",
+        "d": "Four Lane: 244 km, Two Lane: 8,744 km, Single Lane: 36,391 km; CC: 1,191 km, BT: 44,188 km"
+      },
+      "answer": "b",
+      "a": "Four Lane: 660 km, Two Lane: 11,650 km, Single Lane: 30,433 km; CC: 3,031 km, BT: 40,898 km",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Lane Type",
+          "Length (km)",
+          "Surface Type",
+          "Length (km)"
+        ],
+        "rows": [
+          [
+            "Four Lane",
+            "660",
+            "CC Roads",
+            "3,031"
+          ],
+          [
+            "Two Lane + PS",
+            "244",
+            "BT Roads",
+            "40,898"
+          ],
+          [
+            "Two Lane",
+            "11,650",
+            "Metalled",
+            "259"
+          ],
+          [
+            "Single Lane",
+            "30,433",
+            "Un-Metalled",
+            "1,191"
+          ],
+          [
+            "Total",
+            "45,380",
+            "Total",
+            "45,379"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total length of State Highways in Andhra Pradesh?",
+      "options": {
+        "a": "6,240 km",
+        "b": "8,744 km",
+        "c": "12,653 km",
+        "d": "26,486 km"
+      },
+      "answer": "c",
+      "a": "12,653 km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Andhra Pradesh Road Development Corporation (APRDC) established?",
+      "options": {
+        "a": "1988",
+        "b": "1998",
+        "c": "1995",
+        "d": "2004"
+      },
+      "answer": "b",
+      "a": "1998",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which road stretch was developed as a demonstration corridor by APRDC for multi-sector road safety implementation?",
+      "options": {
+        "a": "Renigunta – Kadapa Road",
+        "b": "Vijayawada – Guntur Road",
+        "c": "Narketpally – Addanki Road",
+        "d": "Visakhapatnam – Bheemili Road"
+      },
+      "answer": "a",
+      "a": "Renigunta – Kadapa Road",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the cost-sharing ratio between the New Development Bank (NDB) and the State for the APRBRP and APMCRCIP road projects?",
+      "options": {
+        "a": "80:20",
+        "b": "50:50",
+        "c": "60:40",
+        "d": "70:30"
+      },
+      "answer": "d",
+      "a": "70:30",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the density of National Highways per lakh population in Andhra Pradesh compared to the all-India average?",
+      "options": {
+        "a": "12.09 km vs 17.64 km",
+        "b": "44.46 km vs 53.65 km",
+        "c": "17.64 km vs 12.09 km",
+        "d": "53.65 km vs 44.46 km"
+      },
+      "answer": "c",
+      "a": "17.64 km vs 12.09 km",
+      "e": "AP has an NH density of 17.64 km per lakh population compared to the national average of 12.09 km.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Setu Bandhan sub-scheme of CRIF, how many Railway Over Bridges (ROBs) were sanctioned for Andhra Pradesh?",
+      "options": {
+        "a": "13",
+        "b": "5",
+        "c": "4",
+        "d": "9"
+      },
+      "answer": "d",
+      "a": "9",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Total length of rural roads maintained by the Panchayat Raj Engineering Department as of April 2024 is:",
+      "options": {
+        "a": "1,11,900 km",
+        "b": "54,123 km",
+        "c": "80,635 km",
+        "d": "45,379 km"
+      },
+      "answer": "c",
+      "a": "80,635 km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total number of registered motor vehicles in Andhra Pradesh at the end of December 2024?",
+      "options": {
+        "a": "1.8 crore",
+        "b": "1.59 crore",
+        "c": "1.2 crore",
+        "d": "2.12 crore"
+      },
+      "answer": "a",
+      "a": "1.8 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Among non-transport vehicles in Andhra Pradesh, what percentage do motorcycles account for?",
+      "options": {
+        "a": "82.15%",
+        "b": "75.50%",
+        "c": "92.40%",
+        "d": "88.08%"
+      },
+      "answer": "d",
+      "a": "88.08%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where does Andhra Pradesh rank nationally in terms of the number of road accident deaths?",
+      "options": {
+        "a": "3rd",
+        "b": "5th",
+        "c": "12th",
+        "d": "8th"
+      },
+      "answer": "d",
+      "a": "8th",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the cash reward amount provisioned for a Good Samaritan who assists a road accident victim during the Golden Hour?",
+      "options": {
+        "a": "Rs. 2,500",
+        "b": "Rs. 10,000",
+        "c": "Rs. 5,000",
+        "d": "Rs. 1,000"
+      },
+      "answer": "c",
+      "a": "Rs. 5,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In collaboration with which automobile company is the Institute of Driving Training & Research (IDTR) at Dhone being constructed?",
+      "options": {
+        "a": "Ashok Leyland Ltd.",
+        "b": "Maruti Suzuki India Limited",
+        "c": "Hyundai Motor India",
+        "d": "Tata Motors Limited"
+      },
+      "answer": "a",
+      "a": "Ashok Leyland Ltd.",
+      "e": "The IDTR at Dhone (Kurnool) is partnered with Ashok Leyland Ltd., whereas IDTR Darsi (Prakasam) is partnered with Maruti Suzuki.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "As of December 2024, what was the total fleet strength of buses operated by APSRTC?",
+      "options": {
+        "a": "15,000",
+        "b": "8,475",
+        "c": "11,226",
+        "d": "21,870"
+      },
+      "answer": "c",
+      "a": "11,226",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which state's \"Shakti Scheme\" did the AP Government delegation study in January 2025 to consider free public transit for women?",
+      "options": {
+        "a": "Kerala",
+        "b": "Tamil Nadu",
+        "c": "Telangana",
+        "d": "Karnataka"
+      },
+      "answer": "d",
+      "a": "Karnataka",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage fare concession is provided by APSRTC to senior citizens?",
+      "options": {
+        "a": "25%",
+        "b": "10%",
+        "c": "20%",
+        "d": "50%"
+      },
+      "answer": "a",
+      "a": "25%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the accident rate per lakh km recorded by APSRTC during FY 2024-25 (up to Dec 2024)?",
+      "options": {
+        "a": "0.02",
+        "b": "0.25",
+        "c": "0.06",
+        "d": "0.12"
+      },
+      "answer": "c",
+      "a": "0.06",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many e-buses have been sanctioned for procurement for APSRTC under the PM e-bus Seva Scheme?",
+      "options": {
+        "a": "500",
+        "b": "250",
+        "c": "750",
+        "d": "1,000"
+      },
+      "answer": "c",
+      "a": "750",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of total passenger traffic in India is currently handled by Andhra Pradesh?",
+      "options": {
+        "a": "1.6%",
+        "b": "8.0%",
+        "c": "5.2%",
+        "d": "3.5%"
+      },
+      "answer": "a",
+      "a": "1.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the proposed ultimate annual passenger capacity of Bhogapuram Greenfield International Airport after Phase III completion?",
+      "options": {
+        "a": "12 MPPA",
+        "b": "18 MPPA",
+        "c": "25 MPPA",
+        "d": "6 MPPA"
+      },
+      "answer": "b",
+      "a": "18 MPPA",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "The no-frills Greenfield Airport at Orvakal (Kurnool) has been renamed after which historical personality?",
+      "options": {
+        "a": "Tanguturi Prakasam Pantulu",
+        "b": "Alluri Sitarama Raju",
+        "c": "Uyyalawada Narasimha Reddy",
+        "d": "Pingali Venkayya"
+      },
+      "answer": "c",
+      "a": "Uyyalawada Narasimha Reddy",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many water aerodrome locations have been identified in Andhra Pradesh for seaplane operations under the RCS-UDAN scheme?",
+      "options": {
+        "a": "15",
+        "b": "20",
+        "c": "5",
+        "d": "10"
+      },
+      "answer": "d",
+      "a": "10",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total operational airports currently exist in Andhra Pradesh?",
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "10",
+        "d": "4"
+      },
+      "answer": "a",
+      "a": "6",
+      "e": "AP has 3 domestic airports (Rajahmundry, Kadapa, Orvakal) and 3 international airports (Visakhapatnam, Vijayawada, Tirupati).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the target physical completion date for the construction of the New Integrated Terminal Building at Vijayawada Airport?",
+      "options": {
+        "a": "30.06.25",
+        "b": "11.08.25",
+        "c": "26.01.26",
+        "d": "28.02.25"
+      },
+      "answer": "a",
+      "a": "30.06.25",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the length of coastline in Andhra Pradesh?",
+      "options": {
+        "a": "1,200.00 km",
+        "b": "974.00 km",
+        "c": "1,053.07 km",
+        "d": "850.50 km"
+      },
+      "answer": "c",
+      "a": "1,053.07 km",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What revenue share percentage is paid to the AP State Government by the concessionaire of Kakinada Deep Water Port?",
+      "options": {
+        "a": "12.50%",
+        "b": "2.10%",
+        "c": "2.60%",
+        "d": "22.00%"
+      },
+      "answer": "d",
+      "a": "22.00%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which non-major port in Andhra Pradesh is being developed under a BOOT model with a 2.10% gross revenue concession fee?",
+      "options": {
+        "a": "Rawa Port",
+        "b": "Krishnapatnam Port",
+        "c": "Kakinada Deep Water Port",
+        "d": "Gangavaram Port"
+      },
+      "answer": "d",
+      "a": "Gangavaram Port",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which company is developing the Machilipatnam Port Phase-1 on an EPC basis?",
+      "options": {
+        "a": "Adani Ports & SEZ",
+        "b": "GMR Kakinada Gateway Port Ltd",
+        "c": "Vishwa Samudra Ports (JV)",
+        "d": "Megha Engineering and Infrastructures Ltd (MEIL)"
+      },
+      "answer": "d",
+      "a": "Megha Engineering and Infrastructures Ltd (MEIL)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What physical progress percentage was achieved on Ramayapatnam Port project works up to November 2024?",
+      "options": {
+        "a": "22.57%",
+        "b": "28.09%",
+        "c": "41.38%",
+        "d": "30.09%"
+      },
+      "answer": "d",
+      "a": "30.09%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the performance of operational non-major ports in Andhra Pradesh up to November 2024 in terms of cargo handled and state revenue earned?",
+      "options": {
+        "a": "Krishnapatnam: 11.15 MMT / Rs 101.42 Cr; Gangavaram: 16.201 MMT / Rs 14.751 Cr; Kakinada DW: 37.786 MMT / Rs 57.49 Cr",
+        "b": "Krishnapatnam: 37.786 MMT / Rs 57.49 Cr; Gangavaram: 16.201 MMT / Rs 14.751 Cr; Kakinada DW: 11.15 MMT / Rs 101.42 Cr",
+        "c": "Krishnapatnam: 37.786 MMT / Rs 101.42 Cr; Gangavaram: 11.15 MMT / Rs 14.751 Cr; Kakinada DW: 16.201 MMT / Rs 57.49 Cr",
+        "d": "Krishnapatnam: 16.201 MMT / Rs 14.751 Cr; Gangavaram: 37.786 MMT / Rs 57.49 Cr; Kakinada DW: 11.15 MMT / Rs 101.42 Cr"
+      },
+      "answer": "b",
+      "a": "Krishnapatnam: 37.786 MMT / Rs 57.49 Cr; Gangavaram: 16.201 MMT / Rs 14.751 Cr; Kakinada DW: 11.15 MMT / Rs 101.42 Cr",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Name of the Port",
+          "Cargo Handled (MMT)",
+          "Govt Revenue (Rs. crore)"
+        ],
+        "rows": [
+          [
+            "Krishnapatnam Port",
+            "37.786",
+            "57.49"
+          ],
+          [
+            "Gangavaram Port",
+            "16.201",
+            "14.751"
+          ],
+          [
+            "Kakinada Deep Water Port",
+            "11.150",
+            "101.42"
+          ],
+          [
+            "Kakinada Anchorage Port",
+            "2.326",
+            "46.08"
+          ],
+          [
+            "Rawa Port",
+            "0.443",
+            "2.310"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What value of Blue Economy potential is projected for Andhra Pradesh by the year 2035?",
+      "options": {
+        "a": "US$ 20 billion",
+        "b": "US$ 5 billion",
+        "c": "US$ 10 billion",
+        "d": "US$ 50 billion"
+      },
+      "answer": "a",
+      "a": "US$ 20 billion",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total Post Offices exist in Andhra Pradesh as of 2024-25?",
+      "options": {
+        "a": "9,101",
+        "b": "1,505",
+        "c": "10,672",
+        "d": "8,388"
+      },
+      "answer": "c",
+      "a": "10,672",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Credit-Deposit (CD) ratio of scheduled banks in Andhra Pradesh as of December 2024?",
+      "options": {
+        "a": "60.00%",
+        "b": "161.71%",
+        "c": "40.55%",
+        "d": "157.37%"
+      },
+      "answer": "b",
+      "a": "161.71%",
+      "e": "The state's CD ratio stands at 161.71%, far exceeding the RBI standard norm of 60%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of Adjusted Net Bank Credit (ANBC) was disbursed as Priority Sector advances in AP as of December 2024?",
+      "options": {
+        "a": "18.00%",
+        "b": "40.55%",
+        "c": "59.96%",
+        "d": "40.00%"
+      },
+      "answer": "c",
+      "a": "59.96%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where does Andhra Pradesh rank among Indian states in terms of domestic tourism visits?",
+      "options": {
+        "a": "3rd",
+        "b": "5th",
+        "c": "2nd",
+        "d": "1st"
+      },
+      "answer": "a",
+      "a": "3rd",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Anchor Hubs have been identified by the Government of Andhra Pradesh to lead tourism development under a hub-and-spoke model?",
+      "options": {
+        "a": "7",
+        "b": "25",
+        "c": "12",
+        "d": "5"
+      },
+      "answer": "a",
+      "a": "7",
+      "e": "The seven anchor hubs are Visakhapatnam, Tirupati, Araku Valley, Rajahmundry, Amaravati, Srisailam, and Gandikota.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total Thematic Circuits are proposed to be established under the AP Tourism Policy 2024-29?",
+      "options": {
+        "a": "Over 25",
+        "b": "Over 15",
+        "c": "Over 40",
+        "d": "Over 10"
+      },
+      "answer": "a",
+      "a": "Over 25",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which beach in Andhra Pradesh holds the prestigious international \"Blue Flag\" certification?",
+      "options": {
+        "a": "Suryalanka Beach",
+        "b": "Rushikonda Beach",
+        "c": "Mypadu Beach",
+        "d": "Kakinada Beach"
+      },
+      "answer": "b",
+      "a": "Rushikonda Beach",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the PRASHAD Scheme, pilgrim amenity development was sanctioned for which two major temple complexes in Andhra Pradesh?",
+      "options": {
+        "a": "Ahobilam and Amaravati",
+        "b": "Simhachalam (Visakhapatnam) and Annavaram (Kakinada)",
+        "c": "Tirupati and Srisailam",
+        "d": "Kanipakam and Vijayawada Kanaka Durga"
+      },
+      "answer": "b",
+      "a": "Simhachalam (Visakhapatnam) and Annavaram (Kakinada)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which historic bridge project is being transformed into a major tourist attraction under the SASCI Scheme?",
+      "options": {
+        "a": "Dowlaiswaram Barrage",
+        "b": "Havelock Bridge (Rajahmundry)",
+        "c": "Godavari Arch Bridge",
+        "d": "Prakasam Barrage"
+      },
+      "answer": "b",
+      "a": "Havelock Bridge (Rajahmundry)",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which two destinations in Andhra Pradesh are selected under the Challenge Based Destination Development (CBDD) scheme?",
+      "options": {
+        "a": "Araku Valley and Borra Caves",
+        "b": "Gandikota and Horsley Hills",
+        "c": "Ahobilam and NagarjunaSagar",
+        "d": "Lepakshi and Belum Caves"
+      },
+      "answer": "c",
+      "a": "Ahobilam and NagarjunaSagar",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the project bandwidth cost per annum for the upgraded APSDWAN (AP Software Defined Wide Area Network)?",
+      "options": {
+        "a": "Rs. 5.3 crore",
+        "b": "Rs. 57 crore",
+        "c": "Rs. 12 crore",
+        "d": "Rs. 80 lakhs"
+      },
+      "answer": "c",
+      "a": "Rs. 12 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the AP State Data Center (APSDC), Amaravati hosted?",
+      "options": {
+        "a": "Pi Data Centers, Mangalagiri",
+        "b": "STPI Center, Visakhapatnam",
+        "c": "BSNL Data Center, Vijayawada",
+        "d": "APSAC Campus, Vijayawada"
+      },
+      "answer": "a",
+      "a": "Pi Data Centers, Mangalagiri",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the rank held by Andhra Pradesh in the National States Startup Ranking 2022 by DPIIT?",
+      "options": {
+        "a": "Rank 9",
+        "b": "Rank 3",
+        "c": "Rank 1",
+        "d": "Rank 7"
+      },
+      "answer": "c",
+      "a": "Rank 1",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What total funding amount have startups in Andhra Pradesh raised up to January 25, 2025?",
+      "options": {
+        "a": "Rs. 1,050 crore",
+        "b": "Rs. 250 crore",
+        "c": "Rs. 120 crore",
+        "d": "Rs. 480 crore"
+      },
+      "answer": "d",
+      "a": "Rs. 480 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which sector accounts for the highest number of startups in Andhra Pradesh?",
+      "options": {
+        "a": "Healthcare & Pharma",
+        "b": "IT & ITeS",
+        "c": "Construction & Infrastructure",
+        "d": "Agri & Agritech"
+      },
+      "answer": "b",
+      "a": "IT & ITeS",
+      "e": "IT & ITeS leads with 386 startups, followed by Construction & Infrastructure (248) and Agri/Agritech (216).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many incubators in Andhra Pradesh are supported by the Andhra Pradesh Innovation Society (APIS)?",
+      "options": {
+        "a": "50",
+        "b": "15",
+        "c": "175",
+        "d": "30"
+      },
+      "answer": "a",
+      "a": "50",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which startup incubated under APIS won first prize in the Green Mobility sector at the Climafix Summit at IIT Madras?",
+      "options": {
+        "a": "Garudalytics Pvt. Ltd.",
+        "b": "Sego Automobile Solutions Pvt. Ltd.",
+        "c": "Shakti Photon Solutions Private Limited",
+        "d": "Antar IoT Pvt. Ltd."
+      },
+      "answer": "c",
+      "a": "Shakti Photon Solutions Private Limited",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many mandals were declared as drought-affected in Andhra Pradesh during Kharif 2023-24 using APSAC satellite VCI analysis?",
+      "options": {
+        "a": "63 mandals",
+        "b": "103 mandals",
+        "c": "87 mandals",
+        "d": "123 mandals"
+      },
+      "answer": "b",
+      "a": "103 mandals",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the YES-TECH project implemented by APSAC, satellite-based crop yield estimation was conducted for which two districts?",
+      "options": {
+        "a": "Kurnool and Anantapuramu",
+        "b": "Guntur and Kakinada",
+        "c": "Krishna and NTR",
+        "d": "Visakhapatnam and East Godavari"
+      },
+      "answer": "b",
+      "a": "Guntur and Kakinada",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to APSAC shoreline change mapping (1990–2021), what percentage of Andhra Pradesh's coastline underwent accretion?",
+      "options": {
+        "a": "70%",
+        "b": "20%",
+        "c": "54%",
+        "d": "26%"
+      },
+      "answer": "c",
+      "a": "54%",
+      "e": "Analysis shows 26% (264.46 km) eroded, 54% (550.75 km) underwent accretion, and 20% (203.09 km) remained stable.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Based on the SISDP-U project mapping by APSAC, what percentage of total land in Andhra Pradesh is covered by agricultural land?",
+      "options": {
+        "a": "55.69%",
+        "b": "21.08%",
+        "c": "64.20%",
+        "d": "34.15%"
+      },
+      "answer": "a",
+      "a": "55.69%",
+      "e": "",
+      "table": null
+    }
+  ]
+}

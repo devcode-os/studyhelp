@@ -1,0 +1,1108 @@
+{
+  "slug": "ap-economy-ch9-demographics-and-social-sector",
+  "chapterNumber": 9,
+  "title": "Demographic Profile & Social Sector Development",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "What percentage of India's total population did Andhra Pradesh account for as per the 2011 Census?",
+      "options": {
+        "a": "4.09%",
+        "b": "6.20%",
+        "c": "5.15%",
+        "d": "3.12%"
+      },
+      "answer": "a",
+      "a": "4.09%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total population of Andhra Pradesh in the 2011 Census?",
+      "options": {
+        "a": "404.00 Lakhs",
+        "b": "495.77 Lakhs",
+        "c": "454.00 Lakhs",
+        "d": "233.00 Lakhs"
+      },
+      "answer": "b",
+      "a": "495.77 Lakhs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the decadal growth rate of population in Andhra Pradesh during 2001–11?",
+      "options": {
+        "a": "17.72%",
+        "b": "18.88%",
+        "c": "21.13%",
+        "d": "9.21%"
+      },
+      "answer": "d",
+      "a": "9.21%",
+      "e": "Andhra Pradesh's growth rate of 9.21% during 2001–11 was significantly lower than the All-India growth rate of 17.72%.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the sex ratio (females per 1,000 males) in Andhra Pradesh as per the 2011 Census?",
+      "options": {
+        "a": "997",
+        "b": "987",
+        "c": "983",
+        "d": "943"
+      },
+      "answer": "a",
+      "a": "997",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district recorded the highest density of population in Andhra Pradesh as per the 2011 Census?",
+      "options": {
+        "a": "Guntur",
+        "b": "Visakhapatnam",
+        "c": "Srikakulam",
+        "d": "Krishna"
+      },
+      "answer": "d",
+      "a": "Krishna",
+      "e": "Krishna district recorded the highest density at 518 persons per sq. km, compared to the state average of 304.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the density of population per square kilometre in Andhra Pradesh in 2011?",
+      "options": {
+        "a": "382",
+        "b": "233",
+        "c": "518",
+        "d": "304"
+      },
+      "answer": "d",
+      "a": "304",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the percentage of urban population to total population in Andhra Pradesh as per the 2011 Census?",
+      "options": {
+        "a": "47.45%",
+        "b": "29.47%",
+        "c": "24.13%",
+        "d": "40.81%"
+      },
+      "answer": "b",
+      "a": "29.47%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which district in Andhra Pradesh stood first in urbanization with 47.45 percent of urban population in 2011?",
+      "options": {
+        "a": "Prakasam",
+        "b": "Srikakulam",
+        "c": "Visakhapatnam",
+        "d": "Krishna"
+      },
+      "answer": "c",
+      "a": "Visakhapatnam",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the overall literacy rate of Andhra Pradesh as per the 2011 Census?",
+      "options": {
+        "a": "59.96%",
+        "b": "67.35%",
+        "c": "62.07%",
+        "d": "72.98%"
+      },
+      "answer": "b",
+      "a": "67.35%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the male literacy rate in Andhra Pradesh in the 2011 Census?",
+      "options": {
+        "a": "59.96%",
+        "b": "71.28%",
+        "c": "67.35%",
+        "d": "74.77%"
+      },
+      "answer": "d",
+      "a": "74.77%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the female literacy rate in Andhra Pradesh as per the 2011 Census?",
+      "options": {
+        "a": "62.07%",
+        "b": "59.96%",
+        "c": "67.35%",
+        "d": "52.72%"
+      },
+      "answer": "b",
+      "a": "59.96%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total number of schools in Andhra Pradesh during the 2024-25 academic year?",
+      "options": {
+        "a": "58,572",
+        "b": "44,292",
+        "c": "97,285",
+        "d": "38,222"
+      },
+      "answer": "a",
+      "a": "58,572",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Category",
+          "No. of Schools",
+          "No. of Teachers"
+        ],
+        "rows": [
+          [
+            "Primary",
+            "38,222",
+            "97,285"
+          ],
+          [
+            "Upper Primary",
+            "7,526",
+            "45,591"
+          ],
+          [
+            "High school",
+            "12,824",
+            "1,70,374"
+          ],
+          [
+            "Total",
+            "58,572",
+            "3,13,250"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How many teachers were employed across all categories of schools in Andhra Pradesh in 2024-25?",
+      "options": {
+        "a": "97,285",
+        "b": "1,70,374",
+        "c": "1,84,898",
+        "d": "3,13,250"
+      },
+      "answer": "d",
+      "a": "3,13,250",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many State Government and State Government sector schools are functioning in Andhra Pradesh in 2024-25?",
+      "options": {
+        "a": "13,484",
+        "b": "44,292",
+        "c": "7",
+        "d": "789"
+      },
+      "answer": "b",
+      "a": "44,292",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total enrollment of students in all types of schools in Andhra Pradesh during the 2024-25 academic year?",
+      "options": {
+        "a": "95.48 lakhs",
+        "b": "70.82 lakhs",
+        "c": "68.27 lakhs",
+        "d": "82.00 lakhs"
+      },
+      "answer": "c",
+      "a": "68.27 lakhs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the dropout rate for classes IX to XII in Andhra Pradesh during 2023-24?",
+      "options": {
+        "a": "10.09%",
+        "b": "12.15%",
+        "c": "0.18%",
+        "d": "1.07%"
+      },
+      "answer": "a",
+      "a": "10.09%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the Teacher-Pupil Ratio (TPR) in Primary schools in Andhra Pradesh in 2024-25?",
+      "options": {
+        "a": "19",
+        "b": "26",
+        "c": "24",
+        "d": "20"
+      },
+      "answer": "a",
+      "a": "19",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What annual financial assistance per student does the Government propose under the \"Thalliki Vandanam\" scheme?",
+      "options": {
+        "a": "Rs. 10,000",
+        "b": "Rs. 15,000",
+        "c": "Rs. 5,000",
+        "d": "Rs. 20,000"
+      },
+      "answer": "b",
+      "a": "Rs. 15,000",
+      "e": "Financial assistance of Rs. 15,000 annually is provided for each school-going student studying Classes I to XII to the accounts of mothers.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Model Schools are currently operational under the Andhra Pradesh Model School Society (APMSS)?",
+      "options": {
+        "a": "3,500",
+        "b": "164",
+        "c": "100",
+        "d": "2,809"
+      },
+      "answer": "b",
+      "a": "164",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What cash reward is given to each awardee selected for the State Best Teacher Award in 2024?",
+      "options": {
+        "a": "Rs. 10,000",
+        "b": "Rs. 25,000",
+        "c": "Rs. 15,000",
+        "d": "Rs. 20,000"
+      },
+      "answer": "d",
+      "a": "Rs. 20,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many clusters were reorganized by the School Education Department to serve as primary governance units under Decentralized Administration?",
+      "options": {
+        "a": "600",
+        "b": "5,388",
+        "c": "2,809",
+        "d": "164"
+      },
+      "answer": "c",
+      "a": "2,809",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which Saturdays are observed as \"No Bag Days\" in primary and secondary schools in Andhra Pradesh?",
+      "options": {
+        "a": "Last Saturday of the month",
+        "b": "First and Third Saturdays",
+        "c": "Second and Fourth Saturdays",
+        "d": "Every Saturday"
+      },
+      "answer": "b",
+      "a": "First and Third Saturdays",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "High schools with an enrollment of how many students in classes IV to VIII are being created by upgrading upper primary schools?",
+      "options": {
+        "a": "30",
+        "b": "50",
+        "c": "60",
+        "d": "100"
+      },
+      "answer": "c",
+      "a": "60",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which premier institution partnered with the Government of AP to conduct remedial classes via Zoom under the \"Vidya Shakti\" program?",
+      "options": {
+        "a": "IIT Hyderabad",
+        "b": "IIT Madras",
+        "c": "IISc Bengaluru",
+        "d": "NIT Warangal"
+      },
+      "answer": "b",
+      "a": "IIT Madras",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the central and state fund-sharing pattern for the Samagra Shiksha scheme in Andhra Pradesh?",
+      "options": {
+        "a": "75:25",
+        "b": "60:40",
+        "c": "50:50",
+        "d": "90:10"
+      },
+      "answer": "b",
+      "a": "60:40",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the budget allocated for Mana Badi Mana Bhavishyathu (MBMB) Phase-I program covering 15,713 schools?",
+      "options": {
+        "a": "Rs. 3,466.00 crores",
+        "b": "Rs. 6,010.00 crores",
+        "c": "Rs. 7,670.00 crores",
+        "d": "Rs. 1,200.00 crores"
+      },
+      "answer": "a",
+      "a": "Rs. 3,466.00 crores",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to NCPCR norms, a child who is absent for how many consecutive days from school is considered an Out of School Child (OoSC)?",
+      "options": {
+        "a": "More than 10 consecutive days",
+        "b": "More than 45 consecutive days",
+        "c": "More than 15 consecutive days",
+        "d": "More than 30 consecutive days"
+      },
+      "answer": "d",
+      "a": "More than 30 consecutive days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many out-of-school children were identified and mainstreamed during the door-to-door survey conducted in June-July 2024?",
+      "options": {
+        "a": "84,640",
+        "b": "1,23,159",
+        "c": "41,000",
+        "d": "22,558"
+      },
+      "answer": "a",
+      "a": "84,640",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the approved capacity of Netaji Subhash Chandra Bose Awasiya Vidyalays & Hostels (NSCBAVs) in Andhra Pradesh?",
+      "options": {
+        "a": "1,435 children",
+        "b": "3,500 children",
+        "c": "6,040 children",
+        "d": "1,037 children"
+      },
+      "answer": "a",
+      "a": "1,435 children",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the monthly rate of transport allowance provided per eligible child in areas without nearby schools during 2024-25?",
+      "options": {
+        "a": "Rs. 600 per month",
+        "b": "Rs. 400 per month",
+        "c": "Rs. 800 per month",
+        "d": "Rs. 500 per month"
+      },
+      "answer": "a",
+      "a": "Rs. 600 per month",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many girl students from classes 6 to 12 are equipped with self-defense skills under the Rani Laxmi Bai Atma Raksha Prashikshan program?",
+      "options": {
+        "a": "Nearly 41,000",
+        "b": "Nearly 1.3 million",
+        "c": "Nearly 89,689",
+        "d": "Nearly 500"
+      },
+      "answer": "b",
+      "a": "Nearly 1.3 million",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In how many KGBV Type III centers are currently functioning in 21 districts of Andhra Pradesh?",
+      "options": {
+        "a": "147",
+        "b": "352",
+        "c": "494",
+        "d": "679"
+      },
+      "answer": "b",
+      "a": "352",
+      "e": ":",
+      "table": {
+        "headers": [
+          "Type of KGBV",
+          "Classes",
+          "Total Enrolment (2024-25)"
+        ],
+        "rows": [
+          [
+            "Type III",
+            "$6^{th}$ to $12^{th}$",
+            "89,689"
+          ],
+          [
+            "Type IV",
+            "$9^{th}$ to $12^{th}$",
+            "14,032"
+          ],
+          [
+            "Total",
+            "—",
+            "1,03,721"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total enrollment in Type-IV KGBVs across 18 districts in Andhra Pradesh for 2024-25?",
+      "options": {
+        "a": "89,689",
+        "b": "26,654",
+        "c": "14,032",
+        "d": "11,800"
+      },
+      "answer": "c",
+      "a": "14,032",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many CwSN (Children with Special Needs) are currently benefiting from the 679 Bhavitha Resource Centers across the state?",
+      "options": {
+        "a": "13,200",
+        "b": "1,335",
+        "c": "11,800",
+        "d": "14,538"
+      },
+      "answer": "c",
+      "a": "11,800",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total budget allocated for supplying student kits to students in classes I to X for the academic year 2024-25?",
+      "options": {
+        "a": "Rs. 944.53 crores",
+        "b": "Rs. 28.64 crores",
+        "c": "Rs. 483.75 lakhs",
+        "d": "Rs. 953.71 crores"
+      },
+      "answer": "a",
+      "a": "Rs. 944.53 crores",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under RTE Act 12(1)(c), what is the fee reimbursement provided per child to private school management in urban areas?",
+      "options": {
+        "a": "Rs. 8,000",
+        "b": "Rs. 15,000",
+        "c": "Rs. 5,100",
+        "d": "Rs. 6,500"
+      },
+      "answer": "a",
+      "a": "Rs. 8,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What target year has been set under the NIPUN Bharat initiative to ensure Foundational Literacy and Numeracy (FLN) for all children?",
+      "options": {
+        "a": "2026",
+        "b": "2025",
+        "c": "2027",
+        "d": "2030"
+      },
+      "answer": "c",
+      "a": "2027",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many STEM Labs have been established through Public Private Partnerships to promote experiential learning?",
+      "options": {
+        "a": "100",
+        "b": "500",
+        "c": "300",
+        "d": "2,331"
+      },
+      "answer": "c",
+      "a": "300",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In how many secondary schools across 18 districts is the Personalised Adaptive Learning (PAL) program being conducted for Maths, English, and Telugu?",
+      "options": {
+        "a": "700",
+        "b": "300",
+        "c": "524",
+        "d": "164"
+      },
+      "answer": "c",
+      "a": "524",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many DIETs are currently functioning in Andhra Pradesh under the Government sector?",
+      "options": {
+        "a": "13",
+        "b": "3",
+        "c": "26",
+        "d": "6"
+      },
+      "answer": "a",
+      "a": "13",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What unit cost was sanctioned for 100-bedded hostels approved under the PM JANMAN scheme?",
+      "options": {
+        "a": "Rs. 230.00 Lakhs",
+        "b": "Rs. 150.00 Lakhs",
+        "c": "Rs. 920.00 Lakhs",
+        "d": "Rs. 275.00 Lakhs"
+      },
+      "answer": "d",
+      "a": "Rs. 275.00 Lakhs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many PM SHRI schools were opened in Andhra Pradesh under Phase 1?",
+      "options": {
+        "a": "193",
+        "b": "592",
+        "c": "55",
+        "d": "662"
+      },
+      "answer": "d",
+      "a": "662",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the enhanced monthly honorarium provided by the State Government to Cook cum Helpers under the Dokka Seethamma Madhyahna Badi Bhojanam scheme?",
+      "options": {
+        "a": "Rs. 1,000",
+        "b": "Rs. 3,000",
+        "c": "Rs. 6,000",
+        "d": "Rs. 2,000"
+      },
+      "answer": "b",
+      "a": "Rs. 3,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What amount has been earmarked for the Toilet Maintenance Fund (TMF) during 2024-25?",
+      "options": {
+        "a": "Rs. 185.40 crores",
+        "b": "Rs. 944.53 crores",
+        "c": "Rs. 404.26 crores",
+        "d": "Rs. 686.20 crores"
+      },
+      "answer": "c",
+      "a": "Rs. 404.26 crores",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the monthly honorarium paid to Ayahs engaged for cleaning school toilets and premises under the Toilet Maintenance Fund?",
+      "options": {
+        "a": "Rs. 5,000",
+        "b": "Rs. 3,000",
+        "c": "Rs. 6,000",
+        "d": "Rs. 8,000"
+      },
+      "answer": "c",
+      "a": "Rs. 6,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total schools are targeted for coverage under Phase-II of the school infrastructure program with a financial outlay of Rs. 8,000 crores?",
+      "options": {
+        "a": "30,913",
+        "b": "44,774",
+        "c": "22,344",
+        "d": "15,713"
+      },
+      "answer": "c",
+      "a": "22,344",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the redesigned curriculum for 2025-26 developed by SCERT, the number of textbooks for students was reduced from 110 to how many?",
+      "options": {
+        "a": "77",
+        "b": "67",
+        "c": "58",
+        "d": "90"
+      },
+      "answer": "a",
+      "a": "77",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the overall pass percentage achieved in the 2nd Year Intermediate (IPE & ASE, 2024) in Andhra Pradesh?",
+      "options": {
+        "a": "58.00%",
+        "b": "78.14%",
+        "c": "38.00%",
+        "d": "84.38%"
+      },
+      "answer": "d",
+      "a": "84.38%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the ULLAS adult education scheme, what age group of population is targeted for lifelong learning and literacy?",
+      "options": {
+        "a": "18 to 35 years",
+        "b": "14 to 18 years",
+        "c": "15 years and above",
+        "d": "6 to 14 years"
+      },
+      "answer": "c",
+      "a": "15 years and above",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total duration of the literacy classes designed under the ULLAS scheme for financial year 2024-25?",
+      "options": {
+        "a": "100 hours over 3 months",
+        "b": "200 hours over 6 months",
+        "c": "300 hours over 12 months",
+        "d": "120 hours over 4 months"
+      },
+      "answer": "b",
+      "a": "200 hours over 6 months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Government Degree Colleges (GDCs) are currently functioning under the purview of the Department of Collegiate Education in Andhra Pradesh?",
+      "options": {
+        "a": "26",
+        "b": "109",
+        "c": "57",
+        "d": "169"
+      },
+      "answer": "d",
+      "a": "169",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Government Degree Colleges in Andhra Pradesh have achieved NAAC Accreditation as of 2024-25?",
+      "options": {
+        "a": "169",
+        "b": "37",
+        "c": "109",
+        "d": "26"
+      },
+      "answer": "c",
+      "a": "109",
+      "e": "Out of 169 GDCs, 109 are accredited (6 in A+ Grade, 16 in A, 17 in B++, 26 in B+, and 4 in C Grade).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Swarna Andhra Vision 2047, by which year is it proposed to establish Government Degree Colleges in all 49 remaining Assembly Constituencies?",
+      "options": {
+        "a": "2029",
+        "b": "2026",
+        "c": "2047",
+        "d": "2035"
+      },
+      "answer": "a",
+      "a": "2029",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total number of Polytechnic colleges (Government, Aided, and Private) functioning in Andhra Pradesh?",
+      "options": {
+        "a": "87",
+        "b": "179",
+        "c": "267",
+        "d": "500"
+      },
+      "answer": "c",
+      "a": "267",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the duration of mandatory industrial training for students enrolled in all Diploma courses in Polytechnics?",
+      "options": {
+        "a": "2 months",
+        "b": "1 year",
+        "c": "6 months",
+        "d": "3 months"
+      },
+      "answer": "c",
+      "a": "6 months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the target year for establishing Government Polytechnics across all 175 Assembly Constituencies in Andhra Pradesh under Swarna Andhra 2047?",
+      "options": {
+        "a": "2047",
+        "b": "2029",
+        "c": "2026",
+        "d": "2030"
+      },
+      "answer": "a",
+      "a": "2047",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the Maternal Mortality Ratio (MMR) per 100,000 live births in Andhra Pradesh according to SRS 2018-20?",
+      "options": {
+        "a": "24",
+        "b": "70",
+        "c": "45",
+        "d": "97"
+      },
+      "answer": "c",
+      "a": "45",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the Total Fertility Rate (TFR) in Andhra Pradesh according to SRS 2020?",
+      "options": {
+        "a": "1.8",
+        "b": "2.1",
+        "c": "2.0",
+        "d": "1.5"
+      },
+      "answer": "d",
+      "a": "1.5",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Pradhan Mantri Matru Vandana Yojana (PMMVY), what additional cash incentive is provided if a woman delivers a girl child in her second pregnancy?",
+      "options": {
+        "a": "Rs. 2,000",
+        "b": "Rs. 6,000",
+        "c": "Rs. 3,000",
+        "d": "Rs. 5,000"
+      },
+      "answer": "b",
+      "a": "Rs. 6,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Special Newborn Care Units (SNCUs) are established across Andhra Pradesh to provide care for sick and small newborns?",
+      "options": {
+        "a": "62",
+        "b": "34",
+        "c": "92",
+        "d": "21"
+      },
+      "answer": "a",
+      "a": "62",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What coverage rank did Andhra Pradesh achieve in the country for providing Prophylactic Iron and Folic Acid (IFA) supplementation under Anaemia Mukt Bharat?",
+      "options": {
+        "a": "3rd Rank",
+        "b": "5th Rank",
+        "c": "2nd Rank",
+        "d": "1st Rank"
+      },
+      "answer": "d",
+      "a": "1st Rank",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Family Planning Indemnity Scheme (FPIS), what compensation is awarded in the event of an acceptor's death due to sterilization within 7 days of hospital discharge?",
+      "options": {
+        "a": "Rs. 30,000",
+        "b": "Rs. 2,000,000",
+        "c": "Rs. 4,000,000",
+        "d": "Rs. 1,000,000"
+      },
+      "answer": "c",
+      "a": "Rs. 4,000,000",
+      "e": "Rs. 4,00,000 is given for death within 7 days of discharge, and Rs. 1,00,000 for death between 8 and 30 days.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the annual financial treatment coverage limit per family under the Dr. NTR Vaidya Seva Scheme?",
+      "options": {
+        "a": "Rs. 2.00 lakhs",
+        "b": "Rs. 25.00 lakhs",
+        "c": "Rs. 5.00 lakhs",
+        "d": "No limit for any disease"
+      },
+      "answer": "b",
+      "a": "Rs. 25.00 lakhs",
+      "e": "Cashless coverage is provided up to Rs. 25.00 lakhs per family per annum, with no upper cap specifically for cancer treatment.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What daily post-operative sustenance allowance is paid to patients undergoing identified procedures under Aarogya Aasara?",
+      "options": {
+        "a": "Rs. 100 per day",
+        "b": "Rs. 225 per day",
+        "c": "Rs. 500 per day",
+        "d": "Rs. 150 per day"
+      },
+      "answer": "b",
+      "a": "Rs. 225 per day",
+      "e": "The allowance is provided at Rs. 225 per day, capped up to a maximum of Rs. 5,000 per month.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What target year has been established under the National TB Elimination Programme (NTEP) to eliminate Tuberculosis in India?",
+      "options": {
+        "a": "2030",
+        "b": "2025",
+        "c": "2027",
+        "d": "2047"
+      },
+      "answer": "b",
+      "a": "2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to the 2011 Census, what percentage of the total population of Andhra Pradesh belongs to Scheduled Castes (SC)?",
+      "options": {
+        "a": "17.08%",
+        "b": "24.85%",
+        "c": "5.53%",
+        "d": "43.17%"
+      },
+      "answer": "a",
+      "a": "17.08%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the free power scheme for SC households in Andhra Pradesh, up to how many units of power per month are provided free of charge?",
+      "options": {
+        "a": "150 units",
+        "b": "200 units",
+        "c": "100 units",
+        "d": "300 units"
+      },
+      "answer": "b",
+      "a": "200 units",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the enhanced monthly pension provided to Dappu Artists aged 50 years and above under the NTR Bharosa scheme?",
+      "options": {
+        "a": "Rs. 4,000",
+        "b": "Rs. 6,000",
+        "c": "Rs. 3,000",
+        "d": "Rs. 10,000"
+      },
+      "answer": "a",
+      "a": "Rs. 4,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "According to the 2011 Census, what is the Scheduled Tribe (ST) population percentage in Andhra Pradesh?",
+      "options": {
+        "a": "17.08%",
+        "b": "5.53%",
+        "c": "10.15%",
+        "d": "3.52%"
+      },
+      "answer": "b",
+      "a": "5.53%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What extent of land is provided as house sites for eligible beneficiaries without shelter in rural areas?",
+      "options": {
+        "a": "1 cent",
+        "b": "3 cents",
+        "c": "2 cents",
+        "d": "4 cents"
+      },
+      "answer": "b",
+      "a": "3 cents",
+      "e": "House sites are provided with an extent of 3 cents in rural areas and 2 cents in urban areas.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the target month and year to complete all 7.60 lakh in-progress houses under PMAY (U) BLC, PMAY (G), and PMJANMAN?",
+      "options": {
+        "a": "June 2027",
+        "b": "March 2029",
+        "c": "December 2025",
+        "d": "March 2026"
+      },
+      "answer": "d",
+      "a": "March 2026",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Clean Andhra Pradesh (CLAP) program, what is the target deployment ratio of garbage auto tippers per household in ULBs?",
+      "options": {
+        "a": "One auto for every 500 households",
+        "b": "One auto for every 1,500 households",
+        "c": "One auto for every 1,000 households",
+        "d": "One auto for every 2,000 households"
+      },
+      "answer": "c",
+      "a": "One auto for every 1,000 households",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Jal Jeevan Mission (JJM), what is the minimum target service level of water supply provided per capita per day (LPCD) to every rural household?",
+      "options": {
+        "a": "70 LPCD",
+        "b": "55 LPCD",
+        "c": "40 LPCD",
+        "d": "100 LPCD"
+      },
+      "answer": "b",
+      "a": "55 LPCD",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many legal days of wage employment in a financial year are guaranteed to adult members of rural households under MGNREGS?",
+      "options": {
+        "a": "60 days",
+        "b": "150 days",
+        "c": "90 days",
+        "d": "100 days"
+      },
+      "answer": "d",
+      "a": "100 days",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What position did Andhra Pradesh secure nationally in generating 2023.81 Lakh person days under MGNREGS in 2024-25?",
+      "options": {
+        "a": "1st place",
+        "b": "2nd place",
+        "c": "4th place",
+        "d": "5th place"
+      },
+      "answer": "c",
+      "a": "4th place",
+      "e": "",
+      "table": null
+    }
+  ]
+}

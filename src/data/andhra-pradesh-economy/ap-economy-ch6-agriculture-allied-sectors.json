@@ -1,0 +1,1447 @@
+{
+  "slug": "ap-economy-ch6-agriculture-allied-sectors",
+  "chapterNumber": 6,
+  "title": "Agriculture & Allied Sectors",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "What percentage of Andhra Pradesh's total geographical area was classified as net area sown (including fish culture) in 2023-24?",
+      "options": {
+        "a": "22.63%",
+        "b": "14.90%",
+        "c": "12.84%",
+        "d": "30.40%"
+      },
+      "answer": "d",
+      "a": "30.40%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Area Classification",
+          "Area in Lakh hect.",
+          "Percentage to Total Geographical Area (%)"
+        ],
+        "rows": [
+          [
+            "Net area sown (including fish culture)",
+            "49.55",
+            "30.40%"
+          ],
+          [
+            "Forest",
+            "36.88",
+            "22.63%"
+          ],
+          [
+            "Current fallow lands",
+            "24.29",
+            "14.90%"
+          ],
+          [
+            "Land put non-agricultural uses",
+            "20.93",
+            "12.84%"
+          ],
+          [
+            "Barren and uncultivable land",
+            "13.35",
+            "8.19%"
+          ],
+          [
+            "Other fallow lands",
+            "10.36",
+            "6.36%"
+          ],
+          [
+            "Cultivable waste lands",
+            "4.04",
+            "2.48%"
+          ],
+          [
+            "Permanent Pastures & Grazing lands",
+            "2.03",
+            "1.25%"
+          ],
+          [
+            "Land Under Misc. tree crops not included in NAS",
+            "1.54",
+            "0.95%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the net area sown in Andhra Pradesh during 2023-24?",
+      "options": {
+        "a": "49.55 lakh hectares",
+        "b": "67.26 lakh hectares",
+        "c": "162.97 lakh hectares",
+        "d": "36.88 lakh hectares"
+      },
+      "answer": "a",
+      "a": "49.55 lakh hectares",
+      "e": "The net area sown decreased from 67.26 lakh hectares in 2008-09 to 49.55 lakh hectares in 2023-24 out of a total geographical area of 162.97 lakh hectares.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Agro-Climatic Zones is Andhra Pradesh primarily divided into?",
+      "options": {
+        "a": "6",
+        "b": "10",
+        "c": "4",
+        "d": "8"
+      },
+      "answer": "a",
+      "a": "6",
+      "e": "",
+      "table": {
+        "headers": [
+          "Name of the zone",
+          "Districts Included"
+        ],
+        "rows": [
+          [
+            "North coastal zone",
+            "Srikakulam, Vizianagaram, Visakhapatnam"
+          ],
+          [
+            "Godavari zone",
+            "East Godavari, West Godavari"
+          ],
+          [
+            "Krishna zone",
+            "Krishna, Guntur, Prakasam"
+          ],
+          [
+            "Southern zone",
+            "Chittoor, YSR Kadapa, SPS Nellore"
+          ],
+          [
+            "Scarce rainfall zone",
+            "Kurnool, Anantapuramu"
+          ],
+          [
+            "High altitude & tribal areas zone",
+            "High Altitude & tribal areas of Srikakulam, Visakhapatnam, East Godavari districts"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the average operational landholding size in Andhra Pradesh according to the 2021-22 census data?",
+      "options": {
+        "a": "0.94 hectares",
+        "b": "0.86 hectares",
+        "c": "1.21 hectares",
+        "d": "1.54 hectares"
+      },
+      "answer": "b",
+      "a": "0.86 hectares",
+      "e": "The average landholding size in the state decreased from 0.94 hectares in 2015-16 to 0.86 hectares in 2021-22, while total landholdings increased from 85.24 lakhs to 96.90 lakhs.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How much rainfall was received in Andhra Pradesh during the South West Monsoon period (June to September 2024)?",
+      "options": {
+        "a": "574.7 mm",
+        "b": "278.7 mm",
+        "c": "960.3 mm",
+        "d": "681.6 mm"
+      },
+      "answer": "d",
+      "a": "681.6 mm",
+      "e": "",
+      "table": {
+        "headers": [
+          "Monsoon Season",
+          "Normal Rainfall (mm)",
+          "Actual Rainfall (mm)",
+          "% Deviation"
+        ],
+        "rows": [
+          [
+            "South West Monsoon (June-Sept 2024)",
+            "574.7",
+            "681.6",
+            "18.6%"
+          ],
+          [
+            "North East Monsoon (Oct-Dec 2024)",
+            "285.3",
+            "278.7",
+            "-2.3%"
+          ],
+          [
+            "Total (June to December 2024)",
+            "860.0",
+            "960.3",
+            "11.7%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total estimated food grain production in Andhra Pradesh for the year 2024-25 (2nd Advance Estimates)?",
+      "options": {
+        "a": "161.86 lakh tonnes",
+        "b": "88.10 lakh tonnes",
+        "c": "73.76 lakh tonnes",
+        "d": "143.31 lakh tonnes"
+      },
+      "answer": "a",
+      "a": "161.86 lakh tonnes",
+      "e": "",
+      "table": {
+        "headers": [
+          "Crop Category & Season",
+          "Area 2023-24 (Lakh ha)",
+          "Area 2024-25 (Lakh ha)",
+          "Production 2023-24 (Lakh tonnes)",
+          "Production 2024-25 (Lakh tonnes)"
+        ],
+        "rows": [
+          [
+            "Food Grains (Kharif)",
+            "18.13",
+            "20.36",
+            "79.00",
+            "88.10"
+          ],
+          [
+            "Food Grains (Rabi)",
+            "15.11",
+            "17.15",
+            "64.31",
+            "73.76"
+          ],
+          [
+            "Food Grains (Total)",
+            "33.24",
+            "37.51",
+            "143.31",
+            "161.86"
+          ],
+          [
+            "Paddy (Kharif)",
+            "13.47",
+            "14.04",
+            "71.25",
+            "78.79"
+          ],
+          [
+            "Paddy (Rabi)",
+            "5.74",
+            "6.93",
+            "41.32",
+            "48.36"
+          ],
+          [
+            "Paddy (Total)",
+            "19.21",
+            "20.97",
+            "112.57",
+            "127.15"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the cropping intensity recorded in Andhra Pradesh during 2023-24?",
+      "options": {
+        "a": "1.21",
+        "b": "1.05",
+        "c": "1.15",
+        "d": "1.35"
+      },
+      "answer": "a",
+      "a": "1.21",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What max subsidy amount or percentage is provided for establishing Kisan Drones CHCs under RKVY in 2024-25?",
+      "options": {
+        "a": "80% or Rs. 8 lakhs",
+        "b": "50% or Rs. 4 lakhs",
+        "c": "60% or Rs. 5 lakhs",
+        "d": "75% or Rs. 6 lakhs"
+      },
+      "answer": "a",
+      "a": "80% or Rs. 8 lakhs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which prestigious global award was jointly awarded to APCNF in Portugal on July 11, 2024?",
+      "options": {
+        "a": "World Food Prize",
+        "b": "M.S. Swaminathan Leadership Award",
+        "c": "Gulbenkian Prize for Humanity",
+        "d": "Earthshot Prize"
+      },
+      "answer": "c",
+      "a": "Gulbenkian Prize for Humanity",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What total annual financial assistance per family is promised under the Annadatha Sukhibhava Scheme 2024-25?",
+      "options": {
+        "a": "Rs. 25,000",
+        "b": "Rs. 20,000",
+        "c": "Rs. 10,000",
+        "d": "Rs. 15,000"
+      },
+      "answer": "b",
+      "a": "Rs. 20,000",
+      "e": "The financial assistance of Rs. 20,000 per year includes Rs. 6,000 from the GOI PM-KISAN Scheme for landholder farmers.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total outlay for the Annual Agricultural Credit Plan of Andhra Pradesh for 2024-25?",
+      "options": {
+        "a": "Rs. 2,00,000 crores",
+        "b": "Rs. 2,64,000 crores",
+        "c": "Rs. 1,69,797 crores",
+        "d": "Rs. 3,00,000 crores"
+      },
+      "answer": "b",
+      "a": "Rs. 2,64,000 crores",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the validity period of Crop Cultivator Rights Cards (CCRC) issued to tenant farmers in Andhra Pradesh?",
+      "options": {
+        "a": "36 months",
+        "b": "11 months",
+        "c": "6 months",
+        "d": "24 months"
+      },
+      "answer": "b",
+      "a": "11 months",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Under the Vaddi Leni Runalu (VLR) scheme, what interest subsidy percentage is provided for crop loans up to Rs. 1 lakh repaid within one year?",
+      "options": {
+        "a": "2%",
+        "b": "1%",
+        "c": "4%",
+        "d": "3%"
+      },
+      "answer": "c",
+      "a": "4%",
+      "e": "A 4% interest subsidy is offered for loans up to Rs. 1 lakh under Vaddi Leni Runalu, while a 1% subsidy is provided for loans between Rs. 1 lakh and Rs. 3 lakhs under Pavala Vaddi.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total product fertilizer consumption in Andhra Pradesh during 2023-24?",
+      "options": {
+        "a": "36.28 LMT",
+        "b": "42.50 LMT",
+        "c": "17.22 LMT",
+        "d": "15.80 LMT"
+      },
+      "answer": "a",
+      "a": "36.28 LMT",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the pesticide active ingredient consumption in Andhra Pradesh during Kharif 2024-25?",
+      "options": {
+        "a": "939.702 MT",
+        "b": "746.454 MT",
+        "c": "2650.00 MT",
+        "d": "1990.25 MT"
+      },
+      "answer": "b",
+      "a": "746.454 MT",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Rythu Seva Kendralu (RSKs) were established in Andhra Pradesh adjacent to village secretariats?",
+      "options": {
+        "a": "11,573",
+        "b": "8,750",
+        "c": "13,590",
+        "d": "10,778"
+      },
+      "answer": "d",
+      "a": "10,778",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What additional sft space in Grama Sachivalaya building complexes was allocated for RSK permanent construction under MGNREGS?",
+      "options": {
+        "a": "1359 Sft",
+        "b": "500 Sft",
+        "c": "2000 Sft",
+        "d": "1000 Sft"
+      },
+      "answer": "a",
+      "a": "1359 Sft",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the implementation timeframe of the APIIATP externally aided project assisted by the World Bank?",
+      "options": {
+        "a": "2015-16 to 2022-23",
+        "b": "2019-20 to 2025-26",
+        "c": "2017-18 to 2024-25",
+        "d": "2020-21 to 2027-28"
+      },
+      "answer": "c",
+      "a": "2017-18 to 2024-25",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many growth engines has the Department of Agriculture developed under the Swarna Andhra @2047 Vision?",
+      "options": {
+        "a": "10",
+        "b": "17",
+        "c": "26",
+        "d": "13"
+      },
+      "answer": "b",
+      "a": "17",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Primary Agricultural Cooperative Credit Societies (PACS) operate at the village level in Andhra Pradesh?",
+      "options": {
+        "a": "13",
+        "b": "2042",
+        "c": "1756",
+        "d": "442"
+      },
+      "answer": "b",
+      "a": "2042",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many godowns were constructed under the Agriculture Infrastructure Fund (AIF) scheme through PACS in Andhra Pradesh?",
+      "options": {
+        "a": "455",
+        "b": "1246",
+        "c": "360",
+        "d": "695"
+      },
+      "answer": "d",
+      "a": "695",
+      "e": "During the project period, 695 godowns were constructed providing 3.98 lakh MT of storage capacity with Rs. 736.03 Cr approved loan from NABARD.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the business turnover of District Cooperative Marketing Societies (DCMSs) in Andhra Pradesh during 2024-25 (up to Dec 2024)?",
+      "options": {
+        "a": "Rs. 18,801.13 lakhs",
+        "b": "Rs. 451.44 lakhs",
+        "c": "Rs. 23,865.79 lakhs",
+        "d": "Rs. 450.52 lakhs"
+      },
+      "answer": "a",
+      "a": "Rs. 18,801.13 lakhs",
+      "e": "",
+      "table": {
+        "headers": [
+          "Particulars",
+          "Figures for 2024-25 (1.4.2024 to 31.12.2024) (Rs. in lakhs)"
+        ],
+        "rows": [
+          [
+            "Share Capital",
+            "451.44"
+          ],
+          [
+            "Business Turnover",
+            "18,801.13"
+          ],
+          [
+            "Profit",
+            "450.52"
+          ],
+          [
+            "Loss",
+            "24.00"
+          ],
+          [
+            "Assets",
+            "23,865.79"
+          ],
+          [
+            "Liabilities",
+            "20,870.34"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total area under horticulture crops in Andhra Pradesh during 2023-24 (Final Estimates)?",
+      "options": {
+        "a": "45.59 lakh acres",
+        "b": "56.26 lakh acres",
+        "c": "18.23 lakh hectares",
+        "d": "36.59 lakh hectares"
+      },
+      "answer": "a",
+      "a": "45.59 lakh acres",
+      "e": "",
+      "table": {
+        "headers": [
+          "Crop Category",
+          "2023-24 Area (Lakh Acres)",
+          "2023-24 Production (Lakh MTs)"
+        ],
+        "rows": [
+          [
+            "Fruits",
+            "19.89",
+            "200.66"
+          ],
+          [
+            "Plantation Crops",
+            "11.83",
+            "58.84"
+          ],
+          [
+            "Spices",
+            "8.11",
+            "20.15"
+          ],
+          [
+            "Vegetables",
+            "4.72",
+            "77.04"
+          ],
+          [
+            "Flowers",
+            "1.04",
+            "9.23"
+          ],
+          [
+            "Total",
+            "45.59",
+            "365.92"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What is Andhra Pradesh's share of India's total fruit production?",
+      "options": {
+        "a": "12.5%",
+        "b": "15.6%",
+        "c": "20.2%",
+        "d": "10.0%"
+      },
+      "answer": "b",
+      "a": "15.6%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many growth engine crops are promoted in 24 clusters under Swarnandhra 2047 Action Plan for Horticulture?",
+      "options": {
+        "a": "15",
+        "b": "11",
+        "c": "6",
+        "d": "17"
+      },
+      "answer": "b",
+      "a": "11",
+      "e": "The 11 growth engine crops are banana, mango, chilli, oil palm, cocoa, dragon fruit, onion, cashew, coconut, tomato, and coffee.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What share of Andhra Pradesh's total horticulture area does the Rayalaseema region account for?",
+      "options": {
+        "a": "45%",
+        "b": "52%",
+        "c": "71%",
+        "d": "35%"
+      },
+      "answer": "a",
+      "a": "45%",
+      "e": "Rayalaseema contributes 19.50 lakh acres (45% of state horticulture area), 189.69 lakh MTs (52% of state production), and 26.85 lakh acres (71% of state micro-irrigation area).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the state's second Centre of Excellence for vegetables and spices established?",
+      "options": {
+        "a": "Kuppam, Chittoor District",
+        "b": "Araku, ASSR District",
+        "c": "Tadipatri, Ananthapuramu District",
+        "d": "Gundlapalli, Palnadu District"
+      },
+      "answer": "d",
+      "a": "Gundlapalli, Palnadu District",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total financial outlay proposed for Per Drop More Crop (PDMC) under RKVY for 2025-26?",
+      "options": {
+        "a": "Rs. 60.00 Cr",
+        "b": "Rs. 330.90 Cr",
+        "c": "Rs. 3071.45 Cr",
+        "d": "Rs. 278.96 Cr"
+      },
+      "answer": "c",
+      "a": "Rs. 3071.45 Cr",
+      "e": "",
+      "table": {
+        "headers": [
+          "Scheme Category & Name",
+          "Physical Target (Ha/No)",
+          "Financial Outlay (Rs. in Cr.)"
+        ],
+        "rows": [
+          [
+            "PDMC (RKVY)",
+            "3,00,000",
+            "3071.45"
+          ],
+          [
+            "RKVY (Other)",
+            "1,400",
+            "60.00"
+          ],
+          [
+            "Agro Forestry",
+            "252",
+            "18.81"
+          ],
+          [
+            "Sub-Total (RKVY)",
+            "3,01,652",
+            "3150.26"
+          ],
+          [
+            "MIDH (Krishonnati Yojana)",
+            "15,870",
+            "278.96"
+          ],
+          [
+            "NMEO-Oil Palm (Krishonnati Yojana)",
+            "31,530",
+            "330.90"
+          ],
+          [
+            "NBM (Krishonnati Yojana)",
+            "630",
+            "3.12"
+          ],
+          [
+            "Sub-Total (Krishonnati Yojana)",
+            "48,030",
+            "612.98"
+          ],
+          [
+            "Grand Total",
+            "3,49,682",
+            "3,763.24"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What was Andhra Pradesh's national rank in egg production during 2023-24?",
+      "options": {
+        "a": "5th",
+        "b": "1st",
+        "c": "7th",
+        "d": "2nd"
+      },
+      "answer": "b",
+      "a": "1st",
+      "e": "In 2023-24, AP ranked 1st in egg production (2548.74 lakh eggs), 5th in meat production (10.68 lakh MTs), and 7th in milk production (139.94 lakh MTs).",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total sheep population in Andhra Pradesh as per the 2019 Livestock Census?",
+      "options": {
+        "a": "46.00 lakh",
+        "b": "176.27 lakh",
+        "c": "62.19 lakh",
+        "d": "55.22 lakh"
+      },
+      "answer": "b",
+      "a": "176.27 lakh",
+      "e": "",
+      "table": {
+        "headers": [
+          "Category",
+          "2012 Census (Lakh)",
+          "2019 Census (Lakh)",
+          "% Deviation"
+        ],
+        "rows": [
+          [
+            "Cattle",
+            "47.16",
+            "46.00",
+            "-2.46%"
+          ],
+          [
+            "Buffalo",
+            "64.62",
+            "62.19",
+            "-3.76%"
+          ],
+          [
+            "Sheep",
+            "135.60",
+            "176.27",
+            "+29.99%"
+          ],
+          [
+            "Goat",
+            "44.96",
+            "55.22",
+            "+22.82%"
+          ],
+          [
+            "Pigs",
+            "1.57",
+            "0.92",
+            "-41.40%"
+          ],
+          [
+            "Poultry",
+            "805.83",
+            "1078.63",
+            "+33.85%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What national rank does Andhra Pradesh hold in sheep population according to the 2019 Census?",
+      "options": {
+        "a": "1st",
+        "b": "14th",
+        "c": "6th",
+        "d": "2nd"
+      },
+      "answer": "d",
+      "a": "2nd",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What was the total milk production in Andhra Pradesh during 2023-24?",
+      "options": {
+        "a": "139.94 lakh MTs",
+        "b": "10.68 lakh MTs",
+        "c": "147.14 lakh MTs",
+        "d": "154.48 lakh MTs"
+      },
+      "answer": "a",
+      "a": "139.94 lakh MTs",
+      "e": "",
+      "table": {
+        "headers": [
+          "Growth Engine / Year",
+          "2019-20",
+          "2020-21",
+          "2021-22",
+          "2022-23",
+          "2023-24"
+        ],
+        "rows": [
+          [
+            "Milk (Lakh MTs)",
+            "152.63",
+            "147.14",
+            "154.03",
+            "154.48",
+            "139.94"
+          ],
+          [
+            "Meat (Lakh MTs)",
+            "8.50",
+            "9.54",
+            "10.25",
+            "10.94",
+            "10.68"
+          ],
+          [
+            "Egg (Crore Nos)",
+            "2170.77",
+            "2496.39",
+            "2645.03",
+            "2784.98",
+            "2548.74"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What collateral-free maximum limit is offered under the Pasu Kisan Credit Card (PKCC) scheme?",
+      "options": {
+        "a": "Rs. 1.60 lakhs",
+        "b": "Rs. 3.00 lakhs",
+        "c": "Rs. 2.00 lakhs",
+        "d": "Rs. 1.00 lakh"
+      },
+      "answer": "a",
+      "a": "Rs. 1.60 lakhs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the beneficiary contribution share for constructing Gokulam cattle shelters under MGNREGS?",
+      "options": {
+        "a": "40%",
+        "b": "20%",
+        "c": "10%",
+        "d": "30%"
+      },
+      "answer": "c",
+      "a": "10%",
+      "e": "For cattle shelters, the cost sharing is 10% from beneficiaries and 90% from MGNREGS, whereas for sheep, goat, and poultry shelters, it is 30% beneficiary and 70% MGNREGS.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the approved 3-year insurance premium rate for Cattle/Buffaloes under Pasu Bhima Padhakam?",
+      "options": {
+        "a": "6.40%",
+        "b": "6.25%",
+        "c": "3.00%",
+        "d": "4.50%"
+      },
+      "answer": "a",
+      "a": "6.40%",
+      "e": "",
+      "table": {
+        "headers": [
+          "Category",
+          "Sum Insured",
+          "1 Year Premium",
+          "2 Years Premium",
+          "3 Years Premium"
+        ],
+        "rows": [
+          [
+            "Sheep/Goat/Pig",
+            "Rs. 6,000",
+            "3.00%",
+            "4.50%",
+            "6.25%"
+          ],
+          [
+            "Cattle/Buffaloes",
+            "Rs. 15,000 / Rs. 30,000",
+            "-",
+            "-",
+            "6.40%"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How many Mobile Veterinary Ambulatory Clinics (MVACs) were launched across Andhra Pradesh?",
+      "options": {
+        "a": "175",
+        "b": "340",
+        "c": "455",
+        "d": "565"
+      },
+      "answer": "b",
+      "a": "340",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What subsidy amount is provided under RKVY for establishing Local Breed Conservation Cow Farms (LBCCFs)?",
+      "options": {
+        "a": "Rs. 15 lakhs",
+        "b": "Rs. 17.40 lakhs",
+        "c": "Rs. 9 lakhs",
+        "d": "Rs. 6 lakhs"
+      },
+      "answer": "a",
+      "a": "Rs. 15 lakhs",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the scheduled timeframe for conducting the 21st Livestock Census in Andhra Pradesh?",
+      "options": {
+        "a": "April 2019",
+        "b": "November 2024 to February 2025",
+        "c": "April 2025 to July 2025",
+        "d": "June 2024 to September 2024"
+      },
+      "answer": "b",
+      "a": "November 2024 to February 2025",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the Andhra Pradesh Centre for Advanced Research on Livestock (APCARL) located?",
+      "options": {
+        "a": "Kirikera",
+        "b": "Vijayawada",
+        "c": "Tirupati",
+        "d": "Pulivendula"
+      },
+      "answer": "d",
+      "a": "Pulivendula",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Which indigenous cattle breed conserved by Sri Venkateswara Veterinary University received the ICAR Breed Conservation Award?",
+      "options": {
+        "a": "Ongole",
+        "b": "Punganur",
+        "c": "Sahiwal",
+        "d": "Gir"
+      },
+      "answer": "b",
+      "a": "Punganur",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What national accreditation grading was granted to Sri Venkateswara Veterinary University, Tirupati by NAAC?",
+      "options": {
+        "a": "B",
+        "b": "B+",
+        "c": "A",
+        "d": "A+"
+      },
+      "answer": "b",
+      "a": "B+",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In what year was the Andhra Pradesh Dairy Development Cooperative Federation Ltd (APDDCF) established?",
+      "options": {
+        "a": "1976",
+        "b": "1981",
+        "c": "1995",
+        "d": "1964"
+      },
+      "answer": "b",
+      "a": "1981",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What brand name does APDDCF use for marketing its dairy products?",
+      "options": {
+        "a": "Jersey",
+        "b": "Vijaya",
+        "c": "Amul",
+        "d": "Sangam"
+      },
+      "answer": "b",
+      "a": "Vijaya",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What national rank does Andhra Pradesh hold in India's total milk production?",
+      "options": {
+        "a": "7th",
+        "b": "1st",
+        "c": "4th",
+        "d": "2nd"
+      },
+      "answer": "c",
+      "a": "4th",
+      "e": "AP ranks 4th in national milk production in terms of organized sector dairy development context, while overall total milk output ranks 7th nationally.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What percentage of India's total shrimp exports does Andhra Pradesh contribute?",
+      "options": {
+        "a": "31%",
+        "b": "23.5%",
+        "c": "30%",
+        "d": "15.6%"
+      },
+      "answer": "a",
+      "a": "31%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What relief amount per family is provided during the 61-day marine fishing ban in Andhra Pradesh?",
+      "options": {
+        "a": "Rs. 20,000",
+        "b": "Rs. 10,000",
+        "c": "Rs. 15,000",
+        "d": "Rs. 25,000"
+      },
+      "answer": "a",
+      "a": "Rs. 20,000",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the concessional power tariff rate per unit provided to aqua farmers with land up to 10 acres?",
+      "options": {
+        "a": "Rs. 1.50",
+        "b": "Rs. 5.00",
+        "c": "Rs. 1.00",
+        "d": "Rs. 3.85"
+      },
+      "answer": "a",
+      "a": "Rs. 1.50",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many total Primary Fishermen Cooperative Societies are functioning under the APCS Act 1964 in Andhra Pradesh?",
+      "options": {
+        "a": "1423",
+        "b": "417",
+        "c": "470",
+        "d": "2356"
+      },
+      "answer": "d",
+      "a": "2356",
+      "e": "",
+      "table": {
+        "headers": [
+          "Type of Society",
+          "No. of Societies",
+          "No. of Members"
+        ],
+        "rows": [
+          [
+            "Inland Fishermen Coop. Societies",
+            "1423",
+            "1,57,249"
+          ],
+          [
+            "Marine Fishermen Coop Societies",
+            "470",
+            "1,04,178"
+          ],
+          [
+            "Fisherwomen Coop. Societies",
+            "417",
+            "41,082"
+          ],
+          [
+            "Marketing",
+            "15",
+            "757"
+          ],
+          [
+            "AFJFCS",
+            "3",
+            "41"
+          ],
+          [
+            "FFPOs by PWC (under MACS Act 1995)",
+            "19",
+            "5,441"
+          ],
+          [
+            "FFPOs by NCDC",
+            "7",
+            "210"
+          ],
+          [
+            "FFPOs by NFDB",
+            "2",
+            "60"
+          ],
+          [
+            "Total",
+            "2356",
+            "3,09,018"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "According to the Indian State Forest Report 2023, what percentage of Andhra Pradesh's geographical area is covered by forest area?",
+      "options": {
+        "a": "22.84%",
+        "b": "23.59%",
+        "c": "30.40%",
+        "d": "21.87%"
+      },
+      "answer": "b",
+      "a": "23.59%",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Tiger Reserves are located in Andhra Pradesh?",
+      "options": {
+        "a": "13",
+        "b": "2",
+        "c": "3",
+        "d": "1"
+      },
+      "answer": "d",
+      "a": "1",
+      "e": "AP has 1 Tiger Reserve (NSTR Srisailam), 1 Elephant Reserve, 1 Biosphere Reserve (Seshachalam), 3 National Parks, and 13 Wildlife Sanctuaries.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the current estimated tiger population (excluding cubs) in Nagarjunasagar Srisailam Tiger Reserve (NSTR)?",
+      "options": {
+        "a": "58",
+        "b": "63",
+        "c": "32",
+        "d": "75"
+      },
+      "answer": "b",
+      "a": "63",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What cumulative forest area (in ha) was diverted for non-forest purposes under Van Adhiniyam up to December 31, 2024?",
+      "options": {
+        "a": "27,152.39 ha",
+        "b": "27,641.25 ha",
+        "c": "27,315.93 ha",
+        "d": "26,924.34 ha"
+      },
+      "answer": "b",
+      "a": "27,641.25 ha",
+      "e": "",
+      "table": {
+        "headers": [
+          "Item",
+          "Upto 2017-18",
+          "Upto 2020-21",
+          "Upto 2022-23",
+          "Upto 31.12.2024"
+        ],
+        "rows": [
+          [
+            "Forest area diverted in ha",
+            "26,924.34",
+            "27,152.39",
+            "27,315.93",
+            "27,641.25"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What total plantation extent (in ha) is managed by the A.P. Forest Development Corporation (APFDC) up to 2024-25?",
+      "options": {
+        "a": "65,000 ha",
+        "b": "33,584 ha",
+        "c": "49,742 ha",
+        "d": "5,664 ha"
+      },
+      "answer": "c",
+      "a": "49,742 ha",
+      "e": "",
+      "table": {
+        "headers": [
+          "Species",
+          "Area (ha)"
+        ],
+        "rows": [
+          [
+            "Eucalyptus (Clonal)",
+            "33,584"
+          ],
+          [
+            "Cashew",
+            "5,664"
+          ],
+          [
+            "Coffee",
+            "4,010"
+          ],
+          [
+            "Eucalyptus (Seed origin)",
+            "2,610"
+          ],
+          [
+            "Bamboo",
+            "2,359"
+          ],
+          [
+            "Teak",
+            "956"
+          ],
+          [
+            "Medicinal plants",
+            "334"
+          ],
+          [
+            "Casuarina, Pines and other Misc. species",
+            "225"
+          ],
+          [
+            "Total",
+            "49,742"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "How many saplings were planted under the Plant4Mother Programme in schools in coordination with Eco-Clubs?",
+      "options": {
+        "a": "2.50 crore",
+        "b": "52.90 lakh",
+        "c": "73.00 lakh",
+        "d": "1.31 crore"
+      },
+      "answer": "d",
+      "a": "1.31 crore",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "In which year was the Andhra Pradesh Pollution Control Board (APPCB) established?",
+      "options": {
+        "a": "1980",
+        "b": "1976",
+        "c": "1986",
+        "d": "1974"
+      },
+      "answer": "b",
+      "a": "1976",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What total power generation capacity is provided by the two Waste to Energy (WtE) plants at Visakhapatnam and Guntur?",
+      "options": {
+        "a": "15 MWH & 20 MWH",
+        "b": "25 MWH & 30 MWH",
+        "c": "10 MWH & 15 MWH",
+        "d": "20 MWH & 25 MWH"
+      },
+      "answer": "a",
+      "a": "15 MWH & 20 MWH",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is Andhra Pradesh's national rank in raw mulberry silk production?",
+      "options": {
+        "a": "1st",
+        "b": "5th",
+        "c": "3rd",
+        "d": "2nd"
+      },
+      "answer": "d",
+      "a": "2nd",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the target for expanding mulberry cultivation acreage in Andhra Pradesh by 2029-30?",
+      "options": {
+        "a": "1.75 lakh acres",
+        "b": "2.50 lakh acres",
+        "c": "1.50 lakh acres",
+        "d": "2.00 lakh acres"
+      },
+      "answer": "d",
+      "a": "2.00 lakh acres",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What food plants do Tasar silkworms feed on in the forest areas of Andhra Pradesh?",
+      "options": {
+        "a": "Castor and Tapioca",
+        "b": "Nalla Maddi & Thella Maddi",
+        "c": "Mulberry",
+        "d": "Sal tree"
+      },
+      "answer": "b",
+      "a": "Nalla Maddi & Thella Maddi",
+      "e": "",
+      "table": {
+        "headers": [
+          "Type of Silk",
+          "Major Producing States",
+          "Food Plant"
+        ],
+        "rows": [
+          [
+            "Mulberry",
+            "Karnataka, AP, Tamil Nadu, WB",
+            "Mulberry"
+          ],
+          [
+            "Tasar",
+            "AP, Telangana, Jharkhand, Chhattisgarh, MP",
+            "Nallamaddi & Thella Maddi"
+          ],
+          [
+            "Eri",
+            "Bihar, WB, Odisha, Telangana",
+            "Castor, Tapioca"
+          ],
+          [
+            "Muga",
+            "Assam",
+            "Sal tree"
+          ]
+        ]
+      }
+    },
+    {
+      "type": "mcq",
+      "q": "What state incentive per kg is paid to farmers for bivoltine cocoons at government market level?",
+      "options": {
+        "a": "Rs. 35 per kg",
+        "b": "Rs. 130 per kg",
+        "c": "Rs. 50 per kg",
+        "d": "Rs. 85 per kg"
+      },
+      "answer": "c",
+      "a": "Rs. 50 per kg",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What financial incentive per kg is paid to reelers for producing Filature Bivoltine (BV) Raw Silk?",
+      "options": {
+        "a": "Rs. 35 per kg",
+        "b": "Rs. 130 per kg",
+        "c": "Rs. 50 per kg",
+        "d": "Rs. 85 per kg"
+      },
+      "answer": "b",
+      "a": "Rs. 130 per kg",
+      "e": "Filature BV Raw Silk receives Rs. 130 per kg, Filature CB Raw Silk receives Rs. 85 per kg, and Charka Raw Silk receives Rs. 35 per kg.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the Andhra Pradesh Sericulture Research and Development Institute (APSSRDI) located?",
+      "options": {
+        "a": "Kirikera, Hindupur District",
+        "b": "Dharmavaram",
+        "c": "Madanapalle",
+        "d": "Peddapuram"
+      },
+      "answer": "a",
+      "a": "Kirikera, Hindupur District",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "What is the total storage capacity of operational agricultural godowns under Market Committees in AP?",
+      "options": {
+        "a": "3,98,000 MTs",
+        "b": "5,65,508 MTs",
+        "c": "12,00,000 MTs",
+        "d": "9,65,492 MTs"
+      },
+      "answer": "b",
+      "a": "5,65,508 MTs",
+      "e": "Out of 1,052 total godowns (capacity: 9,65,492 MTs), 626 godowns with a capacity of 5,65,508 MTs are operational.",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many electronic trading markets operate under e-NAM in Andhra Pradesh?",
+      "options": {
+        "a": "26",
+        "b": "52",
+        "c": "13",
+        "d": "33"
+      },
+      "answer": "d",
+      "a": "33",
+      "e": "",
+      "table": null
+    },
+    {
+      "type": "mcq",
+      "q": "How many Rythu Bazars are currently functioning across Andhra Pradesh?",
+      "options": {
+        "a": "124",
+        "b": "122",
+        "c": "107",
+        "d": "28"
+      },
+      "answer": "a",
+      "a": "124",
+      "e": "A total of 124 Rythu Bazars are functioning in the state (including 2 recently completed), with construction of 28 more under progress.",
+      "table": null
+    }
+  ]
+}
