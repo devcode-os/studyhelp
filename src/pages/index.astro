@@ -9,11 +9,14 @@ import Header from '../components/Header.astro';
 // no chapters yet.
 const chapterFiles = import.meta.glob('../data/*/*.json', { eager: true });
 const countsBySubject = {};
+const questionCountsBySubject = {};
 for (const [path, mod] of Object.entries(chapterFiles)) {
   const subjectKey = path.split('/').slice(-2, -1)[0];
   const items = Array.isArray(mod.default) ? mod.default : [mod.default];
   const valid = items.filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber);
   countsBySubject[subjectKey] = (countsBySubject[subjectKey] || 0) + valid.length;
+  const questionsInFile = valid.reduce((sum, ch) => sum + ch.faqs.length, 0);
+  questionCountsBySubject[subjectKey] = (questionCountsBySubject[subjectKey] || 0) + questionsInFile;
 }
 
 // Design/display config only — NOT what controls live vs coming-soon.
@@ -72,9 +75,26 @@ const SUBJECT_CONFIG = [
   },
 ];
 
+// Long titles with a parenthetical qualifier (e.g. "Indian History
+// (Ancient, Medieval and Modern)") wrap awkwardly mid-phrase in the
+// narrow card layout. Split right before the "(" so the template can
+// force a clean break there instead — same technique as /subjects/.
+function splitTitleParts(title) {
+  const idx = title.indexOf(' (');
+  if (idx === -1) return [title];
+  return [title.slice(0, idx), title.slice(idx + 1)];
+}
+
 const subjects = SUBJECT_CONFIG.map((s) => {
   const chapterCount = countsBySubject[s.slug] || 0;
-  return { ...s, chapterCount, available: chapterCount > 0 };
+  const questionCount = questionCountsBySubject[s.slug] || 0;
+  return {
+    ...s,
+    chapterCount,
+    questionCount,
+    titleParts: splitTitleParts(s.titleNative),
+    available: chapterCount > 0,
+  };
 }).sort((a, b) => {
   if (a.available !== b.available) return a.available ? -1 : 1;
   if (a.popular !== b.popular) return a.popular ? -1 : 1;
@@ -87,15 +107,15 @@ const iconMap = {
   gavel: 'ti-gavel',
 };
 ---
-<Layout title="StudyHelp - TSPSC and TS exam preparation" description="Study help for TSPSC and TS exams. Subject-wise FAQs, chapter by chapter.">
+<Layout title="StudyHelp - TSPSC, APPSC and State PSC Exam Preparation" description="Study help for TSPSC, APPSC and other state PSC exams. Subject-wise MCQs, chapter by chapter.">
 
   <Header active="home" />
 
   <div class="page-wide">
 
     <div class="hero-card" id="hero-card">
-      <h1 class="hero-title">Your shortcut to cracking <span class="hero-accent">TSPSC</span> and <span class="hero-accent">TS</span> exams</h1>
-      <p class="hero-sub">Practice real exam-style questions, chapter by chapter</p>
+      <h1 class="hero-title">Your shortcut to cracking <span class="hero-accent">TSPSC</span>, <span class="hero-accent">APPSC</span> and other state PSC exams</h1>
+      <p class="hero-sub">Complete Exam Preparation, organized chapter by chapter</p>
       <div class="hero-hook-row">
         <span class="hero-hook-pill"><span class="hero-hook-spark">&#9889;</span>Free to start</span>
         <span class="hero-hook-pill">15000+ questions</span>
@@ -112,22 +132,36 @@ const iconMap = {
     <div class="subject-list">
       {subjects.map((s) => (
         s.available ? (
-          <a href={`/${s.slug}/`} class={`subject-card subject-card-live ${s.popular ? 'subject-card-popular' : ''}`} data-subject-slug={s.slug}>
-            <span class="avail-pill" data-pill>Available</span>
-            {s.popular && <span class="popular-badge">Popular</span>}
-            <div class="subject-icon">
-              <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+          <a href={`/${s.slug}/`} class="subject-card subject-card-live" data-subject-slug={s.slug}>
+            <span class="avail-pill" data-pill hidden>Purchased</span>
+            <div class="subject-card-header">
+              <div class="subject-icon">
+                <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+              </div>
+              <div class="subject-native">
+                {s.titleParts.length === 2
+                  ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
+                  : s.titleNative}
+              </div>
             </div>
-            <div class="subject-native">{s.titleNative}</div>
             <div class="subject-english">{s.titleEnglish}</div>
-            <span class="subject-count">{s.chapterCount} chapters</span>
+            <span class="subject-count">
+              {s.chapterCount} {s.chapterCount === 1 ? 'chapter' : 'chapters'}
+              {s.questionCount > 0 && <> &middot; {s.questionCount.toLocaleString('en-IN')} MCQs</>}
+            </span>
           </a>
         ) : (
           <div class="subject-card subject-card-soon">
-            <div class="subject-icon subject-icon-muted">
-              <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+            <div class="subject-card-header">
+              <div class="subject-icon subject-icon-muted">
+                <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+              </div>
+              <div class="subject-native">
+                {s.titleParts.length === 2
+                  ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
+                  : s.titleNative}
+              </div>
             </div>
-            <div class="subject-native">{s.titleNative}</div>
             <div class="subject-english">{s.titleEnglish}</div>
             <span class="subject-count-muted">coming soon</span>
           </div>
@@ -312,6 +346,7 @@ const iconMap = {
       padding: 3px 9px;
       border-radius: 20px;
     }
+    .avail-pill[hidden] { display: none; }
     /* Purchased subjects need to be instantly distinguishable from ones
        still available to buy — same orange pill for both read as
        identical at a glance. Green is the universal "you already own
@@ -320,46 +355,60 @@ const iconMap = {
       background: linear-gradient(90deg, #2fb35c, #4dd67e);
       color: #06280f;
     }
-    .popular-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(255, 255, 255, 0.12);
-      color: #ffcb8a;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 9px;
-      border-radius: 20px;
+    .subject-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 0;
     }
-    /* When a card has the Popular badge, the icon needs extra top clearance
-       so it doesn't sit underneath the badges row. Cards without Popular
-       are untouched — icon stays flush at its normal position. */
-    .subject-card-popular .subject-icon {
-      margin-top: 28px;
+    /* Reserve room for the top-right pill (Purchased) so a long title
+       wraps before reaching it instead of running underneath — only
+       applies once the card actually gets the pill (see has-pill,
+       toggled by the script below at the same time it un-hides the
+       pill), so guests/non-owners get the card's full width. */
+    .subject-card-live.has-pill .subject-card-header {
+      padding-right: 56px;
     }
     .subject-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
       background: rgba(255, 154, 60, 0.15);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 10px;
     }
-    .subject-icon i { font-size: 18px; color: #ff9a3c; }
+    .subject-icon i { font-size: 16px; color: #ff9a3c; }
     .subject-icon-muted { background: var(--bg); }
     .subject-icon-muted i { color: var(--muted); }
-    .subject-native { font-weight: 700; font-size: 15px; }
+    .subject-native { flex: 1; min-width: 0; font-weight: 700; font-size: 15px; line-height: 1.25; }
     .subject-card-live .subject-native { color: #ffffff; }
     .subject-card-live .subject-english { color: rgba(255, 255, 255, 0.65); }
-    .subject-english { font-size: 13px; color: var(--muted); margin: 2px 0 10px; }
-    .subject-count { font-size: 12px; color: #ffcb8a; font-weight: 600; }
-    .subject-count-muted { font-size: 12px; color: var(--muted); }
+    .subject-english {
+      font-size: 13px;
+      line-height: 1.3;
+      color: var(--muted);
+      margin: 0 0 10px;
+      padding-left: 42px; /* icon width (32px) + header gap (10px) */
+    }
+    .subject-count {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #ffcb8a;
+      padding-left: 42px;
+    }
+    .subject-count-muted {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      padding-left: 42px;
+    }
 
     /* Mobile: compact 2-column capsule cards, same class names as desktop. */
-    @media (max-width: 900px) {
+    @media (max-width: 720px) {
       .subject-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -374,33 +423,33 @@ const iconMap = {
         font-size: 10px;
         padding: 2px 8px;
       }
-      .popular-badge {
-        top: 10px;
-        left: 10px;
-        font-size: 10px;
-        padding: 2px 8px;
+      .subject-card-header {
+        gap: 8px;
+        margin-bottom: 0;
       }
-      .subject-card-popular .subject-icon {
-        margin-top: 22px;
+      .subject-card-live.has-pill .subject-card-header {
+        padding-right: 46px;
       }
       .subject-icon {
-        width: 30px;
-        height: 30px;
-        border-radius: 9px;
-        margin-bottom: 8px;
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
       }
-      .subject-icon i { font-size: 15px; }
+      .subject-icon i { font-size: 13px; }
       .subject-native {
         font-size: 13px;
         line-height: 1.3;
       }
       .subject-english {
         font-size: 11px;
-        margin: 2px 0 8px;
+        line-height: 1.3;
+        margin: 0 0 8px;
+        padding-left: 34px; /* mobile icon (26px) + header gap (8px) */
       }
       .subject-count,
       .subject-count-muted {
         font-size: 11px;
+        padding-left: 34px; /* mobile icon (26px) + header gap (8px) */
       }
     }
 
@@ -490,6 +539,8 @@ const iconMap = {
               if (pill) {
                 pill.textContent = 'Purchased';
                 pill.classList.add('purchased');
+                pill.hidden = false;
+                card.classList.add('has-pill');
               }
             })
             .catch(() => {})

@@ -57,13 +57,12 @@ const iconMap = {
       <a href="/">Home</a> / Papers
     </div>
 
-    <h1 class="page-h1">Previous Papers</h1>
+    <h1 class="page-h1">Previous Papers <span class="section-pill">Free</span></h1>
 
     <div class="subject-list">
       {papers.map((s) => (
         s.available ? (
           <a href={`/${s.slug}/`} class="subject-card subject-card-live">
-            <span class="avail-pill">Available</span>
             <div class="subject-icon">
               <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
             </div>
@@ -105,6 +104,17 @@ const iconMap = {
     }
     .breadcrumb a { color: var(--muted); text-decoration: none; }
     .page-h1 { margin: 0 0 16px; }
+    .section-pill {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
 
     @media (max-width: 720px) {
       .breadcrumb { display: none; }
@@ -139,17 +149,6 @@ const iconMap = {
       color: #ffffff;
       opacity: 0.55;
     }
-    .avail-pill {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      color: #2a1400;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 20px;
-    }
     .subject-icon {
       width: 36px;
       height: 36px;
@@ -177,12 +176,6 @@ const iconMap = {
       .subject-card {
         border-radius: 16px;
         padding: 0.9rem;
-      }
-      .avail-pill {
-        top: 10px;
-        right: 10px;
-        font-size: 10px;
-        padding: 2px 8px;
       }
       .subject-icon {
         width: 30px;

@@ -48,6 +48,19 @@ const { subject } = Astro.params;
 const { chapters, mockCount } = Astro.props;
 const meta = getSubjectMeta(subject);
 
+// Long titles with a parenthetical qualifier (e.g. "Indian History
+// (Ancient, Medieval and Modern)") wrap awkwardly mid-phrase in the
+// narrow mobile hero card. Split right before the "(" so the template
+// can force a clean break there — but only at mobile widths (see the
+// .title-break CSS below); desktop has enough room to wrap naturally
+// and keeps the title on its own single line.
+function splitTitleParts(title) {
+  const idx = title.indexOf(' (');
+  if (idx === -1) return [title];
+  return [title.slice(0, idx), ' ' + title.slice(idx + 1)];
+}
+const heroTitleParts = splitTitleParts(meta.heading);
+
 const totalQuestions = chapters.reduce((sum, ch) => sum + (ch.faqs ? ch.faqs.length : 0), 0);
 
 // Group chapters by an optional `section` field (e.g. "Medieval History").
@@ -86,7 +99,11 @@ for (const ch of chapters) {
 
     <div class={`subject-header ${meta.category === 'papers' ? 'subject-header-papers' : ''}`}>
       <div class="subject-header-left">
-        <h1 class="subject-h1">{meta.heading}</h1>
+        <h1 class="subject-h1">
+          {heroTitleParts.length === 2
+            ? <>{heroTitleParts[0]}<br class="title-break" /><span class="title-sub">{heroTitleParts[1]}</span></>
+            : meta.heading}
+        </h1>
         {meta.category === 'papers' ? (
           <div class="papers-count-capsule">
             <i class="ti ti-books" aria-hidden="true"></i>
@@ -96,22 +113,22 @@ for (const ch of chapters) {
         <div class="stat-pill-row">
           <div class="stat-pill stat-pill-amber">
             <i class="ti ti-books" aria-hidden="true"></i>
-            <div>
+            <div class="stat-text">
               <div class="stat-num">{chapters.length}</div>
               <div class="stat-label">chapters</div>
             </div>
           </div>
           <div class="stat-pill stat-pill-teal">
             <i class="ti ti-help-circle" aria-hidden="true"></i>
-            <div>
+            <div class="stat-text">
               <div class="stat-num">{totalQuestions}</div>
-              <div class="stat-label">questions</div>
+              <div class="stat-label">MCQs</div>
             </div>
           </div>
           {mockCount > 0 && (
             <a href={`/${subject}-mock-tests/`} class="stat-pill stat-pill-mock stat-pill-link">
               <i class="ti ti-clipboard-list" aria-hidden="true"></i>
-              <div>
+              <div class="stat-text">
                 <div class="stat-num">{mockCount}</div>
                 <div class="stat-label">mock tests</div>
               </div>
@@ -125,11 +142,10 @@ for (const ch of chapters) {
         <div class="subject-header-right">
           <div class="unlock-btn-group">
             <a id="bundle-btn" href={`/plans/?highlight=${subject}&mode=bundle`} class="unlock-btn">
-              <span class="unlock-btn-label">Bundle</span>
               <span class="unlock-btn-detail">Pick any 3 subjects for ₹399</span>
             </a>
             <p class="unlock-btn-sub">Get 3 months (<span id="unlock-btn-days">90</span> days) unlimited access</p>
-            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-secondary-link">Unlock just this subject &ndash; Rs. 199</a>
+            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-secondary-link" hidden>Unlock just this subject &ndash; Rs. 199</a>
           </div>
         </div>
       )}
@@ -148,7 +164,13 @@ for (const ch of chapters) {
               <a href={`/${ch.slug}/`} class="chapter-card">
                 <div class="chapter-card-number">{ch.chapterNumber}</div>
                 <div class="chapter-card-title">{ch.title}</div>
-                <div class="chapter-card-qcount">{ch.type === 'reference' ? `${ch.articles.length} articles` : `${ch.faqs.length} questions`}</div>
+                <div class="chapter-card-qcount">
+                  {ch.type === 'reference'
+                    ? `${ch.articles.length} articles`
+                    : ch.type === 'theory'
+                      ? `${ch.faqs.length} MCQs + Theory`
+                      : `${ch.faqs.length} MCQs`}
+                </div>
               </a>
             ))}
           </div>
@@ -209,9 +231,21 @@ for (const ch of chapters) {
     }
     .subject-header-left { position: relative; flex: 1; min-width: 220px; }
     .subject-header-right { position: relative; flex: 1; min-width: 220px; }
-    .subject-h1 { margin: 0 0 10px; font-size: 21px; font-weight: 800; color: #ffffff; }
-    .stat-pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .subject-h1 { margin: 0 0 18px; font-size: 21px; font-weight: 800; color: #ffffff; line-height: 1.25; }
+    .title-break { display: none; }
+    /* Desktop: plain text, same line, same style as the rest of the h1 —
+       no visual distinction, since the break above is hidden and this
+       should just read as one continuous title. The subheading look
+       (smaller, dimmer, own line) only applies at mobile widths below,
+       where .title-break becomes visible. */
+    .title-sub {
+      display: inline;
+      font: inherit;
+      color: inherit;
+    }
+    .stat-pill-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; }
     .stat-pill {
+      box-sizing: border-box;
       border-radius: 12px;
       padding: 0.6rem 0.9rem;
       display: flex;
@@ -221,6 +255,11 @@ for (const ch of chapters) {
       border: 1px solid rgba(255, 255, 255, 0.12);
     }
     .stat-pill i { font-size: 20px; }
+    .stat-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .stat-pill-amber i { color: #ff9a3c; }
     .stat-pill-amber .stat-num { color: #ffcb8a; }
     .stat-pill-amber .stat-label { color: rgba(255, 255, 255, 0.6); }
@@ -228,8 +267,8 @@ for (const ch of chapters) {
     .stat-pill-teal .stat-num { color: #9df0da; }
     .stat-pill-teal .stat-label { color: rgba(255, 255, 255, 0.6); }
     .stat-pill-mock i { color: #c084fc; }
-    .stat-pill-mock .stat-num { color: #e0b3ff; text-align: center; }
-    .stat-pill-mock .stat-label { color: rgba(255, 255, 255, 0.6); text-align: center; }
+    .stat-pill-mock .stat-num { color: #e0b3ff; }
+    .stat-pill-mock .stat-label { color: rgba(255, 255, 255, 0.6); }
     .stat-pill-link {
       text-decoration: none; cursor: pointer;
       transition: border-color 0.15s, background 0.15s;
@@ -270,6 +309,7 @@ for (const ch of chapters) {
       padding: 6px 14px; border-radius: 999px; text-decoration: none;
       text-align: center;
     }
+    .unlock-secondary-link[hidden] { display: none; }
     .unlock-btn {
       font-size: 13px;
       font-weight: 700;
@@ -295,15 +335,31 @@ for (const ch of chapters) {
     @media (max-width: 900px) {
       .subject-header-left, .subject-header-right { text-align: center; }
       .stat-pill-row { justify-content: center; }
+      .title-break { display: inline; }
+      .title-sub {
+        display: block;
+        margin-top: 2px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: rgba(255, 255, 255, 0.65);
+      }
     }
 
     @media (max-width: 640px) {
       .subject-header { padding: 1rem; gap: 10px; border-radius: 16px; }
-      .subject-h1 { font-size: 20px; margin-bottom: 8px; }
+      .subject-h1 { font-size: 20px; margin-bottom: 14px; }
+      .title-sub { font-size: 13px; }
+      /* Flexbox instead of a fixed 3-column grid: a grid with
+         repeat(3, 1fr) always reserves 3 column-widths even when a
+         subject only has 2 pills (no mock tests), leaving an empty gap
+         where the 3rd column would be instead of the pair centering.
+         Flex-basis keeps 3-pill rows looking the same as the old grid,
+         while letting fewer pills wrap/center naturally. */
       .stat-pill-row {
-        display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
       }
-      .stat-pill { padding: 0.45rem 0.4rem; gap: 5px; border-radius: 9px; }
+      .stat-pill { flex: 1 1 30%; min-width: 0; padding: 0.45rem 0.4rem; gap: 5px; border-radius: 9px; }
       .stat-pill i { font-size: 15px; }
       .stat-num { font-size: 13px; }
       .stat-label { font-size: 9.5px; }
@@ -596,6 +652,7 @@ for (const ch of chapters) {
                     btn.title = `Access until ${formatExpiryDate(data.expires_at)}`;
                   }
                   btn.removeAttribute('href');
+                  btn.removeAttribute('hidden');
                   btn.style.cursor = 'default';
                   btn.style.color = '#5ce0c0';
 

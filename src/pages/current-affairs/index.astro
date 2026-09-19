@@ -94,7 +94,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
             <input type="checkbox" class="ca-month-checkbox" value={m.slug} data-label={m.label} />
             <span class="ca-month-text">
               <span class="ca-month-label">{m.label}</span>
-              <span class="ca-month-meta">{m.sectionCount} sections · {m.questionCount} questions</span>
+              <span class="ca-month-meta">{m.questionCount} MCQs · Explanations · Key Points</span>
             </span>
           </label>
         ))}
@@ -132,7 +132,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
               />
               <span class="ca-month-text">
                 <span class="ca-month-label">{m.label}</span>
-                <span class="ca-month-meta">{m.sectionCount} sections · {m.questionCount} questions</span>
+                <span class="ca-month-meta">{m.questionCount} MCQs · Explanations · Key Points</span>
               </span>
             </label>
           ))}
@@ -160,15 +160,16 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
               <div class="ca-bundle-range">
                 {bundle3.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle3[0].label.split(' ')[1]}
               </div>
-              <div class="ca-bundle-total-badge" id="ca-bundle3-badge" data-default-text={`${bundle3.reduce((sum, m) => sum + m.questionCount, 0)} questions`}>{bundle3.reduce((sum, m) => sum + m.questionCount, 0)} questions</div>
+              <div class="ca-bundle-total-badge" id="ca-bundle3-badge" data-default-text={`${bundle3.reduce((sum, m) => sum + m.questionCount, 0)} MCQs`}>{bundle3.reduce((sum, m) => sum + m.questionCount, 0)} MCQs</div>
+              <div class="ca-bundle-includes">Includes Explanations &amp; Key Points</div>
             </div>
 
             <div class="ca-format-toggle" role="tablist" data-bundle="3">
-              <button type="button" class="ca-format-btn active" data-format="individual">Individual</button>
-              <button type="button" class="ca-format-btn" data-format="combined">Combined</button>
+              <button type="button" class="ca-format-btn active" data-format="combined">Combined</button>
+              <button type="button" class="ca-format-btn" data-format="individual">Individual</button>
             </div>
             <p class="ca-format-hint" data-bundle-hint="3">
-              3 separate monthly PDFs.
+              One merged PDF, sections combined across months.
             </p>
 
             <button
@@ -197,12 +198,13 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
               <div class="ca-bundle-range">
                 {bundle6.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle6[0].label.split(' ')[1]}
               </div>
-              <div class="ca-bundle-total-badge" id="ca-bundle6-badge" data-default-text={`${bundle6.reduce((sum, m) => sum + m.questionCount, 0)} questions`}>{bundle6.reduce((sum, m) => sum + m.questionCount, 0)} questions</div>
+              <div class="ca-bundle-total-badge" id="ca-bundle6-badge" data-default-text={`${bundle6.reduce((sum, m) => sum + m.questionCount, 0)} MCQs`}>{bundle6.reduce((sum, m) => sum + m.questionCount, 0)} MCQs</div>
+              <div class="ca-bundle-includes">Includes Explanations &amp; Key Points</div>
             </div>
 
             <div class="ca-format-toggle" role="tablist" data-bundle="6">
-              <button type="button" class="ca-format-btn" data-format="individual">Individual</button>
               <button type="button" class="ca-format-btn active" data-format="combined">Combined</button>
+              <button type="button" class="ca-format-btn" data-format="individual">Individual</button>
             </div>
             <p class="ca-format-hint" data-bundle-hint="6">
               One merged PDF, sections combined across months.
@@ -534,6 +536,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       flex-shrink: 0; background: var(--accent, #ff6b1a); color: #fff;
       font-weight: 700; font-size: 12px; padding: 5px 11px; border-radius: 999px;
       white-space: nowrap;
+    }
+    .ca-bundle-includes {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--muted);
     }
     /* Badge color matches each card's own ribbon, not the site's generic
        orange accent — keeps the badge visually "part of" that card's
@@ -1153,8 +1160,8 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       // Restore whichever format (Individual/Combined) was last picked
       // for THIS bundle — only on genuine browser Back or a completed
       // Buy redirect, never a fresh visit (always starts at this
-      // bundle's own default format, passed in by the caller — Last 3
-      // defaults to Individual, Last 6 defaults to Combined).
+      // bundle's own default format, passed in by the caller — both
+      // Last 3 and Last 6 default to Combined).
       let initialFormat = defaultFormat;
       if (caShouldRestoreState) {
         try {
@@ -1227,7 +1234,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       });
     });
 
-    setupFormatToggle('3', 'individual');
+    setupFormatToggle('3', 'combined');
     setupFormatToggle('6', 'combined');
 
     // ============================================================
