@@ -51,12 +51,31 @@ import Layout from '../../layouts/Layout.astro';
           if (data.unlocked) {
             titleEl.textContent = 'Payment confirmed!';
             detailEl.textContent = 'Redirecting to your subject...';
+            // Purchase value: 399 for a bundle purchase (subject_id contains
+            // a comma-separated list of 3 slugs), 199 for a single subject.
+            // Previously hardcoded to 199 for every purchase — undercounted
+            // bundle revenue in both pixels below.
+            const purchaseValue = subject_id.includes(',') ? 399 : 199;
             // Fire Meta Pixel Purchase event here, since this is the point
             // where the backend has actually confirmed payment — not just a
             // Razorpay popup closing client-side.
             try {
               if (typeof fbq === 'function') {
-                fbq('track', 'Purchase', { value: 199, currency: 'INR' });
+                fbq('track', 'Purchase', { value: purchaseValue, currency: 'INR' });
+              }
+            } catch (err) {}
+            // Google Ads conversion — same trigger point as the Meta pixel
+            // above (server-confirmed payment, not just checkout closing).
+            // Google Ads conversion ID + label, from Tools & Settings →
+            // Conversions → Purchase action (confirmed via the setup email).
+            try {
+              if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                  send_to: 'AW-18463494790/43frCLOX8_4cEIaliuRE',
+                  value: purchaseValue,
+                  currency: 'INR',
+                  transaction_id: `${user_id}-${subject_id}-${Date.now()}`,
+                });
               }
             } catch (err) {}
             // Best-effort — don't let a slow/failed /me call delay the redirect.
