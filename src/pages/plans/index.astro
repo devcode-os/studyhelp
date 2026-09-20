@@ -7,14 +7,14 @@ import Header from '../../components/Header.astro';
 // made in the master-access Pricing tab show up here immediately, with no
 // code edit or redeploy needed.
 ---
-<Layout title="Plans - StudyHelp" description="Unlock unlimited access to StudyHelp subjects. One-time payment, no subscription.">
+<Layout title="Plans - StudyHelp" description="Unlock full access to StudyHelp subjects. One-time payment, no subscription.">
 
   <Header active="plans" />
 
   <div class="page-wide">
 
     <div class="plans-intro">
-      <h1 class="plans-h1">Unlock Unlimited Access <span id="plans-duration-badge" class="plans-duration-badge">3 Months (90 Days)</span></h1>
+      <h1 class="plans-h1">Unlock Full Access <span id="plans-duration-badge" class="plans-duration-badge">3 Months (90 Days)</span></h1>
       <p class="plans-sub">One-time payment. No subscription.</p>
     </div>
 
@@ -73,7 +73,7 @@ import Header from '../../components/Header.astro';
       <div class="whatyouget-title">What you get</div>
       <div class="whatyouget-grid">
         <div>
-          <div class="whatyouget-item-title">Unlimited reading</div>
+          <div class="whatyouget-item-title">Full reading access</div>
           <div class="whatyouget-item-sub">All chapters, all MCQs, Theory &amp; Mock tests</div>
         </div>
         <div>
@@ -81,10 +81,40 @@ import Header from '../../components/Header.astro';
           <div class="whatyouget-item-sub">Switch devices anytime, no limit</div>
         </div>
         <div>
-          <div class="whatyouget-item-title">Unlimited access</div>
+          <div class="whatyouget-item-title">Full access</div>
           <div class="whatyouget-item-sub">One-time payment, duration shown on each subject</div>
         </div>
       </div>
+    </div>
+
+    <div class="whatyouget-card plans-faq-card">
+      <div class="whatyouget-title">Before you buy</div>
+      <details class="plans-faq-item" open>
+        <summary>How do I buy?</summary>
+        <div class="plans-faq-body">
+          Pick a subject (or 3 for the bundle) and tap Buy — you'll create a quick account
+          if you don't have one, then pay via UPI, card, or netbanking. Access unlocks
+          immediately after payment.
+        </div>
+      </details>
+      <details class="plans-faq-item">
+        <summary>How do I know my subject is unlocked?</summary>
+        <div class="plans-faq-body">
+          A green checkmark ✓ appears on the subject once it's unlocked — you'll see it
+          right away.
+        </div>
+      </details>
+      <details class="plans-faq-item">
+        <summary>Paid but it still shows locked?</summary>
+        <div class="plans-faq-body">
+          Rare, but can happen if the page loads from cache before your purchase syncs.
+          Try logging out and back in, or a hard refresh. Still locked?
+          <a href="https://studyhelp.fdaytalk.com/contact/">Contact us</a> with your
+          Razorpay payment ID and subject name — we'll grant immediate 3-day access
+          while we verify, then activate your full 90-day access counted from your
+          original payment date, so you never lose time.
+        </div>
+      </details>
     </div>
 
   </div>
@@ -419,7 +449,8 @@ import Header from '../../components/Header.astro';
       background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
       border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
     }
-    .whatyouget-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #ffffff; }
+    .whatyouget-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #5de0c0; text-transform: uppercase; letter-spacing: 0.04em; }
+    .plans-faq-card .whatyouget-title { color: #ffb35c; }
     .whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
     .whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
     .whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
@@ -427,6 +458,30 @@ import Header from '../../components/Header.astro';
       .whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 12px; }
       .whatyouget-grid { grid-template-columns: 1fr; gap: 12px; }
     }
+
+    /* ================= Before you buy — FAQ accordion ================= */
+    .plans-faq-card { margin-top: 12px; }
+    .plans-faq-item {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 0;
+    }
+    .plans-faq-item:first-of-type { border-top: none; padding-top: 0; }
+    .plans-faq-item summary {
+      font-size: 13px; font-weight: 600; color: #ffffff;
+      cursor: pointer; list-style: none; display: flex;
+      align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .plans-faq-item summary::-webkit-details-marker { display: none; }
+    .plans-faq-item summary::after {
+      content: '+'; font-size: 16px; font-weight: 400;
+      color: rgba(255,255,255,0.5); flex: 0 0 auto;
+    }
+    .plans-faq-item[open] summary::after { content: '–'; }
+    .plans-faq-body {
+      font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.65);
+      margin-top: 8px;
+    }
+    .plans-faq-body a { color: #ffb35c; font-weight: 600; text-decoration: underline; }
   </style>
 
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
