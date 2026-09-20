@@ -140,12 +140,17 @@ for (const ch of chapters) {
       </div>
       {meta.category !== 'papers' && (
         <div class="subject-header-right">
-          <div class="unlock-btn-group">
+          <div class="unlock-btn-group" id="unlock-btn-group">
+            <div class="hero-toggle" id="hero-toggle">
+              <button type="button" id="hero-toggle-bundle" class="hero-toggle-btn hero-toggle-btn-active">Bundle</button>
+              <button type="button" id="hero-toggle-single" class="hero-toggle-btn">Single</button>
+            </div>
             <a id="bundle-btn" href={`/plans/?highlight=${subject}&mode=bundle`} class="unlock-btn">
               <span class="unlock-btn-detail">Pick any 3 subjects for ₹399</span>
             </a>
-            <p class="unlock-btn-sub">Get 3 months (<span id="unlock-btn-days">90</span> days) unlimited access</p>
-            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-secondary-link" hidden>Unlock just this subject &ndash; Rs. 199</a>
+            <p class="unlock-btn-sub" id="bundle-sub">Get 3 months (<span id="unlock-btn-days">90</span> days) full access</p>
+            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-secondary-link" hidden>Unlock this subject — ₹199</a>
+            <p class="unlock-btn-sub" id="single-sub" hidden>3 months (<span id="unlock-btn-days-2">90</span> days) full access</p>
           </div>
         </div>
       )}
@@ -301,6 +306,16 @@ for (const ch of chapters) {
     .papers-count-capsule i { font-size: 14px; color: #ff9a3c; }
 
     .unlock-btn-group { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 10px; }
+    .hero-toggle {
+      display: inline-flex; background: rgba(255,255,255,0.08); border-radius: 999px;
+      padding: 3px; gap: 2px; margin-bottom: 4px;
+    }
+    .hero-toggle-btn {
+      font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 999px;
+      border: none; background: transparent; color: rgba(255,255,255,0.6); cursor: pointer;
+    }
+    .hero-toggle-btn-active { background: #ffffff; color: #1c1c1a; }
+    .hero-toggle[hidden], #single-sub[hidden] { display: none; }
     .unlock-btn-sub { font-size: 12px; color: rgba(255, 255, 255, 0.8); margin: 0; text-align: center; }
     .unlock-secondary-link {
       display: inline-block;
@@ -325,6 +340,7 @@ for (const ch of chapters) {
       justify-content: center;
       gap: 8px;
     }
+    .unlock-btn[hidden] { display: none; }
     .unlock-btn-label {
       font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em;
       color: #2a1400; opacity: 0.7;
@@ -584,6 +600,34 @@ for (const ch of chapters) {
   <script define:vars={{ subject, isPapers: meta.category === 'papers' }}>
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
+    // Hero Single/Bundle toggle — purely a display switch between the
+    // two existing CTAs (#bundle-btn / #unlock-btn), both of which already
+    // link to the correct /plans/ URL (mode=bundle vs plain highlight).
+    // Skipped entirely for papers (no unlock CTA renders for that category).
+    if (!isPapers) {
+      const heroToggle = document.getElementById('hero-toggle');
+      const toggleBundleBtn = document.getElementById('hero-toggle-bundle');
+      const toggleSingleBtn = document.getElementById('hero-toggle-single');
+      const bundleBtn = document.getElementById('bundle-btn');
+      const bundleSub = document.getElementById('bundle-sub');
+      const unlockBtn = document.getElementById('unlock-btn');
+      const singleSub = document.getElementById('single-sub');
+
+      function setHeroMode(mode) {
+        const isSingle = mode === 'single';
+        toggleBundleBtn.classList.toggle('hero-toggle-btn-active', !isSingle);
+        toggleSingleBtn.classList.toggle('hero-toggle-btn-active', isSingle);
+        bundleBtn.hidden = isSingle;
+        bundleSub.hidden = isSingle;
+        unlockBtn.hidden = !isSingle;
+        singleSub.hidden = !isSingle;
+      }
+      if (toggleBundleBtn && toggleSingleBtn) {
+        toggleBundleBtn.addEventListener('click', () => setHeroMode('bundle'));
+        toggleSingleBtn.addEventListener('click', () => setHeroMode('single'));
+      }
+    }
+
     // Session is fetched ONCE per page by Header.astro and exposed on
     // window.__shSessionPromise. Reusing it here instead of calling /me
     // again avoids a duplicate network request on every subject page load.
@@ -646,7 +690,7 @@ for (const ch of chapters) {
                 if (btn) {
                   const daysLeft = data.expires_at
                     ? formatDaysLeft(data.expires_at)
-                    : 'Unlimited access unlocked';
+                    : 'Full access unlocked';
                   btn.textContent = data.expires_at ? `Access active — ${daysLeft} ✓` : `${daysLeft} ✓`;
                   if (data.expires_at) {
                     btn.title = `Access until ${formatExpiryDate(data.expires_at)}`;
@@ -659,8 +703,10 @@ for (const ch of chapters) {
                   const bundleBtn = document.getElementById('bundle-btn');
                   if (bundleBtn) bundleBtn.style.display = 'none';
 
-                  const durationCaption = document.querySelector('.unlock-btn-sub');
-                  if (durationCaption) durationCaption.style.display = 'none';
+                  const heroToggle = document.getElementById('hero-toggle');
+                  if (heroToggle) heroToggle.style.display = 'none';
+
+                  document.querySelectorAll('.unlock-btn-sub').forEach((el) => { el.style.display = 'none'; });
                 }
 
                 if (data.is_grace_grant) {
@@ -711,4 +757,4 @@ for (const ch of chapters) {
       }
     })();
   </script>
-</Layout>
+</Layout>
