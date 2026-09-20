@@ -48,6 +48,17 @@ const { subject } = Astro.params;
 const { chapters, mockCount } = Astro.props;
 const meta = getSubjectMeta(subject);
 
+// Language switch — only shown when a same-subject counterpart in the
+// other language actually exists (i.e. this slug ends in -en or -te).
+// Purely a link swap; the two versions are separately authored (different
+// chapter counts), so this does NOT try to map content 1:1 — it just
+// takes the visitor to that subject's own page in the other language.
+const langSwitch = subject.endsWith('-en')
+  ? { slug: subject.replace(/-en$/, '-te'), label: 'తెలుగు వెర్షన్ అందుబాటులో ఉంది (MCQs మాత్రమే)' }
+  : subject.endsWith('-te')
+  ? { slug: subject.replace(/-te$/, '-en'), label: 'English Version Available (Theory Included)' }
+  : null;
+
 // Long titles with a parenthetical qualifier (e.g. "Indian History
 // (Ancient, Medieval and Modern)") wrap awkwardly mid-phrase in the
 // narrow mobile hero card. Split right before the "(" so the template
@@ -96,6 +107,12 @@ for (const ch of chapters) {
       )}
       {meta.breadcrumb}
     </div>
+
+    {langSwitch && (
+      <div class="lang-switch-row">
+        <a href={`/${langSwitch.slug}/`} class="lang-switch-link">🌐 {langSwitch.label}</a>
+      </div>
+    )}
 
     <div class={`subject-header ${meta.category === 'papers' ? 'subject-header-papers' : ''}`}>
       <div class="subject-header-left">
@@ -218,6 +235,18 @@ for (const ch of chapters) {
     .breadcrumb a { color: var(--muted); text-decoration: none; font-size: 13px; }
     @media (max-width: 900px) {
       .breadcrumb { display: none; }
+    }
+
+    .lang-switch-row { margin-bottom: 12px; }
+    .lang-switch-link {
+      display: inline-block; max-width: 100%; font-size: 12.5px; font-weight: 700;
+      line-height: 1.45; color: #ffffff; text-decoration: none;
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(255,179,92,0.5); border-radius: 10px;
+      padding: 7px 12px;
+    }
+    @media (max-width: 480px) {
+      .lang-switch-link { font-size: 11.5px; }
     }
 
     .subject-header {
