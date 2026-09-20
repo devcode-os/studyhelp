@@ -35,28 +35,50 @@ export function getStaticPaths() {
     mockCountsBySubject[mockSubject] = (mockCountsBySubject[mockSubject] || 0) + 1;
   }
 
-  return Object.entries(bySubject).map(([subject, chapters]) => ({
-    params: { subject },
-    props: {
-      chapters: chapters.sort((a, b) => a.chapterNumber - b.chapterNumber),
-      mockCount: mockCountsBySubject[subject] || 0,
-    },
-  }));
+  const allSubjectSlugs = new Set(Object.keys(bySubject));
+
+  return Object.entries(bySubject).map(([subject, chapters]) => {
+    const counterpartSlug = subject.endsWith('-en')
+      ? subject.replace(/-en$/, '-te')
+      : subject.endsWith('-te')
+      ? subject.replace(/-te$/, '-en')
+      : null;
+    return {
+      params: { subject },
+      props: {
+        chapters: chapters.sort((a, b) => a.chapterNumber - b.chapterNumber),
+        mockCount: mockCountsBySubject[subject] || 0,
+        // Real existence check against actually-generated pages, not
+        // subjectsMeta (whose getSubjectMeta() always returns a fallback
+        // object for ANY slug, even fake ones — so it can't be used to
+        // detect a missing counterpart; see note at usage site below).
+        counterpartSlug: counterpartSlug && allSubjectSlugs.has(counterpartSlug) ? counterpartSlug : null,
+      },
+    };
+  });
 }
 
 const { subject } = Astro.params;
-const { chapters, mockCount } = Astro.props;
+const { chapters, mockCount, counterpartSlug } = Astro.props;
 const meta = getSubjectMeta(subject);
 
-// Language switch — only shown when a same-subject counterpart in the
-// other language actually exists (i.e. this slug ends in -en or -te).
-// Purely a link swap; the two versions are separately authored (different
-// chapter counts), so this does NOT try to map content 1:1 — it just
-// takes the visitor to that subject's own page in the other language.
-const langSwitch = subject.endsWith('-en')
-  ? { slug: subject.replace(/-en$/, '-te'), label: 'తెలుగు వెర్షన్ అందుబాటులో ఉంది (MCQs మాత్రమే)' }
-  : subject.endsWith('-te')
-  ? { slug: subject.replace(/-te$/, '-en'), label: 'English Version Available (Theory Included)' }
+// Language switch — only shown when counterpartSlug was resolved in
+// getStaticPaths against the real set of generated subject pages (not
+// slug-pattern guessing, and not getSubjectMeta, which always returns a
+// fallback object even for slugs with no actual page — see comment there).
+// Wording: generic by default, since the EN/TE content gap differs per
+// subject and a hardcoded claim would be wrong for most pairs. The one
+// confirmed exception is telangana-history — EN has Theory, TE is
+// MCQs-only — so that specific pair gets the accurate, more detailed
+// label instead of the generic one.
+const langSwitchCopy = {
+  'telangana-history-en': { label: 'తెలుగు వెర్షన్ అందుబాటులో ఉంది (MCQs మాత్రమే)' },
+  'telangana-history-te': { label: 'English Version Available (Theory Included)' },
+};
+const langSwitch = counterpartSlug
+  ? subject.endsWith('-en')
+    ? { slug: counterpartSlug, label: langSwitchCopy[subject]?.label || 'తెలుగు వెర్షన్ అందుబాటులో ఉంది' }
+    : { slug: counterpartSlug, label: langSwitchCopy[subject]?.label || 'English Version Available' }
   : null;
 
 // Long titles with a parenthetical qualifier (e.g. "Indian History
