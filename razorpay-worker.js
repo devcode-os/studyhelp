@@ -43,7 +43,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/quick-revision-clicks", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -151,6 +151,9 @@ export default {
     }
     if (url.pathname === "/master-access/manual-grants" && request.method === "GET") {
       return adminManualGrants(request, env);
+    }
+    if (url.pathname === "/master-access/quick-revision-clicks" && request.method === "GET") {
+      return adminQuickRevisionClicks(request, env);
     }
     if (url.pathname === "/master-access/active-users" && request.method === "GET") {
       return adminActiveUsers(request, env);
@@ -2459,6 +2462,59 @@ async function adminCaPurchases(request, env) {
 //   every authenticated request. This is the real "browsing right now"
 //   signal — "logged in" alone cannot tell the two apart.
 // window_minutes query param controls the "active" cutoff; defaults to 5.
+async function adminQuickRevisionClicks(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const admin = await getAdminFromSession(request, env);
+  if (!admin) return jsonAuth({ error: "Not authorized" }, 401);
+
+  const url = new URL(request.url);
+  const days = Math.max(1, Math.min(90, Number(url.searchParams.get("days")) || 30));
+  const sinceTs = Math.floor(Date.now() / 1000) - days * 24 * 60 * 60;
+
+  const byDay = await env.DB.prepare(
+    `SELECT date(clicked_at, 'unixepoch') AS day,
+            SUM(is_guest) AS guest_clicks,
+            SUM(1 - is_guest) AS logged_in_clicks,
+            COUNT(*) AS total
+     FROM quick_revision_clicks
+     WHERE clicked_at > ?
+     GROUP BY day
+     ORDER BY day DESC`
+  )
+    .bind(sinceTs)
+    .all();
+
+  const bySubject = await env.DB.prepare(
+    `SELECT subject_id,
+            SUM(is_guest) AS guest_clicks,
+            SUM(1 - is_guest) AS logged_in_clicks,
+            COUNT(*) AS total
+     FROM quick_revision_clicks
+     WHERE clicked_at > ?
+     GROUP BY subject_id
+     ORDER BY total DESC`
+  )
+    .bind(sinceTs)
+    .all();
+
+  const totalRow = await env.DB.prepare(
+    `SELECT SUM(is_guest) AS guest_clicks, SUM(1 - is_guest) AS logged_in_clicks, COUNT(*) AS total
+     FROM quick_revision_clicks
+     WHERE clicked_at > ?`
+  )
+    .bind(sinceTs)
+    .first();
+
+  return jsonAuth({
+    days,
+    total_guest_clicks: totalRow?.guest_clicks || 0,
+    total_logged_in_clicks: totalRow?.logged_in_clicks || 0,
+    total_clicks: totalRow?.total || 0,
+    by_day: byDay.results || [],
+    by_subject: bySubject.results || [],
+  });
+}
+
 async function adminActiveUsers(request, env) {
   const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
   const admin = await getAdminFromSession(request, env);
