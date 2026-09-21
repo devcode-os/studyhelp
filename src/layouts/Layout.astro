@@ -22,9 +22,9 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESX0VEW65Q"></script>
-  <script>
+  <script is:inline>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    window.gtag = function(){dataLayer.push(arguments);};
     gtag('js', new Date());
     gtag('config', 'G-ESX0VEW65Q');
     gtag('config', 'AW-18464276214');

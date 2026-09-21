@@ -623,15 +623,30 @@ import Header from '../../components/Header.astro';
             description: 'Bundle: 3 subjects',
             prefill: { name: currentUser.name },
             handler: function (response) {
+              const goToSuccess = function () {
+                window.location.href = '/subjects/?bundle_success=1';
+              };
               if (window.gtag) {
+                let redirected = false;
+                const redirectOnce = function () {
+                  if (redirected) return;
+                  redirected = true;
+                  goToSuccess();
+                };
                 gtag('event', 'conversion', {
                   send_to: 'AW-18464276214/qr_sCJXgjf8cEPb9ueRE',
                   value: order.amount / 100,
                   currency: order.currency,
                   transaction_id: response.razorpay_payment_id,
+                  event_callback: redirectOnce,
                 });
+                // Safety net: gtag's event_callback isn't guaranteed to fire
+                // (blocked request, slow network, ad blocker) — never trap
+                // the user on the checkout page waiting for it.
+                setTimeout(redirectOnce, 800);
+              } else {
+                goToSuccess();
               }
-              window.location.href = '/subjects/?bundle_success=1';
             },
             modal: {
               ondismiss: function () {
@@ -950,16 +965,31 @@ import Header from '../../components/Header.astro';
             description: subject_id,
             prefill: { name: currentUser.name },
             handler: function (response) {
+              const goToProcessing = function () {
+                window.location.href =
+                  `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
+              };
               if (window.gtag) {
+                let redirected = false;
+                const redirectOnce = function () {
+                  if (redirected) return;
+                  redirected = true;
+                  goToProcessing();
+                };
                 gtag('event', 'conversion', {
                   send_to: 'AW-18464276214/qr_sCJXgjf8cEPb9ueRE',
                   value: order.amount / 100,
                   currency: order.currency,
                   transaction_id: response.razorpay_payment_id,
+                  event_callback: redirectOnce,
                 });
+                // Safety net: gtag's event_callback isn't guaranteed to fire
+                // (blocked request, slow network, ad blocker) — never trap
+                // the user on the checkout page waiting for it.
+                setTimeout(redirectOnce, 800);
+              } else {
+                goToProcessing();
               }
-              window.location.href =
-                `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
             },
             modal: {
               ondismiss: function () {
