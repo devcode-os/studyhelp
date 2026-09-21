@@ -866,6 +866,17 @@ import Header from '../../components/Header.astro';
           ? combinedHtml
           : `<div class="row-skeleton">No subjects available right now.</div>`;
 
+        // Internal-only test subjects (used to verify Ads/GA4 conversion
+        // firing with a real ₹1 payment) are rendered like any other row
+        // so the ?buy= auto-trigger below can still find and click their
+        // button, but immediately hidden from the visible grid — never
+        // shown to a real visitor browsing /plans/.
+        const HIDDEN_TEST_SUBJECT_IDS = ['ads-test-conversion'];
+        HIDDEN_TEST_SUBJECT_IDS.forEach((id) => {
+          const row = document.getElementById(`plan-card-${id}`);
+          if (row) row.style.display = 'none';
+        });
+
         document.querySelectorAll('.row-buy-btn').forEach((btn) => {
           btn.addEventListener('click', (e) => {
             e.stopPropagation(); // don't let the row-level bundle-select listener also fire
