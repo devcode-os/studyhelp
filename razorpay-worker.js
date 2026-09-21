@@ -43,7 +43,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
+      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -127,6 +127,9 @@ export default {
     }
     if (url.pathname === "/content/questions" && request.method === "GET") {
       return getChapterQuestions(request, env);
+    }
+    if (url.pathname === "/analytics/quick-revision-click" && request.method === "POST") {
+      return logQuickRevisionClick(request, env);
     }
     if (url.pathname === "/content/theory" && request.method === "GET") {
       return getTheoryContent(request, env);
@@ -3186,6 +3189,52 @@ async function getSingleAnswer(request, env) {
     },
     403
   );
+}
+
+// ---------- Quick Revision click analytics (guest + logged-in) ----------
+// One row per BUTTON PRESS (not per question) — fired once by the client
+// when Quick Revision actually starts revealing, not on every question it
+// loops through. No login required: a guest's user_id is stored NULL and
+// is_guest=1, so both audiences show up in the same table, distinguishable
+// by that flag. Fire-and-forget on the client (keepalive fetch) — a
+// failure here never blocks or affects the actual reveal.
+//
+// Schema (run once via wrangler d1 execute):
+//   CREATE TABLE IF NOT EXISTS quick_revision_clicks (
+//     id INTEGER PRIMARY KEY AUTOINCREMENT,
+//     user_id TEXT,
+//     is_guest INTEGER NOT NULL,
+//     chapter_slug TEXT NOT NULL,
+//     subject_id TEXT NOT NULL,
+//     clicked_at INTEGER NOT NULL
+//   );
+async function logQuickRevisionClick(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+
+  try {
+    const { chapter_slug, subject_id } = await request.json();
+    if (!chapter_slug || !subject_id) {
+      return jsonAuth({ error: "chapter_slug and subject_id required" }, 400);
+    }
+
+    // Session is OPTIONAL here — a guest has no session at all, and that's
+    // a valid, expected call, not an error. getUserFromSession already
+    // returns null for a missing/invalid session rather than throwing.
+    const user = await getUserFromSession(request, env);
+
+    await env.DB.prepare(
+      `INSERT INTO quick_revision_clicks (user_id, is_guest, chapter_slug, subject_id, clicked_at)
+       VALUES (?, ?, ?, ?, ?)`
+    )
+      .bind(user ? user.id : null, user ? 0 : 1, chapter_slug, subject_id, Math.floor(Date.now() / 1000))
+      .run();
+
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    // Analytics failing silently is correct here — never surface this as
+    // an error to the reveal flow itself.
+    return jsonAuth({ ok: false }, 200);
+  }
 }
 
 function json(data, status = 200, extraHeaders = {}) {

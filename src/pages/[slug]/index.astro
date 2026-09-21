@@ -2819,7 +2819,24 @@ function formatMath(str) {
     const revealAllIcon = revealAllBtn ? revealAllBtn.querySelector('.ti-eye, .ti-eye-off') : null;
     let allRevealed = false;
 
+    // ---------- Quick Revision click analytics (guest + logged-in) ----------
+    // Fire-and-forget, once per button press (not per question). keepalive
+    // lets it survive even if the tab navigates right after. Failure here
+    // never blocks or affects the actual reveal — caught and ignored.
+    function logQuickRevisionClick() {
+      try {
+        fetch(`${WORKER_URL}/analytics/quick-revision-click`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          keepalive: true,
+          body: JSON.stringify({ chapter_slug: chapterSlug, subject_id: subject }),
+        }).catch(() => {});
+      } catch (err) {}
+    }
+
     async function doRevealAll() {
+      logQuickRevisionClick();
       let revealedCount = 0;
       // Get a FRESH, confirmed entitlement status before computing loop
       // bounds — reading the `purchased` flag directly here was stale for
