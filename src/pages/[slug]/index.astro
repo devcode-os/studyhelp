@@ -226,7 +226,7 @@ function formatMath(str) {
             </div>
             <div class="rt-action-group">
               <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent">
-                <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Reveal All Answers</span>
+                <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Quick Revision</span>
               </button>
               {meta.category !== 'papers' && (
                 <button type="button" id="rt-start-mocktest" class="rt-btn rt-btn-ghost">
@@ -489,6 +489,15 @@ function formatMath(str) {
       background: color-mix(in srgb, var(--card) 92%, var(--bg) 8%);
       padding: 14px 16px;
     }
+    /* Quick Revision: no divider line between question and its answer —
+       they should read as one Q+A block, not two separated rows. Visual
+       separation between different Q+A sets still comes from the
+       .faq-item card border + 12px .faq-list gap, not a line. */
+    .a-row.a-row-quick {
+      border-top: none;
+      padding-top: 2px;
+      padding-left: 50px; /* aligns with q-text, not q-num — ties Q+A into one visual column */
+    }
 
     /* ---------- Rich MCQ option rows ---------- */
     .opt-row {
@@ -552,6 +561,7 @@ function formatMath(str) {
       .lang-en .answer-text { font-size: 14px !important; font-weight: 600 !important; }
       .lang-en .expl-text { font-size: 14px !important; }
       .lang-en .expl-toggle { font-size: 12px !important; }
+      .expl-toggle:hover { background: color-mix(in srgb, var(--accent) 18%, transparent) !important; }
       .lang-te .q-text { font-weight: 400 !important; }
     }
 
@@ -924,6 +934,7 @@ function formatMath(str) {
     .content[data-font-size="small"] .q-row { padding: 11px 40px 11px 12px !important; gap: 8px !important; }
     .content[data-font-size="small"] .q-num { font-size: 13px !important; min-width: 20px !important; }
     .content[data-font-size="small"] .a-row { padding: 10px 12px !important; }
+    .content[data-font-size="small"] .a-row.a-row-quick { padding-left: 40px !important; padding-top: 2px !important; }
     .content[data-font-size="small"] .opt-row { padding: 8px 10px !important; gap: 8px !important; }
     .content[data-font-size="small"] .opt-badge { width: 22px !important; height: 22px !important; font-size: 11px !important; }
     .content[data-font-size="small"] .opt-icon { width: 18px !important; height: 18px !important; font-size: 11px !important; }
@@ -934,6 +945,7 @@ function formatMath(str) {
     .content[data-font-size="large"] .faq-list { gap: 16px !important; }
     .content[data-font-size="large"] .q-row { padding: 18px 50px 18px 18px !important; gap: 12px !important; }
     .content[data-font-size="large"] .a-row { padding: 16px 18px !important; }
+    .content[data-font-size="large"] .a-row.a-row-quick { padding-left: 54px !important; padding-top: 2px !important; }
     .content[data-font-size="large"] .opt-row { padding: 13px 14px !important; gap: 12px !important; }
     .content[data-font-size="large"] .opt-badge { width: 30px !important; height: 30px !important; font-size: 15px !important; }
 
@@ -1905,7 +1917,7 @@ function formatMath(str) {
   )}
 
   {!isReference && (
-  <script define:vars={{ chapterSlug, subject, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
+  <script define:vars={{ chapterSlug, subject, chapterNumber, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle`;
     const LOGIN_URL = `/login/?next=${encodeURIComponent(window.location.pathname)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
@@ -2026,6 +2038,38 @@ function formatMath(str) {
     let entitlementChecked = false;
     let entitlementCheckPromise = null;
 
+    // ---------- Cross-page entitlement cache (sessionStorage) ----------
+    // Shares "is this subject purchased" across pages within the same tab
+    // session, so navigating chapter-to-chapter (or arriving from a
+    // subject index page that already checked) doesn't repeat the
+    // /check-access round trip. Session-scoped (not localStorage) since
+    // purchase state shouldn't persist stale across browser sessions.
+    // NOTE: for this to be instant on the FIRST chapter opened (coming
+    // straight from the subject index page), that index page needs to
+    // write this same cache key after ITS OWN check-access call — not yet
+    // wired up there.
+    const ENTITLEMENT_CACHE_KEY = `sh_entitlement_${subject}`;
+    const ENTITLEMENT_CACHE_TTL_MS = 10 * 60 * 1000; // 10 min
+
+    function readEntitlementCache() {
+      try {
+        const raw = sessionStorage.getItem(ENTITLEMENT_CACHE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed.purchased !== 'boolean' || !parsed.ts) return null;
+        if (Date.now() - parsed.ts > ENTITLEMENT_CACHE_TTL_MS) return null;
+        return parsed;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function writeEntitlementCache(isPurchased) {
+      try {
+        sessionStorage.setItem(ENTITLEMENT_CACHE_KEY, JSON.stringify({ purchased: isPurchased, ts: Date.now() }));
+      } catch (err) {}
+    }
+
     function getSession() {
       if (window.__shSessionPromise) return window.__shSessionPromise;
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
@@ -2038,6 +2082,23 @@ function formatMath(str) {
       if (entitlementChecked) return purchased;
       if (entitlementCheckPromise) return entitlementCheckPromise;
 
+      // Cross-page cache: a fresh "purchased" result from elsewhere in
+      // this tab session (another chapter of the same subject, or the
+      // subject index page once it's wired up to write the same key)
+      // skips the round trip entirely. A cached FALSE is not trusted the
+      // same way — purchase state can change in another tab, so a
+      // negative cache only pre-fills nothing and just falls through to
+      // a real check; only a positive cache short-circuits, since acting
+      // on a false positive would be a real access-control mistake while
+      // acting on a false negative just costs one extra (accurate) check.
+      const cached = readEntitlementCache();
+      if (cached && cached.purchased === true) {
+        purchased = true;
+        entitlementChecked = true;
+        upgradeToPurchasedPageSize();
+        return true;
+      }
+
       entitlementCheckPromise = (async () => {
         try {
           const session = await getSession();
@@ -2048,6 +2109,7 @@ function formatMath(str) {
             // account, so a guest is treated as locked either way.
             entitlementChecked = true;
             entitlementCheckPromise = null;
+            writeEntitlementCache(false);
             return false;
           }
 
@@ -2057,6 +2119,8 @@ function formatMath(str) {
             purchased = true;
             entitlementChecked = true;
             entitlementCheckPromise = null;
+            upgradeToPurchasedPageSize();
+            writeEntitlementCache(true);
             return true;
           }
 
@@ -2065,6 +2129,8 @@ function formatMath(str) {
           );
           const accessData = await accessRes.json();
           purchased = Boolean(accessData.unlocked);
+          if (purchased) upgradeToPurchasedPageSize();
+          writeEntitlementCache(purchased);
           if (accessData.total_access_days) subjectAccessDays = accessData.total_access_days;
           entitlementChecked = true;
         } catch (err) {
@@ -2108,11 +2174,12 @@ function formatMath(str) {
       });
     }
     // ---------- Fix #4: subject-wide, day-cached free-click limit ----------
-    // Once the daily 15-free-answer limit is hit for this subject, every
-    // subsequent block (any chapter, any page) shows the SAME message as
-    // the first time — no repeat server calls, no separate generic popup.
-    // Cached in localStorage per subject+date so it also survives
-    // navigating to a different chapter within the same subject.
+    // ARCHIVED for the reading flow (see studyhelp-free-click-fingerprint-
+    // system-ARCHIVE.md for the full client+server design) — replaced below
+    // by the simpler "first N questions of page 1 free, no daily reset"
+    // rule. Left in place (NOT deleted) because Mock Test's guest trial
+    // still reads `limitReached`/`setLimitReached`/`DAILY_LIMIT_MESSAGE` —
+    // do not remove without checking the Mock Test block further down.
     function todayKey() {
       const d = new Date();
       return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
@@ -2126,6 +2193,30 @@ function formatMath(str) {
     function setLimitReached() {
       limitReached = true;
       try { localStorage.setItem(LIMIT_STORAGE_KEY, '1'); } catch (err) {}
+    }
+
+    // ---------- NEW: page-1 free-preview rule (replaces the reading flow's
+    // use of the daily fingerprint limit above) ----------
+    // Guests/unpurchased: first FREE_PREVIEW_COUNT questions of page 1 are
+    // free, every day, no cap. Page 2+ always needs entitlement, unchanged.
+    // Purchased users are unaffected — they already bypass all of this via
+    // ensureEntitlementChecked()/bulkAnswers.
+    //
+    // IMPORTANT — server dependency: the live /content/answer Worker
+    // endpoint still enforces its OLD 15-clicks/day counter (see the
+    // archive doc) unless/until that's updated to match. Until the Worker
+    // is updated, a guest who has already exhausted the old daily-15 cap
+    // will still get blocked here even inside the free-preview zone. Ask
+    // to update the Worker too if you want this fully consistent.
+    const FREE_PREVIEW_COUNT = 10;
+    // Indian History (English) only: chapters 1-11 (Ancient) behave like
+    // every other subject; chapters 12-62 (Medieval onward) go straight to
+    // paywall on the bulk Quick Revision button, with no preview at all —
+    // individual per-question taps on page 1 still work normally there.
+    const IS_INDIAN_HISTORY_EN = subject === 'indian-history-en';
+    const INDIAN_HISTORY_FREE_QR_MAX_CHAPTER = 11;
+    function isInFreePreviewZone(i) {
+      return currentPage === 1 && i < FREE_PREVIEW_COUNT;
     }
 
     let bulkAnswers = null;
@@ -2162,7 +2253,29 @@ function formatMath(str) {
       });
     }
     const totalItems = list.querySelectorAll('.faq-item').length;
-    const totalPages = Math.ceil(totalItems / perPage);
+    // ---------- Dynamic page size: 10 for guest/unpurchased, 20 for
+    // purchased ----------
+    // The static build groups items into pages of `perPage` (20) via the
+    // baked-in data-page attribute — that grouping is IGNORED here in
+    // favor of computing pages purely from data-i, so page size can change
+    // at runtime once entitlement is confirmed (which isn't known until a
+    // lazy check fires — see ensureEntitlementChecked).
+    const GUEST_PAGE_SIZE = 10;
+    const PURCHASED_PAGE_SIZE = perPage; // 20, from the Astro PER_PAGE prop
+    let pageSize = GUEST_PAGE_SIZE;
+    let totalPages = Math.ceil(totalItems / pageSize);
+
+    // Called once ensureEntitlementChecked() confirms a real purchase —
+    // switches to the full 20/page size and re-renders in place.
+    function upgradeToPurchasedPageSize() {
+      if (pageSize === PURCHASED_PAGE_SIZE) return;
+      pageSize = PURCHASED_PAGE_SIZE;
+      totalPages = Math.ceil(totalItems / pageSize);
+      // Keep the user looking at roughly the same question they were on,
+      // not just snapped back to page 1.
+      const anchorIndex = (currentPage - 1) * GUEST_PAGE_SIZE;
+      showPage(Math.floor(anchorIndex / pageSize) + 1);
+    }
 
     function escapeHtml(str) {
       const div = document.createElement('div');
@@ -2219,11 +2332,30 @@ function formatMath(str) {
       // Table lives inside the SAME hidden div as the explanation text so
       // both hide/show together as one unit under a single toggle button.
       return `
-        <button type="button" class="expl-toggle" data-target="${explId}" style="margin-top:10px; background:none; border:1px solid var(--border); border-radius:6px; padding:5px 10px; font-size:13px; color:var(--accent); cursor:pointer;">Show explanation</button>
-        <div id="${explId}" style="display:none; margin-top:8px;">
+        <button type="button" class="expl-toggle" data-target="${explId}" aria-expanded="false" style="margin-top:10px; display:inline-flex; align-items:center; gap:6px; background:color-mix(in srgb, var(--accent) 10%, transparent); border:1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius:20px; padding:6px 12px; font-size:13px; font-weight:600; color:var(--accent); cursor:pointer;">
+          <span class="expl-toggle-label">Show explanation</span>
+          <i class="ti ti-chevron-down expl-toggle-chevron" aria-hidden="true" style="font-size:14px; transition:transform 0.2s ease;"></i>
+        </button>
+        <div id="${explId}" style="display:none; margin-top:10px; padding:12px 14px; border-radius:10px; background:color-mix(in srgb, var(--card) 96%, var(--text) 4%); border-left:3px solid var(--accent);">
           ${f.e ? renderExplanationParagraphs(f.e) : ''}
           ${tableHtml}
         </div>
+      `;
+    }
+
+    // Quick Revision: FAQ-style bulk view — no options/distractors, just the
+    // correct answer line plus a collapsed explanation toggle. Distinct from
+    // `peek` (which still shows the full option list with the correct one
+    // highlighted green) — quickRevision skips the option list entirely.
+    function renderMcqQuickBox(f, i) {
+      const tableHtml = f.table ? renderTable(f.table) : '';
+      return `
+        <p class="answer-text" style="margin:0; font-weight:600; color:var(--success-text); font-size:15px; display:flex; align-items:flex-start; gap:8px;">
+          <span>${formatMath(f.a)}</span>
+          <i class="ti ti-check" aria-hidden="true" style="flex-shrink:0; margin-top:2px;"></i>
+        </p>
+        ${renderExplanationInline(f)}
+        ${tableHtml}
       `;
     }
 
@@ -2287,8 +2419,11 @@ function formatMath(str) {
       `;
     }
 
-    function renderAnswerHtml(f, i, peek = false) {
-      return f && f.type === 'mcq' && f.options ? renderMcqBox(f, i, peek) : renderFaqBox(f);
+    function renderAnswerHtml(f, i, peek = false, quickRevision = false) {
+      if (f && f.type === 'mcq' && f.options) {
+        return quickRevision ? renderMcqQuickBox(f, i) : renderMcqBox(f, i, peek);
+      }
+      return renderFaqBox(f);
     }
 
     // ---------- Skeleton loading, replaces plain "Loading..." text.
@@ -2311,6 +2446,7 @@ function formatMath(str) {
           e.stopPropagation();
           userSelections[i] = optEl.getAttribute('data-letter');
           aRow.innerHTML = renderAnswerHtml(f, i);
+          aRow.classList.remove('a-row-quick');
           attachMcqHandlers(aRow, f, i);
           markAnswered(i);
         });
@@ -2321,21 +2457,40 @@ function formatMath(str) {
         toggleBtn.addEventListener('click', (e) => {
           e.stopPropagation();
           const target = document.getElementById(toggleBtn.getAttribute('data-target'));
+          const label = toggleBtn.querySelector('.expl-toggle-label');
+          const chevron = toggleBtn.querySelector('.expl-toggle-chevron');
           const nowOpen = target.style.display === 'block';
           target.style.display = nowOpen ? 'none' : 'block';
-          toggleBtn.textContent = nowOpen ? 'Show explanation' : 'Hide explanation';
+          if (label) label.textContent = nowOpen ? 'Show explanation' : 'Hide explanation';
+          if (chevron) chevron.style.transform = nowOpen ? '' : 'rotate(180deg)';
+          toggleBtn.setAttribute('aria-expanded', String(!nowOpen));
         });
       }
     }
 
-    function showPage(page) {
+    // Resets the Quick Revision button back to its default "Quick
+    // Revision" state (not "Hide All") — called whenever the page changes,
+    // since the bulk-reveal state from one page shouldn't carry over and
+    // stay stuck showing "Hide All" on a page it never actually revealed.
+    function resetRevealAllButtonState() {
+      if (allRevealed) {
+        allRevealed = false;
+        if (revealAllLabel) revealAllLabel.textContent = 'Quick Revision';
+        if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
+      }
+    }
+
+    function showPage(page, { scroll = true } = {}) {
+      const pageChanged = page !== currentPage;
       currentPage = page;
       list.querySelectorAll('.faq-item').forEach((item) => {
-        const itemPage = parseInt(item.getAttribute('data-page'));
+        const i = parseInt(item.getAttribute('data-i'));
+        const itemPage = Math.floor(i / pageSize) + 1;
         item.style.display = itemPage === page ? 'block' : 'none';
       });
+      if (pageChanged && !purchased) resetRevealAllButtonState();
       renderPagination();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function renderPagination() {
@@ -2400,7 +2555,11 @@ function formatMath(str) {
     function prefetchAnswer(i) {
       if (revealedAnswers[i]) return null;
       if (bulkAnswers && bulkAnswers[i]) return null;
-      if (limitReached) return null;
+      // ARCHIVED: old daily-limit short-circuit — `if (limitReached) return null;`
+      // Replaced with the page-1 free-preview zone check. Outside the free
+      // zone, prefetch still fires (it's just a best-effort warm-up fetch);
+      // the actual gate is enforced by openAnswerFor's entitlement check
+      // before the result is ever shown to the user.
       if (inFlightFetches[i]) return inFlightFetches[i];
 
       inFlightFetches[i] = (async () => {
@@ -2448,64 +2607,56 @@ function formatMath(str) {
     // limit response Reveal-all just surfaces it via the same popup.
     // Returns true if revealed successfully, false if blocked (limit/error)
     // — Reveal-all uses this to know when to stop.
-    async function openAnswerFor(i, { scroll = true, peek = false, preselect = null } = {}) {
+    async function openAnswerFor(i, { scroll = true, peek = false, quickRevision = false, preselect = null } = {}) {
       const row = list.querySelector(`.q-row[data-i="${i}"]`);
       if (!row) return true;
       const faqItem = row.closest('.faq-item');
       const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
       if (preselect) userSelections[i] = preselect;
       const previewEl = list.querySelector(`.mcq-preview[data-i="${i}"]`);
+      const forceRerender = peek || quickRevision;
 
       // Already revealed (fetched earlier) — just re-render, no new fetch.
-      // Peek always force-re-renders in pure-answer-key style, even if the
-      // question was already open from the student's own tap.
+      // Peek/quickRevision always force-re-render in their own style, even
+      // if the question was already open from the student's own tap.
       if (revealedAnswers[i]) {
-        if (aRow.style.display === 'block' && !peek) return true;
+        if (aRow.style.display === 'block' && !forceRerender) return true;
         faqItem.classList.add('open');
-        aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i, peek);
+        aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i, peek, quickRevision);
+        aRow.classList.toggle('a-row-quick', quickRevision);
         aRow.style.display = 'block';
         if (previewEl) previewEl.style.display = 'none';
         attachMcqHandlers(aRow, revealedAnswers[i], i);
         return true;
       }
 
-      if (aRow.style.display === 'block' && !peek) return true;
+      if (aRow.style.display === 'block' && !forceRerender) return true;
 
       if (bulkAnswers && bulkAnswers[i]) {
         revealedAnswers[i] = bulkAnswers[i];
         faqItem.classList.add('open');
-        aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i, peek);
+        aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i, peek, quickRevision);
+        aRow.classList.toggle('a-row-quick', quickRevision);
         if (previewEl) previewEl.style.display = 'none';
         aRow.style.display = 'block';
         attachMcqHandlers(aRow, bulkAnswers[i], i);
         return true;
       }
 
-      if (limitReached) {
-        // Bug fix: a locally-cached limitReached (from before login/purchase,
-        // same subject+day) must not block a NOW-purchased user. Verify
-        // real entitlement before trusting the cached flag; if purchased,
-        // clear the stale cache and fall through to a normal fetch.
-        const isPurchasedNow = await ensureEntitlementChecked();
-        if (isPurchasedNow) {
-          limitReached = false;
-          try { localStorage.removeItem(LIMIT_STORAGE_KEY); } catch (err) {}
-        } else {
-          aRow.style.display = 'none';
-          faqItem.classList.remove('open');
-          showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
-          return false;
-        }
-      }
+      // ARCHIVED: old daily-limit recovery block —
+      //   if (limitReached) { ...check purchase, else block via
+      //   DAILY_LIMIT_MESSAGE... }
+      // Removed from the reading flow's active path; see the free-preview
+      // zone check below, which replaces it. (limitReached itself is left
+      // defined above — Mock Test still uses it.)
 
-      // ---------- Fix #2: free clicks apply only to page 1 (first 20) ----------
-      // Free-click allowance not yet exhausted, but user is browsing page 2+
-      // and isn't a purchased subject holder — reveal is always paywalled
-      // here regardless of remaining free clicks. Purchased users pass
-      // straight through (their bulkAnswers branch above already returns
-      // before reaching this point in practice, but this stays as a
-      // correct fallback).
-      if (currentPage > 1) {
+      // ---------- Page-1 free-preview gate (replaces old Fix #2) ----------
+      // Free, no entitlement needed: page 1, first FREE_PREVIEW_COUNT
+      // questions. Everything else (rest of page 1, and all of page 2+)
+      // requires real entitlement — purchased users pass straight through
+      // (their bulkAnswers branch above already returns before reaching
+      // this point in practice, but this stays as a correct fallback).
+      if (!isInFreePreviewZone(i)) {
         const isPurchased = await ensureEntitlementChecked();
         if (!isPurchased) {
           aRow.style.display = 'none';
@@ -2521,7 +2672,7 @@ function formatMath(str) {
       }
 
       faqItem.classList.add('open');
-      if (!peek) {
+      if (!forceRerender) {
         aRow.innerHTML = renderSkeleton();
         aRow.style.display = 'block';
       }
@@ -2571,19 +2722,23 @@ function formatMath(str) {
 
       revealedAnswers[i] = data.answer;
       if (previewEl) previewEl.style.display = 'none';
-      aRow.innerHTML = renderAnswerHtml(data.answer, i, peek);
+      aRow.innerHTML = renderAnswerHtml(data.answer, i, peek, quickRevision);
+      aRow.classList.toggle('a-row-quick', quickRevision);
       aRow.style.display = 'block';
       attachMcqHandlers(aRow, data.answer, i);
 
-      // Reveal-all (peek) never touches the progress/answered count — it's
-      // a lookup action, not practice. FAQ reveals via a real tap count
-      // immediately; MCQ only counts once the user picks an option (see
-      // attachMcqHandlers).
+      // Reveal-all/Quick Revision never touches the progress/answered count
+      // — it's a lookup action, not practice. FAQ reveals via a real tap
+      // count immediately; MCQ only counts once the user picks an option
+      // (see attachMcqHandlers).
       const isMcq = data.answer && data.answer.type === 'mcq' && data.answer.options;
-      if (!peek && !isMcq) markAnswered(i);
+      if (!forceRerender && !isMcq) markAnswered(i);
 
       if (data.unlimited) {
         purchased = true;
+        entitlementChecked = true;
+        upgradeToPurchasedPageSize();
+        writeEntitlementCache(true);
         lockBanner.style.display = 'none';
         if (!bulkAnswers) fetchAllAnswersInBackground();
       } else if (typeof data.remaining === 'number') {
@@ -2666,15 +2821,34 @@ function formatMath(str) {
 
     async function doRevealAll() {
       let revealedCount = 0;
-      for (let i = 0; i < totalQuestions; i++) {
-        const success = await openAnswerFor(i, { scroll: false, peek: true });
+      // Get a FRESH, confirmed entitlement status before computing loop
+      // bounds — reading the `purchased` flag directly here was stale for
+      // a purchased user on their first-ever premium click of the
+      // session: it only actually flips to true mid-loop (once the first
+      // answer fetch comes back from the server), by which point the loop
+      // bounds were already locked to the guest-scoped range. Awaiting
+      // this first fixes that — it's already memoized/cached after the
+      // first real check, so this is a no-op fetch on every call after.
+      const isPurchasedNow = await ensureEntitlementChecked();
+      // Purchased users: reveal the ENTIRE chapter across all pages in one
+      // click (as decided) — the loop never hits a paywall for them anyway.
+      // Guests/unpurchased: scope the loop to ONLY the current page's own
+      // items. Without this, the loop would silently spill past page 1's
+      // free-preview items into page 2's range (still within the same
+      // click, since currentPage never actually changes) and immediately
+      // hit the paywall — showing the popup on page 1 when it should only
+      // ever appear once the user is actually ON page 2+.
+      const startIdx = isPurchasedNow ? 0 : (currentPage - 1) * pageSize;
+      const endIdx = isPurchasedNow ? totalQuestions : Math.min(startIdx + pageSize, totalQuestions);
+      for (let i = startIdx; i < endIdx; i++) {
+        const success = await openAnswerFor(i, { scroll: false, quickRevision: true });
         if (!success) break; // blocked by paywall/limit — stop right here
         revealedCount++;
       }
       // Update the button state if ANYTHING got revealed, even if the loop
       // stopped early partway through — "Hide all" just hides whatever is
       // currently open, which is still correct and useful for a partial
-      // reveal. Only leave the button as "Reveal all" if nothing opened
+      // reveal. Only leave the button as "Quick Revision" if nothing opened
       // at all (e.g. blocked immediately on the very first question).
       if (revealedCount > 0) {
         if (revealAllLabel) revealAllLabel.textContent = 'Hide All';
@@ -2686,16 +2860,24 @@ function formatMath(str) {
     if (revealAllBtn) {
       revealAllBtn.addEventListener('click', async () => {
         if (!allRevealed) {
-          const ok = await withButtonLoading(revealAllBtn, () => ensureEntitlementChecked());
-          if (!ok) {
-            showLimitReached(
-              isPapersSubject
-                ? 'Login to reveal all answers.'
-                : 'Purchase this subject to reveal all answers.',
-              isPapersSubject ? 'login' : 'plans'
-            );
-            return;
+          // Indian History (English) only, Chapters 12+ (Medieval onward):
+          // Quick Revision goes straight to paywall, no preview attempt at
+          // all — even the free-preview zone is skipped for this button.
+          // Individual per-question taps still work normally there (see
+          // isInFreePreviewZone / openAnswerFor — untouched by this check).
+          if (IS_INDIAN_HISTORY_EN && chapterNumber > INDIAN_HISTORY_FREE_QR_MAX_CHAPTER) {
+            const ok = await withButtonLoading(revealAllBtn, () => ensureEntitlementChecked());
+            if (!ok) {
+              showLimitReached(
+                'Purchase this subject to use Quick Revision here — free Quick Revision preview is available on Ancient India chapters (1-11).',
+                'plans'
+              );
+              return;
+            }
           }
+          // Default (every other case): just run the loop — it naturally
+          // stops at the free-preview boundary via openAnswerFor's own
+          // gate for guests, and runs unrestricted for purchased users.
           if (answeredSet.size > 0 && answeredSet.size < totalQuestions) {
             showConfirm(
               `You've answered ${answeredSet.size} of ${totalQuestions} questions. Revealing all will show every answer, including ones you haven't tried yet.`,
@@ -2725,7 +2907,7 @@ function formatMath(str) {
             const previewEl = item.querySelector('.mcq-preview');
             if (previewEl) previewEl.style.display = 'block';
           });
-          if (revealAllLabel) revealAllLabel.textContent = 'Reveal All Answers';
+          if (revealAllLabel) revealAllLabel.textContent = 'Quick Revision';
           if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
           allRevealed = false;
         }
@@ -3470,7 +3652,7 @@ function formatMath(str) {
       }
 
       const targetIndex = n - 1;
-      const targetPage = Math.floor(targetIndex / perPage) + 1;
+      const targetPage = Math.floor(targetIndex / pageSize) + 1;
       if (targetPage !== currentPage) showPage(targetPage);
       setTimeout(() => {
         const item = list.querySelector(`.faq-item[data-i="${targetIndex}"]`);
@@ -3519,7 +3701,37 @@ function formatMath(str) {
     });
 
     updateProgress();
-    renderPagination();
+    // Static build renders the first PER_PAGE (20) items visible by
+    // default — correct for purchased users, but guests need only the
+    // first `pageSize` (10) shown. showPage(1) re-applies visibility
+    // correctly for whichever pageSize applies right now.
+    showPage(1, { scroll: false });
+
+    // ---------- Reveal-only model: hidden (10) by default for everyone,
+    // upgraded to 20 only once a real purchase is confirmed. Never the
+    // other direction — nothing already shown is ever hidden again. This
+    // is deliberately the simple, one-way version: no optimistic render,
+    // no downgrade path, no extra listeners. Purchased users' existing
+    // flow (Quick Revision, individual reveals, Mock Test) is untouched —
+    // this only decides the initial page size before they interact.
+    const cachedEntitlement = readEntitlementCache();
+    if (cachedEntitlement && cachedEntitlement.purchased) {
+      // Fresh positive cache (from this subject's index page, or another
+      // chapter opened earlier this session) — reveal immediately, zero
+      // round trip.
+      purchased = true;
+      entitlementChecked = true;
+      upgradeToPurchasedPageSize();
+    } else {
+      // No fresh positive signal — stays hidden at 10 for now. Still
+      // proactively (not lazily) confirms in the background so a
+      // purchased user without a cache yet doesn't have to click
+      // anything first; this fires once, resolves, and upgrades in place
+      // via upgradeToPurchasedPageSize() if it comes back true. A guest
+      // simply stays at 10 — no further action, no downgrade needed since
+      // nothing was ever shown beyond 10 in the first place.
+      ensureEntitlementChecked();
+    }
     loadAndRenderPublicOptions();
   </script>
   )}
