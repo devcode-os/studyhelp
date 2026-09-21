@@ -698,7 +698,7 @@
           (e) => e.subject_id === recentOrder.subject_id && e.active
         );
         if (!hasMatchingActiveEnt) {
-          return { level: "amber", text: `Payment for "${recentOrder.subject_id}" shows PAID on Razorpay, but there's no matching active entitlement — the webhook likely failed to fire or errored. Recommended: verify the payment ID against Razorpay dashboard, then grant manual access (consider a short grace grant first if unverified, or full 45 days if confirmed).` };
+          return { level: "amber", text: `Payment for "${recentOrder.subject_id}" shows PAID on Razorpay, but there's no matching active entitlement — the webhook likely failed to fire or errored. Recommended: verify the payment ID against Razorpay dashboard, then grant manual access (consider a short grace grant first if unverified, or full 90 days if confirmed).` };
         }
       }
       if (recentOrder && recentOrder.status === "created") {
@@ -714,7 +714,7 @@
       }
       const anyExpired = data.entitlements.length > 0;
       if (anyExpired) {
-        return { level: "gray", text: `All entitlements for this user have expired. If the 45-day window naturally ended, this is expected — offer repurchase. If they believe this is wrong, check order history above.` };
+        return { level: "gray", text: `All entitlements for this user have expired. If the 90-day window naturally ended, this is expected — offer repurchase. If they believe this is wrong, check order history above.` };
       }
       return { level: "gray", text: `No orders or entitlements found for this user yet.` };
     }
@@ -783,7 +783,7 @@
                 <option value="3">3 days (grace)</option>
                 <option value="7">7 days</option>
                 <option value="15">15 days</option>
-                <option value="45" selected>45 days (full)</option>
+                <option value="90" selected>90 days (full)</option>
                 <option value="custom">Custom...</option>
               </select>
               <input id="grantDurationCustom" type="number" min="1" max="365" placeholder="Days" style="display:none;width:80px" />
@@ -875,14 +875,14 @@
           formHost.innerHTML = `
             <div class="confirm-box">
               <div class="muted" style="margin-bottom:8px">
-                Extends from the original grant date (${grantedLabel}), not from today — e.g. entering 45 here
-                sets expiry to 45 days after ${grantedLabel}, however many days have already passed.
+                Extends from the original grant date (${grantedLabel}), not from today — e.g. entering 90 here
+                sets expiry to 90 days after ${grantedLabel}, however many days have already passed.
               </div>
               <div class="row">
                 <select id="extendDuration-${btn.dataset.id}">
                   <option value="7">7 days total</option>
                   <option value="15">15 days total</option>
-                  <option value="45" selected>45 days total (full)</option>
+                  <option value="90" selected>90 days total (full)</option>
                   <option value="custom">Custom...</option>
                 </select>
                 <input id="extendDurationCustom-${btn.dataset.id}" type="number" min="1" max="365" placeholder="Days" style="display:none;width:80px" />
