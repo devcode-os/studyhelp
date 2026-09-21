@@ -622,7 +622,15 @@ import Header from '../../components/Header.astro';
             name: 'StudyHelp',
             description: 'Bundle: 3 subjects',
             prefill: { name: currentUser.name },
-            handler: function () {
+            handler: function (response) {
+              if (window.gtag) {
+                gtag('event', 'conversion', {
+                  send_to: 'AW-18464276214/qr_sCJXgjf8cEPb9ueRE',
+                  value: order.amount / 100,
+                  currency: order.currency,
+                  transaction_id: response.razorpay_payment_id,
+                });
+              }
               window.location.href = '/subjects/?bundle_success=1';
             },
             modal: {
@@ -941,7 +949,15 @@ import Header from '../../components/Header.astro';
             name: 'StudyHelp',
             description: subject_id,
             prefill: { name: currentUser.name },
-            handler: function () {
+            handler: function (response) {
+              if (window.gtag) {
+                gtag('event', 'conversion', {
+                  send_to: 'AW-18464276214/qr_sCJXgjf8cEPb9ueRE',
+                  value: order.amount / 100,
+                  currency: order.currency,
+                  transaction_id: response.razorpay_payment_id,
+                });
+              }
               window.location.href =
                 `/payment-processing/?user_id=${encodeURIComponent(currentUser.user_id)}&subject_id=${encodeURIComponent(subject_id)}`;
             },
