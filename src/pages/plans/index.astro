@@ -84,6 +84,10 @@ import Header from '../../components/Header.astro';
           <div class="whatyouget-item-title">Full access</div>
           <div class="whatyouget-item-sub">One-time payment, duration shown on each subject</div>
         </div>
+        <div>
+          <div class="whatyouget-item-title">Fair refund policy</div>
+          <div class="whatyouget-item-sub"><a href="/refund-policy/" class="whatyouget-link">See our refund &amp; cancellation policy</a></div>
+        </div>
       </div>
     </div>
 
@@ -454,6 +458,8 @@ import Header from '../../components/Header.astro';
     .whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
     .whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
     .whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+    .whatyouget-link { color: rgba(255,255,255,0.75); text-decoration: underline; text-decoration-color: rgba(255,255,255,0.35); text-underline-offset: 3px; }
+    .whatyouget-link:hover { color: #ffffff; }
     @media (max-width: 720px) {
       .whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 12px; }
       .whatyouget-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -836,7 +842,7 @@ import Header from '../../components/Header.astro';
             titleEnglish: s.title_english || '',
             price: s.price_paise / 100,
             popular: !!s.popular,
-            accessDays: s.access_days || 45,
+            accessDays: s.access_days || 90,
             category: s.category || 'subject',
           }))
           .filter((s) => s.category !== 'papers');
