@@ -3045,21 +3045,34 @@ async function getTheoryContent(request, env) {
   return jsonAuth({ concepts });
 }
 
-// Daily free-click limit for subjects NOT purchased — flat, same for everyone,
-// login status makes no difference (per the locked no-login-for-free-tier design).
-const FREE_CLICKS_LIMIT = 15;
-const ANON_COOKIE_NAME = "sh_anon_id";
-const ANON_COOKIE_LIFETIME_SECONDS = 400 * 24 * 60 * 60; // ~13 months, so returning visitors keep a stable anon id
+// ---------- ARCHIVED: 15-clicks/day fingerprint counting system ----------
+// Replaced (see the free-preview block inside getSingleAnswer below) by a
+// simple stateless rule: free if index < FREE_PREVIEW_COUNT, no counting,
+// no daily reset, no fingerprint/cookie actor tracking needed for this
+// endpoint anymore. Kept here (NOT deleted) for future reuse — full
+// design + client-side half also archived in
+// studyhelp-free-click-fingerprint-system-ARCHIVE.md.
+//
+// const FREE_CLICKS_LIMIT = 15;
+// const ANON_COOKIE_NAME = "sh_anon_id";
+// const ANON_COOKIE_LIFETIME_SECONDS = 400 * 24 * 60 * 60; // ~13 months, so returning visitors keep a stable anon id
+//
+// function todayUtc() {
+//   return new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
+// }
+//
+// function getAnonIdFromRequest(request) {
+//   const cookieHeader = request.headers.get("Cookie") || "";
+//   const match = cookieHeader.match(/sh_anon_id=([^;]+)/);
+//   return match ? match[1] : null;
+// }
 
-function todayUtc() {
-  return new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
-}
-
-function getAnonIdFromRequest(request) {
-  const cookieHeader = request.headers.get("Cookie") || "";
-  const match = cookieHeader.match(/sh_anon_id=([^;]+)/);
-  return match ? match[1] : null;
-}
+// Free preview: first N questions of every chapter are free, every day,
+// no cap, no counting — matches the client's page-1 free-preview rule
+// (see FREE_PREVIEW_COUNT in the reading page's script). Everything from
+// index FREE_PREVIEW_COUNT onward needs real entitlement (purchase/admin/
+// papers+login, all checked above this point already).
+const FREE_PREVIEW_COUNT = 10;
 
 // ---------- 12. Single-answer delivery with free-click limiting ----------
 // Used for subjects the visitor has NOT purchased. Purchased subjects always
@@ -3143,89 +3156,35 @@ async function getSingleAnswer(request, env) {
     }
   }
 
-  // 2. Not entitled (logged in but unpurchased, or fully anonymous) -> free-click
-  // budget applies. Login status is irrelevant here by design — the free tier
-  // needs no account at all.
+  // 2. Not entitled (logged in but unpurchased, or fully anonymous) ->
+  // free-preview rule applies. Login status is irrelevant here by design
+  // — the free tier needs no account at all.
   //
-  // Primary tracking key is a client-computed device fingerprint (hash of
-  // userAgent + screen size + timezone + hardwareConcurrency), passed as
-  // ?fp=. Unlike the sh_anon_id cookie, this survives private/incognito
-  // browsing since it's derived from stable device/browser properties
-  // rather than stored state — closing the incognito reset loophole the
-  // cookie-only approach had.
-  //
-  // Falls back to the cookie if no fingerprint was sent (e.g. an old cached
-  // page still loaded, or JS fingerprinting failed for some reason) so
-  // nothing breaks — just loses incognito-resistance for that request.
-  const dailyLimit = FREE_CLICKS_LIMIT;
-  const today = todayUtc();
-
-  const fingerprint = url.searchParams.get("fp");
-  let extraCookieHeader = {};
-  let actorId;
-  let actorType;
-
-  if (fingerprint && /^[a-f0-9]{16,64}$/i.test(fingerprint)) {
-    actorId = fingerprint;
-    actorType = "fp";
-  } else {
-    actorId = getAnonIdFromRequest(request);
-    if (!actorId) {
-      actorId = crypto.randomUUID();
-      extraCookieHeader["Set-Cookie"] =
-        `${ANON_COOKIE_NAME}=${actorId}; Path=/; Max-Age=${ANON_COOKIE_LIFETIME_SECONDS}; Secure; SameSite=Lax`;
-      // Not HttpOnly: this is a soft, best-effort free-trial counter (not a
-      // security boundary), matching the accepted design in the workflow doc.
-    }
-    actorType = "anon";
+  // ARCHIVED (see constants block above for the full commented-out
+  // original): this used to be a 15-clicks/day counter keyed by a
+  // client-sent device fingerprint (falling back to an anon cookie),
+  // upserted into free_click_log per actor+subject+day. Replaced below
+  // with a stateless index check — no counting, no daily reset, nothing
+  // to look up.
+  if (index < FREE_PREVIEW_COUNT) {
+    return jsonAuth({ answer });
   }
 
-  // Single atomic upsert: increment (or create) today's count for this
-  // actor+subject in ONE database round-trip instead of a separate
-  // SELECT-then-INSERT/UPDATE (which was 2 round-trips). If this pushes
-  // the count past the daily limit, we simply don't return the answer for
-  // that call — the log ends up counting the blocked attempt too, which
-  // doesn't affect correctness (the person is still correctly blocked the
-  // moment their real usage exceeds the limit).
-  const newCountRow = await env.DB.prepare(
-    `INSERT INTO free_click_log (id, actor_type, actor_id, subject_id, click_date, count)
-     VALUES (?, ?, ?, ?, ?, 1)
-     ON CONFLICT(actor_type, actor_id, subject_id, click_date)
-     DO UPDATE SET count = count + 1
-     RETURNING count`
+  const subjectRow = await env.DB.prepare(
+    "SELECT access_days, category FROM subjects WHERE id = ?"
   )
-    .bind(crypto.randomUUID(), actorType, actorId, chapter.subject_id, today)
+    .bind(chapter.subject_id)
     .first();
-
-  const newCount = newCountRow.count;
-
-  if (newCount > dailyLimit) {
-    const subjectRow = await env.DB.prepare(
-      "SELECT access_days, category FROM subjects WHERE id = ?"
-    )
-      .bind(chapter.subject_id)
-      .first();
-    const accessDays = (subjectRow && subjectRow.access_days) || 90;
-    const isPapersSubject = subjectRow && subjectRow.category === "papers";
-    return jsonAuth(
-      {
-        error: isPapersSubject
-          ? `You've reached today's ${dailyLimit} free answers for this subject. Login or sign up to continue reading, or come back tomorrow.`
-          : `You've reached today's ${dailyLimit} free answers for this subject. Purchase for ${accessDays} days of unlimited access, or come back tomorrow.`,
-        locked: true,
-        limitReached: true,
-        remaining: 0,
-        dailyLimit,
-      },
-      403,
-      extraCookieHeader
-    );
-  }
-
+  const accessDays = (subjectRow && subjectRow.access_days) || 90;
+  const isPapersSubject = subjectRow && subjectRow.category === "papers";
   return jsonAuth(
-    { answer, remaining: dailyLimit - newCount, dailyLimit },
-    200,
-    extraCookieHeader
+    {
+      error: isPapersSubject
+        ? `Login or sign up to continue reading.`
+        : `Purchase for ${accessDays} days of unlimited access to continue reading.`,
+      locked: true,
+    },
+    403
   );
 }
 
