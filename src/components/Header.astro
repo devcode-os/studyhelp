@@ -11,7 +11,7 @@
 // everywhere else it hides normally while reading. Centralized here by
 // `active` value so those pages need no changes of their own — they
 // already pass this prop.
-const { active = '', compact = false, backHref = '/', title = '', progress = '' } = Astro.props;
+const { active = '', compact = false, backHref = '/', title = '', progress = '', hasModeTabs = false } = Astro.props;
 const stickyTabbar = active === 'plans' || active === 'account' || active === 'signup' || active === 'login';
 ---
 
@@ -23,7 +23,7 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
       </svg>
     </a>
     <span class="chapter-title">{title}</span>
-    {progress && <span class="chapter-progress">{progress}</span>}
+    {hasModeTabs ? <slot name="chapter-progress-area" /> : (progress && <span class="chapter-progress">{progress}</span>)}
     <button type="button" class="theme-toggle chapter-theme-toggle js-theme-toggle" aria-label="Toggle dark mode">
       <i class="ti ti-sun icon-light" aria-hidden="true"></i>
       <i class="ti ti-moon icon-dark" aria-hidden="true"></i>

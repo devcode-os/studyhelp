@@ -167,14 +167,27 @@ function formatMath(str) {
     <Header active="subjects" />
   </div>
   <div class="header-compact-only">
-    <Header compact={true} backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} />
+    <Header compact={true} backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} hasModeTabs={hasMcq}>
+      {hasMcq && (
+        <Fragment slot="chapter-progress-area">
+          <div class="ref-tabs chapter-mode-tabs" id="headerTopLevelTabs">
+            <div class="ref-tab active" data-toptab="mcq">MCQs</div>
+            <div class="ref-tab" data-toptab="theory">Theory</div>
+          </div>
+        </Fragment>
+      )}
+    </Header>
   </div>
 
   <div class={isTelugu ? 'lang-te content' : 'lang-en content'}>
-    <a href={`/${subject}/`} class="back-pill desktop-back-pill">&larr; {backLabel}</a>
-    <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
-      <h1 style="margin:0;">{chapterNumber}. {title}</h1>
-      <span style="font-size:14px; font-weight:700; color:var(--text);">{isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`}</span>
+    <div class="desktop-title-row">
+      <a href={`/${subject}/`} class="back-pill desktop-back-pill">
+        <i class="ti ti-arrow-left" aria-hidden="true"></i> {backLabel}
+      </a>
+      <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+        <h1 style="margin:0;">{chapterNumber}. {title}</h1>
+        <span style="font-size:14px; font-weight:700; color:var(--text);">{isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`}</span>
+      </div>
     </div>
 
     {isReference ? (
@@ -196,7 +209,7 @@ function formatMath(str) {
     ) : (
       <Fragment>
         {hasMcq && (
-          <div class="mode-row">
+          <div class="mode-row desktop-mode-row">
             <div class="ref-tabs mode-tabs" id="topLevelTabs">
               <div class="ref-tab active" data-toptab="mcq">MCQs</div>
               <div class="ref-tab" data-toptab="theory">Theory</div>
@@ -222,29 +235,23 @@ function formatMath(str) {
         )}
 
         <div id="reading-toolbar" class="reading-toolbar">
-          {/* Progress bar removed from Quick Revision block — redundant next to nav buttons.
-          <div class="rt-progress-wrap">
-            <div class="rt-progress-track"><div id="rt-progress-fill" class="rt-progress-fill"></div></div>
-            <span id="rt-progress-text" class="rt-progress-text">0 of {questions.length} answered</span>
-          </div>
-          */}
           <div class="rt-progress-section">
-            <div class="rt-action-group">
-              <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent">
-                <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Quick Revision</span>
-              </button>
-              {meta.category !== 'papers' && (
-                <button type="button" id="rt-start-mocktest" class="rt-btn rt-btn-ghost">
-                  <i class="ti ti-clock-play" aria-hidden="true"></i> Mock Test
-                </button>
-              )}
-            </div>
+            <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent rt-btn-primary-full">
+              <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Quick Revision</span>
+            </button>
           </div>
 
-          <button type="button" id="rt-options-toggle" class="rt-options-toggle" aria-expanded="false">
-            <span><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i> Text size, filter &amp; jump</span>
-            <i class="ti ti-chevron-down rt-options-chevron" aria-hidden="true"></i>
-          </button>
+          <div class="rt-utility-row">
+            {meta.category !== 'papers' && (
+              <button type="button" id="rt-start-mocktest" class="rt-mocktest-link">
+                <i class="ti ti-clock-play" aria-hidden="true"></i> Mock Test
+              </button>
+            )}
+            <button type="button" id="rt-options-toggle" class="rt-options-toggle" aria-expanded="false">
+              <span><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i> Text size, filter &amp; jump</span>
+              <i class="ti ti-chevron-down rt-options-chevron" aria-hidden="true"></i>
+            </button>
+          </div>
 
           <div class="rt-controls-section" id="rt-controls-section" style="display:none;">
             <div class="rt-control-item">
@@ -417,11 +424,19 @@ function formatMath(str) {
     .header-compact-only { display: none; }
     .desktop-back-pill { display: inline-flex; }
     .desktop-title-block { display: flex; }
+    .desktop-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .desktop-title-row .back-pill { margin-bottom: 0; flex-shrink: 0; }
     @media (max-width: 720px) {
       .header-desktop-only { display: none; }
       .header-compact-only { display: block; }
       .desktop-back-pill { display: none !important; }
       .desktop-title-block { display: none !important; }
+      .desktop-mode-row { display: none !important; }
     }
 
     .back-pill {
@@ -429,13 +444,25 @@ function formatMath(str) {
       align-items: center;
       gap: 6px;
       font-size: 13px;
-      color: var(--muted);
+      font-weight: 600;
+      color: var(--text);
       text-decoration: none;
       border: 1px solid var(--border);
+      background: var(--card);
       border-radius: 20px;
-      padding: 5px 12px 5px 8px;
+      padding: 6px 14px 6px 10px;
       margin-bottom: 14px;
+      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
     }
+    .back-pill i { font-size: 14px; transition: transform 0.15s ease; }
+    .back-pill:hover {
+      background: rgba(255,154,60,0.10);
+      border-color: rgba(255,154,60,0.4);
+      color: #d97a1f;
+      box-shadow: 0 2px 8px -2px rgba(255,154,60,0.3);
+    }
+    .back-pill:hover i { transform: translateX(-2px); }
+    .back-pill:active { transform: scale(0.96); }
 
     /* ---------- Locked capsule card design, matched from the proofreader
        reference tool: white card, 1px border, 14px radius, red-brown
@@ -645,6 +672,41 @@ function formatMath(str) {
       color: #ffffff;
     }
 
+    /* Compact header instance of the same toggle (lives inside Header.astro's
+       compact chapter header via a named slot, but styled here — not in
+       Header.astro's own <style> — because scoped Astro styles only apply
+       to markup written in that component's own template; slotted content
+       keeps the parent page's scope, so this rule has to live where the
+       markup is actually authored (index.astro), not where it's rendered. */
+    .chapter-mode-tabs {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      height: 28px;
+      padding: 3px;
+      gap: 2px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      box-sizing: border-box;
+    }
+    .chapter-mode-tabs .ref-tab {
+      flex: none;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 11px;
+      font-size: 10.5px;
+      font-weight: 700;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.55);
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .chapter-mode-tabs .ref-tab.active {
+      background: #ffffff;
+      color: #1c1c1a;
+    }
+
     .mode-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .mode-row .mode-tabs { margin-top: 10px; }
     .mode-row-hint {
@@ -787,6 +849,11 @@ function formatMath(str) {
       margin-top: 10px;
       box-shadow: 0 12px 30px -14px rgba(20,16,43,0.5);
     }
+    html[data-theme="dark"] .reading-toolbar {
+      background: linear-gradient(160deg, #2a2258 0%, #382a68 45%, #4d2f8f 100%);
+      border-color: rgba(255,255,255,0.16);
+      box-shadow: 0 12px 30px -14px rgba(0,0,0,0.7);
+    }
     .rt-progress-section {
       display: flex;
       align-items: center;
@@ -811,7 +878,53 @@ function formatMath(str) {
     }
     .rt-progress-text { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.65); white-space: nowrap; }
 
-    .rt-action-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .rt-utility-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 8px;
+      padding-top: 6px;
+    }
+    .rt-btn-primary-full { width: 100%; justify-content: center; padding: 9px 16px; }
+    .rt-mocktest-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      flex: none;
+      background: none;
+      border: none;
+      padding: 4px 2px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .rt-mocktest-link i { font-size: 13px; }
+    .rt-mocktest-link:active { opacity: 0.7; }
+
+    /* Desktop: the toolbar was designed stacked for a narrow phone screen —
+       full-width CTA, separate utility row below. On desktop that wastes
+       width and pushes question 1 down for no reason, so collapse it into
+       one slim horizontal row instead. */
+    @media (min-width: 721px) {
+      .reading-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 16px;
+      }
+      .rt-progress-section { flex: none; }
+      .rt-btn-primary-full { width: auto; padding: 8px 18px; }
+      .rt-utility-row {
+        flex: 1;
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
     .rt-btn {
       display: inline-flex;
       align-items: center;
@@ -837,6 +950,19 @@ function formatMath(str) {
       border: none;
       box-shadow: 0 4px 12px -4px rgba(255,154,60,0.55);
     }
+    /* Quick Revision button: same white/navy look in both its default and
+       active ("Exit Quick Revision") states — no orange here, unlike other
+       .rt-btn-accent CTAs elsewhere (Login, Unlock Pattern, etc.). */
+    #rt-reveal-all.rt-btn-accent {
+      background: #ffffff;
+      color: #1c1438;
+      box-shadow: inset 0 0 0 1px rgba(28,20,56,0.12);
+    }
+    html[data-theme="dark"] #rt-reveal-all.rt-btn-accent {
+      background: #1c1438;
+      color: #ffffff;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16);
+    }
     .rt-btn-ghost {
       background: rgba(255,255,255,0.10);
       border: 1px solid rgba(255,255,255,0.14);
@@ -845,18 +971,17 @@ function formatMath(str) {
     .rt-btn-small { padding: 7px 12px; }
 
     .rt-options-toggle {
-      width: 100%;
+      width: auto;
+      flex: 1;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       background: none;
       border: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin-top: 8px;
-      padding: 8px 2px 0;
-      font-size: 11.5px;
+      padding: 4px 2px;
+      font-size: 11px;
       font-weight: 500;
-      color: rgba(255,255,255,0.42);
+      color: rgba(255,255,255,0.4);
       cursor: pointer;
     }
     .rt-options-toggle span { display: flex; align-items: center; gap: 6px; }
@@ -940,8 +1065,6 @@ function formatMath(str) {
 
     @media (max-width: 480px) {
       .rt-progress-section { flex-direction: column; align-items: stretch; }
-      .rt-action-group { justify-content: stretch; }
-      .rt-action-group .rt-btn { flex: 1; justify-content: center; }
       .rt-controls-section { flex-direction: column; }
       .rt-control-item { flex: 1 1 auto; width: 100%; }
     }
@@ -1667,14 +1790,18 @@ function formatMath(str) {
     <script>
       // Top-level MCQs / Theory tab switch. Always defaults to MCQs —
       // Theory is paid content on many chapters, so it must never be the
-      // tab a student lands on by default. Purely a visibility toggle —
-      // both panes' own scripts run regardless of which is visible, same
-      // pattern as the ref-tabs toggle below.
-      document.querySelectorAll('#topLevelTabs .ref-tab').forEach((tab) => {
+      // tab a student lands on by default. Two toggle instances exist in
+      // the DOM (one in the compact mobile header, one in the desktop
+      // title area) but only one is visible at a time per viewport via
+      // CSS — select by shared class, not id, so clicking either one
+      // keeps both in sync. Purely a visibility toggle — both panes' own
+      // scripts run regardless of which is visible.
+      document.querySelectorAll('[data-toptab]').forEach((tab) => {
         tab.addEventListener('click', () => {
-          document.querySelectorAll('#topLevelTabs .ref-tab').forEach((t) => t.classList.remove('active'));
-          tab.classList.add('active');
           const which = tab.getAttribute('data-toptab');
+          document.querySelectorAll('[data-toptab]').forEach((t) => {
+            t.classList.toggle('active', t.getAttribute('data-toptab') === which);
+          });
           const mcqPane = document.getElementById('mcqPaneWrap');
           const theoryPane = document.getElementById('theoryPaneWrap');
           const jumpHint = document.getElementById('jumpToPartHint');
@@ -2526,6 +2653,7 @@ function formatMath(str) {
         allRevealed = false;
         if (revealAllLabel) revealAllLabel.textContent = 'Quick Revision';
         if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
+        if (revealAllBtn) revealAllBtn.classList.remove('rt-revision-active');
       }
     }
 
@@ -2917,8 +3045,9 @@ function formatMath(str) {
       // reveal. Only leave the button as "Quick Revision" if nothing opened
       // at all (e.g. blocked immediately on the very first question).
       if (revealedCount > 0) {
-        if (revealAllLabel) revealAllLabel.textContent = 'Hide All';
+        if (revealAllLabel) revealAllLabel.textContent = 'Exit Quick Revision';
         if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye'); revealAllIcon.classList.add('ti-eye-off'); }
+        if (revealAllBtn) revealAllBtn.classList.add('rt-revision-active');
         allRevealed = true;
       }
     }
@@ -2975,6 +3104,7 @@ function formatMath(str) {
           });
           if (revealAllLabel) revealAllLabel.textContent = 'Quick Revision';
           if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
+          if (revealAllBtn) revealAllBtn.classList.remove('rt-revision-active');
           allRevealed = false;
         }
       });
