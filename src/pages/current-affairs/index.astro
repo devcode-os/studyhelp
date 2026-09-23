@@ -933,6 +933,59 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       // redirect, instead of back on whichever hero tab was open before.
       if (params.get('ca_success') === '1' && state.loggedIn) {
         caPurchasesCache = null; // force a fresh fetch — payment just landed
+        const fresh = await loadCaPurchases();
+
+        // Fire conversion tracking here — server-confirmed payment (this
+        // purchase list only reflects what the webhook already wrote), not
+        // just the Razorpay popup closing. Same trigger point and dedup
+        // pattern as the Subjects purchase flow (payment-processing page).
+        // /ca/purchases doesn't return amount_paise, so the value is
+        // estimated from item_type using the same price constants the
+        // page already renders with — exact for single-month and 3/6-month
+        // bundle purchases, the common cases; a multi-month custom-count
+        // buy (monthly picker, several months at once) would only report
+        // one month's price here, undercounting that specific case.
+        try {
+          const purchases = Array.from(fresh.items.values());
+          const newest = purchases.sort(
+            (a, b) => new Date(b.purchase_date) - new Date(a.purchase_date)
+          )[0];
+          if (newest) {
+            const valueByType = {
+              bundle3: PRICE_BUNDLE3,
+              bundle6: PRICE_BUNDLE6,
+            };
+            const purchaseValue = valueByType[newest.item_type] || PRICE_MONTHLY;
+            const alreadyTracked = (() => {
+              try {
+                return sessionStorage.getItem('ca_conversion_tracked_for') === newest.item_id;
+              } catch (err) {
+                return false;
+              }
+            })();
+            if (!alreadyTracked) {
+              try {
+                if (typeof fbq === 'function') {
+                  fbq('track', 'Purchase', { value: purchaseValue, currency: 'INR' });
+                }
+              } catch (err) {}
+              try {
+                if (typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    send_to: 'AW-18464276214/qr_sCJXgjf8cEPb9ueRE',
+                    value: purchaseValue,
+                    currency: 'INR',
+                    transaction_id: `${newest.item_id}-${Date.now()}`,
+                  });
+                }
+              } catch (err) {}
+              try {
+                sessionStorage.setItem('ca_conversion_tracked_for', newest.item_id);
+              } catch (err) {}
+            }
+          }
+        } catch (err) {}
+
         purchasesIcon.click();
         return;
       }
