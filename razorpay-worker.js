@@ -519,8 +519,8 @@ async function handleWebhook(request, env) {
         if (!item) continue;
         try {
           await env.DB.prepare(
-            `INSERT INTO ca_purchases (user_id, item_id, item_type, month_range, amount_paise, r2_object_key)
-             VALUES (?, ?, ?, ?, ?, ?)`
+            `INSERT INTO ca_purchases (user_id, item_id, item_type, month_range, amount_paise, r2_object_key, order_id)
+             VALUES (?, ?, ?, ?, ?, ?, ?)`
           )
             .bind(
               caOrder.user_id,
@@ -528,7 +528,8 @@ async function handleWebhook(request, env) {
               item.itemType,
               item.monthRange,
               perItemPaise,
-              getCaR2Key(itemId)
+              getCaR2Key(itemId),
+              orderId
             )
             .run();
         } catch (err) {
@@ -2584,6 +2585,24 @@ async function adminSearch(request, env) {
     }
   }
 
+  if (!user) {
+    // Subjects orders were already checked above — also try a CA order id
+    // (q docstring promises "order_id" generally, and CA orders live in
+    // their own table) so a pasted CA payment/order id finds the user too.
+    const caOrderMatch = await env.DB.prepare(
+      "SELECT user_id FROM ca_orders WHERE id = ?"
+    )
+      .bind(q)
+      .first();
+    if (caOrderMatch) {
+      user = await env.DB.prepare(
+        "SELECT id, name, phone, recovery_email, created_at FROM users WHERE id = ?"
+      )
+        .bind(caOrderMatch.user_id)
+        .first();
+    }
+  }
+
   if (!user) return jsonAuth({ found: false });
 
   const nowTs = Math.floor(Date.now() / 1000);
@@ -2607,6 +2626,29 @@ async function adminSearch(request, env) {
     .bind(user.id)
     .all();
 
+  // CA (Current Affairs) purchases live in their own table (separate flow
+  // from Subjects orders — see ca-worker-additions-v2.js), so they must be
+  // fetched and merged in here explicitly or they never show up in this
+  // user's Payment History, even though real transactions exist.
+  const caPurchases = await env.DB.prepare(
+    `SELECT order_id, item_id, item_type, month_range, amount_paise, purchase_date
+     FROM ca_purchases WHERE user_id = ? ORDER BY purchase_date DESC LIMIT 20`
+  )
+    .bind(user.id)
+    .all();
+
+  const caOrdersMapped = (caPurchases.results || []).map((r) => ({
+    id: r.order_id || `ca:${r.item_id}`,
+    subject_id: `${r.item_type || "current-affairs"} — ${r.month_range || r.item_id}`,
+    amount_paise: r.amount_paise,
+    status: "paid", // rows only exist once the webhook confirms payment
+    created_at: r.purchase_date,
+  }));
+
+  const mergedOrders = [...(orders.results || []), ...caOrdersMapped].sort(
+    (a, b) => (b.created_at || 0) - (a.created_at || 0)
+  );
+
   const subjects = await env.DB.prepare("SELECT id, name FROM subjects").all();
 
   return jsonAuth({
@@ -2617,7 +2659,7 @@ async function adminSearch(request, env) {
       active: !e.revoked_at && e.expires_at > nowTs,
       manual: !e.order_id && !e.payment_id,
     })),
-    orders: orders.results || [],
+    orders: mergedOrders,
     subjects: subjects.results || [],
   });
 }
