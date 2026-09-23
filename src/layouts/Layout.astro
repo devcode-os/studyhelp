@@ -735,6 +735,16 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
         const banner = document.getElementById('app-install-banner');
         if (banner) banner.style.display = 'none';
       }
+
+      // Signup ("Create your account") page: the banner sits right above
+      // the bottom nav and crowds the form/CTA here, so keep it off on
+      // this page regardless of device/state.
+      const isSignupPage = window.location.pathname === '/signup'
+        || window.location.pathname === '/signup/';
+      if (isSignupPage) {
+        const banner = document.getElementById('app-install-banner');
+        if (banner) banner.style.display = 'none';
+      }
     })();
 
     // Global toast helper — replaces alert() calls site-wide. Usage:
