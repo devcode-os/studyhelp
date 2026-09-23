@@ -113,8 +113,8 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     <div id="ca-panel-pdf" style={initialTab === 'pdf' ? '' : 'display:none'}>
       <div class="ca-picker-tabs" role="tablist">
         <button type="button" class="ca-tab" data-pdf-mode="1">Monthly · ₹{PRICE_MONTHLY}</button>
-        <button type="button" class="ca-tab" data-pdf-mode="3">Last 3 months · ₹{PRICE_BUNDLE3}</button>
-        <button type="button" class="ca-tab active" data-pdf-mode="6">Last 6 months · ₹{PRICE_BUNDLE6}</button>
+        <button type="button" class="ca-tab active" data-pdf-mode="3">Last 3 months · ₹{PRICE_BUNDLE3}</button>
+        <button type="button" class="ca-tab" data-pdf-mode="6">Last 6 months · ₹{PRICE_BUNDLE6}</button>
       </div>
 
       <!-- Monthly: multi-select — pick any months, price scales with count -->
@@ -150,7 +150,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
       <!-- Last 3 / Last 6: no picker — always the current rolling window,
            shown plainly since there's nothing to choose. -->
-      <div id="ca-pdf-bundle3-section" style="display:none">
+      <div id="ca-pdf-bundle3-section">
         {bundle3.length < 3 ? (
           <div class="ca-empty"><p>Need 3 published months for this bundle — check back soon.</p></div>
         ) : (
@@ -188,7 +188,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         )}
       </div>
 
-      <div id="ca-pdf-bundle6-section">
+      <div id="ca-pdf-bundle6-section" style="display:none">
         {bundle6.length < 6 ? (
           <div class="ca-empty"><p>Need 6 published months for this bundle — check back soon.</p></div>
         ) : (
@@ -239,11 +239,58 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
               <div class="ca-whatyouget-item-sub">Download PDF — study offline, anytime</div>
             </div>
             <div>
-              <div class="ca-whatyouget-item-title">One-time payment</div>
-              <div class="ca-whatyouget-item-sub">No subscription — pay per month or bundle</div>
+              <div class="ca-whatyouget-item-title">Simple pricing</div>
+              <div class="ca-whatyouget-item-sub">Pay per month, or save with a 3- or 6-month bundle</div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="whatyouget-card plans-faq-card">
+        <div class="whatyouget-title">Before you buy</div>
+        <details class="plans-faq-item" open>
+          <summary>How do I buy?</summary>
+          <div class="plans-faq-body">
+            Pick a month (or Last 3 / Last 6 for the bundle) and tap Buy Now — you'll
+            create a quick account if you don't have one, then pay via UPI, card, or
+            netbanking. Your purchase appears instantly in the Purchases panel, ready
+            to download.
+          </div>
+        </details>
+        <details class="plans-faq-item">
+          <summary>How do I download my PDF?</summary>
+          <div class="plans-faq-body">
+            After payment, you're taken straight to your Purchases panel with the new
+            item listed. Tap Download PDF anytime — no waiting, no separate email link.
+          </div>
+        </details>
+        <details class="plans-faq-item">
+          <summary>Can I re-download later?</summary>
+          <div class="plans-faq-body">
+            Yes. Every PDF you've bought stays listed in your Purchases panel
+            permanently — click the purchases icon at any time to download again, no
+            repurchase needed.
+          </div>
+        </details>
+        <details class="plans-faq-item">
+          <summary>Combined vs Individual for bundles?</summary>
+          <div class="plans-faq-body">
+            Combined gives you one merged PDF with all months' sections together.
+            Individual gives you separate PDFs, one per month. Pick whichever fits how
+            you study.
+          </div>
+        </details>
+        <details class="plans-faq-item">
+          <summary>Paid but don't see it in Purchases?</summary>
+          <div class="plans-faq-body">
+            This is very rare — most payments sync within seconds. Try refreshing the
+            page first. If it's still missing after a minute,
+            <a href="https://studyhelp.fdaytalk.com/contact/">contact us</a> with your
+            Razorpay payment ID and the month/bundle you bought. We'll verify the
+            payment and, once confirmed, send the PDF directly to your registered
+            email — no need to worry, your purchase is never lost.
+          </div>
+        </details>
       </div>
     </div>
 
@@ -458,6 +505,40 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .ca-whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
     .ca-whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
     .ca-whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+
+    /* ================= Before you buy — FAQ accordion (matches Plans page) ================= */
+    .whatyouget-card {
+      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
+    }
+    .whatyouget-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #5de0c0; text-transform: uppercase; letter-spacing: 0.04em; }
+    .plans-faq-card { margin-top: 12px; }
+    .plans-faq-card .whatyouget-title { color: #ffb35c; }
+    .plans-faq-item {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 0;
+    }
+    .plans-faq-item:first-of-type { border-top: none; padding-top: 0; }
+    .plans-faq-item summary {
+      font-size: 13px; font-weight: 600; color: #ffffff;
+      cursor: pointer; list-style: none; display: flex;
+      align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .plans-faq-item summary::-webkit-details-marker { display: none; }
+    .plans-faq-item summary::after {
+      content: '+'; font-size: 16px; font-weight: 400;
+      color: rgba(255,255,255,0.5); flex: 0 0 auto;
+    }
+    .plans-faq-item[open] summary::after { content: '–'; }
+    .plans-faq-body {
+      font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.65);
+      margin-top: 8px;
+    }
+    .plans-faq-body a { color: #ffb35c; font-weight: 600; text-decoration: underline; }
+    @media (max-width: 720px) {
+      .whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 12px; }
+    }
+
     @media (max-width: 720px) {
       .ca-whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 16px; }
       .ca-whatyouget-wrap { padding-top: 24px; }
@@ -1038,13 +1119,14 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     // Restore whichever PDF sub-tab (Monthly / Last 3 / Last 6) was last
     // active — same reasoning as the hero-tab restore above: only on
     // genuine browser Back or a completed Buy redirect, never a fresh
-    // visit (which always starts at Last 6 months, the server-rendered
-    // default — the max-savings option, shown first so it anchors the
-    // price comparison instead of the cheapest single-month option).
+    // visit (which always starts at Last 3 months, the server-rendered
+    // default — the lower-priced entry point, easier first purchase for
+    // new visitors; Last 6 months still gets the MAX SAVINGS badge to
+    // upsell from there).
     if (caShouldRestoreState) {
       try {
         const savedMode = sessionStorage.getItem('ca_last_pdf_mode');
-        if (savedMode && savedMode !== '6') {
+        if (savedMode && savedMode !== '3') {
           setPdfMode(savedMode);
         }
       } catch (err) {}
