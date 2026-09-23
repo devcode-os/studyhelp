@@ -745,6 +745,17 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
         const banner = document.getElementById('app-install-banner');
         if (banner) banner.style.display = 'none';
       }
+
+      // Chapter reading pages (MCQ/theory/reference): these always render
+      // the compact mobile reading header (.header-compact-only — back
+      // arrow, chapter title, progress) with no bottom tab bar, which no
+      // other page type uses. The banner has no bottom nav to sit above
+      // here and just eats reading space, so hide it.
+      const isReadingPage = !!document.querySelector('.header-compact-only');
+      if (isReadingPage) {
+        const banner = document.getElementById('app-install-banner');
+        if (banner) banner.style.display = 'none';
+      }
     })();
 
     // Global toast helper — replaces alert() calls site-wide. Usage:
