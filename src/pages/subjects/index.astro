@@ -126,7 +126,6 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
     <h1 class="page-h1">Subjects</h1>
 
     <a href="/plans/?mode=bundle" class="offer-strip">
-      <div class="offer-strip-glow" aria-hidden="true"></div>
       <div class="offer-strip-head">
         <div class="offer-strip-icon">
           <i class="ti ti-stack-2" aria-hidden="true"></i>
@@ -349,7 +348,7 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       text-align: left;
       text-decoration: none;
       background: linear-gradient(135deg, #4c1d95 0%, #241a4d 100%);
-      border: 2px solid #ff9a3c;
+      border: 1px solid #ff9a3c;
       border-radius: 16px;
       padding: 1rem 1.1rem;
       margin-bottom: 20px;
@@ -357,10 +356,6 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       transition: transform 0.12s ease;
     }
     .offer-strip:active { transform: scale(0.98); }
-    .offer-strip-glow {
-      position: absolute; top: -34px; right: -34px; width: 130px; height: 130px;
-      border-radius: 50%; background: rgba(255, 154, 60, 0.14); pointer-events: none;
-    }
     .offer-strip-head {
       position: relative; display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
     }
