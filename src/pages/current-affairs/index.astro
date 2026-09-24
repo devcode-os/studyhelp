@@ -1083,8 +1083,20 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       const chosen = checkboxes().filter((c) => c.checked).map((c) => c.value);
       if (!chosen.length) return;
       sessionStorage.setItem('ca_selected_months', JSON.stringify(chosen));
+      // The active tab when Continue is pressed, not the chosen count —
+      // a student can pick fewer than the tab's cap (e.g. 2 while on
+      // "Last 3 months"), so count alone can't be trusted to reflect
+      // which plan they were actually on.
+      sessionStorage.setItem('ca_selected_plan', tab_modeToPlan(maxPick));
       window.location.href = '/current-affairs/read/';
     });
+
+    function tab_modeToPlan(mode) {
+      if (mode === 1) return 'monthly';
+      if (mode === 3) return 'last3';
+      if (mode === 6) return 'last6';
+      return 'monthly';
+    }
 
     // State (hero tab, PDF sub-tab, per-bundle format) is always restored
     // from sessionStorage below — reliable and simple. What makes a
@@ -1143,7 +1155,12 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     if (caShouldRestoreState && caTabParam !== 'pdf') {
       try {
         const savedTab = sessionStorage.getItem('ca_last_hero_tab');
-        if (savedTab === 'pdf') setHeroTab('pdf');
+        // Restore whichever tab was actually last active — previously
+        // this only handled 'pdf', so Back from the read page (which only
+        // exists under the 'free' tab) always fell through to the
+        // server-rendered 'pdf' default instead of returning to Read for
+        // Free where the student actually was.
+        if (savedTab === 'pdf' || savedTab === 'free') setHeroTab(savedTab);
       } catch (err) {}
     }
 

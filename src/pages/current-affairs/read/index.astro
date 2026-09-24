@@ -6,29 +6,41 @@
 // question list, switching entirely client-side (no page reloads) since
 // all CA content is free and lightweight enough to ship in one go.
 import Layout from '../../../layouts/Layout.astro';
-import Header from '../../../components/Header.astro';
 import { getFullDataset } from '../../../lib/currentAffairs.js';
 
 const dataset = getFullDataset(); // every month, every section, every question
 ---
 <Layout title="Current Affairs" description="Read Current Affairs MCQs by section, free.">
-  <Header active="subjects" />
+
 
   <div class="ca-wrap">
     <div class="ca-header-card">
-      <div class="ca-header-left">
-        <div class="breadcrumb">
-          <a href="/">Home</a> / <a href="/current-affairs/">CA</a> / <span id="ca-crumb-section">Appointments</span>
-        </div>
-        <div class="ca-title-row">
+      <div class="ca-header-top">
+        <div class="ca-header-left">
+          <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/current-affairs/">CA</a> / <span id="ca-crumb-section">Appointments</span>
+          </div>
           <h1 id="ca-title">Current Affairs</h1>
-          <span class="ca-sub" id="ca-sub">Loading…</span>
+        </div>
+        <div class="ca-mode-toggle" id="ca-mode-toggle" role="tablist" aria-label="View mode">
+          <button type="button" class="ca-mode-btn active" data-mode="mcqs" role="tab" aria-selected="true">MCQs</button>
+          <button type="button" class="ca-mode-btn" data-mode="revision" role="tab" aria-selected="false">Quick Revision</button>
+        </div>
+        <a href="/current-affairs/" class="ca-icon-btn" aria-label="Change months" title="Change months" hidden>
+          <i class="ti ti-calendar" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="ca-header-controls">
+        <div class="ca-section-pill">
+          <i class="ti ti-list" aria-hidden="true"></i>
+          <select id="ca-section-select" class="ca-section-select"></select>
+          <i class="ti ti-chevron-down ca-section-chevron" aria-hidden="true"></i>
         </div>
       </div>
-      <a href="/current-affairs/" class="ca-change-btn">
-        <i class="ti ti-calendar" aria-hidden="true"></i> Change
-      </a>
     </div>
+
+    <span class="ca-sub" id="ca-sub" hidden>Loading…</span>
 
     <div id="ca-limit-overlay" class="ca-limit-overlay" style="display:none">
       <div class="ca-limit-card">
@@ -37,10 +49,6 @@ const dataset = getFullDataset(); // every month, every section, every question
         <button type="button" id="ca-limit-signup-btn" class="ca-limit-btn">Create free account to continue</button>
         <a href="/current-affairs/" class="ca-limit-link">Back to Current Affairs</a>
       </div>
-    </div>
-
-    <div class="ca-controls">
-      <select id="ca-section-select" class="ca-section-select"></select>
     </div>
 
     <div id="ca-question-list"></div>
@@ -60,14 +68,13 @@ const dataset = getFullDataset(); // every month, every section, every question
   <script type="application/json" id="ca-dataset" set:html={JSON.stringify(dataset)} />
 
   <style is:global>
-    .ca-wrap { max-width: 800px; margin: 0 auto; padding: 24px 24px calc(48px + var(--tabbar-h, 0px)); }
+    .ca-wrap { max-width: 800px; margin: 0 auto; padding: 12px 24px calc(48px + var(--tabbar-h, 0px)); }
 
     .ca-header-card {
       position: relative; overflow: hidden;
       background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      border-radius: 14px; padding: 12px 16px; margin-bottom: 10px;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 12px; box-shadow: 0 6px 16px -8px rgba(20, 16, 43, 0.5);
+      border-radius: 14px; padding: 10px 12px 12px; margin-bottom: 10px;
+      box-shadow: 0 6px 16px -8px rgba(20, 16, 43, 0.5);
     }
     .ca-header-card::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -75,7 +82,12 @@ const dataset = getFullDataset(); // every month, every section, every question
         radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.15), transparent 40%),
         radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.2), transparent 45%);
     }
-    .ca-header-left { position: relative; z-index: 1; min-width: 0; flex: 1; }
+    .ca-header-top {
+      position: relative; z-index: 1;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 8px; margin-bottom: 8px;
+    }
+    .ca-header-left { min-width: 0; flex: 1; }
     .breadcrumb {
       font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 2px;
       overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
@@ -84,31 +96,50 @@ const dataset = getFullDataset(); // every month, every section, every question
     @media (max-width: 900px) {
       .breadcrumb { display: none; }
     }
-    .ca-title-row { display: flex; align-items: baseline; gap: 8px; min-width: 0; flex-wrap: wrap; }
-    .ca-title-row h1 {
-      font-size: 17px; margin: 0; color: #fff; font-weight: 800;
+    .ca-header-left h1 {
+      font-size: 15px; margin: 0; color: #fff; font-weight: 700; letter-spacing: -0.2px;
       overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
-    .ca-sub { color: rgba(255,255,255,0.6); font-size: 12px; }
 
-    .ca-change-btn {
-      position: relative; z-index: 1; flex-shrink: 0; white-space: nowrap;
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    .ca-icon-btn {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
       background: rgba(255,255,255,0.12); color: #fff; text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.25); transition: background 0.15s;
+      transition: background 0.15s;
     }
-    .ca-change-btn:hover { background: rgba(255,255,255,0.22); }
-    .ca-change-btn i { font-size: 13px; }
+    .ca-icon-btn:hover { background: rgba(255,255,255,0.22); }
+    .ca-icon-btn i { font-size: 14px; }
+    .ca-icon-btn[hidden] { display: none; }
 
-    .ca-controls { margin: 0 0 14px; }
-    .ca-section-select {
-      width: 100%; padding: 8px 32px 8px 12px; border-radius: 10px; border: 1px solid var(--border, #ddd);
-      background: var(--card, #fff); color: var(--text, #111); font-weight: 700; font-size: 14px;
-      cursor: pointer; appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 10px center;
+    .ca-header-controls {
+      position: relative; z-index: 1; display: flex; gap: 6px;
     }
+    .ca-mode-toggle {
+      flex-shrink: 0; display: flex; align-items: center; padding: 2px;
+      border-radius: 8px; background: rgba(255,255,255,0.1);
+    }
+    .ca-mode-btn {
+      padding: 5px 9px; border-radius: 6px;
+      border: none; background: transparent; color: #c9c0e8;
+      font-size: 11px; font-weight: 600; cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .ca-mode-btn.active { background: #f6a666; color: #2b1a5e; font-weight: 700; }
+
+    .ca-section-pill {
+      flex: 1; display: flex; align-items: center; gap: 5px;
+      padding: 7px 9px; border-radius: 9px; background: rgba(255,255,255,0.1);
+      min-width: 0; position: relative;
+    }
+    .ca-section-pill i.ti-list { color: #f6a666; font-size: 13px; flex-shrink: 0; }
+    .ca-section-chevron { color: #a89bc9; font-size: 11px; flex-shrink: 0; pointer-events: none; }
+    .ca-section-select {
+      flex: 1; min-width: 0; border: none; background: transparent; color: #fff;
+      font-size: 12.5px; font-weight: 600; cursor: pointer; appearance: none;
+      padding: 0; margin: 0;
+    }
+    .ca-section-select option { color: #111; }
 
     .ca-q-card {
       border: 1px solid var(--border, #ddd); border-radius: 14px; padding: 18px;
@@ -140,6 +171,16 @@ const dataset = getFullDataset(); // every month, every section, every question
     .ca-opt-btn.wrong { border-color: #c62828; background: rgba(198,40,40,0.12); }
     .ca-opt-btn.wrong .ca-opt-letter { background: #c62828; color: #fff; }
     .ca-opt-btn:disabled { cursor: default; }
+
+    .ca-revision-answer {
+      display: flex; align-items: center; gap: 6px; margin: 0 0 4px;
+      font-size: 14px; font-weight: 700; color: #1b7a3d;
+    }
+    .ca-revision-answer::after { content: '✓'; font-weight: 800; }
+    .ca-revision-answer-label {
+      font-size: 11px; font-weight: 700; color: var(--muted, #888);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
 
     .ca-explain-toggle {
       display: none; align-items: center; gap: 4px; background: none; border: none;
@@ -212,10 +253,10 @@ const dataset = getFullDataset(); // every month, every section, every question
     .ca-limit-link { font-size: 13px; color: var(--muted, #888); text-decoration: none; }
     .ca-limit-link:hover { text-decoration: underline; }
 
-    @media (max-width: 480px) {
-      .ca-header-card { flex-wrap: wrap; }
-      .ca-title-row { flex-wrap: wrap; }
-      .ca-sub { flex-basis: 100%; }
+    @media (max-width: 380px) {
+      .ca-header-top { flex-wrap: wrap; }
+      .ca-mode-toggle { order: 3; width: 100%; }
+      .ca-mode-btn { flex: 1; text-align: center; }
     }
   </style>
 
@@ -240,6 +281,23 @@ const dataset = getFullDataset(); // every month, every section, every question
     }
 
     const selectedMonths = dataset.filter((m) => selectedMonthSlugs.includes(m.slug));
+
+    // Title reflects the plan actually picked on the previous page
+    // (stored there as ca_selected_plan), not guessed from month count —
+    // a student can pick fewer than a tab's cap (e.g. 2 months while on
+    // "Last 3 months"), so count alone isn't reliable.
+    let selectedPlan = '';
+    try {
+      selectedPlan = sessionStorage.getItem('ca_selected_plan') || '';
+    } catch (e) { selectedPlan = ''; }
+
+    const PLAN_TITLES = {
+      monthly: 'Monthly Current Affairs',
+      last3: 'Last 3 Months',
+      last6: 'Last 6 Months',
+    };
+    document.getElementById('ca-title').textContent = PLAN_TITLES[selectedPlan] || 'Current Affairs';
+
     const subEl = document.getElementById('ca-sub');
 
     // Build "August, July, June 2026" style label: only show the year when
@@ -325,6 +383,7 @@ const dataset = getFullDataset(); // every month, every section, every question
     if (defaultSection) select.value = defaultSection;
 
     let currentPage = 1;
+    let currentMode = 'mcqs';
 
     // Resume exactly where a guest left off after being sent to sign up
     // (5-min limit popup) — restored once on load, saved on every change.
@@ -334,12 +393,13 @@ const dataset = getFullDataset(); // every month, every section, every question
       if (savedState && sectionNames.includes(savedState.section)) {
         select.value = savedState.section;
         currentPage = savedState.page || 1;
+        if (savedState.mode === 'mcqs' || savedState.mode === 'revision') currentMode = savedState.mode;
       }
     } catch (err) {}
 
     function saveReadState() {
       try {
-        sessionStorage.setItem('ca_read_state', JSON.stringify({ section: select.value, page: currentPage }));
+        sessionStorage.setItem('ca_read_state', JSON.stringify({ section: select.value, page: currentPage, mode: currentMode }));
       } catch (err) {}
     }
 
@@ -350,7 +410,6 @@ const dataset = getFullDataset(); // every month, every section, every question
       if (currentPage > totalPages) currentPage = totalPages;
 
       document.getElementById('ca-crumb-section').textContent = sectionName || '';
-      document.getElementById('ca-title').textContent = sectionName || 'Current Affairs';
 
       const start = (currentPage - 1) * PER_PAGE;
       const pageItems = questions.slice(start, start + PER_PAGE);
@@ -372,11 +431,6 @@ const dataset = getFullDataset(); // every month, every section, every question
         qText.textContent = `${start + idx + 1}. ${item.q}`;
         card.appendChild(qText);
 
-        const optRow = document.createElement('div');
-        optRow.className = 'ca-opt-row';
-
-        const explanationEl = document.createElement('div');
-        explanationEl.className = 'ca-explanation';
         const rawExplanation = item.e || '';
         const splitIdx = rawExplanation.indexOf('Key Points:');
         const mainText = (splitIdx >= 0 ? rawExplanation.slice(0, splitIdx) : rawExplanation).trim();
@@ -384,6 +438,54 @@ const dataset = getFullDataset(); // every month, every section, every question
         const keyPoints = keyPointsBlock
           ? keyPointsBlock.split('\n').map((l) => l.replace(/^•\s*/, '').trim()).filter(Boolean)
           : [];
+
+        if (currentMode === 'revision') {
+          // Quick Revision: answer + explanation shown straight away, no
+          // options list and no click-to-reveal — built for fast re-skim
+          // rather than self-testing.
+          const answerLine = document.createElement('p');
+          answerLine.className = 'ca-revision-answer';
+          answerLine.innerHTML = `<span class="ca-revision-answer-label">Answer:</span> ${item.a || ''}`;
+          card.appendChild(answerLine);
+
+          if (mainText || keyPoints.length) {
+            const explanationEl = document.createElement('div');
+            explanationEl.className = 'ca-explanation shown';
+            if (mainText) {
+              const p = document.createElement('p');
+              p.className = 'ca-explanation-text';
+              p.textContent = mainText;
+              explanationEl.appendChild(p);
+            }
+            if (keyPoints.length) {
+              const label = document.createElement('div');
+              label.className = 'ca-keypoints-label';
+              label.textContent = 'Key Points';
+              explanationEl.appendChild(label);
+
+              const ul = document.createElement('ul');
+              ul.className = 'ca-keypoints-list';
+              keyPoints.forEach((kp) => {
+                const li = document.createElement('li');
+                li.textContent = kp;
+                ul.appendChild(li);
+              });
+              explanationEl.appendChild(ul);
+            }
+            card.appendChild(explanationEl);
+          }
+
+          listEl.appendChild(card);
+          return;
+        }
+
+        // MCQs mode: options list, click-to-reveal, explanation behind a
+        // separate toggle — unchanged from before.
+        const optRow = document.createElement('div');
+        optRow.className = 'ca-opt-row';
+
+        const explanationEl = document.createElement('div');
+        explanationEl.className = 'ca-explanation';
 
         if (mainText) {
           const p = document.createElement('p');
@@ -470,6 +572,34 @@ const dataset = getFullDataset(); // every month, every section, every question
     select.addEventListener('change', () => { currentPage = 1; saveReadState(); render(); });
     document.getElementById('ca-prev-btn').addEventListener('click', () => { currentPage--; saveReadState(); render(); });
     document.getElementById('ca-next-btn').addEventListener('click', () => { currentPage++; saveReadState(); render(); });
+
+    // MCQs / Quick Revision toggle — switches currentMode and re-renders.
+    // Page resets to 1 on switch since the two modes can fit a different
+    // number of items comfortably, and starting back at the top avoids
+    // landing mid-list in the new view.
+    document.querySelectorAll('.ca-mode-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode === 'revision' ? 'revision' : 'mcqs';
+        if (mode === currentMode) return;
+        currentMode = mode;
+        currentPage = 1;
+        document.querySelectorAll('.ca-mode-btn').forEach((b) => {
+          const isActive = b === btn;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-selected', String(isActive));
+        });
+        saveReadState();
+        render();
+      });
+    });
+
+    // Reflect a mode restored from sessionStorage (e.g. after Back) in the
+    // toggle's visual state before the first render.
+    document.querySelectorAll('.ca-mode-btn').forEach((b) => {
+      const isActive = b.dataset.mode === currentMode;
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-selected', String(isActive));
+    });
 
     if (sectionNames.length) render();
 
