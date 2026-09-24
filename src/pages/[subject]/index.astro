@@ -116,7 +116,7 @@ for (const ch of chapters) {
 ---
 <Layout title={meta.seoTitle} description={meta.seoDescription} lang={meta.lang}>
 
-  <Header active="subjects" hideTopBar={true} />
+  <Header active="subjects" />
 
   <div class="page-wide">
 
@@ -245,7 +245,7 @@ for (const ch of chapters) {
     }
     @media (max-width: 900px) {
       .page-wide {
-        padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+        padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
       }
     }
 
@@ -542,52 +542,38 @@ for (const ch of chapters) {
     @media (max-width: 900px) {
       .chapter-grid {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 10px;
       }
       .chapter-card {
         display: grid;
         grid-template-columns: auto 1fr auto;
         align-items: center;
-        column-gap: 10px;
-        border-radius: 12px;
-        border-bottom-width: 2px;
-        padding: 10px 12px;
+        column-gap: 12px;
+        border-radius: 14px;
+        padding: 14px;
       }
       .chapter-card-number {
         margin-bottom: 0;
         flex-shrink: 0;
-        width: 26px;
-        height: 26px;
-        font-size: 11px;
+        width: 34px;
+        height: 34px;
         grid-row: 1 / 3;
       }
       .chapter-card-title {
         grid-column: 2;
         grid-row: 1;
-        text-align: left;
-        font-size: 13.5px;
-        line-height: 1.3;
-        /* Chapter titles vary a lot in length ("Public Finance" vs
-           "Price Dynamics, Rural Wages and Food Security") — clamping
-           to 2 lines keeps every card roughly the same height instead
-           of a long title tripling one card's height next to short
-           single-line ones. */
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        text-align: center;
       }
       .chapter-card-qcount {
         grid-column: 2;
         grid-row: 2;
         margin-top: 2px;
-        text-align: left;
-        font-size: 11px;
+        text-align: center;
       }
       .chapter-card::after {
         content: '';
-        width: 7px;
-        height: 7px;
+        width: 8px;
+        height: 8px;
         border-top: 2px solid rgba(255, 255, 255, 0.5);
         border-right: 2px solid rgba(255, 255, 255, 0.5);
         transform: rotate(45deg);
@@ -665,7 +651,7 @@ for (const ch of chapters) {
     }
     @media (max-width: 480px) {
       .verify-toast {
-        bottom: calc(12px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+        bottom: calc(12px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
         width: calc(100vw - 24px);
       }
     }

@@ -12,7 +12,7 @@ import { getFullDataset } from '../../../lib/currentAffairs.js';
 const dataset = getFullDataset(); // every month, every section, every question
 ---
 <Layout title="Current Affairs" description="Read Current Affairs MCQs by section, free.">
-  <Header active="subjects" hideTopBar={true} />
+  <Header active="subjects" />
 
 
   <div class="ca-wrap">
@@ -70,7 +70,7 @@ const dataset = getFullDataset(); // every month, every section, every question
   <script type="application/json" id="ca-dataset" set:html={JSON.stringify(dataset)} />
 
   <style is:global>
-    .ca-wrap { max-width: 800px; margin: 0 auto; padding: 12px 24px calc(48px + var(--tabbar-h, 0px)); }
+    .ca-wrap { max-width: 800px; margin: 0 auto; padding: 24px 24px calc(48px + var(--tabbar-h, 56px)); }
 
     .ca-header-card {
       position: relative; overflow: hidden;

@@ -115,7 +115,7 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
 ---
 <Layout title="Subjects - StudyHelp" description="All subjects available on StudyHelp for TSPSC and TS exam preparation.">
 
-  <Header active="subjects" hideTopBar={true} />
+  <Header active="subjects" />
 
   <div class="page-wide">
 
@@ -245,15 +245,21 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
        tabbar itself stays visible up through tablet widths, so a page
        between 721px and 900px was getting no bottom padding at all,
        leaving no room to scroll the last section (Question Papers) out
-       from under the fixed bar. */
+       from under the fixed bar.
+       --tabbar-h needs a fallback (56px, its typical rendered height):
+       an unset custom property with no fallback makes the whole calc()
+       invalid, which silently drops this padding-bottom to nothing —
+       exactly what caused cards to render underneath the fixed tab bar
+       on the actual Capacitor app, where the JS that sets --tabbar-h
+       apparently never ran before this painted. */
     @media (max-width: 900px) {
       .page-wide {
-        padding-bottom: calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+        padding-bottom: calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
       }
     }
     @media (max-width: 720px) {
       .page-wide {
-        padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+        padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
       }
     }
 

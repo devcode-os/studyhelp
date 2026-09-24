@@ -48,7 +48,7 @@ const bundle3IndividualIds = bundle3.map((m) => toBackendId(m.slug));
 const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 ---
 <Layout title="Current Affairs" description="Read Current Affairs free, or download a PDF — pick a month, last 3, or last 6 months.">
-  <Header active="current-affairs" hideTopBar={true} />
+  <Header active="current-affairs" />
 
   <div class="ca-wrap">
     <div class="ca-header-card">
@@ -316,7 +316,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
        style attribute never gets attached to them — scoped CSS would
        silently not match. Same fix already used on the read page for
        the same reason. */
-    .ca-wrap { max-width: 900px; margin: 0 auto; padding: 12px 24px 24px; }
+    .ca-wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
 
     .ca-header-card {
       position: relative; overflow: hidden;
@@ -502,7 +502,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     /* Free-read Continue button only (not the Buy Now/PDF button, which
        shares this same base class) — matches the selected-month card
        navy instead of the site's generic accent color. */
-    #ca-continue-btn { background: #2b1a5e; border: 2px solid rgba(255,255,255,0.6); }
+    #ca-continue-btn { background: #2b1a5e; border: 4px solid rgba(255,255,255,0.6); }
 
     /* Desktop: a full-width button looks stretched/oversized against a
        900px-wide container — cap it to a normal CTA width instead. Mobile
