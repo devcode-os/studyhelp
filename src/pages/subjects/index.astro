@@ -125,13 +125,25 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
 
     <h1 class="page-h1">Subjects</h1>
 
-    <div class="offer-strip">
-      <div class="offer-strip-text">
-        <div class="offer-strip-title">Complete Competitive Exam Preparation</div>
-        <div class="offer-strip-price">Pick any 3 subjects &bull; &#8377;399 for 3 months</div>
-        <div class="offer-strip-features">Chapter-wise content &bull; MCQs &bull; Mock Tests</div>
+    <a href="/plans/?mode=bundle" class="offer-strip">
+      <div class="offer-strip-glow" aria-hidden="true"></div>
+      <div class="offer-strip-head">
+        <div class="offer-strip-icon">
+          <i class="ti ti-stack-2" aria-hidden="true"></i>
+        </div>
+        <div class="offer-strip-headtext">
+          <div class="offer-strip-title">Complete Exam Preparation</div>
+          <div class="offer-strip-sub">Chapter-wise MCQs, mock tests &amp; more</div>
+        </div>
       </div>
-    </div>
+      <div class="offer-strip-bottom">
+        <div class="offer-strip-price-block">
+          <div class="offer-strip-price">&#8377;399<span>&nbsp;/ 3 months</span></div>
+          <div class="offer-strip-features">Pick any 3 subjects</div>
+        </div>
+        <div class="offer-strip-btn">Get Bundle <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+      </div>
+    </a>
 
     <a href="/current-affairs/" class="ca-banner">
       <div class="ca-banner-icon">
@@ -275,12 +287,13 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       align-items: center;
       gap: 14px;
       text-align: left;
-      background: linear-gradient(160deg, #221c42 0%, #2b2158 100%);
-      border: 1px solid rgba(92, 224, 192, 0.4);
+      background: #ffffff;
+      border: 2px solid rgba(28, 28, 26, 0.15);
       border-radius: 14px;
       padding: 0.9rem 1.15rem;
       text-decoration: none;
       margin-bottom: 20px;
+      box-shadow: 0 4px 14px -6px rgba(28, 28, 26, 0.15);
       transition: transform 0.12s ease, border-color 0.12s ease;
     }
     .ca-banner:active {
@@ -291,23 +304,23 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       width: 40px;
       height: 40px;
       border-radius: 11px;
-      background: rgba(92, 224, 192, 0.15);
+      background: rgba(30, 184, 148, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .ca-banner-icon i { font-size: 20px; color: #5ce0c0; }
+    .ca-banner-icon i { font-size: 20px; color: #1eb894; }
     .ca-banner-text { flex: 1; min-width: 0; }
     .ca-banner-title {
       font-weight: 800;
       font-size: 17px;
-      color: #ffffff;
+      color: #1c1c1a;
       line-height: 1.25;
     }
     .ca-banner-sub {
       font-size: 11px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.82);
+      color: rgba(28, 28, 26, 0.6);
       margin-top: 2px;
     }
     .ca-banner-arrow {
@@ -315,7 +328,7 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(28, 28, 26, 0.35);
     }
     .ca-banner-arrow i { font-size: 20px; }
     @media (min-width: 901px) {
@@ -330,37 +343,66 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
     }
 
     .offer-strip {
-      text-align: center;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+      text-decoration: none;
       background: linear-gradient(135deg, #4c1d95 0%, #241a4d 100%);
       border: 2px solid #ff9a3c;
       border-radius: 16px;
-      padding: 1rem 1.2rem;
+      padding: 1rem 1.1rem;
       margin-bottom: 20px;
       box-shadow: 0 6px 20px -8px rgba(255, 154, 60, 0.4);
+      transition: transform 0.12s ease;
     }
+    .offer-strip:active { transform: scale(0.98); }
+    .offer-strip-glow {
+      position: absolute; top: -34px; right: -34px; width: 130px; height: 130px;
+      border-radius: 50%; background: rgba(255, 154, 60, 0.14); pointer-events: none;
+    }
+    .offer-strip-head {
+      position: relative; display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+    }
+    .offer-strip-icon {
+      flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(255, 154, 60, 0.18); display: flex; align-items: center; justify-content: center;
+    }
+    .offer-strip-icon i { font-size: 19px; color: #ff9a3c; }
+    .offer-strip-headtext { flex: 1; min-width: 0; }
     .offer-strip-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.25;
-      margin-bottom: 3px;
+      font-size: 16px; font-weight: 800; color: #ffffff; line-height: 1.25;
+    }
+    .offer-strip-sub {
+      font-size: 11.5px; font-weight: 600; color: rgba(255, 255, 255, 0.6); margin-top: 2px;
+    }
+    .offer-strip-bottom {
+      position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px;
     }
     .offer-strip-price {
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #ffcb8a;
-      margin-bottom: 3px;
+      font-size: 21px; font-weight: 800; color: #ffffff; line-height: 1;
     }
+    .offer-strip-price span { font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.6); }
     .offer-strip-features {
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.75);
+      font-size: 11.5px; font-weight: 700; color: #ffcb8a; margin-top: 3px;
     }
+    .offer-strip-btn {
+      flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 800; color: #2a1400;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      padding: 10px 16px; border-radius: 10px; white-space: nowrap;
+    }
+    .offer-strip-btn i { font-size: 14px; }
     @media (max-width: 720px) {
       .offer-strip { padding: 0.85rem 1rem; margin-bottom: 16px; }
-      .offer-strip-title { font-size: 16px; }
-      .offer-strip-price { font-size: 12px; }
-      .offer-strip-features { font-size: 11px; }
+      .offer-strip-head { margin-bottom: 12px; }
+      .offer-strip-icon { width: 34px; height: 34px; border-radius: 9px; }
+      .offer-strip-icon i { font-size: 17px; }
+      .offer-strip-title { font-size: 14.5px; }
+      .offer-strip-sub { font-size: 10.5px; }
+      .offer-strip-price { font-size: 18px; }
+      .offer-strip-features { font-size: 10.5px; }
+      .offer-strip-btn { font-size: 12px; padding: 9px 13px; }
     }
 
     @media (max-width: 720px) {
