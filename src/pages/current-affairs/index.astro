@@ -48,7 +48,7 @@ const bundle3IndividualIds = bundle3.map((m) => toBackendId(m.slug));
 const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 ---
 <Layout title="Current Affairs" description="Read Current Affairs free, or download a PDF — pick a month, last 3, or last 6 months.">
-  <Header active="current-affairs" />
+  <Header active="current-affairs" hideTopBar={true} />
 
   <div class="ca-wrap">
     <div class="ca-header-card">
@@ -94,7 +94,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
             <input type="checkbox" class="ca-month-checkbox" value={m.slug} data-label={m.label} />
             <span class="ca-month-text">
               <span class="ca-month-label">{m.label}</span>
-              <span class="ca-month-meta">{m.questionCount} MCQs · Explanations · Key Points</span>
+              <span class="ca-month-meta">{m.questionCount} MCQs</span>
             </span>
           </label>
         ))}
@@ -132,7 +132,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
               />
               <span class="ca-month-text">
                 <span class="ca-month-label">{m.label}</span>
-                <span class="ca-month-meta">{m.questionCount} MCQs · Explanations · Key Points</span>
+                <span class="ca-month-meta">{m.questionCount} MCQs</span>
               </span>
             </label>
           ))}
@@ -316,7 +316,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
        style attribute never gets attached to them — scoped CSS would
        silently not match. Same fix already used on the read page for
        the same reason. */
-    .ca-wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+    .ca-wrap { max-width: 900px; margin: 0 auto; padding: 12px 24px 24px; }
 
     .ca-header-card {
       position: relative; overflow: hidden;
@@ -425,45 +425,70 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .ca-hint { color: var(--muted, #888); font-size: 12px; margin: 0 0 14px; }
 
     .ca-month-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
       /* Extra clearance so the sticky Continue button (below) never visually
          covers the last card while scrolling — same amount of space the
          button + its bottom offset actually occupy. */
       margin-bottom: 90px;
     }
     .ca-month-card {
-      display: flex; align-items: center; gap: 12px;
-      border: 1.5px solid var(--border, #ddd); border-radius: 12px; padding: 14px 16px;
-      cursor: pointer; background: var(--card, #fff); position: relative;
-      transition: border-color 0.15s, box-shadow 0.15s;
+      display: block; position: relative;
+      border: 1.5px solid var(--border, #ddd); border-radius: 16px; padding: 14px;
+      cursor: pointer; background: var(--card, #fff);
+      transition: border-color 0.15s, background 0.15s;
     }
-    .ca-month-card:hover { border-color: var(--accent, #ff6b1a); }
+    .ca-month-card:hover { border-color: #2b1a5e; }
     .ca-month-card:has(.ca-month-checkbox:checked),
     .ca-month-card:has(.ca-pdf-month-checkbox:checked) {
-      border-color: var(--accent, #ff6b1a);
-      box-shadow: 0 0 0 1px var(--accent, #ff6b1a) inset;
-      background: rgba(255,107,26,0.05);
+      border-color: #2b1a5e;
+      background: #2b1a5e;
+    }
+    .ca-month-card:has(.ca-month-checkbox:checked) .ca-month-label,
+    .ca-month-card:has(.ca-pdf-month-checkbox:checked) .ca-month-label {
+      color: #ffffff;
+    }
+    .ca-month-card:has(.ca-month-checkbox:checked) .ca-month-meta,
+    .ca-month-card:has(.ca-pdf-month-checkbox:checked) .ca-month-meta {
+      color: rgba(255,255,255,0.7);
     }
 
     /* Custom checkbox: hide the native box, draw our own circle + check.
-       Shared by both the free-reading grid and the PDF monthly grid. */
+       Pinned to the tile's top-right corner rather than sitting inline
+       with the label — the compact 2-column tile has no room for a
+       side-by-side row. Shared by both the free-reading grid and the
+       PDF monthly grid. */
     .ca-month-checkbox, .ca-pdf-month-checkbox {
-      appearance: none; -webkit-appearance: none; flex-shrink: 0;
-      width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border, #ccc);
-      cursor: pointer; margin: 0; position: relative; transition: border-color 0.15s, background 0.15s;
+      appearance: none; -webkit-appearance: none;
+      position: absolute; top: 10px; right: 10px;
+      width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--border, #ccc);
+      cursor: pointer; margin: 0; transition: border-color 0.15s, background 0.15s;
     }
     .ca-month-checkbox:checked, .ca-pdf-month-checkbox:checked {
-      background: var(--accent, #ff6b1a); border-color: var(--accent, #ff6b1a);
+      background: #ffffff; border-color: #ffffff;
     }
     .ca-month-checkbox:checked::after, .ca-pdf-month-checkbox:checked::after {
-      content: ''; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px;
-      border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg);
+      content: ''; position: absolute; left: 5px; top: 2px; width: 4px; height: 8px;
+      border: solid #2b1a5e; border-width: 0 2px 2px 0; transform: rotate(45deg);
     }
 
-    .ca-month-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .ca-month-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; padding-right: 22px; }
     .ca-month-label { font-weight: 700; font-size: 14px; }
     .ca-month-meta { font-size: 11px; color: var(--muted, #888); }
     .ca-month-card.ca-disabled { opacity: 0.4; pointer-events: none; }
+
+    /* Last 3 / Last 6 months: not a picker, so no checkbox to show and
+       no pointer affordance — these cards are informational only. */
+    .ca-month-grid.ca-fixed-plan .ca-month-checkbox { display: none; }
+    .ca-month-grid.ca-fixed-plan .ca-month-card { cursor: default; }
+    .ca-month-grid.ca-fixed-plan .ca-month-text { padding-right: 0; }
+
+    /* 3 cards in a 2-column grid leaves one dangling on its own row —
+       center it instead of letting it sit flush left. */
+    .ca-month-grid[data-count="3"] .ca-month-card:nth-child(3) {
+      grid-column: 1 / -1;
+      width: calc((100% - 10px) / 2);
+      margin: 0 auto;
+    }
 
     .ca-continue-btn {
       width: 100%; padding: 14px; border-radius: 12px; border: none;
@@ -473,6 +498,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     }
     .ca-continue-btn:hover:not(:disabled) { opacity: 0.92; }
     .ca-continue-btn:disabled { background: var(--border, #ddd); color: var(--muted, #888); cursor: not-allowed; }
+
+    /* Free-read Continue button only (not the Buy Now/PDF button, which
+       shares this same base class) — matches the selected-month card
+       navy instead of the site's generic accent color. */
+    #ca-continue-btn { background: #2b1a5e; border: 2px solid rgba(255,255,255,0.6); }
 
     /* Desktop: a full-width button looks stretched/oversized against a
        900px-wide container — cap it to a normal CTA width instead. Mobile
@@ -1061,23 +1091,53 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       enforceLimit();
     }
 
+    // Monthly = the existing pick-any-1 UI, every month shown and
+    // selectable. Last 3 / Last 6 aren't a picker at all — always the
+    // current rolling window — so those months are locked pre-checked,
+    // their checkboxes hidden, and anything beyond the window isn't
+    // shown at all rather than sitting there greyed out with nothing to
+    // do. grid.dataset.count drives centering the odd-one-out card when
+    // count is 3 (doesn't fill the 2-column grid evenly).
+    function applyPlanMode(mode) {
+      maxPick = mode;
+      const boxes = checkboxes();
+      const isFixedPlan = mode > 1;
+
+      grid.classList.toggle('ca-fixed-plan', isFixedPlan);
+      grid.dataset.count = isFixedPlan ? String(Math.min(mode, boxes.length)) : '';
+
+      boxes.forEach((c, i) => {
+        const card = c.closest('.ca-month-card');
+        const within = i < mode;
+        c.checked = within;
+        if (isFixedPlan) {
+          c.disabled = true; // locked — nothing to pick for this plan
+          card.style.display = within ? '' : 'none';
+          card.classList.remove('ca-disabled');
+        } else {
+          c.disabled = false;
+          card.style.display = '';
+        }
+      });
+
+      hint.textContent = mode === 1
+        ? 'Pick 1 month.'
+        : 'MCQs & Quick Revision — includes Explanations and Key Points.';
+
+      if (!isFixedPlan) enforceLimit();
+      updateContinueState();
+    }
+
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         tabs.forEach((t) => t.classList.remove('active'));
         tab.classList.add('active');
-        maxPick = parseInt(tab.dataset.mode, 10);
-        hint.textContent = maxPick === 1 ? 'Pick 1 month.' : `Pick up to ${maxPick} months.`;
-        const boxes = checkboxes();
-        boxes.forEach((c, i) => { c.checked = i < maxPick; });
-        enforceLimit();
+        applyPlanMode(parseInt(tab.dataset.mode, 10));
       });
     });
 
     checkboxes().forEach((c) => c.addEventListener('change', () => handleCheckboxChange(c)));
-    if (checkboxes().length) {
-      checkboxes().forEach((c, i) => { c.checked = i < maxPick; });
-      enforceLimit();
-    }
+    if (checkboxes().length) applyPlanMode(maxPick);
 
     continueBtn.addEventListener('click', () => {
       const chosen = checkboxes().filter((c) => c.checked).map((c) => c.value);

@@ -11,7 +11,7 @@
 // everywhere else it hides normally while reading. Centralized here by
 // `active` value so those pages need no changes of their own — they
 // already pass this prop.
-const { active = '', compact = false, backHref = '/', title = '', progress = '', hasModeTabs = false } = Astro.props;
+const { active = '', compact = false, backHref = '/', title = '', progress = '', hasModeTabs = false, hideTopBar = false } = Astro.props;
 const stickyTabbar = active === 'plans' || active === 'account' || active === 'signup' || active === 'login';
 ---
 
@@ -31,7 +31,7 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
   </header>
 ) : (
   <>
-    <header class="site-header">
+    <header class="site-header" class:list={{ 'site-header-hide-mobile': hideTopBar }}>
       <div class="site-header-inner">
         <a href="/" class="logo">StudyHelp</a>
 
@@ -94,7 +94,11 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
     <!-- Mobile bottom tab bar. Only rendered/visible under the 720px breakpoint via CSS.
          Home dropped — the "StudyHelp" logo (visible on every page, already
          linked to "/") serves as the way back to Home instead, freeing up
-         the tab bar for 3 clear destinations. -->
+         the tab bar for 3 clear destinations. Always rendered here regardless
+         of hideTopBar — that prop only suppresses the top logo/nav bar on
+         mobile widths, since some pages (e.g. Current Affairs picker/read)
+         want the bottom nav without the top chrome, but ONLY on phone/tablet:
+         desktop always keeps the full site-header regardless of hideTopBar. -->
     <nav class="mobile-tabbar" aria-label="Primary" data-hide-on-scroll={stickyTabbar ? 'false' : 'true'}>
       <a href="/subjects/" class:list={{ 'tab-active': active === 'subjects' }}>
         <i class="ti ti-books" aria-hidden="true"></i>
@@ -441,6 +445,10 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
     .nav-desktop-only { display: none; }
     .nav-desktop { display: none; }
     .mobile-tabbar { display: flex; }
+    /* hideTopBar prop: suppresses the logo bar on phone/tablet ONLY —
+       desktop always keeps it (site-header has no display rule above
+       900px, so it stays visible there regardless of this class). */
+    .site-header-hide-mobile { display: none; }
   }
 </style>
 

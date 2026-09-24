@@ -6,11 +6,13 @@
 // question list, switching entirely client-side (no page reloads) since
 // all CA content is free and lightweight enough to ship in one go.
 import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
 import { getFullDataset } from '../../../lib/currentAffairs.js';
 
 const dataset = getFullDataset(); // every month, every section, every question
 ---
 <Layout title="Current Affairs" description="Read Current Affairs MCQs by section, free.">
+  <Header active="subjects" hideTopBar={true} />
 
 
   <div class="ca-wrap">
@@ -129,7 +131,7 @@ const dataset = getFullDataset(); // every month, every section, every question
 
     .ca-section-pill {
       flex: 1; display: flex; align-items: center; gap: 5px;
-      padding: 7px 9px; border-radius: 9px; background: rgba(255,255,255,0.1);
+      padding: 7px 9px; border-radius: 9px; background: rgba(255,255,255,0.05);
       min-width: 0; position: relative;
     }
     .ca-section-pill i.ti-list { color: #f6a666; font-size: 13px; flex-shrink: 0; }
@@ -177,10 +179,6 @@ const dataset = getFullDataset(); // every month, every section, every question
       font-size: 14px; font-weight: 700; color: #1b7a3d;
     }
     .ca-revision-answer::after { content: '✓'; font-weight: 800; }
-    .ca-revision-answer-label {
-      font-size: 11px; font-weight: 700; color: var(--muted, #888);
-      text-transform: uppercase; letter-spacing: 0.04em;
-    }
 
     .ca-explain-toggle {
       display: none; align-items: center; gap: 4px; background: none; border: none;
@@ -445,7 +443,7 @@ const dataset = getFullDataset(); // every month, every section, every question
           // rather than self-testing.
           const answerLine = document.createElement('p');
           answerLine.className = 'ca-revision-answer';
-          answerLine.innerHTML = `<span class="ca-revision-answer-label">Answer:</span> ${item.a || ''}`;
+          answerLine.innerHTML = item.a || '';
           card.appendChild(answerLine);
 
           if (mainText || keyPoints.length) {

@@ -116,7 +116,7 @@ for (const ch of chapters) {
 ---
 <Layout title={meta.seoTitle} description={meta.seoDescription} lang={meta.lang}>
 
-  <Header active="subjects" />
+  <Header active="subjects" hideTopBar={true} />
 
   <div class="page-wide">
 
@@ -414,9 +414,9 @@ for (const ch of chapters) {
     }
 
     @media (max-width: 640px) {
-      .subject-header { padding: 1rem; gap: 10px; border-radius: 16px; }
-      .subject-h1 { font-size: 20px; margin-bottom: 14px; }
-      .title-sub { font-size: 13px; }
+      .subject-header { padding: 0.65rem 0.7rem; gap: 6px; border-radius: 14px; margin-bottom: 0.75rem; }
+      .subject-h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px; }
+      .title-sub { font-size: 12px; }
       /* Flexbox instead of a fixed 3-column grid: a grid with
          repeat(3, 1fr) always reserves 3 column-widths even when a
          subject only has 2 pills (no mock tests), leaving an empty gap
@@ -424,26 +424,35 @@ for (const ch of chapters) {
          Flex-basis keeps 3-pill rows looking the same as the old grid,
          while letting fewer pills wrap/center naturally. */
       .stat-pill-row {
-        display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;
       }
-      .stat-pill { flex: 1 1 30%; min-width: 0; padding: 0.45rem 0.4rem; gap: 5px; border-radius: 9px; }
-      .stat-pill i { font-size: 15px; }
-      .stat-num { font-size: 13px; }
-      .stat-label { font-size: 9.5px; }
+      .stat-pill { flex: 1 1 30%; min-width: 0; padding: 0.3rem 0.35rem; gap: 4px; border-radius: 8px; }
+      .stat-pill i { font-size: 13px; }
+      .stat-num { font-size: 12px; }
+      .stat-label { font-size: 8.5px; }
       .stat-pill-arrow { display: none; }
 
       /* Hero pill keeps its own bigger sizing even in the 3-col mobile
          grid — it's the sole/lead stat on papers pages, not a peer of the
          other small pills. */
-      .papers-count-capsule { font-size: 12px; padding: 4px 12px; }
-      .papers-count-capsule i { font-size: 13px; }
+      .papers-count-capsule { font-size: 11px; padding: 3px 10px; }
+      .papers-count-capsule i { font-size: 12px; }
 
-      .unlock-btn-group { margin-top: 10px; gap: 10px; }
-      .unlock-btn { font-size: 12px; padding: 8px 16px; }
-      .unlock-btn-label { font-size: 9px; }
-      .unlock-btn-detail { font-size: 12.5px; }
-      .unlock-btn-sub { font-size: 11px; }
-      .unlock-secondary-link { font-size: 11px; padding: 5px 12px; }
+      .unlock-btn-group {
+        margin-top: 4px; gap: 8px 4px;
+        flex-direction: row; flex-wrap: wrap; justify-content: center;
+      }
+      .hero-toggle { margin-bottom: 0; }
+      /* Sub-text ("Get 3 months...") stays on its own line below the
+         toggle+button row rather than trying to sit beside them —
+         flex-basis:100% forces a wrap even though the group is now a row. */
+      .unlock-btn-sub { flex-basis: 100%; }
+      .unlock-btn { font-size: 11px; padding: 6px 12px; }
+      .unlock-btn-label { font-size: 8px; }
+      .unlock-btn-detail { font-size: 11.5px; }
+      .unlock-btn-sub { font-size: 10px; }
+      .unlock-secondary-link { font-size: 10px; padding: 4px 10px; }
+      .hero-toggle-btn { padding: 4px 10px; font-size: 11px; }
     }
 
     .grace-banner {
