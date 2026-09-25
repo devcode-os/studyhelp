@@ -2050,6 +2050,56 @@ function formatMath(str) {
         if (select) select.value = initial.conceptId || initial.partNumber;
         showConcept(initial.conceptId || initial.partNumber);
       }
+
+      // Proactive unlock: for an already-purchased, already-logged-in user
+      // (entitlement cached from elsewhere in this tab session, or a fast
+      // /check-access confirming it), reveal every locked part immediately
+      // on page load — no click, no visible lock flash. Falls back silently
+      // to the existing per-click Unlock button for guests/unpurchased
+      // users, or if this check errors out.
+      //
+      // window.ensureEntitlementChecked/WORKER_URL are set by the OTHER
+      // <script> block on this page (define:vars scripts are separate
+      // Astro modules), which runs AFTER this one in document order — so
+      // wait for them to exist before calling, instead of assuming they're
+      // ready yet.
+      (async () => {
+        const hasLocked = concepts.some((c) => !c.free);
+        if (!hasLocked) return; // nothing to unlock
+
+        let waited = 0;
+        while (typeof window.ensureEntitlementChecked !== 'function' && waited < 4000) {
+          await new Promise((r) => setTimeout(r, 50));
+          waited += 50;
+        }
+        if (typeof window.ensureEntitlementChecked !== 'function') return;
+
+        try {
+          const ok = await window.ensureEntitlementChecked();
+          if (!ok) return; // guest/unpurchased — leave lock cards as-is
+
+          const fullConcepts = await fetchFullTheoryContent();
+          fullConcepts.forEach((full) => {
+            const idx = concepts.findIndex(
+              (x) => String(x.conceptId) === String(full.conceptId) || String(x.partNumber) === String(full.partNumber)
+            );
+            if (idx !== -1) concepts[idx] = { ...full, free: true };
+          });
+
+          if (select) {
+            Array.from(select.options).forEach((opt) => {
+              opt.textContent = opt.textContent.replace(' 🔒', '');
+            });
+          }
+
+          // Re-render whatever part is currently showing, now unlocked.
+          const currentVal = select ? select.value : (initial && (initial.conceptId || initial.partNumber));
+          if (currentVal != null) showConcept(currentVal);
+        } catch (err) {
+          // Silent — page just stays on the normal locked/click-to-unlock
+          // flow, same as if this proactive check had never run.
+        }
+      })();
     </script>
   )}
 
