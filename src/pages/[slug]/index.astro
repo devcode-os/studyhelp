@@ -1813,18 +1813,19 @@ function formatMath(str) {
     </script>
   )}
   {isTheory && (
-    <script define:vars={{ concepts, hasParts, subject }}>
+    <script define:vars={{ concepts, hasParts, subject, chapterSlug }}>
       // SECURITY: locked concepts never carry content fields (stripped at
       // the getStaticPaths level above) — so a locked concept is detected
       // and handled BEFORE any content field is touched, and the lock
-      // card renders with nothing behind it to blur or scrape. There is
-      // no client-side unlock toggle; "Unlock" sends the student to the
-      // real purchase flow, same as every other paywall on this site.
+      // card renders with nothing behind it to blur or scrape.
       //
-      // TODO: once the theory_content D1 table + Worker endpoint exist,
-      // this can offer an in-place "reveal after purchase" fetch (same
-      // pattern as ensureEntitlementChecked + the chapter-answers fetch)
-      // instead of a plain link to /plans/.
+      // In-place unlock: on click, runs the SAME ensureEntitlementChecked()
+      // used by MCQs (exposed on window by the script below, since Astro
+      // bundles each <script> as its own module), then fetches the real
+      // concepts_json from /content/theory (D1, entitlement-gated) and
+      // merges it into the local `concepts` array. Fails closed on any
+      // error — content stays locked, "View Plans" link remains as a
+      // fallback the whole time.
       const mount = document.getElementById('conceptMount');
       const select = document.getElementById('partSelect');
 
@@ -1834,14 +1835,32 @@ function formatMath(str) {
         return div.innerHTML;
       }
 
+      let theoryFetchPromise = null; // dedupe concurrent unlock clicks
+
+      async function fetchFullTheoryContent() {
+        if (theoryFetchPromise) return theoryFetchPromise;
+        theoryFetchPromise = (async () => {
+          const res = await fetch(
+            `${window.WORKER_URL}/content/theory?chapter_slug=${encodeURIComponent(chapterSlug)}`,
+            { credentials: 'include' }
+          );
+          if (!res.ok) throw new Error('theory fetch failed');
+          const data = await res.json();
+          return data.concepts; // full concepts array, same shape as source JSON
+        })();
+        return theoryFetchPromise;
+      }
+
       function renderConcept(c) {
         if (!c.free) {
+          const cid = c.conceptId || c.partNumber;
           return `
             <div class="concept-lock-overlay concept-lock-standalone">
               <div class="concept-lock-badge">&#128274;</div>
               <div class="concept-lock-title">${hasParts ? `Part ${c.partNumber} is locked` : 'Rest of this chapter is locked'}</div>
-              <div class="concept-lock-sub">Purchase to continue reading.</div>
-              <a class="concept-unlock-btn" href="/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle">View Plans</a>
+              <div class="concept-lock-sub" id="concept-lock-sub-${cid}">Purchase to continue reading.</div>
+              <button class="concept-unlock-btn" id="concept-unlock-btn-${cid}" type="button">Unlock</button>
+              <a class="concept-unlock-link" style="display:block;margin-top:8px;" href="/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle">View Plans</a>
             </div>
           `;
         }
@@ -1973,6 +1992,47 @@ function formatMath(str) {
           (x) => String(x.conceptId) === String(idOrPartNumber) || String(x.partNumber) === String(idOrPartNumber)
         ) || concepts[0];
         mount.innerHTML = renderConcept(c);
+
+        if (!c.free) {
+          const cid = c.conceptId || c.partNumber;
+          const btn = document.getElementById(`concept-unlock-btn-${cid}`);
+          const subEl = document.getElementById(`concept-lock-sub-${cid}`);
+          if (btn) {
+            btn.addEventListener('click', async () => {
+              btn.disabled = true;
+              btn.textContent = 'Checking…';
+              try {
+                const ok = await window.ensureEntitlementChecked();
+                if (!ok) {
+                  if (subEl) subEl.textContent = 'Not purchased yet — view plans below.';
+                  btn.textContent = 'Unlock';
+                  btn.disabled = false;
+                  return;
+                }
+                const fullConcepts = await fetchFullTheoryContent();
+                // Merge full content into the local concepts array in
+                // place — free flags/content now match the purchased chapter.
+                fullConcepts.forEach((full) => {
+                  const idx = concepts.findIndex(
+                    (x) => String(x.conceptId) === String(full.conceptId) || String(x.partNumber) === String(full.partNumber)
+                  );
+                  if (idx !== -1) concepts[idx] = full;
+                });
+                // Refresh lock icons in the Jump-to-part dropdown too.
+                if (select) {
+                  Array.from(select.options).forEach((opt) => {
+                    opt.textContent = opt.textContent.replace(' 🔒', '');
+                  });
+                }
+                showConcept(idOrPartNumber); // re-render now-unlocked part
+              } catch (err) {
+                btn.textContent = 'Unlock';
+                btn.disabled = false;
+                if (subEl) subEl.textContent = 'Something went wrong — try again.';
+              }
+            });
+          }
+        }
       }
 
       if (select) {
@@ -2319,6 +2379,12 @@ function formatMath(str) {
 
       return entitlementCheckPromise;
     }
+
+    // Expose to the separate Theory script module (Astro bundles each
+    // <script> as its own module — these two are needed there to wire
+    // the in-place "unlock after purchase" fetch for locked theory parts).
+    window.ensureEntitlementChecked = ensureEntitlementChecked;
+    window.WORKER_URL = WORKER_URL;
 
     // ---------- Button loading feedback ----------
     // Gives instant visual response to a tap even while the entitlement
