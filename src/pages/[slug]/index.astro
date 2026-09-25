@@ -2010,13 +2010,19 @@ function formatMath(str) {
                   return;
                 }
                 const fullConcepts = await fetchFullTheoryContent();
-                // Merge full content into the local concepts array in
-                // place — free flags/content now match the purchased chapter.
+                // Merge full content into the local concepts array in place.
+                // IMPORTANT: /content/theory returns concepts exactly as
+                // stored in D1 — including their original free:false flag
+                // for what were locked parts. Reaching this line already
+                // means ensureEntitlementChecked() confirmed a real
+                // purchase, so every concept returned here is unlocked for
+                // this user regardless of its stored free value — force it
+                // to true, or renderConcept() would show the lock card again.
                 fullConcepts.forEach((full) => {
                   const idx = concepts.findIndex(
                     (x) => String(x.conceptId) === String(full.conceptId) || String(x.partNumber) === String(full.partNumber)
                   );
-                  if (idx !== -1) concepts[idx] = full;
+                  if (idx !== -1) concepts[idx] = { ...full, free: true };
                 });
                 // Refresh lock icons in the Jump-to-part dropdown too.
                 if (select) {
