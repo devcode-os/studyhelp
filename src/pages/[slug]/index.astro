@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import { getSubjectMeta } from '../../data/subjectsMeta.js';
 
 export function getStaticPaths() {
+
   // Matches src/data/<any-subject-folder>/*.json - no subject names hardcoded.
   const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
 
@@ -29,24 +30,21 @@ export function getStaticPaths() {
     const isTheory = ch.type === 'theory';
 
     if (isTheory) {
-      // SECURITY: locked concepts (c.free === false) carry ONLY their
-      // navigation metadata (conceptId/partNumber/partName) — every
-      // content field (bodyMd, and the grammar-chapter fields below) is
-      // stripped before it ever reaches props, so it never lands in the
-      // static build at all. This mirrors the FAQ branch's
-      // question-text-only pattern below. Only question TEXT ships for
-      // any attached MCQs (ch.faqs) — real answers still come from the
-      // existing Worker+D1 chapter-answers endpoint at reveal time,
-      // exactly like the plain FAQ branch.
+      // SECURITY: locked concepts carry NO content fields — every content
+      // field (bodyMd, and the grammar-chapter fields below) is stripped
+      // before it ever reaches props, so it never lands in the static
+      // build at all.
       //
-      // TODO: once the theory_content D1 table + Worker endpoint exist,
-      // wire the "Unlock" button below to fetch locked bodyMd after a
-      // real entitlement check (same pattern as ensureEntitlementChecked
-      // + the chapter-answers fetch), instead of linking to /plans/.
+      // Free-preview rule: chapter 1 of every subject is fully free, no
+      // exceptions. Chapter 2+ — only the first part (by partNumber) is
+      // free; every other part is locked, whatever its length.
       const hasFaqs = Array.isArray(ch.faqs) && ch.faqs.length > 0;
-      const safeConcepts = (ch.concepts || []).map((c) => {
-        if (c.free) return c; // free part — ship in full, as-is
-        // locked — strip every content field, keep only nav metadata
+      const sortedConcepts = [...(ch.concepts || [])].sort((a, b) => (a.partNumber || 0) - (b.partNumber || 0));
+
+      const safeConcepts = sortedConcepts.map((c, idx) => {
+        const isFree = ch.chapterNumber === 1 || idx === 0;
+        if (isFree) return { ...c, free: true };
+        // Locked — strip every content field, nav metadata only.
         return {
           conceptId: c.conceptId,
           partNumber: c.partNumber,
@@ -54,6 +52,7 @@ export function getStaticPaths() {
           free: false,
         };
       });
+
       return {
         params: { slug: ch.slug },
         props: {
@@ -399,19 +398,24 @@ function formatMath(str) {
         )}
 
         {hasParts && (
-          <div class="part-select-row">
-            {!hasMcq && <div class="part-select-label">Jump to a part</div>}
-            <select id="partSelect" class="part-select">
-              {concepts.map((c) => (
-                <option value={c.conceptId || c.partNumber}>
-                  {`Part ${c.partNumber}/${concepts.length} - ${c.partName}${c.free ? '' : ' 🔒'}`}
-                </option>
-              ))}
-            </select>
-          </div>
+          <select id="partSelect" class="part-select" style="display:none;" aria-hidden="true">
+            {concepts.map((c) => (
+              <option value={c.conceptId || c.partNumber}>
+                {`Part ${c.partNumber}/${concepts.length} - ${c.partName}${c.free ? '' : ' 🔒'}`}
+              </option>
+            ))}
+          </select>
         )}
 
         <div id="conceptMount"></div>
+
+        {hasParts && (
+          <div class="theory-nav-row">
+            <button id="prevPartBtn" class="theory-nav-btn" type="button" aria-label="Previous page">&larr; Previous</button>
+            <span id="partPositionLabel" class="theory-nav-position"></span>
+            <button id="nextPartBtn" class="theory-nav-btn" type="button" aria-label="Next page">Next &rarr;</button>
+          </div>
+        )}
         </div>
       </Fragment>
     )}
@@ -1629,12 +1633,33 @@ function formatMath(str) {
     .intro-card-label{font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;}
     .chapter-intro-text{font-size:16px; line-height:1.65; color:var(--text); margin:0;}
 
-    .part-select-row{margin-top:14px; margin-bottom:16px;}
-    .part-select-label{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+    .part-select-row{margin-top:8px; margin-bottom:16px;}
+    .part-select-label{
+      font-size:12px; font-weight:700; letter-spacing:.04em; color:var(--muted);
+      cursor:pointer; list-style:none; padding:4px 0; display:inline-block;
+    }
+    .part-select-label::-webkit-details-marker{display:none;}
     .part-select{
       width:100%; background:var(--card); border:1px solid var(--border); border-radius:12px;
-      padding:12px 14px; font-size:14.5px; font-weight:600; color:var(--text);
+      padding:12px 14px; font-size:14.5px; font-weight:600; color:var(--text); margin-top:8px;
     }
+
+    /* Page-style Next/Prev navigation — primary way to move through a
+       theory chapter's parts. The old dropdown (now <details>/"Contents")
+       stays available underneath for jumping straight to a topic, but is
+       no longer the only way to move forward. */
+    .theory-nav-row{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-top:14px; padding:10px 4px;
+    }
+    .theory-nav-btn{
+      background:var(--card); border:1px solid var(--border); border-radius:10px;
+      padding:10px 16px; font-size:13.5px; font-weight:700; color:var(--text); cursor:pointer;
+      flex-shrink:0;
+    }
+    .theory-nav-btn:disabled{opacity:.35; cursor:default;}
+    .theory-nav-btn:not(:disabled):hover{border-color:var(--accent); color:var(--accent);}
+    .theory-nav-position{font-size:12.5px; font-weight:700; color:var(--muted); text-align:center; flex:1;}
 
     .theory-md{line-height:1.75; color:var(--text); font-size:15.5px;}
     .theory-md h2{
@@ -1821,7 +1846,7 @@ function formatMath(str) {
       //
       // In-place unlock: on click, runs the SAME ensureEntitlementChecked()
       // used by MCQs (exposed on window by the script below, since Astro
-      // bundles each <script> as its own module), then fetches the real
+      // bundles each script block as its own module), then fetches the real
       // concepts_json from /content/theory (D1, entitlement-gated) and
       // merges it into the local `concepts` array. Fails closed on any
       // error — content stays locked, "View Plans" link remains as a
@@ -1851,9 +1876,20 @@ function formatMath(str) {
         return theoryFetchPromise;
       }
 
+      function renderBodyMd(bodyMd) {
+        // marked's CommonMark flanking-rule regex misclassifies Telugu
+        // (and other non-Latin) letters, so **bold**immediatelyFollowedByLetter
+        // silently fails when the closing ** sits right after punctuation
+        // with no space before the next word. Fix: convert ** pairs to
+        // <strong> ourselves first, then hand the result to marked.
+        const preBoldFixed = bodyMd.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
+        return (window.marked ? window.marked.parse(preBoldFixed) : `<pre>${escapeHtml(bodyMd)}</pre>`);
+      }
+
       function renderConcept(c) {
         if (!c.free) {
           const cid = c.conceptId || c.partNumber;
+
           return `
             <div class="concept-lock-overlay concept-lock-standalone">
               <div class="concept-lock-badge">&#128274;</div>
@@ -1879,13 +1915,7 @@ function formatMath(str) {
               <div class="go">Practice &rarr;</div>
             </a>
           `;
-          // marked's CommonMark flanking-rule regex misclassifies Telugu
-          // (and other non-Latin) letters, so **bold**immediatelyFollowedByLetter
-          // silently fails when the closing ** sits right after punctuation
-          // with no space before the next word. Fix: convert ** pairs to
-          // <strong> ourselves first, then hand the result to marked.
-          const preBoldFixed = c.bodyMd.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
-          const mdHtml = (window.marked ? window.marked.parse(preBoldFixed) : `<pre>${escapeHtml(c.bodyMd)}</pre>`);
+          const mdHtml = renderBodyMd(c.bodyMd);
           return `<div class="theory-md">${mdHtml}</div>${practiceHtmlMd}`;
         }
 
@@ -1987,11 +2017,41 @@ function formatMath(str) {
         return `${rememberHtml}${examplesHtml}${scenariosHtml}${confusionHtml}${exceptionsHtml}${examTipHtml}${practiceHtml}`;
       }
 
+      const prevBtn = document.getElementById('prevPartBtn');
+      const nextBtn = document.getElementById('nextPartBtn');
+      const positionLabel = document.getElementById('partPositionLabel');
+
+      function updateNavUI(currentConcept) {
+        const idx = concepts.findIndex((x) => x === currentConcept);
+        if (positionLabel) positionLabel.textContent = `Part ${currentConcept.partNumber} of ${concepts.length}`;
+        if (prevBtn) prevBtn.disabled = idx <= 0;
+        if (nextBtn) nextBtn.disabled = idx === -1 || idx >= concepts.length - 1;
+        if (prevBtn) prevBtn.dataset.targetIdx = String(idx - 1);
+        if (nextBtn) nextBtn.dataset.targetIdx = String(idx + 1);
+      }
+
+      function goToIndex(idx) {
+        const target = concepts[idx];
+        if (!target) return;
+        const cid = target.conceptId || target.partNumber;
+        if (select) select.value = cid;
+        showConcept(cid);
+        mount.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => goToIndex(Number(prevBtn.dataset.targetIdx)));
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => goToIndex(Number(nextBtn.dataset.targetIdx)));
+      }
+
       function showConcept(idOrPartNumber) {
         const c = concepts.find(
           (x) => String(x.conceptId) === String(idOrPartNumber) || String(x.partNumber) === String(idOrPartNumber)
         ) || concepts[0];
         mount.innerHTML = renderConcept(c);
+        updateNavUI(c);
 
         if (!c.free) {
           const cid = c.conceptId || c.partNumber;
@@ -2059,7 +2119,7 @@ function formatMath(str) {
       // users, or if this check errors out.
       //
       // window.ensureEntitlementChecked/WORKER_URL are set by the OTHER
-      // <script> block on this page (define:vars scripts are separate
+      // script block on this page (define:vars scripts are separate
       // Astro modules), which runs AFTER this one in document order — so
       // wait for them to exist before calling, instead of assuming they're
       // ready yet.
@@ -2437,7 +2497,7 @@ function formatMath(str) {
     }
 
     // Expose to the separate Theory script module (Astro bundles each
-    // <script> as its own module — these two are needed there to wire
+    // script block as its own module — these two are needed there to wire
     // the in-place "unlock after purchase" fetch for locked theory parts).
     window.ensureEntitlementChecked = ensureEntitlementChecked;
     window.WORKER_URL = WORKER_URL;
