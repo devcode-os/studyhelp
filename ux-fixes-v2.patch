@@ -1,0 +1,251 @@
+diff --git a/src/components/Footer.astro b/src/components/Footer.astro
+index 8381b40..c7367ba 100644
+--- a/src/components/Footer.astro
++++ b/src/components/Footer.astro
+@@ -3,9 +3,18 @@
+ // On mobile (<=720px) this is hidden entirely — its links move into a
+ // header "more" menu instead (see Header.astro), since a full footer
+ // competing with the fixed tab bar was awkward UX. Desktop unchanged.
++//
++// `premium`: passed by Layout.astro when the current route is a -v2
++// page, so the footer picks up the indigo/lavender redesign palette
++// instead of the old dark-navy theme, and Forgot Passcode points at
++// its -v2 equivalent. Contact/Support/Terms/Refund/Privacy have no
++// -v2 twin (out of scope for this redesign), so they always link to
++// the one page that exists either way.
++const { premium = false } = Astro.props;
+ const year = new Date().getFullYear();
++const forgotPasscodeHref = premium ? '/forgot-passcode-v2/' : '/forgot-passcode/';
+ ---
+-<footer class="site-footer">
++<footer class:list={['site-footer', { 'sh2-theme': premium }]}>
+   <div class="site-footer-inner">
+     <div class="footer-col">
+       <div class="footer-logo">StudyHelp</div>
+@@ -16,7 +25,7 @@ const year = new Date().getFullYear();
+       <div class="footer-heading">Help &amp; Support</div>
+       <a href="/contact/">Contact Us</a>
+       <a href="/support/">Support</a>
+-      <a href="/forgot-passcode/">Forgot Passcode</a>
++      <a href={forgotPasscodeHref}>Forgot Passcode</a>
+     </div>
+ 
+     <div class="footer-col">
+@@ -92,4 +101,22 @@ const year = new Date().getFullYear();
+       display: none;
+     }
+   }
++
++  /* ---------- Premium theme (sh2-theme) — used only on -v2 pages via
++     the `premium` prop. A fixed dark indigo block (not affected by the
++     light/dark toggle), matching the visual weight of the old dark-navy
++     footer instead of a light background. ---------- */
++  .site-footer.sh2-theme {
++    background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 100%);
++    border-top: 1px solid rgba(255,255,255,0.08);
++  }
++  .site-footer.sh2-theme .footer-logo { color: #ffffff; }
++  .site-footer.sh2-theme .footer-tagline { color: rgba(255,255,255,0.65); }
++  .site-footer.sh2-theme .footer-heading { color: #D8CBFF; }
++  .site-footer.sh2-theme .footer-col a { color: rgba(255,255,255,0.7); }
++  .site-footer.sh2-theme .footer-col a:hover { color: #ffffff; }
++  .site-footer.sh2-theme .footer-bottom {
++    border-top: 1px solid rgba(255,255,255,0.08);
++    color: rgba(255,255,255,0.55);
++  }
+ </style>
+diff --git a/src/components/Header.astro b/src/components/Header.astro
+index 7630d66..2bc1f81 100644
+--- a/src/components/Header.astro
++++ b/src/components/Header.astro
+@@ -504,6 +504,10 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
+     background: #EEEDF6;
+     border-bottom: 1px solid #E7E4F5;
+   }
++  html[data-theme="dark"] .site-header.sh2-theme {
++    background: #1C1A30;
++    border-bottom: 1px solid #302C4E;
++  }
+   .site-header.sh2-theme .logo { color: #1C1A38; font-size: 18px; font-weight: 800; }
+   html[data-theme="dark"] .site-header.sh2-theme .logo { color: #F3F1FC; }
+   .logo-premium {
+@@ -528,15 +532,36 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
+   .logo-mark svg { width: 17px; height: 17px; color: #fff; }
+   .site-header.sh2-theme .nav-desktop a { color: #726F92; }
+   .site-header.sh2-theme .nav-desktop a.active { color: #4B3FA0; }
++  html[data-theme="dark"] .site-header.sh2-theme .nav-desktop a { color: #9C97BE; }
++  html[data-theme="dark"] .site-header.sh2-theme .nav-desktop a.active { color: #A594F5; }
+   .site-header.sh2-theme .theme-toggle {
+     border: 1px solid #E7E4F5;
+     background: #FFFFFF;
+     color: #726F92;
+     box-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 10px 20px -12px rgba(46,37,112,0.18);
+   }
++  html[data-theme="dark"] .site-header.sh2-theme .theme-toggle {
++    border: 1px solid #302C4E;
++    background: #242138;
++    color: #9C97BE;
++  }
++  .site-header.sh2-theme #login-link.btn {
++    border: 1px solid #E7E4F5;
++    background: #FFFFFF;
++    color: #1C1A38;
++  }
++  html[data-theme="dark"] .site-header.sh2-theme #login-link.btn {
++    border: 1px solid #302C4E;
++    background: #242138;
++    color: #F3F1FC;
++  }
+   .site-header.sh2-theme .btn-accent {
+-    background: linear-gradient(150deg, #E8963A, #D8A94E);
+-    color: #2a1400;
++    background: linear-gradient(150deg, #4B3FA0, #2E2570);
++    color: #ffffff;
++  }
++  html[data-theme="dark"] .site-header.sh2-theme .btn-accent {
++    background: linear-gradient(150deg, #A594F5, #7A6CD9);
++    color: #1C1A30;
+   }
+   .site-header.sh2-theme .more-menu-dropdown {
+     background: #FFFFFF;
+@@ -545,6 +570,13 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
+   }
+   .site-header.sh2-theme .more-menu-dropdown a { color: #1C1A38; }
+   .site-header.sh2-theme .more-menu-divider { background: #E7E4F5; }
++  html[data-theme="dark"] .site-header.sh2-theme .more-menu-dropdown {
++    background: #242138;
++    border: 1px solid #302C4E;
++    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
++  }
++  html[data-theme="dark"] .site-header.sh2-theme .more-menu-dropdown a { color: #F3F1FC; }
++  html[data-theme="dark"] .site-header.sh2-theme .more-menu-divider { background: #302C4E; }
+ 
+   /* Premium tab bar: floating rounded pill (matches the design mockup),
+      not the flat edge-to-edge bar the classic theme uses. Higher
+diff --git a/src/layouts/Layout.astro b/src/layouts/Layout.astro
+index 7ebe284..97d8d28 100644
+--- a/src/layouts/Layout.astro
++++ b/src/layouts/Layout.astro
+@@ -652,7 +652,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
+     <slot />
+   </main>
+ 
+-  <Footer />
++  <Footer premium={Astro.url.pathname.includes('-v2')} />
+ 
+   <a id="ca-fab" href="/current-affairs/" title="Current Affairs" aria-label="Current Affairs">
+     <svg viewBox="0 0 24 24">
+diff --git a/src/pages/current-affairs-v2.astro b/src/pages/current-affairs-v2.astro
+index bb7126b..117cf58 100644
+--- a/src/pages/current-affairs-v2.astro
++++ b/src/pages/current-affairs-v2.astro
+@@ -379,7 +379,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
+     .ca-wrap { max-width: 900px; margin: 0 auto; }
+     @media (min-width: 1200px) {
+       .page-wide, .ca-wrap {
+-        max-width: 1200px;
++        max-width: 900px;
+       }
+     }
+     @media (max-width: 900px) {
+@@ -643,6 +643,9 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
+     .ca-bundle-card-max .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-amber), #b45c0a); color: #2a1400; }
+ 
+     .ca-format-toggle { display: flex; gap: 8px; margin-bottom: 16px; }
++    @media (min-width: 1200px) {
++      .ca-format-toggle { max-width: 360px; }
++    }
+     .ca-format-btn {
+       flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid var(--border);
+       background: var(--card); color: var(--text); font-weight: 700; font-size: 13px;
+diff --git a/src/pages/index-v2.astro b/src/pages/index-v2.astro
+index a156adf..7902ea4 100644
+--- a/src/pages/index-v2.astro
++++ b/src/pages/index-v2.astro
+@@ -179,8 +179,10 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
+   <div class="page-wide">
+ 
+     <div class="hero-card" id="hero-card">
+-      <h1 class="hero-title">Your shortcut to cracking TSPSC &amp; APPSC exams</h1>
+-      <p class="hero-sub">Theory, chapter-wise MCQs and mock tests — organised the way your syllabus is.</p>
++      <div class="hero-head">
++        <h1 class="hero-title">Your shortcut to cracking TSPSC &amp; APPSC exams</h1>
++        <p class="hero-sub">Theory, chapter-wise MCQs and mock tests — organised the way your syllabus is.</p>
++      </div>
+       <div class="hero-stats">
+         <div class="stat-pill"><b>{subjects.length}</b><span>subjects</span></div>
+         <div class="stat-pill"><b>{totalChapters}+</b><span>chapters</span></div>
+@@ -468,6 +470,22 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
+       line-height: 1.5;
+       max-width: 30ch;
+     }
++    @media (min-width: 1200px) {
++      .hero-head {
++        display: flex;
++        align-items: flex-start;
++        gap: 28px;
++      }
++      .hero-title {
++        margin-bottom: 0;
++        flex: 0 0 auto;
++      }
++      .hero-sub {
++        margin-bottom: 0;
++        margin-top: 6px;
++        max-width: 34ch;
++      }
++    }
+     .hero-stats { position: relative; display: flex; gap: 10px; }
+     .stat-pill {
+       background: rgba(255,255,255,0.12);
+diff --git a/src/pages/plans-v2.astro b/src/pages/plans-v2.astro
+index a34009d..0300acc 100644
+--- a/src/pages/plans-v2.astro
++++ b/src/pages/plans-v2.astro
+@@ -227,6 +227,9 @@ import Header from '../components/Header.astro';
+ 
+     /* ================= Mode toggle ================= */
+     .mode-toggle { display: flex; gap: 8px; margin-bottom: 8px; }
++    @media (min-width: 1200px) {
++      .mode-toggle { max-width: 420px; }
++    }
+     .mode-btn {
+       flex: 1; padding: 10px 12px; border-radius: 10px; font-size: 0.78rem; font-weight: 700;
+       cursor: pointer; white-space: nowrap;
+@@ -271,6 +274,9 @@ import Header from '../components/Header.astro';
+ 
+     /* ================= Subject rows ================= */
+     .subject-rows { display: flex; flex-direction: column; gap: 7px; }
++    @media (min-width: 1200px) {
++      .subject-rows { max-width: 820px; margin: 0 auto; }
++    }
+     .row-skeleton { text-align: center; padding: 2rem; color: var(--sh2-text-soft); font-size: 0.8rem; }
+     .subject-row {
+       position: relative; overflow: hidden;
+@@ -374,6 +380,9 @@ import Header from '../components/Header.astro';
+       background: var(--sh2-green); color: #ffffff; cursor: pointer; white-space: nowrap;
+     }
+     .bundle-buy-btn:disabled { background: var(--sh2-surface-2); color: var(--sh2-text-soft); opacity: 1; cursor: not-allowed; }
++    @media (min-width: 1200px) {
++      .bundle-sticky-bar { max-width: 420px; margin: 12px auto 0; }
++    }
+ 
+     /* ================= Active subjects (owned) card ================= */
+     .active-row {
+diff --git a/src/pages/subject-v2/[subject].astro b/src/pages/subject-v2/[subject].astro
+index 8eef810..b5b743f 100644
+--- a/src/pages/subject-v2/[subject].astro
++++ b/src/pages/subject-v2/[subject].astro
+@@ -381,6 +381,12 @@ for (const ch of chapters) {
+     .section-heading:first-of-type { margin-top: 4px; }
+ 
+     .chapter-list { display: flex; flex-direction: column; gap: 6px; }
++    @media (min-width: 1200px) {
++      .chapter-list {
++        max-width: 820px;
++        margin: 0 auto;
++      }
++    }
+     .chapter-card {
+       display: flex; align-items: center; gap: 10px;
+       background: var(--sh2-surface);
