@@ -1,0 +1,601 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getSubjectMeta } from '../../data/subjectsMeta.js';
+
+// ============================================================
+// UNCHANGED FROM [subject]/index.astro — same getStaticPaths,
+// same real chapter/mock-test scan, same counterpart-slug check
+// against actually-generated pages (not slug-pattern guessing).
+// ============================================================
+export function getStaticPaths() {
+  const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
+
+  const bySubject = {};
+
+  for (const [path, mod] of Object.entries(chapterFiles)) {
+    const subject = path.split('/').slice(-2, -1)[0];
+    const items = Array.isArray(mod.default) ? mod.default : [mod.default];
+    const valid = items.filter(
+      (ch) =>
+        ch &&
+        ch.slug &&
+        ch.chapterNumber &&
+        (Array.isArray(ch.faqs) || (ch.type === 'reference' && Array.isArray(ch.articles)))
+    );
+
+    if (!bySubject[subject]) bySubject[subject] = [];
+    bySubject[subject].push(...valid);
+  }
+
+  const mockFiles = import.meta.glob('../../data/*/*-mock-tests/*.json', { eager: true });
+  const mockCountsBySubject = {};
+  for (const path of Object.keys(mockFiles)) {
+    const mockFolder = path.split('/').slice(-2, -1)[0];
+    const mockSubject = mockFolder.replace(/-mock-tests$/, '');
+    mockCountsBySubject[mockSubject] = (mockCountsBySubject[mockSubject] || 0) + 1;
+  }
+
+  const allSubjectSlugs = new Set(Object.keys(bySubject));
+
+  return Object.entries(bySubject).map(([subject, chapters]) => {
+    const counterpartSlug = subject.endsWith('-en')
+      ? subject.replace(/-en$/, '-te')
+      : subject.endsWith('-te')
+      ? subject.replace(/-te$/, '-en')
+      : null;
+    return {
+      params: { subject },
+      props: {
+        chapters: chapters.sort((a, b) => a.chapterNumber - b.chapterNumber),
+        mockCount: mockCountsBySubject[subject] || 0,
+        counterpartSlug: counterpartSlug && allSubjectSlugs.has(counterpartSlug) ? counterpartSlug : null,
+      },
+    };
+  });
+}
+
+const { subject } = Astro.params;
+const { chapters, mockCount, counterpartSlug } = Astro.props;
+const meta = getSubjectMeta(subject);
+
+const langSwitchCopy = {
+  'telangana-history-en': { label: 'తెలుగు వెర్షన్ అందుబాటులో ఉంది (MCQs మాత్రమే)' },
+  'telangana-history-te': { label: 'English Version Available (Theory Included)' },
+};
+const langSwitch = counterpartSlug
+  ? subject.endsWith('-en')
+    ? { slug: counterpartSlug, label: langSwitchCopy[subject]?.label || 'తెలుగు వెర్షన్ అందుబాటులో ఉంది' }
+    : { slug: counterpartSlug, label: langSwitchCopy[subject]?.label || 'English Version Available' }
+  : null;
+
+function splitTitleParts(title) {
+  const idx = title.indexOf(' (');
+  if (idx === -1) return [title];
+  return [title.slice(0, idx), ' ' + title.slice(idx + 1)];
+}
+const heroTitleParts = splitTitleParts(meta.heading);
+
+const totalQuestions = chapters.reduce((sum, ch) => sum + (ch.faqs ? ch.faqs.length : 0), 0);
+const isPapers = meta.category === 'papers';
+
+const chapterGroups = [];
+let currentHeading = null;
+for (const ch of chapters) {
+  if (ch.section && ch.section !== currentHeading) {
+    currentHeading = ch.section;
+    chapterGroups.push({ heading: currentHeading, chapters: [] });
+  } else if (!chapterGroups.length) {
+    chapterGroups.push({ heading: currentHeading, chapters: [] });
+  }
+  chapterGroups[chapterGroups.length - 1].chapters.push(ch);
+}
+---
+<Layout title={meta.seoTitle} description={meta.seoDescription} lang={meta.lang}>
+
+  <Header active="subjects" theme="premium" />
+
+  <div class="page-wide">
+
+    {/* Language-switch banner (Telugu/English cross-link) intentionally
+        not rendered here — the redesigned page reads cleaner without it,
+        per explicit feedback. #lang-switch-row still exists nowhere on
+        this page now, but the script below no-ops safely if it can't
+        find that id (e.g. on unlock), so nothing else needs to change. */}
+
+    <div class={`subject-hero ${isPapers ? 'subject-hero-papers' : ''}`}>
+      {isPapers ? (
+        <Fragment>
+          <h1 class="hero-title">
+            {heroTitleParts.length === 2
+              ? <>{heroTitleParts[0]}<span class="hero-title-sub">{heroTitleParts[1]}</span></>
+              : meta.heading}
+          </h1>
+          <div class="papers-capsule">
+            <i class="ti ti-books" aria-hidden="true"></i>
+            <span>{chapters.length} {chapters.length === 1 ? 'Paper' : 'Papers'}</span>
+          </div>
+        </Fragment>
+      ) : (
+        <div class="hero-title-row">
+          <h1 class="hero-title hero-title-inline">
+            {heroTitleParts.length === 2
+              ? <>{heroTitleParts[0]}<span class="hero-title-sub">{heroTitleParts[1]}</span></>
+              : meta.heading}
+          </h1>
+          <div class="hero-meta">
+            <span class="hero-stats-text">{chapters.length} chapters &middot; {totalQuestions.toLocaleString('en-IN')} MCQs</span>
+            {mockCount > 0 && (
+              <a href={`/mock-tests-v2/${subject}/`} class="mock-pill">
+                <i class="ti ti-clipboard-list" aria-hidden="true"></i>
+                {mockCount} mock {mockCount === 1 ? 'test' : 'tests'}
+                <i class="ti ti-chevron-right mock-pill-chev" aria-hidden="true"></i>
+              </a>
+            )}
+          </div>
+        </div>
+      )}
+
+      {!isPapers && (
+        <div class="unlock-group" id="unlock-btn-group">
+          <div class="hero-toggle" id="hero-toggle">
+            <button type="button" id="hero-toggle-bundle" class="hero-toggle-btn hero-toggle-btn-active">Bundle</button>
+            <button type="button" id="hero-toggle-single" class="hero-toggle-btn">Single</button>
+          </div>
+          <a id="bundle-btn" href={`/plans-v2/?highlight=${subject}&mode=bundle`} class="unlock-btn">
+            Pick any 3 subjects for &#8377;399 <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </a>
+          <p class="unlock-sub" id="bundle-sub">Get 3 months (<span id="unlock-btn-days">90</span> days) full access</p>
+          <a id="unlock-btn" href={`/plans-v2/?highlight=${subject}`} class="unlock-btn unlock-btn-single" hidden>Unlock this subject — &#8377;199</a>
+          <p class="unlock-sub" id="single-sub" hidden>3 months (<span id="unlock-btn-days-2">90</span> days) full access</p>
+        </div>
+      )}
+    </div>
+
+    <div id="grace-grant-banner" class="grace-banner" style="display:none;"></div>
+
+    {chapters.length > 0 ? (
+      chapterGroups.map((group) => (
+        <Fragment>
+          {group.heading && (
+            <h2 class="section-heading">{group.heading}</h2>
+          )}
+          <div class="chapter-list">
+            {group.chapters.map((ch) => (
+              <a href={`/chapter-v2/${ch.slug}/`} class="chapter-card">
+                <div class="chapter-num">{ch.chapterNumber}</div>
+                <div class="chapter-body">
+                  <div class="chapter-title">{ch.title}</div>
+                  <div class="chapter-meta">
+                    {ch.type === 'reference'
+                      ? `${ch.articles.length} articles`
+                      : ch.type === 'theory'
+                        ? `${ch.faqs.length} MCQs + Theory`
+                        : `${ch.faqs.length} MCQs`}
+                  </div>
+                </div>
+                <i class="ti ti-chevron-right chapter-chev" aria-hidden="true"></i>
+              </a>
+            ))}
+          </div>
+        </Fragment>
+      ))
+    ) : (
+      <div class="empty-state">
+        <i class="ti ti-hourglass-empty" aria-hidden="true"></i>
+        <p>Chapters coming soon.</p>
+      </div>
+    )}
+
+  </div>
+
+  <div id="verify-toast" class="verify-toast" style="display:none;">
+    <i class="ti ti-mail-exclamation" aria-hidden="true"></i>
+    <span class="verify-toast-text">Email verification pending &mdash; <a href="/account/">verify now</a></span>
+    <button type="button" id="verify-toast-close" class="verify-toast-close" aria-label="Dismiss">
+      <i class="ti ti-x" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <style is:global>
+    .page-wide {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    @media (max-width: 900px) {
+      .page-wide {
+        padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+    /* ---------- Redesign tokens — same palette as index-v2/subjects-v2 ---------- */
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-text: #211F38;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-gold: #D8A94E;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-text: #EFEDFB;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+    .page-wide h1, .page-wide h2, .page-wide .chapter-title, .page-wide .stat-pill b {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* ---------- Language switch ---------- */
+    .lang-switch-link {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.74rem; font-weight: 700; color: var(--sh2-indigo);
+      background: var(--sh2-indigo-soft); border: 1px solid var(--sh2-line);
+      border-radius: 10px; padding: 7px 12px; margin: 8px 0;
+      text-decoration: none;
+    }
+
+    /* ---------- Subject hero ---------- */
+    .subject-hero {
+      background: linear-gradient(155deg, var(--sh2-indigo-deep) 0%, #5A4CC4 55%, #7C63DE 100%);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 14px 28px -16px rgba(46,37,112,0.5);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .subject-hero-papers { text-align: center; }
+    .hero-title {
+      font-weight: 800; font-size: 1rem; line-height: 1.22;
+      margin: 0 0 8px; color: #fff;
+    }
+    .hero-title-sub {
+      display: block; font-size: 0.72rem; font-weight: 600;
+      color: rgba(255,255,255,0.72); margin-top: 3px;
+    }
+    .hero-title-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+    .hero-title-inline { margin-bottom: 0; flex: 1 1 auto; min-width: 0; }
+    .hero-meta {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      justify-content: flex-end; flex-shrink: 0;
+    }
+    .hero-stats-text {
+      font-size: 0.74rem; font-weight: 600; color: rgba(255,255,255,0.78);
+      margin: 0; white-space: nowrap;
+    }
+    @media (max-width: 420px) {
+      .hero-title-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .hero-meta { justify-content: flex-start; }
+    }
+
+    .papers-capsule {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px; padding: 7px 16px;
+      font-size: 0.82rem; font-weight: 700; color: #fff;
+    }
+
+    .mock-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      padding: 5px 10px 5px 12px;
+      font-size: 0.72rem; font-weight: 700; color: #fff;
+      text-decoration: none;
+    }
+    .mock-pill i:first-child { font-size: 0.78rem; }
+    .mock-pill-chev { font-size: 0.7rem !important; color: rgba(255,255,255,0.6); }
+
+    .unlock-group { margin-top: 8px; text-align: center; }
+    .hero-toggle {
+      display: inline-flex; background: rgba(255,255,255,0.1); border-radius: 999px;
+      padding: 3px; gap: 2px; margin-bottom: 7px;
+    }
+    .hero-toggle-btn {
+      font-size: 0.66rem; font-weight: 700; padding: 4px 11px; border-radius: 999px;
+      border: none; background: transparent; color: rgba(255,255,255,0.65); cursor: pointer;
+    }
+    .hero-toggle-btn-active { background: #fff; color: var(--sh2-indigo-deep); }
+    .hero-toggle[hidden], #single-sub[hidden], .unlock-btn[hidden] { display: none; }
+
+    .unlock-btn {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      width: 100%; box-sizing: border-box;
+      font-size: 0.76rem; font-weight: 800; text-align: center;
+      padding: 9px; border-radius: 10px; text-decoration: none;
+      background: #fff;
+      color: var(--sh2-indigo-deep);
+      box-shadow: 0 8px 16px -8px rgba(0,0,0,0.3);
+    }
+    .unlock-btn i { font-size: 0.76rem; }
+    .unlock-btn-single { background: rgba(255,255,255,0.14); color: #fff; box-shadow: none; border: 1px solid rgba(255,255,255,0.28); }
+    .unlock-sub { font-size: 0.64rem; color: rgba(255,255,255,0.75); margin: 5px 0 0; }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.12rem; }
+      .stat-pill { min-width: 0; padding: 7px 8px; }
+      .stat-pill b { font-size: 0.9rem; }
+      .stat-pill span { font-size: 0.6rem; }
+    }
+
+    .grace-banner {
+      margin-bottom: 16px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: var(--sh2-amber-soft);
+      border: 1px solid rgba(232,150,58,0.35);
+      color: #6b4a00;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+    html[data-theme="dark"] .grace-banner { color: var(--sh2-amber); }
+
+    /* ---------- Chapters ---------- */
+    .section-heading {
+      font-size: 0.9rem; font-weight: 800; color: var(--sh2-ink);
+      margin: 22px 0 10px; padding-left: 10px;
+      border-left: 3px solid var(--sh2-indigo);
+    }
+    .section-heading:first-of-type { margin-top: 4px; }
+
+    .chapter-list { display: flex; flex-direction: column; gap: 6px; }
+    .chapter-card {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--sh2-surface);
+      border-radius: 12px;
+      padding: 9px 12px;
+      box-shadow: var(--sh2-shadow);
+      border: 1px solid var(--sh2-line);
+      text-decoration: none;
+      transition: transform 0.12s ease;
+    }
+    .chapter-card:active { transform: scale(0.99); }
+    .chapter-num {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      background: var(--sh2-indigo-soft); color: var(--sh2-indigo);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 800;
+    }
+    .chapter-body { flex: 1; min-width: 0; }
+    .chapter-title { font-size: 0.82rem; font-weight: 700; color: var(--sh2-ink); line-height: 1.28; }
+    .chapter-meta { font-size: 0.68rem; color: var(--sh2-text-soft); margin-top: 1px; }
+    .chapter-chev { flex-shrink: 0; color: var(--sh2-text-soft); font-size: 0.82rem; }
+
+    .empty-state {
+      background: var(--sh2-surface);
+      border: 1px dashed var(--sh2-line);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--sh2-text-soft);
+      box-shadow: var(--sh2-shadow);
+    }
+    .empty-state i { font-size: 28px; display: block; margin-bottom: 8px; }
+    .empty-state p { margin: 0; }
+
+    /* ---------- Verify toast ---------- */
+    .verify-toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 90vw;
+      width: 420px;
+      background: var(--sh2-surface);
+      border: 1px solid var(--sh2-indigo);
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(33,31,61,0.18);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 55;
+      animation: toast-in 0.35s ease-out;
+    }
+    @keyframes toast-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+    .verify-toast i.ti-mail-exclamation { color: var(--sh2-indigo); font-size: 18px; flex-shrink: 0; }
+    .verify-toast-text { flex: 1; font-size: 13px; color: var(--sh2-ink); }
+    .verify-toast-text a { color: var(--sh2-indigo); font-weight: 600; text-decoration: underline; }
+    .verify-toast-close { background: none; border: none; color: var(--sh2-text-soft); cursor: pointer; padding: 2px; display: flex; align-items: center; flex-shrink: 0; }
+    @media (max-width: 480px) {
+      .verify-toast {
+        bottom: calc(12px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
+        width: calc(100vw - 24px);
+      }
+    }
+  </style>
+
+  <script define:vars={{ subject, isPapers }}>
+    // ============================================================
+    // UNCHANGED FROM [subject]/index.astro — same Worker URL, same
+    // hero toggle logic, same session/check-access/subjects-public
+    // calls, same grace-grant banner and verify-toast logic. Only
+    // the element styling/classes changed in the markup above; every
+    // selector below still matches an id that exists in this markup.
+    // ============================================================
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
+    if (!isPapers) {
+      const toggleBundleBtn = document.getElementById('hero-toggle-bundle');
+      const toggleSingleBtn = document.getElementById('hero-toggle-single');
+      const bundleBtn = document.getElementById('bundle-btn');
+      const bundleSub = document.getElementById('bundle-sub');
+      const unlockBtn = document.getElementById('unlock-btn');
+      const singleSub = document.getElementById('single-sub');
+
+      function setHeroMode(mode) {
+        const isSingle = mode === 'single';
+        toggleBundleBtn.classList.toggle('hero-toggle-btn-active', !isSingle);
+        toggleSingleBtn.classList.toggle('hero-toggle-btn-active', isSingle);
+        bundleBtn.hidden = isSingle;
+        bundleSub.hidden = isSingle;
+        unlockBtn.hidden = !isSingle;
+        singleSub.hidden = !isSingle;
+      }
+      if (toggleBundleBtn && toggleSingleBtn) {
+        toggleBundleBtn.addEventListener('click', () => setHeroMode('bundle'));
+        toggleSingleBtn.addEventListener('click', () => setHeroMode('single'));
+      }
+    }
+
+    function getSession() {
+      if (window.__shSessionPromise) return window.__shSessionPromise;
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .catch(() => ({ logged_in: false }));
+    }
+
+    function formatDaysLeft(expiresAtSeconds) {
+      const msLeft = expiresAtSeconds * 1000 - Date.now();
+      const daysLeft = Math.ceil(msLeft / (24 * 60 * 60 * 1000));
+      if (daysLeft <= 0) return 'Expires today';
+      if (daysLeft === 1) return '1 day left';
+      return `${daysLeft} days left`;
+    }
+
+    function formatExpiryDate(expiresAtSeconds) {
+      return new Date(expiresAtSeconds * 1000).toLocaleDateString('en-IN', {
+        day: 'numeric', month: 'short', year: 'numeric',
+      });
+    }
+
+    if (!isPapers) {
+      fetch(`${WORKER_URL}/subjects/public`)
+        .then((res) => res.json())
+        .then((data) => {
+          const match = (data.subjects || []).find((s) => s.id === subject);
+          if (!match || !match.access_days) return;
+          document.querySelectorAll('#access-days-text, #unlock-btn-days').forEach((el) => {
+            el.textContent = match.access_days;
+          });
+        })
+        .catch(() => {});
+    }
+
+    if (!isPapers) {
+      getSession()
+        .then((session) => {
+          if (!session.logged_in) return;
+
+          return fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`)
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.unlocked) {
+                const btn = document.getElementById('unlock-btn');
+                if (btn) {
+                  const daysLeft = data.expires_at
+                    ? formatDaysLeft(data.expires_at)
+                    : 'Full access unlocked';
+                  btn.textContent = data.expires_at ? `Access active — ${daysLeft} ✓` : `${daysLeft} ✓`;
+                  if (data.expires_at) {
+                    btn.title = `Access until ${formatExpiryDate(data.expires_at)}`;
+                  }
+                  btn.removeAttribute('href');
+                  btn.removeAttribute('hidden');
+                  btn.style.cursor = 'default';
+                  btn.style.background = 'rgba(255,255,255,0.16)';
+                  btn.style.color = '#fff';
+                  btn.style.boxShadow = 'none';
+                  const btnIcon = btn.querySelector('i');
+                  if (btnIcon) btnIcon.remove();
+
+                  const bundleBtn = document.getElementById('bundle-btn');
+                  if (bundleBtn) bundleBtn.style.display = 'none';
+
+                  const heroToggle = document.getElementById('hero-toggle');
+                  if (heroToggle) heroToggle.style.display = 'none';
+
+                  document.querySelectorAll('.unlock-sub').forEach((el) => { el.style.display = 'none'; });
+
+                  const langSwitchRow = document.getElementById('lang-switch-row');
+                  if (langSwitchRow) langSwitchRow.style.display = 'none';
+                }
+
+                if (data.is_grace_grant) {
+                  const banner = document.getElementById('grace-grant-banner');
+                  if (banner) {
+                    const days = data.grace_days_remaining;
+                    banner.innerHTML = `We haven't yet confirmed your payment. You've been given ${days ?? ''} day${days === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/" style="color:inherit; font-weight:700;">contact us</a>.`;
+                    banner.style.display = 'block';
+                  }
+                }
+              }
+            });
+        })
+        .catch(() => {});
+    }
+
+    (function showVerifyToastIfFlagged() {
+      let shouldShow = false;
+      try {
+        shouldShow = sessionStorage.getItem('sh_show_verify_toast') === '1';
+        sessionStorage.removeItem('sh_show_verify_toast');
+      } catch (err) {
+        return;
+      }
+      if (!shouldShow) return;
+
+      const toast = document.getElementById('verify-toast');
+      const closeBtn = document.getElementById('verify-toast-close');
+      if (!toast) return;
+
+      toast.style.display = 'flex';
+
+      const AUTO_DISMISS_MS = 25000;
+      const dismissTimer = setTimeout(() => {
+        toast.style.display = 'none';
+      }, AUTO_DISMISS_MS);
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          clearTimeout(dismissTimer);
+          toast.style.display = 'none';
+        });
+      }
+    })();
+  </script>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
+</Layout>

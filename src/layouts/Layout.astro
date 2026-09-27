@@ -407,6 +407,28 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       0%, 100% { box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(24, 95, 165, 0.5); }
       50% { box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5), 0 0 16px 6px rgba(24, 95, 165, 0.5); }
     }
+    /* v2 pages: solid indigo fill instead of the live site's white circle —
+       a white circle with a colored icon all but disappears against the
+       light lavender v2 page background. Scoped to body.sh2-page so this
+       never touches the live pages' fab. */
+    body.sh2-page #ca-fab {
+      background: linear-gradient(135deg, #4B3FA0, #2E2570);
+      box-shadow: 0 8px 20px -4px rgba(46,37,112,0.55);
+    }
+    body.sh2-page #ca-fab svg { stroke: #ffffff; }
+    html[data-theme="dark"] body.sh2-page #ca-fab {
+      background: linear-gradient(135deg, #A594F5, #7A6CD9);
+      box-shadow: 0 8px 20px -4px rgba(0,0,0,0.6);
+    }
+    html[data-theme="dark"] body.sh2-page #ca-fab svg { stroke: #1C1A30; }
+    body.sh2-page #ca-fab.show.ca-fab-hint {
+      animation: ca-fab-bounce 1.6s ease-in-out infinite,
+                 ca-fab-glow-v2 1.6s ease-in-out infinite;
+    }
+    @keyframes ca-fab-glow-v2 {
+      0%, 100% { box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5), 0 0 0 0 rgba(75, 63, 160, 0.5); }
+      50% { box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.5), 0 0 16px 6px rgba(75, 63, 160, 0.5); }
+    }
     @media (max-width: 900px) {
       #ca-fab {
         bottom: calc(16px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
@@ -692,6 +714,16 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       const caFab = document.getElementById('ca-fab');
       if (!caFab) return;
 
+      // Redesigned (-v2) pages link to the new current-affairs-v2 flow
+      // instead of the live one — decided purely from the current path, so
+      // this never touches the live pages' fab (they still link to
+      // /current-affairs/ exactly as before). Any route containing "-v2"
+      // is treated as part of the redesign.
+      const isV2Page = window.location.pathname.includes('-v2');
+      if (isV2Page) {
+        caFab.href = '/current-affairs-v2/';
+      }
+
       // Same deliberate-fresh-entry reasoning as the Header's "Current
       // Affairs" nav links: clicking this icon should always land on the
       // default CA view, not wherever the tab state happened to be left
@@ -708,9 +740,13 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
         caFab.classList.remove('ca-fab-hint');
       });
 
-      const isHome = window.location.pathname === '/';
+      const isHome = window.location.pathname === '/'
+        || window.location.pathname === '/index-v2/'
+        || window.location.pathname === '/index-v2';
       const isSubjectsPage = window.location.pathname === '/subjects/'
-        || window.location.pathname === '/subjects';
+        || window.location.pathname === '/subjects'
+        || window.location.pathname === '/subjects-v2/'
+        || window.location.pathname === '/subjects-v2';
       const isListingPage = !!document.querySelector(
         '.chapter-grid, .subject-header-left, .subject-header-right'
       );
@@ -729,7 +765,8 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       // CA pages themselves don't show the fab (by design — it links TO
       // these pages, showing it here would be pointless), but the banner
       // still needs to stay off here: it was covering the "Continue to
-      // Read" button at the bottom of the CA picker/read pages.
+      // Read" button at the bottom of the CA picker/read pages. Covers
+      // both the live pages and their -v2 rebuilds.
       const isCaPage = window.location.pathname.startsWith('/current-affairs');
       if (isCaPage) {
         const banner = document.getElementById('app-install-banner');
@@ -740,7 +777,9 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       // the bottom nav and crowds the form/CTA here, so keep it off on
       // this page regardless of device/state.
       const isSignupPage = window.location.pathname === '/signup'
-        || window.location.pathname === '/signup/';
+        || window.location.pathname === '/signup/'
+        || window.location.pathname === '/signup-v2'
+        || window.location.pathname === '/signup-v2/';
       if (isSignupPage) {
         const banner = document.getElementById('app-install-banner');
         if (banner) banner.style.display = 'none';

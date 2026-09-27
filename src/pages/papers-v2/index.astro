@@ -1,0 +1,255 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getSubjectMeta } from '../../data/subjectsMeta.js';
+
+// ============================================================
+// UNCHANGED FROM papers/index.astro — same real-data logic.
+// A paper can NEVER show as "Available" here unless it actually
+// has chapter files on disk.
+// ============================================================
+const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
+const countsBySubject = {};
+for (const [path, mod] of Object.entries(chapterFiles)) {
+  const subjectKey = path.split('/').slice(-2, -1)[0];
+  const items = Array.isArray(mod.default) ? mod.default : [mod.default];
+  const valid = items.filter((ch) => ch && ch.slug && ch.chapterNumber);
+  countsBySubject[subjectKey] = (countsBySubject[subjectKey] || 0) + valid.length;
+}
+
+const PUBLIC_PAPERS = [
+  { slug: 'ts-constable-previous-papers-en', icon: 'file' },
+  { slug: 'ts-constable-previous-papers-te', icon: 'file' },
+];
+
+const ENGLISH_NAME = {
+  'ts-constable-previous-papers-en': 'Previous Question Papers',
+  'ts-constable-previous-papers-te': 'Previous Question Papers (Telugu)',
+};
+
+// Same splitTitleParts helper as subjects-v2, so a title with a
+// "(...)" suffix wraps onto its own line inside the card instead of
+// forcing the card taller than its siblings.
+function splitTitleParts(title) {
+  const idx = title.indexOf(' (');
+  if (idx === -1) return [title];
+  return [title.slice(0, idx), title.slice(idx + 1)];
+}
+
+const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
+  const meta = getSubjectMeta(slug);
+  const chapterCount = countsBySubject[slug] || 0;
+  return {
+    titleNative: meta.heading,
+    titleParts: splitTitleParts(meta.heading),
+    titleEnglish: ENGLISH_NAME[slug] || 'Previous Question Papers',
+    slug,
+    lang: slug.endsWith('-te') ? 'TE' : 'EN',
+    chapterCount,
+    icon,
+    available: chapterCount > 0,
+  };
+});
+
+const iconMap = {
+  file: 'ti-file-text',
+};
+---
+<Layout title="Previous Papers - StudyHelp" description="All previous exam question papers available on StudyHelp for TSPSC and TS exam preparation.">
+
+  <Header active="papers" theme="premium" />
+
+  <div class="page-wide">
+
+    <div class="papers-head">
+      <h1 class="papers-h1">Previous Papers <span class="free-badge">Free</span></h1>
+      <p class="papers-sub">{papers.length} papers sets available</p>
+    </div>
+
+    <div class="subject-list">
+      <div class="pair-row">
+        {papers.map((p) => (
+          p.available ? (
+            <a href={`/subject-v2/${p.slug}/`} class="subj-card subj-card-live">
+              <div class="subj-top">
+                <div class="subj-icon subj-icon-blue">
+                  <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+                </div>
+                <span class="lang-flag">{p.lang}</span>
+              </div>
+              <div>
+                <div class="subj-name">
+                  {p.titleParts.length === 2
+                    ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
+                    : p.titleNative}
+                </div>
+                <div class="subj-meta">{p.chapterCount} {p.chapterCount === 1 ? 'paper' : 'papers'}</div>
+              </div>
+              <div class="subj-foot">
+                <span class="free-tag">Free</span>
+              </div>
+            </a>
+          ) : (
+            <div class="subj-card subj-card-soon">
+              <div class="subj-top">
+                <div class="subj-icon subj-icon-blue subj-icon-muted">
+                  <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+                </div>
+                <span class="lang-flag">{p.lang}</span>
+              </div>
+              <div>
+                <div class="subj-name">
+                  {p.titleParts.length === 2
+                    ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
+                    : p.titleNative}
+                </div>
+                <div class="subj-meta">Coming soon</div>
+              </div>
+              <div class="subj-foot">
+                <span class="soon-tag">Coming soon</span>
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+
+  </div>
+
+  <style is:global>
+    .page-wide {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    @media (max-width: 900px) {
+      .page-wide {
+        padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    /* Opts out of Layout.astro's cream body background in favor of the
+       redesign's lavender tint — same pattern as subjects-v2/index-v2. */
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+    /* ---------- Redesign tokens — identical to subjects-v2.astro /
+       index-v2.astro, kept in sync so every -v2 page shares one
+       design system ---------- */
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-text: #211F38;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-gold: #D8A94E;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-text: #EFEDFB;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+    .page-wide h1, .page-wide h3, .page-wide .subj-name {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* ---------- Page head ---------- */
+    .papers-head { margin-bottom: 16px; }
+    .papers-h1 {
+      font-size: 1.4rem; font-weight: 800; color: var(--sh2-ink);
+      margin: 0 0 4px; display: flex; align-items: center; gap: 8px;
+    }
+    .papers-sub { font-size: 0.82rem; color: var(--sh2-text-soft); margin: 0; }
+    .free-badge {
+      font-size: 0.62rem; font-weight: 800; color: var(--sh2-blue);
+      background: var(--sh2-blue-soft); padding: 3px 8px; border-radius: 999px;
+      vertical-align: middle;
+    }
+
+    /* ---------- Card grid — same subj-card system as subjects-v2,
+       so a paper card and a subject card are visually identical. ---------- */
+    .pair-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .pair-row { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    }
+
+    .subj-card {
+      position: relative;
+      background: var(--sh2-surface);
+      border-radius: 18px;
+      padding: 16px 14px;
+      box-shadow: var(--sh2-shadow);
+      border: 1px solid var(--sh2-line);
+      display: flex; flex-direction: column; gap: 10px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: transform 0.12s ease;
+    }
+    .subj-card-live:active { transform: scale(0.98); }
+    .subj-card-soon { opacity: 0.6; }
+
+    .subj-top { display: flex; align-items: center; gap: 10px; }
+    .subj-icon {
+      width: 38px; height: 38px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .subj-icon i { font-size: 18px; }
+    .subj-icon-blue { background: var(--sh2-blue-soft); color: var(--sh2-blue); }
+    .subj-icon-muted { opacity: 0.6; }
+
+    .lang-flag {
+      font-size: 0.63rem; font-weight: 800; color: var(--sh2-text-soft);
+      background: var(--sh2-surface-2); padding: 2px 7px; border-radius: 6px; flex-shrink: 0;
+    }
+
+    .subj-name { font-size: 0.9rem; font-weight: 700; color: var(--sh2-ink); line-height: 1.25; min-height: 2.5em; }
+    .subj-meta { font-size: 0.73rem; color: var(--sh2-text-soft); margin-top: 3px; }
+
+    .subj-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 2px; }
+    .free-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-blue);
+      background: var(--sh2-blue-soft); padding: 4px 9px; border-radius: 7px;
+    }
+    .soon-tag {
+      font-size: 0.7rem; font-weight: 600; color: var(--sh2-text-soft);
+      border: 1px dashed var(--sh2-line); padding: 4px 9px; border-radius: 7px;
+    }
+  </style>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
+
+</Layout>

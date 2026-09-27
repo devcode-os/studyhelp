@@ -65,6 +65,18 @@ export default {
     if (url.pathname === "/check-access" && request.method === "GET") {
       return checkAccess(request, env);
     }
+      if (url.pathname === "/reading-progress" && request.method === "POST") {
+      return logReadingProgress(request, env);
+    }
+    if (url.pathname === "/reading-progress" && request.method === "GET") {
+      return getReadingProgress(request, env);
+    }
+    if (url.pathname === "/ca-reading-progress" && request.method === "POST") {
+      return logCaReadingProgress(request, env);
+    }
+    if (url.pathname === "/ca-reading-progress" && request.method === "GET") {
+      return getCaReadingProgress(request, env);
+    }
     if (url.pathname === "/ca/create-order" && request.method === "POST") {
       return createCaOrder(request, env);
     }
@@ -716,8 +728,151 @@ async function checkAccess(request, env) {
   });
 }
 
-// ---------- Current Affairs PDF purchases ----------
-// Session-gated (unlike checkAccess/createOrder above, which trust a
+// ---------- Reading progress ("continue where you left off") ----------
+// Trusts client-supplied user_id, same pattern as checkAccess above (the
+// frontend only calls this after its own confirmed /me session check).
+// Never trusts the client's claim of ownership though — every write is
+// gated on a live, unexpired entitlement row, same query checkAccess runs.
+// Papers subjects never reach here (client-side skip in chapter-v2), but
+// the entitlement check below would reject them anyway since papers have
+// no entitlement rows at all.
+//
+// chapters_read_count is a simple increment, not a distinct-chapter count
+// — revisiting an already-read chapter still increments it. Accepted
+// tradeoff (see workflow doc): this is a "continue reading" nudge, not a
+// certified progress score, so a second table tracking distinct chapter
+// slugs was judged not worth the complexity for v1.
+async function logReadingProgress(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch (err) {
+    return json({ error: "invalid json" }, 400, CORS_HEADERS);
+  }
+
+  const { user_id, subject_id, chapter_slug, chapter_number, chapter_title } = body || {};
+  if (!user_id || !subject_id || !chapter_slug) {
+    return json({ error: "user_id, subject_id and chapter_slug required" }, 400, CORS_HEADERS);
+  }
+
+  const nowTs = Math.floor(Date.now() / 1000);
+  const entitlement = await env.DB.prepare(
+    "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
+  )
+    .bind(user_id, subject_id, nowTs)
+    .first();
+
+  if (!entitlement) {
+    // Not purchased (or expired) — silent no-op. Matches the client's
+    // fire-and-forget contract: this never blocks or affects the reveal.
+    return json({ ok: true, recorded: false }, 200, CORS_HEADERS);
+  }
+
+  const id = crypto.randomUUID();
+  await env.DB.prepare(
+    `INSERT INTO reading_progress
+       (id, user_id, subject_id, last_chapter_slug, last_chapter_number, last_chapter_title, chapters_read_count, updated_at)
+     VALUES (?, ?, ?, ?, ?, ?, 1, ?)
+     ON CONFLICT(user_id, subject_id) DO UPDATE SET
+       last_chapter_slug = excluded.last_chapter_slug,
+       last_chapter_number = excluded.last_chapter_number,
+       last_chapter_title = excluded.last_chapter_title,
+       chapters_read_count = chapters_read_count + 1,
+       updated_at = excluded.updated_at`
+  )
+    .bind(id, user_id, subject_id, chapter_slug, chapter_number || null, chapter_title || null, nowTs)
+    .run();
+
+  return json({ ok: true, recorded: true }, 200, CORS_HEADERS);
+}
+
+// GET /reading-progress?user_id=&subject_id= — read-only, used by
+// subject-v2/[subject].astro to render the recap card. Returns
+// has_progress:false when nothing's been read yet (never purchased, or
+// purchased but hasn't opened a chapter) rather than an error, so the
+// frontend can just skip rendering the card.
+async function getReadingProgress(request, env) {
+  const url = new URL(request.url);
+  const user_id = url.searchParams.get("user_id");
+  const subject_id = url.searchParams.get("subject_id");
+
+  if (!user_id || !subject_id) {
+    return json({ error: "user_id and subject_id required" }, 400, CORS_HEADERS);
+  }
+
+  const row = await env.DB.prepare(
+    "SELECT last_chapter_slug, last_chapter_number, last_chapter_title, chapters_read_count, updated_at FROM reading_progress WHERE user_id = ? AND subject_id = ?"
+  )
+    .bind(user_id, subject_id)
+    .first();
+
+  if (!row) {
+    return json({ has_progress: false }, 200, CORS_HEADERS);
+  }
+
+  return json({ has_progress: true, ...row }, 200, CORS_HEADERS);
+}
+
+// POST /ca-reading-progress  { user_id, section_name }
+async function logCaReadingProgress(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch (_err) {
+    return json({ error: "Invalid request body" }, 400, CORS_HEADERS);
+  }
+
+  const { user_id, section_name } = body || {};
+  if (!user_id || !section_name) {
+    return json({ error: "Missing user_id or section_name" }, 400, CORS_HEADERS);
+  }
+
+  await env.DB.prepare(
+    `INSERT INTO ca_reading_progress (user_id, month_slug, questions_read_count, updated_at)
+     VALUES (?, ?, 1, datetime('now'))
+     ON CONFLICT(user_id, month_slug) DO UPDATE SET
+       questions_read_count = questions_read_count + 1,
+       updated_at = datetime('now')`
+  )
+    .bind(user_id, section_name)
+    .run();
+
+  return json({ ok: true }, 200, CORS_HEADERS);
+}
+
+// GET /ca-reading-progress?user_id=...
+async function getCaReadingProgress(request, env) {
+  const url = new URL(request.url);
+  const user_id = url.searchParams.get("user_id");
+  if (!user_id) {
+    return json({ has_progress: false }, 200, CORS_HEADERS);
+  }
+
+  const row = await env.DB.prepare(
+    `SELECT month_slug AS section_name, questions_read_count, updated_at
+     FROM ca_reading_progress
+     WHERE user_id = ?
+     ORDER BY updated_at DESC
+     LIMIT 1`
+  )
+    .bind(user_id)
+    .first();
+
+  if (!row) {
+    return json({ has_progress: false }, 200, CORS_HEADERS);
+  }
+
+  return json(
+    {
+      has_progress: true,
+      section_name: row.section_name,
+      questions_read_count: row.questions_read_count,
+      updated_at: row.updated_at,
+    },
+    200,
+    CORS_HEADERS
+  );
+}
 // client-supplied user_id) -- CA PDF downloads require a real logged-in
 // session, no exceptions, per spec. user_id always comes from the
 // verified session, never from the request body/query for any of these

@@ -11,8 +11,27 @@
 // everywhere else it hides normally while reading. Centralized here by
 // `active` value so those pages need no changes of their own — they
 // already pass this prop.
-const { active = '', compact = false, backHref = '/', title = '', progress = '', hasModeTabs = false, hideTopBar = false } = Astro.props;
+// `theme` prop: 'classic' (default, unchanged dark-navy header/tabbar used
+// site-wide) or 'premium' (new light card-based theme — opt-in only, so
+// existing pages are completely unaffected until they explicitly pass
+// theme="premium"). Added for the index-v2 redesign test page.
+const { active = '', compact = false, backHref = '/', title = '', progress = '', hasModeTabs = false, hideTopBar = false, theme = 'classic' } = Astro.props;
 const stickyTabbar = active === 'plans' || active === 'account' || active === 'signup' || active === 'login';
+const isPremium = theme === 'premium';
+
+// When theme="premium" (every -v2 page passes this), route the shared
+// nav — desktop nav, "more" dropdown, mobile bottom tab bar, and the
+// dynamic login/account link below — to the -v2 equivalents instead of
+// the live routes. Classic (live) pages never pass theme="premium", so
+// this leaves them completely untouched.
+const homeHref = isPremium ? '/index-v2/' : '/';
+const subjectsHref = isPremium ? '/subjects-v2/' : '/subjects/';
+const currentAffairsHref = isPremium ? '/current-affairs-v2/' : '/current-affairs/';
+const papersHref = isPremium ? '/papers-v2/' : '/papers/';
+const plansHref = isPremium ? '/plans-v2/' : '/plans/';
+const loginHref = isPremium ? '/login-v2/' : '/login/';
+const accountHref = isPremium ? '/account-v2/' : '/account/';
+const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcode/';
 ---
 
 {compact ? (
@@ -31,16 +50,23 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
   </header>
 ) : (
   <>
-    <header class="site-header" class:list={{ 'site-header-hide-mobile': hideTopBar }}>
+    <header class="site-header" data-account-href={accountHref} class:list={{ 'site-header-hide-mobile': hideTopBar, 'sh2-theme': isPremium }}>
       <div class="site-header-inner">
-        <a href="/" class="logo">StudyHelp</a>
+        <a href={homeHref} class="logo" class:list={{ 'logo-premium': isPremium }}>
+          {isPremium && (
+            <span class="logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V6a2 2 0 0 1 2-2h13v15.5"/><path d="M4 19.5A1.5 1.5 0 0 0 5.5 21H19"/></svg>
+            </span>
+          )}
+          StudyHelp
+        </a>
 
         <nav class="nav-desktop">
-          <a href="/" class:list={{ active: active === 'home' }}>Home</a>
-          <a href="/subjects/" class:list={{ active: active === 'subjects' }}>Subjects</a>
-          <a href="/current-affairs/" class:list={{ active: active === 'current-affairs' }} data-ca-fresh-entry>Current Affairs</a>
-          <a href="/papers/" class:list={{ active: active === 'papers' }}>Papers</a>
-          <a href="/plans/" class:list={{ active: active === 'plans' }}>Plans</a>
+          <a href={homeHref} class:list={{ active: active === 'home' }}>Home</a>
+          <a href={subjectsHref} class:list={{ active: active === 'subjects' }}>Subjects</a>
+          <a href={currentAffairsHref} class:list={{ active: active === 'current-affairs' }} data-ca-fresh-entry>Current Affairs</a>
+          <a href={papersHref} class:list={{ active: active === 'papers' }}>Papers</a>
+          <a href={plansHref} class:list={{ active: active === 'plans' }}>Plans</a>
           <a href="/about/" class:list={{ active: active === 'about' }}>About</a>
         </nav>
 
@@ -71,11 +97,11 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
               <i class="ti ti-dots-vertical" aria-hidden="true"></i>
             </button>
             <div id="more-menu-dropdown" class="more-menu-dropdown" role="menu">
-              <a href="/current-affairs/" role="menuitem" data-ca-fresh-entry>Current Affairs</a>
-              <a href="/papers/" role="menuitem">Previous Papers</a>
+              <a href={currentAffairsHref} role="menuitem" data-ca-fresh-entry>Current Affairs</a>
+              <a href={papersHref} role="menuitem">Previous Papers</a>
               <a href="/contact/" role="menuitem">Contact us</a>
               <a href="/support/" role="menuitem">Support</a>
-              <a href="/forgot-passcode/" role="menuitem">Forgot passcode</a>
+              <a href={forgotPasscodeHref} role="menuitem">Forgot passcode</a>
               <div class="more-menu-divider"></div>
               <a href="/terms/" role="menuitem">Terms &amp; conditions</a>
               <a href="/refund-policy/" role="menuitem">Refund policy</a>
@@ -83,10 +109,11 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
             </div>
           </div>
 
-          <a href="/login/" id="login-link" class="btn btn-outline nav-desktop-only">
+          <a href={loginHref} id="login-link" class="btn btn-outline nav-desktop-only">
+            <span id="header-avatar" class="header-avatar" style="display:none;"></span>
             <span id="login-link-text">Login</span><span id="verify-badge-desktop" class="verify-badge" style="display:none;">!</span>
           </a>
-          <a href="/plans/" class="btn btn-accent nav-desktop-only">Go premium</a>
+          <a href={plansHref} class="btn btn-accent nav-desktop-only">Go premium</a>
         </div>
       </div>
     </header>
@@ -99,18 +126,19 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
          mobile widths, since some pages (e.g. Current Affairs picker/read)
          want the bottom nav without the top chrome, but ONLY on phone/tablet:
          desktop always keeps the full site-header regardless of hideTopBar. -->
-    <nav class="mobile-tabbar" aria-label="Primary" data-hide-on-scroll={stickyTabbar ? 'false' : 'true'}>
-      <a href="/subjects/" class:list={{ 'tab-active': active === 'subjects' }}>
+    <nav class="mobile-tabbar" class:list={{ 'sh2-theme': isPremium }} aria-label="Primary" data-hide-on-scroll={stickyTabbar ? 'false' : 'true'} data-app-only={isPremium ? 'true' : 'false'}>
+      <a href={subjectsHref} class:list={{ 'tab-active': active === 'subjects' }}>
         <i class="ti ti-books" aria-hidden="true"></i>
         <span>Subjects</span>
       </a>
-      <a href="/plans/" class:list={{ 'tab-active': active === 'plans' }}>
+      <a href={plansHref} class:list={{ 'tab-active': active === 'plans' }}>
         <i class="ti ti-shopping-cart" aria-hidden="true"></i>
         <span>Plans</span>
       </a>
-      <a href="/login/" id="login-link-mobile" class:list={{ 'tab-active': active === 'account' }}>
+      <a href={loginHref} id="login-link-mobile" class:list={{ 'tab-active': active === 'account' }}>
         <span class="tab-icon-wrap">
-          <i class="ti ti-user" aria-hidden="true"></i>
+          <i class="ti ti-user" id="tab-user-icon" aria-hidden="true"></i>
+          <span id="tab-avatar" class="tab-avatar" style="display:none;"></span>
           <span id="verify-badge-mobile" class="verify-dot" style="display:none;"></span>
         </span>
         <span id="login-link-mobile-text">Login</span>
@@ -393,6 +421,34 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
     background: #ff6b6b;
     border: 1.5px solid #1a1438;
   }
+  .tab-avatar {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: linear-gradient(150deg, #ff9a3c, #ffb35c);
+    color: #2a1400;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  .header-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(150deg, #ff9a3c, #ffb35c);
+    color: #2a1400;
+    font-size: 11px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
 
   /* ---------- Compact chapter-reading header ---------- */
   .chapter-header {
@@ -441,10 +497,108 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
     color: #ffffff;
   }
 
+  /* ---------- Premium theme overrides (opt-in via theme="premium",
+     used only by the index-v2 test page — every other page keeps the
+     default dark-navy header/tabbar above, completely untouched). ---------- */
+  .site-header.sh2-theme {
+    background: #EEEDF6;
+    border-bottom: 1px solid #E7E4F5;
+  }
+  .site-header.sh2-theme .logo { color: #1C1A38; font-size: 18px; font-weight: 800; }
+  html[data-theme="dark"] .site-header.sh2-theme .logo { color: #F3F1FC; }
+  .logo-premium {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    line-height: 1;
+  }
+  .logo-icon {
+    border-radius: 10px;
+    box-shadow: 0 6px 14px -6px rgba(75,63,160,0.45);
+    display: block;
+    flex-shrink: 0;
+  }
+  .logo-mark {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(150deg, #4B3FA0, #2E2570);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 6px 14px -6px rgba(75,63,160,0.55);
+  }
+  .logo-mark svg { width: 17px; height: 17px; color: #fff; }
+  .site-header.sh2-theme .nav-desktop a { color: #726F92; }
+  .site-header.sh2-theme .nav-desktop a.active { color: #4B3FA0; }
+  .site-header.sh2-theme .theme-toggle {
+    border: 1px solid #E7E4F5;
+    background: #FFFFFF;
+    color: #726F92;
+    box-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 10px 20px -12px rgba(46,37,112,0.18);
+  }
+  .site-header.sh2-theme .btn-accent {
+    background: linear-gradient(150deg, #E8963A, #D8A94E);
+    color: #2a1400;
+  }
+  .site-header.sh2-theme .more-menu-dropdown {
+    background: #FFFFFF;
+    border: 1px solid #E7E4F5;
+    box-shadow: 0 8px 24px rgba(33,31,61,0.12);
+  }
+  .site-header.sh2-theme .more-menu-dropdown a { color: #1C1A38; }
+  .site-header.sh2-theme .more-menu-divider { background: #E7E4F5; }
+
+  /* Premium tab bar: floating rounded pill (matches the design mockup),
+     not the flat edge-to-edge bar the classic theme uses. Higher
+     specificity than the base .mobile-tabbar rules above so it overrides
+     position/shape without needing !important. Same icons/labels/markup —
+     only the container shape and the active-tab treatment change. */
+  .mobile-tabbar.sh2-theme {
+    left: 6px;
+    right: 6px;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: 0;
+    border-radius: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E7E4F5;
+    box-shadow: 0 6px 14px rgba(33,31,61,0.08), 0 20px 36px -18px rgba(46,37,112,0.28);
+    padding: 5px;
+  }
+  html[data-theme="dark"] .mobile-tabbar.sh2-theme {
+    background: #1C1A30;
+    border-color: #302C4E;
+  }
+  .mobile-tabbar.sh2-theme a {
+    color: #726F92;
+    border-radius: 12px;
+    padding: 8px 4px 6px;
+    gap: 3px;
+    font-size: 9px;
+  }
+  .mobile-tabbar.sh2-theme a i { font-size: 16px; line-height: 1; }
+  .mobile-tabbar.sh2-theme a.tab-active {
+    color: #4B3FA0;
+    background: #EEEAFB;
+  }
+  .mobile-tabbar.sh2-theme a.tab-active i { transform: none; }
+  html[data-theme="dark"] .mobile-tabbar.sh2-theme a { color: #9C97BE; }
+  html[data-theme="dark"] .mobile-tabbar.sh2-theme a.tab-active {
+    color: #A594F5;
+    background: #2A2650;
+  }
+
   @media (max-width: 900px) {
     .nav-desktop-only { display: none; }
     .nav-desktop { display: none; }
     .mobile-tabbar { display: flex; }
+    /* Premium-theme tab bar (index-v2 test page only): the site's normal
+       tab bar is always visible under 900px for everyone, since it's
+       currently the ONLY mobile nav on the web version too. This
+       [data-app-only] variant instead defaults to HIDDEN even on phone
+       width, and is shown only when the page detects it's actually
+       running inside the Capacitor app (or the ?view=app test override
+       below) — so you can compare "as web" vs "as app" side by side
+       before deciding whether to ship this behavior site-wide. */
+    .mobile-tabbar.sh2-theme[data-app-only="true"] { display: none; }
+    html.sh2-is-app .mobile-tabbar.sh2-theme[data-app-only="true"] { display: flex; }
     /* hideTopBar prop: suppresses the logo bar on phone/tablet ONLY —
        desktop always keeps it (site-header has no display rule above
        900px, so it stays visible there regardless of this class). */
@@ -498,6 +652,8 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
 </style>
 
 <script is:inline>
+  if (!window.__shHeaderScriptRan) {
+  window.__shHeaderScriptRan = true;
   // WORKER_URL hoisted to top-of-script scope (was previously declared inside
   // the window.__shSessionInit block below, out of reach for initBell() which
   // is defined earlier in this same script — that scoping bug meant every
@@ -552,28 +708,30 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
     });
   }
 
-  const moreMenuBtn = document.getElementById('more-menu-btn');
-  const moreMenuDropdown = document.getElementById('more-menu-dropdown');
-  if (moreMenuBtn && moreMenuDropdown) {
-    moreMenuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = moreMenuDropdown.classList.toggle('open');
-      moreMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-    document.addEventListener('click', (e) => {
-      if (!moreMenuDropdown.contains(e.target) && e.target !== moreMenuBtn) {
-        moreMenuDropdown.classList.remove('open');
-        moreMenuBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-    moreMenuDropdown.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        moreMenuDropdown.classList.remove('open');
-        moreMenuBtn.setAttribute('aria-expanded', 'false');
+   if (!window.__shMoreMenuBound) {
+    window.__shMoreMenuBound = true;
+    const moreMenuBtn = document.getElementById('more-menu-btn');
+    const moreMenuDropdown = document.getElementById('more-menu-dropdown');
+    if (moreMenuBtn && moreMenuDropdown) {
+      moreMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = moreMenuDropdown.classList.toggle('open');
+        moreMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
-    });
+      document.addEventListener('click', (e) => {
+        if (!moreMenuDropdown.contains(e.target) && e.target !== moreMenuBtn) {
+          moreMenuDropdown.classList.remove('open');
+          moreMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      moreMenuDropdown.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          moreMenuDropdown.classList.remove('open');
+          moreMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   }
-
   // ---------- Notification bell — logged-in users only. Bell markup stays
   // display:none (set inline in the HTML above) until the session check
   // below confirms a real login; a logged-out visitor never sees the icon
@@ -754,9 +912,22 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
       });
       initBell();
 
+      // Read the destination straight off the header's own data attribute
+      // (set server-side from the same `accountHref = isPremium ? ... `
+      // this component already computes for every other -v2 link) instead
+      // of checking document.body.classList.contains('sh2-page') here.
+      // That class-check raced against the page's own trailing script that
+      // adds 'sh2-page' to <body> — when the session came from cache
+      // (near-instant), this callback could run as a microtask BEFORE that
+      // later <script> tag executed, reading `false` and silently sending
+      // logged-in users to the classic /account/ instead of /account-v2/.
+      const siteHeaderEl = document.querySelector('.site-header[data-account-href]');
+      const accountDestination = siteHeaderEl
+        ? siteHeaderEl.getAttribute('data-account-href')
+        : (document.body.classList.contains('sh2-page') ? '/account-v2/' : '/account/');
       [loginLink, loginLinkMobile].forEach((el) => {
         if (!el) return;
-        el.href = '/account/';
+        el.href = accountDestination;
       });
       if (loginLinkText) loginLinkText.textContent = 'Account';
       if (loginLinkMobileText) loginLinkMobileText.textContent = 'Account';
@@ -765,6 +936,14 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
         if (verifyBadgeDesktop) verifyBadgeDesktop.style.display = 'inline-flex';
         if (verifyBadgeMobile) verifyBadgeMobile.style.display = 'inline-block';
       }
+
+      const initial = (data.name || '').trim().charAt(0).toUpperCase() || 'A';
+      const tabUserIcon = document.getElementById('tab-user-icon');
+      const tabAvatar = document.getElementById('tab-avatar');
+      const headerAvatar = document.getElementById('header-avatar');
+      if (tabUserIcon) tabUserIcon.style.display = 'none';
+      if (tabAvatar) { tabAvatar.textContent = initial; tabAvatar.style.display = 'flex'; }
+      if (headerAvatar) { headerAvatar.textContent = initial; headerAvatar.style.display = 'inline-flex'; }
 
       // Fetched from the same public endpoint /plans/ uses, instead of a
       // hardcoded slug list — a newly-launched subject is picked up here
@@ -785,7 +964,7 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
           ).then((results) => {
             const allOwned = results.every(Boolean);
             if (allOwned) {
-              document.querySelectorAll('a[href="/plans/"].btn-accent').forEach((el) => {
+              document.querySelectorAll('a.btn-accent.nav-desktop-only').forEach((el) => {
                 el.textContent = '★ Premium';
                 el.style.cursor = 'default';
                 el.removeAttribute('href');
@@ -835,5 +1014,37 @@ const stickyTabbar = active === 'plans' || active === 'account' || active === 's
         });
       }, { passive: true });
     })();
+  }
+
+  // ---------- Premium theme: real Capacitor detection + explicit
+  // web/app test override ----------
+  // window.Capacitor only exists inside the actual native app shell, never
+  // in a normal browser tab (same signal already used elsewhere in this
+  // codebase, e.g. Layout.astro's back-button handling). That's the real,
+  // production signal. Alongside it, a `?view=app` or `?view=web` query
+  // param lets you force either state while testing in plain desktop/phone
+  // Chrome, where window.Capacitor never exists — the override is saved to
+  // sessionStorage so it survives following a link to another page during
+  // the same test session, without needing to re-add ?view= every time.
+  if (!window.__sh2ViewInit) {
+    window.__sh2ViewInit = true;
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var override = params.get('view');
+      if (override === 'app' || override === 'web') {
+        try { sessionStorage.setItem('sh2_view_override', override); } catch (e) {}
+      } else {
+        try { override = sessionStorage.getItem('sh2_view_override'); } catch (e) {}
+      }
+
+      var isRealCapacitor = !!window.Capacitor;
+      var isApp = override ? override === 'app' : isRealCapacitor;
+
+      document.documentElement.classList.toggle('sh2-is-app', isApp);
+      // On-screen toggle UI removed — the ?view=app / ?view=web override
+      // (saved to sessionStorage above) still works for manual testing,
+      // just without a visible button on every page.
+    })();
+  }
   }
 </script>

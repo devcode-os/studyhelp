@@ -1,0 +1,4294 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getSubjectMeta } from '../../data/subjectsMeta.js';
+
+export function getStaticPaths() {
+  // Matches src/data/<any-subject-folder>/*.json - no subject names hardcoded.
+  const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
+
+  const chapters = Object.entries(chapterFiles).flatMap(([path, mod]) => {
+    const subject = path.split('/').slice(-2, -1)[0];
+    const items = Array.isArray(mod.default) ? mod.default : [mod.default];
+
+    return items
+      .filter(
+        (ch) =>
+          ch &&
+          ch.slug &&
+          ch.chapterNumber &&
+          (Array.isArray(ch.faqs) ||
+            (ch.type === 'reference' && Array.isArray(ch.articles)) ||
+            (ch.type === 'theory' && Array.isArray(ch.concepts)))
+      )
+      .map((ch) => ({ ...ch, subject }));
+  });
+
+  return chapters.map((ch) => {
+    const isReference = ch.type === 'reference';
+    const isTheory = ch.type === 'theory';
+
+    if (isTheory) {
+      // SECURITY: locked concepts (c.free === false) carry ONLY their
+      // navigation metadata (conceptId/partNumber/partName) — every
+      // content field (bodyMd, and the grammar-chapter fields below) is
+      // stripped before it ever reaches props, so it never lands in the
+      // static build at all. This mirrors the FAQ branch's
+      // question-text-only pattern below. Only question TEXT ships for
+      // any attached MCQs (ch.faqs) — real answers still come from the
+      // existing Worker+D1 chapter-answers endpoint at reveal time,
+      // exactly like the plain FAQ branch.
+      //
+      // TODO: once the theory_content D1 table + Worker endpoint exist,
+      // wire the "Unlock" button below to fetch locked bodyMd after a
+      // real entitlement check (same pattern as ensureEntitlementChecked
+      // + the chapter-answers fetch), instead of linking to /plans/.
+      const hasFaqs = Array.isArray(ch.faqs) && ch.faqs.length > 0;
+      const safeConcepts = (ch.concepts || []).map((c) => {
+        if (c.free) return c; // free part — ship in full, as-is
+        // locked — strip every content field, keep only nav metadata
+        return {
+          conceptId: c.conceptId,
+          partNumber: c.partNumber,
+          partName: c.partName,
+          free: false,
+        };
+      });
+      return {
+        params: { slug: ch.slug },
+        props: {
+          chapterSlug: ch.slug,
+          subject: ch.subject,
+          chapterNumber: ch.chapterNumber,
+          title: ch.title,
+          isReference: false,
+          isTheory: true,
+          articles: [],
+          amendments: [],
+          questions: hasFaqs ? ch.faqs.map((f) => f.q) : [],
+          weightage: [],
+          concepts: safeConcepts,
+          chapterIntro: ch.chapterIntro || '',
+        },
+      };
+    }
+
+    if (isReference) {
+      // Reference chapters (e.g. Polity Articles & Amendments quick-lookup)
+      // are always free to browse — no paywall, no D1/Worker call, no
+      // login required. Articles/amendments are static lookup data, not
+      // graded answers, so there is nothing here that needs gating.
+      return {
+        params: { slug: ch.slug },
+        props: {
+          chapterSlug: ch.slug,
+          subject: ch.subject,
+          chapterNumber: ch.chapterNumber,
+          title: ch.title,
+          isReference: true,
+          articles: ch.articles || [],
+          amendments: ch.amendments || [],
+          questions: [],
+          // Per-tab search placeholders. Each chapter JSON can override
+          // either or both explicitly; unset ones fall back to a sensible
+          // generic default here so Articles and Amendments never share
+          // the same hint text.
+          articlesSearchPlaceholder: ch.articlesSearchPlaceholder || 'Search by article number or word',
+          amendmentsSearchPlaceholder: ch.amendmentsSearchPlaceholder || 'Search by amendment number, year, or word',
+        },
+      };
+    }
+
+    return {
+      params: { slug: ch.slug },
+      // SECURITY: only question text (ch.faqs[].q) is passed as props.
+      // Answer text, explanations, and tables are NEVER included here —
+      // they live only in D1's chapter_content table, served by the Worker
+      // after a real session + entitlement check. Do not add f.a, f.e, or
+      // f.table to this props object.
+      props: {
+        chapterSlug: ch.slug,
+        subject: ch.subject,
+        chapterNumber: ch.chapterNumber,
+        title: ch.title,
+        isReference: false,
+        articles: [],
+        amendments: [],
+        questions: ch.faqs.map((f) => f.q),
+        // Subject-wise weightage breakdown for previous-papers chapters.
+        // Not sensitive like answers — it's aggregate stats, not a graded
+        // response — but display is still gated to purchased users only
+        // via ensureEntitlementChecked(), zero free clicks.
+        weightage: ch.weightage || [],
+      },
+    };
+  });
+}
+
+const { chapterSlug, subject, chapterNumber, title, questions, isReference, isTheory, articles, amendments, concepts: rawConcepts, chapterIntro, articlesSearchPlaceholder, amendmentsSearchPlaceholder, weightage } = Astro.props;
+const meta = getSubjectMeta(subject);
+const isTelugu = meta.lang === 'te';
+
+// Sorted by partNumber so the jump-to-part dropdown and default part are
+// correct regardless of source JSON ordering. hasParts drives multi-part
+// vs single-concept layout; hasMcq shows the top-level MCQs/Theory tab bar
+// only when this chapter actually carries attached questions.
+const concepts = isTheory ? [...(rawConcepts || [])].sort((a, b) => (a.partNumber || 0) - (b.partNumber || 0)) : [];
+const hasParts = concepts.length > 1;
+const hasMcq = isTheory && Array.isArray(questions) && questions.length > 0;
+
+const backLabel = meta.category === 'papers' ? (isTelugu ? 'ప్రశ్నపత్రాలు' : 'Papers') : (isTelugu ? 'అధ్యాయాలు' : 'Chapters');
+const questionsLabel = isTelugu ? 'ప్రశ్నలు' : 'questions';
+const prevLabel = 'Previous';
+const nextLabel = 'Next';
+
+const PER_PAGE = 20;
+const totalPages = Math.ceil(questions.length / PER_PAGE);
+
+// Converts caret notation (17^203, x^2) into proper Unicode superscripts
+// so questions typed/pasted with ^ still render as math, not literal text.
+// Display-only — no effect on props shape or security.
+const SUP_MAP = { '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻','+':'⁺' };
+function formatMath(str) {
+  return String(str).replace(/\^(-?\d+)/g, (_, exp) =>
+    exp.split('').map((ch) => SUP_MAP[ch] || ch).join('')
+  );
+}
+---
+<Layout title={isReference ? `${title} Reference` : isTheory ? `${title} - Theory` : `${title} FAQs`} description={isReference ? `${title} - ${articles.length} articles, ${amendments.length} amendments` : isTheory ? (chapterIntro || `${title} theory and rules`) : `${title} - ${questions.length} FAQs`}>
+
+  <!-- Desktop keeps the full site header (nav, login, theme toggle) exactly as before.
+       Mobile gets the compact reading-mode header — back arrow, chapter title, progress —
+       with no bottom tab bar at all while inside a chapter. Both are the SAME <Header />
+       component; `compact` is only applied visually under the 720px breakpoint via CSS
+       (see .header-desktop-only / .header-compact-only below), so no duplicate session
+       logic and no extra network calls. -->
+  <div class="header-desktop-only">
+    <Header active="subjects" />
+  </div>
+<div class="header-compact-only">
+  <Header compact={true} theme="premium" backHref={`/subject-v2/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} hasModeTabs={hasMcq}>
+    {hasMcq && (
+      <Fragment slot="chapter-progress-area">
+        <div class="ref-tabs chapter-mode-tabs" id="headerTopLevelTabs">
+          <div class="ref-tab active" data-toptab="mcq">MCQs</div>
+          <div class="ref-tab" data-toptab="theory">Theory</div>
+        </div>
+      </Fragment>
+    )}
+  </Header>
+</div>
+
+  <div class={isTelugu ? 'lang-te content' : 'lang-en content'}>
+    <div class="desktop-title-row">
+      <a href={`/subject-v2/${subject}/`} class="back-pill desktop-back-pill">
+        <i class="ti ti-arrow-left" aria-hidden="true"></i> {backLabel}
+      </a>
+      <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
+        <h1 style="margin:0;">{chapterNumber}. {title}</h1>
+        <span style="font-size:14px; font-weight:700; color:var(--text);">{isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`}</span>
+      </div>
+    </div>
+
+    {isReference ? (
+      <Fragment>
+        <p style="font-size:13px; color:var(--muted); margin:6px 0 0;">Quick reference &middot; Always free to browse</p>
+
+        <div class="ref-tabs">
+          <div class="ref-tab active" data-tab="articles">Articles</div>
+          <div class="ref-tab" data-tab="amendments">Amendments</div>
+        </div>
+
+        <div class="ref-search">
+          <input type="text" id="refSearchInput" placeholder={articlesSearchPlaceholder} style="border:none; outline:none; background:transparent; font-size:14px; color:var(--text); width:100%; font-family:inherit;" />
+        </div>
+        <p class="ref-count" id="refResultCount" style="font-size:12px; color:var(--muted); margin:8px 0 0 2px;"></p>
+
+        <div id="refListContainer"></div>
+      </Fragment>
+    ) : (
+      <Fragment>
+        {hasMcq && (
+          <div class="mode-row desktop-mode-row">
+            <div class="ref-tabs mode-tabs" id="topLevelTabs">
+              <div class="ref-tab active" data-toptab="mcq">MCQs</div>
+              <div class="ref-tab" data-toptab="theory">Theory</div>
+            </div>
+            {hasParts && <span class="mode-row-hint" id="jumpToPartHint" style="display:none;">Jump to a part &darr;</span>}
+          </div>
+        )}
+
+        <div id="mcqPaneWrap" style={isTheory ? (hasMcq ? undefined : 'display:none') : undefined}>
+        {weightage && weightage.length > 0 && (
+          <div id="pattern-weightage-accordion" class="pw-accordion">
+            <button type="button" id="pw-accordion-toggle" class="pw-accordion-toggle" aria-expanded="false">
+              <span class="pw-accordion-label">
+                <i class="ti ti-chart-pie" aria-hidden="true"></i>
+                Question Paper Pattern &amp; Subject Weightage
+              </span>
+              <i class="ti ti-chevron-down pw-accordion-chevron" aria-hidden="true"></i>
+            </button>
+            <div id="pw-accordion-body" class="pw-accordion-body" style="display:none;">
+              <div id="pw-accordion-content"></div>
+            </div>
+          </div>
+        )}
+
+        <div id="reading-toolbar" class="reading-toolbar">
+          <div class="rt-progress-section">
+            <button type="button" id="rt-reveal-all" class="rt-btn rt-btn-accent rt-btn-primary-full">
+              <i class="ti ti-eye" aria-hidden="true"></i> <span id="rt-reveal-all-label">Quick Revision</span>
+            </button>
+          </div>
+
+          <div class="rt-utility-row">
+            {meta.category !== 'papers' && (
+              <button type="button" id="rt-start-mocktest" class="rt-mocktest-link">
+                <i class="ti ti-clock-play" aria-hidden="true"></i> Mock Test
+              </button>
+            )}
+            <button type="button" id="rt-options-toggle" class="rt-options-toggle" aria-expanded="false">
+              <span><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i> Text size, filter &amp; jump</span>
+              <i class="ti ti-chevron-down rt-options-chevron" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="rt-controls-section" id="rt-controls-section" style="display:none;">
+            <div class="rt-control-item">
+              <span class="rt-control-label"><i class="ti ti-text-size" aria-hidden="true"></i> Text size</span>
+              <div class="rt-font-group">
+                <button type="button" class="rt-font-btn" data-size="small">A</button>
+                <button type="button" class="rt-font-btn active" data-size="medium">A</button>
+                <button type="button" class="rt-font-btn" data-size="large">A</button>
+              </div>
+            </div>
+
+            <div class="rt-control-item">
+              <span class="rt-control-label"><i class="ti ti-filter" aria-hidden="true"></i> Filter</span>
+              <select id="rt-filter" class="rt-select">
+                <option value="all">Show all</option>
+                <option value="unanswered">Unanswered only</option>
+                <option value="wrong">Wrong answers only</option>
+              </select>
+            </div>
+
+            <div class="rt-control-item">
+              <span class="rt-control-label"><i class="ti ti-map-pin" aria-hidden="true"></i> Jump to</span>
+              <div class="rt-jump-group">
+                <input type="number" id="rt-jump-input" class="rt-jump-input" placeholder="Q#" min="1" max={questions.length} />
+                <button type="button" id="rt-jump-btn" class="rt-btn rt-btn-ghost rt-btn-small">Go</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="rt-score-summary" class="rt-score-summary" style="display:none;">
+          <button type="button" id="rt-score-close" class="rt-score-close" aria-label="Close score summary">
+            <i class="ti ti-x" aria-hidden="true"></i>
+          </button>
+          <div id="rt-score-content"></div>
+        </div>
+
+        <div class="rt-sticky-bar"><div id="rt-sticky-fill" class="rt-sticky-fill"></div></div>
+
+        <div id="rt-confirm-overlay" class="rt-confirm-overlay" style="display:none;">
+          <div class="rt-confirm-box">
+            <p id="rt-confirm-message" class="rt-confirm-message"></p>
+            <div class="rt-confirm-actions">
+              <button type="button" id="rt-confirm-cancel" class="rt-btn">Keep practicing</button>
+              <button type="button" id="rt-confirm-ok" class="rt-btn rt-btn-accent-solid"></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="rt-toast" class="rt-toast" style="display:none;"></div>
+
+        <!-- Daily-limit / paywall popup: real gating unchanged (same IDs,
+             same showLimitReached()/showRemainingHint() logic below) — only
+             the presentation changed from an inline banner to a blurred
+             modal overlay, matching the confirm-popup style above. -->
+        <div id="lock-banner" class="lock-overlay" style="display:none;">
+          <div class="lock-modal">
+            <button type="button" id="lock-close" class="lock-close" aria-label="Close">
+              <i class="ti ti-x" aria-hidden="true"></i>
+            </button>
+            <p id="lock-message" class="lock-message">{meta.category === 'papers' ? 'Login to unlock this.' : 'Purchase this subject for 3 months (90 days) of unlimited access.'}</p>
+            <a id="lock-action" href={meta.category === 'papers' ? '/login/' : '/plans/'} class="rt-btn rt-btn-accent-solid lock-action">{meta.category === 'papers' ? 'Login / Sign up' : 'View plans'}</a>
+          </div>
+        </div>
+
+        <div id="mt-starting-overlay" class="mt-starting-overlay">
+          <i class="ti ti-clock-play mt-starting-icon" aria-hidden="true"></i>
+          <div class="mt-starting-title">Mock Test Starting&hellip;</div>
+          <div class="mt-starting-sub" id="mt-starting-sub"></div>
+        </div>
+
+        <!-- Mock Test: full-screen overlay, one question at a time, timer,
+             paid-users only. Separate exit-confirm popup reused for both
+             back-button/back-gesture and "Reveal all" tapped mid-test. -->
+        <div id="mt-overlay" class="mt-overlay">
+          <div class="mt-topbar">
+            <div class="mt-timer"><i class="ti ti-clock" aria-hidden="true"></i> <span id="mt-timer-text">00:00</span></div>
+            <button type="button" id="mt-nav-toggle" class="mt-progress mt-nav-toggle">
+              <span id="mt-progress-text">Question 1 of 1</span>
+              <i class="ti ti-layout-grid" aria-hidden="true"></i>
+            </button>
+            <button type="button" id="mt-exit-btn" class="mt-exit-btn">Exit</button>
+          </div>
+          <div class="mt-scroll" id="mt-scroll">
+            <div class="mt-body" id="mt-body"></div>
+            <div class="mt-footer">
+              <button type="button" id="mt-prev-btn" class="mt-nav-btn">Previous</button>
+              <button type="button" id="mt-mark-btn" class="mt-nav-btn mt-mark-btn"><i class="ti ti-flag" aria-hidden="true"></i></button>
+              <button type="button" id="mt-next-btn" class="mt-nav-btn">Next</button>
+              <button type="button" id="mt-submit-btn" class="mt-nav-btn mt-submit-btn" style="display:none;">Submit Test</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="mt-exit-overlay" class="rt-confirm-overlay" style="display:none;">
+          <div class="rt-confirm-box">
+            <p class="rt-confirm-message">Exit mock test? Your progress on this attempt will be lost.</p>
+            <div class="rt-confirm-actions">
+              <button type="button" id="mt-exit-cancel" class="rt-btn">Keep testing</button>
+              <button type="button" id="mt-exit-confirm" class="rt-btn rt-btn-accent-solid">Exit &amp; show score</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="mt-drawer-overlay" class="mt-drawer-overlay" style="display:none;">
+          <div class="mt-drawer">
+            <div class="mt-drawer-header">
+              <span>Question Navigator</span>
+              <button type="button" id="mt-drawer-close" class="mt-drawer-close">&times;</button>
+            </div>
+            <div class="mt-drawer-legend">
+              <span><i class="mt-dot mt-dot-answered"></i> Answered</span>
+              <span><i class="mt-dot mt-dot-marked"></i> Marked</span>
+              <span><i class="mt-dot mt-dot-visited"></i> Visited</span>
+              <span><i class="mt-dot mt-dot-unvisited"></i> Not visited</span>
+            </div>
+            <div class="mt-drawer-grid" id="mt-drawer-grid"></div>
+            <button type="button" id="mt-drawer-submit" class="mt-nav-btn mt-submit-btn" style="width:100%;">Submit Test</button>
+          </div>
+        </div>
+
+        <div id="faq-list" class="faq-list" style="margin-top:20px;">
+          {questions.map((q, i) => (
+            <div class="faq-item" data-i={i} data-page={Math.floor(i / PER_PAGE) + 1} style={i >= PER_PAGE ? 'display:none;' : ''}>
+              <div class="q-row" data-i={i}>
+                <span class="q-num">{i + 1}.</span>
+                <span class="q-text">{formatMath(q)}</span>
+                <i class="ti ti-chevron-down q-chev" aria-hidden="true"></i>
+              </div>
+              <div class="mcq-preview" data-i={i} style="display:none; padding:0 16px 14px;"></div>
+              <div class="a-row" data-i={i} style="display:none;"></div>
+            </div>
+          ))}
+        </div>
+
+        <div id="pagination" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px;"></div>
+        </div>
+
+        <div id="theoryPaneWrap" style={hasMcq ? 'display:none' : (isTheory ? undefined : 'display:none')}>
+        {chapterIntro && (
+          <div class="intro-card">
+            <div class="intro-card-label">About this chapter</div>
+            <p class="chapter-intro-text">{chapterIntro}</p>
+          </div>
+        )}
+
+        {hasParts && (
+          <div class="part-select-row">
+            {!hasMcq && <div class="part-select-label">Jump to a part</div>}
+            <select id="partSelect" class="part-select">
+              {concepts.map((c) => (
+                <option value={c.conceptId || c.partNumber}>
+                  {`Part ${c.partNumber}/${concepts.length} - ${c.partName}${c.free ? '' : ' 🔒'}`}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        <div id="conceptMount"></div>
+        </div>
+      </Fragment>
+    )}
+  </div>
+
+  <style is:global>
+    /* ---------- Header display split: full header on desktop,
+       compact reading header on mobile. No duplicate Header instances
+       execute session logic twice — CSS just decides which markup shows. ---------- */
+    .header-compact-only { display: none; }
+    .desktop-back-pill { display: inline-flex; }
+    .desktop-title-block { display: flex; }
+    .desktop-title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .desktop-title-row .back-pill { margin-bottom: 0; flex-shrink: 0; }
+    @media (max-width: 720px) {
+      .header-desktop-only { display: none; }
+      .header-compact-only { display: block; }
+      .desktop-back-pill { display: none !important; }
+      .desktop-title-block { display: none !important; }
+      .desktop-mode-row { display: none !important; }
+    }
+
+    .back-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 6px 14px 6px 10px;
+      margin-bottom: 14px;
+      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+    }
+    .back-pill i { font-size: 14px; transition: transform 0.15s ease; }
+    .back-pill:hover {
+      background: rgba(255,154,60,0.10);
+      border-color: rgba(255,154,60,0.4);
+      color: #d97a1f;
+      box-shadow: 0 2px 8px -2px rgba(255,154,60,0.3);
+    }
+    .back-pill:hover i { transform: translateX(-2px); }
+    .back-pill:active { transform: scale(0.96); }
+
+    /* ---------- Locked capsule card design, matched from the proofreader
+       reference tool: white card, 1px border, 14px radius, red-brown
+       question numbering, chevron that flips on expand. ---------- */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+    .q-row {
+      cursor: pointer;
+      padding: 16px 46px 16px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      position: relative;
+    }
+    .q-num {
+      color: #B8341C;
+      font-weight: 700;
+      font-size: 15px;
+      min-width: 24px;
+      flex-shrink: 0;
+    }
+    html[data-theme="dark"] .q-num {
+      color: #e08a70;
+    }
+    .q-text {
+      font-size: 16px;
+      line-height: 1.5;
+      flex: 1;
+      margin-bottom: 4px; /* small breather below multi-line stems before the divider */
+      white-space: pre-wrap; /* preserves \n line breaks in multi-line
+                                 question stems, e.g. (I)/(II)/(III)
+                                 statement-based questions */
+    }
+    .q-chev {
+      position: absolute;
+      right: 14px;
+      top: 18px;
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .faq-item.open .q-chev {
+      transform: rotate(180deg);
+    }
+    .a-row {
+      border-top: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, var(--bg) 8%);
+      padding: 14px 16px;
+    }
+    /* Quick Revision: no divider line between question and its answer —
+       they should read as one Q+A block, not two separated rows. Visual
+       separation between different Q+A sets still comes from the
+       .faq-item card border + 12px .faq-list gap, not a line. */
+    .a-row.a-row-quick {
+      border-top: none;
+      padding-top: 2px;
+      padding-left: 50px; /* aligns with q-text, not q-num — ties Q+A into one visual column */
+    }
+
+    /* ---------- Rich MCQ option rows ---------- */
+    .opt-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+    }
+    .opt-row.opt-clickable { cursor: pointer; }
+    .opt-row.opt-clickable:active { transform: scale(0.985); }
+    .opt-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .opt-text { flex: 1; }
+    .opt-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    .opt-row-correct {
+      background: var(--success-bg);
+      border-color: var(--success-text);
+      font-weight: 700;
+    }
+    .opt-row-correct .opt-badge { background: var(--success-text); color: #fff; }
+    .opt-icon-correct { background: var(--success-text); color: #fff; }
+    .opt-row-wrong {
+      background: var(--amber-bg);
+      border-color: #c0392b;
+      font-weight: 700;
+    }
+    .opt-row-wrong .opt-badge { background: #c0392b; color: #fff; }
+    .opt-icon-wrong { background: #c0392b; color: #fff; }
+
+    /* Mobile font reduction — English chapters only. Telugu chapters
+       (.lang-te) are untouched so Telugu font sizing stays exactly as-is. */
+    @media (max-width: 640px) {
+      .lang-en h1 { font-size: 19px !important; }
+      .lang-en .q-text { font-size: 15px !important; font-weight: 400 !important; }
+      .lang-en .opt-badge,
+      .lang-en .opt-text { font-size: 14px !important; }
+      .lang-en .answer-text { font-size: 14px !important; font-weight: 600 !important; }
+      .lang-en .expl-text { font-size: 14px !important; }
+      .lang-en .expl-toggle { font-size: 12px !important; }
+      .expl-toggle:hover { background: color-mix(in srgb, var(--accent) 18%, transparent) !important; }
+      .lang-te .q-text { font-weight: 400 !important; }
+    }
+
+    /* No visual color change on question tap at all — only the green answer
+       reveal below should show. Mobile browsers apply a default blue
+       tap-highlight flash on any clickable element unless explicitly
+       disabled; this removes it completely. */
+    .faq-item,
+    .q-row {
+      -webkit-tap-highlight-color: transparent !important;
+      tap-highlight-color: transparent !important;
+      touch-action: manipulation;
+      outline: none !important;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    .q-row:focus,
+    .q-row:hover,
+    .faq-item:focus {
+      outline: none !important;
+    }
+
+    /* ---------- Reference chapter UI (Articles & Amendments) ----------
+       Free-to-browse quick lookup, no paywall, no D1/Worker involvement.
+       Ported as-is from the reference-mode build so styling matches. */
+    .ref-tabs {
+      display: flex;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+      margin-top: 16px;
+    }
+    .ref-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      border-radius: 9px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .ref-tab.active { background: var(--accent); color: #fff; }
+
+    /* Compact variant for the MCQs/Theory switch: a rare, one-time-per-visit
+       choice, so it shouldn't cost a full-width bar on every page load.
+       Styled as a clean flat segmented control — subtle track, solid white
+       pill on the active option, same pattern as the Bundle/Single switch
+       on the subject page, for consistency across the site. */
+    .mode-tabs {
+      display: inline-flex;
+      width: auto;
+      padding: 4px;
+      gap: 3px;
+      margin-top: 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e4e2ec;
+    }
+    .mode-tabs .ref-tab {
+      flex: none;
+      padding: 7px 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border-radius: 999px;
+      letter-spacing: 0.01em;
+      background: transparent;
+      color: #4a4757;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .mode-tabs .ref-tab.active {
+      background: #1c1438;
+      color: #ffffff;
+    }
+
+    /* Compact header instance of the same toggle (lives inside Header.astro's
+       compact chapter header via a named slot, but styled here — not in
+       Header.astro's own <style> — because scoped Astro styles only apply
+       to markup written in that component's own template; slotted content
+       keeps the parent page's scope, so this rule has to live where the
+       markup is actually authored (index.astro), not where it's rendered. */
+    .chapter-mode-tabs {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      height: 28px;
+      padding: 3px;
+      gap: 2px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      box-sizing: border-box;
+    }
+    .chapter-mode-tabs .ref-tab {
+      flex: none;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 11px;
+      font-size: 10.5px;
+      font-weight: 700;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.55);
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .chapter-mode-tabs .ref-tab.active {
+      background: #ffffff;
+      color: #1c1c1a;
+    }
+
+    .mode-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .mode-row .mode-tabs { margin-top: 10px; }
+    .mode-row-hint {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .ref-search {
+      display: flex;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .ref-search input::placeholder { color: var(--muted); }
+
+    .ref-group-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      margin: 20px 2px 8px;
+    }
+    .ref-group-label:first-of-type { margin-top: 16px; }
+
+    .ref-entry-list { display: flex; flex-direction: column; gap: 10px; }
+    .ref-entry {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .ref-badge {
+      flex-shrink: 0;
+      min-width: 38px;
+      height: 28px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 0 6px;
+    }
+    .ref-entry-body { flex: 1; min-width: 0; }
+    .ref-entry-title { font-size: 14.5px; line-height: 1.4; color: var(--text); }
+    .ref-entry-title.repealed {
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-color: var(--muted);
+    }
+    .ref-entry-meta { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+    .ref-repealed-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 1px 6px;
+      margin-left: 6px;
+    }
+    .ref-empty { text-align: center; padding: 50px 20px; color: var(--muted); font-size: 13px; }
+
+    @media (min-width: 720px) {
+      .ref-entry-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .ref-group-label { grid-column: 1 / -1; }
+    }
+    /* ---------- Question Paper Pattern & Weightage accordion.
+       Deliberately styled DIFFERENT from .reading-toolbar (light card,
+       accent border, subtle icon) rather than the same dark gradient —
+       two visually identical dark cards stacked back to back reads as
+       one confusing block, not two distinct features. This one sits
+       above the toolbar and closes itself once opened once, so there's
+       no visual redundancy competing with Reveal All / Mock Test. */
+    .pw-accordion {
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: 14px;
+      margin-top: 16px;
+      overflow: hidden;
+    }
+    .pw-accordion-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: none;
+      border: none;
+      padding: 14px 16px;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+    }
+    .pw-accordion-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .pw-accordion-label i {
+      font-size: 17px;
+      color: var(--accent);
+    }
+    .pw-accordion-chevron {
+      font-size: 16px;
+      color: var(--muted);
+      transition: transform 0.15s ease;
+      flex-shrink: 0;
+    }
+    .pw-accordion-body {
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--border);
+    }
+    .pw-accordion-body #pw-accordion-content {
+      padding-top: 14px;
+    }
+
+    /* ---------- Reading-experience toolbar ---------- */
+    .reading-toolbar {
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-top: 10px;
+      box-shadow: 0 12px 30px -14px rgba(20,16,43,0.5);
+    }
+    html[data-theme="dark"] .reading-toolbar {
+      background: linear-gradient(160deg, #2a2258 0%, #382a68 45%, #4d2f8f 100%);
+      border-color: rgba(255,255,255,0.16);
+      box-shadow: 0 12px 30px -14px rgba(0,0,0,0.7);
+    }
+    .rt-progress-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .rt-progress-wrap { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 180px; }
+    .rt-progress-track {
+      flex: 1;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      overflow: hidden;
+    }
+    .rt-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      transition: width 0.3s ease;
+      box-shadow: 0 0 8px rgba(255,154,60,0.5);
+    }
+    .rt-progress-text { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.65); white-space: nowrap; }
+
+    .rt-utility-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 8px;
+      padding-top: 6px;
+    }
+    .rt-btn-primary-full { width: 100%; justify-content: center; padding: 9px 16px; }
+    .rt-mocktest-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      flex: none;
+      background: none;
+      border: none;
+      padding: 4px 2px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .rt-mocktest-link i { font-size: 13px; }
+    .rt-mocktest-link:active { opacity: 0.7; }
+
+    /* Desktop: the toolbar was designed stacked for a narrow phone screen —
+       full-width CTA, separate utility row below. On desktop that wastes
+       width and pushes question 1 down for no reason, so collapse it into
+       one slim horizontal row instead. */
+    @media (min-width: 721px) {
+      .reading-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 16px;
+      }
+      .rt-progress-section { flex: none; }
+      .rt-btn-primary-full { width: auto; padding: 8px 18px; }
+      .rt-utility-row {
+        flex: 1;
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+    .rt-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.15s ease;
+    }
+    .rt-btn:active { transform: scale(0.97); }
+    .rt-btn:disabled { opacity: 0.75; cursor: default; }
+    .rt-spin { animation: rt-spin-anim 0.7s linear infinite; }
+    @keyframes rt-spin-anim { to { transform: rotate(360deg); } }
+    .rt-btn i { font-size: 15px; }
+    .rt-btn-accent {
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      border: none;
+      box-shadow: 0 4px 12px -4px rgba(255,154,60,0.55);
+    }
+    /* Quick Revision button: same white/navy look in both its default and
+       active ("Exit Quick Revision") states — no orange here, unlike other
+       .rt-btn-accent CTAs elsewhere (Login, Unlock Pattern, etc.). */
+    #rt-reveal-all.rt-btn-accent {
+      background: #ffffff;
+      color: #1c1438;
+      box-shadow: inset 0 0 0 1px rgba(28,20,56,0.12);
+    }
+    html[data-theme="dark"] #rt-reveal-all.rt-btn-accent {
+      background: #1c1438;
+      color: #ffffff;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16);
+    }
+    .rt-btn-ghost {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #ffcb8a;
+    }
+    .rt-btn-small { padding: 7px 12px; }
+
+    .rt-options-toggle {
+      width: auto;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background: none;
+      border: none;
+      padding: 4px 2px;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+    }
+    .rt-options-toggle span { display: flex; align-items: center; gap: 6px; }
+    .rt-options-toggle i { font-size: 13px; }
+    .rt-options-chevron { font-size: 12px; transition: transform 0.2s ease; }
+    .rt-options-toggle[aria-expanded="true"] .rt-options-chevron { transform: rotate(180deg); }
+
+    .rt-controls-section {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 18px;
+      align-items: flex-end;
+    }
+    .rt-control-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1 1 140px;
+      min-width: 0;
+    }
+    .rt-control-label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.55);
+    }
+    .rt-control-label i { font-size: 13px; }
+
+    .rt-font-group { display: flex; align-items: center; gap: 6px; }
+    .rt-font-btn {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 6px 11px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: all 0.15s ease;
+    }
+    .rt-font-btn[data-size="small"] { font-size: 11px; }
+    .rt-font-btn[data-size="medium"] { font-size: 14px; }
+    .rt-font-btn[data-size="large"] { font-size: 17px; }
+    .rt-font-btn.active {
+      border-color: #ff9a3c;
+      color: #2a1400;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+    }
+    .rt-select {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .rt-select option { background: #1c1438; color: #ffffff; }
+    .rt-jump-group { display: flex; gap: 6px; width: 100%; }
+    .rt-jump-input {
+      flex: 1;
+      min-width: 0;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .rt-jump-input::placeholder { color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 480px) {
+      .rt-progress-section { flex-direction: column; align-items: stretch; }
+      .rt-controls-section { flex-direction: column; }
+      .rt-control-item { flex: 1 1 auto; width: 100%; }
+    }
+
+    /* Sticky mini progress bar while scrolling through a long chapter */
+    .rt-sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 4px;
+      background: var(--border);
+      margin: 0 -16px;
+    }
+    .rt-sticky-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    /* Font-size scaling applied to question + answer text */
+    .content[data-font-size="small"] .q-text,
+    .content[data-font-size="small"] .opt-text,
+    .content[data-font-size="small"] .answer-text,
+    .content[data-font-size="small"] .expl-text { font-size: 13px !important; }
+    .content[data-font-size="large"] .q-text,
+    .content[data-font-size="large"] .opt-text,
+    .content[data-font-size="large"] .answer-text,
+    .content[data-font-size="large"] .expl-text { font-size: 18px !important; }
+
+    /* Small text size also tightens spacing/padding so more content
+       actually fits on screen — a smaller font alone just leaves empty
+       whitespace without this. */
+    .content[data-font-size="small"] .faq-list { gap: 8px !important; }
+    .content[data-font-size="small"] .q-row { padding: 11px 40px 11px 12px !important; gap: 8px !important; }
+    .content[data-font-size="small"] .q-num { font-size: 13px !important; min-width: 20px !important; }
+    .content[data-font-size="small"] .a-row { padding: 10px 12px !important; }
+    .content[data-font-size="small"] .a-row.a-row-quick { padding-left: 40px !important; padding-top: 2px !important; }
+    .content[data-font-size="small"] .opt-row { padding: 8px 10px !important; gap: 8px !important; }
+    .content[data-font-size="small"] .opt-badge { width: 22px !important; height: 22px !important; font-size: 11px !important; }
+    .content[data-font-size="small"] .opt-icon { width: 18px !important; height: 18px !important; font-size: 11px !important; }
+    .content[data-font-size="small"] .opt-list { gap: 4px !important; }
+
+    /* Large text size gets slightly roomier spacing to match the bigger
+       type, so it doesn't feel cramped. */
+    .content[data-font-size="large"] .faq-list { gap: 16px !important; }
+    .content[data-font-size="large"] .q-row { padding: 18px 50px 18px 18px !important; gap: 12px !important; }
+    .content[data-font-size="large"] .a-row { padding: 16px 18px !important; }
+    .content[data-font-size="large"] .a-row.a-row-quick { padding-left: 54px !important; padding-top: 2px !important; }
+    .content[data-font-size="large"] .opt-row { padding: 13px 14px !important; gap: 12px !important; }
+    .content[data-font-size="large"] .opt-badge { width: 30px !important; height: 30px !important; font-size: 15px !important; }
+
+    /* Score summary card, shown after reveal-all or on reaching the end */
+    .rt-score-summary {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .rt-score-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 4px;
+      font-size: 16px;
+    }
+    .rt-score-close:hover { color: var(--text); }
+    .rt-score-summary .rt-score-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .rt-score-summary .rt-score-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ---------- Score summary stat boxes ---------- */
+    .rt-score-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 14px;
+    }
+    .rt-weightage-row {
+      border-top: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .rt-weightage-row:first-of-type { border-top: none; padding-top: 0; }
+    .rt-weightage-row-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .rt-weightage-count {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--accent);
+    }
+    .rt-weightage-breakdown {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .rt-weightage-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 8px;
+    }
+    .rt-weightage-num-blurred {
+      filter: blur(5px);
+      user-select: none;
+      pointer-events: none;
+    }
+    .rt-weightage-unlock {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    /* Papers (logged-out): the CTA renders BEFORE the blurred list instead
+       of after it, so the border/margin need to sit on the bottom edge
+       instead of the top — otherwise it looks like a floating rule with
+       nothing above it. */
+    .rt-weightage-unlock-lead {
+      margin-top: 0;
+      margin-bottom: 16px;
+      padding-top: 0;
+      padding-bottom: 16px;
+      border-top: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .rt-weightage-unlock p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .rt-weightage-unlock-sub {
+      margin: 8px 0 0 !important;
+    }
+    .rt-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .rt-stat-box {
+      border-radius: 12px;
+      padding: 14px 8px;
+      text-align: center;
+    }
+    .rt-stat-box-correct {
+      background: var(--success-bg);
+      border: 1px solid var(--success-text);
+    }
+    .rt-stat-box-wrong {
+      background: var(--amber-bg);
+      border: 1px solid #c0392b;
+    }
+    .rt-stat-box-notattempted {
+      background: color-mix(in srgb, var(--muted) 12%, var(--card));
+      border: 1px solid var(--border);
+    }
+    .mt-review-trigger { cursor: pointer; }
+    .rt-stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .rt-stat-box-correct .rt-stat-num { color: var(--success-text); }
+    .rt-stat-box-wrong .rt-stat-num { color: #c0392b; }
+    .rt-stat-box-notattempted .rt-stat-num { color: var(--muted); }
+    .rt-stat-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      margin-top: 4px;
+      color: var(--muted);
+    }
+
+    .faq-item.rt-hidden { display: none !important; }
+
+    /* ---------- Confirm modal (used by Reveal all + Check my score) ---------- */
+    .rt-confirm-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+    .rt-confirm-box {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 20px 50px -20px rgba(0,0,0,0.4);
+    }
+    .rt-confirm-message {
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: var(--text);
+      margin: 0 0 18px;
+    }
+    .rt-confirm-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .rt-confirm-actions .rt-btn {
+      flex: 1;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+    }
+    .rt-btn-accent-solid {
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+
+    /* ---------- Toast (used for filter/jump notices) ---------- */
+    .rt-toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1c1438;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4);
+      z-index: 90;
+      animation: rt-toast-in 0.25s ease-out;
+      max-width: 90vw;
+      text-align: center;
+    }
+    @keyframes rt-toast-in {
+      from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* ---------- Daily-limit / paywall popup ---------- */
+    .lock-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 110;
+      padding: 20px;
+    }
+    .lock-modal {
+      position: relative;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 30px 24px 26px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 60px -20px rgba(0,0,0,0.5);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .lock-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 4px;
+      font-size: 18px;
+    }
+    .lock-close:hover { color: var(--text); }
+    .lock-message {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--text);
+      margin: 0 30px 20px 0;
+    }
+    .lock-action {
+      display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    /* ---------- Fix #1: Casual copy/paste deterrent ----------
+       Blocks text selection + copy/cut/right-click on question and
+       answer content. Deterrent-level only (view-source/devtools can
+       still bypass this) — matches agreed scope. */
+    .content .q-text,
+    .content .opt-text,
+    .content .answer-text,
+    .content .expl-text,
+    .content .ref-entry-title,
+    .content .ref-entry-meta {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    /* ---------- Mock Test mode ---------- */
+    .mt-overlay {
+      position: fixed;
+      inset: 0;
+      /* dvh (not just inset:0) so this tracks the actually-visible area
+         as browser/OS chrome shows or hides, rather than pinning against
+         a static viewport that can include the system nav bar area on
+         some Android WebViews. 100vh kept as a fallback for browsers
+         without dvh support. JS below (syncMtOverlayHeight) additionally
+         pins an exact pixel height via visualViewport, which is the more
+         reliable signal on devices where dvh alone still doesn't exclude
+         the nav bar. */
+      height: 100vh;
+      height: 100dvh;
+      padding-top: max(env(safe-area-inset-top, 0px), 8px);
+      padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+      background: var(--bg);
+      z-index: 200;
+      display: none;
+      flex-direction: column;
+    }
+    .mt-overlay.active { display: flex; }
+    #mt-exit-overlay { z-index: 210; }
+    .mt-starting-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      z-index: 220;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      color: #fff;
+      text-align: center;
+    }
+    .mt-starting-overlay.active { display: flex; }
+    .mt-starting-icon { font-size: 40px; color: #ffb35c; animation: mt-pulse 0.9s ease-in-out infinite; }
+    @keyframes mt-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.12); opacity: 0.75; } }
+    .mt-starting-title { font-size: 19px; font-weight: 800; }
+    .mt-starting-sub { font-size: 13.5px; color: rgba(255,255,255,0.7); }
+    .mt-topbar {
+      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .mt-timer {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffb35c;
+      font-variant-numeric: tabular-nums;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mt-progress {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+    }
+    .mt-exit-btn {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    /* .mt-scroll wraps mt-body + mt-footer together: this element is the
+       one that stretches/scrolls, so the footer flows in normal document
+       order right after the last option instead of being pinned to the
+       screen's bottom edge. Short questions leave empty space below the
+       buttons; long ones need a scroll to reach them — both intentional. */
+    .mt-scroll {
+      flex: 1;
+      overflow-y: auto;
+    }
+    .mt-body {
+      padding: 16px 16px;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mt-q-num { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 6px; }
+    .mt-q-text { font-size: 16.5px; font-weight: 600; line-height: 1.45; margin-bottom: 14px; white-space: pre-wrap; }
+    .mt-opt-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 13px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    @media (max-width: 480px) {
+      .mt-body { padding: 12px 16px; }
+      .mt-q-text { font-size: 15.5px; margin-bottom: 12px; }
+      .mt-opt-row { padding: 10px 12px; margin-bottom: 7px; }
+    }
+    .mt-opt-row.mt-opt-selected {
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, var(--card));
+    }
+    .mt-footer {
+      display: flex;
+      gap: 10px;
+      padding: 16px;
+      border-top: 1px solid var(--border);
+      max-width: 720px;
+      margin: 8px auto 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mt-nav-btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .mt-nav-btn.mt-submit-btn {
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      border: none;
+    }
+    .mt-nav-btn:disabled { opacity: 0.5; cursor: default; }
+    .mt-nav-toggle {
+      display: flex; align-items: center; gap: 6px; cursor: pointer;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px; padding: 6px 10px; color: rgba(255,255,255,0.9);
+    }
+    .mt-mark-btn { flex: 0 0 44px; }
+    .mt-mark-btn.mt-marked { background: color-mix(in srgb, #a855f7 20%, var(--card)); border-color: #a855f7; color: #a855f7; }
+
+    .mt-drawer-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 230;
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    .mt-drawer {
+      background: var(--bg); width: 100%; max-width: 480px;
+      border-radius: 16px 16px 0 0; padding: 16px; max-height: 75vh;
+      display: flex; flex-direction: column; gap: 12px;
+      box-sizing: border-box; overflow: hidden;
+    }
+    .mt-drawer-header { display: flex; justify-content: space-between; align-items: center; font-weight: 800; font-size: 15px; }
+    .mt-drawer-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--muted); }
+    .mt-drawer-legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 11.5px; color: var(--muted); }
+    .mt-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+    .mt-dot-answered { background: #22c55e; }
+    .mt-dot-marked { background: #a855f7; }
+    .mt-dot-visited { background: #ffb35c; }
+    .mt-dot-unvisited { background: var(--border); }
+
+    .mt-drawer-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      gap: 8px; overflow-y: auto; flex: 1 1 auto; min-height: 0;
+      align-content: start;
+    }
+    .mt-grid-cell {
+      aspect-ratio: 1; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--card); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 13px; cursor: pointer; position: relative;
+    }
+    .mt-grid-cell.mt-cell-answered { background: color-mix(in srgb, #22c55e 18%, var(--card)); border-color: #22c55e; color: #16803c; }
+    .mt-grid-cell.mt-cell-visited { background: color-mix(in srgb, #ffb35c 18%, var(--card)); border-color: #ffb35c; color: #b45c0a; }
+    .mt-grid-cell.mt-cell-marked::after {
+      content: ''; position: absolute; top: 3px; right: 3px; width: 6px; height: 6px;
+      border-radius: 50%; background: #a855f7;
+    }
+    .mt-grid-cell.mt-cell-current { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .mt-drawer .mt-nav-btn.mt-submit-btn { flex: 0 0 auto; }
+
+    @media (min-width: 900px) {
+      .mt-overlay.active { right: 320px; }
+      .mt-overlay.active ~ .mt-drawer-overlay {
+        display: flex !important;
+        position: fixed;
+        inset: 0 0 0 auto;
+        width: 320px;
+        background: transparent;
+        pointer-events: none;
+        align-items: stretch;
+        justify-content: flex-end;
+      }
+      .mt-drawer-overlay .mt-drawer {
+        pointer-events: auto;
+        width: 320px;
+        max-width: 320px;
+        height: 100%;
+        max-height: none;
+        border-radius: 0;
+        border-left: 1px solid var(--border);
+      }
+      .mt-drawer-close { display: none; }
+      .mt-nav-toggle { cursor: default; pointer-events: none; }
+    }
+    .mt-trial-cta {
+      margin-top: 14px;
+      text-align: center;
+      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
+      color: #2a1400;
+      border-radius: 10px;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 13.5px;
+      text-decoration: none;
+      display: block;
+    }
+    .mt-start-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    .mt-start-card p { color: var(--muted); font-size: 13.5px; margin: 8px 0 16px; }
+    #mt-start-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ---------- Theory chapter UI ---------- */
+    .intro-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px 18px; margin:16px 0 20px;}
+    .intro-card-label{font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--accent); margin-bottom:8px;}
+    .chapter-intro-text{font-size:16px; line-height:1.65; color:var(--text); margin:0;}
+
+    .part-select-row{margin-top:14px; margin-bottom:16px;}
+    .part-select-label{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;}
+    .part-select{
+      width:100%; background:var(--card); border:1px solid var(--border); border-radius:12px;
+      padding:12px 14px; font-size:14.5px; font-weight:600; color:var(--text);
+    }
+
+    .theory-md{line-height:1.75; color:var(--text); font-size:15.5px;}
+    .theory-md h2{
+      font-size:18px; font-weight:800; margin:26px 0 14px; padding-bottom:8px;
+      border-bottom:2px solid var(--accent); color:var(--text);
+    }
+    .theory-md h2:first-child{margin-top:4px;}
+    .theory-md h3{
+      font-size:15px; font-weight:700; margin:22px 0 10px; color:var(--accent);
+      display:flex; align-items:center; gap:8px;
+    }
+    .theory-md h3::before{content:''; width:4px; height:16px; background:var(--accent); border-radius:2px; flex-shrink:0;}
+    .theory-md p{margin:0 0 14px;}
+    .theory-md ul,.theory-md ol{margin:0 0 16px; padding-left:0; list-style:none;}
+    .theory-md ul ul, .theory-md ol ul, .theory-md ul ol, .theory-md ol ol{margin:8px 0 8px; padding-left:22px;}
+    .theory-md li{
+      margin-bottom:10px; padding-left:22px; position:relative;
+    }
+    .theory-md > ul > li, .theory-md > ol > li{
+      background:var(--card, rgba(127,127,127,0.06));
+      border-radius:8px; padding:10px 14px 10px 30px; margin-bottom:8px;
+    }
+    .theory-md li::before{
+      content:'•'; position:absolute; left:8px; top:9px; color:var(--accent); font-weight:900; font-size:15px;
+    }
+    .theory-md ul ul li::before{content:'◦'; font-size:13px;}
+    .theory-md > ul > li::before, .theory-md > ol > li::before{left:12px; top:11px;}
+    .theory-md strong{color:var(--accent); font-weight:800;}
+    .theory-md em{color:var(--muted); font-style:italic;}
+    .theory-md hr{border:none; border-top:1px dashed var(--border,#e5e5e5); margin:26px 0;}
+    .theory-md code{background:rgba(127,127,127,0.15); padding:2px 6px; border-radius:4px; font-size:0.9em; font-family:ui-monospace,Consolas,monospace;}
+    .theory-md table{width:100%; border-collapse:collapse; margin:4px 0 18px; font-size:14px; border-radius:8px; overflow:hidden;}
+    .theory-md th{background:var(--accent); color:#fff; font-weight:700; padding:8px 10px; text-align:left;}
+    .theory-md td{border:1px solid var(--border,#e5e5e5); padding:8px 10px; text-align:left;}
+    .theory-md tr:nth-child(even) td{background:rgba(127,127,127,0.05);}
+    .concept-body-wrap{
+      position:relative; border-radius:16px; overflow:hidden; margin-bottom:20px;
+      max-height:340px;
+    }
+    .concept-locked-content{filter:blur(6px); pointer-events:none; user-select:none;}
+    .concept-lock-overlay{
+      position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      background:linear-gradient(180deg, color-mix(in srgb, var(--bg) 15%, transparent) 0%, var(--bg) 55%);
+      text-align:center; padding:24px;
+    }
+    .concept-lock-badge{
+      width:50px; height:50px; border-radius:50%; background:var(--accent); color:#fff;
+      display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:12px;
+    }
+    .concept-lock-title{font-size:15px; font-weight:700; color:var(--text); margin-bottom:5px;}
+    .concept-lock-sub{font-size:13px; color:var(--muted); margin-bottom:14px; max-width:32ch;}
+    /* Standalone variant: locked concepts ship with NO content to blur
+       behind them (stripped server-side), so this renders as a plain
+       centered card instead of an absolute overlay atop blurred text. */
+    .concept-lock-standalone{
+      position:static; inset:auto; background:var(--card); border:1px solid var(--border);
+      border-radius:16px; margin-bottom:20px; padding:40px 24px;
+    }
+    .concept-lock-standalone .concept-unlock-btn{
+      display:inline-block; text-decoration:none;
+    }
+    .concept-unlock-btn{
+      background:var(--accent); color:#fff; border:none; border-radius:10px; padding:11px 20px;
+      font-weight:700; font-size:13.5px; cursor:pointer;
+    }
+
+    .remember-card{
+      background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, var(--card)), var(--card));
+      border:1px solid var(--border); border-radius:14px; padding:18px; margin-bottom:14px;
+    }
+    .remember-tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin-bottom:10px;}
+    .remember-name{font-size:19px; font-weight:800; color:var(--text); margin-bottom:10px;}
+    .structure-line{
+      font-family:'Consolas', monospace; font-size:13.5px; color:#ffc56b;
+      background:linear-gradient(155deg, #1b1730 0%, #241f42 100%);
+      border:1px dashed rgba(255,197,107,0.4); border-radius:8px;
+      padding:11px 14px; margin-bottom:8px;
+      box-shadow:0 4px 14px -6px rgba(0,0,0,0.35);
+    }
+    .structure-gloss{font-size:12.5px; color:var(--muted); margin-bottom:12px;}
+    .usage-line{font-size:14px; color:var(--text); margin-bottom:14px; line-height:1.6;}
+
+    .forms-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;}
+    .form-cell{
+      background:linear-gradient(155deg, #1b1730 0%, #241f42 100%);
+      border-radius:12px; padding:14px 15px;
+      box-shadow:0 4px 14px -6px rgba(0,0,0,0.35);
+    }
+    .form-cell .lbl{
+      font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.07em;
+      color:#ffc56b; margin-bottom:7px; opacity:0.9;
+    }
+    .form-cell .val{font-family:'Consolas', monospace; font-size:12.5px; line-height:1.55; color:#f1eefc; word-break:break-word;}
+    .form-cell .val .form-sentence{margin:0 0 8px 0;}
+    .form-cell .val .form-sentence:last-child{margin-bottom:0;}
+    @media (max-width: 380px) {
+      .forms-grid{grid-template-columns:1fr;}
+    }
+
+    .signal-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
+    .signal-label{width:100%; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin-bottom:6px;}
+    .chip{
+      font-family:'Consolas', monospace; font-size:12px;
+      background:linear-gradient(155deg, #1b1730 0%, #241f42 100%);
+      border-radius:8px; padding:7px 12px; color:#f1eefc;
+      box-shadow:0 3px 10px -5px rgba(0,0,0,0.35);
+    }
+    .chip-note{color:#c9b8ff; font-size:11px; opacity:0.85;}
+
+    .examples-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .examples-label{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:10px;}
+    .ex-row{padding:8px 0; border-bottom:1px solid var(--border); font-size:14.5px; color:var(--text);}
+    .ex-row:last-child{border-bottom:none;}
+    .ex-gloss{font-size:12px; color:var(--muted); margin-top:3px;}
+
+    .scenario-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .scenario-row{padding:8px 0; border-bottom:1px solid var(--border);}
+    .scenario-row:last-child{border-bottom:none;}
+    .scenario-title{font-size:13.5px; font-weight:700; color:var(--text);}
+    .scenario-example{font-size:13.5px; color:var(--muted); margin-top:2px;}
+
+    .confuse-card{background:var(--amber-bg); border:1px solid color-mix(in srgb, var(--accent) 45%, var(--border)); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .confuse-label{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin-bottom:8px;}
+    .confuse-rule{font-size:13.5px; color:var(--text); margin-bottom:10px;}
+    .wr{display:grid; grid-template-columns:18px 1fr; gap:3px 8px; font-size:13.5px; margin-bottom:4px;}
+    .wr .x{color:#c0392b; font-weight:800;}
+    .wr .ok{color:var(--success-text); font-weight:800;}
+    .wr .wrong-text{color:var(--muted); text-decoration:line-through;}
+
+    .exceptions-card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px 18px; margin-bottom:14px;}
+    .exceptions-label{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:8px;}
+    .exceptions-list{margin:0; padding-left:18px; font-size:13.5px; color:var(--text); line-height:1.7;}
+
+    .examtip-card{background:var(--accent-bg); border-left:3px solid var(--accent); border-radius:8px; padding:12px 14px; margin-bottom:20px; font-size:13px; color:var(--text);}
+    .examtip-label{font-weight:700; color:var(--accent); font-size:11px; text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:4px;}
+
+    .practice-cta{
+      background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px;
+      display:flex; align-items:center; gap:12px; margin-bottom:16px; text-decoration:none;
+    }
+    .practice-cta .icon{
+      width:40px; height:40px; border-radius:10px; background:var(--accent-bg); color:var(--accent);
+      display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;
+    }
+    .practice-cta .txt{flex:1;}
+    .practice-cta .h{font-size:14.5px; font-weight:700; color:var(--text);}
+    .practice-cta .s{font-size:12px; color:var(--muted);}
+    .practice-cta .go{background:var(--accent); color:#fff; border-radius:9px; padding:9px 14px; font-weight:700; font-size:13px; flex-shrink:0;}
+  </style>
+
+  {isTheory && <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>}
+  {hasMcq && (
+    <script>
+      // Top-level MCQs / Theory tab switch. Always defaults to MCQs —
+      // Theory is paid content on many chapters, so it must never be the
+      // tab a student lands on by default. Two toggle instances exist in
+      // the DOM (one in the compact mobile header, one in the desktop
+      // title area) but only one is visible at a time per viewport via
+      // CSS — select by shared class, not id, so clicking either one
+      // keeps both in sync. Purely a visibility toggle — both panes' own
+      // scripts run regardless of which is visible.
+      document.querySelectorAll('[data-toptab]').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const which = tab.getAttribute('data-toptab');
+          document.querySelectorAll('[data-toptab]').forEach((t) => {
+            t.classList.toggle('active', t.getAttribute('data-toptab') === which);
+          });
+          const mcqPane = document.getElementById('mcqPaneWrap');
+          const theoryPane = document.getElementById('theoryPaneWrap');
+          const jumpHint = document.getElementById('jumpToPartHint');
+          if (mcqPane) mcqPane.style.display = which === 'mcq' ? '' : 'none';
+          if (theoryPane) theoryPane.style.display = which === 'theory' ? '' : 'none';
+          if (jumpHint) jumpHint.style.display = which === 'theory' ? '' : 'none';
+        });
+      });
+    </script>
+  )}
+  {isTheory && (
+    <script define:vars={{ concepts, hasParts, subject, chapterSlug }}>
+      // SECURITY: locked concepts never carry content fields (stripped at
+      // the getStaticPaths level above) — so a locked concept is detected
+      // and handled BEFORE any content field is touched, and the lock
+      // card renders with nothing behind it to blur or scrape.
+      //
+      // In-place unlock: on click, runs the SAME ensureEntitlementChecked()
+      // used by MCQs (exposed on window by the script below, since Astro
+      // bundles each <script> as its own module), then fetches the real
+      // concepts_json from /content/theory (D1, entitlement-gated) and
+      // merges it into the local `concepts` array. Fails closed on any
+      // error — content stays locked, "View Plans" link remains as a
+      // fallback the whole time.
+      const mount = document.getElementById('conceptMount');
+      const select = document.getElementById('partSelect');
+
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = String(str);
+        return div.innerHTML;
+      }
+
+      let theoryFetchPromise = null; // dedupe concurrent unlock clicks
+
+      async function fetchFullTheoryContent() {
+        if (theoryFetchPromise) return theoryFetchPromise;
+        theoryFetchPromise = (async () => {
+          const res = await fetch(
+            `${window.WORKER_URL}/content/theory?chapter_slug=${encodeURIComponent(chapterSlug)}`,
+            { credentials: 'include' }
+          );
+          if (!res.ok) throw new Error('theory fetch failed');
+          const data = await res.json();
+          return data.concepts; // full concepts array, same shape as source JSON
+        })();
+        return theoryFetchPromise;
+      }
+
+      function renderConcept(c) {
+        if (!c.free) {
+          const cid = c.conceptId || c.partNumber;
+          return `
+            <div class="concept-lock-overlay concept-lock-standalone">
+              <div class="concept-lock-badge">&#128274;</div>
+              <div class="concept-lock-title">${hasParts ? `Part ${c.partNumber} is locked` : 'Rest of this chapter is locked'}</div>
+              <div class="concept-lock-sub" id="concept-lock-sub-${cid}">Purchase to continue reading.</div>
+              <button class="concept-unlock-btn" id="concept-unlock-btn-${cid}" type="button">Unlock</button>
+              <a class="concept-unlock-link" style="display:block;margin-top:8px;" href="/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle">View Plans</a>
+            </div>
+          `;
+        }
+
+        // Narrative theory chapters (history, economy, etc.) carry raw
+        // markdown in bodyMd instead of the grammar-rule fields below.
+        if (c.bodyMd) {
+          const mcqHrefMd = c.mcqSlug ? `/${c.mcqSlug}/${c.conceptId ? `#${c.conceptId}` : ''}` : '#';
+          const practiceHtmlMd = `
+            <a class="practice-cta" href="${mcqHrefMd}">
+              <div class="icon">&#128221;</div>
+              <div class="txt">
+                <div class="h">Practice MCQs - ${escapeHtml(c.partName || '')}</div>
+                <div class="s">Test what you just read with practice questions</div>
+              </div>
+              <div class="go">Practice &rarr;</div>
+            </a>
+          `;
+          // marked's CommonMark flanking-rule regex misclassifies Telugu
+          // (and other non-Latin) letters, so **bold**immediatelyFollowedByLetter
+          // silently fails when the closing ** sits right after punctuation
+          // with no space before the next word. Fix: convert ** pairs to
+          // <strong> ourselves first, then hand the result to marked.
+          const preBoldFixed = c.bodyMd.replace(/\*\*([\s\S]+?)\*\*/g, '<strong>$1</strong>');
+          const mdHtml = (window.marked ? window.marked.parse(preBoldFixed) : `<pre>${escapeHtml(c.bodyMd)}</pre>`);
+          return `<div class="theory-md">${mdHtml}</div>${practiceHtmlMd}`;
+        }
+
+        const formsHtml = c.formsBreakdown ? `
+          <div class="forms-grid">
+            ${Object.entries(c.formsBreakdown).map(([k, v]) => `
+              <div class="form-cell">
+                <div class="lbl">${escapeHtml(k.replace(/_/g, ' '))}</div>
+                <div class="val">${
+                  Array.isArray(v)
+                    ? v.map((sentence) => `<p class="form-sentence">${escapeHtml(sentence)}</p>`).join('')
+                    : escapeHtml(v)
+                }</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const signalHtml = (c.signalWords && c.signalWords.length) ? `
+          <div class="signal-row">
+            <div class="signal-label">Signal words</div>
+            ${c.signalWords.map((s) => `<span class="chip">${escapeHtml(s.word)}${s.note ? ` <span class="chip-note">- ${escapeHtml(s.note)}</span>` : ''}</span>`).join('')}
+          </div>
+        ` : '';
+
+        const rememberHtml = `
+          <div class="remember-card">
+            <div class="remember-tag">&#9733; Rule to remember</div>
+            <div class="remember-name">${escapeHtml(c.partName || '')}</div>
+            ${c.structure ? `<div class="structure-line">${escapeHtml(c.structure)}</div>` : ''}
+            ${c.structureGloss ? `<div class="structure-gloss">${escapeHtml(c.structureGloss)}</div>` : ''}
+            ${c.explanation ? c.explanation.split('\n').filter(Boolean).map((p) => `<p class="usage-line">${escapeHtml(p)}</p>`).join('') : ''}
+            ${formsHtml}
+            ${signalHtml}
+          </div>
+        `;
+
+        const examplesHtml = (c.examples && c.examples.length) ? `
+          <div class="examples-card">
+            <div class="examples-label">Examples</div>
+            ${c.examples.map((e) => `
+              <div class="ex-row">
+                ${escapeHtml(e.sentence)}
+                ${e.gloss ? `<div class="ex-gloss">${escapeHtml(e.gloss)}</div>` : ''}
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const scenariosHtml = (c.usageScenarios && c.usageScenarios.length) ? `
+          <div class="scenario-card">
+            <div class="examples-label">Usage scenarios</div>
+            ${c.usageScenarios.map((s) => `
+              <div class="scenario-row">
+                <div class="scenario-title">${escapeHtml(s.title)}</div>
+                <div class="scenario-example">${escapeHtml(s.example)}</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const confusionHtml = c.confusion ? `
+          <div class="confuse-card">
+            <div class="confuse-label">&#9888; ${escapeHtml(c.confusion.title || 'Common confusion')}</div>
+            ${c.confusion.rule ? `<div class="confuse-rule">${escapeHtml(c.confusion.rule)}</div>` : ''}
+            ${(c.confusion.wrongRight || []).map((wr) => `
+              <div class="wr"><span class="x">&#10007;</span><span class="wrong-text">${escapeHtml(wr.wrong)}</span></div>
+              <div class="wr"><span class="ok">&#10003;</span><span>${escapeHtml(wr.right)}</span></div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const exceptionsHtml = (c.exceptions && c.exceptions.length) ? `
+          <div class="exceptions-card">
+            <div class="exceptions-label">Exceptions</div>
+            <ul class="exceptions-list">${c.exceptions.map((ex) => `<li>${escapeHtml(ex)}</li>`).join('')}</ul>
+          </div>
+        ` : '';
+
+        const examTipHtml = c.examTip ? `
+          <div class="examtip-card">
+            <span class="examtip-label">Exam tip</span>
+            ${escapeHtml(c.examTip)}
+          </div>
+        ` : '';
+
+        const mcqHref = c.mcqSlug ? `/${c.mcqSlug}/${c.conceptId ? `#${c.conceptId}` : ''}` : '#';
+        const practiceHtml = `
+          <a class="practice-cta" href="${mcqHref}">
+            <div class="icon">&#128221;</div>
+            <div class="txt">
+              <div class="h">Practice MCQs - ${escapeHtml(c.partName || '')}</div>
+              <div class="s">Test what you just read with practice questions</div>
+            </div>
+            <div class="go">Practice &rarr;</div>
+          </a>
+        `;
+
+        return `${rememberHtml}${examplesHtml}${scenariosHtml}${confusionHtml}${exceptionsHtml}${examTipHtml}${practiceHtml}`;
+      }
+
+      function showConcept(idOrPartNumber) {
+        const c = concepts.find(
+          (x) => String(x.conceptId) === String(idOrPartNumber) || String(x.partNumber) === String(idOrPartNumber)
+        ) || concepts[0];
+        mount.innerHTML = renderConcept(c);
+
+        if (!c.free) {
+          const cid = c.conceptId || c.partNumber;
+          const btn = document.getElementById(`concept-unlock-btn-${cid}`);
+          const subEl = document.getElementById(`concept-lock-sub-${cid}`);
+          if (btn) {
+            btn.addEventListener('click', async () => {
+              btn.disabled = true;
+              btn.textContent = 'Checking…';
+              try {
+                const ok = await window.ensureEntitlementChecked();
+                if (!ok) {
+                  if (subEl) subEl.textContent = 'Not purchased yet — view plans below.';
+                  btn.textContent = 'Unlock';
+                  btn.disabled = false;
+                  return;
+                }
+                const fullConcepts = await fetchFullTheoryContent();
+                // Merge full content into the local concepts array in place.
+                // IMPORTANT: /content/theory returns concepts exactly as
+                // stored in D1 — including their original free:false flag
+                // for what were locked parts. Reaching this line already
+                // means ensureEntitlementChecked() confirmed a real
+                // purchase, so every concept returned here is unlocked for
+                // this user regardless of its stored free value — force it
+                // to true, or renderConcept() would show the lock card again.
+                fullConcepts.forEach((full) => {
+                  const idx = concepts.findIndex(
+                    (x) => String(x.conceptId) === String(full.conceptId) || String(x.partNumber) === String(full.partNumber)
+                  );
+                  if (idx !== -1) concepts[idx] = { ...full, free: true };
+                });
+                // Refresh lock icons in the Jump-to-part dropdown too.
+                if (select) {
+                  Array.from(select.options).forEach((opt) => {
+                    opt.textContent = opt.textContent.replace(' 🔒', '');
+                  });
+                }
+                showConcept(idOrPartNumber); // re-render now-unlocked part
+              } catch (err) {
+                btn.textContent = 'Unlock';
+                btn.disabled = false;
+                if (subEl) subEl.textContent = 'Something went wrong — try again.';
+              }
+            });
+          }
+        }
+      }
+
+      if (select) {
+        select.addEventListener('change', () => showConcept(select.value));
+      }
+
+      const initial = concepts.find((c) => c.free) || concepts[0];
+      if (initial) {
+        if (select) select.value = initial.conceptId || initial.partNumber;
+        showConcept(initial.conceptId || initial.partNumber);
+      }
+
+      // Proactive unlock: for an already-purchased, already-logged-in user
+      // (entitlement cached from elsewhere in this tab session, or a fast
+      // /check-access confirming it), reveal every locked part immediately
+      // on page load — no click, no visible lock flash. Falls back silently
+      // to the existing per-click Unlock button for guests/unpurchased
+      // users, or if this check errors out.
+      //
+      // window.ensureEntitlementChecked/WORKER_URL are set by the OTHER
+      // <script> block on this page (define:vars scripts are separate
+      // Astro modules), which runs AFTER this one in document order — so
+      // wait for them to exist before calling, instead of assuming they're
+      // ready yet.
+      (async () => {
+        const hasLocked = concepts.some((c) => !c.free);
+        if (!hasLocked) return; // nothing to unlock
+
+        let waited = 0;
+        while (typeof window.ensureEntitlementChecked !== 'function' && waited < 4000) {
+          await new Promise((r) => setTimeout(r, 50));
+          waited += 50;
+        }
+        if (typeof window.ensureEntitlementChecked !== 'function') return;
+
+        try {
+          const ok = await window.ensureEntitlementChecked();
+          if (!ok) return; // guest/unpurchased — leave lock cards as-is
+
+          const fullConcepts = await fetchFullTheoryContent();
+          fullConcepts.forEach((full) => {
+            const idx = concepts.findIndex(
+              (x) => String(x.conceptId) === String(full.conceptId) || String(x.partNumber) === String(full.partNumber)
+            );
+            if (idx !== -1) concepts[idx] = { ...full, free: true };
+          });
+
+          if (select) {
+            Array.from(select.options).forEach((opt) => {
+              opt.textContent = opt.textContent.replace(' 🔒', '');
+            });
+          }
+
+          // Re-render whatever part is currently showing, now unlocked.
+          const currentVal = select ? select.value : (initial && (initial.conceptId || initial.partNumber));
+          if (currentVal != null) showConcept(currentVal);
+        } catch (err) {
+          // Silent — page just stays on the normal locked/click-to-unlock
+          // flow, same as if this proactive check had never run.
+        }
+      })();
+    </script>
+  )}
+
+  {isReference && (
+    <script define:vars={{ articles, amendments, articlesSearchPlaceholder, amendmentsSearchPlaceholder }}>
+      // Fix #1: same casual copy/paste deterrent as the FAQ/MCQ view.
+      const refContentArea = document.querySelector('.content');
+      if (refContentArea) {
+        ['copy', 'cut', 'contextmenu', 'selectstart'].forEach((evt) => {
+          refContentArea.addEventListener(evt, (e) => e.preventDefault());
+        });
+      }
+
+      let currentTab = 'articles';
+      const container = document.getElementById('refListContainer');
+      const searchInput = document.getElementById('refSearchInput');
+      const resultCount = document.getElementById('refResultCount');
+
+      document.querySelectorAll('.ref-tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.ref-tab').forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentTab = tab.getAttribute('data-tab');
+          searchInput.value = '';
+          searchInput.placeholder = currentTab === 'articles' ? articlesSearchPlaceholder : amendmentsSearchPlaceholder;
+          render();
+        });
+      });
+      searchInput.addEventListener('input', render);
+
+      function render() {
+        const q = searchInput.value.trim().toLowerCase();
+        container.innerHTML = '';
+
+        if (currentTab === 'articles') {
+          const items = articles.filter(
+            (a) => a.number.toLowerCase().includes(q) || a.title.toLowerCase().includes(q)
+          );
+          resultCount.textContent = `${items.length} article${items.length !== 1 ? 's' : ''}`;
+          if (items.length === 0) {
+            container.innerHTML = '<div class="ref-empty">No articles match your search.</div>';
+            return;
+          }
+          const grouped = {};
+          items.forEach((a) => { (grouped[a.part] ||= []).push(a); });
+          Object.keys(grouped).forEach((part) => {
+            const label = document.createElement('div');
+            label.className = 'ref-group-label';
+            label.textContent = part;
+            container.appendChild(label);
+
+            const list = document.createElement('div');
+            list.className = 'ref-entry-list';
+            grouped[part].forEach((a) => {
+              const entry = document.createElement('div');
+              entry.className = 'ref-entry';
+              entry.innerHTML = `
+                <div class="ref-badge">${a.number}</div>
+                <div class="ref-entry-body">
+                  <div class="ref-entry-title ${a.repealed ? 'repealed' : ''}">${a.title}${a.repealed ? '<span class="ref-repealed-tag">Repealed</span>' : ''}</div>
+                </div>
+              `;
+              list.appendChild(entry);
+            });
+            container.appendChild(list);
+          });
+        } else {
+          const items = amendments.filter(
+            (a) =>
+              a.number.toLowerCase().includes(q) ||
+              a.year.includes(q) ||
+              a.title.toLowerCase().includes(q) ||
+              a.articlesAffected.join(',').toLowerCase().includes(q)
+          );
+          resultCount.textContent = `${items.length} amendment${items.length !== 1 ? 's' : ''}`;
+          if (items.length === 0) {
+            container.innerHTML = '<div class="ref-empty">No amendments match your search.</div>';
+            return;
+          }
+          items.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+
+          const label = document.createElement('div');
+          label.className = 'ref-group-label';
+          label.textContent = 'Chronological';
+          container.appendChild(label);
+
+          const list = document.createElement('div');
+          list.className = 'ref-entry-list';
+          items.forEach((a) => {
+            const entry = document.createElement('div');
+            entry.className = 'ref-entry';
+            entry.innerHTML = `
+              <div class="ref-badge">${a.number}</div>
+              <div class="ref-entry-body">
+                <div class="ref-entry-title">${a.title}</div>
+                <div class="ref-entry-meta">${a.year} &middot; Affects: ${a.articlesAffected.join(', ')}</div>
+              </div>
+            `;
+            list.appendChild(entry);
+          });
+          container.appendChild(list);
+        }
+      }
+
+      render();
+    </script>
+  )}
+
+  {!isReference && (
+  <script define:vars={{ chapterSlug, subject, chapterNumber, title, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
+    const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle`;
+    const LOGIN_URL = `/login/?next=${encodeURIComponent(window.location.pathname)}`;
+    const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
+    // Device fingerprint for the free-click counter: a hash of stable
+    // device/browser properties (not stored state), so it survives private/
+    // incognito browsing where cookies get wiped on close. UNCHANGED.
+    let fingerprintPromise = null;
+    async function getFingerprint() {
+      if (fingerprintPromise) return fingerprintPromise;
+      fingerprintPromise = (async () => {
+        try {
+          const raw = [
+            navigator.userAgent,
+            screen.width,
+            screen.height,
+            Intl.DateTimeFormat().resolvedOptions().timeZone,
+            navigator.hardwareConcurrency || '',
+          ].join('|');
+          const enc = new TextEncoder().encode(raw);
+          const digest = await crypto.subtle.digest('SHA-256', enc);
+          return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+        } catch (err) {
+          return null;
+        }
+      })();
+      return fingerprintPromise;
+    }
+    getFingerprint();
+
+    // ---------- Fix #1: casual copy/paste deterrent ----------
+    // Blocks copy/cut/right-click/text-selection-start on the content area.
+    // Deterrent-level only, as agreed — doesn't stop view-source/devtools.
+    const contentArea = document.querySelector('.content');
+    if (contentArea) {
+      ['copy', 'cut', 'contextmenu', 'selectstart'].forEach((evt) => {
+        contentArea.addEventListener(evt, (e) => e.preventDefault());
+      });
+    }
+
+    let currentPage = 1;
+    const revealedAnswers = {};
+
+    // ---------- Fix #2: Q+options open by default (no accordion tap) ----------
+    // Public, ungated /content/questions endpoint returns only type+options
+    // (no answer/explanation) for every MCQ in the chapter. Rendered
+    // immediately under each question for ALL users, all pages. Tapping a
+    // preview option is what actually triggers the same gated
+    // /content/answer fetch as before (via preselect) — so free-click
+    // counting, page-2+ restriction, and the paywall are all unchanged;
+    // only the number of taps needed to START that flow has dropped from
+    // two (open + reveal) to one (tap an option).
+    async function loadAndRenderPublicOptions() {
+      try {
+        const res = await fetch(
+          `${WORKER_URL}/content/questions?chapter_slug=${encodeURIComponent(chapterSlug)}`
+        );
+        if (!res.ok) return;
+        const data = await res.json();
+        const qs = data.questions || {};
+        Object.keys(qs).forEach((key) => {
+          const i = parseInt(key);
+          const f = qs[i];
+          if (!f || f.type !== 'mcq' || !f.options) return;
+          renderMcqPreview(i, f);
+        });
+      } catch (err) {
+        // Silent fail — falls back to old accordion-tap behavior for
+        // whichever questions didn't get a preview rendered.
+      }
+    }
+
+    function renderMcqPreview(i, f) {
+      const previewEl = list.querySelector(`.mcq-preview[data-i="${i}"]`);
+      const chev = list.querySelector(`.q-row[data-i="${i}"] .q-chev`);
+      if (!previewEl) return;
+      if (revealedAnswers[i]) return; // already answered/revealed, nothing to preview
+
+      if (chev) chev.style.display = 'none'; // no accordion needed for MCQ anymore
+
+      const optionRows = Object.keys(f.options).map((letter) => `
+        <div class="opt-row opt-clickable mcq-preview-opt" data-letter="${letter}">
+          <span class="opt-badge">${letter.toLowerCase()}</span>
+          <span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>
+        </div>
+      `).join('');
+
+      previewEl.innerHTML = `<div class="opt-list" style="display:flex; flex-direction:column; gap:6px; margin-top:6px;">${optionRows}</div>`;
+      previewEl.style.display = 'block';
+
+      previewEl.querySelectorAll('.mcq-preview-opt').forEach((optEl) => {
+        optEl.addEventListener('pointerdown', () => prefetchAnswer(i));
+        optEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const letter = optEl.getAttribute('data-letter');
+          openAnswerFor(i, { preselect: letter });
+        });
+      });
+    }
+    let purchased = false;
+    // Default by subject type until a real /check-access call confirms the
+    // subject's actual access_days: 365 for question-papers subjects,
+    // 45 for all other (regular chapter) subjects. Only used for CTA
+    // copy — the real entitlement duration always comes from the
+    // Worker/D1, this is display text only.
+    let subjectAccessDays = isPapersSubject ? 365 : 90;
+
+    // ---------- Lazy entitlement check for premium toolbar features ----------
+    // Only called when the student actually taps a premium feature (Reveal
+    // all, Check my score, Filter, Jump) — NOT on page load. Reuses the
+    // session Header.astro already fetched once per page load
+    // (window.__shSessionPromise) instead of calling /me again — a guest
+    // (not logged in) can never have purchased anything, so we skip the
+    // /check-access call entirely for guests and answer instantly. Only
+    // logged-in users trigger the real /check-access call, and that's
+    // cached after the first check so it never re-fires for the rest of
+    // the visit.
+    let entitlementChecked = false;
+    let entitlementCheckPromise = null;
+
+    // ---------- Cross-page entitlement cache (sessionStorage) ----------
+    // Shares "is this subject purchased" across pages within the same tab
+    // session, so navigating chapter-to-chapter (or arriving from a
+    // subject index page that already checked) doesn't repeat the
+    // /check-access round trip. Session-scoped (not localStorage) since
+    // purchase state shouldn't persist stale across browser sessions.
+    // NOTE: for this to be instant on the FIRST chapter opened (coming
+    // straight from the subject index page), that index page needs to
+    // write this same cache key after ITS OWN check-access call — not yet
+    // wired up there.
+    const ENTITLEMENT_CACHE_KEY = `sh_entitlement_${subject}`;
+    const ENTITLEMENT_CACHE_TTL_MS = 10 * 60 * 1000; // 10 min
+
+    function readEntitlementCache() {
+      try {
+        const raw = sessionStorage.getItem(ENTITLEMENT_CACHE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed.purchased !== 'boolean' || !parsed.ts) return null;
+        if (Date.now() - parsed.ts > ENTITLEMENT_CACHE_TTL_MS) return null;
+        return parsed;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function writeEntitlementCache(isPurchased) {
+      try {
+        sessionStorage.setItem(ENTITLEMENT_CACHE_KEY, JSON.stringify({ purchased: isPurchased, ts: Date.now() }));
+      } catch (err) {}
+    }
+
+    function getSession() {
+      if (window.__shSessionPromise) return window.__shSessionPromise;
+      return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+        .then((res) => res.json())
+        .catch(() => ({ logged_in: false }));
+    }
+
+    async function ensureEntitlementChecked() {
+      if (purchased) return true; // already confirmed via an answer fetch
+      if (entitlementChecked) return purchased;
+      if (entitlementCheckPromise) return entitlementCheckPromise;
+
+      // Cross-page cache: a fresh "purchased" result from elsewhere in
+      // this tab session (another chapter of the same subject, or the
+      // subject index page once it's wired up to write the same key)
+      // skips the round trip entirely. A cached FALSE is not trusted the
+      // same way — purchase state can change in another tab, so a
+      // negative cache only pre-fills nothing and just falls through to
+      // a real check; only a positive cache short-circuits, since acting
+      // on a false positive would be a real access-control mistake while
+      // acting on a false negative just costs one extra (accurate) check.
+      const cached = readEntitlementCache();
+      if (cached && cached.purchased === true) {
+        purchased = true;
+        entitlementChecked = true;
+        upgradeToPurchasedPageSize();
+        return true;
+      }
+
+      entitlementCheckPromise = (async () => {
+        try {
+          const session = await getSession();
+          if (!session.logged_in) {
+            // Guest — for a regular subject this means "can never have
+            // purchased anything"; for a papers subject it means "not
+            // logged in yet" — papers are free but still require an
+            // account, so a guest is treated as locked either way.
+            entitlementChecked = true;
+            entitlementCheckPromise = null;
+            writeEntitlementCache(false);
+            return false;
+          }
+
+          if (isPapersSubject) {
+            // Papers are free for any logged-in user — no purchase check
+            // needed, just confirmed login.
+            purchased = true;
+            entitlementChecked = true;
+            entitlementCheckPromise = null;
+            upgradeToPurchasedPageSize();
+            writeEntitlementCache(true);
+            return true;
+          }
+
+          const accessRes = await fetch(
+            `${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`
+          );
+          const accessData = await accessRes.json();
+          purchased = Boolean(accessData.unlocked);
+          if (purchased) upgradeToPurchasedPageSize();
+          writeEntitlementCache(purchased);
+          if (accessData.total_access_days) subjectAccessDays = accessData.total_access_days;
+          entitlementChecked = true;
+        } catch (err) {
+          // Network error — don't cache as "checked", so the next premium
+          // click retries instead of being permanently stuck as locked.
+        }
+        entitlementCheckPromise = null;
+        return purchased;
+      })();
+
+      return entitlementCheckPromise;
+    }
+
+    // Expose to the separate Theory script module (Astro bundles each
+    // <script> as its own module — these two are needed there to wire
+    // the in-place "unlock after purchase" fetch for locked theory parts).
+    window.ensureEntitlementChecked = ensureEntitlementChecked;
+window.WORKER_URL = WORKER_URL;
+
+// Pre-warm the entitlement check as soon as the page loads, rather than
+// waiting for the first answered question — closes a real race where a
+// fast click-then-navigate could leave `purchased` still unresolved when
+// markAnswered() fires, silently dropping that reading-progress write.
+if (!isPapersSubject) {
+  setTimeout(() => ensureEntitlementChecked(), 0);
+}
+
+    // ---------- Button loading feedback ----------
+    // Gives instant visual response to a tap even while the entitlement
+    // check is in flight, so the button never feels unresponsive on a
+    // slower connection. Restores the button's original content after.
+    function withButtonLoading(btn, task) {
+      if (!btn) return task();
+      // Hide the button's existing children (don't destroy/recreate them —
+      // overwriting innerHTML would detach any cached references to them,
+      // like the Reveal-all label/icon, silently breaking later updates).
+      // Insert a temporary spinner alongside instead, then just toggle
+      // visibility back.
+      const children = Array.from(btn.childNodes);
+      children.forEach((node) => {
+        if (node.nodeType === 1) node.style.display = 'none';
+      });
+      const spinner = document.createElement('span');
+      spinner.className = 'rt-btn-loading-spinner';
+      spinner.innerHTML = '<i class="ti ti-loader-2 rt-spin" aria-hidden="true"></i> Checking&hellip;';
+      btn.appendChild(spinner);
+      btn.disabled = true;
+
+      return Promise.resolve(task()).finally(() => {
+        btn.disabled = false;
+        spinner.remove();
+        children.forEach((node) => {
+          if (node.nodeType === 1) node.style.display = '';
+        });
+      });
+    }
+    // ---------- Fix #4: subject-wide, day-cached free-click limit ----------
+    // ARCHIVED for the reading flow (see studyhelp-free-click-fingerprint-
+    // system-ARCHIVE.md for the full client+server design) — replaced below
+    // by the simpler "first N questions of page 1 free, no daily reset"
+    // rule. Left in place (NOT deleted) because Mock Test's guest trial
+    // still reads `limitReached`/`setLimitReached`/`DAILY_LIMIT_MESSAGE` —
+    // do not remove without checking the Mock Test block further down.
+    function todayKey() {
+      const d = new Date();
+      return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    }
+    const LIMIT_STORAGE_KEY = `sh_limit_${subject}_${todayKey()}`;
+    let limitReached = localStorage.getItem(LIMIT_STORAGE_KEY) === '1';
+    const DAILY_LIMIT_MESSAGE = isPapersSubject
+      ? `Login or sign up to continue.`
+      : `Purchase to continue reading.`;
+
+    function setLimitReached() {
+      limitReached = true;
+      try { localStorage.setItem(LIMIT_STORAGE_KEY, '1'); } catch (err) {}
+    }
+
+    // ---------- NEW: page-1 free-preview rule (replaces the reading flow's
+    // use of the daily fingerprint limit above) ----------
+    // Guests/unpurchased: first FREE_PREVIEW_COUNT questions of page 1 are
+    // free, every day, no cap. Page 2+ always needs entitlement, unchanged.
+    // Purchased users are unaffected — they already bypass all of this via
+    // ensureEntitlementChecked()/bulkAnswers.
+    //
+    // IMPORTANT — server dependency: the live /content/answer Worker
+    // endpoint still enforces its OLD 15-clicks/day counter (see the
+    // archive doc) unless/until that's updated to match. Until the Worker
+    // is updated, a guest who has already exhausted the old daily-15 cap
+    // will still get blocked here even inside the free-preview zone. Ask
+    // to update the Worker too if you want this fully consistent.
+    const FREE_PREVIEW_COUNT = 10;
+    // Indian History (English) only: chapters 1-11 (Ancient) behave like
+    // every other subject; chapters 12-62 (Medieval onward) go straight to
+    // paywall on the bulk Quick Revision button, with no preview at all —
+    // individual per-question taps on page 1 still work normally there.
+    const IS_INDIAN_HISTORY_EN = subject === 'indian-history-en';
+    const INDIAN_HISTORY_FREE_QR_MAX_CHAPTER = 11;
+    function isInFreePreviewZone(i) {
+      return currentPage === 1 && i < FREE_PREVIEW_COUNT;
+    }
+
+    let bulkAnswers = null;
+
+    async function fetchAllAnswersInBackground() {
+      try {
+        const res = await fetch(
+          `${WORKER_URL}/content/chapter-answers?chapter_slug=${encodeURIComponent(chapterSlug)}`,
+          { credentials: 'include' }
+        );
+        if (!res.ok) return;
+        const data = await res.json();
+        bulkAnswers = data.answers;
+      } catch (err) {
+        // silently ignore — per-answer fetching still works fine as a fallback
+      }
+    }
+
+    const list = document.getElementById('faq-list');
+    const lockBanner = document.getElementById('lock-banner');
+    const lockMessage = document.getElementById('lock-message');
+    const lockAction = document.getElementById('lock-action');
+    const lockClose = document.getElementById('lock-close');
+
+    if (lockClose) {
+      lockClose.addEventListener('click', () => {
+        lockBanner.style.display = 'none';
+      });
+    }
+    if (lockBanner) {
+      // Click on the dimmed backdrop (outside the modal card) also closes it.
+      lockBanner.addEventListener('click', (e) => {
+        if (e.target === lockBanner) lockBanner.style.display = 'none';
+      });
+    }
+    const totalItems = list.querySelectorAll('.faq-item').length;
+    // ---------- Dynamic page size: 10 for guest/unpurchased, 20 for
+    // purchased ----------
+    // The static build groups items into pages of `perPage` (20) via the
+    // baked-in data-page attribute — that grouping is IGNORED here in
+    // favor of computing pages purely from data-i, so page size can change
+    // at runtime once entitlement is confirmed (which isn't known until a
+    // lazy check fires — see ensureEntitlementChecked).
+    const GUEST_PAGE_SIZE = 10;
+    const PURCHASED_PAGE_SIZE = perPage; // 20, from the Astro PER_PAGE prop
+    let pageSize = GUEST_PAGE_SIZE;
+    let totalPages = Math.ceil(totalItems / pageSize);
+
+    // Called once ensureEntitlementChecked() confirms a real purchase —
+    // switches to the full 20/page size and re-renders in place.
+    function upgradeToPurchasedPageSize() {
+      if (pageSize === PURCHASED_PAGE_SIZE) return;
+      pageSize = PURCHASED_PAGE_SIZE;
+      totalPages = Math.ceil(totalItems / pageSize);
+      // Keep the user looking at roughly the same question they were on,
+      // not just snapped back to page 1.
+      const anchorIndex = (currentPage - 1) * GUEST_PAGE_SIZE;
+      showPage(Math.floor(anchorIndex / pageSize) + 1);
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = String(str);
+      return div.innerHTML;
+    }
+
+    function renderTable(table) {
+      const headerHtml = table.headers.map((h) => `<th style="border:1px solid var(--border); padding:6px 10px; text-align:left; background:var(--card); font-weight:700;">${escapeHtml(h)}</th>`).join('');
+      const rowsHtml = table.rows.map((row, idx) => `
+        <tr style="${idx % 2 === 1 ? 'background:rgba(0,0,0,0.02);' : ''}">
+          ${row.map((cell) => `<td style="border:1px solid var(--border); padding:6px 10px;">${escapeHtml(cell)}</td>`).join('')}
+        </tr>
+      `).join('');
+      return `
+        <div style="margin-top:12px; overflow-x:auto;">
+          ${table.unit ? `<p style="margin:0 0 6px; font-size:13px; color:var(--muted);">${escapeHtml(table.unit)}</p>` : ''}
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead><tr>${headerHtml}</tr></thead>
+            <tbody>${rowsHtml}</tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    const SUP_MAP = { '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻','+':'⁺' };
+    function formatMath(str) {
+      return String(str).replace(/\^(-?\d+)/g, (_, exp) =>
+        exp.split('').map((ch) => SUP_MAP[ch] || ch).join('')
+      );
+    }
+
+    const userSelections = {};
+
+    function renderExplanationParagraphs(text) {
+      const paragraphs = String(text).split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+      return paragraphs.map((p, idx) => {
+        const withBreaks = escapeHtml(formatMath(p)).replace(/\n/g, '<br>');
+        const marginBottom = idx < paragraphs.length - 1 ? '10px' : '0';
+        return `<p class="expl-text" style="margin:0 0 ${marginBottom}; font-size:15px; line-height:1.5; color:color-mix(in srgb, var(--text) 55%, var(--muted) 45%);">${withBreaks}</p>`;
+      }).join('');
+    }
+
+    function renderExplanationInline(f) {
+      if (!f.e) return '';
+      return `<div style="margin-top:8px;">${renderExplanationParagraphs(f.e)}</div>`;
+    }
+
+    function renderExplanationToggle(f, i) {
+      const tableHtml = f.table ? renderTable(f.table) : '';
+      // Neither explanation text nor a table to show — nothing to toggle.
+      if (!f.e && !tableHtml) return '';
+      const explId = `expl-${i}`;
+      // Table lives inside the SAME hidden div as the explanation text so
+      // both hide/show together as one unit under a single toggle button.
+      return `
+        <button type="button" class="expl-toggle" data-target="${explId}" aria-expanded="false" style="margin-top:10px; display:inline-flex; align-items:center; gap:6px; background:color-mix(in srgb, var(--accent) 10%, transparent); border:1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius:20px; padding:6px 12px; font-size:13px; font-weight:600; color:var(--accent); cursor:pointer;">
+          <span class="expl-toggle-label">Show explanation</span>
+          <i class="ti ti-chevron-down expl-toggle-chevron" aria-hidden="true" style="font-size:14px; transition:transform 0.2s ease;"></i>
+        </button>
+        <div id="${explId}" style="display:none; margin-top:10px; padding:12px 14px; border-radius:10px; background:color-mix(in srgb, var(--card) 96%, var(--text) 4%); border-left:3px solid var(--accent);">
+          ${f.e ? renderExplanationParagraphs(f.e) : ''}
+          ${tableHtml}
+        </div>
+      `;
+    }
+
+    // Quick Revision: FAQ-style bulk view — no options/distractors, just the
+    // correct answer line plus a collapsed explanation toggle. Distinct from
+    // `peek` (which still shows the full option list with the correct one
+    // highlighted green) — quickRevision skips the option list entirely.
+    function renderMcqQuickBox(f, i) {
+      const tableHtml = f.table ? renderTable(f.table) : '';
+      return `
+        <p class="answer-text" style="margin:0; font-weight:600; color:var(--success-text); font-size:15px; display:flex; align-items:flex-start; gap:8px;">
+          <span>${formatMath(f.a)}</span>
+          <i class="ti ti-check" aria-hidden="true" style="flex-shrink:0; margin-top:2px;"></i>
+        </p>
+        ${renderExplanationInline(f)}
+        ${tableHtml}
+      `;
+    }
+
+    function renderMcqBox(f, i, peek = false) {
+      const selected = peek ? null : (userSelections[i] || null);
+      const letters = Object.keys(f.options);
+
+      const optionRows = letters.map((letter) => {
+        const isCorrect = letter === f.answer;
+        const isWrongPick = selected && letter === selected && !isCorrect;
+        const isRightPick = selected && isCorrect;
+        // Peek mode (Reveal-all): just highlight the correct option green,
+        // no wrong/right verdict since the user never actually picked.
+        const isPeekCorrect = peek && isCorrect;
+
+        let rowClass = 'opt-row';
+        let badgeClass = 'opt-badge';
+        let icon = '';
+        if (isRightPick || isPeekCorrect) {
+          rowClass += ' opt-row-correct';
+          badgeClass += ' opt-badge-correct';
+          icon = '<span class="opt-icon opt-icon-correct"><i class="ti ti-check" aria-hidden="true"></i></span>';
+        } else if (isWrongPick) {
+          rowClass += ' opt-row-wrong';
+          badgeClass += ' opt-badge-wrong';
+          icon = '<span class="opt-icon opt-icon-wrong"><i class="ti ti-x" aria-hidden="true"></i></span>';
+        }
+        if (!selected && !peek) rowClass += ' opt-clickable';
+
+        return `
+          <div class="${rowClass}" data-letter="${letter}">
+            <span class="${badgeClass}">${letter.toLowerCase()}</span>
+            <span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>
+            ${icon}
+          </div>
+        `;
+      }).join('');
+
+      const feedbackHtml = (selected || peek) ? `
+        <p class="answer-text" style="margin:12px 0 0; font-weight:600; font-size:14px; color:var(--success-text);">
+          Correct Answer: ${formatMath(f.a)}
+        </p>
+        ${renderExplanationToggle(f, i)}
+      ` : `
+        <p style="margin:10px 0 0; font-size:13px; color:var(--muted);">Tap an option to check your answer</p>
+      `;
+
+      return `
+        <div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optionRows}</div>
+        ${feedbackHtml}
+      `;
+    }
+
+    function renderFaqBox(f) {
+      const tableHtml = f.table ? renderTable(f.table) : '';
+      const explHtml = renderExplanationInline(f);
+      return `
+        <p class="answer-text" style="margin:0; font-weight:600; color:var(--success-text); font-size:15px; background:var(--success-bg); border-radius:8px; padding:10px 12px;">${formatMath(f.a)}</p>
+        ${explHtml}
+        ${tableHtml}
+      `;
+    }
+
+    function renderAnswerHtml(f, i, peek = false, quickRevision = false) {
+      if (f && f.type === 'mcq' && f.options) {
+        return quickRevision ? renderMcqQuickBox(f, i) : renderMcqBox(f, i, peek);
+      }
+      return renderFaqBox(f);
+    }
+
+    // ---------- Skeleton loading, replaces plain "Loading..." text.
+    // Shape mimics the eventual answer capsule so there's no layout jump.
+    function renderSkeleton() {
+      return `
+        <div class="skeleton-answer">
+          <div class="skeleton-line w-90"></div>
+          <div class="skeleton-line w-70"></div>
+          <div class="skeleton-line w-50"></div>
+        </div>
+      `;
+    }
+
+    function attachMcqHandlers(aRow, f, i) {
+      if (!f || f.type !== 'mcq' || !f.options) return;
+
+      aRow.querySelectorAll('.opt-clickable').forEach((optEl) => {
+        optEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          userSelections[i] = optEl.getAttribute('data-letter');
+          aRow.innerHTML = renderAnswerHtml(f, i);
+          aRow.classList.remove('a-row-quick');
+          attachMcqHandlers(aRow, f, i);
+          markAnswered(i);
+        });
+      });
+
+      const toggleBtn = aRow.querySelector('.expl-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const target = document.getElementById(toggleBtn.getAttribute('data-target'));
+          const label = toggleBtn.querySelector('.expl-toggle-label');
+          const chevron = toggleBtn.querySelector('.expl-toggle-chevron');
+          const nowOpen = target.style.display === 'block';
+          target.style.display = nowOpen ? 'none' : 'block';
+          if (label) label.textContent = nowOpen ? 'Show explanation' : 'Hide explanation';
+          if (chevron) chevron.style.transform = nowOpen ? '' : 'rotate(180deg)';
+          toggleBtn.setAttribute('aria-expanded', String(!nowOpen));
+        });
+      }
+    }
+
+    // Resets the Quick Revision button back to its default "Quick
+    // Revision" state (not "Hide All") — called whenever the page changes,
+    // since the bulk-reveal state from one page shouldn't carry over and
+    // stay stuck showing "Hide All" on a page it never actually revealed.
+    function resetRevealAllButtonState() {
+      if (allRevealed) {
+        allRevealed = false;
+        if (revealAllLabel) revealAllLabel.textContent = 'Quick Revision';
+        if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
+        if (revealAllBtn) revealAllBtn.classList.remove('rt-revision-active');
+      }
+    }
+
+    function showPage(page, { scroll = true } = {}) {
+      const pageChanged = page !== currentPage;
+      currentPage = page;
+      list.querySelectorAll('.faq-item').forEach((item) => {
+        const i = parseInt(item.getAttribute('data-i'));
+        const itemPage = Math.floor(i / pageSize) + 1;
+        item.style.display = itemPage === page ? 'block' : 'none';
+      });
+      if (pageChanged && !purchased) resetRevealAllButtonState();
+      renderPagination();
+      if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderPagination() {
+      const pag = document.getElementById('pagination');
+      if (totalPages <= 1) { pag.innerHTML = ''; return; }
+      const btnStyle = 'min-width:36px; height:36px; padding:0 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--text); font-size:14px; cursor:pointer;';
+      let html = `<button ${currentPage === 1 ? 'disabled' : ''} id="prev-btn" style="${btnStyle}">${prevLabel}</button>`;
+      for (let p = 1; p <= totalPages; p++) {
+        html += `<button data-page="${p}" style="${btnStyle} ${p === currentPage ? 'border-color:var(--accent); color:var(--accent); font-weight:700;' : ''}">${p}</button>`;
+      }
+      html += `<button ${currentPage === totalPages ? 'disabled' : ''} id="next-btn" style="${btnStyle}">${nextLabel}</button>`;
+      pag.innerHTML = html;
+
+      pag.querySelectorAll('button[data-page]').forEach((btn) => {
+        btn.addEventListener('click', () => showPage(parseInt(btn.getAttribute('data-page'))));
+      });
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      if (prevBtn) prevBtn.addEventListener('click', () => showPage(currentPage - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => showPage(currentPage + 1));
+    }
+
+    // ctaMode: 'plans' (default, paid subjects) or 'login' (papers — free
+    // once logged in, so the CTA sends them to log in, not to checkout).
+    function showLimitReached(message, ctaMode) {
+      lockBanner.style.display = 'flex';
+      lockMessage.textContent = message;
+      if (ctaMode === 'login') {
+        lockAction.textContent = 'Login / Sign up';
+        lockAction.href = LOGIN_URL;
+      } else {
+        lockAction.textContent = 'View plans';
+        lockAction.href = PLANS_URL;
+      }
+    }
+
+    function showRemainingHint(remaining, dailyLimit) {
+      if (remaining <= 3) {
+        lockBanner.style.display = 'flex';
+        lockMessage.textContent = isPapersSubject
+          ? `Login or sign up to continue.`
+          : `Purchase to continue reading.`;
+        if (isPapersSubject) {
+          lockAction.textContent = 'Login / Sign up';
+          lockAction.href = LOGIN_URL;
+        } else {
+          lockAction.textContent = 'View plans';
+          lockAction.href = PLANS_URL;
+        }
+      }
+    }
+
+    // ---------- Prefetch on pointerdown, not click. Starts the network
+    // request the instant a finger/mouse touches the row (pointerdown fires
+    // ~100-200ms before the full click gesture completes), so by the time
+    // click actually fires, the fetch is often already in flight or done.
+    // Same endpoint, same free-click/entitlement checks server-side —
+    // this only shaves perceived latency, it changes nothing about what
+    // gets checked or when access is granted. ----------
+    const inFlightFetches = {};
+
+    function prefetchAnswer(i) {
+      if (revealedAnswers[i]) return null;
+      if (bulkAnswers && bulkAnswers[i]) return null;
+      // ARCHIVED: old daily-limit short-circuit — `if (limitReached) return null;`
+      // Replaced with the page-1 free-preview zone check. Outside the free
+      // zone, prefetch still fires (it's just a best-effort warm-up fetch);
+      // the actual gate is enforced by openAnswerFor's entitlement check
+      // before the result is ever shown to the user.
+      if (inFlightFetches[i]) return inFlightFetches[i];
+
+      inFlightFetches[i] = (async () => {
+        try {
+          const fp = await getFingerprint();
+          const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
+          const res = await fetch(
+            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
+            { credentials: 'include' }
+          );
+          const data = await res.json();
+          return { ok: res.ok, data };
+        } catch (err) {
+          return { ok: false, networkError: true };
+        }
+      })();
+
+      return inFlightFetches[i];
+    }
+
+    // ---------- Reading-experience state ----------
+    const answeredSet = new Set(); // indices genuinely answered: FAQ reveal, or MCQ option pick
+    const totalQuestions = totalItems;
+
+    function updateProgress() {
+      const fill = document.getElementById('rt-progress-fill');
+      const text = document.getElementById('rt-progress-text');
+      const stickyFill = document.getElementById('rt-sticky-fill');
+      const pct = totalQuestions ? Math.round((answeredSet.size / totalQuestions) * 100) : 0;
+      if (fill) fill.style.width = pct + '%';
+      if (stickyFill) stickyFill.style.width = pct + '%';
+      if (text) text.textContent = `${answeredSet.size} of ${totalQuestions} answered`;
+    }
+
+   function markAnswered(i) {
+  console.log('DEBUG markAnswered fired', { isPapersSubject, purchased, entitlementChecked });
+  answeredSet.add(i);
+  updateProgress();
+  // Real reading engagement (never fires from Quick Revision — see
+  // openAnswerFor's !forceRerender guard above, and attachMcqHandlers'
+  // own call to this for MCQs). Papers are login-gated, not purchase-
+  // gated, so they're excluded — the recap card only applies to
+  // purchased subjects.
+  //
+  // Routed through ensureEntitlementChecked() rather than reading the
+  // `purchased` flag directly — if the entitlement check hasn't
+  // resolved yet (e.g. answering a question within the first instant
+  // of the page loading), this reuses/awaits that same in-flight check
+  // instead of silently dropping the log. ensureEntitlementChecked()
+  // already dedups repeat calls (entitlementChecked/entitlementCheckPromise),
+  // and logReadingProgress() itself only ever fires once per page load
+  // (readingProgressLogged), so this adds no extra network calls in the
+  // normal case where purchased is already known.
+  if (!isPapersSubject) {
+    ensureEntitlementChecked().then((ok) => {
+      if (ok) logReadingProgress();
+    });
+  }
+}
+
+       let readingProgressLogged = false;
+    let readingProgressInFlight = false;
+    async function logReadingProgress() {
+      if (readingProgressLogged || readingProgressInFlight) return;
+      readingProgressInFlight = true;
+      try {
+        const session = await getSession();
+        if (!session.logged_in) {
+          readingProgressInFlight = false;
+          return; // not logged in yet — allow a retry on the next answered question
+        }
+        readingProgressLogged = true;
+        fetch(`${WORKER_URL}/reading-progress`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: JSON.stringify({
+            user_id: session.user_id,
+            subject_id: subject,
+            chapter_slug: chapterSlug,
+            chapter_number: chapterNumber,
+            chapter_title: title,
+          }),
+        }).catch(() => {});
+      } catch (err) {
+      } finally {
+        readingProgressInFlight = false;
+      }
+    }
+
+
+    // ---------- openAnswerFor: single entry point for revealing a question,
+    // used by both individual taps and Reveal-all. Every reveal — including
+    // ones triggered by Reveal-all — goes through the SAME real fetch/
+    // entitlement path as a manual click. Nothing bypasses the paywall:
+    // guests and unpurchased users hit the exact same lock-banner/daily-
+    // limit response Reveal-all just surfaces it via the same popup.
+    // Returns true if revealed successfully, false if blocked (limit/error)
+    // — Reveal-all uses this to know when to stop.
+    async function openAnswerFor(i, { scroll = true, peek = false, quickRevision = false, preselect = null } = {}) {
+      const row = list.querySelector(`.q-row[data-i="${i}"]`);
+      if (!row) return true;
+      const faqItem = row.closest('.faq-item');
+      const aRow = list.querySelector(`.a-row[data-i="${i}"]`);
+      if (preselect) userSelections[i] = preselect;
+      const previewEl = list.querySelector(`.mcq-preview[data-i="${i}"]`);
+      const forceRerender = peek || quickRevision;
+
+      // Already revealed (fetched earlier) — just re-render, no new fetch.
+      // Peek/quickRevision always force-re-render in their own style, even
+      // if the question was already open from the student's own tap.
+      if (revealedAnswers[i]) {
+        if (aRow.style.display === 'block' && !forceRerender) return true;
+        faqItem.classList.add('open');
+        aRow.innerHTML = renderAnswerHtml(revealedAnswers[i], i, peek, quickRevision);
+        aRow.classList.toggle('a-row-quick', quickRevision);
+        aRow.style.display = 'block';
+        if (previewEl) previewEl.style.display = 'none';
+        attachMcqHandlers(aRow, revealedAnswers[i], i);
+        return true;
+      }
+
+      if (aRow.style.display === 'block' && !forceRerender) return true;
+
+      if (bulkAnswers && bulkAnswers[i]) {
+        revealedAnswers[i] = bulkAnswers[i];
+        faqItem.classList.add('open');
+        aRow.innerHTML = renderAnswerHtml(bulkAnswers[i], i, peek, quickRevision);
+        aRow.classList.toggle('a-row-quick', quickRevision);
+        if (previewEl) previewEl.style.display = 'none';
+        aRow.style.display = 'block';
+        attachMcqHandlers(aRow, bulkAnswers[i], i);
+        return true;
+      }
+
+      // ARCHIVED: old daily-limit recovery block —
+      //   if (limitReached) { ...check purchase, else block via
+      //   DAILY_LIMIT_MESSAGE... }
+      // Removed from the reading flow's active path; see the free-preview
+      // zone check below, which replaces it. (limitReached itself is left
+      // defined above — Mock Test still uses it.)
+
+      // ---------- Page-1 free-preview gate (replaces old Fix #2) ----------
+      // Free, no entitlement needed: page 1, first FREE_PREVIEW_COUNT
+      // questions. Everything else (rest of page 1, and all of page 2+)
+      // requires real entitlement — purchased users pass straight through
+      // (their bulkAnswers branch above already returns before reaching
+      // this point in practice, but this stays as a correct fallback).
+      if (!isInFreePreviewZone(i)) {
+        const isPurchased = await ensureEntitlementChecked();
+        if (!isPurchased) {
+          aRow.style.display = 'none';
+          faqItem.classList.remove('open');
+          showLimitReached(
+            isPapersSubject
+              ? 'Login or sign up to continue.'
+              : 'Purchase to continue reading.',
+            isPapersSubject ? 'login' : 'plans'
+          );
+          return false;
+        }
+      }
+
+      faqItem.classList.add('open');
+      if (!forceRerender) {
+        aRow.innerHTML = renderSkeleton();
+        aRow.style.display = 'block';
+      }
+
+      const pending = prefetchAnswer(i) || (async () => {
+        try {
+          const fp = await getFingerprint();
+          const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
+          const res = await fetch(
+            `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${i}${fpParam}`,
+            { credentials: 'include' }
+          );
+          const data = await res.json();
+          return { ok: res.ok, data };
+        } catch (err) {
+          return { ok: false, networkError: true };
+        }
+      })();
+
+      const result = await pending;
+      delete inFlightFetches[i];
+
+      if (result.networkError) {
+        aRow.style.display = 'none';
+        faqItem.classList.remove('open');
+        if (window.showToast) {
+          window.showToast('Network error. Please check your connection and try again.', 'error');
+        } else {
+          showLimitReached('Network error. Please check your connection and try again.');
+        }
+        return false;
+      }
+
+      const { ok, data } = result;
+
+      if (!ok) {
+        aRow.style.display = 'none';
+        faqItem.classList.remove('open');
+        if (data.limitReached) {
+          setLimitReached();
+          showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
+        } else {
+          showLimitReached(data.error || DAILY_LIMIT_MESSAGE);
+        }
+        return false;
+      }
+
+      revealedAnswers[i] = data.answer;
+      if (previewEl) previewEl.style.display = 'none';
+      aRow.innerHTML = renderAnswerHtml(data.answer, i, peek, quickRevision);
+      aRow.classList.toggle('a-row-quick', quickRevision);
+      aRow.style.display = 'block';
+      attachMcqHandlers(aRow, data.answer, i);
+
+      // Reveal-all/Quick Revision never touches the progress/answered count
+      // — it's a lookup action, not practice. FAQ reveals via a real tap
+      // count immediately; MCQ only counts once the user picks an option
+      // (see attachMcqHandlers).
+      const isMcq = data.answer && data.answer.type === 'mcq' && data.answer.options;
+      if (!forceRerender && !isMcq) markAnswered(i);
+
+      if (data.unlimited) {
+        purchased = true;
+        entitlementChecked = true;
+        upgradeToPurchasedPageSize();
+        writeEntitlementCache(true);
+        lockBanner.style.display = 'none';
+        if (!bulkAnswers) fetchAllAnswersInBackground();
+      } else if (typeof data.remaining === 'number') {
+        knownRemainingClicks = data.remaining;
+        showRemainingHint(data.remaining, data.dailyLimit);
+      }
+
+      if (scroll) {
+        setTimeout(() => {
+          const rect = faqItem.getBoundingClientRect();
+          if (rect.bottom > window.innerHeight || rect.top < 0) {
+            // Fix #5: answer-reveal auto-scroll disabled per request.
+            // Jump-to-question and score-summary scrolls are unaffected.
+          }
+        }, 50);
+      }
+
+      return true;
+    }
+
+    list.querySelectorAll('.q-row').forEach((row) => {
+      const i = parseInt(row.getAttribute('data-i'));
+
+      // Fire as early as the gesture starts. touchstart/mousedown-equivalent
+      // via pointerdown covers both touch and mouse in one listener.
+      row.addEventListener('pointerdown', () => {
+        prefetchAnswer(i);
+      });
+
+      row.addEventListener('click', () => {
+        openAnswerFor(i);
+      });
+    });
+
+    // ---------- Confirm modal helper (Reveal all + Check my score) ----------
+    function showConfirm(message, okLabel, onConfirm) {
+      const overlay = document.getElementById('rt-confirm-overlay');
+      const msgEl = document.getElementById('rt-confirm-message');
+      const okBtn = document.getElementById('rt-confirm-ok');
+      const cancelBtn = document.getElementById('rt-confirm-cancel');
+      if (!overlay || !msgEl || !okBtn || !cancelBtn) { onConfirm(); return; }
+
+      msgEl.textContent = message;
+      okBtn.textContent = okLabel;
+      overlay.style.display = 'flex';
+
+      function cleanup() {
+        overlay.style.display = 'none';
+        okBtn.removeEventListener('click', handleOk);
+        cancelBtn.removeEventListener('click', handleCancel);
+      }
+      function handleOk() { cleanup(); onConfirm(); }
+      function handleCancel() { cleanup(); }
+
+      okBtn.addEventListener('click', handleOk);
+      cancelBtn.addEventListener('click', handleCancel);
+    }
+
+    // ---------- Toast helper (filter/jump notices) ----------
+    let toastTimer = null;
+    function showLocalToast(message) {
+      const toast = document.getElementById('rt-toast');
+      if (!toast) return;
+      toast.textContent = message;
+      toast.style.display = 'block';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 2500);
+    }
+
+    // ---------- Reveal all / Hide all (toggle) ----------
+    // Every question Reveal-all opens goes through the exact same fetch/
+    // entitlement check as a manual click (see openAnswerFor above) — a
+    // guest or unpurchased user hits the same lock popup partway through,
+    // exactly as if they'd been clicking one by one. Sequential (not
+    // parallel) fetches, so the daily-limit check stays accurate.
+    const revealAllBtn = document.getElementById('rt-reveal-all');
+    const revealAllLabel = document.getElementById('rt-reveal-all-label');
+    const revealAllIcon = revealAllBtn ? revealAllBtn.querySelector('.ti-eye, .ti-eye-off') : null;
+    let allRevealed = false;
+
+    // ---------- Quick Revision click analytics (guest + logged-in) ----------
+    // Fire-and-forget, once per button press (not per question). keepalive
+    // lets it survive even if the tab navigates right after. Failure here
+    // never blocks or affects the actual reveal — caught and ignored.
+    function logQuickRevisionClick() {
+      try {
+        fetch(`${WORKER_URL}/analytics/quick-revision-click`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          keepalive: true,
+          body: JSON.stringify({ chapter_slug: chapterSlug, subject_id: subject }),
+        }).catch(() => {});
+      } catch (err) {}
+    }
+
+    async function doRevealAll() {
+      logQuickRevisionClick();
+      let revealedCount = 0;
+      // Get a FRESH, confirmed entitlement status before computing loop
+      // bounds — reading the `purchased` flag directly here was stale for
+      // a purchased user on their first-ever premium click of the
+      // session: it only actually flips to true mid-loop (once the first
+      // answer fetch comes back from the server), by which point the loop
+      // bounds were already locked to the guest-scoped range. Awaiting
+      // this first fixes that — it's already memoized/cached after the
+      // first real check, so this is a no-op fetch on every call after.
+      const isPurchasedNow = await ensureEntitlementChecked();
+      // Purchased users: reveal the ENTIRE chapter across all pages in one
+      // click (as decided) — the loop never hits a paywall for them anyway.
+      // Guests/unpurchased: scope the loop to ONLY the current page's own
+      // items. Without this, the loop would silently spill past page 1's
+      // free-preview items into page 2's range (still within the same
+      // click, since currentPage never actually changes) and immediately
+      // hit the paywall — showing the popup on page 1 when it should only
+      // ever appear once the user is actually ON page 2+.
+      const startIdx = isPurchasedNow ? 0 : (currentPage - 1) * pageSize;
+      const endIdx = isPurchasedNow ? totalQuestions : Math.min(startIdx + pageSize, totalQuestions);
+      for (let i = startIdx; i < endIdx; i++) {
+        const success = await openAnswerFor(i, { scroll: false, quickRevision: true });
+        if (!success) break; // blocked by paywall/limit — stop right here
+        revealedCount++;
+      }
+      // Update the button state if ANYTHING got revealed, even if the loop
+      // stopped early partway through — "Hide all" just hides whatever is
+      // currently open, which is still correct and useful for a partial
+      // reveal. Only leave the button as "Quick Revision" if nothing opened
+      // at all (e.g. blocked immediately on the very first question).
+      if (revealedCount > 0) {
+        if (revealAllLabel) revealAllLabel.textContent = 'Exit Quick Revision';
+        if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye'); revealAllIcon.classList.add('ti-eye-off'); }
+        if (revealAllBtn) revealAllBtn.classList.add('rt-revision-active');
+        allRevealed = true;
+      }
+    }
+
+    if (revealAllBtn) {
+      revealAllBtn.addEventListener('click', async () => {
+        if (!allRevealed) {
+          // Indian History (English) only, Chapters 12+ (Medieval onward):
+          // Quick Revision goes straight to paywall, no preview attempt at
+          // all — even the free-preview zone is skipped for this button.
+          // Individual per-question taps still work normally there (see
+          // isInFreePreviewZone / openAnswerFor — untouched by this check).
+          if (IS_INDIAN_HISTORY_EN && chapterNumber > INDIAN_HISTORY_FREE_QR_MAX_CHAPTER) {
+            const ok = await withButtonLoading(revealAllBtn, () => ensureEntitlementChecked());
+            if (!ok) {
+              showLimitReached(
+                'Free preview available on Ancient India chapters — purchase this subject for full access.',
+                'plans'
+              );
+              return;
+            }
+          }
+          // Default (every other case): just run the loop — it naturally
+          // stops at the free-preview boundary via openAnswerFor's own
+          // gate for guests, and runs unrestricted for purchased users.
+          if (answeredSet.size > 0 && answeredSet.size < totalQuestions) {
+            showConfirm(
+              `You've answered ${answeredSet.size} of ${totalQuestions} questions. Revealing all will show every answer, including ones you haven't tried yet.`,
+              'Reveal anyway',
+              doRevealAll
+            );
+          } else {
+            doRevealAll();
+          }
+        } else {
+          // Bug fix: "Hide All" must only undo the REVEAL-ALL peek — it
+          // should never touch a question the user genuinely answered
+          // themselves (tracked via userSelections). Those stay exactly as
+          // they are: answer/verdict visible, nothing collapses. Only
+          // peeked-but-not-actually-answered questions get hidden back to
+          // their open-options preview state.
+          list.querySelectorAll('.faq-item').forEach((item) => {
+            const qRow = item.querySelector('.q-row[data-i]');
+            if (!qRow) return;
+            const i = parseInt(qRow.getAttribute('data-i'));
+            if (answeredSet.has(i)) return; // leave genuinely-answered questions untouched (covers both MCQ picks and real FAQ reveals)
+
+            const aRow = item.querySelector('.a-row');
+            if (aRow) aRow.style.display = 'none';
+            item.classList.remove('open');
+
+            const previewEl = item.querySelector('.mcq-preview');
+            if (previewEl) previewEl.style.display = 'block';
+          });
+          if (revealAllLabel) revealAllLabel.textContent = 'Quick Revision';
+          if (revealAllIcon) { revealAllIcon.classList.remove('ti-eye-off'); revealAllIcon.classList.add('ti-eye'); }
+          if (revealAllBtn) revealAllBtn.classList.remove('rt-revision-active');
+          allRevealed = false;
+        }
+      });
+    }
+
+    // ---------- Fix #3: Mock Test mode (paid subject holders only) ----------
+    // One question at a time, persistent timer, shuffled question order per
+    // attempt (original data `index` preserved for answer lookup — only the
+    // DISPLAY order is shuffled, numbering shown to the user is always
+    // sequential 1..N regardless of shuffle). Retakes are unrestricted and
+    // unlimited — no attempt is stored/remembered between visits.
+    const mtOverlay = document.getElementById('mt-overlay');
+    const mtBody = document.getElementById('mt-body');
+    const mtTimerText = document.getElementById('mt-timer-text');
+    const mtProgressText = document.getElementById('mt-progress-text');
+    const mtPrevBtn = document.getElementById('mt-prev-btn');
+    const mtNextBtn = document.getElementById('mt-next-btn');
+    const mtSubmitBtn = document.getElementById('mt-submit-btn');
+    const mtExitBtn = document.getElementById('mt-exit-btn');
+    const mtExitOverlay = document.getElementById('mt-exit-overlay');
+    const mtExitCancel = document.getElementById('mt-exit-cancel');
+    const mtExitConfirm = document.getElementById('mt-exit-confirm');
+    const startMockTestBtn = document.getElementById('rt-start-mocktest');
+
+    const SECONDS_PER_QUESTION = 60;
+    let mtOrder = [];         // shuffled array of original question indices
+    let mtAnswers = {};       // original index -> full answer object (from chapter-answers)
+    let mtSelections = {};    // original index -> selected letter
+    let mtCurrentPos = 0;     // position within mtOrder
+    let mtTimerInterval = null;
+    let mtSecondsLeft = 0;
+    let mtActive = false;
+    let mtReviewMode = false; // true when navigating a finished attempt's review, not a live test
+    let mtAttemptCount = 0; // within-page only, resets on reload/revisit — not persisted
+    let mtTrialMode = false;   // true for guests/non-purchased — first 10 Qs, metered by free-clicks
+    let mtTrialBlocked = false; // set true if free-click limit hit mid-trial
+    const TRIAL_QUESTION_COUNT = 10;
+    let knownRemainingClicks = null; // updated from the server's own `remaining` field on every answer fetch
+
+    // ---------- Question navigator (drawer): answered/visited/marked state ----------
+    const mtVisited = new Set();  // positions (mtCurrentPos values) ever rendered
+    const mtMarked = new Set();   // positions marked for review
+
+    function mtCellState(pos) {
+      const idx = mtOrder[pos];
+      if (mtSelections[idx]) return 'answered';
+      if (mtVisited.has(pos)) return 'visited';
+      return 'unvisited';
+    }
+
+    function renderMtDrawerGrid() {
+      const grid = document.getElementById('mt-drawer-grid');
+      if (!grid) return;
+      grid.innerHTML = mtOrder.map((_, pos) => {
+        const state = mtCellState(pos);
+        const marked = mtMarked.has(pos) ? ' mt-cell-marked' : '';
+        const current = pos === mtCurrentPos ? ' mt-cell-current' : '';
+        return `<div class="mt-grid-cell mt-cell-${state}${marked}${current}" data-pos="${pos}">${pos + 1}</div>`;
+      }).join('');
+      grid.querySelectorAll('.mt-grid-cell').forEach((cell) => {
+        cell.addEventListener('click', () => {
+          mtCurrentPos = parseInt(cell.getAttribute('data-pos'));
+          closeMtDrawer();
+          mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+        });
+      });
+    }
+
+    function openMtDrawer() {
+      renderMtDrawerGrid();
+      const overlay = document.getElementById('mt-drawer-overlay');
+      if (overlay) overlay.style.display = 'flex';
+    }
+    function closeMtDrawer() {
+      const overlay = document.getElementById('mt-drawer-overlay');
+      if (overlay) overlay.style.display = 'none';
+    }
+
+    const mtNavToggle = document.getElementById('mt-nav-toggle');
+    const mtDrawerClose = document.getElementById('mt-drawer-close');
+    const mtDrawerOverlay = document.getElementById('mt-drawer-overlay');
+    const mtDrawerSubmit = document.getElementById('mt-drawer-submit');
+    const mtMarkBtn = document.getElementById('mt-mark-btn');
+
+    if (mtNavToggle) mtNavToggle.addEventListener('click', openMtDrawer);
+    if (mtDrawerClose) mtDrawerClose.addEventListener('click', closeMtDrawer);
+    if (mtDrawerOverlay) mtDrawerOverlay.addEventListener('click', (e) => { if (e.target === mtDrawerOverlay) closeMtDrawer(); });
+    if (mtDrawerSubmit) mtDrawerSubmit.addEventListener('click', () => { closeMtDrawer(); finishMockTest(); });
+    if (mtMarkBtn) mtMarkBtn.addEventListener('click', () => {
+      if (mtMarked.has(mtCurrentPos)) mtMarked.delete(mtCurrentPos);
+      else mtMarked.add(mtCurrentPos);
+      mtMarkBtn.classList.toggle('mt-marked', mtMarked.has(mtCurrentPos));
+    });
+
+    function shuffleArray(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    async function fetchAllAnswersForMockTest() {
+      if (bulkAnswers) return bulkAnswers;
+      const res = await fetch(
+        `${WORKER_URL}/content/chapter-answers?chapter_slug=${encodeURIComponent(chapterSlug)}`,
+        { credentials: 'include' }
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data.answers;
+    }
+
+    // ---------- Free trial Mock Test (guests / non-purchased) ----------
+    // Reuses the SAME per-question /content/answer endpoint as casual free-
+    // click reveals — same 15/day quota, same D1-backed gating, nothing new
+    // to trust. Answers are fetched lazily, one at a time, as the trial-taker
+    // reaches each question (never all upfront), so each question genuinely
+    // costs one real free click, same as normal reading mode.
+    async function fetchTrialAnswer(idx) {
+      const fp = await getFingerprint();
+      const fpParam = fp ? `&fp=${encodeURIComponent(fp)}` : '';
+      const res = await fetch(
+        `${WORKER_URL}/content/answer?chapter_slug=${encodeURIComponent(chapterSlug)}&index=${idx}${fpParam}`,
+        { credentials: 'include' }
+      );
+      const data = await res.json();
+      if (typeof data.remaining === 'number') knownRemainingClicks = data.remaining;
+      return { ok: res.ok, data };
+    }
+
+    function mtFormatTime(sec) {
+      const m = Math.floor(sec / 60).toString().padStart(2, '0');
+      const s = Math.floor(sec % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    async function renderMtQuestion() {
+      mtVisited.add(mtCurrentPos);
+      if (mtMarkBtn) mtMarkBtn.classList.toggle('mt-marked', mtMarked.has(mtCurrentPos));
+      renderMtDrawerGrid();
+      const idx = mtOrder[mtCurrentPos];
+      const q = questions[idx];
+      mtProgressText.textContent = `Question ${mtCurrentPos + 1} of ${mtOrder.length}`;
+
+      // Trial mode: fetch this question's answer/options lazily, only when
+      // the trial-taker actually reaches it — consumes one real free click,
+      // same as a normal reveal tap would.
+      if (mtTrialMode && !mtAnswers[idx]) {
+        mtBody.innerHTML = `
+          <div class="mt-q-num">Q${mtCurrentPos + 1}</div>
+          <div class="mt-q-text">${escapeHtml(formatMath(q))}</div>
+          <div class="skeleton-answer">
+            <div class="skeleton-line w-90"></div>
+            <div class="skeleton-line w-70"></div>
+          </div>
+        `;
+        mtPrevBtn.disabled = true;
+        mtNextBtn.disabled = true;
+        mtSubmitBtn.disabled = true;
+
+        const result = await fetchTrialAnswer(idx);
+        if (!result.ok) {
+          // Free-click limit hit mid-trial — stop here, show whatever was
+          // answered so far via the normal finish flow.
+          mtTrialBlocked = true;
+          showLimitReached(result.data && result.data.limitReached ? DAILY_LIMIT_MESSAGE : (result.data.error || DAILY_LIMIT_MESSAGE), isPapersSubject ? 'login' : 'plans');
+          if (result.data && result.data.limitReached) setLimitReached();
+          finishMockTest();
+          return;
+        }
+        mtAnswers[idx] = result.data.answer;
+      }
+
+      const f = mtAnswers[idx];
+      const isMcq = f && f.type === 'mcq' && f.options;
+
+      let optsHtml = '';
+      if (isMcq) {
+        optsHtml = Object.keys(f.options).map((letter) => {
+          const selected = mtSelections[idx] === letter;
+          return `<div class="mt-opt-row ${selected ? 'mt-opt-selected' : ''}" data-letter="${letter}">
+            <span class="opt-badge">${letter.toLowerCase()}</span>
+            <span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>
+          </div>`;
+        }).join('');
+      }
+
+      mtBody.innerHTML = `
+        <div class="mt-q-num">Q${mtCurrentPos + 1}</div>
+        <div class="mt-q-text">${escapeHtml(formatMath(q))}</div>
+        ${optsHtml}
+      `;
+
+      mtBody.querySelectorAll('.mt-opt-row').forEach((row) => {
+        row.addEventListener('click', () => {
+          mtSelections[idx] = row.getAttribute('data-letter');
+          renderMtQuestion();
+        });
+      });
+
+      mtPrevBtn.disabled = mtCurrentPos === 0;
+      mtNextBtn.disabled = false;
+      mtSubmitBtn.disabled = false;
+      const isLast = mtCurrentPos === mtOrder.length - 1;
+      mtNextBtn.style.display = isLast ? 'none' : '';
+      mtSubmitBtn.style.display = isLast ? '' : 'none';
+    }
+
+    function startMtTimer(totalSeconds) {
+      mtSecondsLeft = totalSeconds;
+      mtTimerText.textContent = mtFormatTime(mtSecondsLeft);
+      mtTimerInterval = setInterval(() => {
+        mtSecondsLeft--;
+        mtTimerText.textContent = mtFormatTime(Math.max(0, mtSecondsLeft));
+        if (mtSecondsLeft <= 0) {
+          clearInterval(mtTimerInterval);
+          finishMockTest();
+        }
+      }, 1000);
+    }
+
+    function stopMtTimer() {
+      if (mtTimerInterval) clearInterval(mtTimerInterval);
+      mtTimerInterval = null;
+    }
+
+    let mtPopstateGuard = null;
+
+    // Real fix for footer buttons hidden behind the Android system nav
+    // bar: 100dvh (CSS) can still include that bar's height on some
+    // WebViews. window.visualViewport.height reliably reports ONLY the
+    // actually-visible area above any system/browser chrome, so pin the
+    // overlay to that in pixels instead of trusting dvh alone. Re-run on
+    // resize (nav bar show/hide, keyboard, rotation) and once shortly
+    // after opening (some browsers report a stale value on first paint).
+    function syncMtOverlayHeight() {
+      if (!mtOverlay.classList.contains('active')) return;
+      const vv = window.visualViewport;
+      const h = vv ? vv.height : window.innerHeight;
+      mtOverlay.style.height = h + 'px';
+    }
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', syncMtOverlayHeight);
+    }
+    window.addEventListener('resize', syncMtOverlayHeight);
+    window.addEventListener('orientationchange', () => setTimeout(syncMtOverlayHeight, 200));
+
+    function openMockTestOverlay() {
+      mtActive = true;
+      mtOverlay.classList.add('active');
+      syncMtOverlayHeight();
+      setTimeout(syncMtOverlayHeight, 150); // catch late/incorrect first reading
+      // Push a history state so back-gesture/back-button triggers popstate
+      // instead of navigating away; intercepted below.
+      history.pushState({ mockTest: true }, '');
+      mtPopstateGuard = () => {
+        history.pushState({ mockTest: true }, '');
+        requestMtExit();
+      };
+      window.addEventListener('popstate', mtPopstateGuard);
+    }
+
+    function closeMockTestOverlay() {
+      mtActive = false;
+      mtOverlay.classList.remove('active');
+      mtOverlay.style.height = ''; // let CSS dvh govern again while hidden
+      stopMtTimer();
+      if (mtPopstateGuard) {
+        window.removeEventListener('popstate', mtPopstateGuard);
+        mtPopstateGuard = null;
+      }
+    }
+
+    function requestMtExit() {
+      if (mtReviewMode) {
+        // Review mode is read-only — nothing to lose, no need to interrupt
+        // with a confirm popup. Just close straight back to the scorecard.
+        mtReviewMode = false;
+        if (mtSubmitBtn) mtSubmitBtn.textContent = 'Submit Test';
+        closeMockTestOverlay();
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      mtExitOverlay.style.display = 'flex';
+    }
+
+    if (mtExitBtn) mtExitBtn.addEventListener('click', requestMtExit);
+    if (mtExitCancel) {
+      mtExitCancel.addEventListener('click', () => { mtExitOverlay.style.display = 'none'; });
+    }
+    if (mtExitConfirm) {
+      mtExitConfirm.addEventListener('click', () => {
+        mtExitOverlay.style.display = 'none';
+        finishMockTest();
+      });
+    }
+    if (mtPrevBtn) mtPrevBtn.addEventListener('click', () => {
+      mtCurrentPos--;
+      mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+    });
+    if (mtNextBtn) mtNextBtn.addEventListener('click', () => {
+      mtCurrentPos++;
+      mtReviewMode ? renderMtReviewQuestion() : renderMtQuestion();
+    });
+    if (mtSubmitBtn) mtSubmitBtn.addEventListener('click', () => {
+      if (mtReviewMode) {
+        mtReviewMode = false;
+        mtSubmitBtn.textContent = 'Submit Test';
+        closeMockTestOverlay();
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        finishMockTest();
+      }
+    });
+
+    function finishMockTest() {
+      closeMockTestOverlay();
+
+      // Feed mock-test selections/answers into the SAME state the normal
+      // Filter feature reads, so "Wrong answers only" works as post-test
+      // review (per agreed spec).
+      Object.keys(mtAnswers).forEach((key) => {
+        const idx = parseInt(key);
+        revealedAnswers[idx] = mtAnswers[idx];
+        if (mtSelections[idx]) {
+          userSelections[idx] = mtSelections[idx];
+          answeredSet.add(idx);
+        }
+      });
+      updateProgress();
+
+      let correct = 0, wrong = 0, attempted = 0;
+      mtOrder.forEach((idx) => {
+        const f = mtAnswers[idx];
+        const isMcq = f && f.type === 'mcq' && f.options;
+        if (!isMcq) return;
+        const pick = mtSelections[idx];
+        if (!pick) return;
+        attempted++;
+        if (pick === f.answer) correct++; else wrong++;
+      });
+      const notAttempted = mtOrder.length - attempted;
+
+      const summary = document.getElementById('rt-score-summary');
+      const content = document.getElementById('rt-score-content');
+      summary.style.display = 'block';
+      content.innerHTML = `
+        <p class="rt-score-title">${mtTrialMode ? 'Free Trial Mock Test Result' : `Mock Test Result - Attempt #${mtAttemptCount}`}</p>
+        <div class="rt-stat-grid">
+          <div class="rt-stat-box rt-stat-box-correct">
+            <div class="rt-stat-num">${correct}</div>
+            <div class="rt-stat-label">Correct</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-wrong">
+            <div class="rt-stat-num">${wrong}</div>
+            <div class="rt-stat-label">Wrong</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-notattempted">
+            <div class="rt-stat-num">${notAttempted}</div>
+            <div class="rt-stat-label">Not attempted</div>
+          </div>
+        </div>
+        <button type="button" id="mt-review-btn" class="rt-btn rt-btn-accent" style="width:100%; justify-content:center; margin-top:14px;">
+          <i class="ti ti-list-check" aria-hidden="true"></i> Review Mock Test
+        </button>
+        ${mtTrialMode ? `
+          <a href="${PLANS_URL}" class="mt-trial-cta">
+            That was just ${mtOrder.length} questions \u2014 unlock the full ${totalQuestions}-question Mock Test for this subject
+          </a>
+        ` : ''}
+      `;
+      summary.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // ---------- Review Mock Test: re-opens the SAME full-screen mock
+      // test block, one question per screen with Previous/Next, but in
+      // review mode — shows your pick vs the correct answer for every
+      // question from this attempt, in original test order. No category
+      // filter — all questions, one pass. ----------
+      const reviewBtn = document.getElementById('mt-review-btn');
+      if (reviewBtn) {
+        reviewBtn.addEventListener('click', () => {
+          openMtReview();
+        });
+      }
+    }
+
+    function openMtReview() {
+      mtReviewMode = true;
+      mtCurrentPos = 0;
+      openMockTestOverlay();
+      renderMtReviewQuestion();
+    }
+
+    function renderMtReviewQuestion() {
+      renderMtDrawerGrid();
+      const idx = mtOrder[mtCurrentPos];
+      const f = mtAnswers[idx];
+      const pick = mtSelections[idx];
+      const isMcq = f && f.type === 'mcq' && f.options;
+
+      mtProgressText.textContent = `Reviewing ${mtCurrentPos + 1} of ${mtOrder.length}`;
+      mtTimerText.textContent = 'Review';
+
+      let bodyHtml = `
+        <div class="mt-q-num">Q${mtCurrentPos + 1}</div>
+        <div class="mt-q-text">${escapeHtml(formatMath(questions[idx]))}</div>
+      `;
+
+      if (isMcq) {
+        const optsHtml = Object.keys(f.options).map((letter) => {
+          const isCorrectLetter = letter === f.answer;
+          const isPick = letter === pick;
+          let cls = 'opt-row';
+          let icon = '';
+          if (isCorrectLetter) {
+            cls += ' opt-row-correct';
+            icon = '<span class="opt-icon opt-icon-correct"><i class="ti ti-check" aria-hidden="true"></i></span>';
+          } else if (isPick) {
+            cls += ' opt-row-wrong';
+            icon = '<span class="opt-icon opt-icon-wrong"><i class="ti ti-x" aria-hidden="true"></i></span>';
+          }
+          return `<div class="${cls}"><span class="opt-badge">${letter.toLowerCase()}</span><span class="opt-text">${escapeHtml(formatMath(f.options[letter]))}</span>${icon}</div>`;
+        }).join('');
+        bodyHtml += `<div class="opt-list" style="display:flex; flex-direction:column; gap:6px;">${optsHtml}</div>`;
+        if (!pick) {
+          bodyHtml += `<p style="margin:10px 0 0; font-size:13px; color:var(--muted);">You did not attempt this question.</p>`;
+        }
+      }
+
+      mtBody.innerHTML = bodyHtml;
+      mtPrevBtn.disabled = mtCurrentPos === 0;
+      mtPrevBtn.style.display = '';
+      const isLast = mtCurrentPos === mtOrder.length - 1;
+      mtNextBtn.style.display = isLast ? 'none' : '';
+      mtSubmitBtn.style.display = isLast ? '' : 'none';
+      mtSubmitBtn.textContent = 'Finish Review';
+    }
+
+    if (startMockTestBtn) {
+      startMockTestBtn.addEventListener('click', async () => {
+        const isPurchased = await withButtonLoading(startMockTestBtn, () => ensureEntitlementChecked());
+
+        mtSelections = {};
+        mtAnswers = {};
+        mtCurrentPos = 0;
+        mtTrialBlocked = false;
+        mtReviewMode = false;
+        if (mtSubmitBtn) mtSubmitBtn.textContent = 'Submit Test';
+
+        if (isPurchased) {
+          mtTrialMode = false;
+          const answers = await fetchAllAnswersForMockTest();
+          if (!answers) {
+            if (window.showToast) window.showToast('Could not load mock test. Please try again.', 'error');
+            return;
+          }
+          mtAnswers = answers;
+          // Fix #3: same chapter's questions, reordered randomly per attempt.
+          mtOrder = shuffleArray(Object.keys(answers).map(Number));
+        } else {
+          // Fix: free trial mock test for guests/non-purchased users — first
+          // 10 questions only, shuffled, each answer metered by the same
+          // free-click quota as normal reading (no bulk fetch, no bypass).
+          //
+          // Bug fix: if the person already used some free clicks reading
+          // casually before starting the trial, promising a fixed 10
+          // questions would silently die mid-test once the real daily
+          // quota ran out. Clamp the trial size to whatever's ACTUALLY
+          // left (from the server's own `remaining` count) so what's shown
+          // upfront is honest and the test never ends unexpectedly.
+          mtTrialMode = true;
+
+          if (limitReached || knownRemainingClicks === 0) {
+            showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
+            return;
+          }
+
+          const availableClicks = knownRemainingClicks === null ? TRIAL_QUESTION_COUNT : knownRemainingClicks;
+          const trialCount = Math.min(TRIAL_QUESTION_COUNT, totalQuestions, availableClicks);
+
+          if (trialCount <= 0) {
+            showLimitReached(DAILY_LIMIT_MESSAGE, isPapersSubject ? 'login' : 'plans');
+            return;
+          }
+
+          mtOrder = shuffleArray(
+            Array.from({ length: trialCount }, (_, i) => i)
+          );
+        }
+
+        const totalSeconds = mtOrder.length * SECONDS_PER_QUESTION;
+
+        // Brief starting transition — gives the mode-switch a moment to
+        // register instead of jumping straight into a running timer.
+        const startingOverlay = document.getElementById('mt-starting-overlay');
+        const startingTitle = document.querySelector('.mt-starting-title');
+        const startingSub = document.getElementById('mt-starting-sub');
+        mtAttemptCount++;
+        if (startingTitle) {
+          startingTitle.textContent = mtTrialMode
+            ? 'Free Trial Mock Test Starting\u2026'
+            : (mtAttemptCount > 1 ? `Ready for Attempt #${mtAttemptCount}\u2026` : 'Mock Test Starting\u2026');
+        }
+        if (startingSub) {
+          startingSub.textContent = mtTrialMode
+            ? `${mtOrder.length} questions \u00b7 uses your free-click quota \u00b7 ${mtFormatTime(totalSeconds)} on the clock`
+            : `${mtOrder.length} questions \u00b7 ${mtFormatTime(totalSeconds)} on the clock`;
+        }
+        if (startingOverlay) startingOverlay.classList.add('active');
+
+        setTimeout(() => {
+          if (startingOverlay) startingOverlay.classList.remove('active');
+          openMockTestOverlay();
+          renderMtQuestion();
+          startMtTimer(totalSeconds);
+        }, 1200);
+      });
+    }
+
+    const scoreCloseBtn = document.getElementById('rt-score-close');
+    if (scoreCloseBtn) {
+      scoreCloseBtn.addEventListener('click', () => {
+        const summary = document.getElementById('rt-score-summary');
+        if (summary) summary.style.display = 'none';
+      });
+    }
+
+    // ---------- Question Paper Pattern & Weightage accordion: opens for
+    // everyone on click (teaser), but the actual numbers (question counts,
+    // percentages) are blurred for non-purchased users — subject/topic
+    // names stay fully readable as a hook, only the figures themselves
+    // are gated behind purchase. Inline accordion, not a popup, so it
+    // doesn't visually compete with the reading toolbar right below it.
+    const pwToggle = document.getElementById('pw-accordion-toggle');
+    const pwBody = document.getElementById('pw-accordion-body');
+    const pwChevron = pwToggle ? pwToggle.querySelector('.pw-accordion-chevron') : null;
+    let pwLoaded = false;
+
+    if (pwToggle && pwBody && Array.isArray(weightage) && weightage.length > 0) {
+      pwToggle.addEventListener('click', async () => {
+        const isOpen = pwBody.style.display === 'block';
+        if (isOpen) {
+          pwBody.style.display = 'none';
+          pwToggle.setAttribute('aria-expanded', 'false');
+          if (pwChevron) pwChevron.style.transform = '';
+          return;
+        }
+
+        pwBody.style.display = 'block';
+        pwToggle.setAttribute('aria-expanded', 'true');
+        if (pwChevron) pwChevron.style.transform = 'rotate(180deg)';
+
+        if (!pwLoaded) {
+          await renderPatternWeightage();
+          pwLoaded = true;
+        }
+      });
+    }
+
+    async function renderPatternWeightage() {
+      const content = document.getElementById('pw-accordion-content');
+      if (!content) return;
+
+      const unlocked = await ensureEntitlementChecked();
+      const numClass = unlocked ? 'rt-weightage-num' : 'rt-weightage-num rt-weightage-num-blurred';
+
+      const rows = weightage.map((w) => {
+        const breakdownHtml = Array.isArray(w.breakdown) && w.breakdown.length > 0
+          ? `<div class="rt-weightage-breakdown">${w.breakdown.map((b) =>
+              `<div class="rt-weightage-breakdown-row"><span>${b.name}</span><span class="${numClass}">${b.questions}</span></div>`
+            ).join('')}</div>`
+          : '';
+        return `
+          <div class="rt-weightage-row">
+            <div class="rt-weightage-row-head">
+              <span class="rt-weightage-subject">${w.subject}</span>
+              <span class="rt-weightage-count ${numClass}">${w.questions} Qs &middot; ${w.percentage}%</span>
+            </div>
+            ${breakdownHtml}
+          </div>
+        `;
+      }).join('');
+
+      // Paper count for the CTA label — derived from the subject slug since
+      // this template is shared by both the English (7 papers) and Telugu
+      // (6 papers) previous-papers packs, and no explicit count is passed in.
+      const papersCount = subject.endsWith('-te') ? 6 : 7;
+      const unlockCta = unlocked ? '' : (
+        isPapersSubject
+          ? `
+        <div class="rt-weightage-unlock rt-weightage-unlock-lead">
+          <p>Login to unlock weightage &amp; question counts</p>
+          <a href="${LOGIN_URL}" class="rt-btn rt-btn-accent">Login / Sign up</a>
+        </div>
+      `
+          : `
+        <div class="rt-weightage-unlock">
+          <p>Unlock exact question counts and percentage weightage for every subject</p>
+          <a href="/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle" class="rt-btn rt-btn-accent">Unlock Pattern (${papersCount} Papers) &ndash; Rs 99</a>
+          <p class="rt-weightage-unlock-sub">Includes ${subjectAccessDays} days unlimited access</p>
+        </div>
+      `
+      );
+
+      content.innerHTML = unlocked || !isPapersSubject
+        ? `${rows}${unlockCta}`
+        : `${unlockCta}${rows}`; // papers, logged out: CTA first so it's visible without scrolling past the blurred list
+    }
+
+    function showScoreSummary() {
+      const summary = document.getElementById('rt-score-summary');
+      const content = document.getElementById('rt-score-content');
+      if (!summary || !content) return;
+
+      let correct = 0, wrong = 0, mcqRevealed = 0;
+      Object.keys(revealedAnswers).forEach((key) => {
+        const idx = parseInt(key);
+        const f = revealedAnswers[idx];
+        const isMcq = f && f.type === 'mcq' && f.options;
+        if (!isMcq) return;
+        mcqRevealed++;
+        const pick = userSelections[idx];
+        if (!pick) return;
+        if (pick === f.answer) correct++; else wrong++;
+      });
+
+      if (mcqRevealed === 0) {
+        summary.style.display = 'block';
+        content.innerHTML = `
+          <p class="rt-score-title">Your progress</p>
+          <div style="text-align:center;">
+            <div class="rt-score-num">${answeredSet.size}/${totalQuestions}</div>
+            <div class="rt-score-label">questions reviewed</div>
+          </div>
+        `;
+        return;
+      }
+
+      const notAttempted = mcqRevealed - correct - wrong;
+      summary.style.display = 'block';
+      content.innerHTML = `
+        <p class="rt-score-title">Your score (revealed questions)</p>
+        <div class="rt-stat-grid">
+          <div class="rt-stat-box rt-stat-box-correct">
+            <div class="rt-stat-num">${correct}</div>
+            <div class="rt-stat-label">Correct</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-wrong">
+            <div class="rt-stat-num">${wrong}</div>
+            <div class="rt-stat-label">Wrong</div>
+          </div>
+          <div class="rt-stat-box rt-stat-box-notattempted">
+            <div class="rt-stat-num">${notAttempted}</div>
+            <div class="rt-stat-label">Not attempted</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ---------- Filter: all / unanswered / wrong ----------
+    // "Wrong" can only check questions that have actually been revealed
+    // (we have no local answer key for unrevealed ones).
+    async function applyFilter() {
+      const filterSelect = document.getElementById('rt-filter');
+      const mode = filterSelect ? filterSelect.value : 'all';
+      const pag = document.getElementById('pagination');
+
+      if (mode !== 'all') {
+        filterSelect.disabled = true;
+        const ok = await ensureEntitlementChecked();
+        filterSelect.disabled = false;
+        if (!ok) {
+          filterSelect.value = 'all';
+          showLimitReached(
+            isPapersSubject
+              ? 'Login to filter by unanswered/wrong.'
+              : 'Purchase this subject to filter by unanswered/wrong.',
+            isPapersSubject ? 'login' : 'plans'
+          );
+          return;
+        }
+      }
+
+      if (mode === 'all') {
+        if (pag) pag.style.display = '';
+        list.querySelectorAll('.faq-item').forEach((item) => {
+          item.classList.remove('rt-hidden');
+        });
+        showPage(currentPage);
+        return;
+      }
+
+      if (pag) pag.style.display = 'none';
+      let matchCount = 0;
+      list.querySelectorAll('.faq-item').forEach((item) => {
+        const i = parseInt(item.getAttribute('data-i'));
+        let show = true;
+        if (mode === 'unanswered') show = !answeredSet.has(i);
+        else if (mode === 'wrong') {
+          const f = revealedAnswers[i];
+          const isMcq = f && f.type === 'mcq' && f.options;
+          show = isMcq && userSelections[i] && userSelections[i] !== f.answer;
+        }
+        item.style.display = show ? 'block' : 'none';
+        item.classList.toggle('rt-hidden', !show);
+        if (show) matchCount++;
+      });
+
+      const modeLabel = mode === 'unanswered' ? 'unanswered' : 'wrong-answer';
+      showLocalToast(`Showing ${matchCount} ${modeLabel} question${matchCount === 1 ? '' : 's'}`);
+    }
+    const filterSelect = document.getElementById('rt-filter');
+    if (filterSelect) filterSelect.addEventListener('change', applyFilter);
+
+    // ---------- Jump to question ----------
+    const jumpInput = document.getElementById('rt-jump-input');
+    const jumpBtn = document.getElementById('rt-jump-btn');
+    async function jumpToQuestion() {
+      const n = parseInt(jumpInput.value);
+      if (!n || n < 1 || n > totalQuestions) return;
+
+      const ok = await withButtonLoading(jumpBtn, () => ensureEntitlementChecked());
+      if (!ok) {
+        showLimitReached(
+          isPapersSubject
+            ? 'Login to jump to a question.'
+            : 'Purchase this subject to jump to a question.',
+          isPapersSubject ? 'login' : 'plans'
+        );
+        return;
+      }
+
+      if (filterSelect && filterSelect.value !== 'all') {
+        filterSelect.value = 'all';
+        applyFilter();
+        showLocalToast(`Filter cleared to jump to Q${n}`);
+      }
+
+      const targetIndex = n - 1;
+      const targetPage = Math.floor(targetIndex / pageSize) + 1;
+      if (targetPage !== currentPage) showPage(targetPage);
+      setTimeout(() => {
+        const item = list.querySelector(`.faq-item[data-i="${targetIndex}"]`);
+        if (item) {
+          item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          item.style.transition = 'box-shadow 0.3s ease';
+          item.style.boxShadow = '0 0 0 2px var(--accent)';
+          setTimeout(() => { item.style.boxShadow = ''; }, 1200);
+        }
+      }, 100);
+    }
+    if (jumpBtn) jumpBtn.addEventListener('click', jumpToQuestion);
+    if (jumpInput) jumpInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') jumpToQuestion(); });
+
+    // ---------- Options toggle (collapsed by default) ----------
+    // Only auto-closes when moving to a different page (see showPage) —
+    // stays open through filter/text-size/jump selections and clicks
+    // elsewhere on the page.
+    const optionsToggle = document.getElementById('rt-options-toggle');
+    const controlsSection = document.getElementById('rt-controls-section');
+
+    function closeOptionsPanel() {
+      if (!controlsSection || !optionsToggle) return;
+      controlsSection.style.display = 'none';
+      optionsToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (optionsToggle && controlsSection) {
+      optionsToggle.addEventListener('click', () => {
+        const isOpen = controlsSection.style.display === 'flex';
+        controlsSection.style.display = isOpen ? 'none' : 'flex';
+        optionsToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+
+    // ---------- Font size control ----------
+    // UX TOGGLE: set to false to disable auto-scroll on reveal, reverting
+    // to plain in-place opening — single flag, no other code changes.
+    const contentEl = document.querySelector('.content');
+    document.querySelectorAll('.rt-font-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.rt-font-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (contentEl) contentEl.setAttribute('data-font-size', btn.getAttribute('data-size'));
+      });
+    });
+
+    updateProgress();
+    // Static build renders the first PER_PAGE (20) items visible by
+    // default — correct for purchased users, but guests need only the
+    // first `pageSize` (10) shown. showPage(1) re-applies visibility
+    // correctly for whichever pageSize applies right now.
+    showPage(1, { scroll: false });
+
+    // ---------- Reveal-only model: hidden (10) by default for everyone,
+    // upgraded to 20 only once a real purchase is confirmed. Never the
+    // other direction — nothing already shown is ever hidden again. This
+    // is deliberately the simple, one-way version: no optimistic render,
+    // no downgrade path, no extra listeners. Purchased users' existing
+    // flow (Quick Revision, individual reveals, Mock Test) is untouched —
+    // this only decides the initial page size before they interact.
+    const cachedEntitlement = readEntitlementCache();
+    if (cachedEntitlement && cachedEntitlement.purchased) {
+      // Fresh positive cache (from this subject's index page, or another
+      // chapter opened earlier this session) — reveal immediately, zero
+      // round trip.
+      purchased = true;
+      entitlementChecked = true;
+      upgradeToPurchasedPageSize();
+    } else {
+      // No fresh positive signal — stays hidden at 10 for now. Still
+      // proactively (not lazily) confirms in the background so a
+      // purchased user without a cache yet doesn't have to click
+      // anything first; this fires once, resolves, and upgrades in place
+      // via upgradeToPurchasedPageSize() if it comes back true. A guest
+      // simply stays at 10 — no further action, no downgrade needed since
+      // nothing was ever shown beyond 10 in the first place.
+      ensureEntitlementChecked();
+    }
+    loadAndRenderPublicOptions();
+  </script>
+  )}
+  <!--
+    PASTE THIS ENTIRE <style> BLOCK right before the final </Layout> tag,
+    after the last </script> in chapter-v2/[slug].astro.
+
+    Nothing else in the file changes — no markup, no script, no
+    getStaticPaths, no security/entitlement/mock-test logic. This only
+    repaints the orange/dark-purple brand accents to the indigo premium
+    palette used on the homepage/subjects/subject pages, reusing the
+    exact same class names/selectors that already exist in this file so
+    the cascade (later <style> block, same or higher specificity, plus
+    !important where the original used it) wins cleanly without editing
+    a single existing rule.
+
+    Left UNTOUCHED on purpose (these are semantic status colors, not
+    brand colors, and retinting them would make correct/wrong/marked/
+    visited harder to read at a glance):
+      #22c55e (correct/answered green), #c0392b (wrong-answer red),
+      #a855f7 (marked-for-review purple), var(--success-bg/--amber-bg)
+      status backgrounds.
+  -->
+  <style is:global>
+  body.sh2-page { background: #EEEDF6; }
+  html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+  .chapter-header {
+    background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 55%, #7C63DE 100%) !important;
+  }
+  html[data-theme="dark"] .chapter-header {
+    background: linear-gradient(160deg, #241F42 0%, #3A3170 45%, #5A4CC4 100%) !important;
+  }
+  .chapter-theme-toggle {
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    background: rgba(255,255,255,0.12) !important;
+  }
+
+  /* ...rest of the block continues as before (the --accent override, back-pill, etc.)... */
+
+    /* Re-tint the shared --accent token for everything inside this
+       page's content column (ref tabs, theory tables, spinner, jump
+       button, practice CTA, weightage counts) — one variable override
+       instead of chasing every var(--accent) usage individually. */
+    .content {
+      --accent: #4B3FA0;
+      --accent-bg: #EEEAFB;
+    }
+    html[data-theme="dark"] .content {
+      --accent: #A594F5;
+      --accent-bg: #2A2650;
+    }
+
+    /* Back pill hover */
+    .back-pill:hover {
+      background: rgba(75,63,160,0.10) !important;
+      border-color: rgba(75,63,160,0.4) !important;
+      color: #4B3FA0 !important;
+    }
+    html[data-theme="dark"] .back-pill:hover { color: #A594F5 !important; }
+
+    /* Question number accent (was red-brown) */
+    .q-num { color: #4B3FA0 !important; }
+    html[data-theme="dark"] .q-num { color: #A594F5 !important; }
+
+    /* MCQs/Theory segmented toggle (desktop + compact header variant) */
+    .mode-tabs { background: #ffffff !important; border-color: #E7E4F5 !important; }
+    .mode-tabs .ref-tab { color: #4B3FA0 !important; }
+    .mode-tabs .ref-tab.active { background: #2E2570 !important; color: #ffffff !important; }
+    .chapter-mode-tabs .ref-tab.active { color: #2E2570 !important; }
+
+    /* Reading toolbar — was dark orange/purple gradient */
+    .reading-toolbar {
+      background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 55%, #7C63DE 100%) !important;
+      box-shadow: 0 12px 30px -14px rgba(46,37,112,0.5) !important;
+    }
+    html[data-theme="dark"] .reading-toolbar {
+      background: linear-gradient(160deg, #241F42 0%, #3A3170 45%, #5A4CC4 100%) !important;
+      box-shadow: 0 12px 30px -14px rgba(0,0,0,0.7) !important;
+    }
+    .rt-progress-fill {
+      background: linear-gradient(90deg, #A594F5, #E8963A) !important;
+      box-shadow: 0 0 8px rgba(165,148,245,0.5) !important;
+    }
+    .rt-mocktest-link { color: rgba(255,255,255,0.65) !important; }
+
+    /* Quick Revision button (white/navy states — just re-tint the navy) */
+    #rt-reveal-all.rt-btn-accent { color: #2E2570 !important; }
+    html[data-theme="dark"] #rt-reveal-all.rt-btn-accent {
+  background: #F3F1FC !important;
+  color: #2E2570 !important;
+}
+
+    .rt-btn-ghost { color: #EEEAFB !important; }
+
+    /* Text-size buttons — active state was orange */
+    .rt-font-btn.active {
+      border-color: #A594F5 !important;
+      color: #ffffff !important;
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+    }
+
+    /* Question Paper Pattern & Weightage accordion border/icon */
+    .pw-accordion { border-color: #4B3FA0 !important; }
+    html[data-theme="dark"] .pw-accordion { border-color: #A594F5 !important; }
+    .pw-accordion-label i { color: #4B3FA0 !important; }
+    html[data-theme="dark"] .pw-accordion-label i { color: #A594F5 !important; }
+
+    /* Mock test starting overlay + top bar — was orange/dark-purple */
+    .mt-starting-overlay, .mt-topbar {
+      background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 55%, #7C63DE 100%) !important;
+    }
+    .mt-starting-icon { color: #E8963A !important; }
+    .mt-timer { color: #E8963A !important; }
+    .mt-nav-btn.mt-submit-btn,
+    .mt-drawer-submit {
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
+    }
+    .mt-dot-visited { background: #E8963A !important; }
+    .mt-grid-cell.mt-cell-visited {
+      background: color-mix(in srgb, #E8963A 18%, var(--card)) !important;
+      border-color: #E8963A !important;
+      color: #b45c0a !important;
+    }
+
+    /* Theory-page reference tables, jump button, practice CTA — all ride
+       var(--accent) above, so no direct overrides needed here beyond the
+       decorative amber highlight boxes below. */
+    .form-cell .lbl { color: #C9B8FF !important; }
+    .chip-note { color: #C9B8FF !important; }
+
+    /* "Review Mock Test" button after a trial mock test finishes */
+    .rt-btn-accent {
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px -4px rgba(75,63,160,0.55) !important;
+    }
+    /* Quick Revision keeps its white/navy look, not the indigo gradient above */
+    #rt-reveal-all.rt-btn-accent {
+      background: #ffffff !important;
+      color: #2E2570 !important;
+      box-shadow: inset 0 0 0 1px rgba(28,20,56,0.12) !important;
+    }
+    html[data-theme="dark"] #rt-reveal-all.rt-btn-accent {
+      background: #F3F1FC !important;
+      color: #2E2570 !important;
+    }
+
+    /* "That was just N questions — unlock the full mock test" trial banner */
+       .mt-trial-cta {
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
+    }
+  </style>
+
+  <script define:vars={{ subject, chapterNumber, title, chapterSlug: Astro.params.slug }}>
+    (function logReadingProgress() {
+      const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+      const session = window.__shSessionPromise
+        ? window.__shSessionPromise
+        : fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+            .then((res) => res.json())
+            .catch(() => ({ logged_in: false }));
+
+      session.then((data) => {
+        if (!data.logged_in) return;
+        fetch(`${WORKER_URL}/reading-progress`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: data.user_id,
+            subject_id: subject,
+            chapter_slug: chapterSlug,
+            chapter_number: chapterNumber,
+            chapter_title: title,
+          }),
+        }).catch(() => {});
+      });
+    })();
+  </script>
+</Layout>
