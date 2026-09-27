@@ -381,6 +381,12 @@ for (const ch of chapters) {
     .section-heading:first-of-type { margin-top: 4px; }
 
     .chapter-list { display: flex; flex-direction: column; gap: 6px; }
+    @media (min-width: 1200px) {
+      .chapter-list {
+        max-width: 820px;
+        margin: 0 auto;
+      }
+    }
     .chapter-card {
       display: flex; align-items: center; gap: 10px;
       background: var(--sh2-surface);

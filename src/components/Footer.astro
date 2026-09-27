@@ -102,32 +102,21 @@ const forgotPasscodeHref = premium ? '/forgot-passcode-v2/' : '/forgot-passcode/
     }
   }
 
-  /* ---------- Premium theme (sh2-theme, same palette as Header.astro's
-     sh2-theme) — used only on -v2 pages via the `premium` prop. ---------- */
+  /* ---------- Premium theme (sh2-theme) — used only on -v2 pages via
+     the `premium` prop. A fixed dark indigo block (not affected by the
+     light/dark toggle), matching the visual weight of the old dark-navy
+     footer instead of a light background. ---------- */
   .site-footer.sh2-theme {
-    background: #EEEDF6;
-    border-top: 1px solid #E7E4F5;
+    background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 100%);
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
-  html[data-theme="dark"] .site-footer.sh2-theme {
-    background: #121120;
-    border-top: 1px solid #302C4E;
-  }
-  .site-footer.sh2-theme .footer-logo { color: #1C1A38; }
-  html[data-theme="dark"] .site-footer.sh2-theme .footer-logo { color: #F3F1FC; }
-  .site-footer.sh2-theme .footer-tagline { color: #726F92; }
-  html[data-theme="dark"] .site-footer.sh2-theme .footer-tagline { color: #9C97BE; }
-  .site-footer.sh2-theme .footer-heading { color: #4B3FA0; }
-  html[data-theme="dark"] .site-footer.sh2-theme .footer-heading { color: #A594F5; }
-  .site-footer.sh2-theme .footer-col a { color: #726F92; }
-  html[data-theme="dark"] .site-footer.sh2-theme .footer-col a { color: #9C97BE; }
-  .site-footer.sh2-theme .footer-col a:hover { color: #4B3FA0; }
-  html[data-theme="dark"] .site-footer.sh2-theme .footer-col a:hover { color: #A594F5; }
+  .site-footer.sh2-theme .footer-logo { color: #ffffff; }
+  .site-footer.sh2-theme .footer-tagline { color: rgba(255,255,255,0.65); }
+  .site-footer.sh2-theme .footer-heading { color: #D8CBFF; }
+  .site-footer.sh2-theme .footer-col a { color: rgba(255,255,255,0.7); }
+  .site-footer.sh2-theme .footer-col a:hover { color: #ffffff; }
   .site-footer.sh2-theme .footer-bottom {
-    border-top: 1px solid #E7E4F5;
-    color: #726F92;
-  }
-  html[data-theme="dark"] .site-footer.sh2-theme .footer-bottom {
-    border-top: 1px solid #302C4E;
-    color: #9C97BE;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.55);
   }
 </style>

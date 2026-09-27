@@ -379,7 +379,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .ca-wrap { max-width: 900px; margin: 0 auto; }
     @media (min-width: 1200px) {
       .page-wide, .ca-wrap {
-        max-width: 1200px;
+        max-width: 900px;
       }
     }
     @media (max-width: 900px) {
@@ -643,6 +643,9 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .ca-bundle-card-max .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-amber), #b45c0a); color: #2a1400; }
 
     .ca-format-toggle { display: flex; gap: 8px; margin-bottom: 16px; }
+    @media (min-width: 1200px) {
+      .ca-format-toggle { max-width: 360px; }
+    }
     .ca-format-btn {
       flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid var(--border);
       background: var(--card); color: var(--text); font-weight: 700; font-size: 13px;
