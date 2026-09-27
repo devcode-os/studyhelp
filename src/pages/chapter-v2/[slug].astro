@@ -164,7 +164,7 @@ function formatMath(str) {
        (see .header-desktop-only / .header-compact-only below), so no duplicate session
        logic and no extra network calls. -->
   <div class="header-desktop-only">
-    <Header active="subjects" />
+    <Header active="subjects" theme="premium" />
   </div>
 <div class="header-compact-only">
   <Header compact={true} theme="premium" backHref={`/subject-v2/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} hasModeTabs={hasMcq}>
@@ -185,7 +185,7 @@ function formatMath(str) {
         <i class="ti ti-arrow-left" aria-hidden="true"></i> {backLabel}
       </a>
       <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
-        <h1 style="margin:0;">{chapterNumber}. {title}</h1>
+        <h1 class="desktop-title-h1" style="margin:0;">{chapterNumber}. {title}</h1>
         <span style="font-size:14px; font-weight:700; color:var(--text);">{isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`}</span>
       </div>
     </div>
@@ -424,6 +424,8 @@ function formatMath(str) {
     .header-compact-only { display: none; }
     .desktop-back-pill { display: inline-flex; }
     .desktop-title-block { display: flex; }
+    .desktop-title-h1 { color: #1C1A38; }
+    html[data-theme="dark"] .desktop-title-h1 { color: #F3F1FC; }
     .desktop-title-row {
       display: flex;
       align-items: baseline;
@@ -4290,5 +4292,9 @@ if (!isPapersSubject) {
         }).catch(() => {});
       });
     })();
+  </script>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
   </script>
 </Layout>

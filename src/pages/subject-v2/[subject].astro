@@ -287,6 +287,10 @@ for (const ch of chapters) {
       font-weight: 800; font-size: 1rem; line-height: 1.22;
       margin: 0 0 8px; color: #fff;
     }
+    @media (min-width: 1200px) {
+      .hero-title { font-size: 1.6rem; }
+      .hero-title-sub { font-size: 0.85rem; }
+    }
     .hero-title-sub {
       display: block; font-size: 0.72rem; font-weight: 600;
       color: rgba(255,255,255,0.72); margin-top: 3px;
@@ -393,9 +397,8 @@ for (const ch of chapters) {
       .chapter-card {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
-        padding: 18px 20px 16px;
-        min-height: 118px;
+        gap: 6px;
+        padding: 16px 18px 14px;
         position: relative;
         border-bottom: 3px solid var(--sh2-indigo);
         transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -404,10 +407,10 @@ for (const ch of chapters) {
         transform: translateY(-3px);
         box-shadow: 0 14px 28px -12px rgba(46,37,112,0.28);
       }
-      .chapter-num { width: 32px; height: 32px; font-size: 0.8rem; }
-      .chapter-title { font-size: 0.98rem; }
-      .chapter-meta { font-size: 0.76rem; margin-top: 3px; }
-      .chapter-chev { position: absolute; top: 18px; right: 18px; }
+      .chapter-num { width: 30px; height: 30px; font-size: 0.78rem; margin-bottom: 2px; }
+      .chapter-title { font-size: 0.95rem; }
+      .chapter-meta { font-size: 0.76rem; margin-top: 2px; }
+      .chapter-chev { display: none; }
     }
     .chapter-card {
       display: flex; align-items: center; gap: 10px;
