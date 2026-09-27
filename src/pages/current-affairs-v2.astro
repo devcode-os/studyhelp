@@ -377,6 +377,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .page-wide h1, .page-wide h2 { font-family: 'Manrope', sans-serif; }
 
     .ca-wrap { max-width: 900px; margin: 0 auto; }
+    @media (min-width: 1200px) {
+      .page-wide, .ca-wrap {
+        max-width: 1200px;
+      }
+    }
     @media (max-width: 900px) {
       .ca-wrap {
         padding-bottom: calc(64px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));

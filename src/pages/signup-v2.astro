@@ -104,6 +104,11 @@ import Header from '../components/Header.astro';
       margin: 0 auto;
       padding: 24px 16px;
     }
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 800px;
+      }
+    }
     html[data-theme="dark"] .page-wide {
       --sh2-bg: #121120;
       --sh2-surface: #1C1A30;

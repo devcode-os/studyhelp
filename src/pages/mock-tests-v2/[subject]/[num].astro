@@ -516,6 +516,9 @@ const isFreeMock = mock.mockNumber === 1;
       --muted: var(--sh2-text-soft);
     }
     .page-wide { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+    @media (min-width: 1200px) {
+      .page-wide { max-width: 1100px; }
+    }
     html[data-theme="dark"] body.sh2-page {
       --sh2-bg: #121120;
       --sh2-surface: #1C1A30;

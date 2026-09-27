@@ -210,6 +210,11 @@ import Header from '../components/Header.astro';
       --text: var(--sh2-ink);
       --muted: var(--sh2-text-soft);
     }
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 900px;
+      }
+    }
     html[data-theme="dark"] .page-wide {
       --sh2-bg: #121120;
       --sh2-surface: #1C1A30;

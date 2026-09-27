@@ -367,6 +367,11 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
         padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
       }
     }
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 900px;
+      }
+    }
 
     /* This page opts out of Layout.astro's site-wide cream body background
        (--bg: #faf9f6) in favor of the redesign's lavender-tinted background

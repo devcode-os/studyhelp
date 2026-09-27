@@ -309,6 +309,11 @@ const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);
         padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
       }
     }
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 1200px;
+      }
+    }
 
     /* Opts out of Layout.astro's cream body background in favor of the
        redesign's lavender tint — scoped to a body class, page-only. */

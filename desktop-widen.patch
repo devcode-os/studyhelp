@@ -1,0 +1,221 @@
+diff --git a/src/layouts/Layout.astro b/src/layouts/Layout.astro
+index e3b2bae..7ebe284 100644
+--- a/src/layouts/Layout.astro
++++ b/src/layouts/Layout.astro
+@@ -153,6 +153,11 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
+       margin: 0 auto;
+       padding: 24px 16px 64px;
+     }
++    @media (min-width: 1200px) {
++      body.sh2-page :global(.content) {
++        max-width: 820px;
++      }
++    }
+     a { color: var(--accent); text-decoration: none; font-size: 17px; }
+     html[data-theme="dark"] a {
+       color: #ffffff;
+diff --git a/src/pages/account-v2.astro b/src/pages/account-v2.astro
+index 669745a..664723a 100644
+--- a/src/pages/account-v2.astro
++++ b/src/pages/account-v2.astro
+@@ -210,6 +210,11 @@ import Header from '../components/Header.astro';
+       --text: var(--sh2-ink);
+       --muted: var(--sh2-text-soft);
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 900px;
++      }
++    }
+     html[data-theme="dark"] .page-wide {
+       --sh2-bg: #121120;
+       --sh2-surface: #1C1A30;
+diff --git a/src/pages/current-affairs-read-v2.astro b/src/pages/current-affairs-read-v2.astro
+index ce7ea91..087b89b 100644
+--- a/src/pages/current-affairs-read-v2.astro
++++ b/src/pages/current-affairs-read-v2.astro
+@@ -126,6 +126,10 @@ const dataset = getFullDataset(); // every month, every section, every question
+     }
+ 
+     .ca-wrap { max-width: 800px; margin: 0 auto; }
++    @media (min-width: 1200px) {
++      .page-wide { max-width: 1000px; }
++      .ca-wrap { max-width: 820px; }
++    }
+ 
+     /* Header card: same indigo hero gradient as current-affairs-v2, replacing
+        the dark-navy/orange one. */
+diff --git a/src/pages/current-affairs-v2.astro b/src/pages/current-affairs-v2.astro
+index 2547034..bb7126b 100644
+--- a/src/pages/current-affairs-v2.astro
++++ b/src/pages/current-affairs-v2.astro
+@@ -377,6 +377,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
+     .page-wide h1, .page-wide h2 { font-family: 'Manrope', sans-serif; }
+ 
+     .ca-wrap { max-width: 900px; margin: 0 auto; }
++    @media (min-width: 1200px) {
++      .page-wide, .ca-wrap {
++        max-width: 1200px;
++      }
++    }
+     @media (max-width: 900px) {
+       .ca-wrap {
+         padding-bottom: calc(64px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
+diff --git a/src/pages/forgot-passcode-v2.astro b/src/pages/forgot-passcode-v2.astro
+index 0e7f57c..14533c9 100644
+--- a/src/pages/forgot-passcode-v2.astro
++++ b/src/pages/forgot-passcode-v2.astro
+@@ -90,6 +90,11 @@ import Header from '../components/Header.astro';
+       margin: 0 auto;
+       padding: 24px 16px;
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 800px;
++      }
++    }
+     html[data-theme="dark"] .page-wide {
+       --sh2-bg: #121120;
+       --sh2-surface: #1C1A30;
+diff --git a/src/pages/index-v2.astro b/src/pages/index-v2.astro
+index c4eeff5..a156adf 100644
+--- a/src/pages/index-v2.astro
++++ b/src/pages/index-v2.astro
+@@ -367,6 +367,11 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
+         padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+       }
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 900px;
++      }
++    }
+ 
+     /* This page opts out of Layout.astro's site-wide cream body background
+        (--bg: #faf9f6) in favor of the redesign's lavender-tinted background
+diff --git a/src/pages/login-v2.astro b/src/pages/login-v2.astro
+index 604d445..add8031 100644
+--- a/src/pages/login-v2.astro
++++ b/src/pages/login-v2.astro
+@@ -57,6 +57,11 @@ import Header from '../components/Header.astro';
+       margin: 0 auto;
+       padding: 24px 16px;
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 800px;
++      }
++    }
+     html[data-theme="dark"] .page-wide {
+       --sh2-bg: #121120;
+       --sh2-surface: #1C1A30;
+diff --git a/src/pages/mock-tests-v2/[subject].astro b/src/pages/mock-tests-v2/[subject].astro
+index 7e15f22..83e7bdd 100644
+--- a/src/pages/mock-tests-v2/[subject].astro
++++ b/src/pages/mock-tests-v2/[subject].astro
+@@ -146,6 +146,11 @@ const subjectName = firstMockTitle.replace(/\s*-\s*Mock Test\s*\d+\s*$/i, '').tr
+     }
+ 
+     .mock-list-page { max-width: 900px; margin: 0 auto; }
++    @media (min-width: 1200px) {
++      .page-wide, .mock-list-page {
++        max-width: 1200px;
++      }
++    }
+     .back-pill { display: inline-block; margin-bottom: 12px; color: var(--sh2-text-soft); text-decoration: none; font-size: 13px; font-weight: 600; }
+     .mock-list-page h1 { margin: 0 0 3px; font-size: 22px; color: var(--sh2-ink); font-weight: 800; }
+     .mock-sub { color: var(--sh2-text-soft); font-size: 12.5px; margin: 0 0 16px; }
+diff --git a/src/pages/mock-tests-v2/[subject]/[num].astro b/src/pages/mock-tests-v2/[subject]/[num].astro
+index 17ef2c5..558a5f4 100644
+--- a/src/pages/mock-tests-v2/[subject]/[num].astro
++++ b/src/pages/mock-tests-v2/[subject]/[num].astro
+@@ -516,6 +516,9 @@ const isFreeMock = mock.mockNumber === 1;
+       --muted: var(--sh2-text-soft);
+     }
+     .page-wide { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
++    @media (min-width: 1200px) {
++      .page-wide { max-width: 1100px; }
++    }
+     html[data-theme="dark"] body.sh2-page {
+       --sh2-bg: #121120;
+       --sh2-surface: #1C1A30;
+diff --git a/src/pages/papers-v2/index.astro b/src/pages/papers-v2/index.astro
+index 3e7578f..3a991b8 100644
+--- a/src/pages/papers-v2/index.astro
++++ b/src/pages/papers-v2/index.astro
+@@ -127,6 +127,11 @@ const iconMap = {
+         padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
+       }
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 1200px;
++      }
++    }
+ 
+     /* Opts out of Layout.astro's cream body background in favor of the
+        redesign's lavender tint — same pattern as subjects-v2/index-v2. */
+diff --git a/src/pages/plans-v2.astro b/src/pages/plans-v2.astro
+index a7c4c83..a34009d 100644
+--- a/src/pages/plans-v2.astro
++++ b/src/pages/plans-v2.astro
+@@ -137,6 +137,11 @@ import Header from '../components/Header.astro';
+       margin: 0 auto;
+       padding: 24px 16px;
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 900px;
++      }
++    }
+     html[data-theme="dark"] .page-wide {
+       --sh2-bg: #121120;
+       --sh2-surface: #1C1A30;
+diff --git a/src/pages/signup-v2.astro b/src/pages/signup-v2.astro
+index 4594e73..ccd1828 100644
+--- a/src/pages/signup-v2.astro
++++ b/src/pages/signup-v2.astro
+@@ -104,6 +104,11 @@ import Header from '../components/Header.astro';
+       margin: 0 auto;
+       padding: 24px 16px;
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 800px;
++      }
++    }
+     html[data-theme="dark"] .page-wide {
+       --sh2-bg: #121120;
+       --sh2-surface: #1C1A30;
+diff --git a/src/pages/subject-v2/[subject].astro b/src/pages/subject-v2/[subject].astro
+index 4304144..8eef810 100644
+--- a/src/pages/subject-v2/[subject].astro
++++ b/src/pages/subject-v2/[subject].astro
+@@ -208,6 +208,11 @@ for (const ch of chapters) {
+         padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
+       }
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 1200px;
++      }
++    }
+ 
+     body.sh2-page { background: #EEEDF6; }
+     html[data-theme="dark"] body.sh2-page { background: #121120; }
+diff --git a/src/pages/subjects-v2.astro b/src/pages/subjects-v2.astro
+index 79b1d41..adc9234 100644
+--- a/src/pages/subjects-v2.astro
++++ b/src/pages/subjects-v2.astro
+@@ -309,6 +309,11 @@ const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);
+         padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
+       }
+     }
++    @media (min-width: 1200px) {
++      .page-wide {
++        max-width: 1200px;
++      }
++    }
+ 
+     /* Opts out of Layout.astro's cream body background in favor of the
+        redesign's lavender tint — scoped to a body class, page-only. */

@@ -208,6 +208,11 @@ for (const ch of chapters) {
         padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
       }
     }
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 1200px;
+      }
+    }
 
     body.sh2-page { background: #EEEDF6; }
     html[data-theme="dark"] body.sh2-page { background: #121120; }
