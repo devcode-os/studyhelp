@@ -388,11 +388,26 @@ for (const ch of chapters) {
       .chapter-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 14px;
       }
       .chapter-card {
-        height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 18px 20px 16px;
+        min-height: 118px;
+        position: relative;
+        border-bottom: 3px solid var(--sh2-indigo);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
       }
+      .chapter-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -12px rgba(46,37,112,0.28);
+      }
+      .chapter-num { width: 32px; height: 32px; font-size: 0.8rem; }
+      .chapter-title { font-size: 0.98rem; }
+      .chapter-meta { font-size: 0.76rem; margin-top: 3px; }
+      .chapter-chev { position: absolute; top: 18px; right: 18px; }
     }
     .chapter-card {
       display: flex; align-items: center; gap: 10px;
