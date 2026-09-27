@@ -130,6 +130,7 @@ const iconMap = {
     @media (min-width: 1200px) {
       .page-wide {
         max-width: 1200px;
+        min-height: 60vh;
       }
     }
 
@@ -209,6 +210,16 @@ const iconMap = {
     @media (min-width: 640px) {
       .pair-row { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
     }
+    /* Desktop: with only 1-2 paper cards, auto-fit+1fr stretched them to
+       fill the whole 1200px wide container. Switch to a fixed compact
+       column width and left-align instead of stretching. */
+    @media (min-width: 1200px) {
+      .pair-row {
+        grid-template-columns: repeat(auto-fit, 220px);
+        justify-content: start;
+        gap: 16px;
+      }
+    }
 
     .subj-card {
       position: relative;
@@ -220,7 +231,13 @@ const iconMap = {
       display: flex; flex-direction: column; gap: 10px;
       text-decoration: none;
       overflow: hidden;
-      transition: transform 0.12s ease;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    @media (min-width: 1200px) {
+      .subj-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -12px rgba(46,37,112,0.28);
+      }
     }
     .subj-card-live:active { transform: scale(0.98); }
     .subj-card-soon { opacity: 0.6; }

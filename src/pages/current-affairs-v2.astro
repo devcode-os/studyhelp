@@ -465,6 +465,9 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .ca-month-owned-badge { font-size: 10.5px; font-weight: 700; color: var(--sh2-green); }
 
     .ca-picker-tabs { display: flex; gap: 8px; margin-bottom: 26px; }
+    @media (min-width: 641px) {
+      .ca-picker-tabs { justify-content: center; }
+    }
     .ca-tab {
       padding: 9px 16px; border-radius: 999px; border: 1.5px solid var(--border);
       background: var(--card); color: var(--text); font-weight: 700; font-size: 13px;
@@ -642,9 +645,52 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .ca-bundle-card-best .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-indigo), var(--sh2-indigo-deep)); }
     .ca-bundle-card-max .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-amber), #b45c0a); color: #2a1400; }
 
+    /* Desktop: turn this from a compact dashed-border row (all its
+       content bunched to the left, icon+3 short lines) into a solid
+       CTA banner that actually uses the full card width — badge+range
+       on the left, MCQs count + includes line on the right. */
+    @media (min-width: 1200px) {
+      .ca-bundle-card {
+        padding: 20px 26px;
+        gap: 20px;
+        border: none;
+      }
+      .ca-bundle-card-best {
+        background: linear-gradient(120deg, var(--sh2-indigo) 0%, var(--sh2-indigo-deep) 100%);
+        box-shadow: 0 14px 28px -14px rgba(46,37,112,0.55);
+      }
+      .ca-bundle-card-max {
+        background: linear-gradient(120deg, var(--sh2-amber) 0%, #b45c0a 100%);
+        box-shadow: 0 14px 28px -14px rgba(232,150,58,0.55);
+      }
+      .ca-bundle-card .ca-bundle-icon { width: 50px; height: 50px; font-size: 22px; background: rgba(255,255,255,0.22); box-shadow: none; }
+      .ca-bundle-best-badge, .ca-bundle-max-badge { color: rgba(255,255,255,0.85); grid-area: badge; }
+      .ca-bundle-range, .ca-bundle-card-best .ca-bundle-range, .ca-bundle-card-max .ca-bundle-range { color: #ffffff; font-size: 16px; grid-area: range; margin-top: 2px; }
+      /* Named-area grid: badge+range stack on the left, the MCQ
+         count + includes line sits as its own column on the right,
+         vertically centered across both left-side rows — instead of
+         everything stacking straight down the left edge. */
+      .ca-bundle-body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "badge foot" "range foot";
+        align-items: center;
+        column-gap: 20px;
+      }
+      .ca-bundle-foot {
+        grid-area: foot; align-self: center;
+        flex-direction: column; align-items: flex-end; gap: 4px; margin-top: 0;
+      }
+      .ca-bundle-total-badge, .ca-bundle-card-best .ca-bundle-total-badge, .ca-bundle-card-max .ca-bundle-total-badge {
+        background: rgba(255,255,255,0.9); color: var(--sh2-indigo-deep); font-size: 12px; padding: 4px 12px;
+      }
+      .ca-bundle-card-max .ca-bundle-total-badge { color: #7a3d00; }
+      .ca-bundle-includes { color: rgba(255,255,255,0.8); font-size: 11px; }
+    }
+
     .ca-format-toggle { display: flex; gap: 8px; margin-bottom: 16px; }
     @media (min-width: 1200px) {
-      .ca-format-toggle { max-width: 360px; }
+      .ca-format-toggle { max-width: 360px; margin-left: auto; margin-right: auto; }
     }
     .ca-format-btn {
       flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid var(--border);
@@ -655,6 +701,9 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       background: linear-gradient(90deg, var(--sh2-indigo), var(--sh2-indigo-deep)); color: #fff; border-color: transparent;
     }
     .ca-format-hint { color: var(--muted); font-size: 12px; margin: 0 0 22px; }
+    @media (min-width: 1200px) {
+      .ca-format-hint { text-align: center; }
+    }
 
     .ca-buy-btn.ca-owned { background: var(--sh2-green); }
 
