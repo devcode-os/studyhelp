@@ -349,6 +349,9 @@ for (const ch of chapters) {
       color: var(--sh2-indigo-deep);
       box-shadow: 0 8px 16px -8px rgba(0,0,0,0.3);
     }
+    @media (min-width: 1200px) {
+      .unlock-btn { max-width: 340px; margin: 0 auto; }
+    }
     .unlock-btn i { font-size: 0.76rem; }
     .unlock-btn-single { background: rgba(255,255,255,0.14); color: #fff; box-shadow: none; border: 1px solid rgba(255,255,255,0.28); }
     .unlock-sub { font-size: 0.64rem; color: rgba(255,255,255,0.75); margin: 5px 0 0; }
@@ -383,8 +386,12 @@ for (const ch of chapters) {
     .chapter-list { display: flex; flex-direction: column; gap: 6px; }
     @media (min-width: 1200px) {
       .chapter-list {
-        max-width: 820px;
-        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .chapter-card {
+        height: 100%;
       }
     }
     .chapter-card {
