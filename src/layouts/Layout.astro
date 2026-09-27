@@ -652,7 +652,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
     <slot />
   </main>
 
-  <Footer />
+  <Footer premium={Astro.url.pathname.includes('-v2')} />
 
   <a id="ca-fab" href="/current-affairs/" title="Current Affairs" aria-label="Current Affairs">
     <svg viewBox="0 0 24 24">

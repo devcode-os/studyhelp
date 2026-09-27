@@ -179,8 +179,10 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
   <div class="page-wide">
 
     <div class="hero-card" id="hero-card">
-      <h1 class="hero-title">Your shortcut to cracking TSPSC &amp; APPSC exams</h1>
-      <p class="hero-sub">Theory, chapter-wise MCQs and mock tests — organised the way your syllabus is.</p>
+      <div class="hero-head">
+        <h1 class="hero-title">Your shortcut to cracking TSPSC &amp; APPSC exams</h1>
+        <p class="hero-sub">Theory, chapter-wise MCQs and mock tests — organised the way your syllabus is.</p>
+      </div>
       <div class="hero-stats">
         <div class="stat-pill"><b>{subjects.length}</b><span>subjects</span></div>
         <div class="stat-pill"><b>{totalChapters}+</b><span>chapters</span></div>
@@ -467,6 +469,22 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       font-size: 0.9rem;
       line-height: 1.5;
       max-width: 30ch;
+    }
+    @media (min-width: 1200px) {
+      .hero-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 28px;
+      }
+      .hero-title {
+        margin-bottom: 0;
+        flex: 0 0 auto;
+      }
+      .hero-sub {
+        margin-bottom: 0;
+        margin-top: 6px;
+        max-width: 34ch;
+      }
     }
     .hero-stats { position: relative; display: flex; gap: 10px; }
     .stat-pill {

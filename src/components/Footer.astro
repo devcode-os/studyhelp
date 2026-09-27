@@ -3,9 +3,18 @@
 // On mobile (<=720px) this is hidden entirely — its links move into a
 // header "more" menu instead (see Header.astro), since a full footer
 // competing with the fixed tab bar was awkward UX. Desktop unchanged.
+//
+// `premium`: passed by Layout.astro when the current route is a -v2
+// page, so the footer picks up the indigo/lavender redesign palette
+// instead of the old dark-navy theme, and Forgot Passcode points at
+// its -v2 equivalent. Contact/Support/Terms/Refund/Privacy have no
+// -v2 twin (out of scope for this redesign), so they always link to
+// the one page that exists either way.
+const { premium = false } = Astro.props;
 const year = new Date().getFullYear();
+const forgotPasscodeHref = premium ? '/forgot-passcode-v2/' : '/forgot-passcode/';
 ---
-<footer class="site-footer">
+<footer class:list={['site-footer', { 'sh2-theme': premium }]}>
   <div class="site-footer-inner">
     <div class="footer-col">
       <div class="footer-logo">StudyHelp</div>
@@ -16,7 +25,7 @@ const year = new Date().getFullYear();
       <div class="footer-heading">Help &amp; Support</div>
       <a href="/contact/">Contact Us</a>
       <a href="/support/">Support</a>
-      <a href="/forgot-passcode/">Forgot Passcode</a>
+      <a href={forgotPasscodeHref}>Forgot Passcode</a>
     </div>
 
     <div class="footer-col">
@@ -91,5 +100,34 @@ const year = new Date().getFullYear();
     .site-footer {
       display: none;
     }
+  }
+
+  /* ---------- Premium theme (sh2-theme, same palette as Header.astro's
+     sh2-theme) — used only on -v2 pages via the `premium` prop. ---------- */
+  .site-footer.sh2-theme {
+    background: #EEEDF6;
+    border-top: 1px solid #E7E4F5;
+  }
+  html[data-theme="dark"] .site-footer.sh2-theme {
+    background: #121120;
+    border-top: 1px solid #302C4E;
+  }
+  .site-footer.sh2-theme .footer-logo { color: #1C1A38; }
+  html[data-theme="dark"] .site-footer.sh2-theme .footer-logo { color: #F3F1FC; }
+  .site-footer.sh2-theme .footer-tagline { color: #726F92; }
+  html[data-theme="dark"] .site-footer.sh2-theme .footer-tagline { color: #9C97BE; }
+  .site-footer.sh2-theme .footer-heading { color: #4B3FA0; }
+  html[data-theme="dark"] .site-footer.sh2-theme .footer-heading { color: #A594F5; }
+  .site-footer.sh2-theme .footer-col a { color: #726F92; }
+  html[data-theme="dark"] .site-footer.sh2-theme .footer-col a { color: #9C97BE; }
+  .site-footer.sh2-theme .footer-col a:hover { color: #4B3FA0; }
+  html[data-theme="dark"] .site-footer.sh2-theme .footer-col a:hover { color: #A594F5; }
+  .site-footer.sh2-theme .footer-bottom {
+    border-top: 1px solid #E7E4F5;
+    color: #726F92;
+  }
+  html[data-theme="dark"] .site-footer.sh2-theme .footer-bottom {
+    border-top: 1px solid #302C4E;
+    color: #9C97BE;
   }
 </style>
