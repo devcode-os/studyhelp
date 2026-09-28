@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+<Layout title="About - StudyHelp" description="StudyHelp is a national competitive exam preparation platform offering chapter-wise MCQs, theory notes, mock tests, and current affairs for exams across India, in English, Telugu, and Hindi.">
+
+  <Header active="about" theme="premium" />
+
+  <div class="content">
+    <h1>About StudyHelp</h1>
+    <p style="font-size:17px; color:var(--text); margin-bottom:16px;">
+      StudyHelp is a preparation platform for competitive exam aspirants across India, built around clear, chapter-wise theory notes, MCQs, and mock tests — without wading through long articles or scattered notes.
+    </p>
+    <p style="font-size:17px; color:var(--text); margin-bottom:16px;">
+      Our content covers subjects used by aspirants nationwide, from RRB and SSC to state PSCs and UPSC: Indian History, Indian Polity (based on Laxmikanth), and Current Affairs, alongside state-focused subjects like Telangana History, Telangana Economy, and Andhra Pradesh Economy for TSPSC, APPSC, and TS Police SI/Constable exams. Content is available in English, Telugu, and Hindi, with new subjects added regularly. Visit the <a href="/subjects-v2/">Subjects page</a> to see everything currently live.
+    </p>
+    <p style="font-size:17px; color:var(--text); margin-bottom:16px;">
+      Every subject is organized chapter by chapter, with theory notes, MCQs, and mock tests written to match the level of detail these exams actually test. Current Affairs is read for free, with monthly PDFs available for download. Reading starts free on every subject, no login needed — once you know the content is useful, unlock a single subject for 90 days, or pick any 3 subjects together as a bundle for better value.
+    </p>
+    <p style="font-size:15px; color:var(--muted);">
+      Questions or feedback? Visit our <a href="/contact-v2/">Contact page</a>, or check the <a href="/plans-v2/">Plans page</a> for pricing details.
+    </p>
+  </div>
+  <style is:global>
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+    /* Reuse the SAME --bg/--card/--border/--text/--muted/--accent/--accent-bg
+       variable names the classic theme's CSS already reads (see
+       layouts/Layout.astro :root) — remapping them here means this page's
+       existing legal-card/auth-card styles pick up the indigo palette
+       automatically, no need to touch a single rule below. */
+    body.sh2-page {
+      --bg: #EEEDF6;
+      --card: #FFFFFF;
+      --border: #E7E4F5;
+      --text: #1C1A38;
+      --muted: #726F92;
+      --accent: #4B3FA0;
+      --accent-bg: #EEEAFB;
+      --success-bg: #DFF3EA;
+      --success-text: #1D7A54;
+    }
+    html[data-theme="dark"] body.sh2-page {
+      --bg: #121120;
+      --card: #1C1A30;
+      --border: #302C4E;
+      --text: #F3F1FC;
+      --muted: #9C97BE;
+      --accent: #A594F5;
+      --accent-bg: #2A2650;
+      --success-bg: #183328;
+      --success-text: #5FCB9B;
+    }
+  </style>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
+</Layout>

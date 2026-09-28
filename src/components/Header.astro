@@ -32,6 +32,11 @@ const plansHref = isPremium ? '/plans-v2/' : '/plans/';
 const loginHref = isPremium ? '/login-v2/' : '/login/';
 const accountHref = isPremium ? '/account-v2/' : '/account/';
 const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcode/';
+const contactHref = isPremium ? '/contact-v2/' : '/contact/';
+const supportHref = isPremium ? '/support-v2/' : '/support/';
+const termsHref = isPremium ? '/terms-v2/' : '/terms/';
+const refundHref = isPremium ? '/refund-policy-v2/' : '/refund-policy/';
+const privacyHref = isPremium ? '/privacy-policy-v2/' : '/privacy-policy/';
 ---
 
 {compact ? (
@@ -99,13 +104,13 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
             <div id="more-menu-dropdown" class="more-menu-dropdown" role="menu">
               <a href={currentAffairsHref} role="menuitem" data-ca-fresh-entry>Current Affairs</a>
               <a href={papersHref} role="menuitem">Previous Papers</a>
-              <a href="/contact/" role="menuitem">Contact us</a>
-              <a href="/support/" role="menuitem">Support</a>
+              <a href={contactHref} role="menuitem">Contact us</a>
+              <a href={supportHref} role="menuitem">Support</a>
               <a href={forgotPasscodeHref} role="menuitem">Forgot passcode</a>
               <div class="more-menu-divider"></div>
-              <a href="/terms/" role="menuitem">Terms &amp; conditions</a>
-              <a href="/refund-policy/" role="menuitem">Refund policy</a>
-              <a href="/privacy-policy/" role="menuitem">Privacy policy</a>
+              <a href={termsHref} role="menuitem">Terms &amp; conditions</a>
+              <a href={refundHref} role="menuitem">Refund policy</a>
+              <a href={privacyHref} role="menuitem">Privacy policy</a>
               <div id="more-menu-logout-divider" class="more-menu-divider" style="display:none;"></div>
               <button type="button" id="more-menu-logout-btn" role="menuitem" style="display:none;">
                 <i class="ti ti-logout" aria-hidden="true"></i> Log out

@@ -6,13 +6,16 @@
 //
 // `premium`: passed by Layout.astro when the current route is a -v2
 // page, so the footer picks up the indigo/lavender redesign palette
-// instead of the old dark-navy theme, and Forgot Passcode points at
-// its -v2 equivalent. Contact/Support/Terms/Refund/Privacy have no
-// -v2 twin (out of scope for this redesign), so they always link to
-// the one page that exists either way.
+// instead of the old dark-navy theme, and every link below points at
+// its -v2 equivalent instead of the classic-theme page.
 const { premium = false } = Astro.props;
 const year = new Date().getFullYear();
 const forgotPasscodeHref = premium ? '/forgot-passcode-v2/' : '/forgot-passcode/';
+const contactHref = premium ? '/contact-v2/' : '/contact/';
+const supportHref = premium ? '/support-v2/' : '/support/';
+const termsHref = premium ? '/terms-v2/' : '/terms/';
+const refundHref = premium ? '/refund-policy-v2/' : '/refund-policy/';
+const privacyHref = premium ? '/privacy-policy-v2/' : '/privacy-policy/';
 ---
 <footer class:list={['site-footer', { 'sh2-theme': premium }]}>
   <div class="site-footer-inner">
@@ -23,16 +26,16 @@ const forgotPasscodeHref = premium ? '/forgot-passcode-v2/' : '/forgot-passcode/
 
     <div class="footer-col">
       <div class="footer-heading">Help &amp; Support</div>
-      <a href="/contact/">Contact Us</a>
-      <a href="/support/">Support</a>
+      <a href={contactHref}>Contact Us</a>
+      <a href={supportHref}>Support</a>
       <a href={forgotPasscodeHref}>Forgot Passcode</a>
     </div>
 
     <div class="footer-col">
       <div class="footer-heading">Legal</div>
-      <a href="/terms/">Terms &amp; Conditions</a>
-      <a href="/refund-policy/">Refund Policy</a>
-      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href={termsHref}>Terms &amp; Conditions</a>
+      <a href={refundHref}>Refund Policy</a>
+      <a href={privacyHref}>Privacy Policy</a>
     </div>
   </div>
 

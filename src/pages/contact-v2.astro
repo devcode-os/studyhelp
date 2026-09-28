@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+<Layout title="Contact Us - StudyHelp" description="How to reach StudyHelp for support, account, or payment issues.">
+  <Header active="contact" theme="premium" />
+
+  <div class="content legal-content">
+    <div class="legal-card">
+      <h1>Contact Us</h1>
+      <p class="updated">StudyHelp is operated by fdaytalk, based in Telangana, India.</p>
+
+      <h2>Email</h2>
+      <p>For any question, account issue, or payment problem, write to us at:</p>
+      <p class="contact-email"><a href="mailto:studyhelp@fdaytalk.com">studyhelp@fdaytalk.com</a></p>
+
+      <h2>Support Form</h2>
+      <p>For account recovery, payment issues, or anything requiring account-specific details, our support form is the fastest way to reach us — it collects the right details up front so we can help without back-and-forth.</p>
+      <a href="/support-v2/" class="btn-block">Go to Support Form</a>
+
+      <h2>What We Can Help With</h2>
+      <ul>
+        <li>Forgotten passcode or account recovery</li>
+        <li>Payment issues — failed payments, duplicate charges, or access not granted after a successful payment</li>
+        <li>Questions about subject content or coverage</li>
+        <li>General feedback or issues with the site</li>
+      </ul>
+
+      <h2>Response Time</h2>
+      <p>We aim to respond to support requests as quickly as possible. Since StudyHelp is a small, independently-run service, response times may vary, but genuine account and payment issues are prioritised.</p>
+
+      <h2>Please Do Not Send</h2>
+      <p>Never send your account passcode to us via email or the support form. We will never ask for it, and you never need to share it to get help.</p>
+    </div>
+  </div>
+
+  <style>
+    .legal-content {
+      max-width: 760px;
+    }
+    .legal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 28px rgba(0,0,0,0.06);
+    }
+    html[data-theme="dark"] .legal-card {
+      box-shadow: 0 4px 28px rgba(0,0,0,0.3);
+    }
+    .legal-card h1 {
+      font-size: 26px;
+      margin: 0 0 4px;
+    }
+    .legal-card .updated {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .legal-card h2 {
+      font-size: 17px;
+      margin: 28px 0 10px;
+      color: var(--text);
+    }
+    .legal-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin: 0 0 14px;
+    }
+    .legal-card ul {
+      margin: 0 0 14px;
+      padding-left: 22px;
+    }
+    .legal-card li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .legal-card a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .contact-email a {
+      font-size: 17px;
+    }
+    .btn-block {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      background: var(--accent-bg);
+      color: var(--accent);
+      text-decoration: none;
+      margin: 4px 0 8px;
+    }
+    @media (max-width: 480px) {
+      .legal-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+  <style is:global>
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+    /* Reuse the SAME --bg/--card/--border/--text/--muted/--accent/--accent-bg
+       variable names the classic theme's CSS already reads (see
+       layouts/Layout.astro :root) — remapping them here means this page's
+       existing legal-card/auth-card styles pick up the indigo palette
+       automatically, no need to touch a single rule below. */
+    body.sh2-page {
+      --bg: #EEEDF6;
+      --card: #FFFFFF;
+      --border: #E7E4F5;
+      --text: #1C1A38;
+      --muted: #726F92;
+      --accent: #4B3FA0;
+      --accent-bg: #EEEAFB;
+      --success-bg: #DFF3EA;
+      --success-text: #1D7A54;
+    }
+    html[data-theme="dark"] body.sh2-page {
+      --bg: #121120;
+      --card: #1C1A30;
+      --border: #302C4E;
+      --text: #F3F1FC;
+      --muted: #9C97BE;
+      --accent: #A594F5;
+      --accent-bg: #2A2650;
+      --success-bg: #183328;
+      --success-text: #5FCB9B;
+    }
+  </style>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
+</Layout>
