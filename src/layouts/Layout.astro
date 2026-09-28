@@ -749,7 +749,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       const isSubjectsPage = window.location.pathname === '/subjects/'
         || window.location.pathname === '/subjects';
       const isListingPage = !!document.querySelector(
-        '.chapter-grid, .subject-header-left, .subject-header-right'
+        '.chapter-grid, .chapter-list, .subject-header-left, .subject-header-right'
       );
 
       if (isHome || isSubjectsPage || isListingPage) {
