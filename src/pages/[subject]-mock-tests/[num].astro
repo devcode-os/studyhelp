@@ -13,7 +13,7 @@ import Header from '../../components/Header.astro';
 import { getSubjectMeta } from '../../data/subjectsMeta.js';
 
 export function getStaticPaths() {
-  const mockFiles = import.meta.glob('../../../data/*/*-mock-tests/*.json', { eager: true });
+  const mockFiles = import.meta.glob('../../data/*/*-mock-tests/*.json', { eager: true });
   const paths = [];
 
   for (const [path, mod] of Object.entries(mockFiles)) {
