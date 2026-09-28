@@ -137,6 +137,7 @@ import Header from '../components/Header.astro';
 
     .auth-card {
       width: 100%;
+      box-sizing: border-box;
       background: var(--sh2-surface);
       border: 1px solid var(--sh2-line);
       border-radius: 20px;
@@ -220,7 +221,7 @@ import Header from '../components/Header.astro';
       background: transparent; color: var(--sh2-text-soft); font-weight: 700; font-size: 0.95rem;
       border-right: 1.5px solid var(--sh2-line);
     }
-    .phone-input input { border: none; border-radius: 0; background: transparent; flex: 1; }
+    .phone-input input { border: none; border-radius: 0; background: transparent; flex: 1; min-width: 0; }
     .phone-input input:focus { box-shadow: none; background: transparent; }
     .code-input {
       font-size: clamp(18px, 5.5vw, 24px); font-weight: 700;
