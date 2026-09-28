@@ -56,7 +56,7 @@ import Header from '../../components/Header.astro';
         <div class="row-skeleton">Loading subjects...</div>
       </div>
 
-      <div id="bundle-sticky-bar" class="bundle-sticky-bar">
+      <div id="bundle-sticky-bar" class="bundle-sticky-bar bundle-sticky-bar-active">
         <button id="bundle-buy-btn" class="bundle-buy-btn" type="button">Buy Bundle — &#8377;399</button>
       </div>
     </div>
@@ -430,14 +430,16 @@ import Header from '../../components/Header.astro';
     .subject-rows.bundle-mode .subject-row { padding: 9px 10px; }
 
     /* ================= Bundle buy bar — sits in normal document flow
-       right after the subject list, on every width. Always visible;
-       clicking with fewer than 3 selected just prompts to pick 3. ================= */
+       right after the subject list, on every width. Only shown in
+       Bundle mode (hidden in Single mode); clicking with fewer than
+       3 selected just prompts to pick 3. ================= */
     .bundle-sticky-bar {
-      display: flex;
+      display: none;
       margin: 12px auto 0;
       max-width: 480px;
       justify-content: center;
     }
+    .bundle-sticky-bar.bundle-sticky-bar-active { display: flex; }
     @media (min-width: 1200px) {
       .bundle-sticky-bar { max-width: 520px; }
     }
@@ -524,6 +526,7 @@ import Header from '../../components/Header.astro';
       selectedBundleSlugs = [];
       document.getElementById('real-plan-grid').classList.toggle('bundle-mode', on);
       document.getElementById('bundle-value-banner').classList.toggle('bundle-value-visible', on);
+      document.getElementById('bundle-sticky-bar').classList.toggle('bundle-sticky-bar-active', on);
       document.getElementById('mode-single-btn').classList.toggle('mode-btn-active', !on);
       document.getElementById('mode-bundle-btn').classList.toggle('mode-btn-active', on);
       document.querySelectorAll('.subject-row').forEach((r) => r.classList.remove('row-selected'));
