@@ -106,6 +106,10 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
               <a href="/terms/" role="menuitem">Terms &amp; conditions</a>
               <a href="/refund-policy/" role="menuitem">Refund policy</a>
               <a href="/privacy-policy/" role="menuitem">Privacy policy</a>
+              <div id="more-menu-logout-divider" class="more-menu-divider" style="display:none;"></div>
+              <button type="button" id="more-menu-logout-btn" role="menuitem" style="display:none;">
+                <i class="ti ti-logout" aria-hidden="true"></i> Log out
+              </button>
             </div>
           </div>
 
@@ -322,17 +326,27 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
   .more-menu-dropdown.open {
     display: block;
   }
-  .more-menu-dropdown a {
+  .more-menu-dropdown a, .more-menu-dropdown button {
     display: block;
+    width: 100%;
     padding: 10px 12px;
     font-size: 14px;
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
   }
-  .more-menu-dropdown a:active {
+  .more-menu-dropdown a:active, .more-menu-dropdown button:active {
     background: rgba(255,255,255,0.08);
   }
+  .more-menu-dropdown button:disabled {
+    opacity: 0.6; cursor: default;
+  }
+  #more-menu-logout-btn i { margin-right: 4px; }
   .more-menu-divider {
     height: 1px;
     background: rgba(255,255,255,0.1);
@@ -568,14 +582,16 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
     border: 1px solid #E7E4F5;
     box-shadow: 0 8px 24px rgba(33,31,61,0.12);
   }
-  .site-header.sh2-theme .more-menu-dropdown a { color: #1C1A38; }
+  .site-header.sh2-theme .more-menu-dropdown a,
+  .site-header.sh2-theme .more-menu-dropdown button { color: #1C1A38; }
   .site-header.sh2-theme .more-menu-divider { background: #E7E4F5; }
   html[data-theme="dark"] .site-header.sh2-theme .more-menu-dropdown {
     background: #242138;
     border: 1px solid #302C4E;
     box-shadow: 0 8px 24px rgba(0,0,0,0.35);
   }
-  html[data-theme="dark"] .site-header.sh2-theme .more-menu-dropdown a { color: #F3F1FC; }
+  html[data-theme="dark"] .site-header.sh2-theme .more-menu-dropdown a,
+  html[data-theme="dark"] .site-header.sh2-theme .more-menu-dropdown button { color: #F3F1FC; }
   html[data-theme="dark"] .site-header.sh2-theme .more-menu-divider { background: #302C4E; }
 
   /* Premium tab bar: floating rounded pill (matches the design mockup),
@@ -964,6 +980,25 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
       });
       if (loginLinkText) loginLinkText.textContent = 'Account';
       if (loginLinkMobileText) loginLinkMobileText.textContent = 'Account';
+
+      // Log out only ever appears once a real session is confirmed —
+      // a guest never sees it, matching the bell icon above. Gives
+      // browser (non-app) users on phone/tablet a way to log out,
+      // since the 3-dot menu is otherwise their only nav short of the
+      // full Account page.
+      const logoutDivider = document.getElementById('more-menu-logout-divider');
+      const logoutBtn = document.getElementById('more-menu-logout-btn');
+      if (logoutDivider) logoutDivider.style.display = 'block';
+      if (logoutBtn) {
+        logoutBtn.style.display = 'block';
+        logoutBtn.addEventListener('click', () => {
+          logoutBtn.disabled = true;
+          logoutBtn.textContent = 'Logging out…';
+          try { sessionStorage.removeItem(SESSION_CACHE_KEY); } catch (e) {}
+          fetch(`${WORKER_URL}/logout`, { method: 'POST', credentials: 'include' })
+            .finally(() => { window.location.href = '/'; });
+        });
+      }
 
       if (!data.email_verified && data.recovery_email) {
         if (verifyBadgeDesktop) verifyBadgeDesktop.style.display = 'inline-flex';
