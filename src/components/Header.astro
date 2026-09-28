@@ -584,15 +584,16 @@ const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcod
      position/shape without needing !important. Same icons/labels/markup —
      only the container shape and the active-tab treatment change. */
   .mobile-tabbar.sh2-theme {
-    left: 6px;
-    right: 6px;
-    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
-    padding-bottom: 0;
-    border-radius: 16px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
     background: #FFFFFF;
-    border: 1px solid #E7E4F5;
-    box-shadow: 0 6px 14px rgba(33,31,61,0.08), 0 20px 36px -18px rgba(46,37,112,0.28);
-    padding: 5px;
+    border: none;
+    border-top: 1px solid #E7E4F5;
+    box-shadow: 0 -6px 14px rgba(33,31,61,0.06);
+    padding: 5px 5px 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   html[data-theme="dark"] .mobile-tabbar.sh2-theme {
     background: #1C1A30;
