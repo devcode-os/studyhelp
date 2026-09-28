@@ -652,7 +652,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
     <slot />
   </main>
 
-  <Footer premium={Astro.url.pathname.includes('-v2')} />
+  <Footer premium={true} />
 
   <a id="ca-fab" href="/current-affairs/" title="Current Affairs" aria-label="Current Affairs">
     <svg viewBox="0 0 24 24">
@@ -726,7 +726,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       // is treated as part of the redesign.
       const isV2Page = window.location.pathname.includes('-v2');
       if (isV2Page) {
-        caFab.href = '/current-affairs-v2/';
+        caFab.href = '/current-affairs/';
       }
 
       // Same deliberate-fresh-entry reasoning as the Header's "Current
@@ -745,13 +745,9 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
         caFab.classList.remove('ca-fab-hint');
       });
 
-      const isHome = window.location.pathname === '/'
-        || window.location.pathname === '/index-v2/'
-        || window.location.pathname === '/index-v2';
+      const isHome = window.location.pathname === '/';
       const isSubjectsPage = window.location.pathname === '/subjects/'
-        || window.location.pathname === '/subjects'
-        || window.location.pathname === '/subjects-v2/'
-        || window.location.pathname === '/subjects-v2';
+        || window.location.pathname === '/subjects';
       const isListingPage = !!document.querySelector(
         '.chapter-grid, .subject-header-left, .subject-header-right'
       );
@@ -782,9 +778,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       // the bottom nav and crowds the form/CTA here, so keep it off on
       // this page regardless of device/state.
       const isSignupPage = window.location.pathname === '/signup'
-        || window.location.pathname === '/signup/'
-        || window.location.pathname === '/signup-v2'
-        || window.location.pathname === '/signup-v2/';
+        || window.location.pathname === '/signup/';
       if (isSignupPage) {
         const banner = document.getElementById('app-install-banner');
         if (banner) banner.style.display = 'none';

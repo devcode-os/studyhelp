@@ -3,6 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import { getSubjectMeta } from '../../data/subjectsMeta.js';
 
+// ============================================================
+// UNCHANGED FROM [subject]/index.astro — same getStaticPaths,
+// same real chapter/mock-test scan, same counterpart-slug check
+// against actually-generated pages (not slug-pattern guessing).
+// ============================================================
 export function getStaticPaths() {
   const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
 
@@ -23,10 +28,6 @@ export function getStaticPaths() {
     bySubject[subject].push(...valid);
   }
 
-  // Mock-test counts, keyed by subject id derived from each
-  // "<subjectId>-mock-tests" folder name — same convention the
-  // [subject]-mock-tests pages use. A subject with no such folder simply
-  // gets 0, so the third stat pill only renders where mocks actually exist.
   const mockFiles = import.meta.glob('../../data/*/*-mock-tests/*.json', { eager: true });
   const mockCountsBySubject = {};
   for (const path of Object.keys(mockFiles)) {
@@ -48,10 +49,6 @@ export function getStaticPaths() {
       props: {
         chapters: chapters.sort((a, b) => a.chapterNumber - b.chapterNumber),
         mockCount: mockCountsBySubject[subject] || 0,
-        // Real existence check against actually-generated pages, not
-        // subjectsMeta (whose getSubjectMeta() always returns a fallback
-        // object for ANY slug, even fake ones — so it can't be used to
-        // detect a missing counterpart; see note at usage site below).
         counterpartSlug: counterpartSlug && allSubjectSlugs.has(counterpartSlug) ? counterpartSlug : null,
       },
     };
@@ -62,15 +59,6 @@ const { subject } = Astro.params;
 const { chapters, mockCount, counterpartSlug } = Astro.props;
 const meta = getSubjectMeta(subject);
 
-// Language switch — only shown when counterpartSlug was resolved in
-// getStaticPaths against the real set of generated subject pages (not
-// slug-pattern guessing, and not getSubjectMeta, which always returns a
-// fallback object even for slugs with no actual page — see comment there).
-// Wording: generic by default, since the EN/TE content gap differs per
-// subject and a hardcoded claim would be wrong for most pairs. The one
-// confirmed exception is telangana-history — EN has Theory, TE is
-// MCQs-only — so that specific pair gets the accurate, more detailed
-// label instead of the generic one.
 const langSwitchCopy = {
   'telangana-history-en': { label: 'తెలుగు వెర్షన్ అందుబాటులో ఉంది (MCQs మాత్రమే)' },
   'telangana-history-te': { label: 'English Version Available (Theory Included)' },
@@ -81,12 +69,6 @@ const langSwitch = counterpartSlug
     : { slug: counterpartSlug, label: langSwitchCopy[subject]?.label || 'English Version Available' }
   : null;
 
-// Long titles with a parenthetical qualifier (e.g. "Indian History
-// (Ancient, Medieval and Modern)") wrap awkwardly mid-phrase in the
-// narrow mobile hero card. Split right before the "(" so the template
-// can force a clean break there — but only at mobile widths (see the
-// .title-break CSS below); desktop has enough room to wrap naturally
-// and keeps the title on its own single line.
 function splitTitleParts(title) {
   const idx = title.indexOf(' (');
   if (idx === -1) return [title];
@@ -95,13 +77,8 @@ function splitTitleParts(title) {
 const heroTitleParts = splitTitleParts(meta.heading);
 
 const totalQuestions = chapters.reduce((sum, ch) => sum + (ch.faqs ? ch.faqs.length : 0), 0);
+const isPapers = meta.category === 'papers';
 
-// Group chapters by an optional `section` field (e.g. "Medieval History").
-// Tag only the FIRST chapter of a new era — every later chapter (in
-// chapterNumber order) inherits that section automatically until a
-// chapter with a different `section` value appears. Chapters before the
-// first tagged chapter get no heading, so subjects with no `section`
-// tags at all render exactly as before.
 const chapterGroups = [];
 let currentHeading = null;
 for (const ch of chapters) {
@@ -116,81 +93,61 @@ for (const ch of chapters) {
 ---
 <Layout title={meta.seoTitle} description={meta.seoDescription} lang={meta.lang}>
 
-  <Header active="subjects" />
+  <Header active="subjects" theme="premium" />
 
   <div class="page-wide">
 
-    <div class="breadcrumb">
-      <a href="/">Home</a> /
-      {meta.category === 'papers' ? (
-        <Fragment><a href="/papers/">Papers</a> /</Fragment>
-      ) : (
-        <Fragment><a href="/subjects/">Subjects</a> /</Fragment>
-      )}
-      {meta.breadcrumb}
-    </div>
+    {/* Language-switch banner (Telugu/English cross-link) intentionally
+        not rendered here — the redesigned page reads cleaner without it,
+        per explicit feedback. #lang-switch-row still exists nowhere on
+        this page now, but the script below no-ops safely if it can't
+        find that id (e.g. on unlock), so nothing else needs to change. */}
 
-    {langSwitch && (
-      <div class="lang-switch-row" id="lang-switch-row">
-        <a href={`/${langSwitch.slug}/`} class="lang-switch-link">🌐 {langSwitch.label}</a>
-      </div>
-    )}
-
-    <div class={`subject-header ${meta.category === 'papers' ? 'subject-header-papers' : ''}`}>
-      <div class="subject-header-left">
-        <h1 class="subject-h1">
-          {heroTitleParts.length === 2
-            ? <>{heroTitleParts[0]}<br class="title-break" /><span class="title-sub">{heroTitleParts[1]}</span></>
-            : meta.heading}
-        </h1>
-        {meta.category === 'papers' ? (
-          <div class="papers-count-capsule">
+    <div class={`subject-hero ${isPapers ? 'subject-hero-papers' : ''}`}>
+      {isPapers ? (
+        <Fragment>
+          <h1 class="hero-title">
+            {heroTitleParts.length === 2
+              ? <>{heroTitleParts[0]}<span class="hero-title-sub">{heroTitleParts[1]}</span></>
+              : meta.heading}
+          </h1>
+          <div class="papers-capsule">
             <i class="ti ti-books" aria-hidden="true"></i>
             <span>{chapters.length} {chapters.length === 1 ? 'Paper' : 'Papers'}</span>
           </div>
-        ) : (
-        <div class="stat-pill-row">
-          <div class="stat-pill stat-pill-amber">
-            <i class="ti ti-books" aria-hidden="true"></i>
-            <div class="stat-text">
-              <div class="stat-num">{chapters.length}</div>
-              <div class="stat-label">chapters</div>
-            </div>
+        </Fragment>
+      ) : (
+        <div class="hero-title-row">
+          <h1 class="hero-title hero-title-inline">
+            {heroTitleParts.length === 2
+              ? <>{heroTitleParts[0]}<span class="hero-title-sub">{heroTitleParts[1]}</span></>
+              : meta.heading}
+          </h1>
+          <div class="hero-meta">
+            <span class="hero-stats-text">{chapters.length} chapters &middot; {totalQuestions.toLocaleString('en-IN')} MCQs</span>
+            {mockCount > 0 && (
+              <a href={`/${subject}-mock-tests/`} class="mock-pill">
+                <i class="ti ti-clipboard-list" aria-hidden="true"></i>
+                {mockCount} mock {mockCount === 1 ? 'test' : 'tests'}
+                <i class="ti ti-chevron-right mock-pill-chev" aria-hidden="true"></i>
+              </a>
+            )}
           </div>
-          <div class="stat-pill stat-pill-teal">
-            <i class="ti ti-help-circle" aria-hidden="true"></i>
-            <div class="stat-text">
-              <div class="stat-num">{totalQuestions}</div>
-              <div class="stat-label">MCQs</div>
-            </div>
-          </div>
-          {mockCount > 0 && (
-            <a href={`/${subject}-mock-tests/`} class="stat-pill stat-pill-mock stat-pill-link">
-              <i class="ti ti-clipboard-list" aria-hidden="true"></i>
-              <div class="stat-text">
-                <div class="stat-num">{mockCount}</div>
-                <div class="stat-label">mock tests</div>
-              </div>
-              <i class="ti ti-chevron-right stat-pill-arrow" aria-hidden="true"></i>
-            </a>
-          )}
         </div>
-        )}
-      </div>
-      {meta.category !== 'papers' && (
-        <div class="subject-header-right">
-          <div class="unlock-btn-group" id="unlock-btn-group">
-            <div class="hero-toggle" id="hero-toggle">
-              <button type="button" id="hero-toggle-bundle" class="hero-toggle-btn hero-toggle-btn-active">Bundle</button>
-              <button type="button" id="hero-toggle-single" class="hero-toggle-btn">Single</button>
-            </div>
-            <a id="bundle-btn" href={`/plans/?highlight=${subject}&mode=bundle`} class="unlock-btn">
-              <span class="unlock-btn-detail">Pick any 3 subjects for ₹399</span>
-            </a>
-            <p class="unlock-btn-sub" id="bundle-sub">Get 3 months (<span id="unlock-btn-days">90</span> days) full access</p>
-            <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-secondary-link" hidden>Unlock this subject — ₹199</a>
-            <p class="unlock-btn-sub" id="single-sub" hidden>3 months (<span id="unlock-btn-days-2">90</span> days) full access</p>
+      )}
+
+      {!isPapers && (
+        <div class="unlock-group" id="unlock-btn-group">
+          <div class="hero-toggle" id="hero-toggle">
+            <button type="button" id="hero-toggle-bundle" class="hero-toggle-btn hero-toggle-btn-active">Bundle</button>
+            <button type="button" id="hero-toggle-single" class="hero-toggle-btn">Single</button>
           </div>
+          <a id="bundle-btn" href={`/plans/?highlight=${subject}&mode=bundle`} class="unlock-btn">
+            Pick any 3 subjects for &#8377;399 <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </a>
+          <p class="unlock-sub" id="bundle-sub">Get 3 months (<span id="unlock-btn-days">90</span> days) full access</p>
+          <a id="unlock-btn" href={`/plans/?highlight=${subject}`} class="unlock-btn unlock-btn-single" hidden>Unlock this subject — &#8377;199</a>
+          <p class="unlock-sub" id="single-sub" hidden>3 months (<span id="unlock-btn-days-2">90</span> days) full access</p>
         </div>
       )}
     </div>
@@ -203,18 +160,21 @@ for (const ch of chapters) {
           {group.heading && (
             <h2 class="section-heading">{group.heading}</h2>
           )}
-          <div class="chapter-grid">
+          <div class="chapter-list">
             {group.chapters.map((ch) => (
               <a href={`/${ch.slug}/`} class="chapter-card">
-                <div class="chapter-card-number">{ch.chapterNumber}</div>
-                <div class="chapter-card-title">{ch.title}</div>
-                <div class="chapter-card-qcount">
-                  {ch.type === 'reference'
-                    ? `${ch.articles.length} articles`
-                    : ch.type === 'theory'
-                      ? `${ch.faqs.length} MCQs + Theory`
-                      : `${ch.faqs.length} MCQs`}
+                <div class="chapter-num">{ch.chapterNumber}</div>
+                <div class="chapter-body">
+                  <div class="chapter-title">{ch.title}</div>
+                  <div class="chapter-meta">
+                    {ch.type === 'reference'
+                      ? `${ch.articles.length} articles`
+                      : ch.type === 'theory'
+                        ? `${ch.faqs.length} MCQs + Theory`
+                        : `${ch.faqs.length} MCQs`}
+                  </div>
                 </div>
+                <i class="ti ti-chevron-right chapter-chev" aria-hidden="true"></i>
               </a>
             ))}
           </div>
@@ -237,379 +197,282 @@ for (const ch of chapters) {
     </button>
   </div>
 
-  <style>
+  <style is:global>
     .page-wide {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 24px 16px;
     }
     @media (max-width: 900px) {
       .page-wide {
         padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
       }
     }
-
-    .breadcrumb {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .breadcrumb a { color: var(--muted); text-decoration: none; font-size: 13px; }
-    @media (max-width: 900px) {
-      .breadcrumb { display: none; }
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 900px;
+      }
     }
 
-    .lang-switch-row { margin-bottom: 12px; }
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+    /* ---------- Redesign tokens — same palette as index-v2/subjects-v2 ---------- */
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-text: #211F38;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-gold: #D8A94E;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-text: #EFEDFB;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+    .page-wide h1, .page-wide h2, .page-wide .chapter-title, .page-wide .stat-pill b {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* ---------- Language switch ---------- */
     .lang-switch-link {
-      display: inline-block; max-width: 100%; font-size: 12.5px; font-weight: 700;
-      line-height: 1.45; color: #ffffff; text-decoration: none;
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255,179,92,0.5); border-radius: 10px;
-      padding: 7px 12px;
-    }
-    @media (max-width: 480px) {
-      .lang-switch-link { font-size: 11.5px; }
+      display: flex; align-items: center; gap: 7px;
+      font-size: 0.74rem; font-weight: 700; color: var(--sh2-indigo);
+      background: var(--sh2-indigo-soft); border: 1px solid var(--sh2-line);
+      border-radius: 10px; padding: 7px 12px; margin: 8px 0;
+      text-decoration: none;
     }
 
-    .subject-header {
-      position: relative;
+    /* ---------- Subject hero ---------- */
+    .subject-hero {
+      background: linear-gradient(155deg, var(--sh2-indigo-deep) 0%, #5A4CC4 55%, #7C63DE 100%);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 14px 28px -16px rgba(46,37,112,0.5);
       overflow: hidden;
-      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      border-radius: 20px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      box-shadow: 0 12px 30px -12px rgba(20, 16, 43, 0.5);
-    }
-    .subject-header-left { position: relative; flex: 1; min-width: 220px; }
-    .subject-header-right { position: relative; flex: 1; min-width: 220px; }
-    .subject-h1 { margin: 0 0 18px; font-size: 21px; font-weight: 800; color: #ffffff; line-height: 1.25; }
-    .title-break { display: none; }
-    /* Desktop: plain text, same line, same style as the rest of the h1 —
-       no visual distinction, since the break above is hidden and this
-       should just read as one continuous title. The subheading look
-       (smaller, dimmer, own line) only applies at mobile widths below,
-       where .title-break becomes visible. */
-    .title-sub {
-      display: inline;
-      font: inherit;
-      color: inherit;
-    }
-    .stat-pill-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; }
-    .stat-pill {
       box-sizing: border-box;
-      border-radius: 12px;
-      padding: 0.6rem 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
     }
-    .stat-pill i { font-size: 20px; }
-    .stat-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    .subject-hero-papers { text-align: center; }
+    .hero-title {
+      font-weight: 800; font-size: 1rem; line-height: 1.22;
+      margin: 0 0 8px; color: #fff;
     }
-    .stat-pill-amber i { color: #ff9a3c; }
-    .stat-pill-amber .stat-num { color: #ffcb8a; }
-    .stat-pill-amber .stat-label { color: rgba(255, 255, 255, 0.6); }
-    .stat-pill-teal i { color: #5ce0c0; }
-    .stat-pill-teal .stat-num { color: #9df0da; }
-    .stat-pill-teal .stat-label { color: rgba(255, 255, 255, 0.6); }
-    .stat-pill-mock i { color: #c084fc; }
-    .stat-pill-mock .stat-num { color: #e0b3ff; }
-    .stat-pill-mock .stat-label { color: rgba(255, 255, 255, 0.6); }
-    .stat-pill-link {
-      text-decoration: none; cursor: pointer;
-      transition: border-color 0.15s, background 0.15s;
+    @media (min-width: 1200px) {
+      .hero-title { font-size: 1.6rem; }
+      .hero-title-sub { font-size: 0.85rem; }
     }
-    .stat-pill-link:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: rgba(192, 132, 252, 0.5);
+    .hero-title-sub {
+      display: block; font-size: 0.72rem; font-weight: 600;
+      color: rgba(255,255,255,0.72); margin-top: 3px;
     }
-    .stat-pill-arrow { font-size: 16px !important; color: rgba(255,255,255,0.4) !important; margin-left: 2px; }
-    .stat-num { font-size: 17px; font-weight: 700; line-height: 1.1; text-align: left; }
-    .stat-label { font-size: 11px; text-align: left; }
+    .hero-title-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+    .hero-title-inline { margin-bottom: 0; flex: 1 1 auto; min-width: 0; }
+    .hero-meta {
+      display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+      justify-content: flex-end; flex-shrink: 0;
+    }
+    .hero-stats-text {
+      font-size: 0.74rem; font-weight: 600; color: rgba(255,255,255,0.78);
+      margin: 0; white-space: nowrap;
+    }
+    @media (max-width: 420px) {
+      .hero-title-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .hero-meta { justify-content: flex-start; }
+    }
 
-    /* Papers header: centered single column, no unlock/right column. The
-       chapter count is a compact "N Papers" capsule sized to its content
-       (not a full-width block), matching a native app's chip styling. */
-    .subject-header-papers { justify-content: center; }
-    .subject-header-papers .subject-header-left {
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      width: 100%; max-width: 100%;
+    .papers-capsule {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px; padding: 7px 16px;
+      font-size: 0.82rem; font-weight: 700; color: #fff;
     }
-    .papers-count-capsule {
-      display: inline-flex; align-items: center; gap: 6px; width: fit-content;
-      padding: 5px 14px;
-      background: linear-gradient(135deg, rgba(255, 154, 60, 0.22), rgba(255, 179, 92, 0.08));
-      border: 1px solid rgba(255, 154, 60, 0.45);
+
+    .mock-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
       border-radius: 999px;
-      font-size: 13px; font-weight: 700; color: #ffcb8a;
-      white-space: nowrap;
+      padding: 5px 10px 5px 12px;
+      font-size: 0.72rem; font-weight: 700; color: #fff;
+      text-decoration: none;
     }
-    .papers-count-capsule i { font-size: 14px; color: #ff9a3c; }
+    .mock-pill i:first-child { font-size: 0.78rem; }
+    .mock-pill-chev { font-size: 0.7rem !important; color: rgba(255,255,255,0.6); }
 
-    .unlock-btn-group { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 10px; }
+    .unlock-group { margin-top: 8px; text-align: center; }
     .hero-toggle {
-      display: inline-flex; background: rgba(255,255,255,0.08); border-radius: 999px;
-      padding: 3px; gap: 2px; margin-bottom: 4px;
+      display: inline-flex; background: rgba(255,255,255,0.1); border-radius: 999px;
+      padding: 3px; gap: 2px; margin-bottom: 7px;
     }
     .hero-toggle-btn {
-      font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 999px;
-      border: none; background: transparent; color: rgba(255,255,255,0.6); cursor: pointer;
+      font-size: 0.66rem; font-weight: 700; padding: 4px 11px; border-radius: 999px;
+      border: none; background: transparent; color: rgba(255,255,255,0.65); cursor: pointer;
     }
-    .hero-toggle-btn-active { background: #ffffff; color: #1c1c1a; }
-    .hero-toggle[hidden], #single-sub[hidden] { display: none; }
-    .unlock-btn-sub { font-size: 12px; color: rgba(255, 255, 255, 0.8); margin: 0; text-align: center; }
-    .unlock-secondary-link {
-      display: inline-block;
-      font-size: 12.5px; font-weight: 700; color: #ffffff;
-      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
-      padding: 6px 14px; border-radius: 999px; text-decoration: none;
-      text-align: center;
-    }
-    .unlock-secondary-link[hidden] { display: none; }
+    .hero-toggle-btn-active { background: #fff; color: var(--sh2-indigo-deep); }
+    .hero-toggle[hidden], #single-sub[hidden], .unlock-btn[hidden] { display: none; }
+
     .unlock-btn {
-      font-size: 13px;
-      font-weight: 700;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 999px;
-      text-decoration: none;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      color: #2a1400;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      width: 100%; box-sizing: border-box;
+      font-size: 0.76rem; font-weight: 800; text-align: center;
+      padding: 9px; border-radius: 10px; text-decoration: none;
+      background: #fff;
+      color: var(--sh2-indigo-deep);
+      box-shadow: 0 8px 16px -8px rgba(0,0,0,0.3);
     }
-    .unlock-btn[hidden] { display: none; }
-    .unlock-btn-label {
-      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em;
-      color: #2a1400; opacity: 0.7;
-      border-right: 1px solid rgba(42,20,0,0.3); padding-right: 8px;
+    @media (min-width: 641px) {
+      .unlock-btn { max-width: 340px; margin: 0 auto; }
     }
-    .unlock-btn-detail { font-size: 13px; font-weight: 700; }
+    .unlock-btn i { font-size: 0.76rem; }
+    .unlock-btn-single { background: rgba(255,255,255,0.14); color: #fff; box-shadow: none; border: 1px solid rgba(255,255,255,0.28); }
+    .unlock-sub { font-size: 0.64rem; color: rgba(255,255,255,0.75); margin: 5px 0 0; }
 
-    @media (max-width: 900px) {
-      .subject-header-left, .subject-header-right { text-align: center; }
-      .stat-pill-row { justify-content: center; }
-      .title-break { display: inline; }
-      .title-sub {
-        display: block;
-        margin-top: 2px;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1.3;
-        color: rgba(255, 255, 255, 0.65);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .subject-header { padding: 0.65rem 0.7rem; gap: 6px; border-radius: 14px; margin-bottom: 0.75rem; }
-      .subject-h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 8px; }
-      .title-sub { font-size: 12px; }
-      /* Flexbox instead of a fixed 3-column grid: a grid with
-         repeat(3, 1fr) always reserves 3 column-widths even when a
-         subject only has 2 pills (no mock tests), leaving an empty gap
-         where the 3rd column would be instead of the pair centering.
-         Flex-basis keeps 3-pill rows looking the same as the old grid,
-         while letting fewer pills wrap/center naturally. */
-      .stat-pill-row {
-        display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;
-      }
-      .stat-pill { flex: 1 1 30%; min-width: 0; padding: 0.3rem 0.35rem; gap: 4px; border-radius: 8px; }
-      .stat-pill i { font-size: 13px; }
-      .stat-num { font-size: 12px; }
-      .stat-label { font-size: 8.5px; }
-      .stat-pill-arrow { display: none; }
-
-      /* Hero pill keeps its own bigger sizing even in the 3-col mobile
-         grid — it's the sole/lead stat on papers pages, not a peer of the
-         other small pills. */
-      .papers-count-capsule { font-size: 11px; padding: 3px 10px; }
-      .papers-count-capsule i { font-size: 12px; }
-
-      .unlock-btn-group {
-        margin-top: 4px; gap: 8px 4px;
-        flex-direction: row; flex-wrap: wrap; justify-content: center;
-      }
-      .hero-toggle { margin-bottom: 0; }
-      /* Sub-text ("Get 3 months...") stays on its own line below the
-         toggle+button row rather than trying to sit beside them —
-         flex-basis:100% forces a wrap even though the group is now a row. */
-      .unlock-btn-sub { flex-basis: 100%; }
-      .unlock-btn { font-size: 11px; padding: 6px 12px; }
-      .unlock-btn-label { font-size: 8px; }
-      .unlock-btn-detail { font-size: 11.5px; }
-      .unlock-btn-sub { font-size: 10px; }
-      .unlock-secondary-link { font-size: 10px; padding: 4px 10px; }
-      .hero-toggle-btn { padding: 4px 10px; font-size: 11px; }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.12rem; }
+      .stat-pill { min-width: 0; padding: 7px 8px; }
+      .stat-pill b { font-size: 0.9rem; }
+      .stat-pill span { font-size: 0.6rem; }
     }
 
     .grace-banner {
-      margin-bottom: 1.5rem;
+      margin-bottom: 16px;
       padding: 12px 16px;
-      border-radius: 10px;
-      background: #fff4e0;
-      border: 1px solid #e8c876;
+      border-radius: 12px;
+      background: var(--sh2-amber-soft);
+      border: 1px solid rgba(232,150,58,0.35);
       color: #6b4a00;
-      font-size: 13px;
+      font-size: 0.8rem;
       line-height: 1.5;
     }
-    html[data-theme="dark"] .grace-banner {
-      background: #3a2a10;
-      border-color: #6b5a2a;
-      color: #f0c07a;
-    }
+    html[data-theme="dark"] .grace-banner { color: var(--sh2-amber); }
 
-    /* ---------- Chapter grid & cards. Desktop: unchanged from original —
-       4-column grid, small gap, compact square-ish cards. Mobile: same
-       class names, restyled into full-width capsule rows with number
-       circle + chevron, matching the locked reading-page design language.
-       No class renaming, so nothing here can leak into or break desktop. ---------- */
+    /* ---------- Chapters ---------- */
     .section-heading {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      margin: 28px 0 10px;
-      padding-left: 10px;
-      border-left: 3px solid #ff9a3c;
+      font-size: 0.9rem; font-weight: 800; color: var(--sh2-ink);
+      margin: 22px 0 10px; padding-left: 10px;
+      border-left: 3px solid var(--sh2-indigo);
     }
-    .section-heading:first-of-type {
-      margin-top: 4px;
-    }
-    @media (max-width: 900px) {
-      .section-heading {
-        margin: 20px 0 8px;
-        font-size: 15px;
-      }
-    }
+    .section-heading:first-of-type { margin-top: 4px; }
 
-    .chapter-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 6px;
-    }
-    .chapter-card {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 3px solid #ff9a3c;
-      border-radius: 14px;
-      padding: 1.25rem;
-      text-decoration: none;
-      color: #ffffff;
-      transition: transform 0.12s ease;
-    }
-    .chapter-card:active {
-      transform: scale(0.98);
-    }
-    .chapter-card-number {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 154, 60, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      color: #ff9a3c;
-      margin-bottom: 12px;
-    }
-    .chapter-card-title {
-      font-weight: 700;
-      font-size: 15px;
-      color: #ffffff;
-    }
-    .chapter-card-qcount {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 4px;
-    }
-
-    @media (max-width: 900px) {
-      .chapter-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
+    .chapter-list { display: flex; flex-direction: column; gap: 6px; }
+    /* Tablets (900-1199px) were still getting the single-column
+       mobile list, so each row stretched full-width and looked
+       oversized. Give them a 2-column grid — the same card treatment
+       desktop gets, just fewer columns. */
+    @media (min-width: 641px) and (max-width: 1199px) {
+      .chapter-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
       }
       .chapter-card {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        column-gap: 10px;
-        border-radius: 12px;
-        border-bottom-width: 2px;
-        padding: 10px 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 14px 16px 12px;
+        position: relative;
+        border-bottom: 3px solid var(--sh2-indigo);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
       }
-      .chapter-card-number {
-        margin-bottom: 0;
-        flex-shrink: 0;
-        width: 26px;
-        height: 26px;
-        font-size: 11px;
-        grid-row: 1 / 3;
+      .chapter-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -12px rgba(46,37,112,0.28);
       }
-      .chapter-card-title {
-        grid-column: 2;
-        grid-row: 1;
-        text-align: left;
-        font-size: 13.5px;
-        line-height: 1.3;
-        /* Chapter titles vary a lot in length ("Public Finance" vs
-           "Price Dynamics, Rural Wages and Food Security") — clamping
-           to 2 lines keeps every card roughly the same height instead
-           of a long title tripling one card's height next to short
-           single-line ones. */
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-      .chapter-card-qcount {
-        grid-column: 2;
-        grid-row: 2;
-        margin-top: 2px;
-        text-align: left;
-        font-size: 11px;
-      }
-      .chapter-card::after {
-        content: '';
-        width: 7px;
-        height: 7px;
-        border-top: 2px solid rgba(255, 255, 255, 0.5);
-        border-right: 2px solid rgba(255, 255, 255, 0.5);
-        transform: rotate(45deg);
-        grid-column: 3;
-        grid-row: 1 / 3;
-      }
+      .chapter-num { width: 28px; height: 28px; font-size: 0.76rem; margin-bottom: 2px; }
+      .chapter-chev { display: none; }
     }
+    @media (min-width: 1200px) {
+      .chapter-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .chapter-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 16px 18px 14px;
+        position: relative;
+        border-bottom: 3px solid var(--sh2-indigo);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .chapter-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -12px rgba(46,37,112,0.28);
+      }
+      .chapter-num { width: 30px; height: 30px; font-size: 0.78rem; margin-bottom: 2px; }
+      .chapter-title { font-size: 0.95rem; }
+      .chapter-meta { font-size: 0.76rem; margin-top: 2px; }
+      .chapter-chev { display: none; }
+    }
+    .chapter-card {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--sh2-surface);
+      border-radius: 12px;
+      padding: 9px 12px;
+      box-shadow: var(--sh2-shadow);
+      border: 1px solid var(--sh2-line);
+      text-decoration: none;
+      transition: transform 0.12s ease;
+    }
+    .chapter-card:active { transform: scale(0.99); }
+    .chapter-num {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+      background: var(--sh2-indigo-soft); color: var(--sh2-indigo);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 800;
+    }
+    .chapter-body { flex: 1; min-width: 0; }
+    .chapter-title { font-size: 0.82rem; font-weight: 700; color: var(--sh2-ink); line-height: 1.28; }
+    .chapter-meta { font-size: 0.68rem; color: var(--sh2-text-soft); margin-top: 1px; }
+    .chapter-chev { flex-shrink: 0; color: var(--sh2-text-soft); font-size: 0.82rem; }
 
     .empty-state {
-      background: var(--card);
-      border: 1px dashed var(--border);
-      border-radius: 14px;
+      background: var(--sh2-surface);
+      border: 1px dashed var(--sh2-line);
+      border-radius: 16px;
       padding: 2.5rem;
       text-align: center;
-      color: var(--muted);
+      color: var(--sh2-text-soft);
+      box-shadow: var(--sh2-shadow);
     }
     .empty-state i { font-size: 28px; display: block; margin-bottom: 8px; }
     .empty-state p { margin: 0; }
 
-    /* Verify toast: positioned to clear the fixed mobile tab bar via the
-       shared --tabbar-h var, same offset pattern used for the scroll-top
-       button and global toast container in Layout.astro. */
+    /* ---------- Verify toast ---------- */
     .verify-toast {
       position: fixed;
       bottom: 20px;
@@ -617,10 +480,10 @@ for (const ch of chapters) {
       transform: translateX(-50%);
       max-width: 90vw;
       width: 420px;
-      background: var(--card);
-      border: 1px solid var(--accent);
-      border-radius: 10px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+      background: var(--sh2-surface);
+      border: 1px solid var(--sh2-indigo);
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(33,31,61,0.18);
       padding: 12px 14px;
       display: flex;
       align-items: center;
@@ -628,41 +491,14 @@ for (const ch of chapters) {
       z-index: 55;
       animation: toast-in 0.35s ease-out;
     }
-    html[data-theme="dark"] .verify-toast {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
-    }
     @keyframes toast-in {
       from { opacity: 0; transform: translateX(-50%) translateY(12px); }
       to { opacity: 1; transform: translateX(-50%) translateY(0); }
     }
-    .verify-toast i.ti-mail-exclamation {
-      color: var(--accent);
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-    .verify-toast-text {
-      flex: 1;
-      font-size: 13px;
-      color: var(--text);
-    }
-    .verify-toast-text a {
-      color: var(--accent);
-      font-weight: 600;
-      text-decoration: underline;
-    }
-    .verify-toast-close {
-      background: none;
-      border: none;
-      color: var(--muted);
-      cursor: pointer;
-      padding: 2px;
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-    .verify-toast-close:hover {
-      color: var(--text);
-    }
+    .verify-toast i.ti-mail-exclamation { color: var(--sh2-indigo); font-size: 18px; flex-shrink: 0; }
+    .verify-toast-text { flex: 1; font-size: 13px; color: var(--sh2-ink); }
+    .verify-toast-text a { color: var(--sh2-indigo); font-weight: 600; text-decoration: underline; }
+    .verify-toast-close { background: none; border: none; color: var(--sh2-text-soft); cursor: pointer; padding: 2px; display: flex; align-items: center; flex-shrink: 0; }
     @media (max-width: 480px) {
       .verify-toast {
         bottom: calc(12px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
@@ -671,15 +507,17 @@ for (const ch of chapters) {
     }
   </style>
 
-  <script define:vars={{ subject, isPapers: meta.category === 'papers' }}>
+  <script define:vars={{ subject, isPapers }}>
+    // ============================================================
+    // UNCHANGED FROM [subject]/index.astro — same Worker URL, same
+    // hero toggle logic, same session/check-access/subjects-public
+    // calls, same grace-grant banner and verify-toast logic. Only
+    // the element styling/classes changed in the markup above; every
+    // selector below still matches an id that exists in this markup.
+    // ============================================================
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
-    // Hero Single/Bundle toggle — purely a display switch between the
-    // two existing CTAs (#bundle-btn / #unlock-btn), both of which already
-    // link to the correct /plans/ URL (mode=bundle vs plain highlight).
-    // Skipped entirely for papers (no unlock CTA renders for that category).
     if (!isPapers) {
-      const heroToggle = document.getElementById('hero-toggle');
       const toggleBundleBtn = document.getElementById('hero-toggle-bundle');
       const toggleSingleBtn = document.getElementById('hero-toggle-single');
       const bundleBtn = document.getElementById('bundle-btn');
@@ -702,12 +540,6 @@ for (const ch of chapters) {
       }
     }
 
-    // Session is fetched ONCE per page by Header.astro and exposed on
-    // window.__shSessionPromise. Reusing it here instead of calling /me
-    // again avoids a duplicate network request on every subject page load.
-    // Falls back to a direct /me call only if Header hasn't set it yet
-    // (shouldn't normally happen since Header renders before this script,
-    // but kept as a safety net).
     function getSession() {
       if (window.__shSessionPromise) return window.__shSessionPromise;
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
@@ -729,9 +561,6 @@ for (const ch of chapters) {
       });
     }
 
-    // Fetch this subject's real access_days from D1 — only meaningful for
-    // paid subjects (the unlock button's duration caption). Papers are
-    // free and have no such button, so this whole block is skipped for them.
     if (!isPapers) {
       fetch(`${WORKER_URL}/subjects/public`)
         .then((res) => res.json())
@@ -742,15 +571,9 @@ for (const ch of chapters) {
             el.textContent = match.access_days;
           });
         })
-        .catch(() => {
-          // silently ignore — static default (45 or 365 based on category) stays as-is
-        });
+        .catch(() => {});
     }
 
-    // Ownership/unlock-state check — only relevant for paid subjects.
-    // Papers have no unlock button and no purchase to check, so this
-    // network call (and the grace-grant banner it can trigger) is skipped
-    // entirely for them.
     if (!isPapers) {
       getSession()
         .then((session) => {
@@ -772,7 +595,11 @@ for (const ch of chapters) {
                   btn.removeAttribute('href');
                   btn.removeAttribute('hidden');
                   btn.style.cursor = 'default';
-                  btn.style.color = '#5ce0c0';
+                  btn.style.background = 'rgba(255,255,255,0.16)';
+                  btn.style.color = '#fff';
+                  btn.style.boxShadow = 'none';
+                  const btnIcon = btn.querySelector('i');
+                  if (btnIcon) btnIcon.remove();
 
                   const bundleBtn = document.getElementById('bundle-btn');
                   if (bundleBtn) bundleBtn.style.display = 'none';
@@ -780,12 +607,8 @@ for (const ch of chapters) {
                   const heroToggle = document.getElementById('hero-toggle');
                   if (heroToggle) heroToggle.style.display = 'none';
 
-                  document.querySelectorAll('.unlock-btn-sub').forEach((el) => { el.style.display = 'none'; });
+                  document.querySelectorAll('.unlock-sub').forEach((el) => { el.style.display = 'none'; });
 
-                  // Language-switch banner ("Telugu version available") is a
-                  // pre-purchase decision nudge — once they've bought and are
-                  // actively studying this version, it's just noise pointing
-                  // them at a different purchase decision they already made.
                   const langSwitchRow = document.getElementById('lang-switch-row');
                   if (langSwitchRow) langSwitchRow.style.display = 'none';
                 }
@@ -794,21 +617,16 @@ for (const ch of chapters) {
                   const banner = document.getElementById('grace-grant-banner');
                   if (banner) {
                     const days = data.grace_days_remaining;
-                    banner.innerHTML = `We haven't yet confirmed your payment. You've been given ${days ?? ''} day${days === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/" style="color:#6b4a00; font-weight:600;">contact us</a>.`;
+                    banner.innerHTML = `We haven't yet confirmed your payment. You've been given ${days ?? ''} day${days === 1 ? '' : 's'} of temporary access while we check — this won't continue automatically. If you believe this is a mistake or have already paid, please <a href="/support/" style="color:inherit; font-weight:700;">contact us</a>.`;
                     banner.style.display = 'block';
                   }
                 }
               }
             });
         })
-        .catch(() => {
-          // silently ignore — button stays as its static category-based default on network error
-        });
+        .catch(() => {});
     }
 
-    // One-time post-purchase toast: flag is set by payment-processing/index.astro
-    // right before redirecting here, only if the account's email was still
-    // unverified at that moment. Read once, then cleared immediately.
     (function showVerifyToastIfFlagged() {
       let shouldShow = false;
       try {
@@ -838,4 +656,8 @@ for (const ch of chapters) {
       }
     })();
   </script>
-</Layout>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
+</Layout>

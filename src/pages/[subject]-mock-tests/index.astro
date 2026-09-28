@@ -1,9 +1,12 @@
 ---
-// src/pages/[subject]-mock-tests/index.astro
-// Generic across ALL subjects/exams: any folder in src/data named
-// "<subjectId>-mock-tests" (e.g. telangana-history-en-mock-tests, later
-// rrb-en-mock-tests) is auto-discovered here — no new page file needed
-// per subject. Route becomes /<subjectId>-mock-tests/.
+// src/pages/mock-tests-v2/[subject].astro
+//
+// UNCHANGED FROM [subject]-mock-tests/index.astro — same getStaticPaths auto-
+// discovery across src/data/*/*-mock-tests/*.json, same real /check-access
+// unlock check. Only visual restyle (indigo/white premium theme, same
+// tokens as subjects-v2/plans-v2) plus a route change: this lives at
+// /mock-tests-v2/<subject>/ instead of /<subject>-mock-tests/ so it doesn't
+// collide with the live route.
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import { getSubjectMeta } from '../../data/subjectsMeta.js';
@@ -34,10 +37,10 @@ const firstMockTitle = mocks[0] ? mocks[0].title : subject;
 const subjectName = firstMockTitle.replace(/\s*-\s*Mock Test\s*\d+\s*$/i, '').trim() || subject;
 ---
 <Layout title={`${subjectName} — Mock Tests`} description={`${mocks.length} full-length mock tests for ${subjectName}.`}>
-  <Header active="subjects" />
+  <Header active="subjects" theme="premium" />
 
-  <div class="mock-list-page">
-    <a href={`/${subject}/`} class="back-pill">&larr; {subjectName}</a>
+  <div class="page-wide mock-list-page">
+    <a href={`/subjects/${subject}/`} class="back-pill">&larr; {subjectName}</a>
 
     <h1>Mock Tests</h1>
     <p class="mock-sub">{mocks.length} full-length papers &middot; {mocks[0]?.totalQuestions || 30} questions each</p>
@@ -97,28 +100,82 @@ const subjectName = firstMockTitle.replace(/\s*-\s*Mock Test\s*\d+\s*$/i, '').tr
     })();
   </script>
 
-  <style>
-    .mock-list-page { max-width: 900px; margin: 0 auto; padding: 20px 16px 60px; }
-    .back-pill { display: inline-block; margin-bottom: 14px; color: var(--muted); text-decoration: none; font-size: 13.5px; }
-    h1 { margin: 0 0 4px; font-size: 26px; }
-    .mock-sub { color: var(--muted); font-size: 13.5px; margin: 0 0 20px; }
+  <style is:global>
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+
+      /* Original CSS reads var(--card)/var(--border)/var(--accent)/var(--text)/
+         var(--muted) — remap those to the indigo palette here rather than
+         rewriting every rule (same pattern as account-v2 / current-affairs-v2). */
+      --card: var(--sh2-surface);
+      --border: var(--sh2-line);
+      --accent: var(--sh2-indigo);
+      --text: var(--sh2-ink);
+      --muted: var(--sh2-text-soft);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+
+    .mock-list-page { max-width: 900px; margin: 0 auto; }
+    @media (min-width: 1200px) {
+      .page-wide, .mock-list-page {
+        max-width: 900px;
+      }
+    }
+    .back-pill { display: inline-block; margin-bottom: 12px; color: var(--sh2-text-soft); text-decoration: none; font-size: 13px; font-weight: 600; }
+    .mock-list-page h1 { margin: 0 0 3px; font-size: 22px; color: var(--sh2-ink); font-weight: 800; }
+    .mock-sub { color: var(--sh2-text-soft); font-size: 12.5px; margin: 0 0 16px; }
     .mock-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 14px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
     }
     .mock-card {
-      display: block; text-decoration: none; color: var(--text);
-      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px; transition: border-color 0.15s;
+      display: block; text-decoration: none; color: var(--sh2-ink);
+      background: var(--sh2-surface); border: 1px solid var(--sh2-line); border-radius: 11px;
+      padding: 11px 12px; transition: border-color 0.15s, box-shadow 0.15s;
+      box-shadow: var(--sh2-shadow);
     }
-    .mock-card:hover { border-color: var(--accent); }
-    .mock-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-    .mock-card-num { font-size: 17px; font-weight: 800; }
-    .mock-card-meta { font-size: 12.5px; color: var(--muted); }
+    .mock-card:hover { border-color: var(--sh2-indigo); }
+    .mock-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+    .mock-card-num { font-size: 14.5px; font-weight: 800; color: var(--sh2-ink); }
+    .mock-card-meta { font-size: 11px; color: var(--sh2-text-soft); }
     .mock-tag {
-      font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 6px;
+      font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 5px;
     }
-    .mock-tag-free { background: color-mix(in srgb, #22c55e 18%, var(--card)); color: #16803c; }
-    .mock-tag-locked { background: var(--border); color: var(--muted); }
+    .mock-tag-free { background: var(--sh2-green-soft); color: var(--sh2-green); }
+    .mock-tag-locked { background: var(--sh2-indigo-soft); color: var(--sh2-indigo); }
   </style>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
 </Layout>

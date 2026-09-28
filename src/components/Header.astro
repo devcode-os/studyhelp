@@ -19,24 +19,22 @@ const { active = '', compact = false, backHref = '/', title = '', progress = '',
 const stickyTabbar = active === 'plans' || active === 'account' || active === 'signup' || active === 'login';
 const isPremium = theme === 'premium';
 
-// When theme="premium" (every -v2 page passes this), route the shared
-// nav — desktop nav, "more" dropdown, mobile bottom tab bar, and the
-// dynamic login/account link below — to the -v2 equivalents instead of
-// the live routes. Classic (live) pages never pass theme="premium", so
-// this leaves them completely untouched.
-const homeHref = isPremium ? '/index-v2/' : '/';
-const subjectsHref = isPremium ? '/subjects-v2/' : '/subjects/';
-const currentAffairsHref = isPremium ? '/current-affairs-v2/' : '/current-affairs/';
-const papersHref = isPremium ? '/papers-v2/' : '/papers/';
-const plansHref = isPremium ? '/plans-v2/' : '/plans/';
-const loginHref = isPremium ? '/login-v2/' : '/login/';
-const accountHref = isPremium ? '/account-v2/' : '/account/';
-const forgotPasscodeHref = isPremium ? '/forgot-passcode-v2/' : '/forgot-passcode/';
-const contactHref = isPremium ? '/contact-v2/' : '/contact/';
-const supportHref = isPremium ? '/support-v2/' : '/support/';
-const termsHref = isPremium ? '/terms-v2/' : '/terms/';
-const refundHref = isPremium ? '/refund-policy-v2/' : '/refund-policy/';
-const privacyHref = isPremium ? '/privacy-policy-v2/' : '/privacy-policy/';
+// Post-swap: the -v2 redesign now lives at the plain routes, so there is
+// only one set of hrefs left (no more classic/premium split).
+const homeHref = '/';
+const subjectsHref = '/subjects/';
+const currentAffairsHref = '/current-affairs/';
+const papersHref = '/papers/';
+const plansHref = '/plans/';
+const loginHref = '/login/';
+const accountHref = '/account/';
+const forgotPasscodeHref = '/forgot-passcode/';
+const contactHref = '/contact/';
+const supportHref = '/support/';
+const termsHref = '/terms/';
+const refundHref = '/refund-policy/';
+const privacyHref = '/privacy-policy/';
+const aboutHref = '/about/';
 ---
 
 {compact ? (
@@ -974,11 +972,11 @@ const privacyHref = isPremium ? '/privacy-policy-v2/' : '/privacy-policy/';
       // adds 'sh2-page' to <body> — when the session came from cache
       // (near-instant), this callback could run as a microtask BEFORE that
       // later <script> tag executed, reading `false` and silently sending
-      // logged-in users to the classic /account/ instead of /account-v2/.
+      // logged-in users to the classic /account/ instead of /account/.
       const siteHeaderEl = document.querySelector('.site-header[data-account-href]');
       const accountDestination = siteHeaderEl
         ? siteHeaderEl.getAttribute('data-account-href')
-        : (document.body.classList.contains('sh2-page') ? '/account-v2/' : '/account/');
+        : (document.body.classList.contains('sh2-page') ? '/account/' : '/account/');
       [loginLink, loginLinkMobile].forEach((el) => {
         if (!el) return;
         el.href = accountDestination;

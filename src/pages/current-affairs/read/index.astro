@@ -1,10 +1,11 @@
 ---
-// src/pages/current-affairs/read/index.astro
+// src/pages/current-affairs-read-v2.astro
 //
-// Single combined reading page. Replaces the earlier picker->sections->
-// per-section-page flow: this one page owns the section dropdown AND the
-// question list, switching entirely client-side (no page reloads) since
-// all CA content is free and lightweight enough to ship in one go.
+// UNCHANGED FROM current-affairs/read/index.astro — same real getFullDataset()
+// data, same section-merge/pagination/MCQ-vs-Quick-Revision logic, same guest
+// 5-minute reading-limit popup. Only visual restyle (indigo/white premium
+// theme, same tokens as current-affairs-v2/plans-v2) plus self-referential
+// URLs updated to the -v2 versions.
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/Header.astro';
 import { getFullDataset } from '../../../lib/currentAffairs.js';
@@ -12,10 +13,9 @@ import { getFullDataset } from '../../../lib/currentAffairs.js';
 const dataset = getFullDataset(); // every month, every section, every question
 ---
 <Layout title="Current Affairs" description="Read Current Affairs MCQs by section, free.">
-  <Header active="subjects" />
+  <Header active="subjects" theme="premium" />
 
-
-  <div class="ca-wrap">
+  <div class="page-wide ca-wrap">
     <div class="ca-header-card">
       <div class="ca-header-top">
         <div class="ca-header-left">
@@ -70,19 +70,78 @@ const dataset = getFullDataset(); // every month, every section, every question
   <script type="application/json" id="ca-dataset" set:html={JSON.stringify(dataset)} />
 
   <style is:global>
-    .ca-wrap { max-width: 800px; margin: 0 auto; padding: 24px 24px calc(48px + var(--tabbar-h, 56px)); }
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
 
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+
+      /* This page's card/option/pagination CSS already reads var(--accent)/
+         var(--card)/var(--border)/var(--text)/var(--muted)/var(--bg)/
+         var(--accent-bg) — remap those to the indigo palette here rather
+         than rewriting every rule (same pattern as account-v2 / current-affairs-v2). */
+      --card: var(--sh2-surface);
+      --border: var(--sh2-line);
+      --accent: var(--sh2-indigo);
+      --accent-bg: var(--sh2-indigo-soft);
+      --bg: var(--sh2-surface-2);
+      --text: var(--sh2-ink);
+      --muted: var(--sh2-text-soft);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+
+    .ca-wrap { max-width: 800px; margin: 0 auto; }
+    @media (min-width: 1200px) {
+      .page-wide { max-width: 1000px; }
+      .ca-wrap { max-width: 820px; }
+    }
+
+    /* Header card: same indigo hero gradient as current-affairs-v2, replacing
+       the dark-navy/orange one. */
     .ca-header-card {
       position: relative; overflow: hidden;
-      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      border-radius: 14px; padding: 10px 12px 12px; margin-bottom: 10px;
-      box-shadow: 0 6px 16px -8px rgba(20, 16, 43, 0.5);
+      background: linear-gradient(155deg, var(--sh2-indigo-deep) 0%, #5A4CC4 55%, #7C63DE 100%);
+      border-radius: 14px; padding: 12px 14px 14px; margin-bottom: 14px;
+      box-shadow: 0 10px 22px -12px rgba(46,37,112,0.45);
     }
     .ca-header-card::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.15), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.2), transparent 45%);
+      background: radial-gradient(circle at 85% 15%, rgba(255,255,255,0.14), transparent 45%);
     }
     .ca-header-top {
       position: relative; z-index: 1;
@@ -91,10 +150,10 @@ const dataset = getFullDataset(); // every month, every section, every question
     }
     .ca-header-left { min-width: 0; flex: 1; }
     .breadcrumb {
-      font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 2px;
+      font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 2px;
       overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
-    .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
     @media (max-width: 900px) {
       .breadcrumb { display: none; }
     }
@@ -106,10 +165,10 @@ const dataset = getFullDataset(); // every month, every section, every question
     .ca-icon-btn {
       flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.12); color: #fff; text-decoration: none;
+      background: rgba(255,255,255,0.14); color: #fff; text-decoration: none;
       transition: background 0.15s;
     }
-    .ca-icon-btn:hover { background: rgba(255,255,255,0.22); }
+    .ca-icon-btn:hover { background: rgba(255,255,255,0.24); }
     .ca-icon-btn i { font-size: 14px; }
     .ca-icon-btn[hidden] { display: none; }
 
@@ -118,24 +177,24 @@ const dataset = getFullDataset(); // every month, every section, every question
     }
     .ca-mode-toggle {
       flex-shrink: 0; display: flex; align-items: center; padding: 2px;
-      border-radius: 8px; background: rgba(255,255,255,0.1);
+      border-radius: 8px; background: rgba(255,255,255,0.12);
     }
     .ca-mode-btn {
       padding: 5px 9px; border-radius: 6px;
-      border: none; background: transparent; color: #c9c0e8;
+      border: none; background: transparent; color: rgba(255,255,255,0.75);
       font-size: 11px; font-weight: 600; cursor: pointer;
       white-space: nowrap;
       transition: background 0.15s, color 0.15s;
     }
-    .ca-mode-btn.active { background: #f6a666; color: #2b1a5e; font-weight: 700; }
+    .ca-mode-btn.active { background: #ffffff; color: var(--sh2-indigo-deep); font-weight: 700; }
 
     .ca-section-pill {
       flex: 1; display: flex; align-items: center; gap: 5px;
-      padding: 7px 9px; border-radius: 9px; background: rgba(255,255,255,0.05);
+      padding: 7px 9px; border-radius: 9px; background: rgba(255,255,255,0.1);
       min-width: 0; position: relative;
     }
-    .ca-section-pill i.ti-list { color: #f6a666; font-size: 13px; flex-shrink: 0; }
-    .ca-section-chevron { color: #a89bc9; font-size: 11px; flex-shrink: 0; pointer-events: none; }
+    .ca-section-pill i.ti-list { color: #fff; font-size: 13px; flex-shrink: 0; opacity: 0.85; }
+    .ca-section-chevron { color: rgba(255,255,255,0.7); font-size: 11px; flex-shrink: 0; pointer-events: none; }
     .ca-section-select {
       flex: 1; min-width: 0; border: none; background: transparent; color: #fff;
       font-size: 12.5px; font-weight: 600; cursor: pointer; appearance: none;
@@ -144,28 +203,28 @@ const dataset = getFullDataset(); // every month, every section, every question
     .ca-section-select option { color: #111; }
 
     .ca-q-card {
-      border: 1px solid var(--border, #ddd); border-radius: 14px; padding: 18px;
-      margin-bottom: 14px; background: var(--card, #fff);
+      border: 1px solid var(--border); border-radius: 14px; padding: 18px;
+      margin-bottom: 14px; background: var(--card); box-shadow: var(--sh2-shadow);
     }
     .ca-q-tag {
-      display: inline-block; font-size: 11px; font-weight: 700; color: var(--accent, #ff6b1a);
-      background: rgba(255,107,26,0.12);
+      display: inline-block; font-size: 11px; font-weight: 700; color: var(--sh2-indigo);
+      background: var(--sh2-indigo-soft);
       padding: 2px 8px; border-radius: 999px; margin-bottom: 10px;
     }
-    .ca-q-text { font-weight: 700; font-size: 15px; margin: 0 0 14px; line-height: 1.4; color: var(--text, #111); }
+    .ca-q-text { font-weight: 700; font-size: 15px; margin: 0 0 14px; line-height: 1.4; color: var(--text); }
 
     .ca-opt-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
     .ca-opt-btn {
       display: flex; gap: 8px; align-items: flex-start; text-align: left; padding: 11px 14px;
-      border-radius: 10px; border: 1px solid var(--border, #ddd); background: var(--bg, #f7f7f9);
-      color: var(--text, #111); cursor: pointer; font-size: 14px; line-height: 1.35;
+      border-radius: 10px; border: 1px solid var(--border); background: var(--bg);
+      color: var(--text); cursor: pointer; font-size: 14px; line-height: 1.35;
       transition: border-color 0.15s, background 0.15s; width: 100%;
     }
-    .ca-opt-btn:hover:not(:disabled) { border-color: var(--accent, #ff6b1a); }
+    .ca-opt-btn:hover:not(:disabled) { border-color: var(--sh2-indigo); }
     .ca-opt-letter {
       display: inline-flex; align-items: center; justify-content: center;
       width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
-      background: var(--accent-bg, #e6f1fb); color: var(--accent, #185fa5);
+      background: var(--accent-bg); color: var(--sh2-indigo);
       font-weight: 700; font-size: 13px;
     }
     .ca-opt-btn.correct { border-color: #2e7d32; background: rgba(46,125,50,0.12); }
@@ -182,28 +241,28 @@ const dataset = getFullDataset(); // every month, every section, every question
 
     .ca-explain-toggle {
       display: none; align-items: center; gap: 4px; background: none; border: none;
-      color: var(--accent, #ff6b1a); font-weight: 700; font-size: 13px; cursor: pointer;
+      color: var(--sh2-indigo); font-weight: 700; font-size: 13px; cursor: pointer;
       padding: 8px 0 0; margin: 0;
     }
     .ca-explain-toggle:hover { text-decoration: underline; }
 
     .ca-explanation {
-      display: none; border-top: 1px dashed var(--border, #ddd); padding-top: 14px; margin-top: 14px;
+      display: none; border-top: 1px dashed var(--border); padding-top: 14px; margin-top: 14px;
     }
     .ca-explanation.shown { display: block; }
     .ca-explanation-text {
-      font-size: 14px; color: var(--text, #222); line-height: 1.6; margin: 0 0 12px;
+      font-size: 14px; color: var(--text); line-height: 1.6; margin: 0 0 12px;
     }
     .ca-keypoints-label {
-      font-size: 12px; font-weight: 800; color: var(--accent, #ff6b1a);
+      font-size: 12px; font-weight: 800; color: var(--sh2-indigo);
       text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 8px;
     }
     .ca-keypoints-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .ca-keypoints-list li {
-      font-size: 14px; color: var(--text, #222); line-height: 1.5; padding-left: 16px; position: relative;
+      font-size: 14px; color: var(--text); line-height: 1.5; padding-left: 16px; position: relative;
     }
     .ca-keypoints-list li::before {
-      content: '•'; position: absolute; left: 0; color: var(--accent, #ff6b1a); font-weight: 800;
+      content: '•'; position: absolute; left: 0; color: var(--sh2-indigo); font-weight: 800;
     }
 
     .ca-pagination {
@@ -211,20 +270,20 @@ const dataset = getFullDataset(); // every month, every section, every question
       flex-wrap: wrap;
     }
     .ca-page-btn {
-      padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border, #ddd);
-      background: var(--card, #fff); color: var(--text, #111); font-weight: 600; cursor: pointer;
+      padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-weight: 600; cursor: pointer;
     }
     .ca-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
     .ca-page-numbers { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
     .ca-page-num-btn {
-      width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border, #ddd);
-      background: var(--card, #fff); color: var(--text, #111); font-weight: 600; cursor: pointer;
+      width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-weight: 600; cursor: pointer;
     }
     .ca-page-num-btn.active {
-      border-color: var(--accent, #185fa5); color: var(--accent, #185fa5);
+      border-color: var(--sh2-indigo); color: var(--sh2-indigo);
     }
 
-    .ca-empty { text-align: center; padding: 40px; color: var(--muted, #888); }
+    .ca-empty { text-align: center; padding: 40px; color: var(--muted); }
 
     /* Guest reading-limit popup — blocks interaction with the page
        underneath (no dismiss button) until the person either signs up or
@@ -232,23 +291,25 @@ const dataset = getFullDataset(); // every month, every section, every question
        continue past the free preview window. */
     .ca-limit-overlay {
       position: fixed; inset: 0; z-index: 200;
-      background: rgba(10, 8, 20, 0.72);
+      background: rgba(28, 26, 56, 0.55);
       display: flex; align-items: center; justify-content: center;
       padding: 20px;
     }
     .ca-limit-card {
-      background: var(--card, #fff); border-radius: 16px; padding: 28px 24px;
+      background: var(--card); border-radius: 16px; padding: 28px 24px;
       max-width: 360px; width: 100%; text-align: center;
-      box-shadow: 0 20px 50px -12px rgba(0,0,0,0.4);
+      box-shadow: var(--sh2-shadow);
     }
-    .ca-limit-card h2 { font-size: 18px; margin: 0 0 10px; color: var(--text, #111); }
-    .ca-limit-card p { font-size: 14px; color: var(--muted, #666); line-height: 1.5; margin: 0 0 20px; }
+    .ca-limit-card h2 { font-size: 18px; margin: 0 0 10px; color: var(--text); }
+    .ca-limit-card p { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0 0 20px; }
     .ca-limit-btn {
       width: 100%; padding: 13px; border-radius: 10px; border: none;
-      background: var(--accent, #185fa5); color: #fff; font-weight: 700; font-size: 14.5px;
+      background: linear-gradient(90deg, var(--sh2-indigo), var(--sh2-indigo-deep)); color: #fff;
+      font-weight: 700; font-size: 14.5px;
       cursor: pointer; margin-bottom: 12px;
+      box-shadow: 0 8px 16px -8px rgba(75,63,160,0.5);
     }
-    .ca-limit-link { font-size: 13px; color: var(--muted, #888); text-decoration: none; }
+    .ca-limit-link { font-size: 13px; color: var(--muted); text-decoration: none; }
     .ca-limit-link:hover { text-decoration: underline; }
 
     @media (max-width: 380px) {
@@ -263,13 +324,30 @@ const dataset = getFullDataset(); // every month, every section, every question
     const PER_PAGE = 20;
     const LETTER_LABEL = { a: 'A', b: 'B', c: 'C', d: 'D', e: 'E', f: 'F' };
 
+    // A ?section= param means we got here from the "Continue reading" recap
+    // card on subjects-v2, not necessarily fresh. If this tab still has a
+    // real month selection saved (the person picked Monthly/Jan 2026,
+    // read a bit, hit Back), that selection is the one to honor — Back
+    // only re-shows the picker page, it doesn't clear sessionStorage, so
+    // this is still "where they left off". Only when there's truly
+    // nothing saved (new tab, another device, cleared storage) does the
+    // card fall back to loading every month, so the section still has
+    // *something* to show rather than landing empty.
+    const resumingFromRecapCard = !!new URLSearchParams(window.location.search).get('section');
+
     let selectedMonthSlugs = [];
     try {
       selectedMonthSlugs = JSON.parse(sessionStorage.getItem('ca_selected_months') || '[]');
     } catch (e) { selectedMonthSlugs = []; }
 
     const emptyEl = document.getElementById('ca-empty');
-    if (!selectedMonthSlugs.length) {
+    if (resumingFromRecapCard && !selectedMonthSlugs.length && dataset.length) {
+      selectedMonthSlugs = dataset.map((m) => m.slug);
+      try {
+        sessionStorage.setItem('ca_selected_months', JSON.stringify(selectedMonthSlugs));
+        sessionStorage.setItem('ca_selected_plan', 'last6');
+      } catch (e) {}
+    } else if (!selectedMonthSlugs.length) {
       if (!dataset.length) {
         emptyEl.style.display = 'block';
       } else {
@@ -380,6 +458,13 @@ const dataset = getFullDataset(); // every month, every section, every question
     const defaultSection = sectionNames.includes('Appointments') ? 'Appointments' : sectionNames[0];
     if (defaultSection) select.value = defaultSection;
 
+    // A ?section= query param (used by the "Continue reading" CA recap card
+    // on subjects-v2) wins over the default — lets that card resume the
+    // reader straight into the section they were last on, even from a
+    // fresh tab where sessionStorage's resume state isn't set yet.
+    const urlSection = new URLSearchParams(window.location.search).get('section');
+    if (urlSection && sectionNames.includes(urlSection)) select.value = urlSection;
+
     let currentPage = 1;
     let currentMode = 'mcqs';
 
@@ -388,7 +473,7 @@ const dataset = getFullDataset(); // every month, every section, every question
     // Survives the redirect naturally since it's the same browser tab.
     try {
       const savedState = JSON.parse(sessionStorage.getItem('ca_read_state') || 'null');
-      if (savedState && sectionNames.includes(savedState.section)) {
+      if (!urlSection && savedState && sectionNames.includes(savedState.section)) {
         select.value = savedState.section;
         currentPage = savedState.page || 1;
         if (savedState.mode === 'mcqs' || savedState.mode === 'revision') currentMode = savedState.mode;
@@ -401,6 +486,32 @@ const dataset = getFullDataset(); // every month, every section, every question
       } catch (err) {}
     }
 
+    // Fire-and-forget: logs "user read this CA section" for a future
+    // recap/continue-reading feature, same pattern as chapter-v2's
+    // reading-progress call. Only fires once per section change (not on
+    // every page-turn within a section) to avoid spamming the endpoint.
+    // Never blocks rendering, never shown to the reader.
+    let lastLoggedCaSection = null;
+    function logCaReadingProgress(sectionName) {
+      if (!sectionName || sectionName === lastLoggedCaSection) return;
+      lastLoggedCaSection = sectionName;
+      const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+      const session = window.__shSessionPromise
+        ? window.__shSessionPromise
+        : fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+            .then((res) => res.json())
+            .catch(() => ({ logged_in: false }));
+
+      session.then((data) => {
+        if (!data.logged_in) return;
+        fetch(`${WORKER_URL}/ca-reading-progress`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: data.user_id, section_name: sectionName }),
+        }).catch(() => {});
+      });
+    }
+
     function render() {
       const sectionName = select.value;
       const questions = sectionMap.get(sectionName) || [];
@@ -408,6 +519,7 @@ const dataset = getFullDataset(); // every month, every section, every question
       if (currentPage > totalPages) currentPage = totalPages;
 
       document.getElementById('ca-crumb-section').textContent = sectionName || '';
+      logCaReadingProgress(sectionName);
 
       const start = (currentPage - 1) * PER_PAGE;
       const pageItems = questions.slice(start, start + PER_PAGE);
@@ -667,5 +779,9 @@ const dataset = getFullDataset(); // every month, every section, every question
         window.location.href = `/signup/?next=${next}`;
       });
     })();
+  </script>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
   </script>
 </Layout>

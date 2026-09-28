@@ -10,12 +10,12 @@
 // its -v2 equivalent instead of the classic-theme page.
 const { premium = false } = Astro.props;
 const year = new Date().getFullYear();
-const forgotPasscodeHref = premium ? '/forgot-passcode-v2/' : '/forgot-passcode/';
-const contactHref = premium ? '/contact-v2/' : '/contact/';
-const supportHref = premium ? '/support-v2/' : '/support/';
-const termsHref = premium ? '/terms-v2/' : '/terms/';
-const refundHref = premium ? '/refund-policy-v2/' : '/refund-policy/';
-const privacyHref = premium ? '/privacy-policy-v2/' : '/privacy-policy/';
+const forgotPasscodeHref = premium ? '/forgot-passcode/' : '/forgot-passcode/';
+const contactHref = premium ? '/contact/' : '/contact/';
+const supportHref = premium ? '/support/' : '/support/';
+const termsHref = premium ? '/terms/' : '/terms/';
+const refundHref = premium ? '/refund-policy/' : '/refund-policy/';
+const privacyHref = premium ? '/privacy-policy/' : '/privacy-policy/';
 ---
 <footer class:list={['site-footer', { 'sh2-theme': premium }]}>
   <div class="site-footer-inner">

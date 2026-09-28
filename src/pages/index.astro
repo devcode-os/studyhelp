@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import { getSubjectMeta } from '../data/subjectsMeta.js';
 
-// Chapter counts are derived from real data files — same technique used on
-// /subjects/index.astro — so a subject can NEVER show as "Available" here
-// unless it actually has chapters. This is what prevents the earlier bug
-// where a subject was manually flagged available during testing but had
-// no chapters yet.
+// ============================================================
+// UNCHANGED FROM index.astro — same real-data logic, untouched.
+// Chapter/question counts are derived from real data files, so a
+// subject can NEVER show as "Available" here unless it actually
+// has chapters.
+// ============================================================
 const chapterFiles = import.meta.glob('../data/*/*.json', { eager: true });
 const countsBySubject = {};
 const questionCountsBySubject = {};
@@ -20,13 +22,17 @@ for (const [path, mod] of Object.entries(chapterFiles)) {
 }
 
 // Design/display config only — NOT what controls live vs coming-soon.
-// `popular` is still a manual editorial choice, that's fine to hardcode.
+// Added: `category` (groups cards on the redesigned homepage) and
+// `lang` (EN/TE — used to pair cards side-by-side within a category).
+// Neither field affects availability logic above.
 const SUBJECT_CONFIG = [
   {
     titleNative: 'Telangana History',
     titleEnglish: 'English Version',
     slug: 'telangana-history-en',
     icon: 'book',
+    category: 'History',
+    lang: 'EN',
     popular: true,
   },
   {
@@ -34,21 +40,35 @@ const SUBJECT_CONFIG = [
     titleEnglish: 'Telugu Version',
     slug: 'telangana-history-te',
     icon: 'book',
+    category: 'History',
+    lang: 'TE',
     popular: true,
+  },
+  {
+    titleNative: 'Indian History (Ancient, Medieval and Modern)',
+    titleEnglish: 'English Version',
+    slug: 'indian-history-en',
+    icon: 'book',
+    category: 'History',
+    lang: 'EN',
+    popular: false,
   },
   {
     titleNative: 'Telangana Economy',
     titleEnglish: 'English Version',
     slug: 'telangana-economy-en',
     icon: 'chart',
+    category: 'Economy',
+    lang: 'EN',
     popular: false,
   },
-
-    {
+  {
     titleNative: 'తెలంగాణ ఆర్థిక వ్యవస్థ',
     titleEnglish: 'Telugu Version',
     slug: 'telangana-economy-te',
     icon: 'chart',
+    category: 'Economy',
+    lang: 'TE',
     popular: false,
   },
   {
@@ -56,21 +76,17 @@ const SUBJECT_CONFIG = [
     titleEnglish: 'English Version',
     slug: 'andhra-pradesh-economy',
     icon: 'chart',
+    category: 'Economy',
+    lang: 'EN',
     popular: false,
   },
-  {
-  titleNative: 'Indian History (Ancient, Medieval and Modern)',
-  titleEnglish: 'English Version',
-  slug: 'indian-history-en',
-  icon: 'book',
-  popular: false,
-},
-
   {
     titleNative: 'Indian Polity',
     titleEnglish: 'English Version',
     slug: 'indian-polity-en',
     icon: 'gavel',
+    category: 'Polity',
+    lang: 'EN',
     popular: false,
   },
   {
@@ -78,14 +94,13 @@ const SUBJECT_CONFIG = [
     titleEnglish: 'Telugu Version',
     slug: 'indian-polity-te',
     icon: 'gavel',
+    category: 'Polity',
+    lang: 'TE',
     popular: false,
   },
 ];
 
-// Long titles with a parenthetical qualifier (e.g. "Indian History
-// (Ancient, Medieval and Modern)") wrap awkwardly mid-phrase in the
-// narrow card layout. Split right before the "(" so the template can
-// force a clean break there instead — same technique as /subjects/.
+// Unchanged — long-title split for narrow cards.
 function splitTitleParts(title) {
   const idx = title.indexOf(' (');
   if (idx === -1) return [title];
@@ -102,407 +117,571 @@ const subjects = SUBJECT_CONFIG.map((s) => {
     titleParts: splitTitleParts(s.titleNative),
     available: chapterCount > 0,
   };
-}).sort((a, b) => {
-  if (a.available !== b.available) return a.available ? -1 : 1;
-  if (a.popular !== b.popular) return a.popular ? -1 : 1;
-  return 0;
 });
+
+// Group by category for the redesigned card layout, preserving each
+// category's internal order from SUBJECT_CONFIG above (History, then
+// Economy, then Polity — matches the order subjects were declared in).
+const categoryOrder = [...new Set(subjects.map((s) => s.category))];
+const groupedSubjects = categoryOrder.map((cat) => ({
+  category: cat,
+  items: subjects.filter((s) => s.category === cat),
+}));
 
 const iconMap = {
   book: 'ti-book',
   chart: 'ti-chart-bar',
   gavel: 'ti-gavel',
+  file: 'ti-file-text',
 };
+const categoryColor = {
+  History: 'amber',
+  Economy: 'green',
+  Polity: 'indigo',
+  Papers: 'blue',
+};
+
+const totalChapters = subjects.reduce((sum, s) => sum + s.chapterCount, 0);
+const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);
+
+// ============================================================
+// UNCHANGED FROM subjects/index.astro — same real data source
+// (PUBLIC_PAPERS + subjectsMeta.js + the same countsBySubject glob
+// derived above). "N papers" is a real count, never hardcoded.
+// ============================================================
+const PUBLIC_PAPERS = [
+  { slug: 'ts-constable-previous-papers-en', icon: 'file' },
+  { slug: 'ts-constable-previous-papers-te', icon: 'file' },
+];
+const PAPERS_ENGLISH_NAME = {
+  'ts-constable-previous-papers-en': 'Previous Question Papers',
+  'ts-constable-previous-papers-te': 'Previous Question Papers (Telugu)',
+};
+const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
+  const meta = getSubjectMeta(slug);
+  const chapterCount = countsBySubject[slug] || 0;
+  return {
+    titleNative: meta.heading,
+    titleParts: splitTitleParts(meta.heading),
+    titleEnglish: PAPERS_ENGLISH_NAME[slug] || 'Previous Question Papers',
+    slug,
+    lang: slug.endsWith('-te') ? 'TE' : 'EN',
+    chapterCount,
+    icon,
+    available: chapterCount > 0,
+  };
+});
 ---
 <Layout title="StudyHelp - TSPSC, APPSC and State PSC Exam Preparation" description="Study help for TSPSC, APPSC and other state PSC exams. Subject-wise MCQs, chapter by chapter.">
 
-  <Header active="home" />
+  <Header active="home" theme="premium" />
 
   <div class="page-wide">
 
     <div class="hero-card" id="hero-card">
-      <h1 class="hero-title">Your shortcut to cracking <span class="hero-accent">TSPSC</span>, <span class="hero-accent">APPSC</span> and other state PSC exams</h1>
-      <p class="hero-sub">Complete Exam Preparation, organized chapter by chapter</p>
-      <div class="hero-hook-row">
-        <span class="hero-hook-pill"><span class="hero-hook-spark">&#9889;</span>Free to start</span>
-        <span class="hero-hook-pill">15000+ questions</span>
-        <a href="/current-affairs/" class="hero-hook-pill hero-hook-pill-ca">Current Affairs 2026</a>
+      <div class="hero-head">
+        <h1 class="hero-title">Your shortcut to cracking TSPSC &amp; APPSC exams</h1>
+        <p class="hero-sub">Theory, chapter-wise MCQs and mock tests — organised the way your syllabus is.</p>
       </div>
-      <a href="/papers/" class="hero-papers-btn">
-        <i class="ti ti-file-text hero-papers-icon" aria-hidden="true"></i>
-        <span>All Previous Question Papers</span>
-      </a>
+      <div class="hero-stats">
+        <div class="stat-pill"><b>{subjects.length}</b><span>subjects</span></div>
+        <div class="stat-pill"><b>{totalChapters}+</b><span>chapters</span></div>
+        <div class="stat-pill"><b>{totalQuestions.toLocaleString('en-IN')}</b><span>MCQs</span></div>
+      </div>
     </div>
 
-    <p class="section-label">Subjects</p>
+    <!--
+      PHASE 2 (not wired yet — needs new D1 columns):
+      A "Continue where you left off" sliding strip goes here for logged-in
+      users with in-progress subjects — one card per subject with a real
+      streak/last-chapter, sliding horizontally so nothing is hidden behind
+      a single hero. Needs:
+        - a `last_active_date` + streak counter per user
+        - a `last_read_chapter` per (user, subject)
+      Both would live in D1 alongside the existing purchases/sessions
+      tables, updated whenever a user reads a chapter. Left out here
+      rather than faked with placeholder data. Wire in once that tracking
+      exists — the CSS/markup pattern from the design mockup can drop in
+      as-is once real progress data is available.
+    -->
+
+    <div class="bundle-card">
+      <div class="bundle-icon">
+        <i class="ti ti-package" aria-hidden="true"></i>
+      </div>
+      <div class="bundle-body">
+        <div class="bundle-tag">BEST VALUE</div>
+        <h2>Pick any 3 subjects</h2>
+        <p>Full access for 90 days</p>
+      </div>
+      <div class="bundle-cta">
+        <div class="bundle-price">₹399<small> /3mo</small></div>
+        <a class="go-btn" href="/plans/" aria-label="View bundle plans">
+          <i class="ti ti-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <a href="/current-affairs/" class="ca-card">
+      <div class="ca-icon">
+        <i class="ti ti-news" aria-hidden="true"></i>
+      </div>
+      <div class="ca-text">
+        <b>Current Affairs 2026</b>
+        <span>Free to read · PDF available</span>
+      </div>
+      <i class="ti ti-chevron-right ca-chev" aria-hidden="true"></i>
+    </a>
+
+    <div class="section-head">
+      <h3>Subjects</h3>
+      <span>₹199 / 90 days each</span>
+    </div>
 
     <div class="subject-list">
-      {subjects.map((s) => (
-        s.available ? (
-          <a href={`/${s.slug}/`} class="subject-card subject-card-live" data-subject-slug={s.slug}>
-            <span class="avail-pill" data-pill hidden aria-label="Purchased"><i class="ti ti-check" aria-hidden="true"></i></span>
-            <div class="subject-card-header">
-              <div class="subject-icon">
-                <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
-              </div>
-              <div class="subject-native">
-                {s.titleParts.length === 2
-                  ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
-                  : s.titleNative}
-              </div>
-            </div>
-            <div class="subject-english">{s.titleEnglish}</div>
-            <span class="subject-count">
-              {s.chapterCount} {s.chapterCount === 1 ? 'chapter' : 'chapters'}
-              {s.questionCount > 0 && <> &middot; {s.questionCount.toLocaleString('en-IN')} MCQs</>}
-            </span>
-          </a>
-        ) : (
-          <div class="subject-card subject-card-soon">
-            <div class="subject-card-header">
-              <div class="subject-icon subject-icon-muted">
-                <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
-              </div>
-              <div class="subject-native">
-                {s.titleParts.length === 2
-                  ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
-                  : s.titleNative}
-              </div>
-            </div>
-            <div class="subject-english">{s.titleEnglish}</div>
-            <span class="subject-count-muted">coming soon</span>
+      {groupedSubjects.map((group) => (
+        <div class="subject-group">
+          <div class="group-tag"><i class={`tag-dot tag-dot-${categoryColor[group.category] || 'indigo'}`}></i>{group.category}</div>
+          <div class="pair-row">
+            {group.items.map((s) => (
+              s.available ? (
+                <a href={`/${s.slug}/`} class="subj-card subj-card-live" data-subject-slug={s.slug}>
+                  <span class="owned-ribbon" data-pill hidden aria-label="Purchased">
+                    <i class="ti ti-check" aria-hidden="true"></i>OWNED
+                  </span>
+                  <div class="subj-top">
+                    <div class={`subj-icon subj-icon-${categoryColor[group.category] || 'indigo'}`}>
+                      <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{s.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {s.titleParts.length === 2
+                        ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
+                        : s.titleNative}
+                    </div>
+                    <div class="subj-meta">
+                      {s.chapterCount} ch
+                      {s.questionCount > 0 && <> &middot; {s.questionCount.toLocaleString('en-IN')} MCQs</>}
+                    </div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="price-tag">₹199</span>
+                  </div>
+                </a>
+              ) : (
+                <div class="subj-card subj-card-soon">
+                  <div class="subj-top">
+                    <div class={`subj-icon subj-icon-${categoryColor[group.category] || 'indigo'} subj-icon-muted`}>
+                      <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{s.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {s.titleParts.length === 2
+                        ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
+                        : s.titleNative}
+                    </div>
+                    <div class="subj-meta">Coming soon</div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="soon-tag">Coming soon</span>
+                  </div>
+                </div>
+              )
+            ))}
           </div>
-        )
+        </div>
       ))}
     </div>
 
+    {papers.some((p) => p.available) && (
+      <div class="papers-section">
+        <div class="section-head">
+          <h3>Question Papers <span class="free-badge">Free</span></h3>
+        </div>
+        <div class="subject-list">
+          <div class="pair-row">
+            {papers.map((p) => (
+              p.available ? (
+                <a href={`/${p.slug}/`} class="subj-card subj-card-live" data-subject-slug={p.slug}>
+                  <div class="subj-top">
+                    <div class="subj-icon subj-icon-blue">
+                      <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{p.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {p.titleParts.length === 2
+                        ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
+                        : p.titleNative}
+                    </div>
+                    <div class="subj-meta">{p.chapterCount} {p.chapterCount === 1 ? 'paper' : 'papers'}</div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="free-tag">Free</span>
+                  </div>
+                </a>
+              ) : (
+                <div class="subj-card subj-card-soon">
+                  <div class="subj-top">
+                    <div class="subj-icon subj-icon-blue subj-icon-muted">
+                      <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{p.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {p.titleParts.length === 2
+                        ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
+                        : p.titleNative}
+                    </div>
+                    <div class="subj-meta">Coming soon</div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="soon-tag">Coming soon</span>
+                  </div>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
     <div id="login-banner" class="login-banner">
-      <span class="login-banner-text">Already purchased a subject? Log in to continue reading.</span>
-      <a href="/login/" class="login-banner-btn">Log in</a>
+      Already purchased a subject? <a href="/login/" class="login-banner-link">Log in to continue</a>
     </div>
 
   </div>
 
   <style is:global>
     .page-wide {
-      max-width: 1100px;
+      max-width: 560px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 24px 16px;
     }
     @media (max-width: 900px) {
       .page-wide {
         padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
       }
     }
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 900px;
+      }
+    }
 
+    /* This page opts out of Layout.astro's site-wide cream body background
+       (--bg: #faf9f6) in favor of the redesign's lavender-tinted background
+       — scoped to a body class so nothing else site-wide is affected. */
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+    /* ---------- Redesign tokens (scoped to this page's own elements
+       only — Header/Footer/global site tokens in Layout.astro are
+       untouched) ---------- */
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-text: #211F38;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-gold: #D8A94E;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-text: #EFEDFB;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+    .page-wide h1, .page-wide h2, .page-wide h3,
+    .page-wide .subj-name, .page-wide .bundle-price, .page-wide .stat-pill b {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* ---------- Hero ---------- */
     .hero-card {
+      background: linear-gradient(155deg, var(--sh2-indigo-deep) 0%, #5A4CC4 55%, #7C63DE 100%);
+      border-radius: 26px;
+      padding: 28px 22px 24px;
+      margin-bottom: 14px;
+      box-shadow: 0 20px 40px -18px rgba(46,37,112,0.55);
       position: relative;
       overflow: hidden;
-      border-radius: 20px;
-      padding: 2.25rem 1.25rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      box-shadow: 0 12px 30px -12px rgba(20, 16, 43, 0.5);
+      text-align: left;
     }
     .hero-card::before {
       content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.18), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.25), transparent 45%);
-      pointer-events: none;
+      position: absolute; right: -50px; bottom: -60px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute; right: 20px; top: -40px;
+      width: 110px; height: 110px; border-radius: 50%;
+      background: rgba(216,169,78,0.3);
     }
     .hero-title {
       position: relative;
-      margin: 0 0 6px;
-      font-size: 21px;
-      color: #ffffff;
-    }
-    .hero-accent {
-      background: linear-gradient(90deg, #ff9a3c, #ffcb8a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-weight: 800;
+      font-size: 1.5rem;
+      line-height: 1.26;
+      margin: 0 0 8px;
+      color: #fff;
+      max-width: 19ch;
     }
     .hero-sub {
       position: relative;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 14px;
-      margin: 0 0 1.1rem;
+      margin: 0 0 20px;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      max-width: 30ch;
     }
-    .hero-hook-row {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
+    @media (min-width: 1200px) {
+      .hero-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 28px;
+      }
+      .hero-title {
+        margin-bottom: 0;
+        flex: 0 0 auto;
+      }
+      .hero-sub {
+        margin-bottom: 0;
+        margin-top: 6px;
+        max-width: 34ch;
+      }
     }
-    .hero-hook-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      color: #2a1400;
-      font-weight: 700;
-      font-size: 12.5px;
-      padding: 0.5rem 0.9rem;
-      border-radius: 999px;
-      white-space: nowrap;
-      box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.55);
+    .hero-stats { position: relative; display: flex; gap: 10px; }
+    .stat-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      padding: 10px 14px;
+      flex: 1;
     }
-    .hero-hook-spark { font-size: 14px; line-height: 1; }
-
-    /* Current Affairs pill: deliberately a different color from the two
-       "Free to start"/"15000+ questions" pills — those are plain
-       informational badges, this one is an actual link to a different
-       page, so it needs to visually read as a separate, clickable thing
-       rather than a third badge in the same set (especially on mobile,
-       where the row wraps and a same-colored third pill blends into the
-       first two as one continuous phrase). */
-    .hero-hook-pill-ca {
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .hero-papers-btn {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 22px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1;
-      padding: 10px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-    }
-    .hero-papers-icon {
-      font-size: 15px;
-      line-height: 1;
-      display: inline-flex;
-      align-items: center;
-    }
-    .hero-papers-btn:active {
-      background: rgba(255, 255, 255, 0.16);
-    }
+    .stat-pill b { display: block; font-size: 1.1rem; font-weight: 800; color: #fff; }
+    .stat-pill span { font-size: 0.68rem; color: rgba(255,255,255,0.7); }
 
     @media (max-width: 640px) {
-      .hero-card { padding: 1rem 0.9rem; border-radius: 16px; margin-bottom: 1rem; }
-      .hero-title { font-size: 16px; margin-bottom: 4px; }
-      .hero-sub { font-size: 12px; margin-bottom: 0.7rem; }
-      .hero-hook-pill { font-size: 10.5px; padding: 0.4rem 0.7rem; gap: 4px; }
-      .hero-hook-spark { font-size: 12px; }
-      .hero-papers-btn { margin-top: 12px; font-size: 11.5px; padding: 8px 14px; }
-      .hero-papers-icon { font-size: 13px; }
+      .hero-card { padding: 20px 18px; border-radius: 22px; }
+      .hero-title { font-size: 1.25rem; }
     }
 
-    .section-label {
-      font-size: 14px;
-      font-weight: 600;
-      margin: 0 0 10px;
+    /* ---------- Bundle ---------- */
+    .bundle-card {
+      background: var(--sh2-surface);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: var(--sh2-shadow);
+      border: 1px solid var(--sh2-line);
+      display: flex; align-items: center; gap: 14px;
+    }
+    .bundle-icon {
+      width: 52px; height: 52px; border-radius: 15px;
+      background: linear-gradient(150deg, var(--sh2-amber), var(--sh2-gold));
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      box-shadow: 0 10px 18px -8px rgba(216,169,78,0.6);
+    }
+    .bundle-icon i { font-size: 22px; color: #fff; }
+    .bundle-body { flex: 1; min-width: 0; }
+    .bundle-tag { font-size: 0.68rem; font-weight: 700; color: var(--sh2-amber); margin-bottom: 2px; }
+    .bundle-card h2 { font-size: 1rem; font-weight: 800; color: var(--sh2-ink); margin: 0 0 3px; }
+    .bundle-card p { font-size: 0.8rem; color: var(--sh2-text-soft); margin: 0; }
+    .bundle-cta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+    .bundle-price { font-weight: 800; font-size: 1.15rem; color: var(--sh2-ink); }
+    .bundle-price small { font-size: 0.65rem; font-weight: 500; color: var(--sh2-text-soft); }
+    .go-btn {
+      width: 34px; height: 34px; border-radius: 11px; background: var(--sh2-indigo-deep);
+      display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none;
     }
 
-    .subject-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-    .subject-card {
-      display: block;
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border-radius: 14px;
-      padding: 1.25rem;
+    /* ---------- Current Affairs ---------- */
+    .ca-card {
+      display: flex; align-items: center; gap: 13px;
+      background: var(--sh2-green-soft);
+      border-radius: 18px; padding: 14px 16px; margin-bottom: 26px;
+      border: 1px solid rgba(38,148,106,0.15);
       text-decoration: none;
-      color: #ffffff;
+    }
+    .ca-icon {
+      width: 40px; height: 40px; border-radius: 12px; background: var(--sh2-surface);
+      color: var(--sh2-green); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; box-shadow: var(--sh2-shadow); font-size: 18px;
+    }
+    .ca-text { flex: 1; }
+    .ca-text b { font-size: 0.9rem; display: block; color: var(--sh2-ink); }
+    .ca-text span { font-size: 0.76rem; color: var(--sh2-green); font-weight: 600; }
+    .ca-chev { color: var(--sh2-green); flex-shrink: 0; }
+
+    /* ---------- Section head ---------- */
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+    .section-head h3 { font-size: 1.08rem; font-weight: 800; margin: 0; color: var(--sh2-ink); display: flex; align-items: center; gap: 8px; }
+    .section-head span:not(.free-badge) { font-size: 0.78rem; color: var(--sh2-text-soft); font-weight: 500; }
+
+    /* ---------- Question Papers — its own segment, visually separated
+       from the Subjects section above (divider + top margin) rather than
+       looking like one more subject-group inside it. ---------- */
+    .papers-section {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--sh2-line);
+    }
+    .free-badge {
+      font-size: 0.62rem; font-weight: 800; color: var(--sh2-blue);
+      background: var(--sh2-blue-soft); padding: 3px 8px; border-radius: 999px;
+      vertical-align: middle;
+    }
+
+    /* ---------- Subject groups ---------- */
+    .subject-group { margin-bottom: 16px; }
+    .group-tag {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-text-soft);
+      margin-bottom: 9px; padding-inline: 2px;
+    }
+    .tag-dot { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+    .tag-dot-amber { background: var(--sh2-amber); }
+    .tag-dot-green { background: var(--sh2-green); }
+    .tag-dot-indigo { background: var(--sh2-indigo); }
+    .tag-dot-blue { background: var(--sh2-blue); }
+
+    .pair-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .subj-card {
       position: relative;
+      background: var(--sh2-surface);
+      border-radius: 18px;
+      padding: 16px 14px;
+      box-shadow: var(--sh2-shadow);
+      border: 1px solid var(--sh2-line);
+      display: flex; flex-direction: column; gap: 10px;
+      text-decoration: none;
       overflow: hidden;
       transition: transform 0.12s ease;
     }
-    .subject-card-live {
-      border: 1px solid #ff9a3c;
+    .subj-card-live:active { transform: scale(0.98); }
+    .subj-card-live.has-pill {
+      border: 1px solid rgba(38,148,106,0.35);
+      box-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(38,148,106,0.35);
     }
-    .subject-card-live:active {
-      transform: scale(0.98);
+    .subj-card-soon { opacity: 0.6; }
+
+    .owned-ribbon {
+      position: absolute; top: 0; right: 0;
+      background: var(--sh2-green); color: #fff;
+      font-size: 0.6rem; font-weight: 800;
+      padding: 4px 10px 4px 12px;
+      border-bottom-left-radius: 10px;
+      display: flex; align-items: center; gap: 4px;
     }
-    /* Owned subjects: swap the orange border for a soft green glow so the
-       card itself reads as "yours" at a glance, not just the badge. */
-    .subject-card-live.has-pill {
-      border-color: #3fd88a;
-      box-shadow: 0 0 0 1px rgba(63, 216, 138, 0.25), 0 0 8px rgba(63, 216, 138, 0.18);
-      overflow: visible; /* lets the checkmark badge sit half outside the card edge */
+    .owned-ribbon i { font-size: 10px; }
+    .owned-ribbon[hidden] { display: none; }
+
+    .subj-top { display: flex; align-items: center; gap: 10px; }
+    .subj-icon {
+      width: 38px; height: 38px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .subject-card-soon {
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      opacity: 0.55;
-    }
-    .subject-card-soon .subject-native { color: #ffffff; }
-    .subject-card-soon .subject-english { color: rgba(255, 255, 255, 0.6); }
-    .subject-card-soon .subject-icon-muted { background: rgba(255, 255, 255, 0.08); }
-    .subject-card-soon .subject-icon-muted i { color: rgba(255, 255, 255, 0.5); }
-    .subject-card-soon .subject-count-muted { color: rgba(255, 255, 255, 0.5); }
-    .avail-pill {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(90deg, #2fb35c, #4dd67e);
-      color: #06280f;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.5);
-    }
-    .avail-pill i { font-size: 13px; font-weight: 700; }
-    .avail-pill[hidden] { display: none; }
-    .subject-card-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 0;
-    }
-    /* The Purchased checkmark badge is a small 22px corner circle, not a
-       text pill — it no longer needs to reserve header space; titles wrap
-       exactly the same as on non-owned cards. */
-    .subject-icon {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: rgba(255, 154, 60, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .subject-icon i { font-size: 16px; color: #ff9a3c; }
-    .subject-icon-muted { background: var(--bg); }
-    .subject-icon-muted i { color: var(--muted); }
-    .subject-native { flex: 1; min-width: 0; font-weight: 700; font-size: 15px; line-height: 1.25; }
-    .subject-card-live .subject-native { color: #ffffff; }
-    .subject-card-live .subject-english { color: rgba(255, 255, 255, 0.65); }
-    .subject-english {
-      font-size: 13px;
-      line-height: 1.3;
-      color: var(--muted);
-      margin: 0 0 10px;
-      padding-left: 42px; /* icon width (32px) + header gap (10px) */
-    }
-    .subject-count {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #ffcb8a;
-      padding-left: 42px;
-    }
-    .subject-count-muted {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--muted);
-      padding-left: 42px;
+    .subj-icon i { font-size: 18px; }
+    .subj-icon-amber { background: var(--sh2-amber-soft); color: var(--sh2-amber); }
+    .subj-icon-green { background: var(--sh2-green-soft); color: var(--sh2-green); }
+    .subj-icon-indigo { background: var(--sh2-indigo-soft); color: var(--sh2-indigo); }
+    .subj-icon-blue { background: var(--sh2-blue-soft); color: var(--sh2-blue); }
+    .subj-icon-muted { opacity: 0.6; }
+
+    .lang-flag {
+      font-size: 0.63rem; font-weight: 800; color: var(--sh2-text-soft);
+      background: var(--sh2-surface-2); padding: 2px 7px; border-radius: 6px; flex-shrink: 0;
     }
 
-    /* Mobile: compact 2-column capsule cards, same class names as desktop. */
-    @media (max-width: 720px) {
-      .subject-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-      .subject-card {
-        border-radius: 16px;
-        padding: 0.9rem;
-      }
-      .avail-pill {
-        top: -6px;
-        right: -6px;
-        width: 18px;
-        height: 18px;
-      }
-      .avail-pill i { font-size: 11px; }
-      .subject-card-header {
-        gap: 8px;
-        margin-bottom: 0;
-      }
-      .subject-icon {
-        width: 26px;
-        height: 26px;
-        border-radius: 8px;
-      }
-      .subject-icon i { font-size: 13px; }
-      .subject-native {
-        font-size: 13px;
-        line-height: 1.3;
-      }
-      .subject-english {
-        font-size: 11px;
-        line-height: 1.3;
-        margin: 0 0 8px;
-        padding-left: 34px; /* mobile icon (26px) + header gap (8px) */
-      }
-      .subject-count,
-      .subject-count-muted {
-        font-size: 11px;
-        padding-left: 34px; /* mobile icon (26px) + header gap (8px) */
-      }
+    .subj-name { font-size: 0.9rem; font-weight: 700; color: var(--sh2-ink); line-height: 1.25; }
+    .subj-meta { font-size: 0.73rem; color: var(--sh2-text-soft); margin-top: 3px; }
+
+    .subj-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 2px; }
+    .price-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-indigo);
+      background: var(--sh2-indigo-soft); padding: 4px 9px; border-radius: 7px;
+    }
+    .soon-tag {
+      font-size: 0.7rem; font-weight: 600; color: var(--sh2-text-soft);
+      border: 1px dashed var(--sh2-line); padding: 4px 9px; border-radius: 7px;
+    }
+    .free-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-blue);
+      background: var(--sh2-blue-soft); padding: 4px 9px; border-radius: 7px;
     }
 
+    /* ---------- Login banner (unchanged behavior — hidden on mobile,
+       hidden entirely once a session is confirmed, per existing script) ---------- */
     .login-banner {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 1rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--sh2-text-soft);
+      padding-block: 28px 24px;
+      margin-top: 6px;
     }
-    .login-banner-text {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.72);
-    }
-    .login-banner-btn {
-      font-size: 13px;
-      font-weight: 700;
-      padding: 8px 18px;
-      border: none;
-      border-radius: 999px;
-      text-decoration: none;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      color: #2a1400;
-      white-space: nowrap;
-      box-shadow: 0 8px 18px -6px rgba(255, 154, 60, 0.45);
-    }
+    .login-banner-link { color: var(--sh2-indigo); font-weight: 700; }
     @media (max-width: 900px) {
-      .login-banner {
-        display: none !important;
-      }
-      body.is-logged-in #hero-card {
-        display: none;
-      }
+      /* Original index.astro always hid this banner on mobile, because the
+         bottom tab bar's "Login" tab already covered that need there. Now
+         that the tab bar is app-only (see Header.astro's data-app-only),
+         mobile WEB users lose their only path to /login/ unless this stays
+         visible for them — so it only hides inside the actual Capacitor
+         app (html.sh2-is-app), where the tab bar's Login tab still exists. */
+      html.sh2-is-app .login-banner { display: none !important; }
+      body.is-logged-in #hero-card { display: none; }
     }
   </style>
 
   <script define:vars={{ subjects }}>
+    // ============================================================
+    // UNCHANGED FROM index.astro — same Worker URL, same session
+    // check, same purchased-subject detection/reordering logic.
+    // Only the selectors below match the new card markup
+    // (data-subject-slug, [data-pill], .has-pill, .subject-list).
+    // ============================================================
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
-    // Session is fetched ONCE per page by Header.astro (which runs synchronously
-    // inline, before this script) and exposed on window.__shSessionPromise.
-    // Reusing that single promise here — instead of this page's own separate
-    // getSession() — avoids duplicate /me calls. Both usages below (login
-    // banner + purchased-subject reordering) now share the SAME request.
     function getSession() {
       if (window.__shSessionPromise) return window.__shSessionPromise;
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
@@ -518,15 +697,14 @@ const iconMap = {
       }
     });
 
-    // Purchased subjects jump to the very front of the grid — ahead of
-    // Popular and everything else — once ownership is known. Popular-first
-    // ordering among the rest is already baked into the server-rendered
-    // order above, so this only needs to handle the "purchased" override.
-    // Reuses the SAME getSession() promise as above — no second /me call.
+    // Purchased subjects jump to the front of their OWN category group
+    // (not the whole page) since categories are now visually separated —
+    // reordering across group boundaries would break the pair-by-language
+    // layout. Same ownership-check logic as before; only the DOM insertion
+    // target changed from one global grid to per-group grids.
     getSession().then(async (session) => {
       if (!session.logged_in) return;
 
-      const grid = document.querySelector('.subject-list');
       const available = subjects.filter((s) => s.available);
       const ownedSlugs = [];
 
@@ -548,14 +726,21 @@ const iconMap = {
         )
       );
 
-      if (ownedSlugs.length > 0 && grid) {
-        // Insert purchased cards at the start, in the order they were found,
-        // ahead of Popular/available/coming-soon which already sit in order.
-        ownedSlugs.slice().reverse().forEach((slug) => {
-          const card = document.querySelector(`[data-subject-slug="${slug}"]`);
-          if (card) grid.prepend(card);
-        });
-      }
+      // Move each owned card to the front of its own pair-row (its category
+      // group), same "reverse then prepend" trick as before, scoped per row
+      // instead of one shared grid.
+      ownedSlugs.slice().reverse().forEach((slug) => {
+        const card = document.querySelector(`[data-subject-slug="${slug}"]`);
+        if (card && card.parentElement) card.parentElement.prepend(card);
+      });
     });
+  </script>
+
+  <script is:inline>
+    // Tags <body> so the .sh2-page background rule above applies only on
+    // this page — avoids editing the shared Layout.astro just to add one
+    // class. Runs immediately (is:inline, no defer) so there's no flash
+    // of the site's default cream background before this fires.
+    document.body.classList.add('sh2-page');
   </script>
 </Layout>

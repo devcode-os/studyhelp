@@ -2,14 +2,34 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import { getSubjectMeta } from '../../data/subjectsMeta.js';
+import { getFullDataset } from '../../lib/currentAffairs.js';
 
-// Counts real chapter files per subject folder — same technique
-// [subject]/index.astro already uses. No chapter counts are hardcoded here;
-// they always reflect what's actually in src/data/<subject>/*.json.
-// Question counts are derived the same way — summing each valid chapter's
-// faqs array — so the number on the card can never drift out of sync with
-// the actual content, the same guarantee the chapter count already has.
-const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
+// ============================================================
+// Total question count per CA section, across ALL months (not just
+// whatever months a given guest/user happened to have selected in
+// sessionStorage on the read page) — gives the CA recap card a stable
+// "X of Y questions" denominator, same shape as a subject's chapterCount.
+// Same section-name aliasing as current-affairs-read-v2.astro so counts
+// merge correctly regardless of which name a given month's file used.
+// ============================================================
+const CA_SECTION_ALIASES = { 'Static Takeaways': 'General Awareness' };
+const caSectionTotals = {};
+const caMonthLabels = {};
+for (const m of getFullDataset()) {
+  for (const [rawName, items] of Object.entries(m.sections)) {
+    const sectionName = CA_SECTION_ALIASES[rawName] || rawName;
+    caSectionTotals[sectionName] = (caSectionTotals[sectionName] || 0) + items.length;
+  }
+  caMonthLabels[m.slug] = `${m.month} ${m.year}`;
+}
+
+// ============================================================
+// UNCHANGED FROM subjects/index.astro — same real-data logic.
+// Chapter/question counts are derived from real data files, so a
+// subject can NEVER show as "Available" here unless it actually
+// has chapters. Same for Question Papers below.
+// ============================================================
+const chapterFiles = import.meta.glob('../data/*/*.json', { eager: true });
 const countsBySubject = {};
 const questionCountsBySubject = {};
 for (const [path, mod] of Object.entries(chapterFiles)) {
@@ -21,24 +41,20 @@ for (const [path, mod] of Object.entries(chapterFiles)) {
   questionCountsBySubject[subjectKey] = (questionCountsBySubject[subjectKey] || 0) + questionsInFile;
 }
 
-// This list controls which subjects are publicly shown on this page and in
-// what order/icon — separate from raw folder presence, since some data
-// folders (e.g. early-stage or test content) aren't ready to list publicly
-// yet. Chapter counts for whatever IS listed here are always live/automatic
-// from the scan above. Add a subject here once it's ready to announce.
+// Same PUBLIC_SUBJECTS list as the real page, with `category` added
+// (display-only, same grouping used on index-v2's homepage) so both
+// pages read as one consistent app.
 const PUBLIC_SUBJECTS = [
-  { slug: 'telangana-history-en', icon: 'book' },
-  { slug: 'telangana-history-te', icon: 'book' },
-  { slug: 'telangana-economy-en', icon: 'chart' },
-  { slug: 'telangana-economy-te', icon: 'chart' },
-  { slug: 'andhra-pradesh-economy', icon: 'chart' },
-  { slug: 'indian-history-en', icon: 'book' },
-  { slug: 'indian-polity-en', icon: 'gavel' },
-  { slug: 'indian-polity-te', icon: 'gavel' },
+  { slug: 'telangana-history-en', icon: 'book', category: 'History' },
+  { slug: 'telangana-history-te', icon: 'book', category: 'History' },
+  { slug: 'indian-history-en', icon: 'book', category: 'History' },
+  { slug: 'telangana-economy-en', icon: 'chart', category: 'Economy' },
+  { slug: 'telangana-economy-te', icon: 'chart', category: 'Economy' },
+  { slug: 'andhra-pradesh-economy', icon: 'chart', category: 'Economy' },
+  { slug: 'indian-polity-en', icon: 'gavel', category: 'Polity' },
+  { slug: 'indian-polity-te', icon: 'gavel', category: 'Polity' },
 ];
 
-// subjectsMeta.js only stores the native-script heading, not a separate
-// English name — so English subtitles are defined here per subject.
 const ENGLISH_NAME = {
   'telangana-history-te': 'Telugu Version',
   'telangana-economy-en': 'English Version',
@@ -50,7 +66,13 @@ const ENGLISH_NAME = {
   'indian-polity-te': 'Telugu Version',
 };
 
-const subjects = PUBLIC_SUBJECTS.map(({ slug, icon }) => {
+function splitTitleParts(title) {
+  const idx = title.indexOf(' (');
+  if (idx === -1) return [title];
+  return [title.slice(0, idx), title.slice(idx + 1)];
+}
+
+const subjects = PUBLIC_SUBJECTS.map(({ slug, icon, category }) => {
   const meta = getSubjectMeta(slug);
   const chapterCount = countsBySubject[slug] || 0;
   const questionCount = questionCountsBySubject[slug] || 0;
@@ -59,6 +81,8 @@ const subjects = PUBLIC_SUBJECTS.map(({ slug, icon }) => {
     titleParts: splitTitleParts(meta.heading),
     titleEnglish: ENGLISH_NAME[slug] || 'English',
     slug,
+    lang: slug.endsWith('-te') ? 'TE' : 'EN',
+    category,
     chapterCount,
     questionCount,
     icon,
@@ -66,39 +90,38 @@ const subjects = PUBLIC_SUBJECTS.map(({ slug, icon }) => {
   };
 });
 
+const categoryOrder = [...new Set(subjects.map((s) => s.category))];
+const groupedSubjects = categoryOrder.map((cat) => ({
+  category: cat,
+  items: subjects.filter((s) => s.category === cat),
+}));
+
 const iconMap = {
   book: 'ti-book',
   chart: 'ti-chart-bar',
   gavel: 'ti-gavel',
   file: 'ti-file-text',
 };
+const categoryColor = {
+  History: 'amber',
+  Economy: 'green',
+  Polity: 'indigo',
+  Papers: 'blue',
+};
 
-// Long titles with a parenthetical qualifier (e.g. "Indian History
-// (Ancient, Medieval and Modern)") wrap awkwardly mid-phrase in the narrow
-// card layout. Split right before the "(" so the template can force a
-// clean line break there instead of letting the browser wrap wherever it
-// likes. Returns a 1-element array unchanged (most subjects, and all
-// native-script titles have no "(" at all) or a 2-element [before, after]
-// pair when a break point is found.
-function splitTitleParts(title) {
-  const idx = title.indexOf(' (');
-  if (idx === -1) return [title];
-  return [title.slice(0, idx), title.slice(idx + 1)];
-}
-
-// Question Papers — same source list/pattern as /papers/index.astro, shown
-// as a second section here since the app has no homepage and /subjects/ is
-// the first screen people land on.
+// ============================================================
+// UNCHANGED FROM subjects/index.astro — same Question Papers
+// source (PUBLIC_PAPERS + subjectsMeta.js + the same
+// countsBySubject glob above). Real counts, never hardcoded.
+// ============================================================
 const PUBLIC_PAPERS = [
   { slug: 'ts-constable-previous-papers-en', icon: 'file' },
   { slug: 'ts-constable-previous-papers-te', icon: 'file' },
 ];
-
 const PAPERS_ENGLISH_NAME = {
   'ts-constable-previous-papers-en': 'Previous Question Papers',
   'ts-constable-previous-papers-te': 'Previous Question Papers (Telugu)',
 };
-
 const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
   const meta = getSubjectMeta(slug);
   const chapterCount = countsBySubject[slug] || 0;
@@ -107,494 +130,500 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
     titleParts: splitTitleParts(meta.heading),
     titleEnglish: PAPERS_ENGLISH_NAME[slug] || 'Previous Question Papers',
     slug,
+    lang: slug.endsWith('-te') ? 'TE' : 'EN',
     chapterCount,
     icon,
     available: chapterCount > 0,
   };
 });
+
+const totalChapters = subjects.reduce((sum, s) => sum + s.chapterCount, 0);
+const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);
 ---
 <Layout title="Subjects - StudyHelp" description="All subjects available on StudyHelp for TSPSC and TS exam preparation.">
 
-  <Header active="subjects" />
+  <Header active="subjects" theme="premium" />
 
   <div class="page-wide">
 
-    <div class="breadcrumb">
-      <a href="/">Home</a> / Subjects
+    <div class="subjects-head">
+      <h1 class="subjects-h1">All Subjects</h1>
+      <p class="subjects-sub">{subjects.length} subjects &middot; {totalChapters}+ chapters &middot; {totalQuestions.toLocaleString('en-IN')} MCQs</p>
     </div>
 
-    <h1 class="page-h1">Subjects</h1>
-
-    <a href="/plans/?mode=bundle" class="offer-strip">
-      <div class="offer-strip-head">
-        <div class="offer-strip-icon">
+    <a href="/plans/?mode=bundle" class="bundle-card">
+      <div class="bundle-top">
+        <div class="bundle-icon">
           <i class="ti ti-stack-2" aria-hidden="true"></i>
         </div>
-        <div class="offer-strip-headtext">
-          <div class="offer-strip-title">Complete Exam Preparation</div>
-          <div class="offer-strip-sub">Chapter-wise MCQs, mock tests &amp; more</div>
+        <div class="bundle-body">
+          <div class="bundle-tag">BEST VALUE</div>
+          <h2>Pick any 3 subjects</h2>
+          <p>Full access for 90 days</p>
         </div>
+        <div class="bundle-price">&#8377;399<small> /3mo</small></div>
       </div>
-      <div class="offer-strip-bottom">
-        <div class="offer-strip-price-block">
-          <div class="offer-strip-price">&#8377;399<span>&nbsp;/ 3 months</span></div>
-          <div class="offer-strip-features">Pick any 3 subjects</div>
-        </div>
-        <div class="offer-strip-btn">Get Bundle <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
-      </div>
+      <span class="get-bundle-btn" aria-hidden="true">
+        Get Bundle <i class="ti ti-arrow-right" aria-hidden="true"></i>
+      </span>
     </a>
 
-    <a href="/current-affairs/" class="ca-banner">
-      <div class="ca-banner-icon">
+    <div class="recap-row" id="recap-row" hidden></div>
+
+    <a href="/current-affairs/" class="ca-card">
+      <div class="ca-icon">
         <i class="ti ti-news" aria-hidden="true"></i>
       </div>
-      <div class="ca-banner-text">
-        <div class="ca-banner-title">Current Affairs 2026</div>
-        <div class="ca-banner-sub">Free to read &middot; PDF download available</div>
+      <div class="ca-text">
+        <b>Current Affairs 2026</b>
+        <span>Free to read &middot; PDF available</span>
       </div>
+      <i class="ti ti-chevron-right ca-chev" aria-hidden="true"></i>
     </a>
 
     <div class="subject-list">
-      {subjects.map((s) => (
-        s.available ? (
-          <a href={`/${s.slug}/`} class="subject-card subject-card-live" data-subject-slug={s.slug}>
-            <span class="avail-pill" data-pill hidden aria-label="Purchased"><i class="ti ti-check" aria-hidden="true"></i></span>
-            <div class="subject-card-header">
-              <div class="subject-icon">
-                <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
-              </div>
-              <div class="subject-native">
-                {s.titleParts.length === 2
-                  ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
-                  : s.titleNative}
-              </div>
-            </div>
-            <div class="subject-english">{s.titleEnglish}</div>
-            <span class="subject-count">
-              {s.chapterCount} {s.chapterCount === 1 ? 'chapter' : 'chapters'}
-              {s.questionCount > 0 && <> &middot; {s.questionCount.toLocaleString('en-IN')} MCQs</>}
-            </span>
-          </a>
-        ) : (
-          <div class="subject-card subject-card-soon">
-            <div class="subject-card-header">
-              <div class="subject-icon subject-icon-muted">
-                <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
-              </div>
-              <div class="subject-native">
-                {s.titleParts.length === 2
-                  ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
-                  : s.titleNative}
-              </div>
-            </div>
-            <div class="subject-english">{s.titleEnglish}</div>
-            <span class="subject-count-muted">coming soon</span>
+      {groupedSubjects.map((group) => (
+        <div class="subject-group">
+          <div class="group-tag"><i class={`tag-dot tag-dot-${categoryColor[group.category] || 'indigo'}`}></i>{group.category}</div>
+          <div class="pair-row">
+            {group.items.map((s) => (
+              s.available ? (
+                <a href={`/${s.slug}/`} class="subj-card subj-card-live" data-subject-slug={s.slug}>
+                  <span class="owned-ribbon" data-pill hidden aria-label="Purchased">
+                    <i class="ti ti-check" aria-hidden="true"></i>OWNED
+                  </span>
+                  <div class="subj-top">
+                    <div class={`subj-icon subj-icon-${categoryColor[group.category] || 'indigo'}`}>
+                      <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{s.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {s.titleParts.length === 2
+                        ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
+                        : s.titleNative}
+                    </div>
+                    <div class="subj-meta">
+                      {s.chapterCount} ch
+                      {s.questionCount > 0 && <> &middot; {s.questionCount.toLocaleString('en-IN')} MCQs</>}
+                    </div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="price-tag" data-price-tag>&#8377;199</span>
+                    <span class="expiry-tag" data-expiry-tag hidden></span>
+                  </div>
+                </a>
+              ) : (
+                <div class="subj-card subj-card-soon">
+                  <div class="subj-top">
+                    <div class={`subj-icon subj-icon-${categoryColor[group.category] || 'indigo'} subj-icon-muted`}>
+                      <i class={`ti ${iconMap[s.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{s.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {s.titleParts.length === 2
+                        ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
+                        : s.titleNative}
+                    </div>
+                    <div class="subj-meta">Coming soon</div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="soon-tag">Coming soon</span>
+                  </div>
+                </div>
+              )
+            ))}
           </div>
-        )
+        </div>
       ))}
     </div>
 
-    <h2 class="page-h2">Question Papers <span class="section-pill">Free</span></h2>
-
-    <div class="subject-list papers-list">
-      {papers.map((p) => (
-        p.available ? (
-          <a href={`/${p.slug}/`} class="subject-card subject-card-live">
-            <div class="subject-card-header">
-              <div class="subject-icon">
-                <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
-              </div>
-              <div class="subject-native">
-                {p.titleParts.length === 2
-                  ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
-                  : p.titleNative}
-              </div>
-            </div>
-            <div class="subject-english">{p.titleEnglish}</div>
-            <span class="subject-count">{p.chapterCount} {p.chapterCount === 1 ? 'paper' : 'papers'}</span>
-          </a>
-        ) : (
-          <div class="subject-card subject-card-soon">
-            <div class="subject-card-header">
-              <div class="subject-icon subject-icon-muted">
-                <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
-              </div>
-              <div class="subject-native">
-                {p.titleParts.length === 2
-                  ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
-                  : p.titleNative}
-              </div>
-            </div>
-            <div class="subject-english">{p.titleEnglish}</div>
-            <span class="subject-count-muted">coming soon</span>
+    {papers.some((p) => p.available) && (
+      <div class="papers-section">
+        <div class="section-head">
+          <h3>Question Papers <span class="free-badge">Free</span></h3>
+        </div>
+        <div class="subject-list">
+          <div class="pair-row">
+            {papers.map((p) => (
+              p.available ? (
+                <a href={`/${p.slug}/`} class="subj-card subj-card-live" data-subject-slug={p.slug}>
+                  <div class="subj-top">
+                    <div class="subj-icon subj-icon-blue">
+                      <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{p.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {p.titleParts.length === 2
+                        ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
+                        : p.titleNative}
+                    </div>
+                    <div class="subj-meta">{p.chapterCount} {p.chapterCount === 1 ? 'paper' : 'papers'}</div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="free-tag">Free</span>
+                  </div>
+                </a>
+              ) : (
+                <div class="subj-card subj-card-soon">
+                  <div class="subj-top">
+                    <div class="subj-icon subj-icon-blue subj-icon-muted">
+                      <i class={`ti ${iconMap[p.icon]}`} aria-hidden="true"></i>
+                    </div>
+                    <span class="lang-flag">{p.lang}</span>
+                  </div>
+                  <div>
+                    <div class="subj-name">
+                      {p.titleParts.length === 2
+                        ? <>{p.titleParts[0]}<br />{p.titleParts[1]}</>
+                        : p.titleNative}
+                    </div>
+                    <div class="subj-meta">Coming soon</div>
+                  </div>
+                  <div class="subj-foot">
+                    <span class="soon-tag">Coming soon</span>
+                  </div>
+                </div>
+              )
+            ))}
           </div>
-        )
-      ))}
-    </div>
+        </div>
+      </div>
+    )}
 
   </div>
 
   <style is:global>
     .page-wide {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 24px 16px;
     }
-    /* Bottom clearance for the fixed mobile tabbar. This needs a wider
-       breakpoint than the phone-only layout tweaks below (720px) — the
-       tabbar itself stays visible up through tablet widths, so a page
-       between 721px and 900px was getting no bottom padding at all,
-       leaving no room to scroll the last section (Question Papers) out
-       from under the fixed bar.
-       --tabbar-h needs a fallback (56px, its typical rendered height):
-       an unset custom property with no fallback makes the whole calc()
-       invalid, which silently drops this padding-bottom to nothing —
-       exactly what caused cards to render underneath the fixed tab bar
-       on the actual Capacitor app, where the JS that sets --tabbar-h
-       apparently never ran before this painted. */
     @media (max-width: 900px) {
-      .page-wide {
-        padding-bottom: calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
-      }
-    }
-    @media (max-width: 720px) {
       .page-wide {
         padding: 16px 16px calc(64px + var(--tabbar-h, 56px) + env(safe-area-inset-bottom, 0px));
       }
     }
-
-    .breadcrumb {
-      display: none; /* hidden site-wide — Subjects is a top-level page
-                         already highlighted in the main nav, so the
-                         breadcrumb (Home / Subjects) was just repeating
-                         that with no real navigational value. */
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 12px;
+    @media (min-width: 1200px) {
+      .page-wide {
+        max-width: 900px;
+      }
     }
-    .breadcrumb a { color: var(--muted); text-decoration: none; }
-    .page-h1 { margin: 0 0 16px; }
-    .page-h2 { margin: 28px 0 16px; font-size: 20px; }
-    .section-pill {
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 8px;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      color: #2a1400;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 3px 10px;
+
+    /* Opts out of Layout.astro's cream body background in favor of the
+       redesign's lavender tint — scoped to a body class, page-only. */
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+    /* ---------- Redesign tokens (identical to index-v2.astro, kept in
+       sync so both pages share one design system) ---------- */
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-text: #211F38;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-gold: #D8A94E;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-text: #EFEDFB;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+    .page-wide h1, .page-wide h2, .page-wide h3,
+    .page-wide .subj-name, .page-wide .bundle-price {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* ---------- Page head (replaces the hero card here — this is a
+       catalogue page, not the homepage) ---------- */
+    .subjects-head { margin-bottom: 16px; }
+    .subjects-h1 { font-size: 1.4rem; font-weight: 800; color: var(--sh2-ink); margin: 0 0 4px; }
+    .subjects-sub { font-size: 0.82rem; color: var(--sh2-text-soft); margin: 0; }
+
+    /* ---------- Bundle (same as index-v2) ---------- */
+    .bundle-card {
+      background: var(--sh2-surface);
       border-radius: 20px;
-    }
-
-    .ca-banner {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-align: left;
-      background: #ffffff;
-      border: 2px solid rgba(28, 28, 26, 0.15);
-      border-radius: 14px;
-      padding: 0.9rem 1.15rem;
-      text-decoration: none;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 14px -6px rgba(28, 28, 26, 0.15);
-      transition: transform 0.12s ease, border-color 0.12s ease;
-    }
-    .ca-banner:active {
-      transform: scale(0.98);
-    }
-    .ca-banner-icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 11px;
-      background: rgba(30, 184, 148, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .ca-banner-icon i { font-size: 20px; color: #1eb894; }
-    .ca-banner-text { flex: 1; min-width: 0; }
-    .ca-banner-title {
-      font-weight: 800;
-      font-size: 17px;
-      color: #1c1c1a;
-      line-height: 1.25;
-    }
-    .ca-banner-sub {
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(28, 28, 26, 0.6);
-      margin-top: 2px;
-    }
-    .ca-banner-arrow {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(28, 28, 26, 0.35);
-    }
-    .ca-banner-arrow i { font-size: 20px; }
-    @media (min-width: 901px) {
-      .ca-banner { display: none; }
-    }
-    @media (max-width: 720px) {
-      .ca-banner { padding: 0.85rem 1rem; margin-bottom: 16px; gap: 12px; }
-      .ca-banner-icon { width: 38px; height: 38px; border-radius: 10px; }
-      .ca-banner-icon i { font-size: 19px; }
-      .ca-banner-title { font-size: 15px; }
-      .ca-banner-sub { font-size: 10.5px; }
-    }
-
-    .offer-strip {
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: var(--sh2-shadow);
+      border: 1px solid var(--sh2-line);
       display: block;
-      position: relative;
-      overflow: hidden;
-      text-align: left;
       text-decoration: none;
-      background: linear-gradient(135deg, #4c1d95 0%, #241a4d 100%);
-      border: 1px solid #ff9a3c;
-      border-radius: 16px;
-      padding: 1rem 1.1rem;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 20px -8px rgba(255, 154, 60, 0.4);
-      transition: transform 0.12s ease;
+      overflow: hidden;
+      box-sizing: border-box;
     }
-    .offer-strip:active { transform: scale(0.98); }
-    .offer-strip-head {
-      position: relative; display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+    .bundle-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .bundle-icon {
+      width: 52px; height: 52px; border-radius: 15px;
+      background: linear-gradient(150deg, var(--sh2-amber), var(--sh2-gold));
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      box-shadow: 0 10px 18px -8px rgba(216,169,78,0.6);
     }
-    .offer-strip-icon {
-      flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px;
-      background: rgba(255, 154, 60, 0.18); display: flex; align-items: center; justify-content: center;
+    .bundle-icon i { font-size: 22px; color: #fff; }
+    .bundle-body { flex: 1; min-width: 0; }
+    .bundle-tag { font-size: 0.68rem; font-weight: 700; color: var(--sh2-amber); margin-bottom: 2px; }
+    .bundle-card h2 { font-size: 1rem; font-weight: 800; color: var(--sh2-ink); margin: 0 0 3px; }
+    .bundle-card p { font-size: 0.8rem; color: var(--sh2-text-soft); margin: 0; }
+    .bundle-price { font-weight: 800; font-size: 1.15rem; color: var(--sh2-ink); flex-shrink: 0; text-align: right; }
+    .bundle-price small { display: block; font-size: 0.65rem; font-weight: 500; color: var(--sh2-text-soft); }
+    .get-bundle-btn {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      width: 100%; box-sizing: border-box;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      background: linear-gradient(150deg, var(--sh2-indigo), var(--sh2-indigo-deep));
+      padding: 9px; border-radius: 10px;
+      box-shadow: 0 8px 14px -8px rgba(75,63,160,0.5);
     }
-    .offer-strip-icon i { font-size: 19px; color: #ff9a3c; }
-    .offer-strip-headtext { flex: 1; min-width: 0; }
-    .offer-strip-title {
-      font-size: 16px; font-weight: 800; color: #ffffff; line-height: 1.25;
-    }
-    .offer-strip-sub {
-      font-size: 11.5px; font-weight: 600; color: rgba(255, 255, 255, 0.6); margin-top: 2px;
-    }
-    .offer-strip-bottom {
-      position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px;
-    }
-    .offer-strip-price {
-      font-size: 21px; font-weight: 800; color: #ffffff; line-height: 1;
-    }
-    .offer-strip-price span { font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.6); }
-    .offer-strip-features {
-      font-size: 11.5px; font-weight: 700; color: #ffcb8a; margin-top: 3px;
-    }
-    .offer-strip-btn {
-      flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 800; color: #2a1400;
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c);
-      padding: 10px 16px; border-radius: 10px; white-space: nowrap;
-    }
-    .offer-strip-btn i { font-size: 14px; }
-    @media (max-width: 720px) {
-      .offer-strip { padding: 0.85rem 1rem; margin-bottom: 16px; }
-      .offer-strip-head { margin-bottom: 12px; }
-      .offer-strip-icon { width: 34px; height: 34px; border-radius: 9px; }
-      .offer-strip-icon i { font-size: 17px; }
-      .offer-strip-title { font-size: 14.5px; }
-      .offer-strip-sub { font-size: 10.5px; }
-      .offer-strip-price { font-size: 18px; }
-      .offer-strip-features { font-size: 10.5px; }
-      .offer-strip-btn { font-size: 12px; padding: 9px 13px; }
+    .get-bundle-btn i { font-size: 0.78rem; }
+
+    /* Desktop: the bundle card was stretching to the full 1200px page
+       width, dragging the "Get Bundle" button into an oversized bar.
+       Cap the card and lay it out as one row: icon+copy left,
+       price+button right — same shape as the live site's premium
+       upsell card. */
+    @media (min-width: 1200px) {
+      .bundle-card {
+        max-width: 720px;
+        padding: 18px 24px;
+        display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      }
+      .bundle-top { margin-bottom: 0; flex: 1; min-width: 0; }
+      .get-bundle-btn { width: auto; padding: 11px 22px; flex-shrink: 0; }
     }
 
-    @media (max-width: 720px) {
-      .breadcrumb { display: none; }
-      .page-h1 { display: none; }
-      .page-h2 { font-size: 17px; margin: 22px 0 10px; }
-      .section-pill { font-size: 10px; padding: 2px 8px; margin-left: 6px; }
+    /* ---------- Continue-reading recap cards ---------- */
+    .recap-row {
+      display: flex; gap: 10px; overflow-x: auto; margin-bottom: 14px;
+      padding-bottom: 2px; scrollbar-width: none;
+    }
+    .recap-row::-webkit-scrollbar { display: none; }
+    .recap-row[hidden] { display: none; }
+    .recap-card {
+      position: relative; overflow: hidden; flex: 0 0 250px;
+      background: linear-gradient(155deg, var(--sh2-indigo-deep) 0%, #5A4CC4 55%, #7C63DE 100%);
+      border-radius: 16px; padding: 14px 16px 16px; color: #fff;
+      text-decoration: none; box-shadow: 0 10px 22px -12px rgba(46,37,112,0.45);
+    }
+    .recap-card::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(circle at 85% 15%, rgba(255,255,255,0.14), transparent 45%);
+    }
+    .recap-tag {
+      position: relative; z-index: 1;
+      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.75); margin-bottom: 4px;
+    }
+    .recap-title {
+      position: relative; z-index: 1;
+      font-size: 0.95rem; font-weight: 800; margin-bottom: 2px;
+    }
+    .recap-sub {
+      position: relative; z-index: 1;
+      font-size: 0.74rem; color: rgba(255,255,255,0.85); margin-bottom: 10px;
+    }
+    .recap-bar-track {
+      position: relative; z-index: 1;
+      height: 5px; border-radius: 999px; background: rgba(255,255,255,0.25);
+      margin-bottom: 10px; overflow: hidden;
+    }
+    .recap-bar-fill {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, #FFD27A, #FFB35C);
+    }
+    .recap-foot {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .recap-count { font-size: 0.7rem; color: rgba(255,255,255,0.75); }
+    .recap-resume-btn {
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-indigo-deep);
+      background: #fff; padding: 6px 12px; border-radius: 999px;
     }
 
-    .subject-list {
+    /* ---------- Current Affairs (same as index-v2) ---------- */
+    .ca-card {
+      display: flex; align-items: center; gap: 13px;
+      background: var(--sh2-green-soft);
+      border-radius: 18px; padding: 14px 16px; margin-bottom: 26px;
+      border: 1px solid rgba(38,148,106,0.15);
+      text-decoration: none;
+    }
+    .ca-icon {
+      width: 40px; height: 40px; border-radius: 12px; background: var(--sh2-surface);
+      color: var(--sh2-green); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; box-shadow: var(--sh2-shadow); font-size: 18px;
+    }
+    .ca-text { flex: 1; }
+    .ca-text b { font-size: 0.9rem; display: block; color: var(--sh2-ink); }
+    .ca-text span { font-size: 0.76rem; color: var(--sh2-green); font-weight: 600; }
+    .ca-chev { color: var(--sh2-green); flex-shrink: 0; }
+
+    /* ---------- Section head ---------- */
+    .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+    .section-head h3 { font-size: 1.08rem; font-weight: 800; margin: 0; color: var(--sh2-ink); display: flex; align-items: center; gap: 8px; }
+
+    .papers-section {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--sh2-line);
+    }
+    .free-badge {
+      font-size: 0.62rem; font-weight: 800; color: var(--sh2-blue);
+      background: var(--sh2-blue-soft); padding: 3px 8px; border-radius: 999px;
+      vertical-align: middle;
+    }
+
+    /* ---------- Subject groups (same card system as index-v2) ---------- */
+    .subject-group { margin-bottom: 16px; }
+    .group-tag {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-text-soft);
+      margin-bottom: 9px; padding-inline: 2px;
+    }
+    .tag-dot { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+    .tag-dot-amber { background: var(--sh2-amber); }
+    .tag-dot-green { background: var(--sh2-green); }
+    .tag-dot-indigo { background: var(--sh2-indigo); }
+    .tag-dot-blue { background: var(--sh2-blue); }
+
+    .pair-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
     }
-    .subject-card {
-      display: block;
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border-radius: 14px;
-      padding: 1.25rem;
-      text-decoration: none;
-      color: #ffffff;
+    @media (min-width: 640px) {
+      .pair-row { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    }
+
+    .subj-card {
       position: relative;
+      background: var(--sh2-surface);
+      border-radius: 18px;
+      padding: 16px 14px;
+      box-shadow: var(--sh2-shadow);
+      border: 1px solid var(--sh2-line);
+      display: flex; flex-direction: column; gap: 10px;
+      text-decoration: none;
       overflow: hidden;
       transition: transform 0.12s ease;
     }
-    .subject-card-live {
-      border: 1px solid #ff9a3c;
+    .subj-card-live:active { transform: scale(0.98); }
+    .subj-card-live.has-pill {
+      border: 1px solid rgba(38,148,106,0.35);
+      box-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(38,148,106,0.35);
     }
-    .subject-card-live:active {
-      transform: scale(0.98);
+    .subj-card-soon { opacity: 0.6; }
+
+    .owned-ribbon {
+      position: absolute; top: 0; right: 0;
+      background: var(--sh2-green); color: #fff;
+      font-size: 0.6rem; font-weight: 800;
+      padding: 4px 10px 4px 12px;
+      border-bottom-left-radius: 10px;
+      display: flex; align-items: center; gap: 4px;
     }
-    /* Owned subjects: swap the orange border for a soft green glow so the
-       card itself reads as "yours" at a glance, not just the badge. */
-    .subject-card-live.has-pill {
-      border-color: #3fd88a;
-      box-shadow: 0 0 0 1px rgba(63, 216, 138, 0.25), 0 0 8px rgba(63, 216, 138, 0.18);
-      overflow: visible; /* lets the checkmark badge sit half outside the card edge */
+    .owned-ribbon i { font-size: 10px; }
+    .owned-ribbon[hidden] { display: none; }
+
+    .subj-top { display: flex; align-items: center; gap: 10px; }
+    .subj-icon {
+      width: 38px; height: 38px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .subject-card-soon {
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      opacity: 0.55;
-    }
-    .avail-pill {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(90deg, #2fb35c, #4dd67e);
-      color: #06280f;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px -1px rgba(0,0,0,0.5);
-    }
-    .avail-pill i { font-size: 13px; font-weight: 700; }
-    .avail-pill[hidden] { display: none; }
-    .subject-card-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 0;
-    }
-    /* The Purchased checkmark badge is a small 22px corner circle now
-       (not a text pill), so it no longer needs to reserve header space —
-       titles wrap exactly the same as on non-owned cards. */
-    .subject-icon {
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: rgba(255, 154, 60, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .subject-icon i { font-size: 16px; color: #ff9a3c; }
-    .subject-icon-muted { background: rgba(255, 255, 255, 0.08); }
-    .subject-icon-muted i { color: rgba(255, 255, 255, 0.5); }
-    .subject-native {
-      flex: 1;
-      min-width: 0;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 1.25;
-      color: #ffffff;
-    }
-    .subject-english {
-      font-size: 13px;
-      line-height: 1.3;
-      color: rgba(255, 255, 255, 0.65);
-      margin: 0 0 10px;
-      padding-left: 42px; /* icon width (32px) + header gap (10px) — keeps this
-                              lined up under the title text, not the icon */
-    }
-    .subject-count {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #ffcb8a;
-      padding-left: 42px; /* icon width (32px) + header gap (10px) */
-    }
-    .subject-count-muted {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.5);
-      padding-left: 42px;
+    .subj-icon i { font-size: 18px; }
+    .subj-icon-amber { background: var(--sh2-amber-soft); color: var(--sh2-amber); }
+    .subj-icon-green { background: var(--sh2-green-soft); color: var(--sh2-green); }
+    .subj-icon-indigo { background: var(--sh2-indigo-soft); color: var(--sh2-indigo); }
+    .subj-icon-blue { background: var(--sh2-blue-soft); color: var(--sh2-blue); }
+    .subj-icon-muted { opacity: 0.6; }
+
+    .lang-flag {
+      font-size: 0.63rem; font-weight: 800; color: var(--sh2-text-soft);
+      background: var(--sh2-surface-2); padding: 2px 7px; border-radius: 6px; flex-shrink: 0;
     }
 
-    /* Mobile: compact 2-column capsule grid, same pattern as the homepage. */
-    @media (max-width: 720px) {
-      .subject-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-      .subject-card {
-        border-radius: 16px;
-        padding: 0.9rem;
-      }
-      .avail-pill {
-        top: -6px;
-        right: -6px;
-        width: 18px;
-        height: 18px;
-      }
-      .avail-pill i { font-size: 11px; }
-      .subject-card-header {
-        gap: 8px;
-        margin-bottom: 0;
-      }
-      .subject-icon {
-        width: 26px;
-        height: 26px;
-        border-radius: 8px;
-      }
-      .subject-icon i { font-size: 13px; }
-      .subject-native {
-        font-size: 13px;
-        line-height: 1.3;
-      }
-      .subject-english {
-        font-size: 11px;
-        line-height: 1.3;
-        margin: 0 0 8px;
-        padding-left: 34px; /* mobile icon (26px) + header gap (8px) */
-      }
-      .subject-count,
-      .subject-count-muted {
-        font-size: 11px;
-        padding-left: 34px; /* mobile icon (26px) + header gap (8px) */
-      }
+    .subj-name { font-size: 0.9rem; font-weight: 700; color: var(--sh2-ink); line-height: 1.25; min-height: 2.5em; }
+    .subj-meta { font-size: 0.73rem; color: var(--sh2-text-soft); margin-top: 3px; }
+
+    .subj-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 2px; }
+    .price-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-indigo);
+      background: var(--sh2-indigo-soft); padding: 4px 9px; border-radius: 7px;
     }
+    .soon-tag {
+      font-size: 0.7rem; font-weight: 600; color: var(--sh2-text-soft);
+      border: 1px dashed var(--sh2-line); padding: 4px 9px; border-radius: 7px;
+    }
+    .free-tag {
+      font-size: 0.72rem; font-weight: 700; color: var(--sh2-blue);
+      background: var(--sh2-blue-soft); padding: 4px 9px; border-radius: 7px;
+    }
+    .expiry-tag {
+      font-size: 0.68rem; font-weight: 700; color: var(--sh2-green);
+      background: var(--sh2-green-soft); padding: 4px 9px; border-radius: 7px;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .expiry-tag[hidden] { display: none; }
+    .expiry-tag.expiry-soon { color: #b45c0a; background: var(--sh2-amber-soft); }
   </style>
 
-  <script define:vars={{ subjects }}>
+  <script define:vars={{ subjects, caSectionTotals, caMonthLabels }}>
+    // ============================================================
+    // UNCHANGED FROM subjects/index.astro — same Worker URL, same
+    // bundle-success toast logic, same session/ownership check and
+    // purchased-reorder logic. Only the DOM selectors match the new
+    // card markup (data-subject-slug, [data-pill], .has-pill), and
+    // reordering happens within each category's own pair-row instead
+    // of one shared grid — same adaptation used on index-v2.
+    //
+    // Also fetches /reading-progress for each owned subject (real D1
+    // data, same table chapter-v2/[slug].astro writes to) and renders
+    // "Continue reading" recap cards for subjects the user has actually
+    // opened a chapter in — logged-in users only, per subject.
+    // ============================================================
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
-    // Show immediately (don't wait on session/ownership check) so the user
-    // sees confirmation the instant the page loads, right after redirecting
-    // back from a successful bundle payment. Uses the same fixed-bottom
-    // #toast-container Layout.astro already uses for other messages (e.g.
-    // "Payment failed") — never falls back to alert(), which is a blocking
-    // native dialog and not how this app surfaces these messages anywhere
-    // else. Cleaning the URL now also prevents the toast from reappearing
-    // on a manual refresh of this page.
-    //
-    // Deferred to DOMContentLoaded deliberately: in Layout.astro, both
-    // #toast-container and the <script> defining window.showToast are
-    // placed AFTER <slot /> — i.e. after this page's own content in
-    // source order. Since inline scripts run synchronously the instant
-    // the parser reaches them, running this immediately (un-deferred)
-    // meant neither window.showToast nor #toast-container existed yet at
-    // that point — both checks below silently failed and nothing ever
-    // appeared. Waiting for DOMContentLoaded guarantees the entire
-    // document, including Layout's trailing script/markup, has already
-    // been parsed and executed first.
     let bundleLoadingToast = null;
     let bundleToastShownAt = null;
     const BUNDLE_TOAST_MIN_VISIBLE_MS = 2500;
     const params = new URLSearchParams(window.location.search);
     const showedBundleToast = params.get('bundle_success') === '1';
 
-    // Removing the instant the ownership check resolves can mean the toast
-    // is only on screen for a fraction of a second if that check happens
-    // to finish fast (cached session, quick network) — enforces at least
-    // BUNDLE_TOAST_MIN_VISIBLE_MS of visible time regardless of how fast
-    // the underlying work actually finishes.
     function removeBundleToastAfterMinDelay() {
       if (!bundleLoadingToast) return;
       const elapsed = Date.now() - bundleToastShownAt;
@@ -607,12 +636,6 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
     document.addEventListener('DOMContentLoaded', () => {
       if (!showedBundleToast) return;
       const message = 'Bundle purchased successfully — loading your subjects…';
-      // Layout's shared window.showToast() only has two colors — red for
-      // 'error', dark/black for everything else, including 'success'. It
-      // has no green variant to call into, and this message should read
-      // as a celebratory success, not a neutral black notice — so this
-      // always builds its own green-styled toast directly rather than
-      // deferring to the shared function.
       const container = document.getElementById('toast-container');
       if (container) {
         bundleLoadingToast = document.createElement('div');
@@ -628,15 +651,9 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
         bundleToastShownAt = Date.now();
       }
       window.history.replaceState({}, '', '/subjects/');
-      // Safety net: remove no matter what, even if some unexpected error
-      // path above never fires the removal — this is payment-confirmation
-      // UX, it should never get stuck on screen.
       setTimeout(() => { if (bundleLoadingToast) bundleLoadingToast.remove(); }, 8000);
     });
 
-    // Session is fetched ONCE per page by Header.astro (runs synchronously
-    // inline, before this script) and exposed on window.__shSessionPromise.
-    // Reusing it here avoids a duplicate /me call on every /subjects/ load.
     function getSession() {
       if (window.__shSessionPromise) return window.__shSessionPromise;
       return fetch(`${WORKER_URL}/me`, { credentials: 'include' })
@@ -644,9 +661,18 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
         .catch(() => ({ logged_in: false }));
     }
 
-    // Only difference for a logged-in user who owns a subject: the pill on
-    // that same card swaps from "Available" to "Purchased". Layout, card
-    // count, grid — everything else stays identical to the guest view.
+    // Real expires_at from /check-access — never a fabricated reading-progress
+    // number (see the "21 of 34 chapters" question this replaced: that data
+    // doesn't exist in the backend yet, expiry does).
+    function formatExpiryLabel(expiresAtSeconds) {
+      if (!expiresAtSeconds) return null;
+      const msLeft = expiresAtSeconds * 1000 - Date.now();
+      const daysLeft = Math.ceil(msLeft / (24 * 60 * 60 * 1000));
+      if (daysLeft <= 0) return { text: 'Expires today', soon: true };
+      if (daysLeft === 1) return { text: '1 day left', soon: true };
+      return { text: `${daysLeft} days left`, soon: daysLeft <= 7 };
+    }
+
     getSession().then(async (session) => {
       if (!session.logged_in) {
         removeBundleToastAfterMinDelay();
@@ -654,27 +680,158 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       }
 
       const available = subjects.filter((s) => s.available);
+      const ownedSlugs = [];
+      const progressBySlug = {};
+
       await Promise.all(
         available.map((s) =>
           fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(s.slug)}`)
             .then((res) => res.json())
-            .then((d) => {
+            .then(async (d) => {
               if (!d.unlocked) return;
+              ownedSlugs.push(s.slug);
               const card = document.querySelector(`[data-subject-slug="${s.slug}"]`);
               const pill = card && card.querySelector('[data-pill]');
               if (pill) {
                 pill.hidden = false;
                 card.classList.add('has-pill');
               }
+              const priceTag = card && card.querySelector('[data-price-tag]');
+              const expiryTag = card && card.querySelector('[data-expiry-tag]');
+              const expiry = formatExpiryLabel(d.expires_at);
+              if (expiryTag && expiry) {
+                expiryTag.innerHTML = `<i class="ti ti-clock" aria-hidden="true"></i>${expiry.text}`;
+                expiryTag.hidden = false;
+                expiryTag.classList.toggle('expiry-soon', expiry.soon);
+                if (priceTag) priceTag.hidden = true;
+              }
+
+              try {
+                const res = await fetch(`${WORKER_URL}/reading-progress?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(s.slug)}`);
+                const prog = await res.json();
+                if (prog.has_progress) progressBySlug[s.slug] = { ...prog, subject: s };
+              } catch (err) {}
             })
             .catch(() => {})
         )
       );
 
-      // The 3 newly-bought subjects now show "Purchased" above — the
-      // "loading…" toast has done its job, remove it (respecting the
-      // minimum-visible-duration floor).
+      ownedSlugs.slice().reverse().forEach((slug) => {
+        const card = document.querySelector(`[data-subject-slug="${slug}"]`);
+        if (card && card.parentElement) card.parentElement.prepend(card);
+      });
+
+     // updated_at is a raw Unix-seconds integer (not an ISO string, not
+// milliseconds) — sort numerically, don't route it through Date().
+const recapEntries = Object.values(progressBySlug).sort(
+  (a, b) => b.updated_at - a.updated_at
+);
+      // Current Affairs reading progress — separate endpoint, no
+      // ownership/ check-access gate (CA reading is free), so this fetch
+      // runs once for the logged-in user regardless of which subjects
+      // they own. Backend only keeps the single most-recent section, so
+      // at most one CA recap card is added.
+      let caProgress = null;
+      try {
+        const caRes = await fetch(`${WORKER_URL}/ca-reading-progress?user_id=${encodeURIComponent(session.user_id)}`);
+        const caData = await caRes.json();
+        if (caData.has_progress) caProgress = caData;
+      } catch (err) {}
+
+      // Normalizes both timestamp shapes to a millisecond epoch number so
+      // they can be compared directly:
+      //  - reading_progress.updated_at (subjects) is a raw Unix-SECONDS
+      //    integer, e.g. 1790123456
+      //  - ca_reading_progress.updated_at (CA) is a SQLite datetime() TEXT
+      //    string, e.g. "2026-09-27 10:24:41" (UTC, space-separated)
+      // Without this, `b.updated_at - a.updated_at` is NaN whenever one
+      // side is the CA string, and the sort silently leaves that card at
+      // the end instead of placing it by actual recency.
+      function toEpochMs(updatedAt) {
+        if (typeof updatedAt === 'number') return updatedAt * 1000;
+        return new Date(String(updatedAt).replace(' ', 'T') + 'Z').getTime();
+      }
+
+      if (recapEntries.length || caProgress) {
+        const row = document.getElementById('recap-row');
+
+        // Build every card as {ts, el} first, subject cards and the CA
+        // card alike, then sort ALL of them together by recency — so
+        // whichever was actually read most recently (a chapter or a CA
+        // section) shows first, not subjects-always-before-CA.
+        const cards = [];
+
+        recapEntries.forEach((p) => {
+          const total = p.subject.chapterCount || 0;
+          const done = Math.min(p.last_chapter_number || 0, total);
+          const pct = total ? Math.round((done / total) * 100) : 0;
+          const a = document.createElement('a');
+          a.className = 'recap-card';
+          a.href = `/${p.last_chapter_slug}/`;
+          a.innerHTML = `
+            <div class="recap-tag">CONTINUE</div>
+            <div class="recap-title">${p.subject.titleNative}</div>
+            <div class="recap-sub">Ch. ${p.last_chapter_number} &middot; ${p.last_chapter_title}</div>
+            <div class="recap-bar-track"><div class="recap-bar-fill" style="width:${pct}%"></div></div>
+            <div class="recap-foot">
+              <span class="recap-count">${done} of ${total} chapters</span>
+              <span class="recap-resume-btn">Resume</span>
+            </div>
+          `;
+          cards.push({ ts: toEpochMs(p.updated_at), el: a });
+        });
+
+        if (caProgress) {
+          const caTotal = caSectionTotals[caProgress.section_name] || 0;
+          const caDone = Math.min(caProgress.questions_read_count || 0, caTotal || caProgress.questions_read_count || 0);
+          const caPct = caTotal ? Math.round((caDone / caTotal) * 100) : 0;
+
+          // Best-effort plan label from this tab's own sessionStorage (the
+          // same place current-affairs-read-v2.astro reads/writes it) —
+          // "Monthly · January 2026", "Last 3 Months", etc. Only reliable
+          // within the same browser tab that did the reading; falls back to
+          // no plan label (just the section name) on a fresh tab/device,
+          // same as everywhere else this session state is used.
+          let caPlanLabel = '';
+          try {
+            const plan = sessionStorage.getItem('ca_selected_plan') || '';
+            const months = JSON.parse(sessionStorage.getItem('ca_selected_months') || '[]');
+            const PLAN_NAMES = { monthly: 'Monthly', last3: 'Last 3 Months', last6: 'Last 6 Months' };
+            if (plan === 'monthly' && months.length === 1 && caMonthLabels[months[0]]) {
+              caPlanLabel = `Monthly · ${caMonthLabels[months[0]]}`;
+            } else if (PLAN_NAMES[plan]) {
+              caPlanLabel = PLAN_NAMES[plan];
+            }
+          } catch (err) {}
+
+          const caCard = document.createElement('a');
+          caCard.className = 'recap-card';
+          caCard.href = `/current-affairs/read/?section=${encodeURIComponent(caProgress.section_name)}`;
+          caCard.innerHTML = `
+            <div class="recap-tag">CONTINUE</div>
+            <div class="recap-title">${caProgress.section_name}</div>
+            <div class="recap-sub">${caPlanLabel || 'Current Affairs'}</div>
+            <div class="recap-bar-track"><div class="recap-bar-fill" style="width:${caPct}%"></div></div>
+            <div class="recap-foot">
+              <span class="recap-count">${caTotal ? `${caDone} of ${caTotal} questions` : `${caDone} questions read`}</span>
+              <span class="recap-resume-btn">Resume</span>
+            </div>
+          `;
+          cards.push({ ts: toEpochMs(caProgress.updated_at), el: caCard });
+        }
+
+        cards
+          .sort((a, b) => b.ts - a.ts)
+          .forEach((c) => row.appendChild(c.el));
+
+        row.hidden = false;
+      }
+
       removeBundleToastAfterMinDelay();
     });
+  </script>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
   </script>
 </Layout>

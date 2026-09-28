@@ -1,12 +1,12 @@
 ---
-// src/pages/current-affairs/index.astro
+// src/pages/current-affairs-v2.astro
 // Picker: Monthly / Last 3 / Last 6 -> straight to the read page (no
 // separate sections page). Read page owns the section dropdown itself.
 //
-// Hero now has two modes: Read for Free (existing free picker, unchanged)
-// and Download PDF (new — Buy Now / Download, reusing the same D1 +
-// Razorpay pattern already live on /plans/). See TODO markers below for
-// the three backend integration points this page assumes exist.
+// UNCHANGED FROM current-affairs/index.astro — same real listAvailableMonths()
+// data, same D1 + Razorpay purchase flow, same Purchases panel. Only visual
+// restyle (indigo/white premium theme, same tokens as plans-v2/subjects-v2)
+// plus self-referential URLs updated to the -v2 versions.
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import { listAvailableMonths } from '../../lib/currentAffairs.js';
@@ -48,9 +48,9 @@ const bundle3IndividualIds = bundle3.map((m) => toBackendId(m.slug));
 const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 ---
 <Layout title="Current Affairs" description="Read Current Affairs free, or download a PDF — pick a month, last 3, or last 6 months.">
-  <Header active="current-affairs" />
+  <Header active="current-affairs" theme="premium" />
 
-  <div class="ca-wrap">
+  <div class="page-wide ca-wrap">
     <div class="ca-header-card">
       <button
         type="button"
@@ -109,7 +109,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       </button>
     </div>
 
-    <!-- ============ DOWNLOAD PDF (new) ============ -->
+    <!-- ============ DOWNLOAD PDF ============ -->
     <div id="ca-panel-pdf" style={initialTab === 'pdf' ? '' : 'display:none'}>
       <div class="ca-picker-tabs" role="tablist">
         <button type="button" class="ca-tab" data-pdf-mode="1">Monthly · ₹{PRICE_MONTHLY}</button>
@@ -156,12 +156,17 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         ) : (
           <>
             <div class="ca-bundle-card ca-bundle-card-best">
-              <span class="ca-bundle-best-ribbon">Best Value</span>
-              <div class="ca-bundle-range">
-                {bundle3.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle3[0].label.split(' ')[1]}
+              <div class="ca-bundle-icon"><i class="ti ti-gift" aria-hidden="true"></i></div>
+              <div class="ca-bundle-body">
+                <span class="ca-bundle-best-badge">★ Best Value</span>
+                <div class="ca-bundle-range">
+                  {bundle3.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle3[0].label.split(' ')[1]}
+                </div>
+                <div class="ca-bundle-foot">
+                  <div class="ca-bundle-total-badge" id="ca-bundle3-badge" data-default-text={`${bundle3.reduce((sum, m) => sum + m.questionCount, 0)} MCQs`}>{bundle3.reduce((sum, m) => sum + m.questionCount, 0)} MCQs</div>
+                  <div class="ca-bundle-includes">Includes Explanations &amp; Key Points</div>
+                </div>
               </div>
-              <div class="ca-bundle-total-badge" id="ca-bundle3-badge" data-default-text={`${bundle3.reduce((sum, m) => sum + m.questionCount, 0)} MCQs`}>{bundle3.reduce((sum, m) => sum + m.questionCount, 0)} MCQs</div>
-              <div class="ca-bundle-includes">Includes Explanations &amp; Key Points</div>
             </div>
 
             <div class="ca-format-toggle" role="tablist" data-bundle="3">
@@ -194,12 +199,17 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         ) : (
           <>
             <div class="ca-bundle-card ca-bundle-card-max">
-              <span class="ca-bundle-max-ribbon">Max Savings</span>
-              <div class="ca-bundle-range">
-                {bundle6.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle6[0].label.split(' ')[1]}
+              <div class="ca-bundle-icon"><i class="ti ti-flame" aria-hidden="true"></i></div>
+              <div class="ca-bundle-body">
+                <span class="ca-bundle-max-badge">🔥 Max Savings</span>
+                <div class="ca-bundle-range">
+                  {bundle6.slice().reverse().map((m) => m.label.replace(' 2026', '')).join(' · ')} {bundle6[0].label.split(' ')[1]}
+                </div>
+                <div class="ca-bundle-foot">
+                  <div class="ca-bundle-total-badge" id="ca-bundle6-badge" data-default-text={`${bundle6.reduce((sum, m) => sum + m.questionCount, 0)} MCQs`}>{bundle6.reduce((sum, m) => sum + m.questionCount, 0)} MCQs</div>
+                  <div class="ca-bundle-includes">Includes Explanations &amp; Key Points</div>
+                </div>
               </div>
-              <div class="ca-bundle-total-badge" id="ca-bundle6-badge" data-default-text={`${bundle6.reduce((sum, m) => sum + m.questionCount, 0)} MCQs`}>{bundle6.reduce((sum, m) => sum + m.questionCount, 0)} MCQs</div>
-              <div class="ca-bundle-includes">Includes Explanations &amp; Key Points</div>
             </div>
 
             <div class="ca-format-toggle" role="tablist" data-bundle="6">
@@ -294,7 +304,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       </div>
     </div>
 
-    <!-- ============ PURCHASES (in-card swap, mock data for now) ============ -->
+    <!-- ============ PURCHASES ============ -->
     <div id="ca-panel-purchases" style="display:none">
       <div class="ca-purchases-head">
         <h2>Your Purchases</h2>
@@ -310,66 +320,114 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
   </div>
 
   <style is:global>
-    /* is:global (not scoped): the Purchases panel's cards and the
-       Monthly grid's "Purchased" badge are built with innerHTML /
-       document.createElement in JS after page load, so Astro's scoped
-       style attribute never gets attached to them — scoped CSS would
-       silently not match. Same fix already used on the read page for
-       the same reason. */
-    .ca-wrap { max-width: 900px; margin: 0 auto; padding: 24px; }
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
 
+    .page-wide {
+      --sh2-bg: #EEEDF6;
+      --sh2-surface: #FFFFFF;
+      --sh2-surface-2: #F6F5FC;
+      --sh2-ink: #1C1A38;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+
+      /* Most of this page's original CSS reads var(--accent)/var(--card)/
+         var(--border)/var(--text)/var(--muted) already (same theme-var
+         pattern as the live Account page) — remap those to the indigo
+         palette here instead of rewriting every rule that uses them. */
+      --card: var(--sh2-surface);
+      --border: var(--sh2-line);
+      --accent: var(--sh2-indigo);
+      --accent-bg: var(--sh2-indigo-soft);
+      --text: var(--sh2-ink);
+      --muted: var(--sh2-text-soft);
+    }
+    html[data-theme="dark"] .page-wide {
+      --sh2-bg: #121120;
+      --sh2-surface: #1C1A30;
+      --sh2-surface-2: #242138;
+      --sh2-ink: #F3F1FC;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap');
+    .page-wide h1, .page-wide h2 { font-family: 'Manrope', sans-serif; }
+
+    .ca-wrap { max-width: 900px; margin: 0 auto; }
+    @media (min-width: 1200px) {
+      .page-wide, .ca-wrap {
+        max-width: 900px;
+      }
+    }
+    @media (max-width: 900px) {
+      .ca-wrap {
+        padding-bottom: calc(64px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    /* ---------- Hero card: indigo gradient (same as chapter-v2's reading
+       toolbar / hero cards elsewhere), replacing the dark-navy/orange one ---------- */
     .ca-header-card {
       position: relative; overflow: hidden;
-      background: linear-gradient(160deg, #14102b 0%, #241a4d 45%, #3d2374 100%);
-      border-radius: 16px; padding: 18px 22px; margin-bottom: 20px;
-      box-shadow: 0 8px 20px -10px rgba(20, 16, 43, 0.5);
+      background: linear-gradient(155deg, var(--sh2-indigo-deep) 0%, #5A4CC4 55%, #7C63DE 100%);
+      border-radius: 18px; padding: 18px 22px; margin-bottom: 20px;
+      box-shadow: 0 14px 28px -16px rgba(46,37,112,0.5);
     }
     .ca-header-card::before {
       content: ""; position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255, 154, 60, 0.16), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.22), transparent 45%);
+      background: radial-gradient(circle at 85% 15%, rgba(255,255,255,0.14), transparent 45%);
     }
     .ca-header-card .breadcrumb, .ca-header-card h1, .ca-header-card .ca-hero-tabs {
       position: relative; z-index: 1;
     }
-    .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
-    .breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
-    @media (max-width: 900px) {
-      .breadcrumb { display: none; }
-    }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    @media (max-width: 900px) { .breadcrumb { display: none; } }
     .ca-header-card h1 { font-size: 22px; margin: 0 0 10px; color: #fff; font-weight: 800; }
 
     .ca-hero-tabs { display: flex; gap: 6px; }
     .ca-hero-tab {
-      padding: 9px 16px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.25);
-      background: transparent; color: rgba(255,255,255,0.75); font-weight: 700; font-size: 13.5px;
+      padding: 9px 16px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.3);
+      background: transparent; color: rgba(255,255,255,0.8); font-weight: 700; font-size: 13.5px;
       cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
     }
-    .ca-hero-tab.active {
-      background: #fff; color: #14102b; border-color: #fff;
-    }
+    .ca-hero-tab.active { background: #fff; color: var(--sh2-indigo-deep); border-color: #fff; }
 
-    /* Purchases icon: top-right of header card. Hidden for guests
-       (no session), shown for any logged-in user regardless of purchase
-       count — empty state is handled inside the panel itself. */
     .ca-purchases-icon {
       position: absolute; top: 16px; right: 16px; z-index: 2;
       width: 34px; height: 34px; border-radius: 50%;
-      background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.35);
       color: #fff; display: flex; align-items: center; justify-content: center;
       cursor: pointer; transition: background 0.15s;
     }
-    .ca-purchases-icon:hover { background: rgba(255,255,255,0.22); }
-
-    /* First-login attention badge — a small red dot signaling "check this,
-       it's your purchases." Shown only until the icon is clicked once,
-       ever (tracked in localStorage, not per-session, so it stays gone on
-       future visits too). */
+    .ca-purchases-icon:hover { background: rgba(255,255,255,0.25); }
     .ca-purchases-badge {
       position: absolute; top: -2px; right: -2px;
       width: 11px; height: 11px; border-radius: 50%;
-      background: #e5484d; border: 2px solid #241a4d;
+      background: #e5484d; border: 2px solid var(--sh2-indigo-deep);
     }
     .ca-purchases-badge::after {
       content: ""; position: absolute; inset: -3px; border-radius: 50%;
@@ -381,67 +439,61 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       100% { transform: scale(1.6); opacity: 0; }
     }
 
-    /* Purchases panel */
     .ca-purchases-head { margin-bottom: 14px; }
-    .ca-purchases-head h2 { margin: 0; font-size: 17px; }
+    .ca-purchases-head h2 { margin: 0; font-size: 17px; color: var(--sh2-ink); }
 
     .ca-purchase-card {
-      border: 1.5px solid var(--border, #ddd); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px;
+      border: 1.5px solid var(--border); border-radius: 14px; padding: 14px 16px; margin-bottom: 10px;
+      background: var(--card); box-shadow: var(--sh2-shadow);
     }
     .ca-purchase-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
-    .ca-purchase-range { font-weight: 800; font-size: 14.5px; }
+    .ca-purchase-range { font-weight: 800; font-size: 14.5px; color: var(--text); }
     .ca-purchase-badge {
       flex-shrink: 0; font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px;
-      background: var(--accent-bg, #fff1e6); color: var(--accent, #ff6b1a); text-transform: capitalize;
+      background: var(--accent-bg); color: var(--accent); text-transform: capitalize;
     }
-    .ca-purchase-meta { color: var(--muted, #888); font-size: 12px; margin-bottom: 2px; }
-    .ca-purchase-date { color: var(--muted, #888); font-size: 11px; margin-bottom: 10px; }
+    .ca-purchase-meta { color: var(--muted); font-size: 12px; margin-bottom: 2px; }
+    .ca-purchase-date { color: var(--muted); font-size: 11px; margin-bottom: 10px; }
     .ca-purchase-dl-btn {
-      width: 100%; padding: 10px; border-radius: 9px; border: none;
-      background: #2e7d32; color: #fff; font-weight: 700; font-size: 13px; cursor: pointer;
+      width: 100%; padding: 10px; border-radius: 10px; border: none;
+      background: var(--sh2-green); color: #fff; font-weight: 700; font-size: 13px; cursor: pointer;
     }
 
-    /* Monthly grid: an owned month becomes a locked, non-interactive card
-       instead of a checkbox — never selectable again as part of a new
-       purchase. Only months bought individually via this tab count here;
-       being included in a bundle purchase does NOT mark it owned here —
-       that stays separate, visible only in the Purchases panel. */
     .ca-month-card.ca-month-owned {
-      cursor: default; border-color: #2e7d32; background: rgba(46,125,50,0.06);
+      cursor: default; border-color: var(--sh2-green); background: var(--sh2-green-soft);
     }
-    .ca-month-owned-badge {
-      font-size: 10.5px; font-weight: 700; color: #2e7d32;
-    }
+    .ca-month-owned-badge { font-size: 10.5px; font-weight: 700; color: var(--sh2-green); }
 
-    .ca-picker-tabs { display: flex; gap: 8px; margin-bottom: 22px; }
+    .ca-picker-tabs { display: flex; gap: 8px; margin-bottom: 26px; }
+    @media (min-width: 641px) {
+      .ca-picker-tabs { justify-content: center; }
+    }
     .ca-tab {
-      padding: 9px 16px; border-radius: 999px; border: 1px solid var(--border, #ddd);
-      background: var(--card, #fff); color: var(--text, #111); font-weight: 700; font-size: 13px;
-      cursor: pointer; transition: background 0.15s, border-color 0.15s;
+      padding: 9px 16px; border-radius: 999px; border: 1.5px solid var(--border);
+      background: var(--card); color: var(--text); font-weight: 700; font-size: 13px;
+      cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
-    .ca-tab:hover { border-color: var(--accent, #ff6b1a); }
-    .ca-tab.active { background: var(--accent, #ff6b1a); color: #fff; border-color: var(--accent, #ff6b1a); }
+    .ca-tab:hover { border-color: var(--accent); }
+    .ca-tab.active { background: linear-gradient(90deg, var(--sh2-indigo), var(--sh2-indigo-deep)); color: #fff; border-color: transparent; }
 
-    .ca-hint { color: var(--muted, #888); font-size: 12px; margin: 0 0 14px; }
+    .ca-hint { color: var(--muted); font-size: 12px; margin: 0 0 14px; }
 
     .ca-month-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-      /* Extra clearance so the sticky Continue button (below) never visually
-         covers the last card while scrolling — same amount of space the
-         button + its bottom offset actually occupy. */
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
       margin-bottom: 90px;
     }
     .ca-month-card {
       display: block; position: relative;
-      border: 1.5px solid var(--border, #ddd); border-radius: 16px; padding: 14px;
-      cursor: pointer; background: var(--card, #fff);
+      border: 1.5px solid var(--border); border-radius: 12px; padding: 9px 11px;
+      cursor: pointer; background: var(--card);
       transition: border-color 0.15s, background 0.15s;
+      box-shadow: var(--sh2-shadow);
     }
-    .ca-month-card:hover { border-color: #2b1a5e; }
+    .ca-month-card:hover { border-color: var(--sh2-indigo); }
     .ca-month-card:has(.ca-month-checkbox:checked),
     .ca-month-card:has(.ca-pdf-month-checkbox:checked) {
-      border-color: #2b1a5e;
-      background: #2b1a5e;
+      border-color: var(--sh2-indigo-deep);
+      background: linear-gradient(150deg, var(--sh2-indigo-deep), var(--sh2-indigo));
     }
     .ca-month-card:has(.ca-month-checkbox:checked) .ca-month-label,
     .ca-month-card:has(.ca-pdf-month-checkbox:checked) .ca-month-label {
@@ -449,41 +501,32 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     }
     .ca-month-card:has(.ca-month-checkbox:checked) .ca-month-meta,
     .ca-month-card:has(.ca-pdf-month-checkbox:checked) .ca-month-meta {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.75);
     }
 
-    /* Custom checkbox: hide the native box, draw our own circle + check.
-       Pinned to the tile's top-right corner rather than sitting inline
-       with the label — the compact 2-column tile has no room for a
-       side-by-side row. Shared by both the free-reading grid and the
-       PDF monthly grid. */
     .ca-month-checkbox, .ca-pdf-month-checkbox {
       appearance: none; -webkit-appearance: none;
-      position: absolute; top: 10px; right: 10px;
-      width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--border, #ccc);
+      position: absolute; top: 8px; right: 8px;
+      width: 15px; height: 15px; border-radius: 50%; border: 1.5px solid var(--border);
       cursor: pointer; margin: 0; transition: border-color 0.15s, background 0.15s;
     }
     .ca-month-checkbox:checked, .ca-pdf-month-checkbox:checked {
       background: #ffffff; border-color: #ffffff;
     }
     .ca-month-checkbox:checked::after, .ca-pdf-month-checkbox:checked::after {
-      content: ''; position: absolute; left: 5px; top: 2px; width: 4px; height: 8px;
-      border: solid #2b1a5e; border-width: 0 2px 2px 0; transform: rotate(45deg);
+      content: ''; position: absolute; left: 4px; top: 1.5px; width: 3.5px; height: 7px;
+      border: solid var(--sh2-indigo-deep); border-width: 0 2px 2px 0; transform: rotate(45deg);
     }
 
-    .ca-month-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; padding-right: 22px; }
-    .ca-month-label { font-weight: 700; font-size: 14px; }
-    .ca-month-meta { font-size: 11px; color: var(--muted, #888); }
+    .ca-month-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; padding-right: 18px; }
+    .ca-month-label { font-weight: 700; font-size: 12.5px; color: var(--text); }
+    .ca-month-meta { font-size: 10px; color: var(--muted); }
     .ca-month-card.ca-disabled { opacity: 0.4; pointer-events: none; }
 
-    /* Last 3 / Last 6 months: not a picker, so no checkbox to show and
-       no pointer affordance — these cards are informational only. */
     .ca-month-grid.ca-fixed-plan .ca-month-checkbox { display: none; }
     .ca-month-grid.ca-fixed-plan .ca-month-card { cursor: default; }
     .ca-month-grid.ca-fixed-plan .ca-month-text { padding-right: 0; }
 
-    /* 3 cards in a 2-column grid leaves one dangling on its own row —
-       center it instead of letting it sit flush left. */
     .ca-month-grid[data-count="3"] .ca-month-card:nth-child(3) {
       grid-column: 1 / -1;
       width: calc((100% - 10px) / 2);
@@ -492,216 +535,189 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
     .ca-continue-btn {
       width: 100%; padding: 14px; border-radius: 12px; border: none;
-      background: var(--accent, #ff6b1a); color: #fff; font-weight: 700; font-size: 15px;
+      background: linear-gradient(90deg, var(--sh2-indigo), var(--sh2-indigo-deep)); color: #fff;
+      font-weight: 700; font-size: 15px;
       cursor: pointer; transition: opacity 0.15s;
       margin-top: 18px;
     }
     .ca-continue-btn:hover:not(:disabled) { opacity: 0.92; }
-    .ca-continue-btn:disabled { background: var(--border, #ddd); color: var(--muted, #888); cursor: not-allowed; }
+    .ca-continue-btn:disabled { background: var(--sh2-surface-2); color: var(--muted); cursor: not-allowed; }
 
-    /* Free-read Continue button only (not the Buy Now/PDF button, which
-       shares this same base class) — matches the selected-month card
-       navy instead of the site's generic accent color. */
-    #ca-continue-btn { background: #2b1a5e; border: 4px solid rgba(255,255,255,0.6); }
+    #ca-continue-btn { background: linear-gradient(90deg, var(--sh2-indigo-deep), var(--sh2-indigo)); border: 4px solid rgba(255,255,255,0.5); }
 
-    /* Desktop: a full-width button looks stretched/oversized against a
-       900px-wide container — cap it to a normal CTA width instead. Mobile
-       keeps full-width, which reads correctly there. */
     @media (min-width: 641px) {
       .ca-continue-btn { max-width: 340px; margin-left: auto; margin-right: auto; display: block; }
     }
 
-    /* Keeps total page height roughly consistent across the three
-       Download PDF tabs — Monthly's 8-card grid is naturally much taller
-       than a single bundle card, so without this, switching tabs made
-       the footer jump into/out of view depending which tab was active. */
     #ca-panel-pdf { min-height: 480px; }
 
-    .ca-empty { text-align: center; padding: 40px; color: var(--muted, #888); }
+    .ca-empty { text-align: center; padding: 40px; color: var(--muted); }
 
-    /* ================= What you get (matches /plans/ page pattern) ================= */
-    .ca-whatyouget-card {
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
+    /* ---------- What you get / Before you buy (light indigo cards, same
+       as plans-v2, replacing the dark navy cards) ---------- */
+    .ca-whatyouget-card, .whatyouget-card {
+      background: var(--sh2-surface);
+      border: 1px solid var(--sh2-line); border-radius: 16px; padding: 1.1rem; color: var(--sh2-ink);
+      box-shadow: var(--sh2-shadow);
       margin-bottom: 20px;
     }
-    /* Wrapper (not the card itself) carries the top spacing, as padding
-       rather than margin — padding on a block-level element never
-       collapses against a preceding sibling's margin the way two
-       adjacent margins can, so this reliably shows a gap regardless of
-       what spacing the Buy Now button above it carries. */
     .ca-whatyouget-wrap { padding-top: 32px; }
-    .ca-whatyouget-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #ffffff; }
+    .ca-whatyouget-title, .whatyouget-title {
+      font-size: 0.78rem; font-weight: 800; margin-bottom: 12px; color: var(--sh2-indigo);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
     .ca-whatyouget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
-    .ca-whatyouget-item-title { font-size: 13px; font-weight: 600; color: #ffffff; }
-    .ca-whatyouget-item-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
+    .ca-whatyouget-item-title { font-size: 13px; font-weight: 700; color: var(--sh2-ink); }
+    .ca-whatyouget-item-sub { font-size: 12px; color: var(--sh2-text-soft); }
 
-    /* ================= Before you buy — FAQ accordion (matches Plans page) ================= */
-    .whatyouget-card {
-      background: linear-gradient(160deg, #1a1438 0%, #241a4d 100%);
-      border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; color: #ffffff;
-    }
-    .whatyouget-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #5de0c0; text-transform: uppercase; letter-spacing: 0.04em; }
     .plans-faq-card { margin-top: 12px; }
-    .plans-faq-card .whatyouget-title { color: #ffb35c; }
-    .plans-faq-item {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 10px 0;
-    }
+    .plans-faq-item { border-top: 1px solid var(--sh2-line); padding: 10px 0; }
     .plans-faq-item:first-of-type { border-top: none; padding-top: 0; }
     .plans-faq-item summary {
-      font-size: 13px; font-weight: 600; color: #ffffff;
+      font-size: 13px; font-weight: 700; color: var(--sh2-ink);
       cursor: pointer; list-style: none; display: flex;
       align-items: center; justify-content: space-between; gap: 8px;
     }
     .plans-faq-item summary::-webkit-details-marker { display: none; }
-    .plans-faq-item summary::after {
-      content: '+'; font-size: 16px; font-weight: 400;
-      color: rgba(255,255,255,0.5); flex: 0 0 auto;
-    }
+    .plans-faq-item summary::after { content: '+'; font-size: 16px; font-weight: 400; color: var(--sh2-text-soft); flex: 0 0 auto; }
     .plans-faq-item[open] summary::after { content: '–'; }
-    .plans-faq-body {
-      font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.65);
-      margin-top: 8px;
-    }
-    .plans-faq-body a { color: #ffb35c; font-weight: 600; text-decoration: underline; }
-    @media (max-width: 720px) {
-      .whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 12px; }
-    }
+    .plans-faq-body { font-size: 12px; line-height: 1.6; color: var(--sh2-text-soft); margin-top: 8px; }
+    .plans-faq-body a { color: var(--sh2-indigo); font-weight: 700; text-decoration: underline; }
 
     @media (max-width: 720px) {
-      .ca-whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 16px; }
+      .ca-whatyouget-card, .whatyouget-card { border-radius: 16px; padding: 1rem; margin-bottom: 12px; }
       .ca-whatyouget-wrap { padding-top: 24px; }
       .ca-whatyouget-grid { grid-template-columns: 1fr; gap: 12px; }
     }
 
-    /* Download PDF: bundle range shown as a plain info card by default
-       (bundle6) — neutral, not competing visually with the price tabs or
-       Buy button. The Last 3 months card additionally gets
-       .ca-bundle-card-best — a left accent stripe + a gold/amber "tag"
-       ribbon, deliberately NOT the same blue as every button/tab on the
-       page, so it reads as "this one's special" rather than just another
-       button-colored pill. */
+    /* ---------- Bundle cards: Best Value = indigo, Max Savings = amber
+       (same two-badge system as elsewhere on the redesign) ---------- */
     .ca-bundle-card {
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      text-align: center;
-      background: var(--card, #fff); border: 1px solid var(--border, #e2e0d8);
-      border-radius: 14px; padding: 14px 18px; margin-bottom: 20px;
-      position: relative;
+      display: flex; align-items: center; gap: 12px;
+      text-align: left;
+      background: var(--sh2-surface);
+      border-radius: 14px; padding: 12px 14px; margin-bottom: 20px;
+      position: relative; box-shadow: var(--sh2-shadow);
+      overflow: hidden;
     }
+    .ca-bundle-icon {
+      flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #ffffff; font-size: 18px;
+    }
+    .ca-bundle-body { min-width: 0; flex: 1; }
     .ca-bundle-card-best {
-      background: linear-gradient(135deg, var(--accent-bg, #eaf3fc) 0%, var(--card, #fff) 100%);
-      border: 1px solid var(--accent, #185fa5);
-      border-left: 4px solid var(--accent, #185fa5);
-      padding-top: 22px; padding-left: 22px; margin-top: 14px;
+      border: 1.5px dashed var(--sh2-indigo);
     }
-    .ca-bundle-best-ribbon {
-      position: absolute; top: -11px; left: 18px;
-      display: inline-flex; align-items: center; gap: 4px;
-      background: linear-gradient(135deg, var(--accent, #185fa5), #0e3a5f);
-      color: #fff;
-      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
-      padding: 4px 12px 4px 10px;
-      /* Tag shape, not a pill: flat left edge, small clipped notch on the
-         right — reads as a price tag rather than a generic rounded chip. */
-      clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%);
-      box-shadow: 0 2px 6px rgba(24, 95, 165, 0.35);
+    .ca-bundle-icon {
+      background: linear-gradient(135deg, var(--sh2-indigo), var(--sh2-indigo-deep));
+      box-shadow: 0 6px 14px -6px rgba(75,63,160,0.6);
     }
-    .ca-bundle-best-ribbon::before {
-      content: '★';
-      font-size: 9px;
+    .ca-bundle-best-badge {
+      display: block; color: var(--sh2-indigo);
+      font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 2px;
     }
 
-    /* Last 6 months' "Max Savings" badge — same ribbon shape/mechanics as
-       Best Value above (deliberately, so the two read as one cohesive
-       badge system), but amber/gold instead of blue so the two bundles
-       stay visually distinct from each other. Last 6 is now the default
-       tab shown on page load, so this needs to hold its own without
-       looking identical to Last 3's badge. */
     .ca-bundle-card-max {
-      background: linear-gradient(135deg, #fff7e6 0%, var(--card, #fff) 100%);
-      border: 1px solid #c9860a;
-      border-left: 4px solid #c9860a;
-      padding-top: 22px; padding-left: 22px; margin-top: 14px;
+      border: 1.5px dashed var(--sh2-amber);
     }
-    .ca-bundle-max-ribbon {
-      position: absolute; top: -11px; left: 18px;
-      display: inline-flex; align-items: center; gap: 4px;
-      background: linear-gradient(135deg, #d99a1b, #8f5c05);
-      color: #fff;
-      font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em;
-      padding: 4px 12px 4px 10px;
-      clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%);
-      box-shadow: 0 2px 6px rgba(201, 134, 10, 0.35);
+    .ca-bundle-card-max .ca-bundle-icon {
+      background: linear-gradient(135deg, var(--sh2-amber), #b45c0a);
+      box-shadow: 0 6px 14px -6px rgba(232,150,58,0.6);
     }
-    .ca-bundle-max-ribbon::before {
-      content: '🔥';
-      font-size: 9px;
+    .ca-bundle-max-badge {
+      display: block; color: #b45c0a;
+      font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      margin-bottom: 2px;
     }
-    .ca-bundle-card-max .ca-bundle-range { font-weight: 800; font-size: 16px; }
-    .ca-bundle-range {
-      font-weight: 700; font-size: 14px; line-height: 1.35; color: var(--text, #111);
-    }
-    .ca-bundle-card-best .ca-bundle-range { font-weight: 800; font-size: 16px; }
+    .ca-bundle-card-max .ca-bundle-range { font-weight: 800; font-size: 13.5px; }
+    .ca-bundle-range { font-weight: 700; font-size: 13px; line-height: 1.3; color: var(--text); }
+    .ca-bundle-card-best .ca-bundle-range { font-weight: 800; font-size: 13.5px; }
+    .ca-bundle-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
     .ca-bundle-total-badge {
-      flex-shrink: 0; background: var(--accent, #ff6b1a); color: #fff;
-      font-weight: 700; font-size: 12px; padding: 5px 11px; border-radius: 999px;
+      flex-shrink: 0; background: var(--sh2-indigo); color: #fff;
+      font-weight: 700; font-size: 10px; padding: 2px 8px; border-radius: 999px;
       white-space: nowrap;
     }
-    .ca-bundle-includes {
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    /* Badge color matches each card's own ribbon, not the site's generic
-       orange accent — keeps the badge visually "part of" that card's
-       color story instead of looking like a mismatched default. */
-    .ca-bundle-card-best .ca-bundle-total-badge {
-      background: linear-gradient(135deg, var(--accent, #185fa5), #0e3a5f);
-    }
-    .ca-bundle-card-max .ca-bundle-total-badge {
-      background: linear-gradient(135deg, #d99a1b, #8f5c05);
+    .ca-bundle-card-max .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-amber), #b45c0a); color: #2a1400; }
+    .ca-bundle-includes { font-size: 9.5px; font-weight: 600; color: var(--muted); }
+    .ca-bundle-card-best .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-indigo), var(--sh2-indigo-deep)); }
+    .ca-bundle-card-max .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-amber), #b45c0a); color: #2a1400; }
+
+    /* Desktop AND tablet: turn this from a compact dashed-border row
+       (all its content bunched to the left, icon+3 short lines) into
+       a solid CTA banner that actually uses the full card width —
+       badge+range on the left, MCQs count + includes line on the
+       right. Starts at 900px so tablets get it too, not just desktop. */
+    @media (min-width: 641px) {
+      .ca-bundle-card {
+        max-width: 460px;
+        margin-left: auto; margin-right: auto;
+        padding: 20px 26px;
+        gap: 20px;
+        border: none;
+      }
+      .ca-bundle-card-best {
+        background: linear-gradient(120deg, var(--sh2-indigo) 0%, var(--sh2-indigo-deep) 100%);
+        box-shadow: 0 14px 28px -14px rgba(46,37,112,0.55);
+      }
+      .ca-bundle-card-max {
+        background: linear-gradient(120deg, var(--sh2-amber) 0%, #b45c0a 100%);
+        box-shadow: 0 14px 28px -14px rgba(232,150,58,0.55);
+      }
+      .ca-bundle-card .ca-bundle-icon { width: 50px; height: 50px; font-size: 22px; background: rgba(255,255,255,0.22); box-shadow: none; }
+      .ca-bundle-best-badge, .ca-bundle-max-badge { color: rgba(255,255,255,0.85); grid-area: badge; }
+      .ca-bundle-range, .ca-bundle-card-best .ca-bundle-range, .ca-bundle-card-max .ca-bundle-range { color: #ffffff; font-size: 16px; grid-area: range; margin-top: 2px; }
+      /* Named-area grid: badge+range stack on the left, the MCQ
+         count + includes line sits as its own column on the right,
+         vertically centered across both left-side rows — instead of
+         everything stacking straight down the left edge. */
+      .ca-bundle-body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "badge foot" "range foot";
+        align-items: center;
+        column-gap: 20px;
+      }
+      .ca-bundle-foot {
+        grid-area: foot; align-self: center;
+        flex-direction: column; align-items: flex-end; gap: 4px; margin-top: 0;
+      }
+      .ca-bundle-total-badge, .ca-bundle-card-best .ca-bundle-total-badge, .ca-bundle-card-max .ca-bundle-total-badge {
+        background: rgba(255,255,255,0.9); color: var(--sh2-indigo-deep); font-size: 12px; padding: 4px 12px;
+      }
+      .ca-bundle-card-max .ca-bundle-total-badge { color: #7a3d00; }
+      .ca-bundle-includes { color: rgba(255,255,255,0.8); font-size: 11px; }
     }
 
-    /* Individual / Combined format toggle */
-    .ca-format-toggle {
-      display: flex; gap: 8px; margin-bottom: 12px;
+    .ca-format-toggle { display: flex; gap: 8px; margin-bottom: 16px; }
+    @media (min-width: 641px) {
+      .ca-format-toggle { max-width: 360px; margin-left: auto; margin-right: auto; }
     }
     .ca-format-btn {
-      flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid var(--border, #ddd);
-      background: var(--card, #fff); color: var(--text, #111); font-weight: 700; font-size: 13px;
+      flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid var(--border);
+      background: var(--card); color: var(--text); font-weight: 700; font-size: 13px;
       cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
     .ca-format-btn.active {
-      background: var(--accent, #ff6b1a); color: #fff; border-color: var(--accent, #ff6b1a);
+      background: linear-gradient(90deg, var(--sh2-indigo), var(--sh2-indigo-deep)); color: #fff; border-color: transparent;
     }
-    .ca-format-hint {
-      color: var(--muted, #888); font-size: 12px; margin: 0 0 16px;
-    }
-
-    /* Buy Now vs Owned/Download button states. Same base as ca-continue-btn
-       (already sticky/positioned via that class); this only overrides color. */
-    .ca-buy-btn.ca-owned {
-      background: #2e7d32;
+    .ca-format-hint { color: var(--muted); font-size: 12px; margin: 0 0 22px; }
+    @media (min-width: 641px) {
+      .ca-format-hint { text-align: center; }
     }
 
-    /* Sticky Continue button: stays pinned near the bottom of the
-       viewport while scrolling through the month grid, but — because
-       it's sticky (not fixed) — it scrolls away normally once the
-       footer is reached, instead of floating on top of it.
-       --bottom-nav-height accounts for the site's fixed bottom tab bar,
-       which only exists on mobile — 0 on desktop. */
+    .ca-buy-btn.ca-owned { background: var(--sh2-green); }
+
     :root { --bottom-nav-height: 0px; }
     .ca-continue-btn {
       position: sticky;
       bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + 20px);
       z-index: 40;
-      box-shadow: 0 4px 14px -4px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 14px -4px rgba(46,37,112,0.35);
     }
 
-    /* Mobile: the site has a fixed bottom nav bar (Subjects / Plans /
-       Login). Sit just above it, and use a slightly tighter button to
-       match. Adjust --bottom-nav-height if the nav's real height differs. */
     @media (max-width: 640px) {
       :root { --bottom-nav-height: 64px; }
       .ca-continue-btn {
@@ -715,11 +731,11 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
   <script>
     // ============================================================
-    // Real backend wiring — one /ca/purchases call powers every
-    // Buy/Download button and the Purchases panel. Cached for the page
-    // load; nothing here trusts anything from the client for price or
-    // ownership — every check is a real fetch to the Worker, which
-    // itself re-verifies the session and re-checks D1 on every call.
+    // UNCHANGED FROM current-affairs/index.astro — same Worker URL,
+    // same /ca/purchases, /ca/create-order, /ca/download(-token) calls,
+    // same Razorpay/Capacitor purchase flow, same Purchases panel logic.
+    // Only self-referential URLs (own page + signup redirect) updated
+    // to the -v2 versions below.
     // ============================================================
     const CA_API = 'https://api.studyhelp.fdaytalk.com';
 
@@ -748,8 +764,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       return state.items.has(itemId);
     }
 
-    // Applies the correct button state (Buy Now vs Download) for one
-    // buy button, given its item id and price.
     async function applyOwnershipState(btn, itemId, price) {
       btn.dataset.itemId = itemId;
       const owned = await checkOwnership(itemId);
@@ -762,7 +776,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       }
     }
 
-    // Loads the Razorpay checkout script once, lazily.
     let razorpayScriptPromise = null;
     function loadRazorpayScript() {
       if (razorpayScriptPromise) return razorpayScriptPromise;
@@ -777,14 +790,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       return razorpayScriptPromise;
     }
 
-    // Triggers a purchase for one or more item_ids. `kind` is either
-    // 'items' (single month / single combined bundle / arbitrary
-    // multi-month picker) or 'individual_bundle' (fixed discounted price
-    // for 3 or 6 real months, each granted separately). No per-button
-    // loading state here — the global nav blur overlay (Layout.astro)
-    // now covers the guest→signup redirect, and the logged-in path opens
-    // Razorpay in place quickly enough on real networks that a button
-    // spinner isn't needed.
     async function triggerPurchase(itemIds, kind) {
       const state = await loadCaPurchases();
       if (!state.loggedIn) {
@@ -813,8 +818,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         return;
       }
 
-      // Name for Razorpay's prefill — best-effort, checkout still works
-      // fine without it if this fails.
       let userName = '';
       try {
         const meRes = await fetch(`${CA_API}/me`, { credentials: 'include' });
@@ -827,10 +830,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         : `Current Affairs — ${itemIds.length} months`;
       const successUrl = '/current-affairs/?ca_success=1';
 
-      // Native app (Capacitor): the plain web Razorpay SDK only offers
-      // Cards inside the app's WebView — UPI and other methods require
-      // the native plugin instead. Same pattern already proven on
-      // Subjects/Plans checkout.
       const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
 
       if (isNativeApp) {
@@ -869,16 +868,10 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         description,
         prefill: { name: userName },
         handler: function () {
-          // Same as Subjects: redirect immediately, trust the webhook
-          // (server-to-server) to have written the actual ca_purchases
-          // row — no client-side signature verification needed here.
           window.location.href = successUrl;
         },
         modal: {
-          ondismiss: function () {
-            // User closed the checkout without paying — order stays
-            // 'created' in ca_orders, harmlessly unused.
-          },
+          ondismiss: function () {},
         },
       });
 
@@ -889,28 +882,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       rzp.open();
     }
 
-    // Re-checks ownership server-side, then delivers the actual PDF.
-    //
-    // Inside the Capacitor app: the embedded WebView doesn't know how to
-    // hand off a Content-Disposition: attachment response to Android's
-    // download manager — navigating it there just silently does nothing
-    // (this is exactly why "Download PDF" appeared unresponsive on the
-    // phone app while working fine on desktop/web). Fix: open the
-    // download in the SYSTEM browser instead (which has a real download
-    // manager) — but that's a separate browsing context without the
-    // app's session cookie, so a short-lived signed token is fetched
-    // first (that fetch call itself runs inside the WebView, where the
-    // cookie IS available) and carried in the URL instead.
-    //
-    // Users on an app version installed BEFORE this fix shipped won't
-    // have the @capacitor/browser plugin at all — there's no in-app
-    // notification/banner system to warn them proactively, so this is
-    // the one moment they'd actually notice anything's different: right
-    // here, at the point of clicking Download. Its absence is checked
-    // and, instead of silently doing nothing (the old broken behavior),
-    // shows a clear message with a direct link to update from the Play
-    // Store — this is the only place in the app currently capable of
-    // catching an out-of-date install for this specific feature.
     async function triggerDownload(itemId) {
       const isNativeApp = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
 
@@ -959,22 +930,10 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
       const params = new URLSearchParams(window.location.search);
 
-      // Land directly on the Purchases panel after a successful payment
-      // redirect, instead of back on whichever hero tab was open before.
       if (params.get('ca_success') === '1' && state.loggedIn) {
         caPurchasesCache = null; // force a fresh fetch — payment just landed
         const fresh = await loadCaPurchases();
 
-        // Fire conversion tracking here — server-confirmed payment (this
-        // purchase list only reflects what the webhook already wrote), not
-        // just the Razorpay popup closing. Same trigger point and dedup
-        // pattern as the Subjects purchase flow (payment-processing page).
-        // /ca/purchases doesn't return amount_paise, so the value is
-        // estimated from item_type using the same price constants the
-        // page already renders with — exact for single-month and 3/6-month
-        // bundle purchases, the common cases; a multi-month custom-count
-        // buy (monthly picker, several months at once) would only report
-        // one month's price here, undercounting that specific case.
         try {
           const purchases = Array.from(fresh.items.values());
           const newest = purchases.sort(
@@ -1020,22 +979,16 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         return;
       }
 
-      // Guest clicked Buy, got sent through signup, is now back here
-      // logged in — automatically resume the purchase they originally
-      // asked for instead of making them find and click Buy again.
       const caBuyRaw = params.get('ca_buy');
       if (caBuyRaw && state.loggedIn) {
         try {
           const { kind, item_ids } = JSON.parse(atob(caBuyRaw));
           if (kind && Array.isArray(item_ids) && item_ids.length) {
-            // Strip the param so a page refresh doesn't re-trigger checkout.
             const cleanUrl = window.location.pathname;
             window.history.replaceState({}, '', cleanUrl);
             triggerPurchase(item_ids, kind);
           }
-        } catch (err) {
-          // Malformed/tampered param — ignore silently, no purchase to resume.
-        }
+        } catch (err) {}
       }
     })();
 
@@ -1052,8 +1005,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       if (checked.length === 0) {
         continueBtn.textContent = 'Select a month';
       } else if (checked.length === 1) {
-        // Single month: already obvious from the one highlighted card,
-        // no need to clutter the button with "(1 month)".
         continueBtn.textContent = 'Continue to Read';
       } else {
         continueBtn.textContent = `Continue to Read (${checked.length} Months)`;
@@ -1066,9 +1017,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       const checkedCount = boxes.filter((c) => c.checked).length;
       boxes.forEach((c) => {
         const card = c.closest('.ca-month-card');
-        // Only disable unchecked cards once the cap is hit in multi-select
-        // mode. In single-select (maxPick === 1) cards must stay clickable
-        // so picking a new month can swap the selection directly.
         if (maxPick > 1 && !c.checked && checkedCount >= maxPick) card.classList.add('ca-disabled');
         else card.classList.remove('ca-disabled');
       });
@@ -1077,27 +1025,16 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
     function handleCheckboxChange(changed) {
       if (maxPick === 1) {
-        // Single-select: picking a new month swaps the selection instead
-        // of requiring the old one to be unticked first.
         if (changed.checked) {
           checkboxes().forEach((c) => { if (c !== changed) c.checked = false; });
         }
       } else {
-        // Multi-select: if over the cap, drop the change rather than
-        // silently exceeding maxPick.
         const checkedCount = checkboxes().filter((c) => c.checked).length;
         if (checkedCount > maxPick) changed.checked = false;
       }
       enforceLimit();
     }
 
-    // Monthly = the existing pick-any-1 UI, every month shown and
-    // selectable. Last 3 / Last 6 aren't a picker at all — always the
-    // current rolling window — so those months are locked pre-checked,
-    // their checkboxes hidden, and anything beyond the window isn't
-    // shown at all rather than sitting there greyed out with nothing to
-    // do. grid.dataset.count drives centering the odd-one-out card when
-    // count is 3 (doesn't fill the 2-column grid evenly).
     function applyPlanMode(mode) {
       maxPick = mode;
       const boxes = checkboxes();
@@ -1111,7 +1048,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         const within = i < mode;
         c.checked = within;
         if (isFixedPlan) {
-          c.disabled = true; // locked — nothing to pick for this plan
+          c.disabled = true;
           card.style.display = within ? '' : 'none';
           card.classList.remove('ca-disabled');
         } else {
@@ -1143,10 +1080,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       const chosen = checkboxes().filter((c) => c.checked).map((c) => c.value);
       if (!chosen.length) return;
       sessionStorage.setItem('ca_selected_months', JSON.stringify(chosen));
-      // The active tab when Continue is pressed, not the chosen count —
-      // a student can pick fewer than the tab's cap (e.g. 2 while on
-      // "Last 3 months"), so count alone can't be trusted to reflect
-      // which plan they were actually on.
       sessionStorage.setItem('ca_selected_plan', tab_modeToPlan(maxPick));
       window.location.href = '/current-affairs/read/';
     });
@@ -1158,14 +1091,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       return 'monthly';
     }
 
-    // State (hero tab, PDF sub-tab, per-bundle format) is always restored
-    // from sessionStorage below — reliable and simple. What makes a
-    // genuinely "fresh" visit actually reset to the defaults isn't
-    // detected here at all: the real entry points (Header's "Current
-    // Affairs" nav links, the floating CA icon) explicitly clear these
-    // sessionStorage keys before navigating here. Browser Back never runs
-    // that clearing code, so it naturally restores exactly as left —
-    // no flaky navigation-type detection needed, no clearing branch here.
     const caShouldRestoreState = true;
 
     // ============================================================
@@ -1192,34 +1117,15 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     heroFreeTab.addEventListener('click', () => setHeroTab('free'));
     heroPdfTab.addEventListener('click', () => setHeroTab('pdf'));
 
-    // Ad/campaign traffic: ?tab=pdf in the URL lands directly on Download
-    // PDF, skipping the default Read for Free view. This is separate from
-    // (and takes priority over) the sessionStorage restore below — a
-    // fresh ad click should always honor its own link, even if this
-    // browser happens to have an old 'free' tab state saved from a
-    // previous visit.
     const caUrlParams = new URLSearchParams(window.location.search);
     const caTabParam = caUrlParams.get('tab');
     if (caTabParam === 'pdf') {
       setHeroTab('pdf');
     }
 
-    // Restore whichever tab was last active. Reliable on browser Back
-    // (sessionStorage carries over untouched), and correct after a Buy ->
-    // signup/login -> redirect-back too (sessionStorage already holds
-    // 'pdf' from when Buy was clicked, since Buy only exists on that tab).
-    // A genuinely fresh visit starts clean because the real entry points
-    // (Header nav, floating icon) clear these keys before navigating here.
-    // Skipped entirely if the URL param above already set the tab, so a
-    // stale saved 'free' state can't override an explicit ad link.
     if (caShouldRestoreState && caTabParam !== 'pdf') {
       try {
         const savedTab = sessionStorage.getItem('ca_last_hero_tab');
-        // Restore whichever tab was actually last active — previously
-        // this only handled 'pdf', so Back from the read page (which only
-        // exists under the 'free' tab) always fell through to the
-        // server-rendered 'pdf' default instead of returning to Read for
-        // Free where the student actually was.
         if (savedTab === 'pdf' || savedTab === 'free') setHeroTab(savedTab);
       } catch (err) {}
     }
@@ -1246,13 +1152,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       tab.addEventListener('click', () => setPdfMode(tab.dataset.pdfMode));
     });
 
-    // Restore whichever PDF sub-tab (Monthly / Last 3 / Last 6) was last
-    // active — same reasoning as the hero-tab restore above: only on
-    // genuine browser Back or a completed Buy redirect, never a fresh
-    // visit (which always starts at Last 3 months, the server-rendered
-    // default — the lower-priced entry point, easier first purchase for
-    // new visitors; Last 6 months still gets the MAX SAVINGS badge to
-    // upsell from there).
     if (caShouldRestoreState) {
       try {
         const savedMode = sessionStorage.getItem('ca_last_pdf_mode');
@@ -1262,12 +1161,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       } catch (err) {}
     }
 
-    // Monthly grid: genuine multi-select — pick any number of months,
-    // price scales with how many are checked. (Ownership here is checked
-    // against the exact combination picked; if a backend later wants to
-    // recognize "some of these are already owned individually" and only
-    // charge for the new ones, that's a refinement on top of this, not
-    // a change to this picker.)
     const pdfGrid = document.getElementById('ca-pdf-month-grid');
     const pdfMonthlyBtn = document.getElementById('ca-pdf-monthly-btn');
     const pdfCheckboxes = () => Array.from(pdfGrid.querySelectorAll('.ca-pdf-month-checkbox'));
@@ -1301,12 +1194,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
 
     const PRICE_MONTHLY_JS = Number(pdfMonthlyBtn.dataset.price);
 
-    // Owned months become locked, non-interactive cards instead of
-    // checkboxes — never re-selectable for a new purchase. Only months
-    // bought individually through THIS tab count as owned here; being
-    // part of a bundle purchase does not mark a month owned in this grid
-    // (that history stays in the Purchases panel only — kept deliberately
-    // simple, no cross-referencing between bundle and monthly ownership).
     async function markOwnedMonths() {
       for (const cb of pdfCheckboxes()) {
         const owned = await checkOwnership(cb.dataset.itemId);
@@ -1330,10 +1217,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     initMonthlyGrid();
 
     // ============================================================
-    // Individual / Combined format toggle (Last 3 / Last 6 months).
-    // Swaps which item_ids/kind the bundle's buy button will actually
-    // purchase — Individual grants each real month separately at a fixed
-    // discount price; Combined buys the single merged-PDF bundle item.
+    // Individual / Combined format toggle
     // ============================================================
     const FORMAT_HINTS = {
       individual: (n) => `${n} separate monthly PDFs.`,
@@ -1369,11 +1253,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         });
       });
 
-      // Restore whichever format (Individual/Combined) was last picked
-      // for THIS bundle — only on genuine browser Back or a completed
-      // Buy redirect, never a fresh visit (always starts at this
-      // bundle's own default format, passed in by the caller — both
-      // Last 3 and Last 6 default to Combined).
       let initialFormat = defaultFormat;
       if (caShouldRestoreState) {
         try {
@@ -1396,21 +1275,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       applyFormat(initialFormat);
     }
 
-    // Bundle ownership: "owned" only when EVERY item in the current
-    // format's item_ids is already owned (Individual = all N months;
-    // Combined = the single bundle item). This is always checked against
-    // the CURRENT rolling window's item_ids (computed fresh from the
-    // server-rendered month list on every page load) — so once a new
-    // month is published and the window shifts (e.g. Jun-Aug becomes
-    // Jul-Sep), the item_ids change and this naturally goes back to
-    // "Buy Now" with no extra logic needed.
-    //
-    // Owned bundles show a "✓ Purchased" badge (matching the monthly
-    // grid's pattern) and a disabled button — no download here. Actual
-    // downloads only ever happen from the Purchases panel, which lists
-    // each real purchased item individually regardless of how it was
-    // bought (single month, combined bundle, or granted via an
-    // Individual-format bundle).
     async function applyOwnershipStateMulti(btn, itemIds, price) {
       const state = await loadCaPurchases();
       const allOwned = itemIds.length > 0 && itemIds.every((id) => state.items.has(id));
@@ -1436,9 +1300,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
         const kind = btn.dataset.activeKind;
         if (!itemIds.length) return;
         if (btn.classList.contains('ca-owned')) {
-          // Download every item this format grants — for Individual
-          // format that's multiple separate PDFs, opened as sequential
-          // downloads; for Combined it's the single merged file.
           itemIds.forEach((id, i) => setTimeout(() => triggerDownload(id), i * 400));
         } else {
           triggerPurchase(itemIds, kind);
@@ -1450,8 +1311,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     setupFormatToggle('6', 'combined');
 
     // ============================================================
-    // Purchases panel — real data from loadCaPurchases(), same card UI
-    // that was already validated with mock data.
+    // Purchases panel
     // ============================================================
     function badgeForItemType(itemType) {
       if (itemType === 'bundle3' || itemType === 'bundle6') return 'Combined';
@@ -1491,11 +1351,6 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       listEl.querySelectorAll('.ca-purchase-dl-btn').forEach((dlBtn) => {
         dlBtn.addEventListener('click', () => {
           triggerDownload(dlBtn.dataset.itemId);
-          // "Started" not "successful" — a direct-link download redirect
-          // gives JS no signal for actual file-download completion, only
-          // for the moment it was triggered. Claiming "successful" here
-          // would be inaccurate if the download were ever slow or failed
-          // silently after the redirect.
           if (window.showToast) {
             window.showToast('Download started');
           }
@@ -1523,6 +1378,9 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       purchasesPanel.style.display = 'none';
       setHeroTab('pdf');
     });
+  </script>
 
+  <script is:inline>
+    document.body.classList.add('sh2-page');
   </script>
 </Layout>

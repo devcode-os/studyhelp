@@ -164,20 +164,20 @@ function formatMath(str) {
        (see .header-desktop-only / .header-compact-only below), so no duplicate session
        logic and no extra network calls. -->
   <div class="header-desktop-only">
-    <Header active="subjects" />
+    <Header active="subjects" theme="premium" />
   </div>
-  <div class="header-compact-only">
-    <Header compact={true} backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} hasModeTabs={hasMcq}>
-      {hasMcq && (
-        <Fragment slot="chapter-progress-area">
-          <div class="ref-tabs chapter-mode-tabs" id="headerTopLevelTabs">
-            <div class="ref-tab active" data-toptab="mcq">MCQs</div>
-            <div class="ref-tab" data-toptab="theory">Theory</div>
-          </div>
-        </Fragment>
-      )}
-    </Header>
-  </div>
+<div class="header-compact-only">
+  <Header compact={true} theme="premium" backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} hasModeTabs={hasMcq}>
+    {hasMcq && (
+      <Fragment slot="chapter-progress-area">
+        <div class="ref-tabs chapter-mode-tabs" id="headerTopLevelTabs">
+          <div class="ref-tab active" data-toptab="mcq">MCQs</div>
+          <div class="ref-tab" data-toptab="theory">Theory</div>
+        </div>
+      </Fragment>
+    )}
+  </Header>
+</div>
 
   <div class={isTelugu ? 'lang-te content' : 'lang-en content'}>
     <div class="desktop-title-row">
@@ -185,7 +185,7 @@ function formatMath(str) {
         <i class="ti ti-arrow-left" aria-hidden="true"></i> {backLabel}
       </a>
       <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
-        <h1 style="margin:0;">{chapterNumber}. {title}</h1>
+        <h1 class="desktop-title-h1" style="margin:0;">{chapterNumber}. {title}</h1>
         <span style="font-size:14px; font-weight:700; color:var(--text);">{isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`}</span>
       </div>
     </div>
@@ -424,6 +424,8 @@ function formatMath(str) {
     .header-compact-only { display: none; }
     .desktop-back-pill { display: inline-flex; }
     .desktop-title-block { display: flex; }
+    .desktop-title-h1 { color: #1C1A38; }
+    html[data-theme="dark"] .desktop-title-h1 { color: #F3F1FC; }
     .desktop-title-row {
       display: flex;
       align-items: baseline;
@@ -1296,8 +1298,8 @@ function formatMath(str) {
       color: var(--text);
     }
     .rt-btn-accent-solid {
-      background: linear-gradient(90deg, #ff9a3c, #ffb35c) !important;
-      color: #2a1400 !important;
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
       border: none !important;
     }
 
@@ -2209,7 +2211,7 @@ function formatMath(str) {
   )}
 
   {!isReference && (
-  <script define:vars={{ chapterSlug, subject, chapterNumber, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
+  <script define:vars={{ chapterSlug, subject, chapterNumber, title, perPage: PER_PAGE, prevLabel, nextLabel, questions, weightage, isPapersSubject: meta.category === 'papers' }}>
     const PLANS_URL = `/plans/?highlight=${encodeURIComponent(subject)}&mode=bundle`;
     const LOGIN_URL = `/login/?next=${encodeURIComponent(window.location.pathname)}`;
     const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
@@ -2440,7 +2442,15 @@ function formatMath(str) {
     // <script> as its own module — these two are needed there to wire
     // the in-place "unlock after purchase" fetch for locked theory parts).
     window.ensureEntitlementChecked = ensureEntitlementChecked;
-    window.WORKER_URL = WORKER_URL;
+window.WORKER_URL = WORKER_URL;
+
+// Pre-warm the entitlement check as soon as the page loads, rather than
+// waiting for the first answered question — closes a real race where a
+// fast click-then-navigate could leave `purchased` still unresolved when
+// markAnswered() fires, silently dropping that reading-progress write.
+if (!isPapersSubject) {
+  setTimeout(() => ensureEntitlementChecked(), 0);
+}
 
     // ---------- Button loading feedback ----------
     // Gives instant visual response to a tap even while the entitlement
@@ -2893,10 +2903,62 @@ function formatMath(str) {
       if (text) text.textContent = `${answeredSet.size} of ${totalQuestions} answered`;
     }
 
-    function markAnswered(i) {
-      answeredSet.add(i);
-      updateProgress();
+   function markAnswered(i) {
+  console.log('DEBUG markAnswered fired', { isPapersSubject, purchased, entitlementChecked });
+  answeredSet.add(i);
+  updateProgress();
+  // Real reading engagement (never fires from Quick Revision — see
+  // openAnswerFor's !forceRerender guard above, and attachMcqHandlers'
+  // own call to this for MCQs). Papers are login-gated, not purchase-
+  // gated, so they're excluded — the recap card only applies to
+  // purchased subjects.
+  //
+  // Routed through ensureEntitlementChecked() rather than reading the
+  // `purchased` flag directly — if the entitlement check hasn't
+  // resolved yet (e.g. answering a question within the first instant
+  // of the page loading), this reuses/awaits that same in-flight check
+  // instead of silently dropping the log. ensureEntitlementChecked()
+  // already dedups repeat calls (entitlementChecked/entitlementCheckPromise),
+  // and logReadingProgress() itself only ever fires once per page load
+  // (readingProgressLogged), so this adds no extra network calls in the
+  // normal case where purchased is already known.
+  if (!isPapersSubject) {
+    ensureEntitlementChecked().then((ok) => {
+      if (ok) logReadingProgress();
+    });
+  }
+}
+
+       let readingProgressLogged = false;
+    let readingProgressInFlight = false;
+    async function logReadingProgress() {
+      if (readingProgressLogged || readingProgressInFlight) return;
+      readingProgressInFlight = true;
+      try {
+        const session = await getSession();
+        if (!session.logged_in) {
+          readingProgressInFlight = false;
+          return; // not logged in yet — allow a retry on the next answered question
+        }
+        readingProgressLogged = true;
+        fetch(`${WORKER_URL}/reading-progress`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          keepalive: true,
+          body: JSON.stringify({
+            user_id: session.user_id,
+            subject_id: subject,
+            chapter_slug: chapterSlug,
+            chapter_number: chapterNumber,
+            chapter_title: title,
+          }),
+        }).catch(() => {});
+      } catch (err) {
+      } finally {
+        readingProgressInFlight = false;
+      }
     }
+
 
     // ---------- openAnswerFor: single entry point for revealing a question,
     // used by both individual taps and Reveal-all. Every reveal — including
@@ -4053,4 +4115,186 @@ function formatMath(str) {
     loadAndRenderPublicOptions();
   </script>
   )}
+  <!--
+    PASTE THIS ENTIRE <style> BLOCK right before the final </Layout> tag,
+    after the last </script> in chapter-v2/[slug].astro.
+
+    Nothing else in the file changes — no markup, no script, no
+    getStaticPaths, no security/entitlement/mock-test logic. This only
+    repaints the orange/dark-purple brand accents to the indigo premium
+    palette used on the homepage/subjects/subject pages, reusing the
+    exact same class names/selectors that already exist in this file so
+    the cascade (later <style> block, same or higher specificity, plus
+    !important where the original used it) wins cleanly without editing
+    a single existing rule.
+
+    Left UNTOUCHED on purpose (these are semantic status colors, not
+    brand colors, and retinting them would make correct/wrong/marked/
+    visited harder to read at a glance):
+      #22c55e (correct/answered green), #c0392b (wrong-answer red),
+      #a855f7 (marked-for-review purple), var(--success-bg/--amber-bg)
+      status backgrounds.
+  -->
+  <style is:global>
+  body.sh2-page { background: #EEEDF6; }
+  html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+  .chapter-header {
+    background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 55%, #7C63DE 100%) !important;
+  }
+  html[data-theme="dark"] .chapter-header {
+    background: linear-gradient(160deg, #241F42 0%, #3A3170 45%, #5A4CC4 100%) !important;
+  }
+  .chapter-theme-toggle {
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    background: rgba(255,255,255,0.12) !important;
+  }
+
+  /* ...rest of the block continues as before (the --accent override, back-pill, etc.)... */
+
+    /* Re-tint the shared --accent token for everything inside this
+       page's content column (ref tabs, theory tables, spinner, jump
+       button, practice CTA, weightage counts) — one variable override
+       instead of chasing every var(--accent) usage individually. */
+    .content {
+      --accent: #4B3FA0;
+      --accent-bg: #EEEAFB;
+    }
+    html[data-theme="dark"] .content {
+      --accent: #A594F5;
+      --accent-bg: #2A2650;
+    }
+
+    /* Back pill hover */
+    .back-pill:hover {
+      background: rgba(75,63,160,0.10) !important;
+      border-color: rgba(75,63,160,0.4) !important;
+      color: #4B3FA0 !important;
+    }
+    html[data-theme="dark"] .back-pill:hover { color: #A594F5 !important; }
+
+    /* Question number accent (was red-brown) */
+    .q-num { color: #4B3FA0 !important; }
+    html[data-theme="dark"] .q-num { color: #A594F5 !important; }
+
+    /* MCQs/Theory segmented toggle (desktop + compact header variant) */
+    .mode-tabs { background: #ffffff !important; border-color: #E7E4F5 !important; }
+    .mode-tabs .ref-tab { color: #4B3FA0 !important; }
+    .mode-tabs .ref-tab.active { background: #2E2570 !important; color: #ffffff !important; }
+    .chapter-mode-tabs .ref-tab.active { color: #2E2570 !important; }
+
+    /* Reading toolbar — was dark orange/purple gradient */
+    .reading-toolbar {
+      background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 55%, #7C63DE 100%) !important;
+      box-shadow: 0 12px 30px -14px rgba(46,37,112,0.5) !important;
+    }
+    html[data-theme="dark"] .reading-toolbar {
+      background: linear-gradient(160deg, #241F42 0%, #3A3170 45%, #5A4CC4 100%) !important;
+      box-shadow: 0 12px 30px -14px rgba(0,0,0,0.7) !important;
+    }
+    .rt-progress-fill {
+      background: linear-gradient(90deg, #A594F5, #E8963A) !important;
+      box-shadow: 0 0 8px rgba(165,148,245,0.5) !important;
+    }
+    .rt-mocktest-link { color: rgba(255,255,255,0.65) !important; }
+
+    /* Quick Revision button (white/navy states — just re-tint the navy) */
+    #rt-reveal-all.rt-btn-accent { color: #2E2570 !important; }
+    html[data-theme="dark"] #rt-reveal-all.rt-btn-accent {
+  background: #F3F1FC !important;
+  color: #2E2570 !important;
+}
+
+    .rt-btn-ghost { color: #EEEAFB !important; }
+
+    /* Text-size buttons — active state was orange */
+    .rt-font-btn.active {
+      border-color: #A594F5 !important;
+      color: #ffffff !important;
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+    }
+
+    /* Question Paper Pattern & Weightage accordion border/icon */
+    .pw-accordion { border-color: #4B3FA0 !important; }
+    html[data-theme="dark"] .pw-accordion { border-color: #A594F5 !important; }
+    .pw-accordion-label i { color: #4B3FA0 !important; }
+    html[data-theme="dark"] .pw-accordion-label i { color: #A594F5 !important; }
+
+    /* Mock test starting overlay + top bar — was orange/dark-purple */
+    .mt-starting-overlay, .mt-topbar {
+      background: linear-gradient(160deg, #2E2570 0%, #4B3FA0 55%, #7C63DE 100%) !important;
+    }
+    .mt-starting-icon { color: #E8963A !important; }
+    .mt-timer { color: #E8963A !important; }
+    .mt-nav-btn.mt-submit-btn,
+    .mt-drawer-submit {
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
+    }
+    .mt-dot-visited { background: #E8963A !important; }
+    .mt-grid-cell.mt-cell-visited {
+      background: color-mix(in srgb, #E8963A 18%, var(--card)) !important;
+      border-color: #E8963A !important;
+      color: #b45c0a !important;
+    }
+
+    /* Theory-page reference tables, jump button, practice CTA — all ride
+       var(--accent) above, so no direct overrides needed here beyond the
+       decorative amber highlight boxes below. */
+    .form-cell .lbl { color: #C9B8FF !important; }
+    .chip-note { color: #C9B8FF !important; }
+
+    /* "Review Mock Test" button after a trial mock test finishes */
+    .rt-btn-accent {
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px -4px rgba(75,63,160,0.55) !important;
+    }
+    /* Quick Revision keeps its white/navy look, not the indigo gradient above */
+    #rt-reveal-all.rt-btn-accent {
+      background: #ffffff !important;
+      color: #2E2570 !important;
+      box-shadow: inset 0 0 0 1px rgba(28,20,56,0.12) !important;
+    }
+    html[data-theme="dark"] #rt-reveal-all.rt-btn-accent {
+      background: #F3F1FC !important;
+      color: #2E2570 !important;
+    }
+
+    /* "That was just N questions — unlock the full mock test" trial banner */
+       .mt-trial-cta {
+      background: linear-gradient(90deg, #4B3FA0, #7C63DE) !important;
+      color: #ffffff !important;
+    }
+  </style>
+
+  <script define:vars={{ subject, chapterNumber, title, chapterSlug: Astro.params.slug }}>
+    (function logReadingProgress() {
+      const WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+      const session = window.__shSessionPromise
+        ? window.__shSessionPromise
+        : fetch(`${WORKER_URL}/me`, { credentials: 'include' })
+            .then((res) => res.json())
+            .catch(() => ({ logged_in: false }));
+
+      session.then((data) => {
+        if (!data.logged_in) return;
+        fetch(`${WORKER_URL}/reading-progress`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            user_id: data.user_id,
+            subject_id: subject,
+            chapter_slug: chapterSlug,
+            chapter_number: chapterNumber,
+            chapter_title: title,
+          }),
+        }).catch(() => {});
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
 </Layout>

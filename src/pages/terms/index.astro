@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 ---
 <Layout title="Terms & Conditions - StudyHelp" description="Terms and conditions for using StudyHelp.">
-  <Header active="terms" />
+  <Header active="terms" theme="premium" />
 
   <div class="content legal-content">
     <div class="legal-card">
@@ -121,4 +121,34 @@ import Header from '../../components/Header.astro';
       }
     }
   </style>
+  <style is:global>
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+    body.sh2-page {
+      --bg: #EEEDF6;
+      --card: #FFFFFF;
+      --border: #E7E4F5;
+      --text: #1C1A38;
+      --muted: #726F92;
+      --accent: #4B3FA0;
+      --accent-bg: #EEEAFB;
+      --success-bg: #DFF3EA;
+      --success-text: #1D7A54;
+    }
+    html[data-theme="dark"] body.sh2-page {
+      --bg: #121120;
+      --card: #1C1A30;
+      --border: #302C4E;
+      --text: #F3F1FC;
+      --muted: #9C97BE;
+      --accent: #A594F5;
+      --accent-bg: #2A2650;
+      --success-bg: #183328;
+      --success-text: #5FCB9B;
+    }
+  </style>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
 </Layout>
