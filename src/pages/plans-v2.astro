@@ -12,8 +12,12 @@ import Header from '../components/Header.astro';
   <div class="page-wide">
 
     <div class="plans-intro">
-      <h1 class="plans-h1">Unlock Full Access <span id="plans-duration-badge" class="plans-duration-badge">3 Months (90 Days)</span></h1>
-      <p class="plans-sub">One-time payment. No subscription.</p>
+      <div class="plans-intro-icon"><i class="ti ti-shield-check"></i></div>
+      <div class="plans-intro-body">
+        <h1 class="plans-h1">Unlock Full Access</h1>
+        <p class="plans-sub">One-time payment. No subscription.</p>
+      </div>
+      <span id="plans-duration-badge" class="plans-duration-badge">3 Months (90 Days)</span>
     </div>
 
     <div id="active-subjects-section" class="active-subjects-section">
@@ -49,7 +53,13 @@ import Header from '../components/Header.astro';
       </div>
 
       <div id="bundle-sticky-bar" class="bundle-sticky-bar" style="display:flex">
-        <span id="bundle-counter">0 of 3 selected</span>
+        <div class="cart-summary">
+          <div class="cart-summary-head">
+            <i class="ti ti-shopping-cart" aria-hidden="true"></i>
+            <span id="bundle-counter">0 of 3 selected</span>
+          </div>
+          <div id="bundle-cart-chips" class="cart-chips"></div>
+        </div>
         <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Bundle Buy — &#8377;399</button>
       </div>
     </div>
@@ -175,29 +185,53 @@ import Header from '../components/Header.astro';
       position: relative;
       overflow: hidden;
       border-radius: 18px;
-      padding: 16px 18px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       background: linear-gradient(155deg, var(--sh2-indigo-deep) 0%, #5A4CC4 55%, #7C63DE 100%);
       box-shadow: 0 14px 28px -16px rgba(46,37,112,0.5);
     }
-    .plans-h1 {
-      margin: 0 0 6px; color: #ffffff; font-size: 1.15rem; font-weight: 800;
-      display: flex; flex-wrap: wrap; align-items: center; gap: 8px; row-gap: 8px;
+    /* Decorative glow — the one visual cue the plain cards below don't
+       have, so this reads as "the hero" and not just another box. */
+    .plans-intro::before {
+      content: '';
+      position: absolute; top: -60px; right: -40px;
+      width: 180px; height: 180px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
     }
+    .plans-intro-icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.25);
+      color: #ffffff; font-size: 21px; position: relative; z-index: 1;
+    }
+    .plans-intro-body { flex: 1; min-width: 0; position: relative; z-index: 1; }
+    .plans-h1 { margin: 0 0 3px; color: #ffffff; font-size: 1.12rem; font-weight: 800; }
     .plans-duration-badge {
-      font-size: 0.72rem; font-weight: 700; color: #ffffff; white-space: nowrap;
-      background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);
-      padding: 3px 10px; border-radius: 999px;
+      flex-shrink: 0; position: relative; z-index: 1;
+      font-size: 0.72rem; font-weight: 800; color: var(--sh2-indigo-deep); white-space: nowrap;
+      background: #ffffff; border: 1px solid rgba(255,255,255,0.6);
+      padding: 6px 12px; border-radius: 999px;
+      box-shadow: 0 4px 10px -4px rgba(0,0,0,0.25);
     }
     .plans-sub { color: rgba(255,255,255,0.75); font-size: 0.78rem; margin: 0; }
-    @media (min-width: 721px) {
+    @media (max-width: 720px) {
+      .plans-intro { flex-wrap: wrap; align-items: flex-start; }
+      .plans-h1 { font-size: 1.02rem; white-space: nowrap; }
       .plans-duration-badge {
-        position: absolute; right: 1rem; top: 50%; transform: translateY(-50%);
-        font-size: 0.78rem; padding: 6px 16px;
+        display: block;
+        width: calc(100% - 16px);
+        margin: 10px auto 0;
+        box-sizing: border-box;
+        text-align: center;
+        order: 1;
+        padding: 8px 12px;
       }
     }
-    @media (max-width: 720px) {
-      .plans-intro { text-align: center; }
-      .plans-h1 { flex-direction: column; }
+    @media (max-width: 360px) {
+      .plans-h1 { white-space: normal; }
     }
 
     /* ================= Section labels ================= */
@@ -373,34 +407,51 @@ import Header from '../components/Header.astro';
     .subject-rows.bundle-mode .subject-row { padding: 9px 10px; }
     @media (max-width: 900px) { .subjects-section:has(.bundle-mode) { padding-bottom: 76px; } }
 
-    /* ================= Sticky bundle bar ================= */
+    /* ================= Sticky bundle bar — styled as a cart summary,
+       not a plain status strip: cart icon, item chips, then the CTA. ================= */
     .bundle-sticky-bar {
-      display: none; gap: 6px;
+      display: none; gap: 10px;
       background: var(--sh2-surface);
       border: 1px solid var(--sh2-line);
-      border-radius: 12px;
-      padding: 4px; justify-content: space-between; align-items: center;
+      border-top: 3px solid var(--sh2-indigo);
+      border-radius: 14px;
+      padding: 10px 12px;
+      justify-content: space-between; align-items: center;
       box-shadow: 0 12px 28px -12px rgba(46,37,112,0.35);
       color: var(--sh2-ink); font-size: 0.78rem; font-weight: 700;
     }
-    #bundle-counter {
-      flex: 1; min-width: 0;
-      background: var(--sh2-indigo-soft);
-      color: var(--sh2-indigo);
-      padding: 9px 10px;
-      border-radius: 10px;
-      text-align: center;
-      white-space: nowrap;
+    .cart-summary { flex: 1; min-width: 0; }
+    .cart-summary-head {
+      display: flex; align-items: center; gap: 6px;
+      color: var(--sh2-indigo); font-size: 0.78rem; font-weight: 800;
     }
+    .cart-summary-head i { font-size: 15px; }
+    #bundle-counter { white-space: nowrap; }
+    .cart-chips {
+      display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;
+      min-height: 0;
+    }
+    .cart-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: var(--sh2-indigo-soft); color: var(--sh2-indigo-deep);
+      font-size: 0.64rem; font-weight: 700;
+      padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+      max-width: 140px; overflow: hidden; text-overflow: ellipsis;
+      cursor: pointer; border: none;
+    }
+    html[data-theme="dark"] .cart-chip { color: var(--sh2-indigo); }
+    .cart-chip .cart-chip-x { font-weight: 900; opacity: 0.7; }
     @media (max-width: 900px) {
       .bundle-sticky-bar {
         position: fixed;
         left: 50%; transform: translateX(-50%);
-        width: calc(100% - 64px);
+        width: calc(100% - 32px);
         bottom: calc(6px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
         z-index: 30;
-        max-width: 320px;
+        max-width: 400px;
+        flex-direction: column; align-items: stretch;
       }
+      .cart-chips { display: none; }
     }
     @media (min-width: 901px) {
       /* Desktop has plenty of vertical room already — docking this to
@@ -409,15 +460,16 @@ import Header from '../components/Header.astro';
          not the spot it visually renders in, so normal siblings after
          it get laid out as if it weren't there and it overlaps them).
          Just let it sit in normal flow after the subject list. */
-      .bundle-sticky-bar { position: static; margin: 12px auto 0; max-width: 360px; }
+      .bundle-sticky-bar { position: static; margin: 12px auto 0; max-width: 480px; }
     }
     .bundle-buy-btn {
-      flex: 1; padding: 10px 12px; border-radius: 10px; border: none; font-weight: 700; font-size: 0.78rem;
+      flex-shrink: 0; padding: 10px 16px; border-radius: 10px; border: none; font-weight: 700; font-size: 0.78rem;
       background: var(--sh2-green); color: #ffffff; cursor: pointer; white-space: nowrap;
     }
+    @media (max-width: 900px) { .bundle-buy-btn { width: 100%; padding: 11px 12px; } }
     .bundle-buy-btn:disabled { background: var(--sh2-surface-2); color: var(--sh2-text-soft); opacity: 1; cursor: not-allowed; }
     @media (min-width: 1200px) {
-      .bundle-sticky-bar { max-width: 420px; margin: 12px auto 0; }
+      .bundle-sticky-bar { max-width: 520px; margin: 12px auto 0; }
     }
 
     /* ================= Active subjects (owned) card ================= */
@@ -448,6 +500,7 @@ import Header from '../components/Header.astro';
       background: var(--sh2-surface);
       border: 1px solid var(--sh2-line); border-radius: 16px; padding: 1.1rem; color: var(--sh2-ink);
       box-shadow: var(--sh2-shadow);
+      margin-top: 24px;
     }
     .whatyouget-title { font-size: 0.78rem; font-weight: 800; margin-bottom: 12px; color: var(--sh2-indigo); text-transform: uppercase; letter-spacing: 0.04em; }
     .plans-faq-card .whatyouget-title { color: var(--sh2-indigo); }
@@ -510,7 +563,25 @@ import Header from '../components/Header.astro';
       const buyBtn = document.getElementById('bundle-buy-btn');
       if (counter) counter.textContent = `${selectedBundleSlugs.length} of 3 selected`;
       if (buyBtn) buyBtn.disabled = selectedBundleSlugs.length !== 3;
+      renderCartChips();
       updateFreeBadge();
+    }
+
+    function renderCartChips() {
+      const chipsEl = document.getElementById('bundle-cart-chips');
+      if (!chipsEl) return;
+      chipsEl.innerHTML = selectedBundleSlugs.map((slug, idx) => {
+        const meta = subjectMeta.find((s) => s.slug === slug);
+        const label = meta ? meta.titleEnglish || meta.titleNative : slug;
+        const freeTag = idx === 2 && selectedBundleSlugs.length === 3 ? ' · Free' : '';
+        return `<button type="button" class="cart-chip" data-chip-slug="${slug}">${label}${freeTag} <span class="cart-chip-x">&times;</span></button>`;
+      }).join('');
+      chipsEl.querySelectorAll('.cart-chip').forEach((chip) => {
+        chip.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleBundleSelect(chip.getAttribute('data-chip-slug'));
+        });
+      });
     }
 
     function updateFreeBadge() {
