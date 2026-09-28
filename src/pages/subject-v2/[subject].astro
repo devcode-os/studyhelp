@@ -388,6 +388,32 @@ for (const ch of chapters) {
     .section-heading:first-of-type { margin-top: 4px; }
 
     .chapter-list { display: flex; flex-direction: column; gap: 6px; }
+    /* Tablets (900-1199px) were still getting the single-column
+       mobile list, so each row stretched full-width and looked
+       oversized. Give them a 2-column grid — the same card treatment
+       desktop gets, just fewer columns. */
+    @media (min-width: 900px) and (max-width: 1199px) {
+      .chapter-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .chapter-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 14px 16px 12px;
+        position: relative;
+        border-bottom: 3px solid var(--sh2-indigo);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .chapter-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -12px rgba(46,37,112,0.28);
+      }
+      .chapter-num { width: 28px; height: 28px; font-size: 0.76rem; margin-bottom: 2px; }
+      .chapter-chev { display: none; }
+    }
     @media (min-width: 1200px) {
       .chapter-list {
         display: grid;

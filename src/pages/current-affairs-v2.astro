@@ -645,11 +645,12 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     .ca-bundle-card-best .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-indigo), var(--sh2-indigo-deep)); }
     .ca-bundle-card-max .ca-bundle-total-badge { background: linear-gradient(135deg, var(--sh2-amber), #b45c0a); color: #2a1400; }
 
-    /* Desktop: turn this from a compact dashed-border row (all its
-       content bunched to the left, icon+3 short lines) into a solid
-       CTA banner that actually uses the full card width — badge+range
-       on the left, MCQs count + includes line on the right. */
-    @media (min-width: 1200px) {
+    /* Desktop AND tablet: turn this from a compact dashed-border row
+       (all its content bunched to the left, icon+3 short lines) into
+       a solid CTA banner that actually uses the full card width —
+       badge+range on the left, MCQs count + includes line on the
+       right. Starts at 900px so tablets get it too, not just desktop. */
+    @media (min-width: 900px) {
       .ca-bundle-card {
         padding: 20px 26px;
         gap: 20px;
@@ -689,7 +690,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     }
 
     .ca-format-toggle { display: flex; gap: 8px; margin-bottom: 16px; }
-    @media (min-width: 1200px) {
+    @media (min-width: 900px) {
       .ca-format-toggle { max-width: 360px; margin-left: auto; margin-right: auto; }
     }
     .ca-format-btn {
@@ -701,7 +702,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
       background: linear-gradient(90deg, var(--sh2-indigo), var(--sh2-indigo-deep)); color: #fff; border-color: transparent;
     }
     .ca-format-hint { color: var(--muted); font-size: 12px; margin: 0 0 22px; }
-    @media (min-width: 1200px) {
+    @media (min-width: 900px) {
       .ca-format-hint { text-align: center; }
     }
 
