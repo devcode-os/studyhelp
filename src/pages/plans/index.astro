@@ -56,15 +56,8 @@ import Header from '../../components/Header.astro';
         <div class="row-skeleton">Loading subjects...</div>
       </div>
 
-      <div id="bundle-sticky-bar" class="bundle-sticky-bar" style="display:flex">
-        <div class="cart-summary">
-          <div class="cart-summary-head">
-            <i class="ti ti-shopping-cart" aria-hidden="true"></i>
-            <span id="bundle-counter">0 of 3 selected</span>
-          </div>
-          <div id="bundle-cart-chips" class="cart-chips"></div>
-        </div>
-        <button id="bundle-buy-btn" class="bundle-buy-btn" disabled type="button">Bundle Buy — &#8377;399</button>
+      <div id="bundle-sticky-bar" class="bundle-sticky-bar">
+        <button id="bundle-buy-btn" class="bundle-buy-btn" type="button">Buy Bundle — &#8377;399</button>
       </div>
     </div>
 
@@ -435,71 +428,23 @@ import Header from '../../components/Header.astro';
     .subject-rows.bundle-mode .row-checkbox { display: flex; }
     .subject-rows.bundle-mode .row-trailing { display: none; }
     .subject-rows.bundle-mode .subject-row { padding: 9px 10px; }
-    @media (max-width: 900px) { .subjects-section:has(.bundle-mode) { padding-bottom: 76px; } }
 
-    /* ================= Sticky bundle bar — styled as a cart summary,
-       not a plain status strip: cart icon, item chips, then the CTA. ================= */
+    /* ================= Bundle buy bar — sits in normal document flow
+       right after the subject list, on every width. Always visible;
+       clicking with fewer than 3 selected just prompts to pick 3. ================= */
     .bundle-sticky-bar {
-      display: none; gap: 10px;
-      background: var(--sh2-surface);
-      border: 1px solid var(--sh2-line);
-      border-top: 3px solid var(--sh2-indigo);
-      border-radius: 14px;
-      padding: 10px 12px;
-      justify-content: space-between; align-items: center;
-      box-shadow: 0 12px 28px -12px rgba(46,37,112,0.35);
-      color: var(--sh2-ink); font-size: 0.78rem; font-weight: 700;
+      display: flex;
+      margin: 12px auto 0;
+      max-width: 480px;
+      justify-content: center;
     }
-    .cart-summary { flex: 1; min-width: 0; }
-    .cart-summary-head {
-      display: flex; align-items: center; gap: 6px;
-      color: var(--sh2-indigo); font-size: 0.78rem; font-weight: 800;
-    }
-    .cart-summary-head i { font-size: 15px; }
-    #bundle-counter { white-space: nowrap; }
-    .cart-chips {
-      display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px;
-      min-height: 0;
-    }
-    .cart-chip {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: var(--sh2-indigo-soft); color: var(--sh2-indigo-deep);
-      font-size: 0.64rem; font-weight: 700;
-      padding: 3px 8px; border-radius: 999px; white-space: nowrap;
-      max-width: 140px; overflow: hidden; text-overflow: ellipsis;
-      cursor: pointer; border: none;
-    }
-    html[data-theme="dark"] .cart-chip { color: var(--sh2-indigo); }
-    .cart-chip .cart-chip-x { font-weight: 900; opacity: 0.7; }
-    @media (max-width: 900px) {
-      .bundle-sticky-bar {
-        position: fixed;
-        left: 50%; transform: translateX(-50%);
-        width: calc(100% - 32px);
-        bottom: calc(6px + var(--tabbar-h, 58px) + env(safe-area-inset-bottom, 0px));
-        z-index: 30;
-        max-width: 400px;
-        flex-direction: column; align-items: stretch;
-      }
-      .cart-chips { display: none; }
-    }
-    @media (min-width: 901px) {
-      /* Desktop has plenty of vertical room already — docking this to
-         the viewport bottom via `sticky` made it float over the list
-         rows below it (sticky reserves its ORIGINAL flow position,
-         not the spot it visually renders in, so normal siblings after
-         it get laid out as if it weren't there and it overlaps them).
-         Just let it sit in normal flow after the subject list. */
-      .bundle-sticky-bar { position: static; margin: 12px auto 0; max-width: 480px; }
+    @media (min-width: 1200px) {
+      .bundle-sticky-bar { max-width: 520px; }
     }
     .bundle-buy-btn {
-      flex-shrink: 0; padding: 10px 16px; border-radius: 10px; border: none; font-weight: 700; font-size: 0.78rem;
+      width: auto;
+      padding: 12px 38px; border-radius: 999px; border: none; font-weight: 700; font-size: 0.84rem;
       background: var(--sh2-green); color: #ffffff; cursor: pointer; white-space: nowrap;
-    }
-    @media (max-width: 900px) { .bundle-buy-btn { width: 100%; padding: 11px 12px; } }
-    .bundle-buy-btn:disabled { background: var(--sh2-surface-2); color: var(--sh2-text-soft); opacity: 1; cursor: not-allowed; }
-    @media (min-width: 1200px) {
-      .bundle-sticky-bar { max-width: 520px; margin: 12px auto 0; }
     }
 
     /* ================= Active subjects (owned) card ================= */
@@ -578,7 +523,6 @@ import Header from '../../components/Header.astro';
       bundleModeOn = on;
       selectedBundleSlugs = [];
       document.getElementById('real-plan-grid').classList.toggle('bundle-mode', on);
-      document.getElementById('bundle-sticky-bar').style.display = on ? 'flex' : 'none';
       document.getElementById('bundle-value-banner').classList.toggle('bundle-value-visible', on);
       document.getElementById('mode-single-btn').classList.toggle('mode-btn-active', !on);
       document.getElementById('mode-bundle-btn').classList.toggle('mode-btn-active', on);
@@ -589,29 +533,7 @@ import Header from '../../components/Header.astro';
     }
 
     function updateBundleBar() {
-      const counter = document.getElementById('bundle-counter');
-      const buyBtn = document.getElementById('bundle-buy-btn');
-      if (counter) counter.textContent = `${selectedBundleSlugs.length} of 3 selected`;
-      if (buyBtn) buyBtn.disabled = selectedBundleSlugs.length !== 3;
-      renderCartChips();
       updateFreeBadge();
-    }
-
-    function renderCartChips() {
-      const chipsEl = document.getElementById('bundle-cart-chips');
-      if (!chipsEl) return;
-      chipsEl.innerHTML = selectedBundleSlugs.map((slug, idx) => {
-        const meta = subjectMeta.find((s) => s.slug === slug);
-        const label = meta ? meta.titleEnglish || meta.titleNative : slug;
-        const freeTag = idx === 2 && selectedBundleSlugs.length === 3 ? ' · Free' : '';
-        return `<button type="button" class="cart-chip" data-chip-slug="${slug}">${label}${freeTag} <span class="cart-chip-x">&times;</span></button>`;
-      }).join('');
-      chipsEl.querySelectorAll('.cart-chip').forEach((chip) => {
-        chip.addEventListener('click', (e) => {
-          e.stopPropagation();
-          toggleBundleSelect(chip.getAttribute('data-chip-slug'));
-        });
-      });
     }
 
     function updateFreeBadge() {
@@ -639,7 +561,18 @@ import Header from '../../components/Header.astro';
     }
 
     function onBuyBundleClick() {
-      if (selectedBundleSlugs.length !== 3) return;
+      if (selectedBundleSlugs.length !== 3) {
+        const remaining = 3 - selectedBundleSlugs.length;
+        const msg = selectedBundleSlugs.length === 0
+          ? 'Pick any 3 subjects'
+          : `Pick ${remaining} more subject${remaining === 1 ? '' : 's'}`;
+        if (window.showToast) {
+          window.showToast(msg, 'error');
+        } else {
+          alert(msg);
+        }
+        return;
+      }
 
       if (!currentUser) {
         const returnTo = `/plans/?mode=bundle&subjects=${encodeURIComponent(selectedBundleSlugs.join(','))}`;
