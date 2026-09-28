@@ -39,12 +39,16 @@ import Header from '../../components/Header.astro';
 
     <div id="subjects-section" class="subjects-section">
       <div id="bundle-value-banner" class="bundle-value-banner bundle-value-visible">
-        <div class="bundle-value-icon"><i class="ti ti-gift"></i></div>
-        <div class="bundle-value-body">
-          <span class="bundle-value-badge">Best Value</span>
+        <span class="bundle-value-tag">Best Value</span>
+        <div class="bundle-value-left">
           <div class="bundle-value-text">
             Buy 2 Subjects, get <span class="bundle-value-free">1 Free</span>
           </div>
+          <div class="bundle-value-sub">Pick any 3 subjects</div>
+        </div>
+        <div class="bundle-value-right">
+          <span class="bundle-value-amt" id="bundle-value-amt">&#8377;399</span>
+          <span class="bundle-value-amt-label" id="bundle-value-amt-label">Bundle price</span>
         </div>
       </div>
 
@@ -278,59 +282,85 @@ import Header from '../../components/Header.astro';
     @media (max-width: 400px) { .mode-btn { font-size: 0.68rem; padding: 10px 6px; } }
 
     /* ================= Bundle value banner =================
-       A real CTA banner — solid gold/amber gradient, white text,
-       full row width — not a faint dashed-border box. */
+       Corner "Best Value" tag + split card: message on the left,
+       bundle price called out in its own block on the right.
+       Same markup/rules at phone, tablet and desktop — only the
+       sizing scales up at wider breakpoints. */
     .bundle-value-banner {
       display: none; position: relative; overflow: hidden;
-      align-items: center; gap: 14px;
-      background: linear-gradient(120deg, var(--sh2-indigo) 0%, var(--sh2-indigo-deep) 100%);
+      align-items: stretch;
+      background: var(--sh2-surface);
+      border: 1.5px solid var(--sh2-indigo);
       border-radius: 14px;
-      padding: 14px 18px;
       margin: 12px 0 14px;
-      box-shadow: 0 14px 28px -14px rgba(46,37,112,0.55);
-      border: none;
     }
     .bundle-value-banner.bundle-value-visible { display: flex; }
+
+    .bundle-value-tag {
+      position: absolute; top: 0; left: 0;
+      background: linear-gradient(120deg, var(--sh2-indigo) 0%, var(--sh2-indigo-deep) 100%);
+      color: #ffffff;
+      font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 4px 10px 4px 12px;
+      border-radius: 0 0 8px 0;
+      line-height: 1.4;
+    }
+
+    .bundle-value-left {
+      flex: 1 1 auto; min-width: 0;
+      padding: 28px 12px 12px 14px;
+      display: flex; flex-direction: column; justify-content: center; gap: 2px;
+    }
+    .bundle-value-text {
+      font-size: 0.86rem; font-weight: 800; color: var(--sh2-ink); line-height: 1.3;
+    }
+    .bundle-value-free {
+      color: #ffffff;
+      background: var(--sh2-indigo);
+      padding: 1px 8px;
+      border-radius: 6px;
+    }
+    .bundle-value-sub { font-size: 0.72rem; font-weight: 600; color: var(--sh2-text-soft); }
+
+    .bundle-value-right {
+      flex: 0 0 auto; width: 92px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+      border-left: 1px solid var(--sh2-line);
+      background: var(--sh2-indigo-soft);
+      text-align: center;
+      padding: 8px 6px;
+    }
+    .bundle-value-amt { font-size: 0.98rem; font-weight: 800; color: var(--sh2-indigo-deep); white-space: nowrap; }
+    .bundle-value-amt-label {
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--sh2-text-soft);
+    }
+    html[data-theme="dark"] .bundle-value-amt { color: var(--sh2-indigo); }
+
+    /* Tablet — a little more breathing room, no layout change */
+    @media (min-width: 640px) {
+      .bundle-value-tag { font-size: 0.7rem; padding: 5px 12px 5px 14px; }
+      .bundle-value-left { padding: 30px 16px 14px 18px; gap: 3px; }
+      .bundle-value-text { font-size: 0.95rem; }
+      .bundle-value-sub { font-size: 0.76rem; }
+      .bundle-value-right { width: 108px; }
+      .bundle-value-amt { font-size: 1.1rem; }
+    }
+
+    /* Desktop — centered, same split-card shape, larger type */
     @media (min-width: 1200px) {
       .bundle-value-banner {
         max-width: 820px;
         margin-left: auto; margin-right: auto;
-        padding: 20px 28px;
-        gap: 18px;
         border-radius: 16px;
-        justify-content: space-between;
       }
-      .bundle-value-icon { width: 52px; height: 52px; font-size: 24px; }
-      .bundle-value-badge { font-size: 0.86rem; }
-      .bundle-value-text { font-size: 1.1rem; }
-      /* Fills the right side instead of leaving it bare */
-      .bundle-value-banner::after {
-        content: "3 subjects · 90 days access";
-        margin-left: auto;
-        font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.8);
-        white-space: nowrap;
-      }
-    }
-    .bundle-value-icon {
-      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.25);
-      color: #ffffff; font-size: 19px;
-    }
-    .bundle-value-body { min-width: 0; }
-    .bundle-value-badge {
-      display: inline-block;
-      color: #ffffff;
-      font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
-      margin-bottom: 2px;
-      opacity: 0.9;
-    }
-    .bundle-value-text { font-size: 0.9rem; font-weight: 800; color: #ffffff; line-height: 1.3; }
-    .bundle-value-free {
-      color: #2E2570;
-      background: #ffffff;
-      padding: 1px 8px;
-      border-radius: 6px;
+      .bundle-value-tag { font-size: 0.74rem; padding: 6px 14px 6px 16px; }
+      .bundle-value-left { padding: 34px 20px 18px 22px; gap: 4px; }
+      .bundle-value-text { font-size: 1.05rem; }
+      .bundle-value-sub { font-size: 0.8rem; }
+      .bundle-value-right { width: 128px; }
+      .bundle-value-amt { font-size: 1.25rem; }
+      .bundle-value-amt-label { font-size: 0.66rem; }
     }
 
     /* ================= Subject rows ================= */
@@ -860,6 +890,24 @@ import Header from '../../components/Header.astro';
       `;
     }
 
+    function updateBundleValueBanner(subjects) {
+      const amtEl = document.getElementById('bundle-value-amt');
+      const labelEl = document.getElementById('bundle-value-amt-label');
+      if (!amtEl || !labelEl || !subjects || !subjects.length) return;
+      const prices = subjects.map((s) => s.price).filter((p) => p > 0);
+      if (!prices.length) return;
+      const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+      const BUNDLE_PRICE = 399;
+      const save = Math.round(avg * 3 - BUNDLE_PRICE);
+      if (save > 0) {
+        amtEl.textContent = `₹${save}`;
+        labelEl.textContent = 'You save';
+      } else {
+        amtEl.textContent = `₹${BUNDLE_PRICE}`;
+        labelEl.textContent = 'Bundle price';
+      }
+    }
+
     async function loadRealSubjects() {
       const grid = document.getElementById('real-plan-grid');
       try {
@@ -929,6 +977,8 @@ import Header from '../../components/Header.astro';
             toggleBundleSelect(slug);
           });
         });
+
+        updateBundleValueBanner(subjects);
       } catch (err) {
         grid.innerHTML = `<div class="row-skeleton">Couldn't load subjects. Please refresh the page.</div>`;
       }
