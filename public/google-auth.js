@@ -60,12 +60,29 @@
       return !!(c && typeof c.isPluginAvailable === 'function' && c.isPluginAvailable('SocialLogin'));
     } catch (e) { return false; }
   }
-  // Usable = configured AND (a normal browser, OR the app build that has the plugin).
+  // Old app builds (Capacitor, but no SocialLogin plugin) cannot sign in with Google.
+  // They still show the button; tapping it sends the user to the Play Store to update.
+  function isOldApp() {
+    return isNativeApp() && !nativePluginAvailable();
+  }
+  // Usable = configured AND the launch switch / preview flag is on. (Normal browser:
+  // web button. App with the plugin: native button. Old app: "update the app" button.)
   function isUsable() {
     if (!isConfigured()) return false;
     if (!LIVE && !previewOn()) return false;
-    if (isNativeApp()) return nativePluginAvailable();
     return true;
+  }
+
+  // ---------- old app: send the user to the Play Store ----------
+  var PLAY_PACKAGE = 'com.fdaytalk.studyhelp';
+  function openPlayStore() {
+    try { window.location.href = 'market://details?id=' + PLAY_PACKAGE; } catch (e) {}
+    // If the Play Store app didn't take over (page still visible), fall back to the web URL.
+    setTimeout(function () {
+      try {
+        if (!document.hidden) window.open('https://play.google.com/store/apps/details?id=' + PLAY_PACKAGE, '_system');
+      } catch (e) {}
+    }, 1500);
   }
 
   // ---------- native (Android app) ----------
@@ -168,6 +185,25 @@
     injectStyles();
     slot.innerHTML = '';
     slot.classList.add('shg-slot');
+
+    if (isOldApp()) {
+      var ob = document.createElement('button');
+      ob.type = 'button';
+      ob.className = 'shg-btn';
+      ob.innerHTML = G_LOGO + '<span></span>';
+      ob.lastChild.textContent = opts.label || 'Continue with Google';
+      var note = document.createElement('div');
+      note.className = 'shg-note';
+      note.style.display = 'none';
+      note.textContent = 'Google sign-in needs the latest StudyHelp app. Opening the Play Store - please update the app, then sign in with Google. You can still use your phone number and passcode.';
+      ob.addEventListener('click', function () {
+        note.style.display = 'block';
+        window.ShGoogle.openPlayStore();
+      });
+      slot.appendChild(ob);
+      slot.parentNode.insertBefore(note, slot.nextSibling);
+      return Promise.resolve(true);
+    }
 
     if (isNativeApp()) {
       var btn = document.createElement('button');
@@ -343,7 +379,7 @@
       });
   }
 
-  window.ShGoogle = { isUsable: isUsable, mount: mount, postJson: postJson, safeNext: safeNext };
+  window.ShGoogle = { isUsable: isUsable, mount: mount, postJson: postJson, safeNext: safeNext, openPlayStore: openPlayStore };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initSignInBlock);
