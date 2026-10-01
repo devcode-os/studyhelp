@@ -1037,7 +1037,8 @@ import Header from '../../components/Header.astro';
 
     function highlightIntendedSubject() {
       const params = new URLSearchParams(window.location.search);
-      const highlightSlug = params.get('highlight');
+      // ?buy=<slug> (redirect after signup/login) also marks and floats the chosen subject to the top.
+      const highlightSlug = params.get('highlight') || params.get('buy');
       if (!highlightSlug) return;
 
       const targetRow = document.getElementById(`plan-card-${highlightSlug}`);
@@ -1073,11 +1074,13 @@ import Header from '../../components/Header.astro';
     }
 
     // Boot
+    // Pick the right tab immediately (before subjects/session load) so a
+    // single-subject visit never flashes the default Bundle tab first.
+    applyRequestedMode();
     loadRealSubjects().then(() => {
       getSession().then((session) => {
         currentUser = session;
         checkOwnershipForAllSubjects().then(() => {
-          applyRequestedMode();
           highlightIntendedSubject();
           const params = new URLSearchParams(window.location.search);
           const buySubject = params.get('buy');
