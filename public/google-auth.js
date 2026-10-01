@@ -81,7 +81,10 @@
       await plugin.initialize({ google: { webClientId: GOOGLE_WEB_CLIENT_ID } });
       nativeReady = true;
     }
-    var res = await plugin.login({ provider: 'google', options: { scopes: ['email', 'profile'] } });
+    // No `scopes`: passing scopes makes the plugin demand a modified MainActivity
+    // ("You CANNOT use scopes without modifying the main activity"). The default
+    // Credential Manager flow already returns an ID token with email + name.
+    var res = await plugin.login({ provider: 'google', options: {} });
     var token = res && res.result && res.result.idToken;
     if (!token) throw new Error('no_id_token');
     return token;
