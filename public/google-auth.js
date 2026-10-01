@@ -1,0 +1,255 @@
+/*
+ * StudyHelp — "Continue with Google"
+ *
+ * Loaded on /login/, /signup/ and /account/. Self-contained and fail-closed:
+ * if anything is missing, blocked or misconfigured, the Google button simply
+ * stays hidden and the existing phone + passcode flow is untouched.
+ *
+ *   Web browser : Google Identity Services button (accounts.google.com/gsi/client)
+ *   Android app : native sign-in through the Capacitor plugin
+ *                 @capgo/capacitor-social-login. App versions built BEFORE that
+ *                 plugin was added don't contain it, so the button stays hidden
+ *                 for every user of those versions (new and existing alike).
+ *
+ * Both paths end the same way: a Google ID token is POSTed to the Worker's
+ * /auth/google (or /account/delete for re-confirmation).
+ */
+(function () {
+  'use strict';
+
+  // >>>>>>>>>> PLACEHOLDER — REPLACE BEFORE DEPLOYING <<<<<<<<<<
+  // The *Web application* OAuth client ID from Google Cloud Console
+  // (APIs & Services -> Credentials). While it still contains "REPLACE_" the
+  // Google button stays hidden everywhere, so shipping this file as-is is safe.
+  var GOOGLE_WEB_CLIENT_ID = 'REPLACE_WITH_WEB_CLIENT_ID.apps.googleusercontent.com';
+  // >>>>>>>>>> END PLACEHOLDER <<<<<<<<<<
+
+  var WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
+
+  // ---------- environment checks ----------
+  function isConfigured() {
+    return GOOGLE_WEB_CLIENT_ID.indexOf('REPLACE_') === -1;
+  }
+  function isNativeApp() {
+    try {
+      var c = window.Capacitor;
+      return !!(c && typeof c.isNativePlatform === 'function' && c.isNativePlatform());
+    } catch (e) { return false; }
+  }
+  function nativePluginAvailable() {
+    try {
+      var c = window.Capacitor;
+      return !!(c && typeof c.isPluginAvailable === 'function' && c.isPluginAvailable('SocialLogin'));
+    } catch (e) { return false; }
+  }
+  // Usable = configured AND (a normal browser, OR the app build that has the plugin).
+  function isUsable() {
+    if (!isConfigured()) return false;
+    if (isNativeApp()) return nativePluginAvailable();
+    return true;
+  }
+
+  // ---------- native (Android app) ----------
+  var nativePlugin = null;
+  var nativeReady = false;
+  function getNativePlugin() {
+    if (!nativePlugin) nativePlugin = window.Capacitor.registerPlugin('SocialLogin');
+    return nativePlugin;
+  }
+  async function nativeGetIdToken() {
+    var plugin = getNativePlugin();
+    if (!nativeReady) {
+      await plugin.initialize({ google: { webClientId: GOOGLE_WEB_CLIENT_ID } });
+      nativeReady = true;
+    }
+    var res = await plugin.login({ provider: 'google', options: { scopes: ['email', 'profile'] } });
+    var token = res && res.result && res.result.idToken;
+    if (!token) throw new Error('no_id_token');
+    return token;
+  }
+
+  // ---------- web (Google Identity Services) ----------
+  var gisPromise = null;
+  var gisInitDone = false;
+  var activeCredentialHandler = null;
+
+  function loadGis() {
+    if (gisPromise) return gisPromise;
+    gisPromise = new Promise(function (resolve, reject) {
+      if (window.google && window.google.accounts && window.google.accounts.id) { resolve(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://accounts.google.com/gsi/client';
+      s.async = true;
+      s.defer = true;
+      s.onload = function () { resolve(); };
+      s.onerror = function () { gisPromise = null; reject(new Error('gis_load_failed')); };
+      document.head.appendChild(s);
+    });
+    return gisPromise;
+  }
+  function gisInit() {
+    if (gisInitDone) return;
+    window.google.accounts.id.initialize({
+      client_id: GOOGLE_WEB_CLIENT_ID,
+      callback: function (resp) {
+        if (activeCredentialHandler && resp && resp.credential) activeCredentialHandler(resp.credential);
+      },
+      ux_mode: 'popup',
+      auto_select: false,
+      cancel_on_tap_outside: true
+    });
+    gisInitDone = true;
+  }
+
+  // ---------- styles (injected so no page CSS has to change) ----------
+  var G_LOGO = '<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">' +
+    '<path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>' +
+    '<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>' +
+    '<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>' +
+    '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>' +
+    '</svg>';
+
+  var stylesInjected = false;
+  function injectStyles() {
+    if (stylesInjected) return;
+    stylesInjected = true;
+    var css =
+      '.shg-wrap{margin:0 0 4px;}' +
+      '.shg-slot{display:flex;justify-content:center;min-height:44px;}' +
+      '.shg-slot.shg-busy{opacity:.55;pointer-events:none;}' +
+      '.shg-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:11px 14px;' +
+      'border-radius:12px;border:1px solid var(--sh2-line,var(--line,#e7e4f5));' +
+      'background:var(--sh2-surface,var(--surface,#fff));color:var(--sh2-text,var(--text,#211f38));' +
+      'font-family:inherit;font-weight:600;font-size:.92rem;cursor:pointer;}' +
+      '.shg-btn:hover:not(:disabled){filter:brightness(.97);}' +
+      '.shg-btn:disabled{opacity:.6;cursor:not-allowed;}' +
+      '.shg-or{display:flex;align-items:center;gap:12px;margin:16px 0 2px;' +
+      'color:var(--sh2-text-soft,var(--muted,#726f92));font-size:.76rem;}' +
+      '.shg-or:before,.shg-or:after{content:"";flex:1;height:1px;background:var(--sh2-line,var(--line,#e7e4f5));}' +
+      '.shg-note{font-size:.78rem;line-height:1.4;color:var(--sh2-text-soft,var(--muted,#726f92));margin-top:12px;}';
+    var el = document.createElement('style');
+    el.setAttribute('data-shg', '1');
+    el.textContent = css;
+    document.head.appendChild(el);
+  }
+
+  // ---------- public: render the right Google button into `slot` ----------
+  // onIdToken(idToken) is called with a fresh Google ID token once the user
+  // finishes. opts.label is used for the native-app button; opts.onError(msg)
+  // is called if the native sign-in fails for a reason other than the user
+  // cancelling. Returns a promise that rejects if the button can't be shown
+  // (e.g. Google script blocked) so the caller can hide its block.
+  function mount(slot, onIdToken, opts) {
+    opts = opts || {};
+    injectStyles();
+    slot.innerHTML = '';
+    slot.classList.add('shg-slot');
+
+    if (isNativeApp()) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'shg-btn';
+      btn.innerHTML = G_LOGO + '<span></span>';
+      btn.lastChild.textContent = opts.label || 'Continue with Google';
+      btn.addEventListener('click', async function () {
+        if (btn.disabled) return;
+        btn.disabled = true;
+        try {
+          var token = await nativeGetIdToken();
+          await onIdToken(token);
+        } catch (e) {
+          var msg = String((e && (e.message || e.errorMessage)) || e || '');
+          if (!/cancel|dismiss|closed|aborted/i.test(msg) && opts.onError) {
+            opts.onError('Google sign-in could not start. Please use your phone number and passcode instead.');
+          }
+        } finally {
+          btn.disabled = false;
+        }
+      });
+      slot.appendChild(btn);
+      return Promise.resolve(true);
+    }
+
+    return loadGis().then(function () {
+      gisInit();
+      activeCredentialHandler = onIdToken;
+      var width = Math.min(400, Math.max(200, slot.clientWidth || 320));
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      window.google.accounts.id.renderButton(slot, {
+        type: 'standard',
+        theme: dark ? 'filled_black' : 'outline',
+        size: 'large',
+        text: 'continue_with',
+        shape: 'rectangular',
+        logo_alignment: 'left',
+        width: width
+      });
+      return true;
+    });
+  }
+
+  // ---------- helpers ----------
+  function postJson(path, body) {
+    return fetch(WORKER_URL + path, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (data) {
+        return { ok: res.ok, status: res.status, data: data };
+      });
+    });
+  }
+
+  // Only same-site relative paths — never bounce to another origin.
+  function safeNext() {
+    var n = new URLSearchParams(window.location.search).get('next') || '/';
+    if (n.charAt(0) !== '/' || n.charAt(1) === '/' || n.indexOf('\\') !== -1) n = '/';
+    return n;
+  }
+
+  // ---------- login + signup pages ----------
+  function initSignInBlock() {
+    var wrap = document.getElementById('google-auth');
+    var slot = document.getElementById('google-auth-slot');
+    if (!wrap || !slot || !isUsable()) return; // stays hidden
+
+    var errBox = document.getElementById('google-auth-error');
+    var errText = document.getElementById('google-auth-error-text');
+    function showError(msg) {
+      if (errBox && errText) { errText.textContent = msg; errBox.style.display = 'flex'; }
+    }
+    function setBusy(b) { slot.classList.toggle('shg-busy', !!b); }
+
+    function handleIdToken(idToken) {
+      if (errBox) errBox.style.display = 'none';
+      setBusy(true);
+      return postJson('/auth/google', { id_token: idToken }).then(function (r) {
+        if (!r.ok) {
+          showError(r.data.error || 'Google sign-in failed. Please try again.');
+          setBusy(false);
+          return;
+        }
+        // Clear any stale cached session so the destination page re-checks fresh
+        try { sessionStorage.removeItem('sh_session_cache'); } catch (e) {}
+        window.location.href = safeNext();
+      }).catch(function () {
+        showError('Network error. Please check your connection and try again.');
+        setBusy(false);
+      });
+    }
+
+    wrap.style.display = 'block'; // show first so the web button can measure its width
+    mount(slot, handleIdToken, { label: 'Continue with Google', onError: showError })
+      .catch(function () { wrap.style.display = 'none'; }); // Google blocked/offline -> fall back to phone form
+  }
+
+  window.ShGoogle = { isUsable: isUsable, mount: mount, postJson: postJson, safeNext: safeNext };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSignInBlock);
+  } else {
+    initSignInBlock();
+  }
+})();

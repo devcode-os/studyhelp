@@ -49,6 +49,18 @@ import Header from '../../components/Header.astro';
       </div>
       <p class="sub" id="signup-sub">Mobile number + passcode — set up in under 30 seconds.</p>
 
+      <!-- Google sign-in: hidden until /google-auth.js confirms it can run here
+           (browser, or an app build that includes the native plugin). Keeps the
+           ?next= redirect, so guests buying from a subject/plan/CA page still land
+           on payment afterwards. -->
+      <div id="google-auth" class="shg-wrap" style="display:none;">
+        <div id="google-auth-slot"></div>
+        <div id="google-auth-error" class="error-msg" style="display:none; margin-top:10px;">
+          <i class="ti ti-alert-circle"></i><span id="google-auth-error-text"></span>
+        </div>
+        <div class="shg-or"><span>or sign up with your phone number</span></div>
+      </div>
+
       <form id="signup-form">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name" />
@@ -589,6 +601,8 @@ import Header from '../../components/Header.astro';
       }
     });
   </script>
+
+  <script is:inline src="/google-auth.js" defer></script>
 
   <script is:inline>
     document.body.classList.add('sh2-page');

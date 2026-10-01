@@ -43,7 +43,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/content/theory", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/quick-revision-clicks", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
+      const authRoutes = ["/signup", "/login", "/auth/google", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/content/theory", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/quick-revision-clicks", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -97,6 +97,9 @@ export default {
     }
     if (url.pathname === "/login" && request.method === "POST") {
       return login(request, env);
+    }
+    if (url.pathname === "/auth/google" && request.method === "POST") {
+      return googleAuth(request, env);
     }
     if (url.pathname === "/logout" && request.method === "POST") {
       return logout(request, env);
@@ -1283,6 +1286,254 @@ async function login(request, env) {
   }
 }
 
+// ---------- 5a. Google sign-in ----------
+// Purely additive: phone + passcode signup/login above are untouched. The
+// client (web button, or the native plugin inside the Android app) sends a
+// Google ID token; we verify its signature against Google's public keys, then
+// log in / link / create.
+//
+// Setup: `npx wrangler secret put GOOGLE_CLIENT_IDS` with the WEB OAuth client
+// ID (comma-separate if you ever need more than one). It is a secret (not a
+// wrangler.toml var) so a deploy can never wipe it. Until it is set,
+// /auth/google answers 503 and nothing else is affected.
+//
+// Account rules (so existing students are never disturbed or duplicated):
+//   1. Known Google account (google_sub)          -> log in.
+//   2. Google email == a VERIFIED recovery email   -> link to that account, log in.
+//   3. Google email matches only UNVERIFIED rows   -> refuse, tell them how to proceed.
+//   4. No match                                    -> create a new Google-only account
+//      (no phone, no passcode, email_verified = 1 because Google verified it).
+const GOOGLE_JWKS_URL = "https://www.googleapis.com/oauth2/v3/certs";
+const GOOGLE_ISSUERS = ["https://accounts.google.com", "accounts.google.com"];
+const GOOGLE_JWKS_TTL_MS = 6 * 60 * 60 * 1000;
+let googleJwksCache = { keys: null, fetchedAt: 0 };
+
+function getGoogleAudiences(env) {
+  return String(env.GOOGLE_CLIENT_IDS || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+function base64UrlToBytes(str) {
+  const b64 = str.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - (str.length % 4)) % 4);
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
+
+async function getGoogleJwks(forceRefresh = false) {
+  const now = Date.now();
+  if (!forceRefresh && googleJwksCache.keys && now - googleJwksCache.fetchedAt < GOOGLE_JWKS_TTL_MS) {
+    return googleJwksCache.keys;
+  }
+  const res = await fetch(GOOGLE_JWKS_URL);
+  if (!res.ok) throw new Error("google_keys_unavailable");
+  const data = await res.json();
+  googleJwksCache = { keys: Array.isArray(data.keys) ? data.keys : [], fetchedAt: now };
+  return googleJwksCache.keys;
+}
+
+// Verifies signature (RS256 against Google's JWKS), issuer, audience, expiry
+// and that Google itself verified the email. opts.jwks / opts.now exist only so
+// the logic can be unit-tested without the network. opts.maxAgeSeconds demands
+// a freshly issued token (used to re-confirm account deletion).
+async function verifyGoogleIdToken(idToken, allowedAudiences, opts = {}) {
+  const parts = String(idToken).split(".");
+  if (parts.length !== 3) throw new Error("malformed_token");
+  const dec = new TextDecoder();
+  const header = JSON.parse(dec.decode(base64UrlToBytes(parts[0])));
+  const payload = JSON.parse(dec.decode(base64UrlToBytes(parts[1])));
+  if (header.alg !== "RS256" || !header.kid) throw new Error("bad_alg");
+
+  let keys = opts.jwks || (await getGoogleJwks());
+  let jwk = keys.find((k) => k.kid === header.kid);
+  if (!jwk && !opts.jwks) {
+    keys = await getGoogleJwks(true);
+    jwk = keys.find((k) => k.kid === header.kid);
+  }
+  if (!jwk) throw new Error("unknown_key");
+
+  const key = await crypto.subtle.importKey(
+    "jwk",
+    { kty: jwk.kty, n: jwk.n, e: jwk.e, alg: "RS256", ext: true },
+    { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" },
+    false,
+    ["verify"]
+  );
+  const valid = await crypto.subtle.verify(
+    "RSASSA-PKCS1-v1_5",
+    key,
+    base64UrlToBytes(parts[2]),
+    new TextEncoder().encode(`${parts[0]}.${parts[1]}`)
+  );
+  if (!valid) throw new Error("bad_signature");
+
+  const nowSec = Math.floor((opts.now || Date.now()) / 1000);
+  if (!GOOGLE_ISSUERS.includes(payload.iss)) throw new Error("bad_issuer");
+  const aud = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
+  if (!aud.some((a) => allowedAudiences.includes(a))) throw new Error("bad_audience");
+  if (!payload.exp || nowSec > payload.exp + 60) throw new Error("expired");
+  if (opts.maxAgeSeconds && (!payload.iat || nowSec - payload.iat > opts.maxAgeSeconds)) {
+    throw new Error("not_fresh");
+  }
+  if (!payload.sub || !payload.email) throw new Error("missing_claims");
+  if (payload.email_verified !== true && payload.email_verified !== "true") {
+    throw new Error("email_not_verified");
+  }
+  return payload;
+}
+
+async function googleAuth(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) =>
+    json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+
+  try {
+    const audiences = getGoogleAudiences(env);
+    if (!audiences.length) {
+      return jsonAuth(
+        { error: "Google sign-in is not available right now.", code: "google_not_configured" },
+        503
+      );
+    }
+
+    const body = await request.json().catch(() => ({}));
+    const idToken = typeof body.id_token === "string" ? body.id_token : "";
+    if (!idToken || idToken.length > 4096) {
+      return jsonAuth(
+        { error: "Google sign-in failed. Please try again.", code: "google_token_invalid" },
+        400
+      );
+    }
+
+    let claims;
+    try {
+      claims = await verifyGoogleIdToken(idToken, audiences);
+    } catch (e) {
+      return jsonAuth(
+        { error: "Google sign-in failed. Please try again.", code: "google_token_invalid" },
+        401
+      );
+    }
+
+    const googleSub = String(claims.sub);
+    const email = String(claims.email).trim().toLowerCase();
+    const displayName = (String(claims.name || "").trim() || email.split("@")[0]).slice(0, 100);
+
+    let isNew = false;
+    // Rule 1 — returning Google user.
+    let user = await env.DB.prepare("SELECT id, name FROM users WHERE google_sub = ?")
+      .bind(googleSub)
+      .first();
+
+    if (!user) {
+      const found = await env.DB.prepare(
+        "SELECT id, name, email_verified, google_sub FROM users WHERE LOWER(recovery_email) = ?"
+      )
+        .bind(email)
+        .all();
+      const matches = found.results || [];
+
+      if (matches.length) {
+        // Rule 2 — link only to an account whose recovery email was OTP-verified.
+        const linkable = matches.filter((m) => Number(m.email_verified) === 1 && !m.google_sub);
+        if (linkable.length === 1) {
+          const target = linkable[0];
+          const linked = await env.DB.prepare(
+            "UPDATE users SET google_sub = ? WHERE id = ? AND google_sub IS NULL"
+          )
+            .bind(googleSub, target.id)
+            .run();
+          if (!linked.meta || linked.meta.changes !== 1) {
+            return jsonAuth(
+              { error: "Could not link your Google account. Please try again.", code: "google_link_failed" },
+              409
+            );
+          }
+          user = { id: target.id, name: target.name };
+        } else if (linkable.length > 1) {
+          return jsonAuth(
+            {
+              error: "More than one account uses this email. Please log in with your phone number and passcode.",
+              code: "google_email_ambiguous",
+            },
+            409
+          );
+        } else if (matches.some((m) => m.google_sub)) {
+          return jsonAuth(
+            {
+              error: "This email is already linked to a different Google account. Please log in with your phone number and passcode.",
+              code: "google_email_in_use",
+            },
+            409
+          );
+        } else {
+          // Rule 3 — never merge into an account whose email was never verified.
+          return jsonAuth(
+            {
+              error: "An account with this email already exists, but the email isn't verified yet. Log in with your phone number and passcode, verify your email in Account, then use Google.",
+              code: "google_verify_email_first",
+            },
+            409
+          );
+        }
+      } else {
+        // Rule 4 — brand-new Google-only account.
+        isNew = true;
+        const userId = crypto.randomUUID();
+        try {
+          await env.DB.prepare(
+            `INSERT INTO users (id, name, recovery_email, email_verified, google_sub)
+             VALUES (?, ?, ?, 1, ?)`
+          )
+            .bind(userId, displayName, email, googleSub)
+            .run();
+          user = { id: userId, name: displayName };
+        } catch (insertErr) {
+          // Double-tap race: the unique google_sub index rejected the second insert.
+          user = await env.DB.prepare("SELECT id, name FROM users WHERE google_sub = ?")
+            .bind(googleSub)
+            .first();
+          if (!user) throw insertErr;
+          isNew = false;
+        }
+      }
+    }
+
+    // Same single-active-session policy as phone login (see login()).
+    await env.DB.prepare(
+      "UPDATE login_sessions SET revoked_reason = 'evicted_by_new_login', revoked_at = ? WHERE user_id = ? AND revoked_reason IS NULL"
+    )
+      .bind(Math.floor(Date.now() / 1000), user.id)
+      .run();
+
+    const session = await createSession(env, user.id);
+
+    return jsonAuth(
+      { user_id: user.id, name: user.name, is_new: isNew },
+      200,
+      { "Set-Cookie": sessionCookie(session, request) }
+    );
+  } catch (err) {
+    return jsonAuth({ error: "Server error" }, 500);
+  }
+}
+
+// Returns the row only for a Google-only account (no passcode). Wrapped so a
+// missing google_sub column (migration not run yet) behaves exactly like before.
+async function getGoogleOnlyUser(env, userId) {
+  try {
+    return await env.DB.prepare(
+      "SELECT google_sub FROM users WHERE id = ? AND passcode_hash IS NULL AND google_sub IS NOT NULL"
+    )
+      .bind(userId)
+      .first();
+  } catch (e) {
+    return null;
+  }
+}
+
 // ---------- 6. Logout ----------
 async function logout(request, env) {
   const token = getSessionTokenFromRequest(request);
@@ -1316,9 +1567,32 @@ async function me(request, env) {
   )
     .bind(user.id)
     .first();
+
+  // Google sign-in: lets the account page hide passcode-only options for
+  // Google-only accounts. Kept in its own try/catch so /me can never break
+  // (e.g. if the google_sub migration hasn't run yet) — it then simply reports
+  // the pre-Google defaults.
+  let hasPasscode = true;
+  let hasGoogle = false;
+  try {
+    const authInfo = await env.DB.prepare(
+      "SELECT (passcode_hash IS NOT NULL) AS has_passcode, (google_sub IS NOT NULL) AS has_google FROM users WHERE id = ?"
+    )
+      .bind(user.id)
+      .first();
+    if (authInfo) {
+      hasPasscode = !!authInfo.has_passcode;
+      hasGoogle = !!authInfo.has_google;
+    }
+  } catch (e) {
+    // ignore — defaults above apply
+  }
+
   return json(
     {
       logged_in: true,
+      has_passcode: hasPasscode,
+      has_google: hasGoogle,
       user_id: user.id,
       name: user.name,
       phone: user.phone,
@@ -1589,22 +1863,47 @@ async function deleteAccount(request, env) {
       return jsonAuth({ error: "Login required" }, 401);
     }
 
-    const { passcode } = await request.json();
-    if (!passcode) {
-      return jsonAuth({ error: "Passcode is required to confirm deletion" }, 400);
-    }
+    const body = await request.json();
+    const { passcode } = body;
 
-    const fullUser = await env.DB.prepare("SELECT passcode_hash FROM users WHERE id = ?")
-      .bind(user.id)
-      .first();
+    // Google-only accounts have no passcode, so they re-confirm with a freshly
+    // issued Google ID token for THEIR OWN Google account instead. Accounts
+    // that have a passcode take the original path below, unchanged.
+    const googleOnly = await getGoogleOnlyUser(env, user.id);
+    if (googleOnly) {
+      let claims;
+      try {
+        claims = await verifyGoogleIdToken(
+          String(body.id_token || ""),
+          getGoogleAudiences(env),
+          { maxAgeSeconds: 300 }
+        );
+      } catch (e) {
+        return jsonAuth(
+          { error: "Google confirmation failed. Please try again.", code: "google_token_invalid" },
+          401
+        );
+      }
+      if (String(claims.sub) !== googleOnly.google_sub) {
+        return jsonAuth({ error: "That Google account does not match this account." }, 401);
+      }
+    } else {
+      if (!passcode) {
+        return jsonAuth({ error: "Passcode is required to confirm deletion" }, 400);
+      }
 
-    if (!fullUser || !fullUser.passcode_hash) {
-      return jsonAuth({ error: "Passcode is incorrect" }, 401);
-    }
+      const fullUser = await env.DB.prepare("SELECT passcode_hash FROM users WHERE id = ?")
+        .bind(user.id)
+        .first();
 
-    const valid = await verifyPasscode(passcode, fullUser.passcode_hash);
-    if (!valid) {
-      return jsonAuth({ error: "Passcode is incorrect" }, 401);
+      if (!fullUser || !fullUser.passcode_hash) {
+        return jsonAuth({ error: "Passcode is incorrect" }, 401);
+      }
+
+      const valid = await verifyPasscode(passcode, fullUser.passcode_hash);
+      if (!valid) {
+        return jsonAuth({ error: "Passcode is incorrect" }, 401);
+      }
     }
 
     // FK-safe cascade — children before parent, matching the manual D1

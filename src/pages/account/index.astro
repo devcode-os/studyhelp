@@ -1059,6 +1059,15 @@ import Header from '../../components/Header.astro';
         document.getElementById('detail-email').textContent = data.recovery_email || '-';
         currentRecoveryEmail = data.recovery_email || '';
 
+        // Google-only account (signed up with Google, so no passcode): hide the
+        // passcode-only option and confirm account deletion with Google instead.
+        // has_passcode is only ever false for those accounts; every existing
+        // phone + passcode account (and any older /me response) skips this.
+        if (data.has_passcode === false) {
+          changePasscodeToggle.style.display = 'none';
+          setupGoogleDelete();
+        }
+
         // "Change recovery email" is only offered once verified — while
         // verification is pending, the verify-banner above is the single
         // path to fix a wrong email (editable before sending, see showVerifyEmailStep).
@@ -1107,6 +1116,76 @@ import Header from '../../components/Header.astro';
     const deleteErrorText = document.getElementById('delete-account-error-text');
     const deleteStepForm = document.getElementById('delete-account-step-form');
     const deleteStepSuccess = document.getElementById('delete-account-step-success');
+
+    // Google-only accounts have no passcode, so deletion is confirmed with a
+    // fresh Google sign-in instead. Called from the /me handler above.
+    function setupGoogleDelete() {
+      const passcodeWrap = deletePasscodeInput ? deletePasscodeInput.closest('.passcode-field-wrap') : null;
+      if (passcodeWrap) passcodeWrap.style.display = 'none';
+      submitDeleteBtn.style.display = 'none';
+
+      const box = document.createElement('div');
+      box.style.display = 'none';
+      box.style.marginTop = '12px';
+      const note = document.createElement('p');
+      note.className = 'hint';
+      note.textContent = 'Confirm it is you with Google. Your account is deleted immediately after.';
+      const slot = document.createElement('div');
+      box.appendChild(note);
+      box.appendChild(slot);
+      deleteErrorMsg.parentNode.insertBefore(box, deleteErrorMsg);
+
+      function showDeleteError(msg) {
+        deleteErrorText.textContent = msg;
+        deleteErrorMsg.style.display = 'flex';
+      }
+
+      function showFallback() {
+        slot.innerHTML = '';
+        const p = document.createElement('p');
+        p.className = 'hint';
+        p.innerHTML = 'Google confirmation is not available here. Please <a href="/support/">contact support</a> to delete your account.';
+        slot.appendChild(p);
+        box.style.display = 'block';
+      }
+
+      function confirmDelete(idToken) {
+        deleteErrorMsg.style.display = 'none';
+        return fetch(`${WORKER_URL}/account/delete`, {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id_token: idToken }),
+        })
+          .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+          .then(({ ok, data }) => {
+            if (!ok) {
+              showDeleteError(data.error || 'Could not delete account.');
+              return;
+            }
+            clearCachedSession();
+            deleteStepForm.style.display = 'none';
+            deleteStepSuccess.style.display = 'block';
+            setTimeout(() => { window.location.href = '/'; }, 1500);
+          })
+          .catch(() => showDeleteError('Network error. Please try again.'));
+      }
+
+      function hideBox() {
+        box.style.display = 'none';
+        slot.innerHTML = '';
+      }
+
+      deleteConfirmCheckbox.addEventListener('change', () => {
+        if (!deleteConfirmCheckbox.checked) { hideBox(); return; }
+        if (!(window.ShGoogle && window.ShGoogle.isUsable())) { showFallback(); return; }
+        box.style.display = 'block';
+        window.ShGoogle
+          .mount(slot, confirmDelete, { label: 'Confirm with Google and delete', onError: showDeleteError })
+          .catch(showFallback);
+      });
+      if (cancelDeleteBtn) cancelDeleteBtn.addEventListener('click', hideBox);
+    }
 
     if (deleteAccountToggle) {
       deleteAccountToggle.addEventListener('click', () => {
@@ -1188,6 +1267,8 @@ import Header from '../../components/Header.astro';
         .finally(() => { window.location.href = '/'; });
     });
   </script>
+
+  <script is:inline src="/google-auth.js" defer></script>
 
   <script is:inline>
     document.body.classList.add('sh2-page');
