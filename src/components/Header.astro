@@ -701,6 +701,27 @@ const aboutHref = '/about/';
     color: rgba(255,255,255,0.5);
     font-size: 13px;
   }
+
+  /* Premium (sh2) theme: the bell dropdown reuses .more-menu-dropdown, which is
+     WHITE in light mode and dark purple in dark mode, but the bell text above is
+     hard-coded white (made for the classic dark dropdown). Give each theme its
+     own readable colours. Classic theme is untouched. */
+  .site-header.sh2-theme .bell-dropdown-header { color: #1C1A38; border-bottom-color: #E7E4F5; }
+  .site-header.sh2-theme .bell-clear-all { color: #B45309; }
+  .site-header.sh2-theme .bell-item { border-bottom-color: #EEEDF6; }
+  .site-header.sh2-theme .bell-item:hover { background: #F4F2FB; }
+  .site-header.sh2-theme .bell-item.unread { background: #FFF1F1; }
+  .site-header.sh2-theme .bell-item-title { color: #1C1A38; }
+  .site-header.sh2-theme .bell-item-body { color: #5C5878; }
+  .site-header.sh2-theme .bell-empty { color: #726F92; }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-dropdown-header { color: #F3F1FC; border-bottom-color: #302C4E; }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-clear-all { color: #FFB35C; }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-item { border-bottom-color: #302C4E; }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-item:hover { background: rgba(255,255,255,0.06); }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-item.unread { background: rgba(255,107,107,0.10); }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-item-title { color: #F3F1FC; }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-item-body { color: rgba(243,241,252,0.7); }
+  html[data-theme="dark"] .site-header.sh2-theme .bell-empty { color: rgba(243,241,252,0.55); }
 </style>
 
 <script is:inline>
