@@ -370,7 +370,7 @@ import Header from '../../components/Header.astro';
         const tailEl = document.getElementById('purchase-context-tail');
         const subEl = document.getElementById('signup-sub');
         if (banner && leadEl && pillEl && tailEl) {
-          leadEl.textContent = 'Create your account to complete your purchase';
+          leadEl.textContent = "You're buying:";
 
           const prettyNames = caBuy.item_ids.map(prettifyCaItemId);
           const allResolved = prettyNames.every(Boolean);
@@ -388,7 +388,7 @@ import Header from '../../components/Header.astro';
               : `Current Affairs — ${caBuy.item_ids.length} months`;
           }
 
-          tailEl.textContent = "You'll be sent straight to payment right after.";
+          tailEl.textContent = 'Sign up, then pay. Takes under a minute.';
           banner.style.display = 'flex';
           if (subEl) subEl.style.display = 'none';
         }
@@ -409,9 +409,9 @@ import Header from '../../components/Header.astro';
         // sentence — the subject name gets its own pill line so it's the
         // one thing that visually anchors the eye, not just a highlighted
         // word buried mid-sentence.
-        leadEl.textContent = 'Create your account to complete your purchase';
+        leadEl.textContent = "You're buying:";
         pillEl.textContent = subjectName;
-        tailEl.textContent = "You'll be sent straight to payment right after.";
+        tailEl.textContent = 'Sign up, then pay. Takes under a minute.';
         banner.style.display = 'flex';
         // In the buy flow, "no Gmail/OTP" reads as a throwaway technical
         // footnote right when the person needs momentum toward payment.
@@ -427,9 +427,9 @@ import Header from '../../components/Header.astro';
       // their 3 subjects once back on Plans. Said plainly rather than
       // overpromising.
       if (isBundle) {
-        leadEl.textContent = 'Create your account to continue your bundle purchase';
+        leadEl.textContent = "You're buying:";
         pillEl.textContent = `Bundle: 3 subjects for ₹399`;
-        tailEl.textContent = "You'll be sent straight to payment right after.";
+        tailEl.textContent = 'Sign up, then continue to complete your purchase.';
         banner.style.display = 'flex';
         if (subEl) subEl.style.display = 'none';
 
