@@ -249,7 +249,7 @@
     function renderUsersTab(filterText) {
       const filter = (filterText || "").trim().toLowerCase();
       const rows = filter
-        ? allUsersCache.filter((u) => (u.phone || "").includes(filter) || (u.name || "").toLowerCase().includes(filter))
+        ? allUsersCache.filter((u) => (u.phone || "").includes(filter) || (u.name || "").toLowerCase().includes(filter) || (u.recovery_email || "").toLowerCase().includes(filter))
         : allUsersCache;
 
       const rowsHtml = rows.map((u) => {
@@ -257,8 +257,8 @@
         const manual = u.subjects_active_manual || 0;
         const hasAny = purchased + manual > 0;
         return `
-          <tr class="user-row" data-phone="${esc(u.phone)}">
-            <td><strong>${esc(u.phone)}</strong></td>
+          <tr class="user-row" data-phone="${esc(u.phone || u.recovery_email)}">
+            <td>${u.phone ? `<strong>${esc(u.phone)}</strong>` : `<span class="badge none">Google</span><div class="muted">${esc(u.recovery_email || "")}</div>`}</td>
             <td>${esc(u.name || "—")}</td>
             <td>
               <span class="badge ${hasAny ? "active" : "none"}" title="Purchased / Manually granted">${purchased} bought · ${manual} manual</span>
@@ -817,7 +817,7 @@
         <div class="card">
           <div class="user-header">
             <h3>${esc(user.name || "(no name)")}</h3>
-            <div class="muted">Phone: ${esc(user.phone)} · Recovery email: ${esc(user.recovery_email || "—")} · Joined: ${fmtDateShort(user.created_at)}</div>
+            <div class="muted">Phone: ${esc(user.phone || "— (Google sign-in)")} · Recovery email: ${esc(user.recovery_email || "—")} · Joined: ${fmtDateShort(user.created_at)}</div>
           </div>
           <div class="callout ${rec.level}" style="margin-bottom:16px">${esc(rec.text)}</div>
         </div>
@@ -872,7 +872,7 @@
         const subjectLabel = $("grantSubject").selectedOptions[0].textContent;
         $("grantConfirm").innerHTML = `
           <div class="confirm-box">
-            Grant <strong>${days} days</strong> access to <strong>${esc(subjectLabel)}</strong> for <strong>${esc(user.phone)}</strong>?
+            Grant <strong>${days} days</strong> access to <strong>${esc(subjectLabel)}</strong> for <strong>${esc(user.phone || user.recovery_email)}</strong>?
             <div class="row" style="margin-top:8px">
               <button id="confirmGrantBtn">Yes, grant access</button>
               <button class="secondary" id="cancelGrantBtn">Cancel</button>
