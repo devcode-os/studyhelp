@@ -256,6 +256,50 @@
     }
   }
 
+  // Buy-flow banner (signup page): simpler wording, used ONLY while the Google
+  // button is showing, so nothing changes for anyone before launch. The page
+  // re-writes the banner text again after it loads the subject name, so a
+  // MutationObserver keeps the simpler wording in place; if Google then fails to
+  // load, the original wording is put back.
+  var bannerObserver = null;
+  var bannerOriginal = null;
+  function applyBuyBannerCopy() {
+    var banner = document.getElementById('purchase-context-banner');
+    var lead = document.getElementById('purchase-context-lead');
+    var tail = document.getElementById('purchase-context-tail');
+    if (!banner || !lead || !tail || !lead.textContent) return;
+    var current = { lead: lead.textContent, tail: tail.textContent };
+    var isBundle = banner.getAttribute('data-shg-bundle') === '1' || /bundle/i.test(current.lead);
+    if (isBundle) banner.setAttribute('data-shg-bundle', '1');
+    var wantLead = "You're buying:";
+    var wantTail = isBundle
+      ? 'Sign up, then continue to complete your purchase.'
+      : 'Sign up, then pay. Takes under a minute.';
+    if (current.lead !== wantLead || current.tail !== wantTail) {
+      if (current.lead !== wantLead && current.tail !== wantTail) bannerOriginal = current; // page's own wording
+      lead.textContent = wantLead;
+      tail.textContent = wantTail;
+    }
+  }
+  function startBuyBannerCopy() {
+    var banner = document.getElementById('purchase-context-banner');
+    if (!banner) return;
+    applyBuyBannerCopy();
+    if (typeof MutationObserver === 'function' && !bannerObserver) {
+      bannerObserver = new MutationObserver(applyBuyBannerCopy);
+      bannerObserver.observe(banner, { childList: true, subtree: true, characterData: true });
+    }
+  }
+  function stopBuyBannerCopy() {
+    if (bannerObserver) { bannerObserver.disconnect(); bannerObserver = null; }
+    var lead = document.getElementById('purchase-context-lead');
+    var tail = document.getElementById('purchase-context-tail');
+    if (bannerOriginal && lead && tail) {
+      lead.textContent = bannerOriginal.lead;
+      tail.textContent = bannerOriginal.tail;
+    }
+  }
+
   // ---------- login + signup pages ----------
   function initSignInBlock() {
     var wrap = document.getElementById('google-auth');
@@ -290,10 +334,12 @@
     wrap.style.display = 'block'; // show first so the web button can measure its width
     injectStyles(); // so the toggle button is styled the moment it appears
     setPhoneFormCollapsed(true);
+    startBuyBannerCopy();
     mount(slot, handleIdToken, { label: 'Continue with Google', onError: showError })
       .catch(function () { // Google blocked/offline -> fall back to the full phone form
         wrap.style.display = 'none';
         setPhoneFormCollapsed(false);
+        stopBuyBannerCopy();
       });
   }
 
