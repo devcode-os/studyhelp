@@ -48,6 +48,14 @@ import Header from '../../components/Header.astro';
         <p id="purchase-context-tail" class="purchase-banner-tail"></p>
       </div>
 
+      <script is:inline>
+        // No flash of the phone form: it stays hidden from the first paint until
+        // /google-auth.js decides (Google button + "Sign up with phone number", or
+        // the full form if Google can't run). 4s safety so the form can never stay
+        // hidden if that script fails to load.
+        document.documentElement.classList.add('shg-hold');
+        setTimeout(function () { document.documentElement.classList.remove('shg-hold'); }, 4000);
+      </script>
       <!-- Google sign-in: hidden until /google-auth.js confirms it can run here
            (browser, or an app build that includes the native plugin). Keeps the
            ?next= redirect, so guests buying from a subject/plan/CA page still land
@@ -101,6 +109,8 @@ import Header from '../../components/Header.astro';
   </div>
 
   <style is:global>
+    html.shg-hold #signup-form { display: none !important; }
+    html.shg-hold #google-auth { display: block !important; visibility: hidden; min-height: 165px; }
     body.sh2-page { background: #EEEDF6; }
     html[data-theme="dark"] body.sh2-page { background: #121120; }
 

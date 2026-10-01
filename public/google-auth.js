@@ -293,10 +293,16 @@
   }
 
   // ---------- login + signup pages ----------
+  // Signup page holds the phone form hidden from first paint (class set inline in
+  // the page); every path below must release it.
+  function releaseHold() {
+    document.documentElement.classList.remove('shg-hold');
+  }
+
   function initSignInBlock() {
     var wrap = document.getElementById('google-auth');
     var slot = document.getElementById('google-auth-slot');
-    if (!wrap || !slot || !isUsable()) return; // stays hidden
+    if (!wrap || !slot || !isUsable()) { releaseHold(); return; } // stays hidden
 
     var errBox = document.getElementById('google-auth-error');
     var errText = document.getElementById('google-auth-error-text');
@@ -326,10 +332,12 @@
     wrap.style.display = 'block'; // show first so the web button can measure its width
     injectStyles(); // so the toggle button is styled the moment it appears
     setPhoneFormCollapsed(true);
+    releaseHold(); // inline styles now keep the form collapsed
     mount(slot, handleIdToken, { label: 'Continue with Google', onError: showError })
       .catch(function () { // Google blocked/offline -> fall back to the full phone form
         wrap.style.display = 'none';
         setPhoneFormCollapsed(false);
+        releaseHold();
       });
   }
 
