@@ -17,18 +17,36 @@
 (function () {
   'use strict';
 
-  // >>>>>>>>>> PLACEHOLDER — REPLACE BEFORE DEPLOYING <<<<<<<<<<
-  // The *Web application* OAuth client ID from Google Cloud Console
-  // (APIs & Services -> Credentials). While it still contains "REPLACE_" the
-  // Google button stays hidden everywhere, so shipping this file as-is is safe.
-  var GOOGLE_WEB_CLIENT_ID = 'REPLACE_WITH_WEB_CLIENT_ID.apps.googleusercontent.com';
-  // >>>>>>>>>> END PLACEHOLDER <<<<<<<<<<
+  // Web application OAuth client ID (Google Cloud project studyhelp-510307).
+  // A client ID is public by design (it is visible in any page that uses Google
+  // sign-in); the secret is not used and is not in this repo.
+  var GOOGLE_WEB_CLIENT_ID = '939652415017-m6iorineoscivrl5o0o5fqj1c6sekvud.apps.googleusercontent.com';
+
+  // >>>>>>>>>> LAUNCH SWITCH <<<<<<<<<<
+  // false = Google button is hidden for everyone EXCEPT a device that opened
+  //         /login/?google_preview=1 once (remembered in that browser/app only;
+  //         /login/?google_preview=0 turns it off again).
+  // true  = Google button is visible to all users (go-live).
+  var LIVE = false;
+  // >>>>>>>>>> END LAUNCH SWITCH <<<<<<<<<<
 
   var WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
 
   // ---------- environment checks ----------
   function isConfigured() {
     return GOOGLE_WEB_CLIENT_ID.indexOf('REPLACE_') === -1;
+  }
+  // Per-device preview flag (only matters while LIVE is false).
+  function previewOn() {
+    var param = null;
+    try { param = new URLSearchParams(window.location.search).get('google_preview'); } catch (e) {}
+    try {
+      if (param === '1') window.localStorage.setItem('sh_google_preview', '1');
+      else if (param === '0') window.localStorage.removeItem('sh_google_preview');
+      return window.localStorage.getItem('sh_google_preview') === '1';
+    } catch (e) {
+      return param === '1'; // storage blocked: still works for this page view
+    }
   }
   function isNativeApp() {
     try {
@@ -45,6 +63,7 @@
   // Usable = configured AND (a normal browser, OR the app build that has the plugin).
   function isUsable() {
     if (!isConfigured()) return false;
+    if (!LIVE && !previewOn()) return false;
     if (isNativeApp()) return nativePluginAvailable();
     return true;
   }
