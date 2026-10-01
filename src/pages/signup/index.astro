@@ -57,7 +57,13 @@ import Header from '../../components/Header.astro';
         <div id="google-auth-error" class="error-msg" style="display:none; margin-top:10px;">
           <i class="ti ti-alert-circle"></i><span id="google-auth-error-text"></span>
         </div>
-        <div class="shg-or"><span>or sign up with your phone number</span></div>
+        <div class="shg-or"><span>or</span></div>
+        <!-- Only shown (by /google-auth.js) together with the Google button: the phone
+             form below is collapsed until this is tapped. Without Google the full
+             form is simply visible, exactly as before. -->
+        <button type="button" id="phone-signup-toggle" class="shg-btn shg-btn-alt" style="display:none;">
+          <i class="ti ti-phone" aria-hidden="true"></i><span>Sign up with phone number</span>
+        </button>
       </div>
 
       <form id="signup-form">

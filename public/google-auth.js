@@ -145,6 +145,8 @@
       'font-family:inherit;font-weight:600;font-size:.92rem;cursor:pointer;}' +
       '.shg-btn:hover:not(:disabled){filter:brightness(.97);}' +
       '.shg-btn:disabled{opacity:.6;cursor:not-allowed;}' +
+      '.shg-btn-alt{margin-top:14px;color:var(--sh2-indigo,#4B3FA0);}' +
+      '.shg-btn-alt i{font-size:1.05rem;}' +
       '.shg-or{display:flex;align-items:center;gap:12px;margin:16px 0 2px;' +
       'color:var(--sh2-text-soft,var(--muted,#726f92));font-size:.76rem;}' +
       '.shg-or:before,.shg-or:after{content:"";flex:1;height:1px;background:var(--sh2-line,var(--line,#e7e4f5));}' +
@@ -231,6 +233,29 @@
     return n;
   }
 
+  // Signup page only: with the Google button showing, collapse the phone form
+  // behind a "Sign up with phone number" button. Without Google (or if Google
+  // fails to load) the full form stays visible, exactly as before.
+  function setPhoneFormCollapsed(collapsed) {
+    var form = document.getElementById('signup-form');
+    var toggle = document.getElementById('phone-signup-toggle');
+    if (!form || !toggle) return;
+    if (collapsed) {
+      form.style.display = 'none';
+      toggle.style.display = 'flex';
+      if (!toggle.getAttribute('data-bound')) {
+        toggle.setAttribute('data-bound', '1');
+        toggle.addEventListener('click', function () {
+          form.style.display = '';
+          toggle.style.display = 'none';
+        });
+      }
+    } else {
+      form.style.display = '';
+      toggle.style.display = 'none';
+    }
+  }
+
   // ---------- login + signup pages ----------
   function initSignInBlock() {
     var wrap = document.getElementById('google-auth');
@@ -263,8 +288,13 @@
     }
 
     wrap.style.display = 'block'; // show first so the web button can measure its width
+    injectStyles(); // so the toggle button is styled the moment it appears
+    setPhoneFormCollapsed(true);
     mount(slot, handleIdToken, { label: 'Continue with Google', onError: showError })
-      .catch(function () { wrap.style.display = 'none'; }); // Google blocked/offline -> fall back to phone form
+      .catch(function () { // Google blocked/offline -> fall back to the full phone form
+        wrap.style.display = 'none';
+        setPhoneFormCollapsed(false);
+      });
   }
 
   window.ShGoogle = { isUsable: isUsable, mount: mount, postJson: postJson, safeNext: safeNext };
