@@ -27,7 +27,7 @@
   //         /login/?google_preview=1 once (remembered in that browser/app only;
   //         /login/?google_preview=0 turns it off again).
   // true  = Google button is visible to all users (go-live).
-  var LIVE = false;
+  var LIVE = true;
   // >>>>>>>>>> END LAUNCH SWITCH <<<<<<<<<<
 
   var WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
