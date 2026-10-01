@@ -50,7 +50,7 @@ import Header from '../../components/Header.astro';
 
       <script is:inline>
         // No flash of the phone form: it stays hidden from the first paint until
-        // /google-auth.js decides (Google button + "Sign up with phone number", or
+        // /google-auth.js decides (Google button + "Create account with phone number", or
         // the full form if Google can't run). 4s safety so the form can never stay
         // hidden if that script fails to load.
         document.documentElement.classList.add('shg-hold');
@@ -70,7 +70,7 @@ import Header from '../../components/Header.astro';
              form below is collapsed until this is tapped. Without Google the full
              form is simply visible, exactly as before. -->
         <button type="button" id="phone-signup-toggle" class="shg-btn shg-btn-alt" style="display:none;">
-          <i class="ti ti-phone" aria-hidden="true"></i><span>Sign up with phone number</span>
+          <i class="ti ti-phone" aria-hidden="true"></i><span>Create account with phone number</span>
         </button>
       </div>
 
@@ -398,7 +398,7 @@ import Header from '../../components/Header.astro';
               : `Current Affairs — ${caBuy.item_ids.length} months`;
           }
 
-          tailEl.textContent = 'Sign up, then pay. Takes under a minute.';
+          tailEl.textContent = 'Continue with Google or create account with phone number.';
           banner.style.display = 'flex';
           if (subEl) subEl.style.display = 'none';
         }
@@ -421,7 +421,7 @@ import Header from '../../components/Header.astro';
         // word buried mid-sentence.
         leadEl.textContent = "You're buying:";
         pillEl.textContent = subjectName;
-        tailEl.textContent = 'Sign up, then pay. Takes under a minute.';
+        tailEl.textContent = 'Continue with Google or create account with phone number.';
         banner.style.display = 'flex';
         // In the buy flow, "no Gmail/OTP" reads as a throwaway technical
         // footnote right when the person needs momentum toward payment.
@@ -439,7 +439,7 @@ import Header from '../../components/Header.astro';
       if (isBundle) {
         leadEl.textContent = "You're buying:";
         pillEl.textContent = `Bundle: 3 subjects for ₹399`;
-        tailEl.textContent = 'Sign up, then continue to complete your purchase.';
+        tailEl.textContent = 'Continue with Google or create account with phone number.';
         banner.style.display = 'flex';
         if (subEl) subEl.style.display = 'none';
 
