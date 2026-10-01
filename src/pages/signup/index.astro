@@ -400,6 +400,8 @@ import Header from '../../components/Header.astro';
 
           tailEl.textContent = 'Continue with Google or create account with phone number.';
           banner.style.display = 'flex';
+          // Buy flow: this is a purchase, not a plain signup - say so in the heading.
+          { const h = document.getElementById('signup-heading'); if (h) h.textContent = 'Complete your purchase'; }
           if (subEl) subEl.style.display = 'none';
         }
         return;
@@ -423,6 +425,8 @@ import Header from '../../components/Header.astro';
         pillEl.textContent = subjectName;
         tailEl.textContent = 'Continue with Google or create account with phone number.';
         banner.style.display = 'flex';
+        // Buy flow: this is a purchase, not a plain signup - say so in the heading.
+        { const h = document.getElementById('signup-heading'); if (h) h.textContent = 'Complete your purchase'; }
         // In the buy flow, "no Gmail/OTP" reads as a throwaway technical
         // footnote right when the person needs momentum toward payment.
         // Swap it for a line that reinforces speed/trust instead — the
@@ -441,6 +445,8 @@ import Header from '../../components/Header.astro';
         pillEl.textContent = `Bundle: 3 subjects for ₹399`;
         tailEl.textContent = 'Continue with Google or create account with phone number.';
         banner.style.display = 'flex';
+        // Buy flow: this is a purchase, not a plain signup - say so in the heading.
+        { const h = document.getElementById('signup-heading'); if (h) h.textContent = 'Complete your purchase'; }
         if (subEl) subEl.style.display = 'none';
 
         // Best-effort: swap the generic pill text for the 3 actual subject
