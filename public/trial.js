@@ -1,5 +1,5 @@
 /*
- * StudyHelp — 3-day free trial (UI)
+ * StudyHelp \u2014 3-day free trial (UI)
  *
  * One shared script. Pages only add an empty marker element and load this file:
  *
@@ -26,7 +26,7 @@
   if (window.ShTrial) return;
 
   var WORKER_URL = 'https://api.studyhelp.fdaytalk.com';
-  var FALLBACK_PRICE = '₹199'; // shown only if /subjects/public can't be read
+  var FALLBACK_PRICE = '\u20b9199'; // shown only if /subjects/public can't be read
 
   var host = window.location.hostname;
   var isLocal = host === 'localhost' || host === '127.0.0.1';
@@ -115,7 +115,7 @@
     return s.title_english ? n + ' (' + s.title_english + ')' : n;
   }
   function priceOf(s) {
-    return s && s.price_paise ? '₹' + Math.round(s.price_paise / 100) : FALLBACK_PRICE;
+    return s && s.price_paise ? '\u20b9' + Math.round(s.price_paise / 100) : FALLBACK_PRICE;
   }
   function findSubject(list, id) {
     for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
@@ -342,7 +342,7 @@
       return withoutOwned(all).then(function (free) { return free; });
     }).then(function (all) {
       var subjects = all.filter(function (s) {
-        // No papers, and no internal test subjects (slug "ads-test…" or priced under Rs 50).
+        // No papers, and no internal test subjects (slug "ads-test\u2026" or priced under Rs 50).
         return s.category !== 'papers' && String(s.id || '').indexOf('ads-test') !== 0 && (s.price_paise || 0) >= 5000;
       });
       // General Science first, the rest keep their site order.
@@ -366,9 +366,9 @@
         chooser +
         '<ul class="sht-list">' +
         '<li>3 days of full access to this one subject</li>' +
-        '<li>Starts now · ends automatically on ' + esc(whenText(endsAt)) + '</li>' +
+        '<li>Starts now \u00b7 ends automatically on ' + esc(whenText(endsAt)) + '</li>' +
         '<li>No card needed. No auto-charge.</li>' +
-        '<li>The subject can’t be changed after you start</li>' +
+        '<li>The subject can\u2019t be changed after you start</li>' +
         '</ul><div class="sht-err"></div>' +
         '<button type="button" class="sht-btn" id="sht-go"' + (fixed ? '' : ' disabled') + '>Start free trial</button>'
       );
@@ -387,7 +387,7 @@
       }
       go.addEventListener('click', function () {
         if (!chosen) return;
-        if (preview) { closeModal(); toast('Preview only — no trial was started.'); return; }
+        if (preview) { closeModal(); toast('Preview only \u2014 no trial was started.'); return; }
         go.disabled = true;
         api('POST', '/trial/start', { subject_id: chosen }).then(function (r) {
           if (r.ok && r.data.ok) {
@@ -421,7 +421,7 @@
       '<div class="sht-ico"><i class="ti ti-clock-hour-4" aria-hidden="true"></i></div>' +
       '<div class="sht-body"><div class="sht-tag">FREE TRIAL ACTIVE</div>' +
       '<div class="sht-title">' + opts.title + '</div>' +
-      '<div class="sht-sub"><b data-trial-left data-expires="' + opts.expires + '">' + esc(leftText(opts.expires)) + '</b> · ends ' + esc(whenText(opts.expires)) + '</div></div>' +
+      '<div class="sht-sub"><b data-trial-left data-expires="' + opts.expires + '">' + esc(leftText(opts.expires)) + '</b> \u00b7 ends ' + esc(whenText(opts.expires)) + '</div></div>' +
       '<div class="sht-actions">' + opts.actions + '</div></div>';
   }
   function endedCard(opts) {
@@ -459,7 +459,7 @@
           if (acc && acc.unlocked && !acc.is_trial) { slot.innerHTML = ''; return false; }
           slot.innerHTML = endedCard({
             title: 'Your free trial has ended',
-            sub: 'Continue ' + esc(name) + ' for ' + esc(price) + '. Pay once — no auto-renewal.',
+            sub: 'Continue ' + esc(name) + ' for ' + esc(price) + '. Pay once \u2014 no auto-renewal.',
             actions: '<a class="sht-btn" href="' + esc(buyHref(tr.subject_id)) + '">Buy now</a>'
           });
           return true;
@@ -468,7 +468,7 @@
       if (st.trial_used) { slot.innerHTML = ''; return false; }
       slot.innerHTML = startCard({
         title: 'Pick any subject free for 3 days',
-        sub: 'Full access. No card. No auto-charge — access just ends.'
+        sub: 'Full access. No card. No auto-charge \u2014 access just ends.'
       });
       return true;
     });
@@ -489,7 +489,7 @@
             slot.innerHTML = endedCard({
               dark: true,
               title: 'Your free trial has ended',
-              sub: 'Continue for ' + esc(price) + '. Pay once — no auto-renewal.',
+              sub: 'Continue for ' + esc(price) + '. Pay once \u2014 no auto-renewal.',
               actions: '<a class="sht-btn" href="' + esc(buyHref(slug)) + '">Buy now</a>'
             });
             return true;
@@ -500,8 +500,8 @@
         slot.innerHTML = startCard({
           dark: true,
           slug: slug,
-          title: 'Free for 3 days — full access',
-          sub: 'Try this subject free. No card. No auto-charge — access just ends.'
+          title: 'Free for 3 days \u2014 full access',
+          sub: 'Try this subject free. No card. No auto-charge \u2014 access just ends.'
         });
         return true;
       });
@@ -588,7 +588,7 @@
             u2.searchParams.delete('trial_started');
             window.history.replaceState(null, '', u2.pathname + (u2.search || '') + u2.hash);
           } catch (e) {}
-          toast('Free trial started — enjoy full access for 3 days.');
+          toast('Free trial started \u2014 enjoy full access for 3 days.');
         }
       });
     });
