@@ -13,7 +13,6 @@ import Header from '../../components/Header.astro';
       <!-- Google sign-in: hidden until /google-auth.js confirms it can run here
            (browser, or an app build that includes the native plugin). -->
       <div id="google-auth" class="shg-wrap" style="display:none;">
-        <div data-trial-slot="auth-note" data-variant="login"></div>
         <div id="google-auth-slot"></div>
         <div id="google-auth-error" class="error-msg" style="display:none; margin-top:10px;">
           <i class="ti ti-alert-circle"></i><span id="google-auth-error-text"></span>
@@ -294,7 +293,6 @@ import Header from '../../components/Header.astro';
   </script>
 
   <script is:inline src="/google-auth.js" defer></script>
-  <script is:inline src="/trial.js" defer></script>
 
   <script is:inline>
     document.body.classList.add('sh2-page');

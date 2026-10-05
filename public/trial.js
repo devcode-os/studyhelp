@@ -290,11 +290,7 @@
   function startFlow(slug) {
     return getStatus(true).then(function (st) {
       if (!st.enabled) return;
-      if (!st.logged_in) {
-        if (preview) { toast('Preview: this would open Google sign-up, then come back here.'); return; }
-        goSignup(slug);
-        return;
-      }
+      if (!st.logged_in) { openConfirmModal(slug, true); return; } // guest: pick the subject first, Google sign-in comes after
       if (st.trial_used) { toast('You have already used your free trial.'); return; }
       if (!st.has_google) { openLinkModal(slug); return; }
       openConfirmModal(slug);
@@ -337,7 +333,7 @@
     });
   }
 
-  function openConfirmModal(slug) {
+  function openConfirmModal(slug, guest) {
     loadSubjects().then(function (all) {
       return withoutOwned(all).then(function (free) { return free; });
     }).then(function (all) {
@@ -387,6 +383,11 @@
       }
       go.addEventListener('click', function () {
         if (!chosen) return;
+        if (guest) {
+          if (preview) { closeModal(); toast('Preview: this would open Google sign-up, then start the trial.'); return; }
+          goSignup(chosen);
+          return;
+        }
         if (preview) { closeModal(); toast('Preview only \u2014 no trial was started.'); return; }
         go.disabled = true;
         api('POST', '/trial/start', { subject_id: chosen }).then(function (r) {
@@ -580,7 +581,17 @@
             u.searchParams.delete('trial_start');
             window.history.replaceState(null, '', u.pathname + (u.search || '') + u.hash);
           } catch (e) {}
-          if (st.logged_in && !st.trial_used) startFlow(ts === '1' ? null : ts);
+          if (st.logged_in && !st.trial_used) {
+            if (ts !== '1' && st.has_google && !preview) {
+              // They already chose the subject and signed in with Google: start it now.
+              api('POST', '/trial/start', { subject_id: ts }).then(function (r) {
+                if (r.ok && r.data.ok) { window.location.href = '/' + ts + '/?trial_started=1'; return; }
+                toast((r.data && r.data.error) || 'Could not start the trial. Please try again.');
+              }).catch(function () { toast('Network error. Please try again.'); });
+            } else {
+              startFlow(ts === '1' ? null : ts);
+            }
+          }
         }
         if (qs.get('trial_started') === '1') {
           try {
