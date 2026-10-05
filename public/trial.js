@@ -300,6 +300,31 @@
     return box;
   }
 
+  // They came back from sign-in, but the free trial was already used on this account.
+  function openUsedModal(chosenSlug, st) {
+    var tr = st.trial || {};
+    Promise.all([
+      loadSubjects(),
+      chosenSlug ? accessFor(chosenSlug, st) : Promise.resolve({ unlocked: false })
+    ]).then(function (res) {
+      var all = res[0], acc = res[1] || {};
+      var used = tr.subject_id ? findSubject(all, tr.subject_id) : null;
+      var usedName = used ? labelOf(used) : 'another subject';
+      var chosen = chosenSlug ? findSubject(all, chosenSlug) : null;
+      var active = !!tr.active;
+      var html = '<h2>' + (active ? 'You already have a free trial' : 'Your free trial has been used') + '</h2>' +
+        '<p>' + (active
+          ? 'Your free trial is on <b>' + esc(usedName) + '</b>. A free trial can be used only once, so it can\u2019t be claimed for another subject.'
+          : 'Your free trial on <b>' + esc(usedName) + '</b> has ended. A free trial can be used only once.') + '</p>';
+      var buttons = '';
+      if (active && tr.subject_id) buttons += '<a class="sht-btn" href="/' + esc(tr.subject_id) + '/" style="display:flex;margin-bottom:8px;">Open ' + esc(used ? (used.name || usedName) : 'subject') + '</a>';
+      if (chosen && !(acc.unlocked && !acc.is_trial)) {
+        buttons += '<a class="sht-btn' + (active ? ' sht-btn-ghost' : '') + '" href="' + esc(buyHref(chosenSlug)) + '" style="display:flex;">Buy ' + esc(chosen.name || labelOf(chosen)) + ' ' + esc(priceOf(chosen)) + '</a>';
+      }
+      openModal(html + buttons);
+    });
+  }
+
   function openConfirmModal(slug, guest) {
     loadSubjects().then(function (all) {
       return withoutOwned(all).then(function (free) { return free; });
@@ -549,6 +574,7 @@
             u.searchParams.delete('trial_start');
             window.history.replaceState(null, '', u.pathname + (u.search || '') + u.hash);
           } catch (e) {}
+          if (st.logged_in && st.trial_used) { openUsedModal(ts === '1' ? null : ts, st); }
           if (st.logged_in && !st.trial_used) {
             if (ts !== '1' && st.email_state === 'ok' && !preview) {
               // They already chose the subject and signed in with Google: start it now.

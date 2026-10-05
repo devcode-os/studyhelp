@@ -282,7 +282,8 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
                     </div>
                   </div>
                   <div class="subj-foot">
-                    <span class="price-tag">₹199</span>
+                    <span class="price-tag" data-price-tag>₹199</span>
+                    <span class="expiry-tag" data-expiry-tag hidden></span>
                   </div>
                 </a>
               ) : (
@@ -662,6 +663,13 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       font-size: 0.72rem; font-weight: 700; color: var(--sh2-indigo);
       background: var(--sh2-indigo-soft); padding: 4px 9px; border-radius: 7px;
     }
+    .expiry-tag {
+      font-size: 0.68rem; font-weight: 700; color: var(--sh2-green);
+      background: var(--sh2-green-soft); padding: 4px 9px; border-radius: 7px;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .expiry-tag[hidden] { display: none; }
+    .expiry-tag.expiry-soon { color: #b45c0a; background: var(--sh2-amber-soft); }
     .soon-tag {
       font-size: 0.7rem; font-weight: 600; color: var(--sh2-text-soft);
       border: 1px dashed var(--sh2-line); padding: 4px 9px; border-radius: 7px;
@@ -722,6 +730,16 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
     // reordering across group boundaries would break the pair-by-language
     // layout. Same ownership-check logic as before; only the DOM insertion
     // target changed from one global grid to per-group grids.
+    // Same "days left" label as the Subjects page (replaces the price on owned subjects).
+    function formatExpiryLabel(expiresAtSeconds) {
+      if (!expiresAtSeconds) return null;
+      const msLeft = expiresAtSeconds * 1000 - Date.now();
+      const daysLeft = Math.ceil(msLeft / (24 * 60 * 60 * 1000));
+      if (daysLeft <= 0) return { text: 'Expires today', soon: true };
+      if (daysLeft === 1) return { text: '1 day left', soon: true };
+      return { text: `${daysLeft} days left`, soon: daysLeft <= 7 };
+    }
+
     getSession().then(async (session) => {
       if (!session.logged_in) return;
 
@@ -746,6 +764,15 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
                   pill.style.background = '#5a4bd0';
                   pill.innerHTML = '<i class="ti ti-gift" aria-hidden="true"></i>FREE TRIAL';
                 }
+              }
+              const priceTag = card && card.querySelector('[data-price-tag]');
+              const expiryTag = card && card.querySelector('[data-expiry-tag]');
+              const expiry = formatExpiryLabel(d.expires_at);
+              if (expiryTag && expiry) {
+                expiryTag.innerHTML = `<i class="ti ti-clock" aria-hidden="true"></i>${expiry.text}`;
+                expiryTag.hidden = false;
+                expiryTag.classList.toggle('expiry-soon', expiry.soon);
+                if (priceTag) priceTag.hidden = true;
               }
             })
             .catch(() => {})
