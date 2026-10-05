@@ -43,7 +43,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/auth/google", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/content/theory", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/quick-revision-clicks", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
+      const authRoutes = ["/signup", "/login", "/auth/google", "/auth/google/link", "/trial/status", "/trial/start", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/content/theory", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/quick-revision-clicks", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -100,6 +100,15 @@ export default {
     }
     if (url.pathname === "/auth/google" && request.method === "POST") {
       return googleAuth(request, env);
+    }
+    if (url.pathname === "/auth/google/link" && request.method === "POST") {
+      return googleLink(request, env);
+    }
+    if (url.pathname === "/trial/status" && request.method === "GET") {
+      return trialStatus(request, env);
+    }
+    if (url.pathname === "/trial/start" && request.method === "POST") {
+      return trialStart(request, env);
     }
     if (url.pathname === "/logout" && request.method === "POST") {
       return logout(request, env);
@@ -242,7 +251,7 @@ async function createOrder(request, env) {
     // Once expired, this correctly falls through and lets them buy again.
     const nowTs = Math.floor(Date.now() / 1000);
     const existing = await env.DB.prepare(
-      "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ?"
+      "SELECT id FROM entitlements WHERE user_id = ? AND subject_id = ? AND expires_at > ? AND (granted_reason IS NULL OR granted_reason != 'free_trial')"
     )
       .bind(user_id, subject_id, nowTs)
       .first();
@@ -342,7 +351,7 @@ async function createBundleOrder(request, env) {
     // re-granting/extending anything already unexpired.
     const nowTs = Math.floor(Date.now() / 1000);
     const { results: alreadyOwned } = await env.DB.prepare(
-      `SELECT subject_id FROM entitlements WHERE user_id = ? AND expires_at > ? AND subject_id IN (${placeholders})`
+      `SELECT subject_id FROM entitlements WHERE user_id = ? AND expires_at > ? AND (granted_reason IS NULL OR granted_reason != 'free_trial') AND subject_id IN (${placeholders})`
     )
       .bind(user_id, nowTs, ...uniqueIds)
       .all();
@@ -590,7 +599,10 @@ async function handleWebhook(request, env) {
              ON CONFLICT(user_id, subject_id) DO UPDATE SET
                order_id = excluded.order_id,
                payment_id = excluded.payment_id,
-               expires_at = excluded.expires_at
+               expires_at = excluded.expires_at,
+               granted_by = CASE WHEN entitlements.granted_reason = 'free_trial' THEN NULL ELSE entitlements.granted_by END,
+               granted_at = CASE WHEN entitlements.granted_reason = 'free_trial' THEN unixepoch() ELSE entitlements.granted_at END,
+               granted_reason = CASE WHEN entitlements.granted_reason = 'free_trial' THEN NULL ELSE entitlements.granted_reason END
              WHERE entitlements.order_id != excluded.order_id`
           ).bind(crypto.randomUUID(), order.user_id, item.subject_id, orderId, paymentId, expiresAt)
         );
@@ -627,7 +639,10 @@ async function handleWebhook(request, env) {
        ON CONFLICT(user_id, subject_id) DO UPDATE SET
          order_id = excluded.order_id,
          payment_id = excluded.payment_id,
-         expires_at = excluded.expires_at
+         expires_at = excluded.expires_at,
+         granted_by = CASE WHEN entitlements.granted_reason = 'free_trial' THEN NULL ELSE entitlements.granted_by END,
+         granted_at = CASE WHEN entitlements.granted_reason = 'free_trial' THEN unixepoch() ELSE entitlements.granted_at END,
+         granted_reason = CASE WHEN entitlements.granted_reason = 'free_trial' THEN NULL ELSE entitlements.granted_reason END
        WHERE entitlements.order_id != excluded.order_id`
     )
       .bind(crypto.randomUUID(), order.user_id, order.subject_id, orderId, paymentId, expiresAt)
@@ -715,7 +730,9 @@ async function checkAccess(request, env) {
   const grantedDurationSeconds = entitlement.granted_at
     ? entitlement.expires_at - entitlement.granted_at
     : null;
+  const isTrial = entitlement.granted_reason === "free_trial";
   const isGraceGrant =
+    !isTrial &&
     !!entitlement.granted_reason &&
     grantedDurationSeconds !== null &&
     grantedDurationSeconds < FULL_ACCESS_SECONDS;
@@ -725,6 +742,8 @@ async function checkAccess(request, env) {
     expires_at: entitlement.expires_at,
     total_access_days: totalAccessDays,
     is_grace_grant: isGraceGrant,
+    is_trial: isTrial,
+    trial_seconds_remaining: isTrial ? Math.max(0, entitlement.expires_at - nowTs) : null,
     grace_days_remaining: isGraceGrant
       ? Math.max(0, Math.ceil((entitlement.expires_at - nowTs) / (24 * 60 * 60)))
       : null,
@@ -1531,6 +1550,217 @@ async function getGoogleOnlyUser(env, userId) {
       .first();
   } catch (e) {
     return null;
+  }
+}
+
+// ---------- Free trial (3 days, one subject, Google accounts only) ----------
+// A trial is an ordinary entitlements row with granted_reason = 'free_trial'
+// and a 3-day expires_at, so every content endpoint unlocks it exactly like a
+// purchase and access ends by itself (no cron, no billing, no auto-renewal).
+// "Trial already used" lives in trial_claims, keyed by google_sub, with no
+// foreign key to users, so deleting an account does not reset it.
+// Master switch: secret TRIAL_ENABLED = "true". Anything else = feature off.
+const TRIAL_SECONDS = 3 * 24 * 60 * 60;
+
+function trialEnabled(env) {
+  return String(env.TRIAL_ENABLED || "").trim().toLowerCase() === "true";
+}
+
+async function trialStatus(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  if (!trialEnabled(env)) return jsonAuth({ enabled: false });
+
+  const user = await getUserFromSession(request, env);
+  if (!user) return jsonAuth({ enabled: true, logged_in: false });
+
+  try {
+    const row = await env.DB.prepare("SELECT google_sub FROM users WHERE id = ?")
+      .bind(user.id)
+      .first();
+    const googleSub = row && row.google_sub ? row.google_sub : null;
+
+    const claim = googleSub
+      ? await env.DB.prepare(
+          "SELECT subject_id, started_at, expires_at FROM trial_claims WHERE google_sub = ? OR user_id = ?"
+        ).bind(googleSub, user.id).first()
+      : await env.DB.prepare(
+          "SELECT subject_id, started_at, expires_at FROM trial_claims WHERE user_id = ?"
+        ).bind(user.id).first();
+
+    const nowTs = Math.floor(Date.now() / 1000);
+    // "active" comes from the live entitlement row (not the claim), so a trial
+    // ended early by support, or replaced by a purchase, is never shown as active.
+    let trialActive = false;
+    if (claim) {
+      const ent = await env.DB.prepare(
+        "SELECT expires_at, granted_reason FROM entitlements WHERE user_id = ? AND subject_id = ?"
+      ).bind(user.id, claim.subject_id).first();
+      trialActive = !!ent && ent.granted_reason === "free_trial" && ent.expires_at > nowTs;
+    }
+    return jsonAuth({
+      enabled: true,
+      logged_in: true,
+      has_google: !!googleSub,
+      trial_used: !!claim,
+      trial: claim
+        ? {
+            subject_id: claim.subject_id,
+            started_at: claim.started_at,
+            expires_at: claim.expires_at,
+            active: trialActive,
+          }
+        : null,
+      trial_seconds: TRIAL_SECONDS,
+    });
+  } catch (err) {
+    return jsonAuth({ error: "Server error" }, 500);
+  }
+}
+
+async function trialStart(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  if (!trialEnabled(env)) {
+    return jsonAuth({ error: "Free trial is not available right now.", code: "trial_disabled" }, 503);
+  }
+
+  const user = await getUserFromSession(request, env);
+  if (!user) return jsonAuth({ error: "Please log in first.", code: "login_required" }, 401);
+
+  try {
+    const body = await request.json().catch(() => ({}));
+    const subjectId = typeof body.subject_id === "string" ? body.subject_id.trim() : "";
+    if (!subjectId) return jsonAuth({ error: "subject_id required", code: "bad_request" }, 400);
+
+    const userRow = await env.DB.prepare("SELECT google_sub FROM users WHERE id = ?")
+      .bind(user.id)
+      .first();
+    const googleSub = userRow && userRow.google_sub ? userRow.google_sub : null;
+    if (!googleSub) {
+      return jsonAuth(
+        { error: "Continue with Google to claim your free trial.", code: "google_required" },
+        403
+      );
+    }
+
+    const subject = await env.DB.prepare("SELECT id, category FROM subjects WHERE id = ?")
+      .bind(subjectId)
+      .first();
+    if (!subject || subject.category === "papers") {
+      return jsonAuth({ error: "This subject is not available for the free trial.", code: "subject_not_eligible" }, 400);
+    }
+
+    const used = await env.DB.prepare(
+      "SELECT 1 AS x FROM trial_claims WHERE google_sub = ? OR user_id = ?"
+    )
+      .bind(googleSub, user.id)
+      .first();
+    if (used) {
+      return jsonAuth({ error: "You have already used your free trial.", code: "trial_used" }, 409);
+    }
+
+    // Not for a subject the user has paid for (now or before) or currently has access to.
+    const nowTs = Math.floor(Date.now() / 1000);
+    const existing = await env.DB.prepare(
+      "SELECT order_id, payment_id, expires_at FROM entitlements WHERE user_id = ? AND subject_id = ?"
+    )
+      .bind(user.id, subjectId)
+      .first();
+    if (existing && (existing.order_id || existing.payment_id || existing.expires_at > nowTs)) {
+      return jsonAuth({ error: "You already have access to this subject.", code: "subject_not_eligible" }, 409);
+    }
+
+    const expiresAt = nowTs + TRIAL_SECONDS;
+    try {
+      // One atomic batch: if the claim insert fails (race / second tap),
+      // the entitlement is not created either.
+      await env.DB.batch([
+        env.DB.prepare(
+          "INSERT INTO trial_claims (google_sub, user_id, subject_id, started_at, expires_at) VALUES (?, ?, ?, ?, ?)"
+        ).bind(googleSub, user.id, subjectId, nowTs, expiresAt),
+        env.DB.prepare(
+          `INSERT INTO entitlements (id, user_id, subject_id, order_id, payment_id, expires_at, granted_reason, granted_by)
+           VALUES (?, ?, ?, '', '', ?, 'free_trial', 'system')
+           ON CONFLICT(user_id, subject_id) DO UPDATE SET
+             expires_at = excluded.expires_at,
+             order_id = '',
+             payment_id = '',
+             granted_reason = 'free_trial',
+             granted_by = 'system',
+             granted_at = unixepoch(),
+             revoked_at = NULL,
+             revoked_reason = NULL,
+             revoked_by = NULL`
+        ).bind(crypto.randomUUID(), user.id, subjectId, expiresAt),
+      ]);
+    } catch (e) {
+      return jsonAuth({ error: "You have already used your free trial.", code: "trial_used" }, 409);
+    }
+
+    return jsonAuth({ ok: true, subject_id: subjectId, expires_at: expiresAt, trial_seconds: TRIAL_SECONDS });
+  } catch (err) {
+    return jsonAuth({ error: "Server error" }, 500);
+  }
+}
+
+// Link a Google account to the account the user is ALREADY logged into
+// (phone + passcode). Unlike /auth/google this never matches by email and
+// never creates an account, so a buyer using a different Gmail keeps all
+// their purchases. Safe because the passcode login already proved identity.
+async function googleLink(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  const user = await getUserFromSession(request, env);
+  if (!user) return jsonAuth({ error: "Please log in first.", code: "login_required" }, 401);
+
+  try {
+    const audiences = getGoogleAudiences(env);
+    if (!audiences.length) {
+      return jsonAuth({ error: "Google sign-in is not available right now.", code: "google_not_configured" }, 503);
+    }
+    const body = await request.json().catch(() => ({}));
+    const idToken = typeof body.id_token === "string" ? body.id_token : "";
+    if (!idToken || idToken.length > 4096) {
+      return jsonAuth({ error: "Google sign-in failed. Please try again.", code: "google_token_invalid" }, 400);
+    }
+    let claims;
+    try {
+      claims = await verifyGoogleIdToken(idToken, audiences);
+    } catch (e) {
+      return jsonAuth({ error: "Google sign-in failed. Please try again.", code: "google_token_invalid" }, 401);
+    }
+    const googleSub = String(claims.sub);
+
+    const me_ = await env.DB.prepare("SELECT google_sub FROM users WHERE id = ?")
+      .bind(user.id)
+      .first();
+    if (me_ && me_.google_sub) {
+      if (me_.google_sub === googleSub) return jsonAuth({ ok: true, already: true });
+      return jsonAuth(
+        { error: "A different Google account is already linked to this account.", code: "google_already_linked" },
+        409
+      );
+    }
+
+    const other = await env.DB.prepare("SELECT id FROM users WHERE google_sub = ?")
+      .bind(googleSub)
+      .first();
+    if (other) {
+      return jsonAuth(
+        { error: "This Google account is already used by another StudyHelp account.", code: "google_in_use" },
+        409
+      );
+    }
+
+    const linked = await env.DB.prepare(
+      "UPDATE users SET google_sub = ? WHERE id = ? AND google_sub IS NULL"
+    )
+      .bind(googleSub, user.id)
+      .run();
+    if (!linked.meta || linked.meta.changes !== 1) {
+      return jsonAuth({ error: "Could not link your Google account. Please try again.", code: "google_link_failed" }, 409);
+    }
+    return jsonAuth({ ok: true });
+  } catch (err) {
+    return jsonAuth({ error: "Could not link your Google account. Please try again.", code: "google_link_failed" }, 409);
   }
 }
 

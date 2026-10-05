@@ -20,6 +20,8 @@ import Header from '../../components/Header.astro';
       <span id="plans-duration-badge" class="plans-duration-badge">3 Months (90 Days)</span>
     </div>
 
+    <div data-trial-slot="banner"></div>
+
     <div id="active-subjects-section" class="active-subjects-section">
       <button type="button" id="active-subjects-toggle" class="section-label active-subjects-toggle" aria-expanded="false">
         <i class="ti ti-circle-check" style="color:#26946A;"></i>
@@ -1111,4 +1113,5 @@ import Header from '../../components/Header.astro';
   <script is:inline>
     document.body.classList.add('sh2-page');
   </script>
+  <script is:inline src="/trial.js" defer></script>
 </Layout>

@@ -218,6 +218,8 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
       as-is once real progress data is available.
     -->
 
+    <div data-trial-slot="banner"></div>
+
     <div class="bundle-card">
       <div class="bundle-icon">
         <i class="ti ti-package" aria-hidden="true"></i>
@@ -761,4 +763,5 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
     // of the site's default cream background before this fires.
     document.body.classList.add('sh2-page');
   </script>
+  <script is:inline src="/trial.js" defer></script>
 </Layout>

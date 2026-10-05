@@ -157,6 +157,8 @@ const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);
       <p class="subjects-sub">{subjects.length} subjects &middot; {totalChapters}+ chapters &middot; {totalQuestions.toLocaleString('en-IN')} MCQs</p>
     </div>
 
+    <div data-trial-slot="banner"></div>
+
     <a href="/plans/?mode=bundle" class="bundle-card">
       <div class="bundle-top">
         <div class="bundle-icon">
@@ -845,4 +847,5 @@ const recapEntries = Object.values(progressBySlug).sort(
   <script is:inline>
     document.body.classList.add('sh2-page');
   </script>
+  <script is:inline src="/trial.js" defer></script>
 </Layout>

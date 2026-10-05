@@ -11,6 +11,8 @@ import Header from '../../components/Header.astro';
       <h1 id="account-name">Your account</h1>
       <p class="sub">Manage your StudyHelp account details.</p>
 
+      <div data-trial-slot="banner"></div>
+
       <div class="verify-banner" id="verify-banner" style="display:none;">
         <div class="verify-banner-row">
           <i class="ti ti-mail-exclamation"></i>
@@ -1269,6 +1271,7 @@ import Header from '../../components/Header.astro';
   </script>
 
   <script is:inline src="/google-auth.js" defer></script>
+  <script is:inline src="/trial.js" defer></script>
 
   <script is:inline>
     document.body.classList.add('sh2-page');

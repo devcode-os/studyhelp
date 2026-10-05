@@ -151,6 +151,7 @@ for (const ch of chapters) {
 
       {!isPapers && (
         <div class="unlock-group" id="unlock-btn-group">
+          <div data-trial-slot="subject" data-subject={subject}></div>
           <div class="hero-toggle" id="hero-toggle">
             <button type="button" id="hero-toggle-bundle" class="hero-toggle-btn hero-toggle-btn-active">Bundle</button>
             <button type="button" id="hero-toggle-single" class="hero-toggle-btn">Single</button>
@@ -597,6 +598,7 @@ for (const ch of chapters) {
           return fetch(`${WORKER_URL}/check-access?user_id=${encodeURIComponent(session.user_id)}&subject_id=${encodeURIComponent(subject)}`)
             .then((res) => res.json())
             .then((data) => {
+              // Free trial: leave the hero alone. /trial.js shows the countdown and a Buy button.
               if (data.unlocked) {
                 const btn = document.getElementById('unlock-btn');
                 if (btn) {
@@ -675,4 +677,5 @@ for (const ch of chapters) {
   <script is:inline>
     document.body.classList.add('sh2-page');
   </script>
+  <script is:inline src="/trial.js" defer></script>
 </Layout>
