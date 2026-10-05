@@ -1566,6 +1566,39 @@ function trialEnabled(env) {
   return String(env.TRIAL_ENABLED || "").trim().toLowerCase() === "true";
 }
 
+// Who the trial belongs to. Two routes, one identity space:
+//   - a linked/created Google account  -> its google_sub
+//   - a recovery email that is verified (OTP) and is a Gmail address
+//     -> "email:<canonical gmail>"  (dots and +tags ignored, googlemail.com = gmail.com)
+// Claims are stored under every identity the user has, so one person gets one
+// trial whichever route they use. (Column trial_claims.google_sub holds either.)
+function canonicalGmail(email) {
+  const e = String(email || "").trim().toLowerCase();
+  const at = e.lastIndexOf("@");
+  if (at < 1) return null;
+  let local = e.slice(0, at);
+  const domain = e.slice(at + 1);
+  if (domain !== "gmail.com" && domain !== "googlemail.com") return null;
+  local = local.split("+")[0].replace(/\./g, "");
+  if (!local) return null;
+  return "email:" + local + "@gmail.com";
+}
+
+async function trialIdentity(env, userId) {
+  const row = await env.DB.prepare(
+    "SELECT google_sub, recovery_email, email_verified FROM users WHERE id = ?"
+  ).bind(userId).first();
+  const googleSub = row && row.google_sub ? row.google_sub : null;
+  const gmailKey = canonicalGmail(row && row.recovery_email);
+  const verified = !!row && Number(row.email_verified) === 1;
+  const ids = [];
+  if (googleSub) ids.push(googleSub);
+  if (gmailKey && verified) ids.push(gmailKey);
+  let emailState = "ok";
+  if (!ids.length) emailState = gmailKey && !verified ? "unverified" : "need_gmail";
+  return { googleSub, ids, emailState };
+}
+
 async function trialStatus(request, env) {
   const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
   if (!trialEnabled(env)) return jsonAuth({ enabled: false });
@@ -1574,17 +1607,14 @@ async function trialStatus(request, env) {
   if (!user) return jsonAuth({ enabled: true, logged_in: false });
 
   try {
-    const row = await env.DB.prepare("SELECT google_sub FROM users WHERE id = ?")
-      .bind(user.id)
-      .first();
-    const googleSub = row && row.google_sub ? row.google_sub : null;
-
-    const claim = googleSub
+    const ident = await trialIdentity(env, user.id);
+    const marks = ident.ids.map(() => "?").join(",");
+    const claim = ident.ids.length
       ? await env.DB.prepare(
-          "SELECT subject_id, started_at, expires_at FROM trial_claims WHERE google_sub = ? OR user_id = ?"
-        ).bind(googleSub, user.id).first()
+          "SELECT subject_id, started_at, expires_at FROM trial_claims WHERE google_sub IN (" + marks + ") OR user_id = ? ORDER BY started_at LIMIT 1"
+        ).bind(...ident.ids, user.id).first()
       : await env.DB.prepare(
-          "SELECT subject_id, started_at, expires_at FROM trial_claims WHERE user_id = ?"
+          "SELECT subject_id, started_at, expires_at FROM trial_claims WHERE user_id = ? ORDER BY started_at LIMIT 1"
         ).bind(user.id).first();
 
     const nowTs = Math.floor(Date.now() / 1000);
@@ -1600,7 +1630,8 @@ async function trialStatus(request, env) {
     return jsonAuth({
       enabled: true,
       logged_in: true,
-      has_google: !!googleSub,
+      has_google: !!ident.googleSub,
+      email_state: ident.emailState,
       trial_used: !!claim,
       trial: claim
         ? {
@@ -1631,13 +1662,12 @@ async function trialStart(request, env) {
     const subjectId = typeof body.subject_id === "string" ? body.subject_id.trim() : "";
     if (!subjectId) return jsonAuth({ error: "subject_id required", code: "bad_request" }, 400);
 
-    const userRow = await env.DB.prepare("SELECT google_sub FROM users WHERE id = ?")
-      .bind(user.id)
-      .first();
-    const googleSub = userRow && userRow.google_sub ? userRow.google_sub : null;
-    if (!googleSub) {
+    const ident = await trialIdentity(env, user.id);
+    if (!ident.ids.length) {
       return jsonAuth(
-        { error: "Continue with Google to claim your free trial.", code: "google_required" },
+        ident.emailState === "unverified"
+          ? { error: "Verify your email to start your free trial.", code: "email_not_verified" }
+          : { error: "Add a Gmail address as your recovery email to start your free trial.", code: "gmail_required" },
         403
       );
     }
@@ -1650,9 +1680,9 @@ async function trialStart(request, env) {
     }
 
     const used = await env.DB.prepare(
-      "SELECT 1 AS x FROM trial_claims WHERE google_sub = ? OR user_id = ?"
+      "SELECT 1 AS x FROM trial_claims WHERE google_sub IN (" + ident.ids.map(() => "?").join(",") + ") OR user_id = ?"
     )
-      .bind(googleSub, user.id)
+      .bind(...ident.ids, user.id)
       .first();
     if (used) {
       return jsonAuth({ error: "You have already used your free trial.", code: "trial_used" }, 409);
@@ -1674,9 +1704,11 @@ async function trialStart(request, env) {
       // One atomic batch: if the claim insert fails (race / second tap),
       // the entitlement is not created either.
       await env.DB.batch([
-        env.DB.prepare(
-          "INSERT INTO trial_claims (google_sub, user_id, subject_id, started_at, expires_at) VALUES (?, ?, ?, ?, ?)"
-        ).bind(googleSub, user.id, subjectId, nowTs, expiresAt),
+        ...ident.ids.map((idKey) =>
+          env.DB.prepare(
+            "INSERT INTO trial_claims (google_sub, user_id, subject_id, started_at, expires_at) VALUES (?, ?, ?, ?, ?)"
+          ).bind(idKey, user.id, subjectId, nowTs, expiresAt)
+        ),
         env.DB.prepare(
           `INSERT INTO entitlements (id, user_id, subject_id, order_id, payment_id, expires_at, granted_reason, granted_by)
            VALUES (?, ?, ?, '', '', ?, 'free_trial', 'system')

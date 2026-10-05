@@ -740,6 +740,12 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
               if (pill) {
                 pill.hidden = false;
                 card.classList.add('has-pill');
+                if (d.is_trial) {
+                  // Free trial, not a purchase: label it honestly.
+                  pill.setAttribute('aria-label', 'Free trial');
+                  pill.style.background = '#5a4bd0';
+                  pill.innerHTML = '<i class="ti ti-gift" aria-hidden="true"></i>FREE TRIAL';
+                }
               }
             })
             .catch(() => {})

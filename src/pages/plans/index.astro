@@ -751,7 +751,8 @@ import Header from '../../components/Header.astro';
           );
           const data = await res.json();
           if (data.unlocked) {
-            setButtonToOpen(btn, subject_id, data.expires_at);
+            // Free trial: keep the Buy button so the trial can be turned into a purchase.
+            if (!data.is_trial) setButtonToOpen(btn, subject_id, data.expires_at);
             anyActive = true;
             activeCount += 1;
 
@@ -768,7 +769,7 @@ import Header from '../../components/Header.astro';
             row.innerHTML = `
               <div>
                 <div class="active-row-title">${meta ? meta.titleNative : subject_id}</div>
-                <div class="active-row-sub">${data.expires_at ? formatDaysLeft(data.expires_at) + ' &middot; until ' + formatExpiryDate(data.expires_at) : 'Active'}</div>
+                <div class="active-row-sub">${data.is_trial ? 'Free trial &middot; ' : ''}${data.expires_at ? formatDaysLeft(data.expires_at) + ' &middot; until ' + formatExpiryDate(data.expires_at) : 'Active'}</div>
               </div>
               <a href="/${subject_id}/" class="active-row-open">Open</a>
               ${graceBannerHtml}
@@ -776,7 +777,7 @@ import Header from '../../components/Header.astro';
             activeList.appendChild(row);
 
             const gridRow = document.getElementById(`plan-card-${subject_id}`);
-            if (gridRow) gridRow.style.display = 'none';
+            if (gridRow && !data.is_trial) gridRow.style.display = 'none';
           }
         } catch (err) {
           // silently skip on network error

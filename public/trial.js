@@ -13,11 +13,10 @@
  * Fail-closed: any error = nothing is shown.
  *
  * The trial itself (3 days, one subject, one per Google account) is enforced by
- * the Worker. This file only shows state and calls /auth/google/link and
- * /trial/start.
+ * the Worker. This file only shows state and calls /trial/start.
  *
  * LOCAL PREVIEW (localhost only, never honoured on the live site):
- *   ?trial_preview=off | out | nogoogle | available | active | ended
+ *   ?trial_preview=off | out | needgmail | unverified | available | active | ended
  *   optional: &trial_subject=<subject-slug> for active / ended
  * Preview mocks the status only; nothing is started and nothing is written.
  */
@@ -75,16 +74,17 @@
     if (kind === 'off') return { enabled: false };
     if (kind === 'out') return { enabled: true, logged_in: false };
     var base = { enabled: true, logged_in: true, trial_seconds: 259200 };
-    if (kind === 'nogoogle') return Object.assign(base, { has_google: false, trial_used: false, trial: null });
+    if (kind === 'nogoogle' || kind === 'needgmail') return Object.assign(base, { has_google: false, email_state: 'need_gmail', trial_used: false, trial: null });
+    if (kind === 'unverified') return Object.assign(base, { has_google: false, email_state: 'unverified', trial_used: false, trial: null });
     if (kind === 'active') {
-      return Object.assign(base, { has_google: true, trial_used: true,
+      return Object.assign(base, { has_google: true, email_state: 'ok', trial_used: true,
         trial: { subject_id: sub, started_at: t - 68 * 3600, expires_at: t + 2 * 86400 + 4 * 3600, active: true } });
     }
     if (kind === 'ended') {
-      return Object.assign(base, { has_google: true, trial_used: true,
+      return Object.assign(base, { has_google: true, email_state: 'ok', trial_used: true,
         trial: { subject_id: sub, started_at: t - 3 * 86400 - 3600, expires_at: t - 3600, active: false } });
     }
-    return Object.assign(base, { has_google: true, trial_used: false, trial: null }); // 'available'
+    return Object.assign(base, { has_google: true, email_state: 'ok', trial_used: false, trial: null }); // 'available'
   }
 
   var statusPromise = null;
@@ -186,7 +186,7 @@
       '.sht-card:not(.sht-dark) .sht-tag{display:inline-block;background:' + G + ';color:#fff;padding:2px 8px;border-radius:999px;margin-bottom:3px;}' +
       '.sht-card:not(.sht-dark) .sht-btn:not(.sht-btn-ghost){background:#5a4bd0;}' +
       '.sht-card:not(.sht-dark) .sht-btn-ghost{color:#5a4bd0;border-color:#5a4bd0;}' +
-      '.sht-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:999px;border:none;' +
+      '.sht-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:10px;border:none;' +
       'background:' + G + ';color:#fff;font-family:inherit;font-weight:800;font-size:.84rem;cursor:pointer;text-decoration:none;white-space:nowrap;}' +
       '.sht-btn:hover{filter:brightness(.95);}' +
       '.sht-btn:disabled{opacity:.55;cursor:not-allowed;}' +
@@ -271,17 +271,6 @@
   }
 
   // ---------- flows ----------
-  function ensureGoogleScript() {
-    if (window.ShGoogle) return Promise.resolve();
-    return new Promise(function (resolve, reject) {
-      var s = document.createElement('script');
-      s.src = '/google-auth.js';
-      s.onload = function () { resolve(); };
-      s.onerror = function () { reject(new Error('google_script')); };
-      document.head.appendChild(s);
-    });
-  }
-
   function goSignup(slug) {
     var next = window.location.pathname + '?trial_start=' + encodeURIComponent(slug || '1');
     window.location.href = '/signup/?next=' + encodeURIComponent(next);
@@ -292,45 +281,23 @@
       if (!st.enabled) return;
       if (!st.logged_in) { openConfirmModal(slug, true); return; } // guest: pick the subject first, Google sign-in comes after
       if (st.trial_used) { toast('You have already used your free trial.'); return; }
-      if (!st.has_google) { openLinkModal(slug); return; }
+      if (st.email_state === 'unverified' || st.email_state === 'need_gmail') { openEmailModal(st.email_state); return; }
       openConfirmModal(slug);
     });
   }
 
-  function openLinkModal(slug) {
+  // Logged in, but no Google account and no verified Gmail yet.
+  // state: 'unverified' (Gmail waiting for its code) or 'need_gmail' (no email / not Gmail).
+  function openEmailModal(state) {
+    var unverified = state === 'unverified';
     var box = openModal(
-      '<h2>Link your Google account</h2>' +
-      '<p>The free trial is for Google accounts. Linking keeps your purchases and progress on this same StudyHelp account.</p>' +
-      '<div class="sht-err"></div><div id="sht-g-slot" style="min-height:44px;"></div>'
+      '<h2>' + (unverified ? 'Verify your email' : 'Add your Gmail') + '</h2>' +
+      '<p>' + (unverified
+        ? 'Verify your email to start your free trial.'
+        : 'Add a Gmail address as your recovery email to start your free trial.') + '</p>' +
+      '<a class="sht-btn" href="/account/" style="display:flex;">' + (unverified ? 'Verify email' : 'Update email') + '</a>'
     );
-    var slot = box.querySelector('#sht-g-slot');
-    if (preview) {
-      slot.innerHTML = '<button type="button" class="sht-btn">Link Google account (preview)</button>';
-      slot.firstChild.addEventListener('click', function () { openConfirmModal(slug); });
-      return;
-    }
-    ensureGoogleScript().then(function () {
-      if (!window.ShGoogle || !window.ShGoogle.isUsable()) throw new Error('google_unavailable');
-      return window.ShGoogle.mount(slot, function (idToken) {
-        slot.style.opacity = '.55';
-        slot.style.pointerEvents = 'none';
-        return api('POST', '/auth/google/link', { id_token: idToken }).then(function (r) {
-          slot.style.opacity = '';
-          slot.style.pointerEvents = '';
-          if (!r.ok) { showErr(box, r.data.error || 'Could not link your Google account. Please try again.'); return; }
-          return getStatus(true).then(function (st) {
-            if (st.trial_used) { closeModal(); toast('You have already used your free trial.'); return; }
-            openConfirmModal(slug);
-          });
-        }).catch(function () {
-          slot.style.opacity = '';
-          slot.style.pointerEvents = '';
-          showErr(box, 'Network error. Please check your connection and try again.');
-        });
-      }, { label: 'Link Google account', onError: function (m) { showErr(box, m); } });
-    }).catch(function () {
-      showErr(box, 'Google sign-in is not available right now. Please try again later.');
-    });
+    return box;
   }
 
   function openConfirmModal(slug, guest) {
@@ -397,7 +364,8 @@
           }
           go.disabled = false;
           var code = r.data && r.data.code;
-          if (code === 'google_required') { openLinkModal(slug); return; }
+          if (code === 'email_not_verified') { openEmailModal('unverified'); return; }
+          if (code === 'gmail_required') { openEmailModal('need_gmail'); return; }
           if (code === 'login_required') { goSignup(slug); return; }
           showErr(box, (r.data && r.data.error) || 'Could not start the trial. Please try again.');
         }).catch(function () {
@@ -582,7 +550,7 @@
             window.history.replaceState(null, '', u.pathname + (u.search || '') + u.hash);
           } catch (e) {}
           if (st.logged_in && !st.trial_used) {
-            if (ts !== '1' && st.has_google && !preview) {
+            if (ts !== '1' && st.email_state === 'ok' && !preview) {
               // They already chose the subject and signed in with Google: start it now.
               api('POST', '/trial/start', { subject_id: ts }).then(function (r) {
                 if (r.ok && r.data.ok) { window.location.href = '/' + ts + '/?trial_started=1'; return; }

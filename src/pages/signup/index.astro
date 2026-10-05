@@ -56,6 +56,19 @@ import Header from '../../components/Header.astro';
         document.documentElement.classList.add('shg-hold');
         setTimeout(function () { document.documentElement.classList.remove('shg-hold'); }, 4000);
       </script>
+      <script is:inline>
+        // Arrived from the free-trial button (?next=...trial_start=...): Google only,
+        // no phone option. Any other visit to this page is unchanged.
+        (function () {
+          try {
+            var next = new URLSearchParams(window.location.search).get('next') || '';
+            if (next.indexOf('trial_start=') === -1) return;
+            document.documentElement.classList.add('sh-trial-signup');
+            var h = document.getElementById('signup-heading');
+            if (h) h.textContent = 'Continue with Google to start your free trial';
+          } catch (e) {}
+        })();
+      </script>
       <!-- Google sign-in: hidden until /google-auth.js confirms it can run here
            (browser, or an app build that includes the native plugin). Keeps the
            ?next= redirect, so guests buying from a subject/plan/CA page still land
@@ -110,6 +123,7 @@ import Header from '../../components/Header.astro';
 
   <style is:global>
     html.shg-hold #signup-form { display: none !important; }
+    html.sh-trial-signup .shg-or, html.sh-trial-signup #phone-signup-toggle { display: none !important; }
     html.shg-hold #google-auth { display: block !important; visibility: hidden; min-height: 165px; }
     body.sh2-page { background: #EEEDF6; }
     html[data-theme="dark"] body.sh2-page { background: #121120; }

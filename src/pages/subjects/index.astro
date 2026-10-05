@@ -708,6 +708,12 @@ const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);
               if (pill) {
                 pill.hidden = false;
                 card.classList.add('has-pill');
+                if (d.is_trial) {
+                  // Free trial, not a purchase: label it honestly.
+                  pill.setAttribute('aria-label', 'Free trial');
+                  pill.style.background = '#5a4bd0';
+                  pill.innerHTML = '<i class="ti ti-gift" aria-hidden="true"></i>FREE TRIAL';
+                }
               }
               const priceTag = card && card.querySelector('[data-price-tag]');
               const expiryTag = card && card.querySelector('[data-expiry-tag]');
