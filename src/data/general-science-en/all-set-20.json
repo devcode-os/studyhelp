@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-set-20",
+  "chapterNumber": 20,
+  "title": "General Science Set 20",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Muscular force – Contact force\n(II) Gravitational force – Contact force\n(III) Electrostatic force – Non-contact force\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-6",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "In aqueous solution, hydrogen ions exist as:",
+      "options": {
+        "a": "H⁻",
+        "b": "H₃O⁺",
+        "c": "OH⁻",
+        "d": "H₂O₂"
+      },
+      "answer": "b",
+      "a": "H₃O⁺",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a component of the cell wall of algae?",
+      "options": {
+        "a": "Mannans",
+        "b": "Chitin",
+        "c": "Cellulose",
+        "d": "Galactans"
+      },
+      "answer": "b",
+      "a": "Chitin",
+      "e": "Algal cell walls contain cellulose, galactans, mannans and minerals like calcium carbonate.",
+      "table": null,
+      "qid": "biology-ch21-cell-25",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The equivalent resistance of 6 Ω and 3 Ω resistors connected in parallel is:",
+      "options": {
+        "a": "9 Ω",
+        "b": "0.5 Ω",
+        "c": "4.5 Ω",
+        "d": "2 Ω"
+      },
+      "answer": "d",
+      "a": "2 Ω",
+      "e": "1/Rp = 1/6 + 1/3 = 1/2, so Rp = 2 Ω.",
+      "table": null,
+      "qid": "physics-ch7-electricity-43",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The chemical properties of members of a homologous series are determined solely by their:",
+      "options": {
+        "a": "Molecular mass",
+        "b": "Number of isomers",
+        "c": "Functional group",
+        "d": "Chain length"
+      },
+      "answer": "c",
+      "a": "Functional group",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Acne during adolescence occurs due to an increase in:",
+      "options": {
+        "a": "Hair growth",
+        "b": "Oily secretions of the skin",
+        "c": "Melanin production",
+        "d": "Sweat production"
+      },
+      "answer": "b",
+      "a": "Oily secretions of the skin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-78",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The triple point of water is assigned the temperature:",
+      "options": {
+        "a": "373.15 K",
+        "b": "0 K",
+        "c": "273.16 K",
+        "d": "273.15 K"
+      },
+      "answer": "c",
+      "a": "273.16 K",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-21",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum concentration of harmful chemicals through the food chain accumulates in:",
+      "options": {
+        "a": "Primary consumers",
+        "b": "Human beings",
+        "c": "Decomposers",
+        "d": "Producers"
+      },
+      "answer": "b",
+      "a": "Human beings",
+      "e": "Human beings occupy the top level in any food chain.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-12",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "In the coagulation of muddy water, the substance commonly added as a coagulant is:",
+      "options": {
+        "a": "Alum (fitkari)",
+        "b": "Baking soda",
+        "c": "Camphor",
+        "d": "Common salt"
+      },
+      "answer": "a",
+      "a": "Alum (fitkari)",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-66",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Along a streamline in steady flow of a non-viscous incompressible fluid, which quantity remains constant?",
+      "options": {
+        "a": "½ρv² + ρgh",
+        "b": "P + ½ρv² − ρgh",
+        "c": "P + ρv + ρgh",
+        "d": "P + ½ρv² + ρgh"
+      },
+      "answer": "d",
+      "a": "P + ½ρv² + ρgh",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-78",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The plant hormone that inhibits growth and causes wilting of leaves is:",
+      "options": {
+        "a": "Auxin",
+        "b": "Cytokinin",
+        "c": "Abscisic acid",
+        "d": "Gibberellin"
+      },
+      "answer": "c",
+      "a": "Abscisic acid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-22",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The Father of the Indian Space programme is:",
+      "options": {
+        "a": "Subrahmanyan Chandrasekhar",
+        "b": "Meghnad Saha",
+        "c": "Vikram Sarabhai",
+        "d": "Vainu Bappu"
+      },
+      "answer": "c",
+      "a": "Vikram Sarabhai",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-91",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Stainless steel is obtained when iron is mixed with:",
+      "options": {
+        "a": "Nickel and chromium",
+        "b": "Carbon and zinc",
+        "c": "Copper and tin",
+        "d": "Lead and tin"
+      },
+      "answer": "a",
+      "a": "Nickel and chromium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-80",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-membrane-bound organelle found in both prokaryotic and eukaryotic cells?",
+      "options": {
+        "a": "Mitochondria",
+        "b": "Lysosomes",
+        "c": "Ribosomes",
+        "d": "Golgi apparatus"
+      },
+      "answer": "c",
+      "a": "Ribosomes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-7",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic field lines around a straight current-carrying wire form:",
+      "options": {
+        "a": "Parallel straight lines",
+        "b": "Elliptical loops",
+        "c": "Concentric circles",
+        "d": "Radial lines from the wire"
+      },
+      "answer": "c",
+      "a": "Concentric circles",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-23",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "In a Dobereiner triad, the atomic weight of the middle element is:",
+      "options": {
+        "a": "Equal to that of the lightest element",
+        "b": "Double that of the lightest element",
+        "c": "Equal to that of the heaviest element",
+        "d": "About half way between those of the other two"
+      },
+      "answer": "d",
+      "a": "About half way between those of the other two",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The variety of plants and animals found in a particular region contributes to the region's:",
+      "options": {
+        "a": "Biodiversity",
+        "b": "Habitat",
+        "c": "Venation",
+        "d": "Adaptation"
+      },
+      "answer": "a",
+      "a": "Biodiversity",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-1",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "After one complete revolution on a circular path of radius R, the displacement is:",
+      "options": {
+        "a": "πR",
+        "b": "zero",
+        "c": "2R",
+        "d": "2πR"
+      },
+      "answer": "b",
+      "a": "zero",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-45",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Bacteria present in the human intestine help in:",
+      "options": {
+        "a": "Digestion",
+        "b": "Respiration",
+        "c": "Photosynthesis",
+        "d": "Excretion"
+      },
+      "answer": "a",
+      "a": "Digestion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-36",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular mass of carbon dioxide (C = 12.011 u, O = 16.00 u) is:",
+      "options": {
+        "a": "56.02 u",
+        "b": "44.01 u",
+        "c": "60.01 u",
+        "d": "28.01 u"
+      },
+      "answer": "b",
+      "a": "44.01 u",
+      "e": "12.011 u + 2 × 16.00 u = 44.011 u.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-104",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about shadows:\n(I) Opaque objects form darker shadows.\n(II) Translucent objects form lighter shadows.\n(III) Changing the colour of an opaque object changes the colour of its shadow.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-5",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Desert plants take up carbon dioxide at:",
+      "options": {
+        "a": "Noon",
+        "b": "Night",
+        "c": "Morning",
+        "d": "Evening"
+      },
+      "answer": "b",
+      "a": "Night",
+      "e": "The intermediate formed is acted upon by the energy absorbed by chlorophyll during the day.",
+      "table": null,
+      "qid": "biology-ch26-respiration-10",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In a sodium chloride crystal, each sodium ion is surrounded by how many chloride ions?",
+      "options": {
+        "a": "Six",
+        "b": "Four",
+        "c": "Eight",
+        "d": "Twelve"
+      },
+      "answer": "a",
+      "a": "Six",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "If the resistance of a conductor is doubled while the potential difference across it is unchanged, the current through it:",
+      "options": {
+        "a": "Becomes half",
+        "b": "Doubles",
+        "c": "Remains the same",
+        "d": "Becomes four times"
+      },
+      "answer": "a",
+      "a": "Becomes half",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-29",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Soil is formed by the disintegration of:",
+      "options": {
+        "a": "Fossil fuels",
+        "b": "Minerals",
+        "c": "Rocks",
+        "d": "Plants"
+      },
+      "answer": "c",
+      "a": "Rocks",
+      "e": "The Sun, water and living organisms act on rocks over thousands of years.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-31",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "A ray of light travelling obliquely from a rarer medium into a denser medium:",
+      "options": {
+        "a": "does not bend",
+        "b": "bends towards the normal",
+        "c": "bends away from the normal",
+        "d": "is reflected back"
+      },
+      "answer": "b",
+      "a": "bends towards the normal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-39",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In bronze (Kamsya), the parts of copper (Tamra) to tin (Vanga) are in the ratio:",
+      "options": {
+        "a": "4:1",
+        "b": "2:1",
+        "c": "1:4",
+        "d": "1:1"
+      },
+      "answer": "a",
+      "a": "4:1",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Rickets is caused by the deficiency of:",
+      "options": {
+        "a": "Vitamin D",
+        "b": "Vitamin C",
+        "c": "Vitamin A",
+        "d": "Vitamin B1"
+      },
+      "answer": "a",
+      "a": "Vitamin D",
+      "e": "Rickets causes soft and bent bones.",
+      "table": {
+        "headers": [
+          "Food component",
+          "Deficiency disease/disorder",
+          "Some sources"
+        ],
+        "rows": [
+          [
+            "Vitamin B1",
+            "Beriberi",
+            "Legumes, nuts, whole grains, seeds, milk products"
+          ],
+          [
+            "Vitamin C",
+            "Scurvy",
+            "Amla, guava, green chilli, orange, lemon"
+          ],
+          [
+            "Vitamin D",
+            "Rickets",
+            "Exposure to sunlight, milk, butter, fish, eggs"
+          ],
+          [
+            "Iodine",
+            "Goitre",
+            "Seaweed, water chestnut (singhada), iodised salt"
+          ],
+          [
+            "Iron",
+            "Anaemia",
+            "Green leafy vegetables, beetroot, pomegranate"
+          ]
+        ]
+      },
+      "qid": "biology-ch25-nutrition-26",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The Kodaikanal Solar Observatory was established in:",
+      "options": {
+        "a": "1952",
+        "b": "1956",
+        "c": "1899",
+        "d": "1987"
+      },
+      "answer": "c",
+      "a": "1899",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-66",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The Indian botanist known for his work on chromosomes, who received the Shanti Swarup Bhatnagar award and Padma Bhushan, is:",
+      "options": {
+        "a": "Birbal Sahni",
+        "b": "Ram Bux Singh",
+        "c": "Jagadish Chandra Bose",
+        "d": "Arun Kumar Sharma"
+      },
+      "answer": "d",
+      "a": "Arun Kumar Sharma",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-93",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    }
+  ]
+}

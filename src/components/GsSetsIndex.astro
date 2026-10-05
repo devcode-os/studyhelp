@@ -1,0 +1,185 @@
+---
+// ============================================================
+// General Science — sets index (UX only).
+// Rendered by src/pages/[subject]/index.astro when the subject is
+// 'general-science-en'. Contains NO lock, answer or payment logic:
+// every tile is a plain link to a normal set page, and that page runs
+// through the same chapter engine as every other subject.
+//
+// Tabs: All (mixed sets) / Physics / Chemistry / Biology. A set's tab
+// comes from its JSON `section` field ('General Science' = All).
+// ============================================================
+const { sets = [] } = Astro.props;
+
+const TAB_DEFS = [
+  { key: 'all', label: 'All', section: 'General Science', blurb: 'Questions mixed from Physics, Chemistry and Biology.' },
+  { key: 'physics', label: 'Physics', section: 'Physics', blurb: 'Physics questions only.' },
+  { key: 'chemistry', label: 'Chemistry', section: 'Chemistry', blurb: 'Chemistry questions only.' },
+  { key: 'biology', label: 'Biology', section: 'Biology', blurb: 'Biology questions only.' },
+];
+
+const tabs = TAB_DEFS.map((t) => {
+  const items = sets
+    .filter((s) => s.section === t.section)
+    .sort((a, b) => a.chapterNumber - b.chapterNumber);
+  const mcqs = items.reduce((n, s) => n + s.count, 0);
+  return { ...t, items, mcqs };
+}).filter((t) => t.items.length > 0);
+---
+<section class="gs" id="gs-root">
+  <div class="gs-tabs" role="tablist" aria-label="General Science practice sets">
+    {tabs.map((t, i) => (
+      <button
+        type="button"
+        role="tab"
+        id={`gs-tab-${t.key}`}
+        class={`gs-tab${i === 0 ? ' gs-tab-active' : ''}`}
+        data-gs-tab={t.key}
+        aria-selected={i === 0 ? 'true' : 'false'}
+        aria-controls={`gs-panel-${t.key}`}
+      >
+        <span class="gs-tab-label">{t.label}</span>
+        <span class="gs-tab-count">{t.items.length}</span>
+      </button>
+    ))}
+  </div>
+
+  {tabs.map((t, i) => (
+    <div
+      class={`gs-panel gs-panel-${t.key}`}
+      role="tabpanel"
+      id={`gs-panel-${t.key}`}
+      aria-labelledby={`gs-tab-${t.key}`}
+      hidden={i !== 0}
+    >
+      <div class="gs-panel-head">
+        <div class="gs-panel-text">
+          <div class="gs-panel-title">{t.items.length} sets &middot; {t.mcqs.toLocaleString('en-IN')} MCQs</div>
+          <div class="gs-panel-blurb">{t.blurb} 30 questions per set.</div>
+        </div>
+        <a class="gs-start" href={`/${t.items[0].slug}/`}>
+          Start Set 1 <i class="ti ti-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="gs-grid">
+        {t.items.map((s) => (
+          <a class="gs-tile" href={`/${s.slug}/`}>
+            <span class="gs-tile-label">Set {s.chapterNumber}</span>
+            <span class="gs-tile-meta">{s.count} MCQs</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  ))}
+</section>
+
+<style>
+  .gs { margin-top: 4px; }
+
+  .gs-tabs {
+    display: flex; gap: 4px; padding: 4px;
+    background: var(--sh2-surface); border: 1px solid var(--sh2-line);
+    border-radius: 14px; box-shadow: var(--sh2-shadow);
+    margin-bottom: 12px;
+  }
+  .gs-tab {
+    flex: 1 1 0; min-width: 0;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 9px 6px; border: none; border-radius: 10px;
+    background: transparent; color: var(--sh2-text-soft);
+    font: inherit; font-size: 0.8rem; font-weight: 800; cursor: pointer;
+    transition: background 0.12s ease, color 0.12s ease;
+  }
+  .gs-tab-count {
+    font-size: 0.66rem; font-weight: 800; padding: 1px 7px; border-radius: 999px;
+    background: var(--sh2-indigo-soft); color: var(--sh2-indigo);
+  }
+    .gs-tab-active { background: var(--sh2-indigo-deep); color: #fff; }
+  .gs-tab-active .gs-tab-count { background: rgba(255,255,255,0.2); color: #fff; }
+  @media (max-width: 640px) {
+    .gs-tab-count { display: none; }
+  }
+
+  .gs-panel { --gs-accent: var(--sh2-indigo); --gs-soft: var(--sh2-indigo-soft); }
+  .gs-panel[hidden] { display: none; }
+  .gs-panel-physics { --gs-accent: var(--sh2-blue); --gs-soft: var(--sh2-blue-soft); }
+  .gs-panel-chemistry { --gs-accent: var(--sh2-green); --gs-soft: var(--sh2-green-soft); }
+  .gs-panel-biology { --gs-accent: var(--sh2-amber); --gs-soft: var(--sh2-amber-soft); }
+
+  .gs-panel-head {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; flex-wrap: wrap; margin: 0 2px 12px;
+  }
+  .gs-panel-text { min-width: 0; flex: 1 1 200px; }
+  .gs-panel-title { font-size: 0.9rem; font-weight: 800; color: var(--sh2-ink); }
+  .gs-panel-blurb { font-size: 0.72rem; color: var(--sh2-text-soft); margin-top: 2px; line-height: 1.4; }
+  .gs-start {
+    display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+    padding: 8px 14px; border-radius: 999px; text-decoration: none;
+    background: var(--sh2-indigo-deep); color: #fff;
+    font-size: 0.76rem; font-weight: 800;
+  }
+
+  .gs-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;
+  }
+  .gs-tile {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    padding: 12px 6px 10px; text-decoration: none;
+    background: var(--sh2-surface); border: 1px solid var(--sh2-line);
+    border-bottom: 3px solid var(--gs-accent);
+    border-radius: 14px; box-shadow: var(--sh2-shadow);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .gs-tile:active { transform: scale(0.98); }
+  .gs-tile-num {
+    width: 34px; height: 34px; border-radius: 50%; margin-bottom: 4px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--gs-soft); color: var(--gs-accent);
+    font-size: 0.82rem; font-weight: 800;
+  }
+    .gs-tile-label { font-size: 1rem; font-weight: 800; color: var(--gs-accent); }
+  .gs-tile-meta { font-size: 0.66rem; color: var(--sh2-text-soft); }
+
+  @media (min-width: 641px) {
+    .gs-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+    .gs-tile:hover { transform: translateY(-3px); box-shadow: 0 14px 28px -12px rgba(46,37,112,0.28); }
+  }
+  @media (min-width: 1200px) {
+    .gs-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+  }
+</style>
+
+<script>
+  const root = document.getElementById('gs-root');
+  if (root) {
+    const tabs = Array.from(root.querySelectorAll('[data-gs-tab]'));
+    const panels = Array.from(root.querySelectorAll('.gs-panel'));
+    const keys = tabs.map((t) => t.getAttribute('data-gs-tab'));
+
+    function show(rawKey, updateHash) {
+      const key = keys.includes(rawKey) ? rawKey : keys[0];
+      tabs.forEach((t) => {
+        const on = t.getAttribute('data-gs-tab') === key;
+        t.classList.toggle('gs-tab-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach((p) => {
+        p.hidden = p.id !== 'gs-panel-' + key;
+      });
+      if (updateHash) {
+        try {
+          const url = key === keys[0] ? location.pathname + location.search : '#' + key;
+          history.replaceState(null, '', url);
+        } catch (err) {}
+      }
+    }
+
+    tabs.forEach((t) => {
+      t.addEventListener('click', () => show(t.getAttribute('data-gs-tab'), true));
+    });
+    show(location.hash.replace('#', ''), false);
+    window.addEventListener('hashchange', () => show(location.hash.replace('#', ''), false));
+  }
+</script>

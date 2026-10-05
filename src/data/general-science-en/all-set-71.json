@@ -1,0 +1,575 @@
+{
+  "slug": "general-science-set-71",
+  "chapterNumber": 71,
+  "title": "General Science Set 71",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In a domestic circuit, different appliances are connected:",
+      "options": {
+        "a": "In parallel",
+        "b": "Only through the earth wire",
+        "c": "Partly in series and partly across the earth",
+        "d": "In series"
+      },
+      "answer": "a",
+      "a": "In parallel",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-45",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Bicuspid valve – Between left atrium and left ventricle\n(II) Tricuspid valve – Between left atrium and left ventricle\n(III) Semilunar valves – Openings of ventricles into pulmonary artery and aorta\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-59",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Above an aircraft wing producing dynamic lift, compared with below it, the air has:",
+      "options": {
+        "a": "higher speed and lower pressure",
+        "b": "higher speed and higher pressure",
+        "c": "lower speed and lower pressure",
+        "d": "lower speed and higher pressure"
+      },
+      "answer": "a",
+      "a": "higher speed and lower pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-82",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Detergents remain effective in hard water because their charged ends:",
+      "options": {
+        "a": "Dissolve calcium and magnesium salts",
+        "b": "Convert hard water to soft water",
+        "c": "Form insoluble precipitates with calcium ions",
+        "d": "Do not form insoluble precipitates with calcium and magnesium ions"
+      },
+      "answer": "d",
+      "a": "Do not form insoluble precipitates with calcium and magnesium ions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-85",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The red colour of blood is due to:",
+      "options": {
+        "a": "Plasma",
+        "b": "Haemoglobin",
+        "c": "WBCs",
+        "d": "Platelets"
+      },
+      "answer": "b",
+      "a": "Haemoglobin",
+      "e": "It is an iron-rich protein present in the Red Blood Cells.",
+      "table": null,
+      "qid": "biology-ch22-tissues-49",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "A rainbow is always formed in a direction:",
+      "options": {
+        "a": "towards the Sun",
+        "b": "opposite to the Sun",
+        "c": "overhead",
+        "d": "perpendicular to the Sun"
+      },
+      "answer": "b",
+      "a": "opposite to the Sun",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-78",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Which allotrope of carbon conducts electricity?",
+      "options": {
+        "a": "Iodine",
+        "b": "Sulphur",
+        "c": "Diamond",
+        "d": "Graphite"
+      },
+      "answer": "d",
+      "a": "Graphite",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Camels developed humps over time to:",
+      "options": {
+        "a": "store water",
+        "b": "absorb heat",
+        "c": "store fat",
+        "d": "store oxygen"
+      },
+      "answer": "c",
+      "a": "store fat",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-42",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Rhizobium – Nitrogen fixation in root nodules of legumes\n(II) Nitrobacter – Conversion of nitrite to nitrate\n(III) Pseudomonas – Nitrification\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and II only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Pseudomonas carries out denitrification.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-118",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon cannot reduce the oxides of sodium, magnesium, calcium and aluminium because these metals have more affinity for oxygen than for:",
+      "options": {
+        "a": "Sulphur",
+        "b": "Chlorine",
+        "c": "Hydrogen",
+        "d": "Carbon"
+      },
+      "answer": "d",
+      "a": "Carbon",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-66",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of chambers in the heart of fishes is:",
+      "options": {
+        "a": "Three",
+        "b": "Two",
+        "c": "Four",
+        "d": "One"
+      },
+      "answer": "b",
+      "a": "Two",
+      "e": "Amphibians and many reptiles have three-chambered hearts.",
+      "table": null,
+      "qid": "biology-ch26-respiration-77",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The angle of incidence is the angle between the:",
+      "options": {
+        "a": "incident ray and the reflected ray",
+        "b": "reflected ray and the mirror surface",
+        "c": "incident ray and the normal",
+        "d": "incident ray and the mirror surface"
+      },
+      "answer": "c",
+      "a": "incident ray and the normal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-11",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Earth is called the Blue Planet because:",
+      "options": {
+        "a": "its core emits blue light",
+        "b": "most of its surface is covered with water",
+        "c": "its atmosphere scatters blue light",
+        "d": "its ozone layer is blue"
+      },
+      "answer": "b",
+      "a": "most of its surface is covered with water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-4",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Waxing period – Shukla Paksha\n(II) Waning period – Krishna Paksha\n(III) Waning period – Shukla Paksha\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-73",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The paediatrician who developed and implemented the treatment for dehydration using Oral Rehydration Solution (ORS) was:",
+      "options": {
+        "a": "Louis Pasteur",
+        "b": "John Tyndall",
+        "c": "Dilip Mahalanabis",
+        "d": "Michael Faraday"
+      },
+      "answer": "c",
+      "a": "Dilip Mahalanabis",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "A bone marrow transplant using stem cells from a healthy person is used to treat blood cancers like leukemia and the disorder:",
+      "options": {
+        "a": "Thalassemia",
+        "b": "Ligament rupture",
+        "c": "Crown gall disease",
+        "d": "Cartilage rupture"
+      },
+      "answer": "a",
+      "a": "Thalassemia",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-76",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "A constant-volume gas thermometer reads temperature in terms of:",
+      "options": {
+        "a": "volume",
+        "b": "density",
+        "c": "pressure",
+        "d": "length"
+      },
+      "answer": "c",
+      "a": "pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-20",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "To obtain the molecular formula from the empirical formula, the additional data required is the:",
+      "options": {
+        "a": "Molar mass",
+        "b": "Percentage composition",
+        "c": "Melting point",
+        "d": "Density"
+      },
+      "answer": "a",
+      "a": "Molar mass",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-109",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A small fragment on a chromosome, formed by a non-staining secondary constriction, is called a:",
+      "options": {
+        "a": "Satellite",
+        "b": "Centromere",
+        "c": "Kinetochore",
+        "d": "Chromatid"
+      },
+      "answer": "a",
+      "a": "Satellite",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-66",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In our country, the potential difference between the live wire and the neutral wire is:",
+      "options": {
+        "a": "440 V",
+        "b": "220 V",
+        "c": "50 V",
+        "d": "110 V"
+      },
+      "answer": "b",
+      "a": "220 V",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-42",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The acidic properties of acids are due to the formation of which ions in solution?",
+      "options": {
+        "a": "Cl⁻",
+        "b": "Na⁺",
+        "c": "H⁺(aq)",
+        "d": "OH⁻"
+      },
+      "answer": "c",
+      "a": "H⁺(aq)",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about reducing food miles:\n(I) It helps cut down the cost and pollution of transport.\n(II) It helps support local farmers.\n(III) It increases pollution during transport.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-45",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "A passenger seated in a moving bus is in motion with respect to:",
+      "options": {
+        "a": "himself",
+        "b": "the bus",
+        "c": "a building outside",
+        "d": "another seated passenger"
+      },
+      "answer": "c",
+      "a": "a building outside",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-33",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following phyla shows organ-level organisation?",
+      "options": {
+        "a": "Platyhelminthes",
+        "b": "Cnidaria",
+        "c": "Porifera",
+        "d": "Annelida"
+      },
+      "answer": "a",
+      "a": "Platyhelminthes",
+      "e": "",
+      "table": {
+        "headers": [
+          "Phylum",
+          "Habitat",
+          "Level of organisation",
+          "Skeleton"
+        ],
+        "rows": [
+          [
+            "Porifera",
+            "Water (marine)",
+            "Cellular",
+            "Absent"
+          ],
+          [
+            "Cnidaria",
+            "Water (fresh and marine)",
+            "Tissue",
+            "Absent"
+          ],
+          [
+            "Platyhelminthes",
+            "Water/inside host",
+            "Organ",
+            "Absent"
+          ],
+          [
+            "Nematoda",
+            "Soil/water/inside host",
+            "Organ system (digestive system)",
+            "Absent"
+          ],
+          [
+            "Annelida",
+            "Moist soil/water",
+            "Organ system",
+            "Absent"
+          ],
+          [
+            "Arthropoda",
+            "Land/water",
+            "Organ system",
+            "Exoskeleton"
+          ],
+          [
+            "Mollusca",
+            "Water/moist land",
+            "Organ system",
+            "Exoskeleton"
+          ],
+          [
+            "Echinodermata",
+            "Marine water",
+            "Organ system",
+            "Endoskeleton"
+          ]
+        ]
+      },
+      "qid": "biology-ch21-cell-151",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In paper chromatography, at the start of the experiment, the solvent level should be:",
+      "options": {
+        "a": "At the top of the paper",
+        "b": "At the sample spot",
+        "c": "Above the sample spot",
+        "d": "Below the sample spot"
+      },
+      "answer": "d",
+      "a": "Below the sample spot",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The fundamental frequency of a note is 256 Hz. The fundamental frequency of the note one octave higher is:",
+      "options": {
+        "a": "512 Hz",
+        "b": "384 Hz",
+        "c": "128 Hz",
+        "d": "1024 Hz"
+      },
+      "answer": "a",
+      "a": "512 Hz",
+      "e": "An octave is the interval between two notes where one has double the frequency of the other.",
+      "table": null,
+      "qid": "physics-ch6-sound-44",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Seeds require water for germination.\n(II) Most seeds do not require light for germination.\n(III) Sunlight is essential for the germination of all seeds.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-11",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In a series combination of resistors, the quantity that is the same through every resistor is:",
+      "options": {
+        "a": "Resistance",
+        "b": "Current",
+        "c": "Power",
+        "d": "Potential difference"
+      },
+      "answer": "b",
+      "a": "Current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-40",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Compounds with identical molecular formula but different structures are called:",
+      "options": {
+        "a": "Structural isomers",
+        "b": "Functional groups",
+        "c": "Allotropes",
+        "d": "Homologues"
+      },
+      "answer": "a",
+      "a": "Structural isomers",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In reptiles and birds, each egg contains enough yolk to nourish the embryo until:",
+      "options": {
+        "a": "It is laid",
+        "b": "Implantation",
+        "c": "Fertilisation",
+        "d": "It hatches"
+      },
+      "answer": "d",
+      "a": "It hatches",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-64",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

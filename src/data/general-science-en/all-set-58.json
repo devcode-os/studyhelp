@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-set-58",
+  "chapterNumber": 58,
+  "title": "General Science Set 58",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Using the data below, the mass of potassium nitrate needed to prepare a saturated solution in 50 g of water at 40 °C is:",
+      "options": {
+        "a": "62 g",
+        "b": "124 g",
+        "c": "31 g",
+        "d": "45 g"
+      },
+      "answer": "c",
+      "a": "31 g",
+      "e": "Solubility at 40 °C is 62 g per 100 g of water, so 50 g of water dissolves 31 g.",
+      "table": {
+        "headers": [
+          "Temperature (°C)",
+          "Solubility of potassium nitrate (g per 100 g water)"
+        ],
+        "rows": [
+          [
+            "20",
+            "32"
+          ],
+          [
+            "40",
+            "62"
+          ],
+          [
+            "60",
+            "106"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch16-physical-chemical-changes-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The gold foil experiment was carried out by Geiger and Marsden, under Rutherford, in:",
+      "options": {
+        "a": "1897",
+        "b": "1911",
+        "c": "1913",
+        "d": "1932"
+      },
+      "answer": "b",
+      "a": "1911",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-29",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Bacillus – Rod-shaped\n(II) Coccus – Spherical\n(III) Vibrio – Spiral\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Vibrio is comma-shaped; Spirillum is spiral.",
+      "table": null,
+      "qid": "biology-ch21-cell-76",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The density of a substance is independent of its shape or size.\n(II) The density of a substance depends on temperature and pressure.\n(III) Pressure significantly affects the density of solids and liquids.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Pressure primarily affects the density of gases.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-73",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum time gap between two sounds for them to be heard as separate sounds is:",
+      "options": {
+        "a": "1 s",
+        "b": "0.1 s",
+        "c": "0.5 s",
+        "d": "0.01 s"
+      },
+      "answer": "b",
+      "a": "0.1 s",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-48",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Gametes formed by meiosis are:",
+      "options": {
+        "a": "Tetraploid",
+        "b": "Triploid",
+        "c": "Haploid",
+        "d": "Diploid"
+      },
+      "answer": "c",
+      "a": "Haploid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-36",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The simplest whole number ratio of the various atoms present in a compound is represented by its:",
+      "options": {
+        "a": "Structural formula",
+        "b": "Formula mass",
+        "c": "Empirical formula",
+        "d": "Molecular formula"
+      },
+      "answer": "c",
+      "a": "Empirical formula",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-108",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) α-rays – Positively charged particles\n(II) β-rays – Negatively charged particles similar to electrons\n(III) γ-rays – Stream of positively charged particles\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "γ-rays are high energy radiations, neutral in nature.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-23",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is acellular?",
+      "options": {
+        "a": "Algae",
+        "b": "Bacteria",
+        "c": "Protozoa",
+        "d": "Viruses"
+      },
+      "answer": "d",
+      "a": "Viruses",
+      "e": "Viruses multiply only when they enter a living cell.",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-18",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The force exerted by a fluid at rest on a surface in contact with it is always:",
+      "options": {
+        "a": "normal to the surface",
+        "b": "inclined at 45°",
+        "c": "tangential",
+        "d": "zero"
+      },
+      "answer": "a",
+      "a": "normal to the surface",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-54",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The transfer of pollen grains from the anther to the stigma of a flower is called:",
+      "options": {
+        "a": "Germination",
+        "b": "Pollination",
+        "c": "Budding",
+        "d": "Fertilisation"
+      },
+      "answer": "b",
+      "a": "Pollination",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-47",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure substances are classified into:",
+      "options": {
+        "a": "Metals and non-metals",
+        "b": "Uniform and non-uniform substances",
+        "c": "Elements and compounds",
+        "d": "Mixtures and alloys"
+      },
+      "answer": "c",
+      "a": "Elements and compounds",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-47",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Aryabhata's stated time for one full rotation of the Earth about its axis is about:",
+      "options": {
+        "a": "23 h 56 min 4.1 s",
+        "b": "24 h exactly",
+        "c": "24 h 4 min",
+        "d": "23 h 30 min"
+      },
+      "answer": "a",
+      "a": "23 h 56 min 4.1 s",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-52",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The ability of some mature plant cells to undifferentiate, divide and redifferentiate into a new plant is called:",
+      "options": {
+        "a": "Intercalary growth",
+        "b": "Totipotency",
+        "c": "Transpiration",
+        "d": "Differentiation"
+      },
+      "answer": "b",
+      "a": "Totipotency",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-37",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Aqua regia is a freshly prepared mixture of concentrated HCl and concentrated HNO₃ in the ratio:",
+      "options": {
+        "a": "3 : 1",
+        "b": "2 : 1",
+        "c": "1 : 1",
+        "d": "1 : 3"
+      },
+      "answer": "a",
+      "a": "3 : 1",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The poles of an electromagnet can be reversed by changing the:",
+      "options": {
+        "a": "Direction of the current",
+        "b": "Length of the wire",
+        "c": "Number of turns of the coil",
+        "d": "Material of the core"
+      },
+      "answer": "a",
+      "a": "Direction of the current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-69",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Genetic material is stored:",
+      "options": {
+        "a": "only in blood cells",
+        "b": "only in the nucleus of reproductive cells",
+        "c": "only in the gametes",
+        "d": "inside every cell of a living being"
+      },
+      "answer": "d",
+      "a": "inside every cell of a living being",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-22",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following elements has atoms, rather than molecules, as its constituent particles?",
+      "options": {
+        "a": "Copper",
+        "b": "Hydrogen",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "a",
+      "a": "Copper",
+      "e": "Hydrogen, nitrogen and oxygen gases consist of molecules in which two atoms combine.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A satellite orbits a planet at a radius R with time period T. Another satellite orbits the same planet at a radius 4R. Its time period is:",
+      "options": {
+        "a": "4T",
+        "b": "2T",
+        "c": "16T",
+        "d": "8T"
+      },
+      "answer": "d",
+      "a": "8T",
+      "e": "T² ∝ R³, so T′ = T × 4^(3/2) = 8T.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-20",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a deficiency disease?",
+      "options": {
+        "a": "Measles",
+        "b": "Scurvy",
+        "c": "Cholera",
+        "d": "Asthma"
+      },
+      "answer": "b",
+      "a": "Scurvy",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-11",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "In asexual reproduction, minor variations arise mainly due to:",
+      "options": {
+        "a": "Small inaccuracies in DNA copying",
+        "b": "Environmental selection",
+        "c": "Sexual recombination",
+        "d": "Pairing of chromosomes"
+      },
+      "answer": "a",
+      "a": "Small inaccuracies in DNA copying",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-1",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of neutrons in an atom with atomic number 53 and mass number 127 is:",
+      "options": {
+        "a": "127",
+        "b": "74",
+        "c": "180",
+        "d": "53"
+      },
+      "answer": "b",
+      "a": "74",
+      "e": "Neutrons = A − Z = 127 − 53 = 74.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-50",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "A reducing agent is a species that is:",
+      "options": {
+        "a": "An acceptor of electrons",
+        "b": "A donor of protons",
+        "c": "An acceptor of oxygen",
+        "d": "A donor of electrons"
+      },
+      "answer": "d",
+      "a": "A donor of electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In plants, which gas can be considered a waste product of photosynthesis?",
+      "options": {
+        "a": "Hydrogen",
+        "b": "Carbon dioxide",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-103",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The terminal velocity of a sphere falling through a viscous medium is directly proportional to the:",
+      "options": {
+        "a": "square of its radius",
+        "b": "viscosity of the medium",
+        "c": "cube of its radius",
+        "d": "radius"
+      },
+      "answer": "a",
+      "a": "square of its radius",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-87",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A soap solution appears cloudy because the micelles are large enough to:",
+      "options": {
+        "a": "Scatter light",
+        "b": "Reflect light only",
+        "c": "Emit light",
+        "d": "Absorb light"
+      },
+      "answer": "a",
+      "a": "Scatter light",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-81",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Curd turns sour due to the production of:",
+      "options": {
+        "a": "Alcohol",
+        "b": "Lactic acid",
+        "c": "Carbon dioxide",
+        "d": "Methane"
+      },
+      "answer": "b",
+      "a": "Lactic acid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-27",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "How frequency is perceived by humans is called:",
+      "options": {
+        "a": "Loudness",
+        "b": "Intensity",
+        "c": "Timbre",
+        "d": "Pitch"
+      },
+      "answer": "d",
+      "a": "Pitch",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-36",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a transparent material?",
+      "options": {
+        "a": "Cellophane paper",
+        "b": "Cardboard",
+        "c": "Butter paper",
+        "d": "Frosted glass"
+      },
+      "answer": "a",
+      "a": "Cellophane paper",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Water covers about ______ of the Earth's surface.",
+      "options": {
+        "a": "three-fourths",
+        "b": "one-fourth",
+        "c": "one-half",
+        "d": "two-thirds"
+      },
+      "answer": "d",
+      "a": "two-thirds",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-23",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    }
+  ]
+}

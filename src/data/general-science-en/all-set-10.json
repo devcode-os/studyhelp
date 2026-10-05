@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-10",
+  "chapterNumber": 10,
+  "title": "General Science Set 10",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Hydrosphere – water\n(II) Geosphere – solid parts such as rocks, soils and minerals\n(III) Biosphere – gases of the air\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "III only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "The gases of the air make up the atmosphere; the biosphere consists of life.",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-12",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "During the day, the wind blowing from the sea to the land is called:",
+      "options": {
+        "a": "sea breeze",
+        "b": "thunderstorm",
+        "c": "land breeze",
+        "d": "cyclone"
+      },
+      "answer": "a",
+      "a": "sea breeze",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-97",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The Law of Octaves was proposed by:",
+      "options": {
+        "a": "Newlands",
+        "b": "de Chancourtois",
+        "c": "Mendeleev",
+        "d": "Dobereiner"
+      },
+      "answer": "a",
+      "a": "Newlands",
+      "e": "It was proposed in 1865.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-renewable resource?",
+      "options": {
+        "a": "Forests",
+        "b": "Soil",
+        "c": "Water",
+        "d": "Air"
+      },
+      "answer": "b",
+      "a": "Soil",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-36",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The relative density of a substance is the ratio of its density to the density of water at:",
+      "options": {
+        "a": "100 °C",
+        "b": "20 °C",
+        "c": "0 °C",
+        "d": "4 °C"
+      },
+      "answer": "d",
+      "a": "4 °C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-69",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of metals does not react with oxygen even at high temperatures?",
+      "options": {
+        "a": "Magnesium and aluminium",
+        "b": "Zinc and lead",
+        "c": "Silver and gold",
+        "d": "Copper and iron"
+      },
+      "answer": "c",
+      "a": "Silver and gold",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A genetically regulated and organised process of selective cell destruction is called:",
+      "options": {
+        "a": "Contact inhibition",
+        "b": "Totipotency",
+        "c": "Programmed cell death",
+        "d": "Mitosis"
+      },
+      "answer": "c",
+      "a": "Programmed cell death",
+      "e": "It helps form fingers during embryo development by eliminating cells between the digits.",
+      "table": null,
+      "qid": "biology-ch21-cell-89",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The force on a current-carrying conductor in a magnetic field is the largest when the current is:",
+      "options": {
+        "a": "Parallel to the field",
+        "b": "Zero",
+        "c": "At 45° to the field",
+        "d": "At right angles to the field"
+      },
+      "answer": "d",
+      "a": "At right angles to the field",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-35",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The atmosphere of Venus is almost entirely made up of:",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Methane",
+        "c": "Oxygen",
+        "d": "Carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-2",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Lothar Meyer plotted melting point, boiling point and which other property against atomic weight to obtain a periodically repeated pattern?",
+      "options": {
+        "a": "Electronegativity",
+        "b": "Ionisation energy",
+        "c": "Atomic volume",
+        "d": "Electron affinity"
+      },
+      "answer": "c",
+      "a": "Atomic volume",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The direction of force on a current-carrying conductor reverses when the direction of current is reversed.\n(II) The direction of force reverses when the direction of the magnetic field is reversed.\n(III) The direction of force is independent of the direction of current and field.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "III only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-37",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Micrographia was published in the year:",
+      "options": {
+        "a": "1665",
+        "b": "1971",
+        "c": "1980",
+        "d": "1660"
+      },
+      "answer": "a",
+      "a": "1665",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-2",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Limiting the supply of air to saturated hydrocarbons results in:",
+      "options": {
+        "a": "Complete combustion",
+        "b": "Substitution reaction",
+        "c": "Incomplete combustion",
+        "d": "Addition reaction"
+      },
+      "answer": "c",
+      "a": "Incomplete combustion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The asteroid belt lies between the orbits of:",
+      "options": {
+        "a": "Saturn and Uranus",
+        "b": "Earth and Mars",
+        "c": "Mars and Jupiter",
+        "d": "Jupiter and Saturn"
+      },
+      "answer": "c",
+      "a": "Mars and Jupiter",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-43",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) All children inherit an X chromosome from their mother.\n(II) A child who inherits Y from the father is a girl.\n(III) Half the children are expected to be boys and half girls.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-19",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "A satellite in a circular orbit around the Earth has a kinetic energy of 4 × 10⁹ J. Its total energy is:",
+      "options": {
+        "a": "+4 × 10⁹ J",
+        "b": "+2 × 10⁹ J",
+        "c": "−4 × 10⁹ J",
+        "d": "−8 × 10⁹ J"
+      },
+      "answer": "c",
+      "a": "−4 × 10⁹ J",
+      "e": "Total energy = −GMm/2r = −K.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-23",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The drug AZT (azidothymidine) is used for helping patients suffering from:",
+      "options": {
+        "a": "Tuberculosis",
+        "b": "AIDS",
+        "c": "Malaria",
+        "d": "Cancer"
+      },
+      "answer": "b",
+      "a": "AIDS",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The rate of breathing in aquatic organisms is faster than in terrestrial organisms because the amount of dissolved oxygen in water is comparatively:",
+      "options": {
+        "a": "Unstable",
+        "b": "Same",
+        "c": "Low",
+        "d": "High"
+      },
+      "answer": "c",
+      "a": "Low",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-57",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A coil of many circular turns of insulated copper wire wrapped closely in the shape of a cylinder is called a:",
+      "options": {
+        "a": "Rheostat",
+        "b": "Loudspeaker",
+        "c": "Electromagnet",
+        "d": "Solenoid"
+      },
+      "answer": "d",
+      "a": "Solenoid",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-30",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a component of xylem?",
+      "options": {
+        "a": "Xylem fibres",
+        "b": "Sieve tubes",
+        "c": "Vessels",
+        "d": "Tracheids"
+      },
+      "answer": "b",
+      "a": "Sieve tubes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-27",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "CO is correctly named as:",
+      "options": {
+        "a": "Carbon monoxide",
+        "b": "Carbon oxide",
+        "c": "Carbon monooxide",
+        "d": "Monocarbon dioxide"
+      },
+      "answer": "a",
+      "a": "Carbon monoxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The second is defined using the unperturbed ground-state hyperfine transition frequency of the atom of:",
+      "options": {
+        "a": "strontium-87",
+        "b": "caesium-133",
+        "c": "rubidium-87",
+        "d": "hydrogen-1"
+      },
+      "answer": "b",
+      "a": "caesium-133",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-8",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The correct sequence of levels of organisation in a living organism is:",
+      "options": {
+        "a": "Cell → Organ → Tissue → Organ system → Organism",
+        "b": "Tissue → Cell → Organ → Organ system → Organism",
+        "c": "Cell → Tissue → Organ system → Organ → Organism",
+        "d": "Cell → Tissue → Organ → Organ system → Organism"
+      },
+      "answer": "d",
+      "a": "Cell → Tissue → Organ → Organ system → Organism",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-11",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Cinnabar is an ore of:",
+      "options": {
+        "a": "Mercury",
+        "b": "Copper",
+        "c": "Iron",
+        "d": "Zinc"
+      },
+      "answer": "a",
+      "a": "Mercury",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The smallest and lightest positive ion obtained in the discharge tube came from the gas:",
+      "options": {
+        "a": "Hydrogen",
+        "b": "Neon",
+        "c": "Oxygen",
+        "d": "Helium"
+      },
+      "answer": "a",
+      "a": "Hydrogen",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-15",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Animals such as frogs that can live both in water and on land are called:",
+      "options": {
+        "a": "Amphibians",
+        "b": "Herbivores",
+        "c": "Terrestrial animals",
+        "d": "Aquatic animals"
+      },
+      "answer": "a",
+      "a": "Amphibians",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-33",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Mechanical energy is the energy an object possesses due to its:",
+      "options": {
+        "a": "temperature",
+        "b": "motion or position",
+        "c": "chemical bonds",
+        "d": "electric charge"
+      },
+      "answer": "b",
+      "a": "motion or position",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-17",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Silicon forms compounds with hydrogen having chains of up to:",
+      "options": {
+        "a": "four or five atoms",
+        "b": "seven or eight atoms",
+        "c": "twelve or thirteen atoms",
+        "d": "two or three atoms"
+      },
+      "answer": "b",
+      "a": "seven or eight atoms",
+      "e": "These compounds are very reactive.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The two subunits of eukaryotic 80S ribosomes are:",
+      "options": {
+        "a": "60S and 40S",
+        "b": "50S and 30S",
+        "c": "70S and 30S",
+        "d": "80S and 60S"
+      },
+      "answer": "a",
+      "a": "60S and 40S",
+      "e": "The 70S prokaryotic ribosome has 50S and 30S subunits.",
+      "table": null,
+      "qid": "biology-ch21-cell-50",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) A convex lens converges a parallel beam of light.\n(II) A concave lens diverges a parallel beam of light.\n(III) A concave mirror diverges a parallel beam of light.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-60",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    }
+  ]
+}

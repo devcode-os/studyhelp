@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-38",
+  "chapterNumber": 38,
+  "title": "General Science Set 38",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following is non-biodegradable?",
+      "options": {
+        "a": "Fruit-peels",
+        "b": "Cake",
+        "c": "Plastics",
+        "d": "Grass"
+      },
+      "answer": "c",
+      "a": "Plastics",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-17",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Aerated water – Gas and liquid\n(II) Vinegar – Liquid and liquid\n(III) Alloys – Solid and gas\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Alloys are mixtures of solid and solid.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "1 inch is equal to:",
+      "options": {
+        "a": "5.24 cm",
+        "b": "2.54 cm",
+        "c": "2.45 cm",
+        "d": "3.54 cm"
+      },
+      "answer": "b",
+      "a": "2.54 cm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-10",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The insectivorous plant having saucer-shaped leaves with hair-like projections with sticky ends is:",
+      "options": {
+        "a": "Amla",
+        "b": "Mimosa",
+        "c": "Nostoc",
+        "d": "Drosera"
+      },
+      "answer": "d",
+      "a": "Drosera",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-10",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The shell with the least energy is:",
+      "options": {
+        "a": "L",
+        "b": "N",
+        "c": "M",
+        "d": "K"
+      },
+      "answer": "d",
+      "a": "K",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-42",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Blue-coloured flowers of hydrangea are produced in:",
+      "options": {
+        "a": "Basic soil",
+        "b": "Neutral soil",
+        "c": "Acidic soil",
+        "d": "Both acidic and basic soil"
+      },
+      "answer": "c",
+      "a": "Acidic soil",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Fungi cannot make their own food by photosynthesis because they lack:",
+      "options": {
+        "a": "Chloroplasts",
+        "b": "Cell wall",
+        "c": "Cell membrane",
+        "d": "Cytoplasm"
+      },
+      "answer": "a",
+      "a": "Chloroplasts",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-17",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The gravitational force on an object of mass 20 kg (g = 9.8 m s⁻²) is:",
+      "options": {
+        "a": "196 N",
+        "b": "20 N",
+        "c": "2.0 N",
+        "d": "1960 N"
+      },
+      "answer": "a",
+      "a": "196 N",
+      "e": "F = mg = 20 kg × 9.8 m s⁻² = 196 N.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-23",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Blood and bone are examples of:",
+      "options": {
+        "a": "Nervous tissue",
+        "b": "Epithelial tissue",
+        "c": "Connective tissue",
+        "d": "Muscular tissue"
+      },
+      "answer": "c",
+      "a": "Connective tissue",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-47",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The decomposition of vegetable matter into compost is an example of an:",
+      "options": {
+        "a": "Exothermic reaction",
+        "b": "Photochemical reaction only",
+        "c": "Endothermic reaction",
+        "d": "Electrolytic reaction"
+      },
+      "answer": "a",
+      "a": "Exothermic reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "One coulomb is equivalent to the charge contained in nearly:",
+      "options": {
+        "a": "1.6 × 10⁻¹⁹ electrons",
+        "b": "1.6 × 10¹⁹ electrons",
+        "c": "6 × 10⁻¹⁹ electrons",
+        "d": "6 × 10¹⁸ electrons"
+      },
+      "answer": "d",
+      "a": "6 × 10¹⁸ electrons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-5",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a source of carbohydrates?",
+      "options": {
+        "a": "Groundnut",
+        "b": "Sweet potato",
+        "c": "Sunflower seeds",
+        "d": "Paneer"
+      },
+      "answer": "b",
+      "a": "Sweet potato",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-5",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction CuO + H₂ → Cu + H₂O, the substance reduced is:",
+      "options": {
+        "a": "Cu",
+        "b": "H₂O",
+        "c": "CuO",
+        "d": "H₂"
+      },
+      "answer": "c",
+      "a": "CuO",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Cathode rays consist of:",
+      "options": {
+        "a": "Neutrons",
+        "b": "Electrons",
+        "c": "Protons",
+        "d": "Alpha particles"
+      },
+      "answer": "b",
+      "a": "Electrons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-6",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of a stem between two nodes is called the:",
+      "options": {
+        "a": "Cuticle",
+        "b": "Node",
+        "c": "Apex",
+        "d": "Internode"
+      },
+      "answer": "d",
+      "a": "Internode",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-8",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "In a Light Emitting Diode (LED), the longer wire is the:",
+      "options": {
+        "a": "Filament",
+        "b": "Negative terminal",
+        "c": "Positive terminal",
+        "d": "Electrode"
+      },
+      "answer": "c",
+      "a": "Positive terminal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-18",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Red rose extract gives red colour in acidic solutions.\n(II) Red rose extract gives green colour in basic solutions.\n(III) Turmeric paper turns red in acidic solutions.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Lime water turns milky in the respiration experiment with germinating seeds due to the presence of more:",
+      "options": {
+        "a": "Oxygen",
+        "b": "Carbon dioxide",
+        "c": "Nitrogen",
+        "d": "Starch"
+      },
+      "answer": "b",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-55",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The main mirror of most modern reflecting telescopes is a large:",
+      "options": {
+        "a": "concave lens",
+        "b": "plane mirror",
+        "c": "convex mirror",
+        "d": "concave mirror"
+      },
+      "answer": "d",
+      "a": "concave mirror",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-36",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The layer of the Earth with the lowest density is the:",
+      "options": {
+        "a": "Inner core",
+        "b": "Crust",
+        "c": "Upper mantle",
+        "d": "Outer core"
+      },
+      "answer": "b",
+      "a": "Crust",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-88",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Fibrinogen – Clotting of blood\n(II) Globulins – Defence mechanisms\n(III) Albumins – Osmotic balance\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-35",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Ernest Rutherford won the 1908 Nobel Prize in:",
+      "options": {
+        "a": "Chemistry",
+        "b": "Medicine",
+        "c": "Physics",
+        "d": "Peace"
+      },
+      "answer": "a",
+      "a": "Chemistry",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-28",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The long legs and wide hooves of camels of the hot desert help them to:",
+      "options": {
+        "a": "Walk on sand without sinking",
+        "b": "Store food",
+        "c": "Survive cold winters",
+        "d": "Swim in water"
+      },
+      "answer": "a",
+      "a": "Walk on sand without sinking",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-26",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of the simplest whole number ratio of ions in an ionic compound is called its:",
+      "options": {
+        "a": "Molecular mass",
+        "b": "Molar mass",
+        "c": "Atomic mass",
+        "d": "Formula unit mass"
+      },
+      "answer": "d",
+      "a": "Formula unit mass",
+      "e": "Ionic compounds form three-dimensional crystals rather than molecules, so molecular mass does not apply to them.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following quantities has no direction?",
+      "options": {
+        "a": "Velocity",
+        "b": "Work",
+        "c": "Displacement",
+        "d": "Force"
+      },
+      "answer": "b",
+      "a": "Work",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-21",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The first scientist to see and describe a live cell was:",
+      "options": {
+        "a": "Rudolf Virchow",
+        "b": "Theodor Schwann",
+        "c": "Antonie von Leeuwenhoek",
+        "d": "Robert Hooke"
+      },
+      "answer": "c",
+      "a": "Antonie von Leeuwenhoek",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-2",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A boy stands 2.5 m in front of a plane mirror. The distance between the boy and his image is:",
+      "options": {
+        "a": "5.0 m",
+        "b": "7.5 m",
+        "c": "2.5 m",
+        "d": "1.25 m"
+      },
+      "answer": "a",
+      "a": "5.0 m",
+      "e": "The image is as far behind the mirror as the object is in front, so the distance is 2 × 2.5 m = 5.0 m.",
+      "table": null,
+      "qid": "physics-ch5-light-8",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Zirconium – Atomic energy\n(II) Titanium – Aerospace\n(III) Zirconium – Aerospace\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-89",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The well-defined places filled by populations of organisms in an ecosystem are called:",
+      "options": {
+        "a": "Habitats",
+        "b": "Colonies",
+        "c": "Zones",
+        "d": "Niches"
+      },
+      "answer": "d",
+      "a": "Niches",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-6",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sun's apparent northward movement from December to June is called:",
+      "options": {
+        "a": "Equinox",
+        "b": "Solstice",
+        "c": "Uttarayan",
+        "d": "Dakshinayan"
+      },
+      "answer": "c",
+      "a": "Uttarayan",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-85",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    }
+  ]
+}

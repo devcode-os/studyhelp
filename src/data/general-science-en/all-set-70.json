@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-set-70",
+  "chapterNumber": 70,
+  "title": "General Science Set 70",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The factor essential for effective filtration is:",
+      "options": {
+        "a": "Pore size",
+        "b": "Apparatus size",
+        "c": "Temperature of mixture",
+        "d": "Presence of air"
+      },
+      "answer": "a",
+      "a": "Pore size",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Mission LiFE, an India-led global initiative, was introduced at the United Nations Climate Change Conference in:",
+      "options": {
+        "a": "2015",
+        "b": "2009",
+        "c": "2023",
+        "d": "2021"
+      },
+      "answer": "d",
+      "a": "2021",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-125",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Unwanted pregnancies are generally removed by surgery only within the:",
+      "options": {
+        "a": "First trimester",
+        "b": "Third trimester",
+        "c": "Ninth month",
+        "d": "Second trimester"
+      },
+      "answer": "a",
+      "a": "First trimester",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-89",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The relative density of a substance with respect to water has the unit:",
+      "options": {
+        "a": "g/cm³",
+        "b": "No unit",
+        "c": "kg/m³",
+        "d": "g/L"
+      },
+      "answer": "b",
+      "a": "No unit",
+      "e": "It is the ratio of the density of the substance to the density of water at that temperature.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-75",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The V–I graph of a nichrome wire is:",
+      "options": {
+        "a": "A straight line parallel to the I axis",
+        "b": "A parabola",
+        "c": "A straight line passing through the origin",
+        "d": "A circle"
+      },
+      "answer": "c",
+      "a": "A straight line passing through the origin",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-30",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The scientist known as the 'Father of Indian Embryology' is:",
+      "options": {
+        "a": "Gregor Mendel",
+        "b": "Louis Pasteur",
+        "c": "P. Maheshwari",
+        "d": "Subhash Mukhopadhyay"
+      },
+      "answer": "c",
+      "a": "P. Maheshwari",
+      "e": "He developed in-vitro fertilisation in flowering plants.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-57",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a prokaryote?",
+      "options": {
+        "a": "Paramoecium",
+        "b": "Blue-green algae",
+        "c": "Yeast",
+        "d": "Amoeba"
+      },
+      "answer": "b",
+      "a": "Blue-green algae",
+      "e": "Prokaryotes are represented by bacteria, blue-green algae, mycoplasma and PPLO.",
+      "table": null,
+      "qid": "biology-ch21-cell-74",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about a uniform hollow spherical shell:\n(I) The force on a point mass outside it is as if the entire mass of the shell were at its centre.\n(II) The force on a point mass inside it is zero.\n(III) It shields a body inside it from the gravitational pull of outside bodies.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-7",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In Kannauj, the natural perfume Mitti ka Ittar is made using the traditional method called:",
+      "options": {
+        "a": "Deg-Bhapka method",
+        "b": "Karkatch method",
+        "c": "Chromatography method",
+        "d": "Panga method"
+      },
+      "answer": "a",
+      "a": "Deg-Bhapka method",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Growth hormone is secreted by the:",
+      "options": {
+        "a": "Adrenal gland",
+        "b": "Thyroid gland",
+        "c": "Pancreas",
+        "d": "Pituitary gland"
+      },
+      "answer": "d",
+      "a": "Pituitary gland",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-28",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Surfaces of which colour absorb and emit radiant energy best?",
+      "options": {
+        "a": "White",
+        "b": "Silver",
+        "c": "Black",
+        "d": "Light yellow"
+      },
+      "answer": "c",
+      "a": "Black",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-71",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In a hydrogen molecule, each hydrogen atom attains the electronic configuration of:",
+      "options": {
+        "a": "Argon",
+        "b": "Helium",
+        "c": "Hydrogen",
+        "d": "Neon"
+      },
+      "answer": "b",
+      "a": "Helium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Papaya – Unisexual flower\n(II) Mustard – Bisexual flower\n(III) Watermelon – Bisexual flower\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-42",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The splitting of white light into its component colours is called:",
+      "options": {
+        "a": "reflection",
+        "b": "dispersion",
+        "c": "scattering",
+        "d": "diffraction"
+      },
+      "answer": "b",
+      "a": "dispersion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-75",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A decomposition reaction carried out by heating is called:",
+      "options": {
+        "a": "Electrolysis",
+        "b": "Photolysis",
+        "c": "Thermal decomposition",
+        "d": "Saponification"
+      },
+      "answer": "c",
+      "a": "Thermal decomposition",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1987, UNEP forged an agreement to freeze CFC production at the levels of the year:",
+      "options": {
+        "a": "1980",
+        "b": "1986",
+        "c": "1992",
+        "d": "1990"
+      },
+      "answer": "b",
+      "a": "1986",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-16",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum acceleration of a particle in SHM with amplitude A and angular frequency ω is:",
+      "options": {
+        "a": "ωA",
+        "b": "ω²A",
+        "c": "A/ω²",
+        "d": "ωA²"
+      },
+      "answer": "b",
+      "a": "ω²A",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-21",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of acquiring oxygen from outside the body and using it to break down food sources for cellular needs is called:",
+      "options": {
+        "a": "Transportation",
+        "b": "Nutrition",
+        "c": "Excretion",
+        "d": "Respiration"
+      },
+      "answer": "d",
+      "a": "Respiration",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-2",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Electric iron – Heating effect of current\n(II) Electromagnet – Magnetic effect of current\n(III) Electric bell – Heating effect of current\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-66",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Oxidising agent – Acceptor of electrons\n(II) Reducing agent – Donor of electrons\n(III) Oxidation – Gain of electrons\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Vitamin D can be produced naturally by the body on exposure to:",
+      "options": {
+        "a": "Moonlight",
+        "b": "Sunlight",
+        "c": "Cold air",
+        "d": "Seawater"
+      },
+      "answer": "b",
+      "a": "Sunlight",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-22",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The electric potential difference between two points is defined as the work done to move:",
+      "options": {
+        "a": "Unit charge from one point to the other",
+        "b": "One ampere of current between the points",
+        "c": "Unit mass of conductor between the points",
+        "d": "One electron per second between the points"
+      },
+      "answer": "a",
+      "a": "Unit charge from one point to the other",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-10",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following exists only as atoms because its atoms are stable?",
+      "options": {
+        "a": "Oxygen",
+        "b": "Hydrogen",
+        "c": "Chlorine",
+        "d": "Helium"
+      },
+      "answer": "d",
+      "a": "Helium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The dialysing fluid in an artificial kidney has the same osmotic pressure as blood but is devoid of:",
+      "options": {
+        "a": "Oxygen",
+        "b": "Salts",
+        "c": "Glucose",
+        "d": "Nitrogenous wastes"
+      },
+      "answer": "d",
+      "a": "Nitrogenous wastes",
+      "e": "Unlike the natural kidney, no re-absorption is involved in an artificial kidney.",
+      "table": null,
+      "qid": "biology-ch26-respiration-100",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "An object placed in a liquid sinks when the:",
+      "options": {
+        "a": "buoyant force exceeds the gravitational force",
+        "b": "buoyant force is zero",
+        "c": "buoyant force equals the gravitational force",
+        "d": "gravitational force exceeds the buoyant force"
+      },
+      "answer": "d",
+      "a": "gravitational force exceeds the buoyant force",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-11",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The Periodic Law is essentially the consequence of the periodic variation in:",
+      "options": {
+        "a": "Electronic configurations",
+        "b": "Isotopic abundance",
+        "c": "Atomic masses",
+        "d": "Number of neutrons"
+      },
+      "answer": "a",
+      "a": "Electronic configurations",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Receptors that detect smell are:",
+      "options": {
+        "a": "Thermal",
+        "b": "Auditory",
+        "c": "Gustatory",
+        "d": "Olfactory"
+      },
+      "answer": "d",
+      "a": "Olfactory",
+      "e": "Gustatory receptors detect taste.",
+      "table": null,
+      "qid": "biology-ch24-human-body-4",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The order of magnitude of a length of 6.4 × 10⁻⁸ m is:",
+      "options": {
+        "a": "–8",
+        "b": "8",
+        "c": "–6",
+        "d": "–7"
+      },
+      "answer": "d",
+      "a": "–7",
+      "e": "Since the number 6.4 lies between 5 and 10, it is rounded to 10. So 10 × 10⁻⁸ = 10⁻⁷.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-18",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which gas forms the largest part of air?",
+      "options": {
+        "a": "Argon",
+        "b": "Carbon dioxide",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "d",
+      "a": "Nitrogen",
+      "e": "",
+      "table": {
+        "headers": [
+          "Gas",
+          "Percentage of air"
+        ],
+        "rows": [
+          [
+            "Nitrogen",
+            "78%"
+          ],
+          [
+            "Oxygen",
+            "21%"
+          ],
+          [
+            "Argon, carbon dioxide and other gases",
+            "1%"
+          ]
+        ]
+      },
+      "qid": "biology-ch31-environment-ecology-21",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The molar mass of a substance is the mass of:",
+      "options": {
+        "a": "One mole of the substance in grams",
+        "b": "One atom of the substance in u",
+        "c": "One gram of the substance in moles",
+        "d": "One molecule of the substance in grams"
+      },
+      "answer": "a",
+      "a": "One mole of the substance in grams",
+      "e": "Its value in grams is numerically equal to the atomic, molecular or formula mass in u.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-102",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-65",
+  "chapterNumber": 65,
+  "title": "General Science Set 65",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Coronary Artery Disease is often referred to as:",
+      "options": {
+        "a": "Heart failure",
+        "b": "Atherosclerosis",
+        "c": "Angina pectoris",
+        "d": "Hypertension"
+      },
+      "answer": "b",
+      "a": "Atherosclerosis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-73",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A compass needle is, in fact, a:",
+      "options": {
+        "a": "Small bar magnet",
+        "b": "Small solenoid",
+        "c": "Soft iron rod",
+        "d": "Piece of nickel"
+      },
+      "answer": "a",
+      "a": "Small bar magnet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-22",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Hydrogen gas is not evolved when a metal reacts with:",
+      "options": {
+        "a": "Nitric acid",
+        "b": "Steam",
+        "c": "Dilute hydrochloric acid",
+        "d": "Dilute sulphuric acid"
+      },
+      "answer": "a",
+      "a": "Nitric acid",
+      "e": "Nitric acid is a strong oxidising agent that oxidises the hydrogen to water. Magnesium and manganese react with very dilute nitric acid to evolve hydrogen.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The only living component of xylem is:",
+      "options": {
+        "a": "Vessels",
+        "b": "Tracheids",
+        "c": "Xylem parenchyma",
+        "d": "Xylem fibres"
+      },
+      "answer": "c",
+      "a": "Xylem parenchyma",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-26",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In a series circuit, if one component fails, the circuit is broken and none of the components works.\n(II) A parallel circuit divides the current through the electrical gadgets.\n(III) A series arrangement is suitable for gadgets that need widely different currents.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-46",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a millet?",
+      "options": {
+        "a": "Rice",
+        "b": "Wheat",
+        "c": "Maize",
+        "d": "Sanwa"
+      },
+      "answer": "d",
+      "a": "Sanwa",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-41",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of valence electrons in a carbon atom is:",
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "4",
+        "d": "2"
+      },
+      "answer": "c",
+      "a": "4",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following situations:\n(I) The force acting on an object is zero.\n(II) The object undergoes no displacement.\n(III) The force acts perpendicular to the displacement.\nIn which of the above is the work done by the force zero?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-4",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Ribosomes were first observed under the electron microscope as dense particles by:",
+      "options": {
+        "a": "George Palade",
+        "b": "Flemming",
+        "c": "Camillo Golgi",
+        "d": "Robert Brown"
+      },
+      "answer": "a",
+      "a": "George Palade",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-49",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "30 density oscillations occur at a fixed point in 6 s. The time period of the sound wave is:",
+      "options": {
+        "a": "5 s",
+        "b": "0.5 s",
+        "c": "0.2 s",
+        "d": "180 s"
+      },
+      "answer": "c",
+      "a": "0.2 s",
+      "e": "ν = 30/6 = 5 Hz; T = 1/5 Hz = 0.2 s.",
+      "table": null,
+      "qid": "physics-ch6-sound-23",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Water droplets appear on the outer surface of a tumbler containing ice-cold water because of:",
+      "options": {
+        "a": "Melting of ice outside the tumbler",
+        "b": "Condensation of water vapour present in the air",
+        "c": "Seepage of water through the glass",
+        "d": "Evaporation of water from the tumbler"
+      },
+      "answer": "b",
+      "a": "Condensation of water vapour present in the air",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Muscle cells change shape in response to nerve impulses because of special:",
+      "options": {
+        "a": "Carbohydrates",
+        "b": "Hormones",
+        "c": "Lipids",
+        "d": "Proteins"
+      },
+      "answer": "d",
+      "a": "Proteins",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-12",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "For the oscillator in the previous question, the kinetic energy at a displacement of 0.06 m from the mean position is:",
+      "options": {
+        "a": "0.50 J",
+        "b": "0.64 J",
+        "c": "0.18 J",
+        "d": "0.32 J"
+      },
+      "answer": "d",
+      "a": "0.32 J",
+      "e": "K = ½k(A² − x²) = 50 × (0.01 − 0.0036) J = 0.32 J.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-35",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "While washing oil-stained clothes with soap, one end of a soap particle attaches to oil and the other end mixes with:",
+      "options": {
+        "a": "Air",
+        "b": "Dirt",
+        "c": "Fabric",
+        "d": "Water"
+      },
+      "answer": "d",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The middle lamella is mainly composed of:",
+      "options": {
+        "a": "Calcium pectate",
+        "b": "Cellulose",
+        "c": "Chitin",
+        "d": "Hemicellulose"
+      },
+      "answer": "a",
+      "a": "Calcium pectate",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-24",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) ²³⁵₉₂U – Fuel in a nuclear reactor\n(II) ¹³¹₅₃I – Treatment of goitre and thyroid cancer\n(III) ¹⁴₆C – Radiation treatment for cancer\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "¹⁴₆C is used to determine the age of ancient fossils and artefacts.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-58",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The hydrogen evolved immediately catches fire when which metal reacts with cold water?",
+      "options": {
+        "a": "Calcium",
+        "b": "Sodium",
+        "c": "Aluminium",
+        "d": "Magnesium"
+      },
+      "answer": "b",
+      "a": "Sodium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "At night, the major gas exchange activity in plants is:",
+      "options": {
+        "a": "Oxygen release",
+        "b": "Nitrogen release",
+        "c": "Carbon dioxide uptake",
+        "d": "Elimination of carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Elimination of carbon dioxide",
+      "e": "During the day, carbon dioxide from respiration is used up in photosynthesis, and oxygen release is the major event.",
+      "table": null,
+      "qid": "biology-ch26-respiration-56",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In uniform circular motion, the velocity at any point is directed along the:",
+      "options": {
+        "a": "radius towards the centre",
+        "b": "radius away from the centre",
+        "c": "tangent to the circle",
+        "d": "diameter"
+      },
+      "answer": "c",
+      "a": "tangent to the circle",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-35",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "An unfertilised egg remains viable for about:",
+      "options": {
+        "a": "One month",
+        "b": "One week",
+        "c": "One day",
+        "d": "One hour"
+      },
+      "answer": "c",
+      "a": "One day",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-74",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Galileo measured the time of each swing of a church lamp using his:",
+      "options": {
+        "a": "watch",
+        "b": "pulse",
+        "c": "hourglass",
+        "d": "sundial"
+      },
+      "answer": "b",
+      "a": "pulse",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-45",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Guru – Heavy\n(II) Drava – Solid\n(III) Khara – Rough\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "Drava means liquid, and sāndra means solid.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Fats are absorbed through lymph in the ___ present in intestinal villi.",
+      "options": {
+        "a": "Nephrons",
+        "b": "Lacteals",
+        "c": "Alveoli",
+        "d": "Sinuses"
+      },
+      "answer": "b",
+      "a": "Lacteals",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-53",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Taking g = 9.8 m s⁻² at the surface and the radius of the Earth as 6400 km, the approximate value of g at a height of 128 km above the surface is:",
+      "options": {
+        "a": "10.2 m s⁻²",
+        "b": "9.6 m s⁻²",
+        "c": "9.8 m s⁻²",
+        "d": "9.4 m s⁻²"
+      },
+      "answer": "d",
+      "a": "9.4 m s⁻²",
+      "e": "g(h) ≈ g(1 − 2h/R) = 9.8 × (1 − 256/6400) = 9.8 × 0.96 ≈ 9.4 m s⁻².",
+      "table": null,
+      "qid": "physics-ch9-gravitation-11",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Water has its highest density at:",
+      "options": {
+        "a": "100 °C",
+        "b": "4 °C",
+        "c": "0 °C",
+        "d": "10 °C"
+      },
+      "answer": "b",
+      "a": "4 °C",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-86",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants are grouped into herbs, shrubs and trees on the basis of:",
+      "options": {
+        "a": "Number of cotyledons",
+        "b": "Type of root",
+        "c": "Colour of flowers",
+        "d": "Height and type of stem"
+      },
+      "answer": "d",
+      "a": "Height and type of stem",
+      "e": "The branching pattern is also a basis.",
+      "table": null,
+      "qid": "biology-ch23-plants-2",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The tendency of an object to resist a change in its state of rest or uniform motion was named by Newton as:",
+      "options": {
+        "a": "inertia",
+        "b": "impulse",
+        "c": "momentum",
+        "d": "friction"
+      },
+      "answer": "a",
+      "a": "inertia",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-12",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "In the chlor-alkali process, hydrogen gas is liberated at the:",
+      "options": {
+        "a": "Anode",
+        "b": "Both electrodes",
+        "c": "Cathode",
+        "d": "Neither electrode"
+      },
+      "answer": "c",
+      "a": "Cathode",
+      "e": "Chlorine is given off at the anode, and sodium hydroxide solution forms near the cathode.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The main site of infection in Hepatitis A is the:",
+      "options": {
+        "a": "Skin",
+        "b": "Intestine",
+        "c": "Liver",
+        "d": "Lungs"
+      },
+      "answer": "c",
+      "a": "Liver",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-8",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of surface water seeping through soil and rocks is called:",
+      "options": {
+        "a": "precipitation",
+        "b": "condensation",
+        "c": "infiltration",
+        "d": "transpiration"
+      },
+      "answer": "c",
+      "a": "infiltration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-83",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

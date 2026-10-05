@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-23",
+  "chapterNumber": 23,
+  "title": "Physics Set 23",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "An object of weight 8000 N rests on four identical feet, each of area 0.10 m². The pressure on the ground is:",
+      "options": {
+        "a": "8.0 × 10² Pa",
+        "b": "2.0 × 10⁴ Pa",
+        "c": "2.0 × 10³ Pa",
+        "d": "8.0 × 10⁴ Pa"
+      },
+      "answer": "b",
+      "a": "2.0 × 10⁴ Pa",
+      "e": "P = 8000 N ÷ 0.40 m² = 2.0 × 10⁴ Pa.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-52",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The sum of 12.34 g, 5.6 g and 0.789 g, to the correct precision, is:",
+      "options": {
+        "a": "18.729 g",
+        "b": "18.7 g",
+        "c": "18.73 g",
+        "d": "19 g"
+      },
+      "answer": "b",
+      "a": "18.7 g",
+      "e": "The sum is 18.729 g. The least precise value (5.6 g) has one decimal place, so the result is rounded to one decimal place.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-21",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "In a hydraulic lift the small and large pistons have areas 10 cm² and 200 cm². A force of 50 N is applied on the small piston. The force on the large piston is:",
+      "options": {
+        "a": "2.5 N",
+        "b": "1000 N",
+        "c": "250 N",
+        "d": "10 000 N"
+      },
+      "answer": "b",
+      "a": "1000 N",
+      "e": "F₂ = F₁A₂/A₁ = 50 × 200 ÷ 10 = 1000 N.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-57",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The viscous drag force on a sphere of radius a moving with velocity v through a fluid of viscosity η is:",
+      "options": {
+        "a": "3πηav",
+        "b": "6πηav",
+        "c": "6πηa²v",
+        "d": "4πηav"
+      },
+      "answer": "b",
+      "a": "6πηav",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-86",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which kinematic equation for constant acceleration relates final velocity, initial velocity, acceleration and displacement, without time?",
+      "options": {
+        "a": "s = vt",
+        "b": "v = u + at",
+        "c": "s = ut + ½at²",
+        "d": "v² = u² + 2as"
+      },
+      "answer": "d",
+      "a": "v² = u² + 2as",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-42",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The strength of an electromagnet can be increased by:\n(I) Increasing the current through the coil\n(II) Increasing the number of turns of the coil\n(III) Inserting an iron core in the coil\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-68",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "In domestic circuits, the circuit with a 15 A current rating is used for:",
+      "options": {
+        "a": "Geysers",
+        "b": "Fans",
+        "c": "Bulbs",
+        "d": "Lamps"
+      },
+      "answer": "a",
+      "a": "Geysers",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-43",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of a simple pendulum at a given place depends on its:",
+      "options": {
+        "a": "material of the bob",
+        "b": "length",
+        "c": "thickness of the string",
+        "d": "mass of the bob"
+      },
+      "answer": "b",
+      "a": "length",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-29",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Most artificial satellites orbit about 800 km above the Earth. The time they take for one orbit is roughly:",
+      "options": {
+        "a": "27 days",
+        "b": "100 minutes",
+        "c": "12 hours",
+        "d": "24 hours"
+      },
+      "answer": "b",
+      "a": "100 minutes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-89",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The extra month added every few years in luni-solar calendars is called:",
+      "options": {
+        "a": "Amant",
+        "b": "Purnimant",
+        "c": "Adhika Maasa",
+        "d": "Uttarayan"
+      },
+      "answer": "c",
+      "a": "Adhika Maasa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-81",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Free liquid drops and bubbles are spherical due to:",
+      "options": {
+        "a": "buoyancy",
+        "b": "surface tension",
+        "c": "Pascal's law",
+        "d": "viscosity"
+      },
+      "answer": "b",
+      "a": "surface tension",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-91",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "In an electric circuit, a fuse is placed:",
+      "options": {
+        "a": "Across the voltmeter",
+        "b": "Across the battery only",
+        "c": "In parallel with the device",
+        "d": "In series with the device"
+      },
+      "answer": "d",
+      "a": "In series with the device",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-59",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Materials that are not attracted towards a magnet are called:",
+      "options": {
+        "a": "Elastic materials",
+        "b": "Conductive materials",
+        "c": "Magnetic materials",
+        "d": "Non-magnetic materials"
+      },
+      "answer": "d",
+      "a": "Non-magnetic materials",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-3",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following devices uses a current-carrying conductor in a magnetic field?",
+      "options": {
+        "a": "Electric fuse",
+        "b": "Earth wire",
+        "c": "Loudspeaker",
+        "d": "Electricity meter"
+      },
+      "answer": "c",
+      "a": "Loudspeaker",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-38",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "A body starts from rest with a constant acceleration of 3 m s⁻². The distance covered in 4 s is:",
+      "options": {
+        "a": "6 m",
+        "b": "12 m",
+        "c": "24 m",
+        "d": "48 m"
+      },
+      "answer": "c",
+      "a": "24 m",
+      "e": "s = ½ × 3 × 4² = 24 m.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-44",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "On the Fahrenheit scale, the number of equal intervals between the ice point and the steam point is:",
+      "options": {
+        "a": "32",
+        "b": "100",
+        "c": "212",
+        "d": "180"
+      },
+      "answer": "d",
+      "a": "180",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-6",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "When an object is taken from the Earth to the Moon:",
+      "options": {
+        "a": "its mass changes but its weight remains the same",
+        "b": "both its mass and weight change",
+        "c": "both its mass and weight remain the same",
+        "d": "its weight changes but its mass remains the same"
+      },
+      "answer": "d",
+      "a": "its weight changes but its mass remains the same",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-7",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The collective oscillations of the constituents of a material medium manifest themselves as:",
+      "options": {
+        "a": "Projectile motion",
+        "b": "Damped motion",
+        "c": "Rectilinear motion",
+        "d": "Waves"
+      },
+      "answer": "d",
+      "a": "Waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-49",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The Rashtriya panchang is published annually by the:",
+      "options": {
+        "a": "ISRO",
+        "b": "Saha Institute of Nuclear Physics",
+        "c": "Indian Institute of Astrophysics",
+        "d": "Positional Astronomy Centre"
+      },
+      "answer": "d",
+      "a": "Positional Astronomy Centre",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-88",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) A dimensionally correct equation is always an exact equation.\n(II) A dimensionally inconsistent equation must be wrong.\n(III) Dimensionless constants cannot be obtained by dimensional analysis.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-27",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A convex lens has a focal length of +20 cm. An object is placed 30 cm in front of it. The image distance is:",
+      "options": {
+        "a": "+6 cm",
+        "b": "+12 cm",
+        "c": "+60 cm",
+        "d": "−60 cm"
+      },
+      "answer": "c",
+      "a": "+60 cm",
+      "e": "1/v = 1/f + 1/u = 1/20 − 1/30 = 1/60, so v = +60 cm.",
+      "table": null,
+      "qid": "physics-ch5-light-55",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The excess pressure inside a liquid drop of radius r and surface tension S is:",
+      "options": {
+        "a": "2S/r",
+        "b": "S/r",
+        "c": "8S/r",
+        "d": "4S/r"
+      },
+      "answer": "a",
+      "a": "2S/r",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-92",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The Earth completes one revolution around the Sun in about:",
+      "options": {
+        "a": "365 days and 6 hours",
+        "b": "366 days",
+        "c": "354 days",
+        "d": "360 days"
+      },
+      "answer": "a",
+      "a": "365 days and 6 hours",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-53",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about kinetic energy:\n(I) It has no direction.\n(II) It increases when positive work done on the object increases its velocity.\n(III) It remains constant when negative work is done on the object.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-25",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The world's largest stone sundial, the Samrat Yantra, is located at:",
+      "options": {
+        "a": "Lucknow",
+        "b": "Hyderabad",
+        "c": "Jaipur",
+        "d": "Chennai"
+      },
+      "answer": "c",
+      "a": "Jaipur",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-36",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The size of the pupil is controlled by the:",
+      "options": {
+        "a": "retina",
+        "b": "cornea",
+        "c": "iris",
+        "d": "optic nerve"
+      },
+      "answer": "c",
+      "a": "iris",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-64",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Bernoulli's equation ideally applies to fluids that are:",
+      "options": {
+        "a": "non-viscous and compressible",
+        "b": "viscous and compressible",
+        "c": "viscous and incompressible",
+        "d": "non-viscous and incompressible"
+      },
+      "answer": "d",
+      "a": "non-viscous and incompressible",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-79",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Knowledge of G, g and the radius of the Earth enables an estimate of the:",
+      "options": {
+        "a": "Density of the Sun",
+        "b": "Period of the Moon",
+        "c": "Escape speed of the Moon",
+        "d": "Mass of the Earth"
+      },
+      "answer": "d",
+      "a": "Mass of the Earth",
+      "e": "Hence the popular statement \"Cavendish weighed the earth\".",
+      "table": null,
+      "qid": "physics-ch9-gravitation-10",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A compass needle is, in fact, a:",
+      "options": {
+        "a": "Small bar magnet",
+        "b": "Small solenoid",
+        "c": "Soft iron rod",
+        "d": "Piece of nickel"
+      },
+      "answer": "a",
+      "a": "Small bar magnet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-22",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In a series circuit, if one component fails, the circuit is broken and none of the components works.\n(II) A parallel circuit divides the current through the electrical gadgets.\n(III) A series arrangement is suitable for gadgets that need widely different currents.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-46",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    }
+  ]
+}

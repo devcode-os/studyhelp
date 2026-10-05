@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-set-2",
+  "chapterNumber": 2,
+  "title": "General Science Set 2",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The process of beating harvested stalks to separate grains from them is called:",
+      "options": {
+        "a": "Handpicking",
+        "b": "Winnowing",
+        "c": "Sieving",
+        "d": "Threshing"
+      },
+      "answer": "d",
+      "a": "Threshing",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Adolescence typically occurs between the ages of:",
+      "options": {
+        "a": "5–10 years",
+        "b": "10–19 years",
+        "c": "12–25 years",
+        "d": "8–15 years"
+      },
+      "answer": "b",
+      "a": "10–19 years",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-76",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The value of the universal gas constant R is:",
+      "options": {
+        "a": "83.1 J mol⁻¹ K⁻¹",
+        "b": "831 J mol⁻¹ K⁻¹",
+        "c": "0.831 J mol⁻¹ K⁻¹",
+        "d": "8.31 J mol⁻¹ K⁻¹"
+      },
+      "answer": "d",
+      "a": "8.31 J mol⁻¹ K⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-19",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A sodium atom on losing its valence electron forms:",
+      "options": {
+        "a": "Na⁻",
+        "b": "Cl⁻",
+        "c": "Na²⁺",
+        "d": "Na⁺"
+      },
+      "answer": "d",
+      "a": "Na⁺",
+      "e": "The sodium cation has 11 protons and 10 electrons.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Cilia and flagella emerge from centriole-like structures called:",
+      "options": {
+        "a": "Mesosomes",
+        "b": "Basal bodies",
+        "c": "Kinetochores",
+        "d": "Nucleoli"
+      },
+      "answer": "b",
+      "a": "Basal bodies",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-55",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of significant figures in 0.00250 m is:",
+      "options": {
+        "a": "3",
+        "b": "2",
+        "c": "4",
+        "d": "5"
+      },
+      "answer": "a",
+      "a": "3",
+      "e": "Leading zeros are not significant. The trailing zero after the decimal point is significant.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-15",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a heterotroph?",
+      "options": {
+        "a": "Green plants",
+        "b": "Fungi",
+        "c": "Money plant",
+        "d": "Croton"
+      },
+      "answer": "b",
+      "a": "Fungi",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-7",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Lunar eclipse – Full Moon day\n(II) Solar eclipse – New Moon day\n(III) Solar eclipse – Full Moon day\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "III only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-69",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "When hydrogen gas is passed over heated copper(II) oxide, the black coating turns:",
+      "options": {
+        "a": "Blue",
+        "b": "Brown",
+        "c": "White",
+        "d": "Green"
+      },
+      "answer": "b",
+      "a": "Brown",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In aquatic plants, air spaces that help them float are formed by specialised:",
+      "options": {
+        "a": "Phloem",
+        "b": "Parenchyma",
+        "c": "Collenchyma",
+        "d": "Sclerenchyma"
+      },
+      "answer": "b",
+      "a": "Parenchyma",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-22",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Most α-particles passed through the gold foil undeflected, which showed that:",
+      "options": {
+        "a": "The nucleus is very large",
+        "b": "Electrons are heavier than α-particles",
+        "c": "Most of the space in an atom is empty",
+        "d": "Positive charge is uniformly spread"
+      },
+      "answer": "c",
+      "a": "Most of the space in an atom is empty",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-30",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The black oxide formed when copper is heated in air is:",
+      "options": {
+        "a": "Copper sulphide",
+        "b": "Copper carbonate",
+        "c": "Copper chloride",
+        "d": "Copper(II) oxide"
+      },
+      "answer": "d",
+      "a": "Copper(II) oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In fishes, blood passes through the heart ___ during one cycle of passage through the body.",
+      "options": {
+        "a": "Once",
+        "b": "Twice",
+        "c": "Thrice",
+        "d": "Four times"
+      },
+      "answer": "a",
+      "a": "Once",
+      "e": "In other vertebrates it passes through the heart twice in each cycle, which is known as double circulation.",
+      "table": null,
+      "qid": "biology-ch26-respiration-78",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The frequency of the AC electric power received in houses is:",
+      "options": {
+        "a": "50 Hz",
+        "b": "100 Hz",
+        "c": "25 Hz",
+        "d": "220 Hz"
+      },
+      "answer": "a",
+      "a": "50 Hz",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-40",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula unit mass of magnesium oxide (Mg = 24 u, O = 16 u) is:",
+      "options": {
+        "a": "56 u",
+        "b": "16 u",
+        "c": "40 u",
+        "d": "24 u"
+      },
+      "answer": "c",
+      "a": "40 u",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Edward Jenner developed the first vaccine against:",
+      "options": {
+        "a": "Smallpox",
+        "b": "Measles",
+        "c": "Tetanus",
+        "d": "Polio"
+      },
+      "answer": "a",
+      "a": "Smallpox",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-15",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "About 99 per cent of the Sun's energy falls within the:",
+      "options": {
+        "a": "UV, visible and infrared regions",
+        "b": "Visible and radio regions",
+        "c": "Gamma ray and X-ray regions",
+        "d": "Microwave and radio regions"
+      },
+      "answer": "a",
+      "a": "UV, visible and infrared regions",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-95",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Electron microscopes produce highly magnified images by using:",
+      "options": {
+        "a": "Laser light",
+        "b": "A beam of electrons",
+        "c": "X-rays",
+        "d": "Ultraviolet rays"
+      },
+      "answer": "b",
+      "a": "A beam of electrons",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-16",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Synthetic diamonds are prepared by subjecting pure carbon to:",
+      "options": {
+        "a": "Electrolysis",
+        "b": "Very low pressure and high temperature",
+        "c": "Sunlight",
+        "d": "Very high pressure and temperature"
+      },
+      "answer": "d",
+      "a": "Very high pressure and temperature",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In which of the following is the work done by the force on the object negative?",
+      "options": {
+        "a": "Lifting a dumbbell upward",
+        "b": "A goalkeeper stopping a ball",
+        "c": "Pushing a wheelchair forward",
+        "d": "Carrying a box horizontally"
+      },
+      "answer": "b",
+      "a": "A goalkeeper stopping a ball",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-6",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The small intestine in humans is almost ___ long.",
+      "options": {
+        "a": "1.5 m",
+        "b": "6 m",
+        "c": "3 m",
+        "d": "9 m"
+      },
+      "answer": "b",
+      "a": "6 m",
+      "e": "The large intestine is about 1.5 m long but is wider than the small intestine.",
+      "table": null,
+      "qid": "biology-ch26-respiration-31",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The Pole Star appears nearly stationary in the sky because:",
+      "options": {
+        "a": "The Earth's axis of rotation points very close to it",
+        "b": "It lies along the Sun's path",
+        "c": "It does not move at all",
+        "d": "It is the closest star to the Earth"
+      },
+      "answer": "a",
+      "a": "The Earth's axis of rotation points very close to it",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-50",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Aluminium oxide reacts with sodium hydroxide to form water and:",
+      "options": {
+        "a": "Sodium aluminate",
+        "b": "Aluminium chloride",
+        "c": "Aluminium hydroxide",
+        "d": "Sodium oxide"
+      },
+      "answer": "a",
+      "a": "Sodium aluminate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The small circular DNA present outside the genomic DNA in many bacteria is called:",
+      "options": {
+        "a": "Mesosome",
+        "b": "Nucleoid",
+        "c": "Plasmid",
+        "d": "Chromatin"
+      },
+      "answer": "c",
+      "a": "Plasmid",
+      "e": "Plasmid DNA confers unique characters such as antibiotic resistance.",
+      "table": null,
+      "qid": "biology-ch21-cell-67",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Kepler's second law follows from the conservation of:",
+      "options": {
+        "a": "Total mechanical energy",
+        "b": "Kinetic energy",
+        "c": "Angular momentum",
+        "d": "Linear momentum"
+      },
+      "answer": "c",
+      "a": "Angular momentum",
+      "e": "It holds for any central force and is not special to the inverse square law.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-6",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "At ordinary temperature, the surface of which of the following metals is covered with a protective layer of oxide?",
+      "options": {
+        "a": "Gold",
+        "b": "Potassium",
+        "c": "Sodium",
+        "d": "Aluminium"
+      },
+      "answer": "d",
+      "a": "Aluminium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) P-wave – Repolarisation of ventricles\n(II) QRS complex – Depolarisation of ventricles\n(III) T-wave – Repolarisation of ventricles\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "II and III only",
+      "e": "The P-wave represents depolarisation of the atria.",
+      "table": null,
+      "qid": "biology-ch24-human-body-66",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound cannot propagate through:",
+      "options": {
+        "a": "Vacuum",
+        "b": "Solids",
+        "c": "Gases",
+        "d": "Liquids"
+      },
+      "answer": "a",
+      "a": "Vacuum",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-5",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a sign, rather than a symptom, of being unwell?",
+      "options": {
+        "a": "Pain",
+        "b": "High blood pressure",
+        "c": "Dizziness",
+        "d": "Tiredness"
+      },
+      "answer": "b",
+      "a": "High blood pressure",
+      "e": "A symptom is what we feel; a sign can be seen or measured.",
+      "table": null,
+      "qid": "biology-ch28-diseases-25",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following ionic compounds has the highest melting point?",
+      "options": {
+        "a": "MgCl₂",
+        "b": "CaO",
+        "c": "LiCl",
+        "d": "NaCl"
+      },
+      "answer": "b",
+      "a": "CaO",
+      "e": "Melting and boiling points of some ionic compounds:",
+      "table": {
+        "headers": [
+          "Compound",
+          "Melting point (K)",
+          "Boiling point (K)"
+        ],
+        "rows": [
+          [
+            "NaCl",
+            "1074",
+            "1686"
+          ],
+          [
+            "LiCl",
+            "887",
+            "1600"
+          ],
+          [
+            "CaCl₂",
+            "1045",
+            "1900"
+          ],
+          [
+            "CaO",
+            "2850",
+            "3120"
+          ],
+          [
+            "MgCl₂",
+            "981",
+            "1685"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch18-metals-non-metals-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    }
+  ]
+}

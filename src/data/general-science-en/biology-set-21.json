@@ -1,0 +1,545 @@
+{
+  "slug": "general-science-biology-set-21",
+  "chapterNumber": 21,
+  "title": "Biology Set 21",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The protein-rich layer that replaces the cell wall in euglenoids and makes their body flexible is called:",
+      "options": {
+        "a": "Middle lamella",
+        "b": "Pellicle",
+        "c": "Glycocalyx",
+        "d": "Capsule"
+      },
+      "answer": "b",
+      "a": "Pellicle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-123",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Plasmogamy – Fusion of protoplasms\n(II) Karyogamy – Fusion of two nuclei\n(III) Dikaryon – Cell with a single diploid nucleus\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "A dikaryon has two nuclei per cell (n + n).",
+      "table": null,
+      "qid": "biology-ch21-cell-128",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The Indian ornithologist referred to as the 'Birdman of India' is:",
+      "options": {
+        "a": "Kamala Sohonie",
+        "b": "Janaki Ammal",
+        "c": "Salim Ali",
+        "d": "Rustom Hormusji Dastur"
+      },
+      "answer": "c",
+      "a": "Salim Ali",
+      "e": "He was awarded the Padma Vibhushan in 1976.",
+      "table": null,
+      "qid": "biology-ch23-plants-18",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The pacemaker of the human heart is the:",
+      "options": {
+        "a": "AV bundle",
+        "b": "Purkinje fibres",
+        "c": "SAN",
+        "d": "AVN"
+      },
+      "answer": "c",
+      "a": "SAN",
+      "e": "It lies in the right upper corner of the right atrium and generates 70–75 action potentials per minute.",
+      "table": null,
+      "qid": "biology-ch24-human-body-60",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Undisturbed patches of forest protected by the local community, found all over India and home to numerous medicinal plants, are called:",
+      "options": {
+        "a": "Bird sanctuaries",
+        "b": "Sacred groves",
+        "c": "Botanical gardens",
+        "d": "Tiger reserves"
+      },
+      "answer": "b",
+      "a": "Sacred groves",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-38",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The formation of different types of tissues leads to:",
+      "options": {
+        "a": "Transpiration",
+        "b": "Dedifferentiation",
+        "c": "Division of labour",
+        "d": "Totipotency"
+      },
+      "answer": "c",
+      "a": "Division of labour",
+      "e": "It increases the efficiency of the body and enables complex life processes.",
+      "table": null,
+      "qid": "biology-ch22-tissues-2",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Sexual reproduction generates more variation than asexual reproduction because it involves:",
+      "options": {
+        "a": "Spore formation",
+        "b": "Combining DNA from two individuals",
+        "c": "Copying DNA within one individual",
+        "d": "Cell-by-cell division"
+      },
+      "answer": "b",
+      "a": "Combining DNA from two individuals",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-38",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Each gene set is present as separate independent pieces, each called a:",
+      "options": {
+        "a": "Nucleus",
+        "b": "Plastid",
+        "c": "Chromosome",
+        "d": "Gene"
+      },
+      "answer": "c",
+      "a": "Chromosome",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-4",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "After pollen lands on a suitable stigma, the pollen tube grows through the:",
+      "options": {
+        "a": "Sepal",
+        "b": "Filament",
+        "c": "Style",
+        "d": "Petal"
+      },
+      "answer": "c",
+      "a": "Style",
+      "e": "It carries the male gamete to the ovule in the ovary.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-53",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The cell organelles that contain chlorophyll are:",
+      "options": {
+        "a": "Nucleus",
+        "b": "Vacuoles",
+        "c": "Chloroplasts",
+        "d": "Mitochondria"
+      },
+      "answer": "c",
+      "a": "Chloroplasts",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-11",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Eukaryotic cells divide in an orderly and controlled manner by a process called the:",
+      "options": {
+        "a": "Cell culture",
+        "b": "Cell cycle",
+        "c": "Totipotency",
+        "d": "Contact inhibition"
+      },
+      "answer": "b",
+      "a": "Cell cycle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-94",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The rough endoplasmic reticulum is continuous with:",
+      "options": {
+        "a": "Tonoplast",
+        "b": "Plasma membrane",
+        "c": "Inner membrane of the nuclear envelope",
+        "d": "Outer membrane of the nuclear envelope"
+      },
+      "answer": "d",
+      "a": "Outer membrane of the nuclear envelope",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-31",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The tissue system that forms the outer covering of the plant and reduces water loss is the:",
+      "options": {
+        "a": "Meristematic tissue system",
+        "b": "Dermal tissue system",
+        "c": "Ground tissue system",
+        "d": "Vascular tissue system"
+      },
+      "answer": "b",
+      "a": "Dermal tissue system",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-30",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The Indian variety of the pitcher plant is:",
+      "options": {
+        "a": "Neelakurinji",
+        "b": "Drosera",
+        "c": "Nepenthes khasiana",
+        "d": "Cuscuta"
+      },
+      "answer": "c",
+      "a": "Nepenthes khasiana",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-170",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The 'Shuchi Scheme' for distributing sanitary pads in government schools is a programme of:",
+      "options": {
+        "a": "Karnataka",
+        "b": "Kerala",
+        "c": "Odisha",
+        "d": "Tamil Nadu"
+      },
+      "answer": "a",
+      "a": "Karnataka",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-91",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The Na⁺/K⁺ pump is an example of:",
+      "options": {
+        "a": "Simple diffusion",
+        "b": "Active transport",
+        "c": "Passive transport",
+        "d": "Osmosis"
+      },
+      "answer": "b",
+      "a": "Active transport",
+      "e": "Ions are moved against the concentration gradient using ATP.",
+      "table": null,
+      "qid": "biology-ch21-cell-22",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Rhizopus – Phycomycetes\n(II) Neurospora – Basidiomycetes\n(III) Alternaria – Deuteromycetes\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "Neurospora is an ascomycete.",
+      "table": null,
+      "qid": "biology-ch21-cell-130",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The rigid matrix of bone contains compounds of:",
+      "options": {
+        "a": "Sulphur and iron",
+        "b": "Potassium and magnesium",
+        "c": "Calcium and phosphorus",
+        "d": "Iron and sodium"
+      },
+      "answer": "c",
+      "a": "Calcium and phosphorus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-53",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Roots stop growing in length when their tips are cut.\nReason (R): Roots grow only from their tips, where cells divide continuously.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true, but R is false",
+        "d": "A is false, but R is true"
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-12",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Apart from carbon dioxide, yeast produces a small amount of:",
+      "options": {
+        "a": "Lactic acid",
+        "b": "Alcohol",
+        "c": "Methane",
+        "d": "Acetic acid"
+      },
+      "answer": "b",
+      "a": "Alcohol",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-25",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Which type of leucocyte forms 2–3 per cent of the total WBCs?",
+      "options": {
+        "a": "Monocytes",
+        "b": "Eosinophils",
+        "c": "Neutrophils",
+        "d": "Basophils"
+      },
+      "answer": "b",
+      "a": "Eosinophils",
+      "e": "Neutrophils are the most abundant and basophils the least abundant WBCs.",
+      "table": {
+        "headers": [
+          "Type of leucocyte",
+          "Percentage of total WBCs"
+        ],
+        "rows": [
+          [
+            "Neutrophils",
+            "60–65"
+          ],
+          [
+            "Lymphocytes",
+            "20–25"
+          ],
+          [
+            "Monocytes",
+            "6–8"
+          ],
+          [
+            "Eosinophils",
+            "2–3"
+          ],
+          [
+            "Basophils",
+            "0.5–1"
+          ]
+        ]
+      },
+      "qid": "biology-ch24-human-body-41",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A false colour satellite image is one in which:",
+      "options": {
+        "a": "different colours show different types of information",
+        "b": "the image is taken at night",
+        "c": "clouds are removed digitally",
+        "d": "only infrared light is recorded"
+      },
+      "answer": "a",
+      "a": "different colours show different types of information",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-20",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The cell wall of fungi is composed mainly of:",
+      "options": {
+        "a": "Chitin",
+        "b": "Cellulose",
+        "c": "Calcium pectate",
+        "d": "Silica"
+      },
+      "answer": "a",
+      "a": "Chitin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-127",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Bacillus – Rod-shaped\n(II) Coccus – Spherical\n(III) Vibrio – Spiral\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Vibrio is comma-shaped; Spirillum is spiral.",
+      "table": null,
+      "qid": "biology-ch21-cell-76",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Gametes formed by meiosis are:",
+      "options": {
+        "a": "Tetraploid",
+        "b": "Triploid",
+        "c": "Haploid",
+        "d": "Diploid"
+      },
+      "answer": "c",
+      "a": "Haploid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-36",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is acellular?",
+      "options": {
+        "a": "Algae",
+        "b": "Bacteria",
+        "c": "Protozoa",
+        "d": "Viruses"
+      },
+      "answer": "d",
+      "a": "Viruses",
+      "e": "Viruses multiply only when they enter a living cell.",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-18",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The transfer of pollen grains from the anther to the stigma of a flower is called:",
+      "options": {
+        "a": "Germination",
+        "b": "Pollination",
+        "c": "Budding",
+        "d": "Fertilisation"
+      },
+      "answer": "b",
+      "a": "Pollination",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-47",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The ability of some mature plant cells to undifferentiate, divide and redifferentiate into a new plant is called:",
+      "options": {
+        "a": "Intercalary growth",
+        "b": "Totipotency",
+        "c": "Transpiration",
+        "d": "Differentiation"
+      },
+      "answer": "b",
+      "a": "Totipotency",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-37",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Genetic material is stored:",
+      "options": {
+        "a": "only in blood cells",
+        "b": "only in the nucleus of reproductive cells",
+        "c": "only in the gametes",
+        "d": "inside every cell of a living being"
+      },
+      "answer": "d",
+      "a": "inside every cell of a living being",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-22",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a deficiency disease?",
+      "options": {
+        "a": "Measles",
+        "b": "Scurvy",
+        "c": "Cholera",
+        "d": "Asthma"
+      },
+      "answer": "b",
+      "a": "Scurvy",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-11",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    }
+  ]
+}

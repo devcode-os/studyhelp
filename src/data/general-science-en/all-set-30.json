@@ -1,0 +1,589 @@
+{
+  "slug": "general-science-set-30",
+  "chapterNumber": 30,
+  "title": "General Science Set 30",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Detergents are generally sodium salts of:",
+      "options": {
+        "a": "Sulphonic acids",
+        "b": "Mineral acids",
+        "c": "Fatty alcohols",
+        "d": "Carboxylic acids"
+      },
+      "answer": "a",
+      "a": "Sulphonic acids",
+      "e": "They can also be ammonium salts with chloride or bromide ions.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-84",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of phyla possesses an exoskeleton?",
+      "options": {
+        "a": "Mollusca and Echinodermata",
+        "b": "Annelida and Arthropoda",
+        "c": "Nematoda and Annelida",
+        "d": "Arthropoda and Mollusca"
+      },
+      "answer": "d",
+      "a": "Arthropoda and Mollusca",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-152",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The shearing stress of fluids is about ___ times smaller than that of solids.",
+      "options": {
+        "a": "thousand",
+        "b": "million",
+        "c": "hundred",
+        "d": "ten"
+      },
+      "answer": "b",
+      "a": "million",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-72",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Substances whose odour changes in acidic or basic media are called:",
+      "options": {
+        "a": "Synthetic indicators",
+        "b": "Universal indicators",
+        "c": "Olfactory indicators",
+        "d": "Natural indicators"
+      },
+      "answer": "c",
+      "a": "Olfactory indicators",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Producers – First trophic level\n(II) Primary consumers – Second trophic level\n(III) Secondary consumers – Fourth trophic level\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Secondary consumers (small carnivores) are at the third level; tertiary consumers (larger carnivores) are at the fourth.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-5",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about X-rays:\n(I) They are not deflected by electric and magnetic fields.\n(II) They have very high penetrating power through matter.\n(III) They are deflected by a magnetic field.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-20",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The inbuilt tendency for variation during reproduction is the basis for:",
+      "options": {
+        "a": "Pollination",
+        "b": "Fission",
+        "c": "Evolution",
+        "d": "Germination"
+      },
+      "answer": "c",
+      "a": "Evolution",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-5",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "As the temperature of a blackbody increases, the wavelength at which the emitted energy is maximum:",
+      "options": {
+        "a": "remains constant",
+        "b": "increases",
+        "c": "becomes infinite",
+        "d": "decreases"
+      },
+      "answer": "d",
+      "a": "decreases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-74",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A homogeneous mixture of two or more metals, or a metal and a non-metal, is called:",
+      "options": {
+        "a": "Emulsion",
+        "b": "Alloy",
+        "c": "Colloid",
+        "d": "Suspension"
+      },
+      "answer": "b",
+      "a": "Alloy",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The Chipko movement began in the early 1970s in:",
+      "options": {
+        "a": "Uttarakhand",
+        "b": "Himachal Pradesh",
+        "c": "Rajasthan",
+        "d": "Karnataka"
+      },
+      "answer": "a",
+      "a": "Uttarakhand",
+      "e": "Local women encircled and hugged trees to protect them from being felled.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-29",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "A potential difference of 24 V across a resistor causes a current of 3 A. The resistance of the resistor is:",
+      "options": {
+        "a": "21 Ω",
+        "b": "72 Ω",
+        "c": "8 Ω",
+        "d": "0.125 Ω"
+      },
+      "answer": "c",
+      "a": "8 Ω",
+      "e": "R = V/I = 24 V / 3 A = 8 Ω.",
+      "table": null,
+      "qid": "physics-ch7-electricity-28",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Rusting – Chemical change\n(II) Melting of ice – Physical change\n(III) Burning of magnesium – Physical change\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Potassium hydroxide is used to absorb:",
+      "options": {
+        "a": "Water vapour",
+        "b": "Oxygen",
+        "c": "Carbon dioxide",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-15",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The motion of a simple pendulum is approximately simple harmonic when its angular displacement is:",
+      "options": {
+        "a": "Equal to 90°",
+        "b": "Large",
+        "c": "Equal to 180°",
+        "d": "Small"
+      },
+      "answer": "d",
+      "a": "Small",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-37",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The reddish brown coating on iron articles is called:",
+      "options": {
+        "a": "Tarnish",
+        "b": "Verdigris",
+        "c": "Patina",
+        "d": "Rust"
+      },
+      "answer": "d",
+      "a": "Rust",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The menstrual cycle usually begins at puberty between the ages of:",
+      "options": {
+        "a": "10–14 years",
+        "b": "16–18 years",
+        "c": "6–8 years",
+        "d": "20–22 years"
+      },
+      "answer": "a",
+      "a": "10–14 years",
+      "e": "It continues till menopause, around the age of 50.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-82",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "J. J. Thomson was awarded the Nobel Prize in Physics in:",
+      "options": {
+        "a": "1906",
+        "b": "1908",
+        "c": "1922",
+        "d": "1935"
+      },
+      "answer": "a",
+      "a": "1906",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-27",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The heart is called myogenic because its normal activity is regulated by:",
+      "options": {
+        "a": "Nodal tissue",
+        "b": "Adrenal hormones",
+        "c": "Sympathetic nerves",
+        "d": "Medulla oblongata"
+      },
+      "answer": "a",
+      "a": "Nodal tissue",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-61",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon monoxide contains carbon and oxygen in the mass ratio of 3:4. The mass of oxygen that combines with 6 g of carbon is:",
+      "options": {
+        "a": "6 g",
+        "b": "4.5 g",
+        "c": "12 g",
+        "d": "8 g"
+      },
+      "answer": "d",
+      "a": "8 g",
+      "e": "(4 ÷ 3) × 6 g = 8 g.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following media has the highest refractive index?",
+      "options": {
+        "a": "Dense flint glass",
+        "b": "Ruby",
+        "c": "Sapphire",
+        "d": "Diamond"
+      },
+      "answer": "d",
+      "a": "Diamond",
+      "e": "",
+      "table": {
+        "headers": [
+          "Material medium",
+          "Refractive index"
+        ],
+        "rows": [
+          [
+            "Air",
+            "1.0003"
+          ],
+          [
+            "Ice",
+            "1.31"
+          ],
+          [
+            "Water",
+            "1.33"
+          ],
+          [
+            "Alcohol",
+            "1.36"
+          ],
+          [
+            "Kerosene",
+            "1.44"
+          ],
+          [
+            "Fused quartz",
+            "1.46"
+          ],
+          [
+            "Turpentine oil",
+            "1.47"
+          ],
+          [
+            "Benzene",
+            "1.50"
+          ],
+          [
+            "Crown glass",
+            "1.52"
+          ],
+          [
+            "Canada balsam",
+            "1.53"
+          ],
+          [
+            "Rock salt",
+            "1.54"
+          ],
+          [
+            "Carbon disulphide",
+            "1.63"
+          ],
+          [
+            "Dense flint glass",
+            "1.65"
+          ],
+          [
+            "Ruby",
+            "1.71"
+          ],
+          [
+            "Sapphire",
+            "1.77"
+          ],
+          [
+            "Diamond",
+            "2.42"
+          ]
+        ]
+      },
+      "qid": "physics-ch5-light-44",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The Earth's magnetic field is believed to originate from the movement of:",
+      "options": {
+        "a": "molten iron in the core",
+        "b": "rocks in the crust",
+        "c": "gases in the atmosphere",
+        "d": "water in the oceans"
+      },
+      "answer": "a",
+      "a": "molten iron in the core",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-9",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Oscillating bodies eventually come to rest at their equilibrium positions because of:",
+      "options": {
+        "a": "Resonance",
+        "b": "Superposition",
+        "c": "Phase difference",
+        "d": "Damping"
+      },
+      "answer": "d",
+      "a": "Damping",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-44",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A metal block has a mass of 468 g and a density of 7.8 g/cm³. Its volume is:",
+      "options": {
+        "a": "460 cm³",
+        "b": "3650 cm³",
+        "c": "6 cm³",
+        "d": "60 cm³"
+      },
+      "answer": "d",
+      "a": "60 cm³",
+      "e": "Volume = mass ÷ density = 468 g ÷ 7.8 g/cm³ = 60 cm³.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-83",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The blood cells that plug leaks by helping to clot the blood at points of injury are:",
+      "options": {
+        "a": "Lymph",
+        "b": "Red blood corpuscles",
+        "c": "Platelets",
+        "d": "Plasma"
+      },
+      "answer": "c",
+      "a": "Platelets",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-84",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The heat produced when a current of 3 A flows through a 10 Ω resistor for 20 s is:",
+      "options": {
+        "a": "5400 J",
+        "b": "600 J",
+        "c": "180 J",
+        "d": "1800 J"
+      },
+      "answer": "d",
+      "a": "1800 J",
+      "e": "H = I²Rt = 9 × 10 × 20 = 1800 J.",
+      "table": null,
+      "qid": "physics-ch7-electricity-53",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "20 mL of a liquid pesticide is mixed with water to make 250 mL of spray. Its volume by volume percentage is:",
+      "options": {
+        "a": "12.5%",
+        "b": "20%",
+        "c": "0.8%",
+        "d": "8%"
+      },
+      "answer": "d",
+      "a": "8%",
+      "e": "(20 / 250) × 100 = 8%.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a component of the cytoskeleton?",
+      "options": {
+        "a": "Intermediate filaments",
+        "b": "Microtubules",
+        "c": "Thylakoids",
+        "d": "Microfilaments"
+      },
+      "answer": "c",
+      "a": "Thylakoids",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-52",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Handspan and foot-length are unsuitable as standard units of length because they:",
+      "options": {
+        "a": "cannot be subdivided",
+        "b": "are too large",
+        "c": "are not decimal-based",
+        "d": "differ from person to person"
+      },
+      "answer": "d",
+      "a": "differ from person to person",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-12",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The gold generally used for making ornaments in India is:",
+      "options": {
+        "a": "18 carat",
+        "b": "20 carat",
+        "c": "22 carat",
+        "d": "24 carat"
+      },
+      "answer": "c",
+      "a": "22 carat",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-84",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The exchange of material between blood and surrounding cells takes place across the walls of:",
+      "options": {
+        "a": "Arteries",
+        "b": "Veins",
+        "c": "Capillaries",
+        "d": "Arterioles"
+      },
+      "answer": "c",
+      "a": "Capillaries",
+      "e": "Capillaries are the smallest vessels, with walls one cell thick.",
+      "table": null,
+      "qid": "biology-ch26-respiration-83",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    }
+  ]
+}

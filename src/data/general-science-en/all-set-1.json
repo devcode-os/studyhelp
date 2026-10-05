@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-1",
+  "chapterNumber": 1,
+  "title": "General Science Set 1",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Under suitable conditions, slime moulds form an aggregation called:",
+      "options": {
+        "a": "Mycelium",
+        "b": "Basidiocarp",
+        "c": "Plasmodium",
+        "d": "Thallus"
+      },
+      "answer": "c",
+      "a": "Plasmodium",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-124",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-luminous object?",
+      "options": {
+        "a": "Sun",
+        "b": "Star",
+        "c": "Moon",
+        "d": "Lightning"
+      },
+      "answer": "c",
+      "a": "Moon",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-2",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A base that dissolves in water is called:",
+      "options": {
+        "a": "Alkali",
+        "b": "Indicator",
+        "c": "Acid",
+        "d": "Salt"
+      },
+      "answer": "a",
+      "a": "Alkali",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Van Mahotsav, the forest festival, is celebrated in the month of:",
+      "options": {
+        "a": "August",
+        "b": "October",
+        "c": "July",
+        "d": "June"
+      },
+      "answer": "c",
+      "a": "July",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-30",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The stress set up in a rod whose expansion is prevented by rigid supports is called:",
+      "options": {
+        "a": "thermal stress",
+        "b": "shear stress",
+        "c": "yield stress",
+        "d": "bulk stress"
+      },
+      "answer": "a",
+      "a": "thermal stress",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-29",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In Dhokra art, the hollow space of the clay mould is filled with molten:",
+      "options": {
+        "a": "Aluminium",
+        "b": "Steel",
+        "c": "Iron",
+        "d": "Brass or bronze"
+      },
+      "answer": "d",
+      "a": "Brass or bronze",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The Silent Valley, a moist evergreen forest saved by a people's movement, is in the Palakkad district of:",
+      "options": {
+        "a": "Tamil Nadu",
+        "b": "Kerala",
+        "c": "Karnataka",
+        "d": "Andhra Pradesh"
+      },
+      "answer": "b",
+      "a": "Kerala",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-16",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of molar specific heat capacity is:",
+      "options": {
+        "a": "J mol⁻¹ K⁻¹",
+        "b": "J kg⁻¹ K⁻¹",
+        "c": "J K⁻¹",
+        "d": "J mol⁻¹"
+      },
+      "answer": "a",
+      "a": "J mol⁻¹ K⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-37",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Bleaching powder is produced by the action of chlorine on:",
+      "options": {
+        "a": "Gypsum",
+        "b": "Calcium carbonate",
+        "c": "Dry slaked lime",
+        "d": "Washing soda"
+      },
+      "answer": "c",
+      "a": "Dry slaked lime",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-66",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Each germ cell has only one gene set.\n(II) All other body cells have two copies of each chromosome.\n(III) The union of two germ cells restores the normal chromosome number.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-13",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The potential energy of an object of mass m at a small height h above the Earth's surface is:",
+      "options": {
+        "a": "½mgh",
+        "b": "mg/h",
+        "c": "mh/g",
+        "d": "mgh"
+      },
+      "answer": "d",
+      "a": "mgh",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-27",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The hot springs of Puga Valley, inhabited by heat-loving unicellular bacteria, are located in:",
+      "options": {
+        "a": "Arunachal Pradesh",
+        "b": "Kerala",
+        "c": "Ladakh",
+        "d": "Manipur"
+      },
+      "answer": "c",
+      "a": "Ladakh",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-92",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Newton's law of cooling, the rate of loss of heat of a body is directly proportional to the:",
+      "options": {
+        "a": "mass of the body",
+        "b": "square of its temperature",
+        "c": "absolute temperature of the body",
+        "d": "temperature difference between the body and its surroundings"
+      },
+      "answer": "d",
+      "a": "temperature difference between the body and its surroundings",
+      "e": "The law holds good only for small temperature differences.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-80",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In a hydrocarbon chain, the element replacing hydrogen is referred to as a:",
+      "options": {
+        "a": "Catalyst",
+        "b": "Heteroatom",
+        "c": "Isomer",
+        "d": "Allotrope"
+      },
+      "answer": "b",
+      "a": "Heteroatom",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Aseptate and coenocytic mycelium is characteristic of:",
+      "options": {
+        "a": "Deuteromycetes",
+        "b": "Ascomycetes",
+        "c": "Basidiomycetes",
+        "d": "Phycomycetes"
+      },
+      "answer": "d",
+      "a": "Phycomycetes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-133",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Dentists use which type of mirror to see large images of the teeth?",
+      "options": {
+        "a": "Convex lens",
+        "b": "Convex mirror",
+        "c": "Plane mirror",
+        "d": "Concave mirror"
+      },
+      "answer": "d",
+      "a": "Concave mirror",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-26",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Dry ice, used for ice cream storage, is:",
+      "options": {
+        "a": "Frozen water vapour",
+        "b": "Solid carbon dioxide",
+        "c": "Frozen nitrogen",
+        "d": "Solid camphor"
+      },
+      "answer": "b",
+      "a": "Solid carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The infoldings of the inner mitochondrial membrane are called:",
+      "options": {
+        "a": "Thylakoids",
+        "b": "Grana",
+        "c": "Cisternae",
+        "d": "Cristae"
+      },
+      "answer": "d",
+      "a": "Cristae",
+      "e": "They increase the surface area.",
+      "table": null,
+      "qid": "biology-ch21-cell-39",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "X-rays were discovered in 1895 by:",
+      "options": {
+        "a": "Marie Curie",
+        "b": "Henri Becquerel",
+        "c": "J. J. Thomson",
+        "d": "Wilhelm Röntgen"
+      },
+      "answer": "d",
+      "a": "Wilhelm Röntgen",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-19",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "If the K-shell is the outermost shell, the number of electrons that makes the atom stable is:",
+      "options": {
+        "a": "8",
+        "b": "6",
+        "c": "2",
+        "d": "4"
+      },
+      "answer": "c",
+      "a": "2",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Organisms that use simple food material such as carbon dioxide and water from inorganic sources are called:",
+      "options": {
+        "a": "Parasites",
+        "b": "Autotrophs",
+        "c": "Ruminants",
+        "d": "Heterotrophs"
+      },
+      "answer": "b",
+      "a": "Autotrophs",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-5",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the causes of myopia:\n(I) Excessive curvature of the eye lens\n(II) Elongation of the eyeball\n(III) The eyeball becoming too small\nWhich of the above can cause myopia?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Hypermetropia arises when the eyeball is too small or the focal length of the eye lens is too long.",
+      "table": null,
+      "qid": "physics-ch5-light-72",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "RBCs are destroyed in the:",
+      "options": {
+        "a": "Liver",
+        "b": "Spleen",
+        "c": "Kidney",
+        "d": "Red bone marrow"
+      },
+      "answer": "b",
+      "a": "Spleen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-40",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Toothpastes used to prevent tooth decay are generally:",
+      "options": {
+        "a": "Acidic",
+        "b": "Neutral",
+        "c": "Both acidic and basic",
+        "d": "Basic"
+      },
+      "answer": "d",
+      "a": "Basic",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The ability of the eye lens to adjust its focal length is called:",
+      "options": {
+        "a": "refraction",
+        "b": "accommodation",
+        "c": "scattering",
+        "d": "dispersion"
+      },
+      "answer": "b",
+      "a": "accommodation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-65",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Regions that support a large number of endemic species and have undergone significant habitat loss are called:",
+      "options": {
+        "a": "Biodiversity hotspots",
+        "b": "Tiger reserves",
+        "c": "Sacred groves",
+        "d": "Phumdis"
+      },
+      "answer": "a",
+      "a": "Biodiversity hotspots",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-172",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Excess nitrates from fertilisers cause algal blooms that deplete oxygen and kill fish. This process is called:",
+      "options": {
+        "a": "Denitrification",
+        "b": "Nitrification",
+        "c": "Ammonification",
+        "d": "Eutrophication"
+      },
+      "answer": "d",
+      "a": "Eutrophication",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-121",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The properties of a compound are different from those of its constituent elements.\n(II) Elements are present in a compound in a fixed and definite ratio.\n(III) The compound formed by hydrogen and oxygen is a gas.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Water, the compound formed by hydrogen and oxygen, is a liquid.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Pregnancy in humans lasts about nine months and is divided into ___ trimesters.",
+      "options": {
+        "a": "Four",
+        "b": "Two",
+        "c": "Five",
+        "d": "Three"
+      },
+      "answer": "d",
+      "a": "Three",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-80",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the effects of a force:\n(I) It can change the speed of a moving object.\n(II) It can change the shape of an object.\n(III) It can change the direction of motion of an object.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-3",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    }
+  ]
+}

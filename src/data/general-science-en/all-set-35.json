@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-set-35",
+  "chapterNumber": 35,
+  "title": "General Science Set 35",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The progressive accumulation of non-degradable harmful chemicals at each trophic level is called:",
+      "options": {
+        "a": "Biodegradation",
+        "b": "Energy flow",
+        "c": "Trophic regulation",
+        "d": "Biological magnification"
+      },
+      "answer": "d",
+      "a": "Biological magnification",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-11",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Graphene aerogel, said to be the lightest material on earth, is made from:",
+      "options": {
+        "a": "Aluminium",
+        "b": "Iron",
+        "c": "Silicon",
+        "d": "Carbon"
+      },
+      "answer": "d",
+      "a": "Carbon",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A sudden loud sound pulse, as in a clap of thunder, is produced when heated air undergoes:",
+      "options": {
+        "a": "Rapid cooling",
+        "b": "Liquefaction",
+        "c": "Condensation",
+        "d": "Rapid expansion"
+      },
+      "answer": "d",
+      "a": "Rapid expansion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-18",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The binomial system of naming organisms was introduced in the 18th century by:",
+      "options": {
+        "a": "Carl Woese",
+        "b": "Aristotle",
+        "c": "Carolus Linnaeus",
+        "d": "R.H. Whittaker"
+      },
+      "answer": "c",
+      "a": "Carolus Linnaeus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-157",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Any reaction that produces a precipitate is called a:",
+      "options": {
+        "a": "Redox reaction",
+        "b": "Precipitation reaction",
+        "c": "Combination reaction",
+        "d": "Neutralisation reaction"
+      },
+      "answer": "b",
+      "a": "Precipitation reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The first person to use a glass prism to obtain the spectrum of sunlight was:",
+      "options": {
+        "a": "Galileo Galilei",
+        "b": "Archimedes",
+        "c": "Blaise Pascal",
+        "d": "Isaac Newton"
+      },
+      "answer": "d",
+      "a": "Isaac Newton",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-77",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The enzymes of the intestinal juice finally convert proteins into:",
+      "options": {
+        "a": "Fatty acids",
+        "b": "Amino acids",
+        "c": "Glycerol",
+        "d": "Glucose"
+      },
+      "answer": "b",
+      "a": "Amino acids",
+      "e": "Complex carbohydrates are converted into glucose, and fats into fatty acids and glycerol.",
+      "table": {
+        "headers": [
+          "Food component",
+          "End product"
+        ],
+        "rows": [
+          [
+            "Proteins",
+            "Amino acids"
+          ],
+          [
+            "Complex carbohydrates",
+            "Glucose"
+          ],
+          [
+            "Fats",
+            "Fatty acids and glycerol"
+          ]
+        ]
+      },
+      "qid": "biology-ch26-respiration-37",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following animals can detect infrasound?",
+      "options": {
+        "a": "Dolphin",
+        "b": "Bat",
+        "c": "Elephant",
+        "d": "Cat"
+      },
+      "answer": "c",
+      "a": "Elephant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-40",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "When blood sugar level rises, the cells of the pancreas respond by:",
+      "options": {
+        "a": "Increasing insulin secretion",
+        "b": "Decreasing insulin secretion",
+        "c": "Secreting thyroxin",
+        "d": "Secreting adrenaline"
+      },
+      "answer": "a",
+      "a": "Increasing insulin secretion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-32",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Different forms of the same element, such as diamond and graphite, are called:",
+      "options": {
+        "a": "Isobars",
+        "b": "Allotropes",
+        "c": "Isotopes",
+        "d": "Isomers"
+      },
+      "answer": "b",
+      "a": "Allotropes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "For an isolated system, the heat lost by the hotter part is ___ the heat gained by the colder part.",
+      "options": {
+        "a": "greater than",
+        "b": "less than",
+        "c": "equal to",
+        "d": "twice"
+      },
+      "answer": "c",
+      "a": "equal to",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-39",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The main source of energy on Earth is the:",
+      "options": {
+        "a": "Wind",
+        "b": "Water",
+        "c": "Fossil fuels",
+        "d": "Sun"
+      },
+      "answer": "d",
+      "a": "Sun",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-27",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a metalloid?",
+      "options": {
+        "a": "Magnesium",
+        "b": "Sulfur",
+        "c": "Carbon",
+        "d": "Silicon"
+      },
+      "answer": "d",
+      "a": "Silicon",
+      "e": "Boron is also a metalloid. Metalloids have properties intermediate between those of metals and non-metals.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The audible range of human hearing is:",
+      "options": {
+        "a": "200 Hz to 200 kHz",
+        "b": "2 Hz to 2 kHz",
+        "c": "20 Hz to 20 kHz",
+        "d": "20 Hz to 2 kHz"
+      },
+      "answer": "c",
+      "a": "20 Hz to 20 kHz",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-38",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following ancient Indian texts classify animals on the basis of habitat, behaviour patterns and ecological roles?",
+      "options": {
+        "a": "Sushruta Samhita and Charaka Samhita",
+        "b": "Arthashastra and Manusmriti",
+        "c": "Upanishads and Puranas",
+        "d": "Rigveda and Brihat Samhita"
+      },
+      "answer": "d",
+      "a": "Rigveda and Brihat Samhita",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-181",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Common salt is obtained from seawater by:",
+      "options": {
+        "a": "Filtration",
+        "b": "Magnetic separation",
+        "c": "Evaporation",
+        "d": "Winnowing"
+      },
+      "answer": "c",
+      "a": "Evaporation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The phenomenon of certain elements emitting radiation on their own was named radioactivity by:",
+      "options": {
+        "a": "Ernest Rutherford",
+        "b": "Frederick Soddy",
+        "c": "Henri Becquerel",
+        "d": "Marie Curie"
+      },
+      "answer": "c",
+      "a": "Henri Becquerel",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-21",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Smoking destroys the hair-like structures in the upper respiratory tract that help remove germs and dust. These structures are called:",
+      "options": {
+        "a": "Cartilage",
+        "b": "Villi",
+        "c": "Cilia",
+        "d": "Alveoli"
+      },
+      "answer": "c",
+      "a": "Cilia",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-71",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Buds produced in the notches along the leaf margin fall on the soil and develop into new plants in:",
+      "options": {
+        "a": "Potato",
+        "b": "Ginger",
+        "c": "Bryophyllum",
+        "d": "Sugarcane"
+      },
+      "answer": "c",
+      "a": "Bryophyllum",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-26",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The charge to mass ratio (e/mₑ) of the electron is:",
+      "options": {
+        "a": "9.11 × 10⁻³¹ C kg⁻¹",
+        "b": "1.76 × 10⁻¹¹ C kg⁻¹",
+        "c": "1.60 × 10⁻¹⁹ C kg⁻¹",
+        "d": "1.76 × 10¹¹ C kg⁻¹"
+      },
+      "answer": "d",
+      "a": "1.76 × 10¹¹ C kg⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-9",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ethane – C₂H₆\n(II) Ethene – C₂H₄\n(III) Ethyne – C₂H₄\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about contraception:\n(I) Condoms act as a mechanical barrier so that sperm does not reach the egg.\n(II) Oral pills change the hormonal balance so that eggs are not released.\n(III) The copper-T is placed in the vagina to prevent pregnancy.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "The loop or copper-T is placed in the uterus.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-86",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The neutron was discovered in 1932 by:",
+      "options": {
+        "a": "James Chadwick",
+        "b": "R. A. Millikan",
+        "c": "J. J. Thomson",
+        "d": "Niels Bohr"
+      },
+      "answer": "a",
+      "a": "James Chadwick",
+      "e": "He bombarded a thin sheet of beryllium with α-particles.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-16",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the IUPAC recommendation, the groups of the periodic table are numbered from 1 to:",
+      "options": {
+        "a": "18",
+        "b": "8",
+        "c": "16",
+        "d": "7"
+      },
+      "answer": "a",
+      "a": "18",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Blood from the intestine is carried to the liver by the:",
+      "options": {
+        "a": "Hepatic portal vein",
+        "b": "Vena cava",
+        "c": "Hepatic artery",
+        "d": "Pulmonary vein"
+      },
+      "answer": "a",
+      "a": "Hepatic portal vein",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-69",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "While walking, the force that pushes a person forward is the force of:",
+      "options": {
+        "a": "friction",
+        "b": "buoyancy",
+        "c": "magnetism",
+        "d": "gravity"
+      },
+      "answer": "a",
+      "a": "friction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-19",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "When dilute hydrochloric acid is added to copper oxide, the colour of the solution becomes:",
+      "options": {
+        "a": "Blue-green",
+        "b": "Pink",
+        "c": "Colourless",
+        "d": "Yellow"
+      },
+      "answer": "a",
+      "a": "Blue-green",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The neural centre that moderates cardiac function through the autonomic nervous system is located in the:",
+      "options": {
+        "a": "Medulla oblongata",
+        "b": "Cerebellum",
+        "c": "Spinal cord",
+        "d": "Hypothalamus"
+      },
+      "answer": "a",
+      "a": "Medulla oblongata",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-71",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The orbital period of the planet Mercury is:",
+      "options": {
+        "a": "365 days",
+        "b": "27 days",
+        "c": "88 earth days",
+        "d": "76 years"
+      },
+      "answer": "c",
+      "a": "88 earth days",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-7",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Iodine is essential for the synthesis of:",
+      "options": {
+        "a": "Adrenaline",
+        "b": "Testosterone",
+        "c": "Thyroxin",
+        "d": "Insulin"
+      },
+      "answer": "c",
+      "a": "Thyroxin",
+      "e": "Thyroxin regulates carbohydrate, protein and fat metabolism.",
+      "table": null,
+      "qid": "biology-ch24-human-body-26",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

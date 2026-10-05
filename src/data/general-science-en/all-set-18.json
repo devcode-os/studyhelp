@@ -1,0 +1,575 @@
+{
+  "slug": "general-science-set-18",
+  "chapterNumber": 18,
+  "title": "General Science Set 18",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "An insoluble substance formed in a reaction is called a:",
+      "options": {
+        "a": "Sediment",
+        "b": "Residue",
+        "c": "Precipitate",
+        "d": "Filtrate"
+      },
+      "answer": "c",
+      "a": "Precipitate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an electrical insulator?",
+      "options": {
+        "a": "Silver",
+        "b": "Plastic",
+        "c": "Aluminium",
+        "d": "Copper"
+      },
+      "answer": "b",
+      "a": "Plastic",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-22",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "If the two copies of a gene for a trait are not identical, the trait that gets expressed is called:",
+      "options": {
+        "a": "Hybrid",
+        "b": "Recessive",
+        "c": "Acquired",
+        "d": "Dominant"
+      },
+      "answer": "d",
+      "a": "Dominant",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-12",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium, magnesium and calcium are obtained by the electrolysis of their:",
+      "options": {
+        "a": "Molten chlorides",
+        "b": "Carbonates",
+        "c": "Oxides",
+        "d": "Sulphides"
+      },
+      "answer": "a",
+      "a": "Molten chlorides",
+      "e": "Aluminium is obtained by electrolytic reduction of aluminium oxide.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-67",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A continuous and closed path of an electric current is called:",
+      "options": {
+        "a": "Potential difference",
+        "b": "Magnetic field",
+        "c": "Resistance",
+        "d": "Electric circuit"
+      },
+      "answer": "d",
+      "a": "Electric circuit",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-2",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Ozone in the upper atmosphere shields the surface of the Earth from:",
+      "options": {
+        "a": "Radio waves",
+        "b": "Ultraviolet radiation",
+        "c": "Infrared radiation",
+        "d": "Visible light"
+      },
+      "answer": "b",
+      "a": "Ultraviolet radiation",
+      "e": "UV radiation is known to cause skin cancer in human beings.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-13",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a native mineral?",
+      "options": {
+        "a": "Calcite",
+        "b": "Gold",
+        "c": "Mica",
+        "d": "Quartz"
+      },
+      "answer": "b",
+      "a": "Gold",
+      "e": "Native minerals are pure elements, such as gold, silver, copper, sulfur and carbon.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following materials has the highest coefficient of linear expansion?",
+      "options": {
+        "a": "Brass",
+        "b": "Copper",
+        "c": "Aluminium",
+        "d": "Silver"
+      },
+      "answer": "c",
+      "a": "Aluminium",
+      "e": "",
+      "table": {
+        "headers": [
+          "Material",
+          "αl (10⁻⁵ K⁻¹)"
+        ],
+        "rows": [
+          [
+            "Aluminium",
+            "2.5"
+          ],
+          [
+            "Brass",
+            "1.8"
+          ],
+          [
+            "Iron",
+            "1.2"
+          ],
+          [
+            "Copper",
+            "1.7"
+          ],
+          [
+            "Silver",
+            "1.9"
+          ],
+          [
+            "Gold",
+            "1.4"
+          ],
+          [
+            "Glass (pyrex)",
+            "0.32"
+          ],
+          [
+            "Lead",
+            "0.29"
+          ]
+        ]
+      },
+      "qid": "physics-ch4-heat-and-temperature-32",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about photosynthesis:\n(I) Chlorophyll is essential for the process.\n(II) Oxygen is a raw material for the process.\n(III) Carbon dioxide is used in the process.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "Oxygen is released as a product.",
+      "table": null,
+      "qid": "biology-ch23-plants-46",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Acute chest pain due to insufficient oxygen reaching the heart muscle is called:",
+      "options": {
+        "a": "Cardiac arrest",
+        "b": "Heart failure",
+        "c": "Hypertension",
+        "d": "Angina pectoris"
+      },
+      "answer": "d",
+      "a": "Angina pectoris",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-74",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "When two objects at different temperatures come in contact, energy flows from the:",
+      "options": {
+        "a": "colder to the hotter object",
+        "b": "hotter to the colder object",
+        "c": "heavier to the lighter object",
+        "d": "larger to the smaller object"
+      },
+      "answer": "b",
+      "a": "hotter to the colder object",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-16",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A pure substance, in science, consists of:",
+      "options": {
+        "a": "Particles in any ratio",
+        "b": "Two or more substances",
+        "c": "The same type of particles",
+        "d": "Visible components"
+      },
+      "answer": "c",
+      "a": "The same type of particles",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Lymph carries digested and absorbed fat from the:",
+      "options": {
+        "a": "Liver",
+        "b": "Stomach",
+        "c": "Kidney",
+        "d": "Intestine"
+      },
+      "answer": "d",
+      "a": "Intestine",
+      "e": "Lymph also drains excess fluid from the extracellular space back into the blood.",
+      "table": null,
+      "qid": "biology-ch26-respiration-85",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A constant force of 25 N displaces an object by 4 m in the direction of the force. The work done is:",
+      "options": {
+        "a": "21 J",
+        "b": "100 J",
+        "c": "29 J",
+        "d": "6.25 J"
+      },
+      "answer": "b",
+      "a": "100 J",
+      "e": "W = F × s = 25 N × 4 m = 100 J.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-3",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas evolved when iron reacts with dilute hydrochloric acid is:",
+      "options": {
+        "a": "Hydrogen",
+        "b": "Chlorine",
+        "c": "Carbon dioxide",
+        "d": "Hydrogen sulfide"
+      },
+      "answer": "a",
+      "a": "Hydrogen",
+      "e": "The gas is colourless, odourless and burns with a pop sound. Sulfur does not react and is left as a yellow solid.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The inner lining of the stomach is protected from the action of acid by:",
+      "options": {
+        "a": "Pancreatic juice",
+        "b": "Bile",
+        "c": "Saliva",
+        "d": "Mucus"
+      },
+      "answer": "d",
+      "a": "Mucus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-28",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A reliable measure of the hotness or coldness of a body is its:",
+      "options": {
+        "a": "latent heat",
+        "b": "temperature",
+        "c": "heat",
+        "d": "specific heat capacity"
+      },
+      "answer": "b",
+      "a": "temperature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-1",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The atomic weight predicted by Mendeleev for Eka-silicon was:",
+      "options": {
+        "a": "70",
+        "b": "72",
+        "c": "68",
+        "d": "72.6"
+      },
+      "answer": "b",
+      "a": "72",
+      "e": "The atomic weight found experimentally for germanium is 72.6.",
+      "table": {
+        "headers": [
+          "Element",
+          "Atomic weight (predicted)",
+          "Atomic weight (found)"
+        ],
+        "rows": [
+          [
+            "Eka-aluminium / Gallium",
+            "68",
+            "70"
+          ],
+          [
+            "Eka-silicon / Germanium",
+            "72",
+            "72.6"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch15-elements-and-compounds-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Blocking the vas deferens in males prevents:",
+      "options": {
+        "a": "Sperm transfer",
+        "b": "Egg release",
+        "c": "Implantation",
+        "d": "Ovulation"
+      },
+      "answer": "a",
+      "a": "Sperm transfer",
+      "e": "Blocking the fallopian tube in females prevents the egg from reaching the uterus.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-87",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "A microphone converts:",
+      "options": {
+        "a": "Electrical energy to sound energy",
+        "b": "Sound energy to electrical energy",
+        "c": "Light energy to sound energy",
+        "d": "Sound energy to light energy"
+      },
+      "answer": "b",
+      "a": "Sound energy to electrical energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-13",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Viruses are composed of genetic material with a protein coat.\n(II) Viroids lack a protein coat around their genetic material.\n(III) Prions are misfolded proteins that lack genetic material.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-166",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of temperature is:",
+      "options": {
+        "a": "degree Fahrenheit",
+        "b": "joule",
+        "c": "kelvin",
+        "d": "degree Celsius"
+      },
+      "answer": "c",
+      "a": "kelvin",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-3",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The acid injected into the skin by a red ant bite is:",
+      "options": {
+        "a": "Methanoic acid",
+        "b": "Lactic acid",
+        "c": "Citric acid",
+        "d": "Acetic acid"
+      },
+      "answer": "a",
+      "a": "Methanoic acid",
+      "e": "Methanoic acid is also called formic acid.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Plant cells have a large vacuole.\n(II) The vacuole helps in maintaining the shape of a plant cell.\n(III) Animal cells usually have large vacuoles.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-10",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "At the centre of a current-carrying circular loop, the magnetic field lines appear as:",
+      "options": {
+        "a": "Concentric circles",
+        "b": "Spirals",
+        "c": "Closed ellipses",
+        "d": "Straight lines"
+      },
+      "answer": "d",
+      "a": "Straight lines",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-28",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "On heating, the density of a substance generally:",
+      "options": {
+        "a": "Becomes zero",
+        "b": "Decreases",
+        "c": "Increases",
+        "d": "Remains the same"
+      },
+      "answer": "b",
+      "a": "Decreases",
+      "e": "The volume increases while the mass is unchanged. This is why hot air rises, as in a hot air balloon.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-84",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The anther contains:",
+      "options": {
+        "a": "Sepals",
+        "b": "Pollen grains",
+        "c": "Pistil",
+        "d": "Ovules"
+      },
+      "answer": "b",
+      "a": "Pollen grains",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-43",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "An element has two isotopes of masses 10 u and 11 u, present in 20% and 80% abundance respectively. Its average atomic mass is:",
+      "options": {
+        "a": "11.0 u",
+        "b": "10.5 u",
+        "c": "10.8 u",
+        "d": "10.2 u"
+      },
+      "answer": "c",
+      "a": "10.8 u",
+      "e": "(10 × 20 + 11 × 80)/100 = 10.8 u.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-59",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "In the liver, methanol is oxidised to:",
+      "options": {
+        "a": "Ethanal",
+        "b": "Ethene",
+        "c": "Ethanoic acid",
+        "d": "Methanal"
+      },
+      "answer": "d",
+      "a": "Methanal",
+      "e": "Methanal coagulates the protoplasm of cells.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Krishi Vigyan Kendras, which train farmers in modern grafting, function under the:",
+      "options": {
+        "a": "Indian Council of Agricultural Research",
+        "b": "Food Safety and Standard Authority of India",
+        "c": "National Health Mission",
+        "d": "Central Drug Research Institute"
+      },
+      "answer": "a",
+      "a": "Indian Council of Agricultural Research",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-31",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

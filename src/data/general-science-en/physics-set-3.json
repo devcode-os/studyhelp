@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-3",
+  "chapterNumber": 3,
+  "title": "Physics Set 3",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "For the lens in the previous situation (f = +20 cm, u = −30 cm), the magnification produced is:",
+      "options": {
+        "a": "+0.5",
+        "b": "+2",
+        "c": "−2",
+        "d": "−0.5"
+      },
+      "answer": "c",
+      "a": "−2",
+      "e": "m = v/u = +60/(−30) = −2.",
+      "table": null,
+      "qid": "physics-ch5-light-56",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "On a graph of density against distance for a sound wave, the highest point (crest) corresponds to a region of:",
+      "options": {
+        "a": "Rarefaction",
+        "b": "Average density",
+        "c": "Zero density",
+        "d": "Compression"
+      },
+      "answer": "d",
+      "a": "Compression",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-16",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sun's energy reaches the Earth through:",
+      "options": {
+        "a": "direct contact",
+        "b": "sound waves",
+        "c": "radiation",
+        "d": "electric circuits"
+      },
+      "answer": "c",
+      "a": "radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-15",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "One millibar is equal to:",
+      "options": {
+        "a": "1000 Pa",
+        "b": "10⁵ Pa",
+        "c": "10 Pa",
+        "d": "100 Pa"
+      },
+      "answer": "d",
+      "a": "100 Pa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-65",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A magnifying glass is a:",
+      "options": {
+        "a": "plane mirror",
+        "b": "concave mirror",
+        "c": "convex lens",
+        "d": "concave lens"
+      },
+      "answer": "c",
+      "a": "convex lens",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-61",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of unique chemical elements known today is:",
+      "options": {
+        "a": "118",
+        "b": "108",
+        "c": "69",
+        "d": "92"
+      },
+      "answer": "a",
+      "a": "118",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-69",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Rutherford showed that α-particles are:",
+      "options": {
+        "a": "Hydrogen nuclei",
+        "b": "High energy electrons",
+        "c": "Helium nuclei",
+        "d": "Neutral radiation"
+      },
+      "answer": "c",
+      "a": "Helium nuclei",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-22",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The wavelength of a 2000 Hz sound wave in air, taking the speed of sound as 344 m s⁻¹, is:",
+      "options": {
+        "a": "17.2 m",
+        "b": "688000 m",
+        "c": "1.72 m",
+        "d": "0.172 m"
+      },
+      "answer": "d",
+      "a": "0.172 m",
+      "e": "λ = 344 m s⁻¹ / 2000 s⁻¹ = 0.172 m.",
+      "table": null,
+      "qid": "physics-ch6-sound-34",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The Moon can cover the Sun completely during a total solar eclipse because:",
+      "options": {
+        "a": "The Moon is larger than the Sun",
+        "b": "The Moon is closer, giving it a similar apparent size",
+        "c": "The Earth's shadow enlarges the Moon",
+        "d": "The Moon is brighter than the Sun"
+      },
+      "answer": "b",
+      "a": "The Moon is closer, giving it a similar apparent size",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-64",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Planets do not twinkle because they are:",
+      "options": {
+        "a": "luminous objects",
+        "b": "extended sources of light",
+        "c": "point-sized sources of light",
+        "d": "very far from the Earth"
+      },
+      "answer": "b",
+      "a": "extended sources of light",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-80",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "John Dalton proposed his atomic theory in:",
+      "options": {
+        "a": "1813",
+        "b": "1897",
+        "c": "1803",
+        "d": "1808"
+      },
+      "answer": "d",
+      "a": "1808",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-3",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The instrument fitted in vehicles to measure the distance travelled is the:",
+      "options": {
+        "a": "stopwatch",
+        "b": "speedometer",
+        "c": "odometer",
+        "d": "ammeter"
+      },
+      "answer": "c",
+      "a": "odometer",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-38",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of neutrons in ¹⁴₆C is:",
+      "options": {
+        "a": "7",
+        "b": "6",
+        "c": "14",
+        "d": "8"
+      },
+      "answer": "d",
+      "a": "8",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-57",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The melting point of tungsten is:",
+      "options": {
+        "a": "4380 °C",
+        "b": "2380 °C",
+        "c": "3380 °C",
+        "d": "1380 °C"
+      },
+      "answer": "c",
+      "a": "3380 °C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-63",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The kinetic energy of a 2 kg object moving with a velocity of 6 m s⁻¹ is:",
+      "options": {
+        "a": "12 J",
+        "b": "72 J",
+        "c": "6 J",
+        "d": "36 J"
+      },
+      "answer": "d",
+      "a": "36 J",
+      "e": "K = ½ × 2 kg × (6 m s⁻¹)² = 36 J.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-24",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "In the Northern Hemisphere, ocean gyres rotate:",
+      "options": {
+        "a": "Towards the poles only",
+        "b": "Clockwise",
+        "c": "Randomly",
+        "d": "Counter-clockwise"
+      },
+      "answer": "b",
+      "a": "Clockwise",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-112",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Winds blow from a region of:",
+      "options": {
+        "a": "high pressure to high pressure",
+        "b": "low pressure to low pressure",
+        "c": "low pressure to high pressure",
+        "d": "high pressure to low pressure"
+      },
+      "answer": "d",
+      "a": "high pressure to low pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-96",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Heat from the Sun reaches the Earth through:",
+      "options": {
+        "a": "regelation",
+        "b": "radiation",
+        "c": "conduction",
+        "d": "convection"
+      },
+      "answer": "b",
+      "a": "radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-60",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The gravitational constant G was first determined experimentally in:",
+      "options": {
+        "a": "1687",
+        "b": "1957",
+        "c": "1609",
+        "d": "1798"
+      },
+      "answer": "d",
+      "a": "1798",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-8",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The presence of excessive artificial light at night is termed:",
+      "options": {
+        "a": "Thermal pollution",
+        "b": "Noise pollution",
+        "c": "Light pollution",
+        "d": "Dust pollution"
+      },
+      "answer": "c",
+      "a": "Light pollution",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-33",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of the Moon's orbit around the Earth is approximately:",
+      "options": {
+        "a": "27.3 days",
+        "b": "365 days",
+        "c": "7 days",
+        "d": "24 hours"
+      },
+      "answer": "a",
+      "a": "27.3 days",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-18",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Burns from steam at 100 °C are more serious than those from boiling water at 100 °C because steam has:",
+      "options": {
+        "a": "greater specific heat capacity",
+        "b": "higher temperature",
+        "c": "greater thermal conductivity",
+        "d": "greater heat content per unit mass"
+      },
+      "answer": "d",
+      "a": "greater heat content per unit mass",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-51",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The image formed by a pinhole camera is:",
+      "options": {
+        "a": "erect",
+        "b": "same size as the object",
+        "c": "virtual",
+        "d": "inverted"
+      },
+      "answer": "d",
+      "a": "inverted",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-6",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In Greek, the word atomos means:",
+      "options": {
+        "a": "Smallest",
+        "b": "Invisible",
+        "c": "Matter",
+        "d": "Indivisible"
+      },
+      "answer": "d",
+      "a": "Indivisible",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-2",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The region surrounding a magnet in which its force can be detected is called:",
+      "options": {
+        "a": "Magnetic pole",
+        "b": "Electromagnet",
+        "c": "Magnetic field",
+        "d": "Electric field"
+      },
+      "answer": "c",
+      "a": "Magnetic field",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-19",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of pressure is named in honour of the French scientist:",
+      "options": {
+        "a": "Daniel Bernoulli",
+        "b": "George Stokes",
+        "c": "Blaise Pascal",
+        "d": "Evangelista Torricelli"
+      },
+      "answer": "c",
+      "a": "Blaise Pascal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-48",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following measures gauge pressure?",
+      "options": {
+        "a": "Spring balance",
+        "b": "Beam balance",
+        "c": "Mercury barometer",
+        "d": "Sphygmomanometer"
+      },
+      "answer": "d",
+      "a": "Sphygmomanometer",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-67",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple periscope is made by using:",
+      "options": {
+        "a": "two plane mirrors",
+        "b": "one convex lens",
+        "c": "one concave mirror",
+        "d": "two convex mirrors"
+      },
+      "answer": "a",
+      "a": "two plane mirrors",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-9",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Cartosat – Imaging of the Earth for mapping\n(II) AstroSat – Scientific observations of stars and other celestial objects\n(III) Mangalyaan – Mission to the Moon\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Mangalyaan is the mission to Mars.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-90",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Skating on snow is possible because the water formed under the skates acts as a:",
+      "options": {
+        "a": "lubricant",
+        "b": "catalyst",
+        "c": "coolant",
+        "d": "insulator"
+      },
+      "answer": "a",
+      "a": "lubricant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-46",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

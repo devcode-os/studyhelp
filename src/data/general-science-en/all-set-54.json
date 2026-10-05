@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-54",
+  "chapterNumber": 54,
+  "title": "General Science Set 54",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The Avogadro constant, NA, is named in honour of:",
+      "options": {
+        "a": "Stanislao Cannizaro",
+        "b": "John Dalton",
+        "c": "Democritus",
+        "d": "Amedeo Avogadro"
+      },
+      "answer": "d",
+      "a": "Amedeo Avogadro",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-100",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Offspring that are not exactly like either parent are produced by:",
+      "options": {
+        "a": "budding in Hydra",
+        "b": "vegetative propagation",
+        "c": "sexual reproduction",
+        "d": "division of amoeba"
+      },
+      "answer": "c",
+      "a": "sexual reproduction",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-43",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The Earth rotates on its axis from:",
+      "options": {
+        "a": "West to East",
+        "b": "North to South",
+        "c": "South to North",
+        "d": "East to West"
+      },
+      "answer": "a",
+      "a": "West to East",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-48",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In Spirogyra, reproduction takes place when the filament breaks up into smaller pieces that grow into new individuals. This is called:",
+      "options": {
+        "a": "Multiple fission",
+        "b": "Fragmentation",
+        "c": "Spore formation",
+        "d": "Budding"
+      },
+      "answer": "b",
+      "a": "Fragmentation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-13",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The liquids generally used in laboratory thermometers are:",
+      "options": {
+        "a": "alcohol and water",
+        "b": "kerosene and water",
+        "c": "water and mercury",
+        "d": "alcohol and mercury"
+      },
+      "answer": "d",
+      "a": "alcohol and mercury",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-13",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following changes cannot be reversed?",
+      "options": {
+        "a": "Condensation of water vapour",
+        "b": "Melting of ice",
+        "c": "Evaporation of water",
+        "d": "Making popcorn from corn"
+      },
+      "answer": "d",
+      "a": "Making popcorn from corn",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a source of Vitamin A?",
+      "options": {
+        "a": "Amla",
+        "b": "Guava",
+        "c": "Lemon",
+        "d": "Papaya"
+      },
+      "answer": "d",
+      "a": "Papaya",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-31",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "If the absolute temperature of a perfect radiator is doubled, the energy radiated per unit time becomes ___ times.",
+      "options": {
+        "a": "16",
+        "b": "2",
+        "c": "4",
+        "d": "8"
+      },
+      "answer": "a",
+      "a": "16",
+      "e": "H ∝ T⁴, so 2⁴ = 16.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-78",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In science, the purpose of separating a mixture is to obtain:",
+      "options": {
+        "a": "A uniform mixture",
+        "b": "Alloys",
+        "c": "Pure substances",
+        "d": "The component of interest"
+      },
+      "answer": "c",
+      "a": "Pure substances",
+      "e": "In everyday life, mixtures are separated to obtain the component of interest and the others are discarded.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Penicillin, the first antibiotic, was discovered in 1928 by:",
+      "options": {
+        "a": "Maharaj Kishan Bhan",
+        "b": "Alexander Fleming",
+        "c": "Kamal Ranadive",
+        "d": "Edward Jenner"
+      },
+      "answer": "b",
+      "a": "Alexander Fleming",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-17",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The region of a sound wave where the density of the medium is lower than the average density is called:",
+      "options": {
+        "a": "Compression",
+        "b": "Crest",
+        "c": "Rarefaction",
+        "d": "Amplitude"
+      },
+      "answer": "c",
+      "a": "Rarefaction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-7",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "A reaction in which an element displaces another element from its compound is called a:",
+      "options": {
+        "a": "Double displacement reaction",
+        "b": "Combination reaction",
+        "c": "Displacement reaction",
+        "d": "Decomposition reaction"
+      },
+      "answer": "c",
+      "a": "Displacement reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The flatworm studied to understand regeneration in animals is:",
+      "options": {
+        "a": "Planaria",
+        "b": "Algae",
+        "c": "Hydra",
+        "d": "Amoeba"
+      },
+      "answer": "a",
+      "a": "Planaria",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-30",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The absolute refractive index of a medium is the ratio of the speed of light in vacuum to the:",
+      "options": {
+        "a": "speed of light in air",
+        "b": "wavelength in the medium",
+        "c": "frequency in the medium",
+        "d": "speed of light in the medium"
+      },
+      "answer": "d",
+      "a": "speed of light in the medium",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-42",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Selection of variants by environmental factors forms the basis of:",
+      "options": {
+        "a": "DNA copying",
+        "b": "Evolutionary processes",
+        "c": "Asexual reproduction",
+        "d": "Fertilisation"
+      },
+      "answer": "b",
+      "a": "Evolutionary processes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-3",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "When fats and oils are oxidised, they become:",
+      "options": {
+        "a": "Corroded",
+        "b": "Rancid",
+        "c": "Saponified",
+        "d": "Hard"
+      },
+      "answer": "b",
+      "a": "Rancid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The image formed by a convex mirror, for any position of the object, is always:",
+      "options": {
+        "a": "real and inverted",
+        "b": "virtual, erect and enlarged",
+        "c": "real, erect and diminished",
+        "d": "virtual, erect and diminished"
+      },
+      "answer": "d",
+      "a": "virtual, erect and diminished",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-27",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The association of fungi with the roots of higher plants is called:",
+      "options": {
+        "a": "Lichen",
+        "b": "Mycorrhiza",
+        "c": "Coenocyte",
+        "d": "Mycelium"
+      },
+      "answer": "b",
+      "a": "Mycorrhiza",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-126",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ammeter – connected in series\n(II) Voltmeter – connected in parallel\n(III) Ammeter – connected in parallel\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-9",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium chloride exists as:",
+      "options": {
+        "a": "Discrete NaCl molecules",
+        "b": "Diatomic molecules",
+        "c": "A covalently bonded network",
+        "d": "Aggregates of oppositely charged ions"
+      },
+      "answer": "d",
+      "a": "Aggregates of oppositely charged ions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The secretions of the prostate gland and seminal vesicles provide the sperms with:",
+      "options": {
+        "a": "Hormones",
+        "b": "Genetic material",
+        "c": "Nutrition and a fluid for easier transport",
+        "d": "A protective coat"
+      },
+      "answer": "c",
+      "a": "Nutrition and a fluid for easier transport",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-70",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which scientist argued, through thought experiments, that a body moving on a horizontal plane would move indefinitely if all impediments were removed?",
+      "options": {
+        "a": "Torricelli",
+        "b": "Galileo Galilei",
+        "c": "Blaise Pascal",
+        "d": "Archimedes"
+      },
+      "answer": "b",
+      "a": "Galileo Galilei",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-13",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Production of light without heat in living organisms, as in fireflies, is called:",
+      "options": {
+        "a": "Combustion",
+        "b": "Bioluminescence",
+        "c": "Sublimation",
+        "d": "Condensation"
+      },
+      "answer": "b",
+      "a": "Bioluminescence",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Plastids that contain chlorophyll are called:",
+      "options": {
+        "a": "Vacuoles",
+        "b": "Mitochondria",
+        "c": "Nucleoids",
+        "d": "Chloroplasts"
+      },
+      "answer": "d",
+      "a": "Chloroplasts",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-9",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "A lever is balanced when:",
+      "options": {
+        "a": "effort × effort arm = load × load arm",
+        "b": "effort × load = effort arm × load arm",
+        "c": "effort + effort arm = load + load arm",
+        "d": "effort × load arm = load × effort arm"
+      },
+      "answer": "a",
+      "a": "effort × effort arm = load × load arm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-44",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The special features that enable plants and animals to survive in a particular region are called:",
+      "options": {
+        "a": "Adaptations",
+        "b": "Groupings",
+        "c": "Habitats",
+        "d": "Venation"
+      },
+      "answer": "a",
+      "a": "Adaptations",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-22",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Fe + CuSO₄ → FeSO₄ + Cu – Displacement reaction\n(II) Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl – Double displacement reaction\n(III) CaO + H₂O → Ca(OH)₂ – Decomposition reaction\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): The motion of a simple pendulum is simple harmonic only for small angular displacements.\nReason (R): For small θ, sin θ can be approximated by θ in radians.\nChoose the correct statement:",
+      "options": {
+        "a": "Both A and R are true, but R is not the correct explanation of A.",
+        "b": "Both A and R are true, and R is the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "b",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-48",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Illegal sex-selective abortion of female foetuses leads to a decline in the:",
+      "options": {
+        "a": "Population density",
+        "b": "Birth rate",
+        "c": "Child sex ratio",
+        "d": "Death rate"
+      },
+      "answer": "c",
+      "a": "Child sex ratio",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-88",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The sky appears dark to an astronaut at a very high altitude because:",
+      "options": {
+        "a": "the Sun is not visible",
+        "b": "blue light is absorbed",
+        "c": "scattering is not prominent at such heights",
+        "d": "the atmosphere is too hot"
+      },
+      "answer": "c",
+      "a": "scattering is not prominent at such heights",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-83",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    }
+  ]
+}

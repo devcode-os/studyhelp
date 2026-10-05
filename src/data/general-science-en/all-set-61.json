@@ -1,0 +1,549 @@
+{
+  "slug": "general-science-set-61",
+  "chapterNumber": 61,
+  "title": "General Science Set 61",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The word 'redox' was coined because oxidation and reduction:",
+      "options": {
+        "a": "Occur only in solutions",
+        "b": "Always occur simultaneously",
+        "c": "Occur only in gases",
+        "d": "Occur only with oxygen"
+      },
+      "answer": "b",
+      "a": "Always occur simultaneously",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The heat required to raise the temperature of 2.0 kg of aluminium (specific heat capacity 900.0 J kg⁻¹ K⁻¹) by 15 K is:",
+      "options": {
+        "a": "2.7 × 10³ J",
+        "b": "1.35 × 10⁴ J",
+        "c": "5.4 × 10⁴ J",
+        "d": "2.7 × 10⁴ J"
+      },
+      "answer": "d",
+      "a": "2.7 × 10⁴ J",
+      "e": "Q = m s ΔT = 2.0 × 900.0 × 15 = 2.7 × 10⁴ J.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-36",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The site of active ribosomal RNA synthesis is the:",
+      "options": {
+        "a": "Centrosome",
+        "b": "Lysosome",
+        "c": "Golgi apparatus",
+        "d": "Nucleolus"
+      },
+      "answer": "d",
+      "a": "Nucleolus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-59",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals can displace copper from copper sulphate solution?",
+      "options": {
+        "a": "Iron",
+        "b": "Mercury",
+        "c": "Gold",
+        "d": "Silver"
+      },
+      "answer": "a",
+      "a": "Iron",
+      "e": "A more reactive metal displaces a less reactive metal from its salt solution.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The temperature at the core of the Sun reaches as high as about:",
+      "options": {
+        "a": "15 million °C",
+        "b": "1.5 million °C",
+        "c": "150 million °C",
+        "d": "15 000 °C"
+      },
+      "answer": "a",
+      "a": "15 million °C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-22",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The process by which plants prepare food in the presence of sunlight and chlorophyll is called:",
+      "options": {
+        "a": "Photosynthesis",
+        "b": "Respiration",
+        "c": "Transpiration",
+        "d": "Excretion"
+      },
+      "answer": "a",
+      "a": "Photosynthesis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-47",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Solar radiation reaches the Earth as:",
+      "options": {
+        "a": "Electromagnetic waves",
+        "b": "Mechanical waves",
+        "c": "Sound waves",
+        "d": "Seismic waves"
+      },
+      "answer": "a",
+      "a": "Electromagnetic waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-93",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The only non-metal that is liquid at room temperature is:",
+      "options": {
+        "a": "Carbon",
+        "b": "Sulphur",
+        "c": "Bromine",
+        "d": "Iodine"
+      },
+      "answer": "c",
+      "a": "Bromine",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The malarial parasite, Plasmodium, divides into many daughter cells simultaneously by:",
+      "options": {
+        "a": "Fragmentation",
+        "b": "Budding",
+        "c": "Multiple fission",
+        "d": "Binary fission"
+      },
+      "answer": "c",
+      "a": "Multiple fission",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-11",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic field produced by a circular coil of n turns is ___ the field produced by a single turn:",
+      "options": {
+        "a": "n times",
+        "b": "n² times",
+        "c": "1/n times",
+        "d": "The same as"
+      },
+      "answer": "a",
+      "a": "n times",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-29",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Breastfeeding is essential for an infant because a mother's milk provides:",
+      "options": {
+        "a": "Complete nutrition",
+        "b": "Only minerals",
+        "c": "Only vitamins",
+        "d": "Only proteins"
+      },
+      "answer": "a",
+      "a": "Complete nutrition",
+      "e": "It also protects the infant from many diseases.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-95",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals do not react with cold or hot water but react with steam?",
+      "options": {
+        "a": "Silver and gold",
+        "b": "Magnesium and calcium",
+        "c": "Lead and copper",
+        "d": "Aluminium, iron and zinc"
+      },
+      "answer": "d",
+      "a": "Aluminium, iron and zinc",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The symbol W for tungsten is derived from its:",
+      "options": {
+        "a": "English name",
+        "b": "German name",
+        "c": "Greek name",
+        "d": "Latin name"
+      },
+      "answer": "b",
+      "a": "German name",
+      "e": "It comes from wolfram.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-68",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Blood pressure, salivation and vomiting are controlled by the:",
+      "options": {
+        "a": "Fore-brain",
+        "b": "Cerebellum",
+        "c": "Medulla",
+        "d": "Spinal cord"
+      },
+      "answer": "c",
+      "a": "Medulla",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-9",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Iron sulfide reacts with dilute hydrochloric acid to form iron chloride and:",
+      "options": {
+        "a": "Hydrogen sulfide",
+        "b": "Sulfur dioxide",
+        "c": "Hydrogen",
+        "d": "Chlorine"
+      },
+      "answer": "a",
+      "a": "Hydrogen sulfide",
+      "e": "The gas is colourless and has a rotten egg-like odour.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A motion that repeats itself at regular intervals of time is called:",
+      "options": {
+        "a": "Oscillatory motion",
+        "b": "Rectilinear motion",
+        "c": "Periodic motion",
+        "d": "Projectile motion"
+      },
+      "answer": "c",
+      "a": "Periodic motion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-1",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Muscle fibres that are unbranched, multinucleate and striated belong to:",
+      "options": {
+        "a": "Smooth muscle",
+        "b": "Skeletal muscle",
+        "c": "Nervous tissue",
+        "d": "Cardiac muscle"
+      },
+      "answer": "b",
+      "a": "Skeletal muscle",
+      "e": "The three muscle types differ in control, cell shape, number of nuclei and striations.",
+      "table": {
+        "headers": [
+          "Muscle type",
+          "Control",
+          "Cell shape",
+          "Nuclei",
+          "Striations"
+        ],
+        "rows": [
+          [
+            "Skeletal",
+            "Voluntary",
+            "Cylindrical, unbranched",
+            "Multinucleate",
+            "Striated"
+          ],
+          [
+            "Smooth",
+            "Involuntary",
+            "Spindle-shaped",
+            "Single nucleus",
+            "Absent"
+          ],
+          [
+            "Cardiac",
+            "Involuntary",
+            "Cylindrical, branched",
+            "Single nucleus",
+            "Faint"
+          ]
+        ]
+      },
+      "qid": "biology-ch22-tissues-57",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following substances sublimes?",
+      "options": {
+        "a": "Ethanol",
+        "b": "Mercury",
+        "c": "Lead",
+        "d": "Dry ice"
+      },
+      "answer": "d",
+      "a": "Dry ice",
+      "e": "Iodine also sublimes.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-48",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which energy is absorbed are known as:",
+      "options": {
+        "a": "Redox reactions",
+        "b": "Combination reactions",
+        "c": "Exothermic reactions",
+        "d": "Endothermic reactions"
+      },
+      "answer": "d",
+      "a": "Endothermic reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The Nasha Mukt Bharat Abhiyaan was launched by the:",
+      "options": {
+        "a": "Ministry of Women and Child Development",
+        "b": "Ministry of Health and Family Welfare",
+        "c": "Ministry of Social Justice and Empowerment",
+        "d": "Ministry of Education"
+      },
+      "answer": "c",
+      "a": "Ministry of Social Justice and Empowerment",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-89",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Taking the latent heat of vaporisation of water as 22.6 × 10⁵ J kg⁻¹, the heat required to convert 0.50 kg of water at 100 °C into steam at 100 °C is:",
+      "options": {
+        "a": "1.13 × 10⁵ J",
+        "b": "1.13 × 10⁶ J",
+        "c": "4.52 × 10⁶ J",
+        "d": "2.26 × 10⁶ J"
+      },
+      "answer": "b",
+      "a": "1.13 × 10⁶ J",
+      "e": "Q = m Lv = 0.50 × 22.6 × 10⁵ = 1.13 × 10⁶ J.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-54",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following reacts with hot water but not with cold water?",
+      "options": {
+        "a": "Calcium",
+        "b": "Aluminium",
+        "c": "Magnesium",
+        "d": "Sodium"
+      },
+      "answer": "c",
+      "a": "Magnesium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The gap between two neurons is called:",
+      "options": {
+        "a": "Dendrite",
+        "b": "Axon",
+        "c": "Impulse",
+        "d": "Synapse"
+      },
+      "answer": "d",
+      "a": "Synapse",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-1",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The coefficient of viscosity is the ratio of shearing stress to:",
+      "options": {
+        "a": "shear strain",
+        "b": "rate of shear strain",
+        "c": "velocity",
+        "d": "pressure"
+      },
+      "answer": "b",
+      "a": "rate of shear strain",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-83",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Bryophytes lack vascular tissues.\n(II) Pteridophytes produce seeds.\n(III) Gymnosperms do not require water for fertilisation.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-139",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Unsaturated carbon compounds generally burn with a:",
+      "options": {
+        "a": "Green flame",
+        "b": "Clean blue flame",
+        "c": "Flame-free glow",
+        "d": "Yellow sooty flame"
+      },
+      "answer": "d",
+      "a": "Yellow sooty flame",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-47",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "One watt is equal to:",
+      "options": {
+        "a": "1 V A⁻¹",
+        "b": "1 A V⁻¹",
+        "c": "1 J C⁻¹",
+        "d": "1 V A"
+      },
+      "answer": "d",
+      "a": "1 V A",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-54",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A series of branching feeding relationships formed by many interlinked food chains is called a:",
+      "options": {
+        "a": "Trophic level",
+        "b": "Food web",
+        "c": "Energy pyramid",
+        "d": "Ecosystem"
+      },
+      "answer": "b",
+      "a": "Food web",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-10",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The Calendar Reform Committee set up in 1952 was chaired by:",
+      "options": {
+        "a": "Vainu Bappu",
+        "b": "Vikram Sarabhai",
+        "c": "Meghnad Saha",
+        "d": "Subrahmanyan Chandrasekhar"
+      },
+      "answer": "c",
+      "a": "Meghnad Saha",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-84",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Heteroatoms and the groups containing them, which confer specific properties to a compound regardless of the carbon chain, are called:",
+      "options": {
+        "a": "Allotropes",
+        "b": "Functional groups",
+        "c": "Homologous series",
+        "d": "Isomers"
+      },
+      "answer": "b",
+      "a": "Functional groups",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    }
+  ]
+}

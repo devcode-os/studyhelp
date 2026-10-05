@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-chemistry-set-12",
+  "chapterNumber": 12,
+  "title": "Chemistry Set 12",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In a mixture of iron filings and sulfur powder, the iron is attracted by a magnet.\n(II) Iron sulfide is attracted by a magnet.\n(III) Iron and sulfur can no longer be separated in iron sulfide.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Milk of magnesia, a mild base used as an antacid, is chemically:",
+      "options": {
+        "a": "Sodium hydroxide",
+        "b": "Magnesium hydroxide",
+        "c": "Calcium hydroxide",
+        "d": "Magnesium oxide"
+      },
+      "answer": "b",
+      "a": "Magnesium hydroxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The regular, repeating three-dimensional arrangement of ions in an ionic compound is called its:",
+      "options": {
+        "a": "Crystal structure",
+        "b": "Formula unit",
+        "c": "Molecular formula",
+        "d": "Electronic configuration"
+      },
+      "answer": "a",
+      "a": "Crystal structure",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Dalton, during a chemical reaction atoms are merely:",
+      "options": {
+        "a": "Created",
+        "b": "Converted into other elements",
+        "c": "Destroyed",
+        "d": "Rearranged"
+      },
+      "answer": "d",
+      "a": "Rearranged",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum amount of solute that dissolves in a fixed quantity of solvent at a particular temperature is called its:",
+      "options": {
+        "a": "Concentration",
+        "b": "Dilution",
+        "c": "Solubility",
+        "d": "Saturation"
+      },
+      "answer": "c",
+      "a": "Solubility",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Mendeleev and Lothar Meyer, working independently, proposed in 1869 that similarities in properties appear at regular intervals when elements are arranged in increasing atomic weights.\n(II) Lothar Meyer's work was published before the work of Mendeleev.\n(III) Mendeleev is generally credited with the development of the Modern Periodic Table.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The molar mass of sodium chloride is:",
+      "options": {
+        "a": "35.5 g mol⁻¹",
+        "b": "58.5 g mol⁻¹",
+        "c": "18.02 g mol⁻¹",
+        "d": "23.0 g mol⁻¹"
+      },
+      "answer": "b",
+      "a": "58.5 g mol⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-103",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Baking powder is a mixture of baking soda and:",
+      "options": {
+        "a": "Acetic acid",
+        "b": "Tartaric acid",
+        "c": "Lactic acid",
+        "d": "Citric acid"
+      },
+      "answer": "b",
+      "a": "Tartaric acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The difference in molecular mass between ethane (C₂H₆) and propane (C₃H₈), taking atomic masses of C = 12 u and H = 1 u, is:",
+      "options": {
+        "a": "12 u",
+        "b": "16 u",
+        "c": "2 u",
+        "d": "14 u"
+      },
+      "answer": "d",
+      "a": "14 u",
+      "e": "Ethane = 30 u, propane = 44 u; 44 − 30 = 14 u.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The Davy Medal was awarded in 1887 by the Royal Society, London, to:",
+      "options": {
+        "a": "Mendeleev",
+        "b": "Dobereiner",
+        "c": "Lothar Meyer",
+        "d": "Newlands"
+      },
+      "answer": "d",
+      "a": "Newlands",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A gross consists of:",
+      "options": {
+        "a": "12 items",
+        "b": "20 items",
+        "c": "144 items",
+        "d": "100 items"
+      },
+      "answer": "c",
+      "a": "144 items",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-97",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Water vapour rises in the atmosphere because it is:",
+      "options": {
+        "a": "Heavier than air",
+        "b": "Denser than water",
+        "c": "Lighter than air",
+        "d": "Colder than air"
+      },
+      "answer": "c",
+      "a": "Lighter than air",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Materials having a lustrous appearance are usually:",
+      "options": {
+        "a": "Rubbers",
+        "b": "Metals",
+        "c": "Non-metals",
+        "d": "Plastics"
+      },
+      "answer": "b",
+      "a": "Metals",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The unique ability of carbon to form bonds with other carbon atoms, giving large molecules, is called:",
+      "options": {
+        "a": "Saponification",
+        "b": "Catenation",
+        "c": "Isomerism",
+        "d": "Allotropy"
+      },
+      "answer": "b",
+      "a": "Catenation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Blood is classified as a:",
+      "options": {
+        "a": "Pure substance",
+        "b": "True suspension",
+        "c": "Colloid",
+        "d": "True solution"
+      },
+      "answer": "c",
+      "a": "Colloid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Magnesium burns in air with a:",
+      "options": {
+        "a": "Dazzling white flame",
+        "b": "Blue flame",
+        "c": "Red flame",
+        "d": "Golden yellow flame"
+      },
+      "answer": "a",
+      "a": "Dazzling white flame",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In a solution formed by dissolving a solid in a liquid, the solid component is called the:",
+      "options": {
+        "a": "Filtrate",
+        "b": "Solute",
+        "c": "Residue",
+        "d": "Solvent"
+      },
+      "answer": "b",
+      "a": "Solute",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Metals in the middle of the reactivity series, such as zinc, iron and lead, are found in the earth's crust mainly as:",
+      "options": {
+        "a": "Free elements",
+        "b": "Oxides, sulphides or carbonates",
+        "c": "Chlorides",
+        "d": "Nitrates"
+      },
+      "answer": "b",
+      "a": "Oxides, sulphides or carbonates",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Home-made ORS is prepared by mixing common salt and sugar in one litre of boiled and cooled water. The amount of sugar used is:",
+      "options": {
+        "a": "Half a teaspoon",
+        "b": "Two teaspoons",
+        "c": "Four teaspoons",
+        "d": "Six teaspoons"
+      },
+      "answer": "d",
+      "a": "Six teaspoons",
+      "e": "Half a teaspoon of common salt is used.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In churning of curd, butter separates at the top because it is:",
+      "options": {
+        "a": "Lighter than buttermilk",
+        "b": "Magnetic",
+        "c": "Heavier than buttermilk",
+        "d": "Insoluble in air"
+      },
+      "answer": "a",
+      "a": "Lighter than buttermilk",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The functional group present in alcohols is:",
+      "options": {
+        "a": "—CH₃",
+        "b": "—OH",
+        "c": "—Cl",
+        "d": "—Br"
+      },
+      "answer": "b",
+      "a": "—OH",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Metals and non-metals are sub-categories of:",
+      "options": {
+        "a": "Elements",
+        "b": "Mixtures",
+        "c": "Compounds",
+        "d": "Alloys"
+      },
+      "answer": "a",
+      "a": "Elements",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which heat is released along with the formation of products are called:",
+      "options": {
+        "a": "Displacement reactions",
+        "b": "Exothermic reactions",
+        "c": "Decomposition reactions",
+        "d": "Endothermic reactions"
+      },
+      "answer": "b",
+      "a": "Exothermic reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Machines called threshers perform:",
+      "options": {
+        "a": "Churning only",
+        "b": "Sieving and filtration together",
+        "c": "Decantation only",
+        "d": "Threshing and winnowing together"
+      },
+      "answer": "d",
+      "a": "Threshing and winnowing together",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Metals above hydrogen in the reactivity series displace hydrogen from dilute acids.\n(II) A more reactive metal displaces a less reactive metal from its salt solution.\n(III) Copper displaces hydrogen from dilute hydrochloric acid.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction 3Fe₃O₄ + 8Al → 9Fe + 4Al₂O₃, the species reduced is:",
+      "options": {
+        "a": "Al₂O₃",
+        "b": "Al",
+        "c": "Fe",
+        "d": "Fe₃O₄"
+      },
+      "answer": "d",
+      "a": "Fe₃O₄",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The method of balancing chemical equations by making trials with the smallest whole number coefficients is called:",
+      "options": {
+        "a": "Hit-and-trial method",
+        "b": "Half reaction method",
+        "c": "Oxidation number method",
+        "d": "Electrolytic method"
+      },
+      "answer": "a",
+      "a": "Hit-and-trial method",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Interparticle attraction is maximum in solids.\n(II) Interparticle spacing is maximum in gases.\n(III) In gases, the movement of particles is restricted to a limited space.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "When a sulfur atom gains two electrons, the ion formed is represented as:",
+      "options": {
+        "a": "S²⁺",
+        "b": "S²⁻",
+        "c": "S⁺",
+        "d": "S⁻"
+      },
+      "answer": "b",
+      "a": "S²⁻",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Gradual deterioration of metal surfaces caused by air, water or other substances is known as:",
+      "options": {
+        "a": "Anodising",
+        "b": "Galvanisation",
+        "c": "Calcination",
+        "d": "Corrosion"
+      },
+      "answer": "d",
+      "a": "Corrosion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-73",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    }
+  ]
+}

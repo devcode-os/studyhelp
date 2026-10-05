@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-chemistry-set-18",
+  "chapterNumber": 18,
+  "title": "Chemistry Set 18",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "When an iron nail is dipped in copper sulphate solution, the blue colour of the solution fades because:",
+      "options": {
+        "a": "Iron displaces copper from copper sulphate",
+        "b": "Water is formed",
+        "c": "Copper displaces iron",
+        "d": "Iron dissolves in water"
+      },
+      "answer": "a",
+      "a": "Iron displaces copper from copper sulphate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The white powder formed on burning a magnesium ribbon in air is:",
+      "options": {
+        "a": "Magnesium chloride",
+        "b": "Magnesium carbonate",
+        "c": "Magnesium hydroxide",
+        "d": "Magnesium oxide"
+      },
+      "answer": "d",
+      "a": "Magnesium oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Excessively acidic soil can be treated with lime.\n(II) Basic soil can be treated with organic matter such as manure and composted leaves.\n(III) Excessive use of chemical fertilisers can make soil acidic.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Handpicking is a convenient method when the particles to be removed are:",
+      "options": {
+        "a": "Magnetic in nature",
+        "b": "Dissolved in the mixture",
+        "c": "Lighter than air",
+        "d": "Present in small quantity"
+      },
+      "answer": "d",
+      "a": "Present in small quantity",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The percentage of carbon present in the earth's crust in the form of minerals is:",
+      "options": {
+        "a": "0.03%",
+        "b": "0.02%",
+        "c": "2%",
+        "d": "0.2%"
+      },
+      "answer": "b",
+      "a": "0.02%",
+      "e": "The atmosphere has 0.03% carbon dioxide.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The pH scale generally measures pH from:",
+      "options": {
+        "a": "0 to 7",
+        "b": "7 to 14",
+        "c": "0 to 14",
+        "d": "1 to 10"
+      },
+      "answer": "c",
+      "a": "0 to 14",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals is found in nature in the free state?",
+      "options": {
+        "a": "Aluminium",
+        "b": "Sodium",
+        "c": "Zinc",
+        "d": "Gold"
+      },
+      "answer": "d",
+      "a": "Gold",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The first woman to receive the Shanti Swarup Bhatnagar Award in the field of chemical science was:",
+      "options": {
+        "a": "Janaki Ammal",
+        "b": "Asima Chatterjee",
+        "c": "Anna Mani",
+        "d": "Kamala Sohonie"
+      },
+      "answer": "b",
+      "a": "Asima Chatterjee",
+      "e": "She was also the second Indian woman to earn a Doctorate of Science, after Janaki Ammal, and was honoured with the Padma Bhushan.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-69",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The brown substance formed during rusting of iron is chemically:",
+      "options": {
+        "a": "Iron sulfate",
+        "b": "Iron oxide",
+        "c": "Calcium carbonate",
+        "d": "Magnesium oxide"
+      },
+      "answer": "b",
+      "a": "Iron oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The first fullerene to be identified was:",
+      "options": {
+        "a": "C-70",
+        "b": "C-80",
+        "c": "C-20",
+        "d": "C-60"
+      },
+      "answer": "d",
+      "a": "C-60",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "N₂O₄ is correctly named as:",
+      "options": {
+        "a": "Nitrogen tetroxide",
+        "b": "Dinitrogen tetroxide",
+        "c": "Dinitrogen tetraoxygen",
+        "d": "Dinitrogen tetraoxide"
+      },
+      "answer": "b",
+      "a": "Dinitrogen tetroxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Basic substances are generally ______ to touch.",
+      "options": {
+        "a": "Brittle",
+        "b": "Slippery",
+        "c": "Sticky",
+        "d": "Rough"
+      },
+      "answer": "b",
+      "a": "Slippery",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Friedrich Wöhler disproved the 'vital force' theory in 1828 by preparing:",
+      "options": {
+        "a": "Acetic acid",
+        "b": "Urea",
+        "c": "Methane",
+        "d": "Ethanol"
+      },
+      "answer": "b",
+      "a": "Urea",
+      "e": "He prepared it from ammonium cyanate.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Reducing the supply of oxygen to fat-containing food helps to:",
+      "options": {
+        "a": "Speed up oxidation",
+        "b": "Slow down oxidation",
+        "c": "Cause decomposition",
+        "d": "Cause corrosion"
+      },
+      "answer": "b",
+      "a": "Slow down oxidation",
+      "e": "Keeping food in air tight containers has the same effect.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following dissolves in kerosene and petrol but not in water?",
+      "options": {
+        "a": "Camphor",
+        "b": "Calcium oxide",
+        "c": "Copper sulfate",
+        "d": "Sodium chloride"
+      },
+      "answer": "a",
+      "a": "Camphor",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A solid has a mass of 300 g and a volume of 120 cm³. Its density is:",
+      "options": {
+        "a": "180 g/cm³",
+        "b": "25 g/cm³",
+        "c": "2.5 g/cm³",
+        "d": "0.4 g/cm³"
+      },
+      "answer": "c",
+      "a": "2.5 g/cm³",
+      "e": "Density = 300 g ÷ 120 cm³ = 2.5 g/cm³.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-82",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Lichens are formed by the association of:",
+      "options": {
+        "a": "A fungus and a moss",
+        "b": "A fungus and an alga",
+        "c": "An alga and a protozoan",
+        "d": "Bacteria and an alga"
+      },
+      "answer": "b",
+      "a": "A fungus and an alga",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "On heating in air, cinnabar is first converted into:",
+      "options": {
+        "a": "Mercuric chloride",
+        "b": "Mercury",
+        "c": "Mercuric sulphate",
+        "d": "Mercuric oxide"
+      },
+      "answer": "d",
+      "a": "Mercuric oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium chloride contains sodium and chlorine in the mass ratio of 23:35.5. The mass of chlorine required to react completely with 69 g of sodium is:",
+      "options": {
+        "a": "71 g",
+        "b": "106.5 g",
+        "c": "35.5 g",
+        "d": "138 g"
+      },
+      "answer": "b",
+      "a": "106.5 g",
+      "e": "(35.5 ÷ 23) × 69 g = 106.5 g.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Nitrogen constitutes about what percentage of air?",
+      "options": {
+        "a": "0.9%",
+        "b": "78%",
+        "c": "50%",
+        "d": "21%"
+      },
+      "answer": "b",
+      "a": "78%",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The cylindrical table of elements, arranged in increasing atomic weights, was made by:",
+      "options": {
+        "a": "Dobereiner",
+        "b": "Lothar Meyer",
+        "c": "Newlands",
+        "d": "de Chancourtois"
+      },
+      "answer": "d",
+      "a": "de Chancourtois",
+      "e": "He was a French geologist, and the table was made in 1862.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following gases:\n(I) Methane\n(II) Carbon dioxide\n(III) Nitrogen\nWhich of the above is/are green house gas(es)?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Sugar is a chemical compound consisting of the elements:",
+      "options": {
+        "a": "Carbon and nitrogen",
+        "b": "Carbon and oxygen",
+        "c": "Hydrogen and oxygen",
+        "d": "Carbon, hydrogen and oxygen"
+      },
+      "answer": "d",
+      "a": "Carbon, hydrogen and oxygen",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Hydrogen gas is not evolved when a metal reacts with:",
+      "options": {
+        "a": "Nitric acid",
+        "b": "Steam",
+        "c": "Dilute hydrochloric acid",
+        "d": "Dilute sulphuric acid"
+      },
+      "answer": "a",
+      "a": "Nitric acid",
+      "e": "Nitric acid is a strong oxidising agent that oxidises the hydrogen to water. Magnesium and manganese react with very dilute nitric acid to evolve hydrogen.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of valence electrons in a carbon atom is:",
+      "options": {
+        "a": "6",
+        "b": "8",
+        "c": "4",
+        "d": "2"
+      },
+      "answer": "c",
+      "a": "4",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Water droplets appear on the outer surface of a tumbler containing ice-cold water because of:",
+      "options": {
+        "a": "Melting of ice outside the tumbler",
+        "b": "Condensation of water vapour present in the air",
+        "c": "Seepage of water through the glass",
+        "d": "Evaporation of water from the tumbler"
+      },
+      "answer": "b",
+      "a": "Condensation of water vapour present in the air",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "While washing oil-stained clothes with soap, one end of a soap particle attaches to oil and the other end mixes with:",
+      "options": {
+        "a": "Air",
+        "b": "Dirt",
+        "c": "Fabric",
+        "d": "Water"
+      },
+      "answer": "d",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The hydrogen evolved immediately catches fire when which metal reacts with cold water?",
+      "options": {
+        "a": "Calcium",
+        "b": "Sodium",
+        "c": "Aluminium",
+        "d": "Magnesium"
+      },
+      "answer": "b",
+      "a": "Sodium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Guru – Heavy\n(II) Drava – Solid\n(III) Khara – Rough\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "Drava means liquid, and sāndra means solid.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Water has its highest density at:",
+      "options": {
+        "a": "100 °C",
+        "b": "4 °C",
+        "c": "0 °C",
+        "d": "10 °C"
+      },
+      "answer": "b",
+      "a": "4 °C",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-86",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-26",
+  "chapterNumber": 26,
+  "title": "Physics Set 26",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "An object placed in a liquid sinks when the:",
+      "options": {
+        "a": "buoyant force exceeds the gravitational force",
+        "b": "buoyant force is zero",
+        "c": "buoyant force equals the gravitational force",
+        "d": "gravitational force exceeds the buoyant force"
+      },
+      "answer": "d",
+      "a": "gravitational force exceeds the buoyant force",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-11",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The order of magnitude of a length of 6.4 × 10⁻⁸ m is:",
+      "options": {
+        "a": "–8",
+        "b": "8",
+        "c": "–6",
+        "d": "–7"
+      },
+      "answer": "d",
+      "a": "–7",
+      "e": "Since the number 6.4 lies between 5 and 10, it is rounded to 10. So 10 × 10⁻⁸ = 10⁻⁷.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-18",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "In a domestic circuit, different appliances are connected:",
+      "options": {
+        "a": "In parallel",
+        "b": "Only through the earth wire",
+        "c": "Partly in series and partly across the earth",
+        "d": "In series"
+      },
+      "answer": "a",
+      "a": "In parallel",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-45",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Above an aircraft wing producing dynamic lift, compared with below it, the air has:",
+      "options": {
+        "a": "higher speed and lower pressure",
+        "b": "higher speed and higher pressure",
+        "c": "lower speed and lower pressure",
+        "d": "lower speed and higher pressure"
+      },
+      "answer": "a",
+      "a": "higher speed and lower pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-82",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A rainbow is always formed in a direction:",
+      "options": {
+        "a": "towards the Sun",
+        "b": "opposite to the Sun",
+        "c": "overhead",
+        "d": "perpendicular to the Sun"
+      },
+      "answer": "b",
+      "a": "opposite to the Sun",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-78",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Rhizobium – Nitrogen fixation in root nodules of legumes\n(II) Nitrobacter – Conversion of nitrite to nitrate\n(III) Pseudomonas – Nitrification\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and II only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Pseudomonas carries out denitrification.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-118",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The angle of incidence is the angle between the:",
+      "options": {
+        "a": "incident ray and the reflected ray",
+        "b": "reflected ray and the mirror surface",
+        "c": "incident ray and the normal",
+        "d": "incident ray and the mirror surface"
+      },
+      "answer": "c",
+      "a": "incident ray and the normal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-11",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Waxing period – Shukla Paksha\n(II) Waning period – Krishna Paksha\n(III) Waning period – Shukla Paksha\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-73",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A constant-volume gas thermometer reads temperature in terms of:",
+      "options": {
+        "a": "volume",
+        "b": "density",
+        "c": "pressure",
+        "d": "length"
+      },
+      "answer": "c",
+      "a": "pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-20",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In our country, the potential difference between the live wire and the neutral wire is:",
+      "options": {
+        "a": "440 V",
+        "b": "220 V",
+        "c": "50 V",
+        "d": "110 V"
+      },
+      "answer": "b",
+      "a": "220 V",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-42",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "A passenger seated in a moving bus is in motion with respect to:",
+      "options": {
+        "a": "himself",
+        "b": "the bus",
+        "c": "a building outside",
+        "d": "another seated passenger"
+      },
+      "answer": "c",
+      "a": "a building outside",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-33",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The fundamental frequency of a note is 256 Hz. The fundamental frequency of the note one octave higher is:",
+      "options": {
+        "a": "512 Hz",
+        "b": "384 Hz",
+        "c": "128 Hz",
+        "d": "1024 Hz"
+      },
+      "answer": "a",
+      "a": "512 Hz",
+      "e": "An octave is the interval between two notes where one has double the frequency of the other.",
+      "table": null,
+      "qid": "physics-ch6-sound-44",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "In a series combination of resistors, the quantity that is the same through every resistor is:",
+      "options": {
+        "a": "Resistance",
+        "b": "Current",
+        "c": "Power",
+        "d": "Potential difference"
+      },
+      "answer": "b",
+      "a": "Current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-40",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The molar specific heat capacity of a gas at constant volume is denoted by:",
+      "options": {
+        "a": "Cv",
+        "b": "L",
+        "c": "Cp",
+        "d": "S"
+      },
+      "answer": "a",
+      "a": "Cv",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-38",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The full form of SONAR is:",
+      "options": {
+        "a": "Sound Navigation and Ranging",
+        "b": "Sound Network and Ranging",
+        "c": "Sonic Navigation and Ranging",
+        "d": "Sonic Navigation and Radiating"
+      },
+      "answer": "a",
+      "a": "Sound Navigation and Ranging",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-55",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The boiling point of water is raised inside a pressure cooker by increasing the:",
+      "options": {
+        "a": "mass",
+        "b": "pressure",
+        "c": "altitude",
+        "d": "volume"
+      },
+      "answer": "b",
+      "a": "pressure",
+      "e": "At high altitudes the atmospheric pressure is lower, so the boiling point is lower and cooking is difficult.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-47",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Objects that emit their own light are called:",
+      "options": {
+        "a": "translucent objects",
+        "b": "transparent objects",
+        "c": "luminous objects",
+        "d": "opaque objects"
+      },
+      "answer": "c",
+      "a": "luminous objects",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-1",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A mass of 6.28 g occupies a volume of 2.5 cm³. The density, to the correct number of significant figures, is:",
+      "options": {
+        "a": "2.512 g cm⁻³",
+        "b": "3 g cm⁻³",
+        "c": "2.51 g cm⁻³",
+        "d": "2.5 g cm⁻³"
+      },
+      "answer": "d",
+      "a": "2.5 g cm⁻³",
+      "e": "6.28/2.5 = 2.512. The result keeps two significant figures, as in the least precise value.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-20",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The dimensions of pressure are:",
+      "options": {
+        "a": "[MLT⁻²]",
+        "b": "[ML⁻³]",
+        "c": "[ML⁻¹T⁻²]",
+        "d": "[ML⁻¹T⁻¹]"
+      },
+      "answer": "c",
+      "a": "[ML⁻¹T⁻²]",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-49",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following allows current to pass through it in one direction only?",
+      "options": {
+        "a": "LED",
+        "b": "Rheostat",
+        "c": "Incandescent lamp",
+        "d": "Nichrome wire"
+      },
+      "answer": "a",
+      "a": "LED",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-19",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about energy in SHM:\n(I) Kinetic and potential energies are always positive.\n(II) At the extreme positions, the energy is entirely potential.\n(III) At the mean position, the energy is entirely potential.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-33",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Electricity from batteries is of a type called Direct Current.\n(II) Electricity from power plants at the wall socket is known as Alternating Current.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "Both I and II",
+        "d": "Neither I nor II"
+      },
+      "answer": "c",
+      "a": "Both I and II",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-24",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound waves are:",
+      "options": {
+        "a": "Longitudinal waves",
+        "b": "Transverse waves",
+        "c": "Electromagnetic waves",
+        "d": "Both longitudinal and transverse waves"
+      },
+      "answer": "a",
+      "a": "Longitudinal waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-10",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "A wire of length l and area of cross-section A has a resistance of 8 Ω. The resistance of another wire of the same material with length 2l and area of cross-section 4A is:",
+      "options": {
+        "a": "1 Ω",
+        "b": "32 Ω",
+        "c": "4 Ω",
+        "d": "16 Ω"
+      },
+      "answer": "c",
+      "a": "4 Ω",
+      "e": "R = ρl/A; new R = ρ(2l)/(4A) = (1/2) × 8 Ω = 4 Ω.",
+      "table": null,
+      "qid": "physics-ch7-electricity-39",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "In the circuit symbol of an electric cell, the long line represents the:",
+      "options": {
+        "a": "Negative terminal",
+        "b": "Filament",
+        "c": "Switch",
+        "d": "Positive terminal"
+      },
+      "answer": "d",
+      "a": "Positive terminal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-21",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The tail of a comet is formed due to:",
+      "options": {
+        "a": "Rotation of the comet",
+        "b": "Gravitational pull of the Sun",
+        "c": "Evaporation of its frozen material near the Sun",
+        "d": "Collision with asteroids"
+      },
+      "answer": "c",
+      "a": "Evaporation of its frozen material near the Sun",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-44",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In trade winds, the air descends not at the poles but at about:",
+      "options": {
+        "a": "90° N latitude",
+        "b": "60° N latitude",
+        "c": "10° N latitude",
+        "d": "30° N latitude"
+      },
+      "answer": "d",
+      "a": "30° N latitude",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-70",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A soap bubble of radius 2.0 mm is formed from a solution of surface tension 0.030 N m⁻¹. The excess pressure inside the bubble is:",
+      "options": {
+        "a": "60 Pa",
+        "b": "30 Pa",
+        "c": "15 Pa",
+        "d": "120 Pa"
+      },
+      "answer": "a",
+      "a": "60 Pa",
+      "e": "A bubble has two surfaces, so ΔP = 4S/r = 4 × 0.030 ÷ 0.0020 = 60 Pa.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-93",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnitude of the magnetic field at a given point near a straight wire increases when the:",
+      "options": {
+        "a": "Compass is moved farther away",
+        "b": "Current through the wire increases",
+        "c": "Wire is kept horizontal",
+        "d": "Current is reduced"
+      },
+      "answer": "b",
+      "a": "Current through the wire increases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-24",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Natural chlorine consists of ³⁵Cl and ³⁷Cl in the approximate ratio:",
+      "options": {
+        "a": "1 : 3",
+        "b": "3 : 1",
+        "c": "2 : 1",
+        "d": "1 : 1"
+      },
+      "answer": "b",
+      "a": "3 : 1",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-60",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    }
+  ]
+}

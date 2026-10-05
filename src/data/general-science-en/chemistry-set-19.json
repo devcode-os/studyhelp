@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-chemistry-set-19",
+  "chapterNumber": 19,
+  "title": "Chemistry Set 19",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In the chlor-alkali process, hydrogen gas is liberated at the:",
+      "options": {
+        "a": "Anode",
+        "b": "Both electrodes",
+        "c": "Cathode",
+        "d": "Neither electrode"
+      },
+      "answer": "c",
+      "a": "Cathode",
+      "e": "Chlorine is given off at the anode, and sodium hydroxide solution forms near the cathode.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Water molecule – two hydrogen atoms and one oxygen atom\n(II) Carbon dioxide molecule – two carbon atoms and one oxygen atom\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "Both I and II",
+        "b": "I only",
+        "c": "II only",
+        "d": "Neither I nor II"
+      },
+      "answer": "b",
+      "a": "I only",
+      "e": "A carbon dioxide molecule has one carbon atom and two oxygen atoms.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a heterogeneous mixture?",
+      "options": {
+        "a": "Salt solution",
+        "b": "Vinegar",
+        "c": "Soda",
+        "d": "Sand and water"
+      },
+      "answer": "d",
+      "a": "Sand and water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "In Ayurveda, Siddha and other traditional systems of medicine, the solvent primarily used for medicinal formulations is:",
+      "options": {
+        "a": "Milk",
+        "b": "Oil",
+        "c": "Ghee",
+        "d": "Water"
+      },
+      "answer": "d",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-70",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a mixture?",
+      "options": {
+        "a": "Sodium chloride",
+        "b": "Concrete",
+        "c": "Iron",
+        "d": "Water"
+      },
+      "answer": "b",
+      "a": "Concrete",
+      "e": "Wood and steel are also mixtures.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The chemical name of baking soda is:",
+      "options": {
+        "a": "Sodium chloride",
+        "b": "Sodium carbonate",
+        "c": "Sodium hydroxide",
+        "d": "Sodium hydrogencarbonate"
+      },
+      "answer": "d",
+      "a": "Sodium hydrogencarbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-68",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The Iron Pillar of Delhi was made in the time of:",
+      "options": {
+        "a": "Ashoka",
+        "b": "Chandragupta II",
+        "c": "Harsha",
+        "d": "Akbar"
+      },
+      "answer": "b",
+      "a": "Chandragupta II",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-85",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Nitrogen – Manufacture of fertilisers\n(II) Iodine – Antiseptic for wounds\n(III) Oxygen – Water purification\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-88",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The best conductors of heat among metals are:",
+      "options": {
+        "a": "Lead and mercury",
+        "b": "Gold and zinc",
+        "c": "Silver and copper",
+        "d": "Iron and aluminium"
+      },
+      "answer": "c",
+      "a": "Silver and copper",
+      "e": "Lead and mercury are comparatively poor conductors of heat.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Coating iron or steel with a thin layer of zinc to prevent rusting is called:",
+      "options": {
+        "a": "Anodising",
+        "b": "Calcination",
+        "c": "Roasting",
+        "d": "Galvanisation"
+      },
+      "answer": "d",
+      "a": "Galvanisation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-75",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas evolved when ethanoic acid reacts with sodium carbonate, which turns lime water milky, is:",
+      "options": {
+        "a": "Methane",
+        "b": "Hydrogen",
+        "c": "Oxygen",
+        "d": "Carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-77",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In ice, compared with liquid water, the interparticle distance is:",
+      "options": {
+        "a": "Farther apart",
+        "b": "Closer",
+        "c": "Zero",
+        "d": "Equal"
+      },
+      "answer": "a",
+      "a": "Farther apart",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Weight, the force by which the Earth attracts an object, is measured in:",
+      "options": {
+        "a": "Pascals",
+        "b": "Newtons",
+        "c": "Kilograms",
+        "d": "Grams"
+      },
+      "answer": "b",
+      "a": "Newtons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure ethanol is called:",
+      "options": {
+        "a": "Absolute alcohol",
+        "b": "Glacial alcohol",
+        "c": "Denatured alcohol",
+        "d": "Rectified alcohol"
+      },
+      "answer": "a",
+      "a": "Absolute alcohol",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Acids that give rise to more H⁺ ions are called:",
+      "options": {
+        "a": "Strong acids",
+        "b": "Concentrated acids",
+        "c": "Weak acids",
+        "d": "Dilute acids"
+      },
+      "answer": "a",
+      "a": "Strong acids",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "When two atoms of hydrogen combine, the stable particle formed is called a:",
+      "options": {
+        "a": "Compound",
+        "b": "Ion",
+        "c": "Molecule",
+        "d": "Isotope"
+      },
+      "answer": "c",
+      "a": "Molecule",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following can be used as an olfactory indicator?",
+      "options": {
+        "a": "Onion",
+        "b": "Red rose extract",
+        "c": "Litmus",
+        "d": "Turmeric"
+      },
+      "answer": "a",
+      "a": "Onion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In a solution formed by mixing two liquids, the component present in smaller amount is called the:",
+      "options": {
+        "a": "Solute",
+        "b": "Solvent",
+        "c": "Solubility",
+        "d": "Solution"
+      },
+      "answer": "a",
+      "a": "Solute",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following uses:\n(I) Washing soda is used in glass, soap and paper industries.\n(II) Washing soda is used in the manufacture of borax.\n(III) Washing soda is used to make drinking water free from germs.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-73",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula of magnesium hydroxide is:",
+      "options": {
+        "a": "MgOH₂",
+        "b": "Mg(OH)₂",
+        "c": "Mg₂(OH)",
+        "d": "Mg₂OH₂"
+      },
+      "answer": "b",
+      "a": "Mg(OH)₂",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The electrolysis of aqueous sodium chloride (brine) is called the:",
+      "options": {
+        "a": "Chlor-alkali process",
+        "b": "Recrystallisation process",
+        "c": "Crystallisation process",
+        "d": "Neutralisation process"
+      },
+      "answer": "a",
+      "a": "Chlor-alkali process",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The ratio of the number of hydrogen atoms to oxygen atoms in water is:",
+      "options": {
+        "a": "2:1",
+        "b": "1:1",
+        "c": "8:1",
+        "d": "1:2"
+      },
+      "answer": "a",
+      "a": "2:1",
+      "e": "Sodium chloride has sodium and chlorine particles in a 1:1 ratio.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction between an acid and a base to give a salt and water is called:",
+      "options": {
+        "a": "Neutralisation",
+        "b": "Dilution",
+        "c": "Displacement",
+        "d": "Combustion"
+      },
+      "answer": "a",
+      "a": "Neutralisation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The chemical formula of slaked lime is:",
+      "options": {
+        "a": "Ca(OH)₂",
+        "b": "CaCl₂",
+        "c": "CaO",
+        "d": "CaCO₃"
+      },
+      "answer": "a",
+      "a": "Ca(OH)₂",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Dalton presented his atomic theory in the year:",
+      "options": {
+        "a": "1808",
+        "b": "1793",
+        "c": "1811",
+        "d": "1789"
+      },
+      "answer": "a",
+      "a": "1808",
+      "e": "Dalton moved to Manchester in 1793.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A cuboid-shaped box has length 20 cm, width 12 cm and height 3 cm. Its volume is:",
+      "options": {
+        "a": "35 cm³",
+        "b": "240 cm³",
+        "c": "360 cm³",
+        "d": "720 cm³"
+      },
+      "answer": "d",
+      "a": "720 cm³",
+      "e": "Volume = l × w × h = 20 cm × 12 cm × 3 cm = 720 cm³.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-81",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A bond formed by the sharing of an electron pair between two atoms is called a:",
+      "options": {
+        "a": "Electrovalent bond",
+        "b": "Covalent bond",
+        "c": "Metallic bond",
+        "d": "Ionic bond"
+      },
+      "answer": "b",
+      "a": "Covalent bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The basic unit that makes up a larger piece of a substance is called its:",
+      "options": {
+        "a": "Interparticle space",
+        "b": "Constituent particle",
+        "c": "Solute",
+        "d": "Fluid"
+      },
+      "answer": "b",
+      "a": "Constituent particle",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "An alloy in which one of the metals is mercury is called:",
+      "options": {
+        "a": "Amalgam",
+        "b": "Solder",
+        "c": "Brass",
+        "d": "Bronze"
+      },
+      "answer": "a",
+      "a": "Amalgam",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-77",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of states of matter is classified as fluids?",
+      "options": {
+        "a": "Solids and liquids",
+        "b": "Solids, liquids and gases",
+        "c": "Liquids and gases",
+        "d": "Solids and gases"
+      },
+      "answer": "c",
+      "a": "Liquids and gases",
+      "e": "Both flow and do not retain a fixed shape.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

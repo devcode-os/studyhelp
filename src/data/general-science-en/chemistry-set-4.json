@@ -1,0 +1,576 @@
+{
+  "slug": "general-science-chemistry-set-4",
+  "chapterNumber": 4,
+  "title": "Chemistry Set 4",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Steam is visible because it contains:",
+      "options": {
+        "a": "Dust particles",
+        "b": "Carbon dioxide",
+        "c": "Hydrogen gas",
+        "d": "Tiny droplets of water"
+      },
+      "answer": "d",
+      "a": "Tiny droplets of water",
+      "e": "Water vapour itself is invisible.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The mole is the SI unit of:",
+      "options": {
+        "a": "Amount of substance",
+        "b": "Mass",
+        "c": "Volume",
+        "d": "Molar mass"
+      },
+      "answer": "a",
+      "a": "Amount of substance",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-98",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following:\n(I) Larger exposed area of water\n(II) Higher humidity of air\n(III) Greater movement of air\nWhich of the above make water evaporate faster?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "Higher humidity slows evaporation.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "A reaction in which a single substance breaks down to give two or more simpler substances is called a:",
+      "options": {
+        "a": "Combination reaction",
+        "b": "Precipitation reaction",
+        "c": "Displacement reaction",
+        "d": "Decomposition reaction"
+      },
+      "answer": "d",
+      "a": "Decomposition reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Who among the following is known as the 'Father of Modern Indian Chemistry'?",
+      "options": {
+        "a": "Homi J. Bhabha",
+        "b": "J.C. Bose",
+        "c": "Acharya Prafulla Chandra Ray",
+        "d": "C.V. Raman"
+      },
+      "answer": "c",
+      "a": "Acharya Prafulla Chandra Ray",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Addition of hydrogen to ethene to form ethane is an example of:",
+      "options": {
+        "a": "Reduction",
+        "b": "Decomposition",
+        "c": "Precipitation",
+        "d": "Oxidation"
+      },
+      "answer": "a",
+      "a": "Reduction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The idea of Parmanu (atom), as tiny indivisible eternal particles of matter, was first spoken of by:",
+      "options": {
+        "a": "Democritus",
+        "b": "Acharya Kanad",
+        "c": "Dalton",
+        "d": "Avogadro"
+      },
+      "answer": "b",
+      "a": "Acharya Kanad",
+      "e": "The idea was written in the Vaisheshika Sutras.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Heating copper powder in air coats its surface with black:",
+      "options": {
+        "a": "Copper carbonate",
+        "b": "Copper(II) oxide",
+        "c": "Copper sulphate",
+        "d": "Copper chloride"
+      },
+      "answer": "b",
+      "a": "Copper(II) oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The two atoms in an oxygen molecule are held together by a:",
+      "options": {
+        "a": "Ionic bond",
+        "b": "Double covalent bond",
+        "c": "Triple covalent bond",
+        "d": "Single covalent bond"
+      },
+      "answer": "b",
+      "a": "Double covalent bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of dissolving an acid or a base in water is:",
+      "options": {
+        "a": "A neutralisation reaction",
+        "b": "Highly endothermic",
+        "c": "Accompanied by no heat change",
+        "d": "Highly exothermic"
+      },
+      "answer": "d",
+      "a": "Highly exothermic",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In terms of electron transfer, oxidation is:",
+      "options": {
+        "a": "Gain of electrons",
+        "b": "Loss of neutrons",
+        "c": "Gain of protons",
+        "d": "Loss of electrons"
+      },
+      "answer": "d",
+      "a": "Loss of electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "A universal indicator is:",
+      "options": {
+        "a": "A basic salt",
+        "b": "A mixture of several indicators",
+        "c": "A single natural dye",
+        "d": "A synthetic acid"
+      },
+      "answer": "b",
+      "a": "A mixture of several indicators",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Dobereiner's groups of three elements with similar properties are known as:",
+      "options": {
+        "a": "Periods",
+        "b": "Octaves",
+        "c": "Series",
+        "d": "Triads"
+      },
+      "answer": "d",
+      "a": "Triads",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The salt formed when ethanoic acid reacts with sodium hydroxide is:",
+      "options": {
+        "a": "Sodium ethanoate",
+        "b": "Sodium ethoxide",
+        "c": "Sodium chloride",
+        "d": "Sodium carbonate"
+      },
+      "answer": "a",
+      "a": "Sodium ethanoate",
+      "e": "It is commonly called sodium acetate.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Stainless steel – Iron, nickel, chromium and carbon\n(II) Brass – Copper and zinc\n(III) Bronze – Copper and zinc\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Bronze is a mixture of copper and tin.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A series of compounds in which the same functional group substitutes for hydrogen in a carbon chain is called a:",
+      "options": {
+        "a": "Reactivity series",
+        "b": "Allotropic series",
+        "c": "Homologous series",
+        "d": "Activity series"
+      },
+      "answer": "c",
+      "a": "Homologous series",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following sets forms a Dobereiner triad?",
+      "options": {
+        "a": "Ca, Br, K",
+        "b": "Li, Na, K",
+        "c": "Na, Mg, Al",
+        "d": "Li, Be, B"
+      },
+      "answer": "b",
+      "a": "Li, Na, K",
+      "e": "Ca, Sr, Ba and Cl, Br, I are the other triads.",
+      "table": {
+        "headers": [
+          "Element",
+          "Atomic weight",
+          "Element",
+          "Atomic weight",
+          "Element",
+          "Atomic weight"
+        ],
+        "rows": [
+          [
+            "Li",
+            "7",
+            "Na",
+            "23",
+            "K",
+            "39"
+          ],
+          [
+            "Ca",
+            "40",
+            "Sr",
+            "88",
+            "Ba",
+            "137"
+          ],
+          [
+            "Cl",
+            "35.5",
+            "Br",
+            "80",
+            "I",
+            "127"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch15-elements-and-compounds-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Ionic compounds are formed by the transfer of electrons from:",
+      "options": {
+        "a": "One non-metal to another",
+        "b": "A metal to a non-metal",
+        "c": "A non-metal to a metal",
+        "d": "One metal to another"
+      },
+      "answer": "b",
+      "a": "A metal to a non-metal",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following compounds reacts with sodium hydrogencarbonate to produce effervescence?",
+      "options": {
+        "a": "Methane",
+        "b": "Ethanol",
+        "c": "Ethene",
+        "d": "Ethanoic acid"
+      },
+      "answer": "d",
+      "a": "Ethanoic acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-88",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following observations does not by itself indicate that a chemical reaction has taken place?",
+      "options": {
+        "a": "Evolution of a gas",
+        "b": "Change in temperature",
+        "c": "Change in colour",
+        "d": "Change in shape of the container"
+      },
+      "answer": "d",
+      "a": "Change in shape of the container",
+      "e": "Change in state, colour, evolution of a gas and change in temperature indicate a chemical reaction.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Limestone, chalk and marble are different forms of:",
+      "options": {
+        "a": "Calcium oxide",
+        "b": "Calcium carbonate",
+        "c": "Calcium hydroxide",
+        "d": "Calcium sulphate"
+      },
+      "answer": "b",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Liquids have:",
+      "options": {
+        "a": "Fixed shape but no fixed volume",
+        "b": "Fixed shape and fixed volume",
+        "c": "No fixed shape but fixed volume",
+        "d": "No fixed shape and no fixed volume"
+      },
+      "answer": "c",
+      "a": "No fixed shape but fixed volume",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In a digital weighing balance, a non-zero initial reading is brought to zero by pressing the:",
+      "options": {
+        "a": "Tare button",
+        "b": "Mode button",
+        "c": "Unit button",
+        "d": "Power button"
+      },
+      "answer": "a",
+      "a": "Tare button",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The milkiness of lime water on passing carbon dioxide through it is due to the formation of:",
+      "options": {
+        "a": "Calcium hydrogencarbonate",
+        "b": "Calcium chloride",
+        "c": "Calcium carbonate",
+        "d": "Calcium oxide"
+      },
+      "answer": "c",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Lanthanoids – Sixth period\n(II) Actinoids – Seventh period\n(III) Lanthanoids – Seventh period\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "The 14 elements of each series are placed in separate panels at the bottom of the periodic table.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The three requirements for combustion are:",
+      "options": {
+        "a": "Fuel, nitrogen and light",
+        "b": "Oxygen, water and heat",
+        "c": "Fuel, carbon dioxide and heat",
+        "d": "Fuel, oxygen and heat"
+      },
+      "answer": "d",
+      "a": "Fuel, oxygen and heat",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of density is:",
+      "options": {
+        "a": "g/s",
+        "b": "kg/m²",
+        "c": "m³/kg",
+        "d": "kg/m³"
+      },
+      "answer": "d",
+      "a": "kg/m³",
+      "e": "For liquids, g/mL and g/cm³ are also used.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-72",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Grinding a stick of chalk into fine powder is an example of:",
+      "options": {
+        "a": "Combustion",
+        "b": "Chemical change",
+        "c": "Physical change",
+        "d": "Nuclear change"
+      },
+      "answer": "c",
+      "a": "Physical change",
+      "e": "Chalk does not change into a new substance on grinding. Only the size of each speck is reduced.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The smallest volume that a 250 mL measuring cylinder can usually read is:",
+      "options": {
+        "a": "2 mL",
+        "b": "0.1 mL",
+        "c": "5 mL",
+        "d": "1 mL"
+      },
+      "answer": "a",
+      "a": "2 mL",
+      "e": "The smallest readable volume depends on the capacity of the cylinder.",
+      "table": {
+        "headers": [
+          "Capacity",
+          "Smallest volume read"
+        ],
+        "rows": [
+          [
+            "10 mL or 25 mL",
+            "0.1 mL"
+          ],
+          [
+            "100 mL",
+            "1 mL"
+          ],
+          [
+            "250 mL",
+            "2 mL"
+          ],
+          [
+            "500 mL",
+            "5 mL"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch13-matter-and-its-properties-78",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Tooth enamel is made up of:",
+      "options": {
+        "a": "Calcium hydroxyapatite",
+        "b": "Calcium sulphate",
+        "c": "Calcium chloride",
+        "d": "Calcium carbonate"
+      },
+      "answer": "a",
+      "a": "Calcium hydroxyapatite",
+      "e": "It is a crystalline form of calcium phosphate and the hardest substance in the body.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    }
+  ]
+}

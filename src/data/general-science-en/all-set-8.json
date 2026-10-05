@@ -1,0 +1,549 @@
+{
+  "slug": "general-science-set-8",
+  "chapterNumber": 8,
+  "title": "General Science Set 8",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In the Northern Hemisphere, ocean gyres rotate:",
+      "options": {
+        "a": "Towards the poles only",
+        "b": "Clockwise",
+        "c": "Randomly",
+        "d": "Counter-clockwise"
+      },
+      "answer": "b",
+      "a": "Clockwise",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-112",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In the conversion of ethanol to ethene, concentrated sulphuric acid acts as a:",
+      "options": {
+        "a": "Catalyst for addition",
+        "b": "Dehydrating agent",
+        "c": "Oxidising agent",
+        "d": "Reducing agent"
+      },
+      "answer": "b",
+      "a": "Dehydrating agent",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A section of DNA that provides information for one protein is called a:",
+      "options": {
+        "a": "Hormone",
+        "b": "Chromosome",
+        "c": "Gene",
+        "d": "Enzyme"
+      },
+      "answer": "c",
+      "a": "Gene",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-2",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Winds blow from a region of:",
+      "options": {
+        "a": "high pressure to high pressure",
+        "b": "low pressure to low pressure",
+        "c": "low pressure to high pressure",
+        "d": "high pressure to low pressure"
+      },
+      "answer": "d",
+      "a": "high pressure to low pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-96",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Baked clay is called:",
+      "options": {
+        "a": "Porcelain",
+        "b": "Stoneware",
+        "c": "Slip",
+        "d": "Terracotta"
+      },
+      "answer": "d",
+      "a": "Terracotta",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In ribosomes, 'S' in 70S and 80S stands for:",
+      "options": {
+        "a": "Subunit",
+        "b": "Sedimentation coefficient",
+        "c": "Size",
+        "d": "Shape"
+      },
+      "answer": "b",
+      "a": "Sedimentation coefficient",
+      "e": "Svedberg's unit; it is indirectly a measure of density and size.",
+      "table": null,
+      "qid": "biology-ch21-cell-51",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Heat from the Sun reaches the Earth through:",
+      "options": {
+        "a": "regelation",
+        "b": "radiation",
+        "c": "conduction",
+        "d": "convection"
+      },
+      "answer": "b",
+      "a": "radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-60",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In solids, the particles can move past each other.\n(II) In solids, the particles only vibrate about their positions.\n(III) On heating a solid, its particles vibrate more vigorously.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Wind-pollinated plants have a long and feathery stigma to trap pollen.\n(II) Insect-pollinated flowers are often brightly coloured and produce nectar and fragrance.\n(III) Pollen grains of insect-pollinated plants are small and light.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-51",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The gravitational constant G was first determined experimentally in:",
+      "options": {
+        "a": "1687",
+        "b": "1957",
+        "c": "1609",
+        "d": "1798"
+      },
+      "answer": "d",
+      "a": "1798",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-8",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In fish, amphibians and insects, the larva is essentially a:",
+      "options": {
+        "a": "Feeding stage",
+        "b": "Dispersal stage",
+        "c": "Breeding stage",
+        "d": "Resting stage"
+      },
+      "answer": "a",
+      "a": "Feeding stage",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-62",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The transfer of heat from one point to another of a material is called:",
+      "options": {
+        "a": "Radiation",
+        "b": "Conduction",
+        "c": "Convection",
+        "d": "Sonority"
+      },
+      "answer": "b",
+      "a": "Conduction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The presence of excessive artificial light at night is termed:",
+      "options": {
+        "a": "Thermal pollution",
+        "b": "Noise pollution",
+        "c": "Light pollution",
+        "d": "Dust pollution"
+      },
+      "answer": "c",
+      "a": "Light pollution",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-33",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Changes during adolescence, including menstruation and other signs of puberty, are mainly due to:",
+      "options": {
+        "a": "Hormones",
+        "b": "Enzymes",
+        "c": "Vitamins",
+        "d": "Minerals"
+      },
+      "answer": "a",
+      "a": "Hormones",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-84",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of the Moon's orbit around the Earth is approximately:",
+      "options": {
+        "a": "27.3 days",
+        "b": "365 days",
+        "c": "7 days",
+        "d": "24 hours"
+      },
+      "answer": "a",
+      "a": "27.3 days",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-18",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not studied under organic chemistry?",
+      "options": {
+        "a": "Methane",
+        "b": "Urea",
+        "c": "Ethanol",
+        "d": "Sodium carbonate"
+      },
+      "answer": "d",
+      "a": "Sodium carbonate",
+      "e": "Carbides, oxides of carbon, carbonates and hydrogencarbonates are excluded.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Water softens the seed coat and helps the embryo develop into a plant.\n(II) Seeds use the air available between soil particles.\n(III) Excess water standing above the soil favours germination of bean seeds.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-99",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Burns from steam at 100 °C are more serious than those from boiling water at 100 °C because steam has:",
+      "options": {
+        "a": "greater specific heat capacity",
+        "b": "higher temperature",
+        "c": "greater thermal conductivity",
+        "d": "greater heat content per unit mass"
+      },
+      "answer": "d",
+      "a": "greater heat content per unit mass",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-51",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of elements in the sixth period is:",
+      "options": {
+        "a": "8",
+        "b": "18",
+        "c": "32",
+        "d": "2"
+      },
+      "answer": "c",
+      "a": "32",
+      "e": "The seventh period is incomplete and would also have a theoretical maximum of 32 elements.",
+      "table": {
+        "headers": [
+          "Period",
+          "Number of elements"
+        ],
+        "rows": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "8"
+          ],
+          [
+            "3",
+            "8"
+          ],
+          [
+            "4",
+            "18"
+          ],
+          [
+            "5",
+            "18"
+          ],
+          [
+            "6",
+            "32"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch15-elements-and-compounds-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Technological development is a factor in the change of culinary practices.\n(II) Improved transportation is a factor in the change of culinary practices.\n(III) Better communication is a factor in the change of culinary practices.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-2",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The image formed by a pinhole camera is:",
+      "options": {
+        "a": "erect",
+        "b": "same size as the object",
+        "c": "virtual",
+        "d": "inverted"
+      },
+      "answer": "d",
+      "a": "inverted",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-6",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Vitamin D helps the body absorb:",
+      "options": {
+        "a": "Iron",
+        "b": "Calcium",
+        "c": "Protein",
+        "d": "Iodine"
+      },
+      "answer": "b",
+      "a": "Calcium",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-30",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The name of the three-carbon compound with a carboxylic acid group is:",
+      "options": {
+        "a": "Propanone",
+        "b": "Propanal",
+        "c": "Propanol",
+        "d": "Propanoic acid"
+      },
+      "answer": "d",
+      "a": "Propanoic acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In Greek, the word atomos means:",
+      "options": {
+        "a": "Smallest",
+        "b": "Invisible",
+        "c": "Matter",
+        "d": "Indivisible"
+      },
+      "answer": "d",
+      "a": "Indivisible",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-2",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Lime water turns milky when it reacts with:",
+      "options": {
+        "a": "Water vapour",
+        "b": "Nitrogen",
+        "c": "Oxygen",
+        "d": "Carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-68",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The region surrounding a magnet in which its force can be detected is called:",
+      "options": {
+        "a": "Magnetic pole",
+        "b": "Electromagnet",
+        "c": "Magnetic field",
+        "d": "Electric field"
+      },
+      "answer": "c",
+      "a": "Magnetic field",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-19",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The Law of Conservation of Mass was proposed in the year:",
+      "options": {
+        "a": "1789",
+        "b": "1808",
+        "c": "1799",
+        "d": "1793"
+      },
+      "answer": "a",
+      "a": "1789",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Microalgae produce more than ______ of the Earth's oxygen supply.",
+      "options": {
+        "a": "half",
+        "b": "one-fourth",
+        "c": "one-third",
+        "d": "three-fourths"
+      },
+      "answer": "a",
+      "a": "half",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-30",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of pressure is named in honour of the French scientist:",
+      "options": {
+        "a": "Daniel Bernoulli",
+        "b": "George Stokes",
+        "c": "Blaise Pascal",
+        "d": "Evangelista Torricelli"
+      },
+      "answer": "c",
+      "a": "Blaise Pascal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-48",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The amount of water vapour present in the air is known as:",
+      "options": {
+        "a": "Humidity",
+        "b": "Evaporation",
+        "c": "Precipitation",
+        "d": "Condensation"
+      },
+      "answer": "a",
+      "a": "Humidity",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    }
+  ]
+}

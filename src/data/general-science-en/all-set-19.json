@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-19",
+  "chapterNumber": 19,
+  "title": "General Science Set 19",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A switch is a simple device that:",
+      "options": {
+        "a": "Completes or breaks a circuit",
+        "b": "Generates electric current",
+        "c": "Stores electric charge",
+        "d": "Measures electric current"
+      },
+      "answer": "a",
+      "a": "Completes or breaks a circuit",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-20",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Maharaj Kishan Bhan played a key role in developing the vaccine against:",
+      "options": {
+        "a": "Hepatitis A",
+        "b": "Polio",
+        "c": "Measles",
+        "d": "Rotavirus"
+      },
+      "answer": "d",
+      "a": "Rotavirus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-21",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-lustrous material?",
+      "options": {
+        "a": "Jute",
+        "b": "Iron",
+        "c": "Copper",
+        "d": "Zinc"
+      },
+      "answer": "a",
+      "a": "Jute",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Heat is the form of energy transferred between a system and its surroundings by virtue of a difference in:",
+      "options": {
+        "a": "pressure",
+        "b": "volume",
+        "c": "mass",
+        "d": "temperature"
+      },
+      "answer": "d",
+      "a": "temperature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-2",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Earth Summit – 1992\n(II) Kyoto Protocol – 2005\n(III) Paris Agreement – 2015\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-35",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Rutherford's model of the atom is also known as the:",
+      "options": {
+        "a": "Quantum mechanical model",
+        "b": "Plum pudding model",
+        "c": "Stationary state model",
+        "d": "Planetary model"
+      },
+      "answer": "d",
+      "a": "Planetary model",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-35",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following can displace copper from copper chloride solution?",
+      "options": {
+        "a": "Silver",
+        "b": "Gold",
+        "c": "Lead",
+        "d": "Mercury"
+      },
+      "answer": "c",
+      "a": "Lead",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The disc-shaped structures present on the sides of the centromere are called:",
+      "options": {
+        "a": "Chromatids",
+        "b": "Kinetochores",
+        "c": "Satellites",
+        "d": "Nucleoli"
+      },
+      "answer": "b",
+      "a": "Kinetochores",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-64",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The model that replaced Bohr's model, describing electrons as clouds with probable regions, is the:",
+      "options": {
+        "a": "Planetary model",
+        "b": "Nuclear model",
+        "c": "Plum pudding model",
+        "d": "Quantum mechanical model"
+      },
+      "answer": "d",
+      "a": "Quantum mechanical model",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-46",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Balancing of chemical equations is based on the law of:",
+      "options": {
+        "a": "Conservation of mass",
+        "b": "Multiple proportions",
+        "c": "Conservation of energy",
+        "d": "Definite proportions"
+      },
+      "answer": "a",
+      "a": "Conservation of mass",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In a flower, the male gametes are found in:",
+      "options": {
+        "a": "the zygote",
+        "b": "the fruit",
+        "c": "pollen grains inside the anther",
+        "d": "ovules"
+      },
+      "answer": "c",
+      "a": "pollen grains inside the anther",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-26",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "In the Himalayan region, the gharat (panchakki) is traditionally used to:",
+      "options": {
+        "a": "cut wood",
+        "b": "lift water",
+        "c": "grind grain",
+        "d": "generate electricity"
+      },
+      "answer": "c",
+      "a": "grind grain",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-35",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A chemical equation in which the number of atoms of each element is not the same on both sides is called:",
+      "options": {
+        "a": "Word equation",
+        "b": "Skeletal equation",
+        "c": "Ionic equation",
+        "d": "Balanced equation"
+      },
+      "answer": "b",
+      "a": "Skeletal equation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Each human gamete has ___ chromosomes.",
+      "options": {
+        "a": "12",
+        "b": "23",
+        "c": "46",
+        "d": "92"
+      },
+      "answer": "b",
+      "a": "23",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-35",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Water clocks in which water flowed out of a vessel were not very accurate because:",
+      "options": {
+        "a": "the flow rate decreased as the water level dropped",
+        "b": "the water evaporated",
+        "c": "the markings faded",
+        "d": "the water froze"
+      },
+      "answer": "a",
+      "a": "the flow rate decreased as the water level dropped",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-44",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Bile juice secreted by the liver is:",
+      "options": {
+        "a": "Acidic",
+        "b": "Mildly basic",
+        "c": "Strongly acidic",
+        "d": "Neutral"
+      },
+      "answer": "b",
+      "a": "Mildly basic",
+      "e": "Bile neutralises the acids in food coming from the stomach and breaks down fats into tiny droplets.",
+      "table": null,
+      "qid": "biology-ch26-respiration-33",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A speed of 54 km/h expressed in m/s is:",
+      "options": {
+        "a": "54 m/s",
+        "b": "5.4 m/s",
+        "c": "15 m/s",
+        "d": "194.4 m/s"
+      },
+      "answer": "c",
+      "a": "15 m/s",
+      "e": "54 × 1000 m / 3600 s = 15 m/s.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-39",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction H₂S + Cl₂ → 2HCl + S, the species oxidised is:",
+      "options": {
+        "a": "S",
+        "b": "HCl",
+        "c": "H₂S",
+        "d": "Cl₂"
+      },
+      "answer": "c",
+      "a": "H₂S",
+      "e": "A more electronegative element, chlorine, is added to hydrogen, or hydrogen is removed from sulphur.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Fat-soluble carotenoid pigments like carotene and xanthophylls are present in:",
+      "options": {
+        "a": "Leucoplasts",
+        "b": "Amyloplasts",
+        "c": "Chloroplasts",
+        "d": "Chromoplasts"
+      },
+      "answer": "d",
+      "a": "Chromoplasts",
+      "e": "They give yellow, orange or red colour to plant parts.",
+      "table": null,
+      "qid": "biology-ch21-cell-43",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A sound of a single frequency, such as that from a tuning fork, is called a:",
+      "options": {
+        "a": "Musical note",
+        "b": "Noise",
+        "c": "Tone",
+        "d": "Overtone"
+      },
+      "answer": "c",
+      "a": "Tone",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-43",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "In India's freedom struggle, Mahatma Gandhi's Dandi March was symbolically associated with:",
+      "options": {
+        "a": "Sodium hydrogencarbonate",
+        "b": "Calcium sulphate",
+        "c": "Sodium carbonate",
+        "d": "Sodium chloride"
+      },
+      "answer": "d",
+      "a": "Sodium chloride",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In frogs and most fish, fertilisation takes place:",
+      "options": {
+        "a": "Inside the uterus",
+        "b": "Outside the body",
+        "c": "Inside the oviduct",
+        "d": "Inside the egg case"
+      },
+      "answer": "b",
+      "a": "Outside the body",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-59",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The underground layers of sediments and rocks that store water in pore spaces are called:",
+      "options": {
+        "a": "aquifers",
+        "b": "watersheds",
+        "c": "lagoons",
+        "d": "glaciers"
+      },
+      "answer": "a",
+      "a": "aquifers",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-84",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In classifying elements, Mendeleev particularly relied on the similarities in the:",
+      "options": {
+        "a": "Electronic configurations",
+        "b": "Empirical formulas and properties of the compounds formed",
+        "c": "Spectral lines",
+        "d": "Number of neutrons"
+      },
+      "answer": "b",
+      "a": "Empirical formulas and properties of the compounds formed",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The pores in the leaf epidermis that help in gaseous exchange and transpiration are:",
+      "options": {
+        "a": "Root hairs",
+        "b": "Sieve pores",
+        "c": "Vessels",
+        "d": "Stomata"
+      },
+      "answer": "d",
+      "a": "Stomata",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-35",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Non-contact thermometers are also called ___ thermometers.",
+      "options": {
+        "a": "infrared",
+        "b": "gas",
+        "c": "laboratory",
+        "d": "constant-volume"
+      },
+      "answer": "a",
+      "a": "infrared",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-11",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The word used in the Vedic texts for tiny visible and invisible entities is:",
+      "options": {
+        "a": "Anu",
+        "b": "Krimi",
+        "c": "Rishi",
+        "d": "Prana"
+      },
+      "answer": "b",
+      "a": "Krimi",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-34",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "A mixture contains two or more pure substances present in:",
+      "options": {
+        "a": "1:1 ratio only",
+        "b": "Any ratio",
+        "c": "Simple whole number ratio",
+        "d": "Fixed ratio"
+      },
+      "answer": "b",
+      "a": "Any ratio",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "If the restoring force contains small additional terms proportional to x² and x³, the oscillators are called:",
+      "options": {
+        "a": "Damped oscillators",
+        "b": "Linear oscillators",
+        "c": "Non-linear oscillators",
+        "d": "Forced oscillators"
+      },
+      "answer": "c",
+      "a": "Non-linear oscillators",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-28",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas released by yeast that makes dough soft and fluffy is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Methane",
+        "c": "Nitrogen",
+        "d": "Oxygen"
+      },
+      "answer": "a",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-24",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    }
+  ]
+}

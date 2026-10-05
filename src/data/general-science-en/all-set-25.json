@@ -1,0 +1,586 @@
+{
+  "slug": "general-science-set-25",
+  "chapterNumber": 25,
+  "title": "General Science Set 25",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Rhizobium bacteria live in the root nodules of:",
+      "options": {
+        "a": "Grasses",
+        "b": "Legumes",
+        "c": "Cacti",
+        "d": "Cereals"
+      },
+      "answer": "b",
+      "a": "Legumes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-28",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The correct increasing order of penetrating power is:",
+      "options": {
+        "a": "γ < β < α",
+        "b": "α < γ < β",
+        "c": "α < β < γ",
+        "d": "β < α < γ"
+      },
+      "answer": "c",
+      "a": "α < β < γ",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-24",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Gold can be dissolved by:",
+      "options": {
+        "a": "Dilute sulphuric acid",
+        "b": "Concentrated hydrochloric acid",
+        "c": "Concentrated nitric acid",
+        "d": "Aqua regia"
+      },
+      "answer": "d",
+      "a": "Aqua regia",
+      "e": "It also dissolves platinum.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a plant source of protein?",
+      "options": {
+        "a": "Fish",
+        "b": "Peas",
+        "c": "Egg",
+        "d": "Chicken"
+      },
+      "answer": "b",
+      "a": "Peas",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-11",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Water rises in a narrow tube in spite of gravity. This is due to:",
+      "options": {
+        "a": "the Magnus effect",
+        "b": "surface tension",
+        "c": "upthrust",
+        "d": "viscosity"
+      },
+      "answer": "b",
+      "a": "surface tension",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-94",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The coating formed by corrosion of copper is:",
+      "options": {
+        "a": "Reddish brown",
+        "b": "Black",
+        "c": "Green",
+        "d": "Blue"
+      },
+      "answer": "c",
+      "a": "Green",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In fish and frogs, fertilisation takes place:",
+      "options": {
+        "a": "in water",
+        "b": "after the eggs are laid on land",
+        "c": "in the soil",
+        "d": "inside the female's body"
+      },
+      "answer": "a",
+      "a": "in water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-41",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The speed of sound in water is approximately how many times its speed in air at 15 °C?",
+      "options": {
+        "a": "8.8",
+        "b": "2.2",
+        "c": "4.4",
+        "d": "14.7"
+      },
+      "answer": "c",
+      "a": "4.4",
+      "e": "1500 m s⁻¹ / 340 m s⁻¹ ≈ 4.4.",
+      "table": {
+        "headers": [
+          "State",
+          "Medium",
+          "Approximate speed"
+        ],
+        "rows": [
+          [
+            "Solid",
+            "Steel",
+            "5000 m s⁻¹"
+          ],
+          [
+            "Liquid",
+            "Water",
+            "1500 m s⁻¹"
+          ],
+          [
+            "Gas",
+            "Air",
+            "340 m s⁻¹"
+          ]
+        ]
+      },
+      "qid": "physics-ch6-sound-35",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The growth of cells outside the body in a nutrient-rich medium under special conditions is called:",
+      "options": {
+        "a": "Cell fusion",
+        "b": "Cell division",
+        "c": "Cell culture",
+        "d": "Cell cycle"
+      },
+      "answer": "c",
+      "a": "Cell culture",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-87",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The temperature at which the liquid and vapour states of a substance coexist in thermal equilibrium is called its:",
+      "options": {
+        "a": "freezing point",
+        "b": "triple point",
+        "c": "boiling point",
+        "d": "melting point"
+      },
+      "answer": "c",
+      "a": "boiling point",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-44",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of elements is liquid at room temperature?",
+      "options": {
+        "a": "Mercury and bromine",
+        "b": "Bromine and caesium",
+        "c": "Gallium and caesium",
+        "d": "Mercury and gallium"
+      },
+      "answer": "a",
+      "a": "Mercury and bromine",
+      "e": "Gallium and caesium are solids that turn liquid at around 30 °C (303 K).",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Plasma constitutes nearly ___ of blood.",
+      "options": {
+        "a": "45 per cent",
+        "b": "65 per cent",
+        "c": "90 per cent",
+        "d": "55 per cent"
+      },
+      "answer": "d",
+      "a": "55 per cent",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-34",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "In a cyclone, the region of lowest pressure is the:",
+      "options": {
+        "a": "cloud base",
+        "b": "coast",
+        "c": "outer rim",
+        "d": "eye"
+      },
+      "answer": "d",
+      "a": "eye",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-99",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Ozone depletion in the stratosphere is caused by:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Nitrogen",
+        "c": "Methane",
+        "d": "Chlorofluorocarbons"
+      },
+      "answer": "d",
+      "a": "Chlorofluorocarbons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a functional category of plant tissue?\nCount: Type A direct-recall 12 / Type B statement-based (statements, pairs, assertion-reason) 3 / Type C numerical 0. Meristem facts are mostly single-point recall, with statement types for related sub-points.",
+      "options": {
+        "a": "Protecting",
+        "b": "Conducting",
+        "c": "Supporting",
+        "d": "Reproductive"
+      },
+      "answer": "d",
+      "a": "Reproductive",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-15",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs in Fleming's left-hand rule:\n(I) Forefinger – Direction of magnetic field\n(II) Middle finger – Direction of current\n(III) Thumb – Direction of current\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-36",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The total number of periods in the long form of the periodic table is:",
+      "options": {
+        "a": "Six",
+        "b": "Nine",
+        "c": "Seven",
+        "d": "Eight"
+      },
+      "answer": "c",
+      "a": "Seven",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The important site of formation of glycoproteins and glycolipids is the:",
+      "options": {
+        "a": "Lysosome",
+        "b": "Golgi apparatus",
+        "c": "Ribosome",
+        "d": "Smooth endoplasmic reticulum"
+      },
+      "answer": "b",
+      "a": "Golgi apparatus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-34",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Owing to its high specific heat capacity, water is used as a:",
+      "options": {
+        "a": "insulator",
+        "b": "lubricant",
+        "c": "coolant",
+        "d": "fuel"
+      },
+      "answer": "c",
+      "a": "coolant",
+      "e": "It is used in automobile radiators, and as a heater in hot water bags.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-35",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The centre associated with the sensation of hunger is located in the:",
+      "options": {
+        "a": "Medulla",
+        "b": "Mid-brain",
+        "c": "Fore-brain",
+        "d": "Cerebellum"
+      },
+      "answer": "c",
+      "a": "Fore-brain",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-8",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Mass is the quantity of matter present in an object.\n(II) Weight is the force by which the Earth attracts an object.\n(III) Mass is measured in newtons.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Most balances actually measure weight, but their scales are marked in mass units. Two-pan balances are an exception.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Day – Earth's rotation\n(II) Month – Moon's phases\n(III) Year – Moon's phases\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-78",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of the brain that maintains posture and equilibrium of the body is the:",
+      "options": {
+        "a": "Mid-brain",
+        "b": "Cerebellum",
+        "c": "Fore-brain",
+        "d": "Medulla"
+      },
+      "answer": "b",
+      "a": "Cerebellum",
+      "e": "It is also responsible for precision of voluntary actions.",
+      "table": null,
+      "qid": "biology-ch24-human-body-10",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "An object is placed between the optical centre and the principal focus of a convex lens. The image formed is:",
+      "options": {
+        "a": "real, inverted and enlarged",
+        "b": "virtual, erect and enlarged",
+        "c": "virtual, erect and diminished",
+        "d": "real, inverted and diminished"
+      },
+      "answer": "b",
+      "a": "virtual, erect and enlarged",
+      "e": "The image is formed on the same side of the lens as the object.",
+      "table": {
+        "headers": [
+          "Position of the object",
+          "Position of the image",
+          "Relative size of the image",
+          "Nature of the image"
+        ],
+        "rows": [
+          [
+            "At infinity",
+            "At focus F2",
+            "Highly diminished, point-sized",
+            "Real and inverted"
+          ],
+          [
+            "Beyond 2F1",
+            "Between F2 and 2F2",
+            "Diminished",
+            "Real and inverted"
+          ],
+          [
+            "At 2F1",
+            "At 2F2",
+            "Same size",
+            "Real and inverted"
+          ],
+          [
+            "Between F1 and 2F1",
+            "Beyond 2F2",
+            "Enlarged",
+            "Real and inverted"
+          ],
+          [
+            "At focus F1",
+            "At infinity",
+            "Image would not be formed",
+            "–"
+          ],
+          [
+            "Between focus F1 and optical centre O",
+            "On the same side of the lens as the object",
+            "Enlarged",
+            "Virtual and erect"
+          ]
+        ]
+      },
+      "qid": "physics-ch5-light-52",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "H₂S is correctly named as:",
+      "options": {
+        "a": "Hydrogen monosulfide",
+        "b": "Dihydrogen monosulfide",
+        "c": "Dihydrogen sulfide",
+        "d": "Hydrogen sulfide"
+      },
+      "answer": "d",
+      "a": "Hydrogen sulfide",
+      "e": "No prefix is added before hydrogen when it is the first element.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Which Indian plant scientist studied the effects of water and temperature on photosynthesis?",
+      "options": {
+        "a": "Rustom Hormusji Dastur",
+        "b": "Salim Ali",
+        "c": "Kamala Sohonie",
+        "d": "Janaki Ammal"
+      },
+      "answer": "a",
+      "a": "Rustom Hormusji Dastur",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-58",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "A car covers 45 km in the first hour, 55 km in the second hour and 35 km in the third hour. Its average speed is:",
+      "options": {
+        "a": "40 km/h",
+        "b": "50 km/h",
+        "c": "45 km/h",
+        "d": "55 km/h"
+      },
+      "answer": "c",
+      "a": "45 km/h",
+      "e": "Total distance 135 km / total time 3 h = 45 km/h.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-41",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "On passing excess carbon dioxide through milky lime water, it turns clear due to the formation of:",
+      "options": {
+        "a": "Calcium oxide",
+        "b": "Calcium chloride",
+        "c": "Calcium hydrogencarbonate",
+        "d": "Calcium hydroxide"
+      },
+      "answer": "c",
+      "a": "Calcium hydrogencarbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "By counting the annual rings on a cut tree trunk, scientists can estimate the tree's:",
+      "options": {
+        "a": "Height",
+        "b": "Age",
+        "c": "Seed number",
+        "d": "Root depth"
+      },
+      "answer": "b",
+      "a": "Age",
+      "e": "Wide and narrow rings also reflect favourable and unfavourable growth conditions in a particular year.",
+      "table": null,
+      "qid": "biology-ch22-tissues-7",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The change of state from solid to liquid is called:",
+      "options": {
+        "a": "vaporisation",
+        "b": "sublimation",
+        "c": "melting",
+        "d": "condensation"
+      },
+      "answer": "c",
+      "a": "melting",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-42",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

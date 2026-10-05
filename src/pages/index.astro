@@ -15,7 +15,8 @@ const questionCountsBySubject = {};
 for (const [path, mod] of Object.entries(chapterFiles)) {
   const subjectKey = path.split('/').slice(-2, -1)[0];
   const items = Array.isArray(mod.default) ? mod.default : [mod.default];
-  const valid = items.filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber);
+  // General Science: only the 'All' sets are counted (the subject sets repeat the same questions).
+  const valid = items.filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber && !(subjectKey === 'general-science-en' && ch.section !== 'General Science'));
   countsBySubject[subjectKey] = (countsBySubject[subjectKey] || 0) + valid.length;
   const questionsInFile = valid.reduce((sum, ch) => sum + ch.faqs.length, 0);
   questionCountsBySubject[subjectKey] = (questionCountsBySubject[subjectKey] || 0) + questionsInFile;
@@ -26,6 +27,15 @@ for (const [path, mod] of Object.entries(chapterFiles)) {
 // `lang` (EN/TE — used to pair cards side-by-side within a category).
 // Neither field affects availability logic above.
 const SUBJECT_CONFIG = [
+  {
+    titleNative: 'General Science (Physics, Chemistry and Biology)',
+    titleEnglish: 'English Version',
+    slug: 'general-science-en',
+    icon: 'flask',
+    category: 'Science',
+    lang: 'EN',
+    popular: false,
+  },
   {
     titleNative: 'Telangana History',
     titleEnglish: 'English Version',
@@ -132,16 +142,19 @@ const iconMap = {
   book: 'ti-book',
   chart: 'ti-chart-bar',
   gavel: 'ti-gavel',
+  flask: 'ti-flask',
   file: 'ti-file-text',
 };
 const categoryColor = {
   History: 'amber',
   Economy: 'green',
   Polity: 'indigo',
+  Science: 'blue',
   Papers: 'blue',
 };
 
-const totalChapters = subjects.reduce((sum, s) => sum + s.chapterCount, 0);
+// General Science is made of sets, not chapters, so it is left out of the chapter total.
+const totalChapters = subjects.filter((s) => s.slug !== 'general-science-en').reduce((sum, s) => sum + s.chapterCount, 0);
 const totalQuestions = subjects.reduce((sum, s) => sum + s.questionCount, 0);
 
 // ============================================================
@@ -258,11 +271,11 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
                   <div>
                     <div class="subj-name">
                       {s.titleParts.length === 2
-                        ? <>{s.titleParts[0]}<br />{s.titleParts[1]}</>
+                        ? <>{s.titleParts[0]}{' '}<br />{s.titleParts[1]}</>
                         : s.titleNative}
                     </div>
                     <div class="subj-meta">
-                      {s.chapterCount} ch
+                      {s.chapterCount} {s.slug === 'general-science-en' ? 'sets' : 'ch'}
                       {s.questionCount > 0 && <> &middot; {s.questionCount.toLocaleString('en-IN')} MCQs</>}
                     </div>
                   </div>
@@ -635,7 +648,12 @@ const papers = PUBLIC_PAPERS.map(({ slug, icon }) => {
     }
 
     .subj-name { font-size: 0.9rem; font-weight: 700; color: var(--sh2-ink); line-height: 1.25; }
-    .subj-meta { font-size: 0.73rem; color: var(--sh2-text-soft); margin-top: 3px; }
+    /* General Science: full-width card on desktop, so keep the name on one line. */
+    @media (min-width: 641px) {
+      .subj-card[data-subject-slug="general-science-en"] .subj-name { min-height: 0; }
+      .subj-card[data-subject-slug="general-science-en"] .subj-name br { display: none; }
+    }
+    .subj-meta { font-size: 0.73rem; color: var(--sh2-text-soft); margin-top: 6px; }
 
     .subj-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 2px; }
     .price-tag {

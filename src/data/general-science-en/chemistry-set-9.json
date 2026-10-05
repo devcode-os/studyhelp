@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-chemistry-set-9",
+  "chapterNumber": 9,
+  "title": "Chemistry Set 9",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The method of arranging objects into groups on the basis of a common property is called:",
+      "options": {
+        "a": "Prediction",
+        "b": "Dissolution",
+        "c": "Observation",
+        "d": "Classification"
+      },
+      "answer": "d",
+      "a": "Classification",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Detergents are generally sodium salts of:",
+      "options": {
+        "a": "Sulphonic acids",
+        "b": "Mineral acids",
+        "c": "Fatty alcohols",
+        "d": "Carboxylic acids"
+      },
+      "answer": "a",
+      "a": "Sulphonic acids",
+      "e": "They can also be ammonium salts with chloride or bromide ions.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-84",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Substances whose odour changes in acidic or basic media are called:",
+      "options": {
+        "a": "Synthetic indicators",
+        "b": "Universal indicators",
+        "c": "Olfactory indicators",
+        "d": "Natural indicators"
+      },
+      "answer": "c",
+      "a": "Olfactory indicators",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "A homogeneous mixture of two or more metals, or a metal and a non-metal, is called:",
+      "options": {
+        "a": "Emulsion",
+        "b": "Alloy",
+        "c": "Colloid",
+        "d": "Suspension"
+      },
+      "answer": "b",
+      "a": "Alloy",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Rusting – Chemical change\n(II) Melting of ice – Physical change\n(III) Burning of magnesium – Physical change\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The reddish brown coating on iron articles is called:",
+      "options": {
+        "a": "Tarnish",
+        "b": "Verdigris",
+        "c": "Patina",
+        "d": "Rust"
+      },
+      "answer": "d",
+      "a": "Rust",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon monoxide contains carbon and oxygen in the mass ratio of 3:4. The mass of oxygen that combines with 6 g of carbon is:",
+      "options": {
+        "a": "6 g",
+        "b": "4.5 g",
+        "c": "12 g",
+        "d": "8 g"
+      },
+      "answer": "d",
+      "a": "8 g",
+      "e": "(4 ÷ 3) × 6 g = 8 g.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A metal block has a mass of 468 g and a density of 7.8 g/cm³. Its volume is:",
+      "options": {
+        "a": "460 cm³",
+        "b": "3650 cm³",
+        "c": "6 cm³",
+        "d": "60 cm³"
+      },
+      "answer": "d",
+      "a": "60 cm³",
+      "e": "Volume = mass ÷ density = 468 g ÷ 7.8 g/cm³ = 60 cm³.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-83",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "20 mL of a liquid pesticide is mixed with water to make 250 mL of spray. Its volume by volume percentage is:",
+      "options": {
+        "a": "12.5%",
+        "b": "20%",
+        "c": "0.8%",
+        "d": "8%"
+      },
+      "answer": "d",
+      "a": "8%",
+      "e": "(20 / 250) × 100 = 8%.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The gold generally used for making ornaments in India is:",
+      "options": {
+        "a": "18 carat",
+        "b": "20 carat",
+        "c": "22 carat",
+        "d": "24 carat"
+      },
+      "answer": "c",
+      "a": "22 carat",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-84",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The bond between the two oxygen atoms in an oxygen molecule is a:",
+      "options": {
+        "a": "Triple bond",
+        "b": "Ionic bond",
+        "c": "Single bond",
+        "d": "Double bond"
+      },
+      "answer": "d",
+      "a": "Double bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "One litre is equivalent to:",
+      "options": {
+        "a": "1 dm³",
+        "b": "10 dm³",
+        "c": "1 cm³",
+        "d": "1 m³"
+      },
+      "answer": "a",
+      "a": "1 dm³",
+      "e": "One millilitre is equivalent to 1 cm³.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-79",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Substances capable of adding oxygen to other substances are called:",
+      "options": {
+        "a": "Catalysts",
+        "b": "Oxidising agents",
+        "c": "Dehydrating agents",
+        "d": "Reducing agents"
+      },
+      "answer": "b",
+      "a": "Oxidising agents",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Each half reaction in a redox process explicitly shows the involvement of:",
+      "options": {
+        "a": "Electrons",
+        "b": "Protons",
+        "c": "Isotopes",
+        "d": "Neutrons"
+      },
+      "answer": "a",
+      "a": "Electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Dust particles suspended in air are considered:",
+      "options": {
+        "a": "Components of air",
+        "b": "Pollutants",
+        "c": "Compounds",
+        "d": "An integral part of air"
+      },
+      "answer": "b",
+      "a": "Pollutants",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Ionic compounds are generally insoluble in:",
+      "options": {
+        "a": "Water",
+        "b": "Salt solution",
+        "c": "Kerosene",
+        "d": "Lime water"
+      },
+      "answer": "c",
+      "a": "Kerosene",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of metals will melt if kept on the palm?",
+      "options": {
+        "a": "Lead and tin",
+        "b": "Gallium and caesium",
+        "c": "Sodium and potassium",
+        "d": "Mercury and zinc"
+      },
+      "answer": "b",
+      "a": "Gallium and caesium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The brown fumes emitted on heating lead nitrate are of:",
+      "options": {
+        "a": "Chlorine",
+        "b": "Bromine",
+        "c": "Sulphur dioxide",
+        "d": "Nitrogen dioxide"
+      },
+      "answer": "d",
+      "a": "Nitrogen dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Compared with covalent compounds, ionic compounds generally have:",
+      "options": {
+        "a": "Low melting and boiling points",
+        "b": "High melting but low boiling points",
+        "c": "Low melting but high boiling points",
+        "d": "High melting and boiling points"
+      },
+      "answer": "d",
+      "a": "High melting and boiling points",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Solder, used for welding electrical wires together, is an alloy of:",
+      "options": {
+        "a": "Copper and tin",
+        "b": "Iron and carbon",
+        "c": "Copper and zinc",
+        "d": "Lead and tin"
+      },
+      "answer": "d",
+      "a": "Lead and tin",
+      "e": "Solder has a low melting point. Some common alloys:",
+      "table": {
+        "headers": [
+          "Alloy",
+          "Constituents"
+        ],
+        "rows": [
+          [
+            "Brass",
+            "Copper and zinc"
+          ],
+          [
+            "Bronze",
+            "Copper and tin"
+          ],
+          [
+            "Solder",
+            "Lead and tin"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch18-metals-non-metals-78",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Soaps are sodium or potassium salts of:",
+      "options": {
+        "a": "Sulphonic acids",
+        "b": "Long-chain carboxylic acids",
+        "c": "Mineral acids",
+        "d": "Short-chain alcohols"
+      },
+      "answer": "b",
+      "a": "Long-chain carboxylic acids",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-75",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Fullerene was named after the US architect:",
+      "options": {
+        "a": "Buckminster Fuller",
+        "b": "Dmitri Mendeleev",
+        "c": "Michael Faraday",
+        "d": "Friedrich Wöhler"
+      },
+      "answer": "a",
+      "a": "Buckminster Fuller",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Successive members of a homologous series differ by a:",
+      "options": {
+        "a": "—CH₃ unit",
+        "b": "—CH— unit",
+        "c": "—CH₂— unit",
+        "d": "—C₂H₄— unit"
+      },
+      "answer": "c",
+      "a": "—CH₂— unit",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The hardest natural substance known is:",
+      "options": {
+        "a": "Graphite",
+        "b": "Iron",
+        "c": "Gold",
+        "d": "Diamond"
+      },
+      "answer": "d",
+      "a": "Diamond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The water in an earthen pot stays cool mainly because:",
+      "options": {
+        "a": "Clay absorbs heat from water",
+        "b": "Water vapour condenses on its outer surface",
+        "c": "Water seeping through the surface evaporates",
+        "d": "Ice forms inside the pot"
+      },
+      "answer": "c",
+      "a": "Water seeping through the surface evaporates",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sindhu-Sarasvatī (Harappan) Civilisation flourished during:",
+      "options": {
+        "a": "1500–500 BCE",
+        "b": "2600–1900 BCE",
+        "c": "2000–1000 BCE",
+        "d": "3300–1300 BCE"
+      },
+      "answer": "b",
+      "a": "2600–1900 BCE",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Calcium oxide reacts vigorously with water to form:",
+      "options": {
+        "a": "Calcium carbonate",
+        "b": "Calcium sulfate",
+        "c": "Calcium hydroxide",
+        "d": "Calcium chloride"
+      },
+      "answer": "c",
+      "a": "Calcium hydroxide",
+      "e": "The reaction releases heat.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Solids have definite volume and definite shape.\n(II) Liquids have definite volume but no definite shape.\n(III) Gases have definite volume but no definite shape.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Gases have neither definite volume nor definite shape.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium and potassium are kept immersed in:",
+      "options": {
+        "a": "Kerosene oil",
+        "b": "Dilute hydrochloric acid",
+        "c": "Lime water",
+        "d": "Water"
+      },
+      "answer": "a",
+      "a": "Kerosene oil",
+      "e": "They react so vigorously with oxygen that they catch fire if kept in the open.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Although iodine has a lower atomic weight than tellurium, Mendeleev placed iodine in:",
+      "options": {
+        "a": "Group VI",
+        "b": "Group V",
+        "c": "Group VII",
+        "d": "Group VIII"
+      },
+      "answer": "c",
+      "a": "Group VII",
+      "e": "Tellurium is in Group VI. Iodine was grouped with fluorine, chlorine and bromine because of similar properties.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    }
+  ]
+}

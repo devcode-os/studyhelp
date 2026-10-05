@@ -1,0 +1,545 @@
+{
+  "slug": "general-science-set-45",
+  "chapterNumber": 45,
+  "title": "General Science Set 45",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which non-metal is commonly used in water purification?",
+      "options": {
+        "a": "Iodine",
+        "b": "Nitrogen",
+        "c": "Oxygen",
+        "d": "Chlorine"
+      },
+      "answer": "d",
+      "a": "Chlorine",
+      "e": "Uses of some non-metals:",
+      "table": {
+        "headers": [
+          "Non-metal",
+          "Use"
+        ],
+        "rows": [
+          [
+            "Oxygen",
+            "Respiration"
+          ],
+          [
+            "Carbon",
+            "Building block of proteins, fats and carbohydrates"
+          ],
+          [
+            "Nitrogen",
+            "Manufacture of fertilisers"
+          ],
+          [
+            "Chlorine",
+            "Water purification"
+          ],
+          [
+            "Iodine",
+            "Antiseptic for wounds"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch18-metals-non-metals-87",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The velocity of a bus changes from 18 km h⁻¹ to 36 km h⁻¹ in 4 s. Its average acceleration is:",
+      "options": {
+        "a": "5.0 m s⁻²",
+        "b": "4.5 m s⁻²",
+        "c": "1.25 m s⁻²",
+        "d": "0.8 m s⁻²"
+      },
+      "answer": "c",
+      "a": "1.25 m s⁻²",
+      "e": "18 km h⁻¹ = 5 m s⁻¹ and 36 km h⁻¹ = 10 m s⁻¹. a = (10 − 5) ÷ 4 = 1.25 m s⁻².",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-33",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The major site for synthesis of lipid in the cell is:",
+      "options": {
+        "a": "Lysosome",
+        "b": "Rough endoplasmic reticulum",
+        "c": "Golgi apparatus",
+        "d": "Smooth endoplasmic reticulum"
+      },
+      "answer": "d",
+      "a": "Smooth endoplasmic reticulum",
+      "e": "In animal cells, steroidal hormones are synthesised here.",
+      "table": null,
+      "qid": "biology-ch21-cell-30",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The two sides of the 'U' of a tuning fork are called:",
+      "options": {
+        "a": "Prongs or tines",
+        "b": "Diaphragms",
+        "c": "Larynx",
+        "d": "Stems"
+      },
+      "answer": "a",
+      "a": "Prongs or tines",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-4",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Brass and bronze are good conductors of electricity.\n(II) Solder has a low melting point.\n(III) The melting point of an alloy is less than that of pure metals.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-82",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Yeast reproduces by putting out small buds that separate and grow further. This process is called:",
+      "options": {
+        "a": "Regeneration",
+        "b": "Budding",
+        "c": "Fragmentation",
+        "d": "Fission"
+      },
+      "answer": "b",
+      "a": "Budding",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-12",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The polar regions experience continuous sunshine for about:",
+      "options": {
+        "a": "One month",
+        "b": "Three months",
+        "c": "Twelve months",
+        "d": "Six months"
+      },
+      "answer": "d",
+      "a": "Six months",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-59",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The products of photosynthesis are:",
+      "options": {
+        "a": "Glucose and carbon dioxide",
+        "b": "Glucose and oxygen",
+        "c": "Carbon dioxide and water",
+        "d": "Starch and water"
+      },
+      "answer": "b",
+      "a": "Glucose and oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-50",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Oxidation and reduction always occur together in a chemical reaction.\nReason (R): The electrons lost by one species are gained by another species.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The angle between the direction of the incident ray and the direction of the emergent ray in a glass prism is called the angle of:",
+      "options": {
+        "a": "deviation",
+        "b": "refraction",
+        "c": "incidence",
+        "d": "emergence"
+      },
+      "answer": "a",
+      "a": "deviation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-74",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Hasuru Honnu, a book describing a botanical excursion in the forests of the Western Ghats, was written by:",
+      "options": {
+        "a": "B. G. L. Swamy",
+        "b": "F. C. Steward",
+        "c": "Sipra Guha Mukherjee",
+        "d": "S. C. Maheshwari"
+      },
+      "answer": "a",
+      "a": "B. G. L. Swamy",
+      "e": "It is written in Kannada and won the Kendra Sahitya Akademi Award in 1978.",
+      "table": null,
+      "qid": "biology-ch22-tissues-40",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following about a burning candle:\n(I) Melting of wax is a physical change.\n(II) Evaporation of wax is a physical change.\n(III) Burning of wax vapour is a chemical change.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The momentum of an object is the product of its:",
+      "options": {
+        "a": "force and time",
+        "b": "mass and acceleration",
+        "c": "force and velocity",
+        "d": "mass and velocity"
+      },
+      "answer": "d",
+      "a": "mass and velocity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-20",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Known as the 'Father of Modern Biogas', who established India's first scientifically designed biogas plant at Ramnagar, Sitapur, in 1957?",
+      "options": {
+        "a": "Ram Bux Singh",
+        "b": "Jagadish Chandra Bose",
+        "c": "Birbal Sahni",
+        "d": "Arun Kumar Sharma"
+      },
+      "answer": "a",
+      "a": "Ram Bux Singh",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-180",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Atoms with the same atomic number but different mass numbers are called:",
+      "options": {
+        "a": "Isobars",
+        "b": "Allotropes",
+        "c": "Nucleons",
+        "d": "Isotopes"
+      },
+      "answer": "d",
+      "a": "Isotopes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-52",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The correct decreasing order of reactivity of the following metals with dilute acids is:",
+      "options": {
+        "a": "Zn > Mg > Fe > Al",
+        "b": "Fe > Zn > Al > Mg",
+        "c": "Al > Mg > Zn > Fe",
+        "d": "Mg > Al > Zn > Fe"
+      },
+      "answer": "d",
+      "a": "Mg > Al > Zn > Fe",
+      "e": "Copper does not react with dilute hydrochloric acid.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the cells of meristematic tissue:\n(I) They have thin cell walls.\n(II) They have a large and prominent nucleus.\n(III) They have large vacuoles.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Vacuoles are generally absent, and the cells are tightly packed with dense cytoplasm.",
+      "table": null,
+      "qid": "biology-ch22-tissues-9",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements for motion in a straight line:\n(I) If the object moves without turning back, distance travelled equals the magnitude of displacement.\n(II) If the object moves in one direction, average speed equals the magnitude of average velocity.\n(III) If the object turns back, average speed equals the magnitude of average velocity.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-47",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The epithelium made of a single layer of thin, flat cells, found in blood vessels and lungs, helps in:",
+      "options": {
+        "a": "Absorption",
+        "b": "Protection",
+        "c": "Rapid exchange of liquids and gases",
+        "d": "Secretion"
+      },
+      "answer": "c",
+      "a": "Rapid exchange of liquids and gases",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-46",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) A transparent solution shows the Tyndall effect.\n(II) A colloid shows the Tyndall effect.\n(III) A suspension shows the Tyndall effect.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-69",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following requires both magnitude and direction for its description?",
+      "options": {
+        "a": "Average speed",
+        "b": "Displacement",
+        "c": "Time interval",
+        "d": "Distance"
+      },
+      "answer": "b",
+      "a": "Displacement",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-27",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A plant closes its stomatal pores when it does not need carbon dioxide, mainly to prevent loss of:",
+      "options": {
+        "a": "Minerals",
+        "b": "Nitrogen",
+        "c": "Water",
+        "d": "Oxygen"
+      },
+      "answer": "c",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-14",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Butter paper – Translucent\n(II) Cardboard – Opaque\n(III) Water – Opaque\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Neutron-scattering experiments using the Dhruva reactor are carried out at the:",
+      "options": {
+        "a": "ISRO",
+        "b": "TIFR",
+        "c": "IISc",
+        "d": "BARC"
+      },
+      "answer": "d",
+      "a": "BARC",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-71",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "In asexual reproduction, new individuals are:",
+      "options": {
+        "a": "exact copies of a single parent",
+        "b": "a mix of two parents",
+        "c": "produced only from seeds",
+        "d": "always larger than the parent"
+      },
+      "answer": "a",
+      "a": "exact copies of a single parent",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-23",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "A change in which no new substance is formed is called a:",
+      "options": {
+        "a": "Combustion",
+        "b": "Physical change",
+        "c": "Reaction",
+        "d": "Chemical change"
+      },
+      "answer": "b",
+      "a": "Physical change",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Magnets that occur naturally and were discovered in ancient times are called:",
+      "options": {
+        "a": "Ring magnets",
+        "b": "Disc magnets",
+        "c": "U-shaped magnets",
+        "d": "Lodestones"
+      },
+      "answer": "d",
+      "a": "Lodestones",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-1",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following are some of the longest cells?",
+      "options": {
+        "a": "Mesophyll cells",
+        "b": "Nerve cells",
+        "c": "White blood cells",
+        "d": "Red blood cells"
+      },
+      "answer": "b",
+      "a": "Nerve cells",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-80",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of plane mirror strips joined together in a kaleidoscope is:",
+      "options": {
+        "a": "four",
+        "b": "five",
+        "c": "two",
+        "d": "three"
+      },
+      "answer": "d",
+      "a": "three",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-10",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Plasma without the clotting factors is called:",
+      "options": {
+        "a": "Lymph",
+        "b": "Serum",
+        "c": "Fibrin",
+        "d": "Interstitial fluid"
+      },
+      "answer": "b",
+      "a": "Serum",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-36",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

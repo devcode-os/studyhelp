@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-44",
+  "chapterNumber": 44,
+  "title": "General Science Set 44",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A train moving at a speed of 20 m/s covers a distance of 144 km. The time taken is:",
+      "options": {
+        "a": "7.2 h",
+        "b": "2 h",
+        "c": "0.5 h",
+        "d": "20 h"
+      },
+      "answer": "b",
+      "a": "2 h",
+      "e": "144000 m / 20 m/s = 7200 s = 2 h.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-40",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A tetanus shot contains:",
+      "options": {
+        "a": "Antibiotic",
+        "b": "Weakened virus",
+        "c": "Inactivated bacterial toxin",
+        "d": "Live tetanus bacteria"
+      },
+      "answer": "c",
+      "a": "Inactivated bacterial toxin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-23",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "When a sulfur atom gains two electrons, the ion formed is represented as:",
+      "options": {
+        "a": "S²⁺",
+        "b": "S²⁻",
+        "c": "S⁺",
+        "d": "S⁻"
+      },
+      "answer": "b",
+      "a": "S²⁻",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The equivalent resistance of resistors of 2 Ω, 3 Ω and 5 Ω connected in series is:",
+      "options": {
+        "a": "0.97 Ω",
+        "b": "10 Ω",
+        "c": "30 Ω",
+        "d": "6 Ω"
+      },
+      "answer": "b",
+      "a": "10 Ω",
+      "e": "Rs = 2 Ω + 3 Ω + 5 Ω = 10 Ω.",
+      "table": null,
+      "qid": "physics-ch7-electricity-41",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Hibiscus – Reticulate venation\n(II) Banana – Parallel venation\n(III) Grass – Reticulate venation\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Grass has parallel venation.",
+      "table": null,
+      "qid": "biology-ch23-plants-8",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Gradual deterioration of metal surfaces caused by air, water or other substances is known as:",
+      "options": {
+        "a": "Anodising",
+        "b": "Galvanisation",
+        "c": "Calcination",
+        "d": "Corrosion"
+      },
+      "answer": "d",
+      "a": "Corrosion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-73",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The speed (v) of a sound wave in terms of its wavelength (λ) and frequency (ν) is:",
+      "options": {
+        "a": "v = ν/λ",
+        "b": "v = λ/ν",
+        "c": "v = λ + ν",
+        "d": "v = λν"
+      },
+      "answer": "d",
+      "a": "v = λν",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-28",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "When light falls on one side of a shoot, auxin diffuses towards the:",
+      "options": {
+        "a": "Illuminated side",
+        "b": "Root",
+        "c": "Shady side",
+        "d": "Leaf"
+      },
+      "answer": "c",
+      "a": "Shady side",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-20",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A car travels 150 km north in 2 h and then 150 km south in 3 h. The average speed and the magnitude of average velocity for the whole trip are:",
+      "options": {
+        "a": "30 km h⁻¹, 0",
+        "b": "60 km h⁻¹, 60 km h⁻¹",
+        "c": "0, 60 km h⁻¹",
+        "d": "60 km h⁻¹, 0"
+      },
+      "answer": "d",
+      "a": "60 km h⁻¹, 0",
+      "e": "Average speed = 300 km ÷ 5 h = 60 km h⁻¹. Net displacement is zero.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-29",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "On heating, ferrous sulphate crystals decompose to give ferric oxide, sulphur dioxide and:",
+      "options": {
+        "a": "Sulphur",
+        "b": "Sulphuric acid",
+        "c": "Hydrogen sulphide",
+        "d": "Sulphur trioxide"
+      },
+      "answer": "d",
+      "a": "Sulphur trioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "'Project Tiger' to protect the declining population of the Bengal Tiger was initiated in:",
+      "options": {
+        "a": "1983",
+        "b": "2022",
+        "c": "2005",
+        "d": "1973"
+      },
+      "answer": "d",
+      "a": "1973",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-35",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The period of the function f(t) = A cos ωt is:",
+      "options": {
+        "a": "2π/ω",
+        "b": "2πω",
+        "c": "ω/2π",
+        "d": "πω"
+      },
+      "answer": "a",
+      "a": "2π/ω",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-10",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "When non-metals react with metals, they form:",
+      "options": {
+        "a": "Positively charged ions",
+        "b": "Neutral molecules",
+        "c": "Hydrides",
+        "d": "Negatively charged ions"
+      },
+      "answer": "d",
+      "a": "Negatively charged ions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The beginning of pregnancy is marked by:",
+      "options": {
+        "a": "Fertilisation",
+        "b": "Menstruation",
+        "c": "Ovulation",
+        "d": "Implantation"
+      },
+      "answer": "d",
+      "a": "Implantation",
+      "e": "The zygote implants into the inner lining of the uterus after a series of mitotic divisions.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-77",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "A small source producing sound in all directions in an unconfined medium sends out:",
+      "options": {
+        "a": "Plane waves",
+        "b": "Transverse waves",
+        "c": "Spherical waves",
+        "d": "Cylindrical waves"
+      },
+      "answer": "c",
+      "a": "Spherical waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-17",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The increase in girth of a stem is due to the activity of:",
+      "options": {
+        "a": "Epidermis",
+        "b": "Intercalary meristem",
+        "c": "Apical meristem",
+        "d": "Lateral meristem"
+      },
+      "answer": "d",
+      "a": "Lateral meristem",
+      "e": "Its cells are arranged in a ring in the stem and divide to add new cells inside and outside.",
+      "table": null,
+      "qid": "biology-ch22-tissues-5",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Turmeric paper cannot differentiate between:",
+      "options": {
+        "a": "Basic and neutral substances",
+        "b": "Acidic and basic substances",
+        "c": "Strong and weak acids",
+        "d": "Acidic and neutral substances"
+      },
+      "answer": "d",
+      "a": "Acidic and neutral substances",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "A girl carries a box while walking horizontally. The work done by the upward force she applies on the box is:",
+      "options": {
+        "a": "equal to weight × distance walked",
+        "b": "positive",
+        "c": "negative",
+        "d": "zero"
+      },
+      "answer": "d",
+      "a": "zero",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-5",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Ozone at higher levels of the atmosphere is formed by the action of ultraviolet radiation on:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Water vapour",
+        "c": "Molecular oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Molecular oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-14",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The currently accepted value of G is:",
+      "options": {
+        "a": "9.8 × 10⁻¹¹ N m² kg⁻²",
+        "b": "6.67 × 10⁻¹¹ N m² kg⁻²",
+        "c": "6.67 × 10⁻¹¹ N m kg⁻²",
+        "d": "6.67 × 10¹¹ N m² kg⁻²"
+      },
+      "answer": "b",
+      "a": "6.67 × 10⁻¹¹ N m² kg⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-9",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Metal oxides that react with both acids and bases to produce salts and water are called:",
+      "options": {
+        "a": "Acidic oxides",
+        "b": "Neutral oxides",
+        "c": "Amphoteric oxides",
+        "d": "Basic oxides"
+      },
+      "answer": "c",
+      "a": "Amphoteric oxides",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants that creep along the ground are called:",
+      "options": {
+        "a": "Herbs",
+        "b": "Creepers",
+        "c": "Shrubs",
+        "d": "Climbers"
+      },
+      "answer": "b",
+      "a": "Creepers",
+      "e": "Plants with weak stems that need support to grow upward are called climbers.",
+      "table": null,
+      "qid": "biology-ch23-plants-5",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The limiting speed beyond which steady flow becomes turbulent is called:",
+      "options": {
+        "a": "average speed",
+        "b": "speed of efflux",
+        "c": "critical speed",
+        "d": "terminal speed"
+      },
+      "answer": "c",
+      "a": "critical speed",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-76",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Cations and anions are collectively called:",
+      "options": {
+        "a": "Compounds",
+        "b": "Isotopes",
+        "c": "Ions",
+        "d": "Molecules"
+      },
+      "answer": "c",
+      "a": "Ions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The plant group called the 'amphibians' of the plant kingdom is:",
+      "options": {
+        "a": "Gymnosperms",
+        "b": "Pteridophyta",
+        "c": "Thallophyta",
+        "d": "Bryophyta"
+      },
+      "answer": "d",
+      "a": "Bryophyta",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-137",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) During the day, land gets heated faster than water.\n(II) A sea breeze blows from the sea to the land during the day.\n(III) A land breeze blows from the sea to the land at night.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "A land breeze blows from the land to the sea at night.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-68",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Amoeba – Binary fission\n(II) Plasmodium – Multiple fission\n(III) Yeast – Fragmentation\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-21",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The first scientist to consider the idea of trends among properties of elements was:",
+      "options": {
+        "a": "Mendeleev",
+        "b": "Dobereiner",
+        "c": "Newlands",
+        "d": "de Chancourtois"
+      },
+      "answer": "b",
+      "a": "Dobereiner",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A fixed object or point with respect to which distance or position is stated is called:",
+      "options": {
+        "a": "reference point",
+        "b": "origin of motion",
+        "c": "extreme position",
+        "d": "mean position"
+      },
+      "answer": "a",
+      "a": "reference point",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-30",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Biodegradable sanitary pads are provided at affordable prices through Jan Aushadhi Kendras under the:",
+      "options": {
+        "a": "Rashtriya Kishor Swasthya Karyakram",
+        "b": "Menstrual Hygiene Scheme",
+        "c": "Suvidha Sanitary Napkin Initiative",
+        "d": "Shuchi Scheme"
+      },
+      "answer": "c",
+      "a": "Suvidha Sanitary Napkin Initiative",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-88",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

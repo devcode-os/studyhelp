@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-12",
+  "chapterNumber": 12,
+  "title": "Physics Set 12",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The escape speed from the surface of the Earth is approximately:",
+      "options": {
+        "a": "11.2 km s⁻¹",
+        "b": "2.3 km s⁻¹",
+        "c": "22.4 km s⁻¹",
+        "d": "5.6 km s⁻¹"
+      },
+      "answer": "a",
+      "a": "11.2 km s⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-16",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about a uniform metallic conductor:\n(I) Its resistance is directly proportional to its length.\n(II) Its resistance is inversely proportional to its area of cross-section.\n(III) Its resistance does not depend on the nature of its material.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-32",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "On a balanced seesaw, a 20 kg child sits 1.5 m from the fulcrum. A 30 kg child on the other side must sit at a distance of:",
+      "options": {
+        "a": "1.0 m",
+        "b": "1.5 m",
+        "c": "2.25 m",
+        "d": "0.5 m"
+      },
+      "answer": "a",
+      "a": "1.0 m",
+      "e": "20 kg × 1.5 m = 30 kg × L gives L = 1.0 m.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-46",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The suggestion that a magnet exerts an equal and opposite force on a current-carrying conductor was made by:",
+      "options": {
+        "a": "Andre-Marie Ampere",
+        "b": "Hans Christian Oersted",
+        "c": "Georg Simon Ohm",
+        "d": "Alessandro Volta"
+      },
+      "answer": "a",
+      "a": "Andre-Marie Ampere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-34",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Friction arises mainly due to:",
+      "options": {
+        "a": "minute irregularities in the surfaces in contact",
+        "b": "gravitational pull",
+        "c": "electrostatic repulsion",
+        "d": "air pressure"
+      },
+      "answer": "a",
+      "a": "minute irregularities in the surfaces in contact",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-24",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The normal temperature of a healthy human adult is taken to be:",
+      "options": {
+        "a": "37.0 °C",
+        "b": "39.0 °C",
+        "c": "35.0 °C",
+        "d": "42.0 °C"
+      },
+      "answer": "a",
+      "a": "37.0 °C",
+      "e": "Human body temperature does not normally go below 35 °C or above 42 °C.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-8",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "For a ray of light passing through a rectangular glass slab, the emergent ray is:",
+      "options": {
+        "a": "parallel to the incident ray",
+        "b": "bent towards the normal",
+        "c": "perpendicular to the incident ray",
+        "d": "absorbed by the slab"
+      },
+      "answer": "a",
+      "a": "parallel to the incident ray",
+      "e": "The ray is slightly shifted sideways.",
+      "table": null,
+      "qid": "physics-ch5-light-40",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The sound energy passing per unit time through a unit area perpendicular to the direction of propagation is called:",
+      "options": {
+        "a": "Timbre",
+        "b": "Intensity",
+        "c": "Loudness",
+        "d": "Pitch"
+      },
+      "answer": "b",
+      "a": "Intensity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-27",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In a series combination, the total potential difference equals the sum of the potential differences across the individual resistors.\n(II) In a parallel combination, the total current equals the sum of the currents through the separate branches.\n(III) In a parallel combination, the potential difference across each resistor is different.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-42",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The Big Dipper lies in the constellation:",
+      "options": {
+        "a": "Ursa Major",
+        "b": "Orion",
+        "c": "Taurus",
+        "d": "Ursa Minor"
+      },
+      "answer": "a",
+      "a": "Ursa Major",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-30",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In a transverse wave, the particles of the medium vibrate:",
+      "options": {
+        "a": "Perpendicular to the direction of propagation",
+        "b": "Along circular paths only",
+        "c": "Parallel to the direction of propagation",
+        "d": "Not at all"
+      },
+      "answer": "a",
+      "a": "Perpendicular to the direction of propagation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-12",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The Swiss physicist Daniel Bernoulli developed his relation in the year:",
+      "options": {
+        "a": "1623",
+        "b": "1738",
+        "c": "1608",
+        "d": "1687"
+      },
+      "answer": "b",
+      "a": "1738",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-77",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Venus – Evening Star\n(II) Mars – Red Planet\n(III) Mercury – Blue Planet\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "The Earth is the Blue Planet.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-39",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Humans perceive the amplitude of a sound wave as:",
+      "options": {
+        "a": "Pitch",
+        "b": "Timbre",
+        "c": "Wavelength",
+        "d": "Loudness"
+      },
+      "answer": "d",
+      "a": "Loudness",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-37",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The Voltaic cell is also known as the:",
+      "options": {
+        "a": "Lemon cell",
+        "b": "Galvanic cell",
+        "c": "Dry cell",
+        "d": "Rechargeable cell"
+      },
+      "answer": "b",
+      "a": "Galvanic cell",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-72",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The excess of pressure at a point inside a liquid over atmospheric pressure is called:",
+      "options": {
+        "a": "relative density",
+        "b": "gauge pressure",
+        "c": "absolute pressure",
+        "d": "hydrostatic paradox"
+      },
+      "answer": "b",
+      "a": "gauge pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-60",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The resistivity of an alloy, compared to that of its constituent metals, is generally:",
+      "options": {
+        "a": "Higher",
+        "b": "Equal",
+        "c": "Zero",
+        "d": "Lower"
+      },
+      "answer": "a",
+      "a": "Higher",
+      "e": "Alloys also do not oxidise readily at high temperatures, hence they are used in electric irons and toasters.",
+      "table": null,
+      "qid": "physics-ch7-electricity-35",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A straight-line velocity-time graph parallel to the time axis indicates:",
+      "options": {
+        "a": "increasing velocity",
+        "b": "constant velocity and zero acceleration",
+        "c": "constant acceleration",
+        "d": "zero velocity"
+      },
+      "answer": "b",
+      "a": "constant velocity and zero acceleration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-40",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the law of areas, a planet moves slowest when it is:",
+      "options": {
+        "a": "Farthest from the Sun",
+        "b": "Nearest to the Sun",
+        "c": "At the end of the semi-minor axis",
+        "d": "At the centre of its orbit"
+      },
+      "answer": "a",
+      "a": "Farthest from the Sun",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-4",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The smallest interval of time after which a periodic motion is repeated is called its:",
+      "options": {
+        "a": "Phase",
+        "b": "Period",
+        "c": "Frequency",
+        "d": "Amplitude"
+      },
+      "answer": "b",
+      "a": "Period",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-3",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A sound wave of larger amplitude carries:",
+      "options": {
+        "a": "Less energy",
+        "b": "More energy",
+        "c": "The same energy",
+        "d": "No energy"
+      },
+      "answer": "b",
+      "a": "More energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-26",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The material through which sound propagates is called:",
+      "options": {
+        "a": "Vacuum",
+        "b": "Source",
+        "c": "Diaphragm",
+        "d": "Medium"
+      },
+      "answer": "d",
+      "a": "Medium",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-6",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Myopia is corrected by using a:",
+      "options": {
+        "a": "concave mirror",
+        "b": "concave lens",
+        "c": "convex lens",
+        "d": "plane mirror"
+      },
+      "answer": "b",
+      "a": "concave lens",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-69",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The dynamic lift on a spinning ball moving through air is called:",
+      "options": {
+        "a": "Magnus effect",
+        "b": "hydrostatic effect",
+        "c": "Stokes effect",
+        "d": "capillary effect"
+      },
+      "answer": "a",
+      "a": "Magnus effect",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-81",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "One volt is equal to:",
+      "options": {
+        "a": "1 W A",
+        "b": "1 C J⁻¹",
+        "c": "1 J C⁻¹",
+        "d": "1 A s"
+      },
+      "answer": "c",
+      "a": "1 J C⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-12",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1934, K. R. Ramanathan measured ozone levels in the Himalayas at an altitude of:",
+      "options": {
+        "a": "12,000 feet",
+        "b": "8,000 feet",
+        "c": "28,000 feet",
+        "d": "18,000 feet"
+      },
+      "answer": "d",
+      "a": "18,000 feet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-127",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A combination of two simple harmonic motions with arbitrary amplitudes and phases is periodic only if:",
+      "options": {
+        "a": "Their phases are equal",
+        "b": "The frequency of one is an integral multiple of the other's",
+        "c": "Their periods are unequal",
+        "d": "Their amplitudes are equal"
+      },
+      "answer": "b",
+      "a": "The frequency of one is an integral multiple of the other's",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-45",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The laws of reflection are valid for which of the following mirrors?",
+      "options": {
+        "a": "Only plane mirrors",
+        "b": "Plane, concave and convex mirrors",
+        "c": "Only concave mirrors",
+        "d": "Only convex mirrors"
+      },
+      "answer": "b",
+      "a": "Plane, concave and convex mirrors",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-15",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "When a bar magnet is placed over iron filings, the maximum number of filings stick near its:",
+      "options": {
+        "a": "Sides",
+        "b": "Centre line",
+        "c": "Middle",
+        "d": "Poles"
+      },
+      "answer": "d",
+      "a": "Poles",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-4",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The oil drop experiment devised by R. A. Millikan was used to determine the:",
+      "options": {
+        "a": "Size of the nucleus",
+        "b": "Charge on the electron",
+        "c": "Mass of the proton",
+        "d": "Charge to mass ratio of the electron"
+      },
+      "answer": "b",
+      "a": "Charge on the electron",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-10",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    }
+  ]
+}

@@ -1,0 +1,579 @@
+{
+  "slug": "general-science-set-28",
+  "chapterNumber": 28,
+  "title": "General Science Set 28",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A hearing aid consists of:",
+      "options": {
+        "a": "A microphone, a tuning fork and a lens",
+        "b": "A diaphragm, a prism and a speaker",
+        "c": "A microphone, an amplifier and a speaker",
+        "d": "A speaker, a lens and a battery only"
+      },
+      "answer": "c",
+      "a": "A microphone, an amplifier and a speaker",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-46",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The fleshy stems of desert plants help them tolerate hot conditions by:",
+      "options": {
+        "a": "Letting snow slide off",
+        "b": "Floating on water",
+        "c": "Reducing wind damage",
+        "d": "Storing water"
+      },
+      "answer": "d",
+      "a": "Storing water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-24",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a pure substance?",
+      "options": {
+        "a": "Air",
+        "b": "Sugar solution in water",
+        "c": "Tea",
+        "d": "Glucose"
+      },
+      "answer": "d",
+      "a": "Glucose",
+      "e": "Glucose contains carbon, hydrogen and oxygen in a fixed ratio, and they cannot be separated by simple physical methods.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The phases of the Moon are caused by:",
+      "options": {
+        "a": "The changing fraction of its illuminated half visible from the Earth",
+        "b": "The Moon's own changing brightness",
+        "c": "The Earth's shadow falling on the Moon",
+        "d": "The Moon's rotation about its axis"
+      },
+      "answer": "a",
+      "a": "The changing fraction of its illuminated half visible from the Earth",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-71",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which gamete is actively motile and has no stored nutrients?",
+      "options": {
+        "a": "Zygote",
+        "b": "Spore",
+        "c": "Sperm",
+        "d": "Egg"
+      },
+      "answer": "c",
+      "a": "Sperm",
+      "e": "",
+      "table": {
+        "headers": [
+          "Feature",
+          "Sperm",
+          "Egg"
+        ],
+        "rows": [
+          [
+            "Size",
+            "Very small",
+            "Large"
+          ],
+          [
+            "Number produced",
+            "Millions",
+            "Few"
+          ],
+          [
+            "Stored nutrients",
+            "Absent",
+            "Present"
+          ],
+          [
+            "Motility",
+            "Actively motile",
+            "Non-motile"
+          ]
+        ]
+      },
+      "qid": "biology-ch27-reproduction-37",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The relationship between the current in a metallic wire and the potential difference across its terminals was found in 1827 by:",
+      "options": {
+        "a": "Andre-Marie Ampere",
+        "b": "Georg Simon Ohm",
+        "c": "Alessandro Volta",
+        "d": "Hans Christian Oersted"
+      },
+      "answer": "b",
+      "a": "Georg Simon Ohm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-26",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "When sodium sulfate solution is mixed with barium chloride solution, the white precipitate formed is:",
+      "options": {
+        "a": "Sodium sulfite",
+        "b": "Sodium chloride",
+        "c": "Barium oxide",
+        "d": "Barium sulfate"
+      },
+      "answer": "d",
+      "a": "Barium sulfate",
+      "e": "Sodium chloride is the other product.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of formation of gametes is called:",
+      "options": {
+        "a": "Fertilisation",
+        "b": "Gametogenesis",
+        "c": "Germination",
+        "d": "Implantation"
+      },
+      "answer": "b",
+      "a": "Gametogenesis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-66",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "A lightning conductor protects a building by:",
+      "options": {
+        "a": "storing charges",
+        "b": "repelling charges",
+        "c": "cooling the air",
+        "d": "providing an easy path for charges to the ground"
+      },
+      "answer": "d",
+      "a": "providing an easy path for charges to the ground",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-103",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The spinal cord is protected by the:",
+      "options": {
+        "a": "Skull",
+        "b": "Vertebral column",
+        "c": "Rib cage",
+        "d": "Pericardium"
+      },
+      "answer": "b",
+      "a": "Vertebral column",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-11",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "An oxidising agent is a species that is:",
+      "options": {
+        "a": "An acceptor of electrons",
+        "b": "A donor of protons",
+        "c": "An acceptor of protons",
+        "d": "A donor of electrons"
+      },
+      "answer": "a",
+      "a": "An acceptor of electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The indivisible particles proposed by Acharya Kanada are called:",
+      "options": {
+        "a": "Parmanus",
+        "b": "Triads",
+        "c": "Dyads",
+        "d": "Atomos"
+      },
+      "answer": "a",
+      "a": "Parmanus",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-1",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Spraying kerosene oil on stagnant water kills mosquito larvae and pupae by cutting off their:",
+      "options": {
+        "a": "Air supply",
+        "b": "Sunlight",
+        "c": "Water",
+        "d": "Food supply"
+      },
+      "answer": "a",
+      "a": "Air supply",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-103",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Our body works within the pH range of:",
+      "options": {
+        "a": "6.0 to 6.8",
+        "b": "5.0 to 5.8",
+        "c": "7.8 to 8.6",
+        "d": "7.0 to 7.8"
+      },
+      "answer": "d",
+      "a": "7.0 to 7.8",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Compared to a thin wire, a thicker wire of the same material and the same length offers:",
+      "options": {
+        "a": "Zero resistance",
+        "b": "Less resistance",
+        "c": "More resistance",
+        "d": "The same resistance"
+      },
+      "answer": "b",
+      "a": "Less resistance",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-48",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas released during photosynthesis, which makes a lit matchstick burn with an intense flame, is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Nitrogen",
+        "c": "Hydrogen",
+        "d": "Oxygen"
+      },
+      "answer": "d",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-49",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The shiny finish on whitewashed walls is due to the formation of:",
+      "options": {
+        "a": "Calcium oxide",
+        "b": "Calcium hydroxide",
+        "c": "Calcium sulphate",
+        "d": "Calcium carbonate"
+      },
+      "answer": "d",
+      "a": "Calcium carbonate",
+      "e": "Calcium hydroxide reacts slowly with carbon dioxide in air. The chemical formula for marble is also CaCO₃.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of work and energy is named after:",
+      "options": {
+        "a": "James Prescott Joule",
+        "b": "Isaac Newton",
+        "c": "Galileo Galilei",
+        "d": "James Watt"
+      },
+      "answer": "a",
+      "a": "James Prescott Joule",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-11",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The longest part of the alimentary canal is the:",
+      "options": {
+        "a": "Oesophagus",
+        "b": "Large intestine",
+        "c": "Small intestine",
+        "d": "Stomach"
+      },
+      "answer": "c",
+      "a": "Small intestine",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-30",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The colour of the clear sky is blue because the fine particles in the atmosphere scatter:",
+      "options": {
+        "a": "red light more strongly than blue",
+        "b": "all colours equally",
+        "c": "only violet light",
+        "d": "blue light more strongly than red"
+      },
+      "answer": "d",
+      "a": "blue light more strongly than red",
+      "e": "Shorter wavelengths are scattered more.",
+      "table": null,
+      "qid": "physics-ch5-light-82",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The leaves fold when touched in:",
+      "options": {
+        "a": "Touch-me-not",
+        "b": "Pine",
+        "c": "Spirogyra",
+        "d": "Fern"
+      },
+      "answer": "a",
+      "a": "Touch-me-not",
+      "e": "It is also called mimosa, chhui-mui or lajjalu.",
+      "table": null,
+      "qid": "biology-ch21-cell-97",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "White silver chloride turns grey in sunlight due to the formation of:",
+      "options": {
+        "a": "Silver oxide",
+        "b": "Silver metal",
+        "c": "Silver nitrate",
+        "d": "Silver sulphide"
+      },
+      "answer": "b",
+      "a": "Silver metal",
+      "e": "Silver bromide behaves in the same way. These reactions are used in black and white photography.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The bending of light around a very small opaque object is called:",
+      "options": {
+        "a": "dispersion",
+        "b": "refraction",
+        "c": "diffraction",
+        "d": "reflection"
+      },
+      "answer": "c",
+      "a": "diffraction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-16",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Bio-catalysts used to break down complex substances into simpler ones are called:",
+      "options": {
+        "a": "Pigments",
+        "b": "Vitamins",
+        "c": "Enzymes",
+        "d": "Hormones"
+      },
+      "answer": "c",
+      "a": "Enzymes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-6",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Calcium starts floating on water because:",
+      "options": {
+        "a": "Oxygen bubbles stick to its surface",
+        "b": "It becomes lighter on melting",
+        "c": "Hydrogen bubbles stick to its surface",
+        "d": "Heat evolved lifts it"
+      },
+      "answer": "c",
+      "a": "Hydrogen bubbles stick to its surface",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "When Venus passes between the Sun and the Earth, the event is called:",
+      "options": {
+        "a": "Transit of Venus",
+        "b": "Lunar eclipse",
+        "c": "Solar eclipse",
+        "d": "Equinox"
+      },
+      "answer": "a",
+      "a": "Transit of Venus",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-65",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The epithelial tissue made of a single layer of tall, pillar-like cells, specialised for absorption, lines the:",
+      "options": {
+        "a": "Small intestine",
+        "b": "Inner ear",
+        "c": "Blood vessels",
+        "d": "Salivary glands"
+      },
+      "answer": "a",
+      "a": "Small intestine",
+      "e": "Epithelial tissues differ in structure according to their function.",
+      "table": {
+        "headers": [
+          "Function",
+          "Structure",
+          "Location in the body"
+        ],
+        "rows": [
+          [
+            "Exchange",
+            "Single layer of thin, flat cells",
+            "Lining of blood vessels and lungs"
+          ],
+          [
+            "Protection",
+            "Many layers of cells; outer cells flat and tightly packed",
+            "Skin, mouth and oesophagus"
+          ],
+          [
+            "Secretion",
+            "Cuboidal or columnar cells specialised for producing and releasing substances",
+            "Salivary glands, sweat glands and stomach lining"
+          ],
+          [
+            "Sensory functions",
+            "Specialised receptor cells having hair-like cilia",
+            "Nostrils, taste buds and inner ear"
+          ],
+          [
+            "Absorption",
+            "Single layer of tall, pillar-like cells, often with hair-like structure",
+            "Lining of small intestine"
+          ]
+        ]
+      },
+      "qid": "biology-ch22-tissues-45",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The period number of an element corresponds to its highest:",
+      "options": {
+        "a": "Principal quantum number (n)",
+        "b": "Number of neutrons",
+        "c": "Number of valence electrons",
+        "d": "Atomic mass"
+      },
+      "answer": "a",
+      "a": "Principal quantum number (n)",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The form of energy proposed to explain the accelerating expansion of the Universe is:",
+      "options": {
+        "a": "chemical energy",
+        "b": "nuclear energy",
+        "c": "dark energy",
+        "d": "sound energy"
+      },
+      "answer": "c",
+      "a": "dark energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-20",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The average life span of RBCs is:",
+      "options": {
+        "a": "30 days",
+        "b": "60 days",
+        "c": "120 days",
+        "d": "90 days"
+      },
+      "answer": "c",
+      "a": "120 days",
+      "e": "In adults, RBCs are formed in the red bone marrow.",
+      "table": null,
+      "qid": "biology-ch24-human-body-39",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

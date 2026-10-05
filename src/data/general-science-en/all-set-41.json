@@ -1,0 +1,553 @@
+{
+  "slug": "general-science-set-41",
+  "chapterNumber": 41,
+  "title": "General Science Set 41",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Among the following metals, the highest thermal conductivity is that of:",
+      "options": {
+        "a": "aluminium",
+        "b": "silver",
+        "c": "copper",
+        "d": "brass"
+      },
+      "answer": "b",
+      "a": "silver",
+      "e": "",
+      "table": {
+        "headers": [
+          "Metal",
+          "Thermal conductivity (J s⁻¹ m⁻¹ K⁻¹)"
+        ],
+        "rows": [
+          [
+            "Silver",
+            "406"
+          ],
+          [
+            "Copper",
+            "385"
+          ],
+          [
+            "Aluminium",
+            "205"
+          ],
+          [
+            "Brass",
+            "109"
+          ],
+          [
+            "Steel",
+            "50.2"
+          ],
+          [
+            "Lead",
+            "34.7"
+          ],
+          [
+            "Mercury",
+            "8.3"
+          ]
+        ]
+      },
+      "qid": "physics-ch4-heat-and-temperature-63",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following diseases is caused by bacteria?",
+      "options": {
+        "a": "Mumps",
+        "b": "Wheat rust",
+        "c": "Malaria",
+        "d": "Cholera"
+      },
+      "answer": "d",
+      "a": "Cholera",
+      "e": "Typhoid, tetanus and citrus canker are also bacterial diseases.",
+      "table": null,
+      "qid": "biology-ch21-cell-118",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Dalton, during a chemical reaction atoms are merely:",
+      "options": {
+        "a": "Created",
+        "b": "Converted into other elements",
+        "c": "Destroyed",
+        "d": "Rearranged"
+      },
+      "answer": "d",
+      "a": "Rearranged",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of electrical resistivity is:",
+      "options": {
+        "a": "Ω m",
+        "b": "Ω m⁻¹",
+        "c": "Ω m²",
+        "d": "Ω"
+      },
+      "answer": "a",
+      "a": "Ω m",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-33",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Petrol, diesel and kerosene are obtained from:",
+      "options": {
+        "a": "Natural gas",
+        "b": "Coal",
+        "c": "Petroleum",
+        "d": "Minerals"
+      },
+      "answer": "c",
+      "a": "Petroleum",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-33",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum amount of solute that dissolves in a fixed quantity of solvent at a particular temperature is called its:",
+      "options": {
+        "a": "Concentration",
+        "b": "Dilution",
+        "c": "Solubility",
+        "d": "Saturation"
+      },
+      "answer": "c",
+      "a": "Solubility",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The flow of cooler air from the valley up the warm mountain slopes during the day is called:",
+      "options": {
+        "a": "Land breeze",
+        "b": "Sea breeze",
+        "c": "Valley breeze",
+        "d": "Mountain breeze"
+      },
+      "answer": "c",
+      "a": "Valley breeze",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-110",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "An open circulatory system is present in:",
+      "options": {
+        "a": "Chordates",
+        "b": "Arthropods",
+        "c": "Annelids",
+        "d": "Mammals"
+      },
+      "answer": "b",
+      "a": "Arthropods",
+      "e": "Molluscs also have an open system; annelids and chordates have a closed system.",
+      "table": null,
+      "qid": "biology-ch24-human-body-55",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Mendeleev and Lothar Meyer, working independently, proposed in 1869 that similarities in properties appear at regular intervals when elements are arranged in increasing atomic weights.\n(II) Lothar Meyer's work was published before the work of Mendeleev.\n(III) Mendeleev is generally credited with the development of the Modern Periodic Table.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The ozone layer in the upper atmosphere mostly absorbs:",
+      "options": {
+        "a": "Radio waves",
+        "b": "Infrared radiation",
+        "c": "Visible light",
+        "d": "Short wavelength UV radiation"
+      },
+      "answer": "d",
+      "a": "Short wavelength UV radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-96",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The connective tissue with a soft, jelly-like matrix that provides flexibility and cushions the ends of bones is:",
+      "options": {
+        "a": "Cartilage",
+        "b": "Tendon",
+        "c": "Ligament",
+        "d": "Bone"
+      },
+      "answer": "a",
+      "a": "Cartilage",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-54",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an inclusion body in prokaryotic cells?",
+      "options": {
+        "a": "Plasmid",
+        "b": "Pilus",
+        "c": "Mesosome",
+        "d": "Glycogen granules"
+      },
+      "answer": "d",
+      "a": "Glycogen granules",
+      "e": "Inclusion bodies are not membrane bound; phosphate and cyanophycean granules are other examples.",
+      "table": null,
+      "qid": "biology-ch21-cell-72",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Infrasonic waves are used for detecting:",
+      "options": {
+        "a": "Kidney stones",
+        "b": "Defects inside metal blocks",
+        "c": "Dirt on delicate machine parts",
+        "d": "Earthquakes and volcanic eruptions"
+      },
+      "answer": "d",
+      "a": "Earthquakes and volcanic eruptions",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-58",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The molar mass of sodium chloride is:",
+      "options": {
+        "a": "35.5 g mol⁻¹",
+        "b": "58.5 g mol⁻¹",
+        "c": "18.02 g mol⁻¹",
+        "d": "23.0 g mol⁻¹"
+      },
+      "answer": "b",
+      "a": "58.5 g mol⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-103",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The Paris Agreement set a goal to limit global warming to below:",
+      "options": {
+        "a": "1 °C",
+        "b": "2.5 °C",
+        "c": "1.5 °C",
+        "d": "3 °C"
+      },
+      "answer": "c",
+      "a": "1.5 °C",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-36",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Atmospheric oxygen is mainly restored through:",
+      "options": {
+        "a": "Combustion",
+        "b": "Respiration",
+        "c": "Photosynthesis",
+        "d": "Decomposition"
+      },
+      "answer": "c",
+      "a": "Photosynthesis",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-122",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Baking powder is a mixture of baking soda and:",
+      "options": {
+        "a": "Acetic acid",
+        "b": "Tartaric acid",
+        "c": "Lactic acid",
+        "d": "Citric acid"
+      },
+      "answer": "b",
+      "a": "Tartaric acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The outermost layer of the bacterial cell envelope is the:",
+      "options": {
+        "a": "Glycocalyx",
+        "b": "Plasma membrane",
+        "c": "Mesosome",
+        "d": "Cell wall"
+      },
+      "answer": "a",
+      "a": "Glycocalyx",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-69",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Photosynthesis and respiration form part of the carbon cycle that operates over a time scale of:",
+      "options": {
+        "a": "Millions of years",
+        "b": "Hours to days",
+        "c": "Days to years",
+        "d": "Several centuries"
+      },
+      "answer": "c",
+      "a": "Days to years",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-114",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The difference in molecular mass between ethane (C₂H₆) and propane (C₃H₈), taking atomic masses of C = 12 u and H = 1 u, is:",
+      "options": {
+        "a": "12 u",
+        "b": "16 u",
+        "c": "2 u",
+        "d": "14 u"
+      },
+      "answer": "d",
+      "a": "14 u",
+      "e": "Ethane = 30 u, propane = 44 u; 44 − 30 = 14 u.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In artificial hybridisation, flowers are covered by bagging to prevent:",
+      "options": {
+        "a": "Germination",
+        "b": "Fruit formation",
+        "c": "Self-pollination",
+        "d": "Seed dispersal"
+      },
+      "answer": "c",
+      "a": "Self-pollination",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-58",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Advanced computer models that simulate the Indian monsoon are run at the Indian Institute of Tropical Meteorology, located in:",
+      "options": {
+        "a": "Pune",
+        "b": "Kolkata",
+        "c": "Thiruvananthapuram",
+        "d": "Bengaluru"
+      },
+      "answer": "a",
+      "a": "Pune",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-128",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Urine produced in the kidneys passes into the urinary bladder through the:",
+      "options": {
+        "a": "Ureters",
+        "b": "Bowman's capsule",
+        "c": "Nephron",
+        "d": "Urethra"
+      },
+      "answer": "a",
+      "a": "Ureters",
+      "e": "Urine is stored in the bladder and released through the urethra.",
+      "table": null,
+      "qid": "biology-ch26-respiration-94",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The diameter of the reflecting surface of a spherical mirror is called its:",
+      "options": {
+        "a": "pole",
+        "b": "radius of curvature",
+        "c": "aperture",
+        "d": "focal length"
+      },
+      "answer": "c",
+      "a": "aperture",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-21",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The Davy Medal was awarded in 1887 by the Royal Society, London, to:",
+      "options": {
+        "a": "Mendeleev",
+        "b": "Dobereiner",
+        "c": "Lothar Meyer",
+        "d": "Newlands"
+      },
+      "answer": "d",
+      "a": "Newlands",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In Amoeba, the food particle is engulfed to form a:",
+      "options": {
+        "a": "Food-vacuole",
+        "b": "Rumen",
+        "c": "Gizzard",
+        "d": "Villus"
+      },
+      "answer": "a",
+      "a": "Food-vacuole",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-20",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "As an object falls freely under gravity, its mechanical energy:",
+      "options": {
+        "a": "remains constant",
+        "b": "increases",
+        "c": "becomes zero",
+        "d": "decreases"
+      },
+      "answer": "a",
+      "a": "remains constant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-31",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A gross consists of:",
+      "options": {
+        "a": "12 items",
+        "b": "20 items",
+        "c": "144 items",
+        "d": "100 items"
+      },
+      "answer": "c",
+      "a": "144 items",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-97",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas from the air that is essential for plants to prepare starch is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Nitrogen",
+        "c": "Oxygen",
+        "d": "Hydrogen"
+      },
+      "answer": "a",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-45",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The point on a planet's orbit that is closest to the Sun is called:",
+      "options": {
+        "a": "Perihelion",
+        "b": "Semi-major axis",
+        "c": "Focus",
+        "d": "Aphelion"
+      },
+      "answer": "a",
+      "a": "Perihelion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-3",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    }
+  ]
+}

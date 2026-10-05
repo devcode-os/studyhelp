@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-39",
+  "chapterNumber": 39,
+  "title": "General Science Set 39",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "On heating cinnabar, the mass percentage of mercury obtained is around:",
+      "options": {
+        "a": "50%",
+        "b": "72.5%",
+        "c": "86.22%",
+        "d": "13.78%"
+      },
+      "answer": "c",
+      "a": "86.22%",
+      "e": "The remaining 13.78% is sulfur.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "In muscle cells lacking oxygen, pyruvate is converted into:",
+      "options": {
+        "a": "Glycogen",
+        "b": "Ethanol",
+        "c": "Starch",
+        "d": "Lactic acid"
+      },
+      "answer": "d",
+      "a": "Lactic acid",
+      "e": "The build-up of lactic acid in muscles during sudden activity causes cramps.",
+      "table": null,
+      "qid": "biology-ch26-respiration-52",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Nichrome is an alloy of:",
+      "options": {
+        "a": "Ni, Cr, Mn and Fe",
+        "b": "Fe, Cr and Cu",
+        "c": "Cu and Ni",
+        "d": "Cu, Mn and Ni"
+      },
+      "answer": "a",
+      "a": "Ni, Cr, Mn and Fe",
+      "e": "Constantan is an alloy of Cu and Ni; manganin is an alloy of Cu, Mn and Ni.",
+      "table": null,
+      "qid": "physics-ch7-electricity-38",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Cell division that leads to the creation of new individuals in unicellular organisms is called:",
+      "options": {
+        "a": "Pollination",
+        "b": "Fragmentation",
+        "c": "Fission",
+        "d": "Regeneration"
+      },
+      "answer": "c",
+      "a": "Fission",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-8",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon compounds having only single bonds between carbon atoms are called:",
+      "options": {
+        "a": "Structural isomers",
+        "b": "Unsaturated compounds",
+        "c": "Saturated compounds",
+        "d": "Homologous compounds"
+      },
+      "answer": "c",
+      "a": "Saturated compounds",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Power is defined as the:",
+      "options": {
+        "a": "rate at which work is done",
+        "b": "force per unit area",
+        "c": "work done multiplied by time",
+        "d": "capacity to do work"
+      },
+      "answer": "a",
+      "a": "rate at which work is done",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-36",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1958, F. C. Steward regenerated whole plants from single cells of the phloem of:",
+      "options": {
+        "a": "Carrot",
+        "b": "Teak",
+        "c": "Onion",
+        "d": "Sunflower"
+      },
+      "answer": "a",
+      "a": "Carrot",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-36",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Heating ethanol at 443 K with excess concentrated sulphuric acid gives:",
+      "options": {
+        "a": "Ethyne",
+        "b": "Ethane",
+        "c": "Ethanoic acid",
+        "d": "Ethene"
+      },
+      "answer": "d",
+      "a": "Ethene",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In a thundercloud, the upper part is occupied by:",
+      "options": {
+        "a": "negatively charged heavier water droplets",
+        "b": "positively charged lighter ice particles",
+        "c": "uncharged water vapour",
+        "d": "negatively charged lighter ice particles"
+      },
+      "answer": "b",
+      "a": "positively charged lighter ice particles",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-101",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Permanent tissues composed of more than one type of cell are called:",
+      "options": {
+        "a": "Meristematic tissues",
+        "b": "Simple permanent tissues",
+        "c": "Complex permanent tissues",
+        "d": "Dermal tissues"
+      },
+      "answer": "c",
+      "a": "Complex permanent tissues",
+      "e": "Simple permanent tissues are composed of only one type of cell.",
+      "table": null,
+      "qid": "biology-ch22-tissues-13",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about cathode rays:\n(I) In the absence of electric or magnetic field, they travel in straight lines.\n(II) Their characteristics do not depend on the material of the electrodes.\n(III) Their characteristics depend on the nature of the gas in the tube.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-7",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The decomposition of limestone gives carbon dioxide and:",
+      "options": {
+        "a": "Calcium chloride",
+        "b": "Slaked lime",
+        "c": "Quick lime",
+        "d": "Calcium sulphate"
+      },
+      "answer": "c",
+      "a": "Quick lime",
+      "e": "Quick lime is used in the manufacture of cement.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The finger-like projections in the inner lining of the small intestine that increase the surface area for absorption are called:",
+      "options": {
+        "a": "Cilia",
+        "b": "Nephrons",
+        "c": "Villi",
+        "d": "Alveoli"
+      },
+      "answer": "c",
+      "a": "Villi",
+      "e": "They are richly supplied with blood vessels.",
+      "table": null,
+      "qid": "biology-ch26-respiration-38",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The wavelength range of UV rays is:",
+      "options": {
+        "a": "400 nm to 700 nm",
+        "b": "100 nm to 400 nm",
+        "c": "1 nm to 10 nm",
+        "d": "700 nm to 1000 nm"
+      },
+      "answer": "b",
+      "a": "100 nm to 400 nm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-97",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The DNA in the cell nucleus is the information source for making:",
+      "options": {
+        "a": "Proteins",
+        "b": "Vitamins",
+        "c": "Lipids",
+        "d": "Carbohydrates"
+      },
+      "answer": "a",
+      "a": "Proteins",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-3",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Of two solutions with pH 6 and pH 8, the solution with the higher hydrogen ion concentration has pH:",
+      "options": {
+        "a": "8",
+        "b": "6",
+        "c": "7",
+        "d": "Both are equal"
+      },
+      "answer": "b",
+      "a": "6",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The core of an electromagnet is made of:",
+      "options": {
+        "a": "Aluminium",
+        "b": "Steel",
+        "c": "Copper",
+        "d": "Soft iron"
+      },
+      "answer": "d",
+      "a": "Soft iron",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-33",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Matthias Schleiden observed that all plants are composed of cells.\n(II) Theodor Schwann concluded that the presence of a cell wall is a unique character of plant cells.\n(III) Rudolf Virchow explained that new cells are formed from pre-existing cells.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-5",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Element 106 has been named Seaborgium (Sg) in honour of:",
+      "options": {
+        "a": "Mendeleev",
+        "b": "Moseley",
+        "c": "Lothar Meyer",
+        "d": "Seaborg"
+      },
+      "answer": "d",
+      "a": "Seaborg",
+      "e": "Seaborg was awarded the Nobel Prize in Chemistry in 1951. His work began with the discovery of plutonium in 1940.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The mechanical advantage of a lever is equal to:",
+      "options": {
+        "a": "effort arm − load arm",
+        "b": "effort arm ÷ load arm",
+        "c": "effort arm × load arm",
+        "d": "load arm ÷ effort arm"
+      },
+      "answer": "b",
+      "a": "effort arm ÷ load arm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-45",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Damage to the habitats of plants and animals leads to:",
+      "options": {
+        "a": "Formation of sacred groves",
+        "b": "Increase in biodiversity",
+        "c": "Loss of biodiversity",
+        "d": "Change in venation"
+      },
+      "answer": "c",
+      "a": "Loss of biodiversity",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-34",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The law stating that the ratio of the sine of the angle of incidence to the sine of the angle of refraction is constant, for light of a given colour and a given pair of media, is known as:",
+      "options": {
+        "a": "Newton's law",
+        "b": "Stokes' law",
+        "c": "Ohm's law",
+        "d": "Snell's law"
+      },
+      "answer": "d",
+      "a": "Snell's law",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-41",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula of aluminium sulfate is:",
+      "options": {
+        "a": "Al₃(SO₄)₂",
+        "b": "Al(SO₄)₃",
+        "c": "Al₂(SO₄)₃",
+        "d": "Al₂SO₄"
+      },
+      "answer": "c",
+      "a": "Al₂(SO₄)₃",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A healthy individual has ___ of haemoglobin in every 100 mL of blood.",
+      "options": {
+        "a": "12–16 g",
+        "b": "30–35 g",
+        "c": "5–8 g",
+        "d": "20–24 g"
+      },
+      "answer": "a",
+      "a": "12–16 g",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-38",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The charge to mass ratio of the electron was first measured in 1897 by:",
+      "options": {
+        "a": "Ernest Rutherford",
+        "b": "James Chadwick",
+        "c": "R. A. Millikan",
+        "d": "J. J. Thomson"
+      },
+      "answer": "d",
+      "a": "J. J. Thomson",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-8",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Vitamins and minerals are also called:",
+      "options": {
+        "a": "Body-building nutrients",
+        "b": "Energy-giving nutrients",
+        "c": "Protective nutrients",
+        "d": "Stored nutrients"
+      },
+      "answer": "c",
+      "a": "Protective nutrients",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-17",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The Modern Periodic Law states that the physical and chemical properties of the elements are periodic functions of their:",
+      "options": {
+        "a": "Atomic masses",
+        "b": "Atomic volumes",
+        "c": "Mass numbers",
+        "d": "Atomic numbers"
+      },
+      "answer": "d",
+      "a": "Atomic numbers",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In the Northern Hemisphere, the autumn equinox falls around:",
+      "options": {
+        "a": "21 March",
+        "b": "21 June",
+        "c": "23 September",
+        "d": "22 December"
+      },
+      "answer": "c",
+      "a": "23 September",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-57",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Insects such as mosquitoes and houseflies that spread pathogens are called:",
+      "options": {
+        "a": "Hosts",
+        "b": "Pathogens",
+        "c": "Vectors",
+        "d": "Parasites"
+      },
+      "answer": "c",
+      "a": "Vectors",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-3",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The individual substances that make up a mixture are called its:",
+      "options": {
+        "a": "Products",
+        "b": "Solutes",
+        "c": "Components",
+        "d": "Compounds"
+      },
+      "answer": "c",
+      "a": "Components",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    }
+  ]
+}

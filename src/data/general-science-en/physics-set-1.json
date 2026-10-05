@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-1",
+  "chapterNumber": 1,
+  "title": "Physics Set 1",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-luminous object?",
+      "options": {
+        "a": "Sun",
+        "b": "Star",
+        "c": "Moon",
+        "d": "Lightning"
+      },
+      "answer": "c",
+      "a": "Moon",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-2",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The stress set up in a rod whose expansion is prevented by rigid supports is called:",
+      "options": {
+        "a": "thermal stress",
+        "b": "shear stress",
+        "c": "yield stress",
+        "d": "bulk stress"
+      },
+      "answer": "a",
+      "a": "thermal stress",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-29",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of molar specific heat capacity is:",
+      "options": {
+        "a": "J mol⁻¹ K⁻¹",
+        "b": "J kg⁻¹ K⁻¹",
+        "c": "J K⁻¹",
+        "d": "J mol⁻¹"
+      },
+      "answer": "a",
+      "a": "J mol⁻¹ K⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-37",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The potential energy of an object of mass m at a small height h above the Earth's surface is:",
+      "options": {
+        "a": "½mgh",
+        "b": "mg/h",
+        "c": "mh/g",
+        "d": "mgh"
+      },
+      "answer": "d",
+      "a": "mgh",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-27",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Newton's law of cooling, the rate of loss of heat of a body is directly proportional to the:",
+      "options": {
+        "a": "mass of the body",
+        "b": "square of its temperature",
+        "c": "absolute temperature of the body",
+        "d": "temperature difference between the body and its surroundings"
+      },
+      "answer": "d",
+      "a": "temperature difference between the body and its surroundings",
+      "e": "The law holds good only for small temperature differences.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-80",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Dentists use which type of mirror to see large images of the teeth?",
+      "options": {
+        "a": "Convex lens",
+        "b": "Convex mirror",
+        "c": "Plane mirror",
+        "d": "Concave mirror"
+      },
+      "answer": "d",
+      "a": "Concave mirror",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-26",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "X-rays were discovered in 1895 by:",
+      "options": {
+        "a": "Marie Curie",
+        "b": "Henri Becquerel",
+        "c": "J. J. Thomson",
+        "d": "Wilhelm Röntgen"
+      },
+      "answer": "d",
+      "a": "Wilhelm Röntgen",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-19",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the causes of myopia:\n(I) Excessive curvature of the eye lens\n(II) Elongation of the eyeball\n(III) The eyeball becoming too small\nWhich of the above can cause myopia?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Hypermetropia arises when the eyeball is too small or the focal length of the eye lens is too long.",
+      "table": null,
+      "qid": "physics-ch5-light-72",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The ability of the eye lens to adjust its focal length is called:",
+      "options": {
+        "a": "refraction",
+        "b": "accommodation",
+        "c": "scattering",
+        "d": "dispersion"
+      },
+      "answer": "b",
+      "a": "accommodation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-65",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Excess nitrates from fertilisers cause algal blooms that deplete oxygen and kill fish. This process is called:",
+      "options": {
+        "a": "Denitrification",
+        "b": "Nitrification",
+        "c": "Ammonification",
+        "d": "Eutrophication"
+      },
+      "answer": "d",
+      "a": "Eutrophication",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-121",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the effects of a force:\n(I) It can change the speed of a moving object.\n(II) It can change the shape of an object.\n(III) It can change the direction of motion of an object.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-3",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The value of the universal gas constant R is:",
+      "options": {
+        "a": "83.1 J mol⁻¹ K⁻¹",
+        "b": "831 J mol⁻¹ K⁻¹",
+        "c": "0.831 J mol⁻¹ K⁻¹",
+        "d": "8.31 J mol⁻¹ K⁻¹"
+      },
+      "answer": "d",
+      "a": "8.31 J mol⁻¹ K⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-19",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of significant figures in 0.00250 m is:",
+      "options": {
+        "a": "3",
+        "b": "2",
+        "c": "4",
+        "d": "5"
+      },
+      "answer": "a",
+      "a": "3",
+      "e": "Leading zeros are not significant. The trailing zero after the decimal point is significant.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-15",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Lunar eclipse – Full Moon day\n(II) Solar eclipse – New Moon day\n(III) Solar eclipse – Full Moon day\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "III only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-69",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Most α-particles passed through the gold foil undeflected, which showed that:",
+      "options": {
+        "a": "The nucleus is very large",
+        "b": "Electrons are heavier than α-particles",
+        "c": "Most of the space in an atom is empty",
+        "d": "Positive charge is uniformly spread"
+      },
+      "answer": "c",
+      "a": "Most of the space in an atom is empty",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-30",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The frequency of the AC electric power received in houses is:",
+      "options": {
+        "a": "50 Hz",
+        "b": "100 Hz",
+        "c": "25 Hz",
+        "d": "220 Hz"
+      },
+      "answer": "a",
+      "a": "50 Hz",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-40",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "About 99 per cent of the Sun's energy falls within the:",
+      "options": {
+        "a": "UV, visible and infrared regions",
+        "b": "Visible and radio regions",
+        "c": "Gamma ray and X-ray regions",
+        "d": "Microwave and radio regions"
+      },
+      "answer": "a",
+      "a": "UV, visible and infrared regions",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-95",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In which of the following is the work done by the force on the object negative?",
+      "options": {
+        "a": "Lifting a dumbbell upward",
+        "b": "A goalkeeper stopping a ball",
+        "c": "Pushing a wheelchair forward",
+        "d": "Carrying a box horizontally"
+      },
+      "answer": "b",
+      "a": "A goalkeeper stopping a ball",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-6",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The Pole Star appears nearly stationary in the sky because:",
+      "options": {
+        "a": "The Earth's axis of rotation points very close to it",
+        "b": "It lies along the Sun's path",
+        "c": "It does not move at all",
+        "d": "It is the closest star to the Earth"
+      },
+      "answer": "a",
+      "a": "The Earth's axis of rotation points very close to it",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-50",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Kepler's second law follows from the conservation of:",
+      "options": {
+        "a": "Total mechanical energy",
+        "b": "Kinetic energy",
+        "c": "Angular momentum",
+        "d": "Linear momentum"
+      },
+      "answer": "c",
+      "a": "Angular momentum",
+      "e": "It holds for any central force and is not special to the inverse square law.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-6",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound cannot propagate through:",
+      "options": {
+        "a": "Vacuum",
+        "b": "Solids",
+        "c": "Gases",
+        "d": "Liquids"
+      },
+      "answer": "a",
+      "a": "Vacuum",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-5",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "A car moving at 20 m s⁻¹ is brought to rest with a constant acceleration of −5 m s⁻². The distance travelled before stopping is:",
+      "options": {
+        "a": "40 m",
+        "b": "20 m",
+        "c": "80 m",
+        "d": "4 m"
+      },
+      "answer": "a",
+      "a": "40 m",
+      "e": "s = u²/(2|a|) = 400 ÷ 10 = 40 m.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-43",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The most common type of rechargeable battery found in almost all devices that use batteries is the:",
+      "options": {
+        "a": "Lithium-ion battery",
+        "b": "Voltaic cell",
+        "c": "Lemon cell",
+        "d": "Dry cell"
+      },
+      "answer": "a",
+      "a": "Lithium-ion battery",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-74",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A temperature of 50 °C is equal to:",
+      "options": {
+        "a": "122 °F",
+        "b": "150 °F",
+        "c": "82 °F",
+        "d": "90 °F"
+      },
+      "answer": "a",
+      "a": "122 °F",
+      "e": "tF = (9/5) × 50 + 32 = 122 °F.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-7",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Planets discovered revolving around other stars in our galaxy are called:",
+      "options": {
+        "a": "Natural satellites",
+        "b": "Exoplanets",
+        "c": "Dwarf planets",
+        "d": "Asteroids"
+      },
+      "answer": "b",
+      "a": "Exoplanets",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-47",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A pressure equivalent of 1 mm of mercury is called:",
+      "options": {
+        "a": "atmosphere",
+        "b": "pascal",
+        "c": "bar",
+        "d": "torr"
+      },
+      "answer": "d",
+      "a": "torr",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-64",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A car starts from rest and its velocity increases uniformly to 12 m s⁻¹ in 6 s. The displacement in these 6 s is:",
+      "options": {
+        "a": "2 m",
+        "b": "36 m",
+        "c": "72 m",
+        "d": "18 m"
+      },
+      "answer": "b",
+      "a": "36 m",
+      "e": "Area of the triangle = ½ × 6 s × 12 m s⁻¹ = 36 m.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-41",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "One kilowatt hour is equal to:",
+      "options": {
+        "a": "3.6 × 10⁶ J",
+        "b": "3.6 × 10³ J",
+        "c": "1 × 10³ J",
+        "d": "3.6 × 10⁹ J"
+      },
+      "answer": "a",
+      "a": "3.6 × 10⁶ J",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-57",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The potential energy of a particle in SHM at displacement x is:",
+      "options": {
+        "a": "kx",
+        "b": "½kx",
+        "c": "kx²",
+        "d": "½kx²"
+      },
+      "answer": "d",
+      "a": "½kx²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-31",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The refractive index of a medium is 1.25. The speed of light in the medium (speed of light in vacuum = 3 × 10⁸ m s⁻¹) is:",
+      "options": {
+        "a": "3.75 × 10⁸ m s⁻¹",
+        "b": "4.2 × 10⁸ m s⁻¹",
+        "c": "1.5 × 10⁸ m s⁻¹",
+        "d": "2.4 × 10⁸ m s⁻¹"
+      },
+      "answer": "d",
+      "a": "2.4 × 10⁸ m s⁻¹",
+      "e": "v = c/n = 3 × 10⁸ ÷ 1.25 = 2.4 × 10⁸ m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch5-light-43",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    }
+  ]
+}

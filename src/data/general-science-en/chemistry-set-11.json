@@ -1,0 +1,591 @@
+{
+  "slug": "general-science-chemistry-set-11",
+  "chapterNumber": 11,
+  "title": "Chemistry Set 11",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about Dalton's atomic theory:\n(I) Matter consists of indivisible atoms.\n(II) All atoms of a given element have identical properties, including identical mass.\n(III) Atoms are created in a chemical reaction.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Chemical reactions involve reorganisation of atoms, which are neither created nor destroyed.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-91",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of conversion of a liquid into a solid is called:",
+      "options": {
+        "a": "Evaporation",
+        "b": "Melting",
+        "c": "Freezing",
+        "d": "Condensation"
+      },
+      "answer": "c",
+      "a": "Freezing",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Some metals lose their lustre due to the effect of air and moisture.\n(II) All materials that shine are metals.\n(III) Surfaces of some non-metals can be made shiny by polishing or coating.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass per cent of carbon in carbon dioxide (C = 12.011 u, O = 16.00 u) is:",
+      "options": {
+        "a": "12.01%",
+        "b": "54.58%",
+        "c": "27.29%",
+        "d": "72.71%"
+      },
+      "answer": "c",
+      "a": "27.29%",
+      "e": "(12.011 ÷ 44.011) × 100 = 27.29%.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-106",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Methanol affects the ______ causing blindness.",
+      "options": {
+        "a": "Olfactory nerve",
+        "b": "Optic nerve",
+        "c": "Auditory nerve",
+        "d": "Spinal cord"
+      },
+      "answer": "b",
+      "a": "Optic nerve",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of mass is:",
+      "options": {
+        "a": "Newton",
+        "b": "Litre",
+        "c": "Gram",
+        "d": "Kilogram"
+      },
+      "answer": "d",
+      "a": "Kilogram",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals is placed immediately above hydrogen in the reactivity series?",
+      "options": {
+        "a": "Copper",
+        "b": "Lead",
+        "c": "Zinc",
+        "d": "Iron"
+      },
+      "answer": "b",
+      "a": "Lead",
+      "e": "The reactivity series, from most to least reactive:",
+      "table": {
+        "headers": [
+          "Position",
+          "Metal",
+          "Symbol"
+        ],
+        "rows": [
+          [
+            "1",
+            "Potassium",
+            "K"
+          ],
+          [
+            "2",
+            "Sodium",
+            "Na"
+          ],
+          [
+            "3",
+            "Calcium",
+            "Ca"
+          ],
+          [
+            "4",
+            "Magnesium",
+            "Mg"
+          ],
+          [
+            "5",
+            "Aluminium",
+            "Al"
+          ],
+          [
+            "6",
+            "Zinc",
+            "Zn"
+          ],
+          [
+            "7",
+            "Iron",
+            "Fe"
+          ],
+          [
+            "8",
+            "Lead",
+            "Pb"
+          ],
+          [
+            "9",
+            "Hydrogen",
+            "H"
+          ],
+          [
+            "10",
+            "Copper",
+            "Cu"
+          ],
+          [
+            "11",
+            "Mercury",
+            "Hg"
+          ],
+          [
+            "12",
+            "Silver",
+            "Ag"
+          ],
+          [
+            "13",
+            "Gold",
+            "Au"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch18-metals-non-metals-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The principle of purification by crystallization is based on differences in the:",
+      "options": {
+        "a": "Particle size of solids",
+        "b": "Solubility of a substance at different temperatures",
+        "c": "Magnetic properties of solids",
+        "d": "Boiling points of liquids"
+      },
+      "answer": "b",
+      "a": "Solubility of a substance at different temperatures",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Aerated water – Gas and liquid\n(II) Vinegar – Liquid and liquid\n(III) Alloys – Solid and gas\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Alloys are mixtures of solid and solid.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Blue-coloured flowers of hydrangea are produced in:",
+      "options": {
+        "a": "Basic soil",
+        "b": "Neutral soil",
+        "c": "Acidic soil",
+        "d": "Both acidic and basic soil"
+      },
+      "answer": "c",
+      "a": "Acidic soil",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The decomposition of vegetable matter into compost is an example of an:",
+      "options": {
+        "a": "Exothermic reaction",
+        "b": "Photochemical reaction only",
+        "c": "Endothermic reaction",
+        "d": "Electrolytic reaction"
+      },
+      "answer": "a",
+      "a": "Exothermic reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction CuO + H₂ → Cu + H₂O, the substance reduced is:",
+      "options": {
+        "a": "Cu",
+        "b": "H₂O",
+        "c": "CuO",
+        "d": "H₂"
+      },
+      "answer": "c",
+      "a": "CuO",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Red rose extract gives red colour in acidic solutions.\n(II) Red rose extract gives green colour in basic solutions.\n(III) Turmeric paper turns red in acidic solutions.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The layer of the Earth with the lowest density is the:",
+      "options": {
+        "a": "Inner core",
+        "b": "Crust",
+        "c": "Upper mantle",
+        "d": "Outer core"
+      },
+      "answer": "b",
+      "a": "Crust",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-88",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of the simplest whole number ratio of ions in an ionic compound is called its:",
+      "options": {
+        "a": "Molecular mass",
+        "b": "Molar mass",
+        "c": "Atomic mass",
+        "d": "Formula unit mass"
+      },
+      "answer": "d",
+      "a": "Formula unit mass",
+      "e": "Ionic compounds form three-dimensional crystals rather than molecules, so molecular mass does not apply to them.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Zirconium – Atomic energy\n(II) Titanium – Aerospace\n(III) Zirconium – Aerospace\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-89",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "On heating cinnabar, the mass percentage of mercury obtained is around:",
+      "options": {
+        "a": "50%",
+        "b": "72.5%",
+        "c": "86.22%",
+        "d": "13.78%"
+      },
+      "answer": "c",
+      "a": "86.22%",
+      "e": "The remaining 13.78% is sulfur.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon compounds having only single bonds between carbon atoms are called:",
+      "options": {
+        "a": "Structural isomers",
+        "b": "Unsaturated compounds",
+        "c": "Saturated compounds",
+        "d": "Homologous compounds"
+      },
+      "answer": "c",
+      "a": "Saturated compounds",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Heating ethanol at 443 K with excess concentrated sulphuric acid gives:",
+      "options": {
+        "a": "Ethyne",
+        "b": "Ethane",
+        "c": "Ethanoic acid",
+        "d": "Ethene"
+      },
+      "answer": "d",
+      "a": "Ethene",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The decomposition of limestone gives carbon dioxide and:",
+      "options": {
+        "a": "Calcium chloride",
+        "b": "Slaked lime",
+        "c": "Quick lime",
+        "d": "Calcium sulphate"
+      },
+      "answer": "c",
+      "a": "Quick lime",
+      "e": "Quick lime is used in the manufacture of cement.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Of two solutions with pH 6 and pH 8, the solution with the higher hydrogen ion concentration has pH:",
+      "options": {
+        "a": "8",
+        "b": "6",
+        "c": "7",
+        "d": "Both are equal"
+      },
+      "answer": "b",
+      "a": "6",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Element 106 has been named Seaborgium (Sg) in honour of:",
+      "options": {
+        "a": "Mendeleev",
+        "b": "Moseley",
+        "c": "Lothar Meyer",
+        "d": "Seaborg"
+      },
+      "answer": "d",
+      "a": "Seaborg",
+      "e": "Seaborg was awarded the Nobel Prize in Chemistry in 1951. His work began with the discovery of plutonium in 1940.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula of aluminium sulfate is:",
+      "options": {
+        "a": "Al₃(SO₄)₂",
+        "b": "Al(SO₄)₃",
+        "c": "Al₂(SO₄)₃",
+        "d": "Al₂SO₄"
+      },
+      "answer": "c",
+      "a": "Al₂(SO₄)₃",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The Modern Periodic Law states that the physical and chemical properties of the elements are periodic functions of their:",
+      "options": {
+        "a": "Atomic masses",
+        "b": "Atomic volumes",
+        "c": "Mass numbers",
+        "d": "Atomic numbers"
+      },
+      "answer": "d",
+      "a": "Atomic numbers",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The individual substances that make up a mixture are called its:",
+      "options": {
+        "a": "Products",
+        "b": "Solutes",
+        "c": "Components",
+        "d": "Compounds"
+      },
+      "answer": "c",
+      "a": "Components",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Addition of oxygen to a substance is oxidation.\n(II) Removal of hydrogen from a substance is oxidation.\n(III) Addition of hydrogen to a substance is oxidation.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The bond formed by sharing of electrons between atoms is called:",
+      "options": {
+        "a": "Covalent bond",
+        "b": "Ionic bond",
+        "c": "Metallic bond",
+        "d": "Hydrogen bond"
+      },
+      "answer": "a",
+      "a": "Covalent bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "15 mL of a sodium hydroxide solution is completely neutralised by 12 mL of a hydrochloric acid solution. The volume of the same hydrochloric acid solution required to neutralise 25 mL of the same sodium hydroxide solution is:",
+      "options": {
+        "a": "25 mL",
+        "b": "20 mL",
+        "c": "13 mL",
+        "d": "30 mL"
+      },
+      "answer": "b",
+      "a": "20 mL",
+      "e": "12 mL acid per 15 mL base = 0.8; 25 mL × 0.8 = 20 mL.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Asima Chatterjee is renowned for her work in developing:",
+      "options": {
+        "a": "Anti-epileptic and anti-malarial drugs",
+        "b": "Anti-cancer and anti-AIDS drugs",
+        "c": "Antibiotics and vaccines",
+        "d": "Painkillers and antiseptics"
+      },
+      "answer": "a",
+      "a": "Anti-epileptic and anti-malarial drugs",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-68",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about ionic compounds:\n(I) They are solids and somewhat hard.\n(II) They have high melting and boiling points.\n(III) They are generally soluble in kerosene and petrol.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Ionic compounds are generally brittle and soluble in water.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    }
+  ]
+}

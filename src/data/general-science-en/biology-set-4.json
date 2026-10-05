@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-biology-set-4",
+  "chapterNumber": 4,
+  "title": "Biology Set 4",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The waxy layer of cutin covering epidermal cells is called the:",
+      "options": {
+        "a": "Lignin",
+        "b": "Cuticle",
+        "c": "Cork",
+        "d": "Pectin"
+      },
+      "answer": "b",
+      "a": "Cuticle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-17",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The exchange of gases in the lungs takes place in the:",
+      "options": {
+        "a": "Windpipe",
+        "b": "Alveoli",
+        "c": "Nostrils",
+        "d": "Rib cage"
+      },
+      "answer": "b",
+      "a": "Alveoli",
+      "e": "Alveoli are balloon-like structures with an extensive network of blood vessels in their walls.",
+      "table": null,
+      "qid": "biology-ch26-respiration-60",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Saliva is secreted by the:",
+      "options": {
+        "a": "Liver",
+        "b": "Salivary glands",
+        "c": "Gastric glands",
+        "d": "Pancreas"
+      },
+      "answer": "b",
+      "a": "Salivary glands",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-24",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "If the Earth were the size of an apple, the crust would be as thin as the apple's:",
+      "options": {
+        "a": "core",
+        "b": "skin",
+        "c": "pulp",
+        "d": "seed"
+      },
+      "answer": "b",
+      "a": "skin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-19",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following planets are relatively small and rocky?",
+      "options": {
+        "a": "Earth and Jupiter",
+        "b": "Uranus and Neptune",
+        "c": "Jupiter and Saturn",
+        "d": "Mercury, Venus, Earth and Mars"
+      },
+      "answer": "d",
+      "a": "Mercury, Venus, Earth and Mars",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-38",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about inhalation:\n(I) The ribs move up and outwards.\n(II) The diaphragm moves downwards.\n(III) The space inside the chest decreases.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-61",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In Rhizopus, spores are protected until they reach a moist surface by:",
+      "options": {
+        "a": "A mucilage layer",
+        "b": "Cilia",
+        "c": "Hyphae",
+        "d": "Thick walls"
+      },
+      "answer": "d",
+      "a": "Thick walls",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-23",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The fluid mosaic model of the plasma membrane was proposed by:",
+      "options": {
+        "a": "Golgi and Palade",
+        "b": "Singer and Nicolson",
+        "c": "Schleiden and Schwann",
+        "d": "Hooke and Brown"
+      },
+      "answer": "b",
+      "a": "Singer and Nicolson",
+      "e": "Proposed in 1972.",
+      "table": null,
+      "qid": "biology-ch21-cell-18",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Hydrosphere – water\n(II) Geosphere – solid parts such as rocks, soils and minerals\n(III) Biosphere – gases of the air\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "III only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "The gases of the air make up the atmosphere; the biosphere consists of life.",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-12",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-renewable resource?",
+      "options": {
+        "a": "Forests",
+        "b": "Soil",
+        "c": "Water",
+        "d": "Air"
+      },
+      "answer": "b",
+      "a": "Soil",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-36",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "A genetically regulated and organised process of selective cell destruction is called:",
+      "options": {
+        "a": "Contact inhibition",
+        "b": "Totipotency",
+        "c": "Programmed cell death",
+        "d": "Mitosis"
+      },
+      "answer": "c",
+      "a": "Programmed cell death",
+      "e": "It helps form fingers during embryo development by eliminating cells between the digits.",
+      "table": null,
+      "qid": "biology-ch21-cell-89",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The atmosphere of Venus is almost entirely made up of:",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Methane",
+        "c": "Oxygen",
+        "d": "Carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-2",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Micrographia was published in the year:",
+      "options": {
+        "a": "1665",
+        "b": "1971",
+        "c": "1980",
+        "d": "1660"
+      },
+      "answer": "a",
+      "a": "1665",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-2",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) All children inherit an X chromosome from their mother.\n(II) A child who inherits Y from the father is a girl.\n(III) Half the children are expected to be boys and half girls.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-19",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The rate of breathing in aquatic organisms is faster than in terrestrial organisms because the amount of dissolved oxygen in water is comparatively:",
+      "options": {
+        "a": "Unstable",
+        "b": "Same",
+        "c": "Low",
+        "d": "High"
+      },
+      "answer": "c",
+      "a": "Low",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-57",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a component of xylem?",
+      "options": {
+        "a": "Xylem fibres",
+        "b": "Sieve tubes",
+        "c": "Vessels",
+        "d": "Tracheids"
+      },
+      "answer": "b",
+      "a": "Sieve tubes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-27",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The correct sequence of levels of organisation in a living organism is:",
+      "options": {
+        "a": "Cell → Organ → Tissue → Organ system → Organism",
+        "b": "Tissue → Cell → Organ → Organ system → Organism",
+        "c": "Cell → Tissue → Organ system → Organ → Organism",
+        "d": "Cell → Tissue → Organ → Organ system → Organism"
+      },
+      "answer": "d",
+      "a": "Cell → Tissue → Organ → Organ system → Organism",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-11",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Animals such as frogs that can live both in water and on land are called:",
+      "options": {
+        "a": "Amphibians",
+        "b": "Herbivores",
+        "c": "Terrestrial animals",
+        "d": "Aquatic animals"
+      },
+      "answer": "a",
+      "a": "Amphibians",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-33",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The two subunits of eukaryotic 80S ribosomes are:",
+      "options": {
+        "a": "60S and 40S",
+        "b": "50S and 30S",
+        "c": "70S and 30S",
+        "d": "80S and 60S"
+      },
+      "answer": "a",
+      "a": "60S and 40S",
+      "e": "The 70S prokaryotic ribosome has 50S and 30S subunits.",
+      "table": null,
+      "qid": "biology-ch21-cell-50",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Energy-giving foods are:",
+      "options": {
+        "a": "Vitamins and minerals",
+        "b": "Proteins and vitamins",
+        "c": "Proteins and minerals",
+        "d": "Carbohydrates and fats"
+      },
+      "answer": "d",
+      "a": "Carbohydrates and fats",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-8",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The two kingdom system of classification, with Plantae and Animalia, is associated with:",
+      "options": {
+        "a": "Carolus Linnaeus",
+        "b": "Herbert F. Copeland",
+        "c": "Ernst Haeckel",
+        "d": "R.H. Whittaker"
+      },
+      "answer": "a",
+      "a": "Carolus Linnaeus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-109",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants store food in the form of:",
+      "options": {
+        "a": "Starch",
+        "b": "Protein",
+        "c": "Fat",
+        "d": "Glucose"
+      },
+      "answer": "a",
+      "a": "Starch",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-39",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of chloroplasts per cell in the green alga Chlamydomonas is:",
+      "options": {
+        "a": "40",
+        "b": "10",
+        "c": "1",
+        "d": "20"
+      },
+      "answer": "c",
+      "a": "1",
+      "e": "Mesophyll cells have 20–40 chloroplasts per cell.",
+      "table": null,
+      "qid": "biology-ch21-cell-46",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Scurvy is caused by the deficiency of:",
+      "options": {
+        "a": "Vitamin D",
+        "b": "Vitamin A",
+        "c": "Vitamin C",
+        "d": "Vitamin B1"
+      },
+      "answer": "c",
+      "a": "Vitamin C",
+      "e": "In 1746, Scottish physician James Lind observed that sailors who consumed lemons and oranges recovered from scurvy.",
+      "table": null,
+      "qid": "biology-ch25-nutrition-13",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The fungal component of a lichen is called the:",
+      "options": {
+        "a": "Mycelium",
+        "b": "Phycobiont",
+        "c": "Mycorrhiza",
+        "d": "Mycobiont"
+      },
+      "answer": "d",
+      "a": "Mycobiont",
+      "e": "The algal component is the phycobiont.",
+      "table": null,
+      "qid": "biology-ch21-cell-168",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy currency for most cellular processes is:",
+      "options": {
+        "a": "Pyruvate",
+        "b": "ADP",
+        "c": "Glucose",
+        "d": "ATP"
+      },
+      "answer": "d",
+      "a": "ATP",
+      "e": "ATP is made from ADP and inorganic phosphate using the energy released during respiration.",
+      "table": null,
+      "qid": "biology-ch26-respiration-54",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "World Water Day is observed on:",
+      "options": {
+        "a": "5th June",
+        "b": "22nd March",
+        "c": "22nd April",
+        "d": "21st March"
+      },
+      "answer": "b",
+      "a": "22nd March",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-26",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Air pollution from factories and vehicles can lead to:",
+      "options": {
+        "a": "smog and acid rain",
+        "b": "increased biodiversity",
+        "c": "soil formation",
+        "d": "formation of the ozone layer"
+      },
+      "answer": "a",
+      "a": "smog and acid rain",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-45",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The cell division that is important for normal growth, repair, maintenance and asexual reproduction is:",
+      "options": {
+        "a": "Fertilisation",
+        "b": "Mitosis",
+        "c": "Pollination",
+        "d": "Meiosis"
+      },
+      "answer": "b",
+      "a": "Mitosis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-83",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The menstrual cycle typically repeats every:",
+      "options": {
+        "a": "21–35 days",
+        "b": "15–20 days",
+        "c": "40–50 days",
+        "d": "10–15 days"
+      },
+      "answer": "a",
+      "a": "21–35 days",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-75",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-6",
+  "chapterNumber": 6,
+  "title": "General Science Set 6",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "B and T lymphocytes are responsible for:",
+      "options": {
+        "a": "Immune responses",
+        "b": "Blood clotting",
+        "c": "Gas transport",
+        "d": "Osmotic balance"
+      },
+      "answer": "a",
+      "a": "Immune responses",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-44",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Convection is possible only in:",
+      "options": {
+        "a": "fluids",
+        "b": "solids",
+        "c": "vacuum",
+        "d": "metals"
+      },
+      "answer": "a",
+      "a": "fluids",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-59",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The percentage of oxygen in exhaled air is nearly:",
+      "options": {
+        "a": "4–5%",
+        "b": "21%",
+        "c": "0.04%",
+        "d": "16–17%"
+      },
+      "answer": "d",
+      "a": "16–17%",
+      "e": "Inhaled air has nearly 21% oxygen and 0.04% carbon dioxide, while exhaled air has nearly 4–5% carbon dioxide.",
+      "table": null,
+      "qid": "biology-ch26-respiration-67",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "With an increase in temperature, the solubility of gases in liquids generally:",
+      "options": {
+        "a": "Remains constant",
+        "b": "Decreases",
+        "c": "Increases",
+        "d": "Becomes zero"
+      },
+      "answer": "b",
+      "a": "Decreases",
+      "e": "More oxygen dissolves in cold water than in warm water.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-67",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The Foucault pendulum gave the first simple demonstration of the Earth's:",
+      "options": {
+        "a": "Magnetism",
+        "b": "Revolution",
+        "c": "Rotation",
+        "d": "Tilt"
+      },
+      "answer": "c",
+      "a": "Rotation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-51",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The thick walls of sclerenchyma cells are due to the deposition of:",
+      "options": {
+        "a": "Pectin",
+        "b": "Lignin",
+        "c": "Latex",
+        "d": "Cutin"
+      },
+      "answer": "b",
+      "a": "Lignin",
+      "e": "Most of these cells are dead. The tissue is found in coconut husk and walnut shell.",
+      "table": null,
+      "qid": "biology-ch22-tissues-24",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Silver – Silver sulphide coating\n(II) Copper – Basic copper carbonate coating\n(III) Copper – Silver sulphide coating\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-74",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The kinetic energy of an object of mass m moving with velocity v is:",
+      "options": {
+        "a": "½mv",
+        "b": "mv",
+        "c": "mv²",
+        "d": "½mv²"
+      },
+      "answer": "d",
+      "a": "½mv²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-22",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "In Amoeba, the splitting of the two cells during division can take place in:",
+      "options": {
+        "a": "The transverse plane only",
+        "b": "The longitudinal plane only",
+        "c": "Any plane",
+        "d": "A fixed plane"
+      },
+      "answer": "c",
+      "a": "Any plane",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-9",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of forming a thick oxide layer on aluminium is called:",
+      "options": {
+        "a": "Calcination",
+        "b": "Anodising",
+        "c": "Galvanisation",
+        "d": "Roasting"
+      },
+      "answer": "b",
+      "a": "Anodising",
+      "e": "The aluminium article is made the anode and electrolysed with dilute sulphuric acid.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Alphabetic symbols of elements derived from their Latin names were suggested in 1813 by:",
+      "options": {
+        "a": "Berzelius",
+        "b": "John Dalton",
+        "c": "Charles Barkla",
+        "d": "Niels Bohr"
+      },
+      "answer": "a",
+      "a": "Berzelius",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-67",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The membranous extensions into the cytoplasm of cyanobacteria that contain pigments are called:",
+      "options": {
+        "a": "Chromatophores",
+        "b": "Chromoplasts",
+        "c": "Mesosomes",
+        "d": "Heterocysts"
+      },
+      "answer": "a",
+      "a": "Chromatophores",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-73",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of a proton in unified atomic mass units is approximately:",
+      "options": {
+        "a": "1.00867 u",
+        "b": "9.109 u",
+        "c": "1.00727 u",
+        "d": "0.00054 u"
+      },
+      "answer": "c",
+      "a": "1.00727 u",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-18",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "In which of the following are spores formed on a swollen vesicle on a long strip of fungal hyphae?",
+      "options": {
+        "a": "Rhizopus",
+        "b": "Aspergillus",
+        "c": "Spirogyra",
+        "d": "Hydra"
+      },
+      "answer": "b",
+      "a": "Aspergillus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-24",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Coal is formed from the remains of:",
+      "options": {
+        "a": "Fish and shells",
+        "b": "Tiny sea animals",
+        "c": "Algae only",
+        "d": "Trees, ferns and other plants"
+      },
+      "answer": "d",
+      "a": "Trees, ferns and other plants",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple pendulum has a period of 2 s on the Earth. At a place where g is one-fourth of that on the Earth, its period will be:",
+      "options": {
+        "a": "2 s",
+        "b": "1 s",
+        "c": "8 s",
+        "d": "4 s"
+      },
+      "answer": "d",
+      "a": "4 s",
+      "e": "T ∝ 1/√g, so the period doubles when g becomes one-fourth.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-41",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The common passage for both sperms and urine in males is the:",
+      "options": {
+        "a": "Vas deferens",
+        "b": "Urethra",
+        "c": "Oviduct",
+        "d": "Ureter"
+      },
+      "answer": "b",
+      "a": "Urethra",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-69",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The three states of matter are interconvertible by changing the conditions of:",
+      "options": {
+        "a": "Temperature and pressure",
+        "b": "Mass and density",
+        "c": "Density and volume",
+        "d": "Volume and mass"
+      },
+      "answer": "a",
+      "a": "Temperature and pressure",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "For the lens in the previous situation (f = +20 cm, u = −30 cm), the magnification produced is:",
+      "options": {
+        "a": "+0.5",
+        "b": "+2",
+        "c": "−2",
+        "d": "−0.5"
+      },
+      "answer": "c",
+      "a": "−2",
+      "e": "m = v/u = +60/(−30) = −2.",
+      "table": null,
+      "qid": "physics-ch5-light-56",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "During childbirth, the foetus is pushed out through the birth canal by:",
+      "options": {
+        "a": "Contractions of uterine muscles",
+        "b": "Contractions of the diaphragm",
+        "c": "Movement of cilia",
+        "d": "Peristalsis in the oviduct"
+      },
+      "answer": "a",
+      "a": "Contractions of uterine muscles",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-81",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Acid + Metal – Salt + Hydrogen gas\n(II) Metal carbonate + Acid – Salt + Oxygen + Water\n(III) Metal oxide + Acid – Salt + Water\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "On a graph of density against distance for a sound wave, the highest point (crest) corresponds to a region of:",
+      "options": {
+        "a": "Rarefaction",
+        "b": "Average density",
+        "c": "Zero density",
+        "d": "Compression"
+      },
+      "answer": "d",
+      "a": "Compression",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-16",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The pea plant (Pisum sativum) belongs to the family:",
+      "options": {
+        "a": "Pisum",
+        "b": "Fabales",
+        "c": "Magnoliopsida",
+        "d": "Fabaceae"
+      },
+      "answer": "d",
+      "a": "Fabaceae",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-156",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a type of animal tissue?",
+      "options": {
+        "a": "Connective",
+        "b": "Meristematic",
+        "c": "Nervous",
+        "d": "Epithelial"
+      },
+      "answer": "b",
+      "a": "Meristematic",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-43",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sun's energy reaches the Earth through:",
+      "options": {
+        "a": "direct contact",
+        "b": "sound waves",
+        "c": "radiation",
+        "d": "electric circuits"
+      },
+      "answer": "c",
+      "a": "radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-15",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The interparticle spaces in solids contain:",
+      "options": {
+        "a": "Nothing at all",
+        "b": "Smoke",
+        "c": "Air",
+        "d": "Water vapour"
+      },
+      "answer": "a",
+      "a": "Nothing at all",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The flow of energy in an ecosystem is:",
+      "options": {
+        "a": "Cyclic",
+        "b": "Random",
+        "c": "Bidirectional",
+        "d": "Unidirectional"
+      },
+      "answer": "d",
+      "a": "Unidirectional",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-9",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "One millibar is equal to:",
+      "options": {
+        "a": "1000 Pa",
+        "b": "10⁵ Pa",
+        "c": "10 Pa",
+        "d": "100 Pa"
+      },
+      "answer": "d",
+      "a": "100 Pa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-65",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A solution of slaked lime is used for:",
+      "options": {
+        "a": "Photography",
+        "b": "Making cement",
+        "c": "Welding",
+        "d": "Whitewashing walls"
+      },
+      "answer": "d",
+      "a": "Whitewashing walls",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Dietary fibres help the body in:",
+      "options": {
+        "a": "Building muscles",
+        "b": "Providing instant energy",
+        "c": "Absorbing calcium",
+        "d": "Removal of undigested food"
+      },
+      "answer": "d",
+      "a": "Removal of undigested food",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-20",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-34",
+  "chapterNumber": 34,
+  "title": "General Science Set 34",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Ventricles have thicker muscular walls than atria.\n(II) Valves ensure that blood does not flow backwards when the atria or ventricles contract.\n(III) The left atrium is a thin-walled upper chamber of the heart.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I only"
+      },
+      "answer": "c",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-75",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1934, K. R. Ramanathan measured ozone levels in the Himalayas at an altitude of:",
+      "options": {
+        "a": "12,000 feet",
+        "b": "8,000 feet",
+        "c": "28,000 feet",
+        "d": "18,000 feet"
+      },
+      "answer": "d",
+      "a": "18,000 feet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-127",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Rhizobium bacteria trap which gas from the air and make it useful for plants?",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Oxygen",
+        "c": "Carbon dioxide",
+        "d": "Hydrogen"
+      },
+      "answer": "a",
+      "a": "Nitrogen",
+      "e": "This is why legumes are grown in rotation with other crops.",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-29",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction of an ester with sodium hydroxide to give an alcohol and the sodium salt of a carboxylic acid is called:",
+      "options": {
+        "a": "Substitution",
+        "b": "Saponification",
+        "c": "Hydrogenation",
+        "d": "Esterification"
+      },
+      "answer": "b",
+      "a": "Saponification",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-74",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A combination of two simple harmonic motions with arbitrary amplitudes and phases is periodic only if:",
+      "options": {
+        "a": "Their phases are equal",
+        "b": "The frequency of one is an integral multiple of the other's",
+        "c": "Their periods are unequal",
+        "d": "Their amplitudes are equal"
+      },
+      "answer": "b",
+      "a": "The frequency of one is an integral multiple of the other's",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-45",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The entire distance travelled by a food item from the producer to the consumer is called:",
+      "options": {
+        "a": "Food chain",
+        "b": "Food route",
+        "c": "Food web",
+        "d": "Food miles"
+      },
+      "answer": "d",
+      "a": "Food miles",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-44",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction of methane with chlorine takes place rapidly in the presence of:",
+      "options": {
+        "a": "Potassium permanganate",
+        "b": "Sulphuric acid",
+        "c": "Sunlight",
+        "d": "Nickel"
+      },
+      "answer": "c",
+      "a": "Sunlight",
+      "e": "It is a substitution reaction in which chlorine replaces hydrogen atoms one by one.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The laws of reflection are valid for which of the following mirrors?",
+      "options": {
+        "a": "Only plane mirrors",
+        "b": "Plane, concave and convex mirrors",
+        "c": "Only concave mirrors",
+        "d": "Only convex mirrors"
+      },
+      "answer": "b",
+      "a": "Plane, concave and convex mirrors",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-15",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "If the water temperature of a bacterial population living in temperate waters rises due to global warming, the survivors would most likely be:",
+      "options": {
+        "a": "Fastest dividing bacteria",
+        "b": "Largest bacteria",
+        "c": "Heat-resistant variants",
+        "d": "Spore-forming bacteria"
+      },
+      "answer": "c",
+      "a": "Heat-resistant variants",
+      "e": "Variation is useful for the survival of species over time.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-7",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "A grain of potassium permanganate spreads the fastest in:",
+      "options": {
+        "a": "Hot water",
+        "b": "Water at room temperature",
+        "c": "Ice-cold water",
+        "d": "All of these equally"
+      },
+      "answer": "a",
+      "a": "Hot water",
+      "e": "Water particles move faster at higher temperature.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "When a bar magnet is placed over iron filings, the maximum number of filings stick near its:",
+      "options": {
+        "a": "Sides",
+        "b": "Centre line",
+        "c": "Middle",
+        "d": "Poles"
+      },
+      "answer": "d",
+      "a": "Poles",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-4",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Pakke Tiger Reserve is located in:",
+      "options": {
+        "a": "Manipur",
+        "b": "Kerala",
+        "c": "Ladakh",
+        "d": "Arunachal Pradesh"
+      },
+      "answer": "d",
+      "a": "Arunachal Pradesh",
+      "e": "It supports four species of hornbills.",
+      "table": null,
+      "qid": "biology-ch21-cell-175",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The oil drop experiment devised by R. A. Millikan was used to determine the:",
+      "options": {
+        "a": "Size of the nucleus",
+        "b": "Charge on the electron",
+        "c": "Mass of the proton",
+        "d": "Charge to mass ratio of the electron"
+      },
+      "answer": "b",
+      "a": "Charge on the electron",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-10",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Punjab – Sarson da saag\n(II) Karnataka – Idli\n(III) Manipur – Chhole bhature\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-46",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula unit mass of magnesium nitrate, Mg(NO₃)₂ (Mg = 24 u, N = 14 u, O = 16 u), is:",
+      "options": {
+        "a": "148 u",
+        "b": "100 u",
+        "c": "86 u",
+        "d": "124 u"
+      },
+      "answer": "a",
+      "a": "148 u",
+      "e": "24 u + {14 u + (16 u × 3)} × 2 = 148 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The force acting on a particle in SHM is:",
+      "options": {
+        "a": "Constant in magnitude",
+        "b": "Proportional to displacement and directed towards the mean position",
+        "c": "Proportional to displacement and directed away from the mean position",
+        "d": "Proportional to the square of displacement"
+      },
+      "answer": "b",
+      "a": "Proportional to displacement and directed towards the mean position",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-25",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about non-communicable diseases:\n(I) They are not caused by pathogens.\n(II) They do not spread from one person to another.\n(III) Typhoid is an example.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-4",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Below the boiling point, vapour formation occurs only at the surface.\n(II) Evaporation takes place only at the boiling point.\n(III) Evaporation is a slower process than boiling.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A person who can see distant objects clearly but cannot see nearby objects distinctly suffers from:",
+      "options": {
+        "a": "hypermetropia",
+        "b": "cataract",
+        "c": "myopia",
+        "d": "night blindness"
+      },
+      "answer": "a",
+      "a": "hypermetropia",
+      "e": "It is corrected by using a convex lens.",
+      "table": null,
+      "qid": "physics-ch5-light-70",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Dengue fever is also known as:",
+      "options": {
+        "a": "Night fever",
+        "b": "Marsh fever",
+        "c": "Jaundice",
+        "d": "Break bone fever"
+      },
+      "answer": "d",
+      "a": "Break bone fever",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-9",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of properties (guṇa) used in Ayurveda to describe all physical matter is:",
+      "options": {
+        "a": "24",
+        "b": "12",
+        "c": "20",
+        "d": "10"
+      },
+      "answer": "c",
+      "a": "20",
+      "e": "They form ten pairs of opposite properties.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The nucleus is smaller than the atom by a factor of about:",
+      "options": {
+        "a": "10¹⁵",
+        "b": "10¹⁰",
+        "c": "10³",
+        "d": "10⁵"
+      },
+      "answer": "d",
+      "a": "10⁵",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-33",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Exchange of nutrients and gases between blood and cells occurs through the:",
+      "options": {
+        "a": "Pericardial fluid",
+        "b": "Serum",
+        "c": "Plasma",
+        "d": "Tissue fluid"
+      },
+      "answer": "d",
+      "a": "Tissue fluid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-54",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Compared with the actual body temperature, the temperature measured in the armpit with a digital thermometer is:",
+      "options": {
+        "a": "2 °C to 3 °C lower",
+        "b": "0.5 °C to 1 °C higher",
+        "c": "the same",
+        "d": "0.5 °C to 1 °C lower"
+      },
+      "answer": "d",
+      "a": "0.5 °C to 1 °C lower",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-9",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about Dalton's postulates:\n(I) Atoms of a given element are identical in mass and chemical properties.\n(II) Atoms of different elements have the same mass.\n(III) Atoms combine in the ratio of simple whole numbers to form compounds.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The arrangement of axonemal microtubules in cilia and flagella is called the:",
+      "options": {
+        "a": "9+3 array",
+        "b": "9+2 array",
+        "c": "9+0 array",
+        "d": "8+2 array"
+      },
+      "answer": "b",
+      "a": "9+2 array",
+      "e": "Nine doublets of peripheral microtubules surround a central pair.",
+      "table": null,
+      "qid": "biology-ch21-cell-54",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Grasshoppers and crickets produce sound by:",
+      "options": {
+        "a": "Striking a membrane",
+        "b": "Vibrating vocal cords",
+        "c": "Rubbing wings or legs",
+        "d": "Vibrating air column"
+      },
+      "answer": "c",
+      "a": "Rubbing wings or legs",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-3",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Antibiotics are effective only against infections caused by:",
+      "options": {
+        "a": "Bacteria",
+        "b": "Viruses",
+        "c": "Protozoa",
+        "d": "Viruses and protozoa"
+      },
+      "answer": "a",
+      "a": "Bacteria",
+      "e": "They target parts of bacterial cells that differ from human or other animal cells.",
+      "table": null,
+      "qid": "biology-ch28-diseases-18",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Obtaining a metal from its oxide involves:",
+      "options": {
+        "a": "Reduction",
+        "b": "Neutralisation",
+        "c": "Calcination",
+        "d": "Oxidation"
+      },
+      "answer": "a",
+      "a": "Reduction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A force of 240 N acts perpendicular to a surface of area 0.60 m². The pressure is:",
+      "options": {
+        "a": "0.0025 Pa",
+        "b": "40 Pa",
+        "c": "400 Pa",
+        "d": "144 Pa"
+      },
+      "answer": "c",
+      "a": "400 Pa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-51",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    }
+  ]
+}

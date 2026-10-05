@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-biology-set-27",
+  "chapterNumber": 27,
+  "title": "Biology Set 27",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "One parent cell undergoing meiosis forms how many daughter cells?",
+      "options": {
+        "a": "4",
+        "b": "2",
+        "c": "3",
+        "d": "8"
+      },
+      "answer": "a",
+      "a": "4",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-84",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The normal systolic pressure is about:",
+      "options": {
+        "a": "100 mm Hg",
+        "b": "140 mm Hg",
+        "c": "120 mm Hg",
+        "d": "80 mm Hg"
+      },
+      "answer": "c",
+      "a": "120 mm Hg",
+      "e": "The normal diastolic pressure is about 80 mm Hg.",
+      "table": null,
+      "qid": "biology-ch26-respiration-80",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Ranganathittu Bird Sanctuary, among the regions preserved through the efforts of Salim Ali, is in:",
+      "options": {
+        "a": "Bharatpur, Rajasthan",
+        "b": "Palakkad, Kerala",
+        "c": "Mandya, Karnataka",
+        "d": "Himachal Pradesh"
+      },
+      "answer": "c",
+      "a": "Mandya, Karnataka",
+      "e": "Keoladeo National Park in Bharatpur, Rajasthan, is the other example.",
+      "table": null,
+      "qid": "biology-ch23-plants-19",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Chulha – Traditional stove\n(II) Sil-batta – Stone grinder\n(III) Gas stove – Traditional stove\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-3",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "On average, the adult human skeleton makes up about what percentage of body weight?",
+      "options": {
+        "a": "5 to 8 per cent",
+        "b": "25 to 30 per cent",
+        "c": "12 to 15 per cent",
+        "d": "40 to 50 per cent"
+      },
+      "answer": "c",
+      "a": "12 to 15 per cent",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-63",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The greatest number of individuals in an ecosystem is generally of:",
+      "options": {
+        "a": "Herbivores",
+        "b": "Carnivores",
+        "c": "Producers",
+        "d": "Decomposers"
+      },
+      "answer": "c",
+      "a": "Producers",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-19",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "In adolescent boys, the growth of the voice box may be seen as a bump in the throat called:",
+      "options": {
+        "a": "Adam's apple",
+        "b": "Tonsil",
+        "c": "Epiglottis",
+        "d": "Goitre"
+      },
+      "answer": "a",
+      "a": "Adam's apple",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-77",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "In the life cycle of a butterfly, the stage between the larva and the adult is the:",
+      "options": {
+        "a": "Zygote",
+        "b": "Egg",
+        "c": "Pupa",
+        "d": "Embryo"
+      },
+      "answer": "c",
+      "a": "Pupa",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-63",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The copper-T is an example of:",
+      "options": {
+        "a": "Barrier method",
+        "b": "Surgical method",
+        "c": "Oral contraceptive pill",
+        "d": "Intra-Uterine Device"
+      },
+      "answer": "d",
+      "a": "Intra-Uterine Device",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-94",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is correctly matched?",
+      "options": {
+        "a": "Solar wind – produced by Earth's core",
+        "b": "Solar wind – come from across the universe",
+        "c": "Cosmic rays – come from far across the universe",
+        "d": "Cosmic rays – originate from the Sun"
+      },
+      "answer": "c",
+      "a": "Cosmic rays – come from far across the universe",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-10",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Penicillin is derived from:",
+      "options": {
+        "a": "Viruses",
+        "b": "Fungi",
+        "c": "Algae",
+        "d": "Bacteria"
+      },
+      "answer": "b",
+      "a": "Fungi",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-32",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The National De-addiction Helpline number is:",
+      "options": {
+        "a": "1091",
+        "b": "112",
+        "c": "1098",
+        "d": "14446"
+      },
+      "answer": "d",
+      "a": "14446",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-87",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants whose seeds have two cotyledons are called:",
+      "options": {
+        "a": "Shrubs",
+        "b": "Herbs",
+        "c": "Dicotyledons",
+        "d": "Monocotyledons"
+      },
+      "answer": "c",
+      "a": "Dicotyledons",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-11",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants that grow very tall with hard, thick, brown woody stems and branches starting higher up on the stem are called:",
+      "options": {
+        "a": "Trees",
+        "b": "Shrubs",
+        "c": "Creepers",
+        "d": "Herbs"
+      },
+      "answer": "a",
+      "a": "Trees",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-3",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT included under Kingdom Protista?",
+      "options": {
+        "a": "Euglenoids",
+        "b": "Chrysophytes",
+        "c": "Slime moulds",
+        "d": "Phycomycetes"
+      },
+      "answer": "d",
+      "a": "Phycomycetes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-119",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The air that always remains in the lungs during the breathing cycle, giving time for gas exchange, is called:",
+      "options": {
+        "a": "Residual volume",
+        "b": "Tidal volume",
+        "c": "Cardiac output",
+        "d": "Stroke volume"
+      },
+      "answer": "a",
+      "a": "Residual volume",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-62",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A diet that has all essential nutrients, roughage and water in the right amount for proper growth and development is called:",
+      "options": {
+        "a": "Liquid diet",
+        "b": "Fortified diet",
+        "c": "Junk diet",
+        "d": "Balanced diet"
+      },
+      "answer": "d",
+      "a": "Balanced diet",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-36",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The sexual spores produced endogenously in sac-like asci are:",
+      "options": {
+        "a": "Zoospores",
+        "b": "Ascospores",
+        "c": "Basidiospores",
+        "d": "Conidia"
+      },
+      "answer": "b",
+      "a": "Ascospores",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-131",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The nucleus as a cell organelle was first described by:",
+      "options": {
+        "a": "Flemming",
+        "b": "George Palade",
+        "c": "Robert Brown",
+        "d": "Camillo Golgi"
+      },
+      "answer": "c",
+      "a": "Robert Brown",
+      "e": "He described it in 1831.",
+      "table": null,
+      "qid": "biology-ch21-cell-3",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Deficiency of growth hormone in childhood leads to:",
+      "options": {
+        "a": "Giantism",
+        "b": "Dwarfism",
+        "c": "Diabetes",
+        "d": "Goitre"
+      },
+      "answer": "b",
+      "a": "Dwarfism",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-29",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Blood pressure is measured with an instrument called:",
+      "options": {
+        "a": "Sphygmomanometer",
+        "b": "Barometer",
+        "c": "Thermometer",
+        "d": "Spirometer"
+      },
+      "answer": "a",
+      "a": "Sphygmomanometer",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-79",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In pea plants, an alteration in the gene for an enzyme that makes it less efficient results in a:",
+      "options": {
+        "a": "Plant with wrinkled seeds",
+        "b": "Plant with more hormone",
+        "c": "Tall plant",
+        "d": "Short plant"
+      },
+      "answer": "d",
+      "a": "Short plant",
+      "e": "The enzyme is involved in making a plant growth hormone, so less efficient enzyme means less hormone.",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-16",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The ability of any living plant cell to develop into a complete plant was proposed in 1902 by:",
+      "options": {
+        "a": "Gottlieb Haberlandt",
+        "b": "Birbal Sahni",
+        "c": "J. Craig Venter",
+        "d": "Arun Kumar Sharma"
+      },
+      "answer": "a",
+      "a": "Gottlieb Haberlandt",
+      "e": "This ability is called totipotency.",
+      "table": null,
+      "qid": "biology-ch21-cell-90",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The processes which together perform the maintenance job of a living organism are called:",
+      "options": {
+        "a": "Molecular movements",
+        "b": "Growth processes",
+        "c": "Tropic movements",
+        "d": "Life processes"
+      },
+      "answer": "d",
+      "a": "Life processes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-1",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a fossil fuel?",
+      "options": {
+        "a": "Wood",
+        "b": "Coal",
+        "c": "Petroleum",
+        "d": "Natural gas"
+      },
+      "answer": "a",
+      "a": "Wood",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-32",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Regular use of addictive substances, once a strong urge to take them again and again develops, is called:",
+      "options": {
+        "a": "Menstruation",
+        "b": "Malnutrition",
+        "c": "Cyberbullying",
+        "d": "Substance abuse"
+      },
+      "answer": "d",
+      "a": "Substance abuse",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-90",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of humps in a camel of the cold desert of Ladakh is:",
+      "options": {
+        "a": "None",
+        "b": "Three",
+        "c": "Two",
+        "d": "One"
+      },
+      "answer": "c",
+      "a": "Two",
+      "e": "Camels of the hot desert have one hump each.",
+      "table": null,
+      "qid": "biology-ch23-plants-27",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "A basic event in reproduction is the creation of a:",
+      "options": {
+        "a": "Bud",
+        "b": "Spore",
+        "c": "Gamete",
+        "d": "DNA copy"
+      },
+      "answer": "d",
+      "a": "DNA copy",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-4",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "A solution whose solute concentration is higher than that inside the cell is called:",
+      "options": {
+        "a": "Isotonic",
+        "b": "Hypotonic",
+        "c": "Hypertonic",
+        "d": "Neutral"
+      },
+      "answer": "c",
+      "a": "Hypertonic",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-23",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Fishes have a 2-chambered heart.\n(II) Amphibians have a 3-chambered heart.\n(III) All reptiles have a 3-chambered heart.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Crocodiles, among reptiles, have a 4-chambered heart.",
+      "table": null,
+      "qid": "biology-ch24-human-body-56",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

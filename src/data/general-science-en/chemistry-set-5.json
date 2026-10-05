@@ -1,0 +1,564 @@
+{
+  "slug": "general-science-chemistry-set-5",
+  "chapterNumber": 5,
+  "title": "Chemistry Set 5",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A metal carbonate reacts with an acid to give a salt, water and:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Hydrogen",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "a",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In electrolytic refining, the insoluble impurities that settle at the bottom of the anode are called:",
+      "options": {
+        "a": "Anode mud",
+        "b": "Gangue",
+        "c": "Residue",
+        "d": "Slag"
+      },
+      "answer": "a",
+      "a": "Anode mud",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-70",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The white insoluble substance formed when carbon dioxide reacts with lime water is:",
+      "options": {
+        "a": "Calcium hydroxide",
+        "b": "Calcium carbonate",
+        "c": "Magnesium oxide",
+        "d": "Calcium oxide"
+      },
+      "answer": "b",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "An atom with fewer than four valence electrons generally:",
+      "options": {
+        "a": "Gains electrons",
+        "b": "Remains unchanged",
+        "c": "Donates electrons",
+        "d": "Shares them"
+      },
+      "answer": "c",
+      "a": "Donates electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "One atomic mass unit is defined as a mass exactly equal to:",
+      "options": {
+        "a": "One-sixteenth of the mass of one oxygen atom",
+        "b": "The mass of one carbon-12 atom",
+        "c": "One-twelfth of the mass of one carbon-12 atom",
+        "d": "The mass of one hydrogen atom"
+      },
+      "answer": "c",
+      "a": "One-twelfth of the mass of one carbon-12 atom",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-96",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Covalent compounds are generally poor conductors of electricity because:",
+      "options": {
+        "a": "They have low densities",
+        "b": "They have weak bonds within molecules",
+        "c": "No charged particles are formed",
+        "d": "Their molecules are large"
+      },
+      "answer": "c",
+      "a": "No charged particles are formed",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which compound is used in soda-acid fire extinguishers?",
+      "options": {
+        "a": "Sodium hydrogencarbonate",
+        "b": "Gypsum",
+        "c": "Washing soda",
+        "d": "Bleaching powder"
+      },
+      "answer": "a",
+      "a": "Sodium hydrogencarbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following allotropes of carbon is smooth and slippery?",
+      "options": {
+        "a": "Buckminsterfullerene",
+        "b": "C-60",
+        "c": "Graphite",
+        "d": "Diamond"
+      },
+      "answer": "c",
+      "a": "Graphite",
+      "e": "Diamond is the hardest substance known.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Salts of a strong acid and a strong base are neutral with pH 7.\n(II) Salts of a strong acid and a weak base are acidic with pH less than 7.\n(III) Salts of a strong base and a weak acid are acidic in nature.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The catalyst used in the hydrogenation of vegetable oils is:",
+      "options": {
+        "a": "Copper",
+        "b": "Zinc",
+        "c": "Platinum",
+        "d": "Nickel"
+      },
+      "answer": "d",
+      "a": "Nickel",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A metal oxide reacts with an acid to give:",
+      "options": {
+        "a": "Salt and hydrogen gas",
+        "b": "Salt, water and carbon dioxide",
+        "c": "Salt and carbon dioxide",
+        "d": "Salt and water"
+      },
+      "answer": "d",
+      "a": "Salt and water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of 0.5 mol of carbon dioxide (molar mass 44.01 g mol⁻¹) is:",
+      "options": {
+        "a": "88.0 g",
+        "b": "44.0 g",
+        "c": "11.0 g",
+        "d": "22.0 g"
+      },
+      "answer": "d",
+      "a": "22.0 g",
+      "e": "Mass = 0.5 mol × 44.01 g mol⁻¹ = 22.0 g.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-105",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): 2 g of hydrogen combines with 16 g of oxygen to form 18 g of water.\nReason (R): According to Dalton's atomic theory, atoms combine in a simple whole number ratio to form compounds.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The chemical formula of gypsum is:",
+      "options": {
+        "a": "CaSO₄.½H₂O",
+        "b": "CuSO₄.5H₂O",
+        "c": "Na₂CO₃.10H₂O",
+        "d": "CaSO₄.2H₂O"
+      },
+      "answer": "d",
+      "a": "CaSO₄.2H₂O",
+      "e": "Salts with water of crystallisation:",
+      "table": {
+        "headers": [
+          "Salt",
+          "Formula",
+          "Water of crystallisation"
+        ],
+        "rows": [
+          [
+            "Hydrated copper sulphate",
+            "CuSO₄.5H₂O",
+            "5"
+          ],
+          [
+            "Washing soda",
+            "Na₂CO₃.10H₂O",
+            "10"
+          ],
+          [
+            "Gypsum",
+            "CaSO₄.2H₂O",
+            "2"
+          ],
+          [
+            "Plaster of Paris",
+            "CaSO₄.½H₂O",
+            "½"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch17-acids-bases-salts-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In the long form of the periodic table, the horizontal rows are called:",
+      "options": {
+        "a": "Families",
+        "b": "Groups",
+        "c": "Blocks",
+        "d": "Periods"
+      },
+      "answer": "d",
+      "a": "Periods",
+      "e": "Mendeleev called the horizontal rows series.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Litmus is extracted from:",
+      "options": {
+        "a": "Algae",
+        "b": "Lichens",
+        "c": "Fungi",
+        "d": "Mosses"
+      },
+      "answer": "b",
+      "a": "Lichens",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "A mixture with uniform composition throughout is called a:",
+      "options": {
+        "a": "Heterogeneous mixture",
+        "b": "Suspension",
+        "c": "Homogeneous mixture",
+        "d": "Emulsion"
+      },
+      "answer": "c",
+      "a": "Homogeneous mixture",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Large brown crystals of common salt, formed when seas of bygone ages dried up, are called:",
+      "options": {
+        "a": "Gypsum",
+        "b": "Rock salt",
+        "c": "Baking soda",
+        "d": "Washing soda"
+      },
+      "answer": "b",
+      "a": "Rock salt",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "A 5–8% solution of acetic acid in water is called:",
+      "options": {
+        "a": "Molasses",
+        "b": "Glacial acetic acid",
+        "c": "Denatured alcohol",
+        "d": "Vinegar"
+      },
+      "answer": "d",
+      "a": "Vinegar",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-69",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The solution of the product formed on burning magnesium in air:",
+      "options": {
+        "a": "Turns red litmus blue",
+        "b": "Turns blue litmus red",
+        "c": "Bleaches both litmus papers",
+        "d": "Does not change either litmus paper"
+      },
+      "answer": "a",
+      "a": "Turns red litmus blue",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following does not conduct electricity when dissolved in water?",
+      "options": {
+        "a": "Sugar",
+        "b": "Magnesium chloride",
+        "c": "Sodium chloride",
+        "d": "Copper sulfate"
+      },
+      "answer": "a",
+      "a": "Sugar",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "An insoluble substance formed in a reaction is called a:",
+      "options": {
+        "a": "Sediment",
+        "b": "Residue",
+        "c": "Precipitate",
+        "d": "Filtrate"
+      },
+      "answer": "c",
+      "a": "Precipitate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium, magnesium and calcium are obtained by the electrolysis of their:",
+      "options": {
+        "a": "Molten chlorides",
+        "b": "Carbonates",
+        "c": "Oxides",
+        "d": "Sulphides"
+      },
+      "answer": "a",
+      "a": "Molten chlorides",
+      "e": "Aluminium is obtained by electrolytic reduction of aluminium oxide.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-67",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a native mineral?",
+      "options": {
+        "a": "Calcite",
+        "b": "Gold",
+        "c": "Mica",
+        "d": "Quartz"
+      },
+      "answer": "b",
+      "a": "Gold",
+      "e": "Native minerals are pure elements, such as gold, silver, copper, sulfur and carbon.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A pure substance, in science, consists of:",
+      "options": {
+        "a": "Particles in any ratio",
+        "b": "Two or more substances",
+        "c": "The same type of particles",
+        "d": "Visible components"
+      },
+      "answer": "c",
+      "a": "The same type of particles",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas evolved when iron reacts with dilute hydrochloric acid is:",
+      "options": {
+        "a": "Hydrogen",
+        "b": "Chlorine",
+        "c": "Carbon dioxide",
+        "d": "Hydrogen sulfide"
+      },
+      "answer": "a",
+      "a": "Hydrogen",
+      "e": "The gas is colourless, odourless and burns with a pop sound. Sulfur does not react and is left as a yellow solid.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The atomic weight predicted by Mendeleev for Eka-silicon was:",
+      "options": {
+        "a": "70",
+        "b": "72",
+        "c": "68",
+        "d": "72.6"
+      },
+      "answer": "b",
+      "a": "72",
+      "e": "The atomic weight found experimentally for germanium is 72.6.",
+      "table": {
+        "headers": [
+          "Element",
+          "Atomic weight (predicted)",
+          "Atomic weight (found)"
+        ],
+        "rows": [
+          [
+            "Eka-aluminium / Gallium",
+            "68",
+            "70"
+          ],
+          [
+            "Eka-silicon / Germanium",
+            "72",
+            "72.6"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch15-elements-and-compounds-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The acid injected into the skin by a red ant bite is:",
+      "options": {
+        "a": "Methanoic acid",
+        "b": "Lactic acid",
+        "c": "Citric acid",
+        "d": "Acetic acid"
+      },
+      "answer": "a",
+      "a": "Methanoic acid",
+      "e": "Methanoic acid is also called formic acid.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "On heating, the density of a substance generally:",
+      "options": {
+        "a": "Becomes zero",
+        "b": "Decreases",
+        "c": "Increases",
+        "d": "Remains the same"
+      },
+      "answer": "b",
+      "a": "Decreases",
+      "e": "The volume increases while the mass is unchanged. This is why hot air rises, as in a hot air balloon.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-84",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In the liver, methanol is oxidised to:",
+      "options": {
+        "a": "Ethanal",
+        "b": "Ethene",
+        "c": "Ethanoic acid",
+        "d": "Methanal"
+      },
+      "answer": "d",
+      "a": "Methanal",
+      "e": "Methanal coagulates the protoplasm of cells.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    }
+  ]
+}

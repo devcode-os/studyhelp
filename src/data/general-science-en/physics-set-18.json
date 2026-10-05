@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-18",
+  "chapterNumber": 18,
+  "title": "Physics Set 18",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "About what percentage of the total global carbon is found in the oceans?",
+      "options": {
+        "a": "49%",
+        "b": "1%",
+        "c": "78%",
+        "d": "71%"
+      },
+      "answer": "d",
+      "a": "71%",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-115",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum number of electrons that can be accommodated in the outermost shell of an atom is:",
+      "options": {
+        "a": "8",
+        "b": "2",
+        "c": "18",
+        "d": "32"
+      },
+      "answer": "a",
+      "a": "8",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-62",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The most abundant isotope of hydrogen in nature is:",
+      "options": {
+        "a": "³₂He",
+        "b": "¹₁H",
+        "c": "²₁H",
+        "d": "³₁H"
+      },
+      "answer": "b",
+      "a": "¹₁H",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-55",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "A temperature of 27 °C on the Kelvin scale is:",
+      "options": {
+        "a": "300.15 K",
+        "b": "327.15 K",
+        "c": "246.15 K",
+        "d": "273.15 K"
+      },
+      "answer": "a",
+      "a": "300.15 K",
+      "e": "T = tC + 273.15 = 27 + 273.15 = 300.15 K.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-15",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) An object moving along a straight line with constant speed is in uniform linear motion.\n(II) An object in uniform linear motion covers equal distances in equal intervals of time.\n(III) An object in non-uniform linear motion covers equal distances in equal intervals of time.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-42",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A concave lens has a focal length of 25 cm. Its power is:",
+      "options": {
+        "a": "+4 D",
+        "b": "−4 D",
+        "c": "−0.04 D",
+        "d": "+0.04 D"
+      },
+      "answer": "b",
+      "a": "−4 D",
+      "e": "P = 1/f = 1/(−0.25 m) = −4 D.",
+      "table": null,
+      "qid": "physics-ch5-light-58",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Between two consecutive marks of a spring balance, 2 N apart, there are 5 equal divisions. The smallest weight it can read is:",
+      "options": {
+        "a": "0.5 N",
+        "b": "2.5 N",
+        "c": "0.2 N",
+        "d": "0.4 N"
+      },
+      "answer": "d",
+      "a": "0.4 N",
+      "e": "2 N ÷ 5 = 0.4 N.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-9",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The fixed point about which a lever rotates is called the:",
+      "options": {
+        "a": "arm",
+        "b": "fulcrum",
+        "c": "effort",
+        "d": "load"
+      },
+      "answer": "b",
+      "a": "fulcrum",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-49",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Electric current – ampere\n(II) Amount of substance – mole\n(III) Luminous intensity – kelvin\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The SI unit of luminous intensity is the candela.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-2",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the speed of sound in air:\n(I) It increases with an increase in temperature.\n(II) It increases with an increase in humidity.\n(III) It depends on the frequency of the source.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-32",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Plastic foams are good insulators mainly because they contain:",
+      "options": {
+        "a": "water",
+        "b": "pockets of air",
+        "c": "metal particles",
+        "d": "free electrons"
+      },
+      "answer": "b",
+      "a": "pockets of air",
+      "e": "Air trapped in woollen fabric, between blankets and in hollow bricks acts the same way.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-66",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of an electron is:",
+      "options": {
+        "a": "1.6749 × 10⁻²⁷ kg",
+        "b": "1.6726 × 10⁻²⁷ kg",
+        "c": "9.1094 × 10⁻³¹ kg",
+        "d": "1.6022 × 10⁻¹⁹ kg"
+      },
+      "answer": "c",
+      "a": "9.1094 × 10⁻³¹ kg",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-12",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Appliances in a domestic circuit are connected in parallel.\nReason (R): Parallel connection ensures that each appliance has the same potential difference.\nChoose the correct statement:",
+      "options": {
+        "a": "Both A and R are true, but R is not the correct explanation of A.",
+        "b": "Both A and R are true, and R is the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "b",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-49",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "A negative sign in the value of magnification produced by a spherical mirror indicates that the image is:",
+      "options": {
+        "a": "enlarged",
+        "b": "real",
+        "c": "virtual",
+        "d": "erect"
+      },
+      "answer": "b",
+      "a": "real",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-33",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Sound wave – Mechanical wave\n(II) Light wave – Mechanical wave\n(III) Sound wave – Longitudinal wave\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-11",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The commercial unit of electrical energy is:",
+      "options": {
+        "a": "Kilowatt hour",
+        "b": "Watt",
+        "c": "Kilowatt",
+        "d": "Volt ampere"
+      },
+      "answer": "a",
+      "a": "Kilowatt hour",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-56",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not a mode of heat transfer?",
+      "options": {
+        "a": "Conduction",
+        "b": "Sublimation",
+        "c": "Convection",
+        "d": "Radiation"
+      },
+      "answer": "b",
+      "a": "Sublimation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-56",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Niels Bohr proposed his model of the atom in:",
+      "options": {
+        "a": "1897",
+        "b": "1932",
+        "c": "1911",
+        "d": "1913"
+      },
+      "answer": "d",
+      "a": "1913",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-39",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "If the velocity of a vehicle becomes three times its original value, its kinetic energy becomes:",
+      "options": {
+        "a": "9 times",
+        "b": "12 times",
+        "c": "6 times",
+        "d": "3 times"
+      },
+      "answer": "a",
+      "a": "9 times",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-23",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following planets is mostly made of gas and ice?",
+      "options": {
+        "a": "Mars",
+        "b": "Uranus",
+        "c": "Mercury",
+        "d": "Venus"
+      },
+      "answer": "b",
+      "a": "Uranus",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-37",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "One atmosphere is equal to:",
+      "options": {
+        "a": "1.33 × 10² Pa",
+        "b": "1.013 × 10³ Pa",
+        "c": "1.013 × 10⁵ Pa",
+        "d": "1.0 × 10⁶ Pa"
+      },
+      "answer": "c",
+      "a": "1.013 × 10⁵ Pa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-61",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "With respect to the displacement plot, the acceleration plot in SHM has a phase difference of:",
+      "options": {
+        "a": "2π",
+        "b": "π/2",
+        "c": "π",
+        "d": "π/4"
+      },
+      "answer": "c",
+      "a": "π",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-23",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A sonar signal returns from the sea bed after 2.4 s. If the speed of sound in seawater is 1500 m s⁻¹, the depth of the sea bed is:",
+      "options": {
+        "a": "900 m",
+        "b": "625 m",
+        "c": "3600 m",
+        "d": "1800 m"
+      },
+      "answer": "d",
+      "a": "1800 m",
+      "e": "Depth = 1500 m s⁻¹ × (2.4 s / 2) = 1800 m.",
+      "table": null,
+      "qid": "physics-ch6-sound-56",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound waves with frequency above 20 kHz are called:",
+      "options": {
+        "a": "Infrasonic waves",
+        "b": "Supersonic waves",
+        "c": "Audible waves",
+        "d": "Ultrasonic waves"
+      },
+      "answer": "d",
+      "a": "Ultrasonic waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-39",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The refreezing of water above a wire that has passed through an ice slab is called:",
+      "options": {
+        "a": "regelation",
+        "b": "fusion",
+        "c": "vaporisation",
+        "d": "sublimation"
+      },
+      "answer": "a",
+      "a": "regelation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-45",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Among the following alloys, the highest resistivity at 20 °C is of:",
+      "options": {
+        "a": "Nichrome",
+        "b": "Manganese",
+        "c": "Manganin",
+        "d": "Constantan"
+      },
+      "answer": "a",
+      "a": "Nichrome",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-37",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "1 mm is equal to:",
+      "options": {
+        "a": "1 cm",
+        "b": "0.01 cm",
+        "c": "0.1 cm",
+        "d": "10 cm"
+      },
+      "answer": "c",
+      "a": "0.1 cm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-9",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The walls of a Dewar flask are coated with:",
+      "options": {
+        "a": "copper",
+        "b": "gold",
+        "c": "aluminium",
+        "d": "silver"
+      },
+      "answer": "d",
+      "a": "silver",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-72",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Electric bulb – Electrical energy to light energy\n(II) Ringing bell – Mechanical energy to sound energy\n(III) Electric water heater – Electrical energy to mechanical energy\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "An electric water heater converts electrical energy into thermal energy.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-12",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The force with which the Earth pulls an object towards itself is called its:",
+      "options": {
+        "a": "friction",
+        "b": "upthrust",
+        "c": "mass",
+        "d": "weight"
+      },
+      "answer": "d",
+      "a": "weight",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-5",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    }
+  ]
+}

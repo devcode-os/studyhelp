@@ -1,0 +1,560 @@
+{
+  "slug": "general-science-set-15",
+  "chapterNumber": 15,
+  "title": "General Science Set 15",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The area under a force-displacement graph between the initial and final positions gives the:",
+      "options": {
+        "a": "acceleration",
+        "b": "velocity",
+        "c": "work done",
+        "d": "power"
+      },
+      "answer": "c",
+      "a": "work done",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-8",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The heart is enclosed in a double-walled membranous bag called the:",
+      "options": {
+        "a": "Pleura",
+        "b": "Meninges",
+        "c": "Peritoneum",
+        "d": "Pericardium"
+      },
+      "answer": "d",
+      "a": "Pericardium",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-58",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A parallel beam of light after reflection from a convex mirror:",
+      "options": {
+        "a": "is absorbed",
+        "b": "converges",
+        "c": "diverges",
+        "d": "remains parallel"
+      },
+      "answer": "c",
+      "a": "diverges",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-37",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Grinding a stick of chalk into fine powder is an example of:",
+      "options": {
+        "a": "Combustion",
+        "b": "Chemical change",
+        "c": "Physical change",
+        "d": "Nuclear change"
+      },
+      "answer": "c",
+      "a": "Physical change",
+      "e": "Chalk does not change into a new substance on grinding. Only the size of each speck is reduced.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following diseases is NOT caused by a virus?",
+      "options": {
+        "a": "Mumps",
+        "b": "Small pox",
+        "c": "Typhoid",
+        "d": "Influenza"
+      },
+      "answer": "c",
+      "a": "Typhoid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-167",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A straight inclined line on a position-time graph indicates:",
+      "options": {
+        "a": "object at rest",
+        "b": "increasing velocity",
+        "c": "constant acceleration",
+        "d": "constant velocity"
+      },
+      "answer": "d",
+      "a": "constant velocity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-36",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The removal of waste products from the body is called:",
+      "options": {
+        "a": "Germination",
+        "b": "Excretion",
+        "c": "Respiration",
+        "d": "Nutrition"
+      },
+      "answer": "b",
+      "a": "Excretion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-96",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The smallest volume that a 250 mL measuring cylinder can usually read is:",
+      "options": {
+        "a": "2 mL",
+        "b": "0.1 mL",
+        "c": "5 mL",
+        "d": "1 mL"
+      },
+      "answer": "a",
+      "a": "2 mL",
+      "e": "The smallest readable volume depends on the capacity of the cylinder.",
+      "table": {
+        "headers": [
+          "Capacity",
+          "Smallest volume read"
+        ],
+        "rows": [
+          [
+            "10 mL or 25 mL",
+            "0.1 mL"
+          ],
+          [
+            "100 mL",
+            "1 mL"
+          ],
+          [
+            "250 mL",
+            "2 mL"
+          ],
+          [
+            "500 mL",
+            "5 mL"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch13-matter-and-its-properties-78",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The albedo of snow lies approximately in the range:",
+      "options": {
+        "a": "0.50–0.70",
+        "b": "0.80–0.90",
+        "c": "0.05–0.10",
+        "d": "0.25–0.30"
+      },
+      "answer": "b",
+      "a": "0.80–0.90",
+      "e": "",
+      "table": {
+        "headers": [
+          "Material",
+          "Albedo"
+        ],
+        "rows": [
+          [
+            "Snow",
+            "0.80–0.90"
+          ],
+          [
+            "Ice",
+            "0.50–0.70"
+          ],
+          [
+            "Crushed rock",
+            "0.25–0.30"
+          ]
+        ]
+      },
+      "qid": "physics-ch9-gravitation-104",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Reproduction of a plant from its leaf, stem or root is called:",
+      "options": {
+        "a": "Germination",
+        "b": "Vegetative propagation",
+        "c": "Fertilisation",
+        "d": "Pollination"
+      },
+      "answer": "b",
+      "a": "Vegetative propagation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-24",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Tooth enamel is made up of:",
+      "options": {
+        "a": "Calcium hydroxyapatite",
+        "b": "Calcium sulphate",
+        "c": "Calcium chloride",
+        "d": "Calcium carbonate"
+      },
+      "answer": "a",
+      "a": "Calcium hydroxyapatite",
+      "e": "It is a crystalline form of calcium phosphate and the hardest substance in the body.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1820, the deflection of a compass needle by an electric current in a nearby wire was accidentally observed by:",
+      "options": {
+        "a": "Alessandro Volta",
+        "b": "Georg Simon Ohm",
+        "c": "Andre-Marie Ampere",
+        "d": "Hans Christian Oersted"
+      },
+      "answer": "d",
+      "a": "Hans Christian Oersted",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-21",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "If gametes are formed from an organism with four chromosome pairs, each pair carrying contrasting characters, the number of possible combinations of characters in the gametes is:",
+      "options": {
+        "a": "32",
+        "b": "12",
+        "c": "8",
+        "d": "16"
+      },
+      "answer": "d",
+      "a": "16",
+      "e": "Each pair offers two choices, so 2 × 2 × 2 × 2 = 16.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-39",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The period of SHM is independent of its:",
+      "options": {
+        "a": "Mass of the block in a spring–mass system",
+        "b": "Amplitude",
+        "c": "Length of a simple pendulum",
+        "d": "Spring constant in a spring–mass system"
+      },
+      "answer": "b",
+      "a": "Amplitude",
+      "e": "The period is also independent of the energy and the phase constant.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-42",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A metal carbonate reacts with an acid to give a salt, water and:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Hydrogen",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "a",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The variety of landforms, rocks and soils, together with the processes that shape them, is called:",
+      "options": {
+        "a": "Biodiversity",
+        "b": "Ecodiversity",
+        "c": "Hydrodiversity",
+        "d": "Geodiversity"
+      },
+      "answer": "d",
+      "a": "Geodiversity",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-13",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The kinetic energy of a particle in SHM of period T varies with a period of:",
+      "options": {
+        "a": "T/4",
+        "b": "T/2",
+        "c": "T",
+        "d": "2T"
+      },
+      "answer": "b",
+      "a": "T/2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-30",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "In electrolytic refining, the insoluble impurities that settle at the bottom of the anode are called:",
+      "options": {
+        "a": "Anode mud",
+        "b": "Gangue",
+        "c": "Residue",
+        "d": "Slag"
+      },
+      "answer": "a",
+      "a": "Anode mud",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-70",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Reproduction in which a new generation is created from a single individual is called:",
+      "options": {
+        "a": "Fertilisation",
+        "b": "Pollination",
+        "c": "Sexual reproduction",
+        "d": "Asexual reproduction"
+      },
+      "answer": "d",
+      "a": "Asexual reproduction",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-17",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The largest reservoir of nitrogen is the:",
+      "options": {
+        "a": "Rocks",
+        "b": "Atmosphere",
+        "c": "Soil",
+        "d": "Oceans"
+      },
+      "answer": "b",
+      "a": "Atmosphere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-129",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants and animals that live on land are said to live in:",
+      "options": {
+        "a": "Marine habitats",
+        "b": "Aquatic habitats",
+        "c": "Terrestrial habitats",
+        "d": "Amphibian habitats"
+      },
+      "answer": "c",
+      "a": "Terrestrial habitats",
+      "e": "Forests, deserts, grasslands and mountains are examples.",
+      "table": null,
+      "qid": "biology-ch23-plants-31",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The white insoluble substance formed when carbon dioxide reacts with lime water is:",
+      "options": {
+        "a": "Calcium hydroxide",
+        "b": "Calcium carbonate",
+        "c": "Magnesium oxide",
+        "d": "Calcium oxide"
+      },
+      "answer": "b",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The working of a fuse is based on:",
+      "options": {
+        "a": "Magnetic effect of current",
+        "b": "Ohm's law",
+        "c": "Joule's heating effect",
+        "d": "Chemical reactions in cells"
+      },
+      "answer": "c",
+      "a": "Joule's heating effect",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-60",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Mitosis produces two genetically identical daughter cells.\n(II) In meiosis, the parent cell divides twice in succession.\n(III) Gametes produced by meiosis have double the chromosome number of the parent cell.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-85",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Energy is defined as the:",
+      "options": {
+        "a": "product of force and time",
+        "b": "rate of doing work",
+        "c": "capacity to do work",
+        "d": "force per unit area"
+      },
+      "answer": "c",
+      "a": "capacity to do work",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-10",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "An atom with fewer than four valence electrons generally:",
+      "options": {
+        "a": "Gains electrons",
+        "b": "Remains unchanged",
+        "c": "Donates electrons",
+        "d": "Shares them"
+      },
+      "answer": "c",
+      "a": "Donates electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The respiratory pigment in human beings is:",
+      "options": {
+        "a": "Keratin",
+        "b": "Melanin",
+        "c": "Chlorophyll",
+        "d": "Haemoglobin"
+      },
+      "answer": "d",
+      "a": "Haemoglobin",
+      "e": "It is present in red blood corpuscles and has a very high affinity for oxygen.",
+      "table": null,
+      "qid": "biology-ch26-respiration-63",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple pendulum eventually stops because of energy loss due to:",
+      "options": {
+        "a": "buoyant force",
+        "b": "magnetic force",
+        "c": "friction at the support and air resistance",
+        "d": "loss of mass"
+      },
+      "answer": "c",
+      "a": "friction at the support and air resistance",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-33",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "One atomic mass unit is defined as a mass exactly equal to:",
+      "options": {
+        "a": "One-sixteenth of the mass of one oxygen atom",
+        "b": "The mass of one carbon-12 atom",
+        "c": "One-twelfth of the mass of one carbon-12 atom",
+        "d": "The mass of one hydrogen atom"
+      },
+      "answer": "c",
+      "a": "One-twelfth of the mass of one carbon-12 atom",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-96",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The exit of food from the stomach into the small intestine is regulated by a:",
+      "options": {
+        "a": "Diaphragm",
+        "b": "Valve",
+        "c": "Sphincter muscle",
+        "d": "Villus"
+      },
+      "answer": "c",
+      "a": "Sphincter muscle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-29",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    }
+  ]
+}

@@ -1,0 +1,561 @@
+{
+  "slug": "general-science-set-46",
+  "chapterNumber": 46,
+  "title": "General Science Set 46",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The acid produced by the stomach to help in digestion is:",
+      "options": {
+        "a": "Sulphuric acid",
+        "b": "Nitric acid",
+        "c": "Acetic acid",
+        "d": "Hydrochloric acid"
+      },
+      "answer": "d",
+      "a": "Hydrochloric acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "An astronaut in an orbiting satellite experiences weightlessness because:",
+      "options": {
+        "a": "Gravity is zero at that height",
+        "b": "The satellite is far from all planets",
+        "c": "Both the astronaut and the satellite are in free fall towards the Earth",
+        "d": "Air resistance cancels gravity"
+      },
+      "answer": "c",
+      "a": "Both the astronaut and the satellite are in free fall towards the Earth",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-24",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Platelets are cell fragments produced from:",
+      "options": {
+        "a": "Erythrocytes",
+        "b": "Lymphocytes",
+        "c": "Monocytes",
+        "d": "Megakaryocytes"
+      },
+      "answer": "d",
+      "a": "Megakaryocytes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-45",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The melting point of gallium, as found experimentally, is:",
+      "options": {
+        "a": "72.6 K",
+        "b": "1231 K",
+        "c": "302.93 K",
+        "d": "3029.3 K"
+      },
+      "answer": "c",
+      "a": "302.93 K",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The matsya-yantra, a magnetised fish-shaped iron piece kept in a vessel of oil, was used by Indians for:",
+      "options": {
+        "a": "Measuring time",
+        "b": "Lifting iron objects",
+        "c": "Navigation at sea",
+        "d": "Producing electricity"
+      },
+      "answer": "c",
+      "a": "Navigation at sea",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-8",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Hydra and Planaria can be cut into any number of pieces, each piece growing into a complete organism. This ability is called:",
+      "options": {
+        "a": "Regeneration",
+        "b": "Budding",
+        "c": "Fission",
+        "d": "Fragmentation"
+      },
+      "answer": "a",
+      "a": "Regeneration",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-14",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Diamond and graphite have the same chemical properties.\n(II) Graphite is a very good conductor of electricity.\n(III) Synthetic diamonds are easily distinguishable from natural diamonds.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy emitted per unit time by a perfect radiator is proportional to:",
+      "options": {
+        "a": "T",
+        "b": "T²",
+        "c": "T⁴",
+        "d": "T³"
+      },
+      "answer": "c",
+      "a": "T⁴",
+      "e": "T is the absolute temperature. This is the Stefan–Boltzmann law.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-76",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Knowledge of gene transfer by Agrobacterium is used in genetic engineering to:",
+      "options": {
+        "a": "Cure animal diseases",
+        "b": "Produce annual rings",
+        "c": "Introduce useful genes into plants",
+        "d": "Form cork"
+      },
+      "answer": "c",
+      "a": "Introduce useful genes into plants",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-42",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "A ray of light passing through the optical centre of a lens:",
+      "options": {
+        "a": "passes without any deviation",
+        "b": "passes through the principal focus",
+        "c": "bends towards the normal",
+        "d": "is reflected back"
+      },
+      "answer": "a",
+      "a": "passes without any deviation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-48",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A three-carbon chain with a triple bond is named:",
+      "options": {
+        "a": "Propyne",
+        "b": "Propanal",
+        "c": "Propene",
+        "d": "Propane"
+      },
+      "answer": "a",
+      "a": "Propyne",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The total number of chromosomes in a human body cell is:",
+      "options": {
+        "a": "23",
+        "b": "92",
+        "c": "44",
+        "d": "46"
+      },
+      "answer": "d",
+      "a": "46",
+      "e": "Humans have 23 pairs of chromosomes.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-34",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Light emitted by the Sun takes about ___ to reach the Earth.",
+      "options": {
+        "a": "20 minutes",
+        "b": "80 seconds",
+        "c": "2 minutes",
+        "d": "8 minutes 20 seconds"
+      },
+      "answer": "d",
+      "a": "8 minutes 20 seconds",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-3",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a renewable resource?",
+      "options": {
+        "a": "Water",
+        "b": "Natural gas",
+        "c": "Coal",
+        "d": "Petroleum"
+      },
+      "answer": "a",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-35",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The suffix used in naming the ketone group is:",
+      "options": {
+        "a": "-one",
+        "b": "-al",
+        "c": "-ol",
+        "d": "-oic acid"
+      },
+      "answer": "a",
+      "a": "-one",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "For a sound wave in air, if the frequency of the source is doubled, the speed of the wave:",
+      "options": {
+        "a": "Remains unchanged",
+        "b": "Halves",
+        "c": "Becomes four times",
+        "d": "Doubles"
+      },
+      "answer": "a",
+      "a": "Remains unchanged",
+      "e": "The wavelength halves while the speed stays constant.",
+      "table": null,
+      "qid": "physics-ch6-sound-31",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Fossils of ancient cyanobacteria are found in structures called:",
+      "options": {
+        "a": "Capsules",
+        "b": "Stromatolites",
+        "c": "Diatomaceous earth",
+        "d": "Mycelium"
+      },
+      "answer": "b",
+      "a": "Stromatolites",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-176",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The lecture series 'Chemical History of a Candle' was delivered by:",
+      "options": {
+        "a": "John Tyndall",
+        "b": "Dilip Mahalanabis",
+        "c": "Michael Faraday",
+        "d": "Louis Pasteur"
+      },
+      "answer": "c",
+      "a": "Michael Faraday",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following shines with its own light?",
+      "options": {
+        "a": "Sirius",
+        "b": "Mars",
+        "c": "Moon",
+        "d": "Venus"
+      },
+      "answer": "a",
+      "a": "Sirius",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-26",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following diseases is caused by a virus?",
+      "options": {
+        "a": "Hepatitis A",
+        "b": "Typhoid",
+        "c": "Tuberculosis",
+        "d": "Cholera"
+      },
+      "answer": "a",
+      "a": "Hepatitis A",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-6",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "As molecular mass increases in a homologous series, the melting and boiling points:",
+      "options": {
+        "a": "Remain constant",
+        "b": "Decrease",
+        "c": "First decrease, then increase",
+        "d": "Increase"
+      },
+      "answer": "d",
+      "a": "Increase",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Nearly all weather phenomena take place in the:",
+      "options": {
+        "a": "Mesosphere",
+        "b": "Thermosphere",
+        "c": "Troposphere",
+        "d": "Stratosphere"
+      },
+      "answer": "c",
+      "a": "Troposphere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-107",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a human-made ecosystem?",
+      "options": {
+        "a": "Pond",
+        "b": "Lake",
+        "c": "Forest",
+        "d": "Crop-field"
+      },
+      "answer": "d",
+      "a": "Crop-field",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-2",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The moment of inertia of a simple pendulum of bob mass m and length L about the support is:",
+      "options": {
+        "a": "mL³",
+        "b": "mL²",
+        "c": "mL",
+        "d": "m/L²"
+      },
+      "answer": "b",
+      "a": "mL²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-39",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "In a healthy adult, the initial filtrate in the kidneys is about ___ daily.",
+      "options": {
+        "a": "1800 L",
+        "b": "180 L",
+        "c": "18 L",
+        "d": "1.8 L"
+      },
+      "answer": "b",
+      "a": "180 L",
+      "e": "Only a litre or two is actually excreted daily because the remaining filtrate is re-absorbed in the kidney tubules.",
+      "table": null,
+      "qid": "biology-ch26-respiration-99",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The basic nature of a substance is due to the formation of ______ ions in solution.",
+      "options": {
+        "a": "Hydronium",
+        "b": "Carbonate",
+        "c": "Hydroxide",
+        "d": "Chloride"
+      },
+      "answer": "c",
+      "a": "Hydroxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following substances has the highest boiling point at 1 atm pressure?",
+      "options": {
+        "a": "Water",
+        "b": "Gold",
+        "c": "Lead",
+        "d": "Mercury"
+      },
+      "answer": "b",
+      "a": "Gold",
+      "e": "",
+      "table": {
+        "headers": [
+          "Substance",
+          "Melting point (°C)",
+          "Boiling point (°C)"
+        ],
+        "rows": [
+          [
+            "Ethanol",
+            "–114",
+            "78"
+          ],
+          [
+            "Gold",
+            "1063",
+            "2660"
+          ],
+          [
+            "Lead",
+            "328",
+            "1744"
+          ],
+          [
+            "Mercury",
+            "–39",
+            "357"
+          ],
+          [
+            "Nitrogen",
+            "–210",
+            "–196"
+          ],
+          [
+            "Oxygen",
+            "–219",
+            "–183"
+          ],
+          [
+            "Water",
+            "0",
+            "100"
+          ]
+        ]
+      },
+      "qid": "physics-ch4-heat-and-temperature-55",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Each of the nine peripheral fibrils of a centriole is a:",
+      "options": {
+        "a": "Quartet",
+        "b": "Triplet",
+        "c": "Doublet",
+        "d": "Singlet"
+      },
+      "answer": "b",
+      "a": "Triplet",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-56",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Eka-aluminium – Gallium\n(II) Eka-silicon – Germanium\n(III) Eka-aluminium – Germanium\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The angle of contact of mercury with glass is:",
+      "options": {
+        "a": "90°",
+        "b": "zero",
+        "c": "acute",
+        "d": "obtuse"
+      },
+      "answer": "d",
+      "a": "obtuse",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-89",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    }
+  ]
+}

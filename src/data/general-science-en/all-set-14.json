@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-14",
+  "chapterNumber": 14,
+  "title": "General Science Set 14",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following compounds reacts with sodium hydrogencarbonate to produce effervescence?",
+      "options": {
+        "a": "Methane",
+        "b": "Ethanol",
+        "c": "Ethene",
+        "d": "Ethanoic acid"
+      },
+      "answer": "d",
+      "a": "Ethanoic acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-88",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In the sensitive plant, leaves move in response to touch due to a change in:",
+      "options": {
+        "a": "Water content of cells",
+        "b": "Cell division",
+        "c": "Growth of cells",
+        "d": "Auxin concentration"
+      },
+      "answer": "a",
+      "a": "Water content of cells",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-15",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic effect can act through:",
+      "options": {
+        "a": "Iron sheets only",
+        "b": "Magnetic materials only",
+        "c": "Vacuum only",
+        "d": "Non-magnetic materials"
+      },
+      "answer": "d",
+      "a": "Non-magnetic materials",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-12",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "In a neuron, information is acquired at the:",
+      "options": {
+        "a": "Synapse",
+        "b": "Dendritic tip",
+        "c": "Axon end",
+        "d": "Cell body"
+      },
+      "answer": "b",
+      "a": "Dendritic tip",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-3",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following observations does not by itself indicate that a chemical reaction has taken place?",
+      "options": {
+        "a": "Evolution of a gas",
+        "b": "Change in temperature",
+        "c": "Change in colour",
+        "d": "Change in shape of the container"
+      },
+      "answer": "d",
+      "a": "Change in shape of the container",
+      "e": "Change in state, colour, evolution of a gas and change in temperature indicate a chemical reaction.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the two forces in Newton's third law:\n(I) They act on different objects.\n(II) They are equal in magnitude and opposite in direction.\n(III) They cancel each other because they act simultaneously.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-17",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Plasma forms what percentage of the total volume of blood?",
+      "options": {
+        "a": "75 per cent",
+        "b": "65 per cent",
+        "c": "55 per cent",
+        "d": "45 per cent"
+      },
+      "answer": "c",
+      "a": "55 per cent",
+      "e": "Formed elements make up the remaining 45 per cent.",
+      "table": null,
+      "qid": "biology-ch22-tissues-52",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The electronic configuration of an element with atomic number 14 is:",
+      "options": {
+        "a": "2, 8, 4",
+        "b": "2, 8, 2",
+        "c": "2, 6, 6",
+        "d": "2, 4, 8"
+      },
+      "answer": "a",
+      "a": "2, 8, 4",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-63",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Limestone, chalk and marble are different forms of:",
+      "options": {
+        "a": "Calcium oxide",
+        "b": "Calcium carbonate",
+        "c": "Calcium hydroxide",
+        "d": "Calcium sulphate"
+      },
+      "answer": "b",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The ozone layer protects living cells by blocking:",
+      "options": {
+        "a": "Solar wind",
+        "b": "Cosmic rays",
+        "c": "Infrared rays",
+        "d": "Ultraviolet rays"
+      },
+      "answer": "d",
+      "a": "Ultraviolet rays",
+      "e": "Ozone is a three-atom form of oxygen.",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-7",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Under clear sky conditions, the maximum insolation reaching the Earth's surface is about:",
+      "options": {
+        "a": "10 kW m⁻²",
+        "b": "1.0 kW m⁻²",
+        "c": "1.4 kW m⁻²",
+        "d": "0.1 kW m⁻²"
+      },
+      "answer": "b",
+      "a": "1.0 kW m⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-101",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Liquids have:",
+      "options": {
+        "a": "Fixed shape but no fixed volume",
+        "b": "Fixed shape and fixed volume",
+        "c": "No fixed shape but fixed volume",
+        "d": "No fixed shape and no fixed volume"
+      },
+      "answer": "c",
+      "a": "No fixed shape but fixed volume",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "At 72 beats per minute, the duration of a cardiac cycle is approximately:",
+      "options": {
+        "a": "1.2 s",
+        "b": "0.8 s",
+        "c": "0.4 s",
+        "d": "1.6 s"
+      },
+      "answer": "b",
+      "a": "0.8 s",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-62",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy stored in fuels and food in the form of bonds between atoms is:",
+      "options": {
+        "a": "chemical energy",
+        "b": "nuclear energy",
+        "c": "electrical energy",
+        "d": "thermal energy"
+      },
+      "answer": "a",
+      "a": "chemical energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-13",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "In Rhizopus, the blob-like structures that contain spores are called:",
+      "options": {
+        "a": "Filaments",
+        "b": "Sporangia",
+        "c": "Buds",
+        "d": "Hyphae"
+      },
+      "answer": "b",
+      "a": "Sporangia",
+      "e": "The thread-like hyphae are not reproductive parts.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-22",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "In a digital weighing balance, a non-zero initial reading is brought to zero by pressing the:",
+      "options": {
+        "a": "Tare button",
+        "b": "Mode button",
+        "c": "Unit button",
+        "d": "Power button"
+      },
+      "answer": "a",
+      "a": "Tare button",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): A freely suspended magnet rests along the north–south direction.\nReason (R): The Earth itself behaves like a giant magnet.\nChoose the correct statement:",
+      "options": {
+        "a": "Both A and R are true, but R is not the correct explanation of A.",
+        "b": "A is true, but R is false.",
+        "c": "Both A and R are true, and R is the correct explanation of A.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "c",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-7",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The embryo gets nutrition from the mother's blood through the:",
+      "options": {
+        "a": "Vagina",
+        "b": "Oviduct",
+        "c": "Placenta",
+        "d": "Cervix"
+      },
+      "answer": "c",
+      "a": "Placenta",
+      "e": "It is a disc embedded in the uterine wall. Waste from the embryo is also removed into the mother's blood through it.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-78",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound travels fastest in:",
+      "options": {
+        "a": "Solids",
+        "b": "Liquids",
+        "c": "Vacuum",
+        "d": "Gases"
+      },
+      "answer": "a",
+      "a": "Solids",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-30",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The milkiness of lime water on passing carbon dioxide through it is due to the formation of:",
+      "options": {
+        "a": "Calcium hydrogencarbonate",
+        "b": "Calcium chloride",
+        "c": "Calcium carbonate",
+        "d": "Calcium oxide"
+      },
+      "answer": "c",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The ribs are attached in front to the:",
+      "options": {
+        "a": "Sternum",
+        "b": "Backbone",
+        "c": "Skull",
+        "d": "Collarbone"
+      },
+      "answer": "a",
+      "a": "Sternum",
+      "e": "They are attached to the spine at the back and joined by flexible cartilage, which lets the rib cage expand and contract during breathing.",
+      "table": null,
+      "qid": "biology-ch22-tissues-74",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about Bohr's model:\n(I) Electrons revolve only in allowed shells.\n(II) Electrons can exist between two shells.\n(III) The shells are also called energy levels.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-47",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Lanthanoids – Sixth period\n(II) Actinoids – Seventh period\n(III) Lanthanoids – Seventh period\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "The 14 elements of each series are placed in separate panels at the bottom of the periodic table.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The 'Save Silent Valley' movement opposed a proposed hydroelectric dam across the river:",
+      "options": {
+        "a": "Bharathapuzha",
+        "b": "Periyar",
+        "c": "Kunthipuzha",
+        "d": "Pamba"
+      },
+      "answer": "c",
+      "a": "Kunthipuzha",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-17",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The phase in which more than half of the illuminated portion of the Moon is seen is called:",
+      "options": {
+        "a": "Gibbous",
+        "b": "Crescent",
+        "c": "Full Moon",
+        "d": "Half Moon"
+      },
+      "answer": "a",
+      "a": "Gibbous",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-74",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Junk foods contain high levels of:",
+      "options": {
+        "a": "Vitamins and minerals",
+        "b": "Starch and water",
+        "c": "Sugar and fats",
+        "d": "Protein and fibre"
+      },
+      "answer": "c",
+      "a": "Sugar and fats",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-38",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The three requirements for combustion are:",
+      "options": {
+        "a": "Fuel, nitrogen and light",
+        "b": "Oxygen, water and heat",
+        "c": "Fuel, carbon dioxide and heat",
+        "d": "Fuel, oxygen and heat"
+      },
+      "answer": "d",
+      "a": "Fuel, oxygen and heat",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The brightest star in the night sky is:",
+      "options": {
+        "a": "Polaris",
+        "b": "Aldebaran",
+        "c": "Betelgeuse",
+        "d": "Sirius"
+      },
+      "answer": "d",
+      "a": "Sirius",
+      "e": "Sirius lies in the constellation Canis Major.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-28",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Dmitri Ivanowsky – Mosaic disease of tobacco\n(II) M.W. Beijerinck – Crystallisation of viruses\n(III) W.M. Stanley – Crystallisation of viruses\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-161",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of density is:",
+      "options": {
+        "a": "g/s",
+        "b": "kg/m²",
+        "c": "m³/kg",
+        "d": "kg/m³"
+      },
+      "answer": "d",
+      "a": "kg/m³",
+      "e": "For liquids, g/mL and g/cm³ are also used.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-72",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+{
+  "slug": "general-science-chemistry-set-21",
+  "chapterNumber": 21,
+  "title": "Chemistry Set 21",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Orange – Citric acid\n(II) Curd – Lactic acid\n(III) Tomato – Acetic acid\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbohydrates in rice, potatoes and bread are broken down during digestion to form:",
+      "options": {
+        "a": "Sucrose",
+        "b": "Starch",
+        "c": "Glucose",
+        "d": "Fructose"
+      },
+      "answer": "c",
+      "a": "Glucose",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The electronic configuration of the chloride ion is:",
+      "options": {
+        "a": "2, 8, 1",
+        "b": "2, 8, 8",
+        "c": "2, 8, 7",
+        "d": "2, 8"
+      },
+      "answer": "b",
+      "a": "2, 8, 8",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The black mass formed on heating a mixture of iron filings and sulfur powder is:",
+      "options": {
+        "a": "Iron oxide",
+        "b": "Iron sulfide",
+        "c": "Iron sulfate",
+        "d": "Iron chloride"
+      },
+      "answer": "b",
+      "a": "Iron sulfide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a combustible substance?",
+      "options": {
+        "a": "Stone",
+        "b": "Water",
+        "c": "Kerosene",
+        "d": "Glass"
+      },
+      "answer": "c",
+      "a": "Kerosene",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Rain water is called acid rain when its pH is less than:",
+      "options": {
+        "a": "6.5",
+        "b": "5.6",
+        "c": "7.0",
+        "d": "5.5"
+      },
+      "answer": "b",
+      "a": "5.6",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "One mole contains exactly how many elementary entities?",
+      "options": {
+        "a": "6.02214076 × 10²²",
+        "b": "6.02214076 × 10²⁴",
+        "c": "6.02214076 × 10²³",
+        "d": "6.02214076 × 10²¹"
+      },
+      "answer": "c",
+      "a": "6.02214076 × 10²³",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-99",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular formula of propane is:",
+      "options": {
+        "a": "C₃H₆",
+        "b": "C₂H₆",
+        "c": "C₄H₁₀",
+        "d": "C₃H₈"
+      },
+      "answer": "d",
+      "a": "C₃H₈",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Baking powder is a mixture of baking soda and:",
+      "options": {
+        "a": "Lactic acid",
+        "b": "Tartaric acid",
+        "c": "Acetic acid",
+        "d": "Citric acid"
+      },
+      "answer": "b",
+      "a": "Tartaric acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-70",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Iron reacts with steam to form hydrogen and:",
+      "options": {
+        "a": "FeO",
+        "b": "Fe₃O₄",
+        "c": "FeSO₄",
+        "d": "FeCl₃"
+      },
+      "answer": "b",
+      "a": "Fe₃O₄",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum temperature at which a solid melts to become a liquid at atmospheric pressure is called its:",
+      "options": {
+        "a": "Evaporation point",
+        "b": "Sublimation point",
+        "c": "Melting point",
+        "d": "Boiling point"
+      },
+      "answer": "c",
+      "a": "Melting point",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The ionic end of a soap molecule is:",
+      "options": {
+        "a": "Hydrophilic",
+        "b": "Neutral",
+        "c": "Hydrophobic",
+        "d": "Non-polar"
+      },
+      "answer": "a",
+      "a": "Hydrophilic",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-80",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Ice floats on liquid water because, compared with water, its density is:",
+      "options": {
+        "a": "Equal",
+        "b": "Lower",
+        "c": "Zero",
+        "d": "Higher"
+      },
+      "answer": "b",
+      "a": "Lower",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-87",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Concentrated nitric acid or sulphuric acid should be diluted by:",
+      "options": {
+        "a": "Adding water to the acid",
+        "b": "Mixing both together quickly",
+        "c": "Adding the acid slowly to water with constant stirring",
+        "d": "Heating the acid before adding water"
+      },
+      "answer": "c",
+      "a": "Adding the acid slowly to water with constant stirring",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The electronic configuration of the magnesium ion (Mg²⁺) is:",
+      "options": {
+        "a": "2, 8, 8",
+        "b": "2, 8, 1",
+        "c": "2, 8",
+        "d": "2, 8, 2"
+      },
+      "answer": "c",
+      "a": "2, 8",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The Periodic Law revealed important analogies among how many naturally occurring elements?",
+      "options": {
+        "a": "118",
+        "b": "94",
+        "c": "98",
+        "d": "92"
+      },
+      "answer": "b",
+      "a": "94",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Non-metallic oxides are acidic in nature.\nReason (R): Carbon dioxide reacts with calcium hydroxide, a base, to form a salt and water.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure gold is known as:",
+      "options": {
+        "a": "22 carat gold",
+        "b": "20 carat gold",
+        "c": "18 carat gold",
+        "d": "24 carat gold"
+      },
+      "answer": "d",
+      "a": "24 carat gold",
+      "e": "It is very soft, so it is alloyed with silver or copper for jewellery.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-83",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Air is a:",
+      "options": {
+        "a": "Non-uniform mixture",
+        "b": "Element",
+        "c": "Compound",
+        "d": "Uniform mixture"
+      },
+      "answer": "d",
+      "a": "Uniform mixture",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum temperature at which a substance catches fire is called its:",
+      "options": {
+        "a": "Melting point",
+        "b": "Boiling point",
+        "c": "Flash point",
+        "d": "Ignition temperature"
+      },
+      "answer": "d",
+      "a": "Ignition temperature",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "A traditional remedy for a nettle sting is rubbing the area with the leaf of:",
+      "options": {
+        "a": "Mint",
+        "b": "Dock plant",
+        "c": "Neem",
+        "d": "Tulsi"
+      },
+      "answer": "b",
+      "a": "Dock plant",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Compounds containing only carbon and hydrogen are called:",
+      "options": {
+        "a": "Hydrocarbons",
+        "b": "Isomers",
+        "c": "Alkanes",
+        "d": "Heteroatoms"
+      },
+      "answer": "a",
+      "a": "Hydrocarbons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A uniform mixture, such as that of salt and water, is called a:",
+      "options": {
+        "a": "Compound",
+        "b": "Suspension",
+        "c": "Solution",
+        "d": "Colloid"
+      },
+      "answer": "c",
+      "a": "Solution",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula unit mass of calcium chloride (Ca = 40 u, Cl = 35.5 u) is:",
+      "options": {
+        "a": "75.5 u",
+        "b": "111 u",
+        "c": "151 u",
+        "d": "146.5 u"
+      },
+      "answer": "b",
+      "a": "111 u",
+      "e": "40 u + (35.5 u × 2) = 111 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    }
+  ]
+}

@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-chemistry-set-17",
+  "chapterNumber": 17,
+  "title": "Chemistry Set 17",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A reducing agent is a species that is:",
+      "options": {
+        "a": "An acceptor of electrons",
+        "b": "A donor of protons",
+        "c": "An acceptor of oxygen",
+        "d": "A donor of electrons"
+      },
+      "answer": "d",
+      "a": "A donor of electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "A soap solution appears cloudy because the micelles are large enough to:",
+      "options": {
+        "a": "Scatter light",
+        "b": "Reflect light only",
+        "c": "Emit light",
+        "d": "Absorb light"
+      },
+      "answer": "a",
+      "a": "Scatter light",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-81",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a transparent material?",
+      "options": {
+        "a": "Cellophane paper",
+        "b": "Cardboard",
+        "c": "Butter paper",
+        "d": "Frosted glass"
+      },
+      "answer": "a",
+      "a": "Cellophane paper",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A reaction in which a single product is formed from two or more reactants is called a:",
+      "options": {
+        "a": "Double displacement reaction",
+        "b": "Decomposition reaction",
+        "c": "Displacement reaction",
+        "d": "Combination reaction"
+      },
+      "answer": "d",
+      "a": "Combination reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In terms of electron transfer, reduction is:",
+      "options": {
+        "a": "Loss of electrons",
+        "b": "Gain of electrons",
+        "c": "Gain of neutrons",
+        "d": "Loss of protons"
+      },
+      "answer": "b",
+      "a": "Gain of electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In centrifugation, the heavier particles:",
+      "options": {
+        "a": "Move outwards and settle at the bottom of the tube",
+        "b": "Dissolve in the liquid",
+        "c": "Float at the top of the liquid",
+        "d": "Move to the centre of the tube"
+      },
+      "answer": "a",
+      "a": "Move outwards and settle at the bottom of the tube",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Newlands' Law of Octaves seemed to be true only up to the element:",
+      "options": {
+        "a": "Magnesium",
+        "b": "Sodium",
+        "c": "Calcium",
+        "d": "Argon"
+      },
+      "answer": "c",
+      "a": "Calcium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A saline drip is 0.9 % m/v sodium chloride. The mass of salt in 500 mL of this solution is:",
+      "options": {
+        "a": "45 g",
+        "b": "4.5 g",
+        "c": "9 g",
+        "d": "0.9 g"
+      },
+      "answer": "b",
+      "a": "4.5 g",
+      "e": "0.9 g per 100 mL × 5 = 4.5 g.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The products formed on heating sodium hydrogencarbonate are:",
+      "options": {
+        "a": "Sodium chloride and hydrogen",
+        "b": "Sodium oxide and water",
+        "c": "Sodium hydroxide and chlorine",
+        "d": "Sodium carbonate, water and carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Sodium carbonate, water and carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-69",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a positively charged polyatomic ion?",
+      "options": {
+        "a": "Nitrate",
+        "b": "Hydroxide",
+        "c": "Sulfate",
+        "d": "Ammonium"
+      },
+      "answer": "d",
+      "a": "Ammonium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which there is an exchange of ions between the reactants are called:",
+      "options": {
+        "a": "Combination reactions",
+        "b": "Decomposition reactions",
+        "c": "Double displacement reactions",
+        "d": "Displacement reactions"
+      },
+      "answer": "c",
+      "a": "Double displacement reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Non-metals form oxides that are either:",
+      "options": {
+        "a": "Basic or neutral",
+        "b": "Acidic or basic",
+        "c": "Acidic or neutral",
+        "d": "Amphoteric or basic"
+      },
+      "answer": "c",
+      "a": "Acidic or neutral",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A homogeneous mixture of two or more metals, or a metal and a non-metal, is called:",
+      "options": {
+        "a": "Compound",
+        "b": "Amalgam",
+        "c": "Colloid",
+        "d": "Alloy"
+      },
+      "answer": "d",
+      "a": "Alloy",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The bond formed by transfer of electrons from one atom to another is called:",
+      "options": {
+        "a": "Ionic bond",
+        "b": "Metallic bond",
+        "c": "Covalent bond",
+        "d": "Hydrogen bond"
+      },
+      "answer": "a",
+      "a": "Ionic bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Scum is formed when soap reacts with the ______ salts present in hard water.",
+      "options": {
+        "a": "Calcium and magnesium",
+        "b": "Sodium and potassium",
+        "c": "Copper and zinc",
+        "d": "Chloride and bromide"
+      },
+      "answer": "a",
+      "a": "Calcium and magnesium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-83",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an exothermic process?",
+      "options": {
+        "a": "Respiration",
+        "b": "Decomposition of silver chloride in sunlight",
+        "c": "Electrolysis of water",
+        "d": "Thermal decomposition of limestone"
+      },
+      "answer": "a",
+      "a": "Respiration",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an element?",
+      "options": {
+        "a": "Glucose",
+        "b": "Sodium",
+        "c": "Ammonia",
+        "d": "Water"
+      },
+      "answer": "b",
+      "a": "Sodium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Substances added to foods containing fats and oils to prevent oxidation are called:",
+      "options": {
+        "a": "Catalysts",
+        "b": "Antioxidants",
+        "c": "Reductants",
+        "d": "Preservatives only"
+      },
+      "answer": "b",
+      "a": "Antioxidants",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Hydrocarbons containing one or more triple bonds are called:",
+      "options": {
+        "a": "Alkynes",
+        "b": "Alcohols",
+        "c": "Alkenes",
+        "d": "Alkanes"
+      },
+      "answer": "a",
+      "a": "Alkynes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The word 'redox' was coined because oxidation and reduction:",
+      "options": {
+        "a": "Occur only in solutions",
+        "b": "Always occur simultaneously",
+        "c": "Occur only in gases",
+        "d": "Occur only with oxygen"
+      },
+      "answer": "b",
+      "a": "Always occur simultaneously",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals can displace copper from copper sulphate solution?",
+      "options": {
+        "a": "Iron",
+        "b": "Mercury",
+        "c": "Gold",
+        "d": "Silver"
+      },
+      "answer": "a",
+      "a": "Iron",
+      "e": "A more reactive metal displaces a less reactive metal from its salt solution.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The only non-metal that is liquid at room temperature is:",
+      "options": {
+        "a": "Carbon",
+        "b": "Sulphur",
+        "c": "Bromine",
+        "d": "Iodine"
+      },
+      "answer": "c",
+      "a": "Bromine",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals do not react with cold or hot water but react with steam?",
+      "options": {
+        "a": "Silver and gold",
+        "b": "Magnesium and calcium",
+        "c": "Lead and copper",
+        "d": "Aluminium, iron and zinc"
+      },
+      "answer": "d",
+      "a": "Aluminium, iron and zinc",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Iron sulfide reacts with dilute hydrochloric acid to form iron chloride and:",
+      "options": {
+        "a": "Hydrogen sulfide",
+        "b": "Sulfur dioxide",
+        "c": "Hydrogen",
+        "d": "Chlorine"
+      },
+      "answer": "a",
+      "a": "Hydrogen sulfide",
+      "e": "The gas is colourless and has a rotten egg-like odour.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which energy is absorbed are known as:",
+      "options": {
+        "a": "Redox reactions",
+        "b": "Combination reactions",
+        "c": "Exothermic reactions",
+        "d": "Endothermic reactions"
+      },
+      "answer": "d",
+      "a": "Endothermic reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following reacts with hot water but not with cold water?",
+      "options": {
+        "a": "Calcium",
+        "b": "Aluminium",
+        "c": "Magnesium",
+        "d": "Sodium"
+      },
+      "answer": "c",
+      "a": "Magnesium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Unsaturated carbon compounds generally burn with a:",
+      "options": {
+        "a": "Green flame",
+        "b": "Clean blue flame",
+        "c": "Flame-free glow",
+        "d": "Yellow sooty flame"
+      },
+      "answer": "d",
+      "a": "Yellow sooty flame",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-47",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Heteroatoms and the groups containing them, which confer specific properties to a compound regardless of the carbon chain, are called:",
+      "options": {
+        "a": "Allotropes",
+        "b": "Functional groups",
+        "c": "Homologous series",
+        "d": "Isomers"
+      },
+      "answer": "b",
+      "a": "Functional groups",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium chloride, formed from hydrochloric acid and sodium hydroxide, is a:",
+      "options": {
+        "a": "Alkali",
+        "b": "Neutral salt",
+        "c": "Basic salt",
+        "d": "Acidic salt"
+      },
+      "answer": "b",
+      "a": "Neutral salt",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-80",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The physical and chemical changes in rocks that eventually lead to soil formation are collectively called:",
+      "options": {
+        "a": "Sedimentation",
+        "b": "Combustion",
+        "c": "Weathering",
+        "d": "Erosion"
+      },
+      "answer": "c",
+      "a": "Weathering",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    }
+  ]
+}

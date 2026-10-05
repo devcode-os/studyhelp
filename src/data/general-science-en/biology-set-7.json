@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-biology-set-7",
+  "chapterNumber": 7,
+  "title": "Biology Set 7",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The evaporation of water vapour through stomata is called:",
+      "options": {
+        "a": "Secretion",
+        "b": "Excretion",
+        "c": "Respiration",
+        "d": "Transpiration"
+      },
+      "answer": "d",
+      "a": "Transpiration",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-19",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Complete separation of the right and left sides of the heart is useful in animals with high energy needs, such as:",
+      "options": {
+        "a": "Fishes",
+        "b": "Many reptiles",
+        "c": "Birds and mammals",
+        "d": "Amphibians"
+      },
+      "answer": "c",
+      "a": "Birds and mammals",
+      "e": "They constantly use energy to maintain their body temperature.",
+      "table": null,
+      "qid": "biology-ch26-respiration-76",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Experiments proving that new life always comes from pre-existing life were done by:",
+      "options": {
+        "a": "P. Maheshwari",
+        "b": "Subhash Mukhopadhyay",
+        "c": "William Harvey",
+        "d": "Louis Pasteur"
+      },
+      "answer": "d",
+      "a": "Louis Pasteur",
+      "e": "He also strengthened the cell theory and found the germ theory of disease.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-18",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Mitochondria divide by:",
+      "options": {
+        "a": "Budding",
+        "b": "Mitosis",
+        "c": "Fission",
+        "d": "Fragmentation"
+      },
+      "answer": "c",
+      "a": "Fission",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-41",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Pili and fimbriae play a role in bacterial motility.\n(II) Pili are elongated tubular structures made of a special protein.\n(III) Fimbriae are small bristle-like fibres that help bacteria attach to host tissues.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-71",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The largest known cell in the living world is the yolk of the:",
+      "options": {
+        "a": "Ostrich egg",
+        "b": "Hen's egg",
+        "c": "Eagle egg",
+        "d": "Crocodile egg"
+      },
+      "answer": "a",
+      "a": "Ostrich egg",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-13",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "If the two copies of a gene for a trait are not identical, the trait that gets expressed is called:",
+      "options": {
+        "a": "Hybrid",
+        "b": "Recessive",
+        "c": "Acquired",
+        "d": "Dominant"
+      },
+      "answer": "d",
+      "a": "Dominant",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-12",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Ozone in the upper atmosphere shields the surface of the Earth from:",
+      "options": {
+        "a": "Radio waves",
+        "b": "Ultraviolet radiation",
+        "c": "Infrared radiation",
+        "d": "Visible light"
+      },
+      "answer": "b",
+      "a": "Ultraviolet radiation",
+      "e": "UV radiation is known to cause skin cancer in human beings.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-13",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about photosynthesis:\n(I) Chlorophyll is essential for the process.\n(II) Oxygen is a raw material for the process.\n(III) Carbon dioxide is used in the process.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "Oxygen is released as a product.",
+      "table": null,
+      "qid": "biology-ch23-plants-46",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Acute chest pain due to insufficient oxygen reaching the heart muscle is called:",
+      "options": {
+        "a": "Cardiac arrest",
+        "b": "Heart failure",
+        "c": "Hypertension",
+        "d": "Angina pectoris"
+      },
+      "answer": "d",
+      "a": "Angina pectoris",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-74",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Lymph carries digested and absorbed fat from the:",
+      "options": {
+        "a": "Liver",
+        "b": "Stomach",
+        "c": "Kidney",
+        "d": "Intestine"
+      },
+      "answer": "d",
+      "a": "Intestine",
+      "e": "Lymph also drains excess fluid from the extracellular space back into the blood.",
+      "table": null,
+      "qid": "biology-ch26-respiration-85",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The inner lining of the stomach is protected from the action of acid by:",
+      "options": {
+        "a": "Pancreatic juice",
+        "b": "Bile",
+        "c": "Saliva",
+        "d": "Mucus"
+      },
+      "answer": "d",
+      "a": "Mucus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-28",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Blocking the vas deferens in males prevents:",
+      "options": {
+        "a": "Sperm transfer",
+        "b": "Egg release",
+        "c": "Implantation",
+        "d": "Ovulation"
+      },
+      "answer": "a",
+      "a": "Sperm transfer",
+      "e": "Blocking the fallopian tube in females prevents the egg from reaching the uterus.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-87",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Viruses are composed of genetic material with a protein coat.\n(II) Viroids lack a protein coat around their genetic material.\n(III) Prions are misfolded proteins that lack genetic material.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-166",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Plant cells have a large vacuole.\n(II) The vacuole helps in maintaining the shape of a plant cell.\n(III) Animal cells usually have large vacuoles.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-10",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The anther contains:",
+      "options": {
+        "a": "Sepals",
+        "b": "Pollen grains",
+        "c": "Pistil",
+        "d": "Ovules"
+      },
+      "answer": "b",
+      "a": "Pollen grains",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-43",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Krishi Vigyan Kendras, which train farmers in modern grafting, function under the:",
+      "options": {
+        "a": "Indian Council of Agricultural Research",
+        "b": "Food Safety and Standard Authority of India",
+        "c": "National Health Mission",
+        "d": "Central Drug Research Institute"
+      },
+      "answer": "a",
+      "a": "Indian Council of Agricultural Research",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-31",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Maharaj Kishan Bhan played a key role in developing the vaccine against:",
+      "options": {
+        "a": "Hepatitis A",
+        "b": "Polio",
+        "c": "Measles",
+        "d": "Rotavirus"
+      },
+      "answer": "d",
+      "a": "Rotavirus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-21",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Earth Summit – 1992\n(II) Kyoto Protocol – 2005\n(III) Paris Agreement – 2015\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-35",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The disc-shaped structures present on the sides of the centromere are called:",
+      "options": {
+        "a": "Chromatids",
+        "b": "Kinetochores",
+        "c": "Satellites",
+        "d": "Nucleoli"
+      },
+      "answer": "b",
+      "a": "Kinetochores",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-64",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In a flower, the male gametes are found in:",
+      "options": {
+        "a": "the zygote",
+        "b": "the fruit",
+        "c": "pollen grains inside the anther",
+        "d": "ovules"
+      },
+      "answer": "c",
+      "a": "pollen grains inside the anther",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-26",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Each human gamete has ___ chromosomes.",
+      "options": {
+        "a": "12",
+        "b": "23",
+        "c": "46",
+        "d": "92"
+      },
+      "answer": "b",
+      "a": "23",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-35",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Bile juice secreted by the liver is:",
+      "options": {
+        "a": "Acidic",
+        "b": "Mildly basic",
+        "c": "Strongly acidic",
+        "d": "Neutral"
+      },
+      "answer": "b",
+      "a": "Mildly basic",
+      "e": "Bile neutralises the acids in food coming from the stomach and breaks down fats into tiny droplets.",
+      "table": null,
+      "qid": "biology-ch26-respiration-33",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Fat-soluble carotenoid pigments like carotene and xanthophylls are present in:",
+      "options": {
+        "a": "Leucoplasts",
+        "b": "Amyloplasts",
+        "c": "Chloroplasts",
+        "d": "Chromoplasts"
+      },
+      "answer": "d",
+      "a": "Chromoplasts",
+      "e": "They give yellow, orange or red colour to plant parts.",
+      "table": null,
+      "qid": "biology-ch21-cell-43",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In frogs and most fish, fertilisation takes place:",
+      "options": {
+        "a": "Inside the uterus",
+        "b": "Outside the body",
+        "c": "Inside the oviduct",
+        "d": "Inside the egg case"
+      },
+      "answer": "b",
+      "a": "Outside the body",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-59",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The pores in the leaf epidermis that help in gaseous exchange and transpiration are:",
+      "options": {
+        "a": "Root hairs",
+        "b": "Sieve pores",
+        "c": "Vessels",
+        "d": "Stomata"
+      },
+      "answer": "d",
+      "a": "Stomata",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-35",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The word used in the Vedic texts for tiny visible and invisible entities is:",
+      "options": {
+        "a": "Anu",
+        "b": "Krimi",
+        "c": "Rishi",
+        "d": "Prana"
+      },
+      "answer": "b",
+      "a": "Krimi",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-34",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas released by yeast that makes dough soft and fluffy is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Methane",
+        "c": "Nitrogen",
+        "d": "Oxygen"
+      },
+      "answer": "a",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-24",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a component of the cell wall of algae?",
+      "options": {
+        "a": "Mannans",
+        "b": "Chitin",
+        "c": "Cellulose",
+        "d": "Galactans"
+      },
+      "answer": "b",
+      "a": "Chitin",
+      "e": "Algal cell walls contain cellulose, galactans, mannans and minerals like calcium carbonate.",
+      "table": null,
+      "qid": "biology-ch21-cell-25",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Acne during adolescence occurs due to an increase in:",
+      "options": {
+        "a": "Hair growth",
+        "b": "Oily secretions of the skin",
+        "c": "Melanin production",
+        "d": "Sweat production"
+      },
+      "answer": "b",
+      "a": "Oily secretions of the skin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-78",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

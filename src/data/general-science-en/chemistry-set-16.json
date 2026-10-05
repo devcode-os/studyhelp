@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-chemistry-set-16",
+  "chapterNumber": 16,
+  "title": "Chemistry Set 16",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The pH of a neutral solution is:",
+      "options": {
+        "a": "0",
+        "b": "5.6",
+        "c": "7",
+        "d": "14"
+      },
+      "answer": "c",
+      "a": "7",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The most ductile metal is:",
+      "options": {
+        "a": "Aluminium",
+        "b": "Copper",
+        "c": "Gold",
+        "d": "Silver"
+      },
+      "answer": "c",
+      "a": "Gold",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike hydrochloric acid, which is completely ionised, carboxylic acids are:",
+      "options": {
+        "a": "Strong acids",
+        "b": "Neutral",
+        "c": "Basic",
+        "d": "Weak acids"
+      },
+      "answer": "d",
+      "a": "Weak acids",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The strength of interparticle attractions depends on:",
+      "options": {
+        "a": "Nature of the substance and interparticle distance",
+        "b": "Mass of the substance only",
+        "c": "Volume and pressure only",
+        "d": "Colour and shape of the substance"
+      },
+      "answer": "a",
+      "a": "Nature of the substance and interparticle distance",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Methane is a major component of bio-gas and:",
+      "options": {
+        "a": "Petrol",
+        "b": "Compressed Natural Gas",
+        "c": "Kerosene",
+        "d": "Coal tar"
+      },
+      "answer": "b",
+      "a": "Compressed Natural Gas",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the gases collected on passing electricity through water:\n(I) Hydrogen burns with a pop sound.\n(II) A burning candle glows brighter in oxygen.\n(III) Both gases collected are water vapour.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "The gases are not water vapour; otherwise they would condense back to water.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Rusting of iron requires the presence of:",
+      "options": {
+        "a": "Dry air only",
+        "b": "Water only",
+        "c": "Both air and water",
+        "d": "Boiled water covered with oil"
+      },
+      "answer": "c",
+      "a": "Both air and water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-72",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Iron nails dropped in sawdust can be separated using:",
+      "options": {
+        "a": "Magnetic separation",
+        "b": "Sieving",
+        "c": "Decantation",
+        "d": "Churning"
+      },
+      "answer": "a",
+      "a": "Magnetic separation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Detergents are usually used to make:",
+      "options": {
+        "a": "Shampoos",
+        "b": "Fuels",
+        "c": "Vinegar",
+        "d": "Perfumes"
+      },
+      "answer": "a",
+      "a": "Shampoos",
+      "e": "They are also used in products for cleaning clothes.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-86",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The particle size in a colloid is:",
+      "options": {
+        "a": "Less than 1 nm",
+        "b": "More than 10000 nm",
+        "c": "More than 1000 nm",
+        "d": "1 – 1000 nm"
+      },
+      "answer": "d",
+      "a": "1 – 1000 nm",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-67",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is practically incompressible?",
+      "options": {
+        "a": "Water",
+        "b": "Iodine vapour",
+        "c": "Air",
+        "d": "Oxygen"
+      },
+      "answer": "a",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following polyatomic ions has a valency of 2?",
+      "options": {
+        "a": "Ammonium",
+        "b": "Hydroxide",
+        "c": "Carbonate",
+        "d": "Nitrate"
+      },
+      "answer": "c",
+      "a": "Carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The shining surface of metals in their pure state is called:",
+      "options": {
+        "a": "Ductility",
+        "b": "Sonority",
+        "c": "Metallic lustre",
+        "d": "Malleability"
+      },
+      "answer": "c",
+      "a": "Metallic lustre",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "At room temperature, the mass of 1 mL of water is close to:",
+      "options": {
+        "a": "100 g",
+        "b": "10 g",
+        "c": "0.1 g",
+        "d": "1 g"
+      },
+      "answer": "d",
+      "a": "1 g",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-74",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas usually liberated when an acid reacts with a metal is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Oxygen",
+        "c": "Hydrogen",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Hydrogen",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "12 g of carbon combines with 32 g of oxygen to form 44 g of carbon dioxide. The mass of carbon dioxide formed when 3.6 g of carbon reacts completely is:",
+      "options": {
+        "a": "10.8 g",
+        "b": "13.2 g",
+        "c": "4.4 g",
+        "d": "15.6 g"
+      },
+      "answer": "b",
+      "a": "13.2 g",
+      "e": "(44 g ÷ 12 g) × 3.6 g = 13.2 g.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Lime water is a solution of:",
+      "options": {
+        "a": "Calcium hydroxide",
+        "b": "Calcium carbonate",
+        "c": "Sodium hydroxide",
+        "d": "Calcium oxide"
+      },
+      "answer": "a",
+      "a": "Calcium hydroxide",
+      "e": "Lime (chuna) is calcium oxide, which on mixing with water gives lime water.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The first international conference on chemistry, held in 1860, took place at:",
+      "options": {
+        "a": "Geneva",
+        "b": "Berlin",
+        "c": "Paris",
+        "d": "Karlsruhe"
+      },
+      "answer": "d",
+      "a": "Karlsruhe",
+      "e": "At this meeting, Stanislao Cannizaro emphasised the importance of Avogadro's work.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-93",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Substances that turn blue litmus paper red are:",
+      "options": {
+        "a": "Basic",
+        "b": "Neutral",
+        "c": "Acidic",
+        "d": "Both acidic and basic"
+      },
+      "answer": "c",
+      "a": "Acidic",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In a separating funnel containing mustard oil and water, the layer collected at the top is:",
+      "options": {
+        "a": "Water",
+        "b": "A mixture of both",
+        "c": "Mustard oil",
+        "d": "Neither"
+      },
+      "answer": "c",
+      "a": "Mustard oil",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The extraction of metals from their ores and then refining them is known as:",
+      "options": {
+        "a": "Corrosion",
+        "b": "Roasting",
+        "c": "Metallurgy",
+        "d": "Calcination"
+      },
+      "answer": "c",
+      "a": "Metallurgy",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Solutions do not exhibit the Tyndall effect.\nReason (R): The particles in a solution are smaller than 1 nm in diameter.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-72",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The scientist known as the Father of Modern Chemistry is:",
+      "options": {
+        "a": "Proust",
+        "b": "Lavoisier",
+        "c": "Dalton",
+        "d": "Raja Ramanna"
+      },
+      "answer": "b",
+      "a": "Lavoisier",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction 2HgO → 2Hg + O₂, mercuric oxide undergoes:",
+      "options": {
+        "a": "Neutralisation",
+        "b": "Precipitation",
+        "c": "Reduction",
+        "d": "Oxidation"
+      },
+      "answer": "c",
+      "a": "Reduction",
+      "e": "Oxygen is removed from mercuric oxide.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Using the data below, the mass of potassium nitrate needed to prepare a saturated solution in 50 g of water at 40 °C is:",
+      "options": {
+        "a": "62 g",
+        "b": "124 g",
+        "c": "31 g",
+        "d": "45 g"
+      },
+      "answer": "c",
+      "a": "31 g",
+      "e": "Solubility at 40 °C is 62 g per 100 g of water, so 50 g of water dissolves 31 g.",
+      "table": {
+        "headers": [
+          "Temperature (°C)",
+          "Solubility of potassium nitrate (g per 100 g water)"
+        ],
+        "rows": [
+          [
+            "20",
+            "32"
+          ],
+          [
+            "40",
+            "62"
+          ],
+          [
+            "60",
+            "106"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch16-physical-chemical-changes-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The density of a substance is independent of its shape or size.\n(II) The density of a substance depends on temperature and pressure.\n(III) Pressure significantly affects the density of solids and liquids.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Pressure primarily affects the density of gases.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-73",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The simplest whole number ratio of the various atoms present in a compound is represented by its:",
+      "options": {
+        "a": "Structural formula",
+        "b": "Formula mass",
+        "c": "Empirical formula",
+        "d": "Molecular formula"
+      },
+      "answer": "c",
+      "a": "Empirical formula",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-108",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure substances are classified into:",
+      "options": {
+        "a": "Metals and non-metals",
+        "b": "Uniform and non-uniform substances",
+        "c": "Elements and compounds",
+        "d": "Mixtures and alloys"
+      },
+      "answer": "c",
+      "a": "Elements and compounds",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-47",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Aqua regia is a freshly prepared mixture of concentrated HCl and concentrated HNO₃ in the ratio:",
+      "options": {
+        "a": "3 : 1",
+        "b": "2 : 1",
+        "c": "1 : 1",
+        "d": "1 : 3"
+      },
+      "answer": "a",
+      "a": "3 : 1",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following elements has atoms, rather than molecules, as its constituent particles?",
+      "options": {
+        "a": "Copper",
+        "b": "Hydrogen",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "a",
+      "a": "Copper",
+      "e": "Hydrogen, nitrogen and oxygen gases consist of molecules in which two atoms combine.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

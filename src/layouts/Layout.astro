@@ -5,6 +5,7 @@ const {
   description,
   lang = 'en',
   ogImage = '/og-default.png',
+  noindex = false,
 } = Astro.props;
 
 // Canonical always points at the production origin + the current path,
@@ -37,6 +38,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any" />

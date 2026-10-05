@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-biology-set-5",
+  "chapterNumber": 5,
+  "title": "Biology Set 5",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In the starch test, a leaf is decolourised by placing it in a test tube containing:",
+      "options": {
+        "a": "Caustic soda",
+        "b": "Iodine solution",
+        "c": "Lime water",
+        "d": "Alcohol"
+      },
+      "answer": "d",
+      "a": "Alcohol",
+      "e": "The test tube is kept in a beaker of boiling water, since alcohol is highly flammable.",
+      "table": null,
+      "qid": "biology-ch23-plants-42",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Most life processes in a cell take place in the:",
+      "options": {
+        "a": "Nucleus",
+        "b": "Cell wall",
+        "c": "Vacuole",
+        "d": "Cytoplasm"
+      },
+      "answer": "d",
+      "a": "Cytoplasm",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-7",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The semi-solid waste called stool is stored in the lower part of the large intestine called the:",
+      "options": {
+        "a": "Rectum",
+        "b": "Anus",
+        "c": "Gizzard",
+        "d": "Rumen"
+      },
+      "answer": "a",
+      "a": "Rectum",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-40",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The streamlined body of fish helps them to:",
+      "options": {
+        "a": "Fly",
+        "b": "Burrow in soil",
+        "c": "Walk on land",
+        "d": "Swim in water"
+      },
+      "answer": "d",
+      "a": "Swim in water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-30",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Which Indian scientist studied the link between hormones, certain viruses and cancer?",
+      "options": {
+        "a": "Suniti Solomon",
+        "b": "Kamal Ranadive",
+        "c": "Yellapragada Subbarao",
+        "d": "Asima Chatterjee"
+      },
+      "answer": "b",
+      "a": "Kamal Ranadive",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-20",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The translocation of food in the sieve tubes takes place with the help of adjacent:",
+      "options": {
+        "a": "Companion cells",
+        "b": "Tracheids",
+        "c": "Vessels",
+        "d": "Guard cells"
+      },
+      "answer": "a",
+      "a": "Companion cells",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-92",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Celiac disease is a condition in which the body reacts to:",
+      "options": {
+        "a": "Gluten",
+        "b": "Starch",
+        "c": "Cellulose",
+        "d": "Lactose"
+      },
+      "answer": "a",
+      "a": "Gluten",
+      "e": "The reaction damages the inner lining of the small intestine. Millets are naturally gluten-free.",
+      "table": null,
+      "qid": "biology-ch26-respiration-47",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The core of a cilium or flagellum, containing microtubules running parallel to its long axis, is called the:",
+      "options": {
+        "a": "Kinetochore",
+        "b": "Hub",
+        "c": "Basal body",
+        "d": "Axoneme"
+      },
+      "answer": "d",
+      "a": "Axoneme",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-53",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Glucose, amino acids, salts and a major amount of water are selectively re-absorbed from the initial filtrate.\n(II) The amount of water re-absorbed depends on how much excess water there is in the body.\n(III) Nephrons do not re-absorb any substance from the filtrate.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-98",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In Paramoecium, food is moved to a specific spot on the cell by the movement of:",
+      "options": {
+        "a": "Villi",
+        "b": "Flagella",
+        "c": "Peristalsis",
+        "d": "Cilia"
+      },
+      "answer": "d",
+      "a": "Cilia",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-21",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The natural ability of the body to fight diseases is known as:",
+      "options": {
+        "a": "Vaccination",
+        "b": "Immunity",
+        "c": "Resistance therapy",
+        "d": "Sanitation"
+      },
+      "answer": "b",
+      "a": "Immunity",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-12",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a major nutrient?",
+      "options": {
+        "a": "Minerals",
+        "b": "Fats",
+        "c": "Roughage",
+        "d": "Proteins"
+      },
+      "answer": "c",
+      "a": "Roughage",
+      "e": "Dietary fibres do not provide any nutrients to the body.",
+      "table": null,
+      "qid": "biology-ch25-nutrition-18",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Offspring that are genetically identical to the parent are called:",
+      "options": {
+        "a": "Hybrids",
+        "b": "Zygotes",
+        "c": "Clones",
+        "d": "Gametes"
+      },
+      "answer": "c",
+      "a": "Clones",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-20",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of a cell that regulates all its activities and growth is the:",
+      "options": {
+        "a": "Cell membrane",
+        "b": "Cell wall",
+        "c": "Nucleus",
+        "d": "Cytoplasm"
+      },
+      "answer": "c",
+      "a": "Nucleus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-6",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Metacentric chromosome – Centromere in the middle\n(II) Acrocentric chromosome – Terminal centromere\n(III) Telocentric chromosome – Terminal centromere\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and III only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "In an acrocentric chromosome the centromere is close to one end, forming one extremely short and one very long arm.",
+      "table": null,
+      "qid": "biology-ch21-cell-65",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Growth hormone releasing factor is released by the:",
+      "options": {
+        "a": "Thyroid",
+        "b": "Pancreas",
+        "c": "Hypothalamus",
+        "d": "Pituitary"
+      },
+      "answer": "c",
+      "a": "Hypothalamus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-33",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The long tail of a sperm helps it to:",
+      "options": {
+        "a": "Store nutrients",
+        "b": "Attach to the uterus",
+        "c": "Carry genetic material",
+        "d": "Swim towards the female germ-cell"
+      },
+      "answer": "d",
+      "a": "Swim towards the female germ-cell",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-71",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "In India, people who performed variolation to protect against smallpox were known as:",
+      "options": {
+        "a": "Vaidyas",
+        "b": "Teekedaars",
+        "c": "Hakims",
+        "d": "Dhais"
+      },
+      "answer": "b",
+      "a": "Teekedaars",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-16",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "In humans, fertilisation normally takes place in the:",
+      "options": {
+        "a": "Cervix",
+        "b": "Fallopian tube",
+        "c": "Vagina",
+        "d": "Uterus"
+      },
+      "answer": "b",
+      "a": "Fallopian tube",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-76",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The Earth image taken by an ISRO satellite was made by combining nearly how many smaller images?",
+      "options": {
+        "a": "300",
+        "b": "30000",
+        "c": "3000",
+        "d": "1000"
+      },
+      "answer": "c",
+      "a": "3000",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-46",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The period during adolescence in which the reproductive tissues mature as general body growth slows down is called:",
+      "options": {
+        "a": "Gestation",
+        "b": "Puberty",
+        "c": "Ovulation",
+        "d": "Menopause"
+      },
+      "answer": "b",
+      "a": "Puberty",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-65",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The material of the nucleus stained by basic dyes was named chromatin by:",
+      "options": {
+        "a": "Flemming",
+        "b": "George Palade",
+        "c": "Robert Brown",
+        "d": "Camillo Golgi"
+      },
+      "answer": "a",
+      "a": "Flemming",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-4",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In the sensitive plant, leaves move in response to touch due to a change in:",
+      "options": {
+        "a": "Water content of cells",
+        "b": "Cell division",
+        "c": "Growth of cells",
+        "d": "Auxin concentration"
+      },
+      "answer": "a",
+      "a": "Water content of cells",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-15",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "In a neuron, information is acquired at the:",
+      "options": {
+        "a": "Synapse",
+        "b": "Dendritic tip",
+        "c": "Axon end",
+        "d": "Cell body"
+      },
+      "answer": "b",
+      "a": "Dendritic tip",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-3",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Plasma forms what percentage of the total volume of blood?",
+      "options": {
+        "a": "75 per cent",
+        "b": "65 per cent",
+        "c": "55 per cent",
+        "d": "45 per cent"
+      },
+      "answer": "c",
+      "a": "55 per cent",
+      "e": "Formed elements make up the remaining 45 per cent.",
+      "table": null,
+      "qid": "biology-ch22-tissues-52",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The ozone layer protects living cells by blocking:",
+      "options": {
+        "a": "Solar wind",
+        "b": "Cosmic rays",
+        "c": "Infrared rays",
+        "d": "Ultraviolet rays"
+      },
+      "answer": "d",
+      "a": "Ultraviolet rays",
+      "e": "Ozone is a three-atom form of oxygen.",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-7",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "At 72 beats per minute, the duration of a cardiac cycle is approximately:",
+      "options": {
+        "a": "1.2 s",
+        "b": "0.8 s",
+        "c": "0.4 s",
+        "d": "1.6 s"
+      },
+      "answer": "b",
+      "a": "0.8 s",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-62",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "In Rhizopus, the blob-like structures that contain spores are called:",
+      "options": {
+        "a": "Filaments",
+        "b": "Sporangia",
+        "c": "Buds",
+        "d": "Hyphae"
+      },
+      "answer": "b",
+      "a": "Sporangia",
+      "e": "The thread-like hyphae are not reproductive parts.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-22",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The embryo gets nutrition from the mother's blood through the:",
+      "options": {
+        "a": "Vagina",
+        "b": "Oviduct",
+        "c": "Placenta",
+        "d": "Cervix"
+      },
+      "answer": "c",
+      "a": "Placenta",
+      "e": "It is a disc embedded in the uterine wall. Waste from the embryo is also removed into the mother's blood through it.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-78",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The ribs are attached in front to the:",
+      "options": {
+        "a": "Sternum",
+        "b": "Backbone",
+        "c": "Skull",
+        "d": "Collarbone"
+      },
+      "answer": "a",
+      "a": "Sternum",
+      "e": "They are attached to the spine at the back and joined by flexible cartilage, which lets the rib cage expand and contract during breathing.",
+      "table": null,
+      "qid": "biology-ch22-tissues-74",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    }
+  ]
+}

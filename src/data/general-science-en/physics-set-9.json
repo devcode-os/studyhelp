@@ -1,0 +1,631 @@
+{
+  "slug": "general-science-physics-set-9",
+  "chapterNumber": 9,
+  "title": "Physics Set 9",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The temperature and pressure at which all three phases of a substance coexist is called its:",
+      "options": {
+        "a": "normal boiling point",
+        "b": "triple point",
+        "c": "melting point",
+        "d": "boiling point"
+      },
+      "answer": "b",
+      "a": "triple point",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-52",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of base units in the SI system is:",
+      "options": {
+        "a": "seven",
+        "b": "nine",
+        "c": "six",
+        "d": "five"
+      },
+      "answer": "a",
+      "a": "seven",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-3",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Cities being warmer than their surrounding rural areas is known as the:",
+      "options": {
+        "a": "Ozone hole",
+        "b": "Urban heat island effect",
+        "c": "Greenhouse effect",
+        "d": "Albedo effect"
+      },
+      "answer": "b",
+      "a": "Urban heat island effect",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-105",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "When sound travels from a source to a listener, what is transferred through the medium?",
+      "options": {
+        "a": "Energy",
+        "b": "A steady flow of air",
+        "c": "Particles of the medium",
+        "d": "Mass of the medium"
+      },
+      "answer": "a",
+      "a": "Energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-14",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The lift-off of a rocket is explained by:",
+      "options": {
+        "a": "Pascal's law",
+        "b": "Newton's third law of motion",
+        "c": "Newton's second law of motion",
+        "d": "Newton's first law of motion"
+      },
+      "answer": "b",
+      "a": "Newton's third law of motion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-18",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "An object is placed between the pole and the principal focus of a concave mirror. The image formed is:",
+      "options": {
+        "a": "virtual, erect and diminished",
+        "b": "real, inverted and diminished",
+        "c": "real, inverted and enlarged",
+        "d": "virtual, erect and enlarged"
+      },
+      "answer": "d",
+      "a": "virtual, erect and enlarged",
+      "e": "The image is formed behind the mirror.",
+      "table": {
+        "headers": [
+          "Position of the object",
+          "Position of the image",
+          "Size of the image",
+          "Nature of the image"
+        ],
+        "rows": [
+          [
+            "At infinity",
+            "At the focus F",
+            "Highly diminished, point-sized",
+            "Real and inverted"
+          ],
+          [
+            "Beyond C",
+            "Between F and C",
+            "Diminished",
+            "Real and inverted"
+          ],
+          [
+            "At C",
+            "At C",
+            "Same size",
+            "Real and inverted"
+          ],
+          [
+            "Between C and F",
+            "Beyond C",
+            "Enlarged",
+            "Real and inverted"
+          ],
+          [
+            "At F",
+            "At infinity",
+            "Image would not be formed",
+            "–"
+          ],
+          [
+            "Between P and F",
+            "Behind the mirror",
+            "Enlarged",
+            "Virtual and erect"
+          ]
+        ]
+      },
+      "qid": "physics-ch5-light-24",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of neutrons in a tritium nucleus is:",
+      "options": {
+        "a": "3",
+        "b": "2",
+        "c": "1",
+        "d": "0"
+      },
+      "answer": "b",
+      "a": "2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-54",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The total mechanical energy of a particle in SHM with amplitude A and spring constant k is:",
+      "options": {
+        "a": "½kA²",
+        "b": "½kx²",
+        "c": "kA²",
+        "d": "½mA"
+      },
+      "answer": "a",
+      "a": "½kA²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-32",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Joule's law, for a given resistance the heat produced is directly proportional to the ___ of the current:",
+      "options": {
+        "a": "Square",
+        "b": "Cube",
+        "c": "Square root",
+        "d": "Reciprocal"
+      },
+      "answer": "a",
+      "a": "Square",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-52",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a magnetic material?",
+      "options": {
+        "a": "Glass",
+        "b": "Rubber",
+        "c": "Wood",
+        "d": "Cobalt"
+      },
+      "answer": "d",
+      "a": "Cobalt",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-2",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Thunder is produced due to:",
+      "options": {
+        "a": "condensation of water vapour",
+        "b": "friction between raindrops",
+        "c": "collision of clouds with mountains",
+        "d": "rapid heating and expansion of air by lightning"
+      },
+      "answer": "d",
+      "a": "rapid heating and expansion of air by lightning",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-102",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the work-energy theorem, the work done on an object equals:",
+      "options": {
+        "a": "the force applied on it",
+        "b": "change in its energy",
+        "c": "its initial energy",
+        "d": "its final kinetic energy"
+      },
+      "answer": "b",
+      "a": "change in its energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-9",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the laws of reflection, the incident ray, the normal at the point of incidence and the reflected ray all lie in the:",
+      "options": {
+        "a": "different planes",
+        "b": "parallel planes",
+        "c": "same plane",
+        "d": "perpendicular planes"
+      },
+      "answer": "c",
+      "a": "same plane",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-13",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Vibration refers to:",
+      "options": {
+        "a": "Random motion of particles in a medium",
+        "b": "Periodic to and fro motion of an object",
+        "c": "Rotation of an object about its axis",
+        "d": "Continuous motion of an object in one direction"
+      },
+      "answer": "b",
+      "a": "Periodic to and fro motion of an object",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-1",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Two instruments playing the same note at the same loudness sound different because of their:",
+      "options": {
+        "a": "Amplitude",
+        "b": "Timbre",
+        "c": "Speed",
+        "d": "Pitch"
+      },
+      "answer": "b",
+      "a": "Timbre",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-42",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The star nearest to us after the Sun is:",
+      "options": {
+        "a": "Polaris",
+        "b": "Proxima Centauri",
+        "c": "Sirius",
+        "d": "Betelgeuse"
+      },
+      "answer": "b",
+      "a": "Proxima Centauri",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-35",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A species has 10 electrons, 8 protons and 8 neutrons. It is:",
+      "options": {
+        "a": "Ne",
+        "b": "O²⁻",
+        "c": "O²⁺",
+        "d": "F⁻"
+      },
+      "answer": "b",
+      "a": "O²⁻",
+      "e": "Z = 8 gives oxygen with A = 16; two excess electrons give a charge of 2−.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-51",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "When a bar magnet is broken into smaller pieces, each piece has:",
+      "options": {
+        "a": "Only a North pole",
+        "b": "Only a South pole",
+        "c": "Both a North pole and a South pole",
+        "d": "No poles"
+      },
+      "answer": "c",
+      "a": "Both a North pole and a South pole",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-5",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The correct increasing order of penetrating power is:",
+      "options": {
+        "a": "γ < β < α",
+        "b": "α < γ < β",
+        "c": "α < β < γ",
+        "d": "β < α < γ"
+      },
+      "answer": "c",
+      "a": "α < β < γ",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-24",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Water rises in a narrow tube in spite of gravity. This is due to:",
+      "options": {
+        "a": "the Magnus effect",
+        "b": "surface tension",
+        "c": "upthrust",
+        "d": "viscosity"
+      },
+      "answer": "b",
+      "a": "surface tension",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-94",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The speed of sound in water is approximately how many times its speed in air at 15 °C?",
+      "options": {
+        "a": "8.8",
+        "b": "2.2",
+        "c": "4.4",
+        "d": "14.7"
+      },
+      "answer": "c",
+      "a": "4.4",
+      "e": "1500 m s⁻¹ / 340 m s⁻¹ ≈ 4.4.",
+      "table": {
+        "headers": [
+          "State",
+          "Medium",
+          "Approximate speed"
+        ],
+        "rows": [
+          [
+            "Solid",
+            "Steel",
+            "5000 m s⁻¹"
+          ],
+          [
+            "Liquid",
+            "Water",
+            "1500 m s⁻¹"
+          ],
+          [
+            "Gas",
+            "Air",
+            "340 m s⁻¹"
+          ]
+        ]
+      },
+      "qid": "physics-ch6-sound-35",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The temperature at which the liquid and vapour states of a substance coexist in thermal equilibrium is called its:",
+      "options": {
+        "a": "freezing point",
+        "b": "triple point",
+        "c": "boiling point",
+        "d": "melting point"
+      },
+      "answer": "c",
+      "a": "boiling point",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-44",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In a cyclone, the region of lowest pressure is the:",
+      "options": {
+        "a": "cloud base",
+        "b": "coast",
+        "c": "outer rim",
+        "d": "eye"
+      },
+      "answer": "d",
+      "a": "eye",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-99",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs in Fleming's left-hand rule:\n(I) Forefinger – Direction of magnetic field\n(II) Middle finger – Direction of current\n(III) Thumb – Direction of current\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-36",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Owing to its high specific heat capacity, water is used as a:",
+      "options": {
+        "a": "insulator",
+        "b": "lubricant",
+        "c": "coolant",
+        "d": "fuel"
+      },
+      "answer": "c",
+      "a": "coolant",
+      "e": "It is used in automobile radiators, and as a heater in hot water bags.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-35",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Day – Earth's rotation\n(II) Month – Moon's phases\n(III) Year – Moon's phases\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-78",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "An object is placed between the optical centre and the principal focus of a convex lens. The image formed is:",
+      "options": {
+        "a": "real, inverted and enlarged",
+        "b": "virtual, erect and enlarged",
+        "c": "virtual, erect and diminished",
+        "d": "real, inverted and diminished"
+      },
+      "answer": "b",
+      "a": "virtual, erect and enlarged",
+      "e": "The image is formed on the same side of the lens as the object.",
+      "table": {
+        "headers": [
+          "Position of the object",
+          "Position of the image",
+          "Relative size of the image",
+          "Nature of the image"
+        ],
+        "rows": [
+          [
+            "At infinity",
+            "At focus F2",
+            "Highly diminished, point-sized",
+            "Real and inverted"
+          ],
+          [
+            "Beyond 2F1",
+            "Between F2 and 2F2",
+            "Diminished",
+            "Real and inverted"
+          ],
+          [
+            "At 2F1",
+            "At 2F2",
+            "Same size",
+            "Real and inverted"
+          ],
+          [
+            "Between F1 and 2F1",
+            "Beyond 2F2",
+            "Enlarged",
+            "Real and inverted"
+          ],
+          [
+            "At focus F1",
+            "At infinity",
+            "Image would not be formed",
+            "–"
+          ],
+          [
+            "Between focus F1 and optical centre O",
+            "On the same side of the lens as the object",
+            "Enlarged",
+            "Virtual and erect"
+          ]
+        ]
+      },
+      "qid": "physics-ch5-light-52",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A car covers 45 km in the first hour, 55 km in the second hour and 35 km in the third hour. Its average speed is:",
+      "options": {
+        "a": "40 km/h",
+        "b": "50 km/h",
+        "c": "45 km/h",
+        "d": "55 km/h"
+      },
+      "answer": "c",
+      "a": "45 km/h",
+      "e": "Total distance 135 km / total time 3 h = 45 km/h.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-41",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The change of state from solid to liquid is called:",
+      "options": {
+        "a": "vaporisation",
+        "b": "sublimation",
+        "c": "melting",
+        "d": "condensation"
+      },
+      "answer": "c",
+      "a": "melting",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-42",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The fourth planet in order of increasing distance from the Sun is:",
+      "options": {
+        "a": "Jupiter",
+        "b": "Earth",
+        "c": "Venus",
+        "d": "Mars"
+      },
+      "answer": "d",
+      "a": "Mars",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-36",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "slug": "general-science-chemistry-set-2",
+  "chapterNumber": 2,
+  "title": "Chemistry Set 2",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Heating sugar gently in a boiling tube leaves behind:",
+      "options": {
+        "a": "Calcium carbonate",
+        "b": "Sulfur",
+        "c": "Charcoal (carbon)",
+        "d": "Iron"
+      },
+      "answer": "c",
+      "a": "Charcoal (carbon)",
+      "e": "Water droplets also form near the open end of the tube.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Dalton published 'A New System of Chemical Philosophy' in the year:",
+      "options": {
+        "a": "1811",
+        "b": "1803",
+        "c": "1808",
+        "d": "1860"
+      },
+      "answer": "c",
+      "a": "1808",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-90",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "With increase in hydronium ion concentration, the pH value of a solution:",
+      "options": {
+        "a": "Decreases",
+        "b": "Remains constant",
+        "c": "First increases, then decreases",
+        "d": "Increases"
+      },
+      "answer": "a",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The white precipitate formed on mixing sodium sulphate and barium chloride solutions is:",
+      "options": {
+        "a": "Barium sulphate",
+        "b": "Barium chloride",
+        "c": "Sodium sulphate",
+        "d": "Sodium chloride"
+      },
+      "answer": "a",
+      "a": "Barium sulphate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Spreading of the fragrance of an incense stick throughout a room shows that air particles are:",
+      "options": {
+        "a": "Stationary",
+        "b": "Closely packed",
+        "c": "Vibrating about fixed positions",
+        "d": "Constantly moving"
+      },
+      "answer": "d",
+      "a": "Constantly moving",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The most malleable metals are:",
+      "options": {
+        "a": "Copper and iron",
+        "b": "Lead and mercury",
+        "c": "Gold and silver",
+        "d": "Aluminium and zinc"
+      },
+      "answer": "c",
+      "a": "Gold and silver",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A chemical reaction in which a substance reacts with oxygen and produces heat and/or light is called:",
+      "options": {
+        "a": "Weathering",
+        "b": "Condensation",
+        "c": "Combustion",
+        "d": "Erosion"
+      },
+      "answer": "c",
+      "a": "Combustion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The present system of atomic masses is based on the standard:",
+      "options": {
+        "a": "Carbon-14",
+        "b": "Carbon-12",
+        "c": "Hydrogen-1",
+        "d": "Oxygen-16"
+      },
+      "answer": "b",
+      "a": "Carbon-12",
+      "e": "This was agreed upon in 1961. Earlier, hydrogen was arbitrarily assigned a mass of 1.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-95",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular formula of cyclohexane is:",
+      "options": {
+        "a": "C₆H₁₄",
+        "b": "C₆H₁₀",
+        "c": "C₆H₆",
+        "d": "C₆H₁₂"
+      },
+      "answer": "d",
+      "a": "C₆H₁₂",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Suspended Particulate Matter (SPM) refers to:",
+      "options": {
+        "a": "Constituent particles of matter",
+        "b": "Molecules of water vapour",
+        "c": "Atoms of gases in air",
+        "d": "Tiny dust particles suspended in air"
+      },
+      "answer": "d",
+      "a": "Tiny dust particles suspended in air",
+      "e": "Even these dust particles are made up of a very large number of atoms and molecules.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The acid present in tamarind is:",
+      "options": {
+        "a": "Tartaric acid",
+        "b": "Lactic acid",
+        "c": "Citric acid",
+        "d": "Acetic acid"
+      },
+      "answer": "a",
+      "a": "Tartaric acid",
+      "e": "Natural sources and their acids are:",
+      "table": {
+        "headers": [
+          "Natural source",
+          "Acid"
+        ],
+        "rows": [
+          [
+            "Vinegar",
+            "Acetic acid"
+          ],
+          [
+            "Orange",
+            "Citric acid"
+          ],
+          [
+            "Tamarind",
+            "Tartaric acid"
+          ],
+          [
+            "Tomato",
+            "Oxalic acid"
+          ],
+          [
+            "Sour milk (curd)",
+            "Lactic acid"
+          ],
+          [
+            "Lemon",
+            "Citric acid"
+          ],
+          [
+            "Ant sting",
+            "Methanoic acid"
+          ],
+          [
+            "Nettle sting",
+            "Methanoic acid"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch17-acids-bases-salts-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular formula of benzene is:",
+      "options": {
+        "a": "C₆H₁₄",
+        "b": "C₆H₆",
+        "c": "C₆H₁₂",
+        "d": "C₅H₁₀"
+      },
+      "answer": "b",
+      "a": "C₆H₆",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "With an increase in temperature, the solubility of gases in liquids generally:",
+      "options": {
+        "a": "Remains constant",
+        "b": "Decreases",
+        "c": "Increases",
+        "d": "Becomes zero"
+      },
+      "answer": "b",
+      "a": "Decreases",
+      "e": "More oxygen dissolves in cold water than in warm water.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-67",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Silver – Silver sulphide coating\n(II) Copper – Basic copper carbonate coating\n(III) Copper – Silver sulphide coating\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-74",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of forming a thick oxide layer on aluminium is called:",
+      "options": {
+        "a": "Calcination",
+        "b": "Anodising",
+        "c": "Galvanisation",
+        "d": "Roasting"
+      },
+      "answer": "b",
+      "a": "Anodising",
+      "e": "The aluminium article is made the anode and electrolysed with dilute sulphuric acid.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Coal is formed from the remains of:",
+      "options": {
+        "a": "Fish and shells",
+        "b": "Tiny sea animals",
+        "c": "Algae only",
+        "d": "Trees, ferns and other plants"
+      },
+      "answer": "d",
+      "a": "Trees, ferns and other plants",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The three states of matter are interconvertible by changing the conditions of:",
+      "options": {
+        "a": "Temperature and pressure",
+        "b": "Mass and density",
+        "c": "Density and volume",
+        "d": "Volume and mass"
+      },
+      "answer": "a",
+      "a": "Temperature and pressure",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Acid + Metal – Salt + Hydrogen gas\n(II) Metal carbonate + Acid – Salt + Oxygen + Water\n(III) Metal oxide + Acid – Salt + Water\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The interparticle spaces in solids contain:",
+      "options": {
+        "a": "Nothing at all",
+        "b": "Smoke",
+        "c": "Air",
+        "d": "Water vapour"
+      },
+      "answer": "a",
+      "a": "Nothing at all",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A solution of slaked lime is used for:",
+      "options": {
+        "a": "Photography",
+        "b": "Making cement",
+        "c": "Welding",
+        "d": "Whitewashing walls"
+      },
+      "answer": "d",
+      "a": "Whitewashing walls",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "When a metal is attacked by substances around it, such as moisture and acids, the process is called:",
+      "options": {
+        "a": "Fermentation",
+        "b": "Rancidity",
+        "c": "Corrosion",
+        "d": "Combustion"
+      },
+      "answer": "c",
+      "a": "Corrosion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-47",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Combustion of coal and petroleum produces major pollutants which are oxides of:",
+      "options": {
+        "a": "Carbon and hydrogen",
+        "b": "Sodium and potassium",
+        "c": "Sulphur and nitrogen",
+        "d": "Chlorine and bromine"
+      },
+      "answer": "c",
+      "a": "Sulphur and nitrogen",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following non-metals is lustrous?",
+      "options": {
+        "a": "Sulphur",
+        "b": "Iodine",
+        "c": "Phosphorus",
+        "d": "Oxygen"
+      },
+      "answer": "b",
+      "a": "Iodine",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Cisplatin and taxol are drugs effective in the therapy of:",
+      "options": {
+        "a": "Cancer",
+        "b": "Diabetes",
+        "c": "AIDS",
+        "d": "Malaria"
+      },
+      "answer": "a",
+      "a": "Cancer",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A stone is lowered into a measuring cylinder containing 40 mL of water, and the water level rises to 52 mL. The volume of the stone is:",
+      "options": {
+        "a": "12 cm³",
+        "b": "92 cm³",
+        "c": "52 cm³",
+        "d": "40 cm³"
+      },
+      "answer": "a",
+      "a": "12 cm³",
+      "e": "Volume = 52 mL − 40 mL = 12 mL = 12 cm³.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-80",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Hydrogen molecule (H₂) – Single bond\n(II) Chlorine molecule (Cl₂) – Single bond\n(III) Oxygen molecule (O₂) – Single bond\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Sieving is used when the components of a solid–solid mixture differ in:",
+      "options": {
+        "a": "Density",
+        "b": "Size",
+        "c": "Colour",
+        "d": "Solubility"
+      },
+      "answer": "b",
+      "a": "Size",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Ethanol produced for industrial use is made unfit for drinking by adding poisonous substances like methanol and a dye that colours it:",
+      "options": {
+        "a": "Blue",
+        "b": "Red",
+        "c": "Yellow",
+        "d": "Green"
+      },
+      "answer": "a",
+      "a": "Blue",
+      "e": "This is called denatured alcohol.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In the conversion of ethanol to ethene, concentrated sulphuric acid acts as a:",
+      "options": {
+        "a": "Catalyst for addition",
+        "b": "Dehydrating agent",
+        "c": "Oxidising agent",
+        "d": "Reducing agent"
+      },
+      "answer": "b",
+      "a": "Dehydrating agent",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Baked clay is called:",
+      "options": {
+        "a": "Porcelain",
+        "b": "Stoneware",
+        "c": "Slip",
+        "d": "Terracotta"
+      },
+      "answer": "d",
+      "a": "Terracotta",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

@@ -137,7 +137,13 @@ const concepts = isTheory ? [...(rawConcepts || [])].sort((a, b) => (a.partNumbe
 const hasParts = concepts.length > 1;
 const hasMcq = isTheory && Array.isArray(questions) && questions.length > 0;
 
-const backLabel = meta.category === 'papers' ? (isTelugu ? 'ప్రశ్నపత్రాలు' : 'Papers') : (isTelugu ? 'అధ్యాయాలు' : 'Chapters');
+// General Science pages are SETS: back goes to the matching tab on the subject page.
+const isGsSet = subject === 'general-science-en';
+const gsTab = isGsSet ? (chapterSlug.match(/^general-science-(physics|chemistry|biology)-set-/)?.[1] || 'all') : null;
+const gsNoIndex = isGsSet && gsTab === 'all'; // 'All' sets repeat the subject sets' questions
+const subjectBackHref = isGsSet ? `/${subject}/${gsTab === 'all' ? '' : '#' + gsTab}` : `/${subject}/`;
+const pageHeading = isGsSet ? title : `${chapterNumber}. ${title}`;
+const backLabel = isGsSet ? 'Sets' : meta.category === 'papers' ? (isTelugu ? 'ప్రశ్నపత్రాలు' : 'Papers') : (isTelugu ? 'అధ్యాయాలు' : 'Chapters');
 const questionsLabel = isTelugu ? 'ప్రశ్నలు' : 'questions';
 const prevLabel = 'Previous';
 const nextLabel = 'Next';
@@ -155,7 +161,7 @@ function formatMath(str) {
   );
 }
 ---
-<Layout title={isReference ? `${title} Reference` : isTheory ? `${title} - Theory` : `${title} FAQs`} description={isReference ? `${title} - ${articles.length} articles, ${amendments.length} amendments` : isTheory ? (chapterIntro || `${title} theory and rules`) : `${title} - ${questions.length} FAQs`}>
+<Layout noindex={gsNoIndex} title={isReference ? `${title} Reference` : isTheory ? `${title} - Theory` : `${title} FAQs`} description={isReference ? `${title} - ${articles.length} articles, ${amendments.length} amendments` : isTheory ? (chapterIntro || `${title} theory and rules`) : `${title} - ${questions.length} FAQs`}>
 
   <!-- Desktop keeps the full site header (nav, login, theme toggle) exactly as before.
        Mobile gets the compact reading-mode header — back arrow, chapter title, progress —
@@ -167,7 +173,7 @@ function formatMath(str) {
     <Header active="subjects" theme="premium" />
   </div>
 <div class="header-compact-only">
-  <Header compact={true} theme="premium" backHref={`/${subject}/`} title={`${chapterNumber}. ${title}`} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} hasModeTabs={hasMcq}>
+  <Header compact={true} theme="premium" backHref={subjectBackHref} title={pageHeading} progress={isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`} hasModeTabs={hasMcq}>
     {hasMcq && (
       <Fragment slot="chapter-progress-area">
         <div class="ref-tabs chapter-mode-tabs" id="headerTopLevelTabs">
@@ -181,11 +187,11 @@ function formatMath(str) {
 
   <div class={isTelugu ? 'lang-te content' : 'lang-en content'}>
     <div class="desktop-title-row">
-      <a href={`/${subject}/`} class="back-pill desktop-back-pill">
+      <a href={subjectBackHref} class="back-pill desktop-back-pill">
         <i class="ti ti-arrow-left" aria-hidden="true"></i> {backLabel}
       </a>
       <div class="desktop-title-block" style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;">
-        <h1 class="desktop-title-h1" style="margin:0;">{chapterNumber}. {title}</h1>
+        <h1 class="desktop-title-h1" style="margin:0;">{pageHeading}</h1>
         <span style="font-size:14px; font-weight:700; color:var(--text);">{isReference ? `${articles.length} articles, ${amendments.length} amendments` : `${questions.length} ${questionsLabel}`}</span>
       </div>
     </div>
@@ -1823,7 +1829,7 @@ function formatMath(str) {
       //
       // In-place unlock: on click, runs the SAME ensureEntitlementChecked()
       // used by MCQs (exposed on window by the script below, since Astro
-      // bundles each <script> as its own module), then fetches the real
+      // bundles each script tag as its own module), then fetches the real
       // concepts_json from /content/theory (D1, entitlement-gated) and
       // merges it into the local `concepts` array. Fails closed on any
       // error — content stays locked, "View Plans" link remains as a
@@ -2061,7 +2067,7 @@ function formatMath(str) {
       // users, or if this check errors out.
       //
       // window.ensureEntitlementChecked/WORKER_URL are set by the OTHER
-      // <script> block on this page (define:vars scripts are separate
+      // script block on this page (define:vars scripts are separate
       // Astro modules), which runs AFTER this one in document order — so
       // wait for them to exist before calling, instead of assuming they're
       // ready yet.
@@ -2439,7 +2445,7 @@ function formatMath(str) {
     }
 
     // Expose to the separate Theory script module (Astro bundles each
-    // <script> as its own module — these two are needed there to wire
+    // script tag as its own module — these two are needed there to wire
     // the in-place "unlock after purchase" fetch for locked theory parts).
     window.ensureEntitlementChecked = ensureEntitlementChecked;
 window.WORKER_URL = WORKER_URL;

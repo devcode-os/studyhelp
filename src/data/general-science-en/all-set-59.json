@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-59",
+  "chapterNumber": 59,
+  "title": "General Science Set 59",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Most craters on the Moon's surface were formed by:",
+      "options": {
+        "a": "Volcanic eruptions",
+        "b": "Impact of asteroids or rocks from space",
+        "c": "Erosion by wind",
+        "d": "Earthquakes"
+      },
+      "answer": "b",
+      "a": "Impact of asteroids or rocks from space",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-41",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The 'food factories' of plants are the:",
+      "options": {
+        "a": "Roots",
+        "b": "Flowers",
+        "c": "Leaves",
+        "d": "Stems"
+      },
+      "answer": "c",
+      "a": "Leaves",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-43",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The far point of a normal eye is:",
+      "options": {
+        "a": "2.5 m",
+        "b": "1 m",
+        "c": "25 cm",
+        "d": "infinity"
+      },
+      "answer": "d",
+      "a": "infinity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-67",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A reaction in which a single product is formed from two or more reactants is called a:",
+      "options": {
+        "a": "Double displacement reaction",
+        "b": "Decomposition reaction",
+        "c": "Displacement reaction",
+        "d": "Combination reaction"
+      },
+      "answer": "d",
+      "a": "Combination reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In the human erythrocyte membrane, the approximate percentage of protein is:",
+      "options": {
+        "a": "25 per cent",
+        "b": "52 per cent",
+        "c": "40 per cent",
+        "d": "60 per cent"
+      },
+      "answer": "b",
+      "a": "52 per cent",
+      "e": "Lipids make up approximately 40 per cent.",
+      "table": null,
+      "qid": "biology-ch21-cell-20",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The mirror formula relating object distance u, image distance v and focal length f is:",
+      "options": {
+        "a": "1/v + 1/u = 1/f",
+        "b": "v + u = f",
+        "c": "1/v − 1/u = 1/f",
+        "d": "1/v + 1/u = f"
+      },
+      "answer": "a",
+      "a": "1/v + 1/u = 1/f",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-32",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In terms of electron transfer, reduction is:",
+      "options": {
+        "a": "Loss of electrons",
+        "b": "Gain of electrons",
+        "c": "Gain of neutrons",
+        "d": "Loss of protons"
+      },
+      "answer": "b",
+      "a": "Gain of electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The central nervous system consists of:",
+      "options": {
+        "a": "Brain and spinal cord",
+        "b": "Spinal cord and spinal nerves",
+        "c": "Cranial nerves and spinal nerves",
+        "d": "Brain and cranial nerves"
+      },
+      "answer": "a",
+      "a": "Brain and spinal cord",
+      "e": "The peripheral nervous system consists of cranial nerves and spinal nerves.",
+      "table": null,
+      "qid": "biology-ch24-human-body-6",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the image formed by a plane mirror:\n(I) It is of the same size as the object.\n(II) It can be obtained on a screen.\n(III) It is erect.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-7",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In centrifugation, the heavier particles:",
+      "options": {
+        "a": "Move outwards and settle at the bottom of the tube",
+        "b": "Dissolve in the liquid",
+        "c": "Float at the top of the liquid",
+        "d": "Move to the centre of the tube"
+      },
+      "answer": "a",
+      "a": "Move outwards and settle at the bottom of the tube",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The largest isolated single cell is the egg of:",
+      "options": {
+        "a": "Ostrich",
+        "b": "Hen",
+        "c": "Frog",
+        "d": "Fish"
+      },
+      "answer": "a",
+      "a": "Ostrich",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-78",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In a multi-step calculation, intermediate results should be retained to:",
+      "options": {
+        "a": "two more significant figures than the least precise measurement",
+        "b": "the same number of significant figures as the least precise measurement",
+        "c": "one fewer significant figure than the least precise measurement",
+        "d": "one more significant figure than the least precise measurement"
+      },
+      "answer": "d",
+      "a": "one more significant figure than the least precise measurement",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-23",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "If the alveolar surface were spread out, it would cover about:",
+      "options": {
+        "a": "160 m²",
+        "b": "8 m²",
+        "c": "40 m²",
+        "d": "80 m²"
+      },
+      "answer": "d",
+      "a": "80 m²",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-65",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Newlands' Law of Octaves seemed to be true only up to the element:",
+      "options": {
+        "a": "Magnesium",
+        "b": "Sodium",
+        "c": "Calcium",
+        "d": "Argon"
+      },
+      "answer": "c",
+      "a": "Calcium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A 12 V battery is connected across 4 Ω and 6 Ω resistors joined in parallel. The total current drawn from the battery is:",
+      "options": {
+        "a": "0.2 A",
+        "b": "1.2 A",
+        "c": "20 A",
+        "d": "5 A"
+      },
+      "answer": "d",
+      "a": "5 A",
+      "e": "I = 12/4 + 12/6 = 3 A + 2 A = 5 A.",
+      "table": null,
+      "qid": "physics-ch7-electricity-49",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The Agariyas, a tribal community, practise salt farming in the:",
+      "options": {
+        "a": "Little Rann of Kutch",
+        "b": "Thar Desert",
+        "c": "Chilika Lake",
+        "d": "Sambhar Lake"
+      },
+      "answer": "a",
+      "a": "Little Rann of Kutch",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-16",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The process in which particles pass on heat to their neighbours without moving from their positions is called:",
+      "options": {
+        "a": "radiation",
+        "b": "conduction",
+        "c": "regelation",
+        "d": "convection"
+      },
+      "answer": "b",
+      "a": "conduction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-57",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A saline drip is 0.9 % m/v sodium chloride. The mass of salt in 500 mL of this solution is:",
+      "options": {
+        "a": "45 g",
+        "b": "4.5 g",
+        "c": "9 g",
+        "d": "0.9 g"
+      },
+      "answer": "b",
+      "a": "4.5 g",
+      "e": "0.9 g per 100 mL × 5 = 4.5 g.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "A blue-black colour on adding diluted iodine solution to a food item indicates the presence of:",
+      "options": {
+        "a": "Starch",
+        "b": "Fat",
+        "c": "Protein",
+        "d": "Vitamin C"
+      },
+      "answer": "a",
+      "a": "Starch",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-33",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "1 watt is equal to:",
+      "options": {
+        "a": "1 kg m s⁻²",
+        "b": "1 J s",
+        "c": "1 N m",
+        "d": "1 J s⁻¹"
+      },
+      "answer": "d",
+      "a": "1 J s⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-37",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The products formed on heating sodium hydrogencarbonate are:",
+      "options": {
+        "a": "Sodium chloride and hydrogen",
+        "b": "Sodium oxide and water",
+        "c": "Sodium hydroxide and chlorine",
+        "d": "Sodium carbonate, water and carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Sodium carbonate, water and carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-69",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Beriberi is caused by the deficiency of:",
+      "options": {
+        "a": "Iron",
+        "b": "Calcium",
+        "c": "Vitamin C",
+        "d": "Vitamin B1"
+      },
+      "answer": "d",
+      "a": "Vitamin B1",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-27",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "An open tube manometer is used to measure:",
+      "options": {
+        "a": "relative density",
+        "b": "pressure differences",
+        "c": "surface tension",
+        "d": "viscosity"
+      },
+      "answer": "b",
+      "a": "pressure differences",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-66",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a positively charged polyatomic ion?",
+      "options": {
+        "a": "Nitrate",
+        "b": "Hydroxide",
+        "c": "Sulfate",
+        "d": "Ammonium"
+      },
+      "answer": "d",
+      "a": "Ammonium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The outermost layer of the plant body is formed by:",
+      "options": {
+        "a": "Phloem",
+        "b": "Epidermis",
+        "c": "Collenchyma",
+        "d": "Xylem"
+      },
+      "answer": "b",
+      "a": "Epidermis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-16",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Electric current is defined as the:",
+      "options": {
+        "a": "Product of charge and potential difference",
+        "b": "Work done per unit charge",
+        "c": "Rate of flow of electric charges",
+        "d": "Opposition to the flow of charges"
+      },
+      "answer": "c",
+      "a": "Rate of flow of electric charges",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-1",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The fungi known as imperfect fungi, because only asexual or vegetative phases were known, belong to:",
+      "options": {
+        "a": "Basidiomycetes",
+        "b": "Ascomycetes",
+        "c": "Deuteromycetes",
+        "d": "Phycomycetes"
+      },
+      "answer": "c",
+      "a": "Deuteromycetes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-129",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The peak wind speed of the Amphan cyclone in 2020 was:",
+      "options": {
+        "a": "120 km/h",
+        "b": "160 km/h",
+        "c": "270 km/h",
+        "d": "350 km/h"
+      },
+      "answer": "c",
+      "a": "270 km/h",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-105",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which there is an exchange of ions between the reactants are called:",
+      "options": {
+        "a": "Combination reactions",
+        "b": "Decomposition reactions",
+        "c": "Double displacement reactions",
+        "d": "Displacement reactions"
+      },
+      "answer": "c",
+      "a": "Double displacement reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In most mammals, the zygote develops into an embryo:",
+      "options": {
+        "a": "in the soil",
+        "b": "inside the body of the female",
+        "c": "inside an egg laid by the female",
+        "d": "in water outside the body"
+      },
+      "answer": "b",
+      "a": "inside the body of the female",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-31",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    }
+  ]
+}

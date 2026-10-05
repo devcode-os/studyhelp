@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-47",
+  "chapterNumber": 47,
+  "title": "General Science Set 47",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The term \"cell\" was first used in science by:",
+      "options": {
+        "a": "Antonie van Leeuwenhoek",
+        "b": "Robert Hooke",
+        "c": "Ananda Mohan Chakrabarty",
+        "d": "Charles Darwin"
+      },
+      "answer": "b",
+      "a": "Robert Hooke",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-1",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The bond between the two nitrogen atoms in a nitrogen molecule is a:",
+      "options": {
+        "a": "Triple bond",
+        "b": "Single bond",
+        "c": "Ionic bond",
+        "d": "Double bond"
+      },
+      "answer": "a",
+      "a": "Triple bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The direction of a magnetic field is taken to be the direction in which a ___ moves inside it:",
+      "options": {
+        "a": "Iron filing",
+        "b": "Electron",
+        "c": "North pole of a compass needle",
+        "d": "South pole of a compass needle"
+      },
+      "answer": "c",
+      "a": "North pole of a compass needle",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-14",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Sucrose is transferred into phloem tissue using energy from:",
+      "options": {
+        "a": "Water",
+        "b": "Chlorophyll",
+        "c": "ATP",
+        "d": "Sunlight"
+      },
+      "answer": "c",
+      "a": "ATP",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-91",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The enzyme that converts fibrinogen into fibrin is:",
+      "options": {
+        "a": "Prothrombin",
+        "b": "Thrombin",
+        "c": "Heparin",
+        "d": "Thrombokinase"
+      },
+      "answer": "b",
+      "a": "Thrombin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-51",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Anna Mani, an Indian scientist who built many weather measurement instruments, is also known as the:",
+      "options": {
+        "a": "Missile Woman of India",
+        "b": "Solar Woman of India",
+        "c": "Weather Woman of India",
+        "d": "Wind Woman of India"
+      },
+      "answer": "c",
+      "a": "Weather Woman of India",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-14",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Metallic oxides are classified as:",
+      "options": {
+        "a": "Basic oxides",
+        "b": "Acidic oxides",
+        "c": "Neutral oxides",
+        "d": "Amphoteric oxides"
+      },
+      "answer": "a",
+      "a": "Basic oxides",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Adrenaline is secreted by the:",
+      "options": {
+        "a": "Pancreas",
+        "b": "Thyroid",
+        "c": "Adrenal glands",
+        "d": "Pituitary"
+      },
+      "answer": "c",
+      "a": "Adrenal glands",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-24",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The blackbody radiation curves depend only on the:",
+      "options": {
+        "a": "temperature",
+        "b": "material",
+        "c": "size",
+        "d": "shape"
+      },
+      "answer": "a",
+      "a": "temperature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-79",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Atomic masses are determined fairly accurately today by:",
+      "options": {
+        "a": "Distillation",
+        "b": "Crystallisation",
+        "c": "Chromatography",
+        "d": "Mass spectrometry"
+      },
+      "answer": "d",
+      "a": "Mass spectrometry",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-101",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The limit of resolution of the human eye is:",
+      "options": {
+        "a": "1 mm",
+        "b": "0.5 mm",
+        "c": "0.01 mm",
+        "d": "0.1 mm"
+      },
+      "answer": "d",
+      "a": "0.1 mm",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-14",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy stored in the nuclei of atoms is:",
+      "options": {
+        "a": "thermal energy",
+        "b": "chemical energy",
+        "c": "nuclear energy",
+        "d": "light energy"
+      },
+      "answer": "c",
+      "a": "nuclear energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-14",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Decomposition of food waste is useful in preparing:",
+      "options": {
+        "a": "Rust",
+        "b": "Lime water",
+        "c": "Dry ice",
+        "d": "Compost"
+      },
+      "answer": "d",
+      "a": "Compost",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The process by which cell division in many animal cells stops when they come in contact with neighbouring cells is:",
+      "options": {
+        "a": "Totipotency",
+        "b": "Karyogamy",
+        "c": "Osmosis",
+        "d": "Contact inhibition"
+      },
+      "answer": "d",
+      "a": "Contact inhibition",
+      "e": "Cancer cells lose this control and divide uncontrollably.",
+      "table": null,
+      "qid": "biology-ch21-cell-88",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Atoms with a complete octet in their valence shell are:",
+      "options": {
+        "a": "Strong electron donors",
+        "b": "Highly reactive",
+        "c": "Largely unreactive",
+        "d": "Strong electron acceptors"
+      },
+      "answer": "c",
+      "a": "Largely unreactive",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-66",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Microorganisms that break down dead remains into simple inorganic substances are called:",
+      "options": {
+        "a": "Parasites",
+        "b": "Decomposers",
+        "c": "Producers",
+        "d": "Primary consumers"
+      },
+      "answer": "b",
+      "a": "Decomposers",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-3",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The value of Wien's constant is:",
+      "options": {
+        "a": "3 × 10⁸ m s⁻¹",
+        "b": "8.31 J mol⁻¹ K⁻¹",
+        "c": "5.67 × 10⁻⁸ W m⁻² K⁻⁴",
+        "d": "2.9 × 10⁻³ m K"
+      },
+      "answer": "d",
+      "a": "2.9 × 10⁻³ m K",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-73",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Oxidation of magnesium with fluorine, chlorine or sulphur is classified as oxidation because:",
+      "options": {
+        "a": "Electropositive element is removed",
+        "b": "Oxygen is added",
+        "c": "An electronegative element is added",
+        "d": "Hydrogen is removed"
+      },
+      "answer": "c",
+      "a": "An electronegative element is added",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In Amoeba, the contractile vacuole is important for:",
+      "options": {
+        "a": "Photosynthesis",
+        "b": "Locomotion",
+        "c": "Protein synthesis",
+        "d": "Osmoregulation"
+      },
+      "answer": "d",
+      "a": "Osmoregulation",
+      "e": "It also helps in excretion.",
+      "table": null,
+      "qid": "biology-ch21-cell-38",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "During a total lunar eclipse, the Moon appears:",
+      "options": {
+        "a": "Green",
+        "b": "Dark red",
+        "c": "Bright white",
+        "d": "Blue"
+      },
+      "answer": "b",
+      "a": "Dark red",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-63",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Distillation can separate two miscible liquids whose boiling points differ by at least about:",
+      "options": {
+        "a": "5 °C",
+        "b": "15 °C",
+        "c": "10 °C",
+        "d": "25 °C"
+      },
+      "answer": "d",
+      "a": "25 °C",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The Indian woman scientist who received a Ph.D. from Cambridge University for her work on respiration in plants is:",
+      "options": {
+        "a": "Usha Lachungpa",
+        "b": "Janaki Ammal",
+        "c": "Divya Mudappa",
+        "d": "Kamala Sohonie"
+      },
+      "answer": "d",
+      "a": "Kamala Sohonie",
+      "e": "She also worked on the sap of the coconut palm as a nutritive drink called Neera.",
+      "table": null,
+      "qid": "biology-ch23-plants-59",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "A periodic motion is simple harmonic when the displacement is a:",
+      "options": {
+        "a": "Logarithmic function of time",
+        "b": "Exponential function of time",
+        "c": "Sinusoidal function of time",
+        "d": "Linear function of time"
+      },
+      "answer": "c",
+      "a": "Sinusoidal function of time",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-13",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is soluble in water?",
+      "options": {
+        "a": "Sawdust",
+        "b": "Sugar",
+        "c": "Chalk powder",
+        "d": "Sand"
+      },
+      "answer": "b",
+      "a": "Sugar",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-47",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The diffusion of water across a selectively permeable membrane is called:",
+      "options": {
+        "a": "Active transport",
+        "b": "Facilitated diffusion",
+        "c": "Simple diffusion",
+        "d": "Osmosis"
+      },
+      "answer": "d",
+      "a": "Osmosis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-21",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The Moon rises later each day by about:",
+      "options": {
+        "a": "5 minutes",
+        "b": "50 minutes",
+        "c": "24 hours",
+        "d": "15 minutes"
+      },
+      "answer": "b",
+      "a": "50 minutes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-75",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Venus is hotter than Mercury mainly because:",
+      "options": {
+        "a": "its thick atmosphere traps heat",
+        "b": "it rotates faster",
+        "c": "it is closer to the Sun",
+        "d": "it has no atmosphere"
+      },
+      "answer": "a",
+      "a": "its thick atmosphere traps heat",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-1",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Changes in which one or more new substances are formed are called:",
+      "options": {
+        "a": "Chemical changes",
+        "b": "Physical changes",
+        "c": "Natural changes",
+        "d": "Reversible changes"
+      },
+      "answer": "a",
+      "a": "Chemical changes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum speed of a particle in SHM with amplitude A and angular frequency ω is:",
+      "options": {
+        "a": "ω²A",
+        "b": "A/ω",
+        "c": "ωA",
+        "d": "ωA²"
+      },
+      "answer": "c",
+      "a": "ωA",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-20",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants whose seeds have a single cotyledon are called:",
+      "options": {
+        "a": "Creepers",
+        "b": "Dicotyledons",
+        "c": "Monocotyledons",
+        "d": "Climbers"
+      },
+      "answer": "c",
+      "a": "Monocotyledons",
+      "e": "Maize is an example.",
+      "table": null,
+      "qid": "biology-ch23-plants-12",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    }
+  ]
+}

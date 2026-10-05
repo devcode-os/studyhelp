@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-9",
+  "chapterNumber": 9,
+  "title": "General Science Set 9",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The part of the vascular tissue in plants that moves water and minerals obtained from the soil is the:",
+      "options": {
+        "a": "Epidermis",
+        "b": "Phloem",
+        "c": "Cambium",
+        "d": "Xylem"
+      },
+      "answer": "d",
+      "a": "Xylem",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-87",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following measures gauge pressure?",
+      "options": {
+        "a": "Spring balance",
+        "b": "Beam balance",
+        "c": "Mercury barometer",
+        "d": "Sphygmomanometer"
+      },
+      "answer": "d",
+      "a": "Sphygmomanometer",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-67",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Respiration in plants takes place in:",
+      "options": {
+        "a": "Only the green parts",
+        "b": "Only the roots",
+        "c": "Only the leaves",
+        "d": "All parts of the plant"
+      },
+      "answer": "d",
+      "a": "All parts of the plant",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-56",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Ionic compounds conduct electricity in:",
+      "options": {
+        "a": "Solid state only",
+        "b": "Molten state and aqueous solution",
+        "c": "Solid and molten state only",
+        "d": "None of these states"
+      },
+      "answer": "b",
+      "a": "Molten state and aqueous solution",
+      "e": "In the solid state the ions cannot move because of the rigid structure.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple periscope is made by using:",
+      "options": {
+        "a": "two plane mirrors",
+        "b": "one convex lens",
+        "c": "one concave mirror",
+        "d": "two convex mirrors"
+      },
+      "answer": "a",
+      "a": "two plane mirrors",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-9",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon dioxide is mostly transported in human blood in the:",
+      "options": {
+        "a": "Form bound to haemoglobin",
+        "b": "Dissolved form",
+        "c": "Gaseous form",
+        "d": "Form carried inside platelets"
+      },
+      "answer": "b",
+      "a": "Dissolved form",
+      "e": "Carbon dioxide is more soluble in water than oxygen is.",
+      "table": null,
+      "qid": "biology-ch26-respiration-64",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals can be cut with a knife?",
+      "options": {
+        "a": "Copper",
+        "b": "Sodium",
+        "c": "Aluminium",
+        "d": "Iron"
+      },
+      "answer": "b",
+      "a": "Sodium",
+      "e": "Alkali metals (lithium, sodium, potassium) are soft, with low densities and low melting points.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Cartosat – Imaging of the Earth for mapping\n(II) AstroSat – Scientific observations of stars and other celestial objects\n(III) Mangalyaan – Mission to the Moon\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Mangalyaan is the mission to Mars.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-90",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The waxy layer of cutin covering epidermal cells is called the:",
+      "options": {
+        "a": "Lignin",
+        "b": "Cuticle",
+        "c": "Cork",
+        "d": "Pectin"
+      },
+      "answer": "b",
+      "a": "Cuticle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-17",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Skating on snow is possible because the water formed under the skates acts as a:",
+      "options": {
+        "a": "lubricant",
+        "b": "catalyst",
+        "c": "coolant",
+        "d": "insulator"
+      },
+      "answer": "a",
+      "a": "lubricant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-46",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A hand-powered device that separates blood components without electricity, based on centrifugation, is called:",
+      "options": {
+        "a": "Paperfuge",
+        "b": "Separating funnel",
+        "c": "Condenser",
+        "d": "Distillation flask"
+      },
+      "answer": "a",
+      "a": "Paperfuge",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The exchange of gases in the lungs takes place in the:",
+      "options": {
+        "a": "Windpipe",
+        "b": "Alveoli",
+        "c": "Nostrils",
+        "d": "Rib cage"
+      },
+      "answer": "b",
+      "a": "Alveoli",
+      "e": "Alveoli are balloon-like structures with an extensive network of blood vessels in their walls.",
+      "table": null,
+      "qid": "biology-ch26-respiration-60",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "At constant pressure, the volume V and absolute temperature T of a given quantity of gas are related as:",
+      "options": {
+        "a": "VT = constant",
+        "b": "V + T = constant",
+        "c": "V/T² = constant",
+        "d": "V/T = constant"
+      },
+      "answer": "d",
+      "a": "V/T = constant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-18",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Saliva is secreted by the:",
+      "options": {
+        "a": "Liver",
+        "b": "Salivary glands",
+        "c": "Gastric glands",
+        "d": "Pancreas"
+      },
+      "answer": "b",
+      "a": "Salivary glands",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-24",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In a micelle formed in water, the ends of the soap molecules on the surface of the cluster are the:",
+      "options": {
+        "a": "Hydrocarbon tails",
+        "b": "Hydrophobic ends",
+        "c": "Ionic ends",
+        "d": "Oil droplets"
+      },
+      "answer": "c",
+      "a": "Ionic ends",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-79",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The image formed by a concave lens, irrespective of the position of the object, is always:",
+      "options": {
+        "a": "virtual, erect and diminished",
+        "b": "virtual, erect and enlarged",
+        "c": "real and inverted",
+        "d": "real, erect and diminished"
+      },
+      "answer": "a",
+      "a": "virtual, erect and diminished",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-54",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "If the Earth were the size of an apple, the crust would be as thin as the apple's:",
+      "options": {
+        "a": "core",
+        "b": "skin",
+        "c": "pulp",
+        "d": "seed"
+      },
+      "answer": "b",
+      "a": "skin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-19",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Plaster of Paris is obtained by heating gypsum at:",
+      "options": {
+        "a": "373 K",
+        "b": "473 K",
+        "c": "573 K",
+        "d": "273 K"
+      },
+      "answer": "a",
+      "a": "373 K",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-77",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The magnitude of displacement can be less than the total distance travelled.\n(II) The magnitude of displacement can be greater than the total distance travelled.\n(III) Displacement can be zero even when the distance travelled is not zero.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-28",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following planets are relatively small and rocky?",
+      "options": {
+        "a": "Earth and Jupiter",
+        "b": "Uranus and Neptune",
+        "c": "Jupiter and Saturn",
+        "d": "Mercury, Venus, Earth and Mars"
+      },
+      "answer": "d",
+      "a": "Mercury, Venus, Earth and Mars",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-38",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "A waxing Moon is easiest to spot at:",
+      "options": {
+        "a": "Midnight",
+        "b": "Noon",
+        "c": "Sunset",
+        "d": "Sunrise"
+      },
+      "answer": "c",
+      "a": "Sunset",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-76",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon attains noble gas configuration by:",
+      "options": {
+        "a": "Losing two and gaining two electrons",
+        "b": "Losing four electrons",
+        "c": "Sharing its valence electrons",
+        "d": "Gaining four electrons"
+      },
+      "answer": "c",
+      "a": "Sharing its valence electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about inhalation:\n(I) The ribs move up and outwards.\n(II) The diaphragm moves downwards.\n(III) The space inside the chest decreases.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-61",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Taking the speed of sound as 340 m s⁻¹, the minimum distance of a reflecting surface for hearing a distinct echo is:",
+      "options": {
+        "a": "34 m",
+        "b": "17 m",
+        "c": "68 m",
+        "d": "8.5 m"
+      },
+      "answer": "b",
+      "a": "17 m",
+      "e": "Sound covers 340 m s⁻¹ × 0.1 s = 34 m to the surface and back, so the distance is 17 m.",
+      "table": null,
+      "qid": "physics-ch6-sound-49",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Analysing the percentage of the elements present in a given sample of a known compound helps in checking its:",
+      "options": {
+        "a": "Boiling point",
+        "b": "Volume",
+        "c": "Density",
+        "d": "Purity"
+      },
+      "answer": "d",
+      "a": "Purity",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-107",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In Rhizopus, spores are protected until they reach a moist surface by:",
+      "options": {
+        "a": "A mucilage layer",
+        "b": "Cilia",
+        "c": "Hyphae",
+        "d": "Thick walls"
+      },
+      "answer": "d",
+      "a": "Thick walls",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-23",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The process by which decomposers return nitrogen compounds such as ammonia to the soil is called:",
+      "options": {
+        "a": "Denitrification",
+        "b": "Ammonification",
+        "c": "Nitrification",
+        "d": "Assimilation"
+      },
+      "answer": "b",
+      "a": "Ammonification",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-119",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The fluid mosaic model of the plasma membrane was proposed by:",
+      "options": {
+        "a": "Golgi and Palade",
+        "b": "Singer and Nicolson",
+        "c": "Schleiden and Schwann",
+        "d": "Hooke and Brown"
+      },
+      "answer": "b",
+      "a": "Singer and Nicolson",
+      "e": "Proposed in 1972.",
+      "table": null,
+      "qid": "biology-ch21-cell-18",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The substance used by doctors as plaster for supporting fractured bones in the right position is:",
+      "options": {
+        "a": "Washing soda",
+        "b": "Bleaching powder",
+        "c": "Baking soda",
+        "d": "Plaster of Paris"
+      },
+      "answer": "d",
+      "a": "Plaster of Paris",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-79",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a pair of isobars?",
+      "options": {
+        "a": "¹⁴₆C and ¹⁴₇N",
+        "b": "¹²₆C and ¹⁴₆C",
+        "c": "¹₁H and ²₁H",
+        "d": "³⁵₁₇Cl and ³⁷₁₇Cl"
+      },
+      "answer": "a",
+      "a": "¹⁴₆C and ¹⁴₇N",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-53",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    }
+  ]
+}

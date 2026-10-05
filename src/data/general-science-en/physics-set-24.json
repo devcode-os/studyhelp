@@ -1,0 +1,580 @@
+{
+  "slug": "general-science-physics-set-24",
+  "chapterNumber": 24,
+  "title": "Physics Set 24",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following situations:\n(I) The force acting on an object is zero.\n(II) The object undergoes no displacement.\n(III) The force acts perpendicular to the displacement.\nIn which of the above is the work done by the force zero?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-4",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "30 density oscillations occur at a fixed point in 6 s. The time period of the sound wave is:",
+      "options": {
+        "a": "5 s",
+        "b": "0.5 s",
+        "c": "0.2 s",
+        "d": "180 s"
+      },
+      "answer": "c",
+      "a": "0.2 s",
+      "e": "ν = 30/6 = 5 Hz; T = 1/5 Hz = 0.2 s.",
+      "table": null,
+      "qid": "physics-ch6-sound-23",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "For the oscillator in the previous question, the kinetic energy at a displacement of 0.06 m from the mean position is:",
+      "options": {
+        "a": "0.50 J",
+        "b": "0.64 J",
+        "c": "0.18 J",
+        "d": "0.32 J"
+      },
+      "answer": "d",
+      "a": "0.32 J",
+      "e": "K = ½k(A² − x²) = 50 × (0.01 − 0.0036) J = 0.32 J.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-35",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) ²³⁵₉₂U – Fuel in a nuclear reactor\n(II) ¹³¹₅₃I – Treatment of goitre and thyroid cancer\n(III) ¹⁴₆C – Radiation treatment for cancer\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "¹⁴₆C is used to determine the age of ancient fossils and artefacts.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-58",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "In uniform circular motion, the velocity at any point is directed along the:",
+      "options": {
+        "a": "radius towards the centre",
+        "b": "radius away from the centre",
+        "c": "tangent to the circle",
+        "d": "diameter"
+      },
+      "answer": "c",
+      "a": "tangent to the circle",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-35",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Galileo measured the time of each swing of a church lamp using his:",
+      "options": {
+        "a": "watch",
+        "b": "pulse",
+        "c": "hourglass",
+        "d": "sundial"
+      },
+      "answer": "b",
+      "a": "pulse",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-45",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Taking g = 9.8 m s⁻² at the surface and the radius of the Earth as 6400 km, the approximate value of g at a height of 128 km above the surface is:",
+      "options": {
+        "a": "10.2 m s⁻²",
+        "b": "9.6 m s⁻²",
+        "c": "9.8 m s⁻²",
+        "d": "9.4 m s⁻²"
+      },
+      "answer": "d",
+      "a": "9.4 m s⁻²",
+      "e": "g(h) ≈ g(1 − 2h/R) = 9.8 × (1 − 256/6400) = 9.8 × 0.96 ≈ 9.4 m s⁻².",
+      "table": null,
+      "qid": "physics-ch9-gravitation-11",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The tendency of an object to resist a change in its state of rest or uniform motion was named by Newton as:",
+      "options": {
+        "a": "inertia",
+        "b": "impulse",
+        "c": "momentum",
+        "d": "friction"
+      },
+      "answer": "a",
+      "a": "inertia",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-12",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of surface water seeping through soil and rocks is called:",
+      "options": {
+        "a": "precipitation",
+        "b": "condensation",
+        "c": "infiltration",
+        "d": "transpiration"
+      },
+      "answer": "c",
+      "a": "infiltration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-83",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In a simple pendulum, the restoring torque about the support is provided by the:",
+      "options": {
+        "a": "Tension in the string",
+        "b": "Component mg cos θ",
+        "c": "Weight mg in full",
+        "d": "Component mg sin θ"
+      },
+      "answer": "d",
+      "a": "Component mg sin θ",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-38",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A scale has a broken zero end. An object's ends coincide with the 2.0 cm and 11.6 cm marks. The length of the object is:",
+      "options": {
+        "a": "8.6 cm",
+        "b": "9.6 cm",
+        "c": "11.6 cm",
+        "d": "13.6 cm"
+      },
+      "answer": "b",
+      "a": "9.6 cm",
+      "e": "11.6 cm – 2.0 cm = 9.6 cm.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-14",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The dimensional formula of mass density is:",
+      "options": {
+        "a": "[M L⁻³ T⁰]",
+        "b": "[M⁰ L⁻³ T⁰]",
+        "c": "[M L³ T⁰]",
+        "d": "[M L⁻² T⁰]"
+      },
+      "answer": "a",
+      "a": "[M L⁻³ T⁰]",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-25",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "During a change of state, the temperature of a substance:",
+      "options": {
+        "a": "fluctuates",
+        "b": "rises",
+        "c": "falls",
+        "d": "remains constant"
+      },
+      "answer": "d",
+      "a": "remains constant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-43",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The Moon takes about how long to cycle through all its phases?",
+      "options": {
+        "a": "29.5 days",
+        "b": "14 days",
+        "c": "7 days",
+        "d": "27.3 days"
+      },
+      "answer": "a",
+      "a": "29.5 days",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-77",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Varahamihira gave methods for predicting seasonal rainfall in his work:",
+      "options": {
+        "a": "Surya Siddhanta",
+        "b": "Aryabhatiya",
+        "c": "Lilavati",
+        "d": "Brihatsamhita"
+      },
+      "answer": "d",
+      "a": "Brihatsamhita",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-87",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The metal used almost exclusively for the filaments of electric bulbs is:",
+      "options": {
+        "a": "Copper",
+        "b": "Aluminium",
+        "c": "Tungsten",
+        "d": "Nichrome"
+      },
+      "answer": "c",
+      "a": "Tungsten",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-62",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The correct chronological order of the atomic models is:",
+      "options": {
+        "a": "Dalton, Rutherford, Thomson, Bohr",
+        "b": "Dalton, Thomson, Rutherford, Bohr",
+        "c": "Thomson, Dalton, Rutherford, Bohr",
+        "d": "Dalton, Thomson, Bohr, Rutherford"
+      },
+      "answer": "b",
+      "a": "Dalton, Thomson, Rutherford, Bohr",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-45",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The right-hand thumb rule is also called:",
+      "options": {
+        "a": "Oersted's rule",
+        "b": "Ampere's rule",
+        "c": "Maxwell's corkscrew rule",
+        "d": "Fleming's rule"
+      },
+      "answer": "c",
+      "a": "Maxwell's corkscrew rule",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-27",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The main limitation of Rutherford's model was its inability to explain the:",
+      "options": {
+        "a": "Presence of electrons",
+        "b": "Existence of a nucleus",
+        "c": "Neutrality of the atom",
+        "d": "Stability of the atom"
+      },
+      "answer": "d",
+      "a": "Stability of the atom",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-36",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following has the highest specific heat capacity?",
+      "options": {
+        "a": "Aluminium",
+        "b": "Ice",
+        "c": "Water",
+        "d": "Iron"
+      },
+      "answer": "c",
+      "a": "Water",
+      "e": "",
+      "table": {
+        "headers": [
+          "Substance",
+          "Specific heat capacity (J kg⁻¹ K⁻¹)"
+        ],
+        "rows": [
+          [
+            "Water",
+            "4186.0"
+          ],
+          [
+            "Ice",
+            "2060"
+          ],
+          [
+            "Aluminium",
+            "900.0"
+          ],
+          [
+            "Glass",
+            "840"
+          ],
+          [
+            "Iron",
+            "450"
+          ],
+          [
+            "Copper",
+            "386.4"
+          ],
+          [
+            "Lead",
+            "127.7"
+          ]
+        ]
+      },
+      "qid": "physics-ch4-heat-and-temperature-34",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The Haber–Bosch process produces ___ from atmospheric nitrogen:",
+      "options": {
+        "a": "Ammonia",
+        "b": "Glucose",
+        "c": "Nitrogen oxides",
+        "d": "Ozone"
+      },
+      "answer": "a",
+      "a": "Ammonia",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-120",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "For a spherical mirror of small aperture, the principal focus lies midway between the:",
+      "options": {
+        "a": "pole and centre of curvature",
+        "b": "pole and aperture",
+        "c": "focus and aperture",
+        "d": "centre of curvature and the object"
+      },
+      "answer": "a",
+      "a": "pole and centre of curvature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-22",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound loudness is commonly measured in:",
+      "options": {
+        "a": "Second",
+        "b": "Metre",
+        "c": "Decibel",
+        "d": "Hertz"
+      },
+      "answer": "c",
+      "a": "Decibel",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-41",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The weight of a 1 kg object on different bodies is as follows. On which body is the weight smallest?",
+      "options": {
+        "a": "Mars",
+        "b": "Earth",
+        "c": "Moon",
+        "d": "Venus"
+      },
+      "answer": "c",
+      "a": "Moon",
+      "e": "The weight of a 1 kg object on the Moon is 1.6 N.",
+      "table": {
+        "headers": [
+          "Body",
+          "Weight of 1 kg object"
+        ],
+        "rows": [
+          [
+            "Earth",
+            "10 N"
+          ],
+          [
+            "Moon",
+            "1.6 N"
+          ],
+          [
+            "Mars",
+            "3.8 N"
+          ],
+          [
+            "Venus",
+            "9 N"
+          ],
+          [
+            "Jupiter",
+            "25.4 N"
+          ]
+        ]
+      },
+      "qid": "physics-ch2-force-motion-and-pressure-8",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The condition in which the crystalline lens of the eye becomes milky and cloudy is called:",
+      "options": {
+        "a": "cataract",
+        "b": "presbyopia",
+        "c": "hypermetropia",
+        "d": "myopia"
+      },
+      "answer": "a",
+      "a": "cataract",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-68",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs of curves on a pressure–temperature phase diagram and the phases coexisting on them:\n(I) Fusion curve – solid and liquid\n(II) Vaporisation curve – liquid and vapour\n(III) Sublimation curve – solid and liquid\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "The sublimation curve represents solid and vapour coexisting.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-53",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A particle executes SHM with a period of 0.5 s. Its angular frequency is:",
+      "options": {
+        "a": "π rad s⁻¹",
+        "b": "0.5π rad s⁻¹",
+        "c": "2π rad s⁻¹",
+        "d": "4π rad s⁻¹"
+      },
+      "answer": "d",
+      "a": "4π rad s⁻¹",
+      "e": "ω = 2π/T = 2π/0.5 s = 4π rad s⁻¹.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-16",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The path of a light beam becomes visible when it passes through a colloidal solution due to:",
+      "options": {
+        "a": "total reflection",
+        "b": "diffraction",
+        "c": "the Tyndall effect",
+        "d": "dispersion"
+      },
+      "answer": "c",
+      "a": "the Tyndall effect",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-85",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The factor 2 in the relation s = 2πr is treated as:",
+      "options": {
+        "a": "an uncertain digit",
+        "b": "an exact number",
+        "c": "a number with two significant figures",
+        "d": "a number with one significant figure"
+      },
+      "answer": "b",
+      "a": "an exact number",
+      "e": "It has an infinite number of significant figures.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-19",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The viscosity of liquids decreases with rise in temperature.\n(II) The viscosity of gases increases with rise in temperature.\n(III) The surface tension of a liquid usually increases with rise in temperature.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-85",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    }
+  ]
+}

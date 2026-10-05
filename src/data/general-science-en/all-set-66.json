@@ -1,0 +1,553 @@
+{
+  "slug": "general-science-set-66",
+  "chapterNumber": 66,
+  "title": "General Science Set 66",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Most of the water on Earth is found in:",
+      "options": {
+        "a": "Rivers",
+        "b": "Ice sheets",
+        "c": "Underground",
+        "d": "Oceans and seas"
+      },
+      "answer": "d",
+      "a": "Oceans and seas",
+      "e": "This water is saline and not fit for domestic, agricultural or industrial use.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-24",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Water molecule – two hydrogen atoms and one oxygen atom\n(II) Carbon dioxide molecule – two carbon atoms and one oxygen atom\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "Both I and II",
+        "b": "I only",
+        "c": "II only",
+        "d": "Neither I nor II"
+      },
+      "answer": "b",
+      "a": "I only",
+      "e": "A carbon dioxide molecule has one carbon atom and two oxygen atoms.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In a simple pendulum, the restoring torque about the support is provided by the:",
+      "options": {
+        "a": "Tension in the string",
+        "b": "Component mg cos θ",
+        "c": "Weight mg in full",
+        "d": "Component mg sin θ"
+      },
+      "answer": "d",
+      "a": "Component mg sin θ",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-38",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Herbivores eating grass have a longer small intestine to allow digestion of:",
+      "options": {
+        "a": "Protein",
+        "b": "Fat",
+        "c": "Starch",
+        "d": "Cellulose"
+      },
+      "answer": "d",
+      "a": "Cellulose",
+      "e": "Meat is easier to digest, so carnivores like tigers have a shorter small intestine.",
+      "table": null,
+      "qid": "biology-ch26-respiration-32",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A scale has a broken zero end. An object's ends coincide with the 2.0 cm and 11.6 cm marks. The length of the object is:",
+      "options": {
+        "a": "8.6 cm",
+        "b": "9.6 cm",
+        "c": "11.6 cm",
+        "d": "13.6 cm"
+      },
+      "answer": "b",
+      "a": "9.6 cm",
+      "e": "11.6 cm – 2.0 cm = 9.6 cm.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-14",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a heterogeneous mixture?",
+      "options": {
+        "a": "Salt solution",
+        "b": "Vinegar",
+        "c": "Soda",
+        "d": "Sand and water"
+      },
+      "answer": "d",
+      "a": "Sand and water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "In place of a well-defined nucleus, bacterial cells have a:",
+      "options": {
+        "a": "Vacuole",
+        "b": "Plastid",
+        "c": "Cell wall",
+        "d": "Nucleoid"
+      },
+      "answer": "d",
+      "a": "Nucleoid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-16",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The dimensional formula of mass density is:",
+      "options": {
+        "a": "[M L⁻³ T⁰]",
+        "b": "[M⁰ L⁻³ T⁰]",
+        "c": "[M L³ T⁰]",
+        "d": "[M L⁻² T⁰]"
+      },
+      "answer": "a",
+      "a": "[M L⁻³ T⁰]",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-25",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "In Ayurveda, Siddha and other traditional systems of medicine, the solvent primarily used for medicinal formulations is:",
+      "options": {
+        "a": "Milk",
+        "b": "Oil",
+        "c": "Ghee",
+        "d": "Water"
+      },
+      "answer": "d",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-70",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following mature cells lacks a nucleus?",
+      "options": {
+        "a": "Sieve tube cell",
+        "b": "Nerve cell",
+        "c": "Columnar epithelial cell",
+        "d": "Mesophyll cell"
+      },
+      "answer": "a",
+      "a": "Sieve tube cell",
+      "e": "Erythrocytes of many mammals also lack a nucleus.",
+      "table": null,
+      "qid": "biology-ch21-cell-60",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "During a change of state, the temperature of a substance:",
+      "options": {
+        "a": "fluctuates",
+        "b": "rises",
+        "c": "falls",
+        "d": "remains constant"
+      },
+      "answer": "d",
+      "a": "remains constant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-43",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The term 'virus' means:",
+      "options": {
+        "a": "Obligate parasite",
+        "b": "Living fluid",
+        "c": "Crystalline protein",
+        "d": "Venom or poisonous fluid"
+      },
+      "answer": "d",
+      "a": "Venom or poisonous fluid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-160",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a mixture?",
+      "options": {
+        "a": "Sodium chloride",
+        "b": "Concrete",
+        "c": "Iron",
+        "d": "Water"
+      },
+      "answer": "b",
+      "a": "Concrete",
+      "e": "Wood and steel are also mixtures.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The Moon takes about how long to cycle through all its phases?",
+      "options": {
+        "a": "29.5 days",
+        "b": "14 days",
+        "c": "7 days",
+        "d": "27.3 days"
+      },
+      "answer": "a",
+      "a": "29.5 days",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-77",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Crown gall disease in plants is caused by:",
+      "options": {
+        "a": "Agrobacterium tumefaciens",
+        "b": "Nostoc",
+        "c": "Lactobacillus",
+        "d": "Rhizobium"
+      },
+      "answer": "a",
+      "a": "Agrobacterium tumefaciens",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-41",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Varahamihira gave methods for predicting seasonal rainfall in his work:",
+      "options": {
+        "a": "Surya Siddhanta",
+        "b": "Aryabhatiya",
+        "c": "Lilavati",
+        "d": "Brihatsamhita"
+      },
+      "answer": "d",
+      "a": "Brihatsamhita",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-87",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The chemical name of baking soda is:",
+      "options": {
+        "a": "Sodium chloride",
+        "b": "Sodium carbonate",
+        "c": "Sodium hydroxide",
+        "d": "Sodium hydrogencarbonate"
+      },
+      "answer": "d",
+      "a": "Sodium hydrogencarbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-68",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In plants, waste products stored as resins and gums are found especially in old:",
+      "options": {
+        "a": "Roots",
+        "b": "Phloem",
+        "c": "Xylem",
+        "d": "Stomata"
+      },
+      "answer": "c",
+      "a": "Xylem",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-101",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The metal used almost exclusively for the filaments of electric bulbs is:",
+      "options": {
+        "a": "Copper",
+        "b": "Aluminium",
+        "c": "Tungsten",
+        "d": "Nichrome"
+      },
+      "answer": "c",
+      "a": "Tungsten",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-62",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The Iron Pillar of Delhi was made in the time of:",
+      "options": {
+        "a": "Ashoka",
+        "b": "Chandragupta II",
+        "c": "Harsha",
+        "d": "Akbar"
+      },
+      "answer": "b",
+      "a": "Chandragupta II",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-85",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants take up nitrogen mainly in the form of:",
+      "options": {
+        "a": "Inorganic nitrates or nitrites",
+        "b": "Nitric oxide",
+        "c": "Ammonia",
+        "d": "Nitrogen gas"
+      },
+      "answer": "a",
+      "a": "Inorganic nitrates or nitrites",
+      "e": "Nitrogen is essential for the synthesis of proteins and other compounds.",
+      "table": null,
+      "qid": "biology-ch26-respiration-17",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The correct chronological order of the atomic models is:",
+      "options": {
+        "a": "Dalton, Rutherford, Thomson, Bohr",
+        "b": "Dalton, Thomson, Rutherford, Bohr",
+        "c": "Thomson, Dalton, Rutherford, Bohr",
+        "d": "Dalton, Thomson, Bohr, Rutherford"
+      },
+      "answer": "b",
+      "a": "Dalton, Thomson, Rutherford, Bohr",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-45",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The hydrolytic enzymes of lysosomes are optimally active at:",
+      "options": {
+        "a": "Highly alkaline pH",
+        "b": "Acidic pH",
+        "c": "Neutral pH",
+        "d": "Slightly alkaline pH"
+      },
+      "answer": "b",
+      "a": "Acidic pH",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-35",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Nitrogen – Manufacture of fertilisers\n(II) Iodine – Antiseptic for wounds\n(III) Oxygen – Water purification\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-88",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The right-hand thumb rule is also called:",
+      "options": {
+        "a": "Oersted's rule",
+        "b": "Ampere's rule",
+        "c": "Maxwell's corkscrew rule",
+        "d": "Fleming's rule"
+      },
+      "answer": "c",
+      "a": "Maxwell's corkscrew rule",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-27",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of the pistil that connects the stigma to the ovary is the:",
+      "options": {
+        "a": "Anther",
+        "b": "Style",
+        "c": "Sepal",
+        "d": "Filament"
+      },
+      "answer": "b",
+      "a": "Style",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-45",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The best conductors of heat among metals are:",
+      "options": {
+        "a": "Lead and mercury",
+        "b": "Gold and zinc",
+        "c": "Silver and copper",
+        "d": "Iron and aluminium"
+      },
+      "answer": "c",
+      "a": "Silver and copper",
+      "e": "Lead and mercury are comparatively poor conductors of heat.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The main limitation of Rutherford's model was its inability to explain the:",
+      "options": {
+        "a": "Presence of electrons",
+        "b": "Existence of a nucleus",
+        "c": "Neutrality of the atom",
+        "d": "Stability of the atom"
+      },
+      "answer": "d",
+      "a": "Stability of the atom",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-36",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Autotrophs include green plants and some bacteria.\n(II) Heterotrophs include animals and fungi.\n(III) Autotrophs use enzymes to break down complex substances obtained from other organisms.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-22",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following has the highest specific heat capacity?",
+      "options": {
+        "a": "Aluminium",
+        "b": "Ice",
+        "c": "Water",
+        "d": "Iron"
+      },
+      "answer": "c",
+      "a": "Water",
+      "e": "",
+      "table": {
+        "headers": [
+          "Substance",
+          "Specific heat capacity (J kg⁻¹ K⁻¹)"
+        ],
+        "rows": [
+          [
+            "Water",
+            "4186.0"
+          ],
+          [
+            "Ice",
+            "2060"
+          ],
+          [
+            "Aluminium",
+            "900.0"
+          ],
+          [
+            "Glass",
+            "840"
+          ],
+          [
+            "Iron",
+            "450"
+          ],
+          [
+            "Copper",
+            "386.4"
+          ],
+          [
+            "Lead",
+            "127.7"
+          ]
+        ]
+      },
+      "qid": "physics-ch4-heat-and-temperature-34",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

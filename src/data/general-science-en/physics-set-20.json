@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-20",
+  "chapterNumber": 20,
+  "title": "Physics Set 20",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The Earth rotates on its axis from:",
+      "options": {
+        "a": "West to East",
+        "b": "North to South",
+        "c": "South to North",
+        "d": "East to West"
+      },
+      "answer": "a",
+      "a": "West to East",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-48",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The liquids generally used in laboratory thermometers are:",
+      "options": {
+        "a": "alcohol and water",
+        "b": "kerosene and water",
+        "c": "water and mercury",
+        "d": "alcohol and mercury"
+      },
+      "answer": "d",
+      "a": "alcohol and mercury",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-13",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "If the absolute temperature of a perfect radiator is doubled, the energy radiated per unit time becomes ___ times.",
+      "options": {
+        "a": "16",
+        "b": "2",
+        "c": "4",
+        "d": "8"
+      },
+      "answer": "a",
+      "a": "16",
+      "e": "H ∝ T⁴, so 2⁴ = 16.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-78",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The region of a sound wave where the density of the medium is lower than the average density is called:",
+      "options": {
+        "a": "Compression",
+        "b": "Crest",
+        "c": "Rarefaction",
+        "d": "Amplitude"
+      },
+      "answer": "c",
+      "a": "Rarefaction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-7",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The absolute refractive index of a medium is the ratio of the speed of light in vacuum to the:",
+      "options": {
+        "a": "speed of light in air",
+        "b": "wavelength in the medium",
+        "c": "frequency in the medium",
+        "d": "speed of light in the medium"
+      },
+      "answer": "d",
+      "a": "speed of light in the medium",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-42",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The image formed by a convex mirror, for any position of the object, is always:",
+      "options": {
+        "a": "real and inverted",
+        "b": "virtual, erect and enlarged",
+        "c": "real, erect and diminished",
+        "d": "virtual, erect and diminished"
+      },
+      "answer": "d",
+      "a": "virtual, erect and diminished",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-27",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ammeter – connected in series\n(II) Voltmeter – connected in parallel\n(III) Ammeter – connected in parallel\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-9",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which scientist argued, through thought experiments, that a body moving on a horizontal plane would move indefinitely if all impediments were removed?",
+      "options": {
+        "a": "Torricelli",
+        "b": "Galileo Galilei",
+        "c": "Blaise Pascal",
+        "d": "Archimedes"
+      },
+      "answer": "b",
+      "a": "Galileo Galilei",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-13",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A lever is balanced when:",
+      "options": {
+        "a": "effort × effort arm = load × load arm",
+        "b": "effort × load = effort arm × load arm",
+        "c": "effort + effort arm = load + load arm",
+        "d": "effort × load arm = load × effort arm"
+      },
+      "answer": "a",
+      "a": "effort × effort arm = load × load arm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-44",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): The motion of a simple pendulum is simple harmonic only for small angular displacements.\nReason (R): For small θ, sin θ can be approximated by θ in radians.\nChoose the correct statement:",
+      "options": {
+        "a": "Both A and R are true, but R is not the correct explanation of A.",
+        "b": "Both A and R are true, and R is the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "b",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-48",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The sky appears dark to an astronaut at a very high altitude because:",
+      "options": {
+        "a": "the Sun is not visible",
+        "b": "blue light is absorbed",
+        "c": "scattering is not prominent at such heights",
+        "d": "the atmosphere is too hot"
+      },
+      "answer": "c",
+      "a": "scattering is not prominent at such heights",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-83",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic field inside a long current-carrying solenoid is:",
+      "options": {
+        "a": "Strongest near its ends",
+        "b": "Uniform",
+        "c": "Weakest at the centre",
+        "d": "Zero"
+      },
+      "answer": "b",
+      "a": "Uniform",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-31",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The increase in the dimensions of a body due to a rise in its temperature is called:",
+      "options": {
+        "a": "regelation",
+        "b": "thermal stress",
+        "c": "thermal expansion",
+        "d": "sublimation"
+      },
+      "answer": "c",
+      "a": "thermal expansion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-23",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Water flows at 2 m s⁻¹ through a pipe of cross-section 20 cm², which narrows to 5 cm². The speed in the narrow part is:",
+      "options": {
+        "a": "8 m s⁻¹",
+        "b": "10 m s⁻¹",
+        "c": "4 m s⁻¹",
+        "d": "0.5 m s⁻¹"
+      },
+      "answer": "a",
+      "a": "8 m s⁻¹",
+      "e": "A₁v₁ = A₂v₂, so v₂ = 20 × 2 ÷ 5 = 8 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-74",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Ākāśha Gangā is the Indian name for the:",
+      "options": {
+        "a": "Orion constellation",
+        "b": "Asteroid belt",
+        "c": "Milky Way Galaxy",
+        "d": "Solar System"
+      },
+      "answer": "c",
+      "a": "Milky Way Galaxy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-45",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Pendulum clock – Christiaan Huygens\n(II) Accurate expression for time from the shadow of a vertical stick – Varahamihira\n(III) Sinking-bowl water clock – Kautilya\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The sinking-bowl water clock (Ghatika-yantra) was first mentioned by Aryabhata.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-34",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "An object makes one revolution on a circle of radius R in time T. Its average speed is:",
+      "options": {
+        "a": "2πR/T",
+        "b": "πR/T",
+        "c": "zero",
+        "d": "2πRT"
+      },
+      "answer": "a",
+      "a": "2πR/T",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-46",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Calculations show that an electron in Rutherford's model would spiral into the nucleus in about:",
+      "options": {
+        "a": "1 s",
+        "b": "10⁻⁸ s",
+        "c": "10⁻¹⁵ s",
+        "d": "10⁸ s"
+      },
+      "answer": "b",
+      "a": "10⁻⁸ s",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-38",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "A device draws a current of 1.5 A from a 220 V supply. Its power is:",
+      "options": {
+        "a": "146.7 W",
+        "b": "221.5 W",
+        "c": "218.5 W",
+        "d": "330 W"
+      },
+      "answer": "d",
+      "a": "330 W",
+      "e": "P = VI = 220 V × 1.5 A = 330 W.",
+      "table": null,
+      "qid": "physics-ch7-electricity-55",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Generation of heat in a conductor due to the flow of electric current is known as the:",
+      "options": {
+        "a": "Lighting effect of current",
+        "b": "Chemical effect of current",
+        "c": "Heating effect of current",
+        "d": "Magnetic effect of current"
+      },
+      "answer": "c",
+      "a": "Heating effect of current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-50",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The absolute zero of temperature is close to:",
+      "options": {
+        "a": "–100 °C",
+        "b": "–32 °C",
+        "c": "–273.15 °C",
+        "d": "–373.15 °C"
+      },
+      "answer": "c",
+      "a": "–273.15 °C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-16",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Outside a bar magnet, the magnetic field lines emerge from the:",
+      "options": {
+        "a": "South pole",
+        "b": "Middle of the magnet",
+        "c": "Sides of the magnet",
+        "d": "North pole"
+      },
+      "answer": "d",
+      "a": "North pole",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-15",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The centre of the reflecting surface of a spherical mirror is called its:",
+      "options": {
+        "a": "centre of curvature",
+        "b": "pole",
+        "c": "principal focus",
+        "d": "aperture"
+      },
+      "answer": "b",
+      "a": "pole",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-18",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "One astronomical unit is approximately the distance between the:",
+      "options": {
+        "a": "Sun and Jupiter",
+        "b": "Earth and the Moon",
+        "c": "Sun and the Earth",
+        "d": "Sun and Proxima Centauri"
+      },
+      "answer": "c",
+      "a": "Sun and the Earth",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-34",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Water warms up more slowly than land mainly because it has a greater:",
+      "options": {
+        "a": "specific heat capacity",
+        "b": "latent heat",
+        "c": "density",
+        "d": "emissivity"
+      },
+      "answer": "a",
+      "a": "specific heat capacity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-69",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "When both poles of a magnet are brought near the two ends of an iron bar, the iron bar is:",
+      "options": {
+        "a": "Repelled by the North pole and attracted by the South pole",
+        "b": "Repelled by both poles",
+        "c": "Attracted by the North pole only",
+        "d": "Attracted by both poles"
+      },
+      "answer": "d",
+      "a": "Attracted by both poles",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-11",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) A lunar eclipse occurs when the Earth comes between the Sun and the Moon.\n(II) The eclipsed full Moon can be safely watched with the naked eye.\n(III) Sunglasses make direct viewing of a solar eclipse safe.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-62",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The power of a lens is the reciprocal of its focal length, and its SI unit is:",
+      "options": {
+        "a": "dioptre",
+        "b": "watt",
+        "c": "joule",
+        "d": "candela"
+      },
+      "answer": "a",
+      "a": "dioptre",
+      "e": "The focal length must be expressed in metres.",
+      "table": null,
+      "qid": "physics-ch5-light-57",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The centre of curvature of a convex mirror lies:",
+      "options": {
+        "a": "at its pole",
+        "b": "at its principal focus",
+        "c": "in front of the mirror",
+        "d": "behind the mirror"
+      },
+      "answer": "d",
+      "a": "behind the mirror",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-19",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Electric bulbs are usually filled with chemically inactive:",
+      "options": {
+        "a": "Nitrogen and argon",
+        "b": "Carbon dioxide and argon",
+        "c": "Oxygen and hydrogen",
+        "d": "Oxygen and nitrogen"
+      },
+      "answer": "a",
+      "a": "Nitrogen and argon",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-64",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    }
+  ]
+}

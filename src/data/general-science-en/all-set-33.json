@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-33",
+  "chapterNumber": 33,
+  "title": "General Science Set 33",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Calcium oxide reacts vigorously with water to form:",
+      "options": {
+        "a": "Calcium carbonate",
+        "b": "Calcium sulfate",
+        "c": "Calcium hydroxide",
+        "d": "Calcium chloride"
+      },
+      "answer": "c",
+      "a": "Calcium hydroxide",
+      "e": "The reaction releases heat.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The Voltaic cell is also known as the:",
+      "options": {
+        "a": "Lemon cell",
+        "b": "Galvanic cell",
+        "c": "Dry cell",
+        "d": "Rechargeable cell"
+      },
+      "answer": "b",
+      "a": "Galvanic cell",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-72",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following reproduces by forming buds that break off and grow into new individuals?",
+      "options": {
+        "a": "Amoeba",
+        "b": "Bacteria",
+        "c": "Hydra",
+        "d": "Planaria"
+      },
+      "answer": "c",
+      "a": "Hydra",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-29",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The excess of pressure at a point inside a liquid over atmospheric pressure is called:",
+      "options": {
+        "a": "relative density",
+        "b": "gauge pressure",
+        "c": "absolute pressure",
+        "d": "hydrostatic paradox"
+      },
+      "answer": "b",
+      "a": "gauge pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-60",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Solids have definite volume and definite shape.\n(II) Liquids have definite volume but no definite shape.\n(III) Gases have definite volume but no definite shape.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Gases have neither definite volume nor definite shape.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The chromosomes in the nucleus carry information for inheritance in the form of:",
+      "options": {
+        "a": "Starch",
+        "b": "Proteins",
+        "c": "Lipids",
+        "d": "DNA"
+      },
+      "answer": "d",
+      "a": "DNA",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-2",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The resistivity of an alloy, compared to that of its constituent metals, is generally:",
+      "options": {
+        "a": "Higher",
+        "b": "Equal",
+        "c": "Zero",
+        "d": "Lower"
+      },
+      "answer": "a",
+      "a": "Higher",
+      "e": "Alloys also do not oxidise readily at high temperatures, hence they are used in electric irons and toasters.",
+      "table": null,
+      "qid": "physics-ch7-electricity-35",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium and potassium are kept immersed in:",
+      "options": {
+        "a": "Kerosene oil",
+        "b": "Dilute hydrochloric acid",
+        "c": "Lime water",
+        "d": "Water"
+      },
+      "answer": "a",
+      "a": "Kerosene oil",
+      "e": "They react so vigorously with oxygen that they catch fire if kept in the open.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The ground tissue system includes:",
+      "options": {
+        "a": "Epidermis and cuticle",
+        "b": "Parenchyma, collenchyma and sclerenchyma",
+        "c": "Xylem and phloem",
+        "d": "Cork and cork cambium"
+      },
+      "answer": "b",
+      "a": "Parenchyma, collenchyma and sclerenchyma",
+      "e": "The vascular tissue system consists of xylem and phloem.",
+      "table": null,
+      "qid": "biology-ch22-tissues-31",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "A straight-line velocity-time graph parallel to the time axis indicates:",
+      "options": {
+        "a": "increasing velocity",
+        "b": "constant velocity and zero acceleration",
+        "c": "constant acceleration",
+        "d": "zero velocity"
+      },
+      "answer": "b",
+      "a": "constant velocity and zero acceleration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-40",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Microorganisms do not grow on pickles and murabbas because of the high concentration of:",
+      "options": {
+        "a": "Moisture",
+        "b": "Water",
+        "c": "Oxygen",
+        "d": "Salt or sugar"
+      },
+      "answer": "d",
+      "a": "Salt or sugar",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-33",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Although iodine has a lower atomic weight than tellurium, Mendeleev placed iodine in:",
+      "options": {
+        "a": "Group VI",
+        "b": "Group V",
+        "c": "Group VII",
+        "d": "Group VIII"
+      },
+      "answer": "c",
+      "a": "Group VII",
+      "e": "Tellurium is in Group VI. Iodine was grouped with fluorine, chlorine and bromine because of similar properties.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the law of areas, a planet moves slowest when it is:",
+      "options": {
+        "a": "Farthest from the Sun",
+        "b": "Nearest to the Sun",
+        "c": "At the end of the semi-minor axis",
+        "d": "At the centre of its orbit"
+      },
+      "answer": "a",
+      "a": "Farthest from the Sun",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-4",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "De-oxygenated blood is pumped to the lungs by the:",
+      "options": {
+        "a": "Left ventricle",
+        "b": "Right ventricle",
+        "c": "Left atrium",
+        "d": "Right atrium"
+      },
+      "answer": "b",
+      "a": "Right ventricle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-74",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The Law of Constant Proportions was proposed by:",
+      "options": {
+        "a": "Lavoisier",
+        "b": "Avogadro",
+        "c": "Dalton",
+        "d": "Proust"
+      },
+      "answer": "d",
+      "a": "Proust",
+      "e": "It is also called the Law of Definite Proportions or Proust's Law.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The smallest interval of time after which a periodic motion is repeated is called its:",
+      "options": {
+        "a": "Phase",
+        "b": "Period",
+        "c": "Frequency",
+        "d": "Amplitude"
+      },
+      "answer": "b",
+      "a": "Period",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-3",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Amyloplasts – Starch\n(II) Elaioplasts – Proteins\n(III) Aleuroplasts – Proteins\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "Elaioplasts store oils and fats.",
+      "table": null,
+      "qid": "biology-ch21-cell-44",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A sound wave of larger amplitude carries:",
+      "options": {
+        "a": "Less energy",
+        "b": "More energy",
+        "c": "The same energy",
+        "d": "No energy"
+      },
+      "answer": "b",
+      "a": "More energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-26",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Roasting – Strong heating of sulphide ores in excess air\n(II) Calcination – Strong heating of carbonate ores in limited air\n(III) Roasting – Strong heating of carbonate ores in limited air\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In the silk moth, the thread-like material used to make silk fabric is secreted by the:",
+      "options": {
+        "a": "Pupa",
+        "b": "Larva",
+        "c": "Egg",
+        "d": "Adult"
+      },
+      "answer": "b",
+      "a": "Larva",
+      "e": "Larvae wrap the thread around themselves before changing to pupae.",
+      "table": null,
+      "qid": "biology-ch21-cell-105",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The material through which sound propagates is called:",
+      "options": {
+        "a": "Vacuum",
+        "b": "Source",
+        "c": "Diaphragm",
+        "d": "Medium"
+      },
+      "answer": "d",
+      "a": "Medium",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-6",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "In aerobic respiration, one molecule of pyruvate gives ___ molecules of carbon dioxide.",
+      "options": {
+        "a": "1",
+        "b": "3",
+        "c": "6",
+        "d": "2"
+      },
+      "answer": "b",
+      "a": "3",
+      "e": "The other product is water.",
+      "table": null,
+      "qid": "biology-ch26-respiration-51",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The names suggested by discoverers for new elements are ratified by:",
+      "options": {
+        "a": "IUPAC",
+        "b": "Nobel Committee",
+        "c": "The discoverer alone",
+        "d": "Royal Society"
+      },
+      "answer": "a",
+      "a": "IUPAC",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Myopia is corrected by using a:",
+      "options": {
+        "a": "concave mirror",
+        "b": "concave lens",
+        "c": "convex lens",
+        "d": "plane mirror"
+      },
+      "answer": "b",
+      "a": "concave lens",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-69",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Arteries – Carry blood away from the heart\n(II) Veins – Have valves ensuring one-directional flow of blood\n(III) Arteries – Have valves ensuring one-directional flow of blood\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Arteries have thick, elastic walls because blood emerges from the heart under high pressure.",
+      "table": null,
+      "qid": "biology-ch26-respiration-82",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In a chemical reaction, 8 g of substance A reacts completely with 6 g of substance B to form substances C and D. If 9 g of C is formed, the mass of D formed is:",
+      "options": {
+        "a": "3 g",
+        "b": "14 g",
+        "c": "23 g",
+        "d": "5 g"
+      },
+      "answer": "d",
+      "a": "5 g",
+      "e": "Mass of products = mass of reactants = 14 g, so D = 14 g − 9 g = 5 g.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The dynamic lift on a spinning ball moving through air is called:",
+      "options": {
+        "a": "Magnus effect",
+        "b": "hydrostatic effect",
+        "c": "Stokes effect",
+        "d": "capillary effect"
+      },
+      "answer": "a",
+      "a": "Magnus effect",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-81",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The break-down of pyruvate using oxygen takes place in the:",
+      "options": {
+        "a": "Chloroplast",
+        "b": "Cytoplasm",
+        "c": "Nucleus",
+        "d": "Mitochondria"
+      },
+      "answer": "d",
+      "a": "Mitochondria",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-50",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "One volt is equal to:",
+      "options": {
+        "a": "1 W A",
+        "b": "1 C J⁻¹",
+        "c": "1 J C⁻¹",
+        "d": "1 A s"
+      },
+      "answer": "c",
+      "a": "1 J C⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-12",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair consists of amphoteric oxides?",
+      "options": {
+        "a": "CO₂ and SO₂",
+        "b": "Al₂O₃ and ZnO",
+        "c": "Na₂O and K₂O",
+        "d": "CuO and MgO"
+      },
+      "answer": "b",
+      "a": "Al₂O₃ and ZnO",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    }
+  ]
+}

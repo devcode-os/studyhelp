@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-biology-set-8",
+  "chapterNumber": 8,
+  "title": "Biology Set 8",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The maximum concentration of harmful chemicals through the food chain accumulates in:",
+      "options": {
+        "a": "Primary consumers",
+        "b": "Human beings",
+        "c": "Decomposers",
+        "d": "Producers"
+      },
+      "answer": "b",
+      "a": "Human beings",
+      "e": "Human beings occupy the top level in any food chain.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-12",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The plant hormone that inhibits growth and causes wilting of leaves is:",
+      "options": {
+        "a": "Auxin",
+        "b": "Cytokinin",
+        "c": "Abscisic acid",
+        "d": "Gibberellin"
+      },
+      "answer": "c",
+      "a": "Abscisic acid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-22",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a non-membrane-bound organelle found in both prokaryotic and eukaryotic cells?",
+      "options": {
+        "a": "Mitochondria",
+        "b": "Lysosomes",
+        "c": "Ribosomes",
+        "d": "Golgi apparatus"
+      },
+      "answer": "c",
+      "a": "Ribosomes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-7",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The variety of plants and animals found in a particular region contributes to the region's:",
+      "options": {
+        "a": "Biodiversity",
+        "b": "Habitat",
+        "c": "Venation",
+        "d": "Adaptation"
+      },
+      "answer": "a",
+      "a": "Biodiversity",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-1",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Bacteria present in the human intestine help in:",
+      "options": {
+        "a": "Digestion",
+        "b": "Respiration",
+        "c": "Photosynthesis",
+        "d": "Excretion"
+      },
+      "answer": "a",
+      "a": "Digestion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-36",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Desert plants take up carbon dioxide at:",
+      "options": {
+        "a": "Noon",
+        "b": "Night",
+        "c": "Morning",
+        "d": "Evening"
+      },
+      "answer": "b",
+      "a": "Night",
+      "e": "The intermediate formed is acted upon by the energy absorbed by chlorophyll during the day.",
+      "table": null,
+      "qid": "biology-ch26-respiration-10",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Soil is formed by the disintegration of:",
+      "options": {
+        "a": "Fossil fuels",
+        "b": "Minerals",
+        "c": "Rocks",
+        "d": "Plants"
+      },
+      "answer": "c",
+      "a": "Rocks",
+      "e": "The Sun, water and living organisms act on rocks over thousands of years.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-31",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Rickets is caused by the deficiency of:",
+      "options": {
+        "a": "Vitamin D",
+        "b": "Vitamin C",
+        "c": "Vitamin A",
+        "d": "Vitamin B1"
+      },
+      "answer": "a",
+      "a": "Vitamin D",
+      "e": "Rickets causes soft and bent bones.",
+      "table": {
+        "headers": [
+          "Food component",
+          "Deficiency disease/disorder",
+          "Some sources"
+        ],
+        "rows": [
+          [
+            "Vitamin B1",
+            "Beriberi",
+            "Legumes, nuts, whole grains, seeds, milk products"
+          ],
+          [
+            "Vitamin C",
+            "Scurvy",
+            "Amla, guava, green chilli, orange, lemon"
+          ],
+          [
+            "Vitamin D",
+            "Rickets",
+            "Exposure to sunlight, milk, butter, fish, eggs"
+          ],
+          [
+            "Iodine",
+            "Goitre",
+            "Seaweed, water chestnut (singhada), iodised salt"
+          ],
+          [
+            "Iron",
+            "Anaemia",
+            "Green leafy vegetables, beetroot, pomegranate"
+          ]
+        ]
+      },
+      "qid": "biology-ch25-nutrition-26",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The Indian botanist known for his work on chromosomes, who received the Shanti Swarup Bhatnagar award and Padma Bhushan, is:",
+      "options": {
+        "a": "Birbal Sahni",
+        "b": "Ram Bux Singh",
+        "c": "Jagadish Chandra Bose",
+        "d": "Arun Kumar Sharma"
+      },
+      "answer": "d",
+      "a": "Arun Kumar Sharma",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-93",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The first step in the break-down of glucose, a six-carbon molecule, gives a three-carbon molecule called:",
+      "options": {
+        "a": "Pyruvate",
+        "b": "Ethanol",
+        "c": "Lactic acid",
+        "d": "ATP"
+      },
+      "answer": "a",
+      "a": "Pyruvate",
+      "e": "This step takes place in the cytoplasm.",
+      "table": null,
+      "qid": "biology-ch26-respiration-48",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Bovine spongiform encephalopathy (mad cow disease) is caused by:",
+      "options": {
+        "a": "Prions",
+        "b": "Viroids",
+        "c": "Protozoa",
+        "d": "Bacteria"
+      },
+      "answer": "a",
+      "a": "Prions",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-165",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The central process behind asexual reproduction is:",
+      "options": {
+        "a": "Meiosis",
+        "b": "Mitosis",
+        "c": "Pollination",
+        "d": "Fertilisation"
+      },
+      "answer": "b",
+      "a": "Mitosis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-19",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of gases released by burning fossil fuels are greenhouse gases?",
+      "options": {
+        "a": "Oxygen and nitrogen",
+        "b": "Carbon dioxide and methane",
+        "c": "Ozone and argon",
+        "d": "Hydrogen and helium"
+      },
+      "answer": "b",
+      "a": "Carbon dioxide and methane",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-33",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Adding more nutrients to food during processing to improve its nutritional quality is called:",
+      "options": {
+        "a": "Pasteurisation",
+        "b": "Fermentation",
+        "c": "Germination",
+        "d": "Fortification"
+      },
+      "answer": "d",
+      "a": "Fortification",
+      "e": "Iodised salt and some baby foods are examples of fortified foods.",
+      "table": null,
+      "qid": "biology-ch25-nutrition-42",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The secondary wall of a plant cell is formed on which side of the primary wall?",
+      "options": {
+        "a": "Inner side, towards the membrane",
+        "b": "Outer side",
+        "c": "Both sides equally",
+        "d": "Only at cell junctions"
+      },
+      "answer": "a",
+      "a": "Inner side, towards the membrane",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-27",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Food is transported from leaves to other parts of the plant through:",
+      "options": {
+        "a": "Sieve tubes",
+        "b": "Vessels",
+        "c": "Tracheids",
+        "d": "Xylem fibres"
+      },
+      "answer": "a",
+      "a": "Sieve tubes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-28",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The planet with the highest average temperature in the solar system is:",
+      "options": {
+        "a": "Venus",
+        "b": "Earth",
+        "c": "Mars",
+        "d": "Mercury"
+      },
+      "answer": "a",
+      "a": "Venus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-37",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The government agency that regulates food quality in India is the:",
+      "options": {
+        "a": "Food Safety and Standard Authority of India",
+        "b": "National Institute of Nutrition",
+        "c": "Indian Council of Agricultural Research",
+        "d": "National Dairy Development Board"
+      },
+      "answer": "a",
+      "a": "Food Safety and Standard Authority of India",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-43",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Glucose, which provides instant energy, is an example of a:",
+      "options": {
+        "a": "Fat",
+        "b": "Vitamin",
+        "c": "Carbohydrate",
+        "d": "Protein"
+      },
+      "answer": "c",
+      "a": "Carbohydrate",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-4",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "In plants, glucose is broken down during respiration in the presence of:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Chlorophyll",
+        "c": "Oxygen",
+        "d": "Starch"
+      },
+      "answer": "c",
+      "a": "Oxygen",
+      "e": "Carbon dioxide, water and energy are released.",
+      "table": null,
+      "qid": "biology-ch23-plants-54",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following shows the correct order of classification from the broadest to the most specific group?",
+      "options": {
+        "a": "Kingdom, Phylum, Order, Class, Family, Genus, Species",
+        "b": "Kingdom, Phylum, Class, Order, Family, Genus, Species",
+        "c": "Kingdom, Class, Phylum, Order, Family, Genus, Species",
+        "d": "Kingdom, Phylum, Class, Family, Order, Genus, Species"
+      },
+      "answer": "b",
+      "a": "Kingdom, Phylum, Class, Order, Family, Genus, Species",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-154",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following correctly shows the sequence in the life cycle of a bean plant?",
+      "options": {
+        "a": "Seed → Leaves → Germination → Flowers → Fruits",
+        "b": "Seed → Germination → Leaves → Flowers → Fruits",
+        "c": "Seed → Germination → Flowers → Leaves → Fruits",
+        "d": "Germination → Seed → Leaves → Fruits → Flowers"
+      },
+      "answer": "b",
+      "a": "Seed → Germination → Leaves → Flowers → Fruits",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-101",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Menstrual pads should be changed in:",
+      "options": {
+        "a": "1–2 hours",
+        "b": "4–6 hours",
+        "c": "10–12 hours",
+        "d": "24 hours"
+      },
+      "answer": "b",
+      "a": "4–6 hours",
+      "e": "They should be changed more often if the flow is heavy.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-84",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which structure lies between each vertebra, acting as a cushion and allowing flexibility?",
+      "options": {
+        "a": "Cartilage disc",
+        "b": "Sternum",
+        "c": "Tendon",
+        "d": "Ligament"
+      },
+      "answer": "a",
+      "a": "Cartilage disc",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-72",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The expulsion of undigested waste through the anus is called:",
+      "options": {
+        "a": "Egestion",
+        "b": "Excretion",
+        "c": "Rumination",
+        "d": "Absorption"
+      },
+      "answer": "a",
+      "a": "Egestion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-41",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The microscope of Robert Hooke magnified objects by about:",
+      "options": {
+        "a": "1,000 to 2,000 times",
+        "b": "10,00,000 times",
+        "c": "200 to 300 times",
+        "d": "20 to 30 times"
+      },
+      "answer": "c",
+      "a": "200 to 300 times",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-3",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "In a typical 28-day menstrual cycle, ovulation takes place on day:",
+      "options": {
+        "a": "21",
+        "b": "28",
+        "c": "5",
+        "d": "14"
+      },
+      "answer": "d",
+      "a": "14",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-73",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The Rh antigen on human RBCs is similar to one present in:",
+      "options": {
+        "a": "Baboons",
+        "b": "Rhesus monkeys",
+        "c": "Chimpanzees",
+        "d": "Gorillas"
+      },
+      "answer": "b",
+      "a": "Rhesus monkeys",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-48",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Heart failure means the heart is not pumping blood effectively enough to meet the needs of the body.\n(II) Heart failure is the same as cardiac arrest.\n(III) Congestion of the lungs is one of the main symptoms of heart failure.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "I and II only"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-75",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The sex of a human child is determined by the chromosome inherited from the:",
+      "options": {
+        "a": "Mother",
+        "b": "Father",
+        "c": "Both parents equally",
+        "d": "Neither parent"
+      },
+      "answer": "b",
+      "a": "Father",
+      "e": "Every child inherits X from the mother; a child receiving X from the father is a girl, and one receiving Y is a boy.",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-7",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    }
+  ]
+}

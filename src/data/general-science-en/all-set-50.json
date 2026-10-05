@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-50",
+  "chapterNumber": 50,
+  "title": "General Science Set 50",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In Hydra, a bud develops as an outgrowth due to:",
+      "options": {
+        "a": "Repeated cell division at one specific site",
+        "b": "Fusion of two cells",
+        "c": "Meiosis at several sites",
+        "d": "Spore release"
+      },
+      "answer": "a",
+      "a": "Repeated cell division at one specific site",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-16",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Niels Bohr proposed his model of the atom in:",
+      "options": {
+        "a": "1897",
+        "b": "1932",
+        "c": "1911",
+        "d": "1913"
+      },
+      "answer": "d",
+      "a": "1913",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-39",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "An aqueous solution of which of the following does not conduct electricity?",
+      "options": {
+        "a": "Sodium hydroxide",
+        "b": "Sulphuric acid",
+        "c": "Hydrochloric acid",
+        "d": "Glucose"
+      },
+      "answer": "d",
+      "a": "Glucose",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "A person has a stroke volume of 80 mL and a heart rate of 75 beats per minute. The cardiac output is:",
+      "options": {
+        "a": "5.0 L/min",
+        "b": "0.6 L/min",
+        "c": "6.0 L/min",
+        "d": "6.5 L/min"
+      },
+      "answer": "c",
+      "a": "6.0 L/min",
+      "e": "Cardiac output = stroke volume × heart rate = 80 mL × 75 = 6000 mL/min = 6.0 L/min.",
+      "table": null,
+      "qid": "biology-ch24-human-body-64",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "If the velocity of a vehicle becomes three times its original value, its kinetic energy becomes:",
+      "options": {
+        "a": "9 times",
+        "b": "12 times",
+        "c": "6 times",
+        "d": "3 times"
+      },
+      "answer": "a",
+      "a": "9 times",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-23",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Tooth decay starts when the pH of the mouth falls below:",
+      "options": {
+        "a": "7.0",
+        "b": "5.5",
+        "c": "5.6",
+        "d": "6.5"
+      },
+      "answer": "b",
+      "a": "5.5",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In cyanobacteria such as Nostoc and Anabaena, atmospheric nitrogen is fixed in specialised cells called:",
+      "options": {
+        "a": "Mesosomes",
+        "b": "Chromatophores",
+        "c": "Heterocysts",
+        "d": "Gas vacuoles"
+      },
+      "answer": "c",
+      "a": "Heterocysts",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-117",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following planets is mostly made of gas and ice?",
+      "options": {
+        "a": "Mars",
+        "b": "Uranus",
+        "c": "Mercury",
+        "d": "Venus"
+      },
+      "answer": "b",
+      "a": "Uranus",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-37",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The ancient Indian text that records observations on plant growth, soil and agricultural practices is:",
+      "options": {
+        "a": "Vrikshayurveda",
+        "b": "Manusmriti",
+        "c": "Arthashastra",
+        "d": "Sushruta Samhita"
+      },
+      "answer": "a",
+      "a": "Vrikshayurveda",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-60",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Impurities such as soil and sand present in an ore are called:",
+      "options": {
+        "a": "Gangue",
+        "b": "Slag",
+        "c": "Anode mud",
+        "d": "Minerals"
+      },
+      "answer": "a",
+      "a": "Gangue",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "One atmosphere is equal to:",
+      "options": {
+        "a": "1.33 × 10² Pa",
+        "b": "1.013 × 10³ Pa",
+        "c": "1.013 × 10⁵ Pa",
+        "d": "1.0 × 10⁶ Pa"
+      },
+      "answer": "c",
+      "a": "1.013 × 10⁵ Pa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-61",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The Scottish physician James Lind observed sailors recovering from scurvy during a voyage in the year:",
+      "options": {
+        "a": "1846",
+        "b": "1764",
+        "c": "1796",
+        "d": "1746"
+      },
+      "answer": "d",
+      "a": "1746",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-14",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "With respect to the displacement plot, the acceleration plot in SHM has a phase difference of:",
+      "options": {
+        "a": "2π",
+        "b": "π/2",
+        "c": "π",
+        "d": "π/4"
+      },
+      "answer": "c",
+      "a": "π",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-23",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The test used to identify carbon dioxide gas is:",
+      "options": {
+        "a": "Lime water turning milky",
+        "b": "Lime water turning blue",
+        "c": "Blowing in tap water",
+        "d": "Burning of a magnesium ribbon"
+      },
+      "answer": "a",
+      "a": "Lime water turning milky",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The non-membrane-bound organelle of animal cells that helps in cell division is:",
+      "options": {
+        "a": "Lysosome",
+        "b": "Vacuole",
+        "c": "Centrosome",
+        "d": "Peroxisome"
+      },
+      "answer": "c",
+      "a": "Centrosome",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-8",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A sonar signal returns from the sea bed after 2.4 s. If the speed of sound in seawater is 1500 m s⁻¹, the depth of the sea bed is:",
+      "options": {
+        "a": "900 m",
+        "b": "625 m",
+        "c": "3600 m",
+        "d": "1800 m"
+      },
+      "answer": "d",
+      "a": "1800 m",
+      "e": "Depth = 1500 m s⁻¹ × (2.4 s / 2) = 1800 m.",
+      "table": null,
+      "qid": "physics-ch6-sound-56",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Increasing the pressure on a gas causes its density to:",
+      "options": {
+        "a": "Become zero",
+        "b": "Remain the same",
+        "c": "Decrease",
+        "d": "Increase"
+      },
+      "answer": "d",
+      "a": "Increase",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-85",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Mixed blood is pumped out by the single ventricle in:",
+      "options": {
+        "a": "Fishes",
+        "b": "Amphibians",
+        "c": "Mammals",
+        "d": "Birds"
+      },
+      "answer": "b",
+      "a": "Amphibians",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-57",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound waves with frequency above 20 kHz are called:",
+      "options": {
+        "a": "Infrasonic waves",
+        "b": "Supersonic waves",
+        "c": "Audible waves",
+        "d": "Ultrasonic waves"
+      },
+      "answer": "d",
+      "a": "Ultrasonic waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-39",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about camels:\n(I) They excrete small amounts of urine.\n(II) Their dung is dry.\n(III) They sweat profusely.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Camels do not sweat, so they can survive for many days without drinking water.",
+      "table": null,
+      "qid": "biology-ch23-plants-28",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Hydrogen ions are produced from HCl only in the presence of:",
+      "options": {
+        "a": "Air",
+        "b": "Water",
+        "c": "Heat",
+        "d": "Sunlight"
+      },
+      "answer": "b",
+      "a": "Water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The refreezing of water above a wire that has passed through an ice slab is called:",
+      "options": {
+        "a": "regelation",
+        "b": "fusion",
+        "c": "vaporisation",
+        "d": "sublimation"
+      },
+      "answer": "a",
+      "a": "regelation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-45",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The Rh antigen is present on the RBCs of nearly ___ of humans.",
+      "options": {
+        "a": "80 per cent",
+        "b": "20 per cent",
+        "c": "50 per cent",
+        "d": "95 per cent"
+      },
+      "answer": "a",
+      "a": "80 per cent",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-49",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction of glucose with oxygen in the cells to provide energy is called:",
+      "options": {
+        "a": "Respiration",
+        "b": "Photosynthesis",
+        "c": "Fermentation",
+        "d": "Combustion"
+      },
+      "answer": "a",
+      "a": "Respiration",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Among the following alloys, the highest resistivity at 20 °C is of:",
+      "options": {
+        "a": "Nichrome",
+        "b": "Manganese",
+        "c": "Manganin",
+        "d": "Constantan"
+      },
+      "answer": "a",
+      "a": "Nichrome",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-37",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The viroid discovered by T.O. Diener in 1971 causes:",
+      "options": {
+        "a": "Mosaic disease of tobacco",
+        "b": "Potato spindle tuber disease",
+        "c": "Citrus canker",
+        "d": "Wheat rust"
+      },
+      "answer": "b",
+      "a": "Potato spindle tuber disease",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-164",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "1 mm is equal to:",
+      "options": {
+        "a": "1 cm",
+        "b": "0.01 cm",
+        "c": "0.1 cm",
+        "d": "10 cm"
+      },
+      "answer": "c",
+      "a": "0.1 cm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-9",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Unsaturated hydrocarbons add hydrogen in the presence of catalysts such as:",
+      "options": {
+        "a": "Copper or silver",
+        "b": "Iron or zinc",
+        "c": "Sodium or potassium",
+        "d": "Palladium or nickel"
+      },
+      "answer": "d",
+      "a": "Palladium or nickel",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Rigidity and strength are provided to plant cells by the:",
+      "options": {
+        "a": "Nucleus",
+        "b": "Cytoplasm",
+        "c": "Cell wall",
+        "d": "Cell membrane"
+      },
+      "answer": "c",
+      "a": "Cell wall",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-8",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The walls of a Dewar flask are coated with:",
+      "options": {
+        "a": "copper",
+        "b": "gold",
+        "c": "aluminium",
+        "d": "silver"
+      },
+      "answer": "d",
+      "a": "silver",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-72",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

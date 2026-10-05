@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-52",
+  "chapterNumber": 52,
+  "title": "General Science Set 52",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In steady flow, two streamlines can never:",
+      "options": {
+        "a": "cross each other",
+        "b": "be closely spaced",
+        "c": "run parallel",
+        "d": "be curved"
+      },
+      "answer": "a",
+      "a": "cross each other",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-75",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Camillo Golgi first observed densely stained reticular structures near the nucleus in the year:",
+      "options": {
+        "a": "1972",
+        "b": "1898",
+        "c": "1953",
+        "d": "1831"
+      },
+      "answer": "b",
+      "a": "1898",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-32",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The unit of plane angle is radian, with symbol rad.\n(II) The unit of solid angle is steradian, with symbol sr.\n(III) Plane angle is the ratio of the intercepted area of a spherical surface to the square of its radius.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Statement III describes solid angle. Plane angle is the ratio of arc length to radius. Both radian and steradian are dimensionless.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-4",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The coating formed by corrosion of silver is:",
+      "options": {
+        "a": "Green",
+        "b": "Reddish brown",
+        "c": "White",
+        "d": "Black"
+      },
+      "answer": "d",
+      "a": "Black",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "After fertilisation in a flowering plant, the zygote develops into the:",
+      "options": {
+        "a": "fruit",
+        "b": "flower",
+        "c": "anther",
+        "d": "seed"
+      },
+      "answer": "d",
+      "a": "seed",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-28",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Dimensional analysis shows that the time period T of a simple pendulum of length l, at a place with acceleration due to gravity g, is proportional to:",
+      "options": {
+        "a": "√(g/l)",
+        "b": "√(lg)",
+        "c": "√(l/g)",
+        "d": "l/g"
+      },
+      "answer": "c",
+      "a": "√(l/g)",
+      "e": "The constant of proportionality, 2π, cannot be found by this method.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-28",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The nutrient present in spinach, kidney beans, raisins and figs that helps in the formation of blood is:",
+      "options": {
+        "a": "Iodine",
+        "b": "Calcium",
+        "c": "Iron",
+        "d": "Fats"
+      },
+      "answer": "c",
+      "a": "Iron",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-85",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Phosphorus is stored in:",
+      "options": {
+        "a": "Dilute acid",
+        "b": "Kerosene oil",
+        "c": "Lime water",
+        "d": "Water"
+      },
+      "answer": "d",
+      "a": "Water",
+      "e": "Phosphorus catches fire when exposed to atmospheric air.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The General Conference on Weights and Measures revised the SI in November of:",
+      "options": {
+        "a": "1971",
+        "b": "1990",
+        "c": "2018",
+        "d": "2005"
+      },
+      "answer": "c",
+      "a": "2018",
+      "e": "The SI scheme was developed by the Bureau International des Poids et Mesures in 1971.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-6",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The electrical impulse travels away from the cell body along the:",
+      "options": {
+        "a": "Axon",
+        "b": "Dendrite",
+        "c": "Synapse",
+        "d": "Receptor"
+      },
+      "answer": "a",
+      "a": "Axon",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-2",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "When muddy water is filtered through filter paper, the mud left on the paper is called:",
+      "options": {
+        "a": "Residue",
+        "b": "Distillate",
+        "c": "Filtrate",
+        "d": "Sediment"
+      },
+      "answer": "a",
+      "a": "Residue",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-17",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Near the surface of the Earth, the acceleration due to gravity is nearly:",
+      "options": {
+        "a": "0.98 m s⁻²",
+        "b": "9.8 m s⁻²",
+        "c": "1.6 m s⁻²",
+        "d": "98 m s⁻²"
+      },
+      "answer": "b",
+      "a": "9.8 m s⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-22",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Regeneration is carried out by specialised cells.\n(II) Regeneration is the same as reproduction.\n(III) Hydra uses regenerative cells for reproduction by budding.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "Most organisms would not normally depend on being cut up to reproduce.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-15",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "In the electrolysis of molten sodium chloride, sodium is deposited at the:",
+      "options": {
+        "a": "Cathode",
+        "b": "Anode",
+        "c": "Both electrodes",
+        "d": "Neither electrode"
+      },
+      "answer": "a",
+      "a": "Cathode",
+      "e": "Chlorine is liberated at the anode.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-68",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In the New Cartesian Sign Convention, the origin is taken at the:",
+      "options": {
+        "a": "pole of the mirror",
+        "b": "object",
+        "c": "principal focus",
+        "d": "centre of curvature"
+      },
+      "answer": "a",
+      "a": "pole of the mirror",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-30",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The cells of nervous tissue, specialised to receive, process and transmit messages, are called:",
+      "options": {
+        "a": "Neurons",
+        "b": "Muscle fibres",
+        "c": "Companion cells",
+        "d": "Epithelial cells"
+      },
+      "answer": "a",
+      "a": "Neurons",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-60",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Among the good electrical conductors, the metal mainly used for making electrical wires owing to its lower cost and abundant supply is:",
+      "options": {
+        "a": "Tungsten",
+        "b": "Copper",
+        "c": "Silver",
+        "d": "Gold"
+      },
+      "answer": "b",
+      "a": "Copper",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-23",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A violet colour on adding copper sulfate and caustic soda solutions to a food item indicates the presence of:",
+      "options": {
+        "a": "Minerals",
+        "b": "Starch",
+        "c": "Protein",
+        "d": "Fat"
+      },
+      "answer": "c",
+      "a": "Protein",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-35",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Winnowing separates the components of a mixture on the basis of difference in:",
+      "options": {
+        "a": "Size of particles",
+        "b": "Magnetic property",
+        "c": "Weight of components",
+        "d": "Solubility"
+      },
+      "answer": "c",
+      "a": "Weight of components",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The coefficient of volume expansion αv and the coefficient of linear expansion αl of a solid are related as:",
+      "options": {
+        "a": "αv = αl",
+        "b": "αv = 3αl",
+        "c": "αv = αl/3",
+        "d": "αv = 2αl"
+      },
+      "answer": "b",
+      "a": "αv = 3αl",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-24",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The ribosomes present in the mitochondrial matrix are of which type?",
+      "options": {
+        "a": "30S",
+        "b": "80S",
+        "c": "70S",
+        "d": "50S"
+      },
+      "answer": "c",
+      "a": "70S",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-40",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The notation used for an aqueous solution in a chemical equation is:",
+      "options": {
+        "a": "(s)",
+        "b": "(aq)",
+        "c": "(l)",
+        "d": "(g)"
+      },
+      "answer": "b",
+      "a": "(aq)",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The period of the function sin 2ωt + cos 4ωt is:",
+      "options": {
+        "a": "π/ω",
+        "b": "π/2ω",
+        "c": "4π/ω",
+        "d": "2π/ω"
+      },
+      "answer": "a",
+      "a": "π/ω",
+      "e": "sin 2ωt has period π/ω and cos 4ωt has period π/2ω, so the sum repeats after π/ω.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-12",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The hormone secreted by the testes is:",
+      "options": {
+        "a": "Testosterone",
+        "b": "Insulin",
+        "c": "Oestrogen",
+        "d": "Thyroxin"
+      },
+      "answer": "a",
+      "a": "Testosterone",
+      "e": "It regulates sperm formation and brings about the changes in appearance seen in boys at puberty.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-68",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The formula of the oxide of gallium is Ga₂O₃.\n(II) The formula of the oxide of germanium is GeO₂.\n(III) The formula of the chloride of gallium is GaCl₄.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "The formula of gallium chloride is GaCl₃.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "For an object placed at 2F₁ of a convex lens, the image is formed at:",
+      "options": {
+        "a": "beyond 2F₂",
+        "b": "F₂",
+        "c": "2F₂",
+        "d": "infinity"
+      },
+      "answer": "c",
+      "a": "2F₂",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-53",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Cyanobacteria possess which photosynthetic pigment similar to that of green plants?",
+      "options": {
+        "a": "Chlorophyll b",
+        "b": "Xanthophyll",
+        "c": "Carotene",
+        "d": "Chlorophyll a"
+      },
+      "answer": "d",
+      "a": "Chlorophyll a",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-116",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In tissue culture, cells placed in an artificial medium divide rapidly to form a small group of cells called:",
+      "options": {
+        "a": "Callus",
+        "b": "Embryo",
+        "c": "Zygote",
+        "d": "Plantlet"
+      },
+      "answer": "a",
+      "a": "Callus",
+      "e": "The callus is transferred to another medium containing hormones for growth and differentiation.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-29",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "One horsepower is equal to:",
+      "options": {
+        "a": "746 W",
+        "b": "74.6 W",
+        "c": "7460 W",
+        "d": "1000 W"
+      },
+      "answer": "a",
+      "a": "746 W",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-39",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of hydrogen obtained on decomposing 27 g of purified water is:",
+      "options": {
+        "a": "9 g",
+        "b": "1 g",
+        "c": "3 g",
+        "d": "24 g"
+      },
+      "answer": "c",
+      "a": "3 g",
+      "e": "Hydrogen and oxygen are in the mass ratio 1:8, so hydrogen = (1 ÷ 9) × 27 g = 3 g.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    }
+  ]
+}

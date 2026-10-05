@@ -1,0 +1,553 @@
+{
+  "slug": "general-science-set-13",
+  "chapterNumber": 13,
+  "title": "General Science Set 13",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a major nutrient?",
+      "options": {
+        "a": "Minerals",
+        "b": "Fats",
+        "c": "Roughage",
+        "d": "Proteins"
+      },
+      "answer": "c",
+      "a": "Roughage",
+      "e": "Dietary fibres do not provide any nutrients to the body.",
+      "table": null,
+      "qid": "biology-ch25-nutrition-18",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The latent heat of vaporisation of water is:",
+      "options": {
+        "a": "22.6 × 10³ J kg⁻¹",
+        "b": "4.19 × 10⁵ J kg⁻¹",
+        "c": "22.6 × 10⁵ J kg⁻¹",
+        "d": "2.26 × 10⁷ J kg⁻¹"
+      },
+      "answer": "c",
+      "a": "22.6 × 10⁵ J kg⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-50",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In terms of electron transfer, oxidation is:",
+      "options": {
+        "a": "Gain of electrons",
+        "b": "Loss of neutrons",
+        "c": "Gain of protons",
+        "d": "Loss of electrons"
+      },
+      "answer": "d",
+      "a": "Loss of electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Offspring that are genetically identical to the parent are called:",
+      "options": {
+        "a": "Hybrids",
+        "b": "Zygotes",
+        "c": "Clones",
+        "d": "Gametes"
+      },
+      "answer": "c",
+      "a": "Clones",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-20",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "In the Northern Hemisphere, the longest day occurs around:",
+      "options": {
+        "a": "23 September",
+        "b": "22 December",
+        "c": "21 June",
+        "d": "21 March"
+      },
+      "answer": "c",
+      "a": "21 June",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-55",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A universal indicator is:",
+      "options": {
+        "a": "A basic salt",
+        "b": "A mixture of several indicators",
+        "c": "A single natural dye",
+        "d": "A synthetic acid"
+      },
+      "answer": "b",
+      "a": "A mixture of several indicators",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of a cell that regulates all its activities and growth is the:",
+      "options": {
+        "a": "Cell membrane",
+        "b": "Cell wall",
+        "c": "Nucleus",
+        "d": "Cytoplasm"
+      },
+      "answer": "c",
+      "a": "Nucleus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-6",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) A change of units changes the number of significant figures in a measurement.\n(II) The location of the decimal point has no bearing on the number of significant figures.\n(III) In scientific notation, all zeros in the base number are significant.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-17",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Metacentric chromosome – Centromere in the middle\n(II) Acrocentric chromosome – Terminal centromere\n(III) Telocentric chromosome – Terminal centromere\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and III only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "In an acrocentric chromosome the centromere is close to one end, forming one extremely short and one very long arm.",
+      "table": null,
+      "qid": "biology-ch21-cell-65",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Dobereiner's groups of three elements with similar properties are known as:",
+      "options": {
+        "a": "Periods",
+        "b": "Octaves",
+        "c": "Series",
+        "d": "Triads"
+      },
+      "answer": "d",
+      "a": "Triads",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In the sign convention for lenses, the focal length of a convex lens is ___ and that of a concave lens is ___.",
+      "options": {
+        "a": "negative, positive",
+        "b": "positive, negative",
+        "c": "negative, negative",
+        "d": "positive, positive"
+      },
+      "answer": "b",
+      "a": "positive, negative",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-51",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Growth hormone releasing factor is released by the:",
+      "options": {
+        "a": "Thyroid",
+        "b": "Pancreas",
+        "c": "Hypothalamus",
+        "d": "Pituitary"
+      },
+      "answer": "c",
+      "a": "Hypothalamus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-33",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A spherical mirror whose reflecting surface is curved inwards is called a:",
+      "options": {
+        "a": "plane mirror",
+        "b": "concave mirror",
+        "c": "parabolic mirror",
+        "d": "convex mirror"
+      },
+      "answer": "b",
+      "a": "concave mirror",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-17",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The salt formed when ethanoic acid reacts with sodium hydroxide is:",
+      "options": {
+        "a": "Sodium ethanoate",
+        "b": "Sodium ethoxide",
+        "c": "Sodium chloride",
+        "d": "Sodium carbonate"
+      },
+      "answer": "a",
+      "a": "Sodium ethanoate",
+      "e": "It is commonly called sodium acetate.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The long tail of a sperm helps it to:",
+      "options": {
+        "a": "Store nutrients",
+        "b": "Attach to the uterus",
+        "c": "Carry genetic material",
+        "d": "Swim towards the female germ-cell"
+      },
+      "answer": "d",
+      "a": "Swim towards the female germ-cell",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-71",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of electric charge is:",
+      "options": {
+        "a": "Ampere",
+        "b": "Coulomb",
+        "c": "Volt",
+        "d": "Ohm"
+      },
+      "answer": "b",
+      "a": "Coulomb",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-4",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Stainless steel – Iron, nickel, chromium and carbon\n(II) Brass – Copper and zinc\n(III) Bronze – Copper and zinc\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Bronze is a mixture of copper and tin.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In India, people who performed variolation to protect against smallpox were known as:",
+      "options": {
+        "a": "Vaidyas",
+        "b": "Teekedaars",
+        "c": "Hakims",
+        "d": "Dhais"
+      },
+      "answer": "b",
+      "a": "Teekedaars",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-16",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Refraction of light is due to a change in the:",
+      "options": {
+        "a": "colour of light",
+        "b": "speed of light",
+        "c": "frequency of light",
+        "d": "intensity of light"
+      },
+      "answer": "b",
+      "a": "speed of light",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-38",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A series of compounds in which the same functional group substitutes for hydrogen in a carbon chain is called a:",
+      "options": {
+        "a": "Reactivity series",
+        "b": "Allotropic series",
+        "c": "Homologous series",
+        "d": "Activity series"
+      },
+      "answer": "c",
+      "a": "Homologous series",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In humans, fertilisation normally takes place in the:",
+      "options": {
+        "a": "Cervix",
+        "b": "Fallopian tube",
+        "c": "Vagina",
+        "d": "Uterus"
+      },
+      "answer": "b",
+      "a": "Fallopian tube",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-76",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Two forces of 12 N and 5 N act on a block in opposite directions along the same line. The magnitude of the net force is:",
+      "options": {
+        "a": "2.4 N",
+        "b": "7 N",
+        "c": "60 N",
+        "d": "17 N"
+      },
+      "answer": "b",
+      "a": "7 N",
+      "e": "12 N − 5 N = 7 N.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-14",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The Earth image taken by an ISRO satellite was made by combining nearly how many smaller images?",
+      "options": {
+        "a": "300",
+        "b": "30000",
+        "c": "3000",
+        "d": "1000"
+      },
+      "answer": "c",
+      "a": "3000",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-46",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon, with electronic configuration 2, 4, attains an octet by:",
+      "options": {
+        "a": "Gaining four electrons",
+        "b": "Losing four electrons",
+        "c": "Sharing four electrons",
+        "d": "Losing two electrons"
+      },
+      "answer": "c",
+      "a": "Sharing four electrons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-65",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following sets forms a Dobereiner triad?",
+      "options": {
+        "a": "Ca, Br, K",
+        "b": "Li, Na, K",
+        "c": "Na, Mg, Al",
+        "d": "Li, Be, B"
+      },
+      "answer": "b",
+      "a": "Li, Na, K",
+      "e": "Ca, Sr, Ba and Cl, Br, I are the other triads.",
+      "table": {
+        "headers": [
+          "Element",
+          "Atomic weight",
+          "Element",
+          "Atomic weight",
+          "Element",
+          "Atomic weight"
+        ],
+        "rows": [
+          [
+            "Li",
+            "7",
+            "Na",
+            "23",
+            "K",
+            "39"
+          ],
+          [
+            "Ca",
+            "40",
+            "Sr",
+            "88",
+            "Ba",
+            "137"
+          ],
+          [
+            "Cl",
+            "35.5",
+            "Br",
+            "80",
+            "I",
+            "127"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch15-elements-and-compounds-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The period during adolescence in which the reproductive tissues mature as general body growth slows down is called:",
+      "options": {
+        "a": "Gestation",
+        "b": "Puberty",
+        "c": "Ovulation",
+        "d": "Menopause"
+      },
+      "answer": "b",
+      "a": "Puberty",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-65",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "0.20 kg of water at 20 °C is mixed with 0.30 kg of water at 60 °C in an isolated container. The final temperature is:",
+      "options": {
+        "a": "40 °C",
+        "b": "36 °C",
+        "c": "42 °C",
+        "d": "44 °C"
+      },
+      "answer": "d",
+      "a": "44 °C",
+      "e": "0.30 (60 − T) = 0.20 (T − 20), so T = 44 °C.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-41",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Ionic compounds are formed by the transfer of electrons from:",
+      "options": {
+        "a": "One non-metal to another",
+        "b": "A metal to a non-metal",
+        "c": "A non-metal to a metal",
+        "d": "One metal to another"
+      },
+      "answer": "b",
+      "a": "A metal to a non-metal",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The material of the nucleus stained by basic dyes was named chromatin by:",
+      "options": {
+        "a": "Flemming",
+        "b": "George Palade",
+        "c": "Robert Brown",
+        "d": "Camillo Golgi"
+      },
+      "answer": "a",
+      "a": "Flemming",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-4",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Thunder is heard 8 s after a lightning flash. If the speed of sound in air is 340 m s⁻¹, the distance of the lightning strike is approximately:",
+      "options": {
+        "a": "2720 m",
+        "b": "42.5 m",
+        "c": "5440 m",
+        "d": "272 m"
+      },
+      "answer": "a",
+      "a": "2720 m",
+      "e": "Distance = 340 m s⁻¹ × 8 s = 2720 m (light reaches almost instantly).",
+      "table": null,
+      "qid": "physics-ch6-sound-33",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    }
+  ]
+}

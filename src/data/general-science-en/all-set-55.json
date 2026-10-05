@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-55",
+  "chapterNumber": 55,
+  "title": "General Science Set 55",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) CS₂ – Carbon disulfide\n(II) PCl₃ – Phosphorus trichloride\n(III) N₂O₅ – Dinitrogen tetroxide\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "N₂O₅ is dinitrogen pentoxide.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Errors in mitosis leading to uncontrolled cell division can result in:",
+      "options": {
+        "a": "Contact inhibition",
+        "b": "Haploid gametes",
+        "c": "Tumour formation",
+        "d": "Programmed cell death"
+      },
+      "answer": "c",
+      "a": "Tumour formation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-86",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic field inside a long current-carrying solenoid is:",
+      "options": {
+        "a": "Strongest near its ends",
+        "b": "Uniform",
+        "c": "Weakest at the centre",
+        "d": "Zero"
+      },
+      "answer": "b",
+      "a": "Uniform",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-31",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The pH of a neutral solution is:",
+      "options": {
+        "a": "0",
+        "b": "5.6",
+        "c": "7",
+        "d": "14"
+      },
+      "answer": "c",
+      "a": "7",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sangai, the dancing deer found on floating phumdis, is endemic to:",
+      "options": {
+        "a": "Ladakh",
+        "b": "Manipur",
+        "c": "Arunachal Pradesh",
+        "d": "Kerala"
+      },
+      "answer": "b",
+      "a": "Manipur",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-173",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The increase in the dimensions of a body due to a rise in its temperature is called:",
+      "options": {
+        "a": "regelation",
+        "b": "thermal stress",
+        "c": "thermal expansion",
+        "d": "sublimation"
+      },
+      "answer": "c",
+      "a": "thermal expansion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-23",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The scientist who studied the structure of vitamin B12 and won the Nobel Prize in Chemistry in 1964 is:",
+      "options": {
+        "a": "Irène Joliot-Curie",
+        "b": "Marie Curie",
+        "c": "Dorothy Hodgkin",
+        "d": "Rosalind Franklin"
+      },
+      "answer": "c",
+      "a": "Dorothy Hodgkin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-86",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The most ductile metal is:",
+      "options": {
+        "a": "Aluminium",
+        "b": "Copper",
+        "c": "Gold",
+        "d": "Silver"
+      },
+      "answer": "c",
+      "a": "Gold",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Water flows at 2 m s⁻¹ through a pipe of cross-section 20 cm², which narrows to 5 cm². The speed in the narrow part is:",
+      "options": {
+        "a": "8 m s⁻¹",
+        "b": "10 m s⁻¹",
+        "c": "4 m s⁻¹",
+        "d": "0.5 m s⁻¹"
+      },
+      "answer": "a",
+      "a": "8 m s⁻¹",
+      "e": "A₁v₁ = A₂v₂, so v₂ = 20 × 2 ÷ 5 = 8 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-74",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The cellular functions of sieve tube cells are regulated by:",
+      "options": {
+        "a": "Phloem fibres",
+        "b": "Xylem parenchyma",
+        "c": "Phloem parenchyma",
+        "d": "Companion cells"
+      },
+      "answer": "d",
+      "a": "Companion cells",
+      "e": "They monitor the loading and unloading of sugars in sieve tubes.",
+      "table": null,
+      "qid": "biology-ch22-tissues-29",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Unlike hydrochloric acid, which is completely ionised, carboxylic acids are:",
+      "options": {
+        "a": "Strong acids",
+        "b": "Neutral",
+        "c": "Basic",
+        "d": "Weak acids"
+      },
+      "answer": "d",
+      "a": "Weak acids",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Ākāśha Gangā is the Indian name for the:",
+      "options": {
+        "a": "Orion constellation",
+        "b": "Asteroid belt",
+        "c": "Milky Way Galaxy",
+        "d": "Solar System"
+      },
+      "answer": "c",
+      "a": "Milky Way Galaxy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-45",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Halophiles – Hot springs\n(II) Methanogens – Marshy areas\n(III) Thermoacidophiles – Hot springs\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "Halophiles live in extremely salty areas.",
+      "table": null,
+      "qid": "biology-ch21-cell-114",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Pendulum clock – Christiaan Huygens\n(II) Accurate expression for time from the shadow of a vertical stick – Varahamihira\n(III) Sinking-bowl water clock – Kautilya\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The sinking-bowl water clock (Ghatika-yantra) was first mentioned by Aryabhata.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-34",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The strength of interparticle attractions depends on:",
+      "options": {
+        "a": "Nature of the substance and interparticle distance",
+        "b": "Mass of the substance only",
+        "c": "Volume and pressure only",
+        "d": "Colour and shape of the substance"
+      },
+      "answer": "a",
+      "a": "Nature of the substance and interparticle distance",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Paramecium belongs to the group of microorganisms called:",
+      "options": {
+        "a": "Protozoa",
+        "b": "Algae",
+        "c": "Fungi",
+        "d": "Bacteria"
+      },
+      "answer": "a",
+      "a": "Protozoa",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-19",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "An object makes one revolution on a circle of radius R in time T. Its average speed is:",
+      "options": {
+        "a": "2πR/T",
+        "b": "πR/T",
+        "c": "zero",
+        "d": "2πRT"
+      },
+      "answer": "a",
+      "a": "2πR/T",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-46",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Binary fission in a definite orientation, in relation to a whip-like structure at one end of the cell, is seen in:",
+      "options": {
+        "a": "Plasmodium",
+        "b": "Yeast",
+        "c": "Leishmania",
+        "d": "Amoeba"
+      },
+      "answer": "c",
+      "a": "Leishmania",
+      "e": "Leishmania causes kala-azar.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-10",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Methane is a major component of bio-gas and:",
+      "options": {
+        "a": "Petrol",
+        "b": "Compressed Natural Gas",
+        "c": "Kerosene",
+        "d": "Coal tar"
+      },
+      "answer": "b",
+      "a": "Compressed Natural Gas",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Calculations show that an electron in Rutherford's model would spiral into the nucleus in about:",
+      "options": {
+        "a": "1 s",
+        "b": "10⁻⁸ s",
+        "c": "10⁻¹⁵ s",
+        "d": "10⁸ s"
+      },
+      "answer": "b",
+      "a": "10⁻⁸ s",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-38",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The transfer of pollen from one flower to another by wind, insects or animals is called:",
+      "options": {
+        "a": "Propagation",
+        "b": "Pollination",
+        "c": "Fertilisation",
+        "d": "Germination"
+      },
+      "answer": "b",
+      "a": "Pollination",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-27",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the gases collected on passing electricity through water:\n(I) Hydrogen burns with a pop sound.\n(II) A burning candle glows brighter in oxygen.\n(III) Both gases collected are water vapour.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "The gases are not water vapour; otherwise they would condense back to water.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A device draws a current of 1.5 A from a 220 V supply. Its power is:",
+      "options": {
+        "a": "146.7 W",
+        "b": "221.5 W",
+        "c": "218.5 W",
+        "d": "330 W"
+      },
+      "answer": "d",
+      "a": "330 W",
+      "e": "P = VI = 220 V × 1.5 A = 330 W.",
+      "table": null,
+      "qid": "physics-ch7-electricity-55",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Many unicellular organisms remove wastes from the body surface into the surrounding water by:",
+      "options": {
+        "a": "Simple diffusion",
+        "b": "Nephrons",
+        "c": "Transpiration",
+        "d": "Egestion"
+      },
+      "answer": "a",
+      "a": "Simple diffusion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-93",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Generation of heat in a conductor due to the flow of electric current is known as the:",
+      "options": {
+        "a": "Lighting effect of current",
+        "b": "Chemical effect of current",
+        "c": "Heating effect of current",
+        "d": "Magnetic effect of current"
+      },
+      "answer": "c",
+      "a": "Heating effect of current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-50",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Rusting of iron requires the presence of:",
+      "options": {
+        "a": "Dry air only",
+        "b": "Water only",
+        "c": "Both air and water",
+        "d": "Boiled water covered with oil"
+      },
+      "answer": "c",
+      "a": "Both air and water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-72",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Bawadi – Rajasthan\n(II) Vav – Gujarat\n(III) Bawadi – Gujarat\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Stepwells are built for water harvesting.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-25",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The absolute zero of temperature is close to:",
+      "options": {
+        "a": "–100 °C",
+        "b": "–32 °C",
+        "c": "–273.15 °C",
+        "d": "–373.15 °C"
+      },
+      "answer": "c",
+      "a": "–273.15 °C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-16",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Iron nails dropped in sawdust can be separated using:",
+      "options": {
+        "a": "Magnetic separation",
+        "b": "Sieving",
+        "c": "Decantation",
+        "d": "Churning"
+      },
+      "answer": "a",
+      "a": "Magnetic separation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The protein-rich layer that replaces the cell wall in euglenoids and makes their body flexible is called:",
+      "options": {
+        "a": "Middle lamella",
+        "b": "Pellicle",
+        "c": "Glycocalyx",
+        "d": "Capsule"
+      },
+      "answer": "b",
+      "a": "Pellicle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-123",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    }
+  ]
+}

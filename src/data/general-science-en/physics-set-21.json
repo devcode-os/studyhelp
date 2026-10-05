@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-21",
+  "chapterNumber": 21,
+  "title": "Physics Set 21",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "High-speed winds are accompanied by:",
+      "options": {
+        "a": "increased air pressure",
+        "b": "reduced air pressure",
+        "c": "increased air density",
+        "d": "no change in air pressure"
+      },
+      "answer": "b",
+      "a": "reduced air pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-98",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A pendulum bob completes 90 oscillations in one minute. Its time period is:",
+      "options": {
+        "a": "0.9 s",
+        "b": "1.5 s",
+        "c": "0.67 s",
+        "d": "5400 s"
+      },
+      "answer": "c",
+      "a": "0.67 s",
+      "e": "ν = 90/60 s = 1.5 Hz; T = 1/1.5 s ≈ 0.67 s.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-6",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The area enclosed by a velocity-time graph and the time axis gives:",
+      "options": {
+        "a": "displacement",
+        "b": "average speed",
+        "c": "force",
+        "d": "acceleration"
+      },
+      "answer": "a",
+      "a": "displacement",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-39",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A sound wave in air has a frequency of 500 Hz and a wavelength of 0.68 m. Its speed is:",
+      "options": {
+        "a": "735 m s⁻¹",
+        "b": "340 m s⁻¹",
+        "c": "680 m s⁻¹",
+        "d": "0.00136 m s⁻¹"
+      },
+      "answer": "b",
+      "a": "340 m s⁻¹",
+      "e": "v = 500 Hz × 0.68 m = 340 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch6-sound-29",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Most bats locate prey in the dark by emitting short bursts of:",
+      "options": {
+        "a": "Ultrasonic waves",
+        "b": "Radio waves",
+        "c": "Infrasonic waves",
+        "d": "Light waves"
+      },
+      "answer": "a",
+      "a": "Ultrasonic waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-54",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "A particle in SHM has amplitude 0.2 m and angular frequency 5 rad s⁻¹. Its maximum speed is:",
+      "options": {
+        "a": "5 m s⁻¹",
+        "b": "1.0 m s⁻¹",
+        "c": "25 m s⁻¹",
+        "d": "0.04 m s⁻¹"
+      },
+      "answer": "b",
+      "a": "1.0 m s⁻¹",
+      "e": "v(max) = ωA = 5 rad s⁻¹ × 0.2 m = 1.0 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-24",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following helps reduce reverberation in an auditorium?",
+      "options": {
+        "a": "Smooth marble walls",
+        "b": "Glass panels",
+        "c": "Bare concrete ceilings",
+        "d": "Upholstered chairs"
+      },
+      "answer": "d",
+      "a": "Upholstered chairs",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-52",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Venus is hotter than Mercury, although farther from the Sun, because of:",
+      "options": {
+        "a": "Its closeness to Earth",
+        "b": "Heat trapped by its atmosphere",
+        "c": "Its faster rotation",
+        "d": "Its larger size"
+      },
+      "answer": "b",
+      "a": "Heat trapped by its atmosphere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-38",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Water has its maximum density at:",
+      "options": {
+        "a": "10 °C",
+        "b": "4 °C",
+        "c": "100 °C",
+        "d": "0 °C"
+      },
+      "answer": "b",
+      "a": "4 °C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-27",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Canal rays discovered in a modified cathode ray tube consist of:",
+      "options": {
+        "a": "High energy radiation",
+        "b": "Neutral particles",
+        "c": "Electrons",
+        "d": "Positively charged gaseous ions"
+      },
+      "answer": "d",
+      "a": "Positively charged gaseous ions",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-14",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Live wire – Red insulation\n(II) Neutral wire – Black insulation\n(III) Earth wire – Red insulation\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "The earth wire has green insulation.",
+      "table": null,
+      "qid": "physics-ch8-magnetism-41",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Joule's law of heating, the heat H produced in a resistor R carrying a steady current I for time t is:",
+      "options": {
+        "a": "I²R/t",
+        "b": "I²Rt",
+        "c": "IRt",
+        "d": "IR²t"
+      },
+      "answer": "b",
+      "a": "I²Rt",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-51",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a scalar quantity?",
+      "options": {
+        "a": "Force",
+        "b": "Acceleration",
+        "c": "Displacement",
+        "d": "Pressure"
+      },
+      "answer": "d",
+      "a": "Pressure",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-50",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The gold foil experiment was carried out by Geiger and Marsden, under Rutherford, in:",
+      "options": {
+        "a": "1897",
+        "b": "1911",
+        "c": "1913",
+        "d": "1932"
+      },
+      "answer": "b",
+      "a": "1911",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-29",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum time gap between two sounds for them to be heard as separate sounds is:",
+      "options": {
+        "a": "1 s",
+        "b": "0.1 s",
+        "c": "0.5 s",
+        "d": "0.01 s"
+      },
+      "answer": "b",
+      "a": "0.1 s",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-48",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) α-rays – Positively charged particles\n(II) β-rays – Negatively charged particles similar to electrons\n(III) γ-rays – Stream of positively charged particles\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "γ-rays are high energy radiations, neutral in nature.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-23",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The force exerted by a fluid at rest on a surface in contact with it is always:",
+      "options": {
+        "a": "normal to the surface",
+        "b": "inclined at 45°",
+        "c": "tangential",
+        "d": "zero"
+      },
+      "answer": "a",
+      "a": "normal to the surface",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-54",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Aryabhata's stated time for one full rotation of the Earth about its axis is about:",
+      "options": {
+        "a": "23 h 56 min 4.1 s",
+        "b": "24 h exactly",
+        "c": "24 h 4 min",
+        "d": "23 h 30 min"
+      },
+      "answer": "a",
+      "a": "23 h 56 min 4.1 s",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-52",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The poles of an electromagnet can be reversed by changing the:",
+      "options": {
+        "a": "Direction of the current",
+        "b": "Length of the wire",
+        "c": "Number of turns of the coil",
+        "d": "Material of the core"
+      },
+      "answer": "a",
+      "a": "Direction of the current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-69",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A satellite orbits a planet at a radius R with time period T. Another satellite orbits the same planet at a radius 4R. Its time period is:",
+      "options": {
+        "a": "4T",
+        "b": "2T",
+        "c": "16T",
+        "d": "8T"
+      },
+      "answer": "d",
+      "a": "8T",
+      "e": "T² ∝ R³, so T′ = T × 4^(3/2) = 8T.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-20",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of neutrons in an atom with atomic number 53 and mass number 127 is:",
+      "options": {
+        "a": "127",
+        "b": "74",
+        "c": "180",
+        "d": "53"
+      },
+      "answer": "b",
+      "a": "74",
+      "e": "Neutrons = A − Z = 127 − 53 = 74.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-50",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The terminal velocity of a sphere falling through a viscous medium is directly proportional to the:",
+      "options": {
+        "a": "square of its radius",
+        "b": "viscosity of the medium",
+        "c": "cube of its radius",
+        "d": "radius"
+      },
+      "answer": "a",
+      "a": "square of its radius",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-87",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "How frequency is perceived by humans is called:",
+      "options": {
+        "a": "Loudness",
+        "b": "Intensity",
+        "c": "Timbre",
+        "d": "Pitch"
+      },
+      "answer": "d",
+      "a": "Pitch",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-36",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Most craters on the Moon's surface were formed by:",
+      "options": {
+        "a": "Volcanic eruptions",
+        "b": "Impact of asteroids or rocks from space",
+        "c": "Erosion by wind",
+        "d": "Earthquakes"
+      },
+      "answer": "b",
+      "a": "Impact of asteroids or rocks from space",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-41",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The far point of a normal eye is:",
+      "options": {
+        "a": "2.5 m",
+        "b": "1 m",
+        "c": "25 cm",
+        "d": "infinity"
+      },
+      "answer": "d",
+      "a": "infinity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-67",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The mirror formula relating object distance u, image distance v and focal length f is:",
+      "options": {
+        "a": "1/v + 1/u = 1/f",
+        "b": "v + u = f",
+        "c": "1/v − 1/u = 1/f",
+        "d": "1/v + 1/u = f"
+      },
+      "answer": "a",
+      "a": "1/v + 1/u = 1/f",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-32",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the image formed by a plane mirror:\n(I) It is of the same size as the object.\n(II) It can be obtained on a screen.\n(III) It is erect.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-7",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In a multi-step calculation, intermediate results should be retained to:",
+      "options": {
+        "a": "two more significant figures than the least precise measurement",
+        "b": "the same number of significant figures as the least precise measurement",
+        "c": "one fewer significant figure than the least precise measurement",
+        "d": "one more significant figure than the least precise measurement"
+      },
+      "answer": "d",
+      "a": "one more significant figure than the least precise measurement",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-23",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A 12 V battery is connected across 4 Ω and 6 Ω resistors joined in parallel. The total current drawn from the battery is:",
+      "options": {
+        "a": "0.2 A",
+        "b": "1.2 A",
+        "c": "20 A",
+        "d": "5 A"
+      },
+      "answer": "d",
+      "a": "5 A",
+      "e": "I = 12/4 + 12/6 = 3 A + 2 A = 5 A.",
+      "table": null,
+      "qid": "physics-ch7-electricity-49",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The process in which particles pass on heat to their neighbours without moving from their positions is called:",
+      "options": {
+        "a": "radiation",
+        "b": "conduction",
+        "c": "regelation",
+        "d": "convection"
+      },
+      "answer": "b",
+      "a": "conduction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-57",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

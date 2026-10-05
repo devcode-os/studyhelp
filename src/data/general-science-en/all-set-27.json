@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-27",
+  "chapterNumber": 27,
+  "title": "General Science Set 27",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Which of the following is a chemical property?",
+      "options": {
+        "a": "Odour",
+        "b": "Density",
+        "c": "Combustibility",
+        "d": "Colour"
+      },
+      "answer": "c",
+      "a": "Combustibility",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which ions play a very important role in blood clotting?",
+      "options": {
+        "a": "Calcium",
+        "b": "Magnesium",
+        "c": "Potassium",
+        "d": "Sodium"
+      },
+      "answer": "a",
+      "a": "Calcium",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-52",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "In humans, sound is produced by the vibration of:",
+      "options": {
+        "a": "Eardrum",
+        "b": "Vocal cords",
+        "c": "Cochlea",
+        "d": "Tongue"
+      },
+      "answer": "b",
+      "a": "Vocal cords",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-2",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Crude petroleum is separated into its different fractions by:",
+      "options": {
+        "a": "Fractional distillation",
+        "b": "Centrifugation",
+        "c": "Crystallization",
+        "d": "Sublimation"
+      },
+      "answer": "a",
+      "a": "Fractional distillation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "An oily patch left on paper when a food item is pressed in it indicates the presence of:",
+      "options": {
+        "a": "Protein",
+        "b": "Fat",
+        "c": "Roughage",
+        "d": "Starch"
+      },
+      "answer": "b",
+      "a": "Fat",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-34",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following has no dimensions?",
+      "options": {
+        "a": "Refractive index",
+        "b": "Acceleration",
+        "c": "Density",
+        "d": "Speed"
+      },
+      "answer": "a",
+      "a": "Refractive index",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-26",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Reflex arcs are formed in the:",
+      "options": {
+        "a": "Cerebellum",
+        "b": "Spinal cord",
+        "c": "Fore-brain",
+        "d": "Medulla"
+      },
+      "answer": "b",
+      "a": "Spinal cord",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-5",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction of iron(III) oxide with aluminium, used to join railway tracks, is called:",
+      "options": {
+        "a": "Roasting",
+        "b": "Electrolytic refining",
+        "c": "Thermit reaction",
+        "d": "Calcination"
+      },
+      "answer": "c",
+      "a": "Thermit reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A body in uniform circular motion has non-zero acceleration because:",
+      "options": {
+        "a": "its displacement is always zero",
+        "b": "its path has a fixed radius",
+        "c": "its speed keeps changing",
+        "d": "the direction of its velocity keeps changing"
+      },
+      "answer": "d",
+      "a": "the direction of its velocity keeps changing",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-34",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Fish – Fins\n(II) Goat – Legs\n(III) Ant – Wings\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Ants use legs for movement.",
+      "table": null,
+      "qid": "biology-ch23-plants-21",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "A piston oscillating in an air-filled tube produces a sound wave of frequency 50 Hz. The number of oscillations completed by the piston in one minute is:",
+      "options": {
+        "a": "50",
+        "b": "0.83",
+        "c": "30",
+        "d": "3000"
+      },
+      "answer": "d",
+      "a": "3000",
+      "e": "50 s⁻¹ × 60 s = 3000.",
+      "table": null,
+      "qid": "physics-ch6-sound-24",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Soap micelles stay in solution and do not precipitate because of:",
+      "options": {
+        "a": "Hydrogen bonding",
+        "b": "Ion-ion repulsion",
+        "c": "Covalent bonding",
+        "d": "Gravity"
+      },
+      "answer": "b",
+      "a": "Ion-ion repulsion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-82",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The transport of soluble products of photosynthesis from leaves to other parts of the plant is called:",
+      "options": {
+        "a": "Excretion",
+        "b": "Egestion",
+        "c": "Transpiration",
+        "d": "Translocation"
+      },
+      "answer": "d",
+      "a": "Translocation",
+      "e": "It occurs in the phloem, which also transports amino acids and other substances.",
+      "table": null,
+      "qid": "biology-ch26-respiration-88",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "When a ray of light is incident along the normal to a mirror, the angle of reflection is:",
+      "options": {
+        "a": "180°",
+        "b": "90°",
+        "c": "0°",
+        "d": "45°"
+      },
+      "answer": "c",
+      "a": "0°",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-14",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure ethanoic acid often freezes in winter in cold climates, giving rise to the name:",
+      "options": {
+        "a": "Rectified acetic acid",
+        "b": "Absolute acetic acid",
+        "c": "Dilute acetic acid",
+        "d": "Glacial acetic acid"
+      },
+      "answer": "d",
+      "a": "Glacial acetic acid",
+      "e": "Its melting point is 290 K.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-70",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The Father of Microbiology is:",
+      "options": {
+        "a": "Robert Hooke",
+        "b": "Louis Pasteur",
+        "c": "Antonie van Leeuwenhoek",
+        "d": "Ananda Mohan Chakrabarty"
+      },
+      "answer": "c",
+      "a": "Antonie van Leeuwenhoek",
+      "e": "He was the first to clearly see and describe bacteria and blood cells.",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-4",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "In a regular year, the Indian National Calendar begins on:",
+      "options": {
+        "a": "22 March",
+        "b": "1 January",
+        "c": "23 September",
+        "d": "21 June"
+      },
+      "answer": "a",
+      "a": "22 March",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-83",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The rhythmic contractions of the muscles lining the alimentary canal that push food forward are called:",
+      "options": {
+        "a": "Peristaltic movements",
+        "b": "Rumination",
+        "c": "Egestion",
+        "d": "Absorption"
+      },
+      "answer": "a",
+      "a": "Peristaltic movements",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-26",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Any substance that is used to create an object is called a:",
+      "options": {
+        "a": "Matter",
+        "b": "Mass",
+        "c": "Mixture",
+        "d": "Material"
+      },
+      "answer": "d",
+      "a": "Material",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The image formed by the eye lens on the retina is:",
+      "options": {
+        "a": "real and erect",
+        "b": "virtual and erect",
+        "c": "real and inverted",
+        "d": "virtual and inverted"
+      },
+      "answer": "c",
+      "a": "real and inverted",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-62",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The protein-digesting enzyme released by the gastric glands is:",
+      "options": {
+        "a": "Amylase",
+        "b": "Trypsin",
+        "c": "Lipase",
+        "d": "Pepsin"
+      },
+      "answer": "d",
+      "a": "Pepsin",
+      "e": "Hydrochloric acid creates an acidic medium that facilitates the action of pepsin.",
+      "table": null,
+      "qid": "biology-ch26-respiration-27",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of elements that exist in the gaseous state at room temperature is:",
+      "options": {
+        "a": "2",
+        "b": "14",
+        "c": "9",
+        "d": "11"
+      },
+      "answer": "d",
+      "a": "11",
+      "e": "All of them are non-metals.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) North pole – North pole: Repulsion\n(II) North pole – South pole: Attraction\n(III) South pole – South pole: Attraction\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-9",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants whose seeds are not enclosed in fruits but are exposed on cones are:",
+      "options": {
+        "a": "Gymnosperms",
+        "b": "Bryophytes",
+        "c": "Angiosperms",
+        "d": "Pteridophytes"
+      },
+      "answer": "a",
+      "a": "Gymnosperms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-140",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "For an incompressible fluid, the equation of continuity expresses conservation of:",
+      "options": {
+        "a": "energy",
+        "b": "charge",
+        "c": "momentum",
+        "d": "mass"
+      },
+      "answer": "d",
+      "a": "mass",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-73",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of metal oxides dissolves in water to form alkalis?",
+      "options": {
+        "a": "Aluminium oxide and zinc oxide",
+        "b": "Copper(II) oxide and mercuric oxide",
+        "c": "Sodium oxide and potassium oxide",
+        "d": "Fe₃O₄ and Al₂O₃"
+      },
+      "answer": "c",
+      "a": "Sodium oxide and potassium oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "An adult mosquito may survive for about:",
+      "options": {
+        "a": "30 to 45 days",
+        "b": "60 to 90 days",
+        "c": "2 to 3 days",
+        "d": "10 to 15 days"
+      },
+      "answer": "d",
+      "a": "10 to 15 days",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-104",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A clap in an empty corridor is heard as an echo after 0.8 s. If the speed of sound is 340 m s⁻¹, the distance of the wall is:",
+      "options": {
+        "a": "136 m",
+        "b": "425 m",
+        "c": "272 m",
+        "d": "68 m"
+      },
+      "answer": "a",
+      "a": "136 m",
+      "e": "Distance = (340 m s⁻¹ × 0.8 s)/2 = 136 m.",
+      "table": null,
+      "qid": "physics-ch6-sound-50",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an aquatic habitat?",
+      "options": {
+        "a": "Desert",
+        "b": "Lake",
+        "c": "Grassland",
+        "d": "Forest"
+      },
+      "answer": "b",
+      "a": "Lake",
+      "e": "Ponds, rivers and oceans are also aquatic habitats.",
+      "table": null,
+      "qid": "biology-ch23-plants-32",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "1 m³ is equal to:",
+      "options": {
+        "a": "10000 L",
+        "b": "10 L",
+        "c": "100 L",
+        "d": "1000 L"
+      },
+      "answer": "d",
+      "a": "1000 L",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

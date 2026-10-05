@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-biology-set-20",
+  "chapterNumber": 20,
+  "title": "Biology Set 20",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Amphioxus belongs to:",
+      "options": {
+        "a": "Echinoderms",
+        "b": "Vertebrates",
+        "c": "Protochordates",
+        "d": "Invertebrates"
+      },
+      "answer": "c",
+      "a": "Protochordates",
+      "e": "Protochordates possess a notochord at least once during their life.",
+      "table": null,
+      "qid": "biology-ch21-cell-145",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a junk food?",
+      "options": {
+        "a": "Roasted chana",
+        "b": "Carbonated drink",
+        "c": "Boiled gram",
+        "d": "Fresh fruit"
+      },
+      "answer": "b",
+      "a": "Carbonated drink",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-39",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following plants has fibrous roots?",
+      "options": {
+        "a": "Mustard",
+        "b": "Hibiscus",
+        "c": "Chickpea",
+        "d": "Wheat"
+      },
+      "answer": "d",
+      "a": "Wheat",
+      "e": "Fibrous roots appear as a bunch of similar-sized thin roots arising from the base of the stem.",
+      "table": null,
+      "qid": "biology-ch23-plants-10",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Spindle-shaped, non-striated muscle cells with a single nucleus are found in the:",
+      "options": {
+        "a": "Muscles attached to the skeleton",
+        "b": "Heart",
+        "c": "Stomach",
+        "d": "Tendons"
+      },
+      "answer": "c",
+      "a": "Stomach",
+      "e": "They are also found in the intestines and help in slow, continuous movements like digestion.",
+      "table": null,
+      "qid": "biology-ch22-tissues-58",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The protein content of Spirulina is more than ______ of its body weight.",
+      "options": {
+        "a": "40 per cent",
+        "b": "80 per cent",
+        "c": "60 per cent",
+        "d": "20 per cent"
+      },
+      "answer": "c",
+      "a": "60 per cent",
+      "e": "Spirulina is also a good source of vitamin B12.",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-32",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The approximate length of the DNA thread in a single human cell is:",
+      "options": {
+        "a": "2 cm",
+        "b": "20 m",
+        "c": "2 mm",
+        "d": "2 m"
+      },
+      "answer": "d",
+      "a": "2 m",
+      "e": "It is distributed among 46 chromosomes.",
+      "table": null,
+      "qid": "biology-ch21-cell-63",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Some nutrients like vitamin C are lost during cooking due to high heat.\n(II) Washing cut or peeled vegetables and fruits may result in the loss of some vitamins.\n(III) Fruits and vegetables should not be washed before consumption.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-19",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Apart from the liver and the inner lining of the small intestine, the small intestine receives digestive secretions from the:",
+      "options": {
+        "a": "Large intestine",
+        "b": "Pancreas",
+        "c": "Stomach",
+        "d": "Salivary glands"
+      },
+      "answer": "b",
+      "a": "Pancreas",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-35",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In plant cells, vacuoles can occupy up to what percentage of the cell volume?",
+      "options": {
+        "a": "90 per cent",
+        "b": "70 per cent",
+        "c": "50 per cent",
+        "d": "100 per cent"
+      },
+      "answer": "a",
+      "a": "90 per cent",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-37",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Offspring that are not exactly like either parent are produced by:",
+      "options": {
+        "a": "budding in Hydra",
+        "b": "vegetative propagation",
+        "c": "sexual reproduction",
+        "d": "division of amoeba"
+      },
+      "answer": "c",
+      "a": "sexual reproduction",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-43",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "In Spirogyra, reproduction takes place when the filament breaks up into smaller pieces that grow into new individuals. This is called:",
+      "options": {
+        "a": "Multiple fission",
+        "b": "Fragmentation",
+        "c": "Spore formation",
+        "d": "Budding"
+      },
+      "answer": "b",
+      "a": "Fragmentation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-13",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a source of Vitamin A?",
+      "options": {
+        "a": "Amla",
+        "b": "Guava",
+        "c": "Lemon",
+        "d": "Papaya"
+      },
+      "answer": "d",
+      "a": "Papaya",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-31",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Penicillin, the first antibiotic, was discovered in 1928 by:",
+      "options": {
+        "a": "Maharaj Kishan Bhan",
+        "b": "Alexander Fleming",
+        "c": "Kamal Ranadive",
+        "d": "Edward Jenner"
+      },
+      "answer": "b",
+      "a": "Alexander Fleming",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-17",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The flatworm studied to understand regeneration in animals is:",
+      "options": {
+        "a": "Planaria",
+        "b": "Algae",
+        "c": "Hydra",
+        "d": "Amoeba"
+      },
+      "answer": "a",
+      "a": "Planaria",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-30",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Selection of variants by environmental factors forms the basis of:",
+      "options": {
+        "a": "DNA copying",
+        "b": "Evolutionary processes",
+        "c": "Asexual reproduction",
+        "d": "Fertilisation"
+      },
+      "answer": "b",
+      "a": "Evolutionary processes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-3",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The association of fungi with the roots of higher plants is called:",
+      "options": {
+        "a": "Lichen",
+        "b": "Mycorrhiza",
+        "c": "Coenocyte",
+        "d": "Mycelium"
+      },
+      "answer": "b",
+      "a": "Mycorrhiza",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-126",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The secretions of the prostate gland and seminal vesicles provide the sperms with:",
+      "options": {
+        "a": "Hormones",
+        "b": "Genetic material",
+        "c": "Nutrition and a fluid for easier transport",
+        "d": "A protective coat"
+      },
+      "answer": "c",
+      "a": "Nutrition and a fluid for easier transport",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-70",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Plastids that contain chlorophyll are called:",
+      "options": {
+        "a": "Vacuoles",
+        "b": "Mitochondria",
+        "c": "Nucleoids",
+        "d": "Chloroplasts"
+      },
+      "answer": "d",
+      "a": "Chloroplasts",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-9",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The special features that enable plants and animals to survive in a particular region are called:",
+      "options": {
+        "a": "Adaptations",
+        "b": "Groupings",
+        "c": "Habitats",
+        "d": "Venation"
+      },
+      "answer": "a",
+      "a": "Adaptations",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-22",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Illegal sex-selective abortion of female foetuses leads to a decline in the:",
+      "options": {
+        "a": "Population density",
+        "b": "Birth rate",
+        "c": "Child sex ratio",
+        "d": "Death rate"
+      },
+      "answer": "c",
+      "a": "Child sex ratio",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-88",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Errors in mitosis leading to uncontrolled cell division can result in:",
+      "options": {
+        "a": "Contact inhibition",
+        "b": "Haploid gametes",
+        "c": "Tumour formation",
+        "d": "Programmed cell death"
+      },
+      "answer": "c",
+      "a": "Tumour formation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-86",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sangai, the dancing deer found on floating phumdis, is endemic to:",
+      "options": {
+        "a": "Ladakh",
+        "b": "Manipur",
+        "c": "Arunachal Pradesh",
+        "d": "Kerala"
+      },
+      "answer": "b",
+      "a": "Manipur",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-173",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The scientist who studied the structure of vitamin B12 and won the Nobel Prize in Chemistry in 1964 is:",
+      "options": {
+        "a": "Irène Joliot-Curie",
+        "b": "Marie Curie",
+        "c": "Dorothy Hodgkin",
+        "d": "Rosalind Franklin"
+      },
+      "answer": "c",
+      "a": "Dorothy Hodgkin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-86",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The cellular functions of sieve tube cells are regulated by:",
+      "options": {
+        "a": "Phloem fibres",
+        "b": "Xylem parenchyma",
+        "c": "Phloem parenchyma",
+        "d": "Companion cells"
+      },
+      "answer": "d",
+      "a": "Companion cells",
+      "e": "They monitor the loading and unloading of sugars in sieve tubes.",
+      "table": null,
+      "qid": "biology-ch22-tissues-29",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Halophiles – Hot springs\n(II) Methanogens – Marshy areas\n(III) Thermoacidophiles – Hot springs\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "Halophiles live in extremely salty areas.",
+      "table": null,
+      "qid": "biology-ch21-cell-114",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Paramecium belongs to the group of microorganisms called:",
+      "options": {
+        "a": "Protozoa",
+        "b": "Algae",
+        "c": "Fungi",
+        "d": "Bacteria"
+      },
+      "answer": "a",
+      "a": "Protozoa",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-19",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Binary fission in a definite orientation, in relation to a whip-like structure at one end of the cell, is seen in:",
+      "options": {
+        "a": "Plasmodium",
+        "b": "Yeast",
+        "c": "Leishmania",
+        "d": "Amoeba"
+      },
+      "answer": "c",
+      "a": "Leishmania",
+      "e": "Leishmania causes kala-azar.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-10",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The transfer of pollen from one flower to another by wind, insects or animals is called:",
+      "options": {
+        "a": "Propagation",
+        "b": "Pollination",
+        "c": "Fertilisation",
+        "d": "Germination"
+      },
+      "answer": "b",
+      "a": "Pollination",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-27",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Many unicellular organisms remove wastes from the body surface into the surrounding water by:",
+      "options": {
+        "a": "Simple diffusion",
+        "b": "Nephrons",
+        "c": "Transpiration",
+        "d": "Egestion"
+      },
+      "answer": "a",
+      "a": "Simple diffusion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-93",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Bawadi – Rajasthan\n(II) Vav – Gujarat\n(III) Bawadi – Gujarat\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Stepwells are built for water harvesting.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-25",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    }
+  ]
+}

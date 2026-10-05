@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import { getSubjectMeta } from '../../data/subjectsMeta.js';
+import GsSetsIndex from '../../components/GsSetsIndex.astro';
 
 // ============================================================
 // UNCHANGED FROM [subject]/index.astro — same getStaticPaths,
@@ -59,6 +60,16 @@ const { subject } = Astro.params;
 const { chapters, mockCount, counterpartSlug } = Astro.props;
 const meta = getSubjectMeta(subject);
 
+// General Science is shown as practice SETS (tabs: All / Physics / Chemistry /
+// Biology), not as a chapter list. 'All' sets (section 'General Science')
+// hold every question once; the subject tabs reuse the same questions, so
+// hero totals count the 'All' sets only.
+const isGs = subject === 'general-science-en';
+const gsSets = isGs
+  ? chapters.map((ch) => ({ slug: ch.slug, title: ch.title, section: ch.section, chapterNumber: ch.chapterNumber, count: ch.faqs.length }))
+  : [];
+const gsAllSets = gsSets.filter((s) => s.section === 'General Science');
+
 const langSwitchCopy = {
   'telangana-history-en': { label: 'తెలుగు వెర్షన్ అందుబాటులో ఉంది (MCQs మాత్రమే)' },
   'telangana-history-te': { label: 'English Version Available (Theory Included)' },
@@ -76,7 +87,9 @@ function splitTitleParts(title) {
 }
 const heroTitleParts = splitTitleParts(meta.heading);
 
-const totalQuestions = chapters.reduce((sum, ch) => sum + (ch.faqs ? ch.faqs.length : 0), 0);
+const totalQuestions = isGs
+  ? gsAllSets.reduce((sum, s) => sum + s.count, 0)
+  : chapters.reduce((sum, ch) => sum + (ch.faqs ? ch.faqs.length : 0), 0);
 const isPapers = meta.category === 'papers';
 
 const chapterGroups = [];
@@ -124,7 +137,7 @@ for (const ch of chapters) {
               : meta.heading}
           </h1>
           <div class="hero-meta">
-            <span class="hero-stats-text">{chapters.length} chapters &middot; {totalQuestions.toLocaleString('en-IN')} MCQs</span>
+            <span class="hero-stats-text">{isGs ? `${gsAllSets.length} sets` : `${chapters.length} chapters`} &middot; {totalQuestions.toLocaleString('en-IN')} MCQs</span>
             {mockCount > 0 && (
               <a href={`/${subject}-mock-tests/`} class="mock-pill">
                 <i class="ti ti-clipboard-list" aria-hidden="true"></i>
@@ -154,7 +167,9 @@ for (const ch of chapters) {
 
     <div id="grace-grant-banner" class="grace-banner" style="display:none;"></div>
 
-    {chapters.length > 0 ? (
+    {isGs ? (
+      <GsSetsIndex sets={gsSets} />
+    ) : chapters.length > 0 ? (
       chapterGroups.map((group) => (
         <Fragment>
           {group.heading && (

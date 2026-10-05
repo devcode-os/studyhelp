@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-chemistry-set-1",
+  "chapterNumber": 1,
+  "title": "Chemistry Set 1",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A base that dissolves in water is called:",
+      "options": {
+        "a": "Alkali",
+        "b": "Indicator",
+        "c": "Acid",
+        "d": "Salt"
+      },
+      "answer": "a",
+      "a": "Alkali",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In Dhokra art, the hollow space of the clay mould is filled with molten:",
+      "options": {
+        "a": "Aluminium",
+        "b": "Steel",
+        "c": "Iron",
+        "d": "Brass or bronze"
+      },
+      "answer": "d",
+      "a": "Brass or bronze",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Bleaching powder is produced by the action of chlorine on:",
+      "options": {
+        "a": "Gypsum",
+        "b": "Calcium carbonate",
+        "c": "Dry slaked lime",
+        "d": "Washing soda"
+      },
+      "answer": "c",
+      "a": "Dry slaked lime",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-66",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In a hydrocarbon chain, the element replacing hydrogen is referred to as a:",
+      "options": {
+        "a": "Catalyst",
+        "b": "Heteroatom",
+        "c": "Isomer",
+        "d": "Allotrope"
+      },
+      "answer": "b",
+      "a": "Heteroatom",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Dry ice, used for ice cream storage, is:",
+      "options": {
+        "a": "Frozen water vapour",
+        "b": "Solid carbon dioxide",
+        "c": "Frozen nitrogen",
+        "d": "Solid camphor"
+      },
+      "answer": "b",
+      "a": "Solid carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-62",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "If the K-shell is the outermost shell, the number of electrons that makes the atom stable is:",
+      "options": {
+        "a": "8",
+        "b": "6",
+        "c": "2",
+        "d": "4"
+      },
+      "answer": "c",
+      "a": "2",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Toothpastes used to prevent tooth decay are generally:",
+      "options": {
+        "a": "Acidic",
+        "b": "Neutral",
+        "c": "Both acidic and basic",
+        "d": "Basic"
+      },
+      "answer": "d",
+      "a": "Basic",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The properties of a compound are different from those of its constituent elements.\n(II) Elements are present in a compound in a fixed and definite ratio.\n(III) The compound formed by hydrogen and oxygen is a gas.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Water, the compound formed by hydrogen and oxygen, is a liquid.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of beating harvested stalks to separate grains from them is called:",
+      "options": {
+        "a": "Handpicking",
+        "b": "Winnowing",
+        "c": "Sieving",
+        "d": "Threshing"
+      },
+      "answer": "d",
+      "a": "Threshing",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "A sodium atom on losing its valence electron forms:",
+      "options": {
+        "a": "Na⁻",
+        "b": "Cl⁻",
+        "c": "Na²⁺",
+        "d": "Na⁺"
+      },
+      "answer": "d",
+      "a": "Na⁺",
+      "e": "The sodium cation has 11 protons and 10 electrons.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "When hydrogen gas is passed over heated copper(II) oxide, the black coating turns:",
+      "options": {
+        "a": "Blue",
+        "b": "Brown",
+        "c": "White",
+        "d": "Green"
+      },
+      "answer": "b",
+      "a": "Brown",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The black oxide formed when copper is heated in air is:",
+      "options": {
+        "a": "Copper sulphide",
+        "b": "Copper carbonate",
+        "c": "Copper chloride",
+        "d": "Copper(II) oxide"
+      },
+      "answer": "d",
+      "a": "Copper(II) oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula unit mass of magnesium oxide (Mg = 24 u, O = 16 u) is:",
+      "options": {
+        "a": "56 u",
+        "b": "16 u",
+        "c": "40 u",
+        "d": "24 u"
+      },
+      "answer": "c",
+      "a": "40 u",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Synthetic diamonds are prepared by subjecting pure carbon to:",
+      "options": {
+        "a": "Electrolysis",
+        "b": "Very low pressure and high temperature",
+        "c": "Sunlight",
+        "d": "Very high pressure and temperature"
+      },
+      "answer": "d",
+      "a": "Very high pressure and temperature",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Aluminium oxide reacts with sodium hydroxide to form water and:",
+      "options": {
+        "a": "Sodium aluminate",
+        "b": "Aluminium chloride",
+        "c": "Aluminium hydroxide",
+        "d": "Sodium oxide"
+      },
+      "answer": "a",
+      "a": "Sodium aluminate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "At ordinary temperature, the surface of which of the following metals is covered with a protective layer of oxide?",
+      "options": {
+        "a": "Gold",
+        "b": "Potassium",
+        "c": "Sodium",
+        "d": "Aluminium"
+      },
+      "answer": "d",
+      "a": "Aluminium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following ionic compounds has the highest melting point?",
+      "options": {
+        "a": "MgCl₂",
+        "b": "CaO",
+        "c": "LiCl",
+        "d": "NaCl"
+      },
+      "answer": "b",
+      "a": "CaO",
+      "e": "Melting and boiling points of some ionic compounds:",
+      "table": {
+        "headers": [
+          "Compound",
+          "Melting point (K)",
+          "Boiling point (K)"
+        ],
+        "rows": [
+          [
+            "NaCl",
+            "1074",
+            "1686"
+          ],
+          [
+            "LiCl",
+            "887",
+            "1600"
+          ],
+          [
+            "CaCl₂",
+            "1045",
+            "1900"
+          ],
+          [
+            "CaO",
+            "2850",
+            "3120"
+          ],
+          [
+            "MgCl₂",
+            "981",
+            "1685"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch18-metals-non-metals-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Mishraloha was the name given to a mixture of:",
+      "options": {
+        "a": "Two gases",
+        "b": "Two or more metals",
+        "c": "A metal and a non-metal",
+        "d": "Two non-metals"
+      },
+      "answer": "b",
+      "a": "Two or more metals",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In the balanced equation 3Fe + 4H₂O → Fe₃O₄ + 4H₂, the coefficient of H₂ is:",
+      "options": {
+        "a": "4",
+        "b": "1",
+        "c": "2",
+        "d": "3"
+      },
+      "answer": "a",
+      "a": "4",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Erosion of rocks by flowing water and wind is a:",
+      "options": {
+        "a": "Reaction with oxygen",
+        "b": "Combustion",
+        "c": "Chemical change",
+        "d": "Physical change"
+      },
+      "answer": "d",
+      "a": "Physical change",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular mass of ammonia (N = 14 u, H = 1 u) is:",
+      "options": {
+        "a": "17 u",
+        "b": "15 u",
+        "c": "16 u",
+        "d": "18 u"
+      },
+      "answer": "a",
+      "a": "17 u",
+      "e": "14 u + (1 u × 3) = 17 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "When a mixture of acetone and water is heated, the liquid that vaporises first is:",
+      "options": {
+        "a": "Water",
+        "b": "Acetone",
+        "c": "Both together",
+        "d": "Neither"
+      },
+      "answer": "b",
+      "a": "Acetone",
+      "e": "Acetone boils at about 56 °C and water at 100 °C.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction 2Na + Cl₂ → 2NaCl, sodium acts as:",
+      "options": {
+        "a": "A precipitating agent",
+        "b": "An oxidising agent",
+        "c": "A catalyst",
+        "d": "A reducing agent"
+      },
+      "answer": "d",
+      "a": "A reducing agent",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "A wire of about ______ in length can be drawn from one gram of gold.",
+      "options": {
+        "a": "2 km",
+        "b": "20 km",
+        "c": "20 m",
+        "d": "200 m"
+      },
+      "answer": "a",
+      "a": "2 km",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The circulation of water between the Earth's surface and the atmosphere is known as:",
+      "options": {
+        "a": "Rain cycle",
+        "b": "Water cycle",
+        "c": "Condensation cycle",
+        "d": "Vapour cycle"
+      },
+      "answer": "b",
+      "a": "Water cycle",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of valence electrons in a chlorine atom is:",
+      "options": {
+        "a": "8",
+        "b": "7",
+        "c": "6",
+        "d": "5"
+      },
+      "answer": "b",
+      "a": "7",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Bags of chips are flushed with which gas to prevent oxidation?",
+      "options": {
+        "a": "Chlorine",
+        "b": "Oxygen",
+        "c": "Nitrogen",
+        "d": "Hydrogen"
+      },
+      "answer": "c",
+      "a": "Nitrogen",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Raja Ramanna is often called the:",
+      "options": {
+        "a": "Father of Modern Chemistry",
+        "b": "Father of the Indian Nuclear Programme",
+        "c": "Father of the Indian Space Programme",
+        "d": "Father of the Green Revolution"
+      },
+      "answer": "b",
+      "a": "Father of the Indian Nuclear Programme",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A mixture of camphor and sand can be separated by:",
+      "options": {
+        "a": "Sublimation",
+        "b": "Chromatography",
+        "c": "Decantation",
+        "d": "Filtration"
+      },
+      "answer": "a",
+      "a": "Sublimation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas dissolved in water that is essential for the survival of aquatic animals and plants is:",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Carbon dioxide",
+        "c": "Oxygen",
+        "d": "Methane"
+      },
+      "answer": "c",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

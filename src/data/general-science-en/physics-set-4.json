@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-4",
+  "chapterNumber": 4,
+  "title": "Physics Set 4",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "At constant pressure, the volume V and absolute temperature T of a given quantity of gas are related as:",
+      "options": {
+        "a": "VT = constant",
+        "b": "V + T = constant",
+        "c": "V/T² = constant",
+        "d": "V/T = constant"
+      },
+      "answer": "d",
+      "a": "V/T = constant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-18",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The image formed by a concave lens, irrespective of the position of the object, is always:",
+      "options": {
+        "a": "virtual, erect and diminished",
+        "b": "virtual, erect and enlarged",
+        "c": "real and inverted",
+        "d": "real, erect and diminished"
+      },
+      "answer": "a",
+      "a": "virtual, erect and diminished",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-54",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The magnitude of displacement can be less than the total distance travelled.\n(II) The magnitude of displacement can be greater than the total distance travelled.\n(III) Displacement can be zero even when the distance travelled is not zero.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-28",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A waxing Moon is easiest to spot at:",
+      "options": {
+        "a": "Midnight",
+        "b": "Noon",
+        "c": "Sunset",
+        "d": "Sunrise"
+      },
+      "answer": "c",
+      "a": "Sunset",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-76",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Taking the speed of sound as 340 m s⁻¹, the minimum distance of a reflecting surface for hearing a distinct echo is:",
+      "options": {
+        "a": "34 m",
+        "b": "17 m",
+        "c": "68 m",
+        "d": "8.5 m"
+      },
+      "answer": "b",
+      "a": "17 m",
+      "e": "Sound covers 340 m s⁻¹ × 0.1 s = 34 m to the surface and back, so the distance is 17 m.",
+      "table": null,
+      "qid": "physics-ch6-sound-49",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The process by which decomposers return nitrogen compounds such as ammonia to the soil is called:",
+      "options": {
+        "a": "Denitrification",
+        "b": "Ammonification",
+        "c": "Nitrification",
+        "d": "Assimilation"
+      },
+      "answer": "b",
+      "a": "Ammonification",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-119",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a pair of isobars?",
+      "options": {
+        "a": "¹⁴₆C and ¹⁴₇N",
+        "b": "¹²₆C and ¹⁴₆C",
+        "c": "¹₁H and ²₁H",
+        "d": "³⁵₁₇Cl and ³⁷₁₇Cl"
+      },
+      "answer": "a",
+      "a": "¹⁴₆C and ¹⁴₇N",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-53",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "During the day, the wind blowing from the sea to the land is called:",
+      "options": {
+        "a": "sea breeze",
+        "b": "thunderstorm",
+        "c": "land breeze",
+        "d": "cyclone"
+      },
+      "answer": "a",
+      "a": "sea breeze",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-97",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The relative density of a substance is the ratio of its density to the density of water at:",
+      "options": {
+        "a": "100 °C",
+        "b": "20 °C",
+        "c": "0 °C",
+        "d": "4 °C"
+      },
+      "answer": "d",
+      "a": "4 °C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-69",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The force on a current-carrying conductor in a magnetic field is the largest when the current is:",
+      "options": {
+        "a": "Parallel to the field",
+        "b": "Zero",
+        "c": "At 45° to the field",
+        "d": "At right angles to the field"
+      },
+      "answer": "d",
+      "a": "At right angles to the field",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-35",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The direction of force on a current-carrying conductor reverses when the direction of current is reversed.\n(II) The direction of force reverses when the direction of the magnetic field is reversed.\n(III) The direction of force is independent of the direction of current and field.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "III only",
+        "d": "II and III only"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-37",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The asteroid belt lies between the orbits of:",
+      "options": {
+        "a": "Saturn and Uranus",
+        "b": "Earth and Mars",
+        "c": "Mars and Jupiter",
+        "d": "Jupiter and Saturn"
+      },
+      "answer": "c",
+      "a": "Mars and Jupiter",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-43",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A satellite in a circular orbit around the Earth has a kinetic energy of 4 × 10⁹ J. Its total energy is:",
+      "options": {
+        "a": "+4 × 10⁹ J",
+        "b": "+2 × 10⁹ J",
+        "c": "−4 × 10⁹ J",
+        "d": "−8 × 10⁹ J"
+      },
+      "answer": "c",
+      "a": "−4 × 10⁹ J",
+      "e": "Total energy = −GMm/2r = −K.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-23",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A coil of many circular turns of insulated copper wire wrapped closely in the shape of a cylinder is called a:",
+      "options": {
+        "a": "Rheostat",
+        "b": "Loudspeaker",
+        "c": "Electromagnet",
+        "d": "Solenoid"
+      },
+      "answer": "d",
+      "a": "Solenoid",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-30",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The second is defined using the unperturbed ground-state hyperfine transition frequency of the atom of:",
+      "options": {
+        "a": "strontium-87",
+        "b": "caesium-133",
+        "c": "rubidium-87",
+        "d": "hydrogen-1"
+      },
+      "answer": "b",
+      "a": "caesium-133",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-8",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The smallest and lightest positive ion obtained in the discharge tube came from the gas:",
+      "options": {
+        "a": "Hydrogen",
+        "b": "Neon",
+        "c": "Oxygen",
+        "d": "Helium"
+      },
+      "answer": "a",
+      "a": "Hydrogen",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-15",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Mechanical energy is the energy an object possesses due to its:",
+      "options": {
+        "a": "temperature",
+        "b": "motion or position",
+        "c": "chemical bonds",
+        "d": "electric charge"
+      },
+      "answer": "b",
+      "a": "motion or position",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-17",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) A convex lens converges a parallel beam of light.\n(II) A concave lens diverges a parallel beam of light.\n(III) A concave mirror diverges a parallel beam of light.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-60",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "1 joule is equal to:",
+      "options": {
+        "a": "1 kg m⁻¹ s⁻²",
+        "b": "1 kg m² s⁻²",
+        "c": "1 kg m s⁻²",
+        "d": "1 kg m² s⁻³"
+      },
+      "answer": "b",
+      "a": "1 kg m² s⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-2",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "One hertz (1 Hz) is equal to:",
+      "options": {
+        "a": "1 m⁻¹",
+        "b": "1 s⁻¹",
+        "c": "1 s",
+        "d": "1 m s⁻¹"
+      },
+      "answer": "b",
+      "a": "1 s⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-21",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The sub-tropical high pressure belts lie around:",
+      "options": {
+        "a": "30° N and S",
+        "b": "60° N and S",
+        "c": "90° N and S",
+        "d": "0°"
+      },
+      "answer": "a",
+      "a": "30° N and S",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-111",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "\"The line joining a planet to the Sun sweeps equal areas in equal intervals of time\" is known as Kepler's:",
+      "options": {
+        "a": "First law",
+        "b": "Law of gravitation",
+        "c": "Third law",
+        "d": "Second law"
+      },
+      "answer": "d",
+      "a": "Second law",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-2",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not a leap year in the Gregorian calendar?",
+      "options": {
+        "a": "2000",
+        "b": "1900",
+        "c": "2004",
+        "d": "1600"
+      },
+      "answer": "b",
+      "a": "1900",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-80",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Liquids exert pressure only at the bottom of a container.\n(II) Liquids exert pressure on the side walls of a container.\n(III) Liquids exert pressure in all directions.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-71",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "An object immersed in a liquid experiences an upward force equal to the weight of the liquid displaced. This principle is attributed to:",
+      "options": {
+        "a": "Blaise Pascal",
+        "b": "Torricelli",
+        "c": "Archimedes",
+        "d": "Daniel Bernoulli"
+      },
+      "answer": "c",
+      "a": "Archimedes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-10",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The shell with n = 3 is designated as:",
+      "options": {
+        "a": "M",
+        "b": "L",
+        "c": "K",
+        "d": "N"
+      },
+      "answer": "a",
+      "a": "M",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-41",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of average acceleration is:",
+      "options": {
+        "a": "m",
+        "b": "m s⁻¹",
+        "c": "m s⁻²",
+        "d": "N"
+      },
+      "answer": "c",
+      "a": "m s⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-30",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following forces is always attractive?",
+      "options": {
+        "a": "Gravitational force",
+        "b": "Electrostatic force",
+        "c": "Magnetic force",
+        "d": "Muscular force"
+      },
+      "answer": "a",
+      "a": "Gravitational force",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-4",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "An appliance of 500 W is operated for 6 hours daily for 10 days. The electrical energy consumed is:",
+      "options": {
+        "a": "3 kW h",
+        "b": "3000 kW h",
+        "c": "300 kW h",
+        "d": "30 kW h"
+      },
+      "answer": "d",
+      "a": "30 kW h",
+      "e": "500 W × 6 h × 10 = 30000 W h = 30 kW h.",
+      "table": null,
+      "qid": "physics-ch7-electricity-58",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The term \"vibration\" is generally used when the frequency of the motion is:",
+      "options": {
+        "a": "Zero",
+        "b": "Low",
+        "c": "High",
+        "d": "Equal to the amplitude"
+      },
+      "answer": "c",
+      "a": "High",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-8",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    }
+  ]
+}

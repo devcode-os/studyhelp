@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-42",
+  "chapterNumber": 42,
+  "title": "General Science Set 42",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Water vapour rises in the atmosphere because it is:",
+      "options": {
+        "a": "Heavier than air",
+        "b": "Denser than water",
+        "c": "Lighter than air",
+        "d": "Colder than air"
+      },
+      "answer": "c",
+      "a": "Lighter than air",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is pollinated by wind?",
+      "options": {
+        "a": "Marigold",
+        "b": "Wheat",
+        "c": "Sunflower",
+        "d": "Hibiscus"
+      },
+      "answer": "b",
+      "a": "Wheat",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-49",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the motion of an object under the gravitational influence of another object:\n(I) Angular momentum is conserved.\n(II) Total mechanical energy is conserved.\n(III) Linear momentum is conserved.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-25",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The tiny pores on the surface of leaves that help in the exchange of gases are:",
+      "options": {
+        "a": "Hooves",
+        "b": "Cotyledons",
+        "c": "Vessels",
+        "d": "Stomata"
+      },
+      "answer": "d",
+      "a": "Stomata",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-51",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Materials having a lustrous appearance are usually:",
+      "options": {
+        "a": "Rubbers",
+        "b": "Metals",
+        "c": "Non-metals",
+        "d": "Plastics"
+      },
+      "answer": "b",
+      "a": "Metals",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Cyclones form over:",
+      "options": {
+        "a": "warm ocean waters",
+        "b": "deserts",
+        "c": "polar ice",
+        "d": "mountains"
+      },
+      "answer": "a",
+      "a": "warm ocean waters",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-100",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following are natural agents that help in turning and loosening the soil?",
+      "options": {
+        "a": "Termites",
+        "b": "Beetles",
+        "c": "Earthworms",
+        "d": "Ants"
+      },
+      "answer": "c",
+      "a": "Earthworms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-38",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Kepler's law of orbits, planets move in:",
+      "options": {
+        "a": "Elliptical orbits with the Sun at one focus",
+        "b": "Elliptical orbits with the Sun at the centre",
+        "c": "Circular orbits with the Sun at the centre",
+        "d": "Circular orbits with the Sun at one focus"
+      },
+      "answer": "a",
+      "a": "Elliptical orbits with the Sun at one focus",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-1",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The unique ability of carbon to form bonds with other carbon atoms, giving large molecules, is called:",
+      "options": {
+        "a": "Saponification",
+        "b": "Catenation",
+        "c": "Isomerism",
+        "d": "Allotropy"
+      },
+      "answer": "b",
+      "a": "Catenation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The combined challenge of climate change, biodiversity loss and pollution is known as the:",
+      "options": {
+        "a": "Global balance",
+        "b": "Triple planetary crisis",
+        "c": "Ozone crisis",
+        "d": "Green crisis"
+      },
+      "answer": "b",
+      "a": "Triple planetary crisis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-32",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Grains sprinkled on a stretched sheet jump when a loud sound is produced near it, without touching it.\nReason (R): Sound is a form of energy.\nChoose the correct statement:",
+      "options": {
+        "a": "Both A and R are true, but R is not the correct explanation of A.",
+        "b": "Both A and R are true, and R is the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "b",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-15",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Blood is classified as a:",
+      "options": {
+        "a": "Pure substance",
+        "b": "True suspension",
+        "c": "Colloid",
+        "d": "True solution"
+      },
+      "answer": "c",
+      "a": "Colloid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Rh incompatibility between an Rh-negative mother and an Rh-positive foetus causes:",
+      "options": {
+        "a": "Heart failure",
+        "b": "Atherosclerosis",
+        "c": "Erythroblastosis foetalis",
+        "d": "Angina"
+      },
+      "answer": "c",
+      "a": "Erythroblastosis foetalis",
+      "e": "It can be avoided by giving anti-Rh antibodies to the mother immediately after the delivery of the first child.",
+      "table": null,
+      "qid": "biology-ch24-human-body-50",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A concave mirror has a focal length of −10 cm. An object is placed 30 cm in front of it. The image distance is:",
+      "options": {
+        "a": "−15 cm",
+        "b": "−7.5 cm",
+        "c": "−30 cm",
+        "d": "+15 cm"
+      },
+      "answer": "a",
+      "a": "−15 cm",
+      "e": "1/v = 1/f − 1/u = −1/10 + 1/30 = −2/30, so v = −15 cm.",
+      "table": null,
+      "qid": "physics-ch5-light-34",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Magnesium burns in air with a:",
+      "options": {
+        "a": "Dazzling white flame",
+        "b": "Blue flame",
+        "c": "Red flame",
+        "d": "Golden yellow flame"
+      },
+      "answer": "a",
+      "a": "Dazzling white flame",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "M.W. Beijerinck described the infectious extract of diseased tobacco plants as:",
+      "options": {
+        "a": "Nucleoprotein",
+        "b": "Omnis cellula-e cellula",
+        "c": "Contagium vivum fluidum",
+        "d": "Capsomere"
+      },
+      "answer": "c",
+      "a": "Contagium vivum fluidum",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-162",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The mechanical advantage of a machine is the ratio of:",
+      "options": {
+        "a": "effort to load",
+        "b": "load multiplied by effort",
+        "c": "load minus effort",
+        "d": "load to effort"
+      },
+      "answer": "d",
+      "a": "load to effort",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-41",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The small bone that protects the knee joint is the:",
+      "options": {
+        "a": "Collarbone",
+        "b": "Kneecap",
+        "c": "Vertebra",
+        "d": "Sternum"
+      },
+      "answer": "b",
+      "a": "Kneecap",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-69",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The fraction of solar radiation reflected by a surface is called its:",
+      "options": {
+        "a": "Albedo",
+        "b": "Insolation",
+        "c": "Solar constant",
+        "d": "Transmission"
+      },
+      "answer": "a",
+      "a": "Albedo",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-103",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In a solution formed by dissolving a solid in a liquid, the solid component is called the:",
+      "options": {
+        "a": "Filtrate",
+        "b": "Solute",
+        "c": "Residue",
+        "d": "Solvent"
+      },
+      "answer": "b",
+      "a": "Solute",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The tiny pores on the surface of leaves that help plants take air in and out are:",
+      "options": {
+        "a": "Nuclear pores",
+        "b": "Plasmodesmata",
+        "c": "Stomata",
+        "d": "Rhizoids"
+      },
+      "answer": "c",
+      "a": "Stomata",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-95",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Atmospheric CO₂ has risen from about 315 ppm in 1960 to about:",
+      "options": {
+        "a": "420 ppm",
+        "b": "380 ppm",
+        "c": "350 ppm",
+        "d": "500 ppm"
+      },
+      "answer": "a",
+      "a": "420 ppm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-117",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Metals in the middle of the reactivity series, such as zinc, iron and lead, are found in the earth's crust mainly as:",
+      "options": {
+        "a": "Free elements",
+        "b": "Oxides, sulphides or carbonates",
+        "c": "Chlorides",
+        "d": "Nitrates"
+      },
+      "answer": "b",
+      "a": "Oxides, sulphides or carbonates",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The tissue that transports water and minerals from the roots to other parts of the plant is:",
+      "options": {
+        "a": "Parenchyma",
+        "b": "Collenchyma",
+        "c": "Phloem",
+        "d": "Xylem"
+      },
+      "answer": "d",
+      "a": "Xylem",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-25",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Every oscillatory motion is periodic.\n(II) Every periodic motion is oscillatory.\n(III) Circular motion is periodic but not oscillatory.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-2",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Home-made ORS is prepared by mixing common salt and sugar in one litre of boiled and cooled water. The amount of sugar used is:",
+      "options": {
+        "a": "Half a teaspoon",
+        "b": "Two teaspoons",
+        "c": "Four teaspoons",
+        "d": "Six teaspoons"
+      },
+      "answer": "d",
+      "a": "Six teaspoons",
+      "e": "Half a teaspoon of common salt is used.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The space of 10 to 50 nm between the two membranes of the nuclear envelope is called the:",
+      "options": {
+        "a": "Perinuclear space",
+        "b": "Nucleoplasm",
+        "c": "Intermembrane space",
+        "d": "Cisterna"
+      },
+      "answer": "a",
+      "a": "Perinuclear space",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-57",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The continuous movement of water upward as water vapour and downward through precipitation is called the:",
+      "options": {
+        "a": "condensation",
+        "b": "transpiration",
+        "c": "infiltration",
+        "d": "water cycle"
+      },
+      "answer": "d",
+      "a": "water cycle",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-82",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A healthy adult man has, on average, ___ RBCs per mm³ of blood.",
+      "options": {
+        "a": "5–5.5 million",
+        "b": "8–9 million",
+        "c": "6000–8000",
+        "d": "2.5–3 million"
+      },
+      "answer": "a",
+      "a": "5–5.5 million",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-37",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "In churning of curd, butter separates at the top because it is:",
+      "options": {
+        "a": "Lighter than buttermilk",
+        "b": "Magnetic",
+        "c": "Heavier than buttermilk",
+        "d": "Insoluble in air"
+      },
+      "answer": "a",
+      "a": "Lighter than buttermilk",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    }
+  ]
+}

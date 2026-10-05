@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-62",
+  "chapterNumber": 62,
+  "title": "General Science Set 62",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In sexual reproduction, the genetic material contributed by the father and the mother is:",
+      "options": {
+        "a": "Entirely maternal",
+        "b": "Different in amount for each trait",
+        "c": "Practically equal",
+        "d": "Mostly paternal"
+      },
+      "answer": "c",
+      "a": "Practically equal",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-18",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "At sea level, the height of the mercury column in a barometer is about:",
+      "options": {
+        "a": "76 cm",
+        "b": "760 cm",
+        "c": "7.6 cm",
+        "d": "13.6 cm"
+      },
+      "answer": "a",
+      "a": "76 cm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-63",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Sodium chloride, formed from hydrochloric acid and sodium hydroxide, is a:",
+      "options": {
+        "a": "Alkali",
+        "b": "Neutral salt",
+        "c": "Basic salt",
+        "d": "Acidic salt"
+      },
+      "answer": "b",
+      "a": "Neutral salt",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-80",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The reproductive parts of a flower are:",
+      "options": {
+        "a": "Petals and stamens",
+        "b": "Sepals and petals",
+        "c": "Sepals and pistil",
+        "d": "Stamens and pistil"
+      },
+      "answer": "d",
+      "a": "Stamens and pistil",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-41",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The valency of an element with electronic configuration 2, 8, 6 is:",
+      "options": {
+        "a": "6",
+        "b": "1",
+        "c": "2",
+        "d": "8"
+      },
+      "answer": "c",
+      "a": "2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-64",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Mendel's experiments on the rules of inheritance were carried out on:",
+      "options": {
+        "a": "Bacteria",
+        "b": "Sugarcane",
+        "c": "Pea plants",
+        "d": "Snails"
+      },
+      "answer": "c",
+      "a": "Pea plants",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-17",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The physical and chemical changes in rocks that eventually lead to soil formation are collectively called:",
+      "options": {
+        "a": "Sedimentation",
+        "b": "Combustion",
+        "c": "Weathering",
+        "d": "Erosion"
+      },
+      "answer": "c",
+      "a": "Weathering",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Two magnetic field lines cannot intersect because at the point of intersection the compass needle would:",
+      "options": {
+        "a": "Lose its magnetism",
+        "b": "Point towards two directions",
+        "c": "Rotate continuously",
+        "d": "Stop moving"
+      },
+      "answer": "b",
+      "a": "Point towards two directions",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-18",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Plant tissues are broadly classified into meristematic and permanent tissues on the basis of their:",
+      "options": {
+        "a": "Size",
+        "b": "Colour",
+        "c": "Ability to divide",
+        "d": "Location"
+      },
+      "answer": "c",
+      "a": "Ability to divide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-14",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "When an iron nail is dipped in copper sulphate solution, the blue colour of the solution fades because:",
+      "options": {
+        "a": "Iron displaces copper from copper sulphate",
+        "b": "Water is formed",
+        "c": "Copper displaces iron",
+        "d": "Iron dissolves in water"
+      },
+      "answer": "a",
+      "a": "Iron displaces copper from copper sulphate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Both the resistance and the resistivity of a material vary with:",
+      "options": {
+        "a": "Length",
+        "b": "Temperature",
+        "c": "Area of cross-section",
+        "d": "Mass"
+      },
+      "answer": "b",
+      "a": "Temperature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-34",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The first person to observe a cell, in 1665, using a self-designed microscope was:",
+      "options": {
+        "a": "Robert Hooke",
+        "b": "Antonie von Leeuwenhoek",
+        "c": "Matthias Schleiden",
+        "d": "Robert Brown"
+      },
+      "answer": "a",
+      "a": "Robert Hooke",
+      "e": "He observed box-like compartments in a thin slice of cork and named them 'cells'.",
+      "table": null,
+      "qid": "biology-ch21-cell-1",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "An object of weight 8000 N rests on four identical feet, each of area 0.10 m². The pressure on the ground is:",
+      "options": {
+        "a": "8.0 × 10² Pa",
+        "b": "2.0 × 10⁴ Pa",
+        "c": "2.0 × 10³ Pa",
+        "d": "8.0 × 10⁴ Pa"
+      },
+      "answer": "b",
+      "a": "2.0 × 10⁴ Pa",
+      "e": "P = 8000 N ÷ 0.40 m² = 2.0 × 10⁴ Pa.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-52",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The white powder formed on burning a magnesium ribbon in air is:",
+      "options": {
+        "a": "Magnesium chloride",
+        "b": "Magnesium carbonate",
+        "c": "Magnesium hydroxide",
+        "d": "Magnesium oxide"
+      },
+      "answer": "d",
+      "a": "Magnesium oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The phagocytic leucocytes are:",
+      "options": {
+        "a": "Lymphocytes and basophils",
+        "b": "Neutrophils and monocytes",
+        "c": "Basophils and eosinophils",
+        "d": "Eosinophils and lymphocytes"
+      },
+      "answer": "b",
+      "a": "Neutrophils and monocytes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-42",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The sum of 12.34 g, 5.6 g and 0.789 g, to the correct precision, is:",
+      "options": {
+        "a": "18.729 g",
+        "b": "18.7 g",
+        "c": "18.73 g",
+        "d": "19 g"
+      },
+      "answer": "b",
+      "a": "18.7 g",
+      "e": "The sum is 18.729 g. The least precise value (5.6 g) has one decimal place, so the result is rounded to one decimal place.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-21",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Menstruation may last for:",
+      "options": {
+        "a": "1–2 days",
+        "b": "3–7 days",
+        "c": "10–12 days",
+        "d": "14–15 days"
+      },
+      "answer": "b",
+      "a": "3–7 days",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-82",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Excessively acidic soil can be treated with lime.\n(II) Basic soil can be treated with organic matter such as manure and composted leaves.\n(III) Excessive use of chemical fertilisers can make soil acidic.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In a hydraulic lift the small and large pistons have areas 10 cm² and 200 cm². A force of 50 N is applied on the small piston. The force on the large piston is:",
+      "options": {
+        "a": "2.5 N",
+        "b": "1000 N",
+        "c": "250 N",
+        "d": "10 000 N"
+      },
+      "answer": "b",
+      "a": "1000 N",
+      "e": "F₂ = F₁A₂/A₁ = 50 × 200 ÷ 10 = 1000 N.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-57",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The removal of harmful metabolic by-products from the body is called:",
+      "options": {
+        "a": "Nutrition",
+        "b": "Excretion",
+        "c": "Egestion",
+        "d": "Translocation"
+      },
+      "answer": "b",
+      "a": "Excretion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-3",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Handpicking is a convenient method when the particles to be removed are:",
+      "options": {
+        "a": "Magnetic in nature",
+        "b": "Dissolved in the mixture",
+        "c": "Lighter than air",
+        "d": "Present in small quantity"
+      },
+      "answer": "d",
+      "a": "Present in small quantity",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The viscous drag force on a sphere of radius a moving with velocity v through a fluid of viscosity η is:",
+      "options": {
+        "a": "3πηav",
+        "b": "6πηav",
+        "c": "6πηa²v",
+        "d": "4πηav"
+      },
+      "answer": "b",
+      "a": "6πηav",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-86",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The high incidence of oral cancer in India is linked to chewing tobacco in the form of:",
+      "options": {
+        "a": "Hookah",
+        "b": "Gutkha",
+        "c": "Cigar",
+        "d": "Bidi"
+      },
+      "answer": "b",
+      "a": "Gutkha",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-66",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which kinematic equation for constant acceleration relates final velocity, initial velocity, acceleration and displacement, without time?",
+      "options": {
+        "a": "s = vt",
+        "b": "v = u + at",
+        "c": "s = ut + ½at²",
+        "d": "v² = u² + 2as"
+      },
+      "answer": "d",
+      "a": "v² = u² + 2as",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-42",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The percentage of carbon present in the earth's crust in the form of minerals is:",
+      "options": {
+        "a": "0.03%",
+        "b": "0.02%",
+        "c": "2%",
+        "d": "0.2%"
+      },
+      "answer": "b",
+      "a": "0.02%",
+      "e": "The atmosphere has 0.03% carbon dioxide.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The pattern of veins on a leaf is called:",
+      "options": {
+        "a": "Cotyledon",
+        "b": "Venation",
+        "c": "Adaptation",
+        "d": "Taproot"
+      },
+      "answer": "b",
+      "a": "Venation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-6",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The strength of an electromagnet can be increased by:\n(I) Increasing the current through the coil\n(II) Increasing the number of turns of the coil\n(III) Inserting an iron core in the coil\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-68",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The development of a complete plant through anther culture was achieved by:",
+      "options": {
+        "a": "B. G. L. Swamy",
+        "b": "F. C. Steward",
+        "c": "Hendrik van Rheede",
+        "d": "Sipra Guha Mukherjee and S. C. Maheshwari"
+      },
+      "answer": "d",
+      "a": "Sipra Guha Mukherjee and S. C. Maheshwari",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-39",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The pH scale generally measures pH from:",
+      "options": {
+        "a": "0 to 7",
+        "b": "7 to 14",
+        "c": "0 to 14",
+        "d": "1 to 10"
+      },
+      "answer": "c",
+      "a": "0 to 14",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In domestic circuits, the circuit with a 15 A current rating is used for:",
+      "options": {
+        "a": "Geysers",
+        "b": "Fans",
+        "c": "Bulbs",
+        "d": "Lamps"
+      },
+      "answer": "a",
+      "a": "Geysers",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-43",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    }
+  ]
+}

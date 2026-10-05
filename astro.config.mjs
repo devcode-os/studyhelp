@@ -13,7 +13,8 @@ export default defineConfig({
         !page.includes('/signup/') &&
         !page.includes('/forgot-passcode/') &&
         !page.includes('/master-access/') &&
-        !page.includes('/payment-processing/'),
+        !page.includes('/payment-processing/') &&
+        !page.includes('/general-science-set-'),
     }),
   ],
   devToolbar: {

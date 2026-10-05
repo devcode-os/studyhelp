@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-29",
+  "chapterNumber": 29,
+  "title": "General Science Set 29",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The Montreal Protocol reduced the use of:",
+      "options": {
+        "a": "Chlorofluorocarbons",
+        "b": "Methane",
+        "c": "Nitrates",
+        "d": "Carbon dioxide"
+      },
+      "answer": "a",
+      "a": "Chlorofluorocarbons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-109",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The thick white and yellowish clouds in the atmosphere of Venus are made of:",
+      "options": {
+        "a": "Sulphuric acid",
+        "b": "Nitric acid",
+        "c": "Carbon dioxide",
+        "d": "Hydrochloric acid"
+      },
+      "answer": "a",
+      "a": "Sulphuric acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "In 2010, a synthetic copy of the DNA of which bacterium was inserted into a related cell whose own DNA had been removed?",
+      "options": {
+        "a": "Lactobacillus",
+        "b": "Mycoplasma mycoides",
+        "c": "Rhizobium",
+        "d": "Nostoc"
+      },
+      "answer": "b",
+      "a": "Mycoplasma mycoides",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-91",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Convex mirrors are used as rear-view mirrors in vehicles because they have a:",
+      "options": {
+        "a": "larger image size",
+        "b": "real image",
+        "c": "inverted image",
+        "d": "wider field of view"
+      },
+      "answer": "d",
+      "a": "wider field of view",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-28",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "After fertilisation, the ovary develops into a:",
+      "options": {
+        "a": "Fruit",
+        "b": "Embryo",
+        "c": "Seed",
+        "d": "Flower"
+      },
+      "answer": "a",
+      "a": "Fruit",
+      "e": "The ovules develop into seeds.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-55",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "At the boiling point of a liquid, vapour formation occurs:",
+      "options": {
+        "a": "Not at all",
+        "b": "At the surface and within the liquid",
+        "c": "Only at the surface",
+        "d": "Only within the liquid"
+      },
+      "answer": "b",
+      "a": "At the surface and within the liquid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A child slides from rest down a frictionless slide of height 3.2 m (g = 10 m s⁻²). The velocity at the bottom is:",
+      "options": {
+        "a": "64 m s⁻¹",
+        "b": "32 m s⁻¹",
+        "c": "5.7 m s⁻¹",
+        "d": "8 m s⁻¹"
+      },
+      "answer": "d",
+      "a": "8 m s⁻¹",
+      "e": "½mv² = mgh gives v = √(2gh) = √64 = 8 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-32",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following plants has taproots and reticulate venation?",
+      "options": {
+        "a": "Chickpea",
+        "b": "Lemongrass",
+        "c": "Maize",
+        "d": "Wheat"
+      },
+      "answer": "a",
+      "a": "Chickpea",
+      "e": "Wheat has fibrous roots and parallel venation.",
+      "table": null,
+      "qid": "biology-ch23-plants-14",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Acidic factory waste is made safe for a lake before release by adding:",
+      "options": {
+        "a": "Acidic substances",
+        "b": "Neutral salts",
+        "c": "Plain water",
+        "d": "Basic substances"
+      },
+      "answer": "d",
+      "a": "Basic substances",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The results of Faraday's electrolysis experiments suggested the:",
+      "options": {
+        "a": "Existence of the nucleus",
+        "b": "Particulate nature of electricity",
+        "c": "Wave nature of light",
+        "d": "Phenomenon of radioactivity"
+      },
+      "answer": "b",
+      "a": "Particulate nature of electricity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-4",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the events during photosynthesis:\n(I) Absorption of light energy by chlorophyll.\n(II) Splitting of water molecules into hydrogen and oxygen.\n(III) Oxidation of carbon dioxide to carbohydrates.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Carbon dioxide is reduced, not oxidised, to carbohydrates.",
+      "table": null,
+      "qid": "biology-ch26-respiration-9",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular formula of the alkene with five carbon atoms is:",
+      "options": {
+        "a": "C₅H₈",
+        "b": "C₅H₁₀",
+        "c": "C₅H₁₂",
+        "d": "C₅H₁₄"
+      },
+      "answer": "b",
+      "a": "C₅H₁₀",
+      "e": "The general formula for alkenes is CₙH₂ₙ.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Two boxes of masses 2 kg and 3 kg, connected by a string, lie on a frictionless horizontal surface. A horizontal force of 20 N pulls the 2 kg box. The acceleration of the system is:",
+      "options": {
+        "a": "4 m s⁻²",
+        "b": "6.7 m s⁻²",
+        "c": "100 m s⁻²",
+        "d": "10 m s⁻²"
+      },
+      "answer": "a",
+      "a": "4 m s⁻²",
+      "e": "a = F/(m₁ + m₂) = 20 N ÷ 5 kg = 4 m s⁻².",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-21",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Green plants in a terrestrial ecosystem capture about ______ of the energy of sunlight falling on their leaves.",
+      "options": {
+        "a": "1%",
+        "b": "10%",
+        "c": "20%",
+        "d": "5%"
+      },
+      "answer": "a",
+      "a": "1%",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-6",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "James Watt, after whom the SI unit of power is named, is known for inventing:",
+      "options": {
+        "a": "an efficient steam engine",
+        "b": "the lever",
+        "c": "the pulley",
+        "d": "the simple pendulum"
+      },
+      "answer": "a",
+      "a": "an efficient steam engine",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-38",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas released by plants during photosynthesis is:",
+      "options": {
+        "a": "Oxygen",
+        "b": "Carbon dioxide",
+        "c": "Methane",
+        "d": "Nitrogen"
+      },
+      "answer": "a",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-39",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The classical definition of reduction was:",
+      "options": {
+        "a": "Addition of oxygen",
+        "b": "Removal of oxygen",
+        "c": "Gain of electrons",
+        "d": "Removal of hydrogen"
+      },
+      "answer": "b",
+      "a": "Removal of oxygen",
+      "e": "It has since been broadened to include removal of an electronegative element or addition of hydrogen or an electropositive element.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "At the equilibrium position of an oscillating body, the net external force on it is:",
+      "options": {
+        "a": "Zero",
+        "b": "Directed away from the position",
+        "c": "Maximum",
+        "d": "Equal to its weight"
+      },
+      "answer": "a",
+      "a": "Zero",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-47",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Gibberellins help in the growth of the stem.\n(II) Cytokinins are present in greater concentration in fruits and seeds.\n(III) Abscisic acid promotes growth.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "III only"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-23",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The Law of Conservation of Mass and the Law of Constant Proportions together formed the basis of:",
+      "options": {
+        "a": "Bohr's model",
+        "b": "Octet rule",
+        "c": "Rutherford's model",
+        "d": "Dalton's atomic theory"
+      },
+      "answer": "d",
+      "a": "Dalton's atomic theory",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of electric potential difference is named after:",
+      "options": {
+        "a": "Georg Simon Ohm",
+        "b": "Hans Christian Oersted",
+        "c": "Andre-Marie Ampere",
+        "d": "Alessandro Volta"
+      },
+      "answer": "d",
+      "a": "Alessandro Volta",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-11",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Rhododendrons on mountain tops in the Shola forests of Nilgiris survive heavy winds because they have:",
+      "options": {
+        "a": "Conical shape",
+        "b": "Greater height and larger leaves",
+        "c": "Shorter height and smaller leaves",
+        "d": "Fleshy stems"
+      },
+      "answer": "c",
+      "a": "Shorter height and smaller leaves",
+      "e": "Rhododendrons in the mountains near Sikkim are taller.",
+      "table": null,
+      "qid": "biology-ch23-plants-29",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not classified as a metal or a non-metal because it is not an element?",
+      "options": {
+        "a": "Carbon",
+        "b": "Sulphur",
+        "c": "Glass",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Glass",
+      "e": "Plastic, wood, rubber and paper are likewise not elements.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "As the distance from a straight current-carrying wire increases, the magnetic field produced by a given current:",
+      "options": {
+        "a": "Increases",
+        "b": "Remains the same",
+        "c": "Decreases",
+        "d": "Becomes zero immediately"
+      },
+      "answer": "c",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-25",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The most diverse plant group on the Earth is:",
+      "options": {
+        "a": "Angiosperms",
+        "b": "Gymnosperms",
+        "c": "Pteridophytes",
+        "d": "Bryophytes"
+      },
+      "answer": "a",
+      "a": "Angiosperms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-141",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The 17th-century work on Indian plants compiled by Hendrik van Rheede is:",
+      "options": {
+        "a": "Flora Indica",
+        "b": "On the Origin of Species",
+        "c": "Brihat Samhita",
+        "d": "Hortus Malabaricus"
+      },
+      "answer": "d",
+      "a": "Hortus Malabaricus",
+      "e": "It was compiled with the help of Itty Achudan and other local experts.",
+      "table": null,
+      "qid": "biology-ch21-cell-142",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The new Moon day is also called:",
+      "options": {
+        "a": "Shukla Paksha",
+        "b": "Purnima",
+        "c": "Amavasya",
+        "d": "Krishna Paksha"
+      },
+      "answer": "c",
+      "a": "Amavasya",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-72",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The method of arranging objects into groups on the basis of a common property is called:",
+      "options": {
+        "a": "Prediction",
+        "b": "Dissolution",
+        "c": "Observation",
+        "d": "Classification"
+      },
+      "answer": "d",
+      "a": "Classification",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Plantlets mass-produced from the shoot tip (apical meristem) by tissue culture help eliminate:",
+      "options": {
+        "a": "Virus-infected plants",
+        "b": "Pollinators",
+        "c": "Spores",
+        "d": "Seeds"
+      },
+      "answer": "a",
+      "a": "Virus-infected plants",
+      "e": "Tissue culture is commonly used for ornamental plants.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-30",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of the human ear that converts vibrations into electrical signals for the brain is the:",
+      "options": {
+        "a": "Diaphragm",
+        "b": "Eardrum",
+        "c": "Larynx",
+        "d": "Cochlea"
+      },
+      "answer": "d",
+      "a": "Cochlea",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-47",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    }
+  ]
+}

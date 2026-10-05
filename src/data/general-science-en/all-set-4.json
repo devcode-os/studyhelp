@@ -1,0 +1,541 @@
+{
+  "slug": "general-science-set-4",
+  "chapterNumber": 4,
+  "title": "General Science Set 4",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The time period of a simple pendulum of length 0.25 m at g = 9.8 m s⁻² is approximately:",
+      "options": {
+        "a": "3.1 s",
+        "b": "0.5 s",
+        "c": "2.0 s",
+        "d": "1.0 s"
+      },
+      "answer": "d",
+      "a": "1.0 s",
+      "e": "T = 2π√(0.25/9.8) s ≈ 1.0 s.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-40",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of valence electrons in a chlorine atom is:",
+      "options": {
+        "a": "8",
+        "b": "7",
+        "c": "6",
+        "d": "5"
+      },
+      "answer": "b",
+      "a": "7",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "In plants, carbohydrates not used immediately are stored in the form of:",
+      "options": {
+        "a": "Glycogen",
+        "b": "Cellulose",
+        "c": "Glucose",
+        "d": "Starch"
+      },
+      "answer": "d",
+      "a": "Starch",
+      "e": "In humans, some of the energy derived from food is stored as glycogen.",
+      "table": null,
+      "qid": "biology-ch26-respiration-8",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A sheet 0.2 mm thick is made of atoms of diameter about 10⁻¹⁰ m stacked in a line. The approximate number of atoms across its thickness is:",
+      "options": {
+        "a": "2 × 10³",
+        "b": "2 × 10⁷",
+        "c": "2 × 10⁶",
+        "d": "2 × 10⁻⁶"
+      },
+      "answer": "c",
+      "a": "2 × 10⁶",
+      "e": "0.2 mm = 2 × 10⁻⁴ m; 2 × 10⁻⁴ m ÷ 10⁻¹⁰ m = 2 × 10⁶.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-34",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Villages with more mangroves experienced less destruction during the super cyclone that hit Orissa in:",
+      "options": {
+        "a": "1971",
+        "b": "1999",
+        "c": "1991",
+        "d": "2004"
+      },
+      "answer": "b",
+      "a": "1999",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-182",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Bags of chips are flushed with which gas to prevent oxidation?",
+      "options": {
+        "a": "Chlorine",
+        "b": "Oxygen",
+        "c": "Nitrogen",
+        "d": "Hydrogen"
+      },
+      "answer": "c",
+      "a": "Nitrogen",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "When white light passes through a glass prism, the colour that bends the most is:",
+      "options": {
+        "a": "green",
+        "b": "violet",
+        "c": "red",
+        "d": "yellow"
+      },
+      "answer": "b",
+      "a": "violet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-76",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The inhalation of tobacco-polluted air by non-smokers is called:",
+      "options": {
+        "a": "Tobacco chewing",
+        "b": "Active smoking",
+        "c": "Passive smoking",
+        "d": "Smokeless tobacco use"
+      },
+      "answer": "c",
+      "a": "Passive smoking",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-70",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A device used to change the resistance in an electric circuit without changing the voltage source is called a:",
+      "options": {
+        "a": "Fuse",
+        "b": "Rheostat",
+        "c": "Ammeter",
+        "d": "Voltmeter"
+      },
+      "answer": "b",
+      "a": "Rheostat",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-31",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Raja Ramanna is often called the:",
+      "options": {
+        "a": "Father of Modern Chemistry",
+        "b": "Father of the Indian Nuclear Programme",
+        "c": "Father of the Indian Space Programme",
+        "d": "Father of the Green Revolution"
+      },
+      "answer": "b",
+      "a": "Father of the Indian Nuclear Programme",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Body-building foods are rich in:",
+      "options": {
+        "a": "Proteins",
+        "b": "Fats",
+        "c": "Carbohydrates",
+        "d": "Minerals"
+      },
+      "answer": "a",
+      "a": "Proteins",
+      "e": "Protein-rich foods help in growth and repair of the body.",
+      "table": null,
+      "qid": "biology-ch25-nutrition-9",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a Class II lever?",
+      "options": {
+        "a": "Wheelbarrow",
+        "b": "Seesaw",
+        "c": "Scissors",
+        "d": "Tweezers"
+      },
+      "answer": "a",
+      "a": "Wheelbarrow",
+      "e": "In a Class II lever, the load lies between the fulcrum and the effort.",
+      "table": {
+        "headers": [
+          "Class",
+          "Position",
+          "Examples"
+        ],
+        "rows": [
+          [
+            "Class I",
+            "Fulcrum in between",
+            "Scissors, crowbar, pliers, balance scale, seesaw"
+          ],
+          [
+            "Class II",
+            "Load in between",
+            "Lemon squeezer, wheelbarrow, bottle opener"
+          ],
+          [
+            "Class III",
+            "Effort in between",
+            "Tweezers, broom, hammer, oar"
+          ]
+        ]
+      },
+      "qid": "physics-ch3-work-energy-and-power-47",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A mixture of camphor and sand can be separated by:",
+      "options": {
+        "a": "Sublimation",
+        "b": "Chromatography",
+        "c": "Decantation",
+        "d": "Filtration"
+      },
+      "answer": "a",
+      "a": "Sublimation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The development of the embryo in a seed into a seedling under appropriate conditions is called:",
+      "options": {
+        "a": "Pollination",
+        "b": "Fragmentation",
+        "c": "Fertilisation",
+        "d": "Germination"
+      },
+      "answer": "d",
+      "a": "Germination",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-56",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about an inclined plane:\n(I) For the same height, a longer plane requires a smaller effort.\n(II) The work done on the load decreases as the plane becomes longer.\n(III) Its mechanical advantage is greater than 1.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-50",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about vaccines:\n(I) They are preventive, not curative.\n(II) They can be made from weakened or dead pathogens.\n(III) They treat a disease once a person is already sick.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-14",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas dissolved in water that is essential for the survival of aquatic animals and plants is:",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Carbon dioxide",
+        "c": "Oxygen",
+        "d": "Methane"
+      },
+      "answer": "c",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Electromagnetic waves travel in vacuum with a speed of:",
+      "options": {
+        "a": "3 × 10¹⁰ m s⁻¹",
+        "b": "3 × 10⁵ m s⁻¹",
+        "c": "3 × 10⁸ m s⁻¹",
+        "d": "3 × 10⁶ m s⁻¹"
+      },
+      "answer": "c",
+      "a": "3 × 10⁸ m s⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-61",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The place where plants and animals live is called their:",
+      "options": {
+        "a": "Grove",
+        "b": "Biodiversity",
+        "c": "Habitat",
+        "d": "Adaptation"
+      },
+      "answer": "c",
+      "a": "Habitat",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-23",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Heating sugar gently in a boiling tube leaves behind:",
+      "options": {
+        "a": "Calcium carbonate",
+        "b": "Sulfur",
+        "c": "Charcoal (carbon)",
+        "d": "Iron"
+      },
+      "answer": "c",
+      "a": "Charcoal (carbon)",
+      "e": "Water droplets also form near the open end of the tube.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In an Amant calendar, the month ends on the:",
+      "options": {
+        "a": "New Moon day",
+        "b": "Day after the new Moon",
+        "c": "Day after the full Moon",
+        "d": "Full Moon day"
+      },
+      "answer": "a",
+      "a": "New Moon day",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-82",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Growth in plants requires actively dividing cells that together form:",
+      "options": {
+        "a": "Parenchyma",
+        "b": "Epidermis",
+        "c": "Collenchyma",
+        "d": "Meristematic tissue"
+      },
+      "answer": "d",
+      "a": "Meristematic tissue",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-3",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Kerosene is optically denser than water because it has a higher:",
+      "options": {
+        "a": "speed of light",
+        "b": "refractive index",
+        "c": "specific heat capacity",
+        "d": "mass density"
+      },
+      "answer": "b",
+      "a": "refractive index",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-45",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Dalton published 'A New System of Chemical Philosophy' in the year:",
+      "options": {
+        "a": "1811",
+        "b": "1803",
+        "c": "1808",
+        "d": "1860"
+      },
+      "answer": "c",
+      "a": "1808",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-90",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The backbone is made up of a series of small bones called:",
+      "options": {
+        "a": "Ribs",
+        "b": "Cartilage discs",
+        "c": "Tendons",
+        "d": "Vertebrae"
+      },
+      "answer": "d",
+      "a": "Vertebrae",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-71",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Average velocity is the average rate of change of:",
+      "options": {
+        "a": "speed",
+        "b": "position",
+        "c": "distance",
+        "d": "acceleration"
+      },
+      "answer": "b",
+      "a": "position",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-31",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about mitochondria and chloroplasts:\n(I) Both are double membrane bound.\n(II) Both contain their own DNA and ribosomes.\n(III) Both are single membrane bound.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-48",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "With increase in hydronium ion concentration, the pH value of a solution:",
+      "options": {
+        "a": "Decreases",
+        "b": "Remains constant",
+        "c": "First increases, then decreases",
+        "d": "Increases"
+      },
+      "answer": "a",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Ice stupas, used to conserve water for the spring and summer, are made in:",
+      "options": {
+        "a": "Kerala",
+        "b": "Ladakh",
+        "c": "Sikkim",
+        "d": "Uttarakhand"
+      },
+      "answer": "b",
+      "a": "Ladakh",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-86",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "ASHA, the community health workers working under the National Health Mission, stands for:",
+      "options": {
+        "a": "Advanced Society Health Assistant",
+        "b": "Authorised Safe Health Attendant",
+        "c": "Associated School Health Aide",
+        "d": "Accredited Social Health Activist"
+      },
+      "answer": "d",
+      "a": "Accredited Social Health Activist",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-90",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

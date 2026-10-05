@@ -1,0 +1,561 @@
+{
+  "slug": "general-science-physics-set-25",
+  "chapterNumber": 25,
+  "title": "Physics Set 25",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A steel rod is prevented from expanding while its temperature rises by 20 K. If αl = 1.2 × 10⁻⁵ K⁻¹ and Young's modulus Y = 2 × 10¹¹ N m⁻², the thermal stress developed is:",
+      "options": {
+        "a": "2.4 × 10⁷ N m⁻²",
+        "b": "9.6 × 10⁷ N m⁻²",
+        "c": "4.8 × 10⁶ N m⁻²",
+        "d": "4.8 × 10⁷ N m⁻²"
+      },
+      "answer": "d",
+      "a": "4.8 × 10⁷ N m⁻²",
+      "e": "Stress = Y αl ΔT = 2 × 10¹¹ × 1.2 × 10⁻⁵ × 20 = 4.8 × 10⁷ N m⁻².",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-30",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Magnetic field lines are closed curves.\n(II) The field lines are crowded where the magnetic field is stronger.\n(III) Two magnetic field lines can cross each other near the poles.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-20",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "In traditional Indian measurement, 'angula' refers to:",
+      "options": {
+        "a": "stride",
+        "b": "foot length",
+        "c": "arm length",
+        "d": "finger width"
+      },
+      "answer": "d",
+      "a": "finger width",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-13",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "With the potential energy taken as zero at infinite separation, the gravitational potential energy of two particles of masses m₁ and m₂ separated by a distance r is:",
+      "options": {
+        "a": "+Gm₁m₂/r²",
+        "b": "−Gm₁m₂/r²",
+        "c": "+Gm₁m₂/r",
+        "d": "−Gm₁m₂/r"
+      },
+      "answer": "d",
+      "a": "−Gm₁m₂/r",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-12",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Maxwell's electromagnetic theory, an accelerated charged particle emits:",
+      "options": {
+        "a": "Canal rays",
+        "b": "Cathode rays",
+        "c": "Electromagnetic radiation",
+        "d": "Alpha particles"
+      },
+      "answer": "c",
+      "a": "Electromagnetic radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-37",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The slope of a velocity-time graph gives:",
+      "options": {
+        "a": "speed",
+        "b": "distance",
+        "c": "acceleration",
+        "d": "displacement"
+      },
+      "answer": "c",
+      "a": "acceleration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-38",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of resistance is:",
+      "options": {
+        "a": "Coulomb",
+        "b": "Watt",
+        "c": "Ohm",
+        "d": "Ampere"
+      },
+      "answer": "c",
+      "a": "Ohm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-27",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The lens formula relating object distance u, image distance v and focal length f is:",
+      "options": {
+        "a": "v − u = f",
+        "b": "1/u − 1/v = 1/f",
+        "c": "1/v + 1/u = 1/f",
+        "d": "1/v − 1/u = 1/f"
+      },
+      "answer": "d",
+      "a": "1/v − 1/u = 1/f",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-50",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Excess atmospheric CO₂ absorbed by the oceans makes sea water more:",
+      "options": {
+        "a": "Dense",
+        "b": "Alkaline",
+        "c": "Acidic",
+        "d": "Saline"
+      },
+      "answer": "c",
+      "a": "Acidic",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-124",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Work done against which of the following forces does not result in storage of energy?",
+      "options": {
+        "a": "Electric force",
+        "b": "Frictional force",
+        "c": "Gravitational force",
+        "d": "Magnetic force"
+      },
+      "answer": "b",
+      "a": "Frictional force",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-18",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A freely suspended bar magnet comes to rest along the:",
+      "options": {
+        "a": "North–south direction",
+        "b": "North-east to south-west direction",
+        "c": "East–west direction",
+        "d": "Direction of its shape"
+      },
+      "answer": "a",
+      "a": "North–south direction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-6",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "In the Northern Hemisphere, the shortest day occurs around:",
+      "options": {
+        "a": "21 March",
+        "b": "23 September",
+        "c": "21 June",
+        "d": "22 December"
+      },
+      "answer": "d",
+      "a": "22 December",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-56",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Swing – Oscillatory motion\n(II) Merry-go-round – Circular motion\n(III) Eraser whirled on a thread – Oscillatory motion\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "A whirled eraser moves along a circular path.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-31",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Millikan concluded that the electrical charge on an oil droplet is always:",
+      "options": {
+        "a": "A fraction of the electronic charge",
+        "b": "Equal to e only",
+        "c": "Equal to zero",
+        "d": "An integral multiple of the electronic charge"
+      },
+      "answer": "d",
+      "a": "An integral multiple of the electronic charge",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-13",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The day-night cycle is caused by the:",
+      "options": {
+        "a": "Revolution of the Moon around the Earth",
+        "b": "Rotation of the Earth on its axis",
+        "c": "Revolution of the Earth around the Sun",
+        "d": "Tilt of the Earth's axis"
+      },
+      "answer": "b",
+      "a": "Rotation of the Earth on its axis",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-49",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "When the North pole of a bar magnet is brought near the North pole of a compass needle, the needle:",
+      "options": {
+        "a": "Moves away",
+        "b": "Starts rotating continuously",
+        "c": "Moves closer",
+        "d": "Remains undisturbed"
+      },
+      "answer": "a",
+      "a": "Moves away",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-13",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "In SHM, the speed of the particle is maximum at the:",
+      "options": {
+        "a": "Extreme positions",
+        "b": "Point of maximum displacement",
+        "c": "Mean position",
+        "d": "Point of maximum acceleration"
+      },
+      "answer": "c",
+      "a": "Mean position",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-22",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Water seeps fastest through:",
+      "options": {
+        "a": "gravel",
+        "b": "silt",
+        "c": "clay",
+        "d": "sand"
+      },
+      "answer": "a",
+      "a": "gravel",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-85",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Two point masses of 20 kg each are separated by 0.5 m. Taking G = 6.67 × 10⁻¹¹ N m² kg⁻², their gravitational potential energy is:",
+      "options": {
+        "a": "−5.34 × 10⁻⁸ J",
+        "b": "−1.07 × 10⁻⁷ J",
+        "c": "+5.34 × 10⁻⁸ J",
+        "d": "−2.67 × 10⁻⁸ J"
+      },
+      "answer": "a",
+      "a": "−5.34 × 10⁻⁸ J",
+      "e": "U = −Gm₁m₂/r = −(6.67 × 10⁻¹¹ × 20 × 20)/0.5 ≈ −5.34 × 10⁻⁸ J.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-14",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Huygens' early pendulum clocks could gain or lose about how much time each day?",
+      "options": {
+        "a": "10 min",
+        "b": "1 min",
+        "c": "10 s",
+        "d": "1 s"
+      },
+      "answer": "c",
+      "a": "10 s",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-37",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The mechanical energy of an object is conserved if:",
+      "options": {
+        "a": "its mass is small",
+        "b": "it is at rest",
+        "c": "no other external force acts on it",
+        "d": "it moves with constant velocity"
+      },
+      "answer": "c",
+      "a": "no other external force acts on it",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-30",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Among the following, the material with the lowest resistivity at 20 °C is:",
+      "options": {
+        "a": "Copper",
+        "b": "Silver",
+        "c": "Aluminium",
+        "d": "Iron"
+      },
+      "answer": "b",
+      "a": "Silver",
+      "e": "",
+      "table": {
+        "headers": [
+          "Material",
+          "Resistivity at 20 °C (Ω m)"
+        ],
+        "rows": [
+          [
+            "Silver",
+            "1.60 × 10⁻⁸"
+          ],
+          [
+            "Copper",
+            "1.62 × 10⁻⁸"
+          ],
+          [
+            "Aluminium",
+            "2.63 × 10⁻⁸"
+          ],
+          [
+            "Tungsten",
+            "5.20 × 10⁻⁸"
+          ],
+          [
+            "Iron",
+            "10.0 × 10⁻⁸"
+          ],
+          [
+            "Mercury",
+            "94.0 × 10⁻⁸"
+          ],
+          [
+            "Constantan",
+            "49 × 10⁻⁶"
+          ],
+          [
+            "Manganin",
+            "44 × 10⁻⁶"
+          ],
+          [
+            "Nichrome",
+            "100 × 10⁻⁶"
+          ]
+        ]
+      },
+      "qid": "physics-ch7-electricity-36",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Mission LiFE, an India-led global initiative, was introduced at the United Nations Climate Change Conference in:",
+      "options": {
+        "a": "2015",
+        "b": "2009",
+        "c": "2023",
+        "d": "2021"
+      },
+      "answer": "d",
+      "a": "2021",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-125",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The V–I graph of a nichrome wire is:",
+      "options": {
+        "a": "A straight line parallel to the I axis",
+        "b": "A parabola",
+        "c": "A straight line passing through the origin",
+        "d": "A circle"
+      },
+      "answer": "c",
+      "a": "A straight line passing through the origin",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-30",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about a uniform hollow spherical shell:\n(I) The force on a point mass outside it is as if the entire mass of the shell were at its centre.\n(II) The force on a point mass inside it is zero.\n(III) It shields a body inside it from the gravitational pull of outside bodies.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-7",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Surfaces of which colour absorb and emit radiant energy best?",
+      "options": {
+        "a": "White",
+        "b": "Silver",
+        "c": "Black",
+        "d": "Light yellow"
+      },
+      "answer": "c",
+      "a": "Black",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-71",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The splitting of white light into its component colours is called:",
+      "options": {
+        "a": "reflection",
+        "b": "dispersion",
+        "c": "scattering",
+        "d": "diffraction"
+      },
+      "answer": "b",
+      "a": "dispersion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-75",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum acceleration of a particle in SHM with amplitude A and angular frequency ω is:",
+      "options": {
+        "a": "ωA",
+        "b": "ω²A",
+        "c": "A/ω²",
+        "d": "ωA²"
+      },
+      "answer": "b",
+      "a": "ω²A",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-21",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Electric iron – Heating effect of current\n(II) Electromagnet – Magnetic effect of current\n(III) Electric bell – Heating effect of current\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "II and III only"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-66",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The electric potential difference between two points is defined as the work done to move:",
+      "options": {
+        "a": "Unit charge from one point to the other",
+        "b": "One ampere of current between the points",
+        "c": "Unit mass of conductor between the points",
+        "d": "One electron per second between the points"
+      },
+      "answer": "a",
+      "a": "Unit charge from one point to the other",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-10",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    }
+  ]
+}

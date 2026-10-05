@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-19",
+  "chapterNumber": 19,
+  "title": "Physics Set 19",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The chemical action within a cell generates:",
+      "options": {
+        "a": "Heat in its terminals",
+        "b": "Resistance across its terminals",
+        "c": "Potential difference across its terminals",
+        "d": "Magnetic field around its terminals"
+      },
+      "answer": "c",
+      "a": "Potential difference across its terminals",
+      "e": "The potential difference exists even when no current is drawn from the cell.",
+      "table": null,
+      "qid": "physics-ch7-electricity-14",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The unit hertz is named after the discoverer of:",
+      "options": {
+        "a": "Radio waves",
+        "b": "X-rays",
+        "c": "Cathode rays",
+        "d": "Radioactivity"
+      },
+      "answer": "a",
+      "a": "Radio waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-5",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about Rutherford's conclusions:\n(I) The positive charge is concentrated in a very small volume.\n(II) The nucleus occupies most of the volume of the atom.\n(III) The nucleus contains most of the mass of the atom.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-32",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "An object moving in a straight line travels equal distances in equal intervals of time, for all choices of intervals. Its speed is:",
+      "options": {
+        "a": "constant",
+        "b": "decreasing",
+        "c": "zero",
+        "d": "increasing"
+      },
+      "answer": "a",
+      "a": "constant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-32",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of the coefficient of viscosity is:",
+      "options": {
+        "a": "kg m⁻³",
+        "b": "N m⁻²",
+        "c": "N s m⁻²",
+        "d": "N m⁻¹"
+      },
+      "answer": "c",
+      "a": "N s m⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-84",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The potential energy of a 4 kg object at a height of 6 m (g = 10 m s⁻²) is:",
+      "options": {
+        "a": "2400 J",
+        "b": "24 J",
+        "c": "120 J",
+        "d": "240 J"
+      },
+      "answer": "d",
+      "a": "240 J",
+      "e": "U = mgh = 4 kg × 10 m s⁻² × 6 m = 240 J.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-28",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "When an object is placed at the principal focus of a concave mirror, the image is formed at:",
+      "options": {
+        "a": "the focus",
+        "b": "the centre of curvature",
+        "c": "infinity",
+        "d": "the pole"
+      },
+      "answer": "c",
+      "a": "infinity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-25",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Two lenses of power +3.0 D and −1.5 D are placed in contact. The net power is:",
+      "options": {
+        "a": "+1.5 D",
+        "b": "−4.5 D",
+        "c": "+4.5 D",
+        "d": "−1.5 D"
+      },
+      "answer": "a",
+      "a": "+1.5 D",
+      "e": "The net power is the algebraic sum of the individual powers.",
+      "table": null,
+      "qid": "physics-ch5-light-59",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In steady flow, two streamlines can never:",
+      "options": {
+        "a": "cross each other",
+        "b": "be closely spaced",
+        "c": "run parallel",
+        "d": "be curved"
+      },
+      "answer": "a",
+      "a": "cross each other",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-75",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The unit of plane angle is radian, with symbol rad.\n(II) The unit of solid angle is steradian, with symbol sr.\n(III) Plane angle is the ratio of the intercepted area of a spherical surface to the square of its radius.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Statement III describes solid angle. Plane angle is the ratio of arc length to radius. Both radian and steradian are dimensionless.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-4",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Dimensional analysis shows that the time period T of a simple pendulum of length l, at a place with acceleration due to gravity g, is proportional to:",
+      "options": {
+        "a": "√(g/l)",
+        "b": "√(lg)",
+        "c": "√(l/g)",
+        "d": "l/g"
+      },
+      "answer": "c",
+      "a": "√(l/g)",
+      "e": "The constant of proportionality, 2π, cannot be found by this method.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-28",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The General Conference on Weights and Measures revised the SI in November of:",
+      "options": {
+        "a": "1971",
+        "b": "1990",
+        "c": "2018",
+        "d": "2005"
+      },
+      "answer": "c",
+      "a": "2018",
+      "e": "The SI scheme was developed by the Bureau International des Poids et Mesures in 1971.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-6",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Near the surface of the Earth, the acceleration due to gravity is nearly:",
+      "options": {
+        "a": "0.98 m s⁻²",
+        "b": "9.8 m s⁻²",
+        "c": "1.6 m s⁻²",
+        "d": "98 m s⁻²"
+      },
+      "answer": "b",
+      "a": "9.8 m s⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-22",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "In the New Cartesian Sign Convention, the origin is taken at the:",
+      "options": {
+        "a": "pole of the mirror",
+        "b": "object",
+        "c": "principal focus",
+        "d": "centre of curvature"
+      },
+      "answer": "a",
+      "a": "pole of the mirror",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-30",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Among the good electrical conductors, the metal mainly used for making electrical wires owing to its lower cost and abundant supply is:",
+      "options": {
+        "a": "Tungsten",
+        "b": "Copper",
+        "c": "Silver",
+        "d": "Gold"
+      },
+      "answer": "b",
+      "a": "Copper",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-23",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The coefficient of volume expansion αv and the coefficient of linear expansion αl of a solid are related as:",
+      "options": {
+        "a": "αv = αl",
+        "b": "αv = 3αl",
+        "c": "αv = αl/3",
+        "d": "αv = 2αl"
+      },
+      "answer": "b",
+      "a": "αv = 3αl",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-24",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The period of the function sin 2ωt + cos 4ωt is:",
+      "options": {
+        "a": "π/ω",
+        "b": "π/2ω",
+        "c": "4π/ω",
+        "d": "2π/ω"
+      },
+      "answer": "a",
+      "a": "π/ω",
+      "e": "sin 2ωt has period π/ω and cos 4ωt has period π/2ω, so the sum repeats after π/ω.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-12",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "For an object placed at 2F₁ of a convex lens, the image is formed at:",
+      "options": {
+        "a": "beyond 2F₂",
+        "b": "F₂",
+        "c": "2F₂",
+        "d": "infinity"
+      },
+      "answer": "c",
+      "a": "2F₂",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-53",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "One horsepower is equal to:",
+      "options": {
+        "a": "746 W",
+        "b": "74.6 W",
+        "c": "7460 W",
+        "d": "1000 W"
+      },
+      "answer": "a",
+      "a": "746 W",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-39",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Heavier atoms need many more neutrons than protons because neutrons:",
+      "options": {
+        "a": "Reduce repulsion between protons and strengthen the nuclear force",
+        "b": "Carry a negative charge",
+        "c": "Increase the repulsion between protons",
+        "d": "Orbit around the nucleus"
+      },
+      "answer": "a",
+      "a": "Reduce repulsion between protons and strengthen the nuclear force",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-70",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The planetary observations from which Kepler's laws were extracted were compiled by:",
+      "options": {
+        "a": "Newton",
+        "b": "Cavendish",
+        "c": "Galileo",
+        "d": "Tycho Brahe"
+      },
+      "answer": "d",
+      "a": "Tycho Brahe",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-5",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In India, the Big Dipper is known as:",
+      "options": {
+        "a": "Dhūmaketu",
+        "b": "Saptaṛiṣhi",
+        "c": "Dhruva tārā",
+        "d": "Ākāśha Gangā"
+      },
+      "answer": "b",
+      "a": "Saptaṛiṣhi",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-32",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The escape speed from the surface of the Earth, in terms of g and the radius R of the Earth, is:",
+      "options": {
+        "a": "√(g/R)",
+        "b": "√(2gR)",
+        "c": "2gR",
+        "d": "√(gR)"
+      },
+      "answer": "b",
+      "a": "√(2gR)",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-15",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "An athlete runs 80 m along a straight track and then returns 50 m along the same path. The total distance travelled and the magnitude of displacement are:",
+      "options": {
+        "a": "130 m, 30 m",
+        "b": "30 m, 130 m",
+        "c": "80 m, 50 m",
+        "d": "130 m, 130 m"
+      },
+      "answer": "a",
+      "a": "130 m, 30 m",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-26",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "An iron rod of length 5.0 m is heated through 50 K. If αl = 1.2 × 10⁻⁵ K⁻¹, the increase in its length is:",
+      "options": {
+        "a": "1.2 × 10⁻³ m",
+        "b": "3.0 × 10⁻³ m",
+        "c": "6.0 × 10⁻³ m",
+        "d": "3.0 × 10⁻⁴ m"
+      },
+      "answer": "b",
+      "a": "3.0 × 10⁻³ m",
+      "e": "Δl = αl l ΔT = 1.2 × 10⁻⁵ × 5.0 × 50 = 3.0 × 10⁻³ m.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-31",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Ohm's law holds for a metallic wire provided its ___ remains the same:",
+      "options": {
+        "a": "Temperature",
+        "b": "Density",
+        "c": "Mass",
+        "d": "Volume"
+      },
+      "answer": "a",
+      "a": "Temperature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-25",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Seasons occur because of the tilt of the Earth's axis and its spherical shape.\n(II) Seasons occur because the Earth is closer to the Sun in summer than in winter.\n(III) The Earth is closest to the Sun in January.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-54",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Clearing forests reduces transpiration and can lower local rainfall.\n(II) Without tree roots to hold the soil, soil erosion could increase.\n(III) Deforestation increases the rate of photosynthesis.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-123",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The result that any periodic function can be expressed as a superposition of sine and cosine functions was proved by:",
+      "options": {
+        "a": "Newton",
+        "b": "Hertz",
+        "c": "Galileo",
+        "d": "Fourier"
+      },
+      "answer": "d",
+      "a": "Fourier",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-9",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Most of the refraction of light entering the human eye occurs at the:",
+      "options": {
+        "a": "crystalline lens",
+        "b": "retina",
+        "c": "iris",
+        "d": "outer surface of the cornea"
+      },
+      "answer": "d",
+      "a": "outer surface of the cornea",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-63",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    }
+  ]
+}

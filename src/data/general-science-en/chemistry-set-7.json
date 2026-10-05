@@ -1,0 +1,556 @@
+{
+  "slug": "general-science-chemistry-set-7",
+  "chapterNumber": 7,
+  "title": "Chemistry Set 7",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Graphite is a conductor of electricity.\n(II) Iodine is a non-metal that is lustrous.\n(III) All metals exist as solids at room temperature.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Vegetable oils generally have long unsaturated carbon chains.\n(II) Animal fats generally have saturated carbon chains.\n(III) Saturated hydrocarbons readily undergo addition reactions.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which oxidation and reduction occur simultaneously are called:",
+      "options": {
+        "a": "Redox reactions",
+        "b": "Combination reactions only",
+        "c": "Precipitation reactions",
+        "d": "Displacement reactions only"
+      },
+      "answer": "a",
+      "a": "Redox reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The saturated hydrocarbon with five carbon atoms is:",
+      "options": {
+        "a": "Butane",
+        "b": "Pentane",
+        "c": "Hexane",
+        "d": "Propane"
+      },
+      "answer": "b",
+      "a": "Pentane",
+      "e": "The saturated compounds of carbon and hydrogen with 1 to 6 carbon atoms:",
+      "table": {
+        "headers": [
+          "No. of C atoms",
+          "Name",
+          "Formula"
+        ],
+        "rows": [
+          [
+            "1",
+            "Methane",
+            "CH₄"
+          ],
+          [
+            "2",
+            "Ethane",
+            "C₂H₆"
+          ],
+          [
+            "3",
+            "Propane",
+            "C₃H₈"
+          ],
+          [
+            "4",
+            "Butane",
+            "C₄H₁₀"
+          ],
+          [
+            "5",
+            "Pentane",
+            "C₅H₁₂"
+          ],
+          [
+            "6",
+            "Hexane",
+            "C₆H₁₄"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch19-carbon-and-its-compounds-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The property by which materials can be beaten into thin sheets is called:",
+      "options": {
+        "a": "Sonority",
+        "b": "Ductility",
+        "c": "Conduction",
+        "d": "Malleability"
+      },
+      "answer": "d",
+      "a": "Malleability",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) More solute can be dissolved in an unsaturated solution at a given temperature.\n(II) A saturated solution can dissolve more solute at the same temperature.\n(III) For most solids, a saturated solution at a particular temperature behaves as an unsaturated solution if the temperature is increased.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-66",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "With increase in temperature, the solubility of gases dissolved in liquids generally:",
+      "options": {
+        "a": "Remains constant",
+        "b": "Increases",
+        "c": "First increases, then decreases",
+        "d": "Decreases"
+      },
+      "answer": "d",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure water from any source contains hydrogen and oxygen in the mass ratio of:",
+      "options": {
+        "a": "8:1",
+        "b": "2:1",
+        "c": "1:16",
+        "d": "1:8"
+      },
+      "answer": "d",
+      "a": "1:8",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure iron, which is very soft, becomes hard and strong when mixed with about ______ of carbon.",
+      "options": {
+        "a": "0.05%",
+        "b": "5%",
+        "c": "0.5%",
+        "d": "50%"
+      },
+      "answer": "a",
+      "a": "0.05%",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-81",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following solutions is more concentrated?",
+      "options": {
+        "a": "2 spoons of salt in 100 mL of water",
+        "b": "4 spoons of salt in 50 mL of water",
+        "c": "Both are equally concentrated",
+        "d": "They cannot be compared"
+      },
+      "answer": "b",
+      "a": "4 spoons of salt in 50 mL of water",
+      "e": "4 spoons in 50 mL is 0.08 spoon per mL, against 0.02 spoon per mL for the other.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Lime water turns milky when exhaled air is bubbled through it.\nReason (R): Exhaled air contains carbon dioxide, which reacts with lime water to form an insoluble substance.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not made of matter?",
+      "options": {
+        "a": "Light",
+        "b": "Water",
+        "c": "Air",
+        "d": "Sand"
+      },
+      "answer": "a",
+      "a": "Light",
+      "e": "Heat and electricity are also not made of matter.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a covalent compound?",
+      "options": {
+        "a": "MgO",
+        "b": "HCl",
+        "c": "NaCl",
+        "d": "CaCl₂"
+      },
+      "answer": "b",
+      "a": "HCl",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Lime water turns milky when carbon dioxide reacts with calcium hydroxide to form:",
+      "options": {
+        "a": "Calcium carbonate",
+        "b": "Calcium sulfate",
+        "c": "Calcium chloride",
+        "d": "Calcium oxide"
+      },
+      "answer": "a",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The colour of litmus solution when it is neither acidic nor basic is:",
+      "options": {
+        "a": "Blue",
+        "b": "Pink",
+        "c": "Purple",
+        "d": "Red"
+      },
+      "answer": "c",
+      "a": "Purple",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The physical state of matter is determined by which property of its particles?",
+      "options": {
+        "a": "Mass",
+        "b": "Size",
+        "c": "Thermal energy",
+        "d": "Colour"
+      },
+      "answer": "c",
+      "a": "Thermal energy",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1913, Henry Moseley observed regularities in the:",
+      "options": {
+        "a": "Cathode rays",
+        "b": "Characteristic X-ray spectra of the elements",
+        "c": "Scattering of alpha particles",
+        "d": "Emission spectra of hydrogen"
+      },
+      "answer": "b",
+      "a": "Characteristic X-ray spectra of the elements",
+      "e": "He showed that atomic number is a more fundamental property of an element than its atomic mass.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of conversion of water vapour into its liquid state is called:",
+      "options": {
+        "a": "Evaporation",
+        "b": "Condensation",
+        "c": "Freezing",
+        "d": "Melting"
+      },
+      "answer": "b",
+      "a": "Condensation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of elements presently known is:",
+      "options": {
+        "a": "118",
+        "b": "92",
+        "c": "108",
+        "d": "128"
+      },
+      "answer": "a",
+      "a": "118",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Bleaching powder is used to:",
+      "options": {
+        "a": "Make drinking water free from germs",
+        "b": "Support fractured bones",
+        "c": "Remove permanent hardness of water",
+        "d": "Neutralise excess stomach acid"
+      },
+      "answer": "a",
+      "a": "Make drinking water free from germs",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-67",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Gold can be dissolved by:",
+      "options": {
+        "a": "Dilute sulphuric acid",
+        "b": "Concentrated hydrochloric acid",
+        "c": "Concentrated nitric acid",
+        "d": "Aqua regia"
+      },
+      "answer": "d",
+      "a": "Aqua regia",
+      "e": "It also dissolves platinum.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The coating formed by corrosion of copper is:",
+      "options": {
+        "a": "Reddish brown",
+        "b": "Black",
+        "c": "Green",
+        "d": "Blue"
+      },
+      "answer": "c",
+      "a": "Green",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of elements is liquid at room temperature?",
+      "options": {
+        "a": "Mercury and bromine",
+        "b": "Bromine and caesium",
+        "c": "Gallium and caesium",
+        "d": "Mercury and gallium"
+      },
+      "answer": "a",
+      "a": "Mercury and bromine",
+      "e": "Gallium and caesium are solids that turn liquid at around 30 °C (303 K).",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Ozone depletion in the stratosphere is caused by:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Nitrogen",
+        "c": "Methane",
+        "d": "Chlorofluorocarbons"
+      },
+      "answer": "d",
+      "a": "Chlorofluorocarbons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The total number of periods in the long form of the periodic table is:",
+      "options": {
+        "a": "Six",
+        "b": "Nine",
+        "c": "Seven",
+        "d": "Eight"
+      },
+      "answer": "c",
+      "a": "Seven",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Mass is the quantity of matter present in an object.\n(II) Weight is the force by which the Earth attracts an object.\n(III) Mass is measured in newtons.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Most balances actually measure weight, but their scales are marked in mass units. Two-pan balances are an exception.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-55",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "H₂S is correctly named as:",
+      "options": {
+        "a": "Hydrogen monosulfide",
+        "b": "Dihydrogen monosulfide",
+        "c": "Dihydrogen sulfide",
+        "d": "Hydrogen sulfide"
+      },
+      "answer": "d",
+      "a": "Hydrogen sulfide",
+      "e": "No prefix is added before hydrogen when it is the first element.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "On passing excess carbon dioxide through milky lime water, it turns clear due to the formation of:",
+      "options": {
+        "a": "Calcium oxide",
+        "b": "Calcium chloride",
+        "c": "Calcium hydrogencarbonate",
+        "d": "Calcium hydroxide"
+      },
+      "answer": "c",
+      "a": "Calcium hydrogencarbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Names of simple anions end with:",
+      "options": {
+        "a": "-ate",
+        "b": "-ite",
+        "c": "-ine",
+        "d": "-ide"
+      },
+      "answer": "d",
+      "a": "-ide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular mass of dinitrogen monoxide, N₂O (N = 14 u, O = 16 u), is:",
+      "options": {
+        "a": "44 u",
+        "b": "28 u",
+        "c": "46 u",
+        "d": "30 u"
+      },
+      "answer": "a",
+      "a": "44 u",
+      "e": "(14 u × 2) + 16 u = 44 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    }
+  ]
+}

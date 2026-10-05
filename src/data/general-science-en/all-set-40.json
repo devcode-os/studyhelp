@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-40",
+  "chapterNumber": 40,
+  "title": "General Science Set 40",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Mercury thermometers are being replaced by digital thermometers because mercury is:",
+      "options": {
+        "a": "toxic",
+        "b": "opaque",
+        "c": "brittle",
+        "d": "expensive"
+      },
+      "answer": "a",
+      "a": "toxic",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-10",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a microalga?",
+      "options": {
+        "a": "Diatoms",
+        "b": "Chlorella",
+        "c": "Lactobacillus",
+        "d": "Spirulina"
+      },
+      "answer": "c",
+      "a": "Lactobacillus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-31",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Addition of oxygen to a substance is oxidation.\n(II) Removal of hydrogen from a substance is oxidation.\n(III) Addition of hydrogen to a substance is oxidation.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The relation between frequency ν and time period T is:",
+      "options": {
+        "a": "ν = T²",
+        "b": "ν = 1/T",
+        "c": "ν = T",
+        "d": "ν = 2πT"
+      },
+      "answer": "b",
+      "a": "ν = 1/T",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-4",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The Mid Day Meal Programme, implemented in 2002, is now known as:",
+      "options": {
+        "a": "Nasha Mukt",
+        "b": "Poshan Abhiyaan",
+        "c": "PM POSHAN",
+        "d": "Suvidha"
+      },
+      "answer": "c",
+      "a": "PM POSHAN",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-25",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The projection of uniform circular motion on a diameter of the circle executes:",
+      "options": {
+        "a": "Non-periodic motion",
+        "b": "Projectile motion",
+        "c": "Uniform linear motion",
+        "d": "Simple harmonic motion"
+      },
+      "answer": "d",
+      "a": "Simple harmonic motion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-18",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The initial breakdown of food into fine pieces by crushing and chewing is called:",
+      "options": {
+        "a": "Rumination",
+        "b": "Mechanical digestion",
+        "c": "Egestion",
+        "d": "Absorption"
+      },
+      "answer": "b",
+      "a": "Mechanical digestion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-23",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The bond formed by sharing of electrons between atoms is called:",
+      "options": {
+        "a": "Covalent bond",
+        "b": "Ionic bond",
+        "c": "Metallic bond",
+        "d": "Hydrogen bond"
+      },
+      "answer": "a",
+      "a": "Covalent bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a contact force?",
+      "options": {
+        "a": "Force of friction",
+        "b": "Electrostatic force",
+        "c": "Magnetic force",
+        "d": "Gravitational force"
+      },
+      "answer": "a",
+      "a": "Force of friction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-2",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "India's first test tube baby was born in the year:",
+      "options": {
+        "a": "1968",
+        "b": "1998",
+        "c": "1978",
+        "d": "1988"
+      },
+      "answer": "c",
+      "a": "1978",
+      "e": "Subhash Mukhopadhyay of Kolkata pioneered it through experimental IVF work.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-93",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "15 mL of a sodium hydroxide solution is completely neutralised by 12 mL of a hydrochloric acid solution. The volume of the same hydrochloric acid solution required to neutralise 25 mL of the same sodium hydroxide solution is:",
+      "options": {
+        "a": "25 mL",
+        "b": "20 mL",
+        "c": "13 mL",
+        "d": "30 mL"
+      },
+      "answer": "b",
+      "a": "20 mL",
+      "e": "12 mL acid per 15 mL base = 0.8; 25 mL × 0.8 = 20 mL.",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of a simple pendulum of length L at a place where the acceleration due to gravity is g is:",
+      "options": {
+        "a": "2π(L/g)",
+        "b": "π√(L/g)",
+        "c": "2π√(g/L)",
+        "d": "2π√(L/g)"
+      },
+      "answer": "d",
+      "a": "2π√(L/g)",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-36",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "International Yoga Day is observed every year on:",
+      "options": {
+        "a": "21st June",
+        "b": "21st September",
+        "c": "21st March",
+        "d": "21st December"
+      },
+      "answer": "a",
+      "a": "21st June",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-75",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Asima Chatterjee is renowned for her work in developing:",
+      "options": {
+        "a": "Anti-epileptic and anti-malarial drugs",
+        "b": "Anti-cancer and anti-AIDS drugs",
+        "c": "Antibiotics and vaccines",
+        "d": "Painkillers and antiseptics"
+      },
+      "answer": "a",
+      "a": "Anti-epileptic and anti-malarial drugs",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-68",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In a hydraulic lift with small piston area A₁ and large piston area A₂, the mechanical advantage is:",
+      "options": {
+        "a": "A₁ + A₂",
+        "b": "A₁A₂",
+        "c": "A₂/A₁",
+        "d": "A₁/A₂"
+      },
+      "answer": "c",
+      "a": "A₂/A₁",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-58",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Smallpox was declared eradicated worldwide in the year:",
+      "options": {
+        "a": "1979",
+        "b": "1950",
+        "c": "1965",
+        "d": "1980"
+      },
+      "answer": "a",
+      "a": "1979",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-22",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "In a cathode ray discharge tube, the rays travel:",
+      "options": {
+        "a": "From anode to cathode",
+        "b": "In both directions alternately",
+        "c": "From cathode to anode",
+        "d": "Only when the tube is at atmospheric pressure"
+      },
+      "answer": "c",
+      "a": "From cathode to anode",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-5",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about ionic compounds:\n(I) They are solids and somewhat hard.\n(II) They have high melting and boiling points.\n(III) They are generally soluble in kerosene and petrol.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Ionic compounds are generally brittle and soluble in water.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "When a plant receives sunlight from only one direction, its root:",
+      "options": {
+        "a": "Grows horizontally",
+        "b": "Grows upwards",
+        "c": "Grows towards the light",
+        "d": "Continues to grow downwards"
+      },
+      "answer": "d",
+      "a": "Continues to grow downwards",
+      "e": "The shoot grows in the direction of light.",
+      "table": null,
+      "qid": "biology-ch21-cell-100",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Monitoring airspace by detecting the low frequency humming of drones and aircraft is called:",
+      "options": {
+        "a": "Reverberation",
+        "b": "Ultrasonography",
+        "c": "Audio surveillance",
+        "d": "Echolocation"
+      },
+      "answer": "c",
+      "a": "Audio surveillance",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-59",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "In human blood, oxygen is carried by the:",
+      "options": {
+        "a": "Red blood corpuscles",
+        "b": "Lymph",
+        "c": "Platelets",
+        "d": "Plasma"
+      },
+      "answer": "a",
+      "a": "Red blood corpuscles",
+      "e": "Plasma transports food, carbon dioxide and nitrogenous wastes in dissolved form.",
+      "table": null,
+      "qid": "biology-ch26-respiration-72",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In a mixture of iron filings and sulfur powder, the iron is attracted by a magnet.\n(II) Iron sulfide is attracted by a magnet.\n(III) Iron and sulfur can no longer be separated in iron sulfide.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The pre-monsoon local thunderstorms known as Bordoisila occur in:",
+      "options": {
+        "a": "Kerala",
+        "b": "West Bengal",
+        "c": "Karnataka",
+        "d": "Assam"
+      },
+      "answer": "d",
+      "a": "Assam",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-104",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The character that unified the earlier 'Plants' kingdom, grouping bacteria, fungi, mosses, ferns, gymnosperms and angiosperms together, was the presence of:",
+      "options": {
+        "a": "Chlorophyll",
+        "b": "Autotrophic nutrition",
+        "c": "Cell wall",
+        "d": "Eukaryotic organisation"
+      },
+      "answer": "c",
+      "a": "Cell wall",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-112",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Milk of magnesia, a mild base used as an antacid, is chemically:",
+      "options": {
+        "a": "Sodium hydroxide",
+        "b": "Magnesium hydroxide",
+        "c": "Calcium hydroxide",
+        "d": "Magnesium oxide"
+      },
+      "answer": "b",
+      "a": "Magnesium hydroxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-36",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of work is:",
+      "options": {
+        "a": "pascal",
+        "b": "watt",
+        "c": "newton",
+        "d": "joule"
+      },
+      "answer": "d",
+      "a": "joule",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-1",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The structures that traverse the cell wall and middle lamella and connect the cytoplasm of neighbouring cells are:",
+      "options": {
+        "a": "Nuclear pores",
+        "b": "Plasmodesmata",
+        "c": "Cisternae",
+        "d": "Microvilli"
+      },
+      "answer": "b",
+      "a": "Plasmodesmata",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-26",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The regular, repeating three-dimensional arrangement of ions in an ionic compound is called its:",
+      "options": {
+        "a": "Crystal structure",
+        "b": "Formula unit",
+        "c": "Molecular formula",
+        "d": "Electronic configuration"
+      },
+      "answer": "a",
+      "a": "Crystal structure",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about a particle in uniform circular motion:\n(I) Its projection on the y-axis is also an SHM of the same amplitude as that on the x-axis.\n(II) The two projections differ in phase by π/2.\n(III) The force in linear SHM is the same as the centripetal force of the circular motion.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-19",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The species name of the Purple Frog, Nasikabatrachus sahyadrensis, refers to:",
+      "options": {
+        "a": "Sahyadri Hills",
+        "b": "Its discoverer",
+        "c": "Its purple colour",
+        "d": "The monsoon season"
+      },
+      "answer": "a",
+      "a": "Sahyadri Hills",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-178",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    }
+  ]
+}

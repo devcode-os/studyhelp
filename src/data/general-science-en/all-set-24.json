@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-set-24",
+  "chapterNumber": 24,
+  "title": "General Science Set 24",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The total mechanical energy of a particle in SHM with amplitude A and spring constant k is:",
+      "options": {
+        "a": "½kA²",
+        "b": "½kx²",
+        "c": "kA²",
+        "d": "½mA"
+      },
+      "answer": "a",
+      "a": "½kA²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-32",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Gonorrhoea – Bacterial infection\n(II) Syphilis – Bacterial infection\n(III) HIV-AIDS – Viral infection\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-85",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The large intestine contains bacteria that help in digestion.\n(II) Fibre-rich foods help the large intestine function properly by making the stool easier to pass.\n(III) The large intestine is called large because it is longer than the small intestine.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-46",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Joule's law, for a given resistance the heat produced is directly proportional to the ___ of the current:",
+      "options": {
+        "a": "Square",
+        "b": "Cube",
+        "c": "Square root",
+        "d": "Reciprocal"
+      },
+      "answer": "a",
+      "a": "Square",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-52",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a covalent compound?",
+      "options": {
+        "a": "MgO",
+        "b": "HCl",
+        "c": "NaCl",
+        "d": "CaCl₂"
+      },
+      "answer": "b",
+      "a": "HCl",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Which blood group has both A and B antigens on RBCs and no antibodies in plasma?",
+      "options": {
+        "a": "B",
+        "b": "AB",
+        "c": "O",
+        "d": "A"
+      },
+      "answer": "b",
+      "a": "AB",
+      "e": "",
+      "table": {
+        "headers": [
+          "Blood group",
+          "Antigens on RBCs",
+          "Antibodies in plasma",
+          "Donor's group"
+        ],
+        "rows": [
+          [
+            "A",
+            "A",
+            "anti-B",
+            "A, O"
+          ],
+          [
+            "B",
+            "B",
+            "anti-A",
+            "B, O"
+          ],
+          [
+            "AB",
+            "A, B",
+            "nil",
+            "AB, A, B, O"
+          ],
+          [
+            "O",
+            "nil",
+            "anti-A, B",
+            "O"
+          ]
+        ]
+      },
+      "qid": "biology-ch24-human-body-46",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a magnetic material?",
+      "options": {
+        "a": "Glass",
+        "b": "Rubber",
+        "c": "Wood",
+        "d": "Cobalt"
+      },
+      "answer": "d",
+      "a": "Cobalt",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-2",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Lime water turns milky when carbon dioxide reacts with calcium hydroxide to form:",
+      "options": {
+        "a": "Calcium carbonate",
+        "b": "Calcium sulfate",
+        "c": "Calcium chloride",
+        "d": "Calcium oxide"
+      },
+      "answer": "a",
+      "a": "Calcium carbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Ascariasis is caused by:",
+      "options": {
+        "a": "Protozoa",
+        "b": "Bacteria",
+        "c": "Roundworms",
+        "d": "Virus"
+      },
+      "answer": "c",
+      "a": "Roundworms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-7",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Thunder is produced due to:",
+      "options": {
+        "a": "condensation of water vapour",
+        "b": "friction between raindrops",
+        "c": "collision of clouds with mountains",
+        "d": "rapid heating and expansion of air by lightning"
+      },
+      "answer": "d",
+      "a": "rapid heating and expansion of air by lightning",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-102",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The colour of litmus solution when it is neither acidic nor basic is:",
+      "options": {
+        "a": "Blue",
+        "b": "Pink",
+        "c": "Purple",
+        "d": "Red"
+      },
+      "answer": "c",
+      "a": "Purple",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Hydra – Cnidaria\n(II) Earthworm – Annelida\n(III) Starfish – Mollusca\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Starfish belongs to Echinodermata.",
+      "table": null,
+      "qid": "biology-ch21-cell-153",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the work-energy theorem, the work done on an object equals:",
+      "options": {
+        "a": "the force applied on it",
+        "b": "change in its energy",
+        "c": "its initial energy",
+        "d": "its final kinetic energy"
+      },
+      "answer": "b",
+      "a": "change in its energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-9",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The floating grasslands called phumdis are located in:",
+      "options": {
+        "a": "Chilika Lake",
+        "b": "Pulicat Lake",
+        "c": "Loktak Lake",
+        "d": "Dal Lake"
+      },
+      "answer": "c",
+      "a": "Loktak Lake",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-174",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the laws of reflection, the incident ray, the normal at the point of incidence and the reflected ray all lie in the:",
+      "options": {
+        "a": "different planes",
+        "b": "parallel planes",
+        "c": "same plane",
+        "d": "perpendicular planes"
+      },
+      "answer": "c",
+      "a": "same plane",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-13",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The physical state of matter is determined by which property of its particles?",
+      "options": {
+        "a": "Mass",
+        "b": "Size",
+        "c": "Thermal energy",
+        "d": "Colour"
+      },
+      "answer": "c",
+      "a": "Thermal energy",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about scientific names:\n(I) The genus name begins with a capital letter.\n(II) The species name begins with a capital letter.\n(III) Scientific names are written in italics when printed.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-158",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Vibration refers to:",
+      "options": {
+        "a": "Random motion of particles in a medium",
+        "b": "Periodic to and fro motion of an object",
+        "c": "Rotation of an object about its axis",
+        "d": "Continuous motion of an object in one direction"
+      },
+      "answer": "b",
+      "a": "Periodic to and fro motion of an object",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-1",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1913, Henry Moseley observed regularities in the:",
+      "options": {
+        "a": "Cathode rays",
+        "b": "Characteristic X-ray spectra of the elements",
+        "c": "Scattering of alpha particles",
+        "d": "Emission spectra of hydrogen"
+      },
+      "answer": "b",
+      "a": "Characteristic X-ray spectra of the elements",
+      "e": "He showed that atomic number is a more fundamental property of an element than its atomic mass.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a part of the endomembrane system?",
+      "options": {
+        "a": "Golgi complex",
+        "b": "Mitochondria",
+        "c": "Lysosomes",
+        "d": "Vacuoles"
+      },
+      "answer": "b",
+      "a": "Mitochondria",
+      "e": "The functions of mitochondria, chloroplasts and peroxisomes are not coordinated with the endomembrane components.",
+      "table": null,
+      "qid": "biology-ch21-cell-29",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Two instruments playing the same note at the same loudness sound different because of their:",
+      "options": {
+        "a": "Amplitude",
+        "b": "Timbre",
+        "c": "Speed",
+        "d": "Pitch"
+      },
+      "answer": "b",
+      "a": "Timbre",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-42",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of conversion of water vapour into its liquid state is called:",
+      "options": {
+        "a": "Evaporation",
+        "b": "Condensation",
+        "c": "Freezing",
+        "d": "Melting"
+      },
+      "answer": "b",
+      "a": "Condensation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Satellite images can help detect which of the following?\n(I) Ocean temperature\n(II) Oil spills\n(III) Wind direction\nSelect the correct answer:",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-40",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The star nearest to us after the Sun is:",
+      "options": {
+        "a": "Polaris",
+        "b": "Proxima Centauri",
+        "c": "Sirius",
+        "d": "Betelgeuse"
+      },
+      "answer": "b",
+      "a": "Proxima Centauri",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-35",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "R.H. Whittaker proposed the Five Kingdom Classification in the year:",
+      "options": {
+        "a": "1977",
+        "b": "1938",
+        "c": "1866",
+        "d": "1969"
+      },
+      "answer": "d",
+      "a": "1969",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-111",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of elements presently known is:",
+      "options": {
+        "a": "118",
+        "b": "92",
+        "c": "108",
+        "d": "128"
+      },
+      "answer": "a",
+      "a": "118",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A species has 10 electrons, 8 protons and 8 neutrons. It is:",
+      "options": {
+        "a": "Ne",
+        "b": "O²⁻",
+        "c": "O²⁺",
+        "d": "F⁻"
+      },
+      "answer": "b",
+      "a": "O²⁻",
+      "e": "Z = 8 gives oxygen with A = 16; two excess electrons give a charge of 2−.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-51",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Water in the diet helps the body to:",
+      "options": {
+        "a": "Provide instant energy",
+        "b": "Store energy",
+        "c": "Build muscles",
+        "d": "Absorb nutrients from food"
+      },
+      "answer": "d",
+      "a": "Absorb nutrients from food",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-21",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "When a bar magnet is broken into smaller pieces, each piece has:",
+      "options": {
+        "a": "Only a North pole",
+        "b": "Only a South pole",
+        "c": "Both a North pole and a South pole",
+        "d": "No poles"
+      },
+      "answer": "c",
+      "a": "Both a North pole and a South pole",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-5",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Bleaching powder is used to:",
+      "options": {
+        "a": "Make drinking water free from germs",
+        "b": "Support fractured bones",
+        "c": "Remove permanent hardness of water",
+        "d": "Neutralise excess stomach acid"
+      },
+      "answer": "a",
+      "a": "Make drinking water free from germs",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-67",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    }
+  ]
+}

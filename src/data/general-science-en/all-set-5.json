@@ -1,0 +1,557 @@
+{
+  "slug": "general-science-set-5",
+  "chapterNumber": 5,
+  "title": "General Science Set 5",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The white precipitate formed on mixing sodium sulphate and barium chloride solutions is:",
+      "options": {
+        "a": "Barium sulphate",
+        "b": "Barium chloride",
+        "c": "Sodium sulphate",
+        "d": "Sodium chloride"
+      },
+      "answer": "a",
+      "a": "Barium sulphate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "A fuse protects a circuit by melting due to:",
+      "options": {
+        "a": "Earthing",
+        "b": "Parallel connection",
+        "c": "Joule heating",
+        "d": "Magnetic attraction"
+      },
+      "answer": "c",
+      "a": "Joule heating",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-48",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The fertilised egg in a flowering plant is called a:",
+      "options": {
+        "a": "Zygote",
+        "b": "Callus",
+        "c": "Spore",
+        "d": "Gamete"
+      },
+      "answer": "a",
+      "a": "Zygote",
+      "e": "It later develops into an embryo.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-54",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The mercury barometer was devised by the Italian scientist:",
+      "options": {
+        "a": "Daniel Bernoulli",
+        "b": "Archimedes",
+        "c": "Evangelista Torricelli",
+        "d": "George Stokes"
+      },
+      "answer": "c",
+      "a": "Evangelista Torricelli",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-62",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Spreading of the fragrance of an incense stick throughout a room shows that air particles are:",
+      "options": {
+        "a": "Stationary",
+        "b": "Closely packed",
+        "c": "Vibrating about fixed positions",
+        "d": "Constantly moving"
+      },
+      "answer": "d",
+      "a": "Constantly moving",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a secondary sexual characteristic?",
+      "options": {
+        "a": "Change in voice in boys",
+        "b": "Growth of moustache in boys",
+        "c": "Development of breasts in girls",
+        "d": "Onset of menstrual cycle"
+      },
+      "answer": "d",
+      "a": "Onset of menstrual cycle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-79",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The dimensional formula of force is:",
+      "options": {
+        "a": "[M L² T⁻²]",
+        "b": "[M L T⁻¹]",
+        "c": "[M L⁻¹ T⁻²]",
+        "d": "[M L T⁻²]"
+      },
+      "answer": "d",
+      "a": "[M L T⁻²]",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-24",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Fish – Gills\n(II) Earthworm – Moist skin\n(III) Tadpole – Lungs\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Tadpoles breathe through gills. Adult frogs use lungs on land and skin in water.",
+      "table": null,
+      "qid": "biology-ch26-respiration-58",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The most malleable metals are:",
+      "options": {
+        "a": "Copper and iron",
+        "b": "Lead and mercury",
+        "c": "Gold and silver",
+        "d": "Aluminium and zinc"
+      },
+      "answer": "c",
+      "a": "Gold and silver",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The straight line passing through the pole and the centre of curvature of a spherical mirror is called its:",
+      "options": {
+        "a": "principal axis",
+        "b": "normal",
+        "c": "radius",
+        "d": "aperture"
+      },
+      "answer": "a",
+      "a": "principal axis",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-20",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Mango – Tree\n(II) Rose – Shrub\n(III) Tomato – Shrub\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Tomato is a herb, with a small, soft, green stem.",
+      "table": null,
+      "qid": "biology-ch23-plants-4",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "A chemical reaction in which a substance reacts with oxygen and produces heat and/or light is called:",
+      "options": {
+        "a": "Weathering",
+        "b": "Condensation",
+        "c": "Combustion",
+        "d": "Erosion"
+      },
+      "answer": "c",
+      "a": "Combustion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "For resistors connected in parallel, the reciprocal of the equivalent resistance is equal to the:",
+      "options": {
+        "a": "Sum of their resistances",
+        "b": "Difference of their reciprocals",
+        "c": "Sum of their reciprocals",
+        "d": "Product of their resistances"
+      },
+      "answer": "c",
+      "a": "Sum of their reciprocals",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-44",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The bones of the skull are connected by:",
+      "options": {
+        "a": "Ball and socket joints",
+        "b": "Fixed joints",
+        "c": "Pivot joints",
+        "d": "Hinge joints"
+      },
+      "answer": "b",
+      "a": "Fixed joints",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-67",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The present system of atomic masses is based on the standard:",
+      "options": {
+        "a": "Carbon-14",
+        "b": "Carbon-12",
+        "c": "Hydrogen-1",
+        "d": "Oxygen-16"
+      },
+      "answer": "b",
+      "a": "Carbon-12",
+      "e": "This was agreed upon in 1961. Earlier, hydrogen was arbitrarily assigned a mass of 1.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-95",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "M. K. Vainu Bappu is known as the:",
+      "options": {
+        "a": "Father of modern Indian astronomy",
+        "b": "Father of the Indian space programme",
+        "c": "Father of Indian nuclear physics",
+        "d": "Father of the Indian National Calendar"
+      },
+      "answer": "a",
+      "a": "Father of modern Indian astronomy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-67",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Bilateral symmetry, with distinct head-tail and front-back regions, first appears in the phylum:",
+      "options": {
+        "a": "Nematoda",
+        "b": "Platyhelminthes",
+        "c": "Porifera",
+        "d": "Cnidaria"
+      },
+      "answer": "b",
+      "a": "Platyhelminthes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-148",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the Bohr–Bury rule, the maximum number of electrons in the M shell is:",
+      "options": {
+        "a": "2",
+        "b": "18",
+        "c": "8",
+        "d": "32"
+      },
+      "answer": "b",
+      "a": "18",
+      "e": "Maximum electrons = 2n² = 2 × 3² = 18.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-61",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The longest portion of a bacterial flagellum, extending from the cell surface to the outside, is the:",
+      "options": {
+        "a": "Basal body",
+        "b": "Hook",
+        "c": "Filament",
+        "d": "Pilus"
+      },
+      "answer": "c",
+      "a": "Filament",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-70",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular formula of cyclohexane is:",
+      "options": {
+        "a": "C₆H₁₄",
+        "b": "C₆H₁₀",
+        "c": "C₆H₆",
+        "d": "C₆H₁₂"
+      },
+      "answer": "d",
+      "a": "C₆H₁₂",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The changing shapes of the bright portion of the Moon as seen from the Earth are called:",
+      "options": {
+        "a": "Tides",
+        "b": "Phases",
+        "c": "Eclipses",
+        "d": "Revolutions"
+      },
+      "answer": "b",
+      "a": "Phases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-70",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Plant cells placed in a concentrated sugar solution lose water but do not shrink in overall size.\nReason (R): The rigid cell wall maintains the shape of the plant cell.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true, but R is false",
+        "d": "A is false, but R is true"
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A",
+      "e": "The inner content shrinks as the cell membrane pulls away from the cell wall.",
+      "table": null,
+      "qid": "biology-ch21-cell-28",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Suspended Particulate Matter (SPM) refers to:",
+      "options": {
+        "a": "Constituent particles of matter",
+        "b": "Molecules of water vapour",
+        "c": "Atoms of gases in air",
+        "d": "Tiny dust particles suspended in air"
+      },
+      "answer": "d",
+      "a": "Tiny dust particles suspended in air",
+      "e": "Even these dust particles are made up of a very large number of atoms and molecules.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The value of the solar constant is approximately:",
+      "options": {
+        "a": "1.0 kW m⁻²",
+        "b": "0.14 kW m⁻²",
+        "c": "14 kW m⁻²",
+        "d": "1.4 kW m⁻²"
+      },
+      "answer": "d",
+      "a": "1.4 kW m⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-100",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Nutritional requirements may vary with age.\n(II) Nutritional requirements may vary with physical activity.\n(III) Nutritional requirements are the same for everyone.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-37",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The acid present in tamarind is:",
+      "options": {
+        "a": "Tartaric acid",
+        "b": "Lactic acid",
+        "c": "Citric acid",
+        "d": "Acetic acid"
+      },
+      "answer": "a",
+      "a": "Tartaric acid",
+      "e": "Natural sources and their acids are:",
+      "table": {
+        "headers": [
+          "Natural source",
+          "Acid"
+        ],
+        "rows": [
+          [
+            "Vinegar",
+            "Acetic acid"
+          ],
+          [
+            "Orange",
+            "Citric acid"
+          ],
+          [
+            "Tamarind",
+            "Tartaric acid"
+          ],
+          [
+            "Tomato",
+            "Oxalic acid"
+          ],
+          [
+            "Sour milk (curd)",
+            "Lactic acid"
+          ],
+          [
+            "Lemon",
+            "Citric acid"
+          ],
+          [
+            "Ant sting",
+            "Methanoic acid"
+          ],
+          [
+            "Nettle sting",
+            "Methanoic acid"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch17-acids-bases-salts-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The gravitational potential at a point due to the Earth is defined as the potential energy of:",
+      "options": {
+        "a": "A particle of unit charge at that point",
+        "b": "Any particle at that point",
+        "c": "A particle of unit mass at that point",
+        "d": "A particle of the mass of the Earth at that point"
+      },
+      "answer": "c",
+      "a": "A particle of unit mass at that point",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-13",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Water covers approximately what percentage of the Earth's surface?",
+      "options": {
+        "a": "80",
+        "b": "70",
+        "c": "50",
+        "d": "60"
+      },
+      "answer": "b",
+      "a": "70",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-11",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "For a satellite in a circular orbit around the Earth, as the height above the surface increases, the orbital speed:",
+      "options": {
+        "a": "Decreases",
+        "b": "Increases",
+        "c": "First increases and then decreases",
+        "d": "Remains constant"
+      },
+      "answer": "a",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-19",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular formula of benzene is:",
+      "options": {
+        "a": "C₆H₁₄",
+        "b": "C₆H₆",
+        "c": "C₆H₁₂",
+        "d": "C₅H₁₀"
+      },
+      "answer": "b",
+      "a": "C₆H₆",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    }
+  ]
+}

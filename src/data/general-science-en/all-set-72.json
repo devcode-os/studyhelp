@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-72",
+  "chapterNumber": 72,
+  "title": "General Science Set 72",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The molar specific heat capacity of a gas at constant volume is denoted by:",
+      "options": {
+        "a": "Cv",
+        "b": "L",
+        "c": "Cp",
+        "d": "S"
+      },
+      "answer": "a",
+      "a": "Cv",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-38",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Fermentation of molasses obtained from sugarcane juice gives:",
+      "options": {
+        "a": "Ethanoic acid",
+        "b": "Ethanol",
+        "c": "Methanol",
+        "d": "Ethene"
+      },
+      "answer": "b",
+      "a": "Ethanol",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-66",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following shows the correct hierarchy of organisation in multicellular organisms?",
+      "options": {
+        "a": "Tissue → Cell → Organ → Organ system → Organism",
+        "b": "Cell → Tissue → Organ → Organ system → Organism",
+        "c": "Cell → Tissue → Organ system → Organ → Organism",
+        "d": "Cell → Organ → Tissue → Organ system → Organism"
+      },
+      "answer": "b",
+      "a": "Cell → Tissue → Organ → Organ system → Organism",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-1",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The full form of SONAR is:",
+      "options": {
+        "a": "Sound Navigation and Ranging",
+        "b": "Sound Network and Ranging",
+        "c": "Sonic Navigation and Ranging",
+        "d": "Sonic Navigation and Radiating"
+      },
+      "answer": "a",
+      "a": "Sound Navigation and Ranging",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-55",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ernst Haeckel – Three kingdom system\n(II) Herbert F. Copeland – Five kingdom system\n(III) Carolus Linnaeus – Two kingdom system\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "Copeland proposed the four kingdom system.",
+      "table": null,
+      "qid": "biology-ch21-cell-110",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction 2Na + H₂ → 2NaH, sodium is oxidised because:",
+      "options": {
+        "a": "It gains electrons",
+        "b": "Hydrogen is removed from it",
+        "c": "It loses electrons",
+        "d": "Oxygen is added to it"
+      },
+      "answer": "c",
+      "a": "It loses electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The boiling point of water is raised inside a pressure cooker by increasing the:",
+      "options": {
+        "a": "mass",
+        "b": "pressure",
+        "c": "altitude",
+        "d": "volume"
+      },
+      "answer": "b",
+      "a": "pressure",
+      "e": "At high altitudes the atmospheric pressure is lower, so the boiling point is lower and cooking is difficult.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-47",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The tiny pores on the surface of leaves through which gaseous exchange takes place are called:",
+      "options": {
+        "a": "Villi",
+        "b": "Gills",
+        "c": "Alveoli",
+        "d": "Stomata"
+      },
+      "answer": "d",
+      "a": "Stomata",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-12",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Objects that emit their own light are called:",
+      "options": {
+        "a": "translucent objects",
+        "b": "transparent objects",
+        "c": "luminous objects",
+        "d": "opaque objects"
+      },
+      "answer": "c",
+      "a": "luminous objects",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-1",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Mendeleev left several gaps in his table because he proposed that some elements were still:",
+      "options": {
+        "a": "Undiscovered",
+        "b": "Synthetic",
+        "c": "Radioactive",
+        "d": "Gaseous"
+      },
+      "answer": "a",
+      "a": "Undiscovered",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Millets are also called:",
+      "options": {
+        "a": "Junk cereals",
+        "b": "Nutri-cereals",
+        "c": "Protective cereals",
+        "d": "Fortified cereals"
+      },
+      "answer": "b",
+      "a": "Nutri-cereals",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-40",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "A mass of 6.28 g occupies a volume of 2.5 cm³. The density, to the correct number of significant figures, is:",
+      "options": {
+        "a": "2.512 g cm⁻³",
+        "b": "3 g cm⁻³",
+        "c": "2.51 g cm⁻³",
+        "d": "2.5 g cm⁻³"
+      },
+      "answer": "d",
+      "a": "2.5 g cm⁻³",
+      "e": "6.28/2.5 = 2.512. The result keeps two significant figures, as in the least precise value.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-20",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Dalton's atomic theory could not explain the:",
+      "options": {
+        "a": "Reorganisation of atoms in chemical reactions",
+        "b": "Laws of gaseous volumes",
+        "c": "Laws of chemical combination",
+        "d": "Combination of atoms in a fixed ratio in compounds"
+      },
+      "answer": "b",
+      "a": "Laws of gaseous volumes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-92",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "One parent cell undergoing meiosis forms how many daughter cells?",
+      "options": {
+        "a": "4",
+        "b": "2",
+        "c": "3",
+        "d": "8"
+      },
+      "answer": "a",
+      "a": "4",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-84",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The dimensions of pressure are:",
+      "options": {
+        "a": "[MLT⁻²]",
+        "b": "[ML⁻³]",
+        "c": "[ML⁻¹T⁻²]",
+        "d": "[ML⁻¹T⁻¹]"
+      },
+      "answer": "c",
+      "a": "[ML⁻¹T⁻²]",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-49",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The normal systolic pressure is about:",
+      "options": {
+        "a": "100 mm Hg",
+        "b": "140 mm Hg",
+        "c": "120 mm Hg",
+        "d": "80 mm Hg"
+      },
+      "answer": "c",
+      "a": "120 mm Hg",
+      "e": "The normal diastolic pressure is about 80 mm Hg.",
+      "table": null,
+      "qid": "biology-ch26-respiration-80",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Medicines used for treating indigestion are called:",
+      "options": {
+        "a": "Analgesics",
+        "b": "Antacids",
+        "c": "Antibiotics",
+        "d": "Antiseptics"
+      },
+      "answer": "b",
+      "a": "Antacids",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following allows current to pass through it in one direction only?",
+      "options": {
+        "a": "LED",
+        "b": "Rheostat",
+        "c": "Incandescent lamp",
+        "d": "Nichrome wire"
+      },
+      "answer": "a",
+      "a": "LED",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-19",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Ranganathittu Bird Sanctuary, among the regions preserved through the efforts of Salim Ali, is in:",
+      "options": {
+        "a": "Bharatpur, Rajasthan",
+        "b": "Palakkad, Kerala",
+        "c": "Mandya, Karnataka",
+        "d": "Himachal Pradesh"
+      },
+      "answer": "c",
+      "a": "Mandya, Karnataka",
+      "e": "Keoladeo National Park in Bharatpur, Rajasthan, is the other example.",
+      "table": null,
+      "qid": "biology-ch23-plants-19",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The 'p' in pH stands for 'potenz', a German word meaning:",
+      "options": {
+        "a": "Purity",
+        "b": "Pressure",
+        "c": "Potential",
+        "d": "Power"
+      },
+      "answer": "d",
+      "a": "Power",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-47",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about energy in SHM:\n(I) Kinetic and potential energies are always positive.\n(II) At the extreme positions, the energy is entirely potential.\n(III) At the mean position, the energy is entirely potential.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-33",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Chulha – Traditional stove\n(II) Sil-batta – Stone grinder\n(III) Gas stove – Traditional stove\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-3",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Electricity from batteries is of a type called Direct Current.\n(II) Electricity from power plants at the wall socket is known as Alternating Current.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "Both I and II",
+        "d": "Neither I nor II"
+      },
+      "answer": "c",
+      "a": "Both I and II",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-24",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A solution that cannot dissolve any more solute at a given temperature is called:",
+      "options": {
+        "a": "Dilute solution",
+        "b": "Unsaturated solution",
+        "c": "Colloidal solution",
+        "d": "Saturated solution"
+      },
+      "answer": "d",
+      "a": "Saturated solution",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "On average, the adult human skeleton makes up about what percentage of body weight?",
+      "options": {
+        "a": "5 to 8 per cent",
+        "b": "25 to 30 per cent",
+        "c": "12 to 15 per cent",
+        "d": "40 to 50 per cent"
+      },
+      "answer": "c",
+      "a": "12 to 15 per cent",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-63",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Sound waves are:",
+      "options": {
+        "a": "Longitudinal waves",
+        "b": "Transverse waves",
+        "c": "Electromagnetic waves",
+        "d": "Both longitudinal and transverse waves"
+      },
+      "answer": "a",
+      "a": "Longitudinal waves",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-10",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The greatest number of individuals in an ecosystem is generally of:",
+      "options": {
+        "a": "Herbivores",
+        "b": "Carnivores",
+        "c": "Producers",
+        "d": "Decomposers"
+      },
+      "answer": "c",
+      "a": "Producers",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-19",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Following the prefix naming system, NH₃ is named:",
+      "options": {
+        "a": "Nitrogen monohydride",
+        "b": "Ammonia",
+        "c": "Nitrogen trihydride",
+        "d": "Trinitrogen hydride"
+      },
+      "answer": "c",
+      "a": "Nitrogen trihydride",
+      "e": "Ammonia is its common name.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A wire of length l and area of cross-section A has a resistance of 8 Ω. The resistance of another wire of the same material with length 2l and area of cross-section 4A is:",
+      "options": {
+        "a": "1 Ω",
+        "b": "32 Ω",
+        "c": "4 Ω",
+        "d": "16 Ω"
+      },
+      "answer": "c",
+      "a": "4 Ω",
+      "e": "R = ρl/A; new R = ρ(2l)/(4A) = (1/2) × 8 Ω = 4 Ω.",
+      "table": null,
+      "qid": "physics-ch7-electricity-39",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "In adolescent boys, the growth of the voice box may be seen as a bump in the throat called:",
+      "options": {
+        "a": "Adam's apple",
+        "b": "Tonsil",
+        "c": "Epiglottis",
+        "d": "Goitre"
+      },
+      "answer": "a",
+      "a": "Adam's apple",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-77",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

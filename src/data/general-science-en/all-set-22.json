@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-22",
+  "chapterNumber": 22,
+  "title": "General Science Set 22",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In plants, glucose is broken down during respiration in the presence of:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Chlorophyll",
+        "c": "Oxygen",
+        "d": "Starch"
+      },
+      "answer": "c",
+      "a": "Oxygen",
+      "e": "Carbon dioxide, water and energy are released.",
+      "table": null,
+      "qid": "biology-ch23-plants-54",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The gauge pressure at a depth of 5.0 m in water (density 1000 kg m⁻³, g = 10 m s⁻²) is:",
+      "options": {
+        "a": "1.5 × 10⁵ Pa",
+        "b": "5.0 × 10⁵ Pa",
+        "c": "5.0 × 10³ Pa",
+        "d": "5.0 × 10⁴ Pa"
+      },
+      "answer": "d",
+      "a": "5.0 × 10⁴ Pa",
+      "e": "ρgh = 1000 × 10 × 5.0 = 5.0 × 10⁴ Pa.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-59",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of elements known at present is:",
+      "options": {
+        "a": "94",
+        "b": "112",
+        "c": "118",
+        "d": "98"
+      },
+      "answer": "c",
+      "a": "118",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following shows the correct order of classification from the broadest to the most specific group?",
+      "options": {
+        "a": "Kingdom, Phylum, Order, Class, Family, Genus, Species",
+        "b": "Kingdom, Phylum, Class, Order, Family, Genus, Species",
+        "c": "Kingdom, Class, Phylum, Order, Family, Genus, Species",
+        "d": "Kingdom, Phylum, Class, Family, Order, Genus, Species"
+      },
+      "answer": "b",
+      "a": "Kingdom, Phylum, Class, Order, Family, Genus, Species",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-154",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The identity of an element is determined by its:",
+      "options": {
+        "a": "Number of nucleons",
+        "b": "Number of neutrons",
+        "c": "Mass number",
+        "d": "Atomic number"
+      },
+      "answer": "d",
+      "a": "Atomic number",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-48",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following correctly shows the sequence in the life cycle of a bean plant?",
+      "options": {
+        "a": "Seed → Leaves → Germination → Flowers → Fruits",
+        "b": "Seed → Germination → Leaves → Flowers → Fruits",
+        "c": "Seed → Germination → Flowers → Leaves → Fruits",
+        "d": "Germination → Seed → Leaves → Fruits → Flowers"
+      },
+      "answer": "b",
+      "a": "Seed → Germination → Leaves → Flowers → Fruits",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-101",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Cuprous – Cu⁺\n(II) Cupric – Cu²⁺\n(III) Ferrous – Fe³⁺\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Ferrous is Fe²⁺ and ferric is Fe³⁺.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic field pattern around a current-carrying solenoid is similar to that of a:",
+      "options": {
+        "a": "Horse-shoe magnet only",
+        "b": "Straight wire",
+        "c": "Circular loop",
+        "d": "Bar magnet"
+      },
+      "answer": "d",
+      "a": "Bar magnet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-32",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Menstrual pads should be changed in:",
+      "options": {
+        "a": "1–2 hours",
+        "b": "4–6 hours",
+        "c": "10–12 hours",
+        "d": "24 hours"
+      },
+      "answer": "b",
+      "a": "4–6 hours",
+      "e": "They should be changed more often if the flow is heavy.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-84",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following turns red litmus paper blue?",
+      "options": {
+        "a": "Baking soda solution",
+        "b": "Vinegar",
+        "c": "Tamarind water",
+        "d": "Lemon juice"
+      },
+      "answer": "a",
+      "a": "Baking soda solution",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Water flows out of a small hole in the side of an open tank, 1.8 m below the water surface. The speed of efflux (g = 10 m s⁻²) is:",
+      "options": {
+        "a": "36 m s⁻¹",
+        "b": "6 m s⁻¹",
+        "c": "3 m s⁻¹",
+        "d": "18 m s⁻¹"
+      },
+      "answer": "b",
+      "a": "6 m s⁻¹",
+      "e": "v = √(2gh) = √(2 × 10 × 1.8) = √36 = 6 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-80",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Which structure lies between each vertebra, acting as a cushion and allowing flexibility?",
+      "options": {
+        "a": "Cartilage disc",
+        "b": "Sternum",
+        "c": "Tendon",
+        "d": "Ligament"
+      },
+      "answer": "a",
+      "a": "Cartilage disc",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-72",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "A ramp 3.0 m long is used to raise an object through a height of 1.2 m. Ignoring friction, its mechanical advantage is:",
+      "options": {
+        "a": "0.4",
+        "b": "2.5",
+        "c": "3.6",
+        "d": "1.8"
+      },
+      "answer": "b",
+      "a": "2.5",
+      "e": "Mechanical advantage = L/h = 3.0 m ÷ 1.2 m = 2.5.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-43",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Steel is a mixture of iron and:",
+      "options": {
+        "a": "Chromium",
+        "b": "Nickel",
+        "c": "Carbon",
+        "d": "Zinc"
+      },
+      "answer": "c",
+      "a": "Carbon",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-79",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The expulsion of undigested waste through the anus is called:",
+      "options": {
+        "a": "Egestion",
+        "b": "Excretion",
+        "c": "Rumination",
+        "d": "Absorption"
+      },
+      "answer": "a",
+      "a": "Egestion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-41",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "National Space Day is celebrated in India on:",
+      "options": {
+        "a": "15 August",
+        "b": "23 August",
+        "c": "21 June",
+        "d": "12 April"
+      },
+      "answer": "b",
+      "a": "23 August",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-42",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The microscope of Robert Hooke magnified objects by about:",
+      "options": {
+        "a": "1,000 to 2,000 times",
+        "b": "10,00,000 times",
+        "c": "200 to 300 times",
+        "d": "20 to 30 times"
+      },
+      "answer": "c",
+      "a": "200 to 300 times",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-3",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Rubber is softer than iron and harder than:",
+      "options": {
+        "a": "Iron",
+        "b": "Stone",
+        "c": "Steel",
+        "d": "Sponge"
+      },
+      "answer": "d",
+      "a": "Sponge",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In a common type of bi-focal lens, the upper portion is a ___ lens and the lower portion is a ___ lens.",
+      "options": {
+        "a": "concave, concave",
+        "b": "concave, convex",
+        "c": "convex, convex",
+        "d": "convex, concave"
+      },
+      "answer": "b",
+      "a": "concave, convex",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-73",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In a typical 28-day menstrual cycle, ovulation takes place on day:",
+      "options": {
+        "a": "21",
+        "b": "28",
+        "c": "5",
+        "d": "14"
+      },
+      "answer": "d",
+      "a": "14",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-73",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Graphite is a conductor of electricity.\n(II) Iodine is a non-metal that is lustrous.\n(III) All metals exist as solids at room temperature.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Protons and neutrons present in the nucleus are collectively called:",
+      "options": {
+        "a": "Electrons",
+        "b": "Nucleons",
+        "c": "Isobars",
+        "d": "Isotopes"
+      },
+      "answer": "b",
+      "a": "Nucleons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-49",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The Rh antigen on human RBCs is similar to one present in:",
+      "options": {
+        "a": "Baboons",
+        "b": "Rhesus monkeys",
+        "c": "Chimpanzees",
+        "d": "Gorillas"
+      },
+      "answer": "b",
+      "a": "Rhesus monkeys",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-48",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Vegetable oils generally have long unsaturated carbon chains.\n(II) Animal fats generally have saturated carbon chains.\n(III) Saturated hydrocarbons readily undergo addition reactions.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The twinkling of stars is due to:",
+      "options": {
+        "a": "dispersion of starlight",
+        "b": "diffraction of starlight",
+        "c": "reflection of starlight",
+        "d": "atmospheric refraction of starlight"
+      },
+      "answer": "d",
+      "a": "atmospheric refraction of starlight",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-79",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Heart failure means the heart is not pumping blood effectively enough to meet the needs of the body.\n(II) Heart failure is the same as cardiac arrest.\n(III) Congestion of the lungs is one of the main symptoms of heart failure.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "I only",
+        "c": "II and III only",
+        "d": "I and II only"
+      },
+      "answer": "a",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-75",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Eclipses do not occur every month mainly because of the:",
+      "options": {
+        "a": "Rotation of the Moon on its axis",
+        "b": "Tilt of the Earth's axis",
+        "c": "Changing distance of the Earth from the Sun",
+        "d": "Small tilt of the Moon's orbit with respect to the Earth's orbit"
+      },
+      "answer": "d",
+      "a": "Small tilt of the Moon's orbit with respect to the Earth's orbit",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-68",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The sex of a human child is determined by the chromosome inherited from the:",
+      "options": {
+        "a": "Mother",
+        "b": "Father",
+        "c": "Both parents equally",
+        "d": "Neither parent"
+      },
+      "answer": "b",
+      "a": "Father",
+      "e": "Every child inherits X from the mother; a child receiving X from the father is a girl, and one receiving Y is a boy.",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-7",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which oxidation and reduction occur simultaneously are called:",
+      "options": {
+        "a": "Redox reactions",
+        "b": "Combination reactions only",
+        "c": "Precipitation reactions",
+        "d": "Displacement reactions only"
+      },
+      "answer": "a",
+      "a": "Redox reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple pendulum takes 27 s to complete 15 oscillations. Its time period is:",
+      "options": {
+        "a": "405 s",
+        "b": "0.56 s",
+        "c": "12 s",
+        "d": "1.8 s"
+      },
+      "answer": "d",
+      "a": "1.8 s",
+      "e": "27 s / 15 = 1.8 s.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-43",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    }
+  ]
+}

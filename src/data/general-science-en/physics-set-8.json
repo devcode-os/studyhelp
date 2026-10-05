@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-8",
+  "chapterNumber": 8,
+  "title": "Physics Set 8",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "After one complete revolution on a circular path of radius R, the displacement is:",
+      "options": {
+        "a": "πR",
+        "b": "zero",
+        "c": "2R",
+        "d": "2πR"
+      },
+      "answer": "b",
+      "a": "zero",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-45",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about shadows:\n(I) Opaque objects form darker shadows.\n(II) Translucent objects form lighter shadows.\n(III) Changing the colour of an opaque object changes the colour of its shadow.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-5",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "If the resistance of a conductor is doubled while the potential difference across it is unchanged, the current through it:",
+      "options": {
+        "a": "Becomes half",
+        "b": "Doubles",
+        "c": "Remains the same",
+        "d": "Becomes four times"
+      },
+      "answer": "a",
+      "a": "Becomes half",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-29",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A ray of light travelling obliquely from a rarer medium into a denser medium:",
+      "options": {
+        "a": "does not bend",
+        "b": "bends towards the normal",
+        "c": "bends away from the normal",
+        "d": "is reflected back"
+      },
+      "answer": "b",
+      "a": "bends towards the normal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-39",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The Kodaikanal Solar Observatory was established in:",
+      "options": {
+        "a": "1952",
+        "b": "1956",
+        "c": "1899",
+        "d": "1987"
+      },
+      "answer": "c",
+      "a": "1899",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-66",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The Himalayan glaciers and polar ice caps belong to the:",
+      "options": {
+        "a": "Biosphere",
+        "b": "Hydrosphere",
+        "c": "Cryosphere",
+        "d": "Geosphere"
+      },
+      "answer": "c",
+      "a": "Cryosphere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-92",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The emissivity of a perfect radiator is:",
+      "options": {
+        "a": "0.97",
+        "b": "0",
+        "c": "0.4",
+        "d": "1"
+      },
+      "answer": "d",
+      "a": "1",
+      "e": "The emissivity of a tungsten lamp is about 0.4.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-77",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Thomson's model of the atom is also called the:",
+      "options": {
+        "a": "Nuclear model",
+        "b": "Shell model",
+        "c": "Planetary model",
+        "d": "Plum pudding model"
+      },
+      "answer": "d",
+      "a": "Plum pudding model",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-26",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "A block of mass 0.5 kg attached to a spring of constant 200 N m⁻¹ oscillates on a frictionless surface. Its time period is approximately:",
+      "options": {
+        "a": "6.28 s",
+        "b": "0.05 s",
+        "c": "3.14 s",
+        "d": "0.31 s"
+      },
+      "answer": "d",
+      "a": "0.31 s",
+      "e": "T = 2π√(m/k) = 2π√(0.5/200) s ≈ 0.31 s.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-27",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "All isotopes of an element show the same chemical behaviour because they have the same number of:",
+      "options": {
+        "a": "Electrons",
+        "b": "Nucleons",
+        "c": "Neutrons",
+        "d": "Mass"
+      },
+      "answer": "a",
+      "a": "Electrons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-56",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "For a satellite in a circular orbit, the ratio of its kinetic energy to the magnitude of its potential energy is:",
+      "options": {
+        "a": "1:4",
+        "b": "1:2",
+        "c": "2:1",
+        "d": "1:1"
+      },
+      "answer": "b",
+      "a": "1:2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-22",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The notation K, L, M, N for shells originated from the X-ray experiments of:",
+      "options": {
+        "a": "Wilhelm Röntgen",
+        "b": "Ernest Rutherford",
+        "c": "Charles Barkla",
+        "d": "Niels Bohr"
+      },
+      "answer": "c",
+      "a": "Charles Barkla",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-44",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The charge possessed by an electron is:",
+      "options": {
+        "a": "+1.6 × 10⁻¹⁹ C",
+        "b": "+6 × 10¹⁸ C",
+        "c": "−6 × 10⁻¹⁹ C",
+        "d": "−1.6 × 10⁻¹⁹ C"
+      },
+      "answer": "d",
+      "a": "−1.6 × 10⁻¹⁹ C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-6",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of constellations officially listed by the International Astronomical Union is:",
+      "options": {
+        "a": "88",
+        "b": "108",
+        "c": "12",
+        "d": "48"
+      },
+      "answer": "a",
+      "a": "88",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-27",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of force is:",
+      "options": {
+        "a": "joule",
+        "b": "watt",
+        "c": "newton",
+        "d": "pascal"
+      },
+      "answer": "c",
+      "a": "newton",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-1",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A net force of 30 N acts on an object of mass 6 kg initially at rest. Its acceleration is:",
+      "options": {
+        "a": "24 m s⁻²",
+        "b": "0.2 m s⁻²",
+        "c": "5 m s⁻²",
+        "d": "180 m s⁻²"
+      },
+      "answer": "c",
+      "a": "5 m s⁻²",
+      "e": "a = F/m = 30 N ÷ 6 kg = 5 m s⁻².",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-15",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The gauge pressure at a depth of 5.0 m in water (density 1000 kg m⁻³, g = 10 m s⁻²) is:",
+      "options": {
+        "a": "1.5 × 10⁵ Pa",
+        "b": "5.0 × 10⁵ Pa",
+        "c": "5.0 × 10³ Pa",
+        "d": "5.0 × 10⁴ Pa"
+      },
+      "answer": "d",
+      "a": "5.0 × 10⁴ Pa",
+      "e": "ρgh = 1000 × 10 × 5.0 = 5.0 × 10⁴ Pa.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-59",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The identity of an element is determined by its:",
+      "options": {
+        "a": "Number of nucleons",
+        "b": "Number of neutrons",
+        "c": "Mass number",
+        "d": "Atomic number"
+      },
+      "answer": "d",
+      "a": "Atomic number",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-48",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic field pattern around a current-carrying solenoid is similar to that of a:",
+      "options": {
+        "a": "Horse-shoe magnet only",
+        "b": "Straight wire",
+        "c": "Circular loop",
+        "d": "Bar magnet"
+      },
+      "answer": "d",
+      "a": "Bar magnet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-32",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Water flows out of a small hole in the side of an open tank, 1.8 m below the water surface. The speed of efflux (g = 10 m s⁻²) is:",
+      "options": {
+        "a": "36 m s⁻¹",
+        "b": "6 m s⁻¹",
+        "c": "3 m s⁻¹",
+        "d": "18 m s⁻¹"
+      },
+      "answer": "b",
+      "a": "6 m s⁻¹",
+      "e": "v = √(2gh) = √(2 × 10 × 1.8) = √36 = 6 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-80",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A ramp 3.0 m long is used to raise an object through a height of 1.2 m. Ignoring friction, its mechanical advantage is:",
+      "options": {
+        "a": "0.4",
+        "b": "2.5",
+        "c": "3.6",
+        "d": "1.8"
+      },
+      "answer": "b",
+      "a": "2.5",
+      "e": "Mechanical advantage = L/h = 3.0 m ÷ 1.2 m = 2.5.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-43",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "National Space Day is celebrated in India on:",
+      "options": {
+        "a": "15 August",
+        "b": "23 August",
+        "c": "21 June",
+        "d": "12 April"
+      },
+      "answer": "b",
+      "a": "23 August",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-42",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In a common type of bi-focal lens, the upper portion is a ___ lens and the lower portion is a ___ lens.",
+      "options": {
+        "a": "concave, concave",
+        "b": "concave, convex",
+        "c": "convex, convex",
+        "d": "convex, concave"
+      },
+      "answer": "b",
+      "a": "concave, convex",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-73",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Protons and neutrons present in the nucleus are collectively called:",
+      "options": {
+        "a": "Electrons",
+        "b": "Nucleons",
+        "c": "Isobars",
+        "d": "Isotopes"
+      },
+      "answer": "b",
+      "a": "Nucleons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-49",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The twinkling of stars is due to:",
+      "options": {
+        "a": "dispersion of starlight",
+        "b": "diffraction of starlight",
+        "c": "reflection of starlight",
+        "d": "atmospheric refraction of starlight"
+      },
+      "answer": "d",
+      "a": "atmospheric refraction of starlight",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-79",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Eclipses do not occur every month mainly because of the:",
+      "options": {
+        "a": "Rotation of the Moon on its axis",
+        "b": "Tilt of the Earth's axis",
+        "c": "Changing distance of the Earth from the Sun",
+        "d": "Small tilt of the Moon's orbit with respect to the Earth's orbit"
+      },
+      "answer": "d",
+      "a": "Small tilt of the Moon's orbit with respect to the Earth's orbit",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-68",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple pendulum takes 27 s to complete 15 oscillations. Its time period is:",
+      "options": {
+        "a": "405 s",
+        "b": "0.56 s",
+        "c": "12 s",
+        "d": "1.8 s"
+      },
+      "answer": "d",
+      "a": "1.8 s",
+      "e": "27 s / 15 = 1.8 s.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-43",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "In Thomson's model of the atom, the positive charge is:",
+      "options": {
+        "a": "Distributed in shells",
+        "b": "Concentrated at the centre",
+        "c": "Uniformly distributed in a sphere",
+        "d": "Absent"
+      },
+      "answer": "c",
+      "a": "Uniformly distributed in a sphere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-25",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The expression U = mgh for potential energy is valid only:",
+      "options": {
+        "a": "far from the Earth's surface",
+        "b": "near the Earth's surface",
+        "c": "when the object is moving",
+        "d": "inside the Earth"
+      },
+      "answer": "b",
+      "a": "near the Earth's surface",
+      "e": "Away from the Earth's surface, g decreases.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-34",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "In the right-hand thumb rule for a straight current-carrying conductor, the thumb points in the direction of the:",
+      "options": {
+        "a": "Magnetic field",
+        "b": "Current",
+        "c": "Motion of electrons",
+        "d": "Force on the conductor"
+      },
+      "answer": "b",
+      "a": "Current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-26",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    }
+  ]
+}

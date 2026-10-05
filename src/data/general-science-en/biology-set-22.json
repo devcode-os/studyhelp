@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-biology-set-22",
+  "chapterNumber": 22,
+  "title": "Biology Set 22",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "In asexual reproduction, minor variations arise mainly due to:",
+      "options": {
+        "a": "Small inaccuracies in DNA copying",
+        "b": "Environmental selection",
+        "c": "Sexual recombination",
+        "d": "Pairing of chromosomes"
+      },
+      "answer": "a",
+      "a": "Small inaccuracies in DNA copying",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-1",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "In plants, which gas can be considered a waste product of photosynthesis?",
+      "options": {
+        "a": "Hydrogen",
+        "b": "Carbon dioxide",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-103",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Curd turns sour due to the production of:",
+      "options": {
+        "a": "Alcohol",
+        "b": "Lactic acid",
+        "c": "Carbon dioxide",
+        "d": "Methane"
+      },
+      "answer": "b",
+      "a": "Lactic acid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-27",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Water covers about ______ of the Earth's surface.",
+      "options": {
+        "a": "three-fourths",
+        "b": "one-fourth",
+        "c": "one-half",
+        "d": "two-thirds"
+      },
+      "answer": "d",
+      "a": "two-thirds",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-23",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The 'food factories' of plants are the:",
+      "options": {
+        "a": "Roots",
+        "b": "Flowers",
+        "c": "Leaves",
+        "d": "Stems"
+      },
+      "answer": "c",
+      "a": "Leaves",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-43",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "In the human erythrocyte membrane, the approximate percentage of protein is:",
+      "options": {
+        "a": "25 per cent",
+        "b": "52 per cent",
+        "c": "40 per cent",
+        "d": "60 per cent"
+      },
+      "answer": "b",
+      "a": "52 per cent",
+      "e": "Lipids make up approximately 40 per cent.",
+      "table": null,
+      "qid": "biology-ch21-cell-20",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The central nervous system consists of:",
+      "options": {
+        "a": "Brain and spinal cord",
+        "b": "Spinal cord and spinal nerves",
+        "c": "Cranial nerves and spinal nerves",
+        "d": "Brain and cranial nerves"
+      },
+      "answer": "a",
+      "a": "Brain and spinal cord",
+      "e": "The peripheral nervous system consists of cranial nerves and spinal nerves.",
+      "table": null,
+      "qid": "biology-ch24-human-body-6",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The largest isolated single cell is the egg of:",
+      "options": {
+        "a": "Ostrich",
+        "b": "Hen",
+        "c": "Frog",
+        "d": "Fish"
+      },
+      "answer": "a",
+      "a": "Ostrich",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-78",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "If the alveolar surface were spread out, it would cover about:",
+      "options": {
+        "a": "160 m²",
+        "b": "8 m²",
+        "c": "40 m²",
+        "d": "80 m²"
+      },
+      "answer": "d",
+      "a": "80 m²",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-65",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The Agariyas, a tribal community, practise salt farming in the:",
+      "options": {
+        "a": "Little Rann of Kutch",
+        "b": "Thar Desert",
+        "c": "Chilika Lake",
+        "d": "Sambhar Lake"
+      },
+      "answer": "a",
+      "a": "Little Rann of Kutch",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-16",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "A blue-black colour on adding diluted iodine solution to a food item indicates the presence of:",
+      "options": {
+        "a": "Starch",
+        "b": "Fat",
+        "c": "Protein",
+        "d": "Vitamin C"
+      },
+      "answer": "a",
+      "a": "Starch",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-33",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Beriberi is caused by the deficiency of:",
+      "options": {
+        "a": "Iron",
+        "b": "Calcium",
+        "c": "Vitamin C",
+        "d": "Vitamin B1"
+      },
+      "answer": "d",
+      "a": "Vitamin B1",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-27",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The outermost layer of the plant body is formed by:",
+      "options": {
+        "a": "Phloem",
+        "b": "Epidermis",
+        "c": "Collenchyma",
+        "d": "Xylem"
+      },
+      "answer": "b",
+      "a": "Epidermis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-16",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The fungi known as imperfect fungi, because only asexual or vegetative phases were known, belong to:",
+      "options": {
+        "a": "Basidiomycetes",
+        "b": "Ascomycetes",
+        "c": "Deuteromycetes",
+        "d": "Phycomycetes"
+      },
+      "answer": "c",
+      "a": "Deuteromycetes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-129",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In most mammals, the zygote develops into an embryo:",
+      "options": {
+        "a": "in the soil",
+        "b": "inside the body of the female",
+        "c": "inside an egg laid by the female",
+        "d": "in water outside the body"
+      },
+      "answer": "b",
+      "a": "inside the body of the female",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-31",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Without an atmosphere, the Earth would become too cold.\nReason (R): The greenhouse effect traps part of the heat radiated by the Earth.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true, but R is false",
+        "d": "A is false, but R is true"
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-18",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The rings in the throat that ensure the air-passage does not collapse are made of:",
+      "options": {
+        "a": "Bone",
+        "b": "Collagen",
+        "c": "Muscle",
+        "d": "Cartilage"
+      },
+      "answer": "d",
+      "a": "Cartilage",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-59",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Plant cells possess cell walls, plastids and a large central vacuole.\n(II) Animal cells have centrioles, which are absent in almost all plant cells.\n(III) Animal cells possess plastids.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-81",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Root hairs increase the surface area for:",
+      "options": {
+        "a": "Gaseous exchange",
+        "b": "Transpiration",
+        "c": "Absorption of water and minerals",
+        "d": "Photosynthesis"
+      },
+      "answer": "c",
+      "a": "Absorption of water and minerals",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-18",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "India's Mars Orbiter Mission, Mangalyaan, was launched by ISRO in:",
+      "options": {
+        "a": "2013",
+        "b": "2011",
+        "c": "2019",
+        "d": "2008"
+      },
+      "answer": "a",
+      "a": "2013",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-8",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Dedifferentiation is the process in which mature cells:",
+      "options": {
+        "a": "Form cork",
+        "b": "Lose their nuclei",
+        "c": "Regain the ability to divide",
+        "d": "Become specialised"
+      },
+      "answer": "c",
+      "a": "Regain the ability to divide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-38",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy released when the terminal phosphate linkage in ATP is broken using water is equivalent to:",
+      "options": {
+        "a": "305 kJ/mol",
+        "b": "30.5 kJ/mol",
+        "c": "12.5 kJ/mol",
+        "d": "3.05 kJ/mol"
+      },
+      "answer": "b",
+      "a": "30.5 kJ/mol",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-55",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In a prokaryotic cell, the region containing genetic material not enclosed by a membrane is called the:",
+      "options": {
+        "a": "Nucleoplasm",
+        "b": "Nucleus",
+        "c": "Nucleolus",
+        "d": "Nucleoid"
+      },
+      "answer": "d",
+      "a": "Nucleoid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-82",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The chamber in birds that breaks down food by contraction and relaxation of its walls, often with the help of grit, is the:",
+      "options": {
+        "a": "Stomach",
+        "b": "Crop",
+        "c": "Rumen",
+        "d": "Gizzard"
+      },
+      "answer": "d",
+      "a": "Gizzard",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-43",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The conical shape and sloping branches of deodar trees help them to:",
+      "options": {
+        "a": "Resist heavy winds",
+        "b": "Absorb sunlight",
+        "c": "Let snow slide off easily",
+        "d": "Store water"
+      },
+      "answer": "c",
+      "a": "Let snow slide off easily",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-25",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "In In-vitro Fertilisation (IVF), the egg and sperm are combined:",
+      "options": {
+        "a": "Inside the ovary",
+        "b": "Inside the uterus",
+        "c": "Inside the oviduct",
+        "d": "Outside the female body"
+      },
+      "answer": "d",
+      "a": "Outside the female body",
+      "e": "The fertilised egg is then implanted in the uterus.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-92",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The site of active ribosomal RNA synthesis is the:",
+      "options": {
+        "a": "Centrosome",
+        "b": "Lysosome",
+        "c": "Golgi apparatus",
+        "d": "Nucleolus"
+      },
+      "answer": "d",
+      "a": "Nucleolus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-59",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The process by which plants prepare food in the presence of sunlight and chlorophyll is called:",
+      "options": {
+        "a": "Photosynthesis",
+        "b": "Respiration",
+        "c": "Transpiration",
+        "d": "Excretion"
+      },
+      "answer": "a",
+      "a": "Photosynthesis",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-47",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The malarial parasite, Plasmodium, divides into many daughter cells simultaneously by:",
+      "options": {
+        "a": "Fragmentation",
+        "b": "Budding",
+        "c": "Multiple fission",
+        "d": "Binary fission"
+      },
+      "answer": "c",
+      "a": "Multiple fission",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-11",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Breastfeeding is essential for an infant because a mother's milk provides:",
+      "options": {
+        "a": "Complete nutrition",
+        "b": "Only minerals",
+        "c": "Only vitamins",
+        "d": "Only proteins"
+      },
+      "answer": "a",
+      "a": "Complete nutrition",
+      "e": "It also protects the infant from many diseases.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-95",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

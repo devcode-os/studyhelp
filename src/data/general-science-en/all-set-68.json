@@ -1,0 +1,536 @@
+{
+  "slug": "general-science-set-68",
+  "chapterNumber": 68,
+  "title": "General Science Set 68",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A steel rod is prevented from expanding while its temperature rises by 20 K. If αl = 1.2 × 10⁻⁵ K⁻¹ and Young's modulus Y = 2 × 10¹¹ N m⁻², the thermal stress developed is:",
+      "options": {
+        "a": "2.4 × 10⁷ N m⁻²",
+        "b": "9.6 × 10⁷ N m⁻²",
+        "c": "4.8 × 10⁶ N m⁻²",
+        "d": "4.8 × 10⁷ N m⁻²"
+      },
+      "answer": "d",
+      "a": "4.8 × 10⁷ N m⁻²",
+      "e": "Stress = Y αl ΔT = 2 × 10¹¹ × 1.2 × 10⁻⁵ × 20 = 4.8 × 10⁷ N m⁻².",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-30",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Earth's nearly circular orbit mainly ensures that:",
+      "options": {
+        "a": "the magnetic field stays strong",
+        "b": "the atmosphere remains thick",
+        "c": "days and nights are equal everywhere",
+        "d": "sunlight and heat remain nearly steady through the year"
+      },
+      "answer": "d",
+      "a": "sunlight and heat remain nearly steady through the year",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-16",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following uses:\n(I) Washing soda is used in glass, soap and paper industries.\n(II) Washing soda is used in the manufacture of borax.\n(III) Washing soda is used to make drinking water free from germs.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-73",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Magnetic field lines are closed curves.\n(II) The field lines are crowded where the magnetic field is stronger.\n(III) Two magnetic field lines can cross each other near the poles.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-20",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a parasitic plant?",
+      "options": {
+        "a": "Drosera",
+        "b": "Venus fly trap",
+        "c": "Cuscuta",
+        "d": "Bladderwort"
+      },
+      "answer": "c",
+      "a": "Cuscuta",
+      "e": "Bladderwort and Venus fly trap are insectivorous plants.",
+      "table": null,
+      "qid": "biology-ch21-cell-134",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In traditional Indian measurement, 'angula' refers to:",
+      "options": {
+        "a": "stride",
+        "b": "foot length",
+        "c": "arm length",
+        "d": "finger width"
+      },
+      "answer": "d",
+      "a": "finger width",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-13",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula of magnesium hydroxide is:",
+      "options": {
+        "a": "MgOH₂",
+        "b": "Mg(OH)₂",
+        "c": "Mg₂(OH)",
+        "d": "Mg₂OH₂"
+      },
+      "answer": "b",
+      "a": "Mg(OH)₂",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Water and minerals are transported from the roots to the leaves and other parts of the plant through the:",
+      "options": {
+        "a": "Cuticle",
+        "b": "Phloem",
+        "c": "Xylem",
+        "d": "Stomata"
+      },
+      "answer": "c",
+      "a": "Xylem",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-52",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "With the potential energy taken as zero at infinite separation, the gravitational potential energy of two particles of masses m₁ and m₂ separated by a distance r is:",
+      "options": {
+        "a": "+Gm₁m₂/r²",
+        "b": "−Gm₁m₂/r²",
+        "c": "+Gm₁m₂/r",
+        "d": "−Gm₁m₂/r"
+      },
+      "answer": "d",
+      "a": "−Gm₁m₂/r",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-12",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The scientific name of the lion is:",
+      "options": {
+        "a": "Pisum sativum",
+        "b": "Mangifera indica",
+        "c": "Panthera tigris",
+        "d": "Panthera leo"
+      },
+      "answer": "d",
+      "a": "Panthera leo",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-159",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The electrolysis of aqueous sodium chloride (brine) is called the:",
+      "options": {
+        "a": "Chlor-alkali process",
+        "b": "Recrystallisation process",
+        "c": "Crystallisation process",
+        "d": "Neutralisation process"
+      },
+      "answer": "a",
+      "a": "Chlor-alkali process",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Maxwell's electromagnetic theory, an accelerated charged particle emits:",
+      "options": {
+        "a": "Canal rays",
+        "b": "Cathode rays",
+        "c": "Electromagnetic radiation",
+        "d": "Alpha particles"
+      },
+      "answer": "c",
+      "a": "Electromagnetic radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-37",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Some leaves appear red, violet or brown because they contain more of:",
+      "options": {
+        "a": "Starch than glucose",
+        "b": "Coloured pigments than chlorophyll",
+        "c": "Water than chlorophyll",
+        "d": "Cutin than chlorophyll"
+      },
+      "answer": "b",
+      "a": "Coloured pigments than chlorophyll",
+      "e": "This hides the green colour, but starch can still be detected by the iodine test.",
+      "table": null,
+      "qid": "biology-ch23-plants-61",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The ratio of the number of hydrogen atoms to oxygen atoms in water is:",
+      "options": {
+        "a": "2:1",
+        "b": "1:1",
+        "c": "8:1",
+        "d": "1:2"
+      },
+      "answer": "a",
+      "a": "2:1",
+      "e": "Sodium chloride has sodium and chlorine particles in a 1:1 ratio.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The slope of a velocity-time graph gives:",
+      "options": {
+        "a": "speed",
+        "b": "distance",
+        "c": "acceleration",
+        "d": "displacement"
+      },
+      "answer": "c",
+      "a": "acceleration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-38",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "PPLO stands for:",
+      "options": {
+        "a": "Pathogenic Pleuro Lung Organisms",
+        "b": "Protein Producing Lipid Organisms",
+        "c": "Pleuro Pneumonia Like Organisms",
+        "d": "Primitive Prokaryotic Living Organisms"
+      },
+      "answer": "c",
+      "a": "Pleuro Pneumonia Like Organisms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-75",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of resistance is:",
+      "options": {
+        "a": "Coulomb",
+        "b": "Watt",
+        "c": "Ohm",
+        "d": "Ampere"
+      },
+      "answer": "c",
+      "a": "Ohm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-27",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction between an acid and a base to give a salt and water is called:",
+      "options": {
+        "a": "Neutralisation",
+        "b": "Dilution",
+        "c": "Displacement",
+        "d": "Combustion"
+      },
+      "answer": "a",
+      "a": "Neutralisation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pollination strategy releases more pollen grains per flower?",
+      "options": {
+        "a": "Insect pollination",
+        "b": "Pollination by water",
+        "c": "Pollination by birds",
+        "d": "Wind pollination"
+      },
+      "answer": "d",
+      "a": "Wind pollination",
+      "e": "",
+      "table": {
+        "headers": [
+          "Pollination strategy",
+          "Approximate pollen grains released per flower",
+          "Estimated average number of seeds formed"
+        ],
+        "rows": [
+          [
+            "Wind-pollinated grasses (maize, wheat)",
+            "5,00,000–10,00,000",
+            "50–200"
+          ],
+          [
+            "Insect-pollinated plants (sunflower)",
+            "20,000–40,000",
+            "800–1,000"
+          ]
+        ]
+      },
+      "qid": "biology-ch27-reproduction-52",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The lens formula relating object distance u, image distance v and focal length f is:",
+      "options": {
+        "a": "v − u = f",
+        "b": "1/u − 1/v = 1/f",
+        "c": "1/v + 1/u = 1/f",
+        "d": "1/v − 1/u = 1/f"
+      },
+      "answer": "d",
+      "a": "1/v − 1/u = 1/f",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-50",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In the starch experiment, caustic soda (sodium hydroxide) is used to absorb:",
+      "options": {
+        "a": "Oxygen",
+        "b": "Nitrogen",
+        "c": "Water vapour",
+        "d": "Carbon dioxide"
+      },
+      "answer": "d",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-44",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The chemical formula of slaked lime is:",
+      "options": {
+        "a": "Ca(OH)₂",
+        "b": "CaCl₂",
+        "c": "CaO",
+        "d": "CaCO₃"
+      },
+      "answer": "a",
+      "a": "Ca(OH)₂",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Excess atmospheric CO₂ absorbed by the oceans makes sea water more:",
+      "options": {
+        "a": "Dense",
+        "b": "Alkaline",
+        "c": "Acidic",
+        "d": "Saline"
+      },
+      "answer": "c",
+      "a": "Acidic",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-124",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Iodised salt is common salt mixed with required quantities of salts of:",
+      "options": {
+        "a": "Iron",
+        "b": "Iodine",
+        "c": "Calcium",
+        "d": "Potassium"
+      },
+      "answer": "b",
+      "a": "Iodine",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-15",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Dalton presented his atomic theory in the year:",
+      "options": {
+        "a": "1808",
+        "b": "1793",
+        "c": "1811",
+        "d": "1789"
+      },
+      "answer": "a",
+      "a": "1808",
+      "e": "Dalton moved to Manchester in 1793.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Work done against which of the following forces does not result in storage of energy?",
+      "options": {
+        "a": "Electric force",
+        "b": "Frictional force",
+        "c": "Gravitational force",
+        "d": "Magnetic force"
+      },
+      "answer": "b",
+      "a": "Frictional force",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-18",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Muscle cell – Spindle-shaped\n(II) Nerve cell – Long and branched\n(III) Cheek cell – Spindle-shaped\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Cheek cells are thin and flat.",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-12",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "A cuboid-shaped box has length 20 cm, width 12 cm and height 3 cm. Its volume is:",
+      "options": {
+        "a": "35 cm³",
+        "b": "240 cm³",
+        "c": "360 cm³",
+        "d": "720 cm³"
+      },
+      "answer": "d",
+      "a": "720 cm³",
+      "e": "Volume = l × w × h = 20 cm × 12 cm × 3 cm = 720 cm³.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-81",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A freely suspended bar magnet comes to rest along the:",
+      "options": {
+        "a": "North–south direction",
+        "b": "North-east to south-west direction",
+        "c": "East–west direction",
+        "d": "Direction of its shape"
+      },
+      "answer": "a",
+      "a": "North–south direction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-6",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Transpiration helps in water transportation by creating a transpiration pull in the:",
+      "options": {
+        "a": "Xylem",
+        "b": "Cork",
+        "c": "Epidermis",
+        "d": "Phloem"
+      },
+      "answer": "a",
+      "a": "Xylem",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-20",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    }
+  ]
+}

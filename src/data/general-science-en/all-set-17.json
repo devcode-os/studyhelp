@@ -1,0 +1,546 @@
+{
+  "slug": "general-science-set-17",
+  "chapterNumber": 17,
+  "title": "General Science Set 17",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The chemical formula of gypsum is:",
+      "options": {
+        "a": "CaSO₄.½H₂O",
+        "b": "CuSO₄.5H₂O",
+        "c": "Na₂CO₃.10H₂O",
+        "d": "CaSO₄.2H₂O"
+      },
+      "answer": "d",
+      "a": "CaSO₄.2H₂O",
+      "e": "Salts with water of crystallisation:",
+      "table": {
+        "headers": [
+          "Salt",
+          "Formula",
+          "Water of crystallisation"
+        ],
+        "rows": [
+          [
+            "Hydrated copper sulphate",
+            "CuSO₄.5H₂O",
+            "5"
+          ],
+          [
+            "Washing soda",
+            "Na₂CO₃.10H₂O",
+            "10"
+          ],
+          [
+            "Gypsum",
+            "CaSO₄.2H₂O",
+            "2"
+          ],
+          [
+            "Plaster of Paris",
+            "CaSO₄.½H₂O",
+            "½"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch17-acids-bases-salts-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following festivals follows a solar sidereal calendar?",
+      "options": {
+        "a": "Diwali",
+        "b": "Eid-ul-Fitr",
+        "c": "Makar Sankranti",
+        "d": "Holi"
+      },
+      "answer": "c",
+      "a": "Makar Sankranti",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-87",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the plasma membrane:\n(I) Phospholipids are arranged in a bilayer with polar heads towards the outer sides.\n(II) The hydrophobic tails lie towards the inner part of the membrane.\n(III) Cholesterol is absent from the membrane.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-19",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "When detergent is dissolved in water, its angle of contact with fibres:",
+      "options": {
+        "a": "becomes obtuse",
+        "b": "becomes 180°",
+        "c": "becomes small",
+        "d": "remains unchanged"
+      },
+      "answer": "c",
+      "a": "becomes small",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-90",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The diameter of a human red blood cell is about:",
+      "options": {
+        "a": "7.0 µm",
+        "b": "0.7 µm",
+        "c": "700 µm",
+        "d": "70 µm"
+      },
+      "answer": "a",
+      "a": "7.0 µm",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-79",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In the long form of the periodic table, the horizontal rows are called:",
+      "options": {
+        "a": "Families",
+        "b": "Groups",
+        "c": "Blocks",
+        "d": "Periods"
+      },
+      "answer": "d",
+      "a": "Periods",
+      "e": "Mendeleev called the horizontal rows series.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Surface tension is numerically equal to:",
+      "options": {
+        "a": "surface energy per unit area",
+        "b": "force per unit volume",
+        "c": "force per unit area",
+        "d": "surface energy per unit length"
+      },
+      "answer": "a",
+      "a": "surface energy per unit area",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-88",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The jelly-like cluster of frog eggs seen near the edge of a pond is called:",
+      "options": {
+        "a": "Froglet",
+        "b": "Embryo",
+        "c": "Spawn",
+        "d": "Tadpole"
+      },
+      "answer": "c",
+      "a": "Spawn",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-106",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Litmus is extracted from:",
+      "options": {
+        "a": "Algae",
+        "b": "Lichens",
+        "c": "Fungi",
+        "d": "Mosses"
+      },
+      "answer": "b",
+      "a": "Lichens",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The periodic to and fro motion of an object about its mean position is called:",
+      "options": {
+        "a": "Vibration",
+        "b": "Reflection",
+        "c": "Reverberation",
+        "d": "Propagation"
+      },
+      "answer": "a",
+      "a": "Vibration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-8",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The tiger (Panthera tigris) belongs to the family:",
+      "options": {
+        "a": "Felidae",
+        "b": "Carnivora",
+        "c": "Panthera",
+        "d": "Fabaceae"
+      },
+      "answer": "a",
+      "a": "Felidae",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-155",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A mixture with uniform composition throughout is called a:",
+      "options": {
+        "a": "Heterogeneous mixture",
+        "b": "Suspension",
+        "c": "Homogeneous mixture",
+        "d": "Emulsion"
+      },
+      "answer": "c",
+      "a": "Homogeneous mixture",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-45",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of significant figures in 4500 m (written without a decimal point) is:",
+      "options": {
+        "a": "1",
+        "b": "3",
+        "c": "4",
+        "d": "2"
+      },
+      "answer": "d",
+      "a": "2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-16",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a nitrogenous waste removed from the blood in the kidneys?",
+      "options": {
+        "a": "Urea",
+        "b": "Glucose",
+        "c": "Salts",
+        "d": "Amino acids"
+      },
+      "answer": "a",
+      "a": "Urea",
+      "e": "Uric acid is another nitrogenous waste removed from blood in the kidneys.",
+      "table": null,
+      "qid": "biology-ch26-respiration-95",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A change in pressure applied to an enclosed fluid is transmitted undiminished to every point of the fluid and the walls of its container. This is known as:",
+      "options": {
+        "a": "Pascal's law",
+        "b": "Stokes' law",
+        "c": "Bernoulli's principle",
+        "d": "Torricelli's law"
+      },
+      "answer": "a",
+      "a": "Pascal's law",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-55",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Large brown crystals of common salt, formed when seas of bygone ages dried up, are called:",
+      "options": {
+        "a": "Gypsum",
+        "b": "Rock salt",
+        "c": "Baking soda",
+        "d": "Washing soda"
+      },
+      "answer": "b",
+      "a": "Rock salt",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The evaporation of water vapour through stomata is called:",
+      "options": {
+        "a": "Secretion",
+        "b": "Excretion",
+        "c": "Respiration",
+        "d": "Transpiration"
+      },
+      "answer": "d",
+      "a": "Transpiration",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-19",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of a satellite orbiting very close to the surface of the Earth is approximately:",
+      "options": {
+        "a": "24 hours",
+        "b": "85 minutes",
+        "c": "27.3 days",
+        "d": "12 hours"
+      },
+      "answer": "b",
+      "a": "85 minutes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-21",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Complete separation of the right and left sides of the heart is useful in animals with high energy needs, such as:",
+      "options": {
+        "a": "Fishes",
+        "b": "Many reptiles",
+        "c": "Birds and mammals",
+        "d": "Amphibians"
+      },
+      "answer": "c",
+      "a": "Birds and mammals",
+      "e": "They constantly use energy to maintain their body temperature.",
+      "table": null,
+      "qid": "biology-ch26-respiration-76",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A 5–8% solution of acetic acid in water is called:",
+      "options": {
+        "a": "Molasses",
+        "b": "Glacial acetic acid",
+        "c": "Denatured alcohol",
+        "d": "Vinegar"
+      },
+      "answer": "d",
+      "a": "Vinegar",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-69",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The vessel and stirrer of a calorimeter are made of a metal such as:",
+      "options": {
+        "a": "copper",
+        "b": "glass wool",
+        "c": "wood",
+        "d": "lead"
+      },
+      "answer": "a",
+      "a": "copper",
+      "e": "Aluminium is also used. The outer jacket contains insulating material such as glass wool.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-40",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Experiments proving that new life always comes from pre-existing life were done by:",
+      "options": {
+        "a": "P. Maheshwari",
+        "b": "Subhash Mukhopadhyay",
+        "c": "William Harvey",
+        "d": "Louis Pasteur"
+      },
+      "answer": "d",
+      "a": "Louis Pasteur",
+      "e": "He also strengthened the cell theory and found the germ theory of disease.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-18",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The solution of the product formed on burning magnesium in air:",
+      "options": {
+        "a": "Turns red litmus blue",
+        "b": "Turns blue litmus red",
+        "c": "Bleaches both litmus papers",
+        "d": "Does not change either litmus paper"
+      },
+      "answer": "a",
+      "a": "Turns red litmus blue",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "On the Fahrenheit scale, the steam point of water is:",
+      "options": {
+        "a": "100 °F",
+        "b": "180 °F",
+        "c": "273 °F",
+        "d": "212 °F"
+      },
+      "answer": "d",
+      "a": "212 °F",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-5",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Mitochondria divide by:",
+      "options": {
+        "a": "Budding",
+        "b": "Mitosis",
+        "c": "Fission",
+        "d": "Fragmentation"
+      },
+      "answer": "c",
+      "a": "Fission",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-41",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following does not conduct electricity when dissolved in water?",
+      "options": {
+        "a": "Sugar",
+        "b": "Magnesium chloride",
+        "c": "Sodium chloride",
+        "d": "Copper sulfate"
+      },
+      "answer": "a",
+      "a": "Sugar",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A current of 2 A flows through a circuit for 5 minutes. The charge that flows through the circuit is:",
+      "options": {
+        "a": "120 C",
+        "b": "600 C",
+        "c": "10 C",
+        "d": "2.5 C"
+      },
+      "answer": "b",
+      "a": "600 C",
+      "e": "t = 5 min = 300 s; Q = It = 2 A × 300 s = 600 C.",
+      "table": null,
+      "qid": "physics-ch7-electricity-8",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Pili and fimbriae play a role in bacterial motility.\n(II) Pili are elongated tubular structures made of a special protein.\n(III) Fimbriae are small bristle-like fibres that help bacteria attach to host tissues.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-71",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The work done in moving a charge of 3 C between two points having a potential difference of 9 V is:",
+      "options": {
+        "a": "3 J",
+        "b": "0.33 J",
+        "c": "12 J",
+        "d": "27 J"
+      },
+      "answer": "d",
+      "a": "27 J",
+      "e": "W = VQ = 9 V × 3 C = 27 J.",
+      "table": null,
+      "qid": "physics-ch7-electricity-13",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The largest known cell in the living world is the yolk of the:",
+      "options": {
+        "a": "Ostrich egg",
+        "b": "Hen's egg",
+        "c": "Eagle egg",
+        "d": "Crocodile egg"
+      },
+      "answer": "a",
+      "a": "Ostrich egg",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-13",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    }
+  ]
+}

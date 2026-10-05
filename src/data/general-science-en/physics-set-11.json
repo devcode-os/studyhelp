@@ -1,0 +1,589 @@
+{
+  "slug": "general-science-physics-set-11",
+  "chapterNumber": 11,
+  "title": "Physics Set 11",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The form of energy proposed to explain the accelerating expansion of the Universe is:",
+      "options": {
+        "a": "chemical energy",
+        "b": "nuclear energy",
+        "c": "dark energy",
+        "d": "sound energy"
+      },
+      "answer": "c",
+      "a": "dark energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-20",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The Montreal Protocol reduced the use of:",
+      "options": {
+        "a": "Chlorofluorocarbons",
+        "b": "Methane",
+        "c": "Nitrates",
+        "d": "Carbon dioxide"
+      },
+      "answer": "a",
+      "a": "Chlorofluorocarbons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-109",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Convex mirrors are used as rear-view mirrors in vehicles because they have a:",
+      "options": {
+        "a": "larger image size",
+        "b": "real image",
+        "c": "inverted image",
+        "d": "wider field of view"
+      },
+      "answer": "d",
+      "a": "wider field of view",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-28",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A child slides from rest down a frictionless slide of height 3.2 m (g = 10 m s⁻²). The velocity at the bottom is:",
+      "options": {
+        "a": "64 m s⁻¹",
+        "b": "32 m s⁻¹",
+        "c": "5.7 m s⁻¹",
+        "d": "8 m s⁻¹"
+      },
+      "answer": "d",
+      "a": "8 m s⁻¹",
+      "e": "½mv² = mgh gives v = √(2gh) = √64 = 8 m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-32",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The results of Faraday's electrolysis experiments suggested the:",
+      "options": {
+        "a": "Existence of the nucleus",
+        "b": "Particulate nature of electricity",
+        "c": "Wave nature of light",
+        "d": "Phenomenon of radioactivity"
+      },
+      "answer": "b",
+      "a": "Particulate nature of electricity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-4",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Two boxes of masses 2 kg and 3 kg, connected by a string, lie on a frictionless horizontal surface. A horizontal force of 20 N pulls the 2 kg box. The acceleration of the system is:",
+      "options": {
+        "a": "4 m s⁻²",
+        "b": "6.7 m s⁻²",
+        "c": "100 m s⁻²",
+        "d": "10 m s⁻²"
+      },
+      "answer": "a",
+      "a": "4 m s⁻²",
+      "e": "a = F/(m₁ + m₂) = 20 N ÷ 5 kg = 4 m s⁻².",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-21",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "James Watt, after whom the SI unit of power is named, is known for inventing:",
+      "options": {
+        "a": "an efficient steam engine",
+        "b": "the lever",
+        "c": "the pulley",
+        "d": "the simple pendulum"
+      },
+      "answer": "a",
+      "a": "an efficient steam engine",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-38",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "At the equilibrium position of an oscillating body, the net external force on it is:",
+      "options": {
+        "a": "Zero",
+        "b": "Directed away from the position",
+        "c": "Maximum",
+        "d": "Equal to its weight"
+      },
+      "answer": "a",
+      "a": "Zero",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-47",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of electric potential difference is named after:",
+      "options": {
+        "a": "Georg Simon Ohm",
+        "b": "Hans Christian Oersted",
+        "c": "Andre-Marie Ampere",
+        "d": "Alessandro Volta"
+      },
+      "answer": "d",
+      "a": "Alessandro Volta",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-11",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "As the distance from a straight current-carrying wire increases, the magnetic field produced by a given current:",
+      "options": {
+        "a": "Increases",
+        "b": "Remains the same",
+        "c": "Decreases",
+        "d": "Becomes zero immediately"
+      },
+      "answer": "c",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-25",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The new Moon day is also called:",
+      "options": {
+        "a": "Shukla Paksha",
+        "b": "Purnima",
+        "c": "Amavasya",
+        "d": "Krishna Paksha"
+      },
+      "answer": "c",
+      "a": "Amavasya",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-72",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of the human ear that converts vibrations into electrical signals for the brain is the:",
+      "options": {
+        "a": "Diaphragm",
+        "b": "Eardrum",
+        "c": "Larynx",
+        "d": "Cochlea"
+      },
+      "answer": "d",
+      "a": "Cochlea",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-47",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The shearing stress of fluids is about ___ times smaller than that of solids.",
+      "options": {
+        "a": "thousand",
+        "b": "million",
+        "c": "hundred",
+        "d": "ten"
+      },
+      "answer": "b",
+      "a": "million",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-72",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about X-rays:\n(I) They are not deflected by electric and magnetic fields.\n(II) They have very high penetrating power through matter.\n(III) They are deflected by a magnetic field.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-20",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "As the temperature of a blackbody increases, the wavelength at which the emitted energy is maximum:",
+      "options": {
+        "a": "remains constant",
+        "b": "increases",
+        "c": "becomes infinite",
+        "d": "decreases"
+      },
+      "answer": "d",
+      "a": "decreases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-74",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A potential difference of 24 V across a resistor causes a current of 3 A. The resistance of the resistor is:",
+      "options": {
+        "a": "21 Ω",
+        "b": "72 Ω",
+        "c": "8 Ω",
+        "d": "0.125 Ω"
+      },
+      "answer": "c",
+      "a": "8 Ω",
+      "e": "R = V/I = 24 V / 3 A = 8 Ω.",
+      "table": null,
+      "qid": "physics-ch7-electricity-28",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The motion of a simple pendulum is approximately simple harmonic when its angular displacement is:",
+      "options": {
+        "a": "Equal to 90°",
+        "b": "Large",
+        "c": "Equal to 180°",
+        "d": "Small"
+      },
+      "answer": "d",
+      "a": "Small",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-37",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "J. J. Thomson was awarded the Nobel Prize in Physics in:",
+      "options": {
+        "a": "1906",
+        "b": "1908",
+        "c": "1922",
+        "d": "1935"
+      },
+      "answer": "a",
+      "a": "1906",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-27",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following media has the highest refractive index?",
+      "options": {
+        "a": "Dense flint glass",
+        "b": "Ruby",
+        "c": "Sapphire",
+        "d": "Diamond"
+      },
+      "answer": "d",
+      "a": "Diamond",
+      "e": "",
+      "table": {
+        "headers": [
+          "Material medium",
+          "Refractive index"
+        ],
+        "rows": [
+          [
+            "Air",
+            "1.0003"
+          ],
+          [
+            "Ice",
+            "1.31"
+          ],
+          [
+            "Water",
+            "1.33"
+          ],
+          [
+            "Alcohol",
+            "1.36"
+          ],
+          [
+            "Kerosene",
+            "1.44"
+          ],
+          [
+            "Fused quartz",
+            "1.46"
+          ],
+          [
+            "Turpentine oil",
+            "1.47"
+          ],
+          [
+            "Benzene",
+            "1.50"
+          ],
+          [
+            "Crown glass",
+            "1.52"
+          ],
+          [
+            "Canada balsam",
+            "1.53"
+          ],
+          [
+            "Rock salt",
+            "1.54"
+          ],
+          [
+            "Carbon disulphide",
+            "1.63"
+          ],
+          [
+            "Dense flint glass",
+            "1.65"
+          ],
+          [
+            "Ruby",
+            "1.71"
+          ],
+          [
+            "Sapphire",
+            "1.77"
+          ],
+          [
+            "Diamond",
+            "2.42"
+          ]
+        ]
+      },
+      "qid": "physics-ch5-light-44",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Oscillating bodies eventually come to rest at their equilibrium positions because of:",
+      "options": {
+        "a": "Resonance",
+        "b": "Superposition",
+        "c": "Phase difference",
+        "d": "Damping"
+      },
+      "answer": "d",
+      "a": "Damping",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-44",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The heat produced when a current of 3 A flows through a 10 Ω resistor for 20 s is:",
+      "options": {
+        "a": "5400 J",
+        "b": "600 J",
+        "c": "180 J",
+        "d": "1800 J"
+      },
+      "answer": "d",
+      "a": "1800 J",
+      "e": "H = I²Rt = 9 × 10 × 20 = 1800 J.",
+      "table": null,
+      "qid": "physics-ch7-electricity-53",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Handspan and foot-length are unsuitable as standard units of length because they:",
+      "options": {
+        "a": "cannot be subdivided",
+        "b": "are too large",
+        "c": "are not decimal-based",
+        "d": "differ from person to person"
+      },
+      "answer": "d",
+      "a": "differ from person to person",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-12",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following works on Pascal's law?",
+      "options": {
+        "a": "Mercury barometer",
+        "b": "Spring balance",
+        "c": "Hydraulic brake",
+        "d": "Rubber sucker"
+      },
+      "answer": "c",
+      "a": "Hydraulic brake",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-56",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The mechanical advantage of a fixed pulley is:",
+      "options": {
+        "a": "0.5",
+        "b": "4",
+        "c": "1",
+        "d": "2"
+      },
+      "answer": "c",
+      "a": "1",
+      "e": "A fixed pulley only changes the direction of the effort.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-42",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Light travels in vacuum with a speed of:",
+      "options": {
+        "a": "3 × 10⁸ m s⁻¹",
+        "b": "3 × 10⁶ m s⁻¹",
+        "c": "3 × 10¹⁰ m s⁻¹",
+        "d": "3 × 10⁵ m s⁻¹"
+      },
+      "answer": "a",
+      "a": "3 × 10⁸ m s⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-46",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A lens that is thicker at the edges than at the middle is called a:",
+      "options": {
+        "a": "convex lens",
+        "b": "concave lens",
+        "c": "converging lens",
+        "d": "plane lens"
+      },
+      "answer": "b",
+      "a": "concave lens",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-47",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following functions of time is non-periodic?",
+      "options": {
+        "a": "sin ωt + cos ωt",
+        "b": "e^(−ωt)",
+        "c": "cos ωt + cos 3ωt",
+        "d": "sin ωt + cos 2ωt"
+      },
+      "answer": "b",
+      "a": "e^(−ωt)",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-11",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Short-circuiting occurs when the:",
+      "options": {
+        "a": "Earth wire is disconnected",
+        "b": "Fuse is replaced",
+        "c": "Live and neutral wires come into direct contact",
+        "d": "Appliance is switched off"
+      },
+      "answer": "c",
+      "a": "Live and neutral wires come into direct contact",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-46",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about a sound wave:\n(I) The particles of the medium travel along with the wave.\n(II) Compressions and rarefactions are produced alternately.\n(III) Energy is transferred without the flow of particles of the medium.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-9",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "In solids, heat is mainly transferred by:",
+      "options": {
+        "a": "radiation",
+        "b": "conduction",
+        "c": "evaporation",
+        "d": "convection"
+      },
+      "answer": "b",
+      "a": "conduction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-58",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

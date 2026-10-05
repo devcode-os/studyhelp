@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-60",
+  "chapterNumber": 60,
+  "title": "General Science Set 60",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A drop of 10 mm or more in the mercury level of a barometer at sea level is a sign of:",
+      "options": {
+        "a": "low tide",
+        "b": "fair weather",
+        "c": "an approaching storm",
+        "d": "a rise in temperature"
+      },
+      "answer": "c",
+      "a": "an approaching storm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-68",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Non-metals form oxides that are either:",
+      "options": {
+        "a": "Basic or neutral",
+        "b": "Acidic or basic",
+        "c": "Acidic or neutral",
+        "d": "Amphoteric or basic"
+      },
+      "answer": "c",
+      "a": "Acidic or neutral",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Without an atmosphere, the Earth would become too cold.\nReason (R): The greenhouse effect traps part of the heat radiated by the Earth.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A",
+        "b": "Both A and R are true, but R is not the correct explanation of A",
+        "c": "A is true, but R is false",
+        "d": "A is false, but R is true"
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-18",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnitude of the maximum displacement of a particle in SHM is called its:",
+      "options": {
+        "a": "Amplitude",
+        "b": "Phase",
+        "c": "Angular frequency",
+        "d": "Period"
+      },
+      "answer": "a",
+      "a": "Amplitude",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-14",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A homogeneous mixture of two or more metals, or a metal and a non-metal, is called:",
+      "options": {
+        "a": "Compound",
+        "b": "Amalgam",
+        "c": "Colloid",
+        "d": "Alloy"
+      },
+      "answer": "d",
+      "a": "Alloy",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-76",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The rings in the throat that ensure the air-passage does not collapse are made of:",
+      "options": {
+        "a": "Bone",
+        "b": "Collagen",
+        "c": "Muscle",
+        "d": "Cartilage"
+      },
+      "answer": "d",
+      "a": "Cartilage",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-59",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The Pole Star is a part of the:",
+      "options": {
+        "a": "Canis Major",
+        "b": "Big Dipper",
+        "c": "Little Dipper",
+        "d": "Orion"
+      },
+      "answer": "c",
+      "a": "Little Dipper",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-31",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Plant cells possess cell walls, plastids and a large central vacuole.\n(II) Animal cells have centrioles, which are absent in almost all plant cells.\n(III) Animal cells possess plastids.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-81",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The bond formed by transfer of electrons from one atom to another is called:",
+      "options": {
+        "a": "Ionic bond",
+        "b": "Metallic bond",
+        "c": "Covalent bond",
+        "d": "Hydrogen bond"
+      },
+      "answer": "a",
+      "a": "Ionic bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The least distance of distinct vision for a young adult with normal vision is about:",
+      "options": {
+        "a": "2.5 cm",
+        "b": "25 m",
+        "c": "25 cm",
+        "d": "2.5 m"
+      },
+      "answer": "c",
+      "a": "25 cm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-66",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Root hairs increase the surface area for:",
+      "options": {
+        "a": "Gaseous exchange",
+        "b": "Transpiration",
+        "c": "Absorption of water and minerals",
+        "d": "Photosynthesis"
+      },
+      "answer": "c",
+      "a": "Absorption of water and minerals",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-18",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of angular frequency is:",
+      "options": {
+        "a": "Second",
+        "b": "Metre per second",
+        "c": "Radian per second",
+        "d": "Hertz"
+      },
+      "answer": "c",
+      "a": "Radian per second",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-17",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Scum is formed when soap reacts with the ______ salts present in hard water.",
+      "options": {
+        "a": "Calcium and magnesium",
+        "b": "Sodium and potassium",
+        "c": "Copper and zinc",
+        "d": "Chloride and bromide"
+      },
+      "answer": "a",
+      "a": "Calcium and magnesium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-83",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "India's Mars Orbiter Mission, Mangalyaan, was launched by ISRO in:",
+      "options": {
+        "a": "2013",
+        "b": "2011",
+        "c": "2019",
+        "d": "2008"
+      },
+      "answer": "a",
+      "a": "2013",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-8",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The speed of light in vacuum is:",
+      "options": {
+        "a": "3 × 10⁶ m s⁻¹",
+        "b": "3 × 10¹⁰ m s⁻¹",
+        "c": "3 × 10⁵ m s⁻¹",
+        "d": "3 × 10⁸ m s⁻¹"
+      },
+      "answer": "d",
+      "a": "3 × 10⁸ m s⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-94",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an exothermic process?",
+      "options": {
+        "a": "Respiration",
+        "b": "Decomposition of silver chloride in sunlight",
+        "c": "Electrolysis of water",
+        "d": "Thermal decomposition of limestone"
+      },
+      "answer": "a",
+      "a": "Respiration",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Dedifferentiation is the process in which mature cells:",
+      "options": {
+        "a": "Form cork",
+        "b": "Lose their nuclei",
+        "c": "Regain the ability to divide",
+        "d": "Become specialised"
+      },
+      "answer": "c",
+      "a": "Regain the ability to divide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-38",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The thin wire that glows in an incandescent lamp is called the:",
+      "options": {
+        "a": "Electrolyte",
+        "b": "Terminal",
+        "c": "Electrode",
+        "d": "Filament"
+      },
+      "answer": "d",
+      "a": "Filament",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-17",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy released when the terminal phosphate linkage in ATP is broken using water is equivalent to:",
+      "options": {
+        "a": "305 kJ/mol",
+        "b": "30.5 kJ/mol",
+        "c": "12.5 kJ/mol",
+        "d": "3.05 kJ/mol"
+      },
+      "answer": "b",
+      "a": "30.5 kJ/mol",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-55",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an element?",
+      "options": {
+        "a": "Glucose",
+        "b": "Sodium",
+        "c": "Ammonia",
+        "d": "Water"
+      },
+      "answer": "b",
+      "a": "Sodium",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Boyle's law – Robert Boyle, English chemist\n(II) Charles' law – Jacques Charles, French scientist\n(III) Kelvin scale – Isaac Newton\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "The Kelvin scale is named after the British scientist Lord Kelvin.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-17",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In a prokaryotic cell, the region containing genetic material not enclosed by a membrane is called the:",
+      "options": {
+        "a": "Nucleoplasm",
+        "b": "Nucleus",
+        "c": "Nucleolus",
+        "d": "Nucleoid"
+      },
+      "answer": "d",
+      "a": "Nucleoid",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-82",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A force of 180 N acts on an object in a direction opposite to its displacement of 0.5 m. The work done by the force is:",
+      "options": {
+        "a": "90 J",
+        "b": "360 J",
+        "c": "−90 J",
+        "d": "−360 J"
+      },
+      "answer": "c",
+      "a": "−90 J",
+      "e": "W = 180 N × (−0.5 m) = −90 J.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-7",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Substances added to foods containing fats and oils to prevent oxidation are called:",
+      "options": {
+        "a": "Catalysts",
+        "b": "Antioxidants",
+        "c": "Reductants",
+        "d": "Preservatives only"
+      },
+      "answer": "b",
+      "a": "Antioxidants",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-52",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The chamber in birds that breaks down food by contraction and relaxation of its walls, often with the help of grit, is the:",
+      "options": {
+        "a": "Stomach",
+        "b": "Crop",
+        "c": "Rumen",
+        "d": "Gizzard"
+      },
+      "answer": "d",
+      "a": "Gizzard",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-43",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In Bohr's model, an electron moving in a stationary state:",
+      "options": {
+        "a": "Gains energy continuously",
+        "b": "Loses energy continuously",
+        "c": "Has constant energy",
+        "d": "Falls into the nucleus"
+      },
+      "answer": "c",
+      "a": "Has constant energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-40",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Hydrocarbons containing one or more triple bonds are called:",
+      "options": {
+        "a": "Alkynes",
+        "b": "Alcohols",
+        "c": "Alkenes",
+        "d": "Alkanes"
+      },
+      "answer": "a",
+      "a": "Alkynes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The conical shape and sloping branches of deodar trees help them to:",
+      "options": {
+        "a": "Resist heavy winds",
+        "b": "Absorb sunlight",
+        "c": "Let snow slide off easily",
+        "d": "Store water"
+      },
+      "answer": "c",
+      "a": "Let snow slide off easily",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-25",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of heat energy transferred is:",
+      "options": {
+        "a": "joule",
+        "b": "watt",
+        "c": "kelvin",
+        "d": "pascal"
+      },
+      "answer": "a",
+      "a": "joule",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-4",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In In-vitro Fertilisation (IVF), the egg and sperm are combined:",
+      "options": {
+        "a": "Inside the ovary",
+        "b": "Inside the uterus",
+        "c": "Inside the oviduct",
+        "d": "Outside the female body"
+      },
+      "answer": "d",
+      "a": "Outside the female body",
+      "e": "The fertilised egg is then implanted in the uterus.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-92",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

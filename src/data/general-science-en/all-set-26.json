@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-26",
+  "chapterNumber": 26,
+  "title": "General Science Set 26",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The intercalary meristem is located:",
+      "options": {
+        "a": "At the tip of the root",
+        "b": "At the tip of the shoot",
+        "c": "In a ring along the stem circumference",
+        "d": "At the base of the internode or just above the node"
+      },
+      "answer": "d",
+      "a": "At the base of the internode or just above the node",
+      "e": "It helps grasses regenerate after mowing or grazing.",
+      "table": null,
+      "qid": "biology-ch22-tissues-6",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Names of simple anions end with:",
+      "options": {
+        "a": "-ate",
+        "b": "-ite",
+        "c": "-ine",
+        "d": "-ide"
+      },
+      "answer": "d",
+      "a": "-ide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The fourth planet in order of increasing distance from the Sun is:",
+      "options": {
+        "a": "Jupiter",
+        "b": "Earth",
+        "c": "Venus",
+        "d": "Mars"
+      },
+      "answer": "d",
+      "a": "Mars",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-36",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The hormone synthesised at the shoot tip that helps cells to grow longer is:",
+      "options": {
+        "a": "Auxin",
+        "b": "Gibberellin",
+        "c": "Abscisic acid",
+        "d": "Cytokinin"
+      },
+      "answer": "a",
+      "a": "Auxin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-19",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Echoes are strongest from:",
+      "options": {
+        "a": "Hard and smooth surfaces",
+        "b": "Curtains",
+        "c": "Soft, porous surfaces",
+        "d": "Rough surfaces"
+      },
+      "answer": "a",
+      "a": "Hard and smooth surfaces",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-60",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular mass of dinitrogen monoxide, N₂O (N = 14 u, O = 16 u), is:",
+      "options": {
+        "a": "44 u",
+        "b": "28 u",
+        "c": "46 u",
+        "d": "30 u"
+      },
+      "answer": "a",
+      "a": "44 u",
+      "e": "(14 u × 2) + 16 u = 44 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Habitats of the Great Indian Bustard have been declared as protected areas in the states of:",
+      "options": {
+        "a": "Punjab, Haryana and Uttar Pradesh",
+        "b": "Gujarat, Rajasthan and Maharashtra",
+        "c": "Kerala, Karnataka and Tamil Nadu",
+        "d": "Assam, Manipur and Nagaland"
+      },
+      "answer": "b",
+      "a": "Gujarat, Rajasthan and Maharashtra",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-37",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The accepted value of the charge on an electron is:",
+      "options": {
+        "a": "−1.758 × 10¹¹ C",
+        "b": "−1.602 × 10⁻¹⁹ C",
+        "c": "+1.602 × 10⁻¹⁹ C",
+        "d": "−9.109 × 10⁻³¹ C"
+      },
+      "answer": "b",
+      "a": "−1.602 × 10⁻¹⁹ C",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-11",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Dioxygen in the atmosphere is present to the extent of about:",
+      "options": {
+        "a": "20%",
+        "b": "10%",
+        "c": "30%",
+        "d": "50%"
+      },
+      "answer": "a",
+      "a": "20%",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The approximate stroke volume of each ventricle is:",
+      "options": {
+        "a": "35 mL",
+        "b": "120 mL",
+        "c": "70 mL",
+        "d": "50 mL"
+      },
+      "answer": "c",
+      "a": "70 mL",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-63",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A lever or an inclined plane can reduce the force required for a task, but not the:",
+      "options": {
+        "a": "mechanical advantage",
+        "b": "effort arm",
+        "c": "length of the plane",
+        "d": "total work done"
+      },
+      "answer": "d",
+      "a": "total work done",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-48",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The convex, forming face of the Golgi apparatus is called the:",
+      "options": {
+        "a": "trans face",
+        "b": "lumen",
+        "c": "cis face",
+        "d": "matrix"
+      },
+      "answer": "c",
+      "a": "cis face",
+      "e": "The concave face is the trans, or maturing, face.",
+      "table": null,
+      "qid": "biology-ch21-cell-33",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Sambhar Lake, a water body containing common salt, is located in:",
+      "options": {
+        "a": "Gujarat",
+        "b": "Rajasthan",
+        "c": "Haryana",
+        "d": "Madhya Pradesh"
+      },
+      "answer": "b",
+      "a": "Rajasthan",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "On the equator, the duration of sunlight is always:",
+      "options": {
+        "a": "18 hours",
+        "b": "12 hours",
+        "c": "24 hours",
+        "d": "6 hours"
+      },
+      "answer": "b",
+      "a": "12 hours",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-58",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The shoulder joint together with the collarbone forms the:",
+      "options": {
+        "a": "Rib cage",
+        "b": "Vertebral column",
+        "c": "Shoulder girdle",
+        "d": "Skull"
+      },
+      "answer": "c",
+      "a": "Shoulder girdle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-70",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "A mild base used to relieve the pain of a bee sting is:",
+      "options": {
+        "a": "Lemon juice",
+        "b": "Vinegar",
+        "c": "Baking soda",
+        "d": "Amla juice"
+      },
+      "answer": "c",
+      "a": "Baking soda",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The escape speed from the surface of the Moon is approximately:",
+      "options": {
+        "a": "5.6 km s⁻¹",
+        "b": "2.3 km s⁻¹",
+        "c": "11.2 km s⁻¹",
+        "d": "0.46 km s⁻¹"
+      },
+      "answer": "b",
+      "a": "2.3 km s⁻¹",
+      "e": "Gas molecules moving faster than this escape, so the Moon has no atmosphere.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-17",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The tissue with unevenly thickened corners due to deposition of pectin is:",
+      "options": {
+        "a": "Collenchyma",
+        "b": "Epidermis",
+        "c": "Sclerenchyma",
+        "d": "Parenchyma"
+      },
+      "answer": "a",
+      "a": "Collenchyma",
+      "e": "It provides support and flexibility, allowing stems and tendrils to bend without breaking.",
+      "table": null,
+      "qid": "biology-ch22-tissues-23",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the New Cartesian Sign Convention:\n(I) The object is always placed to the left of the mirror.\n(II) Distances measured to the right of the origin are taken as positive.\n(III) Distances measured perpendicular to and above the principal axis are taken as negative.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-31",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Ethanoic acid reacts with absolute ethanol in the presence of an acid catalyst to give:",
+      "options": {
+        "a": "Ethene",
+        "b": "An alkane",
+        "c": "An ester",
+        "d": "A salt"
+      },
+      "answer": "c",
+      "a": "An ester",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-72",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The mode of nutrition in animals is:",
+      "options": {
+        "a": "Chemosynthetic",
+        "b": "Saprophytic",
+        "c": "Photosynthetic",
+        "d": "Holozoic"
+      },
+      "answer": "d",
+      "a": "Holozoic",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-143",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Motion that repeats its path after a fixed interval of time is called:",
+      "options": {
+        "a": "periodic motion",
+        "b": "linear motion",
+        "c": "uniform motion",
+        "d": "non-uniform motion"
+      },
+      "answer": "a",
+      "a": "periodic motion",
+      "e": "Both circular and oscillatory motion are periodic.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-32",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an abiotic component of an ecosystem?",
+      "options": {
+        "a": "Insects",
+        "b": "Bacteria",
+        "c": "Rainfall",
+        "d": "Fungi"
+      },
+      "answer": "c",
+      "a": "Rainfall",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-20",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Water droplets in clouds are generally formed around:",
+      "options": {
+        "a": "Dust particles",
+        "b": "Ice crystals",
+        "c": "Smoke only",
+        "d": "Salt crystals"
+      },
+      "answer": "a",
+      "a": "Dust particles",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The number 3.865 rounded off to three significant figures is:",
+      "options": {
+        "a": "3.87",
+        "b": "3.86",
+        "c": "3.85",
+        "d": "3.9"
+      },
+      "answer": "b",
+      "a": "3.86",
+      "e": "The dropped digit is 5 and the preceding digit 6 is even, so it is left unchanged.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-22",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The plant hormone that promotes cell division is:",
+      "options": {
+        "a": "Auxin",
+        "b": "Cytokinin",
+        "c": "Gibberellin",
+        "d": "Abscisic acid"
+      },
+      "answer": "b",
+      "a": "Cytokinin",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-21",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The salt formed when zinc reacts with warm sodium hydroxide solution is:",
+      "options": {
+        "a": "Zinc chloride",
+        "b": "Zinc oxide",
+        "c": "Sodium carbonate",
+        "d": "Sodium zincate"
+      },
+      "answer": "d",
+      "a": "Sodium zincate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "An electric iron consumes 2 kW of power at 220 V. Among domestic fuses rated 1 A, 2 A, 3 A, 5 A and 10 A, the suitable fuse is:",
+      "options": {
+        "a": "2 A",
+        "b": "5 A",
+        "c": "10 A",
+        "d": "3 A"
+      },
+      "answer": "c",
+      "a": "10 A",
+      "e": "I = 2000 W / 220 V ≈ 9.09 A, so a 10 A fuse is used.",
+      "table": null,
+      "qid": "physics-ch7-electricity-61",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Roughage in food is provided mainly by:",
+      "options": {
+        "a": "Rocks",
+        "b": "Plant products",
+        "c": "Animal products",
+        "d": "Seawater"
+      },
+      "answer": "b",
+      "a": "Plant products",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-23",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The maximum change in the density of air in a compression, compared to the average density, is the:",
+      "options": {
+        "a": "Frequency",
+        "b": "Amplitude",
+        "c": "Wavelength",
+        "d": "Intensity"
+      },
+      "answer": "b",
+      "a": "Amplitude",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-25",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    }
+  ]
+}

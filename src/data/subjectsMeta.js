@@ -61,6 +61,13 @@ export const subjectsMeta = {
     seoTitle: 'భారత రాజ్యాంగం MCQs',
     seoDescription: 'UPSC, SSC, TSPSC మరియు TS పోలీస్ SI, కానిస్టేబుల్ పరీక్షల కోసం భారత రాజ్యాంగం ప్రశ్నలు, అధ్యాయాల వారీగా',
   },
+  'general-science-en': {
+    lang: 'en',
+    heading: 'General Science (Physics, Chemistry and Biology)',
+    breadcrumb: 'General Science',
+    seoTitle: 'General Science MCQs',
+    seoDescription: 'SSC, Railway, Police, TSPSC and other competitive exam preparation - General Science MCQs in practice sets of 30 with answers and explanations',
+  },
   'ts-constable-previous-papers-en': {
     lang: 'en',
     category: 'papers',

@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-set-43",
+  "chapterNumber": 43,
+  "title": "General Science Set 43",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Since the International Astronomical Union redefined the requirements for a planet in 2006, Pluto is classified as a:",
+      "options": {
+        "a": "Comet",
+        "b": "Asteroid",
+        "c": "Dwarf planet",
+        "d": "Planet"
+      },
+      "answer": "c",
+      "a": "Dwarf planet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-40",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Transfer of pollen from the anther of a flower of one plant to the stigma of a flower of another plant of the same type is called:",
+      "options": {
+        "a": "Cross-pollination",
+        "b": "Fertilisation",
+        "c": "Self-pollination",
+        "d": "Germination"
+      },
+      "answer": "a",
+      "a": "Cross-pollination",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-48",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "A lunar year, consisting of 12 lunar months, has about:",
+      "options": {
+        "a": "365 days",
+        "b": "360 days",
+        "c": "354 days",
+        "d": "384 days"
+      },
+      "answer": "c",
+      "a": "354 days",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-79",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The functional group present in alcohols is:",
+      "options": {
+        "a": "—CH₃",
+        "b": "—OH",
+        "c": "—Cl",
+        "d": "—Br"
+      },
+      "answer": "b",
+      "a": "—OH",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Biogas produced by microbes in an oxygen-free environment contains a high proportion of:",
+      "options": {
+        "a": "Hydrogen",
+        "b": "Methane",
+        "c": "Oxygen",
+        "d": "Nitrogen"
+      },
+      "answer": "b",
+      "a": "Methane",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-21",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of principal foci of a lens is:",
+      "options": {
+        "a": "two",
+        "b": "one",
+        "c": "four",
+        "d": "three"
+      },
+      "answer": "a",
+      "a": "two",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-49",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Metals and non-metals are sub-categories of:",
+      "options": {
+        "a": "Elements",
+        "b": "Mixtures",
+        "c": "Compounds",
+        "d": "Alloys"
+      },
+      "answer": "a",
+      "a": "Elements",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Tissue-level organisation is first seen in the phylum:",
+      "options": {
+        "a": "Cnidaria",
+        "b": "Porifera",
+        "c": "Nematoda",
+        "d": "Platyhelminthes"
+      },
+      "answer": "a",
+      "a": "Cnidaria",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-147",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In a dry cell, the negative terminal is the:",
+      "options": {
+        "a": "Carbon rod",
+        "b": "Metal cap",
+        "c": "Zinc container",
+        "d": "Electrolyte paste"
+      },
+      "answer": "c",
+      "a": "Zinc container",
+      "e": "The carbon rod with a metal cap is the positive terminal, and the electrolyte is a thick moist paste.",
+      "table": null,
+      "qid": "physics-ch7-electricity-73",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Mature human red blood cells survive for approximately:",
+      "options": {
+        "a": "365 days",
+        "b": "120 days",
+        "c": "60 days",
+        "d": "30 days"
+      },
+      "answer": "b",
+      "a": "120 days",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-61",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Reactions in which heat is released along with the formation of products are called:",
+      "options": {
+        "a": "Displacement reactions",
+        "b": "Exothermic reactions",
+        "c": "Decomposition reactions",
+        "d": "Endothermic reactions"
+      },
+      "answer": "b",
+      "a": "Exothermic reactions",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The surface temperature of the Sun, estimated by Wien's law from its wavelength of maximum intensity, is about:",
+      "options": {
+        "a": "15 000 K",
+        "b": "6060 K",
+        "c": "3000 K",
+        "d": "200 K"
+      },
+      "answer": "b",
+      "a": "6060 K",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-75",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following prokaryotes completely lacks a cell wall?",
+      "options": {
+        "a": "Mycoplasma",
+        "b": "Vibrio",
+        "c": "Spirillum",
+        "d": "Cyanobacteria"
+      },
+      "answer": "a",
+      "a": "Mycoplasma",
+      "e": "Mycoplasma are the smallest living cells known and can survive without oxygen.",
+      "table": null,
+      "qid": "biology-ch21-cell-77",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "If ν is the frequency and T is the time period of a wave, then:",
+      "options": {
+        "a": "ν + T = 1",
+        "b": "ν = T",
+        "c": "νT = 1",
+        "d": "ν/T = 1"
+      },
+      "answer": "c",
+      "a": "νT = 1",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-22",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Machines called threshers perform:",
+      "options": {
+        "a": "Churning only",
+        "b": "Sieving and filtration together",
+        "c": "Decantation only",
+        "d": "Threshing and winnowing together"
+      },
+      "answer": "d",
+      "a": "Threshing and winnowing together",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "In a few reptiles, the sex of the developing animal is determined by the:",
+      "options": {
+        "a": "Chromosome inherited from the father",
+        "b": "Age of the mother",
+        "c": "Number of chromosome pairs",
+        "d": "Temperature at which fertilised eggs are kept"
+      },
+      "answer": "d",
+      "a": "Temperature at which fertilised eggs are kept",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-8",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The persistence of sound in a large hall after the source stops, caused by multiple reflections, is called:",
+      "options": {
+        "a": "Reverberation",
+        "b": "Refraction",
+        "c": "Resonance",
+        "d": "Echo"
+      },
+      "answer": "a",
+      "a": "Reverberation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-51",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Metals above hydrogen in the reactivity series displace hydrogen from dilute acids.\n(II) A more reactive metal displaces a less reactive metal from its salt solution.\n(III) Copper displaces hydrogen from dilute hydrochloric acid.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-46",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Frog – External fertilisation\n(II) Lizard – Internal fertilisation\n(III) Fish – Internal fertilisation\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-60",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "One newton is the force that produces an acceleration of 1 m s⁻² on an object of mass:",
+      "options": {
+        "a": "9.8 kg",
+        "b": "1 g",
+        "c": "1 kg",
+        "d": "10 kg"
+      },
+      "answer": "c",
+      "a": "1 kg",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-16",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about antibiotic resistance:\n(I) Taking antibiotics when not required contributes to it.\n(II) Some bacteria can transfer resistance to other bacteria.\n(III) Antibiotics are effective in treating influenza.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-19",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction 3Fe₃O₄ + 8Al → 9Fe + 4Al₂O₃, the species reduced is:",
+      "options": {
+        "a": "Al₂O₃",
+        "b": "Al",
+        "c": "Fe",
+        "d": "Fe₃O₄"
+      },
+      "answer": "d",
+      "a": "Fe₃O₄",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-42",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reflection of sound, the directions of the incident and reflected sound make equal angles with the:",
+      "options": {
+        "a": "Source of sound",
+        "b": "Direction of the wind",
+        "c": "Reflecting surface itself",
+        "d": "Normal to the reflecting surface"
+      },
+      "answer": "d",
+      "a": "Normal to the reflecting surface",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-61",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Enzymes are specific in their action.\n(II) Plastics are readily broken down by bacteria.\n(III) Substances not broken down by biological processes are non-biodegradable.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II only",
+        "c": "I and II only",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-18",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The method of balancing chemical equations by making trials with the smallest whole number coefficients is called:",
+      "options": {
+        "a": "Hit-and-trial method",
+        "b": "Half reaction method",
+        "c": "Oxidation number method",
+        "d": "Electrolytic method"
+      },
+      "answer": "a",
+      "a": "Hit-and-trial method",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Resistors of 4 Ω and 12 Ω connected in parallel are joined in series with a 5 Ω resistor across a 16 V battery. The total current in the circuit is:",
+      "options": {
+        "a": "3.2 A",
+        "b": "0.76 A",
+        "c": "2 A",
+        "d": "1 A"
+      },
+      "answer": "c",
+      "a": "2 A",
+      "e": "1/R′ = 1/4 + 1/12 = 1/3, so R′ = 3 Ω; total R = 3 Ω + 5 Ω = 8 Ω; I = 16 V / 8 Ω = 2 A.",
+      "table": null,
+      "qid": "physics-ch7-electricity-45",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The basic filtration unit of the kidney is the:",
+      "options": {
+        "a": "Neuron",
+        "b": "Nephron",
+        "c": "Alveolus",
+        "d": "Villus"
+      },
+      "answer": "b",
+      "a": "Nephron",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-96",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an example of forced convection?",
+      "options": {
+        "a": "Trade wind",
+        "b": "Sea breeze",
+        "c": "Human circulatory system",
+        "d": "Land breeze"
+      },
+      "answer": "c",
+      "a": "Human circulatory system",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-67",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Interparticle attraction is maximum in solids.\n(II) Interparticle spacing is maximum in gases.\n(III) In gases, the movement of particles is restricted to a limited space.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-35",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which animal produces 5,000–50,000 eggs at a time?",
+      "options": {
+        "a": "Bird",
+        "b": "Lizard",
+        "c": "Fish",
+        "d": "Frog"
+      },
+      "answer": "d",
+      "a": "Frog",
+      "e": "",
+      "table": {
+        "headers": [
+          "Animal",
+          "Mode of fertilisation",
+          "Number of eggs produced",
+          "Estimated survival of young ones"
+        ],
+        "rows": [
+          [
+            "Fish",
+            "External",
+            "100s–1000s at a time",
+            "Low"
+          ],
+          [
+            "Frog",
+            "External",
+            "5,000–50,000 at a time",
+            "Low"
+          ],
+          [
+            "Lizard",
+            "Internal",
+            "2–20 at a time",
+            "Moderate"
+          ],
+          [
+            "Bird",
+            "Internal",
+            "1–15 at a time",
+            "Moderate to High"
+          ]
+        ]
+      },
+      "qid": "biology-ch27-reproduction-61",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

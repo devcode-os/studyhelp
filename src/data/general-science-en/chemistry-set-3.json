@@ -1,0 +1,549 @@
+{
+  "slug": "general-science-chemistry-set-3",
+  "chapterNumber": 3,
+  "title": "Chemistry Set 3",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In solids, the particles can move past each other.\n(II) In solids, the particles only vibrate about their positions.\n(III) On heating a solid, its particles vibrate more vigorously.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The transfer of heat from one point to another of a material is called:",
+      "options": {
+        "a": "Radiation",
+        "b": "Conduction",
+        "c": "Convection",
+        "d": "Sonority"
+      },
+      "answer": "b",
+      "a": "Conduction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not studied under organic chemistry?",
+      "options": {
+        "a": "Methane",
+        "b": "Urea",
+        "c": "Ethanol",
+        "d": "Sodium carbonate"
+      },
+      "answer": "d",
+      "a": "Sodium carbonate",
+      "e": "Carbides, oxides of carbon, carbonates and hydrogencarbonates are excluded.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of elements in the sixth period is:",
+      "options": {
+        "a": "8",
+        "b": "18",
+        "c": "32",
+        "d": "2"
+      },
+      "answer": "c",
+      "a": "32",
+      "e": "The seventh period is incomplete and would also have a theoretical maximum of 32 elements.",
+      "table": {
+        "headers": [
+          "Period",
+          "Number of elements"
+        ],
+        "rows": [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "8"
+          ],
+          [
+            "3",
+            "8"
+          ],
+          [
+            "4",
+            "18"
+          ],
+          [
+            "5",
+            "18"
+          ],
+          [
+            "6",
+            "32"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch15-elements-and-compounds-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The name of the three-carbon compound with a carboxylic acid group is:",
+      "options": {
+        "a": "Propanone",
+        "b": "Propanal",
+        "c": "Propanol",
+        "d": "Propanoic acid"
+      },
+      "answer": "d",
+      "a": "Propanoic acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The Law of Conservation of Mass was proposed in the year:",
+      "options": {
+        "a": "1789",
+        "b": "1808",
+        "c": "1799",
+        "d": "1793"
+      },
+      "answer": "a",
+      "a": "1789",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The amount of water vapour present in the air is known as:",
+      "options": {
+        "a": "Humidity",
+        "b": "Evaporation",
+        "c": "Precipitation",
+        "d": "Condensation"
+      },
+      "answer": "a",
+      "a": "Humidity",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Ionic compounds conduct electricity in:",
+      "options": {
+        "a": "Solid state only",
+        "b": "Molten state and aqueous solution",
+        "c": "Solid and molten state only",
+        "d": "None of these states"
+      },
+      "answer": "b",
+      "a": "Molten state and aqueous solution",
+      "e": "In the solid state the ions cannot move because of the rigid structure.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals can be cut with a knife?",
+      "options": {
+        "a": "Copper",
+        "b": "Sodium",
+        "c": "Aluminium",
+        "d": "Iron"
+      },
+      "answer": "b",
+      "a": "Sodium",
+      "e": "Alkali metals (lithium, sodium, potassium) are soft, with low densities and low melting points.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-11",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "A hand-powered device that separates blood components without electricity, based on centrifugation, is called:",
+      "options": {
+        "a": "Paperfuge",
+        "b": "Separating funnel",
+        "c": "Condenser",
+        "d": "Distillation flask"
+      },
+      "answer": "a",
+      "a": "Paperfuge",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "In a micelle formed in water, the ends of the soap molecules on the surface of the cluster are the:",
+      "options": {
+        "a": "Hydrocarbon tails",
+        "b": "Hydrophobic ends",
+        "c": "Ionic ends",
+        "d": "Oil droplets"
+      },
+      "answer": "c",
+      "a": "Ionic ends",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-79",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Plaster of Paris is obtained by heating gypsum at:",
+      "options": {
+        "a": "373 K",
+        "b": "473 K",
+        "c": "573 K",
+        "d": "273 K"
+      },
+      "answer": "a",
+      "a": "373 K",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-77",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Carbon attains noble gas configuration by:",
+      "options": {
+        "a": "Losing two and gaining two electrons",
+        "b": "Losing four electrons",
+        "c": "Sharing its valence electrons",
+        "d": "Gaining four electrons"
+      },
+      "answer": "c",
+      "a": "Sharing its valence electrons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-4",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Analysing the percentage of the elements present in a given sample of a known compound helps in checking its:",
+      "options": {
+        "a": "Boiling point",
+        "b": "Volume",
+        "c": "Density",
+        "d": "Purity"
+      },
+      "answer": "d",
+      "a": "Purity",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-107",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The substance used by doctors as plaster for supporting fractured bones in the right position is:",
+      "options": {
+        "a": "Washing soda",
+        "b": "Bleaching powder",
+        "c": "Baking soda",
+        "d": "Plaster of Paris"
+      },
+      "answer": "d",
+      "a": "Plaster of Paris",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-79",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The Law of Octaves was proposed by:",
+      "options": {
+        "a": "Newlands",
+        "b": "de Chancourtois",
+        "c": "Mendeleev",
+        "d": "Dobereiner"
+      },
+      "answer": "a",
+      "a": "Newlands",
+      "e": "It was proposed in 1865.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of metals does not react with oxygen even at high temperatures?",
+      "options": {
+        "a": "Magnesium and aluminium",
+        "b": "Zinc and lead",
+        "c": "Silver and gold",
+        "d": "Copper and iron"
+      },
+      "answer": "c",
+      "a": "Silver and gold",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Lothar Meyer plotted melting point, boiling point and which other property against atomic weight to obtain a periodically repeated pattern?",
+      "options": {
+        "a": "Electronegativity",
+        "b": "Ionisation energy",
+        "c": "Atomic volume",
+        "d": "Electron affinity"
+      },
+      "answer": "c",
+      "a": "Atomic volume",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Limiting the supply of air to saturated hydrocarbons results in:",
+      "options": {
+        "a": "Complete combustion",
+        "b": "Substitution reaction",
+        "c": "Incomplete combustion",
+        "d": "Addition reaction"
+      },
+      "answer": "c",
+      "a": "Incomplete combustion",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-48",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The drug AZT (azidothymidine) is used for helping patients suffering from:",
+      "options": {
+        "a": "Tuberculosis",
+        "b": "AIDS",
+        "c": "Malaria",
+        "d": "Cancer"
+      },
+      "answer": "b",
+      "a": "AIDS",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-1",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "CO is correctly named as:",
+      "options": {
+        "a": "Carbon monoxide",
+        "b": "Carbon oxide",
+        "c": "Carbon monooxide",
+        "d": "Monocarbon dioxide"
+      },
+      "answer": "a",
+      "a": "Carbon monoxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Cinnabar is an ore of:",
+      "options": {
+        "a": "Mercury",
+        "b": "Copper",
+        "c": "Iron",
+        "d": "Zinc"
+      },
+      "answer": "a",
+      "a": "Mercury",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-61",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Silicon forms compounds with hydrogen having chains of up to:",
+      "options": {
+        "a": "four or five atoms",
+        "b": "seven or eight atoms",
+        "c": "twelve or thirteen atoms",
+        "d": "two or three atoms"
+      },
+      "answer": "b",
+      "a": "seven or eight atoms",
+      "e": "These compounds are very reactive.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-18",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Air is a homogeneous mixture.\n(II) Sugar solution is a homogeneous mixture.\n(III) A mixture of salt and sugar is a homogeneous mixture.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A flame is produced only when ______ substances burn.",
+      "options": {
+        "a": "Gaseous",
+        "b": "Molten",
+        "c": "Solid",
+        "d": "Liquid"
+      },
+      "answer": "a",
+      "a": "Gaseous",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-50",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Bleaching powder is represented as:",
+      "options": {
+        "a": "Ca(OH)₂",
+        "b": "CaCl₂",
+        "c": "CaCO₃",
+        "d": "Ca(ClO)₂"
+      },
+      "answer": "d",
+      "a": "Ca(ClO)₂",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "When sugar is dissolved in water, the volume of the solution is less than the sum of the volumes of sugar and water. This indicates the presence of:",
+      "options": {
+        "a": "Evaporation of water",
+        "b": "Interparticle spaces in water",
+        "c": "Loss of mass of sugar",
+        "d": "Chemical reaction between sugar and water"
+      },
+      "answer": "b",
+      "a": "Interparticle spaces in water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-30",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas released on mixing vinegar with baking soda is:",
+      "options": {
+        "a": "Oxygen",
+        "b": "Hydrogen",
+        "c": "Carbon dioxide",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-41",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Soap is not effective in hard water.\nReason (R): Soap reacts with the calcium and magnesium salts of hard water to form an insoluble scum.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-87",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Density of a substance is the mass present in:",
+      "options": {
+        "a": "Unit volume",
+        "b": "Unit time",
+        "c": "Unit area",
+        "d": "Unit length"
+      },
+      "answer": "a",
+      "a": "Unit volume",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

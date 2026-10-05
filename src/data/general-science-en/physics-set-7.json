@@ -1,0 +1,557 @@
+{
+  "slug": "general-science-physics-set-7",
+  "chapterNumber": 7,
+  "title": "Physics Set 7",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "On the Fahrenheit scale, the steam point of water is:",
+      "options": {
+        "a": "100 °F",
+        "b": "180 °F",
+        "c": "273 °F",
+        "d": "212 °F"
+      },
+      "answer": "d",
+      "a": "212 °F",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-5",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A current of 2 A flows through a circuit for 5 minutes. The charge that flows through the circuit is:",
+      "options": {
+        "a": "120 C",
+        "b": "600 C",
+        "c": "10 C",
+        "d": "2.5 C"
+      },
+      "answer": "b",
+      "a": "600 C",
+      "e": "t = 5 min = 300 s; Q = It = 2 A × 300 s = 600 C.",
+      "table": null,
+      "qid": "physics-ch7-electricity-8",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The work done in moving a charge of 3 C between two points having a potential difference of 9 V is:",
+      "options": {
+        "a": "3 J",
+        "b": "0.33 J",
+        "c": "12 J",
+        "d": "27 J"
+      },
+      "answer": "d",
+      "a": "27 J",
+      "e": "W = VQ = 9 V × 3 C = 27 J.",
+      "table": null,
+      "qid": "physics-ch7-electricity-13",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is an electrical insulator?",
+      "options": {
+        "a": "Silver",
+        "b": "Plastic",
+        "c": "Aluminium",
+        "d": "Copper"
+      },
+      "answer": "b",
+      "a": "Plastic",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-22",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A continuous and closed path of an electric current is called:",
+      "options": {
+        "a": "Potential difference",
+        "b": "Magnetic field",
+        "c": "Resistance",
+        "d": "Electric circuit"
+      },
+      "answer": "d",
+      "a": "Electric circuit",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-2",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following materials has the highest coefficient of linear expansion?",
+      "options": {
+        "a": "Brass",
+        "b": "Copper",
+        "c": "Aluminium",
+        "d": "Silver"
+      },
+      "answer": "c",
+      "a": "Aluminium",
+      "e": "",
+      "table": {
+        "headers": [
+          "Material",
+          "αl (10⁻⁵ K⁻¹)"
+        ],
+        "rows": [
+          [
+            "Aluminium",
+            "2.5"
+          ],
+          [
+            "Brass",
+            "1.8"
+          ],
+          [
+            "Iron",
+            "1.2"
+          ],
+          [
+            "Copper",
+            "1.7"
+          ],
+          [
+            "Silver",
+            "1.9"
+          ],
+          [
+            "Gold",
+            "1.4"
+          ],
+          [
+            "Glass (pyrex)",
+            "0.32"
+          ],
+          [
+            "Lead",
+            "0.29"
+          ]
+        ]
+      },
+      "qid": "physics-ch4-heat-and-temperature-32",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "When two objects at different temperatures come in contact, energy flows from the:",
+      "options": {
+        "a": "colder to the hotter object",
+        "b": "hotter to the colder object",
+        "c": "heavier to the lighter object",
+        "d": "larger to the smaller object"
+      },
+      "answer": "b",
+      "a": "hotter to the colder object",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-16",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A constant force of 25 N displaces an object by 4 m in the direction of the force. The work done is:",
+      "options": {
+        "a": "21 J",
+        "b": "100 J",
+        "c": "29 J",
+        "d": "6.25 J"
+      },
+      "answer": "b",
+      "a": "100 J",
+      "e": "W = F × s = 25 N × 4 m = 100 J.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-3",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A reliable measure of the hotness or coldness of a body is its:",
+      "options": {
+        "a": "latent heat",
+        "b": "temperature",
+        "c": "heat",
+        "d": "specific heat capacity"
+      },
+      "answer": "b",
+      "a": "temperature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-1",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A microphone converts:",
+      "options": {
+        "a": "Electrical energy to sound energy",
+        "b": "Sound energy to electrical energy",
+        "c": "Light energy to sound energy",
+        "d": "Sound energy to light energy"
+      },
+      "answer": "b",
+      "a": "Sound energy to electrical energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-13",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of temperature is:",
+      "options": {
+        "a": "degree Fahrenheit",
+        "b": "joule",
+        "c": "kelvin",
+        "d": "degree Celsius"
+      },
+      "answer": "c",
+      "a": "kelvin",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-3",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "At the centre of a current-carrying circular loop, the magnetic field lines appear as:",
+      "options": {
+        "a": "Concentric circles",
+        "b": "Spirals",
+        "c": "Closed ellipses",
+        "d": "Straight lines"
+      },
+      "answer": "d",
+      "a": "Straight lines",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-28",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "An element has two isotopes of masses 10 u and 11 u, present in 20% and 80% abundance respectively. Its average atomic mass is:",
+      "options": {
+        "a": "11.0 u",
+        "b": "10.5 u",
+        "c": "10.8 u",
+        "d": "10.2 u"
+      },
+      "answer": "c",
+      "a": "10.8 u",
+      "e": "(10 × 20 + 11 × 80)/100 = 10.8 u.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-59",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "A switch is a simple device that:",
+      "options": {
+        "a": "Completes or breaks a circuit",
+        "b": "Generates electric current",
+        "c": "Stores electric charge",
+        "d": "Measures electric current"
+      },
+      "answer": "a",
+      "a": "Completes or breaks a circuit",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-20",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Heat is the form of energy transferred between a system and its surroundings by virtue of a difference in:",
+      "options": {
+        "a": "pressure",
+        "b": "volume",
+        "c": "mass",
+        "d": "temperature"
+      },
+      "answer": "d",
+      "a": "temperature",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-2",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Rutherford's model of the atom is also known as the:",
+      "options": {
+        "a": "Quantum mechanical model",
+        "b": "Plum pudding model",
+        "c": "Stationary state model",
+        "d": "Planetary model"
+      },
+      "answer": "d",
+      "a": "Planetary model",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-35",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The model that replaced Bohr's model, describing electrons as clouds with probable regions, is the:",
+      "options": {
+        "a": "Planetary model",
+        "b": "Nuclear model",
+        "c": "Plum pudding model",
+        "d": "Quantum mechanical model"
+      },
+      "answer": "d",
+      "a": "Quantum mechanical model",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-46",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "In the Himalayan region, the gharat (panchakki) is traditionally used to:",
+      "options": {
+        "a": "cut wood",
+        "b": "lift water",
+        "c": "grind grain",
+        "d": "generate electricity"
+      },
+      "answer": "c",
+      "a": "grind grain",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-35",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Water clocks in which water flowed out of a vessel were not very accurate because:",
+      "options": {
+        "a": "the flow rate decreased as the water level dropped",
+        "b": "the water evaporated",
+        "c": "the markings faded",
+        "d": "the water froze"
+      },
+      "answer": "a",
+      "a": "the flow rate decreased as the water level dropped",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-44",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A speed of 54 km/h expressed in m/s is:",
+      "options": {
+        "a": "54 m/s",
+        "b": "5.4 m/s",
+        "c": "15 m/s",
+        "d": "194.4 m/s"
+      },
+      "answer": "c",
+      "a": "15 m/s",
+      "e": "54 × 1000 m / 3600 s = 15 m/s.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-39",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A sound of a single frequency, such as that from a tuning fork, is called a:",
+      "options": {
+        "a": "Musical note",
+        "b": "Noise",
+        "c": "Tone",
+        "d": "Overtone"
+      },
+      "answer": "c",
+      "a": "Tone",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-43",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The underground layers of sediments and rocks that store water in pore spaces are called:",
+      "options": {
+        "a": "aquifers",
+        "b": "watersheds",
+        "c": "lagoons",
+        "d": "glaciers"
+      },
+      "answer": "a",
+      "a": "aquifers",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-84",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Non-contact thermometers are also called ___ thermometers.",
+      "options": {
+        "a": "infrared",
+        "b": "gas",
+        "c": "laboratory",
+        "d": "constant-volume"
+      },
+      "answer": "a",
+      "a": "infrared",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-11",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "If the restoring force contains small additional terms proportional to x² and x³, the oscillators are called:",
+      "options": {
+        "a": "Damped oscillators",
+        "b": "Linear oscillators",
+        "c": "Non-linear oscillators",
+        "d": "Forced oscillators"
+      },
+      "answer": "c",
+      "a": "Non-linear oscillators",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-28",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Muscular force – Contact force\n(II) Gravitational force – Contact force\n(III) Electrostatic force – Non-contact force\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-6",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The equivalent resistance of 6 Ω and 3 Ω resistors connected in parallel is:",
+      "options": {
+        "a": "9 Ω",
+        "b": "0.5 Ω",
+        "c": "4.5 Ω",
+        "d": "2 Ω"
+      },
+      "answer": "d",
+      "a": "2 Ω",
+      "e": "1/Rp = 1/6 + 1/3 = 1/2, so Rp = 2 Ω.",
+      "table": null,
+      "qid": "physics-ch7-electricity-43",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The triple point of water is assigned the temperature:",
+      "options": {
+        "a": "373.15 K",
+        "b": "0 K",
+        "c": "273.16 K",
+        "d": "273.15 K"
+      },
+      "answer": "c",
+      "a": "273.16 K",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-21",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Along a streamline in steady flow of a non-viscous incompressible fluid, which quantity remains constant?",
+      "options": {
+        "a": "½ρv² + ρgh",
+        "b": "P + ½ρv² − ρgh",
+        "c": "P + ρv + ρgh",
+        "d": "P + ½ρv² + ρgh"
+      },
+      "answer": "d",
+      "a": "P + ½ρv² + ρgh",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-78",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The Father of the Indian Space programme is:",
+      "options": {
+        "a": "Subrahmanyan Chandrasekhar",
+        "b": "Meghnad Saha",
+        "c": "Vikram Sarabhai",
+        "d": "Vainu Bappu"
+      },
+      "answer": "c",
+      "a": "Vikram Sarabhai",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-91",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The magnetic field lines around a straight current-carrying wire form:",
+      "options": {
+        "a": "Parallel straight lines",
+        "b": "Elliptical loops",
+        "c": "Concentric circles",
+        "d": "Radial lines from the wire"
+      },
+      "answer": "c",
+      "a": "Concentric circles",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-23",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    }
+  ]
+}

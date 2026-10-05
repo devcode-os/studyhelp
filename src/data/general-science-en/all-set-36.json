@@ -1,0 +1,588 @@
+{
+  "slug": "general-science-set-36",
+  "chapterNumber": 36,
+  "title": "General Science Set 36",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A wire of length 2 m and area of cross-section 1 × 10⁻⁶ m² has a resistance of 4 Ω. The resistivity of its material is:",
+      "options": {
+        "a": "2 × 10⁻⁶ Ω m",
+        "b": "8 × 10⁻⁶ Ω m",
+        "c": "2 × 10⁶ Ω m",
+        "d": "0.5 × 10⁻⁶ Ω m"
+      },
+      "answer": "a",
+      "a": "2 × 10⁻⁶ Ω m",
+      "e": "ρ = RA/l = (4 Ω × 1 × 10⁻⁶ m²) / 2 m = 2 × 10⁻⁶ Ω m.",
+      "table": null,
+      "qid": "physics-ch7-electricity-47",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas formed on burning sulphur in air is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Sulphur dioxide",
+        "c": "Hydrogen sulphide",
+        "d": "Nitrogen dioxide"
+      },
+      "answer": "b",
+      "a": "Sulphur dioxide",
+      "e": "It dissolves in water to form sulphurous acid, which is acidic.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Insulin – Pancreas\n(II) Thyroxin – Thyroid gland\n(III) Growth hormone – Adrenal gland\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-31",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Because of the anomalous behaviour of water, lakes and ponds freeze first at the:",
+      "options": {
+        "a": "top",
+        "b": "sides",
+        "c": "bottom",
+        "d": "middle"
+      },
+      "answer": "a",
+      "a": "top",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-28",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In the electrolysis of water, the volume of gas collected at one electrode is double that at the other because water contains hydrogen and oxygen in the ratio of atoms:",
+      "options": {
+        "a": "2 : 1",
+        "b": "3 : 1",
+        "c": "1 : 2",
+        "d": "1 : 1"
+      },
+      "answer": "a",
+      "a": "2 : 1",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Salim Ali wrote a landmark series on the birds of the Indian Subcontinent comprising how many books?",
+      "options": {
+        "a": "5",
+        "b": "12",
+        "c": "8",
+        "d": "10"
+      },
+      "answer": "d",
+      "a": "10",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-20",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "India's first insolation atlas, Solar Radiation Over India, was published by Anna Mani and:",
+      "options": {
+        "a": "S. Rangarajan",
+        "b": "Vainu Bappu",
+        "c": "Meghnad Saha",
+        "d": "K. R. Ramanathan"
+      },
+      "answer": "a",
+      "a": "S. Rangarajan",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-126",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The carbon atoms in graphite are arranged in layers of:",
+      "options": {
+        "a": "Hexagonal arrays",
+        "b": "Spherical units",
+        "c": "Tetrahedral units",
+        "d": "Cubic units"
+      },
+      "answer": "a",
+      "a": "Hexagonal arrays",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Which kingdom is characterised by prokaryotic cells with a non-cellulosic cell wall made of polysaccharide and amino acid?",
+      "options": {
+        "a": "Monera",
+        "b": "Plantae",
+        "c": "Protista",
+        "d": "Fungi"
+      },
+      "answer": "a",
+      "a": "Monera",
+      "e": "",
+      "table": {
+        "headers": [
+          "Kingdom",
+          "Cell type",
+          "Cell wall",
+          "Nuclear membrane",
+          "Body organisation",
+          "Mode of nutrition"
+        ],
+        "rows": [
+          [
+            "Monera",
+            "Prokaryotic",
+            "Non-cellulosic (polysaccharide + amino acid)",
+            "Absent",
+            "Cellular",
+            "Autotrophic (chemosynthetic and photosynthetic) and heterotrophic (saprophytic/parasitic)"
+          ],
+          [
+            "Protista",
+            "Eukaryotic",
+            "Present in some",
+            "Present",
+            "Cellular",
+            "Autotrophic (photosynthetic) and heterotrophic"
+          ],
+          [
+            "Fungi",
+            "Eukaryotic",
+            "Present, with chitin",
+            "Present",
+            "Multicellular/loose tissue",
+            "Heterotrophic (saprophytic/parasitic)"
+          ],
+          [
+            "Plantae",
+            "Eukaryotic",
+            "Present (cellulose)",
+            "Present",
+            "Tissue/organ",
+            "Autotrophic (photosynthetic)"
+          ],
+          [
+            "Animalia",
+            "Eukaryotic",
+            "Absent",
+            "Present",
+            "Tissue/organ/organ system",
+            "Heterotrophic (holozoic/saprophytic etc.)"
+          ]
+        ]
+      },
+      "qid": "biology-ch21-cell-113",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Transparent material – Light passes almost completely through it\n(II) Translucent material – Light passes partially through it\n(III) Opaque material – Light passes partially through it\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-4",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The hormone responsible for puberty changes in males is:",
+      "options": {
+        "a": "Thyroxin",
+        "b": "Insulin",
+        "c": "Testosterone",
+        "d": "Oestrogen"
+      },
+      "answer": "c",
+      "a": "Testosterone",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-30",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Unsaturated hydrocarbons containing one or more double bonds are called:",
+      "options": {
+        "a": "Alkanes",
+        "b": "Alcohols",
+        "c": "Alkenes",
+        "d": "Alkynes"
+      },
+      "answer": "c",
+      "a": "Alkenes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A solar eclipse occurs when the:",
+      "options": {
+        "a": "Sun lies between the Earth and the Moon",
+        "b": "Earth lies between the Sun and the Moon",
+        "c": "Venus passes between the Sun and the Earth",
+        "d": "Moon lies between the Sun and the Earth"
+      },
+      "answer": "d",
+      "a": "Moon lies between the Sun and the Earth",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-61",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The single membrane that bounds the vacuole is called:",
+      "options": {
+        "a": "Thylakoid",
+        "b": "Tonoplast",
+        "c": "Nuclear envelope",
+        "d": "Plasma membrane"
+      },
+      "answer": "b",
+      "a": "Tonoplast",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-36",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of latent heat is:",
+      "options": {
+        "a": "J kg⁻¹ K⁻¹",
+        "b": "J K⁻¹",
+        "c": "J kg⁻¹",
+        "d": "J mol⁻¹"
+      },
+      "answer": "c",
+      "a": "J kg⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-49",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The constituents of a compound can be separated into simpler substances by:",
+      "options": {
+        "a": "Filtration",
+        "b": "Simple physical methods",
+        "c": "Hand-picking",
+        "d": "Chemical methods"
+      },
+      "answer": "d",
+      "a": "Chemical methods",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "A thick cuticle on the epidermis of plants in very dry habitats reduces:",
+      "options": {
+        "a": "Absorption of minerals",
+        "b": "Food storage",
+        "c": "Water loss through transpiration",
+        "d": "Root hair formation"
+      },
+      "answer": "c",
+      "a": "Water loss through transpiration",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-34",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The mechanical energy of an object is the:",
+      "options": {
+        "a": "sum of its kinetic and potential energies",
+        "b": "difference of its kinetic and potential energies",
+        "c": "ratio of its kinetic to potential energy",
+        "d": "product of its kinetic and potential energies"
+      },
+      "answer": "a",
+      "a": "sum of its kinetic and potential energies",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-29",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The melting point of urea is:",
+      "options": {
+        "a": "0 °C",
+        "b": "100 °C",
+        "c": "133 °C",
+        "d": "1538 °C"
+      },
+      "answer": "c",
+      "a": "133 °C",
+      "e": "Melting points of some solids are given below.",
+      "table": {
+        "headers": [
+          "Material",
+          "Melting point"
+        ],
+        "rows": [
+          [
+            "Ice",
+            "0 °C"
+          ],
+          [
+            "Urea",
+            "133 °C"
+          ],
+          [
+            "Iron",
+            "1538 °C"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch13-matter-and-its-properties-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Anything or any event that prompts a living being to respond is called:",
+      "options": {
+        "a": "Germination",
+        "b": "Stimulus",
+        "c": "Excretion",
+        "d": "Respiration"
+      },
+      "answer": "b",
+      "a": "Stimulus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-9",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "For a mass m attached to a spring of spring constant k, the angular frequency of oscillation is:",
+      "options": {
+        "a": "k/m",
+        "b": "√(k/m)",
+        "c": "m/k",
+        "d": "√(m/k)"
+      },
+      "answer": "b",
+      "a": "√(k/m)",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-26",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Which state of water retains its shape irrespective of the container in which it is placed?",
+      "options": {
+        "a": "Water vapour",
+        "b": "Liquid water",
+        "c": "Ice",
+        "d": "Steam"
+      },
+      "answer": "c",
+      "a": "Ice",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Respiration is a:",
+      "options": {
+        "a": "Nervous process",
+        "b": "Mechanical process",
+        "c": "Chemical process",
+        "d": "Physical process"
+      },
+      "answer": "c",
+      "a": "Chemical process",
+      "e": "Breathing is a physical process, whereas respiration is a chemical process occurring inside the body.",
+      "table": null,
+      "qid": "biology-ch26-respiration-69",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The closeness of magnetic field lines indicates the:",
+      "options": {
+        "a": "Relative strength of the field",
+        "b": "Shape of the magnet",
+        "c": "Polarity of the magnet",
+        "d": "Direction of the field"
+      },
+      "answer": "a",
+      "a": "Relative strength of the field",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-17",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The instrument called the crescograph, used to record how plants respond to stimuli, was built by:",
+      "options": {
+        "a": "C.V. Raman",
+        "b": "Birbal Sahni",
+        "c": "Arun Kumar Sharma",
+        "d": "Jagadish Chandra Bose"
+      },
+      "answer": "d",
+      "a": "Jagadish Chandra Bose",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-13",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A straight line parallel to the time axis on a position-time graph represents:",
+      "options": {
+        "a": "increasing velocity",
+        "b": "an object at rest",
+        "c": "constant acceleration",
+        "d": "constant velocity"
+      },
+      "answer": "b",
+      "a": "an object at rest",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-37",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Mendeleev's Periodic Law states that the properties of the elements are a periodic function of their:",
+      "options": {
+        "a": "Atomic volumes",
+        "b": "Valencies",
+        "c": "Atomic weights",
+        "d": "Atomic numbers"
+      },
+      "answer": "c",
+      "a": "Atomic weights",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The accidental stomach wound of Alexis St. Martin, which later allowed observation of digestion in the stomach, occurred in the year:",
+      "options": {
+        "a": "1842",
+        "b": "1822",
+        "c": "1862",
+        "d": "1802"
+      },
+      "answer": "b",
+      "a": "1822",
+      "e": "Dr William Beaumont observed digestion through the permanent opening left by the wound.",
+      "table": null,
+      "qid": "biology-ch26-respiration-44",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Conventionally, the direction of electric current in a circuit is taken as:",
+      "options": {
+        "a": "Opposite to the direction of flow of electrons",
+        "b": "From negative to positive terminal through the cell",
+        "c": "Same as the direction of flow of electrons",
+        "d": "Perpendicular to the flow of electrons"
+      },
+      "answer": "a",
+      "a": "Opposite to the direction of flow of electrons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-3",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "While reading the volume of water in a measuring cylinder, the reading should coincide with the:",
+      "options": {
+        "a": "Bottom of the meniscus",
+        "b": "Edge of the cylinder",
+        "c": "Mid-point of the meniscus",
+        "d": "Top of the meniscus"
+      },
+      "answer": "a",
+      "a": "Bottom of the meniscus",
+      "e": "For coloured liquids, the reading coincides with the top of the meniscus.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-77",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "slug": "general-science-physics-set-27",
+  "chapterNumber": 27,
+  "title": "Physics Set 27",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Danger signal lights are red because red light is:",
+      "options": {
+        "a": "the most refracted colour",
+        "b": "least scattered by fog or smoke",
+        "c": "most scattered by fog or smoke",
+        "d": "the brightest colour"
+      },
+      "answer": "b",
+      "a": "least scattered by fog or smoke",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-84",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A lifting electromagnet releases the iron objects when the current through it is:",
+      "options": {
+        "a": "Switched OFF",
+        "b": "Doubled",
+        "c": "Reversed",
+        "d": "Increased"
+      },
+      "answer": "a",
+      "a": "Switched OFF",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-70",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI base unit of luminous intensity is:",
+      "options": {
+        "a": "candela",
+        "b": "ampere",
+        "c": "mole",
+        "d": "kelvin"
+      },
+      "answer": "a",
+      "a": "candela",
+      "e": "The seven SI base quantities, units and symbols are listed below.",
+      "table": {
+        "headers": [
+          "Base quantity",
+          "SI unit",
+          "Symbol"
+        ],
+        "rows": [
+          [
+            "Length",
+            "metre",
+            "m"
+          ],
+          [
+            "Mass",
+            "kilogram",
+            "kg"
+          ],
+          [
+            "Time",
+            "second",
+            "s"
+          ],
+          [
+            "Electric current",
+            "ampere",
+            "A"
+          ],
+          [
+            "Thermodynamic temperature",
+            "kelvin",
+            "K"
+          ],
+          [
+            "Amount of substance",
+            "mole",
+            "mol"
+          ],
+          [
+            "Luminous intensity",
+            "candela",
+            "cd"
+          ]
+        ]
+      },
+      "qid": "physics-ch1-units-and-measurement-1",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of specific heat capacity is:",
+      "options": {
+        "a": "J K⁻¹",
+        "b": "J mol⁻¹ K⁻¹",
+        "c": "J kg⁻¹ K⁻¹",
+        "d": "J kg⁻¹"
+      },
+      "answer": "c",
+      "a": "J kg⁻¹ K⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-33",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "An electron moves from one shell to another by absorbing or releasing energy equal to the:",
+      "options": {
+        "a": "Difference between the energies of the two levels",
+        "b": "Energy of the higher level",
+        "c": "Sum of energies of the two levels",
+        "d": "Energy of the lower level"
+      },
+      "answer": "a",
+      "a": "Difference between the energies of the two levels",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-43",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The relative density of a metal is 2.7. Its density in kg m⁻³ is:",
+      "options": {
+        "a": "2.7 × 10⁻³",
+        "b": "2.7",
+        "c": "2.7 × 10⁶",
+        "d": "2.7 × 10³"
+      },
+      "answer": "d",
+      "a": "2.7 × 10³",
+      "e": "Density = 2.7 × density of water (1.0 × 10³ kg m⁻³).",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-70",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A sonic boom is produced when an aircraft flies at a speed:",
+      "options": {
+        "a": "Equal to the speed of light",
+        "b": "Higher than the speed of sound",
+        "c": "Lower than the speed of sound",
+        "d": "Equal to zero"
+      },
+      "answer": "b",
+      "a": "Higher than the speed of sound",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-19",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The defect of vision caused by the gradual weakening of the ciliary muscles and diminishing flexibility of the eye lens with age is:",
+      "options": {
+        "a": "hypermetropia",
+        "b": "myopia",
+        "c": "presbyopia",
+        "d": "cataract"
+      },
+      "answer": "c",
+      "a": "presbyopia",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-71",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A particle in SHM has spring constant 100 N m⁻¹ and amplitude 0.1 m. Its total energy is:",
+      "options": {
+        "a": "0.5 J",
+        "b": "5 J",
+        "c": "1 J",
+        "d": "0.05 J"
+      },
+      "answer": "a",
+      "a": "0.5 J",
+      "e": "E = ½kA² = ½ × 100 N m⁻¹ × (0.1 m)² = 0.5 J.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-34",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A current carrying coil that behaves as a magnet is called:",
+      "options": {
+        "a": "Fuse",
+        "b": "Electromagnet",
+        "c": "Rheostat",
+        "d": "Voltaic cell"
+      },
+      "answer": "b",
+      "a": "Electromagnet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-67",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A combination of two or more cells, with the positive terminal of one connected to the negative terminal of the next, is called a:",
+      "options": {
+        "a": "Circuit",
+        "b": "Battery",
+        "c": "Rheostat",
+        "d": "Switch"
+      },
+      "answer": "b",
+      "a": "Battery",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-16",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a greenhouse gas?",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Argon",
+        "c": "Oxygen",
+        "d": "Methane"
+      },
+      "answer": "d",
+      "a": "Methane",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-98",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a poor conductor of heat?",
+      "options": {
+        "a": "Silver",
+        "b": "Glass wool",
+        "c": "Copper",
+        "d": "Aluminium"
+      },
+      "answer": "b",
+      "a": "Glass wool",
+      "e": "Gases are poor thermal conductors, and liquids are intermediate between solids and gases.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-62",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A ray of light passing through the centre of curvature of a concave mirror, after reflection, is:",
+      "options": {
+        "a": "passing through the focus",
+        "b": "reflected back along the same path",
+        "c": "parallel to the principal axis",
+        "d": "passing through the pole"
+      },
+      "answer": "b",
+      "a": "reflected back along the same path",
+      "e": "Such a ray falls on the mirror along the normal.",
+      "table": null,
+      "qid": "physics-ch5-light-29",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "In June, the season in the Southern Hemisphere is:",
+      "options": {
+        "a": "Summer",
+        "b": "Autumn",
+        "c": "Spring",
+        "d": "Winter"
+      },
+      "answer": "d",
+      "a": "Winter",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-60",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The relative charges of the electron, proton and neutron respectively are:",
+      "options": {
+        "a": "0, +1, −1",
+        "b": "−1, +1, 0",
+        "c": "−1, 0, +1",
+        "d": "+1, −1, 0"
+      },
+      "answer": "b",
+      "a": "−1, +1, 0",
+      "e": "",
+      "table": {
+        "headers": [
+          "Particle",
+          "Relative charge",
+          "Approx. mass (u)"
+        ],
+        "rows": [
+          [
+            "Electron",
+            "−1",
+            "0"
+          ],
+          [
+            "Proton",
+            "+1",
+            "1"
+          ],
+          [
+            "Neutron",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      "qid": "physics-ch10-atomic-and-nuclear-physics-17",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The discovery in 1820 that an electric current produces a magnetic field was made by:",
+      "options": {
+        "a": "Alessandro Volta",
+        "b": "Hans Christian Oersted",
+        "c": "Georg Simon Ohm",
+        "d": "Luigi Galvani"
+      },
+      "answer": "b",
+      "a": "Hans Christian Oersted",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-65",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The most abundant gas in the Earth's atmosphere is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Oxygen",
+        "c": "Nitrogen",
+        "d": "Argon"
+      },
+      "answer": "c",
+      "a": "Nitrogen",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-106",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A convex mirror has a focal length of +15 cm. An object is placed 30 cm in front of it. The magnification produced is:",
+      "options": {
+        "a": "−0.33",
+        "b": "+3.0",
+        "c": "−3.0",
+        "d": "+0.33"
+      },
+      "answer": "d",
+      "a": "+0.33",
+      "e": "1/v = 1/15 + 1/30 = 3/30, so v = +10 cm. m = −v/u = −10/(−30) = +0.33.",
+      "table": null,
+      "qid": "physics-ch5-light-35",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "At the time of a short circuit, the current in the circuit:",
+      "options": {
+        "a": "Varies continuously",
+        "b": "Increases abruptly",
+        "c": "Does not change",
+        "d": "Reduces substantially"
+      },
+      "answer": "b",
+      "a": "Increases abruptly",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-47",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The distance between two consecutive troughs of a sound wave is called its:",
+      "options": {
+        "a": "Frequency",
+        "b": "Amplitude",
+        "c": "Wavelength",
+        "d": "Time period"
+      },
+      "answer": "c",
+      "a": "Wavelength",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-20",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "When positive work is done on an object, its energy:",
+      "options": {
+        "a": "decreases",
+        "b": "becomes zero",
+        "c": "increases",
+        "d": "remains unchanged"
+      },
+      "answer": "c",
+      "a": "increases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-19",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The scientist said to have measured the periods of a swinging chandelier in a church using his pulse beats is:",
+      "options": {
+        "a": "Galileo",
+        "b": "Fourier",
+        "c": "Hertz",
+        "d": "Newton"
+      },
+      "answer": "a",
+      "a": "Galileo",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-43",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "In the gold foil experiment, the fraction of α-particles that bounced back was about:",
+      "options": {
+        "a": "1 in 20",
+        "b": "1 in 20,000",
+        "c": "1 in 200",
+        "d": "1 in 2 million"
+      },
+      "answer": "b",
+      "a": "1 in 20,000",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-31",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The pressure at the bottom of a liquid column in a container depends on the:",
+      "options": {
+        "a": "height of the liquid column",
+        "b": "base area",
+        "c": "total mass of the liquid",
+        "d": "shape of the container"
+      },
+      "answer": "a",
+      "a": "height of the liquid column",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-53",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ultrasonography – Imaging of internal organs\n(II) Infrasonic waves – Breaking kidney stones\n(III) Ultrasonic waves – Detecting defects inside metal blocks\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-57",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    }
+  ]
+}

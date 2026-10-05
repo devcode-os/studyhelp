@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-physics-set-6",
+  "chapterNumber": 6,
+  "title": "Physics Set 6",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The area under a force-displacement graph between the initial and final positions gives the:",
+      "options": {
+        "a": "acceleration",
+        "b": "velocity",
+        "c": "work done",
+        "d": "power"
+      },
+      "answer": "c",
+      "a": "work done",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-8",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A parallel beam of light after reflection from a convex mirror:",
+      "options": {
+        "a": "is absorbed",
+        "b": "converges",
+        "c": "diverges",
+        "d": "remains parallel"
+      },
+      "answer": "c",
+      "a": "diverges",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-37",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A straight inclined line on a position-time graph indicates:",
+      "options": {
+        "a": "object at rest",
+        "b": "increasing velocity",
+        "c": "constant acceleration",
+        "d": "constant velocity"
+      },
+      "answer": "d",
+      "a": "constant velocity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-36",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The albedo of snow lies approximately in the range:",
+      "options": {
+        "a": "0.50–0.70",
+        "b": "0.80–0.90",
+        "c": "0.05–0.10",
+        "d": "0.25–0.30"
+      },
+      "answer": "b",
+      "a": "0.80–0.90",
+      "e": "",
+      "table": {
+        "headers": [
+          "Material",
+          "Albedo"
+        ],
+        "rows": [
+          [
+            "Snow",
+            "0.80–0.90"
+          ],
+          [
+            "Ice",
+            "0.50–0.70"
+          ],
+          [
+            "Crushed rock",
+            "0.25–0.30"
+          ]
+        ]
+      },
+      "qid": "physics-ch9-gravitation-104",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "In 1820, the deflection of a compass needle by an electric current in a nearby wire was accidentally observed by:",
+      "options": {
+        "a": "Alessandro Volta",
+        "b": "Georg Simon Ohm",
+        "c": "Andre-Marie Ampere",
+        "d": "Hans Christian Oersted"
+      },
+      "answer": "d",
+      "a": "Hans Christian Oersted",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-21",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The period of SHM is independent of its:",
+      "options": {
+        "a": "Mass of the block in a spring–mass system",
+        "b": "Amplitude",
+        "c": "Length of a simple pendulum",
+        "d": "Spring constant in a spring–mass system"
+      },
+      "answer": "b",
+      "a": "Amplitude",
+      "e": "The period is also independent of the energy and the phase constant.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-42",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The kinetic energy of a particle in SHM of period T varies with a period of:",
+      "options": {
+        "a": "T/4",
+        "b": "T/2",
+        "c": "T",
+        "d": "2T"
+      },
+      "answer": "b",
+      "a": "T/2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-30",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The largest reservoir of nitrogen is the:",
+      "options": {
+        "a": "Rocks",
+        "b": "Atmosphere",
+        "c": "Soil",
+        "d": "Oceans"
+      },
+      "answer": "b",
+      "a": "Atmosphere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-129",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The working of a fuse is based on:",
+      "options": {
+        "a": "Magnetic effect of current",
+        "b": "Ohm's law",
+        "c": "Joule's heating effect",
+        "d": "Chemical reactions in cells"
+      },
+      "answer": "c",
+      "a": "Joule's heating effect",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-60",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Energy is defined as the:",
+      "options": {
+        "a": "product of force and time",
+        "b": "rate of doing work",
+        "c": "capacity to do work",
+        "d": "force per unit area"
+      },
+      "answer": "c",
+      "a": "capacity to do work",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-10",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple pendulum eventually stops because of energy loss due to:",
+      "options": {
+        "a": "buoyant force",
+        "b": "magnetic force",
+        "c": "friction at the support and air resistance",
+        "d": "loss of mass"
+      },
+      "answer": "c",
+      "a": "friction at the support and air resistance",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-33",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Because of atmospheric refraction, the Sun is visible about ___ before the actual sunrise.",
+      "options": {
+        "a": "20 minutes",
+        "b": "12 minutes",
+        "c": "2 minutes",
+        "d": "8 minutes"
+      },
+      "answer": "c",
+      "a": "2 minutes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-81",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Kilogram – Planck constant\n(II) Kelvin – Boltzmann constant\n(III) Mole – Elementary charge\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "The mole is defined by fixing the Avogadro constant.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-7",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy stored by an object due to its deformation, or in a system of objects due to their relative positions, is called:",
+      "options": {
+        "a": "kinetic energy",
+        "b": "chemical energy",
+        "c": "thermal energy",
+        "d": "potential energy"
+      },
+      "answer": "d",
+      "a": "potential energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-26",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The metal cap of an electric cell is its:",
+      "options": {
+        "a": "Negative terminal",
+        "b": "Filament",
+        "c": "Switch",
+        "d": "Positive terminal"
+      },
+      "answer": "d",
+      "a": "Positive terminal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-15",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The father of the Indian nuclear programme is:",
+      "options": {
+        "a": "Homi Jehangir Bhabha",
+        "b": "Vainu Bappu",
+        "c": "Meghnad Saha",
+        "d": "Vikram Sarabhai"
+      },
+      "answer": "a",
+      "a": "Homi Jehangir Bhabha",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-72",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "A block of mass m is attached to two identical springs of spring constant k on either side, fixed to rigid supports. The time period of its oscillations is:",
+      "options": {
+        "a": "2π√(m/2k)",
+        "b": "2π√(2m/k)",
+        "c": "2π√(m/k)",
+        "d": "π√(m/k)"
+      },
+      "answer": "a",
+      "a": "2π√(m/2k)",
+      "e": "The net restoring force is −2kx.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-29",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The base units of length, mass and time in the FPS system are respectively:",
+      "options": {
+        "a": "metre, kilogram, second",
+        "b": "foot, kilogram, second",
+        "c": "centimetre, gram, second",
+        "d": "foot, pound, second"
+      },
+      "answer": "d",
+      "a": "foot, pound, second",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-5",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A body cools from 90 °C to 80 °C in 5 min when the surroundings are at 30 °C. The time taken to cool from 60 °C to 50 °C is:",
+      "options": {
+        "a": "22 min",
+        "b": "11 min",
+        "c": "2.3 min",
+        "d": "5 min"
+      },
+      "answer": "b",
+      "a": "11 min",
+      "e": "10/5 = K(85 − 30) and 10/t = K(55 − 30), so t = 5 × 55/25 = 11 min.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-81",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In steady-state conduction through a bar, the rate of heat flow is inversely proportional to the:",
+      "options": {
+        "a": "area of cross-section",
+        "b": "length of the bar",
+        "c": "temperature difference",
+        "d": "thermal conductivity"
+      },
+      "answer": "b",
+      "a": "length of the bar",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-65",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The liquid in which the electrodes of a Voltaic cell are partly dipped is called:",
+      "options": {
+        "a": "Terminal",
+        "b": "Core",
+        "c": "Filament",
+        "d": "Electrolyte"
+      },
+      "answer": "d",
+      "a": "Electrolyte",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-71",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The pendulum clock was invented in the year:",
+      "options": {
+        "a": "1656",
+        "b": "1756",
+        "c": "1565",
+        "d": "1657"
+      },
+      "answer": "a",
+      "a": "1656",
+      "e": "It was patented in 1657.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-35",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following festivals follows a solar sidereal calendar?",
+      "options": {
+        "a": "Diwali",
+        "b": "Eid-ul-Fitr",
+        "c": "Makar Sankranti",
+        "d": "Holi"
+      },
+      "answer": "c",
+      "a": "Makar Sankranti",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-87",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "When detergent is dissolved in water, its angle of contact with fibres:",
+      "options": {
+        "a": "becomes obtuse",
+        "b": "becomes 180°",
+        "c": "becomes small",
+        "d": "remains unchanged"
+      },
+      "answer": "c",
+      "a": "becomes small",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-90",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Surface tension is numerically equal to:",
+      "options": {
+        "a": "surface energy per unit area",
+        "b": "force per unit volume",
+        "c": "force per unit area",
+        "d": "surface energy per unit length"
+      },
+      "answer": "a",
+      "a": "surface energy per unit area",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-88",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The periodic to and fro motion of an object about its mean position is called:",
+      "options": {
+        "a": "Vibration",
+        "b": "Reflection",
+        "c": "Reverberation",
+        "d": "Propagation"
+      },
+      "answer": "a",
+      "a": "Vibration",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-8",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of significant figures in 4500 m (written without a decimal point) is:",
+      "options": {
+        "a": "1",
+        "b": "3",
+        "c": "4",
+        "d": "2"
+      },
+      "answer": "d",
+      "a": "2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-16",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "A change in pressure applied to an enclosed fluid is transmitted undiminished to every point of the fluid and the walls of its container. This is known as:",
+      "options": {
+        "a": "Pascal's law",
+        "b": "Stokes' law",
+        "c": "Bernoulli's principle",
+        "d": "Torricelli's law"
+      },
+      "answer": "a",
+      "a": "Pascal's law",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-55",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of a satellite orbiting very close to the surface of the Earth is approximately:",
+      "options": {
+        "a": "24 hours",
+        "b": "85 minutes",
+        "c": "27.3 days",
+        "d": "12 hours"
+      },
+      "answer": "b",
+      "a": "85 minutes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-21",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The vessel and stirrer of a calorimeter are made of a metal such as:",
+      "options": {
+        "a": "copper",
+        "b": "glass wool",
+        "c": "wood",
+        "d": "lead"
+      },
+      "answer": "a",
+      "a": "copper",
+      "e": "Aluminium is also used. The outer jacket contains insulating material such as glass wool.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-40",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    }
+  ]
+}

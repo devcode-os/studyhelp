@@ -1,0 +1,553 @@
+{
+  "slug": "general-science-physics-set-15",
+  "chapterNumber": 15,
+  "title": "Physics Set 15",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The relation between frequency ν and time period T is:",
+      "options": {
+        "a": "ν = T²",
+        "b": "ν = 1/T",
+        "c": "ν = T",
+        "d": "ν = 2πT"
+      },
+      "answer": "b",
+      "a": "ν = 1/T",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-4",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The projection of uniform circular motion on a diameter of the circle executes:",
+      "options": {
+        "a": "Non-periodic motion",
+        "b": "Projectile motion",
+        "c": "Uniform linear motion",
+        "d": "Simple harmonic motion"
+      },
+      "answer": "d",
+      "a": "Simple harmonic motion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-18",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a contact force?",
+      "options": {
+        "a": "Force of friction",
+        "b": "Electrostatic force",
+        "c": "Magnetic force",
+        "d": "Gravitational force"
+      },
+      "answer": "a",
+      "a": "Force of friction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-2",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of a simple pendulum of length L at a place where the acceleration due to gravity is g is:",
+      "options": {
+        "a": "2π(L/g)",
+        "b": "π√(L/g)",
+        "c": "2π√(g/L)",
+        "d": "2π√(L/g)"
+      },
+      "answer": "d",
+      "a": "2π√(L/g)",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-36",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "In a hydraulic lift with small piston area A₁ and large piston area A₂, the mechanical advantage is:",
+      "options": {
+        "a": "A₁ + A₂",
+        "b": "A₁A₂",
+        "c": "A₂/A₁",
+        "d": "A₁/A₂"
+      },
+      "answer": "c",
+      "a": "A₂/A₁",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-58",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "In a cathode ray discharge tube, the rays travel:",
+      "options": {
+        "a": "From anode to cathode",
+        "b": "In both directions alternately",
+        "c": "From cathode to anode",
+        "d": "Only when the tube is at atmospheric pressure"
+      },
+      "answer": "c",
+      "a": "From cathode to anode",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-5",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Monitoring airspace by detecting the low frequency humming of drones and aircraft is called:",
+      "options": {
+        "a": "Reverberation",
+        "b": "Ultrasonography",
+        "c": "Audio surveillance",
+        "d": "Echolocation"
+      },
+      "answer": "c",
+      "a": "Audio surveillance",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-59",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The pre-monsoon local thunderstorms known as Bordoisila occur in:",
+      "options": {
+        "a": "Kerala",
+        "b": "West Bengal",
+        "c": "Karnataka",
+        "d": "Assam"
+      },
+      "answer": "d",
+      "a": "Assam",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-104",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of work is:",
+      "options": {
+        "a": "pascal",
+        "b": "watt",
+        "c": "newton",
+        "d": "joule"
+      },
+      "answer": "d",
+      "a": "joule",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-1",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about a particle in uniform circular motion:\n(I) Its projection on the y-axis is also an SHM of the same amplitude as that on the x-axis.\n(II) The two projections differ in phase by π/2.\n(III) The force in linear SHM is the same as the centripetal force of the circular motion.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-19",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Among the following metals, the highest thermal conductivity is that of:",
+      "options": {
+        "a": "aluminium",
+        "b": "silver",
+        "c": "copper",
+        "d": "brass"
+      },
+      "answer": "b",
+      "a": "silver",
+      "e": "",
+      "table": {
+        "headers": [
+          "Metal",
+          "Thermal conductivity (J s⁻¹ m⁻¹ K⁻¹)"
+        ],
+        "rows": [
+          [
+            "Silver",
+            "406"
+          ],
+          [
+            "Copper",
+            "385"
+          ],
+          [
+            "Aluminium",
+            "205"
+          ],
+          [
+            "Brass",
+            "109"
+          ],
+          [
+            "Steel",
+            "50.2"
+          ],
+          [
+            "Lead",
+            "34.7"
+          ],
+          [
+            "Mercury",
+            "8.3"
+          ]
+        ]
+      },
+      "qid": "physics-ch4-heat-and-temperature-63",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of electrical resistivity is:",
+      "options": {
+        "a": "Ω m",
+        "b": "Ω m⁻¹",
+        "c": "Ω m²",
+        "d": "Ω"
+      },
+      "answer": "a",
+      "a": "Ω m",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-33",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The flow of cooler air from the valley up the warm mountain slopes during the day is called:",
+      "options": {
+        "a": "Land breeze",
+        "b": "Sea breeze",
+        "c": "Valley breeze",
+        "d": "Mountain breeze"
+      },
+      "answer": "c",
+      "a": "Valley breeze",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-110",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The ozone layer in the upper atmosphere mostly absorbs:",
+      "options": {
+        "a": "Radio waves",
+        "b": "Infrared radiation",
+        "c": "Visible light",
+        "d": "Short wavelength UV radiation"
+      },
+      "answer": "d",
+      "a": "Short wavelength UV radiation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-96",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Infrasonic waves are used for detecting:",
+      "options": {
+        "a": "Kidney stones",
+        "b": "Defects inside metal blocks",
+        "c": "Dirt on delicate machine parts",
+        "d": "Earthquakes and volcanic eruptions"
+      },
+      "answer": "d",
+      "a": "Earthquakes and volcanic eruptions",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-58",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Atmospheric oxygen is mainly restored through:",
+      "options": {
+        "a": "Combustion",
+        "b": "Respiration",
+        "c": "Photosynthesis",
+        "d": "Decomposition"
+      },
+      "answer": "c",
+      "a": "Photosynthesis",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-122",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Photosynthesis and respiration form part of the carbon cycle that operates over a time scale of:",
+      "options": {
+        "a": "Millions of years",
+        "b": "Hours to days",
+        "c": "Days to years",
+        "d": "Several centuries"
+      },
+      "answer": "c",
+      "a": "Days to years",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-114",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Advanced computer models that simulate the Indian monsoon are run at the Indian Institute of Tropical Meteorology, located in:",
+      "options": {
+        "a": "Pune",
+        "b": "Kolkata",
+        "c": "Thiruvananthapuram",
+        "d": "Bengaluru"
+      },
+      "answer": "a",
+      "a": "Pune",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-128",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The diameter of the reflecting surface of a spherical mirror is called its:",
+      "options": {
+        "a": "pole",
+        "b": "radius of curvature",
+        "c": "aperture",
+        "d": "focal length"
+      },
+      "answer": "c",
+      "a": "aperture",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-21",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "As an object falls freely under gravity, its mechanical energy:",
+      "options": {
+        "a": "remains constant",
+        "b": "increases",
+        "c": "becomes zero",
+        "d": "decreases"
+      },
+      "answer": "a",
+      "a": "remains constant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-31",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The point on a planet's orbit that is closest to the Sun is called:",
+      "options": {
+        "a": "Perihelion",
+        "b": "Semi-major axis",
+        "c": "Focus",
+        "d": "Aphelion"
+      },
+      "answer": "a",
+      "a": "Perihelion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-3",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the motion of an object under the gravitational influence of another object:\n(I) Angular momentum is conserved.\n(II) Total mechanical energy is conserved.\n(III) Linear momentum is conserved.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-25",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Cyclones form over:",
+      "options": {
+        "a": "warm ocean waters",
+        "b": "deserts",
+        "c": "polar ice",
+        "d": "mountains"
+      },
+      "answer": "a",
+      "a": "warm ocean waters",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-100",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "According to Kepler's law of orbits, planets move in:",
+      "options": {
+        "a": "Elliptical orbits with the Sun at one focus",
+        "b": "Elliptical orbits with the Sun at the centre",
+        "c": "Circular orbits with the Sun at the centre",
+        "d": "Circular orbits with the Sun at one focus"
+      },
+      "answer": "a",
+      "a": "Elliptical orbits with the Sun at one focus",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-1",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Grains sprinkled on a stretched sheet jump when a loud sound is produced near it, without touching it.\nReason (R): Sound is a form of energy.\nChoose the correct statement:",
+      "options": {
+        "a": "Both A and R are true, but R is not the correct explanation of A.",
+        "b": "Both A and R are true, and R is the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "b",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-15",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "A concave mirror has a focal length of −10 cm. An object is placed 30 cm in front of it. The image distance is:",
+      "options": {
+        "a": "−15 cm",
+        "b": "−7.5 cm",
+        "c": "−30 cm",
+        "d": "+15 cm"
+      },
+      "answer": "a",
+      "a": "−15 cm",
+      "e": "1/v = 1/f − 1/u = −1/10 + 1/30 = −2/30, so v = −15 cm.",
+      "table": null,
+      "qid": "physics-ch5-light-34",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The mechanical advantage of a machine is the ratio of:",
+      "options": {
+        "a": "effort to load",
+        "b": "load multiplied by effort",
+        "c": "load minus effort",
+        "d": "load to effort"
+      },
+      "answer": "d",
+      "a": "load to effort",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-41",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The fraction of solar radiation reflected by a surface is called its:",
+      "options": {
+        "a": "Albedo",
+        "b": "Insolation",
+        "c": "Solar constant",
+        "d": "Transmission"
+      },
+      "answer": "a",
+      "a": "Albedo",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-103",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Atmospheric CO₂ has risen from about 315 ppm in 1960 to about:",
+      "options": {
+        "a": "420 ppm",
+        "b": "380 ppm",
+        "c": "350 ppm",
+        "d": "500 ppm"
+      },
+      "answer": "a",
+      "a": "420 ppm",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-117",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Every oscillatory motion is periodic.\n(II) Every periodic motion is oscillatory.\n(III) Circular motion is periodic but not oscillatory.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-2",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    }
+  ]
+}

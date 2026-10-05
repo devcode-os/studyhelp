@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-biology-set-1",
+  "chapterNumber": 1,
+  "title": "Biology Set 1",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Under suitable conditions, slime moulds form an aggregation called:",
+      "options": {
+        "a": "Mycelium",
+        "b": "Basidiocarp",
+        "c": "Plasmodium",
+        "d": "Thallus"
+      },
+      "answer": "c",
+      "a": "Plasmodium",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-124",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Van Mahotsav, the forest festival, is celebrated in the month of:",
+      "options": {
+        "a": "August",
+        "b": "October",
+        "c": "July",
+        "d": "June"
+      },
+      "answer": "c",
+      "a": "July",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-30",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The Silent Valley, a moist evergreen forest saved by a people's movement, is in the Palakkad district of:",
+      "options": {
+        "a": "Tamil Nadu",
+        "b": "Kerala",
+        "c": "Karnataka",
+        "d": "Andhra Pradesh"
+      },
+      "answer": "b",
+      "a": "Kerala",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-16",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Each germ cell has only one gene set.\n(II) All other body cells have two copies of each chromosome.\n(III) The union of two germ cells restores the normal chromosome number.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-13",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The hot springs of Puga Valley, inhabited by heat-loving unicellular bacteria, are located in:",
+      "options": {
+        "a": "Arunachal Pradesh",
+        "b": "Kerala",
+        "c": "Ladakh",
+        "d": "Manipur"
+      },
+      "answer": "c",
+      "a": "Ladakh",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-92",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Aseptate and coenocytic mycelium is characteristic of:",
+      "options": {
+        "a": "Deuteromycetes",
+        "b": "Ascomycetes",
+        "c": "Basidiomycetes",
+        "d": "Phycomycetes"
+      },
+      "answer": "d",
+      "a": "Phycomycetes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-133",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The infoldings of the inner mitochondrial membrane are called:",
+      "options": {
+        "a": "Thylakoids",
+        "b": "Grana",
+        "c": "Cisternae",
+        "d": "Cristae"
+      },
+      "answer": "d",
+      "a": "Cristae",
+      "e": "They increase the surface area.",
+      "table": null,
+      "qid": "biology-ch21-cell-39",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Organisms that use simple food material such as carbon dioxide and water from inorganic sources are called:",
+      "options": {
+        "a": "Parasites",
+        "b": "Autotrophs",
+        "c": "Ruminants",
+        "d": "Heterotrophs"
+      },
+      "answer": "b",
+      "a": "Autotrophs",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-5",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "RBCs are destroyed in the:",
+      "options": {
+        "a": "Liver",
+        "b": "Spleen",
+        "c": "Kidney",
+        "d": "Red bone marrow"
+      },
+      "answer": "b",
+      "a": "Spleen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-40",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Regions that support a large number of endemic species and have undergone significant habitat loss are called:",
+      "options": {
+        "a": "Biodiversity hotspots",
+        "b": "Tiger reserves",
+        "c": "Sacred groves",
+        "d": "Phumdis"
+      },
+      "answer": "a",
+      "a": "Biodiversity hotspots",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-172",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Pregnancy in humans lasts about nine months and is divided into ___ trimesters.",
+      "options": {
+        "a": "Four",
+        "b": "Two",
+        "c": "Five",
+        "d": "Three"
+      },
+      "answer": "d",
+      "a": "Three",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-80",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Adolescence typically occurs between the ages of:",
+      "options": {
+        "a": "5–10 years",
+        "b": "10–19 years",
+        "c": "12–25 years",
+        "d": "8–15 years"
+      },
+      "answer": "b",
+      "a": "10–19 years",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-76",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Cilia and flagella emerge from centriole-like structures called:",
+      "options": {
+        "a": "Mesosomes",
+        "b": "Basal bodies",
+        "c": "Kinetochores",
+        "d": "Nucleoli"
+      },
+      "answer": "b",
+      "a": "Basal bodies",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-55",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a heterotroph?",
+      "options": {
+        "a": "Green plants",
+        "b": "Fungi",
+        "c": "Money plant",
+        "d": "Croton"
+      },
+      "answer": "b",
+      "a": "Fungi",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-7",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In aquatic plants, air spaces that help them float are formed by specialised:",
+      "options": {
+        "a": "Phloem",
+        "b": "Parenchyma",
+        "c": "Collenchyma",
+        "d": "Sclerenchyma"
+      },
+      "answer": "b",
+      "a": "Parenchyma",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-22",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "In fishes, blood passes through the heart ___ during one cycle of passage through the body.",
+      "options": {
+        "a": "Once",
+        "b": "Twice",
+        "c": "Thrice",
+        "d": "Four times"
+      },
+      "answer": "a",
+      "a": "Once",
+      "e": "In other vertebrates it passes through the heart twice in each cycle, which is known as double circulation.",
+      "table": null,
+      "qid": "biology-ch26-respiration-78",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Edward Jenner developed the first vaccine against:",
+      "options": {
+        "a": "Smallpox",
+        "b": "Measles",
+        "c": "Tetanus",
+        "d": "Polio"
+      },
+      "answer": "a",
+      "a": "Smallpox",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-15",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Electron microscopes produce highly magnified images by using:",
+      "options": {
+        "a": "Laser light",
+        "b": "A beam of electrons",
+        "c": "X-rays",
+        "d": "Ultraviolet rays"
+      },
+      "answer": "b",
+      "a": "A beam of electrons",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-16",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The small intestine in humans is almost ___ long.",
+      "options": {
+        "a": "1.5 m",
+        "b": "6 m",
+        "c": "3 m",
+        "d": "9 m"
+      },
+      "answer": "b",
+      "a": "6 m",
+      "e": "The large intestine is about 1.5 m long but is wider than the small intestine.",
+      "table": null,
+      "qid": "biology-ch26-respiration-31",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The small circular DNA present outside the genomic DNA in many bacteria is called:",
+      "options": {
+        "a": "Mesosome",
+        "b": "Nucleoid",
+        "c": "Plasmid",
+        "d": "Chromatin"
+      },
+      "answer": "c",
+      "a": "Plasmid",
+      "e": "Plasmid DNA confers unique characters such as antibiotic resistance.",
+      "table": null,
+      "qid": "biology-ch21-cell-67",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) P-wave – Repolarisation of ventricles\n(II) QRS complex – Depolarisation of ventricles\n(III) T-wave – Repolarisation of ventricles\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "II and III only",
+      "e": "The P-wave represents depolarisation of the atria.",
+      "table": null,
+      "qid": "biology-ch24-human-body-66",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a sign, rather than a symptom, of being unwell?",
+      "options": {
+        "a": "Pain",
+        "b": "High blood pressure",
+        "c": "Dizziness",
+        "d": "Tiredness"
+      },
+      "answer": "b",
+      "a": "High blood pressure",
+      "e": "A symptom is what we feel; a sign can be seen or measured.",
+      "table": null,
+      "qid": "biology-ch28-diseases-25",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The main thinking part of the brain is the:",
+      "options": {
+        "a": "Medulla",
+        "b": "Mid-brain",
+        "c": "Cerebellum",
+        "d": "Fore-brain"
+      },
+      "answer": "d",
+      "a": "Fore-brain",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-7",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Masses of bacterial cells together with food particles that stick to the teeth form:",
+      "options": {
+        "a": "Dental plaque",
+        "b": "Enamel",
+        "c": "Dentine",
+        "d": "Pulp"
+      },
+      "answer": "a",
+      "a": "Dental plaque",
+      "e": "Bacteria acting on sugars produce acids that demineralise enamel, and saliva cannot reach the tooth surface to neutralise the acid.",
+      "table": null,
+      "qid": "biology-ch26-respiration-45",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Amoeboid protozoans – Amoeba\n(II) Flagellated protozoans – Paramoecium\n(III) Sporozoans – Plasmodium\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "Paramoecium is a ciliated protozoan.",
+      "table": null,
+      "qid": "biology-ch21-cell-125",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of nutrients in soil is essential for plant growth?",
+      "options": {
+        "a": "Nitrogen and potassium",
+        "b": "Coal and oil",
+        "c": "Iron and copper",
+        "d": "Salt and sulphur"
+      },
+      "answer": "a",
+      "a": "Nitrogen and potassium",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-14",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The main root with small side roots arising from it is called a:",
+      "options": {
+        "a": "Rhizoid",
+        "b": "Taproot",
+        "c": "Cotyledon",
+        "d": "Fibrous root"
+      },
+      "answer": "b",
+      "a": "Taproot",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-9",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "In terrestrial plants, the water used in photosynthesis is taken up from the soil by the:",
+      "options": {
+        "a": "Roots",
+        "b": "Stomata",
+        "c": "Stems",
+        "d": "Leaves"
+      },
+      "answer": "a",
+      "a": "Roots",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-16",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Edible mushrooms are a good source of:",
+      "options": {
+        "a": "Iodine",
+        "b": "Starch",
+        "c": "Protein",
+        "d": "Fat"
+      },
+      "answer": "c",
+      "a": "Protein",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-12",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "In decomposition, nutrients from dead matter are returned to the soil by:",
+      "options": {
+        "a": "Producers",
+        "b": "Herbivores",
+        "c": "Predators",
+        "d": "Decomposers"
+      },
+      "answer": "d",
+      "a": "Decomposers",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-17",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    }
+  ]
+}

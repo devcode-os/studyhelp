@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-chemistry-set-10",
+  "chapterNumber": 10,
+  "title": "Chemistry Set 10",
+  "section": "Chemistry",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The Law of Constant Proportions was proposed by:",
+      "options": {
+        "a": "Lavoisier",
+        "b": "Avogadro",
+        "c": "Dalton",
+        "d": "Proust"
+      },
+      "answer": "d",
+      "a": "Proust",
+      "e": "It is also called the Law of Definite Proportions or Proust's Law.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-8",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Roasting – Strong heating of sulphide ores in excess air\n(II) Calcination – Strong heating of carbonate ores in limited air\n(III) Roasting – Strong heating of carbonate ores in limited air\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The names suggested by discoverers for new elements are ratified by:",
+      "options": {
+        "a": "IUPAC",
+        "b": "Nobel Committee",
+        "c": "The discoverer alone",
+        "d": "Royal Society"
+      },
+      "answer": "a",
+      "a": "IUPAC",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In a chemical reaction, 8 g of substance A reacts completely with 6 g of substance B to form substances C and D. If 9 g of C is formed, the mass of D formed is:",
+      "options": {
+        "a": "3 g",
+        "b": "14 g",
+        "c": "23 g",
+        "d": "5 g"
+      },
+      "answer": "d",
+      "a": "5 g",
+      "e": "Mass of products = mass of reactants = 14 g, so D = 14 g − 9 g = 5 g.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair consists of amphoteric oxides?",
+      "options": {
+        "a": "CO₂ and SO₂",
+        "b": "Al₂O₃ and ZnO",
+        "c": "Na₂O and K₂O",
+        "d": "CuO and MgO"
+      },
+      "answer": "b",
+      "a": "Al₂O₃ and ZnO",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction of an ester with sodium hydroxide to give an alcohol and the sodium salt of a carboxylic acid is called:",
+      "options": {
+        "a": "Substitution",
+        "b": "Saponification",
+        "c": "Hydrogenation",
+        "d": "Esterification"
+      },
+      "answer": "b",
+      "a": "Saponification",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-74",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The reaction of methane with chlorine takes place rapidly in the presence of:",
+      "options": {
+        "a": "Potassium permanganate",
+        "b": "Sulphuric acid",
+        "c": "Sunlight",
+        "d": "Nickel"
+      },
+      "answer": "c",
+      "a": "Sunlight",
+      "e": "It is a substitution reaction in which chlorine replaces hydrogen atoms one by one.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A grain of potassium permanganate spreads the fastest in:",
+      "options": {
+        "a": "Hot water",
+        "b": "Water at room temperature",
+        "c": "Ice-cold water",
+        "d": "All of these equally"
+      },
+      "answer": "a",
+      "a": "Hot water",
+      "e": "Water particles move faster at higher temperature.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula unit mass of magnesium nitrate, Mg(NO₃)₂ (Mg = 24 u, N = 14 u, O = 16 u), is:",
+      "options": {
+        "a": "148 u",
+        "b": "100 u",
+        "c": "86 u",
+        "d": "124 u"
+      },
+      "answer": "a",
+      "a": "148 u",
+      "e": "24 u + {14 u + (16 u × 3)} × 2 = 148 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Below the boiling point, vapour formation occurs only at the surface.\n(II) Evaporation takes place only at the boiling point.\n(III) Evaporation is a slower process than boiling.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-27",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of properties (guṇa) used in Ayurveda to describe all physical matter is:",
+      "options": {
+        "a": "24",
+        "b": "12",
+        "c": "20",
+        "d": "10"
+      },
+      "answer": "c",
+      "a": "20",
+      "e": "They form ten pairs of opposite properties.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-58",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about Dalton's postulates:\n(I) Atoms of a given element are identical in mass and chemical properties.\n(II) Atoms of different elements have the same mass.\n(III) Atoms combine in the ratio of simple whole numbers to form compounds.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-16",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Obtaining a metal from its oxide involves:",
+      "options": {
+        "a": "Reduction",
+        "b": "Neutralisation",
+        "c": "Calcination",
+        "d": "Oxidation"
+      },
+      "answer": "a",
+      "a": "Reduction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Graphene aerogel, said to be the lightest material on earth, is made from:",
+      "options": {
+        "a": "Aluminium",
+        "b": "Iron",
+        "c": "Silicon",
+        "d": "Carbon"
+      },
+      "answer": "d",
+      "a": "Carbon",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-63",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Any reaction that produces a precipitate is called a:",
+      "options": {
+        "a": "Redox reaction",
+        "b": "Precipitation reaction",
+        "c": "Combination reaction",
+        "d": "Neutralisation reaction"
+      },
+      "answer": "b",
+      "a": "Precipitation reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Different forms of the same element, such as diamond and graphite, are called:",
+      "options": {
+        "a": "Isobars",
+        "b": "Allotropes",
+        "c": "Isotopes",
+        "d": "Isomers"
+      },
+      "answer": "b",
+      "a": "Allotropes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a metalloid?",
+      "options": {
+        "a": "Magnesium",
+        "b": "Sulfur",
+        "c": "Carbon",
+        "d": "Silicon"
+      },
+      "answer": "d",
+      "a": "Silicon",
+      "e": "Boron is also a metalloid. Metalloids have properties intermediate between those of metals and non-metals.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Common salt is obtained from seawater by:",
+      "options": {
+        "a": "Filtration",
+        "b": "Magnetic separation",
+        "c": "Evaporation",
+        "d": "Winnowing"
+      },
+      "answer": "c",
+      "a": "Evaporation",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ethane – C₂H₆\n(II) Ethene – C₂H₄\n(III) Ethyne – C₂H₄\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the IUPAC recommendation, the groups of the periodic table are numbered from 1 to:",
+      "options": {
+        "a": "18",
+        "b": "8",
+        "c": "16",
+        "d": "7"
+      },
+      "answer": "a",
+      "a": "18",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-25",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "When dilute hydrochloric acid is added to copper oxide, the colour of the solution becomes:",
+      "options": {
+        "a": "Blue-green",
+        "b": "Pink",
+        "c": "Colourless",
+        "d": "Yellow"
+      },
+      "answer": "a",
+      "a": "Blue-green",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas formed on burning sulphur in air is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Sulphur dioxide",
+        "c": "Hydrogen sulphide",
+        "d": "Nitrogen dioxide"
+      },
+      "answer": "b",
+      "a": "Sulphur dioxide",
+      "e": "It dissolves in water to form sulphurous acid, which is acidic.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In the electrolysis of water, the volume of gas collected at one electrode is double that at the other because water contains hydrogen and oxygen in the ratio of atoms:",
+      "options": {
+        "a": "2 : 1",
+        "b": "3 : 1",
+        "c": "1 : 2",
+        "d": "1 : 1"
+      },
+      "answer": "a",
+      "a": "2 : 1",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The carbon atoms in graphite are arranged in layers of:",
+      "options": {
+        "a": "Hexagonal arrays",
+        "b": "Spherical units",
+        "c": "Tetrahedral units",
+        "d": "Cubic units"
+      },
+      "answer": "a",
+      "a": "Hexagonal arrays",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Unsaturated hydrocarbons containing one or more double bonds are called:",
+      "options": {
+        "a": "Alkanes",
+        "b": "Alcohols",
+        "c": "Alkenes",
+        "d": "Alkynes"
+      },
+      "answer": "c",
+      "a": "Alkenes",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The constituents of a compound can be separated into simpler substances by:",
+      "options": {
+        "a": "Filtration",
+        "b": "Simple physical methods",
+        "c": "Hand-picking",
+        "d": "Chemical methods"
+      },
+      "answer": "d",
+      "a": "Chemical methods",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-10",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The melting point of urea is:",
+      "options": {
+        "a": "0 °C",
+        "b": "100 °C",
+        "c": "133 °C",
+        "d": "1538 °C"
+      },
+      "answer": "c",
+      "a": "133 °C",
+      "e": "Melting points of some solids are given below.",
+      "table": {
+        "headers": [
+          "Material",
+          "Melting point"
+        ],
+        "rows": [
+          [
+            "Ice",
+            "0 °C"
+          ],
+          [
+            "Urea",
+            "133 °C"
+          ],
+          [
+            "Iron",
+            "1538 °C"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch13-matter-and-its-properties-24",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which state of water retains its shape irrespective of the container in which it is placed?",
+      "options": {
+        "a": "Water vapour",
+        "b": "Liquid water",
+        "c": "Ice",
+        "d": "Steam"
+      },
+      "answer": "c",
+      "a": "Ice",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Mendeleev's Periodic Law states that the properties of the elements are a periodic function of their:",
+      "options": {
+        "a": "Atomic volumes",
+        "b": "Valencies",
+        "c": "Atomic weights",
+        "d": "Atomic numbers"
+      },
+      "answer": "c",
+      "a": "Atomic weights",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "While reading the volume of water in a measuring cylinder, the reading should coincide with the:",
+      "options": {
+        "a": "Bottom of the meniscus",
+        "b": "Edge of the cylinder",
+        "c": "Mid-point of the meniscus",
+        "d": "Top of the meniscus"
+      },
+      "answer": "a",
+      "a": "Bottom of the meniscus",
+      "e": "For coloured liquids, the reading coincides with the top of the meniscus.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-77",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    }
+  ]
+}

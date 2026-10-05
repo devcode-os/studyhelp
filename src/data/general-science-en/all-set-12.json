@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-12",
+  "chapterNumber": 12,
+  "title": "General Science Set 12",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "An appliance of 500 W is operated for 6 hours daily for 10 days. The electrical energy consumed is:",
+      "options": {
+        "a": "3 kW h",
+        "b": "3000 kW h",
+        "c": "300 kW h",
+        "d": "30 kW h"
+      },
+      "answer": "d",
+      "a": "30 kW h",
+      "e": "500 W × 6 h × 10 = 30000 W h = 30 kW h.",
+      "table": null,
+      "qid": "physics-ch7-electricity-58",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "In the starch test, a leaf is decolourised by placing it in a test tube containing:",
+      "options": {
+        "a": "Caustic soda",
+        "b": "Iodine solution",
+        "c": "Lime water",
+        "d": "Alcohol"
+      },
+      "answer": "d",
+      "a": "Alcohol",
+      "e": "The test tube is kept in a beaker of boiling water, since alcohol is highly flammable.",
+      "table": null,
+      "qid": "biology-ch23-plants-42",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following:\n(I) Larger exposed area of water\n(II) Higher humidity of air\n(III) Greater movement of air\nWhich of the above make water evaporate faster?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "Higher humidity slows evaporation.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The term \"vibration\" is generally used when the frequency of the motion is:",
+      "options": {
+        "a": "Zero",
+        "b": "Low",
+        "c": "High",
+        "d": "Equal to the amplitude"
+      },
+      "answer": "c",
+      "a": "High",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-8",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "Most life processes in a cell take place in the:",
+      "options": {
+        "a": "Nucleus",
+        "b": "Cell wall",
+        "c": "Vacuole",
+        "d": "Cytoplasm"
+      },
+      "answer": "d",
+      "a": "Cytoplasm",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-7",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The black patch at the centre of the drum head of a tabla is called:",
+      "options": {
+        "a": "Tanpura",
+        "b": "Syaahi",
+        "c": "Bansuri",
+        "d": "Taal"
+      },
+      "answer": "b",
+      "a": "Syaahi",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-45",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The semi-solid waste called stool is stored in the lower part of the large intestine called the:",
+      "options": {
+        "a": "Rectum",
+        "b": "Anus",
+        "c": "Gizzard",
+        "d": "Rumen"
+      },
+      "answer": "a",
+      "a": "Rectum",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-40",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A reaction in which a single substance breaks down to give two or more simpler substances is called a:",
+      "options": {
+        "a": "Combination reaction",
+        "b": "Precipitation reaction",
+        "c": "Displacement reaction",
+        "d": "Decomposition reaction"
+      },
+      "answer": "d",
+      "a": "Decomposition reaction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The net change in position of an object between two given instants is called its:",
+      "options": {
+        "a": "acceleration",
+        "b": "distance",
+        "c": "displacement",
+        "d": "average speed"
+      },
+      "answer": "c",
+      "a": "displacement",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-25",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The streamlined body of fish helps them to:",
+      "options": {
+        "a": "Fly",
+        "b": "Burrow in soil",
+        "c": "Walk on land",
+        "d": "Swim in water"
+      },
+      "answer": "d",
+      "a": "Swim in water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-30",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Who among the following is known as the 'Father of Modern Indian Chemistry'?",
+      "options": {
+        "a": "Homi J. Bhabha",
+        "b": "J.C. Bose",
+        "c": "Acharya Prafulla Chandra Ray",
+        "d": "C.V. Raman"
+      },
+      "answer": "c",
+      "a": "Acharya Prafulla Chandra Ray",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-12",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "For an ideal gas at constant pressure, the coefficient of volume expansion is:",
+      "options": {
+        "a": "1/T",
+        "b": "T²",
+        "c": "1/T²",
+        "d": "T"
+      },
+      "answer": "a",
+      "a": "1/T",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-26",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Which Indian scientist studied the link between hormones, certain viruses and cancer?",
+      "options": {
+        "a": "Suniti Solomon",
+        "b": "Kamal Ranadive",
+        "c": "Yellapragada Subbarao",
+        "d": "Asima Chatterjee"
+      },
+      "answer": "b",
+      "a": "Kamal Ranadive",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-20",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Addition of hydrogen to ethene to form ethane is an example of:",
+      "options": {
+        "a": "Reduction",
+        "b": "Decomposition",
+        "c": "Precipitation",
+        "d": "Oxidation"
+      },
+      "answer": "a",
+      "a": "Reduction",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The two main organs in the human body where the magnetic field produced is significant are the:",
+      "options": {
+        "a": "Heart and brain",
+        "b": "Lungs and kidneys",
+        "c": "Heart and liver",
+        "d": "Brain and stomach"
+      },
+      "answer": "a",
+      "a": "Heart and brain",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-39",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The translocation of food in the sieve tubes takes place with the help of adjacent:",
+      "options": {
+        "a": "Companion cells",
+        "b": "Tracheids",
+        "c": "Vessels",
+        "d": "Guard cells"
+      },
+      "answer": "a",
+      "a": "Companion cells",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-92",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Celiac disease is a condition in which the body reacts to:",
+      "options": {
+        "a": "Gluten",
+        "b": "Starch",
+        "c": "Cellulose",
+        "d": "Lactose"
+      },
+      "answer": "a",
+      "a": "Gluten",
+      "e": "The reaction damages the inner lining of the small intestine. Millets are naturally gluten-free.",
+      "table": null,
+      "qid": "biology-ch26-respiration-47",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The North Atlantic Drift is an extension of the:",
+      "options": {
+        "a": "Kuroshio Current",
+        "b": "Antarctic Circumpolar Current",
+        "c": "Equatorial Counter Current",
+        "d": "Gulf Stream"
+      },
+      "answer": "d",
+      "a": "Gulf Stream",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-113",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The idea of Parmanu (atom), as tiny indivisible eternal particles of matter, was first spoken of by:",
+      "options": {
+        "a": "Democritus",
+        "b": "Acharya Kanad",
+        "c": "Dalton",
+        "d": "Avogadro"
+      },
+      "answer": "b",
+      "a": "Acharya Kanad",
+      "e": "The idea was written in the Vaisheshika Sutras.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-20",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The core of a cilium or flagellum, containing microtubules running parallel to its long axis, is called the:",
+      "options": {
+        "a": "Kinetochore",
+        "b": "Hub",
+        "c": "Basal body",
+        "d": "Axoneme"
+      },
+      "answer": "d",
+      "a": "Axoneme",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-53",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ārdrā – Betelgeuse\n(II) Kṛittikā – Pleiades\n(III) Rohiṇī – Sirius\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Rohiṇī is Aldebaran, a star in Taurus.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-29",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Heating copper powder in air coats its surface with black:",
+      "options": {
+        "a": "Copper carbonate",
+        "b": "Copper(II) oxide",
+        "c": "Copper sulphate",
+        "d": "Copper chloride"
+      },
+      "answer": "b",
+      "a": "Copper(II) oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Glucose, amino acids, salts and a major amount of water are selectively re-absorbed from the initial filtrate.\n(II) The amount of water re-absorbed depends on how much excess water there is in the body.\n(III) Nephrons do not re-absorb any substance from the filtrate.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-98",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The coefficient of area expansion of a rectangular sheet is:",
+      "options": {
+        "a": "3αl",
+        "b": "2αl",
+        "c": "αl/2",
+        "d": "αl"
+      },
+      "answer": "b",
+      "a": "2αl",
+      "e": "αl is the coefficient of linear expansion.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-25",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The two atoms in an oxygen molecule are held together by a:",
+      "options": {
+        "a": "Ionic bond",
+        "b": "Double covalent bond",
+        "c": "Triple covalent bond",
+        "d": "Single covalent bond"
+      },
+      "answer": "b",
+      "a": "Double covalent bond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "In Paramoecium, food is moved to a specific spot on the cell by the movement of:",
+      "options": {
+        "a": "Villi",
+        "b": "Flagella",
+        "c": "Peristalsis",
+        "d": "Cilia"
+      },
+      "answer": "d",
+      "a": "Cilia",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-21",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The atmosphere holds about what fraction of the total global carbon?",
+      "options": {
+        "a": "49%",
+        "b": "21%",
+        "c": "71%",
+        "d": "1%"
+      },
+      "answer": "d",
+      "a": "1%",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-116",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The natural ability of the body to fight diseases is known as:",
+      "options": {
+        "a": "Vaccination",
+        "b": "Immunity",
+        "c": "Resistance therapy",
+        "d": "Sanitation"
+      },
+      "answer": "b",
+      "a": "Immunity",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-12",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of thermal conductivity is:",
+      "options": {
+        "a": "J m⁻¹ K⁻¹",
+        "b": "J s⁻¹ m⁻²",
+        "c": "W m⁻² K⁻¹",
+        "d": "W m⁻¹ K⁻¹"
+      },
+      "answer": "d",
+      "a": "W m⁻¹ K⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-64",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The process of dissolving an acid or a base in water is:",
+      "options": {
+        "a": "A neutralisation reaction",
+        "b": "Highly endothermic",
+        "c": "Accompanied by no heat change",
+        "d": "Highly exothermic"
+      },
+      "answer": "d",
+      "a": "Highly exothermic",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-44",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    }
+  ]
+}

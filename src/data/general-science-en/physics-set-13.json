@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-physics-set-13",
+  "chapterNumber": 13,
+  "title": "Physics Set 13",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The force acting on a particle in SHM is:",
+      "options": {
+        "a": "Constant in magnitude",
+        "b": "Proportional to displacement and directed towards the mean position",
+        "c": "Proportional to displacement and directed away from the mean position",
+        "d": "Proportional to the square of displacement"
+      },
+      "answer": "b",
+      "a": "Proportional to displacement and directed towards the mean position",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-25",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A person who can see distant objects clearly but cannot see nearby objects distinctly suffers from:",
+      "options": {
+        "a": "hypermetropia",
+        "b": "cataract",
+        "c": "myopia",
+        "d": "night blindness"
+      },
+      "answer": "a",
+      "a": "hypermetropia",
+      "e": "It is corrected by using a convex lens.",
+      "table": null,
+      "qid": "physics-ch5-light-70",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The nucleus is smaller than the atom by a factor of about:",
+      "options": {
+        "a": "10¹⁵",
+        "b": "10¹⁰",
+        "c": "10³",
+        "d": "10⁵"
+      },
+      "answer": "d",
+      "a": "10⁵",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-33",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Compared with the actual body temperature, the temperature measured in the armpit with a digital thermometer is:",
+      "options": {
+        "a": "2 °C to 3 °C lower",
+        "b": "0.5 °C to 1 °C higher",
+        "c": "the same",
+        "d": "0.5 °C to 1 °C lower"
+      },
+      "answer": "d",
+      "a": "0.5 °C to 1 °C lower",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-9",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Grasshoppers and crickets produce sound by:",
+      "options": {
+        "a": "Striking a membrane",
+        "b": "Vibrating vocal cords",
+        "c": "Rubbing wings or legs",
+        "d": "Vibrating air column"
+      },
+      "answer": "c",
+      "a": "Rubbing wings or legs",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-3",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "A force of 240 N acts perpendicular to a surface of area 0.60 m². The pressure is:",
+      "options": {
+        "a": "0.0025 Pa",
+        "b": "40 Pa",
+        "c": "400 Pa",
+        "d": "144 Pa"
+      },
+      "answer": "c",
+      "a": "400 Pa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-51",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "A sudden loud sound pulse, as in a clap of thunder, is produced when heated air undergoes:",
+      "options": {
+        "a": "Rapid cooling",
+        "b": "Liquefaction",
+        "c": "Condensation",
+        "d": "Rapid expansion"
+      },
+      "answer": "d",
+      "a": "Rapid expansion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-18",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The first person to use a glass prism to obtain the spectrum of sunlight was:",
+      "options": {
+        "a": "Galileo Galilei",
+        "b": "Archimedes",
+        "c": "Blaise Pascal",
+        "d": "Isaac Newton"
+      },
+      "answer": "d",
+      "a": "Isaac Newton",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-77",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following animals can detect infrasound?",
+      "options": {
+        "a": "Dolphin",
+        "b": "Bat",
+        "c": "Elephant",
+        "d": "Cat"
+      },
+      "answer": "c",
+      "a": "Elephant",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-40",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "For an isolated system, the heat lost by the hotter part is ___ the heat gained by the colder part.",
+      "options": {
+        "a": "greater than",
+        "b": "less than",
+        "c": "equal to",
+        "d": "twice"
+      },
+      "answer": "c",
+      "a": "equal to",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-39",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The audible range of human hearing is:",
+      "options": {
+        "a": "200 Hz to 200 kHz",
+        "b": "2 Hz to 2 kHz",
+        "c": "20 Hz to 20 kHz",
+        "d": "20 Hz to 2 kHz"
+      },
+      "answer": "c",
+      "a": "20 Hz to 20 kHz",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-38",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The phenomenon of certain elements emitting radiation on their own was named radioactivity by:",
+      "options": {
+        "a": "Ernest Rutherford",
+        "b": "Frederick Soddy",
+        "c": "Henri Becquerel",
+        "d": "Marie Curie"
+      },
+      "answer": "c",
+      "a": "Henri Becquerel",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-21",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The charge to mass ratio (e/mₑ) of the electron is:",
+      "options": {
+        "a": "9.11 × 10⁻³¹ C kg⁻¹",
+        "b": "1.76 × 10⁻¹¹ C kg⁻¹",
+        "c": "1.60 × 10⁻¹⁹ C kg⁻¹",
+        "d": "1.76 × 10¹¹ C kg⁻¹"
+      },
+      "answer": "d",
+      "a": "1.76 × 10¹¹ C kg⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-9",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The neutron was discovered in 1932 by:",
+      "options": {
+        "a": "James Chadwick",
+        "b": "R. A. Millikan",
+        "c": "J. J. Thomson",
+        "d": "Niels Bohr"
+      },
+      "answer": "a",
+      "a": "James Chadwick",
+      "e": "He bombarded a thin sheet of beryllium with α-particles.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-16",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "While walking, the force that pushes a person forward is the force of:",
+      "options": {
+        "a": "friction",
+        "b": "buoyancy",
+        "c": "magnetism",
+        "d": "gravity"
+      },
+      "answer": "a",
+      "a": "friction",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-19",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The orbital period of the planet Mercury is:",
+      "options": {
+        "a": "365 days",
+        "b": "27 days",
+        "c": "88 earth days",
+        "d": "76 years"
+      },
+      "answer": "c",
+      "a": "88 earth days",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-7",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A wire of length 2 m and area of cross-section 1 × 10⁻⁶ m² has a resistance of 4 Ω. The resistivity of its material is:",
+      "options": {
+        "a": "2 × 10⁻⁶ Ω m",
+        "b": "8 × 10⁻⁶ Ω m",
+        "c": "2 × 10⁶ Ω m",
+        "d": "0.5 × 10⁻⁶ Ω m"
+      },
+      "answer": "a",
+      "a": "2 × 10⁻⁶ Ω m",
+      "e": "ρ = RA/l = (4 Ω × 1 × 10⁻⁶ m²) / 2 m = 2 × 10⁻⁶ Ω m.",
+      "table": null,
+      "qid": "physics-ch7-electricity-47",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Because of the anomalous behaviour of water, lakes and ponds freeze first at the:",
+      "options": {
+        "a": "top",
+        "b": "sides",
+        "c": "bottom",
+        "d": "middle"
+      },
+      "answer": "a",
+      "a": "top",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-28",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "India's first insolation atlas, Solar Radiation Over India, was published by Anna Mani and:",
+      "options": {
+        "a": "S. Rangarajan",
+        "b": "Vainu Bappu",
+        "c": "Meghnad Saha",
+        "d": "K. R. Ramanathan"
+      },
+      "answer": "a",
+      "a": "S. Rangarajan",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-126",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Transparent material – Light passes almost completely through it\n(II) Translucent material – Light passes partially through it\n(III) Opaque material – Light passes partially through it\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-4",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A solar eclipse occurs when the:",
+      "options": {
+        "a": "Sun lies between the Earth and the Moon",
+        "b": "Earth lies between the Sun and the Moon",
+        "c": "Venus passes between the Sun and the Earth",
+        "d": "Moon lies between the Sun and the Earth"
+      },
+      "answer": "d",
+      "a": "Moon lies between the Sun and the Earth",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-61",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The SI unit of latent heat is:",
+      "options": {
+        "a": "J kg⁻¹ K⁻¹",
+        "b": "J K⁻¹",
+        "c": "J kg⁻¹",
+        "d": "J mol⁻¹"
+      },
+      "answer": "c",
+      "a": "J kg⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-49",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The mechanical energy of an object is the:",
+      "options": {
+        "a": "sum of its kinetic and potential energies",
+        "b": "difference of its kinetic and potential energies",
+        "c": "ratio of its kinetic to potential energy",
+        "d": "product of its kinetic and potential energies"
+      },
+      "answer": "a",
+      "a": "sum of its kinetic and potential energies",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-29",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "For a mass m attached to a spring of spring constant k, the angular frequency of oscillation is:",
+      "options": {
+        "a": "k/m",
+        "b": "√(k/m)",
+        "c": "m/k",
+        "d": "√(m/k)"
+      },
+      "answer": "b",
+      "a": "√(k/m)",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-26",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The closeness of magnetic field lines indicates the:",
+      "options": {
+        "a": "Relative strength of the field",
+        "b": "Shape of the magnet",
+        "c": "Polarity of the magnet",
+        "d": "Direction of the field"
+      },
+      "answer": "a",
+      "a": "Relative strength of the field",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-17",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "A straight line parallel to the time axis on a position-time graph represents:",
+      "options": {
+        "a": "increasing velocity",
+        "b": "an object at rest",
+        "c": "constant acceleration",
+        "d": "constant velocity"
+      },
+      "answer": "b",
+      "a": "an object at rest",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-37",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Conventionally, the direction of electric current in a circuit is taken as:",
+      "options": {
+        "a": "Opposite to the direction of flow of electrons",
+        "b": "From negative to positive terminal through the cell",
+        "c": "Same as the direction of flow of electrons",
+        "d": "Perpendicular to the flow of electrons"
+      },
+      "answer": "a",
+      "a": "Opposite to the direction of flow of electrons",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-3",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "An engine does 9000 J of work in 12 s. Its average power is:",
+      "options": {
+        "a": "9012 W",
+        "b": "750 W",
+        "c": "0.0013 W",
+        "d": "108000 W"
+      },
+      "answer": "b",
+      "a": "750 W",
+      "e": "P = W/t = 9000 J ÷ 12 s = 750 W.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-40",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Taking the insolation on the Earth's surface as 1 kW m⁻², the solar energy received by a 3 m² area in 1 hour is:",
+      "options": {
+        "a": "1.08 × 10⁷ J",
+        "b": "3.6 × 10⁶ J",
+        "c": "3.0 × 10³ J",
+        "d": "1.08 × 10⁴ J"
+      },
+      "answer": "a",
+      "a": "1.08 × 10⁷ J",
+      "e": "E = 1000 J s⁻¹ m⁻² × 3 m² × 3600 s = 1.08 × 10⁷ J.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-102",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The Whispering Gallery, where a faint whisper can be heard multiple times across the dome, is in the Gol Gumbaz at:",
+      "options": {
+        "a": "Bijapur",
+        "b": "Hampi",
+        "c": "Hyderabad",
+        "d": "Mysuru"
+      },
+      "answer": "a",
+      "a": "Bijapur",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-53",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    }
+  ]
+}

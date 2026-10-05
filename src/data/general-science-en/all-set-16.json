@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-16",
+  "chapterNumber": 16,
+  "title": "General Science Set 16",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Because of atmospheric refraction, the Sun is visible about ___ before the actual sunrise.",
+      "options": {
+        "a": "20 minutes",
+        "b": "12 minutes",
+        "c": "2 minutes",
+        "d": "8 minutes"
+      },
+      "answer": "c",
+      "a": "2 minutes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-81",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Tendon – Connects muscle to bone\n(II) Ligament – Connects bone to bone\n(III) Cartilage – Connects muscle to bone\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-55",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Covalent compounds are generally poor conductors of electricity because:",
+      "options": {
+        "a": "They have low densities",
+        "b": "They have weak bonds within molecules",
+        "c": "No charged particles are formed",
+        "d": "Their molecules are large"
+      },
+      "answer": "c",
+      "a": "No charged particles are formed",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-6",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Kilogram – Planck constant\n(II) Kelvin – Boltzmann constant\n(III) Mole – Elementary charge\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "The mole is defined by fixing the Avogadro constant.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-7",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The enzyme in saliva that breaks down starch into simple sugar is:",
+      "options": {
+        "a": "Trypsin",
+        "b": "Salivary amylase",
+        "c": "Lipase",
+        "d": "Pepsin"
+      },
+      "answer": "b",
+      "a": "Salivary amylase",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-25",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which compound is used in soda-acid fire extinguishers?",
+      "options": {
+        "a": "Sodium hydrogencarbonate",
+        "b": "Gypsum",
+        "c": "Washing soda",
+        "d": "Bleaching powder"
+      },
+      "answer": "a",
+      "a": "Sodium hydrogencarbonate",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-71",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The energy stored by an object due to its deformation, or in a system of objects due to their relative positions, is called:",
+      "options": {
+        "a": "kinetic energy",
+        "b": "chemical energy",
+        "c": "thermal energy",
+        "d": "potential energy"
+      },
+      "answer": "d",
+      "a": "potential energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-26",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Robert Hooke observed the first cells in a thin slice of:",
+      "options": {
+        "a": "Leaf",
+        "b": "Cork",
+        "c": "Onion peel",
+        "d": "Cheek lining"
+      },
+      "answer": "b",
+      "a": "Cork",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-5",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The metal cap of an electric cell is its:",
+      "options": {
+        "a": "Negative terminal",
+        "b": "Filament",
+        "c": "Switch",
+        "d": "Positive terminal"
+      },
+      "answer": "d",
+      "a": "Positive terminal",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-15",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following allotropes of carbon is smooth and slippery?",
+      "options": {
+        "a": "Buckminsterfullerene",
+        "b": "C-60",
+        "c": "Graphite",
+        "d": "Diamond"
+      },
+      "answer": "c",
+      "a": "Graphite",
+      "e": "Diamond is the hardest substance known.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-13",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Persons of which blood group are called universal donors?",
+      "options": {
+        "a": "A",
+        "b": "AB",
+        "c": "B",
+        "d": "O"
+      },
+      "answer": "d",
+      "a": "O",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-47",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The father of the Indian nuclear programme is:",
+      "options": {
+        "a": "Homi Jehangir Bhabha",
+        "b": "Vainu Bappu",
+        "c": "Meghnad Saha",
+        "d": "Vikram Sarabhai"
+      },
+      "answer": "a",
+      "a": "Homi Jehangir Bhabha",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-72",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following seeds requires light to germinate?",
+      "options": {
+        "a": "Bean",
+        "b": "Calendula",
+        "c": "Coleus",
+        "d": "Zinnia"
+      },
+      "answer": "c",
+      "a": "Coleus",
+      "e": "Calendula and Zinnia seeds need darkness.",
+      "table": null,
+      "qid": "biology-ch21-cell-12",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Salts of a strong acid and a strong base are neutral with pH 7.\n(II) Salts of a strong acid and a weak base are acidic with pH less than 7.\n(III) Salts of a strong base and a weak acid are acidic in nature.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "A block of mass m is attached to two identical springs of spring constant k on either side, fixed to rigid supports. The time period of its oscillations is:",
+      "options": {
+        "a": "2π√(m/2k)",
+        "b": "2π√(2m/k)",
+        "c": "2π√(m/k)",
+        "d": "π√(m/k)"
+      },
+      "answer": "a",
+      "a": "2π√(m/2k)",
+      "e": "The net restoring force is −2kx.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-29",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The Indian botanist who played a key role in the 'Save Silent Valley' movement and headed the Botanical Survey of India was:",
+      "options": {
+        "a": "Janaki Ammal",
+        "b": "Kamala Sohonie",
+        "c": "Rustom Hormusji Dastur",
+        "d": "Salim Ali"
+      },
+      "answer": "a",
+      "a": "Janaki Ammal",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-15",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The catalyst used in the hydrogenation of vegetable oils is:",
+      "options": {
+        "a": "Copper",
+        "b": "Zinc",
+        "c": "Platinum",
+        "d": "Nickel"
+      },
+      "answer": "d",
+      "a": "Nickel",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The base units of length, mass and time in the FPS system are respectively:",
+      "options": {
+        "a": "metre, kilogram, second",
+        "b": "foot, kilogram, second",
+        "c": "centimetre, gram, second",
+        "d": "foot, pound, second"
+      },
+      "answer": "d",
+      "a": "foot, pound, second",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-5",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Mars lies at the edge of the Sun's habitable zone.\n(II) Mercury has a thin atmosphere about 100 times thinner than Earth's.\n(III) The atmosphere of Mars is about 100 times thinner than that of Earth.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "I and III only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and III only",
+      "e": "Mercury has no atmosphere at all.",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-5",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "A body cools from 90 °C to 80 °C in 5 min when the surroundings are at 30 °C. The time taken to cool from 60 °C to 50 °C is:",
+      "options": {
+        "a": "22 min",
+        "b": "11 min",
+        "c": "2.3 min",
+        "d": "5 min"
+      },
+      "answer": "b",
+      "a": "11 min",
+      "e": "10/5 = K(85 − 30) and 10/t = K(55 − 30), so t = 5 × 55/25 = 11 min.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-81",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A metal oxide reacts with an acid to give:",
+      "options": {
+        "a": "Salt and hydrogen gas",
+        "b": "Salt, water and carbon dioxide",
+        "c": "Salt and carbon dioxide",
+        "d": "Salt and water"
+      },
+      "answer": "d",
+      "a": "Salt and water",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-26",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Segmented bodies with a body cavity and organ system level organisation are seen in:",
+      "options": {
+        "a": "Porifera",
+        "b": "Annelida",
+        "c": "Nematoda",
+        "d": "Cnidaria"
+      },
+      "answer": "b",
+      "a": "Annelida",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-149",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "In steady-state conduction through a bar, the rate of heat flow is inversely proportional to the:",
+      "options": {
+        "a": "area of cross-section",
+        "b": "length of the bar",
+        "c": "temperature difference",
+        "d": "thermal conductivity"
+      },
+      "answer": "b",
+      "a": "length of the bar",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-65",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "An aquatic plant pollinated through water is:",
+      "options": {
+        "a": "Maize",
+        "b": "Sunflower",
+        "c": "Marigold",
+        "d": "Vallisneria"
+      },
+      "answer": "d",
+      "a": "Vallisneria",
+      "e": "Hydrilla is another water-pollinated plant.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-50",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of 0.5 mol of carbon dioxide (molar mass 44.01 g mol⁻¹) is:",
+      "options": {
+        "a": "88.0 g",
+        "b": "44.0 g",
+        "c": "11.0 g",
+        "d": "22.0 g"
+      },
+      "answer": "d",
+      "a": "22.0 g",
+      "e": "Mass = 0.5 mol × 44.01 g mol⁻¹ = 22.0 g.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-105",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The liquid in which the electrodes of a Voltaic cell are partly dipped is called:",
+      "options": {
+        "a": "Terminal",
+        "b": "Core",
+        "c": "Filament",
+        "d": "Electrolyte"
+      },
+      "answer": "d",
+      "a": "Electrolyte",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-71",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "A specialised, differentiated form of cell membrane, formed by infoldings and characteristic of prokaryotes, is the:",
+      "options": {
+        "a": "Mesosome",
+        "b": "Chromatophore",
+        "c": "Plasmid",
+        "d": "Glycocalyx"
+      },
+      "answer": "a",
+      "a": "Mesosome",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-68",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): 2 g of hydrogen combines with 16 g of oxygen to form 18 g of water.\nReason (R): According to Dalton's atomic theory, atoms combine in a simple whole number ratio to form compounds.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-19",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "The pendulum clock was invented in the year:",
+      "options": {
+        "a": "1656",
+        "b": "1756",
+        "c": "1565",
+        "d": "1657"
+      },
+      "answer": "a",
+      "a": "1656",
+      "e": "It was patented in 1657.",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-35",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The part of a neuron that receives signals from other neurons is the:",
+      "options": {
+        "a": "Axon",
+        "b": "Axon terminals",
+        "c": "Dendrites",
+        "d": "Cell body"
+      },
+      "answer": "c",
+      "a": "Dendrites",
+      "e": "The axon is a long fibre that carries messages from the cell and ends at axon terminals.",
+      "table": null,
+      "qid": "biology-ch22-tissues-61",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    }
+  ]
+}

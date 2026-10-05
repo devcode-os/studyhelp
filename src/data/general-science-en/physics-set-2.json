@@ -1,0 +1,541 @@
+{
+  "slug": "general-science-physics-set-2",
+  "chapterNumber": 2,
+  "title": "Physics Set 2",
+  "section": "Physics",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The earth wire in a house is connected to:",
+      "options": {
+        "a": "A metal plate deep in the earth",
+        "b": "The neutral wire",
+        "c": "The main fuse",
+        "d": "The live wire"
+      },
+      "answer": "a",
+      "a": "A metal plate deep in the earth",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-44",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "In the troposphere, temperature decreases with height at about:",
+      "options": {
+        "a": "12 °C per km",
+        "b": "65 °C per km",
+        "c": "0.65 °C per km",
+        "d": "6.5 °C per km"
+      },
+      "answer": "d",
+      "a": "6.5 °C per km",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-108",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of a simple pendulum of length 0.25 m at g = 9.8 m s⁻² is approximately:",
+      "options": {
+        "a": "3.1 s",
+        "b": "0.5 s",
+        "c": "2.0 s",
+        "d": "1.0 s"
+      },
+      "answer": "d",
+      "a": "1.0 s",
+      "e": "T = 2π√(0.25/9.8) s ≈ 1.0 s.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-40",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "A sheet 0.2 mm thick is made of atoms of diameter about 10⁻¹⁰ m stacked in a line. The approximate number of atoms across its thickness is:",
+      "options": {
+        "a": "2 × 10³",
+        "b": "2 × 10⁷",
+        "c": "2 × 10⁶",
+        "d": "2 × 10⁻⁶"
+      },
+      "answer": "c",
+      "a": "2 × 10⁶",
+      "e": "0.2 mm = 2 × 10⁻⁴ m; 2 × 10⁻⁴ m ÷ 10⁻¹⁰ m = 2 × 10⁶.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-34",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "When white light passes through a glass prism, the colour that bends the most is:",
+      "options": {
+        "a": "green",
+        "b": "violet",
+        "c": "red",
+        "d": "yellow"
+      },
+      "answer": "b",
+      "a": "violet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-76",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "A device used to change the resistance in an electric circuit without changing the voltage source is called a:",
+      "options": {
+        "a": "Fuse",
+        "b": "Rheostat",
+        "c": "Ammeter",
+        "d": "Voltmeter"
+      },
+      "answer": "b",
+      "a": "Rheostat",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-31",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a Class II lever?",
+      "options": {
+        "a": "Wheelbarrow",
+        "b": "Seesaw",
+        "c": "Scissors",
+        "d": "Tweezers"
+      },
+      "answer": "a",
+      "a": "Wheelbarrow",
+      "e": "In a Class II lever, the load lies between the fulcrum and the effort.",
+      "table": {
+        "headers": [
+          "Class",
+          "Position",
+          "Examples"
+        ],
+        "rows": [
+          [
+            "Class I",
+            "Fulcrum in between",
+            "Scissors, crowbar, pliers, balance scale, seesaw"
+          ],
+          [
+            "Class II",
+            "Load in between",
+            "Lemon squeezer, wheelbarrow, bottle opener"
+          ],
+          [
+            "Class III",
+            "Effort in between",
+            "Tweezers, broom, hammer, oar"
+          ]
+        ]
+      },
+      "qid": "physics-ch3-work-energy-and-power-47",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about an inclined plane:\n(I) For the same height, a longer plane requires a smaller effort.\n(II) The work done on the load decreases as the plane becomes longer.\n(III) Its mechanical advantage is greater than 1.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-50",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Electromagnetic waves travel in vacuum with a speed of:",
+      "options": {
+        "a": "3 × 10¹⁰ m s⁻¹",
+        "b": "3 × 10⁵ m s⁻¹",
+        "c": "3 × 10⁸ m s⁻¹",
+        "d": "3 × 10⁶ m s⁻¹"
+      },
+      "answer": "c",
+      "a": "3 × 10⁸ m s⁻¹",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-61",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In an Amant calendar, the month ends on the:",
+      "options": {
+        "a": "New Moon day",
+        "b": "Day after the new Moon",
+        "c": "Day after the full Moon",
+        "d": "Full Moon day"
+      },
+      "answer": "a",
+      "a": "New Moon day",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-82",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Kerosene is optically denser than water because it has a higher:",
+      "options": {
+        "a": "speed of light",
+        "b": "refractive index",
+        "c": "specific heat capacity",
+        "d": "mass density"
+      },
+      "answer": "b",
+      "a": "refractive index",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-45",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Average velocity is the average rate of change of:",
+      "options": {
+        "a": "speed",
+        "b": "position",
+        "c": "distance",
+        "d": "acceleration"
+      },
+      "answer": "b",
+      "a": "position",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-31",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Ice stupas, used to conserve water for the spring and summer, are made in:",
+      "options": {
+        "a": "Kerala",
+        "b": "Ladakh",
+        "c": "Sikkim",
+        "d": "Uttarakhand"
+      },
+      "answer": "b",
+      "a": "Ladakh",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-86",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "A fuse protects a circuit by melting due to:",
+      "options": {
+        "a": "Earthing",
+        "b": "Parallel connection",
+        "c": "Joule heating",
+        "d": "Magnetic attraction"
+      },
+      "answer": "c",
+      "a": "Joule heating",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-48",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "The mercury barometer was devised by the Italian scientist:",
+      "options": {
+        "a": "Daniel Bernoulli",
+        "b": "Archimedes",
+        "c": "Evangelista Torricelli",
+        "d": "George Stokes"
+      },
+      "answer": "c",
+      "a": "Evangelista Torricelli",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-62",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The dimensional formula of force is:",
+      "options": {
+        "a": "[M L² T⁻²]",
+        "b": "[M L T⁻¹]",
+        "c": "[M L⁻¹ T⁻²]",
+        "d": "[M L T⁻²]"
+      },
+      "answer": "d",
+      "a": "[M L T⁻²]",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-24",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "The straight line passing through the pole and the centre of curvature of a spherical mirror is called its:",
+      "options": {
+        "a": "principal axis",
+        "b": "normal",
+        "c": "radius",
+        "d": "aperture"
+      },
+      "answer": "a",
+      "a": "principal axis",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-20",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "For resistors connected in parallel, the reciprocal of the equivalent resistance is equal to the:",
+      "options": {
+        "a": "Sum of their resistances",
+        "b": "Difference of their reciprocals",
+        "c": "Sum of their reciprocals",
+        "d": "Product of their resistances"
+      },
+      "answer": "c",
+      "a": "Sum of their reciprocals",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-44",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "M. K. Vainu Bappu is known as the:",
+      "options": {
+        "a": "Father of modern Indian astronomy",
+        "b": "Father of the Indian space programme",
+        "c": "Father of Indian nuclear physics",
+        "d": "Father of the Indian National Calendar"
+      },
+      "answer": "a",
+      "a": "Father of modern Indian astronomy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-67",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "According to the Bohr–Bury rule, the maximum number of electrons in the M shell is:",
+      "options": {
+        "a": "2",
+        "b": "18",
+        "c": "8",
+        "d": "32"
+      },
+      "answer": "b",
+      "a": "18",
+      "e": "Maximum electrons = 2n² = 2 × 3² = 18.",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-61",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The changing shapes of the bright portion of the Moon as seen from the Earth are called:",
+      "options": {
+        "a": "Tides",
+        "b": "Phases",
+        "c": "Eclipses",
+        "d": "Revolutions"
+      },
+      "answer": "b",
+      "a": "Phases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-70",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The value of the solar constant is approximately:",
+      "options": {
+        "a": "1.0 kW m⁻²",
+        "b": "0.14 kW m⁻²",
+        "c": "14 kW m⁻²",
+        "d": "1.4 kW m⁻²"
+      },
+      "answer": "d",
+      "a": "1.4 kW m⁻²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-100",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The gravitational potential at a point due to the Earth is defined as the potential energy of:",
+      "options": {
+        "a": "A particle of unit charge at that point",
+        "b": "Any particle at that point",
+        "c": "A particle of unit mass at that point",
+        "d": "A particle of the mass of the Earth at that point"
+      },
+      "answer": "c",
+      "a": "A particle of unit mass at that point",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-13",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "For a satellite in a circular orbit around the Earth, as the height above the surface increases, the orbital speed:",
+      "options": {
+        "a": "Decreases",
+        "b": "Increases",
+        "c": "First increases and then decreases",
+        "d": "Remains constant"
+      },
+      "answer": "a",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-19",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Convection is possible only in:",
+      "options": {
+        "a": "fluids",
+        "b": "solids",
+        "c": "vacuum",
+        "d": "metals"
+      },
+      "answer": "a",
+      "a": "fluids",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-59",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The Foucault pendulum gave the first simple demonstration of the Earth's:",
+      "options": {
+        "a": "Magnetism",
+        "b": "Revolution",
+        "c": "Rotation",
+        "d": "Tilt"
+      },
+      "answer": "c",
+      "a": "Rotation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-51",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The kinetic energy of an object of mass m moving with velocity v is:",
+      "options": {
+        "a": "½mv",
+        "b": "mv",
+        "c": "mv²",
+        "d": "½mv²"
+      },
+      "answer": "d",
+      "a": "½mv²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-22",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "Alphabetic symbols of elements derived from their Latin names were suggested in 1813 by:",
+      "options": {
+        "a": "Berzelius",
+        "b": "John Dalton",
+        "c": "Charles Barkla",
+        "d": "Niels Bohr"
+      },
+      "answer": "a",
+      "a": "Berzelius",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-67",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The mass of a proton in unified atomic mass units is approximately:",
+      "options": {
+        "a": "1.00867 u",
+        "b": "9.109 u",
+        "c": "1.00727 u",
+        "d": "0.00054 u"
+      },
+      "answer": "c",
+      "a": "1.00727 u",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-18",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "A simple pendulum has a period of 2 s on the Earth. At a place where g is one-fourth of that on the Earth, its period will be:",
+      "options": {
+        "a": "2 s",
+        "b": "1 s",
+        "c": "8 s",
+        "d": "4 s"
+      },
+      "answer": "d",
+      "a": "4 s",
+      "e": "T ∝ 1/√g, so the period doubles when g becomes one-fourth.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-41",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    }
+  ]
+}

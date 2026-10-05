@@ -1,0 +1,541 @@
+{
+  "slug": "general-science-set-74",
+  "chapterNumber": 74,
+  "title": "General Science Set 74",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The sexual spores produced endogenously in sac-like asci are:",
+      "options": {
+        "a": "Zoospores",
+        "b": "Ascospores",
+        "c": "Basidiospores",
+        "d": "Conidia"
+      },
+      "answer": "b",
+      "a": "Ascospores",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-131",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The relative density of a metal is 2.7. Its density in kg m⁻³ is:",
+      "options": {
+        "a": "2.7 × 10⁻³",
+        "b": "2.7",
+        "c": "2.7 × 10⁶",
+        "d": "2.7 × 10³"
+      },
+      "answer": "d",
+      "a": "2.7 × 10³",
+      "e": "Density = 2.7 × density of water (1.0 × 10³ kg m⁻³).",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-70",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The nucleus as a cell organelle was first described by:",
+      "options": {
+        "a": "Flemming",
+        "b": "George Palade",
+        "c": "Robert Brown",
+        "d": "Camillo Golgi"
+      },
+      "answer": "c",
+      "a": "Robert Brown",
+      "e": "He described it in 1831.",
+      "table": null,
+      "qid": "biology-ch21-cell-3",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Baking powder is a mixture of baking soda and:",
+      "options": {
+        "a": "Lactic acid",
+        "b": "Tartaric acid",
+        "c": "Acetic acid",
+        "d": "Citric acid"
+      },
+      "answer": "b",
+      "a": "Tartaric acid",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-70",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "A sonic boom is produced when an aircraft flies at a speed:",
+      "options": {
+        "a": "Equal to the speed of light",
+        "b": "Higher than the speed of sound",
+        "c": "Lower than the speed of sound",
+        "d": "Equal to zero"
+      },
+      "answer": "b",
+      "a": "Higher than the speed of sound",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-19",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Deficiency of growth hormone in childhood leads to:",
+      "options": {
+        "a": "Giantism",
+        "b": "Dwarfism",
+        "c": "Diabetes",
+        "d": "Goitre"
+      },
+      "answer": "b",
+      "a": "Dwarfism",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-29",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Iron reacts with steam to form hydrogen and:",
+      "options": {
+        "a": "FeO",
+        "b": "Fe₃O₄",
+        "c": "FeSO₄",
+        "d": "FeCl₃"
+      },
+      "answer": "b",
+      "a": "Fe₃O₄",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The defect of vision caused by the gradual weakening of the ciliary muscles and diminishing flexibility of the eye lens with age is:",
+      "options": {
+        "a": "hypermetropia",
+        "b": "myopia",
+        "c": "presbyopia",
+        "d": "cataract"
+      },
+      "answer": "c",
+      "a": "presbyopia",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch5-light-71",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Blood pressure is measured with an instrument called:",
+      "options": {
+        "a": "Sphygmomanometer",
+        "b": "Barometer",
+        "c": "Thermometer",
+        "d": "Spirometer"
+      },
+      "answer": "a",
+      "a": "Sphygmomanometer",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-79",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A particle in SHM has spring constant 100 N m⁻¹ and amplitude 0.1 m. Its total energy is:",
+      "options": {
+        "a": "0.5 J",
+        "b": "5 J",
+        "c": "1 J",
+        "d": "0.05 J"
+      },
+      "answer": "a",
+      "a": "0.5 J",
+      "e": "E = ½kA² = ½ × 100 N m⁻¹ × (0.1 m)² = 0.5 J.",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-34",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum temperature at which a solid melts to become a liquid at atmospheric pressure is called its:",
+      "options": {
+        "a": "Evaporation point",
+        "b": "Sublimation point",
+        "c": "Melting point",
+        "d": "Boiling point"
+      },
+      "answer": "c",
+      "a": "Melting point",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-22",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "In pea plants, an alteration in the gene for an enzyme that makes it less efficient results in a:",
+      "options": {
+        "a": "Plant with wrinkled seeds",
+        "b": "Plant with more hormone",
+        "c": "Tall plant",
+        "d": "Short plant"
+      },
+      "answer": "d",
+      "a": "Short plant",
+      "e": "The enzyme is involved in making a plant growth hormone, so less efficient enzyme means less hormone.",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-16",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "A current carrying coil that behaves as a magnet is called:",
+      "options": {
+        "a": "Fuse",
+        "b": "Electromagnet",
+        "c": "Rheostat",
+        "d": "Voltaic cell"
+      },
+      "answer": "b",
+      "a": "Electromagnet",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-67",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The ability of any living plant cell to develop into a complete plant was proposed in 1902 by:",
+      "options": {
+        "a": "Gottlieb Haberlandt",
+        "b": "Birbal Sahni",
+        "c": "J. Craig Venter",
+        "d": "Arun Kumar Sharma"
+      },
+      "answer": "a",
+      "a": "Gottlieb Haberlandt",
+      "e": "This ability is called totipotency.",
+      "table": null,
+      "qid": "biology-ch21-cell-90",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The ionic end of a soap molecule is:",
+      "options": {
+        "a": "Hydrophilic",
+        "b": "Neutral",
+        "c": "Hydrophobic",
+        "d": "Non-polar"
+      },
+      "answer": "a",
+      "a": "Hydrophilic",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-80",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "A combination of two or more cells, with the positive terminal of one connected to the negative terminal of the next, is called a:",
+      "options": {
+        "a": "Circuit",
+        "b": "Battery",
+        "c": "Rheostat",
+        "d": "Switch"
+      },
+      "answer": "b",
+      "a": "Battery",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-16",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The processes which together perform the maintenance job of a living organism are called:",
+      "options": {
+        "a": "Molecular movements",
+        "b": "Growth processes",
+        "c": "Tropic movements",
+        "d": "Life processes"
+      },
+      "answer": "d",
+      "a": "Life processes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-1",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Ice floats on liquid water because, compared with water, its density is:",
+      "options": {
+        "a": "Equal",
+        "b": "Lower",
+        "c": "Zero",
+        "d": "Higher"
+      },
+      "answer": "b",
+      "a": "Lower",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-87",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a greenhouse gas?",
+      "options": {
+        "a": "Nitrogen",
+        "b": "Argon",
+        "c": "Oxygen",
+        "d": "Methane"
+      },
+      "answer": "d",
+      "a": "Methane",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-98",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a fossil fuel?",
+      "options": {
+        "a": "Wood",
+        "b": "Coal",
+        "c": "Petroleum",
+        "d": "Natural gas"
+      },
+      "answer": "a",
+      "a": "Wood",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-32",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Concentrated nitric acid or sulphuric acid should be diluted by:",
+      "options": {
+        "a": "Adding water to the acid",
+        "b": "Mixing both together quickly",
+        "c": "Adding the acid slowly to water with constant stirring",
+        "d": "Heating the acid before adding water"
+      },
+      "answer": "c",
+      "a": "Adding the acid slowly to water with constant stirring",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-43",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a poor conductor of heat?",
+      "options": {
+        "a": "Silver",
+        "b": "Glass wool",
+        "c": "Copper",
+        "d": "Aluminium"
+      },
+      "answer": "b",
+      "a": "Glass wool",
+      "e": "Gases are poor thermal conductors, and liquids are intermediate between solids and gases.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-62",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Regular use of addictive substances, once a strong urge to take them again and again develops, is called:",
+      "options": {
+        "a": "Menstruation",
+        "b": "Malnutrition",
+        "c": "Cyberbullying",
+        "d": "Substance abuse"
+      },
+      "answer": "d",
+      "a": "Substance abuse",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-90",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A ray of light passing through the centre of curvature of a concave mirror, after reflection, is:",
+      "options": {
+        "a": "passing through the focus",
+        "b": "reflected back along the same path",
+        "c": "parallel to the principal axis",
+        "d": "passing through the pole"
+      },
+      "answer": "b",
+      "a": "reflected back along the same path",
+      "e": "Such a ray falls on the mirror along the normal.",
+      "table": null,
+      "qid": "physics-ch5-light-29",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of humps in a camel of the cold desert of Ladakh is:",
+      "options": {
+        "a": "None",
+        "b": "Three",
+        "c": "Two",
+        "d": "One"
+      },
+      "answer": "c",
+      "a": "Two",
+      "e": "Camels of the hot desert have one hump each.",
+      "table": null,
+      "qid": "biology-ch23-plants-27",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The electronic configuration of the magnesium ion (Mg²⁺) is:",
+      "options": {
+        "a": "2, 8, 8",
+        "b": "2, 8, 1",
+        "c": "2, 8",
+        "d": "2, 8, 2"
+      },
+      "answer": "c",
+      "a": "2, 8",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In June, the season in the Southern Hemisphere is:",
+      "options": {
+        "a": "Summer",
+        "b": "Autumn",
+        "c": "Spring",
+        "d": "Winter"
+      },
+      "answer": "d",
+      "a": "Winter",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-60",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "A basic event in reproduction is the creation of a:",
+      "options": {
+        "a": "Bud",
+        "b": "Spore",
+        "c": "Gamete",
+        "d": "DNA copy"
+      },
+      "answer": "d",
+      "a": "DNA copy",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-4",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The Periodic Law revealed important analogies among how many naturally occurring elements?",
+      "options": {
+        "a": "118",
+        "b": "94",
+        "c": "98",
+        "d": "92"
+      },
+      "answer": "b",
+      "a": "94",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-23",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The relative charges of the electron, proton and neutron respectively are:",
+      "options": {
+        "a": "0, +1, −1",
+        "b": "−1, +1, 0",
+        "c": "−1, 0, +1",
+        "d": "+1, −1, 0"
+      },
+      "answer": "b",
+      "a": "−1, +1, 0",
+      "e": "",
+      "table": {
+        "headers": [
+          "Particle",
+          "Relative charge",
+          "Approx. mass (u)"
+        ],
+        "rows": [
+          [
+            "Electron",
+            "−1",
+            "0"
+          ],
+          [
+            "Proton",
+            "+1",
+            "1"
+          ],
+          [
+            "Neutron",
+            "0",
+            "1"
+          ]
+        ]
+      },
+      "qid": "physics-ch10-atomic-and-nuclear-physics-17",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    }
+  ]
+}

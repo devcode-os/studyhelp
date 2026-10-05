@@ -1,0 +1,501 @@
+{
+  "slug": "general-science-set-75",
+  "chapterNumber": 75,
+  "title": "General Science Set 75",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A solution whose solute concentration is higher than that inside the cell is called:",
+      "options": {
+        "a": "Isotonic",
+        "b": "Hypotonic",
+        "c": "Hypertonic",
+        "d": "Neutral"
+      },
+      "answer": "c",
+      "a": "Hypertonic",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-23",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Non-metallic oxides are acidic in nature.\nReason (R): Carbon dioxide reacts with calcium hydroxide, a base, to form a salt and water.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The discovery in 1820 that an electric current produces a magnetic field was made by:",
+      "options": {
+        "a": "Alessandro Volta",
+        "b": "Hans Christian Oersted",
+        "c": "Georg Simon Ohm",
+        "d": "Luigi Galvani"
+      },
+      "answer": "b",
+      "a": "Hans Christian Oersted",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-65",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Fishes have a 2-chambered heart.\n(II) Amphibians have a 3-chambered heart.\n(III) All reptiles have a 3-chambered heart.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "Crocodiles, among reptiles, have a 4-chambered heart.",
+      "table": null,
+      "qid": "biology-ch24-human-body-56",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The most abundant gas in the Earth's atmosphere is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Oxygen",
+        "c": "Nitrogen",
+        "d": "Argon"
+      },
+      "answer": "c",
+      "a": "Nitrogen",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-106",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure gold is known as:",
+      "options": {
+        "a": "22 carat gold",
+        "b": "20 carat gold",
+        "c": "18 carat gold",
+        "d": "24 carat gold"
+      },
+      "answer": "d",
+      "a": "24 carat gold",
+      "e": "It is very soft, so it is alloyed with silver or copper for jewellery.",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-83",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The menstrual cycle generally recurs every:",
+      "options": {
+        "a": "14–16 days",
+        "b": "28–30 days",
+        "c": "21–24 days",
+        "d": "40–45 days"
+      },
+      "answer": "b",
+      "a": "28–30 days",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-81",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "A convex mirror has a focal length of +15 cm. An object is placed 30 cm in front of it. The magnification produced is:",
+      "options": {
+        "a": "−0.33",
+        "b": "+3.0",
+        "c": "−3.0",
+        "d": "+0.33"
+      },
+      "answer": "d",
+      "a": "+0.33",
+      "e": "1/v = 1/15 + 1/30 = 3/30, so v = +10 cm. m = −v/u = −10/(−30) = +0.33.",
+      "table": null,
+      "qid": "physics-ch5-light-35",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "The blood component that helps in clotting at the site of injury is:",
+      "options": {
+        "a": "RBCs",
+        "b": "WBCs",
+        "c": "Plasma",
+        "d": "Platelets"
+      },
+      "answer": "d",
+      "a": "Platelets",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-50",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Air is a:",
+      "options": {
+        "a": "Non-uniform mixture",
+        "b": "Element",
+        "c": "Compound",
+        "d": "Uniform mixture"
+      },
+      "answer": "d",
+      "a": "Uniform mixture",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-33",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "At the time of a short circuit, the current in the circuit:",
+      "options": {
+        "a": "Varies continuously",
+        "b": "Increases abruptly",
+        "c": "Does not change",
+        "d": "Reduces substantially"
+      },
+      "answer": "b",
+      "a": "Increases abruptly",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-47",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about excretion in plants:\n(I) Many waste products are stored in cellular vacuoles.\n(II) Waste products may be stored in leaves that fall off.\n(III) Plants never excrete any waste substance into the soil around them.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-102",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The minimum temperature at which a substance catches fire is called its:",
+      "options": {
+        "a": "Melting point",
+        "b": "Boiling point",
+        "c": "Flash point",
+        "d": "Ignition temperature"
+      },
+      "answer": "d",
+      "a": "Ignition temperature",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-31",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The distance between two consecutive troughs of a sound wave is called its:",
+      "options": {
+        "a": "Frequency",
+        "b": "Amplitude",
+        "c": "Wavelength",
+        "d": "Time period"
+      },
+      "answer": "c",
+      "a": "Wavelength",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-20",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following cells lacks a cell wall?",
+      "options": {
+        "a": "Bacterial cell",
+        "b": "Plant cell",
+        "c": "Fungal cell",
+        "d": "Animal cell"
+      },
+      "answer": "d",
+      "a": "Animal cell",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-35",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "A traditional remedy for a nettle sting is rubbing the area with the leaf of:",
+      "options": {
+        "a": "Mint",
+        "b": "Dock plant",
+        "c": "Neem",
+        "d": "Tulsi"
+      },
+      "answer": "b",
+      "a": "Dock plant",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "When positive work is done on an object, its energy:",
+      "options": {
+        "a": "decreases",
+        "b": "becomes zero",
+        "c": "increases",
+        "d": "remains unchanged"
+      },
+      "answer": "c",
+      "a": "increases",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-19",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "The growth of roots downward and shoots upward in response to the pull of earth is called:",
+      "options": {
+        "a": "Geotropism",
+        "b": "Hydrotropism",
+        "c": "Phototropism",
+        "d": "Chemotropism"
+      },
+      "answer": "a",
+      "a": "Geotropism",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-17",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The scientist said to have measured the periods of a swinging chandelier in a church using his pulse beats is:",
+      "options": {
+        "a": "Galileo",
+        "b": "Fourier",
+        "c": "Hertz",
+        "d": "Newton"
+      },
+      "answer": "a",
+      "a": "Galileo",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-43",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "According to WHO, health is a state of complete:",
+      "options": {
+        "a": "physical, mental and social well-being",
+        "b": "mental and social well-being",
+        "c": "physical and mental well-being",
+        "d": "physical well-being and absence of disease"
+      },
+      "answer": "a",
+      "a": "physical, mental and social well-being",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-1",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Compounds containing only carbon and hydrogen are called:",
+      "options": {
+        "a": "Hydrocarbons",
+        "b": "Isomers",
+        "c": "Alkanes",
+        "d": "Heteroatoms"
+      },
+      "answer": "a",
+      "a": "Hydrocarbons",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In the gold foil experiment, the fraction of α-particles that bounced back was about:",
+      "options": {
+        "a": "1 in 20",
+        "b": "1 in 20,000",
+        "c": "1 in 200",
+        "d": "1 in 2 million"
+      },
+      "answer": "b",
+      "a": "1 in 20,000",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-31",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "The diameter of the visible field of a microscope is 3 mm, and 12 cells lie along it in a straight line. The estimated size of one cell is:",
+      "options": {
+        "a": "250 µm",
+        "b": "0.25 µm",
+        "c": "2500 µm",
+        "d": "25 µm"
+      },
+      "answer": "a",
+      "a": "250 µm",
+      "e": "3 mm = 3000 µm; 3000 ÷ 12 = 250 µm.",
+      "table": null,
+      "qid": "biology-ch21-cell-15",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A uniform mixture, such as that of salt and water, is called a:",
+      "options": {
+        "a": "Compound",
+        "b": "Suspension",
+        "c": "Solution",
+        "d": "Colloid"
+      },
+      "answer": "c",
+      "a": "Solution",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-60",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The pressure at the bottom of a liquid column in a container depends on the:",
+      "options": {
+        "a": "height of the liquid column",
+        "b": "base area",
+        "c": "total mass of the liquid",
+        "d": "shape of the container"
+      },
+      "answer": "a",
+      "a": "height of the liquid column",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-53",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Microorganisms are found in hot water springs and snow-cold zones.\n(II) Microorganisms may be unicellular or multicellular.\n(III) Microorganisms cannot live inside the bodies of plants and animals.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-37",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The formula unit mass of calcium chloride (Ca = 40 u, Cl = 35.5 u) is:",
+      "options": {
+        "a": "75.5 u",
+        "b": "111 u",
+        "c": "151 u",
+        "d": "146.5 u"
+      },
+      "answer": "b",
+      "a": "111 u",
+      "e": "40 u + (35.5 u × 2) = 111 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ultrasonography – Imaging of internal organs\n(II) Infrasonic waves – Breaking kidney stones\n(III) Ultrasonic waves – Detecting defects inside metal blocks\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-57",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The flexible rod-shaped structure used as a major criterion for classifying animals into non-chordata and chordata is the:",
+      "options": {
+        "a": "Vertebral column",
+        "b": "Nuclear envelope",
+        "c": "Notochord",
+        "d": "Cartilage"
+      },
+      "answer": "c",
+      "a": "Notochord",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-144",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    }
+  ]
+}

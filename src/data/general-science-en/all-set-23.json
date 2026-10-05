@@ -1,0 +1,601 @@
+{
+  "slug": "general-science-set-23",
+  "chapterNumber": 23,
+  "title": "General Science Set 23",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Thylakoids arranged in stacks like piles of coins are called:",
+      "options": {
+        "a": "Cristae",
+        "b": "Grana",
+        "c": "Stroma lamellae",
+        "d": "Stroma"
+      },
+      "answer": "b",
+      "a": "Grana",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-45",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The saturated hydrocarbon with five carbon atoms is:",
+      "options": {
+        "a": "Butane",
+        "b": "Pentane",
+        "c": "Hexane",
+        "d": "Propane"
+      },
+      "answer": "b",
+      "a": "Pentane",
+      "e": "The saturated compounds of carbon and hydrogen with 1 to 6 carbon atoms:",
+      "table": {
+        "headers": [
+          "No. of C atoms",
+          "Name",
+          "Formula"
+        ],
+        "rows": [
+          [
+            "1",
+            "Methane",
+            "CH₄"
+          ],
+          [
+            "2",
+            "Ethane",
+            "C₂H₆"
+          ],
+          [
+            "3",
+            "Propane",
+            "C₃H₈"
+          ],
+          [
+            "4",
+            "Butane",
+            "C₄H₁₀"
+          ],
+          [
+            "5",
+            "Pentane",
+            "C₅H₁₂"
+          ],
+          [
+            "6",
+            "Hexane",
+            "C₆H₁₄"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch19-carbon-and-its-compounds-32",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In Thomson's model of the atom, the positive charge is:",
+      "options": {
+        "a": "Distributed in shells",
+        "b": "Concentrated at the centre",
+        "c": "Uniformly distributed in a sphere",
+        "d": "Absent"
+      },
+      "answer": "c",
+      "a": "Uniformly distributed in a sphere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-25",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a source of iron?",
+      "options": {
+        "a": "Paneer",
+        "b": "Butter",
+        "c": "Beetroot",
+        "d": "Papaya"
+      },
+      "answer": "c",
+      "a": "Beetroot",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-32",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The property by which materials can be beaten into thin sheets is called:",
+      "options": {
+        "a": "Sonority",
+        "b": "Ductility",
+        "c": "Conduction",
+        "d": "Malleability"
+      },
+      "answer": "d",
+      "a": "Malleability",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-2",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The expression U = mgh for potential energy is valid only:",
+      "options": {
+        "a": "far from the Earth's surface",
+        "b": "near the Earth's surface",
+        "c": "when the object is moving",
+        "d": "inside the Earth"
+      },
+      "answer": "b",
+      "a": "near the Earth's surface",
+      "e": "Away from the Earth's surface, g decreases.",
+      "table": null,
+      "qid": "physics-ch3-work-energy-and-power-34",
+      "subject": "physics",
+      "chapter": "physics-ch3-work-energy-and-power"
+    },
+    {
+      "type": "mcq",
+      "q": "In yeast, pyruvate is converted into ethanol and carbon dioxide during:",
+      "options": {
+        "a": "Fermentation",
+        "b": "Photosynthesis",
+        "c": "Digestion",
+        "d": "Translocation"
+      },
+      "answer": "a",
+      "a": "Fermentation",
+      "e": "Since it takes place in the absence of oxygen, it is called anaerobic respiration.",
+      "table": null,
+      "qid": "biology-ch26-respiration-49",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "In the right-hand thumb rule for a straight current-carrying conductor, the thumb points in the direction of the:",
+      "options": {
+        "a": "Magnetic field",
+        "b": "Current",
+        "c": "Motion of electrons",
+        "d": "Force on the conductor"
+      },
+      "answer": "b",
+      "a": "Current",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-26",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) More solute can be dissolved in an unsaturated solution at a given temperature.\n(II) A saturated solution can dissolve more solute at the same temperature.\n(III) For most solids, a saturated solution at a particular temperature behaves as an unsaturated solution if the temperature is increased.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-66",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "The food prepared in the leaves is transported to all parts of the plant through the:",
+      "options": {
+        "a": "Stomata",
+        "b": "Phloem",
+        "c": "Xylem",
+        "d": "Taproot"
+      },
+      "answer": "b",
+      "a": "Phloem",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-53",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The temperature and pressure at which all three phases of a substance coexist is called its:",
+      "options": {
+        "a": "normal boiling point",
+        "b": "triple point",
+        "c": "melting point",
+        "d": "boiling point"
+      },
+      "answer": "b",
+      "a": "triple point",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-52",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "Food chains generally consist of only three or four steps mainly because of:",
+      "options": {
+        "a": "Scarcity of decomposers",
+        "b": "Loss of energy at each step",
+        "c": "Absence of herbivores",
+        "d": "Excess of producers"
+      },
+      "answer": "b",
+      "a": "Loss of energy at each step",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-8",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "With increase in temperature, the solubility of gases dissolved in liquids generally:",
+      "options": {
+        "a": "Remains constant",
+        "b": "Increases",
+        "c": "First increases, then decreases",
+        "d": "Decreases"
+      },
+      "answer": "d",
+      "a": "Decreases",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of base units in the SI system is:",
+      "options": {
+        "a": "seven",
+        "b": "nine",
+        "c": "six",
+        "d": "five"
+      },
+      "answer": "a",
+      "a": "seven",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-3",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Snails – Sex determined by temperature\n(II) A few reptiles – Sex determined by temperature of eggs\n(III) Human beings – Sex largely genetically determined\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "Snails can change sex, indicating that sex is not genetically determined.",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-9",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure water from any source contains hydrogen and oxygen in the mass ratio of:",
+      "options": {
+        "a": "8:1",
+        "b": "2:1",
+        "c": "1:16",
+        "d": "1:8"
+      },
+      "answer": "d",
+      "a": "1:8",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-9",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Cities being warmer than their surrounding rural areas is known as the:",
+      "options": {
+        "a": "Ozone hole",
+        "b": "Urban heat island effect",
+        "c": "Greenhouse effect",
+        "d": "Albedo effect"
+      },
+      "answer": "b",
+      "a": "Urban heat island effect",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-105",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements is/are correct?",
+      "options": {
+        "a": "In a plant greenhouse, heat is trapped because the space is closed.",
+        "b": "On Earth, gases trap heat by absorbing radiation given off by the warmed Earth.",
+        "c": "Both of the above",
+        "d": "Neither of the above"
+      },
+      "answer": "c",
+      "a": "Both of the above",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-15",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Pure iron, which is very soft, becomes hard and strong when mixed with about ______ of carbon.",
+      "options": {
+        "a": "0.05%",
+        "b": "5%",
+        "c": "0.5%",
+        "d": "50%"
+      },
+      "answer": "a",
+      "a": "0.05%",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-81",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "When sound travels from a source to a listener, what is transferred through the medium?",
+      "options": {
+        "a": "Energy",
+        "b": "A steady flow of air",
+        "c": "Particles of the medium",
+        "d": "Mass of the medium"
+      },
+      "answer": "a",
+      "a": "Energy",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-14",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Mitochondria are the sites of:",
+      "options": {
+        "a": "Protein synthesis",
+        "b": "Photosynthesis",
+        "c": "Aerobic respiration",
+        "d": "Lipid synthesis"
+      },
+      "answer": "c",
+      "a": "Aerobic respiration",
+      "e": "They produce cellular energy as ATP and are called the 'power houses' of the cell.",
+      "table": null,
+      "qid": "biology-ch21-cell-42",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The lift-off of a rocket is explained by:",
+      "options": {
+        "a": "Pascal's law",
+        "b": "Newton's third law of motion",
+        "c": "Newton's second law of motion",
+        "d": "Newton's first law of motion"
+      },
+      "answer": "b",
+      "a": "Newton's third law of motion",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-18",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "During the day, when the stomata are open, the major driving force in the movement of water in the xylem is:",
+      "options": {
+        "a": "Transpiration pull",
+        "b": "ATP",
+        "c": "Root pressure",
+        "d": "Diffusion pressure"
+      },
+      "answer": "a",
+      "a": "Transpiration pull",
+      "e": "The effect of root pressure is more important at night.",
+      "table": null,
+      "qid": "biology-ch26-respiration-90",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following solutions is more concentrated?",
+      "options": {
+        "a": "2 spoons of salt in 100 mL of water",
+        "b": "4 spoons of salt in 50 mL of water",
+        "c": "Both are equally concentrated",
+        "d": "They cannot be compared"
+      },
+      "answer": "b",
+      "a": "4 spoons of salt in 50 mL of water",
+      "e": "4 spoons in 50 mL is 0.08 spoon per mL, against 0.02 spoon per mL for the other.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-64",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "An object is placed between the pole and the principal focus of a concave mirror. The image formed is:",
+      "options": {
+        "a": "virtual, erect and diminished",
+        "b": "real, inverted and diminished",
+        "c": "real, inverted and enlarged",
+        "d": "virtual, erect and enlarged"
+      },
+      "answer": "d",
+      "a": "virtual, erect and enlarged",
+      "e": "The image is formed behind the mirror.",
+      "table": {
+        "headers": [
+          "Position of the object",
+          "Position of the image",
+          "Size of the image",
+          "Nature of the image"
+        ],
+        "rows": [
+          [
+            "At infinity",
+            "At the focus F",
+            "Highly diminished, point-sized",
+            "Real and inverted"
+          ],
+          [
+            "Beyond C",
+            "Between F and C",
+            "Diminished",
+            "Real and inverted"
+          ],
+          [
+            "At C",
+            "At C",
+            "Same size",
+            "Real and inverted"
+          ],
+          [
+            "Between C and F",
+            "Beyond C",
+            "Enlarged",
+            "Real and inverted"
+          ],
+          [
+            "At F",
+            "At infinity",
+            "Image would not be formed",
+            "–"
+          ],
+          [
+            "Between P and F",
+            "Behind the mirror",
+            "Enlarged",
+            "Virtual and erect"
+          ]
+        ]
+      },
+      "qid": "physics-ch5-light-24",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Diseases that persist for more than ______ are referred to as chronic diseases.",
+      "options": {
+        "a": "1 year",
+        "b": "1 month",
+        "c": "6 months",
+        "d": "3 months"
+      },
+      "answer": "d",
+      "a": "3 months",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-10",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Assertion (A): Lime water turns milky when exhaled air is bubbled through it.\nReason (R): Exhaled air contains carbon dioxide, which reacts with lime water to form an insoluble substance.",
+      "options": {
+        "a": "Both A and R are true, and R is the correct explanation of A.",
+        "b": "Both A and R are true, but R is not the correct explanation of A.",
+        "c": "A is true, but R is false.",
+        "d": "A is false, but R is true."
+      },
+      "answer": "a",
+      "a": "Both A and R are true, and R is the correct explanation of A.",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-39",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The number of neutrons in a tritium nucleus is:",
+      "options": {
+        "a": "3",
+        "b": "2",
+        "c": "1",
+        "d": "0"
+      },
+      "answer": "b",
+      "a": "2",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch10-atomic-and-nuclear-physics-54",
+      "subject": "physics",
+      "chapter": "physics-ch10-atomic-and-nuclear-physics"
+    },
+    {
+      "type": "mcq",
+      "q": "One kilogram of sponge can filter up to how many litres of sea water per day?",
+      "options": {
+        "a": "24,000",
+        "b": "240",
+        "c": "2,400",
+        "d": "240,000"
+      },
+      "answer": "a",
+      "a": "24,000",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-146",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is not made of matter?",
+      "options": {
+        "a": "Light",
+        "b": "Water",
+        "c": "Air",
+        "d": "Sand"
+      },
+      "answer": "a",
+      "a": "Light",
+      "e": "Heat and electricity are also not made of matter.",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-65",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    }
+  ]
+}

@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-biology-set-9",
+  "chapterNumber": 9,
+  "title": "Biology Set 9",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Thylakoids arranged in stacks like piles of coins are called:",
+      "options": {
+        "a": "Cristae",
+        "b": "Grana",
+        "c": "Stroma lamellae",
+        "d": "Stroma"
+      },
+      "answer": "b",
+      "a": "Grana",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-45",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a source of iron?",
+      "options": {
+        "a": "Paneer",
+        "b": "Butter",
+        "c": "Beetroot",
+        "d": "Papaya"
+      },
+      "answer": "c",
+      "a": "Beetroot",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-32",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "In yeast, pyruvate is converted into ethanol and carbon dioxide during:",
+      "options": {
+        "a": "Fermentation",
+        "b": "Photosynthesis",
+        "c": "Digestion",
+        "d": "Translocation"
+      },
+      "answer": "a",
+      "a": "Fermentation",
+      "e": "Since it takes place in the absence of oxygen, it is called anaerobic respiration.",
+      "table": null,
+      "qid": "biology-ch26-respiration-49",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The food prepared in the leaves is transported to all parts of the plant through the:",
+      "options": {
+        "a": "Stomata",
+        "b": "Phloem",
+        "c": "Xylem",
+        "d": "Taproot"
+      },
+      "answer": "b",
+      "a": "Phloem",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-53",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Food chains generally consist of only three or four steps mainly because of:",
+      "options": {
+        "a": "Scarcity of decomposers",
+        "b": "Loss of energy at each step",
+        "c": "Absence of herbivores",
+        "d": "Excess of producers"
+      },
+      "answer": "b",
+      "a": "Loss of energy at each step",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-8",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Snails – Sex determined by temperature\n(II) A few reptiles – Sex determined by temperature of eggs\n(III) Human beings – Sex largely genetically determined\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "II and III only",
+      "e": "Snails can change sex, indicating that sex is not genetically determined.",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-9",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following statements is/are correct?",
+      "options": {
+        "a": "In a plant greenhouse, heat is trapped because the space is closed.",
+        "b": "On Earth, gases trap heat by absorbing radiation given off by the warmed Earth.",
+        "c": "Both of the above",
+        "d": "Neither of the above"
+      },
+      "answer": "c",
+      "a": "Both of the above",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-15",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Mitochondria are the sites of:",
+      "options": {
+        "a": "Protein synthesis",
+        "b": "Photosynthesis",
+        "c": "Aerobic respiration",
+        "d": "Lipid synthesis"
+      },
+      "answer": "c",
+      "a": "Aerobic respiration",
+      "e": "They produce cellular energy as ATP and are called the 'power houses' of the cell.",
+      "table": null,
+      "qid": "biology-ch21-cell-42",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "During the day, when the stomata are open, the major driving force in the movement of water in the xylem is:",
+      "options": {
+        "a": "Transpiration pull",
+        "b": "ATP",
+        "c": "Root pressure",
+        "d": "Diffusion pressure"
+      },
+      "answer": "a",
+      "a": "Transpiration pull",
+      "e": "The effect of root pressure is more important at night.",
+      "table": null,
+      "qid": "biology-ch26-respiration-90",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Diseases that persist for more than ______ are referred to as chronic diseases.",
+      "options": {
+        "a": "1 year",
+        "b": "1 month",
+        "c": "6 months",
+        "d": "3 months"
+      },
+      "answer": "d",
+      "a": "3 months",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-10",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "One kilogram of sponge can filter up to how many litres of sea water per day?",
+      "options": {
+        "a": "24,000",
+        "b": "240",
+        "c": "2,400",
+        "d": "240,000"
+      },
+      "answer": "a",
+      "a": "24,000",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-146",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Gonorrhoea – Bacterial infection\n(II) Syphilis – Bacterial infection\n(III) HIV-AIDS – Viral infection\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-85",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) The large intestine contains bacteria that help in digestion.\n(II) Fibre-rich foods help the large intestine function properly by making the stool easier to pass.\n(III) The large intestine is called large because it is longer than the small intestine.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-46",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which blood group has both A and B antigens on RBCs and no antibodies in plasma?",
+      "options": {
+        "a": "B",
+        "b": "AB",
+        "c": "O",
+        "d": "A"
+      },
+      "answer": "b",
+      "a": "AB",
+      "e": "",
+      "table": {
+        "headers": [
+          "Blood group",
+          "Antigens on RBCs",
+          "Antibodies in plasma",
+          "Donor's group"
+        ],
+        "rows": [
+          [
+            "A",
+            "A",
+            "anti-B",
+            "A, O"
+          ],
+          [
+            "B",
+            "B",
+            "anti-A",
+            "B, O"
+          ],
+          [
+            "AB",
+            "A, B",
+            "nil",
+            "AB, A, B, O"
+          ],
+          [
+            "O",
+            "nil",
+            "anti-A, B",
+            "O"
+          ]
+        ]
+      },
+      "qid": "biology-ch24-human-body-46",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Ascariasis is caused by:",
+      "options": {
+        "a": "Protozoa",
+        "b": "Bacteria",
+        "c": "Roundworms",
+        "d": "Virus"
+      },
+      "answer": "c",
+      "a": "Roundworms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch28-diseases-7",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Hydra – Cnidaria\n(II) Earthworm – Annelida\n(III) Starfish – Mollusca\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "Starfish belongs to Echinodermata.",
+      "table": null,
+      "qid": "biology-ch21-cell-153",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The floating grasslands called phumdis are located in:",
+      "options": {
+        "a": "Chilika Lake",
+        "b": "Pulicat Lake",
+        "c": "Loktak Lake",
+        "d": "Dal Lake"
+      },
+      "answer": "c",
+      "a": "Loktak Lake",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-174",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about scientific names:\n(I) The genus name begins with a capital letter.\n(II) The species name begins with a capital letter.\n(III) Scientific names are written in italics when printed.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-158",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a part of the endomembrane system?",
+      "options": {
+        "a": "Golgi complex",
+        "b": "Mitochondria",
+        "c": "Lysosomes",
+        "d": "Vacuoles"
+      },
+      "answer": "b",
+      "a": "Mitochondria",
+      "e": "The functions of mitochondria, chloroplasts and peroxisomes are not coordinated with the endomembrane components.",
+      "table": null,
+      "qid": "biology-ch21-cell-29",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Satellite images can help detect which of the following?\n(I) Ocean temperature\n(II) Oil spills\n(III) Wind direction\nSelect the correct answer:",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "d",
+      "a": "I, II and III",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-40",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "R.H. Whittaker proposed the Five Kingdom Classification in the year:",
+      "options": {
+        "a": "1977",
+        "b": "1938",
+        "c": "1866",
+        "d": "1969"
+      },
+      "answer": "d",
+      "a": "1969",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-111",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Water in the diet helps the body to:",
+      "options": {
+        "a": "Provide instant energy",
+        "b": "Store energy",
+        "c": "Build muscles",
+        "d": "Absorb nutrients from food"
+      },
+      "answer": "d",
+      "a": "Absorb nutrients from food",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-21",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Rhizobium bacteria live in the root nodules of:",
+      "options": {
+        "a": "Grasses",
+        "b": "Legumes",
+        "c": "Cacti",
+        "d": "Cereals"
+      },
+      "answer": "b",
+      "a": "Legumes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-28",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is a plant source of protein?",
+      "options": {
+        "a": "Fish",
+        "b": "Peas",
+        "c": "Egg",
+        "d": "Chicken"
+      },
+      "answer": "b",
+      "a": "Peas",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-11",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "In fish and frogs, fertilisation takes place:",
+      "options": {
+        "a": "in water",
+        "b": "after the eggs are laid on land",
+        "c": "in the soil",
+        "d": "inside the female's body"
+      },
+      "answer": "a",
+      "a": "in water",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-41",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The growth of cells outside the body in a nutrient-rich medium under special conditions is called:",
+      "options": {
+        "a": "Cell fusion",
+        "b": "Cell division",
+        "c": "Cell culture",
+        "d": "Cell cycle"
+      },
+      "answer": "c",
+      "a": "Cell culture",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-87",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Plasma constitutes nearly ___ of blood.",
+      "options": {
+        "a": "45 per cent",
+        "b": "65 per cent",
+        "c": "90 per cent",
+        "d": "55 per cent"
+      },
+      "answer": "d",
+      "a": "55 per cent",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-34",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a functional category of plant tissue?\nCount: Type A direct-recall 12 / Type B statement-based (statements, pairs, assertion-reason) 3 / Type C numerical 0. Meristem facts are mostly single-point recall, with statement types for related sub-points.",
+      "options": {
+        "a": "Protecting",
+        "b": "Conducting",
+        "c": "Supporting",
+        "d": "Reproductive"
+      },
+      "answer": "d",
+      "a": "Reproductive",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-15",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The important site of formation of glycoproteins and glycolipids is the:",
+      "options": {
+        "a": "Lysosome",
+        "b": "Golgi apparatus",
+        "c": "Ribosome",
+        "d": "Smooth endoplasmic reticulum"
+      },
+      "answer": "b",
+      "a": "Golgi apparatus",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-34",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The centre associated with the sensation of hunger is located in the:",
+      "options": {
+        "a": "Medulla",
+        "b": "Mid-brain",
+        "c": "Fore-brain",
+        "d": "Cerebellum"
+      },
+      "answer": "c",
+      "a": "Fore-brain",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-8",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    }
+  ]
+}

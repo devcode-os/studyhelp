@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-63",
+  "chapterNumber": 63,
+  "title": "General Science Set 63",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The chief producers in the oceans are:",
+      "options": {
+        "a": "Slime moulds",
+        "b": "Euglenoids",
+        "c": "Dinoflagellates",
+        "d": "Diatoms"
+      },
+      "answer": "d",
+      "a": "Diatoms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-121",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following metals is found in nature in the free state?",
+      "options": {
+        "a": "Aluminium",
+        "b": "Sodium",
+        "c": "Zinc",
+        "d": "Gold"
+      },
+      "answer": "d",
+      "a": "Gold",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-59",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The time period of a simple pendulum at a given place depends on its:",
+      "options": {
+        "a": "material of the bob",
+        "b": "length",
+        "c": "thickness of the string",
+        "d": "mass of the bob"
+      },
+      "answer": "b",
+      "a": "length",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch1-units-and-measurement-29",
+      "subject": "physics",
+      "chapter": "physics-ch1-units-and-measurement"
+    },
+    {
+      "type": "mcq",
+      "q": "Rudolf Virchow modified the hypothesis of Schleiden and Schwann, giving the cell theory its final shape, in the year:",
+      "options": {
+        "a": "1838",
+        "b": "1855",
+        "c": "1898",
+        "d": "1839"
+      },
+      "answer": "b",
+      "a": "1855",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-6",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The first woman to receive the Shanti Swarup Bhatnagar Award in the field of chemical science was:",
+      "options": {
+        "a": "Janaki Ammal",
+        "b": "Asima Chatterjee",
+        "c": "Anna Mani",
+        "d": "Kamala Sohonie"
+      },
+      "answer": "b",
+      "a": "Asima Chatterjee",
+      "e": "She was also the second Indian woman to earn a Doctorate of Science, after Janaki Ammal, and was honoured with the Padma Bhushan.",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-69",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Most artificial satellites orbit about 800 km above the Earth. The time they take for one orbit is roughly:",
+      "options": {
+        "a": "27 days",
+        "b": "100 minutes",
+        "c": "12 hours",
+        "d": "24 hours"
+      },
+      "answer": "b",
+      "a": "100 minutes",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-89",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ovary – Production of eggs\n(II) Cervix – Opening of the uterus into the vagina\n(III) Vas deferens – Production of sperms\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-72",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The extra month added every few years in luni-solar calendars is called:",
+      "options": {
+        "a": "Amant",
+        "b": "Purnimant",
+        "c": "Adhika Maasa",
+        "d": "Uttarayan"
+      },
+      "answer": "c",
+      "a": "Adhika Maasa",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-81",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The muscle found only in the heart, with cylindrical and branched fibres, is:",
+      "options": {
+        "a": "Skeletal muscle",
+        "b": "Smooth muscle",
+        "c": "Cartilage",
+        "d": "Cardiac muscle"
+      },
+      "answer": "d",
+      "a": "Cardiac muscle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-59",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The brown substance formed during rusting of iron is chemically:",
+      "options": {
+        "a": "Iron sulfate",
+        "b": "Iron oxide",
+        "c": "Calcium carbonate",
+        "d": "Magnesium oxide"
+      },
+      "answer": "b",
+      "a": "Iron oxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-28",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Free liquid drops and bubbles are spherical due to:",
+      "options": {
+        "a": "buoyancy",
+        "b": "surface tension",
+        "c": "Pascal's law",
+        "d": "viscosity"
+      },
+      "answer": "b",
+      "a": "surface tension",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-91",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Human cells contain how many pairs of chromosomes other than the sex chromosomes?",
+      "options": {
+        "a": "22",
+        "b": "24",
+        "c": "23",
+        "d": "21"
+      },
+      "answer": "a",
+      "a": "22",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-5",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The first fullerene to be identified was:",
+      "options": {
+        "a": "C-70",
+        "b": "C-80",
+        "c": "C-20",
+        "d": "C-60"
+      },
+      "answer": "d",
+      "a": "C-60",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "In an electric circuit, a fuse is placed:",
+      "options": {
+        "a": "Across the voltmeter",
+        "b": "Across the battery only",
+        "c": "In parallel with the device",
+        "d": "In series with the device"
+      },
+      "answer": "d",
+      "a": "In series with the device",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-59",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "In Ayurveda, ritucharya refers to:",
+      "options": {
+        "a": "Body constitution",
+        "b": "Daily routine",
+        "c": "Seasonal routine",
+        "d": "Fresh wholesome diet"
+      },
+      "answer": "c",
+      "a": "Seasonal routine",
+      "e": "Dinacharya is the daily routine; prakriti is body constitution.",
+      "table": null,
+      "qid": "biology-ch28-diseases-24",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "N₂O₄ is correctly named as:",
+      "options": {
+        "a": "Nitrogen tetroxide",
+        "b": "Dinitrogen tetroxide",
+        "c": "Dinitrogen tetraoxygen",
+        "d": "Dinitrogen tetraoxide"
+      },
+      "answer": "b",
+      "a": "Dinitrogen tetroxide",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-29",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Materials that are not attracted towards a magnet are called:",
+      "options": {
+        "a": "Elastic materials",
+        "b": "Conductive materials",
+        "c": "Magnetic materials",
+        "d": "Non-magnetic materials"
+      },
+      "answer": "d",
+      "a": "Non-magnetic materials",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-3",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Menstruation stops naturally by the age of:",
+      "options": {
+        "a": "35–40 years",
+        "b": "60–65 years",
+        "c": "45–55 years",
+        "d": "30–35 years"
+      },
+      "answer": "c",
+      "a": "45–55 years",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-83",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following devices uses a current-carrying conductor in a magnetic field?",
+      "options": {
+        "a": "Electric fuse",
+        "b": "Earth wire",
+        "c": "Loudspeaker",
+        "d": "Electricity meter"
+      },
+      "answer": "c",
+      "a": "Loudspeaker",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-38",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Basic substances are generally ______ to touch.",
+      "options": {
+        "a": "Brittle",
+        "b": "Slippery",
+        "c": "Sticky",
+        "d": "Rough"
+      },
+      "answer": "b",
+      "a": "Slippery",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch17-acids-bases-salts-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch17-acids-bases-salts"
+    },
+    {
+      "type": "mcq",
+      "q": "The release of energy is much greater in:",
+      "options": {
+        "a": "Fermentation",
+        "b": "Lactic acid formation",
+        "c": "Anaerobic respiration",
+        "d": "Aerobic respiration"
+      },
+      "answer": "d",
+      "a": "Aerobic respiration",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-53",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A body starts from rest with a constant acceleration of 3 m s⁻². The distance covered in 4 s is:",
+      "options": {
+        "a": "6 m",
+        "b": "12 m",
+        "c": "24 m",
+        "d": "48 m"
+      },
+      "answer": "c",
+      "a": "24 m",
+      "e": "s = ½ × 3 × 4² = 24 m.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-44",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Free and attached earlobes are examples of:",
+      "options": {
+        "a": "Variants of a trait",
+        "b": "Dominant traits only",
+        "c": "Acquired traits",
+        "d": "Sex-linked traits"
+      },
+      "answer": "a",
+      "a": "Variants of a trait",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-14",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Friedrich Wöhler disproved the 'vital force' theory in 1828 by preparing:",
+      "options": {
+        "a": "Acetic acid",
+        "b": "Urea",
+        "c": "Methane",
+        "d": "Ethanol"
+      },
+      "answer": "b",
+      "a": "Urea",
+      "e": "He prepared it from ammonium cyanate.",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-21",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "On the Fahrenheit scale, the number of equal intervals between the ice point and the steam point is:",
+      "options": {
+        "a": "32",
+        "b": "100",
+        "c": "212",
+        "d": "180"
+      },
+      "answer": "d",
+      "a": "180",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-6",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "An electron microscope can magnify a cell about:",
+      "options": {
+        "a": "1,000 times",
+        "b": "1,00,000 times",
+        "c": "10,00,000 times",
+        "d": "10,000 times"
+      },
+      "answer": "c",
+      "a": "10,00,000 times",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-15",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Reducing the supply of oxygen to fat-containing food helps to:",
+      "options": {
+        "a": "Speed up oxidation",
+        "b": "Slow down oxidation",
+        "c": "Cause decomposition",
+        "d": "Cause corrosion"
+      },
+      "answer": "b",
+      "a": "Slow down oxidation",
+      "e": "Keeping food in air tight containers has the same effect.",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-54",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "When an object is taken from the Earth to the Moon:",
+      "options": {
+        "a": "its mass changes but its weight remains the same",
+        "b": "both its mass and weight change",
+        "c": "both its mass and weight remain the same",
+        "d": "its weight changes but its mass remains the same"
+      },
+      "answer": "d",
+      "a": "its weight changes but its mass remains the same",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-7",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The second heart sound (\"dub\") is associated with the closure of the:",
+      "options": {
+        "a": "Tricuspid valve",
+        "b": "Bicuspid valve",
+        "c": "Semilunar valves",
+        "d": "Both tricuspid and bicuspid valves"
+      },
+      "answer": "c",
+      "a": "Semilunar valves",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-65",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following dissolves in kerosene and petrol but not in water?",
+      "options": {
+        "a": "Camphor",
+        "b": "Calcium oxide",
+        "c": "Copper sulfate",
+        "d": "Sodium chloride"
+      },
+      "answer": "a",
+      "a": "Camphor",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-49",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    }
+  ]
+}

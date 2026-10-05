@@ -1,0 +1,518 @@
+{
+  "slug": "general-science-set-3",
+  "chapterNumber": 3,
+  "title": "General Science Set 3",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "A car moving at 20 m s⁻¹ is brought to rest with a constant acceleration of −5 m s⁻². The distance travelled before stopping is:",
+      "options": {
+        "a": "40 m",
+        "b": "20 m",
+        "c": "80 m",
+        "d": "4 m"
+      },
+      "answer": "a",
+      "a": "40 m",
+      "e": "s = u²/(2|a|) = 400 ÷ 10 = 40 m.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-43",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The main thinking part of the brain is the:",
+      "options": {
+        "a": "Medulla",
+        "b": "Mid-brain",
+        "c": "Cerebellum",
+        "d": "Fore-brain"
+      },
+      "answer": "d",
+      "a": "Fore-brain",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-7",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The most common type of rechargeable battery found in almost all devices that use batteries is the:",
+      "options": {
+        "a": "Lithium-ion battery",
+        "b": "Voltaic cell",
+        "c": "Lemon cell",
+        "d": "Dry cell"
+      },
+      "answer": "a",
+      "a": "Lithium-ion battery",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-74",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "Mishraloha was the name given to a mixture of:",
+      "options": {
+        "a": "Two gases",
+        "b": "Two or more metals",
+        "c": "A metal and a non-metal",
+        "d": "Two non-metals"
+      },
+      "answer": "b",
+      "a": "Two or more metals",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch15-elements-and-compounds-34",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch15-elements-and-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "Masses of bacterial cells together with food particles that stick to the teeth form:",
+      "options": {
+        "a": "Dental plaque",
+        "b": "Enamel",
+        "c": "Dentine",
+        "d": "Pulp"
+      },
+      "answer": "a",
+      "a": "Dental plaque",
+      "e": "Bacteria acting on sugars produce acids that demineralise enamel, and saliva cannot reach the tooth surface to neutralise the acid.",
+      "table": null,
+      "qid": "biology-ch26-respiration-45",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "A temperature of 50 °C is equal to:",
+      "options": {
+        "a": "122 °F",
+        "b": "150 °F",
+        "c": "82 °F",
+        "d": "90 °F"
+      },
+      "answer": "a",
+      "a": "122 °F",
+      "e": "tF = (9/5) × 50 + 32 = 122 °F.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-7",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "In the balanced equation 3Fe + 4H₂O → Fe₃O₄ + 4H₂, the coefficient of H₂ is:",
+      "options": {
+        "a": "4",
+        "b": "1",
+        "c": "2",
+        "d": "3"
+      },
+      "answer": "a",
+      "a": "4",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Amoeboid protozoans – Amoeba\n(II) Flagellated protozoans – Paramoecium\n(III) Sporozoans – Plasmodium\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I and III only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and III only",
+      "e": "Paramoecium is a ciliated protozoan.",
+      "table": null,
+      "qid": "biology-ch21-cell-125",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Planets discovered revolving around other stars in our galaxy are called:",
+      "options": {
+        "a": "Natural satellites",
+        "b": "Exoplanets",
+        "c": "Dwarf planets",
+        "d": "Asteroids"
+      },
+      "answer": "b",
+      "a": "Exoplanets",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-47",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of nutrients in soil is essential for plant growth?",
+      "options": {
+        "a": "Nitrogen and potassium",
+        "b": "Coal and oil",
+        "c": "Iron and copper",
+        "d": "Salt and sulphur"
+      },
+      "answer": "a",
+      "a": "Nitrogen and potassium",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-14",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Erosion of rocks by flowing water and wind is a:",
+      "options": {
+        "a": "Reaction with oxygen",
+        "b": "Combustion",
+        "c": "Chemical change",
+        "d": "Physical change"
+      },
+      "answer": "d",
+      "a": "Physical change",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-38",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "A pressure equivalent of 1 mm of mercury is called:",
+      "options": {
+        "a": "atmosphere",
+        "b": "pascal",
+        "c": "bar",
+        "d": "torr"
+      },
+      "answer": "d",
+      "a": "torr",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-64",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The main root with small side roots arising from it is called a:",
+      "options": {
+        "a": "Rhizoid",
+        "b": "Taproot",
+        "c": "Cotyledon",
+        "d": "Fibrous root"
+      },
+      "answer": "b",
+      "a": "Taproot",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-9",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The molecular mass of ammonia (N = 14 u, H = 1 u) is:",
+      "options": {
+        "a": "17 u",
+        "b": "15 u",
+        "c": "16 u",
+        "d": "18 u"
+      },
+      "answer": "a",
+      "a": "17 u",
+      "e": "14 u + (1 u × 3) = 17 u.",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-53",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "A car starts from rest and its velocity increases uniformly to 12 m s⁻¹ in 6 s. The displacement in these 6 s is:",
+      "options": {
+        "a": "2 m",
+        "b": "36 m",
+        "c": "72 m",
+        "d": "18 m"
+      },
+      "answer": "b",
+      "a": "36 m",
+      "e": "Area of the triangle = ½ × 6 s × 12 m s⁻¹ = 36 m.",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-41",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "In terrestrial plants, the water used in photosynthesis is taken up from the soil by the:",
+      "options": {
+        "a": "Roots",
+        "b": "Stomata",
+        "c": "Stems",
+        "d": "Leaves"
+      },
+      "answer": "a",
+      "a": "Roots",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-16",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "One kilowatt hour is equal to:",
+      "options": {
+        "a": "3.6 × 10⁶ J",
+        "b": "3.6 × 10³ J",
+        "c": "1 × 10³ J",
+        "d": "3.6 × 10⁹ J"
+      },
+      "answer": "a",
+      "a": "3.6 × 10⁶ J",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-57",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "When a mixture of acetone and water is heated, the liquid that vaporises first is:",
+      "options": {
+        "a": "Water",
+        "b": "Acetone",
+        "c": "Both together",
+        "d": "Neither"
+      },
+      "answer": "b",
+      "a": "Acetone",
+      "e": "Acetone boils at about 56 °C and water at 100 °C.",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-56",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "Edible mushrooms are a good source of:",
+      "options": {
+        "a": "Iodine",
+        "b": "Starch",
+        "c": "Protein",
+        "d": "Fat"
+      },
+      "answer": "c",
+      "a": "Protein",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-12",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "The potential energy of a particle in SHM at displacement x is:",
+      "options": {
+        "a": "kx",
+        "b": "½kx",
+        "c": "kx²",
+        "d": "½kx²"
+      },
+      "answer": "d",
+      "a": "½kx²",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch11-oscillations-shm-31",
+      "subject": "physics",
+      "chapter": "physics-ch11-oscillations-shm"
+    },
+    {
+      "type": "mcq",
+      "q": "In decomposition, nutrients from dead matter are returned to the soil by:",
+      "options": {
+        "a": "Producers",
+        "b": "Herbivores",
+        "c": "Predators",
+        "d": "Decomposers"
+      },
+      "answer": "d",
+      "a": "Decomposers",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-17",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "In the reaction 2Na + Cl₂ → 2NaCl, sodium acts as:",
+      "options": {
+        "a": "A precipitating agent",
+        "b": "An oxidising agent",
+        "c": "A catalyst",
+        "d": "A reducing agent"
+      },
+      "answer": "d",
+      "a": "A reducing agent",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch20-chemical-reactions-and-equations-40",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch20-chemical-reactions-and-equations"
+    },
+    {
+      "type": "mcq",
+      "q": "The refractive index of a medium is 1.25. The speed of light in the medium (speed of light in vacuum = 3 × 10⁸ m s⁻¹) is:",
+      "options": {
+        "a": "3.75 × 10⁸ m s⁻¹",
+        "b": "4.2 × 10⁸ m s⁻¹",
+        "c": "1.5 × 10⁸ m s⁻¹",
+        "d": "2.4 × 10⁸ m s⁻¹"
+      },
+      "answer": "d",
+      "a": "2.4 × 10⁸ m s⁻¹",
+      "e": "v = c/n = 3 × 10⁸ ÷ 1.25 = 2.4 × 10⁸ m s⁻¹.",
+      "table": null,
+      "qid": "physics-ch5-light-43",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "If the Earth were much smaller but of the same average density, its atmosphere would:",
+      "options": {
+        "a": "become richer in ozone",
+        "b": "become thicker",
+        "c": "escape into space",
+        "d": "freeze"
+      },
+      "answer": "c",
+      "a": "escape into space",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-6",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "A wire of about ______ in length can be drawn from one gram of gold.",
+      "options": {
+        "a": "2 km",
+        "b": "20 km",
+        "c": "20 m",
+        "d": "200 m"
+      },
+      "answer": "a",
+      "a": "2 km",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-5",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The earth wire in a house is connected to:",
+      "options": {
+        "a": "A metal plate deep in the earth",
+        "b": "The neutral wire",
+        "c": "The main fuse",
+        "d": "The live wire"
+      },
+      "answer": "a",
+      "a": "A metal plate deep in the earth",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-44",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "On average, the percentage of the food eaten that is turned into body mass and made available to the next level of consumers is:",
+      "options": {
+        "a": "10%",
+        "b": "5%",
+        "c": "20%",
+        "d": "1%"
+      },
+      "answer": "a",
+      "a": "10%",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-7",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "In the troposphere, temperature decreases with height at about:",
+      "options": {
+        "a": "12 °C per km",
+        "b": "65 °C per km",
+        "c": "0.65 °C per km",
+        "d": "6.5 °C per km"
+      },
+      "answer": "d",
+      "a": "6.5 °C per km",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-108",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The circulation of water between the Earth's surface and the atmosphere is known as:",
+      "options": {
+        "a": "Rain cycle",
+        "b": "Water cycle",
+        "c": "Condensation cycle",
+        "d": "Vapour cycle"
+      },
+      "answer": "b",
+      "a": "Water cycle",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-7",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The world's first non-steroidal and non-hormonal oral contraceptive pill was developed at the:",
+      "options": {
+        "a": "Central Drug Research Institute, Lucknow",
+        "b": "Indian Council of Agricultural Research",
+        "c": "National Institute of Nutrition",
+        "d": "Food Safety and Standard Authority of India"
+      },
+      "answer": "a",
+      "a": "Central Drug Research Institute, Lucknow",
+      "e": "It is taken once weekly.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-91",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    }
+  ]
+}

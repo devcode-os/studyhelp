@@ -1,0 +1,549 @@
+{
+  "slug": "general-science-biology-set-23",
+  "chapterNumber": 23,
+  "title": "Biology Set 23",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "Blood pressure, salivation and vomiting are controlled by the:",
+      "options": {
+        "a": "Fore-brain",
+        "b": "Cerebellum",
+        "c": "Medulla",
+        "d": "Spinal cord"
+      },
+      "answer": "c",
+      "a": "Medulla",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-9",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Muscle fibres that are unbranched, multinucleate and striated belong to:",
+      "options": {
+        "a": "Smooth muscle",
+        "b": "Skeletal muscle",
+        "c": "Nervous tissue",
+        "d": "Cardiac muscle"
+      },
+      "answer": "b",
+      "a": "Skeletal muscle",
+      "e": "The three muscle types differ in control, cell shape, number of nuclei and striations.",
+      "table": {
+        "headers": [
+          "Muscle type",
+          "Control",
+          "Cell shape",
+          "Nuclei",
+          "Striations"
+        ],
+        "rows": [
+          [
+            "Skeletal",
+            "Voluntary",
+            "Cylindrical, unbranched",
+            "Multinucleate",
+            "Striated"
+          ],
+          [
+            "Smooth",
+            "Involuntary",
+            "Spindle-shaped",
+            "Single nucleus",
+            "Absent"
+          ],
+          [
+            "Cardiac",
+            "Involuntary",
+            "Cylindrical, branched",
+            "Single nucleus",
+            "Faint"
+          ]
+        ]
+      },
+      "qid": "biology-ch22-tissues-57",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The Nasha Mukt Bharat Abhiyaan was launched by the:",
+      "options": {
+        "a": "Ministry of Women and Child Development",
+        "b": "Ministry of Health and Family Welfare",
+        "c": "Ministry of Social Justice and Empowerment",
+        "d": "Ministry of Education"
+      },
+      "answer": "c",
+      "a": "Ministry of Social Justice and Empowerment",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-89",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The gap between two neurons is called:",
+      "options": {
+        "a": "Dendrite",
+        "b": "Axon",
+        "c": "Impulse",
+        "d": "Synapse"
+      },
+      "answer": "d",
+      "a": "Synapse",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-1",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Bryophytes lack vascular tissues.\n(II) Pteridophytes produce seeds.\n(III) Gymnosperms do not require water for fertilisation.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and III only"
+      },
+      "answer": "d",
+      "a": "I and III only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-139",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "A series of branching feeding relationships formed by many interlinked food chains is called a:",
+      "options": {
+        "a": "Trophic level",
+        "b": "Food web",
+        "c": "Energy pyramid",
+        "d": "Ecosystem"
+      },
+      "answer": "b",
+      "a": "Food web",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-10",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "In sexual reproduction, the genetic material contributed by the father and the mother is:",
+      "options": {
+        "a": "Entirely maternal",
+        "b": "Different in amount for each trait",
+        "c": "Practically equal",
+        "d": "Mostly paternal"
+      },
+      "answer": "c",
+      "a": "Practically equal",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-18",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "The reproductive parts of a flower are:",
+      "options": {
+        "a": "Petals and stamens",
+        "b": "Sepals and petals",
+        "c": "Sepals and pistil",
+        "d": "Stamens and pistil"
+      },
+      "answer": "d",
+      "a": "Stamens and pistil",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-41",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Mendel's experiments on the rules of inheritance were carried out on:",
+      "options": {
+        "a": "Bacteria",
+        "b": "Sugarcane",
+        "c": "Pea plants",
+        "d": "Snails"
+      },
+      "answer": "c",
+      "a": "Pea plants",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-17",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Plant tissues are broadly classified into meristematic and permanent tissues on the basis of their:",
+      "options": {
+        "a": "Size",
+        "b": "Colour",
+        "c": "Ability to divide",
+        "d": "Location"
+      },
+      "answer": "c",
+      "a": "Ability to divide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-14",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The first person to observe a cell, in 1665, using a self-designed microscope was:",
+      "options": {
+        "a": "Robert Hooke",
+        "b": "Antonie von Leeuwenhoek",
+        "c": "Matthias Schleiden",
+        "d": "Robert Brown"
+      },
+      "answer": "a",
+      "a": "Robert Hooke",
+      "e": "He observed box-like compartments in a thin slice of cork and named them 'cells'.",
+      "table": null,
+      "qid": "biology-ch21-cell-1",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The phagocytic leucocytes are:",
+      "options": {
+        "a": "Lymphocytes and basophils",
+        "b": "Neutrophils and monocytes",
+        "c": "Basophils and eosinophils",
+        "d": "Eosinophils and lymphocytes"
+      },
+      "answer": "b",
+      "a": "Neutrophils and monocytes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-42",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Menstruation may last for:",
+      "options": {
+        "a": "1–2 days",
+        "b": "3–7 days",
+        "c": "10–12 days",
+        "d": "14–15 days"
+      },
+      "answer": "b",
+      "a": "3–7 days",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-82",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The removal of harmful metabolic by-products from the body is called:",
+      "options": {
+        "a": "Nutrition",
+        "b": "Excretion",
+        "c": "Egestion",
+        "d": "Translocation"
+      },
+      "answer": "b",
+      "a": "Excretion",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-3",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The high incidence of oral cancer in India is linked to chewing tobacco in the form of:",
+      "options": {
+        "a": "Hookah",
+        "b": "Gutkha",
+        "c": "Cigar",
+        "d": "Bidi"
+      },
+      "answer": "b",
+      "a": "Gutkha",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-66",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The pattern of veins on a leaf is called:",
+      "options": {
+        "a": "Cotyledon",
+        "b": "Venation",
+        "c": "Adaptation",
+        "d": "Taproot"
+      },
+      "answer": "b",
+      "a": "Venation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-6",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The development of a complete plant through anther culture was achieved by:",
+      "options": {
+        "a": "B. G. L. Swamy",
+        "b": "F. C. Steward",
+        "c": "Hendrik van Rheede",
+        "d": "Sipra Guha Mukherjee and S. C. Maheshwari"
+      },
+      "answer": "d",
+      "a": "Sipra Guha Mukherjee and S. C. Maheshwari",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-39",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The chief producers in the oceans are:",
+      "options": {
+        "a": "Slime moulds",
+        "b": "Euglenoids",
+        "c": "Dinoflagellates",
+        "d": "Diatoms"
+      },
+      "answer": "d",
+      "a": "Diatoms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-121",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Rudolf Virchow modified the hypothesis of Schleiden and Schwann, giving the cell theory its final shape, in the year:",
+      "options": {
+        "a": "1838",
+        "b": "1855",
+        "c": "1898",
+        "d": "1839"
+      },
+      "answer": "b",
+      "a": "1855",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-6",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Ovary – Production of eggs\n(II) Cervix – Opening of the uterus into the vagina\n(III) Vas deferens – Production of sperms\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and III only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-72",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The muscle found only in the heart, with cylindrical and branched fibres, is:",
+      "options": {
+        "a": "Skeletal muscle",
+        "b": "Smooth muscle",
+        "c": "Cartilage",
+        "d": "Cardiac muscle"
+      },
+      "answer": "d",
+      "a": "Cardiac muscle",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch22-tissues-59",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "Human cells contain how many pairs of chromosomes other than the sex chromosomes?",
+      "options": {
+        "a": "22",
+        "b": "24",
+        "c": "23",
+        "d": "21"
+      },
+      "answer": "a",
+      "a": "22",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-5",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "In Ayurveda, ritucharya refers to:",
+      "options": {
+        "a": "Body constitution",
+        "b": "Daily routine",
+        "c": "Seasonal routine",
+        "d": "Fresh wholesome diet"
+      },
+      "answer": "c",
+      "a": "Seasonal routine",
+      "e": "Dinacharya is the daily routine; prakriti is body constitution.",
+      "table": null,
+      "qid": "biology-ch28-diseases-24",
+      "subject": "biology",
+      "chapter": "biology-ch28-diseases"
+    },
+    {
+      "type": "mcq",
+      "q": "Menstruation stops naturally by the age of:",
+      "options": {
+        "a": "35–40 years",
+        "b": "60–65 years",
+        "c": "45–55 years",
+        "d": "30–35 years"
+      },
+      "answer": "c",
+      "a": "45–55 years",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-83",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The release of energy is much greater in:",
+      "options": {
+        "a": "Fermentation",
+        "b": "Lactic acid formation",
+        "c": "Anaerobic respiration",
+        "d": "Aerobic respiration"
+      },
+      "answer": "d",
+      "a": "Aerobic respiration",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-53",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Free and attached earlobes are examples of:",
+      "options": {
+        "a": "Variants of a trait",
+        "b": "Dominant traits only",
+        "c": "Acquired traits",
+        "d": "Sex-linked traits"
+      },
+      "answer": "a",
+      "a": "Variants of a trait",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-14",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "An electron microscope can magnify a cell about:",
+      "options": {
+        "a": "1,000 times",
+        "b": "1,00,000 times",
+        "c": "10,00,000 times",
+        "d": "10,000 times"
+      },
+      "answer": "c",
+      "a": "10,00,000 times",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-15",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "The second heart sound (\"dub\") is associated with the closure of the:",
+      "options": {
+        "a": "Tricuspid valve",
+        "b": "Bicuspid valve",
+        "c": "Semilunar valves",
+        "d": "Both tricuspid and bicuspid valves"
+      },
+      "answer": "c",
+      "a": "Semilunar valves",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-65",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The fusion of male and female germ-cells is called:",
+      "options": {
+        "a": "Regeneration",
+        "b": "Fertilisation",
+        "c": "Germination",
+        "d": "Pollination"
+      },
+      "answer": "b",
+      "a": "Fertilisation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-46",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Trypsin – Digestion of proteins\n(II) Lipase – Breakdown of emulsified fats\n(III) Pepsin – Digestion of carbohydrates\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "II and III only",
+        "b": "I only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Both trypsin and lipase are enzymes of pancreatic juice. Pepsin digests proteins.",
+      "table": null,
+      "qid": "biology-ch26-respiration-36",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    }
+  ]
+}

@@ -1,0 +1,551 @@
+{
+  "slug": "general-science-biology-set-11",
+  "chapterNumber": 11,
+  "title": "Biology Set 11",
+  "section": "Biology",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The gas released during photosynthesis, which makes a lit matchstick burn with an intense flame, is:",
+      "options": {
+        "a": "Carbon dioxide",
+        "b": "Nitrogen",
+        "c": "Hydrogen",
+        "d": "Oxygen"
+      },
+      "answer": "d",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-49",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The longest part of the alimentary canal is the:",
+      "options": {
+        "a": "Oesophagus",
+        "b": "Large intestine",
+        "c": "Small intestine",
+        "d": "Stomach"
+      },
+      "answer": "c",
+      "a": "Small intestine",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-30",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The leaves fold when touched in:",
+      "options": {
+        "a": "Touch-me-not",
+        "b": "Pine",
+        "c": "Spirogyra",
+        "d": "Fern"
+      },
+      "answer": "a",
+      "a": "Touch-me-not",
+      "e": "It is also called mimosa, chhui-mui or lajjalu.",
+      "table": null,
+      "qid": "biology-ch21-cell-97",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Bio-catalysts used to break down complex substances into simpler ones are called:",
+      "options": {
+        "a": "Pigments",
+        "b": "Vitamins",
+        "c": "Enzymes",
+        "d": "Hormones"
+      },
+      "answer": "c",
+      "a": "Enzymes",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-6",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The epithelial tissue made of a single layer of tall, pillar-like cells, specialised for absorption, lines the:",
+      "options": {
+        "a": "Small intestine",
+        "b": "Inner ear",
+        "c": "Blood vessels",
+        "d": "Salivary glands"
+      },
+      "answer": "a",
+      "a": "Small intestine",
+      "e": "Epithelial tissues differ in structure according to their function.",
+      "table": {
+        "headers": [
+          "Function",
+          "Structure",
+          "Location in the body"
+        ],
+        "rows": [
+          [
+            "Exchange",
+            "Single layer of thin, flat cells",
+            "Lining of blood vessels and lungs"
+          ],
+          [
+            "Protection",
+            "Many layers of cells; outer cells flat and tightly packed",
+            "Skin, mouth and oesophagus"
+          ],
+          [
+            "Secretion",
+            "Cuboidal or columnar cells specialised for producing and releasing substances",
+            "Salivary glands, sweat glands and stomach lining"
+          ],
+          [
+            "Sensory functions",
+            "Specialised receptor cells having hair-like cilia",
+            "Nostrils, taste buds and inner ear"
+          ],
+          [
+            "Absorption",
+            "Single layer of tall, pillar-like cells, often with hair-like structure",
+            "Lining of small intestine"
+          ]
+        ]
+      },
+      "qid": "biology-ch22-tissues-45",
+      "subject": "biology",
+      "chapter": "biology-ch22-tissues"
+    },
+    {
+      "type": "mcq",
+      "q": "The average life span of RBCs is:",
+      "options": {
+        "a": "30 days",
+        "b": "60 days",
+        "c": "120 days",
+        "d": "90 days"
+      },
+      "answer": "c",
+      "a": "120 days",
+      "e": "In adults, RBCs are formed in the red bone marrow.",
+      "table": null,
+      "qid": "biology-ch24-human-body-39",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "In 2010, a synthetic copy of the DNA of which bacterium was inserted into a related cell whose own DNA had been removed?",
+      "options": {
+        "a": "Lactobacillus",
+        "b": "Mycoplasma mycoides",
+        "c": "Rhizobium",
+        "d": "Nostoc"
+      },
+      "answer": "b",
+      "a": "Mycoplasma mycoides",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-91",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "After fertilisation, the ovary develops into a:",
+      "options": {
+        "a": "Fruit",
+        "b": "Embryo",
+        "c": "Seed",
+        "d": "Flower"
+      },
+      "answer": "a",
+      "a": "Fruit",
+      "e": "The ovules develop into seeds.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-55",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following plants has taproots and reticulate venation?",
+      "options": {
+        "a": "Chickpea",
+        "b": "Lemongrass",
+        "c": "Maize",
+        "d": "Wheat"
+      },
+      "answer": "a",
+      "a": "Chickpea",
+      "e": "Wheat has fibrous roots and parallel venation.",
+      "table": null,
+      "qid": "biology-ch23-plants-14",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements about the events during photosynthesis:\n(I) Absorption of light energy by chlorophyll.\n(II) Splitting of water molecules into hydrogen and oxygen.\n(III) Oxidation of carbon dioxide to carbohydrates.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I and II only",
+        "d": "I, II and III"
+      },
+      "answer": "c",
+      "a": "I and II only",
+      "e": "Carbon dioxide is reduced, not oxidised, to carbohydrates.",
+      "table": null,
+      "qid": "biology-ch26-respiration-9",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Green plants in a terrestrial ecosystem capture about ______ of the energy of sunlight falling on their leaves.",
+      "options": {
+        "a": "1%",
+        "b": "10%",
+        "c": "20%",
+        "d": "5%"
+      },
+      "answer": "a",
+      "a": "1%",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-6",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The gas released by plants during photosynthesis is:",
+      "options": {
+        "a": "Oxygen",
+        "b": "Carbon dioxide",
+        "c": "Methane",
+        "d": "Nitrogen"
+      },
+      "answer": "a",
+      "a": "Oxygen",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-39",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) Gibberellins help in the growth of the stem.\n(II) Cytokinins are present in greater concentration in fruits and seeds.\n(III) Abscisic acid promotes growth.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "III only"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-23",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "Rhododendrons on mountain tops in the Shola forests of Nilgiris survive heavy winds because they have:",
+      "options": {
+        "a": "Conical shape",
+        "b": "Greater height and larger leaves",
+        "c": "Shorter height and smaller leaves",
+        "d": "Fleshy stems"
+      },
+      "answer": "c",
+      "a": "Shorter height and smaller leaves",
+      "e": "Rhododendrons in the mountains near Sikkim are taller.",
+      "table": null,
+      "qid": "biology-ch23-plants-29",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The most diverse plant group on the Earth is:",
+      "options": {
+        "a": "Angiosperms",
+        "b": "Gymnosperms",
+        "c": "Pteridophytes",
+        "d": "Bryophytes"
+      },
+      "answer": "a",
+      "a": "Angiosperms",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-141",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The 17th-century work on Indian plants compiled by Hendrik van Rheede is:",
+      "options": {
+        "a": "Flora Indica",
+        "b": "On the Origin of Species",
+        "c": "Brihat Samhita",
+        "d": "Hortus Malabaricus"
+      },
+      "answer": "d",
+      "a": "Hortus Malabaricus",
+      "e": "It was compiled with the help of Itty Achudan and other local experts.",
+      "table": null,
+      "qid": "biology-ch21-cell-142",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Plantlets mass-produced from the shoot tip (apical meristem) by tissue culture help eliminate:",
+      "options": {
+        "a": "Virus-infected plants",
+        "b": "Pollinators",
+        "c": "Spores",
+        "d": "Seeds"
+      },
+      "answer": "a",
+      "a": "Virus-infected plants",
+      "e": "Tissue culture is commonly used for ornamental plants.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-30",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Which pair of phyla possesses an exoskeleton?",
+      "options": {
+        "a": "Mollusca and Echinodermata",
+        "b": "Annelida and Arthropoda",
+        "c": "Nematoda and Annelida",
+        "d": "Arthropoda and Mollusca"
+      },
+      "answer": "d",
+      "a": "Arthropoda and Mollusca",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-152",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Producers – First trophic level\n(II) Primary consumers – Second trophic level\n(III) Secondary consumers – Fourth trophic level\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I only",
+        "b": "I and II only",
+        "c": "II and III only",
+        "d": "I, II and III"
+      },
+      "answer": "b",
+      "a": "I and II only",
+      "e": "Secondary consumers (small carnivores) are at the third level; tertiary consumers (larger carnivores) are at the fourth.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-5",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "The inbuilt tendency for variation during reproduction is the basis for:",
+      "options": {
+        "a": "Pollination",
+        "b": "Fission",
+        "c": "Evolution",
+        "d": "Germination"
+      },
+      "answer": "c",
+      "a": "Evolution",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-5",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The Chipko movement began in the early 1970s in:",
+      "options": {
+        "a": "Uttarakhand",
+        "b": "Himachal Pradesh",
+        "c": "Rajasthan",
+        "d": "Karnataka"
+      },
+      "answer": "a",
+      "a": "Uttarakhand",
+      "e": "Local women encircled and hugged trees to protect them from being felled.",
+      "table": null,
+      "qid": "biology-ch31-environment-ecology-29",
+      "subject": "biology",
+      "chapter": "biology-ch31-environment-ecology"
+    },
+    {
+      "type": "mcq",
+      "q": "Potassium hydroxide is used to absorb:",
+      "options": {
+        "a": "Water vapour",
+        "b": "Oxygen",
+        "c": "Carbon dioxide",
+        "d": "Nitrogen"
+      },
+      "answer": "c",
+      "a": "Carbon dioxide",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-15",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The menstrual cycle usually begins at puberty between the ages of:",
+      "options": {
+        "a": "10–14 years",
+        "b": "16–18 years",
+        "c": "6–8 years",
+        "d": "20–22 years"
+      },
+      "answer": "a",
+      "a": "10–14 years",
+      "e": "It continues till menopause, around the age of 50.",
+      "table": null,
+      "qid": "biology-ch27-reproduction-82",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The heart is called myogenic because its normal activity is regulated by:",
+      "options": {
+        "a": "Nodal tissue",
+        "b": "Adrenal hormones",
+        "c": "Sympathetic nerves",
+        "d": "Medulla oblongata"
+      },
+      "answer": "a",
+      "a": "Nodal tissue",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch24-human-body-61",
+      "subject": "biology",
+      "chapter": "biology-ch24-human-body"
+    },
+    {
+      "type": "mcq",
+      "q": "The Earth's magnetic field is believed to originate from the movement of:",
+      "options": {
+        "a": "molten iron in the core",
+        "b": "rocks in the crust",
+        "c": "gases in the atmosphere",
+        "d": "water in the oceans"
+      },
+      "answer": "a",
+      "a": "molten iron in the core",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch32-earth-life-sustaining-planet-9",
+      "subject": "biology",
+      "chapter": "biology-ch32-earth-life-sustaining-planet"
+    },
+    {
+      "type": "mcq",
+      "q": "The blood cells that plug leaks by helping to clot the blood at points of injury are:",
+      "options": {
+        "a": "Lymph",
+        "b": "Red blood corpuscles",
+        "c": "Platelets",
+        "d": "Plasma"
+      },
+      "answer": "c",
+      "a": "Platelets",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch26-respiration-84",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following is NOT a component of the cytoskeleton?",
+      "options": {
+        "a": "Intermediate filaments",
+        "b": "Microtubules",
+        "c": "Thylakoids",
+        "d": "Microfilaments"
+      },
+      "answer": "c",
+      "a": "Thylakoids",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-52",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The exchange of material between blood and surrounding cells takes place across the walls of:",
+      "options": {
+        "a": "Arteries",
+        "b": "Veins",
+        "c": "Capillaries",
+        "d": "Arterioles"
+      },
+      "answer": "c",
+      "a": "Capillaries",
+      "e": "Capillaries are the smallest vessels, with walls one cell thick.",
+      "table": null,
+      "qid": "biology-ch26-respiration-83",
+      "subject": "biology",
+      "chapter": "biology-ch26-respiration"
+    },
+    {
+      "type": "mcq",
+      "q": "The green pigment in leaves that helps in capturing sunlight is:",
+      "options": {
+        "a": "Carotene",
+        "b": "Cutin",
+        "c": "Xanthophyll",
+        "d": "Chlorophyll"
+      },
+      "answer": "d",
+      "a": "Chlorophyll",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch23-plants-40",
+      "subject": "biology",
+      "chapter": "biology-ch23-plants"
+    },
+    {
+      "type": "mcq",
+      "q": "The F2 phenotypic ratio when two separate traits are inherited independently in pea plants is:",
+      "options": {
+        "a": "9:3:3:1",
+        "b": "1:1",
+        "c": "9:7",
+        "d": "3:1"
+      },
+      "answer": "a",
+      "a": "9:3:3:1",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-11",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    }
+  ]
+}

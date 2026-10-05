@@ -1,0 +1,537 @@
+{
+  "slug": "general-science-set-32",
+  "chapterNumber": 32,
+  "title": "General Science Set 32",
+  "section": "General Science",
+  "faqs": [
+    {
+      "type": "mcq",
+      "q": "The suggestion that a magnet exerts an equal and opposite force on a current-carrying conductor was made by:",
+      "options": {
+        "a": "Andre-Marie Ampere",
+        "b": "Hans Christian Oersted",
+        "c": "Georg Simon Ohm",
+        "d": "Alessandro Volta"
+      },
+      "answer": "a",
+      "a": "Andre-Marie Ampere",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch8-magnetism-34",
+      "subject": "physics",
+      "chapter": "physics-ch8-magnetism"
+    },
+    {
+      "type": "mcq",
+      "q": "Compared with covalent compounds, ionic compounds generally have:",
+      "options": {
+        "a": "Low melting and boiling points",
+        "b": "High melting but low boiling points",
+        "c": "Low melting but high boiling points",
+        "d": "High melting and boiling points"
+      },
+      "answer": "d",
+      "a": "High melting and boiling points",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch14-atoms-and-molecules-51",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch14-atoms-and-molecules"
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following global biodiversity hotspots includes the Nicobar Islands?",
+      "options": {
+        "a": "Himalayas",
+        "b": "Indo-Burma",
+        "c": "Sundaland",
+        "d": "Western Ghats"
+      },
+      "answer": "c",
+      "a": "Sundaland",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-171",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "Friction arises mainly due to:",
+      "options": {
+        "a": "minute irregularities in the surfaces in contact",
+        "b": "gravitational pull",
+        "c": "electrostatic repulsion",
+        "d": "air pressure"
+      },
+      "answer": "a",
+      "a": "minute irregularities in the surfaces in contact",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-24",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "Coluthur Gopalan is associated with:",
+      "options": {
+        "a": "Discovery of vitamin B12",
+        "b": "Studying scurvy among sailors",
+        "c": "Starting salt farming in Gujarat",
+        "d": "Initiating nutrition research in India"
+      },
+      "answer": "d",
+      "a": "Initiating nutrition research in India",
+      "e": "He analysed more than 500 Indian foods for their nutritional value.",
+      "table": null,
+      "qid": "biology-ch25-nutrition-24",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Solder, used for welding electrical wires together, is an alloy of:",
+      "options": {
+        "a": "Copper and tin",
+        "b": "Iron and carbon",
+        "c": "Copper and zinc",
+        "d": "Lead and tin"
+      },
+      "answer": "d",
+      "a": "Lead and tin",
+      "e": "Solder has a low melting point. Some common alloys:",
+      "table": {
+        "headers": [
+          "Alloy",
+          "Constituents"
+        ],
+        "rows": [
+          [
+            "Brass",
+            "Copper and zinc"
+          ],
+          [
+            "Bronze",
+            "Copper and tin"
+          ],
+          [
+            "Solder",
+            "Lead and tin"
+          ]
+        ]
+      },
+      "qid": "chemistry-ch18-metals-non-metals-78",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "The normal temperature of a healthy human adult is taken to be:",
+      "options": {
+        "a": "37.0 °C",
+        "b": "39.0 °C",
+        "c": "35.0 °C",
+        "d": "42.0 °C"
+      },
+      "answer": "a",
+      "a": "37.0 °C",
+      "e": "Human body temperature does not normally go below 35 °C or above 42 °C.",
+      "table": null,
+      "qid": "physics-ch4-heat-and-temperature-8",
+      "subject": "physics",
+      "chapter": "physics-ch4-heat-and-temperature"
+    },
+    {
+      "type": "mcq",
+      "q": "The sex of a human baby is determined by the chromosome contributed by the:",
+      "options": {
+        "a": "Mother",
+        "b": "Both parents equally",
+        "c": "Neither parent",
+        "d": "Father"
+      },
+      "answer": "d",
+      "a": "Father",
+      "e": "The mother always contributes an X chromosome. The father contributes either X (female, XX) or Y (male, XY).",
+      "table": null,
+      "qid": "biology-ch27-reproduction-83",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Soaps are sodium or potassium salts of:",
+      "options": {
+        "a": "Sulphonic acids",
+        "b": "Long-chain carboxylic acids",
+        "c": "Mineral acids",
+        "d": "Short-chain alcohols"
+      },
+      "answer": "b",
+      "a": "Long-chain carboxylic acids",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-75",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "For a ray of light passing through a rectangular glass slab, the emergent ray is:",
+      "options": {
+        "a": "parallel to the incident ray",
+        "b": "bent towards the normal",
+        "c": "perpendicular to the incident ray",
+        "d": "absorbed by the slab"
+      },
+      "answer": "a",
+      "a": "parallel to the incident ray",
+      "e": "The ray is slightly shifted sideways.",
+      "table": null,
+      "qid": "physics-ch5-light-40",
+      "subject": "physics",
+      "chapter": "physics-ch5-light"
+    },
+    {
+      "type": "mcq",
+      "q": "Chlorophyll pigments in a chloroplast are present in the:",
+      "options": {
+        "a": "Outer membrane",
+        "b": "Stroma",
+        "c": "Inner membrane",
+        "d": "Thylakoids"
+      },
+      "answer": "d",
+      "a": "Thylakoids",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-47",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The sound energy passing per unit time through a unit area perpendicular to the direction of propagation is called:",
+      "options": {
+        "a": "Timbre",
+        "b": "Intensity",
+        "c": "Loudness",
+        "d": "Pitch"
+      },
+      "answer": "b",
+      "a": "Intensity",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-27",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Fullerene was named after the US architect:",
+      "options": {
+        "a": "Buckminster Fuller",
+        "b": "Dmitri Mendeleev",
+        "c": "Michael Faraday",
+        "d": "Friedrich Wöhler"
+      },
+      "answer": "a",
+      "a": "Buckminster Fuller",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-15",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The sex chromosomes in human males are:",
+      "options": {
+        "a": "XO",
+        "b": "YY",
+        "c": "XX",
+        "d": "XY"
+      },
+      "answer": "d",
+      "a": "XY",
+      "e": "Women have a perfect pair, XX; in men the Y chromosome is shorter than X.",
+      "table": null,
+      "qid": "biology-ch30-genetics-evolution-basics-6",
+      "subject": "biology",
+      "chapter": "biology-ch30-genetics-evolution-basics"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following statements:\n(I) In a series combination, the total potential difference equals the sum of the potential differences across the individual resistors.\n(II) In a parallel combination, the total current equals the sum of the currents through the separate branches.\n(III) In a parallel combination, the potential difference across each resistor is different.\nWhich of the above is/are correct?",
+      "options": {
+        "a": "I only",
+        "b": "II and III only",
+        "c": "I, II and III",
+        "d": "I and II only"
+      },
+      "answer": "d",
+      "a": "I and II only",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch7-electricity-42",
+      "subject": "physics",
+      "chapter": "physics-ch7-electricity"
+    },
+    {
+      "type": "mcq",
+      "q": "The bacterium that ferments milk to form curd is:",
+      "options": {
+        "a": "Rhizobium",
+        "b": "Paramecium",
+        "c": "Lactobacillus",
+        "d": "Spirulina"
+      },
+      "answer": "c",
+      "a": "Lactobacillus",
+      "e": "It also helps in fermentation of batter for idli and dosa, and dough for bhatura.",
+      "table": null,
+      "qid": "biology-ch29-microorganisms-26",
+      "subject": "biology",
+      "chapter": "biology-ch29-microorganisms"
+    },
+    {
+      "type": "mcq",
+      "q": "Successive members of a homologous series differ by a:",
+      "options": {
+        "a": "—CH₃ unit",
+        "b": "—CH— unit",
+        "c": "—CH₂— unit",
+        "d": "—C₂H₄— unit"
+      },
+      "answer": "c",
+      "a": "—CH₂— unit",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch19-carbon-and-its-compounds-37",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch19-carbon-and-its-compounds"
+    },
+    {
+      "type": "mcq",
+      "q": "The Big Dipper lies in the constellation:",
+      "options": {
+        "a": "Ursa Major",
+        "b": "Orion",
+        "c": "Taurus",
+        "d": "Ursa Minor"
+      },
+      "answer": "a",
+      "a": "Ursa Major",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch9-gravitation-30",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "Leaves facing each other come together after sunset in the sleeping leaves of:",
+      "options": {
+        "a": "Fern",
+        "b": "Moss",
+        "c": "Pine",
+        "d": "Amla"
+      },
+      "answer": "d",
+      "a": "Amla",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-98",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    },
+    {
+      "type": "mcq",
+      "q": "The hardest natural substance known is:",
+      "options": {
+        "a": "Graphite",
+        "b": "Iron",
+        "c": "Gold",
+        "d": "Diamond"
+      },
+      "answer": "d",
+      "a": "Diamond",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch18-metals-non-metals-14",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch18-metals-non-metals"
+    },
+    {
+      "type": "mcq",
+      "q": "In a transverse wave, the particles of the medium vibrate:",
+      "options": {
+        "a": "Perpendicular to the direction of propagation",
+        "b": "Along circular paths only",
+        "c": "Parallel to the direction of propagation",
+        "d": "Not at all"
+      },
+      "answer": "a",
+      "a": "Perpendicular to the direction of propagation",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-12",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "Plants such as banana, orange, rose and jasmine, which have lost the capacity to produce seeds, can be propagated by:",
+      "options": {
+        "a": "Meiosis",
+        "b": "Fertilisation",
+        "c": "Vegetative propagation",
+        "d": "Pollination"
+      },
+      "answer": "c",
+      "a": "Vegetative propagation",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-27",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "The Swiss physicist Daniel Bernoulli developed his relation in the year:",
+      "options": {
+        "a": "1623",
+        "b": "1738",
+        "c": "1608",
+        "d": "1687"
+      },
+      "answer": "b",
+      "a": "1738",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch2-force-motion-and-pressure-77",
+      "subject": "physics",
+      "chapter": "physics-ch2-force-motion-and-pressure"
+    },
+    {
+      "type": "mcq",
+      "q": "The water in an earthen pot stays cool mainly because:",
+      "options": {
+        "a": "Clay absorbs heat from water",
+        "b": "Water vapour condenses on its outer surface",
+        "c": "Water seeping through the surface evaporates",
+        "d": "Ice forms inside the pot"
+      },
+      "answer": "c",
+      "a": "Water seeping through the surface evaporates",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch16-physical-chemical-changes-3",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch16-physical-chemical-changes"
+    },
+    {
+      "type": "mcq",
+      "q": "The ovules in a flower are located in the:",
+      "options": {
+        "a": "Stigma",
+        "b": "Style",
+        "c": "Filament",
+        "d": "Ovary"
+      },
+      "answer": "d",
+      "a": "Ovary",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch27-reproduction-44",
+      "subject": "biology",
+      "chapter": "biology-ch27-reproduction"
+    },
+    {
+      "type": "mcq",
+      "q": "Consider the following pairs:\n(I) Venus – Evening Star\n(II) Mars – Red Planet\n(III) Mercury – Blue Planet\nWhich of the pairs given above is/are correctly matched?",
+      "options": {
+        "a": "I and II only",
+        "b": "II and III only",
+        "c": "I only",
+        "d": "I, II and III"
+      },
+      "answer": "a",
+      "a": "I and II only",
+      "e": "The Earth is the Blue Planet.",
+      "table": null,
+      "qid": "physics-ch9-gravitation-39",
+      "subject": "physics",
+      "chapter": "physics-ch9-gravitation"
+    },
+    {
+      "type": "mcq",
+      "q": "The Sindhu-Sarasvatī (Harappan) Civilisation flourished during:",
+      "options": {
+        "a": "1500–500 BCE",
+        "b": "2600–1900 BCE",
+        "c": "2000–1000 BCE",
+        "d": "3300–1300 BCE"
+      },
+      "answer": "b",
+      "a": "2600–1900 BCE",
+      "e": "",
+      "table": null,
+      "qid": "chemistry-ch13-matter-and-its-properties-57",
+      "subject": "chemistry",
+      "chapter": "chemistry-ch13-matter-and-its-properties"
+    },
+    {
+      "type": "mcq",
+      "q": "Ghee and various kinds of oils are grouped under:",
+      "options": {
+        "a": "Carbohydrates",
+        "b": "Proteins",
+        "c": "Fats",
+        "d": "Minerals"
+      },
+      "answer": "c",
+      "a": "Fats",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch25-nutrition-6",
+      "subject": "biology",
+      "chapter": "biology-ch25-nutrition"
+    },
+    {
+      "type": "mcq",
+      "q": "Humans perceive the amplitude of a sound wave as:",
+      "options": {
+        "a": "Pitch",
+        "b": "Timbre",
+        "c": "Wavelength",
+        "d": "Loudness"
+      },
+      "answer": "d",
+      "a": "Loudness",
+      "e": "",
+      "table": null,
+      "qid": "physics-ch6-sound-37",
+      "subject": "physics",
+      "chapter": "physics-ch6-sound"
+    },
+    {
+      "type": "mcq",
+      "q": "The alternation of diploid sporophytic and haploid gametophytic phases in the life cycle of plants is called:",
+      "options": {
+        "a": "Alternation of generations",
+        "b": "Plasmogamy",
+        "c": "Dikaryophase",
+        "d": "Metamorphosis"
+      },
+      "answer": "a",
+      "a": "Alternation of generations",
+      "e": "",
+      "table": null,
+      "qid": "biology-ch21-cell-135",
+      "subject": "biology",
+      "chapter": "biology-ch21-cell"
+    }
+  ]
+}
