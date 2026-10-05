@@ -213,6 +213,7 @@
       '.sht-modal{position:relative;width:100%;max-width:420px;max-height:90vh;overflow:auto;background:' + SURF + ';color:' + INK + ';' +
       'border-radius:20px;padding:22px 20px 20px;box-shadow:0 24px 60px -12px rgba(20,16,50,.5);}' +
       '.sht-x{position:absolute;top:10px;right:12px;border:none;background:transparent;font-size:1.5rem;line-height:1;color:' + SOFT + ';cursor:pointer;}' +
+      '.sht-modal .sht-btn{box-sizing:border-box;width:100%;white-space:normal;text-align:center;}' +
       '.sht-modal h2{font-size:1.15rem;font-weight:800;margin:0 28px 6px 0;line-height:1.3;}' +
       '.sht-modal p{font-size:.86rem;line-height:1.5;color:' + SOFT + ';margin:0 0 12px;}' +
       '.sht-list{list-style:none;margin:0 0 14px;padding:0;font-size:.84rem;line-height:1.5;}' +
