@@ -60,52 +60,30 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
       <button type="button" class="study-btn study-btn-primary" id="study-trial-btn" data-trial-start="">Start Free Trial</button>
     </section>
 
-    <!-- 2. DOWNLOAD PDF -->
-    <section class="study-card" id="pdf">
-      <div class="study-head">
-        <div class="study-ico study-ico-amber"><i class="ti ti-file-download" aria-hidden="true"></i></div>
-        <h2>Download PDF</h2>
-        <span class="study-tag">Study offline</span>
+    <!-- 2-4. MORE WAYS (compact rows, same style as homepage cards; original text kept) -->
+    <a class="srow" id="pdf" href={PDF_BUY_URL}>
+      <div class="srow-ico srow-amber"><i class="ti ti-file-download" aria-hidden="true"></i></div>
+      <div class="srow-text"><b>Download PDF</b><span>MCQ practice PDFs with answers, subject by subject. Download once and study anywhere, without internet.</span><em>₹{PDF_PRICE} per subject, one-time</em></div>
+      <i class="ti ti-chevron-right srow-chev" aria-hidden="true"></i>
+    </a>
+    <section class="srow srow-col" id="kindle">
+      <div class="srow-top">
+        <div class="srow-ico srow-amber"><i class="ti ti-books" aria-hidden="true"></i></div>
+        <div class="srow-text"><b>Amazon Kindle</b><span>We are also available on Kindle</span></div>
       </div>
-      <p class="study-sub">Chapter-Wise MCQ PDFs</p>
-      <div class="study-price">₹{PDF_PRICE}<small> per subject, one-time</small></div>
-      {PDF_BUY_URL
-        ? <a class="study-btn study-btn-soft" href={PDF_BUY_URL}>Browse PDFs</a>
-        : <span class="study-btn study-btn-disabled">Coming soon</span>}
+      <a class="srow-book" href="https://link.amazon/B0ehQ54u4" target="_blank" rel="noopener">
+        <div class="srow-text"><b>Indian Polity</b><span>4,000+ MCQs with Explanations. Chapter-wise practice sets.</span></div>
+        <em class="srow-buy">Buy on Amazon · ₹299</em>
+      </a>
+      <a class="srow-book" href="https://link.amazon/B0apjMhAo" target="_blank" rel="noopener">
+        <div class="srow-text"><b>Indian History</b><span>Ancient, Medieval and Modern. 4,000+ MCQs with Explanations.</span></div>
+        <em class="srow-buy">Buy on Amazon · ₹299</em>
+      </a>
     </section>
-
-    <!-- 3. AMAZON KINDLE -->
-    <section class="study-card" id="kindle">
-      <div class="study-head">
-        <div class="study-ico study-ico-amber"><i class="ti ti-books" aria-hidden="true"></i></div>
-        <h2>Amazon Kindle</h2>
-        <span class="study-tag">Kindle eBook</span>
-      </div>
-      <p class="study-sub">We are also available on Kindle</p>
-      <div class="study-books">
-        <div class="study-book">
-          <b>Indian Polity</b>
-          <span>4,000+ MCQs with Explanations. Chapter-wise practice sets.</span>
-          <a class="study-btn study-btn-amazon" href="https://link.amazon/B0ehQ54u4" target="_blank" rel="noopener">Buy on Amazon · ₹299</a>
-        </div>
-        <div class="study-book">
-          <b>Indian History</b>
-          <span>Ancient, Medieval and Modern. 4,000+ MCQs with Explanations.</span>
-          <a class="study-btn study-btn-amazon" href="https://link.amazon/B0apjMhAo" target="_blank" rel="noopener">Buy on Amazon · ₹299</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. GOOGLE PLAY BOOKS -->
-    <section class="study-card" id="playbooks">
-      <div class="study-head">
-        <div class="study-ico study-ico-blue"><i class="ti ti-book-2" aria-hidden="true"></i></div>
-        <h2>Google Play Books</h2>
-        <span class="study-tag study-tag-grey">Coming soon</span>
-      </div>
-      <p class="study-sub">Our books are on the way to Google Play Books.</p>
-      <span class="study-btn study-btn-disabled">Coming soon</span>
-    </section>
+    <div class="srow srow-off" id="playbooks">
+      <div class="srow-ico srow-blue"><i class="ti ti-book-2" aria-hidden="true"></i></div>
+      <div class="srow-text"><b>Google Play Books</b><span>Our books are on the way to Google Play Books.</span><em>Coming soon</em></div>
+    </div>
 
   </div>
 
@@ -240,6 +218,35 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
     .study-wrap .study-intro { padding-bottom: 20px; }
     .study-wrap .study-card:not(.study-card-main) { border: 1.5px solid #CFCAE8; }
     html[data-theme="dark"] .study-wrap .study-card:not(.study-card-main) { border-color: #3D3866; }
+
+    /* sales-rows */
+    .study-wrap .srow { display:flex; align-items:center; gap:13px; padding:12px 14px; margin-bottom:10px; border-radius:18px; background:var(--sh2-surface,#fff); border:1.5px solid #CFCAE8; text-decoration:none; color:inherit; }
+    .srow-ico { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-size:1.15rem; flex:none; }
+    .srow-amber { background:var(--sh2-amber-soft); color:var(--sh2-amber); }
+    .srow-blue { background:var(--sh2-blue-soft); color:var(--sh2-blue); }
+    .srow-text { flex:1; min-width:0; }
+    .srow-text b { display:block; font-size:.92rem; color:var(--sh2-ink); }
+    .srow-text span { display:block; line-height:1.35; font-size:.76rem; font-weight:600; color:var(--sh2-text-soft); }
+    .srow-chev { color:var(--sh2-text-soft); }
+    .srow-text em { display:block; font-style:normal; font-size:.76rem; font-weight:800; color:var(--sh2-indigo); margin-top:2px; }
+    .srow-col { flex-direction:column; align-items:stretch; gap:8px; }
+    .srow-top { display:flex; align-items:center; justify-content:flex-start; gap:13px; width:100%; }
+    .srow-book { display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--sh2-line); border-radius:12px; text-decoration:none; color:inherit; }
+    .srow-book .srow-text b { font-size:.88rem; }
+    .srow-buy { flex:none; font-style:normal; font-size:.72rem; font-weight:800; background:var(--sh2-amber); color:#1C1A38; padding:6px 10px; border-radius:999px; text-align:center; }
+    .srow-off { opacity:.65; }
+    html[data-theme="dark"] .study-wrap .srow { border-color:#3D3866; background:#1B1930; }
+    @media (min-width:820px){ .study-wrap .srow:hover{ border-color:var(--sh2-indigo); } }
+
+    /* sales-catchy */
+    .study-wrap .study-card-main { background: #1C1A38; border: 0; box-shadow: 0 14px 30px -12px rgba(28,26,56,.6); }
+    .study-wrap .study-card-main h2 { color: #fff; }
+    .study-wrap .study-card-main .study-sub { color: #C9C5EA; }
+    .study-wrap .study-card-main .study-ico { background: rgba(255,255,255,.14); color: #fff; }
+    .study-wrap .study-card-main .study-tag-green { background: #FFC83D; color: #2B2250; }
+    .study-wrap .study-card-main .study-btn-primary { background: #FFC83D; color: #2B2250; font-weight: 800; }
+    .study-wrap .study-card-main .study-btn-primary::after { content: " \2192"; }
+    .study-wrap .study-card-main .study-fine, .study-wrap .study-card-main .study-fine a { color: #C9C5EA; }
   </style>
 
   <script is:inline>

@@ -110,6 +110,31 @@ const PDFS = [
     }
     .dl-fine { color: var(--soft); font-size: .78rem; line-height: 1.5; margin: 16px 0 0; text-align: center; }
     .dl-fine a { color: var(--ind); }
+
+    /* dl-compact */
+    @media (max-width: 819px) {
+      .dl-wrap { padding-top: 12px; }
+      .dl-crumb { margin-bottom: 4px; }
+      .dl-intro h1 { font-size: 1.3rem; margin-bottom: 4px; }
+      .dl-intro p { font-size: .84rem; line-height: 1.35; margin-bottom: 12px; }
+      .dl-list { gap: 10px; }
+      .dl-card { display: grid; grid-template-columns: 1fr auto; column-gap: 10px; align-items: center; padding: 12px; border-radius: 14px; }
+      .dl-card .dl-sel-label, .dl-card .dl-note { grid-column: 1 / -1; }
+      .dl-card .dl-top { grid-column: 1; justify-content: flex-start; gap: 8px; }
+      .dl-top h2 { font-size: 1rem; line-height: 1.2; }
+      .dl-card .dl-note { margin: 0 0 2px; font-size: .8rem; }
+      .dl-tag { font-size: .66rem; padding: 2px 7px; }
+      .dl-card .dl-meta { grid-column: 1; margin: 2px 0 0; font-size: .8rem; }
+      .dl-card .dl-btn { grid-column: 2; grid-row: 1 / span 2; width: auto; margin: 0; padding: 9px 12px; font-size: .82rem; white-space: nowrap; }
+      .dl-card .dl-sel-label { grid-row: auto; }
+      .dl-fine { font-size: .74rem; margin-top: 12px; }
+    }
+
+    /* dl-center */
+    @media (max-width: 819px) {
+      .dl-card .dl-sel-label, .dl-card .dl-note { grid-column: 1; }
+      .dl-card .dl-btn { grid-row: 1 / span 4; align-self: center; }
+    }
   </style>
 
   <script>
