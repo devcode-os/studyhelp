@@ -45,7 +45,7 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
 
     <div class="study-intro">
       <h1>Choose How You Want to Study</h1>
-      <p>Practice online, download PDFs, or read on Kindle and Google Play Books. For UPSC, SSC, TGPSC, APPSC and more</p>
+      <p>Built for your success. Study anytime, anywhere.</p>
     </div>
 
     <!-- 1. STUDY ONLINE -->
@@ -55,7 +55,7 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
         <h2>Study Online</h2>
         <span class="study-tag study-tag-green">3 days free</span>
       </div>
-     <p class="study-sub">19,000+ topic-wise MCQs. Pick any subject free for 3 days. No card, no auto-charge.</p>
+     <p class="study-sub">19,000+ topic-wise MCQs. Try any subject free for 3 days.</p>
       <div data-trial-slot="banner" id="study-trial-slot"></div>
       <button type="button" class="study-btn study-btn-primary" id="study-trial-btn" data-trial-start="">Start Free Trial</button>
     </section>
@@ -67,7 +67,7 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
         <h2>Download PDF</h2>
         <span class="study-tag">Study offline</span>
       </div>
-      <p class="study-sub">MCQ practice PDFs with answers, Chapter-wise.</p>
+      <p class="study-sub">Chapter-Wise MCQ PDFs</p>
       <div class="study-price">₹{PDF_PRICE}<small> per subject, one-time</small></div>
       {PDF_BUY_URL
         ? <a class="study-btn study-btn-soft" href={PDF_BUY_URL}>Browse PDFs</a>
@@ -216,6 +216,30 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
     /* sales-tidy */
     #app-install-banner { display: none !important; }
     body:not(.trial-solo) .study-card-main:has([data-trial-slot] .sht-card) .study-sub { display: none; }
+  
+    /* sales-compact */
+    @media (max-width: 600px) {
+      .study-wrap { padding-top: 12px; }
+      .study-intro { padding: 0 2px 10px; }
+      .study-intro h1 { font-size: 1.2rem; }
+      .study-intro p { margin: 3px 0 0; font-size: 0.85rem; line-height: 1.35; }
+      .study-card { padding: 12px; margin-bottom: 10px; border-radius: 16px; }
+      .study-head { gap: 10px; margin-bottom: 4px; }
+      .study-head h2 { font-size: 1.1rem; line-height: 1.25; white-space: nowrap; }
+      .study-ico { width: 36px; height: 36px; border-radius: 10px; font-size: 1.1rem; }
+      .study-tag { font-size: 0.68rem; padding: 3px 8px; }
+      .study-sub { font-size: 0.82rem; line-height: 1.4; margin: 4px 0 10px; }
+      .study-price { font-size: 1.25rem; margin: 0 0 8px; }
+      .study-price small { font-size: 0.78rem; }
+      .study-btn { padding: 9px 14px; font-size: 0.85rem; }
+      .study-btn-soft { padding: 7px 20px; }
+      .study-book b { font-size: 1.1rem; }
+    }
+  
+    /* sales-spacing */
+    .study-wrap .study-intro { padding-bottom: 20px; }
+    .study-wrap .study-card:not(.study-card-main) { border: 1.5px solid #CFCAE8; }
+    html[data-theme="dark"] .study-wrap .study-card:not(.study-card-main) { border-color: #3D3866; }
   </style>
 
   <script is:inline>
