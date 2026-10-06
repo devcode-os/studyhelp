@@ -277,10 +277,37 @@
     window.location.href = '/signup/?next=' + encodeURIComponent(next);
   }
 
+  // Facebook / Instagram in-app browsers have no saved Google account, so sign-in there
+  // is a blank box. Offer a one-tap "Open in Chrome" (Android) before Google sign-in.
+  var inAppSkipped = false;
+  function isInApp() { return /FBAN|FBAV|FB_IAB|Instagram/i.test(navigator.userAgent || ''); }
+  function chromeIntentUrl() {
+    var u = window.location;
+    return 'intent://' + u.host + u.pathname + u.search + '#Intent;scheme=https;package=com.android.chrome;end';
+  }
+  function openInAppModal(slug) {
+    var box = openModal(
+      '<h2>Open in Chrome to sign in faster</h2>' +
+      '<p>In Chrome your Google account is one tap away.</p>' +
+      '<button type="button" class="sht-btn" data-inapp="chrome">Open in Chrome</button>' +
+      '<p style="font-size:.78rem;margin:10px 0 0;text-align:center;">If nothing happens, tap the \u22EE menu at the top right and choose Open in Chrome.</p>' +
+      '<p style="text-align:center;margin:10px 0 0;"><a href="#" data-inapp="go" style="color:inherit;text-decoration:underline;">Continue here anyway</a></p>'
+    );
+    box.querySelector('[data-inapp="chrome"]').addEventListener('click', function () {
+      window.location.href = chromeIntentUrl();
+    });
+    box.querySelector('[data-inapp="go"]').addEventListener('click', function (e) {
+      e.preventDefault();
+      inAppSkipped = true;
+      closeModal();
+      openConfirmModal(slug, true);
+    });
+  }
+
   function startFlow(slug) {
     return getStatus(true).then(function (st) {
       if (!st.enabled) return;
-      if (!st.logged_in) { openConfirmModal(slug, true); return; } // guest: pick the subject first, Google sign-in comes after
+      if (!st.logged_in) { if (isInApp() && !inAppSkipped) { openInAppModal(slug); return; } openConfirmModal(slug, true); return; } // guest: pick the subject first, Google sign-in comes after
       if (st.trial_used) { toast('You have already used your free trial.'); return; }
       if (st.email_state === 'unverified' || st.email_state === 'need_gmail') { openEmailModal(st.email_state); return; }
       openConfirmModal(slug);
@@ -589,6 +616,7 @@
           }
         }
         if (qs.get('trial_started') === '1') {
+          try { if (typeof fbq === 'function') fbq('track', 'StartTrial'); } catch (e) {}
           try {
             var u2 = new URL(window.location.href);
             u2.searchParams.delete('trial_started');
