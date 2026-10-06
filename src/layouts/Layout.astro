@@ -656,7 +656,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
 
   <Footer premium={true} />
 
-  <a id="ca-fab" href="/current-affairs/" title="Current Affairs" aria-label="Current Affairs">
+  <a id="ca-fab" href="/sales/" title="Study Options" aria-label="Study Options">
     <svg viewBox="0 0 24 24">
       <path d="M4 4h16v13H7l-3 3V4z" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M8 9h8M8 13h5" stroke-linecap="round"/>
@@ -728,7 +728,7 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       // is treated as part of the redesign.
       const isV2Page = window.location.pathname.includes('-v2');
       if (isV2Page) {
-        caFab.href = '/current-affairs/';
+        caFab.href = '/sales/';
       }
 
       // Same deliberate-fresh-entry reasoning as the Header's "Current

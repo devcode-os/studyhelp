@@ -1,0 +1,275 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+// ============================================================
+// /sales/ — one page that lists every way to study with StudyHelp:
+// Study Online (3-day free trial), Download PDF, Amazon Kindle,
+// Google Play Books (coming soon).
+//
+// The Start Free Trial button reuses the site's existing trial flow
+// (public/trial.js, [data-trial-start]) — nothing new is built for it.
+// ============================================================
+
+// ---- PLACEHOLDER: PDF checkout link -------------------------------------
+// Leave empty until the ₹299 PDF has a real payment/checkout page.
+// While empty, the PDF card shows a disabled "Coming soon" button instead
+// of a dead link. Put the real URL here (e.g. a Razorpay payment page).
+const PDF_BUY_URL = '/downloads/';
+const PDF_PRICE = 299;
+// --------------------------------------------------------------------------
+
+// Real question total, derived from the data files exactly like the homepage
+// (so it never goes stale). Same subjects, same General Science de-duplication.
+const SUBJECT_SLUGS = [
+  'general-science-en', 'telangana-history-en', 'telangana-history-te',
+  'indian-history-en', 'telangana-economy-en', 'telangana-economy-te',
+  'andhra-pradesh-economy', 'indian-polity-en',
+];
+const chapterFiles = import.meta.glob('../../data/*/*.json', { eager: true });
+let totalQuestions = 0;
+for (const [path, mod] of Object.entries(chapterFiles)) {
+  const subjectKey = path.split('/').slice(-2, -1)[0];
+  if (!SUBJECT_SLUGS.includes(subjectKey)) continue;
+  const items = Array.isArray(mod.default) ? mod.default : [mod.default];
+  const valid = items.filter((ch) => ch && Array.isArray(ch.faqs) && ch.slug && ch.chapterNumber && !(subjectKey === 'general-science-en' && ch.section !== 'General Science'));
+  totalQuestions += valid.reduce((sum, ch) => sum + ch.faqs.length, 0);
+}
+const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
+---
+<Layout title="Study Options - Online, PDF and Kindle | StudyHelp" description="Study TGPSC and APPSC subjects online with a 3-day free trial, download the PDF, or read the StudyHelp books on Amazon Kindle.">
+
+  <Header active="" theme="premium" />
+
+  <div class="study-wrap">
+
+    <div class="study-intro">
+      <h1>Choose How You Want to Study</h1>
+      <p>Practice online, download PDFs, or read on Kindle and Google Play Books. For UPSC, SSC, TGPSC, APPSC and more</p>
+    </div>
+
+    <!-- 1. STUDY ONLINE -->
+    <section class="study-card study-card-main" id="online">
+      <div class="study-head">
+        <div class="study-ico study-ico-indigo"><i class="ti ti-device-laptop" aria-hidden="true"></i></div>
+        <h2>Study Online</h2>
+        <span class="study-tag study-tag-green">3 days free</span>
+      </div>
+     <p class="study-sub">19,000+ topic-wise MCQs. Pick any subject free for 3 days. No card, no auto-charge.</p>
+      <div data-trial-slot="banner" id="study-trial-slot"></div>
+      <button type="button" class="study-btn study-btn-primary" id="study-trial-btn" data-trial-start="">Start Free Trial</button>
+    </section>
+
+    <!-- 2. DOWNLOAD PDF -->
+    <section class="study-card" id="pdf">
+      <div class="study-head">
+        <div class="study-ico study-ico-amber"><i class="ti ti-file-download" aria-hidden="true"></i></div>
+        <h2>Download PDF</h2>
+        <span class="study-tag">Study offline</span>
+      </div>
+      <p class="study-sub">MCQ practice PDFs with answers, Chapter-wise.</p>
+      <div class="study-price">₹{PDF_PRICE}<small> per subject, one-time</small></div>
+      {PDF_BUY_URL
+        ? <a class="study-btn study-btn-soft" href={PDF_BUY_URL}>Browse PDFs</a>
+        : <span class="study-btn study-btn-disabled">Coming soon</span>}
+    </section>
+
+    <!-- 3. AMAZON KINDLE -->
+    <section class="study-card" id="kindle">
+      <div class="study-head">
+        <div class="study-ico study-ico-amber"><i class="ti ti-books" aria-hidden="true"></i></div>
+        <h2>Amazon Kindle</h2>
+        <span class="study-tag">Kindle eBook</span>
+      </div>
+      <p class="study-sub">We are also available on Kindle</p>
+      <div class="study-books">
+        <div class="study-book">
+          <b>Indian Polity</b>
+          <span>4,000+ MCQs with Explanations. Chapter-wise practice sets.</span>
+          <a class="study-btn study-btn-amazon" href="https://link.amazon/B0ehQ54u4" target="_blank" rel="noopener">Buy on Amazon · ₹299</a>
+        </div>
+        <div class="study-book">
+          <b>Indian History</b>
+          <span>Ancient, Medieval and Modern. 4,000+ MCQs with Explanations.</span>
+          <a class="study-btn study-btn-amazon" href="https://link.amazon/B0apjMhAo" target="_blank" rel="noopener">Buy on Amazon · ₹299</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GOOGLE PLAY BOOKS -->
+    <section class="study-card" id="playbooks">
+      <div class="study-head">
+        <div class="study-ico study-ico-blue"><i class="ti ti-book-2" aria-hidden="true"></i></div>
+        <h2>Google Play Books</h2>
+        <span class="study-tag study-tag-grey">Coming soon</span>
+      </div>
+      <p class="study-sub">Our books are on the way to Google Play Books.</p>
+      <span class="study-btn study-btn-disabled">Coming soon</span>
+    </section>
+
+  </div>
+
+  <style is:global>
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+
+    .study-wrap {
+      --sh2-surface: #FFFFFF;
+      --sh2-indigo: #4B3FA0;
+      --sh2-indigo-deep: #2E2570;
+      --sh2-indigo-soft: #EEEAFB;
+      --sh2-amber: #E8963A;
+      --sh2-amber-soft: #FBEDD9;
+      --sh2-green: #26946A;
+      --sh2-green-soft: #DFF3EA;
+      --sh2-blue: #2F7DD6;
+      --sh2-blue-soft: #E1EDFB;
+      --sh2-ink: #1C1A38;
+      --sh2-text-soft: #726F92;
+      --sh2-line: #E7E4F5;
+      --sh2-shadow: 0 1px 2px rgba(33,31,61,0.05), 0 14px 28px -14px rgba(46,37,112,0.22);
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      color: var(--sh2-ink);
+    }
+    html[data-theme="dark"] .study-wrap {
+      --sh2-surface: #1C1A30;
+      --sh2-indigo: #A594F5;
+      --sh2-indigo-deep: #7A6CD9;
+      --sh2-indigo-soft: #2A2650;
+      --sh2-amber: #F0B45E;
+      --sh2-amber-soft: #3B2C15;
+      --sh2-green: #5FCB9B;
+      --sh2-green-soft: #183328;
+      --sh2-blue: #6FA8EC;
+      --sh2-blue-soft: #1B2A40;
+      --sh2-ink: #F3F1FC;
+      --sh2-text-soft: #9C97BE;
+      --sh2-line: #302C4E;
+      --sh2-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 14px 28px -14px rgba(0,0,0,0.55);
+    }
+    @media (max-width: 900px) {
+      .study-wrap { padding: 16px 16px calc(64px + var(--tabbar-h) + env(safe-area-inset-bottom, 0px)); }
+    }
+
+    .study-intro { padding: 4px 2px 16px; }
+    .study-intro h1 { font-size: 1.45rem; line-height: 1.25; margin: 0; color: var(--sh2-ink); }
+    .study-intro p { margin: 6px 0 0; color: var(--sh2-text-soft); font-size: 0.95rem; }
+
+    .study-card {
+      background: var(--sh2-surface);
+      border: 1px solid var(--sh2-line);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 14px;
+      box-shadow: var(--sh2-shadow);
+    }
+    .study-card-main { border: 1.5px solid var(--sh2-indigo); }
+    .study-head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+    .study-head h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.01em; margin: 0; color: var(--sh2-ink); }
+    .study-ico { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; font-size: 1.5rem; flex: none; }
+    .study-ico-indigo { background: var(--sh2-indigo-soft); color: var(--sh2-indigo); }
+    .study-ico-amber { background: var(--sh2-amber-soft); color: var(--sh2-amber); }
+    .study-ico-blue { background: var(--sh2-blue-soft); color: var(--sh2-blue); }
+    .study-tag { margin-left: auto; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: var(--sh2-indigo-soft); color: var(--sh2-indigo); white-space: nowrap; }
+    .study-tag-green { background: var(--sh2-green); color: #fff; }
+    .study-tag-grey { background: var(--sh2-line); color: var(--sh2-text-soft); }
+    .study-sub { color: var(--sh2-text-soft); font-size: 0.9rem; line-height: 1.5; margin: 6px 0 14px; }
+    .study-fine { margin: 12px 0 0; font-size: 0.82rem; color: var(--sh2-text-soft); text-align: center; }
+    .study-fine a { color: var(--sh2-indigo); font-weight: 700; }
+
+    .study-price { font-size: 1.6rem; font-weight: 800; color: var(--sh2-indigo); margin: 0 0 12px; }
+    .study-price small { font-size: 0.85rem; font-weight: 600; color: var(--sh2-text-soft); }
+
+    .study-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; box-sizing: border-box;
+      padding: 10px 16px; border-radius: 10px; border: none;
+      font-family: inherit; font-weight: 700; font-size: 0.88rem;
+      text-align: center; text-decoration: none; cursor: pointer;
+    }
+    /* Homepage trial card: only shown here for active / ended trials. While the trial is unused, the green button above is the call to action. */
+    body.trial-solo #study-trial-slot { display: none; }
+    #study-trial-slot:not(:empty) { margin: 0 0 4px; }
+    .study-btn-primary { background: var(--sh2-green); color: #fff; }
+    .study-btn-primary:hover { filter: brightness(0.95); }
+    .study-btn-amazon { background: var(--sh2-amber); color: #1C1A38; }
+    .study-btn-disabled { background: var(--sh2-line); color: var(--sh2-text-soft); font-weight: 600; cursor: default; }
+
+        .study-books { display: grid; gap: 12px; }
+    .study-book { border: 1px solid var(--sh2-line); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .study-book b { font-size: 1.35rem; font-weight: 800; color: var(--sh2-ink); }
+    .study-book span { font-size: 0.84rem; color: var(--sh2-text-soft); line-height: 1.45; }
+    .study-book .study-btn-amazon {
+      width: auto; align-self: center;
+      padding: 8px 16px; font-size: 0.85rem; font-weight: 700;
+      background: var(--sh2-amber);
+      border: none;
+    }
+    @media (min-width: 600px) { .study-books { grid-template-columns: 1fr 1fr; } }
+    .study-book span { font-size: 0.84rem; color: var(--sh2-text-soft); line-height: 1.45; }
+    @media (min-width: 600px) { .study-books { grid-template-columns: 1fr 1fr; } }
+  
+    .study-btn-soft { display: block; width: fit-content; margin: 0 auto; padding: 8px 22px; font-size: 0.85rem; font-weight: 700; background: var(--sh2-amber-soft); color: var(--sh2-ink); border: 1.5px solid var(--sh2-amber); }
+  
+    /* sales-tidy */
+    #app-install-banner { display: none !important; }
+    body:not(.trial-solo) .study-card-main:has([data-trial-slot] .sht-card) .study-sub { display: none; }
+  </style>
+
+  <script is:inline>
+    // Same pattern as the homepage: tag <body> so the lavender background applies only here.
+    document.body.classList.add('sh2-page');
+  </script>
+  <script is:inline src="/trial.js" defer></script>
+
+  <script is:inline>
+    (function () {
+      var btn = document.getElementById('study-trial-btn');
+      if (!btn) return;
+
+      // Meta Pixel: count clicks on the trial button on this page. This is a
+      // button CLICK (intent), not a finished trial start; the sign-up happens
+      // afterwards inside trial.js.
+      btn.addEventListener('click', function () {
+        try { if (typeof fbq === 'function') fbq('trackCustom', 'TrialButtonClick', { page: 'sales' }); } catch (e) {}
+      });
+
+      // If the free trial is switched off, or this visitor has already used it,
+      // trial.js would do nothing (or only show a small message). Turn the button
+      // into a plain "Open subjects" link so it is never a dead end.
+      function becomeLink() {
+        var nb = btn.cloneNode(true);          // clone drops trial.js's click listener
+        nb.removeAttribute('data-trial-start');
+        nb.textContent = 'Open Subjects';
+        nb.addEventListener('click', function () { window.location.href = '/subjects/'; });
+        btn.parentNode.replaceChild(nb, btn);
+      }
+      function check() {
+        if (!window.ShTrial || !window.ShTrial.getStatus) { becomeLink(); return; }
+        window.ShTrial.getStatus().then(function (st) {
+          if (!st || !st.enabled) { becomeLink(); return; }
+          // Logged-in users already know the site: no "Already studying?" line.
+          var fineEl = document.getElementById('study-trial-fine');
+          if (st.logged_in && fineEl) fineEl.remove();
+          if (st.logged_in && st.trial_used) {
+            // Same card as the homepage (active / ended). Hide our button while it loads;
+            // if trial.js shows nothing (trial ended long ago), fall back to Open Subjects.
+            var fine = document.getElementById('study-trial-fine');
+            var slot = document.getElementById('study-trial-slot');
+            btn.style.display = 'none';
+            if (fine) fine.style.display = 'none';
+            setTimeout(function () {
+              if (slot && slot.firstElementChild) return;
+              btn.style.display = '';
+              if (fine) fine.style.display = '';
+              becomeLink();
+            }, 2500);
+          }
+        }).catch(becomeLink);
+      }
+      window.addEventListener('load', function () { setTimeout(check, 0); });
+    })();
+  </script>
+</Layout>

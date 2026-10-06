@@ -396,9 +396,20 @@ import Header from '../../components/Header.astro';
         if (banner && leadEl && pillEl && tailEl) {
           leadEl.textContent = "You're buying:";
 
+          const SUBJECT_PDF_NAMES = {
+            'pdf-indian-polity': 'Indian Polity',
+            'pdf-indian-history': 'Indian History',
+            'pdf-general-science': 'General Science',
+            'pdf-telangana-history': 'Telangana History (English)',
+            'pdf-telangana-history-te': 'Telangana History (Telugu)',
+            'pdf-telangana-economy': 'Telangana Economy (English)',
+            'pdf-andhra-pradesh-economy': 'Andhra Pradesh Economy',
+          };
           const prettyNames = caBuy.item_ids.map(prettifyCaItemId);
           const allResolved = prettyNames.every(Boolean);
-          if (allResolved) {
+          if (caBuy.item_ids.every((id) => SUBJECT_PDF_NAMES[id])) {
+            pillEl.textContent = caBuy.item_ids.map((id) => SUBJECT_PDF_NAMES[id]).join(', ') + ' PDF';
+          } else if (allResolved) {
             // Single item -> just that month/bundle range. Multiple items
             // (custom multi-month pick, or an "Individual" format bundle
             // granting several months) -> join them, e.g.

@@ -1315,6 +1315,7 @@ const bundle6IndividualIds = bundle6.map((m) => toBackendId(m.slug));
     // ============================================================
     function badgeForItemType(itemType) {
       if (itemType === 'bundle3' || itemType === 'bundle6') return 'Combined';
+      if (itemType === 'subject') return 'Subject PDF';
       return 'Monthly';
     }
 

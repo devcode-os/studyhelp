@@ -1182,7 +1182,7 @@ async function downloadCaPdf(request, env) {
   return new Response(object.body, {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="${r2ObjectKey}"`,
+      "Content-Disposition": `attachment; filename="${r2ObjectKey.split("/").pop()}"`,
       "Cache-Control": "private, no-store",
     },
   });

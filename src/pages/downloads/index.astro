@@ -1,0 +1,318 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+// ============================================================
+// /downloads/ - subject MCQ PDFs (Rs. 299 each).
+// Uses the same Worker purchase system as Current Affairs
+// (/ca/create-order, /ca/purchases, /ca/download(-token)).
+// item ids MUST match the keys in caCatalog.js.
+// To add a PDF: add it here AND in caCatalog.js, upload it to R2
+// under subjects/<id>.pdf.
+// ============================================================
+const PRICE = 299;
+const PDFS = [
+  { id: 'pdf-indian-polity',          name: 'Indian Polity',          medium: 'English', mcqs: '4,100+', chapters: 29 },
+  { id: 'pdf-indian-history',         name: 'Indian History',         medium: 'English', mcqs: '4,200+', chapters: 62, note: 'Ancient, Medieval and Modern' },
+  { id: 'pdf-telangana-history',      name: 'Telangana History',      medium: 'English', mcqs: '3,500+', chapters: 34 },
+  { id: 'pdf-telangana-history-te',   name: 'Telangana History',      medium: 'Telugu',  mcqs: '2,300+', chapters: 40 },
+  { id: 'pdf-general-science',        name: 'General Science',        medium: 'English', mcqs: '2,200+', chapters: 76, unit: 'sets', note: 'Physics, Chemistry and Biology' },
+  { id: 'pdf-telangana-economy',      name: 'Telangana Economy',      medium: 'English', mcqs: '800+',   chapters: 12 },
+  { id: 'pdf-andhra-pradesh-economy', name: 'Andhra Pradesh Economy', medium: 'English', mcqs: '700+',   chapters: 13 },
+];
+---
+<Layout title="Download MCQ PDFs | StudyHelp" description="Subject-wise MCQ practice PDFs with answers for TGPSC, APPSC, UPSC and SSC. Download once, study offline. Rs. 299 per subject.">
+  <Header active="" theme="premium" />
+
+  <div class="dl-wrap">
+    <div class="dl-intro">
+      <div class="dl-crumb"><a href="/sales/">Study Options</a> / Download PDFs</div>
+      <h1>Download MCQ PDFs</h1>
+      <p>Chapter-wise practice sets with answers after every set. Pay once, download any time, study offline.</p>
+    </div>
+
+    <section class="dl-mine" id="dl-mine" style="display:none">
+      <h2>Your PDFs</h2>
+      <div id="dl-mine-list"></div>
+    </section>
+
+    <div class="dl-list">
+      {PDFS.map((p) => (
+        <section class="dl-card" data-pdf={p.id}>
+          <div class="dl-sel-label">You're buying this PDF</div>
+          <div class="dl-top">
+            <h2>{p.name}</h2>
+            <span class:list={['dl-tag', p.medium === 'Telugu' && 'dl-tag-te']}>{p.medium}</span>
+          </div>
+          {p.note && <p class="dl-note">{p.note}</p>}
+          <p class="dl-meta">{p.mcqs} MCQs &middot; {p.chapters} {p.unit === 'sets' ? 'practice sets' : 'chapters'}</p>
+          <button type="button" class="dl-btn" data-item-id={p.id} data-price={PRICE} data-name={p.medium === 'Telugu' ? `${p.name} (Telugu)` : p.name}>Buy Now - ₹{PRICE}</button>
+        </section>
+      ))}
+      <section class="dl-card dl-ca">
+        <div class="dl-top">
+          <h2>Current Affairs</h2>
+          <span class="dl-tag">Monthly</span>
+        </div>
+        <p class="dl-meta">Get Last 3 months Current Affairs MCQ PDF</p>
+        <a class="dl-btn dl-btn-link" href="/current-affairs/">Buy Now - ₹199</a>
+      </section>
+    </div>
+
+
+    <p class="dl-fine">One-time payment. The PDF is for your personal study and stays in your account, so you can download it again any time. Answers are given for every question; explanations are included where available. Telugu PDFs carry Telugu questions and answers.</p>
+    <p class="dl-fine">Need help? <a href="/support/">Contact support</a> &middot; <a href="/refund-policy/">Refund policy</a></p>
+  </div>
+
+  <style is:global>
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+    .dl-wrap { --s:#fff; --ink:#1C1A38; --soft:#726F92; --line:#E7E4F5; --ind:#4B3FA0; --ind-soft:#EEEAFB; --amb:#E8963A; --amb-soft:#FBEDD9; --grn:#26946A; --grn-soft:#DFF3EA;
+      max-width: 560px; margin: 0 auto; padding: 24px 16px 40px; color: var(--ink); }
+    html[data-theme="dark"] .dl-wrap { --s:#1C1A30; --ink:#F1EFFF; --soft:#A9A5CC; --line:#322E55; --ind:#A594F5; --ind-soft:#2A2650; --amb-soft:#3A2D18; --grn-soft:#17352B; }
+    #app-install-banner { display: none !important; }
+    .dl-crumb { font-size: .8rem; color: var(--soft); margin-bottom: 8px; }
+    .dl-crumb a { color: var(--ind); text-decoration: none; }
+    .dl-intro h1 { font-size: 1.6rem; font-weight: 800; margin: 0 0 6px; }
+    .dl-intro p { color: var(--soft); font-size: .95rem; line-height: 1.5; margin: 0 0 18px; }
+    .dl-list { display: grid; gap: 12px; }
+    .dl-card { background: var(--s); border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: 0 1px 2px rgba(33,31,61,.05), 0 14px 28px -14px rgba(46,37,112,.22); }
+    .dl-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .dl-top h2 { font-size: 1.25rem; font-weight: 800; margin: 0; }
+    .dl-tag { font-size: .72rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--ind-soft); color: var(--ind); white-space: nowrap; }
+    .dl-tag-te { background: var(--amb-soft); color: #A8610F; }
+    html[data-theme="dark"] .dl-tag-te { color: #F2B36A; }
+    .dl-meta { color: var(--soft); font-size: .86rem; margin: 2px 0 0; }
+    .dl-note { color: var(--soft); font-size: .86rem; margin: 6px 0 0; }
+    .dl-btn { line-height: 1.3; margin-top: 12px; width: 100%; padding: 11px 16px; border: 0; border-radius: 10px; background: var(--ind); color: #fff; font-size: .92rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+    html[data-theme="dark"] .dl-btn { color: #1C1A30; }
+    .dl-btn.dl-owned { background: var(--grn); color: #fff; }
+    .dl-btn:disabled { opacity: .6; cursor: default; }
+    .dl-sel-label { display: none; align-self: flex-start; font-size: .74rem; font-weight: 800; letter-spacing: .02em; color: #fff; background: var(--ind); padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; width: fit-content; }
+    html[data-theme="dark"] .dl-sel-label { color: #1C1A30; }
+    .dl-list.dl-picking .dl-card { opacity: .4; transition: opacity .2s; }
+    .dl-list.dl-picking .dl-card.dl-selected { opacity: 1; border-color: var(--ind); box-shadow: 0 0 0 3px var(--ind-soft), 0 14px 28px -14px rgba(46,37,112,.35); }
+    .dl-card.dl-selected .dl-sel-label { display: block; }
+    .dl-mine { background: var(--s); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; margin: 0 0 14px; }
+    .dl-mine h2 { font-size: 1.05rem; font-weight: 800; margin: 0 0 8px; }
+    .dl-mine-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
+    .dl-mine-row:first-of-type { border-top: 0; }
+    .dl-mine-name { font-size: .92rem; font-weight: 700; }
+    .dl-mine-sub { font-size: .76rem; color: var(--soft); }
+    .dl-mine-btn { flex: none; padding: 8px 14px; border: 0; border-radius: 9px; background: var(--grn); color: #fff; font-size: .82rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .dl-btn-link { line-height: 1.3; display: block; text-align: center; text-decoration: none; box-sizing: border-box; }
+    .dl-card { display: flex; flex-direction: column; }
+    .dl-card .dl-btn { margin-top: auto; }
+    .dl-meta { margin-bottom: 12px; }
+    @media (min-width: 820px) {
+      .dl-wrap { max-width: 940px; }
+      .dl-list { grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+    .dl-fine { color: var(--soft); font-size: .78rem; line-height: 1.5; margin: 16px 0 0; text-align: center; }
+    .dl-fine a { color: var(--ind); }
+  </style>
+
+  <script>
+    const CA_API = 'https://api.studyhelp.fdaytalk.com';
+    const PRICE_RS = 299;
+    let cache = null;
+
+    async function loadPurchases() {
+      if (cache) return cache;
+      try {
+        const res = await fetch(`${CA_API}/ca/purchases`, { credentials: 'include' });
+        if (res.status === 401) {
+          cache = { loggedIn: false, items: new Set() };
+        } else {
+          const data = await res.json();
+          cache = { loggedIn: true, items: new Set((data.purchases || []).map((p) => p.item_id)), rows: data.purchases || [] };
+        }
+      } catch (e) {
+        cache = { loggedIn: false, items: new Set() };
+      }
+      return cache;
+    }
+
+    let rzpPromise = null;
+    function loadRazorpay() {
+      if (rzpPromise) return rzpPromise;
+      rzpPromise = new Promise((resolve, reject) => {
+        if (window.Razorpay) return resolve();
+        const s = document.createElement('script');
+        s.src = 'https://checkout.razorpay.com/v1/checkout.js';
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error('Failed to load Razorpay checkout'));
+        document.head.appendChild(s);
+      });
+      return rzpPromise;
+    }
+
+    function isNative() {
+      return !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+    }
+
+    function markSelected(itemId, on) {
+      const list = document.querySelector('.dl-list');
+      document.querySelectorAll('.dl-card').forEach((c) => c.classList.remove('dl-selected'));
+      list.classList.toggle('dl-picking', !!on);
+      if (on) {
+        const card = document.querySelector(`[data-pdf="${itemId}"]`);
+        if (card) { card.classList.add('dl-selected'); card.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+      }
+    }
+
+    async function buy(itemId) {
+      const state = await loadPurchases();
+      if (!state.loggedIn) {
+        const payload = btoa(JSON.stringify({ kind: 'items', item_ids: [itemId] }));
+        window.location.href = `/signup/?next=${encodeURIComponent('/downloads/?ca_buy=' + payload)}`;
+        return;
+      }
+      markSelected(itemId, true);
+      let orderRes;
+      try {
+        orderRes = await fetch(`${CA_API}/ca/create-order`, {
+          method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ kind: 'items', item_ids: [itemId] }),
+        });
+      } catch (e) { markSelected(itemId, false); alert('Could not start checkout. Please try again.'); return; }
+      const order = await orderRes.json();
+      if (!orderRes.ok) { markSelected(itemId, false); alert(order.error || 'Could not start checkout.'); return; }
+
+      let userName = '';
+      try { const me = await (await fetch(`${CA_API}/me`, { credentials: 'include' })).json(); userName = me.name || ''; } catch (e) {}
+      const successUrl = '/downloads/?ca_success=1&item=' + encodeURIComponent(itemId);
+      const btnEl = document.querySelector(`.dl-btn[data-item-id="${itemId}"]`);
+      const description = (btnEl && btnEl.dataset.name ? btnEl.dataset.name : 'Subject') + ' PDF';
+
+      if (isNative()) {
+        window.Capacitor.Plugins.RazorpayNative.open({
+          key: order.key_id, amount: order.amount, currency: order.currency, order_id: order.order_id,
+          name: 'StudyHelp', description, prefill: { name: userName },
+        }).then((r) => {
+          if (r.success) { window.location.href = successUrl; return; }
+          markSelected(itemId, false);
+          if (window.showToast) window.showToast('Payment failed. Please try again.', 'error');
+          else alert('Payment failed. Please try again.');
+        }).catch((err) => { markSelected(itemId, false); alert('Error: ' + (err && err.message ? err.message : String(err))); });
+        return;
+      }
+
+      await loadRazorpay();
+      const rzp = new window.Razorpay({
+        key: order.key_id, order_id: order.order_id, amount: order.amount, currency: order.currency,
+        name: 'StudyHelp', description, prefill: { name: userName },
+        handler: function () { window.location.href = successUrl; },
+        modal: { ondismiss: function () { markSelected(itemId, false); } },
+      });
+      rzp.on('payment.failed', function () { markSelected(itemId, false); alert('Payment failed. Please try again.'); });
+      rzp.open();
+    }
+
+    async function download(itemId) {
+      if (isNative()) {
+        if (!(window.Capacitor.Plugins && window.Capacitor.Plugins.Browser)) {
+          if (confirm('Please update the StudyHelp app to download PDFs.\n\nTap OK to open the Play Store, or Cancel to stay here.')) {
+            window.location.href = 'https://play.google.com/store/apps/details?id=com.fdaytalk.studyhelp';
+          }
+          return;
+        }
+        try {
+          const r = await fetch(`${CA_API}/ca/download-token?item_id=${encodeURIComponent(itemId)}`, { credentials: 'include' });
+          const d = await r.json();
+          if (!r.ok || !d.token) { alert(d.error || 'Could not start download. Please try again.'); return; }
+          window.Capacitor.Plugins.Browser.open({ url: `${CA_API}/ca/download?item_id=${encodeURIComponent(itemId)}&token=${encodeURIComponent(d.token)}` });
+        } catch (e) { alert('Could not start download. Please check your connection and try again.'); }
+        return;
+      }
+      window.location.href = `${CA_API}/ca/download?item_id=${encodeURIComponent(itemId)}`;
+    }
+
+    function renderMine(state) {
+      const box = document.getElementById('dl-mine');
+      const list = document.getElementById('dl-mine-list');
+      const rows = Array.from(state.rows || []).sort((a, b) => new Date(b.purchase_date) - new Date(a.purchase_date));
+      list.innerHTML = '';
+      if (!state.loggedIn || !rows.length) { box.style.display = 'none'; return; }
+      rows.forEach((p) => {
+        const kind = p.item_type === 'subject' ? 'Subject PDF' : (p.item_type === 'bundle3' || p.item_type === 'bundle6') ? 'Current Affairs, combined' : 'Current Affairs';
+        const row = document.createElement('div');
+        row.className = 'dl-mine-row';
+        const info = document.createElement('div');
+        const nm = document.createElement('div'); nm.className = 'dl-mine-name'; nm.textContent = String(p.month_range).replace(/ \(PDF\)$/, '');
+        const sb = document.createElement('div'); sb.className = 'dl-mine-sub'; sb.textContent = kind;
+        info.appendChild(nm); info.appendChild(sb);
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'dl-mine-btn'; b.textContent = 'Download';
+        b.addEventListener('click', () => { download(p.item_id); if (window.showToast) window.showToast('Download started'); });
+        row.appendChild(info); row.appendChild(b);
+        list.appendChild(row);
+      });
+      box.style.display = '';
+    }
+
+    function paint(state) {
+      renderMine(state);
+      document.querySelectorAll('button.dl-btn[data-item-id]').forEach((btn) => {
+        const id = btn.dataset.itemId;
+        if (state.items.has(id)) { btn.textContent = 'Download PDF'; btn.classList.add('dl-owned'); }
+        else { btn.textContent = `Buy Now - ₹${PRICE_RS}`; btn.classList.remove('dl-owned'); }
+      });
+    }
+
+    document.querySelectorAll('button.dl-btn[data-item-id]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const id = btn.dataset.itemId;
+        const state = await loadPurchases();
+        if (state.items.has(id)) {
+          download(id);
+          if (window.showToast) window.showToast('Download started');
+        } else {
+          buy(id);
+        }
+      });
+    });
+
+    (async function init() {
+      let state = await loadPurchases();
+      paint(state);
+      const params = new URLSearchParams(window.location.search);
+
+      if (params.get('ca_success') === '1' && state.loggedIn) {
+        cache = null;
+        state = await loadPurchases();
+        paint(state);
+        const item = params.get('item') || '';
+        try {
+          if (item && sessionStorage.getItem('dl_conv_tracked') !== item) {
+            if (typeof fbq === 'function') fbq('track', 'Purchase', { value: PRICE_RS, currency: 'INR' });
+            if (typeof gtag === 'function') {
+              gtag('event', 'conversion', { send_to: 'AW-18464276214/qr_sCJXgjf8cEPb9ueRE', value: PRICE_RS, currency: 'INR', transaction_id: `${item}-${Date.now()}` });
+            }
+            sessionStorage.setItem('dl_conv_tracked', item);
+          }
+        } catch (e) {}
+        window.history.replaceState({}, '', window.location.pathname);
+        if (window.showToast) window.showToast('Payment received. Your PDF is ready to download.');
+        const card = item && document.querySelector(`[data-pdf="${item}"]`);
+        if (card) card.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        return;
+      }
+
+      const raw = params.get('ca_buy');
+      if (raw && state.loggedIn) {
+        try {
+          const { kind, item_ids } = JSON.parse(atob(raw));
+          if (kind === 'items' && Array.isArray(item_ids) && item_ids.length === 1) {
+            window.history.replaceState({}, '', window.location.pathname);
+            buy(item_ids[0]);
+          }
+        } catch (e) {}
+      }
+    })();
+  </script>
+
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
+</Layout>

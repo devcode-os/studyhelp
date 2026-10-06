@@ -27,6 +27,15 @@ export const CA_CATALOG = {
     monthRange: "March \u2013 August 2026",
     amountPaise: 29900,
   },
+
+  // Subject MCQ PDFs (Rs. 299 each). Files live under subjects/ in the same R2 bucket.
+  "pdf-indian-polity": { itemType: "subject", monthRange: "Indian Polity (PDF)", amountPaise: 29900, r2Key: "subjects/pdf-indian-polity.pdf" },
+  "pdf-indian-history": { itemType: "subject", monthRange: "Indian History (PDF)", amountPaise: 29900, r2Key: "subjects/pdf-indian-history.pdf" },
+  "pdf-general-science": { itemType: "subject", monthRange: "General Science (PDF)", amountPaise: 29900, r2Key: "subjects/pdf-general-science.pdf" },
+  "pdf-telangana-history": { itemType: "subject", monthRange: "Telangana History - English (PDF)", amountPaise: 29900, r2Key: "subjects/pdf-telangana-history.pdf" },
+  "pdf-telangana-history-te": { itemType: "subject", monthRange: "Telangana History - Telugu (PDF)", amountPaise: 29900, r2Key: "subjects/pdf-telangana-history-te.pdf" },
+  "pdf-telangana-economy": { itemType: "subject", monthRange: "Telangana Economy - English (PDF)", amountPaise: 29900, r2Key: "subjects/pdf-telangana-economy.pdf" },
+  "pdf-andhra-pradesh-economy": { itemType: "subject", monthRange: "Andhra Pradesh Economy (PDF)", amountPaise: 29900, r2Key: "subjects/pdf-andhra-pradesh-economy.pdf" },
 };
 
 // Fixed discount price for "Individual" format bundles (3 or 6 real
@@ -35,5 +44,6 @@ export const CA_CATALOG = {
 export const INDIVIDUAL_BUNDLE_PRICES = { 3: 19900, 6: 29900 };
 
 export function getCaR2Key(itemId) {
-  return `${itemId}.pdf`;
+  const item = CA_CATALOG[itemId];
+  return (item && item.r2Key) || `${itemId}.pdf`;
 }
