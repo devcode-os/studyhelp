@@ -120,7 +120,7 @@
     }
     b.addEventListener('click', go);
     inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); go(); } });
-    setTimeout(function () { try { inp.focus(); } catch (e) {} }, 60);
+    if (mode !== 'start') setTimeout(function () { try { inp.focus(); } catch (e) {} }, 60);
   }
 
   function lookup(v, b, showMsg) {
