@@ -4,7 +4,7 @@
   var p = location.pathname.replace(/\/+$/, '');
   if (p === '/signup' || p === '/login' || p === '/forgot-passcode') return;
   var WORKER = 'https://api.studyhelp.fdaytalk.com';
-  var css = '[data-trial-slot="banner"] .sht-card:has([data-trial-start]){display:none!important}' +
+  var css = '@media(max-width:819px){[data-trial-slot="banner"] .sht-card:has([data-trial-start]){display:none!important}}' +
     'body.sh-sticky-on{padding-bottom:60px}' +
     '#sh-sticky{position:fixed;left:0;right:0;bottom:0;z-index:900;display:flex;gap:10px;padding:8px 14px calc(8px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -4px 16px rgba(0,0,0,.08)}' +
     '#sh-sticky a,#sh-sticky button{flex:1;text-align:center;font:600 14px/1 system-ui,sans-serif;padding:11px 8px;border-radius:9px;text-decoration:none;cursor:pointer;border:2px solid #4F46E5}' +
