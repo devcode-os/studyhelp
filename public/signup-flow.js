@@ -178,11 +178,19 @@
       '<p style="margin:12px 0 0;"><a href="#" id="ig-go" style="color:#555;text-decoration:underline;font-size:.9rem;">Continue here anyway</a></p></div>';
     document.body.appendChild(o);
     o.querySelector('#ig-chrome').onclick=function(){var u=location;location.href='intent://'+u.host+u.pathname+u.search+'#Intent;scheme=https;package=com.android.chrome;end';};
-    o.querySelector('#ig-go').onclick=function(e){e.preventDefault();skipped=true;o.remove();};
+    o.querySelector('#ig-go').onclick=function(e){e.preventDefault();skipped=true;o.remove();var x=document.querySelectorAll('.ig-ov');for(var i=0;i<x.length;i++)x[i].remove();};
   }
-  document.addEventListener('click',function(e){
-    if(skipped)return;
-    var t=e.target;
-    if(t&&t.closest&&t.closest('#google-auth-slot')){e.preventDefault();e.stopPropagation();show();}
-  },true);
+  /* inapp-overlay */
+  function ensure(){
+    var slot=document.getElementById('google-auth-slot');
+    if(!slot||skipped)return;
+    if(slot.querySelector('.ig-ov'))return;
+    slot.style.position='relative';
+    var ov=document.createElement('div');
+    ov.className='ig-ov';
+    ov.style.cssText='position:absolute;left:0;top:0;right:0;bottom:0;z-index:5;cursor:pointer;';
+    ov.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();show();});
+    slot.appendChild(ov);
+  }
+  setInterval(ensure,400);
 })();
