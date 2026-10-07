@@ -3,10 +3,16 @@
   var ua=navigator.userAgent||'';
   if(!/Android/i.test(ua)||window.Capacitor)return;
   if(/^\/(signup|login|forgot-passcode)/.test(location.pathname))return;
-  var K='sh_app_nudge',inApp=/FBAN|FBAV|FB_IAB|Instagram/i.test(ua);
-  var fresh=/[?&]trial_started=1/.test(location.search);
-  try{var v=localStorage.getItem(K);if(v==='never')return;if(v&&!fresh&&Date.now()-Number(v)<3*864e5)return;}catch(e){}
-  if(!inApp&&!fresh)return;
+  var K='sh_app_nudge',P='sh_nudge_pending';
+  try{if(localStorage.getItem(K)==='never')return;}catch(e){}
+  var q=location.search,path=location.pathname;
+  var signal=/[?&](trial_started|bundle_success|ca_success)=1/.test(q)||path.indexOf('/payment-processing')===0;
+  try{
+    if(signal)localStorage.setItem(P,String(Date.now()));
+    var p=Number(localStorage.getItem(P)||0);
+    if(!p||Date.now()-p>10*60*1000)return;
+  }catch(e){if(!signal)return;}
+  if(path.indexOf('/payment-processing')===0)return;
   function show(){
     var o=document.createElement('div');
     o.style.cssText='position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center;padding:0;';
@@ -23,7 +29,5 @@
     };
     o.querySelector('#shn-x').onclick=function(e){e.preventDefault();o.remove();};
   }
-  fetch('https://api.studyhelp.fdaytalk.com/trial/status',{credentials:'include'}).then(function(r){return r.json()}).then(function(s){
-    if(s&&s.logged_in)setTimeout(show,2500);
-  }).catch(function(){});
+  setTimeout(function(){try{localStorage.removeItem(P);}catch(e){}show();},2500);
 })();
