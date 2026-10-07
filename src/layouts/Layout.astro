@@ -569,6 +569,8 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       30% { transform: translateY(-8px); opacity: 1; }
     }
   </style>
+  <style is:global>/* hide-install-banner */ #app-install-banner { display: none !important; }</style>
+  <style is:global>/* hide-fab-phone */ @media (max-width: 819px) { #ca-fab { display: none !important; } }</style>
 </head>
 <body>
   <div id="sh-nav-overlay"><div class="sh-nav-dots"><span></span><span></span><span></span></div></div>
@@ -916,5 +918,6 @@ const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogI
       });
     }
   </script>
+  <script is:inline src="/sticky-cta.js" defer></script>
 </body>
 </html>

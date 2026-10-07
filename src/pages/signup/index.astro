@@ -65,7 +65,7 @@ import Header from '../../components/Header.astro';
             if (next.indexOf('trial_start=') === -1) return;
             document.documentElement.classList.add('sh-trial-signup');
             var h = document.getElementById('signup-heading');
-            if (h) h.textContent = 'Continue with Google to start your free trial';
+            if (h) h.textContent = 'Start your free trial';
           } catch (e) {}
         })();
       </script>
@@ -649,6 +649,7 @@ import Header from '../../components/Header.astro';
   </script>
 
   <script is:inline src="/google-auth.js" defer></script>
+  <script is:inline src="/signup-flow.js" defer></script>
 
   <script is:inline>
     document.body.classList.add('sh2-page');

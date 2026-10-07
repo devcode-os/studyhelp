@@ -71,11 +71,11 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
         <div class="srow-ico srow-amber"><i class="ti ti-books" aria-hidden="true"></i></div>
         <div class="srow-text"><b>Amazon Kindle</b><span>We are also available on Kindle</span></div>
       </div>
-      <a class="srow-book" href="https://link.amazon/B0ehQ54u4" target="_blank" rel="noopener">
+      <a class="srow-book" href="https://www.amazon.in/dp/B0HLT7FTMZ/" data-aff="https://link.amazon/B0ehQ54u4" target="_blank" rel="noopener">
         <div class="srow-text"><b>Indian Polity</b><span>4,000+ MCQs with Explanations. Chapter-wise practice sets.</span></div>
         <em class="srow-buy">Buy on Amazon · ₹299</em>
       </a>
-      <a class="srow-book" href="https://link.amazon/B0apjMhAo" target="_blank" rel="noopener">
+      <a class="srow-book" href="https://www.amazon.in/dp/B0HLYZT1BQ/" data-aff="https://link.amazon/B0apjMhAo" target="_blank" rel="noopener">
         <div class="srow-text"><b>Indian History</b><span>Ancient, Medieval and Modern. 4,000+ MCQs with Explanations.</span></div>
         <em class="srow-buy">Buy on Amazon · ₹299</em>
       </a>
@@ -301,6 +301,17 @@ const questionsLabel = `${totalQuestions.toLocaleString('en-IN')}+`;
         }).catch(becomeLink);
       }
       window.addEventListener('load', function () { setTimeout(check, 0); });
+    })();
+  </script>
+<!-- kindle-desktop-links -->
+  <script is:inline>
+    // Phones/tablets: normal Amazon links (open the Amazon app). Desktop: affiliate links.
+    (function () {
+      try {
+        var desktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches && !/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+        if (!desktop) return;
+        document.querySelectorAll("a.srow-book[data-aff]").forEach(function (a) { a.href = a.getAttribute("data-aff"); });
+      } catch (e) {}
     })();
   </script>
 </Layout>

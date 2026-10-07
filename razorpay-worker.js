@@ -43,7 +43,7 @@ export default {
 
     // Handle CORS preflight
     if (request.method === "OPTIONS") {
-      const authRoutes = ["/signup", "/login", "/auth/google", "/auth/google/link", "/trial/status", "/trial/start", "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/content/theory", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/quick-revision-clicks", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
+      const authRoutes = ["/signup", "/login", "/auth/google", "/auth/google/link", "/trial/status", "/trial/start", "/auth/lookup",  "/logout", "/me", "/forgot-passcode/send-otp", "/forgot-passcode/reset", "/content/chapter-answers", "/content/answer", "/content/theory", "/verify-email/send-otp", "/verify-email/confirm", "/account/change-email/send-otp", "/account/change-email/confirm", "/account/change-passcode", "/account/delete", "/master-access/login", "/master-access/logout", "/master-access/me", "/master-access/search", "/master-access/grant", "/master-access/extend", "/master-access/revoke", "/master-access/users", "/master-access/manual-grants", "/master-access/active-users", "/master-access/quick-revision-clicks", "/master-access/ca-purchases", "/master-access/subjects", "/master-access/subjects/update", "/master-access/subjects/create", "/announcements/list", "/announcements/mark-seen", "/announcements/clear", "/analytics/quick-revision-click", "/ca/create-order", "/ca/purchases", "/ca/download-token"];
       const headers = authRoutes.includes(url.pathname)
         ? corsHeadersWithCredentials(request)
         : CORS_HEADERS;
@@ -104,6 +104,10 @@ export default {
     if (url.pathname === "/auth/google/link" && request.method === "POST") {
       return googleLink(request, env);
     }
+    if (url.pathname === "/auth/lookup" && request.method === "POST") { return authLookup(request, env); }
+    if (url.pathname === "/auth/identify" && request.method === "POST") { return authIdentify(request, env); }
+    if (url.pathname === "/auth/email/login" && request.method === "POST") { return authEmailLogin(request, env); }
+    if (url.pathname === "/auth/email/verify" && request.method === "POST") { return authEmailVerify(request, env); }
     if (url.pathname === "/trial/status" && request.method === "GET") {
       return trialStatus(request, env);
     }
@@ -1593,7 +1597,7 @@ async function trialIdentity(env, userId) {
   const verified = !!row && Number(row.email_verified) === 1;
   const ids = [];
   if (googleSub) ids.push(googleSub);
-  if (gmailKey && verified) ids.push(gmailKey);
+  if (gmailKey) ids.push(gmailKey);
   let emailState = "ok";
   if (!ids.length) emailState = gmailKey && !verified ? "unverified" : "need_gmail";
   return { googleSub, ids, emailState };
@@ -4248,3 +4252,182 @@ async function clearAnnouncement(request, env) {
     return jsonAuth({ error: "Server error", detail: String(err) }, 500);
   }
 }
+
+// ===== sh-lookup: one-box sign-up helper =====
+// POST /auth/lookup {identifier}: tells the page whether this phone/email already has a login.
+async function authLookup(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  try {
+    const body = await request.json().catch(() => ({}));
+    const raw = String(body.identifier || "").trim();
+    if (!raw) return jsonAuth({ error: "Enter your email or phone number" }, 400);
+    if (raw.indexOf("@") === -1) {
+      const phone = raw.replace(/\D/g, "").slice(-10);
+      if (phone.length !== 10) return jsonAuth({ error: "Enter a 10-digit phone number" }, 400);
+      const u = await env.DB.prepare("SELECT passcode_hash FROM users WHERE phone = ?").bind(phone).first();
+      return jsonAuth({ exists: !!(u && u.passcode_hash) });
+    }
+    const email = raw.toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 120) return jsonAuth({ error: "Enter a valid email address" }, 400);
+    const rows = (await env.DB.prepare(
+      "SELECT passcode_hash, google_sub FROM users WHERE lower(recovery_email) = ? LIMIT 10"
+    ).bind(email).all()).results || [];
+    if (rows.some((r) => r.passcode_hash)) return jsonAuth({ exists: true });
+    if (rows.some((r) => r.google_sub)) return jsonAuth({ exists: false, google: true });
+    return jsonAuth({ exists: false });
+  } catch (err) {
+    return jsonAuth({ error: "Server error" }, 500);
+  }
+}
+// ===== end sh-lookup =====
+
+
+// ===== sh-email-signup: one-box sign-up (email or phone) =====
+function shNormEmail(s) { return String(s || "").trim().toLowerCase(); }
+function shValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length <= 120; }
+
+async function shSendSignupOtpEmail(env, toEmail, otp) {
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: "StudyHelp <studyhelp@fdaytalk.com>",
+        to: [toEmail],
+        subject: "Your StudyHelp sign-up code",
+        html: `<p>Your StudyHelp sign-up code is:</p>
+               <p style="font-size:24px;font-weight:bold;letter-spacing:4px;">${otp}</p>
+               <p>This code expires in 10 minutes. If you did not request this, you can ignore this email.</p>`,
+      }),
+    });
+    return { ok: res.ok };
+  } catch (err) {
+    return { ok: false };
+  }
+}
+
+// POST /auth/identify {identifier}: decides what the one box should do next.
+async function authIdentify(request, env) {
+  const jsonAuth = (data, status = 200) => json(data, status, corsHeadersWithCredentials(request));
+  try {
+    const body = await request.json().catch(() => ({}));
+    const raw = String(body.identifier || "").trim();
+    if (!raw) return jsonAuth({ error: "Enter your email or phone number" }, 400);
+
+    if (raw.indexOf("@") === -1) {
+      const phone = raw.replace(/\D/g, "").slice(-10);
+      if (phone.length !== 10) return jsonAuth({ error: "Enter a valid email or 10-digit phone number" }, 400);
+      const u = await env.DB.prepare("SELECT passcode_hash FROM users WHERE phone = ?").bind(phone).first();
+      if (u && u.passcode_hash) return jsonAuth({ state: "passcode", via: "phone", identifier: phone });
+      return jsonAuth({ state: "no_phone_account" });
+    }
+
+    const email = shNormEmail(raw);
+    if (!shValidEmail(email)) return jsonAuth({ error: "Enter a valid email address" }, 400);
+
+    const rows = (await env.DB.prepare(
+      "SELECT passcode_hash, google_sub, email_verified FROM users WHERE lower(recovery_email) = ? ORDER BY email_verified DESC LIMIT 10"
+    ).bind(email).all()).results || [];
+    if (rows.some((r) => r.passcode_hash && Number(r.email_verified) === 1)) {
+      return jsonAuth({ state: "passcode", via: "email", identifier: email });
+    }
+    if (rows.some((r) => r.google_sub)) return jsonAuth({ state: "google" });
+    if (rows.some((r) => r.passcode_hash)) return jsonAuth({ state: "use_phone" });
+
+    // New person: the trial needs a real Gmail, so only Gmail is accepted here.
+    if (!canonicalGmail(email)) {
+      return jsonAuth({ state: "need_gmail", error: "Please use a Gmail address, or tap Continue with Google." }, 400);
+    }
+
+    const nowSec = Math.floor(Date.now() / 1000);
+    const ip = request.headers.get("CF-Connecting-IP") || "";
+    const last = await env.DB.prepare("SELECT created_at FROM email_signup_otps WHERE email = ? ORDER BY created_at DESC LIMIT 1").bind(email).first();
+    if (last && nowSec - last.created_at < 60) {
+      return jsonAuth({ error: `Please wait ${60 - (nowSec - last.created_at)}s before retrying.` }, 429);
+    }
+    const dayEmail = await env.DB.prepare("SELECT COUNT(*) AS c FROM email_signup_otps WHERE email = ? AND created_at > ?").bind(email, nowSec - 86400).first();
+    if (dayEmail && dayEmail.c >= 5) return jsonAuth({ error: "Too many attempts. Try again tomorrow." }, 429);
+    if (ip) {
+      const hourIp = await env.DB.prepare("SELECT COUNT(*) AS c FROM email_signup_otps WHERE ip = ? AND created_at > ?").bind(ip, nowSec - 3600).first();
+      if (hourIp && hourIp.c >= 20) return jsonAuth({ error: "Too many attempts. Please try later." }, 429);
+    }
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    await env.DB.prepare("DELETE FROM email_signup_otps WHERE email = ? AND used = 0").bind(email).run();
+    await env.DB.prepare(
+      "INSERT INTO email_signup_otps (id, email, otp_hash, ip, created_at, expires_at) VALUES (?, ?, ?, ?, ?, ?)"
+    ).bind(crypto.randomUUID(), email, await sha256Hex(otp), ip, nowSec, nowSec + 600).run();
+
+    const sent = await shSendSignupOtpEmail(env, email, otp);
+    if (!sent.ok) return jsonAuth({ error: "Could not send the code right now. Please try again shortly." }, 502);
+    return jsonAuth({ state: "code_sent", identifier: email });
+  } catch (err) {
+    return jsonAuth({ error: "Server error" }, 500);
+  }
+}
+
+// POST /auth/email/login {email, passcode}
+async function authEmailLogin(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) => json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+  try {
+    const body = await request.json().catch(() => ({}));
+    const email = shNormEmail(body.email);
+    const passcode = String(body.passcode || "");
+    if (!email || !/^\d{6}$/.test(passcode)) return jsonAuth({ error: "Invalid email or passcode" }, 401);
+    const user = await env.DB.prepare(
+      "SELECT id, name, passcode_hash FROM users WHERE lower(recovery_email) = ? AND email_verified = 1 AND passcode_hash IS NOT NULL LIMIT 1"
+    ).bind(email).first();
+    if (!user || !(await verifyPasscode(passcode, user.passcode_hash))) {
+      return jsonAuth({ error: "Invalid email or passcode" }, 401);
+    }
+    await env.DB.prepare(
+      "UPDATE login_sessions SET revoked_reason = 'evicted_by_new_login', revoked_at = ? WHERE user_id = ? AND revoked_reason IS NULL"
+    ).bind(Math.floor(Date.now() / 1000), user.id).run();
+    const session = await createSession(env, user.id);
+    return jsonAuth({ user_id: user.id, name: user.name }, 200, { "Set-Cookie": sessionCookie(session, request) });
+  } catch (err) {
+    return jsonAuth({ error: "Server error" }, 500);
+  }
+}
+
+// POST /auth/email/verify {email, otp, passcode}: proves the email, creates the account, logs in.
+async function authEmailVerify(request, env) {
+  const jsonAuth = (data, status = 200, extra = {}) => json(data, status, { ...corsHeadersWithCredentials(request), ...extra });
+  try {
+    const body = await request.json().catch(() => ({}));
+    const email = shNormEmail(body.email);
+    const otp = String(body.otp || "").trim();
+    const passcode = String(body.passcode || "");
+    if (!shValidEmail(email) || !canonicalGmail(email)) return jsonAuth({ error: "Please use a Gmail address." }, 400);
+    if (!/^\d{6}$/.test(otp)) return jsonAuth({ error: "Enter the 6-digit code from your email" }, 400);
+    if (!/^\d{6}$/.test(passcode)) return jsonAuth({ error: "Passcode must be exactly 6 digits" }, 400);
+
+    const nowSec = Math.floor(Date.now() / 1000);
+    const row = await env.DB.prepare(
+      "SELECT id, otp_hash, attempts, expires_at, used FROM email_signup_otps WHERE email = ? ORDER BY created_at DESC LIMIT 1"
+    ).bind(email).first();
+    if (!row || row.used || row.expires_at < nowSec) return jsonAuth({ error: "Invalid or expired code" }, 400);
+    if (row.attempts >= 5) return jsonAuth({ error: "Too many incorrect attempts. Please request a new code." }, 429);
+    if ((await sha256Hex(otp)) !== row.otp_hash) {
+      await env.DB.prepare("UPDATE email_signup_otps SET attempts = attempts + 1 WHERE id = ?").bind(row.id).run();
+      return jsonAuth({ error: "Incorrect code" }, 400);
+    }
+    await env.DB.prepare("UPDATE email_signup_otps SET used = 1 WHERE id = ?").bind(row.id).run();
+
+    const exists = await env.DB.prepare(
+      "SELECT id FROM users WHERE lower(recovery_email) = ? AND email_verified = 1 LIMIT 1"
+    ).bind(email).first();
+    if (exists) return jsonAuth({ error: "An account already exists for this email. Please log in." }, 409);
+
+    const userId = crypto.randomUUID();
+    const name = email.split("@")[0].slice(0, 40);
+    await env.DB.prepare(
+      "INSERT INTO users (id, name, recovery_email, email_verified, passcode_hash) VALUES (?, ?, ?, 1, ?)"
+    ).bind(userId, name, email, await hashPasscode(passcode)).run();
+    const session = await createSession(env, userId);
+    return jsonAuth({ user_id: userId, name }, 200, { "Set-Cookie": sessionCookie(session, request) });
+  } catch (err) {
+    return jsonAuth({ error: "Server error" }, 500);
+  }
+}
+// ===== end sh-email-signup =====

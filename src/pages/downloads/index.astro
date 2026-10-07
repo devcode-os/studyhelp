@@ -29,6 +29,7 @@ const PDFS = [
       <div class="dl-crumb"><a href="/sales/">Study Options</a> / Download PDFs</div>
       <h1>Download MCQ PDFs</h1>
       <p>Chapter-wise practice sets with answers after every set. Pay once, download any time, study offline.</p>
+      <p class="dl-same">✓ Same MCQs as online. Study offline.</p>
     </div>
 
     <section class="dl-mine" id="dl-mine" style="display:none">
@@ -46,7 +47,7 @@ const PDFS = [
           </div>
           {p.note && <p class="dl-note">{p.note}</p>}
           <p class="dl-meta">{p.mcqs} MCQs &middot; {p.chapters} {p.unit === 'sets' ? 'practice sets' : 'chapters'}</p>
-          <button type="button" class="dl-btn" data-item-id={p.id} data-price={PRICE} data-name={p.medium === 'Telugu' ? `${p.name} (Telugu)` : p.name}>Buy Now - ₹{PRICE}</button>
+          <button type="button" class="dl-btn" data-item-id={p.id} data-price={PRICE} data-name={p.medium === 'Telugu' ? `${p.name} (Telugu)` : p.name}>₹{PRICE}</button>
         </section>
       ))}
       <section class="dl-card dl-ca">
@@ -55,12 +56,35 @@ const PDFS = [
           <span class="dl-tag">Monthly</span>
         </div>
         <p class="dl-meta">Get Last 3 months Current Affairs MCQ PDF</p>
-        <a class="dl-btn dl-btn-link" href="/current-affairs/">Buy Now - ₹199</a>
+        <a class="dl-btn dl-btn-link" href="/current-affairs/">₹199</a>
       </section>
     </div>
 
 
+    <div class="dl-more">
+      <section class="srow srow-col" id="kindle">
+        <div class="srow-top">
+          <div class="srow-ico srow-amber"><i class="ti ti-books" aria-hidden="true"></i></div>
+          <div class="srow-text"><b>Amazon Kindle</b><span>We are also available on Kindle</span></div>
+        </div>
+        <a class="srow-book" href="https://www.amazon.in/dp/B0HLT7FTMZ/" data-aff="https://link.amazon/B0ehQ54u4" target="_blank" rel="noopener">
+          <div class="srow-text"><b>Indian Polity</b><span>4,000+ MCQs with Explanations. Chapter-wise practice sets.</span></div>
+          <em class="srow-buy">Buy on Amazon · ₹299</em>
+        </a>
+        <a class="srow-book" href="https://www.amazon.in/dp/B0HLYZT1BQ/" data-aff="https://link.amazon/B0apjMhAo" target="_blank" rel="noopener">
+          <div class="srow-text"><b>Indian History</b><span>Ancient, Medieval and Modern. 4,000+ MCQs with Explanations.</span></div>
+          <em class="srow-buy">Buy on Amazon · ₹299</em>
+        </a>
+      </section>
+      <div class="srow srow-off" id="playbooks">
+        <div class="srow-ico srow-blue"><i class="ti ti-book-2" aria-hidden="true"></i></div>
+        <div class="srow-text"><b>Google Play Books</b><span>Our books are on the way to Google Play Books.</span><em>Coming soon</em></div>
+      </div>
+    </div>
+
+
     <p class="dl-fine">One-time payment. The PDF is for your personal study and stays in your account, so you can download it again any time. Answers are given for every question; explanations are included where available. Telugu PDFs carry Telugu questions and answers.</p>
+    <p class="dl-fine">Want online practice instead? <a href="/plans/">See ₹199 plans</a></p>
     <p class="dl-fine">Need help? <a href="/support/">Contact support</a> &middot; <a href="/refund-policy/">Refund policy</a></p>
   </div>
 
@@ -135,6 +159,37 @@ const PDFS = [
       .dl-card .dl-sel-label, .dl-card .dl-note { grid-column: 1; }
       .dl-card .dl-btn { grid-row: 1 / span 4; align-self: center; }
     }
+
+    /* dl-rows */
+    .dl-same { margin: 0 0 10px; padding: 7px 10px; background: var(--grn-soft); color: var(--grn); border-radius: 8px; font-size: .78rem; font-weight: 700; }
+    @media (max-width: 819px) {
+      .dl-list { gap: 0; background: var(--s); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 1px 2px rgba(33,31,61,.05); }
+      .dl-card { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; padding: 10px 12px; }
+      .dl-card:last-child { border-bottom: 0; }
+      .dl-card .dl-btn { padding: 8px 9px; font-size: .74rem; }
+      .dl-card .dl-top h2 { font-size: .92rem; }
+      .dl-list.dl-picking .dl-card.dl-selected { box-shadow: none; background: var(--ind-soft); }
+    }
+
+    /* dl-more */
+    .dl-more { --sh2-surface:#FFFFFF; --sh2-indigo:#4B3FA0; --sh2-amber:#E8963A; --sh2-amber-soft:#FBEDD9; --sh2-blue:#2F7DD6; --sh2-blue-soft:#E1EDFB; --sh2-ink:#1C1A38; --sh2-text-soft:#726F92; --sh2-line:#E7E4F5; margin-top: 14px; }
+    html[data-theme="dark"] .dl-more { --sh2-surface:#1C1A30; --sh2-indigo:#A594F5; --sh2-amber:#F0B45E; --sh2-amber-soft:#3B2C15; --sh2-blue:#6FA8EC; --sh2-blue-soft:#1B2A40; --sh2-ink:#F3F1FC; --sh2-text-soft:#9C97BE; --sh2-line:#302C4E; }
+    .dl-more .srow { display:flex; align-items:center; gap:13px; padding:12px 14px; margin-bottom:10px; border-radius:18px; background:var(--sh2-surface); border:1.5px solid #CFCAE8; text-decoration:none; color:inherit; }
+    .dl-more .srow-ico { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-size:1.15rem; flex:none; }
+    .dl-more .srow-amber { background:var(--sh2-amber-soft); color:var(--sh2-amber); }
+    .dl-more .srow-blue { background:var(--sh2-blue-soft); color:var(--sh2-blue); }
+    .dl-more .srow-text { flex:1; min-width:0; }
+    .dl-more .srow-text b { display:block; font-size:.92rem; color:var(--sh2-ink); }
+    .dl-more .srow-text span { display:block; line-height:1.35; font-size:.76rem; font-weight:600; color:var(--sh2-text-soft); }
+    .dl-more .srow-text em { display:block; font-style:normal; font-size:.76rem; font-weight:800; color:var(--sh2-indigo); margin-top:2px; }
+    .dl-more .srow-col { flex-direction:column; align-items:stretch; gap:8px; }
+    .dl-more .srow-top { display:flex; align-items:center; justify-content:flex-start; gap:13px; width:100%; }
+    .dl-more .srow-book { display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--sh2-line); border-radius:12px; text-decoration:none; color:inherit; }
+    .dl-more .srow-book .srow-text b { font-size:.88rem; }
+    .dl-more .srow-buy { flex:none; font-style:normal; font-size:.72rem; font-weight:800; background:var(--sh2-amber); color:#1C1A38; padding:6px 10px; border-radius:999px; text-align:center; }
+    .dl-more .srow-off { opacity:.65; }
+    html[data-theme="dark"] .dl-more .srow { border-color:#3D3866; background:#1B1930; }
+
   </style>
 
   <script>
@@ -281,7 +336,7 @@ const PDFS = [
       document.querySelectorAll('button.dl-btn[data-item-id]').forEach((btn) => {
         const id = btn.dataset.itemId;
         if (state.items.has(id)) { btn.textContent = 'Download PDF'; btn.classList.add('dl-owned'); }
-        else { btn.textContent = `Buy Now - ₹${PRICE_RS}`; btn.classList.remove('dl-owned'); }
+        else { btn.textContent = `₹${PRICE_RS}`; btn.classList.remove('dl-owned'); }
       });
     }
 
@@ -339,5 +394,16 @@ const PDFS = [
 
   <script is:inline>
     document.body.classList.add('sh2-page');
+  </script>
+<!-- kindle-desktop-links -->
+  <script is:inline>
+    // Phones/tablets: normal Amazon links (open the Amazon app). Desktop: affiliate links.
+    (function () {
+      try {
+        var desktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches && !/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+        if (!desktop) return;
+        document.querySelectorAll("a.srow-book[data-aff]").forEach(function (a) { a.href = a.getAttribute("data-aff"); });
+      } catch (e) {}
+    })();
   </script>
 </Layout>
