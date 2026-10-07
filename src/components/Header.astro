@@ -142,6 +142,10 @@ const aboutHref = '/about/';
         <i class="ti ti-shopping-cart" aria-hidden="true"></i>
         <span>Plans</span>
       </a>
+      <a href="/downloads/" class:list={{ 'tab-active': active === 'pdfs' }}>
+        <i class="ti ti-file-download" aria-hidden="true"></i>
+        <span>PDFs</span>
+      </a>
       <a href={loginHref} id="login-link-mobile" class:list={{ 'tab-active': active === 'account' }}>
         <span class="tab-icon-wrap">
           <i class="ti ti-user" id="tab-user-icon" aria-hidden="true"></i>
