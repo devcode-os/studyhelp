@@ -307,7 +307,7 @@
   function startFlow(slug) {
     return getStatus(true).then(function (st) {
       if (!st.enabled) return;
-      if (!st.logged_in) { if (isInApp() && !inAppSkipped) { openInAppModal(slug); return; } openConfirmModal(slug, true); return; } // guest: pick the subject first, Google sign-in comes after
+      if (!st.logged_in) { openConfirmModal(slug, true); return; } // guest: pick the subject first, Google sign-in comes after
       if (st.trial_used) { toast('You have already used your free trial.'); return; }
       if (st.email_state === 'unverified' || st.email_state === 'need_gmail') { openEmailModal(st.email_state); return; }
       openConfirmModal(slug);

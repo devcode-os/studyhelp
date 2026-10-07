@@ -162,3 +162,27 @@
 
   render(false);
 })();
+
+/* inapp-google */
+(function(){
+  var ua=navigator.userAgent||'';
+  if(!/FBAN|FBAV|FB_IAB|Instagram/i.test(ua)||!/Android/i.test(ua))return;
+  var skipped=false;
+  function show(){
+    var o=document.createElement('div');
+    o.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:20px;';
+    o.innerHTML='<div style="background:#fff;border-radius:16px;padding:22px 20px;max-width:340px;width:100%;text-align:center;font-family:inherit;">'+
+      '<h2 style="margin:0 0 8px;font-size:1.1rem;color:#1a1a2e;">Open in Chrome to sign in faster</h2>'+
+      '<p style="margin:0 0 14px;font-size:.9rem;color:#555;">In Chrome your Google account is one tap away.</p>'+
+      '<button type="button" id="ig-chrome" style="width:100%;padding:12px;border:0;border-radius:10px;background:#4F46E5;color:#fff;font-weight:700;font-size:1rem;">Open in Chrome</button>'+
+      '<p style="margin:12px 0 0;"><a href="#" id="ig-go" style="color:#555;text-decoration:underline;font-size:.9rem;">Continue here anyway</a></p></div>';
+    document.body.appendChild(o);
+    o.querySelector('#ig-chrome').onclick=function(){var u=location;location.href='intent://'+u.host+u.pathname+u.search+'#Intent;scheme=https;package=com.android.chrome;end';};
+    o.querySelector('#ig-go').onclick=function(e){e.preventDefault();skipped=true;o.remove();};
+  }
+  document.addEventListener('click',function(e){
+    if(skipped)return;
+    var t=e.target;
+    if(t&&t.closest&&t.closest('#google-auth-slot')){e.preventDefault();e.stopPropagation();show();}
+  },true);
+})();
