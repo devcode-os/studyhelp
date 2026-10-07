@@ -186,6 +186,15 @@
       '.sht-card:not(.sht-dark) .sht-tag{display:inline-block;background:' + G + ';color:#fff;padding:2px 8px;border-radius:999px;margin-bottom:3px;}' +
       '.sht-card:not(.sht-dark) .sht-btn:not(.sht-btn-ghost){background:#5a4bd0;}' +
       '.sht-card:not(.sht-dark) .sht-btn-ghost{color:#5a4bd0;border-color:#5a4bd0;}' +
+      /* compact active-trial card */
+      '.sht-act:not(.sht-dark){padding:10px 12px;gap:6px;margin:0 0 10px;}' +
+      '.sht-act:not(.sht-dark) .sht-ico{width:32px;height:32px;font-size:1.05rem;border-radius:10px;}' +
+      '.sht-act:not(.sht-dark) .sht-body{flex:1 1 150px;}' +
+      '.sht-act:not(.sht-dark) .sht-tag{font-size:.58rem;padding:1px 7px;margin-bottom:2px;}' +
+      '.sht-act:not(.sht-dark) .sht-title{font-size:.88rem;line-height:1.25;}' +
+      '.sht-act:not(.sht-dark) .sht-sub{font-size:.72rem;margin-top:1px;}' +
+      '.sht-act:not(.sht-dark) .sht-actions{flex:1 1 100%;justify-content:center;gap:8px;}' +
+      '.sht-act:not(.sht-dark) .sht-btn{padding:7px 14px;font-size:.8rem;border-radius:9px;}' +
       '.sht-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:10px;border:none;' +
       'background:' + G + ';color:#fff;font-family:inherit;font-weight:800;font-size:.84rem;cursor:pointer;text-decoration:none;white-space:nowrap;}' +
       '.sht-btn:hover{filter:brightness(.95);}' +
@@ -439,7 +448,7 @@
       '<div class="sht-actions"><button type="button" class="sht-btn" data-trial-start="' + esc(opts.slug || '') + '">Start free trial</button></div></div>';
   }
   function activeCard(opts) {
-    return '<div class="sht-card' + (opts.dark ? ' sht-dark' : '') + '">' +
+    return '<div class="sht-card sht-act' + (opts.dark ? ' sht-dark' : '') + '">' +
       '<div class="sht-ico"><i class="ti ti-clock-hour-4" aria-hidden="true"></i></div>' +
       '<div class="sht-body"><div class="sht-tag">FREE TRIAL ACTIVE</div>' +
       '<div class="sht-title">' + opts.title + '</div>' +
