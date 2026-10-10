@@ -17,6 +17,7 @@ export const CA_CATALOG = {
   "current-affairs-june-2026":     { itemType: "month", monthRange: "June 2026",     amountPaise: 9900 },
   "current-affairs-july-2026":     { itemType: "month", monthRange: "July 2026",     amountPaise: 9900 },
   "current-affairs-august-2026":   { itemType: "month", monthRange: "August 2026",   amountPaise: 9900 },
+  "current-affairs-september-2026": { itemType: "month", monthRange: "September 2026", amountPaise: 9900 },
   "current-affairs-last3-jun-jul-aug-2026": {
     itemType: "bundle3",
     monthRange: "June, July, August 2026",
@@ -25,6 +26,16 @@ export const CA_CATALOG = {
   "current-affairs-last6-mar-apr-may-jun-jul-aug-2026": {
     itemType: "bundle6",
     monthRange: "March \u2013 August 2026",
+    amountPaise: 29900,
+  },
+  "current-affairs-last3-jul-aug-sep-2026": {
+    itemType: "bundle3",
+    monthRange: "July, August, September 2026",
+    amountPaise: 19900,
+  },
+  "current-affairs-last6-apr-may-jun-jul-aug-sep-2026": {
+    itemType: "bundle6",
+    monthRange: "April \u2013 September 2026",
     amountPaise: 29900,
   },
 
