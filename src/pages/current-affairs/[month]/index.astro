@@ -1,0 +1,172 @@
+---
+// src/pages/current-affairs/[month]/index.astro
+// One static, indexable landing page per month: /current-affairs/september-2026/
+// Built from the same month JSON as the reader (no new data files). Shows a
+// small sample of every section (SAMPLE_PER_SECTION) so the page has real,
+// unique content for search, while the full set stays in the reader / PDF.
+// New month JSON in src/data/current-affairs/ => new page + sitemap entry
+// automatically on the next build.
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import { getFullDataset } from '../../../lib/currentAffairs.js';
+
+const SAMPLE_PER_SECTION = 5;
+
+export function getStaticPaths() {
+  // NOTE: getStaticPaths is hoisted out of the component scope, so its
+  // helpers must live inside it (they cannot see top-level declarations).
+  const monthSlug = (m) => `${m.month.toLowerCase()}-${m.year}`;
+  const all = getFullDataset(); // newest first
+  return all.map((m, i) => ({
+    params: { month: monthSlug(m) },
+    props: {
+      data: m,
+      newer: i > 0 ? { label: all[i - 1].label, slug: monthSlug(all[i - 1]) } : null,
+      older: i < all.length - 1 ? { label: all[i + 1].label, slug: monthSlug(all[i + 1]) } : null,
+      others: all.filter((x) => x.slug !== m.slug).slice(0, 8).map((x) => ({ label: x.label, slug: monthSlug(x) })),
+    },
+  }));
+}
+
+const { data, newer, older, others } = Astro.props;
+const monthSlug = (m) => `${m.month.toLowerCase()}-${m.year}`;
+
+const sections = Object.entries(data.sections).map(([name, items]) => ({
+  name,
+  id: name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+  total: items.length,
+  sample: items.slice(0, SAMPLE_PER_SECTION),
+}));
+const totalQuestions = sections.reduce((s, x) => s + x.total, 0);
+
+// Explanation without the folded-in "Key Points:" block (keeps samples short).
+function explanationOnly(e) {
+  return (e || '').split('\n\nKey Points:')[0].trim();
+}
+
+const title = `${data.label} Current Affairs MCQs with Answers | StudyHelp`;
+const description = `${totalQuestions} ${data.label} current affairs MCQs with answers and explanations across ${sections.length} sections — appointments, awards, sports, national and international news and more. Practice free or download the PDF.`;
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://studyhelp.fdaytalk.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Current Affairs', item: 'https://studyhelp.fdaytalk.com/current-affairs/' },
+    { '@type': 'ListItem', position: 3, name: data.label, item: `https://studyhelp.fdaytalk.com/current-affairs/${monthSlug(data)}/` },
+  ],
+};
+---
+<Layout title={title} description={description}>
+  <Header active="current-affairs" theme="premium" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+
+  <div class="content ca-month">
+    <div class="breadcrumb">
+      <a href="/">Home</a> / <a href="/current-affairs/">Current Affairs</a> / {data.label}
+    </div>
+
+    <h1>{data.label} Current Affairs MCQs</h1>
+    <p class="sub">
+      {totalQuestions} questions with answers and explanations · {sections.length} sections
+    </p>
+
+    <p class="ca-month-intro">
+      Revise everything that mattered in {data.label} for SSC, banking, TGPSC, APPSC and other state exams.
+      Each question below is a sample from that section; the full set is free to practise in the reader,
+      and the complete month is also available as a PDF for offline study.
+    </p>
+
+    <div class="ca-month-cta">
+      <a class="ca-btn ca-btn-primary" href="/current-affairs/read/">Practice all {totalQuestions} questions free</a>
+      <a class="ca-btn" href="/current-affairs/?tab=pdf">Download {data.label} PDF</a>
+    </div>
+
+    <nav class="ca-month-toc" aria-label="Sections">
+      <h2>Sections in {data.label}</h2>
+      <ul>
+        {sections.map((s) => (
+          <li><a href={`#${s.id}`}>{s.name}</a> <span class="ca-count">{s.total}</span></li>
+        ))}
+      </ul>
+    </nav>
+
+    {sections.map((s) => (
+      <section class="ca-month-section" id={s.id}>
+        <h2>{s.name} — {data.label}</h2>
+        <p class="ca-section-count">Showing {s.sample.length} of {s.total} questions</p>
+
+        {s.sample.map((q, i) => (
+          <article class="ca-q">
+            <h3>Q{i + 1}. {q.q}</h3>
+            <ol class="ca-opts" type="a">
+              {Object.entries(q.options).map(([k, v]) => <li>{v}</li>)}
+            </ol>
+            <p class="ca-ans"><strong>Answer:</strong> {q.a}</p>
+            {explanationOnly(q.e) && <p class="ca-exp">{explanationOnly(q.e)}</p>}
+          </article>
+        ))}
+
+        {s.total > s.sample.length && (
+          <p class="ca-more">
+            <a href="/current-affairs/read/">Practise the remaining {s.total - s.sample.length} {s.name} questions →</a>
+          </p>
+        )}
+      </section>
+    ))}
+
+    <section class="ca-month-nav">
+      <h2>More current affairs</h2>
+      <p>
+        {newer && <a href={`/current-affairs/${newer.slug}/`}>← {newer.label}</a>}
+        {newer && older && ' · '}
+        {older && <a href={`/current-affairs/${older.slug}/`}>{older.label} →</a>}
+      </p>
+      <ul class="ca-others">
+        {others.map((o) => <li><a href={`/current-affairs/${o.slug}/`}>{o.label} Current Affairs</a></li>)}
+      </ul>
+    </section>
+  </div>
+
+  <style is:global>
+    body.sh2-page { background: #EEEDF6; }
+    html[data-theme="dark"] body.sh2-page { background: #121120; }
+    body.sh2-page {
+      --bg: #EEEDF6; --card: #FFFFFF; --border: #E7E4F5; --text: #1C1A38;
+      --muted: #726F92; --accent: #4B3FA0; --accent-bg: #EEEAFB;
+      --success-bg: #DFF3EA; --success-text: #1D7A54;
+    }
+    html[data-theme="dark"] body.sh2-page {
+      --bg: #121120; --card: #1C1A30; --border: #302C4E; --text: #F3F1FC;
+      --muted: #9C97BE; --accent: #A594F5; --accent-bg: #2A2650;
+      --success-bg: #183328; --success-text: #5FCB9B;
+    }
+    .ca-month .breadcrumb { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+    .ca-month .breadcrumb a { font-size: 14px; }
+    .ca-month-intro { font-size: 16px; line-height: 1.6; color: var(--text); margin: 0 0 16px; }
+    .ca-month-cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
+    .ca-btn { display: inline-block; padding: 12px 18px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); color: var(--accent); font-size: 15px; font-weight: 600; text-decoration: none; }
+    .ca-btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    html[data-theme="dark"] .ca-btn-primary { color: #121120; }
+    .ca-month-toc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; margin: 0 0 28px; }
+    .ca-month-toc h2 { font-size: 17px; margin: 0 0 10px; }
+    .ca-month-toc ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px 16px; }
+    .ca-month-toc a { font-size: 15px; }
+    .ca-count { color: var(--muted); font-size: 13px; margin-left: 4px; }
+    .ca-month-section { margin: 0 0 32px; scroll-margin-top: 80px; }
+    .ca-month-section h2 { font-size: 21px; margin: 0 0 4px; }
+    .ca-section-count { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+    .ca-q { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin: 0 0 12px; }
+    .ca-q h3 { font-size: 16px; line-height: 1.45; margin: 0 0 8px; font-weight: 600; }
+    .ca-opts { margin: 0 0 8px; padding-left: 22px; font-size: 15px; line-height: 1.55; }
+    .ca-ans { margin: 0 0 4px; font-size: 15px; color: var(--success-text); }
+    .ca-exp { margin: 0; font-size: 14px; line-height: 1.55; color: var(--muted); }
+    .ca-more a { font-size: 15px; font-weight: 600; }
+    .ca-month-nav h2 { font-size: 19px; margin: 0 0 8px; }
+    .ca-others { padding-left: 18px; margin: 8px 0 0; line-height: 1.8; }
+    .ca-others a, .ca-month-nav a { font-size: 15px; }
+  </style>
+  <script is:inline>
+    document.body.classList.add('sh2-page');
+  </script>
+</Layout>
