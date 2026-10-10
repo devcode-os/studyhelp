@@ -31,9 +31,12 @@ export function getStaticPaths() {
 const { data, newer, older, others } = Astro.props;
 const monthSlug = (m) => `${m.month.toLowerCase()}-${m.year}`;
 
-const sections = Object.entries(data.sections).map(([name, items]) => ({
-  name,
-  id: name.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+// Same alias the reader and PDF generator use: older month files store this
+// section as "Static Takeaways"; the public name is "General Awareness".
+const SECTION_ALIASES = { 'Static Takeaways': 'General Awareness' };
+const sections = Object.entries(data.sections).map(([rawName, items]) => ({
+  name: SECTION_ALIASES[rawName] || rawName,
+  id: (SECTION_ALIASES[rawName] || rawName).toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
   total: items.length,
   sample: items.slice(0, SAMPLE_PER_SECTION),
 }));
